@@ -1,0 +1,22 @@
+[
+  {
+    "id": "classic",
+    "name": "Classic",
+    "icon": "https://terraria.wiki.gg/images/Classic_Mode.png"
+  },
+  {
+    "id": "expert",
+    "name": "Expert",
+    "icon": "https://terraria.wiki.gg/images/Expert_Mode.png"
+  },
+  {
+    "id": "master",
+    "name": "Master",
+    "icon": "https://terraria.wiki.gg/images/Master_Mode.png"
+  },
+  {
+    "id": "journey",
+    "name": "Journey",
+    "icon": "https://terraria.wiki.gg/images/Journey_Mode.png"
+  }
+]

@@ -1,0 +1,278 @@
+// Shapes of the static JSON files written by pipeline/build_tracker_data.py.
+
+export const PLATFORM_IDS = ['desktop', 'console', 'mobile', 'oldgen', '3ds', 'japanese'] as const
+export type PlatformId = (typeof PLATFORM_IDS)[number]
+
+export const DIFFICULTIES = ['classic', 'expert', 'master', 'journey'] as const
+export type Difficulty = (typeof DIFFICULTIES)[number]
+
+export interface Item {
+  key: string
+  id: number
+  name: string
+  internalName?: string
+  page: string
+  url: string
+  icon?: string
+  iconPlaced?: string
+  iconEquipped?: string
+  categories: string[]
+  subcategories: string[]
+  obtain: string[]
+  vendors: string[]
+  events: string[]
+  /** biomes where enemies that drop the item spawn */
+  biomes: string[]
+  /** "night" / "day": dropped by enemies that only spawn then */
+  times: string[]
+  platforms: PlatformId[]
+  platformsKnown: boolean
+  /** Desktop patch that added the item, e.g. "1.4.0.1" */
+  introduced?: string
+  /** game update the item belongs to, e.g. "1.4.0" (id in versions.json) */
+  version?: string
+  /** only obtainable from this difficulty on */
+  minDifficulty?: 'expert' | 'master'
+  /** only obtainable during events (see `events`) */
+  eventOnly?: boolean
+  hardmode: boolean
+  hardmodeOnly: boolean
+  unobtainable: boolean
+  banner: boolean
+  questFish: boolean
+  rarity?: number
+  buy?: number
+  sell?: number
+  research?: number
+  stack?: number
+  consumable: boolean
+  placeable: boolean
+  autoswing: boolean
+  damage?: number
+  damageType?: string
+  critical?: number
+  knockback?: number
+  velocity?: number
+  useTime?: number
+  mana?: number
+  defense?: number
+  bodySlot?: string
+  pickaxePower?: number
+  axePower?: number
+  hammerPower?: number
+  toolSpeed?: number
+  fishingPower?: number
+  baitPower?: number
+  rangeBonus?: number
+  healLife?: number
+  healMana?: number
+  placedWidth?: number
+  placedHeight?: number
+  buff?: string
+  debuff?: string
+  tooltip?: string
+}
+
+export interface GroupEntry {
+  id: string
+  name: string
+  icon?: string
+  count: number
+  parent?: string
+  /** "Other …" subcategory: the parent's items that fit no other subcategory */
+  fallback?: boolean
+}
+
+export interface PlatformEntry {
+  id: PlatformId
+  name: string
+  count: number
+  /** the wiki's platform icon (data URI) */
+  icon?: string
+}
+
+export interface VersionEntry {
+  id: string
+  name: string
+  count: number
+  /** icon of an item added in the update */
+  icon?: string
+}
+
+export interface RarityEntry {
+  id: number
+  name: string
+  count: number
+  icon?: string
+}
+
+export interface CoinEntry {
+  id: 'platinum' | 'gold' | 'silver' | 'copper'
+  name: string
+  /** value in copper coins */
+  value: number
+  icon?: string
+}
+
+export const DROP_MODES = ['normal', 'expert', 'master'] as const
+export type DropMode = (typeof DROP_MODES)[number]
+
+/** Something that drops items: an enemy/boss, a treasure bag, later chests and crates. */
+export interface DropSource {
+  id: string
+  name: string
+  kind: 'npc' | 'bag' | 'container'
+  icon?: string
+  npcId?: number
+  /** where / when the enemy spawns (biomes.json / times.json ids) */
+  biomes?: string[]
+  times?: string[]
+}
+
+export interface Drop {
+  source: string
+  /** full display text, e.g. "1–3 · Expert: 2–6" */
+  quantity?: string
+  /** full display text, e.g. "1% · Expert: 1.99%" */
+  rate?: string
+  /** chance in percent per game mode (only the modes the drop exists in) */
+  chance?: Partial<Record<DropMode, number>>
+  /** quantity per game mode, e.g. { normal: "1–3", expert: "2–6" } */
+  quantities?: Partial<Record<DropMode, string>>
+  /** game modes the drop exists in */
+  modes: DropMode[]
+}
+
+export interface BossStage {
+  id: string
+  name: string
+  icon?: string
+}
+
+export interface Boss {
+  id: string
+  name: string
+  stage: string
+  icon?: string
+  /** drop sources that count for the boss (itself, parts, treasure bag) */
+  sources: string[]
+  count: number
+}
+
+/** One ingredient: an item, an "Any …" group, or (not matched) just a name. */
+export interface Ingredient {
+  item?: string
+  group?: string
+  name?: string
+  amount: number
+}
+
+export interface Recipe {
+  result: string
+  amount: number
+  /** all required, e.g. ["Work Bench", "Ecto Mist"] */
+  stations: string[]
+  ingredients: Ingredient[]
+  /** only on these platforms (missing = all) */
+  platforms?: PlatformId[]
+}
+
+export interface Station {
+  /** items that provide the station (stronger ones included) */
+  items?: string[]
+  icon?: string
+  /** environment condition or world object - needs no item */
+  condition?: boolean
+}
+
+export interface IngredientGroup {
+  items: string[]
+  icon?: string
+}
+
+/** Shimmer transmutation: item (or group / unmatched name) -> result */
+export interface Shimmer {
+  item?: string
+  group?: string
+  name?: string
+  result: string
+  amount: number
+}
+
+export interface RecipeData {
+  recipes: Recipe[]
+  /** result key -> recipes */
+  byResult: Map<string, Recipe[]>
+  /** item key -> recipes using it (directly or through a group) */
+  usedIn: Map<string, Recipe[]>
+  stations: Map<string, Station>
+  groups: Map<string, IngredientGroup>
+  /** item key -> what it turns into */
+  shimmerFrom: Map<string, Shimmer[]>
+  /** result key -> what turns into it */
+  shimmerTo: Map<string, Shimmer[]>
+}
+
+export type BestiaryTypeId = 'town' | 'critter' | 'enemy' | 'boss'
+
+/** One bestiary entry; variants ("Zombie (Female)") are entries of their own, as in-game. */
+export interface BestiaryEntry {
+  /** internal NPC name, also the key in the world file's bestiary */
+  id: string
+  /** same as id (set when loading; generic filter code keys by `key`) */
+  key: string
+  /** number in the in-game bestiary */
+  n: number
+  name: string
+  page: string
+  url: string
+  icon?: string
+  type: BestiaryTypeId
+  stars?: number
+  npcId?: number
+  /** biomes.json / times.json / events.json ids */
+  biomes: string[]
+  times: string[]
+  events: string[]
+  /** game update (versions.json id) */
+  version: string
+  platforms: PlatformId[]
+}
+
+export interface BestiaryType {
+  id: BestiaryTypeId
+  name: string
+  icon?: string
+  count: number
+}
+
+export interface GameData {
+  items: Item[]
+  itemsByKey: Map<string, Item>
+  /** Numeric item id -> items. Not unique: old-gen/3DS items reuse some ids. */
+  itemsById: Map<number, Item[]>
+  categories: GroupEntry[]
+  subcategories: GroupEntry[]
+  obtain: GroupEntry[]
+  vendors: GroupEntry[]
+  events: GroupEntry[]
+  biomes: GroupEntry[]
+  times: GroupEntry[]
+  platforms: PlatformEntry[]
+  /** game updates, oldest first */
+  versions: VersionEntry[]
+  rarities: Map<number, RarityEntry>
+  /** highest value first */
+  coins: CoinEntry[]
+  dropSources: Map<string, DropSource>
+  /** item key -> drops, highest chance first */
+  drops: Map<string, Drop[]>
+  bossStages: BossStage[]
+  bosses: Boss[]
+  /** generic drops (coins, healing potions) that never count for a boss */
+  bossIgnoreItems: Set<string>
+  recipes: RecipeData
+  bestiary: { types: BestiaryType[]; entries: BestiaryEntry[] }
+  /** difficulty -> icon of the wiki */
+  difficultyIcons: Partial<Record<Difficulty, string>>
+}

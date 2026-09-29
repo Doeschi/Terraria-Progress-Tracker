@@ -1,0 +1,183 @@
+import { useEffect, useState } from 'react'
+import {
+  BookOpen,
+  ChevronRight,
+  Clock,
+  FilePlus,
+  FileText,
+  FolderOpen,
+  Globe,
+  Hammer,
+  History,
+  ListChecks,
+  Pickaxe,
+  ShieldCheck,
+  SlidersHorizontal,
+  Swords,
+} from 'lucide-react'
+import { useStore } from '@/store'
+import { canSaveInPlace, clearBackup, hasRememberedWorld, readBackup, type Backup } from '@/lib/files'
+import { useWorldLoader } from '@/hooks/useWorldLoader'
+import { activePlaythrough } from '@/lib/saveFile'
+import { Button } from '@/components/ui/button'
+import { openFileAction } from '@/actions'
+import { AiNotice, Credits } from './Credits'
+import { formatRelativeDay } from '@/lib/format'
+
+export function WelcomeScreen() {
+  const data = useStore((s) => s.data)!
+  const newFile = useStore((s) => s.newFile)
+  const loadFile = useStore((s) => s.loadFile)
+  const [backup, setBackup] = useState<Backup | null>(null)
+  const { load } = useWorldLoader()
+
+  useEffect(() => {
+    readBackup().then(setBackup)
+  }, [])
+
+  // Continue: restore the session, then reload the active playthrough's world file if the
+  // browser remembers it. Runs inside the click, so the browser may ask for read access
+  // to the file right away; without a remembered file the header offers "reconnect".
+  const continueSession = (b: Backup) => {
+    loadFile({ doc: b.doc, fileName: b.fileName, handle: b.handle }, b.dirty)
+    const pt = activePlaythrough(b.doc)
+    if (!pt?.world || !canSaveInPlace) return
+    const id = pt.id
+    void hasRememberedWorld(id).then((remembered) => remembered && load(id, true, false))
+  }
+
+  const features = [
+    {
+      icon: ListChecks,
+      title: 'Every item, tracked',
+      text: `All ${data.items.length.toLocaleString('en')} items from the Terraria Wiki – per playthrough, with its own platform, difficulty and game version.`,
+    },
+    {
+      icon: SlidersHorizontal,
+      title: 'Filters with live progress',
+      text: 'Categories, sources, vendors, bosses, events, biomes, rarity and updates – each with its own progress bar.',
+    },
+    {
+      icon: Hammer,
+      title: 'Crafting recipes',
+      text: 'How an item is made, what it is used in, and what you can craft right now – from your items or your chests.',
+    },
+    {
+      icon: Swords,
+      title: 'Drops & bosses',
+      text: 'Who drops what, with the chances for Classic, Expert and Master.',
+    },
+    {
+      icon: BookOpen,
+      title: 'Bestiary',
+      text: `All ${data.bestiary.entries.length} entries, checked by hand or straight from your world.`,
+    },
+    {
+      icon: Globe,
+      title: 'Sync with your world',
+      text: 'Sync items and bestiary from your world, and find any item in your chests on a map.',
+    },
+  ]
+
+  return (
+    <div className="grid min-h-svh place-items-center bg-gradient-to-b from-emerald-500/10 via-background to-background p-4">
+      <div className="flex w-full max-w-2xl flex-col gap-8 py-6">
+        <div className="flex flex-col items-center gap-3 text-center">
+          <span className="grid size-14 place-items-center rounded-2xl bg-primary text-primary-foreground shadow-lg">
+            <Pickaxe className="size-7" />
+          </span>
+          <h1 className="text-2xl font-semibold">Terraria Progress Tracker</h1>
+          <p className="max-w-md text-sm text-balance text-muted-foreground">
+            Your companion for a 100% run: see what's still missing, how to get it – and let your world file do the
+            tracking.
+          </p>
+        </div>
+
+        <ul className="grid gap-x-6 gap-y-4 sm:grid-cols-2">
+          {features.map((f) => (
+            <li key={f.title} className="flex gap-3">
+              <span className="grid size-8 shrink-0 place-items-center rounded-lg bg-primary/15 text-primary">
+                <f.icon className="size-4" />
+              </span>
+              <div className="min-w-0">
+                <div className="text-sm font-medium">{f.title}</div>
+                <p className="text-xs text-muted-foreground">{f.text}</p>
+              </div>
+            </li>
+          ))}
+        </ul>
+
+        <div className="mx-auto flex w-full max-w-md flex-col gap-2 rounded-xl border bg-card p-4 shadow-sm">
+          {backup && <ContinueButton backup={backup} onClick={() => continueSession(backup)} />}
+          <Button
+            size="lg"
+            variant={backup ? 'outline' : 'default'}
+            className="justify-start"
+            onClick={() => void openFileAction()}
+          >
+            <FolderOpen /> Open tracking file…
+          </Button>
+          <Button
+            size="lg"
+            variant="outline"
+            className="justify-start"
+            onClick={() => {
+              void clearBackup()
+              newFile()
+            }}
+          >
+            <FilePlus /> Create new tracking file
+          </Button>
+        </div>
+
+        <div className="mx-auto flex max-w-md flex-col gap-3">
+          <p className="flex items-center gap-2 text-xs text-muted-foreground">
+            <ShieldCheck className="size-4 shrink-0" />
+            <span>
+              Everything runs in your browser. Tracking files and world files are never uploaded; only item icons are
+              loaded from the Terraria Wiki.
+            </span>
+          </p>
+          <Credits withIcon />
+          <AiNotice />
+        </div>
+      </div>
+    </div>
+  )
+}
+
+/** The last session: file name, when it was saved, unsaved changes and the active playthrough. */
+function ContinueButton({ backup, onClick }: { backup: Backup; onClick: () => void }) {
+  const pt = activePlaythrough(backup.doc)
+  return (
+    <button
+      onClick={onClick}
+      className="group flex w-full items-center gap-3 rounded-lg bg-primary px-4 py-3 text-left text-primary-foreground shadow-sm transition-colors hover:bg-primary/90 focus-visible:ring-3 focus-visible:ring-ring/50 focus-visible:outline-none"
+    >
+      <History className="size-5 shrink-0" />
+      <span className="flex min-w-0 flex-1 flex-col gap-1">
+        <span className="text-sm font-semibold">Continue where you left off</span>
+        <span className="flex flex-wrap items-center gap-x-3 gap-y-0.5 text-xs opacity-85">
+          <span className="flex min-w-0 items-center gap-1">
+            <FileText className="size-3.5 shrink-0" />
+            <span className="truncate">
+              {backup.fileName ?? 'Unsaved file'}
+              {pt && ` · ${pt.name}`}
+            </span>
+          </span>
+          <span className="flex items-center gap-1">
+            <Clock className="size-3.5 shrink-0" />
+            {formatRelativeDay(backup.savedAt)}
+          </span>
+          {backup.dirty && (
+            <span className="flex items-center gap-1">
+              <span className="size-2 rounded-full bg-amber-400" />
+              unsaved changes
+            </span>
+          )}
+        </span>
+      </span>
+      <ChevronRight className="size-4 shrink-0 opacity-70 transition-transform group-hover:translate-x-0.5" />
+    </button>
+  )
+}

@@ -1,0 +1,26 @@
+[
+  {
+    "id": "platinum",
+    "name": "Platinum Coin",
+    "value": 1000000,
+    "icon": "https://terraria.wiki.gg/images/Platinum_Coin.png"
+  },
+  {
+    "id": "gold",
+    "name": "Gold Coin",
+    "value": 10000,
+    "icon": "https://terraria.wiki.gg/images/Gold_Coin.png"
+  },
+  {
+    "id": "silver",
+    "name": "Silver Coin",
+    "value": 100,
+    "icon": "https://terraria.wiki.gg/images/Silver_Coin.png"
+  },
+  {
+    "id": "copper",
+    "name": "Copper Coin",
+    "value": 1,
+    "icon": "https://terraria.wiki.gg/images/Copper_Coin.png"
+  }
+]

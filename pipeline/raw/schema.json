@@ -1,0 +1,1401 @@
+{
+ "Items": {
+  "itemid": {
+   "type": "Integer",
+   "list": false,
+   "delimiter": null
+  },
+  "name": {
+   "type": "String",
+   "list": false,
+   "delimiter": null
+  },
+  "internalname": {
+   "type": "String",
+   "list": false,
+   "delimiter": null
+  },
+  "image": {
+   "type": "Wikitext",
+   "list": false,
+   "delimiter": null
+  },
+  "imagefile": {
+   "type": "String",
+   "list": false,
+   "delimiter": null
+  },
+  "imageplaced": {
+   "type": "Wikitext",
+   "list": false,
+   "delimiter": null
+  },
+  "imageequipped": {
+   "type": "Wikitext",
+   "list": false,
+   "delimiter": null
+  },
+  "autoswing": {
+   "type": "Boolean",
+   "list": false,
+   "delimiter": null
+  },
+  "stack": {
+   "type": "Wikitext",
+   "list": false,
+   "delimiter": null
+  },
+  "consumable": {
+   "type": "Boolean",
+   "list": false,
+   "delimiter": null
+  },
+  "hardmode": {
+   "type": "Boolean",
+   "list": false,
+   "delimiter": null
+  },
+  "type": {
+   "type": "String",
+   "list": true,
+   "delimiter": "^"
+  },
+  "listcat": {
+   "type": "String",
+   "list": true,
+   "delimiter": "^"
+  },
+  "tag": {
+   "type": "String",
+   "list": true,
+   "delimiter": "^"
+  },
+  "damage": {
+   "type": "Wikitext",
+   "list": false,
+   "delimiter": null
+  },
+  "damagetype": {
+   "type": "String",
+   "list": false,
+   "delimiter": null
+  },
+  "defense": {
+   "type": "Wikitext",
+   "list": false,
+   "delimiter": null
+  },
+  "velocity": {
+   "type": "Wikitext",
+   "list": false,
+   "delimiter": null
+  },
+  "knockback": {
+   "type": "Wikitext",
+   "list": false,
+   "delimiter": null
+  },
+  "research": {
+   "type": "Wikitext",
+   "list": false,
+   "delimiter": null
+  },
+  "rare": {
+   "type": "Wikitext",
+   "list": false,
+   "delimiter": null
+  },
+  "buy": {
+   "type": "Wikitext",
+   "list": false,
+   "delimiter": null
+  },
+  "sell": {
+   "type": "Wikitext",
+   "list": false,
+   "delimiter": null
+  },
+  "axe": {
+   "type": "Wikitext",
+   "list": false,
+   "delimiter": null
+  },
+  "pick": {
+   "type": "Wikitext",
+   "list": false,
+   "delimiter": null
+  },
+  "hammer": {
+   "type": "Wikitext",
+   "list": false,
+   "delimiter": null
+  },
+  "fishing": {
+   "type": "Wikitext",
+   "list": false,
+   "delimiter": null
+  },
+  "bait": {
+   "type": "Integer",
+   "list": false,
+   "delimiter": null
+  },
+  "bonus": {
+   "type": "Wikitext",
+   "list": false,
+   "delimiter": null
+  },
+  "toolspeed": {
+   "type": "Wikitext",
+   "list": false,
+   "delimiter": null
+  },
+  "usetime": {
+   "type": "Wikitext",
+   "list": false,
+   "delimiter": null
+  },
+  "unobtainable": {
+   "type": "Boolean",
+   "list": false,
+   "delimiter": null
+  },
+  "critical": {
+   "type": "Wikitext",
+   "list": false,
+   "delimiter": null
+  },
+  "tooltip": {
+   "type": "Wikitext",
+   "list": false,
+   "delimiter": null
+  },
+  "placeable": {
+   "type": "Boolean",
+   "list": false,
+   "delimiter": null
+  },
+  "placedwidth": {
+   "type": "Integer",
+   "list": false,
+   "delimiter": null
+  },
+  "placedheight": {
+   "type": "Integer",
+   "list": false,
+   "delimiter": null
+  },
+  "mana": {
+   "type": "Wikitext",
+   "list": false,
+   "delimiter": null
+  },
+  "hheal": {
+   "type": "Wikitext",
+   "list": false,
+   "delimiter": null
+  },
+  "mheal": {
+   "type": "Wikitext",
+   "list": false,
+   "delimiter": null
+  },
+  "bodyslot": {
+   "type": "String",
+   "list": false,
+   "delimiter": null
+  },
+  "buffs": {
+   "type": "String",
+   "list": true,
+   "delimiter": "^"
+  },
+  "debuffs": {
+   "type": "String",
+   "list": true,
+   "delimiter": "^"
+  }
+ },
+ "Exclusive": {
+  "pagename": {
+   "type": "String",
+   "list": false,
+   "delimiter": null
+  },
+  "pagenamemd5": {
+   "type": "String",
+   "list": false,
+   "delimiter": null
+  },
+  "desktop": {
+   "type": "Boolean",
+   "list": false,
+   "delimiter": null
+  },
+  "console": {
+   "type": "Boolean",
+   "list": false,
+   "delimiter": null
+  },
+  "oldgen": {
+   "type": "Boolean",
+   "list": false,
+   "delimiter": null
+  },
+  "mobile": {
+   "type": "Boolean",
+   "list": false,
+   "delimiter": null
+  },
+  "3ds": {
+   "type": "Boolean",
+   "list": false,
+   "delimiter": null
+  },
+  "japanese": {
+   "type": "Boolean",
+   "list": false,
+   "delimiter": null
+  },
+  "combined": {
+   "type": "Integer",
+   "list": false,
+   "delimiter": null
+  },
+  "cached": {
+   "type": "Integer",
+   "list": false,
+   "delimiter": null
+  }
+ },
+ "History": {
+  "lang": {
+   "type": "String",
+   "list": false,
+   "delimiter": null
+  },
+  "patch": {
+   "type": "String",
+   "list": false,
+   "delimiter": null
+  },
+  "changes": {
+   "type": "Wikitext",
+   "list": false,
+   "delimiter": null
+  }
+ },
+ "Drops": {
+  "nameraw": {
+   "type": "String",
+   "list": false,
+   "delimiter": null
+  },
+  "id": {
+   "type": "Wikitext",
+   "list": false,
+   "delimiter": null
+  },
+  "name": {
+   "type": "Wikitext",
+   "list": false,
+   "delimiter": null
+  },
+  "item": {
+   "type": "String",
+   "list": false,
+   "delimiter": null
+  },
+  "quantity": {
+   "type": "Wikitext",
+   "list": false,
+   "delimiter": null
+  },
+  "rate": {
+   "type": "Wikitext",
+   "list": false,
+   "delimiter": null
+  },
+  "custom": {
+   "type": "Wikitext",
+   "list": false,
+   "delimiter": null
+  },
+  "isfromnpc": {
+   "type": "Boolean",
+   "list": false,
+   "delimiter": null
+  },
+  "normal": {
+   "type": "Boolean",
+   "list": false,
+   "delimiter": null
+  },
+  "expert": {
+   "type": "Boolean",
+   "list": false,
+   "delimiter": null
+  },
+  "master": {
+   "type": "Boolean",
+   "list": false,
+   "delimiter": null
+  }
+ },
+ "NPCs": {
+  "name": {
+   "type": "Wikitext",
+   "list": false,
+   "delimiter": null
+  },
+  "nameraw": {
+   "type": "String",
+   "list": false,
+   "delimiter": null
+  },
+  "image": {
+   "type": "Wikitext",
+   "list": false,
+   "delimiter": null
+  },
+  "type": {
+   "type": "String",
+   "list": true,
+   "delimiter": "^"
+  },
+  "environment": {
+   "type": "String",
+   "list": false,
+   "delimiter": null
+  },
+  "ai": {
+   "type": "String",
+   "list": false,
+   "delimiter": null
+  },
+  "damage": {
+   "type": "Wikitext",
+   "list": false,
+   "delimiter": null
+  },
+  "life": {
+   "type": "Wikitext",
+   "list": false,
+   "delimiter": null
+  },
+  "defense": {
+   "type": "Wikitext",
+   "list": false,
+   "delimiter": null
+  },
+  "knockback": {
+   "type": "Wikitext",
+   "list": false,
+   "delimiter": null
+  },
+  "banner": {
+   "type": "Wikitext",
+   "list": false,
+   "delimiter": null
+  },
+  "bannername": {
+   "type": "String",
+   "list": false,
+   "delimiter": null
+  },
+  "money": {
+   "type": "Wikitext",
+   "list": false,
+   "delimiter": null
+  },
+  "npcid": {
+   "type": "Integer",
+   "list": false,
+   "delimiter": null
+  },
+  "immunities": {
+   "type": "String",
+   "list": true,
+   "delimiter": "^"
+  }
+ },
+ "Equipinfo": {
+  "itemid": {
+   "type": "Integer",
+   "list": false,
+   "delimiter": null
+  },
+  "ccdryLight": {
+   "type": "Float",
+   "list": true,
+   "delimiter": "¤"
+  },
+  "cciceBarrier": {
+   "type": "Boolean",
+   "list": false,
+   "delimiter": null
+  },
+  "ccwetLight": {
+   "type": "Float",
+   "list": true,
+   "delimiter": "¤"
+  },
+  "accAmmoCyclerDamage": {
+   "type": "Boolean",
+   "list": false,
+   "delimiter": null
+  },
+  "accArmletOfRuin": {
+   "type": "Boolean",
+   "list": false,
+   "delimiter": null
+  },
+  "accCalendar": {
+   "type": "Boolean",
+   "list": false,
+   "delimiter": null
+  },
+  "accCompass": {
+   "type": "String",
+   "list": false,
+   "delimiter": null
+  },
+  "accCritterGuide": {
+   "type": "Boolean",
+   "list": false,
+   "delimiter": null
+  },
+  "accDepthMeter": {
+   "type": "String",
+   "list": false,
+   "delimiter": null
+  },
+  "accDivingHelm": {
+   "type": "Boolean",
+   "list": false,
+   "delimiter": null
+  },
+  "accDreamCatcher": {
+   "type": "Boolean",
+   "list": false,
+   "delimiter": null
+  },
+  "accFishFinder": {
+   "type": "Boolean",
+   "list": false,
+   "delimiter": null
+  },
+  "accFishingBobber": {
+   "type": "Boolean",
+   "list": false,
+   "delimiter": null
+  },
+  "accFishingLine": {
+   "type": "Boolean",
+   "list": false,
+   "delimiter": null
+  },
+  "accFlipper": {
+   "type": "Boolean",
+   "list": false,
+   "delimiter": null
+  },
+  "accGolemSentryBackpack": {
+   "type": "Boolean",
+   "list": false,
+   "delimiter": null
+  },
+  "accHarpyCharm": {
+   "type": "Boolean",
+   "list": false,
+   "delimiter": null
+  },
+  "accHoneyedBarb": {
+   "type": "Boolean",
+   "list": false,
+   "delimiter": null
+  },
+  "accJarOfSouls": {
+   "type": "Boolean",
+   "list": false,
+   "delimiter": null
+  },
+  "accLavaFishing": {
+   "type": "Boolean",
+   "list": false,
+   "delimiter": null
+  },
+  "accMerman": {
+   "type": "Boolean",
+   "list": false,
+   "delimiter": null
+  },
+  "accMobiusStrip": {
+   "type": "Boolean",
+   "list": false,
+   "delimiter": null
+  },
+  "accOreFinder": {
+   "type": "Boolean",
+   "list": false,
+   "delimiter": null
+  },
+  "accPoisonBarb": {
+   "type": "Boolean",
+   "list": false,
+   "delimiter": null
+  },
+  "accPyroclast": {
+   "type": "Boolean",
+   "list": false,
+   "delimiter": null
+  },
+  "accRunSpeed": {
+   "type": "String",
+   "list": false,
+   "delimiter": null
+  },
+  "accSentryBackpack": {
+   "type": "Boolean",
+   "list": false,
+   "delimiter": null
+  },
+  "accSeraphNecklace": {
+   "type": "Boolean",
+   "list": false,
+   "delimiter": null
+  },
+  "accSharpBarb": {
+   "type": "Boolean",
+   "list": false,
+   "delimiter": null
+  },
+  "accSilverBracer": {
+   "type": "Boolean",
+   "list": false,
+   "delimiter": null
+  },
+  "accSnakeBand": {
+   "type": "Boolean",
+   "list": false,
+   "delimiter": null
+  },
+  "accSnappingStone": {
+   "type": "Boolean",
+   "list": false,
+   "delimiter": null
+  },
+  "accStopwatch": {
+   "type": "Boolean",
+   "list": false,
+   "delimiter": null
+  },
+  "accTackleBox": {
+   "type": "Boolean",
+   "list": false,
+   "delimiter": null
+  },
+  "accThirdEye": {
+   "type": "Boolean",
+   "list": false,
+   "delimiter": null
+  },
+  "accTimerCrit": {
+   "type": "Boolean",
+   "list": false,
+   "delimiter": null
+  },
+  "accWatch": {
+   "type": "String",
+   "list": false,
+   "delimiter": null
+  },
+  "accWeatherRadio": {
+   "type": "Boolean",
+   "list": false,
+   "delimiter": null
+  },
+  "accWickedArmlet": {
+   "type": "Boolean",
+   "list": false,
+   "delimiter": null
+  },
+  "aggro": {
+   "type": "String",
+   "list": false,
+   "delimiter": null
+  },
+  "ammoCost75": {
+   "type": "Boolean",
+   "list": false,
+   "delimiter": null
+  },
+  "ammoCost80": {
+   "type": "Boolean",
+   "list": false,
+   "delimiter": null
+  },
+  "ammoCyclingMode": {
+   "type": "String",
+   "list": false,
+   "delimiter": null
+  },
+  "arcticDivingGear": {
+   "type": "Boolean",
+   "list": false,
+   "delimiter": null
+  },
+  "armorPenetration": {
+   "type": "String",
+   "list": false,
+   "delimiter": null
+  },
+  "arrowDamage": {
+   "type": "String",
+   "list": false,
+   "delimiter": null
+  },
+  "arrowDamageAdditiveStack": {
+   "type": "String",
+   "list": false,
+   "delimiter": null
+  },
+  "autoActuator": {
+   "type": "Boolean",
+   "list": false,
+   "delimiter": null
+  },
+  "autoJump": {
+   "type": "Boolean",
+   "list": false,
+   "delimiter": null
+  },
+  "autoPaint": {
+   "type": "Boolean",
+   "list": false,
+   "delimiter": null
+  },
+  "autoReuseGlove": {
+   "type": "Boolean",
+   "list": false,
+   "delimiter": null
+  },
+  "blackBelt": {
+   "type": "Boolean",
+   "list": false,
+   "delimiter": null
+  },
+  "blockRange": {
+   "type": "String",
+   "list": false,
+   "delimiter": null
+  },
+  "boneGloveItem": {
+   "type": "Integer",
+   "list": false,
+   "delimiter": null
+  },
+  "brainOfConfusionItem": {
+   "type": "Integer",
+   "list": false,
+   "delimiter": null
+  },
+  "buffImmune": {
+   "type": "Integer",
+   "list": true,
+   "delimiter": "¤"
+  },
+  "bulletDamage": {
+   "type": "String",
+   "list": false,
+   "delimiter": null
+  },
+  "canFloatInWater": {
+   "type": "Boolean",
+   "list": false,
+   "delimiter": null
+  },
+  "CanSeeInvisibleBlocks": {
+   "type": "Boolean",
+   "list": false,
+   "delimiter": null
+  },
+  "carpet": {
+   "type": "Boolean",
+   "list": false,
+   "delimiter": null
+  },
+  "catalystBand": {
+   "type": "Boolean",
+   "list": false,
+   "delimiter": null
+  },
+  "chiselSpeed": {
+   "type": "Boolean",
+   "list": false,
+   "delimiter": null
+  },
+  "chloroAmmoCost80": {
+   "type": "Boolean",
+   "list": false,
+   "delimiter": null
+  },
+  "cordage": {
+   "type": "Boolean",
+   "list": false,
+   "delimiter": null
+  },
+  "counterWeight": {
+   "type": "Integer",
+   "list": true,
+   "delimiter": "¤"
+  },
+  "CRTMonolithShader": {
+   "type": "Boolean",
+   "list": false,
+   "delimiter": null
+  },
+  "dashType": {
+   "type": "String",
+   "list": false,
+   "delimiter": null
+  },
+  "dd2Accessory": {
+   "type": "Boolean",
+   "list": false,
+   "delimiter": null
+  },
+  "deadMansSweater": {
+   "type": "Boolean",
+   "list": false,
+   "delimiter": null
+  },
+  "desertBoots": {
+   "type": "Boolean",
+   "list": false,
+   "delimiter": null
+  },
+  "discount": {
+   "type": "Boolean",
+   "list": false,
+   "delimiter": null
+  },
+  "dontHurtCritters": {
+   "type": "Boolean",
+   "list": false,
+   "delimiter": null
+  },
+  "dontHurtNature": {
+   "type": "Boolean",
+   "list": false,
+   "delimiter": null
+  },
+  "dontStarveShader": {
+   "type": "Boolean",
+   "list": false,
+   "delimiter": null
+  },
+  "empressBrooch": {
+   "type": "Boolean",
+   "list": false,
+   "delimiter": null
+  },
+  "endurance": {
+   "type": "String",
+   "list": false,
+   "delimiter": null
+  },
+  "equipmentBasedLuckBonus": {
+   "type": "String",
+   "list": false,
+   "delimiter": null
+  },
+  "equippedAnyTileRangeAcc": {
+   "type": "Boolean",
+   "list": false,
+   "delimiter": null
+  },
+  "equippedAnyTileSpeedAcc": {
+   "type": "Boolean",
+   "list": false,
+   "delimiter": null
+  },
+  "equippedAnyWallSpeedAcc": {
+   "type": "Boolean",
+   "list": false,
+   "delimiter": null
+  },
+  "extraFall": {
+   "type": "String",
+   "list": false,
+   "delimiter": null
+  },
+  "fireWalk": {
+   "type": "Boolean",
+   "list": false,
+   "delimiter": null
+  },
+  "fishingSkill": {
+   "type": "String",
+   "list": false,
+   "delimiter": null
+  },
+  "flowerBoots": {
+   "type": "Boolean",
+   "list": false,
+   "delimiter": null
+  },
+  "goldRing": {
+   "type": "Boolean",
+   "list": false,
+   "delimiter": null
+  },
+  "gravControl2": {
+   "type": "Boolean",
+   "list": false,
+   "delimiter": null
+  },
+  "hasCreditsSceneMusicBox": {
+   "type": "Boolean",
+   "list": false,
+   "delimiter": null
+  },
+  "hasDeadCellsDownDash": {
+   "type": "Boolean",
+   "list": false,
+   "delimiter": null
+  },
+  "hasJumpOption_Blizzard": {
+   "type": "Boolean",
+   "list": false,
+   "delimiter": null
+  },
+  "hasJumpOption_Cloud": {
+   "type": "Boolean",
+   "list": false,
+   "delimiter": null
+  },
+  "hasJumpOption_Fart": {
+   "type": "Boolean",
+   "list": false,
+   "delimiter": null
+  },
+  "hasJumpOption_Sail": {
+   "type": "Boolean",
+   "list": false,
+   "delimiter": null
+  },
+  "hasJumpOption_Sandstorm": {
+   "type": "Boolean",
+   "list": false,
+   "delimiter": null
+  },
+  "hasLuck_LuckyClover": {
+   "type": "Boolean",
+   "list": false,
+   "delimiter": null
+  },
+  "hasLuck_LuckyCoin": {
+   "type": "Boolean",
+   "list": false,
+   "delimiter": null
+  },
+  "hasLuck_LuckyHorseshoe": {
+   "type": "Boolean",
+   "list": false,
+   "delimiter": null
+  },
+  "hasLuck_RavenFeather": {
+   "type": "Boolean",
+   "list": false,
+   "delimiter": null
+  },
+  "hasLuck_WiltedClover": {
+   "type": "Boolean",
+   "list": false,
+   "delimiter": null
+  },
+  "hasLuckyCoin": {
+   "type": "Boolean",
+   "list": false,
+   "delimiter": null
+  },
+  "hasLucyTheAxe": {
+   "type": "Boolean",
+   "list": false,
+   "delimiter": null
+  },
+  "hasMagiluminescence": {
+   "type": "Boolean",
+   "list": false,
+   "delimiter": null
+  },
+  "hasMoltenQuiver": {
+   "type": "Boolean",
+   "list": false,
+   "delimiter": null
+  },
+  "hasPaladinShield": {
+   "type": "Boolean",
+   "list": false,
+   "delimiter": null
+  },
+  "hasPhoenixQuiver": {
+   "type": "Boolean",
+   "list": false,
+   "delimiter": null
+  },
+  "honeyCombItem": {
+   "type": "Integer",
+   "list": false,
+   "delimiter": null
+  },
+  "huntressAmmoCost90": {
+   "type": "Boolean",
+   "list": false,
+   "delimiter": null
+  },
+  "iceSkate": {
+   "type": "Boolean",
+   "list": false,
+   "delimiter": null
+  },
+  "InfoAccMechShowWires": {
+   "type": "Boolean",
+   "list": false,
+   "delimiter": null
+  },
+  "jumpBoost": {
+   "type": "Boolean",
+   "list": false,
+   "delimiter": null
+  },
+  "jumpSpeedBoost": {
+   "type": "String",
+   "list": false,
+   "delimiter": null
+  },
+  "kbGlove": {
+   "type": "Boolean",
+   "list": false,
+   "delimiter": null
+  },
+  "killClothier": {
+   "type": "Boolean",
+   "list": false,
+   "delimiter": null
+  },
+  "killGuide": {
+   "type": "Boolean",
+   "list": false,
+   "delimiter": null
+  },
+  "lavaMax": {
+   "type": "String",
+   "list": false,
+   "delimiter": null
+  },
+  "lavaRose": {
+   "type": "Boolean",
+   "list": false,
+   "delimiter": null
+  },
+  "lifeRegen": {
+   "type": "String",
+   "list": false,
+   "delimiter": null
+  },
+  "longInvince": {
+   "type": "Boolean",
+   "list": false,
+   "delimiter": null
+  },
+  "magicCrit": {
+   "type": "String",
+   "list": false,
+   "delimiter": null
+  },
+  "magicCuffs": {
+   "type": "Boolean",
+   "list": false,
+   "delimiter": null
+  },
+  "magicDamage": {
+   "type": "String",
+   "list": false,
+   "delimiter": null
+  },
+  "magicQuiver": {
+   "type": "Boolean",
+   "list": false,
+   "delimiter": null
+  },
+  "magicString": {
+   "type": "Boolean",
+   "list": false,
+   "delimiter": null
+  },
+  "magmaStone": {
+   "type": "Boolean",
+   "list": false,
+   "delimiter": null
+  },
+  "manaCost": {
+   "type": "String",
+   "list": false,
+   "delimiter": null
+  },
+  "manaFlower": {
+   "type": "Boolean",
+   "list": false,
+   "delimiter": null
+  },
+  "manaMagnet": {
+   "type": "Boolean",
+   "list": false,
+   "delimiter": null
+  },
+  "manaRegenBonus": {
+   "type": "String",
+   "list": false,
+   "delimiter": null
+  },
+  "maxMinions": {
+   "type": "String",
+   "list": false,
+   "delimiter": null
+  },
+  "maxTagEffects": {
+   "type": "String",
+   "list": false,
+   "delimiter": null
+  },
+  "maxTurrets": {
+   "type": "String",
+   "list": false,
+   "delimiter": null
+  },
+  "meleeCrit": {
+   "type": "String",
+   "list": false,
+   "delimiter": null
+  },
+  "meleeDamage": {
+   "type": "String",
+   "list": false,
+   "delimiter": null
+  },
+  "meleeScaleGlove": {
+   "type": "Boolean",
+   "list": false,
+   "delimiter": null
+  },
+  "meleeSpeed": {
+   "type": "String",
+   "list": false,
+   "delimiter": null
+  },
+  "minionDamage": {
+   "type": "String",
+   "list": false,
+   "delimiter": null
+  },
+  "minionKB": {
+   "type": "String",
+   "list": false,
+   "delimiter": null
+  },
+  "moonLordLegs": {
+   "type": "Boolean",
+   "list": false,
+   "delimiter": null
+  },
+  "moveSpeed": {
+   "type": "String",
+   "list": false,
+   "delimiter": null
+  },
+  "mysticSashDodge": {
+   "type": "Boolean",
+   "list": false,
+   "delimiter": null
+  },
+  "nightVision": {
+   "type": "Boolean",
+   "list": false,
+   "delimiter": null
+  },
+  "noFallDmg": {
+   "type": "Boolean",
+   "list": false,
+   "delimiter": null
+  },
+  "noirShader": {
+   "type": "Boolean",
+   "list": false,
+   "delimiter": null
+  },
+  "noKnockback": {
+   "type": "Boolean",
+   "list": false,
+   "delimiter": null
+  },
+  "npcTypeNoAggro": {
+   "type": "Integer",
+   "list": true,
+   "delimiter": "¤"
+  },
+  "panic": {
+   "type": "Boolean",
+   "list": false,
+   "delimiter": null
+  },
+  "pickSpeed": {
+   "type": "String",
+   "list": false,
+   "delimiter": null
+  },
+  "preventAllItemPickups": {
+   "type": "Boolean",
+   "list": false,
+   "delimiter": null
+  },
+  "pStone": {
+   "type": "Boolean",
+   "list": false,
+   "delimiter": null
+  },
+  "rangedCrit": {
+   "type": "String",
+   "list": false,
+   "delimiter": null
+  },
+  "rangedDamage": {
+   "type": "String",
+   "list": false,
+   "delimiter": null
+  },
+  "remoteVisionForDrone": {
+   "type": "Boolean",
+   "list": false,
+   "delimiter": null
+  },
+  "retroMonolithShader": {
+   "type": "Boolean",
+   "list": false,
+   "delimiter": null
+  },
+  "rocketBoots": {
+   "type": "String",
+   "list": false,
+   "delimiter": null
+  },
+  "rocketDamage": {
+   "type": "String",
+   "list": false,
+   "delimiter": null
+  },
+  "rulerGrid": {
+   "type": "Boolean",
+   "list": false,
+   "delimiter": null
+  },
+  "rulerLine": {
+   "type": "Boolean",
+   "list": false,
+   "delimiter": null
+  },
+  "scope": {
+   "type": "Boolean",
+   "list": false,
+   "delimiter": null
+  },
+  "shimmerImmune": {
+   "type": "Boolean",
+   "list": false,
+   "delimiter": null
+  },
+  "shinyStone": {
+   "type": "Boolean",
+   "list": false,
+   "delimiter": null
+  },
+  "skyStoneEffects": {
+   "type": "String",
+   "list": false,
+   "delimiter": null
+  },
+  "slowFall": {
+   "type": "Boolean",
+   "list": false,
+   "delimiter": null
+  },
+  "spikedBoots": {
+   "type": "String",
+   "list": false,
+   "delimiter": null
+  },
+  "sporeSac": {
+   "type": "Boolean",
+   "list": false,
+   "delimiter": null
+  },
+  "starCloakItem": {
+   "type": "Integer",
+   "list": false,
+   "delimiter": null
+  },
+  "starCloakItem_beeCloakOverrideItem": {
+   "type": "Integer",
+   "list": false,
+   "delimiter": null
+  },
+  "starCloakItem_manaCloakOverrideItem": {
+   "type": "Integer",
+   "list": false,
+   "delimiter": null
+  },
+  "starCloakItem_snakeCloakOverrideItem": {
+   "type": "Integer",
+   "list": false,
+   "delimiter": null
+  },
+  "starCloakItem_starVeilOverrideItem": {
+   "type": "Integer",
+   "list": false,
+   "delimiter": null
+  },
+  "statManaMax2": {
+   "type": "String",
+   "list": false,
+   "delimiter": null
+  },
+  "stressBall": {
+   "type": "Boolean",
+   "list": false,
+   "delimiter": null
+  },
+  "strongBees": {
+   "type": "Boolean",
+   "list": false,
+   "delimiter": null
+  },
+  "tagEffectDuration": {
+   "type": "String",
+   "list": false,
+   "delimiter": null
+  },
+  "tileRangeX": {
+   "type": "String",
+   "list": false,
+   "delimiter": null
+  },
+  "tileRangeY": {
+   "type": "String",
+   "list": false,
+   "delimiter": null
+  },
+  "treasureMagnet": {
+   "type": "Boolean",
+   "list": false,
+   "delimiter": null
+  },
+  "vanityRocketBoots": {
+   "type": "String",
+   "list": false,
+   "delimiter": null
+  },
+  "volatileGelatin": {
+   "type": "Boolean",
+   "list": false,
+   "delimiter": null
+  },
+  "waterWalk": {
+   "type": "Boolean",
+   "list": false,
+   "delimiter": null
+  },
+  "waterWalk2": {
+   "type": "Boolean",
+   "list": false,
+   "delimiter": null
+  },
+  "whipRangeMultiplier": {
+   "type": "String",
+   "list": false,
+   "delimiter": null
+  },
+  "wolfAcc": {
+   "type": "Boolean",
+   "list": false,
+   "delimiter": null
+  },
+  "yoyoGlove": {
+   "type": "Boolean",
+   "list": false,
+   "delimiter": null
+  },
+  "yoyoString": {
+   "type": "Boolean",
+   "list": false,
+   "delimiter": null
+  }
+ },
+ "Recipes": {
+  "result": {
+   "type": "String",
+   "list": false,
+   "delimiter": null
+  },
+  "resultid": {
+   "type": "String",
+   "list": false,
+   "delimiter": null
+  },
+  "resultimage": {
+   "type": "String",
+   "list": false,
+   "delimiter": null
+  },
+  "resulttext": {
+   "type": "String",
+   "list": false,
+   "delimiter": null
+  },
+  "amount": {
+   "type": "Integer",
+   "list": false,
+   "delimiter": null
+  },
+  "version": {
+   "type": "String",
+   "list": false,
+   "delimiter": null
+  },
+  "station": {
+   "type": "String",
+   "list": false,
+   "delimiter": null
+  },
+  "ingredients": {
+   "type": "String",
+   "list": true,
+   "delimiter": "^"
+  },
+  "ings": {
+   "type": "String",
+   "list": false,
+   "delimiter": null
+  },
+  "args": {
+   "type": "Text",
+   "list": false,
+   "delimiter": null
+  },
+  "legacy": {
+   "type": "Boolean",
+   "list": false,
+   "delimiter": null
+  }
+ }
+}

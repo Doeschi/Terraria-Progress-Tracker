@@ -1,0 +1,16 @@
+__pycache__/
+*.pyc
+.venv/
+
+node_modules/
+web/dist/
+
+# local settings: the contact for the wiki's User-Agent (see download_cargo_tables.py)
+pipeline/contact.txt
+
+# editor / assistant settings
+.claude/
+
+# test world files never belong in the repo
+*.wld
+*.wld.bak*

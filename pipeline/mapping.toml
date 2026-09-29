@@ -1,0 +1,1846 @@
+# Mapping of raw Cargo values to what the tracker shows.
+# Read by build_tracker_data.py (step 2). Edit freely and re-run the script.
+#
+# How matching works
+#   Every raw value is turned into a key "<field>:<value>", e.g.
+#     type:furniture      listcat:yoyos      tag:vendor:steampunker    hardmode:1
+#   Values are normalised first: lowercased, whitespace collapsed, and a wiki
+#   sort key after "|" is cut off ("souls|flight" -> "souls").
+#   "*" in a match entry is a wildcard ("tag:vendor:*").
+#   The fields that are read are listed in [settings] below.
+#   Additionally "equip:<field>" keys: the player values an equippable item
+#   changes (wiki Equipinfo table, e.g. equip:movespeed, equip:accrunspeed),
+#   and "page:<wiki page>" (e.g. page:chairs - many items share a page),
+#   "npc:critter" (the item is a catchable critter, NPCs table) and
+#   "drop:npc" / "drop:boss" (dropped by an enemy / a boss, Drops table).
+#
+# Sections
+#   categories, subcategories, obtain, vendors, events, biomes, times
+#       One entry per id. Each becomes a list field on every item
+#       (item.categories, item.subcategories, ...) and its own <section>.json
+#       with a count of matching items. Order here = order in the output.
+#         name       display name
+#         match      raw keys that put an item into this entry
+#         icon       name of an item whose icon is used, or
+#         icon_file  a wiki file name (e.g. an NPC sprite)
+#         (no icon)  -> icon of the first item in the entry
+#         parent     (subcategories only) category id; items in the
+#                    subcategory are also added to that category
+#         fallback   (subcategories only) true = gets every item of the
+#                    parent category that is in no other of its subcategories
+#         only_in_parent  (subcategories only) true = only for items that are
+#                    in the parent category anyway (does not add the parent)
+#         exclude    keys that remove the entry again (e.g. ["tag:enemy banner"])
+#         with_categories  (subcategories only) the parent's items that are also
+#                    in one of these categories (e.g. ["block", "wall"])
+#         without_categories  (subcategories only) not for items that are also in
+#                    one of these categories
+#       events, biomes and times also have rules for drops and spawn
+#       conditions (environments, drop_conditions, alone; see their sections).
+#   flags
+#       Boolean item fields: true if any key matches.
+#   drops, boss_stages, bosses
+#       Which drop sources are used, and the curated boss list (see below).
+#   recipes, recipe_groups, stations
+#       Crafting: conditions that need no item, extra "Any ..." groups, and
+#       which items provide a crafting station (recipes.json).
+#   bestiary
+#       Entry types and how the bestiary's filters map to biomes, times and
+#       events (bestiary.json).
+#   versions
+#       Display names and icons (item names) of the game updates
+#       (versions.json). Items are grouped by the Desktop patch that introduced
+#       them: 1.0-1.3 by minor version, 1.4.x per update.
+#   ignore
+#       Raw keys that are dropped on purpose. Keys that are neither matched
+#       nor ignored are reported as "unmapped" when the script runs.
+#   manual
+#       Assignments by item name, for items the wiki gives no `type`.
+#       "<item name or pattern>" = ["<section>:<id>", ...]
+#       Names are case-insensitive, "*" is a wildcard. Items that still end up
+#       without a category are listed when the script runs.
+
+[settings]
+match_fields = ["type", "listcat", "tag", "hardmode", "unobtainable"]
+
+
+# ---------------------------------------------------------------- categories
+# From the Items `type` field.
+
+[categories.weapon]
+name = "Weapons"
+icon = "Copper Shortsword"
+match = ["type:weapon"]
+
+[categories.ammunition]
+name = "Ammunition"
+icon = "Wooden Arrow"
+match = ["type:ammunition"]
+
+[categories.tool]
+name = "Tools"
+icon = "Copper Pickaxe"
+match = ["type:tool"]
+
+[categories.armor]
+name = "Armor"
+icon = "Iron Chainmail"
+match = ["type:armor"]
+
+[categories.accessory]
+name = "Accessories"
+icon = "Hermes Boots"
+match = ["type:accessory"]
+
+[categories.vanity]
+name = "Vanity"
+icon = "Top Hat"
+match = ["type:vanity"]
+
+[categories.dye]
+name = "Dyes"
+icon = "Red Dye"
+match = ["type:dye"]
+
+[categories.potion]
+name = "Potions"
+icon = "Healing Potion"
+match = ["type:potion"]
+
+[categories.food]
+name = "Food"
+icon = "Bowl of Soup"
+match = ["type:food"]
+
+[categories.consumable]
+name = "Consumables"
+icon = "Mushroom"
+match = ["type:consumable"]
+
+[categories.permanent-booster]
+name = "Permanent boosters"
+icon = "Life Crystal"
+match = ["type:permanent booster"]
+
+[categories.summon]
+name = "Summon items"
+icon = "Suspicious Looking Eye"
+match = []  # filled through its subcategories
+
+[categories.pet]
+name = "Pets"
+icon = "Zephyr Fish"
+match = ["type:pet summon"]
+
+[categories.mount]
+name = "Mounts"
+icon = "Slimy Saddle"
+match = ["type:mount summon"]
+
+[categories.crafting-material]
+name = "Crafting materials"
+icon = "Iron Bar"
+match = ["type:crafting material"]
+
+[categories.crafting-station]
+name = "Crafting stations"
+icon = "Work Bench"
+match = ["type:crafting station"]
+
+[categories.block]
+name = "Blocks"
+icon = "Dirt Block"
+match = ["type:block"]
+
+[categories.wall]
+name = "Walls"
+icon = "Wood Wall"
+match = ["type:wall"]
+
+[categories.furniture]
+name = "Furniture"
+icon = "Wooden Chair"
+match = ["type:furniture"]
+
+[categories.light-source]
+name = "Light sources"
+icon = "Torch"
+match = ["type:light source"]
+
+[categories.storage]
+name = "Storage"
+icon = "Chest"
+match = ["type:storage"]
+
+[categories.mechanism]
+name = "Mechanisms"
+icon = "Lever"
+match = ["type:mechanism"]
+
+[categories.bait]
+name = "Bait"
+icon = "Worm"
+match = ["type:bait"]
+
+[categories.crate]
+name = "Crates"
+icon = "Wooden Crate"
+match = ["type:crate"]
+
+[categories.grab-bag]
+name = "Grab bags"
+icon = "Goodie Bag"
+match = ["type:grab bag"]
+
+[categories.key]
+name = "Keys"
+icon = "Golden Key"
+match = ["type:key"]
+
+[categories.seeds]
+name = "Seeds"
+icon = "Acorn"
+match = ["type:seeds"]
+
+[categories.miscellaneous]
+name = "Miscellaneous"
+match = ["type:miscellaneous", "type:background object"]
+
+
+# ------------------------------------------------------------- subcategories
+
+# Weapons
+[subcategories.melee]
+name = "Melee weapons"
+parent = "weapon"
+icon = "Copper Broadsword"
+match = ["listcat:melee weapons"]
+
+[subcategories.ranged]
+name = "Ranged weapons"
+parent = "weapon"
+icon = "Wooden Bow"
+match = ["listcat:ranged weapons"]
+
+[subcategories.magic]
+name = "Magic weapons"
+parent = "weapon"
+icon = "Wand of Sparking"
+match = ["listcat:magic weapons"]
+
+[subcategories.summon-weapon]
+name = "Summon weapons"
+parent = "weapon"
+icon = "Slime Staff"
+match = ["listcat:summon weapons"]
+
+[subcategories.broadsword]
+name = "Broadswords"
+parent = "weapon"
+icon = "Copper Broadsword"
+match = ["listcat:broadswords"]
+
+[subcategories.shortsword]
+name = "Shortswords"
+parent = "weapon"
+icon = "Copper Shortsword"
+match = ["listcat:shortswords"]
+
+[subcategories.spear]
+name = "Spears"
+parent = "weapon"
+icon = "Spear"
+match = ["listcat:spears"]
+
+[subcategories.yoyo]
+name = "Yoyos"
+parent = "weapon"
+icon = "Wooden Yoyo"
+match = ["listcat:yoyos"]
+
+[subcategories.flail]
+name = "Flails"
+parent = "weapon"
+icon = "Mace"
+match = ["listcat:flails"]
+
+[subcategories.boomerang]
+name = "Boomerangs"
+parent = "weapon"
+icon = "Wooden Boomerang"
+match = ["listcat:boomerangs"]
+
+[subcategories.projectile-melee]
+name = "Projectile melee"
+parent = "weapon"
+match = ["listcat:projectile melee"]
+
+[subcategories.whip]
+name = "Whips"
+parent = "weapon"
+icon = "Leather Whip"
+match = ["listcat:whips"]
+
+[subcategories.bow]
+name = "Bows"
+parent = "weapon"
+icon = "Wooden Bow"
+match = ["listcat:bows"]
+
+[subcategories.repeater]
+name = "Repeaters"
+parent = "weapon"
+icon = "Cobalt Repeater"
+match = ["listcat:repeaters"]
+
+[subcategories.gun]
+name = "Guns"
+parent = "weapon"
+icon = "Flintlock Pistol"
+match = ["listcat:guns"]
+
+[subcategories.launcher]
+name = "Launchers"
+parent = "weapon"
+icon = "Rocket Launcher"
+match = ["listcat:launchers"]
+
+[subcategories.wand]
+name = "Wands"
+parent = "weapon"
+icon = "Wand of Sparking"
+match = ["listcat:wands"]
+
+[subcategories.spell-book]
+name = "Spell books"
+parent = "weapon"
+icon = "Water Bolt"
+match = ["listcat:spell books"]
+
+[subcategories.magic-gun]
+name = "Magic guns"
+parent = "weapon"
+icon = "Space Gun"
+match = ["listcat:magic guns"]
+
+[subcategories.minion]
+name = "Minion summons"
+parent = "weapon"
+icon = "Slime Staff"
+match = ["listcat:minion summon items", "tag:minion"]
+
+[subcategories.sentry]
+name = "Sentry summons"
+parent = "weapon"
+icon = "Queen Spider Staff"
+match = ["listcat:sentry summon items", "tag:sentry"]
+
+[subcategories.explosive]
+name = "Explosives"
+parent = "weapon"
+icon = "Bomb"
+match = ["listcat:explosives"]
+
+# Ammunition
+[subcategories.arrow]
+name = "Arrows"
+parent = "ammunition"
+icon = "Wooden Arrow"
+match = ["listcat:arrows"]
+
+[subcategories.bullet]
+name = "Bullets"
+parent = "ammunition"
+icon = "Musket Ball"
+match = ["listcat:bullets"]
+
+[subcategories.dart]
+name = "Darts"
+parent = "ammunition"
+icon = "Seed"
+match = ["listcat:darts"]
+
+[subcategories.rocket]
+name = "Rockets"
+parent = "ammunition"
+icon = "Rocket I"
+match = ["listcat:rockets"]
+
+[subcategories.flare]
+name = "Flares"
+parent = "ammunition"
+icon = "Flare"
+match = ["listcat:flares"]
+
+# Tools
+[subcategories.pickaxe]
+name = "Pickaxes"
+parent = "tool"
+icon = "Copper Pickaxe"
+match = ["listcat:pickaxes"]
+
+[subcategories.drill]
+name = "Drills"
+parent = "tool"
+icon = "Cobalt Drill"
+match = ["listcat:drills"]
+
+[subcategories.axe]
+name = "Axes"
+parent = "tool"
+icon = "Copper Axe"
+match = ["listcat:axes"]
+
+[subcategories.chainsaw]
+name = "Chainsaws"
+parent = "tool"
+icon = "Cobalt Chainsaw"
+match = ["listcat:chainsaws"]
+
+[subcategories.hammer]
+name = "Hammers"
+parent = "tool"
+icon = "Copper Hammer"
+match = ["listcat:hammers"]
+
+[subcategories.hamaxe]
+name = "Hamaxes"
+parent = "tool"
+icon = "Molten Hamaxe"
+match = ["listcat:hamaxes"]
+
+[subcategories.hook]
+name = "Hooks"
+parent = "tool"
+icon = "Grappling Hook"
+match = ["tag:hooks"]
+
+[subcategories.fishing-pole]
+name = "Fishing poles"
+parent = "tool"
+icon = "Wood Fishing Pole"
+match = ["tag:fishing poles"]
+
+[subcategories.paint]
+name = "Paints"
+parent = "tool"
+icon = "Red Paint"
+match = ["listcat:paints"]
+
+[subcategories.instrument]
+name = "Instruments"
+parent = "tool"
+icon = "Harp"
+match = ["listcat:instruments"]
+
+# Accessories
+# Most rules use "equip:<field>": the player values an item changes, from the
+# wiki's Equipinfo table (game code field names, case-insensitive, * = wildcard).
+# only_in_parent: only for items that are accessories anyway (armor pieces also
+# change such values but must not become accessories).
+[subcategories.movement]
+name = "Movement"
+parent = "accessory"
+icon = "Hermes Boots"
+only_in_parent = true
+match = [
+    "type:boots",
+    "equip:movespeed", "equip:accrunspeed", "equip:rocketboots", "equip:vanityrocketboots",
+    "equip:dashtype", "equip:iceskate", "equip:waterwalk", "equip:waterwalk2",
+    "equip:jumpboost", "equip:jumpspeedboost", "equip:hasjumpoption_*", "equip:carpet",
+    "equip:nofalldmg", "equip:slowfall", "equip:autojump", "equip:gravcontrol2",
+    "equip:spikedboots", "equip:desertboots", "equip:extrafall", "equip:canfloatinwater",
+    "equip:accflipper", "equip:hasdeadcellsdowndash", "equip:empressbrooch",
+    "equip:moonlordlegs", "equip:hasmagiluminescence", "equip:accmobiusstrip",
+]
+
+[subcategories.wings]
+name = "Wings"
+parent = "accessory"
+icon = "Angel Wings"
+match = ["tag:wings"]
+
+[subcategories.defense-survival]
+name = "Defense & survival"
+parent = "accessory"
+icon = "Cobalt Shield"
+only_in_parent = true
+match = [
+    "type:shield",
+    "equip:endurance", "equip:noknockback", "equip:firewalk", "equip:lavamax", "equip:lavarose",
+    "equip:buffimmune", "equip:liferegen", "equip:longinvince", "equip:panic", "equip:pstone",
+    "equip:cciceBarrier", "equip:haspaladinshield", "equip:brainofconfusionitem",
+    "equip:blackbelt", "equip:mysticsashdodge", "equip:starcloakitem*", "equip:honeycombitem",
+    "equip:shinystone", "equip:arcticdivinggear", "equip:accdivinghelm", "equip:accmerman",
+    "equip:wolfacc", "equip:skystoneeffects", "equip:shimmerimmune", "equip:deadmanssweater",
+    "equip:aggro", "equip:npctypenoaggro", "equip:nightvision",
+]
+
+[subcategories.combat]
+name = "Combat"
+parent = "accessory"
+icon = "Warrior Emblem"
+only_in_parent = true
+match = [
+    "equip:melee*", "equip:ranged*", "equip:magic*", "equip:rocketdamage", "equip:arrowdamage*",
+    "equip:bulletdamage", "equip:ammocost*", "equip:chloroammocost80", "equip:huntressammocost90",
+    "equip:ammocyclingmode", "equip:armorpenetration", "equip:kbglove", "equip:magmastone",
+    "equip:autoreuseglove", "equip:yoyo*", "equip:counterweight", "equip:scope",
+    "equip:manacost", "equip:manaflower", "equip:manamagnet", "equip:manaregenbonus",
+    "equip:statmanamax2", "equip:acc*barb", "equip:accpyroclast", "equip:hasmoltenquiver",
+    "equip:hasphoenixquiver", "equip:bonegloveitem", "equip:volatilegelatin", "equip:strongbees",
+    "equip:sporesac", "equip:accarmletofruin", "equip:accwickedarmlet", "equip:acctimercrit",
+    "equip:accammocyclerdamage", "equip:stressball", "equip:accsnappingstone",
+    "equip:accsilverbracer", "equip:accsnakeband", "equip:accseraphnecklace",
+    "equip:catalystband", "equip:accharpycharm",
+]
+
+[subcategories.summoning]
+name = "Summoning"
+parent = "accessory"
+icon = "Pygmy Necklace"
+only_in_parent = true
+match = [
+    "equip:maxminions", "equip:maxturrets", "equip:miniondamage", "equip:minionkb",
+    "equip:whiprangemultiplier", "equip:maxtageffects", "equip:tageffectduration",
+    "equip:accsentrybackpack", "equip:accgolemsentrybackpack", "equip:dd2accessory",
+]
+
+[subcategories.informational]
+name = "Informational"
+parent = "accessory"
+icon = "Copper Watch"
+match = [
+    "tag:informational", "listcat:informational items",
+    "equip:accwatch", "equip:acccompass", "equip:accdepthmeter", "equip:accfishfinder",
+    "equip:accorefinder", "equip:acccritterguide", "equip:accdreamcatcher", "equip:accjarofsouls",
+    "equip:accstopwatch", "equip:accthirdeye", "equip:accweatherradio", "equip:acccalendar",
+    "equip:infoaccmechshowwires", "equip:rulergrid", "equip:rulerline",
+    "equip:remotevisionfordrone", "equip:canseeinvisibleblocks",
+]
+only_in_parent = true
+
+[subcategories.fishing-gear]
+name = "Fishing"
+parent = "accessory"
+icon = "Tackle Box"
+only_in_parent = true
+match = ["equip:fishingskill", "equip:accfishingbobber", "equip:accfishingline",
+         "equip:acctacklebox", "equip:acclavafishing"]
+
+[subcategories.building-mining]
+name = "Building & mining"
+parent = "accessory"
+icon = "Architect Gizmo Pack"
+only_in_parent = true
+match = ["equip:tilerange*", "equip:blockrange", "equip:pickspeed", "equip:equippedanytile*",
+         "equip:equippedanywallspeedacc", "equip:autopaint", "equip:autoactuator",
+         "equip:chiselspeed", "equip:cordage", "equip:treasuremagnet", "equip:donthurtnature",
+         "equip:donthurtcritters", "equip:flowerboots"]
+
+[subcategories.luck-coins]
+name = "Luck & coins"
+parent = "accessory"
+icon = "Lucky Coin"
+only_in_parent = true
+match = ["equip:hasluck*", "equip:goldring", "equip:hasluckycoin", "equip:discount",
+         "equip:equipmentbasedluckbonus"]
+
+[subcategories.music-box]
+name = "Music boxes"
+parent = "accessory"
+icon = "Music Box"
+only_in_parent = true
+match = []  # by name, see the manual section
+
+# Dyes
+[subcategories.hair-dye]
+name = "Hair dyes"
+parent = "dye"
+icon = "Life Hair Dye"
+match = ["type:hair dye"]
+
+# Potions
+[subcategories.healing]
+name = "Healing items"
+parent = "potion"
+icon = "Healing Potion"
+match = ["listcat:healing items"]
+
+# Summon items
+[subcategories.boss-summon]
+name = "Boss summons"
+parent = "summon"
+icon = "Suspicious Looking Eye"
+match = ["type:boss summon"]
+
+[subcategories.event-summon]
+name = "Event summons"
+parent = "summon"
+icon = "Goblin Battle Standard"
+match = ["type:event summon"]
+
+[subcategories.item-summon]
+name = "Item summons"
+parent = "summon"
+icon = "Money Trough"
+match = ["type:item summon"]
+
+# Pets & mounts
+[subcategories.light-pet]
+name = "Light pets"
+parent = "pet"
+icon = "Fairy Bell"
+match = ["type:light pet"]
+
+[subcategories.minecart]
+name = "Minecarts"
+parent = "mount"
+icon = "Minecart"
+match = ["tag:minecart"]
+
+# Crafting materials
+# The wiki marks every item used in a recipe as crafting material. Real
+# materials get their own groups; items that are mainly something else are
+# grouped by that (with_categories).
+[subcategories.bar]
+name = "Bars"
+parent = "crafting-material"
+icon = "Iron Bar"
+match = ["type:bar"]
+
+[subcategories.ore]
+name = "Ores"
+parent = "crafting-material"
+icon = "Iron Ore"
+match = ["type:ore"]
+
+[subcategories.gem]
+name = "Gems"
+parent = "crafting-material"
+icon = "Sapphire"
+match = ["type:gem"]
+
+[subcategories.soul]
+name = "Souls"
+parent = "crafting-material"
+icon = "Soul of Light"
+only_in_parent = true
+match = []  # "Soul of ...", see the manual section
+
+[subcategories.fragment]
+name = "Fragments"
+parent = "crafting-material"
+icon = "Solar Fragment"
+only_in_parent = true
+match = []  # "... Fragment", see the manual section
+
+[subcategories.enemy-drop]
+name = "Enemy drops"
+parent = "crafting-material"
+icon = "Shark Fin"
+only_in_parent = true
+match = ["drop:npc"]
+# materials, not blocks/furniture/equipment an enemy happens to drop too
+without_categories = ["block", "wall", "furniture", "crafting-station", "light-source", "storage",
+                      "mechanism", "accessory", "weapon", "tool", "armor", "vanity"]
+
+[subcategories.critter]
+name = "Critters"
+parent = "crafting-material"
+icon = "Bunny"
+only_in_parent = true
+match = ["npc:critter", "page:gem squirrels", "page:gem bunnies"]
+
+[subcategories.potion-ingredient]
+name = "Potion ingredients"
+parent = "crafting-material"
+icon = "Daybloom"
+match = ["tag:potion ingredients", "listcat:potion ingredients"]
+
+[subcategories.thread-cloth]
+name = "Threads & cloth"
+parent = "crafting-material"
+icon = "Silk"
+only_in_parent = true
+match = ["page:threads"]  # plus Silk, Leather, ... in the manual section
+
+[subcategories.material-block]
+name = "Blocks & walls"
+parent = "crafting-material"
+icon = "Stone Block"
+match = []
+with_categories = ["block", "wall"]
+
+[subcategories.material-furniture]
+name = "Furniture & stations"
+parent = "crafting-material"
+icon = "Work Bench"
+match = []
+with_categories = ["furniture", "crafting-station", "light-source", "storage", "mechanism"]
+
+[subcategories.material-equipment]
+name = "Equipment"
+parent = "crafting-material"
+icon = "Hermes Boots"
+match = []
+with_categories = ["accessory", "weapon", "tool", "armor", "vanity", "ammunition"]
+
+# Blocks
+[subcategories.brick]
+name = "Bricks"
+parent = "block"
+icon = "Gray Brick"
+match = ["type:brick"]
+
+[subcategories.sand]
+name = "Sands"
+parent = "block"
+icon = "Sand Block"
+match = ["listcat:sands"]
+
+# Furniture - mostly by the wiki page an item is on ("page:<name>"): most
+# furniture pieces share a page per type, e.g. all chairs are on "Chairs".
+[subcategories.painting]
+name = "Paintings"
+parent = "furniture"
+icon = "The Merchant"
+match = ["tag:painting", "page:paintings"]
+
+[subcategories.statue]
+name = "Statues"
+parent = "furniture"
+icon = "Angel Statue"
+match = ["page:statues"]
+
+[subcategories.trophy-relic]
+name = "Trophies & relics"
+parent = "furniture"
+icon = "Eye of Cthulhu Trophy"
+match = ["page:trophies", "page:relics"]
+
+[subcategories.furniture-music-box]
+name = "Music boxes"
+parent = "furniture"
+icon = "Music Box"
+match = ["page:music boxes"]
+
+[subcategories.chair]
+name = "Chairs"
+parent = "furniture"
+icon = "Wooden Chair"
+match = ["page:chairs"]
+
+[subcategories.table]
+name = "Tables"
+parent = "furniture"
+icon = "Wooden Table"
+match = ["page:tables"]
+
+[subcategories.work-bench]
+name = "Work benches"
+parent = "furniture"
+icon = "Work Bench"
+match = ["page:work benches"]
+
+[subcategories.sofa-bench]
+name = "Sofas & benches"
+parent = "furniture"
+icon = "Sofa"
+match = ["page:sofas", "page:benches"]
+
+[subcategories.toilet]
+name = "Toilets"
+parent = "furniture"
+icon = "Toilet"
+match = ["page:toilets"]
+
+[subcategories.bed]
+name = "Beds"
+parent = "furniture"
+icon = "Bed"
+match = ["page:beds"]
+
+[subcategories.door]
+name = "Doors"
+parent = "furniture"
+icon = "Wooden Door"
+match = ["page:doors"]
+
+[subcategories.chest]
+name = "Chests"
+parent = "furniture"
+icon = "Chest"
+match = ["page:chests", "page:trapped chests"]
+
+[subcategories.dresser]
+name = "Dressers"
+parent = "furniture"
+icon = "Dresser"
+match = ["page:dressers"]
+
+[subcategories.bookcase]
+name = "Bookcases"
+parent = "furniture"
+icon = "Bookcase"
+match = ["page:bookcases"]
+
+[subcategories.piano]
+name = "Pianos"
+parent = "furniture"
+icon = "Piano"
+match = ["page:pianos"]
+
+[subcategories.clock]
+name = "Clocks"
+parent = "furniture"
+icon = "Grandfather Clock"
+match = ["page:grandfather clocks"]
+
+[subcategories.sink]
+name = "Sinks"
+parent = "furniture"
+icon = "Wooden Sink"
+match = ["page:sinks"]
+
+[subcategories.bathtub]
+name = "Bathtubs"
+parent = "furniture"
+icon = "Bathtub"
+match = ["page:bathtubs"]
+
+[subcategories.lamp]
+name = "Lamps"
+parent = "furniture"
+icon = "Tiki Torch"
+match = ["page:lamps"]
+
+[subcategories.lantern]
+name = "Lanterns"
+parent = "furniture"
+icon = "Chinese Lantern"
+match = ["page:lanterns"]
+
+[subcategories.chandelier]
+name = "Chandeliers"
+parent = "furniture"
+icon = "Copper Chandelier"
+match = ["page:chandeliers"]
+
+[subcategories.candle]
+name = "Candles & candelabras"
+parent = "furniture"
+icon = "Candle"
+match = ["page:candles", "page:candelabras"]
+
+[subcategories.torch-campfire]
+name = "Torches & campfires"
+parent = "furniture"
+icon = "Campfire"
+match = ["page:torches", "page:campfires"]
+
+[subcategories.platform]
+name = "Platforms"
+parent = "furniture"
+icon = "Wood Platform"
+match = ["tag:platform", "page:platforms"]
+
+[subcategories.cage-jar]
+name = "Cages & jars"
+parent = "furniture"
+icon = "Bunny Cage"
+match = ["page:cages", "page:butterfly jars", "page:dragonfly jars", "page:jellyfish jars", "page:fish bowls", "page:fairy jars"]
+
+[subcategories.decoration]
+name = "Decorations"
+parent = "furniture"
+icon = "Potted Forest Tree"
+match = ["page:christmas tree decorations", "page:potted trees", "page:planter boxes", "page:hanging herbs", "page:vases", "page:seashells", "page:streamers", "page:silly tied balloons", "page:christmas lights", "page:potted lava plants", "page:potted crystal plants", "page:animal skins", "page:pin flags", "page:water fountains", "page:monoliths", "page:tombstones"]
+
+[subcategories.enemy-banner]
+name = "Enemy banners"
+parent = "furniture"
+icon = "Zombie Banner"
+match = ["tag:enemy banner"]
+
+[subcategories.other-banner]
+name = "Other banners"
+parent = "furniture"
+icon = "Red Banner"
+match = []  # items named "... Banner", see the manual section
+exclude = ["tag:enemy banner"]
+
+# Miscellaneous
+[subcategories.novelty]
+name = "Novelty items"
+parent = "miscellaneous"
+match = ["tag:novelty", "listcat:novelty items"]
+
+[subcategories.quest-fish]
+name = "Quest fish"
+parent = "miscellaneous"
+icon = "Batfish"
+match = ["tag:quest fish"]
+
+[subcategories.kite]
+name = "Kites"
+parent = "miscellaneous"
+icon = "Blue Kite"
+match = []  # filled through [manual]
+
+[subcategories.coin]
+name = "Coins"
+parent = "miscellaneous"
+icon = "Gold Coin"
+match = ["listcat:coins"]
+
+
+# Fallbacks: items of a category that fit none of its subcategories (listed
+# last, so they are the last entry below their category). Summon items has
+# none - all its items are boss, event or item summons.
+[subcategories.other-weapon]
+name = "Other weapons"
+parent = "weapon"
+match = []
+fallback = true
+
+[subcategories.other-ammunition]
+name = "Other ammunition"
+parent = "ammunition"
+match = []
+fallback = true
+
+[subcategories.other-tool]
+name = "Other tools"
+parent = "tool"
+match = []
+fallback = true
+
+[subcategories.other-accessory]
+name = "Other accessories"
+parent = "accessory"
+match = []
+fallback = true
+
+[subcategories.other-dye]
+name = "Other dyes"
+parent = "dye"
+match = []
+fallback = true
+
+[subcategories.other-potion]
+name = "Other potions"
+parent = "potion"
+match = []
+fallback = true
+
+[subcategories.other-pet]
+name = "Other pets"
+parent = "pet"
+match = []
+fallback = true
+
+[subcategories.other-mount]
+name = "Other mounts"
+parent = "mount"
+match = []
+fallback = true
+
+[subcategories.other-crafting-material]
+name = "Other crafting materials"
+parent = "crafting-material"
+match = []
+fallback = true
+
+[subcategories.other-block]
+name = "Other blocks"
+parent = "block"
+match = []
+fallback = true
+
+[subcategories.other-furniture]
+name = "Other furniture"
+parent = "furniture"
+match = []
+fallback = true
+
+[subcategories.other-miscellaneous]
+name = "Other miscellaneous items"
+parent = "miscellaneous"
+match = []
+fallback = true
+
+
+# -------------------------------------------------------------------- obtain
+# How an item can be obtained. Built from `tag` and `listcat`; both are
+# filled in by wiki editors and are not complete. Names read as "how", not
+# "what" ("Crafted", not "Crafting"), so they are not mistaken for categories.
+# loot = chests, pots, trees ...; plunder = placed in the world and collected
+# (dungeon furniture, statues, ores).
+
+[obtain.crafted]
+name = "Crafted"
+icon = "Work Bench"
+match = ["listcat:craftable items"]
+
+[obtain.vendor]
+name = "Bought from NPCs"
+icon = "Gold Coin"
+match = ["tag:vendor", "tag:buy", "tag:buyable", "tag:vendor:*"]
+
+[obtain.drop]
+name = "Dropped by enemies"
+icon = "Gel"
+match = ["tag:drop", "listcat:drop items"]
+
+[obtain.loot]
+name = "Found in chests & pots"
+icon = "Chest"
+match = ["tag:loot", "listcat:loot items"]
+
+[obtain.plunder]
+name = "Collected in the world"
+icon = "Gold Chest"
+match = ["tag:plunder", "tag:plunder:*", "listcat:plunder items"]
+
+[obtain.bag]
+name = "From grab bags & crates"
+icon = "Wooden Crate"
+match = ["tag:bag loot", "listcat:bag loot items"]
+
+[obtain.treasure-bag]
+name = "From boss treasure bags"
+icon_file = "Treasure Bag (Eye of Cthulhu).png"
+match = ["tag:treasure bag loot", "listcat:treasure bag loot items"]
+
+[obtain.fishing]
+name = "Fished"
+icon = "Wood Fishing Pole"
+match = ["tag:fished", "listcat:fished items", "tag:quest fish"]
+
+[obtain.quest-reward]
+name = "Angler quest reward"
+icon_file = "Angler.png"
+match = ["tag:quest rewards", "listcat:quest rewards"]
+
+[obtain.developer]
+name = "Developer item"
+icon = "Red's Wings"
+match = ["tag:developer", "listcat:developer items"]
+
+[obtain.unobtainable]
+name = "Unobtainable"
+match = ["unobtainable:1", "tag:unobtainable", "listcat:unobtainable items"]
+
+
+# ------------------------------------------------------------------- vendors
+# NPCs that sell the item (from `tag` values "vendor:<npc>").
+
+[vendors.merchant]
+name = "Merchant"
+icon_file = "Merchant.png"
+match = ["tag:vendor:merchant"]
+
+[vendors.arms-dealer]
+name = "Arms Dealer"
+icon_file = "Arms Dealer.png"
+match = ["tag:vendor:arms dealer"]
+
+[vendors.demolitionist]
+name = "Demolitionist"
+icon_file = "Demolitionist.png"
+match = ["tag:vendor:demolitionist"]
+
+[vendors.dryad]
+name = "Dryad"
+icon_file = "Dryad.png"
+match = ["tag:vendor:dryad"]
+
+[vendors.painter]
+name = "Painter"
+icon_file = "Painter.png"
+match = ["tag:vendor:painter"]
+
+[vendors.dye-trader]
+name = "Dye Trader"
+icon_file = "Dye Trader.png"
+match = ["tag:vendor:dye trader"]
+
+[vendors.tavernkeep]
+name = "Tavernkeep"
+icon_file = "Tavernkeep.png"
+match = ["tag:vendor:tavernkeep"]
+
+[vendors.stylist]
+name = "Stylist"
+icon_file = "Stylist.png"
+match = ["tag:vendor:stylist"]
+
+[vendors.golfer]
+name = "Golfer"
+icon_file = "Golfer.png"
+match = ["tag:vendor:golfer"]
+
+[vendors.zoologist]
+name = "Zoologist"
+icon_file = "Zoologist.png"
+match = ["tag:vendor:zoologist"]
+
+[vendors.goblin-tinkerer]
+name = "Goblin Tinkerer"
+icon_file = "Goblin Tinkerer.png"
+match = ["tag:vendor:goblin tinkerer"]
+
+[vendors.witch-doctor]
+name = "Witch Doctor"
+icon_file = "Witch Doctor.png"
+match = ["tag:vendor:witch doctor"]
+
+[vendors.clothier]
+name = "Clothier"
+icon_file = "Clothier.png"
+match = ["tag:vendor:clothier"]
+
+[vendors.mechanic]
+name = "Mechanic"
+icon_file = "Mechanic.png"
+match = ["tag:vendor:mechanic"]
+
+[vendors.party-girl]
+name = "Party Girl"
+icon_file = "Party Girl.png"
+match = ["tag:vendor:party girl"]
+
+[vendors.wizard]
+name = "Wizard"
+icon_file = "Wizard.png"
+match = ["tag:vendor:wizard"]
+
+[vendors.truffle]
+name = "Truffle"
+icon_file = "Truffle.png"
+match = ["tag:vendor:truffle"]
+
+[vendors.pirate]
+name = "Pirate"
+icon_file = "Pirate.png"
+match = ["tag:vendor:pirate"]
+
+[vendors.steampunker]
+name = "Steampunker"
+icon_file = "Steampunker.png"
+match = ["tag:vendor:steampunker"]
+
+[vendors.cyborg]
+name = "Cyborg"
+icon_file = "Cyborg.png"
+match = ["tag:vendor:cyborg"]
+
+[vendors.santa-claus]
+name = "Santa Claus"
+icon_file = "Santa Claus.png"
+match = ["tag:vendor:santa claus"]
+
+[vendors.princess]
+name = "Princess"
+icon_file = "Princess.png"
+match = ["tag:vendor:princess"]
+
+[vendors.traveling-merchant]
+name = "Traveling Merchant"
+icon_file = "Traveling Merchant.png"
+match = ["tag:vendor:traveling merchant", "tag:vendor:travelling merchant"]
+
+[vendors.skeleton-merchant]
+name = "Skeleton Merchant"
+icon_file = "Skeleton Merchant.png"
+match = ["tag:vendor:skeleton merchant"]
+
+
+# -------------------------------------------------------------------- events
+# Game events. An item belongs to an event if it can be obtained during it:
+#   match            wiki tags ("during:<x>", "dd2", ...)
+#   environments     NPC spawn conditions (NPCs table, "environment"). Items
+#                    dropped by an enemy that only spawns during this event
+#                    (every spawn alternative contains the condition) count.
+#                    Drops of main bosses (pre-Hardmode/Hardmode stages) do not.
+#   drop_conditions  words in a drop's chance/condition text ("during Halloween")
+# Order here = default order in the filter (it can also be sorted A-Z).
+# Slime Rain and Starfall are left out: no item is obtainable only there
+# (slimes also spawn outside Slime Rain, Fallen Stars are not a drop).
+
+[events.goblin-army]
+name = "Goblin Army"
+icon = "Goblin Battle Standard"
+environments = ["Goblin Army"]
+
+[events.pirate-invasion]
+name = "Pirate Invasion"
+icon = "Pirate Map"
+environments = ["Pirate Invasion"]
+
+[events.frost-legion]
+name = "Frost Legion"
+icon = "Snow Globe"
+environments = ["Frost Legion"]
+
+[events.martian-madness]
+name = "Martian Madness"
+icon = "Martian Conduit Plating"
+environments = ["Martian Madness"]
+
+[events.old-ones-army]
+name = "Old One's Army"
+icon = "Eternia Crystal"
+match = ["tag:dd2"]
+environments = ["Old One's Army"]
+
+[events.blood-moon]
+name = "Blood Moon"
+icon = "Bloody Tear"
+match = ["tag:during:blood moon"]
+environments = ["Blood Moon"]
+
+[events.solar-eclipse]
+name = "Solar Eclipse"
+icon = "Solar Tablet"
+match = ["tag:during:solar eclipse"]
+environments = ["Solar Eclipse"]
+
+[events.pumpkin-moon]
+name = "Pumpkin Moon"
+icon = "Pumpkin Moon Medallion"
+environments = ["Pumpkin Moon"]
+
+[events.frost-moon]
+name = "Frost Moon"
+icon = "Naughty Present"
+environments = ["Frost Moon"]
+
+[events.lunar-events]
+name = "Lunar Events"
+icon = "Celestial Sigil"
+environments = ["Lunar Events"]
+
+[events.rain]
+name = "Rain"
+icon = "Umbrella"
+environments = ["Rain"]
+
+[events.windy-day]
+name = "Windy Day"
+icon = "Blue Kite"
+environments = ["Windy Day"]
+
+[events.sandstorm]
+name = "Sandstorm"
+icon = "Sandstorm in a Bottle"
+environments = ["Sandstorm"]
+
+[events.blizzard]
+name = "Blizzard"
+icon = "Blizzard in a Bottle"
+environments = ["Blizzard"]
+
+[events.halloween]
+name = "Halloween"
+icon = "Goodie Bag"
+match = ["tag:during:halloween"]
+environments = ["Halloween"]
+drop_conditions = ["Halloween"]
+
+[events.christmas]
+name = "Christmas"
+icon = "Present"
+match = ["tag:during:christmas"]
+environments = ["Christmas"]
+drop_conditions = ["Christmas"]
+
+
+# -------------------------------------------------------------------- biomes
+# Where the enemies spawn that drop an item (NPCs table, "environment").
+#   environments  spawn conditions of the biome; a condition like
+#                 "Snow biome+Night" counts for every biome named in it
+#   alone         conditions that count only on their own, not as part of a
+#                 combination ("Night" alone = surface at night, but
+#                 "Snow biome+Night" is not the surface)
+# Main bosses and enemies that only spawn during events are left out.
+# Order here = default order in the filter (it can also be sorted A-Z).
+
+[biomes.forest-surface]
+name = "Forest & surface"
+icon = "Acorn"
+environments = ["Forest", "Surface"]
+alone = ["Night", "Day", "Rain"]  # only when the whole condition ("Night" = surface at night)
+
+[biomes.underground]
+name = "Underground & caverns"
+icon = "Stone Block"
+environments = ["Underground", "Cavern"]
+
+[biomes.desert]
+name = "Desert"
+icon = "Sand Block"
+environments = ["Desert", "Underground Desert", "Sandstorm"]
+
+[biomes.snow]
+name = "Snow"
+icon = "Snow Block"
+environments = ["Snow biome", "Ice biome", "Blizzard"]
+
+[biomes.jungle]
+name = "Jungle"
+icon = "Mud Block"
+environments = ["Jungle", "Underground Jungle", "Bee Hive (biome)"]
+
+[biomes.jungle-temple]
+name = "Jungle Temple"
+icon = "Lihzahrd Brick"
+environments = ["Jungle Temple"]
+
+[biomes.corruption]
+name = "Corruption"
+icon = "Ebonstone Block"
+environments = ["The Corruption", "Underground Corruption", "Corrupted Desert"]
+
+[biomes.crimson]
+name = "Crimson"
+icon = "Crimstone Block"
+environments = ["The Crimson", "Underground Crimson", "Crimson Desert"]
+
+[biomes.hallow]
+name = "Hallow"
+icon = "Pearlstone Block"
+environments = ["The Hallow", "Underground Hallow", "Hallowed Desert"]
+
+[biomes.ocean]
+name = "Ocean"
+icon = "Seashell"
+environments = ["Ocean"]
+
+[biomes.dungeon]
+name = "Dungeon"
+icon = "Blue Brick"
+environments = ["Dungeon", "Dungeon entrance"]
+
+[biomes.underworld]
+name = "Underworld"
+icon = "Ash Block"
+environments = ["The Underworld"]
+
+[biomes.space]
+name = "Space"
+icon = "Fallen Star"
+environments = ["Space"]
+
+[biomes.glowing-mushroom]
+name = "Glowing Mushroom"
+icon = "Glowing Mushroom"
+environments = ["Glowing Mushroom biome"]
+
+[biomes.granite-marble]
+name = "Granite & Marble caves"
+icon = "Granite Block"
+environments = ["Granite Cave", "Marble Cave"]
+
+[biomes.spider-nest]
+name = "Spider Nest"
+icon = "Cobweb"
+environments = ["Spider Nest"]
+
+[biomes.graveyard]
+name = "Graveyard"
+icon = "Tombstone"
+environments = ["Graveyard"]
+
+[biomes.meteorite]
+name = "Meteorite"
+icon = "Meteorite"
+environments = ["Meteorite (biome)"]
+
+
+# ---------------------------------------------------------------------- times
+# Items dropped by enemies that only spawn at this time of day (every spawn
+# alternative contains the condition).
+
+[times.night]
+name = "Night"
+icon = "Moon Charm"
+environments = ["Night"]
+
+[times.day]
+name = "Day"
+icon = "Sunflower"
+environments = ["Day"]
+
+
+# --------------------------------------------------------------------- flags
+
+[flags]
+hardmode = ["hardmode:1", "tag:hardmode", "tag:hardmodeonly"]
+hardmodeOnly = ["tag:hardmodeonly"]
+unobtainable = ["unobtainable:1", "tag:unobtainable", "listcat:unobtainable items"]
+banner = ["tag:enemy banner"]
+questFish = ["tag:quest fish"]
+
+
+# --------------------------------------------------------------------- drops
+# What the wiki's Drops table contributes (drops.json). Source kinds:
+#   npc        enemies and bosses (the table's "isfromnpc")
+#   bag        boss treasure bags ("Treasure Bag (...)")
+#   container  chests, crates, grab bags ... (not used yet)
+
+[drops]
+include_kinds = ["npc", "bag"]
+# Generic drops almost every boss has. They do not count for the
+# "Dropped by boss" filter (they still show in the item's drop list).
+boss_ignore_items = [
+    "Copper Coin", "Silver Coin", "Gold Coin", "Platinum Coin",
+    "Lesser Healing Potion", "Healing Potion", "Greater Healing Potion", "Super Healing Potion",
+]
+
+
+# ------------------------------------------------------------------- recipes
+# Crafting recipes (recipes.json) from the wiki's Recipes table.
+#   conditions  station names that need no item: environment conditions and
+#               world objects (a recipe can need several stations, e.g.
+#               "Work Bench and Ecto Mist")
+#   shimmer     the station name of shimmer transmutations (kept apart)
+# The "Any ..." ingredient groups come from the wiki page "Alternative crafting
+# ingredients" (raw/page_wikitext.json); [recipe_groups] adds groups the page
+# does not list (item name patterns, "*" = wildcard).
+
+[recipes]
+conditions = ["By Hand", "Water", "Honey", "Lava", "Snow Biome", "Ecto Mist", "Demon Altar"]
+shimmer = "Shimmer"
+
+[recipe_groups]
+"Any Torch" = ["torch", "* torch"]
+"Recorded Music Boxes" = ["music box (*)"]
+
+# Station -> the items that provide it (name patterns, "*" = wildcard), stronger
+# stations included. Stations not listed here are provided by the item of the
+# same name.
+[stations]
+"Work Bench" = ["work bench", "* work bench"]
+"Iron Anvil" = ["iron anvil", "lead anvil", "mythril anvil", "orichalcum anvil"]
+"Mythril Anvil" = ["mythril anvil", "orichalcum anvil"]
+"Furnace" = ["furnace", "hellforge", "adamantite forge", "titanium forge"]
+"Hellforge" = ["hellforge", "adamantite forge", "titanium forge"]
+"Adamantite Forge" = ["adamantite forge", "titanium forge"]
+"Loom" = ["loom", "living loom"]
+"Cooking Pot" = ["cooking pot", "cauldron"]
+"Placed Bottle" = ["bottle", "alchemy table"]
+"Bookcase" = ["bookcase", "* bookcase"]
+"Campfire" = ["campfire", "* campfire"]
+
+
+# ------------------------------------------------------------------ bestiary
+# bestiary.json from the wiki pages "Bestiary/List" and "NPC IDs".
+#   types     entry type -> NPCs-table types (lowercase); entries matching none
+#             are "enemy". Checked in this order.
+#   filters   the bestiary's own filter names (Bestiary_Biomes/Times/Events/
+#             Invasions.<name>) -> our "<section>:<id>" (biomes, times, events);
+#             [] = not used
+
+[bestiary]
+first_version = "1.4.0"   # the bestiary was added in 1.4.0.1
+platforms = ["desktop", "console", "mobile"]
+
+[bestiary.types]
+town = ["npc"]
+critter = ["critter", "gold critter"]
+boss = ["boss", "boss part"]
+
+[bestiary.type_names]
+town = "Town NPCs"
+critter = "Critters"
+enemy = "Enemies"
+boss = "Bosses"
+
+# entry whose icon is shown for each type
+[bestiary.type_icons]
+town = "Guide"
+critter = "Bunny"
+enemy = "BlueSlime"
+boss = "EyeofCthulhu"
+
+[bestiary.filters]
+Surface = ["biomes:forest-surface"]
+Underground = ["biomes:underground"]
+Caverns = ["biomes:underground"]
+Desert = ["biomes:desert"]
+UndergroundDesert = ["biomes:desert"]
+CorruptDesert = ["biomes:corruption", "biomes:desert"]
+CorruptUndergroundDesert = ["biomes:corruption", "biomes:desert"]
+CrimsonDesert = ["biomes:crimson", "biomes:desert"]
+CrimsonUndergroundDesert = ["biomes:crimson", "biomes:desert"]
+HallowDesert = ["biomes:hallow", "biomes:desert"]
+HallowUndergroundDesert = ["biomes:hallow", "biomes:desert"]
+Snow = ["biomes:snow"]
+UndergroundSnow = ["biomes:snow"]
+CorruptIce = ["biomes:corruption", "biomes:snow"]
+CrimsonIce = ["biomes:crimson", "biomes:snow"]
+HallowIce = ["biomes:hallow", "biomes:snow"]
+Jungle = ["biomes:jungle"]
+UndergroundJungle = ["biomes:jungle"]
+TheTemple = ["biomes:jungle-temple"]
+TheCorruption = ["biomes:corruption"]
+UndergroundCorruption = ["biomes:corruption"]
+Crimson = ["biomes:crimson"]
+UndergroundCrimson = ["biomes:crimson"]
+TheHallow = ["biomes:hallow"]
+UndergroundHallow = ["biomes:hallow"]
+Ocean = ["biomes:ocean"]
+TheDungeon = ["biomes:dungeon"]
+TheUnderworld = ["biomes:underworld"]
+Sky = ["biomes:space"]
+SurfaceMushroom = ["biomes:glowing-mushroom"]
+UndergroundMushroom = ["biomes:glowing-mushroom"]
+Granite = ["biomes:granite-marble"]
+Marble = ["biomes:granite-marble"]
+SpiderNest = ["biomes:spider-nest"]
+Graveyard = ["biomes:graveyard"]
+Meteor = ["biomes:meteorite"]
+SolarPillar = ["events:lunar-events"]
+NebulaPillar = ["events:lunar-events"]
+VortexPillar = ["events:lunar-events"]
+StardustPillar = ["events:lunar-events"]
+DayTime = ["times:day"]
+NightTime = ["times:night"]
+BloodMoon = ["events:blood-moon"]
+Eclipse = ["events:solar-eclipse"]
+PumpkinMoon = ["events:pumpkin-moon"]
+FrostMoon = ["events:frost-moon"]
+Goblins = ["events:goblin-army"]
+Pirates = ["events:pirate-invasion"]
+FrostLegion = ["events:frost-legion"]
+Martian = ["events:martian-madness"]
+OldOnesArmy = ["events:old-ones-army"]
+Rain = ["events:rain"]
+WindyDay = ["events:windy-day"]
+Sandstorm = ["events:sandstorm"]
+Halloween = ["events:halloween"]
+Christmas = ["events:christmas"]
+Party = []
+
+
+# -------------------------------------------------------------------- bosses
+# "Dropped by boss" filter group (bosses.json). Grouped by stage, in order.
+#   sources    Drops-table source names whose drops count for the boss:
+#              the boss itself, its parts and its treasure bag.
+#   icon_file  wiki file (map icons)
+
+[boss_stages.pre-hardmode]
+name = "Pre-Hardmode bosses"
+icon = "Suspicious Looking Eye"
+
+[boss_stages.hardmode]
+name = "Hardmode bosses"
+icon = "Mechanical Skull"
+
+[boss_stages.event]
+name = "Event bosses"
+icon = "Pumpkin Moon Medallion"
+
+[bosses.king-slime]
+name = "King Slime"
+stage = "pre-hardmode"
+icon_file = "Map Icon King Slime.png"
+sources = ["King Slime", "Treasure Bag (King Slime)"]
+
+[bosses.eye-of-cthulhu]
+name = "Eye of Cthulhu"
+stage = "pre-hardmode"
+icon_file = "Map Icon Eye of Cthulhu (first form).png"
+sources = ["Eye of Cthulhu", "Treasure Bag (Eye of Cthulhu)"]
+
+[bosses.eater-of-worlds]
+name = "Eater of Worlds"
+stage = "pre-hardmode"
+icon_file = "Map Icon Eater of Worlds.png"
+sources = ["Eater of Worlds", "Treasure Bag (Eater of Worlds)"]
+
+[bosses.brain-of-cthulhu]
+name = "Brain of Cthulhu"
+stage = "pre-hardmode"
+icon_file = "Map Icon Brain of Cthulhu.png"
+sources = ["Brain of Cthulhu", "Treasure Bag (Brain of Cthulhu)"]
+
+[bosses.queen-bee]
+name = "Queen Bee"
+stage = "pre-hardmode"
+icon_file = "Map Icon Queen Bee.png"
+sources = ["Queen Bee", "Treasure Bag (Queen Bee)"]
+
+[bosses.skeletron]
+name = "Skeletron"
+stage = "pre-hardmode"
+icon_file = "Map Icon Skeletron.png"
+sources = ["Skeletron", "Treasure Bag (Skeletron)"]
+
+[bosses.deerclops]
+name = "Deerclops"
+stage = "pre-hardmode"
+icon_file = "Map Icon Deerclops.png"
+sources = ["Deerclops", "Treasure Bag (Deerclops)"]
+
+[bosses.wall-of-flesh]
+name = "Wall of Flesh"
+stage = "pre-hardmode"
+icon_file = "Map Icon Wall of Flesh.png"
+sources = ["Wall of Flesh", "Treasure Bag (Wall of Flesh)"]
+
+[bosses.queen-slime]
+name = "Queen Slime"
+stage = "hardmode"
+icon_file = "Map Icon Queen Slime.png"
+sources = ["Queen Slime", "Treasure Bag (Queen Slime)"]
+
+[bosses.the-twins]
+name = "The Twins"
+stage = "hardmode"
+icon_file = "Map Icon Retinazer (first form).png"
+sources = ["The Twins", "Retinazer", "Spazmatism", "Treasure Bag (The Twins)"]
+
+[bosses.the-destroyer]
+name = "The Destroyer"
+stage = "hardmode"
+icon_file = "Map Icon The Destroyer.png"
+sources = ["The Destroyer", "Treasure Bag (The Destroyer)"]
+
+[bosses.skeletron-prime]
+name = "Skeletron Prime"
+stage = "hardmode"
+icon_file = "Map Icon Skeletron Prime.png"
+sources = ["Skeletron Prime", "Treasure Bag (Skeletron Prime)"]
+
+[bosses.plantera]
+name = "Plantera"
+stage = "hardmode"
+icon_file = "Map Icon Plantera (first form).png"
+sources = ["Plantera", "Treasure Bag (Plantera)"]
+
+[bosses.golem]
+name = "Golem"
+stage = "hardmode"
+icon_file = "Map Icon Golem.png"
+sources = ["Golem", "Treasure Bag (Golem)"]
+
+[bosses.duke-fishron]
+name = "Duke Fishron"
+stage = "hardmode"
+icon_file = "Map Icon Duke Fishron.png"
+sources = ["Duke Fishron", "Treasure Bag (Duke Fishron)"]
+
+[bosses.empress-of-light]
+name = "Empress of Light"
+stage = "hardmode"
+icon_file = "Map Icon Empress of Light.png"
+sources = ["Empress of Light", "Treasure Bag (Empress of Light)"]
+
+[bosses.lunatic-cultist]
+name = "Lunatic Cultist"
+stage = "hardmode"
+icon_file = "Map Icon Lunatic Cultist.png"
+sources = ["Lunatic Cultist"]
+
+[bosses.moon-lord]
+name = "Moon Lord"
+stage = "hardmode"
+icon_file = "Map Icon Moon Lord.png"
+sources = ["Moon Lord", "Treasure Bag (Moon Lord)"]
+
+[bosses.dark-mage]
+name = "Dark Mage"
+stage = "event"
+icon_file = "Map Icon Dark Mage.png"
+sources = ["Dark Mage"]
+
+[bosses.ogre]
+name = "Ogre"
+stage = "event"
+icon_file = "Map Icon Ogre.png"
+sources = ["Ogre"]
+
+[bosses.betsy]
+name = "Betsy"
+stage = "event"
+icon_file = "Map Icon Betsy.png"
+sources = ["Betsy", "Treasure Bag (Betsy)"]
+
+[bosses.mourning-wood]
+name = "Mourning Wood"
+stage = "event"
+icon_file = "Map Icon Mourning Wood.png"
+sources = ["Mourning Wood"]
+
+[bosses.pumpking]
+name = "Pumpking"
+stage = "event"
+icon_file = "Map Icon Pumpking.png"
+sources = ["Pumpking"]
+
+[bosses.everscream]
+name = "Everscream"
+stage = "event"
+icon_file = "Map Icon Everscream.png"
+sources = ["Everscream"]
+
+[bosses.santa-nk1]
+name = "Santa-NK1"
+stage = "event"
+icon_file = "Map Icon Santa-NK1.png"
+sources = ["Santa-NK1"]
+
+[bosses.ice-queen]
+name = "Ice Queen"
+stage = "event"
+icon_file = "Map Icon Ice Queen.png"
+sources = ["Ice Queen"]
+
+[bosses.flying-dutchman]
+name = "Flying Dutchman"
+stage = "event"
+icon_file = "Map Icon Flying Dutchman.png"
+sources = ["Flying Dutchman"]
+
+[bosses.martian-saucer]
+name = "Martian Saucer"
+stage = "event"
+icon_file = "Map Icon Martian Saucer.png"
+sources = ["Martian Saucer"]
+
+[bosses.solar-pillar]
+name = "Solar Pillar"
+stage = "event"
+icon_file = "Map Icon Solar Pillar.png"
+sources = ["Solar Pillar"]
+
+[bosses.nebula-pillar]
+name = "Nebula Pillar"
+stage = "event"
+icon_file = "Map Icon Nebula Pillar.png"
+sources = ["Nebula Pillar"]
+
+[bosses.vortex-pillar]
+name = "Vortex Pillar"
+stage = "event"
+icon_file = "Map Icon Vortex Pillar.png"
+sources = ["Vortex Pillar"]
+
+[bosses.stardust-pillar]
+name = "Stardust Pillar"
+stage = "event"
+icon_file = "Map Icon Stardust Pillar.png"
+sources = ["Stardust Pillar"]
+
+
+# ------------------------------------------------------------------ versions
+
+# name: official update names where Re-Logic gave one (1.3 and later, from the
+# wiki's patch pages); 1.0-1.2 have none, their names describe the update.
+# icon: an item added in that update.
+
+[versions."1.0"]
+name = "1.0 · Release"
+icon = "Night's Edge"
+
+[versions."1.1"]
+name = "1.1 · Hardmode"
+icon = "Excalibur"
+
+[versions."1.2"]
+name = "1.2 · Plantera & Golem"
+icon = "Terra Blade"
+
+[versions."1.3"]
+name = "1.3 · Moon Lord & Expert Mode"
+icon = "Meowmere"
+
+[versions."1.4.0"]
+name = "1.4.0 · Journey's End"
+icon = "Zenith"
+
+[versions."1.4.1"]
+name = "1.4.1 · Rounding Out the Journey"
+icon = "Flinx Staff"
+
+[versions."1.4.2"]
+name = "1.4.2 · Steam Workshop Support"
+
+[versions."1.4.3"]
+name = "1.4.3 · An Eye For An Eye"
+icon = "Eye Bone"
+
+[versions."1.4.4"]
+name = "1.4.4 · Labor of Love"
+icon = "Bottomless Shimmer Bucket"
+
+[versions."1.4.5"]
+name = "1.4.5 · Bigger and Boulder"
+icon = "Rainbow Boulder"
+
+
+# -------------------------------------------------------------------- ignore
+# Dropped on purpose (duplicates of other fields, or not useful).
+
+[ignore]
+keys = [
+    "type:set",                      # armor/vanity set pages, not items
+    "tag:mechanism", "tag:storage", "tag:light source", "tag:wiring",
+    "tag:construction", "tag:fishing",
+    "tag:vendor:seed:*",             # special-seed vendor variants
+    "tag:during:night",              # not an event (1 item)
+    "tag:after:event:*",             # sold after an event (2 items)
+    "listcat:accessory items", "listcat:ammunition items",
+    "listcat:weapon items", "listcat:storage items",
+    "listcat:mechanism items", "listcat:light source items",
+    "listcat:crafting stations", "listcat:minecart track items",
+    "listcat:souls", "listcat:scope", "listcat:buffs", "listcat:debuffs",
+    "listcat:wall-piercing weapons",
+]
+
+
+# -------------------------------------------------------------------- manual
+# Items without a `type` on the wiki.
+
+[manual]
+# decorative banners (colored, dungeon, underworld, War Table Banner, ...);
+# enemy banners are excluded in [subcategories.other-banner]
+"* Banner" = ["subcategories:other-banner"]
+
+"*Music Box*" = ["subcategories:music-box"]
+# effects the Equipinfo table does not record
+"Band of Regeneration" = ["subcategories:defense-survival"]
+"Soul of *" = ["subcategories:soul"]
+"* Fragment" = ["subcategories:fragment"]
+"Silk" = ["subcategories:thread-cloth"]
+"Leather" = ["subcategories:thread-cloth"]
+"Tattered Cloth" = ["subcategories:thread-cloth"]
+"Shackle" = ["subcategories:defense-survival"]        # only +1 defense
+"Step Stool" = ["subcategories:movement"]
+"* Kite" = ["subcategories:kite"]
+"* Team Block" = ["categories:block"]
+"* License" = ["categories:consumable"]
+
+"Explosive Bunny" = ["categories:ammunition"]      # Bunny Cannon ammo
+"Etherian Javelin" = ["categories:weapon"]
+"Boring Bow" = ["subcategories:bow"]
+"The Imploder" = ["categories:weapon"]
+"Ogre Mask" = ["categories:vanity"]
+"Goblin Mask" = ["categories:vanity"]
+"Goblin Bomber Cap" = ["categories:vanity"]
+"Kobold Dynamite Backpack" = ["categories:vanity"]
+"Color Only Dye" = ["categories:dye"]
+"Rainbow Glowstick" = ["categories:light-source"]
+"Universal Pylon" = ["categories:furniture"]
+"Giant Tiki" = ["categories:furniture"]
+"Demon Altar" = ["categories:crafting-station"]
+"Crimson Altar" = ["categories:crafting-station"]
+"Defender Medal" = ["subcategories:coin"]           # Tavernkeep currency
+"Chest Lock" = ["categories:tool"]
+"Coal" = ["categories:miscellaneous"]
+"Phasic Warp Ejector" = ["categories:miscellaneous"]
+"Sleeping Icon" = ["categories:miscellaneous"]
+"Used Gas Trap" = ["categories:miscellaneous"]
