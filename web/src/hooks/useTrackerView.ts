@@ -56,6 +56,7 @@ export function useTrackerView(): TrackerView | null {
     const bySource = bossesBySource(data)
     const bossStage = new Map(data.bosses.map((b) => [b.id, b.stage]))
     const containerGroup = new Map(data.containerGroups.flatMap((g) => g.sources.map((s) => [s, g.id] as const)))
+    const conditionGroup = new Map([...data.conditions.values()].map((c) => [c.id, c.group]))
     return new Map(
       data.items.map((i) => [
         i.key,
@@ -65,6 +66,7 @@ export function useTrackerView(): TrackerView | null {
           bossStage,
           itemContainers(data, i, difficulty),
           containerGroup,
+          conditionGroup,
         ),
       ]),
     )

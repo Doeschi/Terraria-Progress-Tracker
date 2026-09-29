@@ -19,6 +19,8 @@ class Mapping:
         self.drop_kinds = data.get("drops", {}).get("include_kinds", ["npc", "bag"])
         self.boss_ignore_items = data.get("drops", {}).get("boss_ignore_items", [])
         self.boss_stages = data.get("boss_stages", {})
+        # conditions of shop rows and drops (see conditions.py)
+        self.conditions = data.get("conditions", {})
         # container groups ("Found in") and icons of containers that are no item
         self.containers = data.get("containers", {})
         for group in self.containers.values():

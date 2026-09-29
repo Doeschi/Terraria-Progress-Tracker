@@ -3,7 +3,8 @@ import { compareVersions } from '@/lib/availability'
 import { chanceFor, dropsFor, type DropKind } from '@/lib/drops'
 import type { Difficulty, GameData, Item, PlatformId } from '@/lib/types'
 import { Coins, RarityIcon } from '../common'
-import { formatDate } from '@/lib/format'
+import { formatDate, nameOf } from '@/lib/format'
+import { conditionNames } from '@/lib/conditions'
 
 // Column catalogue of the item table. `value` is what the column sorts by,
 // `cell` how it is shown (defaults to the value).
@@ -69,7 +70,16 @@ export function buildColumns(data: GameData): ItemColumn[] {
       .join(', ')
   const event = names(data.events)
   const biome = names(data.biomes)
-  const time = names(data.times)
+  const condition = (ids: string[]) => ids.map((id) => data.conditions.get(id)?.name ?? id).join(', ')
+  // "Merchant, Witch Doctor (Night, Jungle, after Plantera)" - conditions of the shop rows
+  const soldBy = (i: Item) =>
+    i.vendors
+      .map((v) => {
+        const rows = (data.shops.get(i.key) ?? []).filter((r) => r.vendor === v)
+        const conds = [...new Set(rows.flatMap((r) => conditionNames(data, r)))]
+        return `${nameOf(data.vendors, v)}${conds.length ? ` (${conds.join(', ')})` : ''}`
+      })
+      .join(', ')
 
   return [
     // ------------------------------------------------------------ item
@@ -157,7 +167,15 @@ export function buildColumns(data: GameData): ItemColumn[] {
       value: (i, t) => bestChance(i, t.difficulty, 'found'),
       cell: (i, t) => dropList(i, t.difficulty, 'found'),
     },
-    { id: 'vendors', label: 'Sold by', group: 'Source', size: 160, value: (i) => vendor(i.vendors) },
+    {
+      id: 'vendors',
+      label: 'Sold by',
+      group: 'Source',
+      size: 220,
+      // sorts by vendor name, shows the conditions of the shop rows
+      value: (i) => vendor(i.vendors),
+      cell: (i) => soldBy(i),
+    },
     {
       id: 'events',
       label: 'Events',
@@ -180,7 +198,7 @@ export function buildColumns(data: GameData): ItemColumn[] {
         ) : null,
     },
     { id: 'biomes', label: 'Biome', group: 'Source', size: 200, value: (i) => biome(i.biomes ?? []) },
-    { id: 'times', label: 'Time of day', group: 'Source', size: 110, value: (i) => time(i.times ?? []) },
+    { id: 'conditions', label: 'Conditions', group: 'Source', size: 160, value: (i) => condition(i.conditions) },
     {
       id: 'platforms',
       label: 'Platforms',

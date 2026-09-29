@@ -9,25 +9,25 @@
     "id": "underground",
     "name": "Underground & caverns",
     "icon": "https://terraria.wiki.gg/images/Stone_Block.png",
-    "count": 76
+    "count": 77
   },
   {
     "id": "desert",
     "name": "Desert",
     "icon": "https://terraria.wiki.gg/images/Sand_Block.png",
-    "count": 27
+    "count": 29
   },
   {
     "id": "snow",
     "name": "Snow",
     "icon": "https://terraria.wiki.gg/images/Snow_Block.png",
-    "count": 41
+    "count": 46
   },
   {
     "id": "jungle",
     "name": "Jungle",
     "icon": "https://terraria.wiki.gg/images/Mud_Block.png",
-    "count": 55
+    "count": 63
   },
   {
     "id": "jungle-temple",
@@ -39,31 +39,31 @@
     "id": "corruption",
     "name": "Corruption",
     "icon": "https://terraria.wiki.gg/images/Ebonstone_Block.png",
-    "count": 36
+    "count": 46
   },
   {
     "id": "crimson",
     "name": "Crimson",
     "icon": "https://terraria.wiki.gg/images/Crimstone_Block.png",
-    "count": 35
+    "count": 45
   },
   {
     "id": "hallow",
     "name": "Hallow",
     "icon": "https://terraria.wiki.gg/images/Pearlstone_Block.png",
-    "count": 35
+    "count": 37
   },
   {
     "id": "ocean",
     "name": "Ocean",
     "icon": "https://terraria.wiki.gg/images/Seashell.png",
-    "count": 9
+    "count": 10
   },
   {
     "id": "dungeon",
     "name": "Dungeon",
     "icon": "https://terraria.wiki.gg/images/Blue_Brick.png",
-    "count": 35
+    "count": 34
   },
   {
     "id": "underworld",
@@ -75,13 +75,13 @@
     "id": "space",
     "name": "Space",
     "icon": "https://terraria.wiki.gg/images/Fallen_Star.gif",
-    "count": 6
+    "count": 9
   },
   {
     "id": "glowing-mushroom",
     "name": "Glowing Mushroom",
     "icon": "https://terraria.wiki.gg/images/Glowing_Mushroom.png",
-    "count": 8
+    "count": 9
   },
   {
     "id": "granite-marble",
@@ -93,13 +93,13 @@
     "id": "spider-nest",
     "name": "Spider Nest",
     "icon": "https://terraria.wiki.gg/images/Cobweb.png",
-    "count": 4
+    "count": 3
   },
   {
     "id": "graveyard",
     "name": "Graveyard",
     "icon": "https://terraria.wiki.gg/images/Tombstone.png",
-    "count": 15
+    "count": 42
   },
   {
     "id": "meteorite",

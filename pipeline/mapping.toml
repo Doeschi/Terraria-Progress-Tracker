@@ -1030,6 +1030,18 @@ name = "Angler quest reward"
 icon_file = "Angler.png"
 match = ["tag:quest rewards", "listcat:quest rewards"]
 
+# The wiki tags the Dye Trader's rewards for Strange Plants as "quest rewards" too.
+# They are listed in the section `section` of `page` ({{item|...}}), grouped under
+# headings like "After defeating [[Plantera]]" (conditions of the reward); for them
+# this entry replaces `replaces`.
+[obtain.strange-plant]
+name = "Strange Plant reward"
+icon_file = "Dye Trader.png"
+match = []
+page = "Dye Trader"
+section = "Rewards"
+replaces = "quest-reward"
+
 [obtain.unobtainable]
 name = "Unobtainable"
 match = ["unobtainable:1", "tag:unobtainable", "listcat:unobtainable items"]
@@ -1173,79 +1185,104 @@ match = ["tag:vendor:skeleton merchant"]
 
 [events.goblin-army]
 name = "Goblin Army"
+links = ["goblin army"]
 icon = "Goblin Battle Standard"
 environments = ["Goblin Army"]
 
 [events.pirate-invasion]
 name = "Pirate Invasion"
+links = ["pirate invasion"]
 icon = "Pirate Map"
 environments = ["Pirate Invasion"]
 
 [events.frost-legion]
 name = "Frost Legion"
+links = ["frost legion"]
 icon = "Snow Globe"
 environments = ["Frost Legion"]
 
 [events.martian-madness]
 name = "Martian Madness"
+links = ["martian madness"]
 icon = "Martian Conduit Plating"
 environments = ["Martian Madness"]
 
 [events.old-ones-army]
 name = "Old One's Army"
+links = ["old one's army"]
 icon = "Eternia Crystal"
 match = ["tag:dd2"]
 environments = ["Old One's Army"]
 
 [events.blood-moon]
 name = "Blood Moon"
+links = ["blood moon"]
 icon = "Bloody Tear"
 match = ["tag:during:blood moon"]
 environments = ["Blood Moon"]
 
 [events.solar-eclipse]
 name = "Solar Eclipse"
+links = ["solar eclipse"]
 icon = "Solar Tablet"
 match = ["tag:during:solar eclipse"]
 environments = ["Solar Eclipse"]
 
 [events.pumpkin-moon]
 name = "Pumpkin Moon"
+links = ["pumpkin moon"]
 icon = "Pumpkin Moon Medallion"
 environments = ["Pumpkin Moon"]
 
 [events.frost-moon]
 name = "Frost Moon"
+links = ["frost moon"]
 icon = "Naughty Present"
 environments = ["Frost Moon"]
 
 [events.lunar-events]
 name = "Lunar Events"
+links = ["lunar events"]
 icon = "Celestial Sigil"
 environments = ["Lunar Events"]
 
 [events.rain]
 name = "Rain"
+links = ["rain", "thunderstorm"]
 icon = "Umbrella"
 environments = ["Rain"]
 
 [events.windy-day]
 name = "Windy Day"
+links = ["windy day"]
 icon = "Blue Kite"
 environments = ["Windy Day"]
 
 [events.sandstorm]
 name = "Sandstorm"
+links = ["sandstorm"]
 icon = "Sandstorm in a Bottle"
 environments = ["Sandstorm"]
 
 [events.blizzard]
 name = "Blizzard"
+links = ["blizzard"]
 icon = "Blizzard in a Bottle"
 environments = ["Blizzard"]
 
+[events.party]
+name = "Party"
+icon = "Party Hat"
+links = ["party"]
+
+[events.lantern-night]
+name = "Lantern Night"
+icon = "Confetti"
+links = ["lantern night"]
+
 [events.halloween]
 name = "Halloween"
+links = ["halloween"]
 icon = "Goodie Bag"
 match = ["tag:during:halloween"]
 environments = ["Halloween"]
@@ -1253,6 +1290,7 @@ drop_conditions = ["Halloween"]
 
 [events.christmas]
 name = "Christmas"
+links = ["christmas"]
 icon = "Present"
 match = ["tag:during:christmas"]
 environments = ["Christmas"]
@@ -1271,72 +1309,87 @@ drop_conditions = ["Christmas"]
 
 [biomes.forest-surface]
 name = "Forest & surface"
+links = ["forest", "surface"]
 icon = "Acorn"
 environments = ["Forest", "Surface"]
 alone = ["Night", "Day", "Rain"]  # only when the whole condition ("Night" = surface at night)
 
 [biomes.underground]
 name = "Underground & caverns"
+links = ["underground", "cavern", "caverns"]
+phrases = ['^\s*(cavern|underground)\b']
 icon = "Stone Block"
 environments = ["Underground", "Cavern"]
 
 [biomes.desert]
 name = "Desert"
+links = ["desert", "underground desert"]
 icon = "Sand Block"
 environments = ["Desert", "Underground Desert", "Sandstorm"]
 
 [biomes.snow]
 name = "Snow"
+links = ["snow biome", "snow", "underground snow"]
 icon = "Snow Block"
 environments = ["Snow biome", "Ice biome", "Blizzard"]
 
 [biomes.jungle]
 name = "Jungle"
+links = ["jungle", "underground jungle"]
 icon = "Mud Block"
 environments = ["Jungle", "Underground Jungle", "Bee Hive (biome)"]
 
 [biomes.jungle-temple]
 name = "Jungle Temple"
+links = ["jungle temple"]
 icon = "Lihzahrd Brick"
 environments = ["Jungle Temple"]
 
 [biomes.corruption]
 name = "Corruption"
+links = ["corruption", "the corruption", "corrupt", "underground corruption"]
 icon = "Ebonstone Block"
 environments = ["The Corruption", "Underground Corruption", "Corrupted Desert"]
 
 [biomes.crimson]
 name = "Crimson"
+links = ["crimson", "the crimson", "underground crimson"]
 icon = "Crimstone Block"
 environments = ["The Crimson", "Underground Crimson", "Crimson Desert"]
 
 [biomes.hallow]
 name = "Hallow"
+links = ["hallow", "the hallow", "underground hallow"]
 icon = "Pearlstone Block"
 environments = ["The Hallow", "Underground Hallow", "Hallowed Desert"]
 
 [biomes.ocean]
 name = "Ocean"
+links = ["ocean"]
 icon = "Seashell"
 environments = ["Ocean"]
 
 [biomes.dungeon]
 name = "Dungeon"
+links = ["dungeon"]
 icon = "Blue Brick"
 environments = ["Dungeon", "Dungeon entrance"]
 
 [biomes.underworld]
 name = "Underworld"
+links = ["underworld"]
 icon = "Ash Block"
 environments = ["The Underworld"]
 
 [biomes.space]
 name = "Space"
+links = ["space", "space altitudes"]
 icon = "Fallen Star"
 environments = ["Space"]
 
 [biomes.glowing-mushroom]
 name = "Glowing Mushroom"
+links = ["glowing mushroom biome", "surface mushroom biome"]
 icon = "Glowing Mushroom"
 environments = ["Glowing Mushroom biome"]
 
@@ -1352,11 +1405,13 @@ environments = ["Spider Nest"]
 
 [biomes.graveyard]
 name = "Graveyard"
+links = ["graveyard"]
 icon = "Tombstone"
 environments = ["Graveyard"]
 
 [biomes.meteorite]
 name = "Meteorite"
+links = ["meteorite"]
 icon = "Meteorite"
 environments = ["Meteorite (biome)"]
 
@@ -1374,6 +1429,176 @@ environments = ["Night"]
 name = "Day"
 icon = "Sunflower"
 environments = ["Day"]
+
+
+# ---------------------------------------------------------------- conditions
+# When a shop row (vendor pages, `{{shop row|item|condition}}`) or a drop is
+# available. Condition texts are split into clauses; the wiki links of a clause
+# (and `phrases`, regular expressions on its plain text) give the ids below or
+# those of [events.*] / [biomes.*] (their `links` / `phrases`). Links after a
+# negation ("before", "except", "not", ...) in the same clause are skipped.
+# "After <boss>" conditions come from [bosses] (the boss's name and drop sources,
+# in a clause with "defeated"). `group` = one of [conditions.groups]; groups with
+# `filter = true` make up the "Conditions" filter, the others are only shown.
+# Moon phases come from {{moons|n}} (the wiki's moon icons "Moon-n.png").
+# Unmapped links are reported unless they name an item or are in ignore_links.
+
+[conditions]
+ignore_links = [
+    "moon phase", "pylons", "golf score", "health", "mana", "multiplayer", "vampirism",
+    "world is infected", "i am error", "npc drops", "coins", "altar", "clown", "tax collector",
+    "expert mode", "master mode", "portable storage", "fairies",
+    # "if the Party Girl is present"
+    "party girl", "mechanic", "wizard", "angler", "pirate",
+]
+
+[conditions.groups]
+time = { name = "Time of day", filter = true }
+moon = { name = "Moon phase", filter = true }
+boss = { name = "After a boss", filter = true }
+weather = { name = "Weather", filter = true }
+progress = { name = "Progress", filter = false }
+seed = { name = "World seed", filter = false }
+
+[conditions.day]
+name = "Day"
+group = "time"
+icon = "Sunflower"
+links = ["day", "daytime"]
+
+[conditions.night]
+name = "Night"
+group = "time"
+icon = "Moon Charm"
+links = ["night"]
+
+[conditions.moon-1]
+name = "Full moon"
+group = "moon"
+icon_file = "Moon-1.png"
+moon = 1
+links = ["full moon"]
+
+[conditions.moon-2]
+name = "Waning gibbous"
+group = "moon"
+icon_file = "Moon-2.png"
+moon = 2
+
+[conditions.moon-3]
+name = "Third quarter"
+group = "moon"
+icon_file = "Moon-3.png"
+moon = 3
+
+[conditions.moon-4]
+name = "Waning crescent"
+group = "moon"
+icon_file = "Moon-4.png"
+moon = 4
+
+[conditions.moon-5]
+name = "New moon"
+group = "moon"
+icon_file = "Moon-5.png"
+moon = 5
+links = ["new moon"]
+
+[conditions.moon-6]
+name = "Waxing crescent"
+group = "moon"
+icon_file = "Moon-6.png"
+moon = 6
+
+[conditions.moon-7]
+name = "First quarter"
+group = "moon"
+icon_file = "Moon-7.png"
+moon = 7
+
+[conditions.moon-8]
+name = "Waxing gibbous"
+group = "moon"
+icon_file = "Moon-8.png"
+moon = 8
+
+[conditions.windy]
+name = "Windy (wind ≥ 20 mph)"
+group = "weather"
+icon = "Pin Wheel"
+links = ["wind"]
+
+[conditions.after-any-mech]
+name = "Any mechanical boss"
+group = "boss"
+icon = "Mechanical Skull"
+links = ["mechanical boss"]
+after = true
+
+[conditions.after-all-mechs]
+name = "All three mechanical bosses"
+group = "boss"
+icon = "Mechanical Skull"
+links = ["mechanical bosses"]
+after = true
+
+[conditions.hardmode]
+name = "Hardmode"
+group = "progress"
+icon = "Pwnhammer"
+links = ["hardmode"]
+phrases = ['^\s*hardmode\b']
+
+[conditions.pre-hardmode]
+name = "Pre-Hardmode only"
+group = "progress"
+icon = "Copper Shortsword"
+links = ["pre-hardmode"]
+
+[conditions.seed-remix]
+name = "Remix seed"
+group = "seed"
+links = ["remix", "don't dig up"]
+
+[conditions.seed-ftw]
+name = "For the Worthy seed"
+group = "seed"
+links = ["for the worthy"]
+
+[conditions.seed-zenith]
+name = "Zenith seed"
+group = "seed"
+links = ["zenith (seed)", "get fixed boi"]
+
+[conditions.seed-drunk]
+name = "Drunk world seed"
+group = "seed"
+links = ["celebration mk 10", "drunk world", "05162020"]
+
+[conditions.seed-ntb]
+name = "Not the Bees seed"
+group = "seed"
+links = ["not the bees"]
+
+[conditions.seed-constant]
+name = "The Constant seed"
+group = "seed"
+links = ["the constant", "what a horrible night to have a curse"]
+
+[conditions.seed-no-traps]
+name = "No Traps seed"
+group = "seed"
+links = ["no traps"]
+
+[conditions.seed-rainbow-road]
+name = "Rainbow Road seed"
+group = "seed"
+links = ["rainbow road"]
+
+[conditions.seed-other]
+name = "Special seed"
+group = "seed"
+links = ["invisible plane", "winter is coming", "we don't even test for that", "secret world seeds"]
 
 
 # --------------------------------------------------------------------- flags

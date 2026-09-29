@@ -9,7 +9,7 @@
     "id": "vendor",
     "name": "Bought from NPCs",
     "icon": "https://terraria.wiki.gg/images/Gold_Coin.png",
-    "count": 790
+    "count": 807
   },
   {
     "id": "drop",
@@ -51,7 +51,13 @@
     "id": "quest-reward",
     "name": "Angler quest reward",
     "icon": "https://terraria.wiki.gg/images/Angler.png",
-    "count": 76
+    "count": 43
+  },
+  {
+    "id": "strange-plant",
+    "name": "Strange Plant reward",
+    "icon": "https://terraria.wiki.gg/images/Dye_Trader.png",
+    "count": 33
   },
   {
     "id": "unobtainable",

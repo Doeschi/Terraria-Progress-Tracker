@@ -6,7 +6,8 @@ import { cn } from '@/lib/utils'
 import { DIFFICULTY_LABELS } from '@/lib/availability'
 import { chestSearchHint } from '@/lib/world'
 import { chanceFor, dropKind, dropsFor, modeLabel, otherChances, quantityFor, type DropKind } from '@/lib/drops'
-import type { Drop, GameData, Item } from '@/lib/types'
+import type { Drop, GameData, Item, ShopRow } from '@/lib/types'
+import { conditionNames } from '@/lib/conditions'
 import { Button } from '@/components/ui/button'
 import { Checkbox } from '@/components/ui/checkbox'
 import { Sheet, SheetContent, SheetDescription, SheetTitle } from '@/components/ui/sheet'
@@ -226,12 +227,6 @@ function DetailContent({ item, Title }: { item: Item; Title: TitleComponent }) {
 
         <Section title="How to get it">
           <Chips values={item.obtain.map((o) => nameOf(data.obtain, o))} empty="Unknown" />
-          {item.vendors.length > 0 && (
-            <p className="text-sm">
-              <span className="text-muted-foreground">Sold by </span>
-              {item.vendors.map((v) => nameOf(data.vendors, v)).join(', ')}
-            </p>
-          )}
           {item.events.length > 0 && (
             <p className="text-sm">
               <span className="text-muted-foreground">{item.eventOnly ? 'Only during ' : 'During '}</span>
@@ -240,6 +235,7 @@ function DetailContent({ item, Title }: { item: Item; Title: TitleComponent }) {
           )}
         </Section>
 
+        <SoldBySection data={data} item={item} />
         <DropsSection data={data} item={item} difficulty={pt.difficulty} kind="dropped" />
         <DropsSection data={data} item={item} difficulty={pt.difficulty} kind="found" />
 
@@ -263,6 +259,44 @@ function DetailContent({ item, Title }: { item: Item; Title: TitleComponent }) {
         </Section>
       </div>
     </>
+  )
+}
+
+/** Vendors with the conditions of their shop rows ("In Hardmode, during night, …", moon phases). */
+function SoldBySection({ data, item }: { data: GameData; item: Item }) {
+  if (!item.vendors.length) return null
+  const rows = data.shops.get(item.key) ?? []
+  return (
+    <Section title="Sold by">
+      <ul className="divide-y rounded-lg border">
+        {item.vendors.flatMap((v) => {
+          const vendor = data.vendors.find((x) => x.id === v)
+          // a vendor without shop row (only tagged in the Items table) sells it without condition
+          const own = rows.filter((r) => r.vendor === v)
+          return (own.length ? own : [{ vendor: v } as ShopRow]).map((r, n) => (
+            <li key={`${v}-${n}`} className="flex items-center gap-3 px-3 py-2">
+              <WikiIcon src={vendor?.icon} alt="" size={32} />
+              <div className="min-w-0 flex-1">
+                <div className="text-sm font-medium">{vendor?.name ?? v}</div>
+                {r.text && <div className="text-xs text-muted-foreground">{r.text}</div>}
+              </div>
+              {r.moons && (
+                <span className="flex shrink-0 gap-0.5">
+                  {r.moons.map((m) => {
+                    const moon = data.conditions.get(`moon-${m}`)
+                    return (
+                      <span key={m} title={moon?.name}>
+                        <WikiIcon src={moon?.icon} alt={moon?.name ?? ''} size={18} />
+                      </span>
+                    )
+                  })}
+                </span>
+              )}
+            </li>
+          ))
+        })}
+      </ul>
+    </Section>
   )
 }
 
@@ -332,6 +366,7 @@ function DropRow({
   const chance = chanceFor(drop, difficulty)
   const others = otherChances(drop, difficulty)
   const quantity = quantityFor(drop, difficulty)
+  const conditions = conditionNames(data, drop)
   // where / when the enemy spawns, e.g. "Forest & surface · night"
   const spawn = [
     (source?.biomes ?? []).map((b) => nameOf(data.biomes, b)).join(', '),
@@ -350,6 +385,18 @@ function DropRow({
           {quantity && <span>× {quantity}</span>}
           {modes && <span>{modes}</span>}
         </div>
+        {(conditions.length > 0 || drop.note) && (
+          <div className="flex flex-wrap gap-1 pt-0.5">
+            {conditions.map((c) => (
+              <span key={c} className="rounded bg-muted px-1.5 text-[11px] text-muted-foreground">
+                {c}
+              </span>
+            ))}
+            {drop.note && !conditions.length && (
+              <span className="text-[11px] text-muted-foreground italic">{drop.note}</span>
+            )}
+          </div>
+        )}
       </div>
       <span className="flex shrink-0 flex-col items-end text-right tabular-nums" title={drop.rate}>
         <span className="text-sm font-medium">{chance !== undefined ? `${chance}%` : drop.rate}</span>

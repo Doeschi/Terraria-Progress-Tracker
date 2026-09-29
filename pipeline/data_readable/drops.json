@@ -1521,10 +1521,7 @@
       "name": "Tax Collector",
       "kind": "npc",
       "icon": "https://terraria.wiki.gg/images/Tax_Collector.png",
-      "npcId": 441,
-      "biomes": [
-        "underworld"
-      ]
+      "npcId": 441
     },
     "creature-from-the-deep": {
       "id": "creature-from-the-deep",
@@ -2755,10 +2752,7 @@
       "name": "Stylist",
       "kind": "npc",
       "icon": "https://terraria.wiki.gg/images/Stylist.png",
-      "npcId": 353,
-      "biomes": [
-        "spider-nest"
-      ]
+      "npcId": 353
     },
     "wyvern": {
       "id": "wyvern",
@@ -2775,10 +2769,7 @@
       "name": "Mechanic",
       "kind": "npc",
       "icon": "https://terraria.wiki.gg/images/Mechanic.png",
-      "npcId": 124,
-      "biomes": [
-        "dungeon"
-      ]
+      "npcId": 124
     },
     "clothier": {
       "id": "clothier",
@@ -3301,10 +3292,7 @@
       "name": "Guide",
       "kind": "npc",
       "icon": "https://terraria.wiki.gg/images/Guide.png",
-      "npcId": 22,
-      "biomes": [
-        "forest-surface"
-      ]
+      "npcId": 22
     },
     "queen-bee": {
       "id": "queen-bee",
@@ -7247,7 +7235,8 @@
           "normal",
           "expert",
           "master"
-        ]
+        ],
+        "note": "During wave 15 and up"
       }
     ],
     "EverscreamPetItem": [
@@ -8699,6 +8688,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "biomes": [
+          "underground"
         ]
       },
       {
@@ -9269,6 +9261,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "biomes": [
+          "underground"
         ]
       },
       {
@@ -9753,6 +9748,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "biomes": [
+          "underground"
         ]
       },
       {
@@ -10475,6 +10473,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "biomes": [
+          "underground"
         ]
       },
       {
@@ -11197,6 +11198,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "biomes": [
+          "underground"
         ]
       },
       {
@@ -11678,6 +11682,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "biomes": [
+          "underground"
         ]
       },
       {
@@ -11698,6 +11705,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "biomes": [
+          "underground"
         ]
       },
       {
@@ -11960,6 +11970,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "biomes": [
+          "underground"
         ]
       },
       {
@@ -17260,6 +17273,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "biomes": [
+          "underground"
         ]
       },
       {
@@ -17726,6 +17742,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "biomes": [
+          "underground"
         ]
       },
       {
@@ -18727,6 +18746,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "conditions": [
+          "seed-other"
         ]
       }
     ],
@@ -23481,6 +23503,11 @@
           "normal",
           "expert",
           "master"
+        ],
+        "note": "Corrupt and Crimson only",
+        "biomes": [
+          "corruption",
+          "crimson"
         ]
       },
       {
@@ -24103,6 +24130,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "conditions": [
+          "seed-constant"
         ]
       },
       {
@@ -24145,6 +24175,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "conditions": [
+          "seed-constant"
         ]
       },
       {
@@ -25443,6 +25476,10 @@
           "normal",
           "expert",
           "master"
+        ],
+        "note": "Hallow only",
+        "biomes": [
+          "hallow"
         ]
       },
       {
@@ -28137,6 +28174,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "biomes": [
+          "underground"
         ]
       },
       {
@@ -28849,6 +28889,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "biomes": [
+          "underground"
         ]
       },
       {
@@ -29793,6 +29836,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "biomes": [
+          "underground"
         ]
       },
       {
@@ -30235,6 +30281,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "biomes": [
+          "underground"
         ]
       },
       {
@@ -31179,6 +31228,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "biomes": [
+          "underground"
         ]
       },
       {
@@ -32183,6 +32235,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "biomes": [
+          "underground"
         ]
       },
       {
@@ -32705,6 +32760,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "biomes": [
+          "underground"
         ]
       },
       {
@@ -33913,6 +33971,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "biomes": [
+          "underground"
         ]
       },
       {
@@ -34409,7 +34470,8 @@
           "normal",
           "expert",
           "master"
-        ]
+        ],
+        "note": "when the Dungeon is not present; ''see conditions''"
       },
       {
         "source": "dungeon-crate",
@@ -34947,7 +35009,8 @@
           "normal",
           "expert",
           "master"
-        ]
+        ],
+        "note": "when the Dungeon is not present; ''see conditions''"
       },
       {
         "source": "dungeon-crate",
@@ -35003,7 +35066,8 @@
           "normal",
           "expert",
           "master"
-        ]
+        ],
+        "note": "when the Dungeon is not present; ''see conditions''"
       },
       {
         "source": "dungeon-crate",
@@ -41807,7 +41871,8 @@
           "normal",
           "expert",
           "master"
-        ]
+        ],
+        "note": "when a Hellforge is not present; ''see conditions''"
       },
       {
         "source": "hellstone-crate",
@@ -45593,7 +45658,8 @@
           "normal",
           "expert",
           "master"
-        ]
+        ],
+        "note": "During wave 15 and up"
       }
     ],
     "PumpkingMasterTrophy": [
@@ -45729,7 +45795,8 @@
           "normal",
           "expert",
           "master"
-        ]
+        ],
+        "note": "During wave 15 and up"
       }
     ],
     "IceQueenTrophy": [
@@ -45745,7 +45812,8 @@
           "normal",
           "expert",
           "master"
-        ]
+        ],
+        "note": "During wave 15 and up"
       }
     ],
     "IceQueenPetItem": [
@@ -45909,6 +45977,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "conditions": [
+          "seed-constant"
         ]
       },
       {
@@ -45951,6 +46022,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "conditions": [
+          "seed-constant"
         ]
       },
       {
@@ -45993,6 +46067,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "conditions": [
+          "seed-constant"
         ]
       },
       {
@@ -47661,7 +47738,8 @@
           "normal",
           "expert",
           "master"
-        ]
+        ],
+        "note": "Only if name is Jim"
       }
     ],
     "TaxCollectorsStickOfDoom": [
@@ -49246,6 +49324,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "conditions": [
+          "hardmode"
         ]
       }
     ],
@@ -49469,6 +49550,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "biomes": [
+          "underground"
         ]
       }
     ],
@@ -49727,7 +49811,8 @@
           "normal",
           "expert",
           "master"
-        ]
+        ],
+        "note": "During wave 15 and up"
       }
     ],
     "SantankMountItem": [
@@ -50535,6 +50620,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "conditions": [
+          "seed-rainbow-road"
         ]
       },
       {
@@ -50555,6 +50643,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "conditions": [
+          "seed-rainbow-road"
         ]
       },
       {
@@ -50575,6 +50666,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "conditions": [
+          "seed-rainbow-road"
         ]
       },
       {
@@ -50615,6 +50709,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "conditions": [
+          "seed-rainbow-road"
         ]
       },
       {
@@ -50635,6 +50732,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "conditions": [
+          "seed-rainbow-road"
         ]
       }
     ],
@@ -50745,6 +50845,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "conditions": [
+          "seed-constant"
         ]
       },
       {
@@ -50948,6 +51051,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "conditions": [
+          "seed-remix"
         ]
       },
       {
@@ -50968,6 +51074,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "conditions": [
+          "seed-remix"
         ]
       },
       {
@@ -52241,6 +52350,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "biomes": [
+          "underground"
         ]
       },
       {
@@ -52323,6 +52435,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "biomes": [
+          "underground"
         ]
       },
       {
@@ -52385,6 +52500,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "biomes": [
+          "underground"
         ]
       },
       {
@@ -52447,6 +52565,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "biomes": [
+          "underground"
         ]
       },
       {
@@ -52589,6 +52710,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "biomes": [
+          "underground"
         ]
       },
       {
@@ -52771,7 +52895,8 @@
           "normal",
           "expert",
           "master"
-        ]
+        ],
+        "note": "Only if name is Whitney"
       }
     ],
     "DjinnLamp": [
@@ -53275,6 +53400,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "events": [
+          "halloween"
         ]
       },
       {
@@ -53295,6 +53423,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "events": [
+          "halloween"
         ]
       },
       {
@@ -53315,6 +53446,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "events": [
+          "halloween"
         ]
       },
       {
@@ -53335,6 +53469,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "events": [
+          "halloween"
         ]
       },
       {
@@ -53355,6 +53492,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "events": [
+          "halloween"
         ]
       },
       {
@@ -53375,6 +53515,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "events": [
+          "halloween"
         ]
       },
       {
@@ -53395,6 +53538,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "events": [
+          "halloween"
         ]
       },
       {
@@ -53415,6 +53561,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "events": [
+          "halloween"
         ]
       },
       {
@@ -53435,6 +53584,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "events": [
+          "halloween"
         ]
       },
       {
@@ -53455,6 +53607,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "events": [
+          "halloween"
         ]
       },
       {
@@ -53475,6 +53630,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "events": [
+          "halloween"
         ]
       },
       {
@@ -53495,6 +53653,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "events": [
+          "halloween"
         ]
       }
     ],
@@ -53517,6 +53678,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "conditions": [
+          "night"
         ]
       },
       {
@@ -53537,6 +53701,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "conditions": [
+          "day"
         ]
       },
       {
@@ -53557,6 +53724,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "events": [
+          "halloween"
         ]
       }
     ],
@@ -53579,6 +53749,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "conditions": [
+          "night"
         ]
       },
       {
@@ -53599,6 +53772,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "conditions": [
+          "day"
         ]
       },
       {
@@ -53619,6 +53795,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "events": [
+          "halloween"
         ]
       }
     ],
@@ -53641,6 +53820,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "conditions": [
+          "night"
         ]
       },
       {
@@ -53661,6 +53843,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "conditions": [
+          "day"
         ]
       },
       {
@@ -53681,6 +53866,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "events": [
+          "halloween"
         ]
       }
     ],
@@ -53703,6 +53891,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "conditions": [
+          "night"
         ]
       },
       {
@@ -53723,6 +53914,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "conditions": [
+          "day"
         ]
       },
       {
@@ -53743,6 +53937,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "events": [
+          "halloween"
         ]
       }
     ],
@@ -53765,6 +53962,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "conditions": [
+          "night"
         ]
       },
       {
@@ -53785,6 +53985,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "conditions": [
+          "day"
         ]
       },
       {
@@ -53805,6 +54008,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "events": [
+          "halloween"
         ]
       }
     ],
@@ -53847,6 +54053,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "events": [
+          "halloween"
         ]
       }
     ],
@@ -53889,6 +54098,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "events": [
+          "halloween"
         ]
       }
     ],
@@ -53911,6 +54123,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "conditions": [
+          "day"
         ]
       },
       {
@@ -53931,6 +54146,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "events": [
+          "halloween"
         ]
       },
       {
@@ -53951,6 +54169,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "conditions": [
+          "night"
         ]
       }
     ],
@@ -53973,6 +54194,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "conditions": [
+          "day"
         ]
       },
       {
@@ -53993,6 +54217,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "events": [
+          "halloween"
         ]
       },
       {
@@ -54013,6 +54240,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "conditions": [
+          "night"
         ]
       }
     ],
@@ -54035,6 +54265,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "biomes": [
+          "ocean"
         ]
       },
       {
@@ -54055,6 +54288,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "biomes": [
+          "ocean"
         ]
       },
       {
@@ -54075,6 +54311,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "biomes": [
+          "ocean"
         ]
       },
       {
@@ -54095,6 +54334,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "biomes": [
+          "ocean"
         ]
       }
     ],
@@ -54117,6 +54359,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "biomes": [
+          "ocean"
         ]
       },
       {
@@ -54137,6 +54382,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "biomes": [
+          "ocean"
         ]
       },
       {
@@ -54157,6 +54405,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "biomes": [
+          "ocean"
         ]
       },
       {
@@ -54177,6 +54428,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "biomes": [
+          "ocean"
         ]
       }
     ],
@@ -54239,6 +54493,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "events": [
+          "halloween"
         ]
       },
       {
@@ -54259,6 +54516,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "events": [
+          "halloween"
         ]
       },
       {
@@ -54279,6 +54539,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "biomes": [
+          "ocean"
         ]
       }
     ],
@@ -54341,6 +54604,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "events": [
+          "halloween"
         ]
       },
       {
@@ -54361,6 +54627,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "events": [
+          "halloween"
         ]
       },
       {
@@ -54381,6 +54650,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "biomes": [
+          "ocean"
         ]
       }
     ],
@@ -54423,6 +54695,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "events": [
+          "halloween"
         ]
       },
       {
@@ -54443,6 +54718,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "biomes": [
+          "ocean"
         ]
       },
       {
@@ -54463,6 +54741,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "conditions": [
+          "night"
         ]
       },
       {
@@ -54483,6 +54764,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "events": [
+          "halloween"
         ]
       },
       {
@@ -54503,6 +54787,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "conditions": [
+          "day"
         ]
       }
     ],
@@ -54545,6 +54832,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "events": [
+          "halloween"
         ]
       },
       {
@@ -54565,6 +54855,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "biomes": [
+          "ocean"
         ]
       },
       {
@@ -54585,6 +54878,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "conditions": [
+          "night"
         ]
       },
       {
@@ -54605,6 +54901,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "events": [
+          "halloween"
         ]
       },
       {
@@ -54625,6 +54924,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "conditions": [
+          "day"
         ]
       }
     ],
@@ -54687,6 +54989,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "events": [
+          "halloween"
         ]
       },
       {
@@ -54707,6 +55012,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "events": [
+          "halloween"
         ]
       },
       {
@@ -54727,6 +55035,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "biomes": [
+          "ocean"
         ]
       }
     ],
@@ -54789,6 +55100,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "events": [
+          "halloween"
         ]
       },
       {
@@ -54809,6 +55123,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "events": [
+          "halloween"
         ]
       },
       {
@@ -54829,6 +55146,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "biomes": [
+          "ocean"
         ]
       }
     ],
@@ -54871,6 +55191,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "events": [
+          "halloween"
         ]
       },
       {
@@ -54891,6 +55214,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "biomes": [
+          "underworld"
         ]
       }
     ],
@@ -54933,6 +55259,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "events": [
+          "halloween"
         ]
       },
       {
@@ -54953,6 +55282,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "biomes": [
+          "underworld"
         ]
       }
     ],
@@ -55017,6 +55349,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "conditions": [
+          "hardmode"
         ]
       }
     ],
@@ -55039,6 +55374,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "conditions": [
+          "hardmode"
         ]
       }
     ],
@@ -55061,6 +55399,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "conditions": [
+          "hardmode"
         ]
       }
     ],
@@ -55083,6 +55424,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "conditions": [
+          "hardmode"
         ]
       }
     ],
@@ -55105,6 +55449,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "conditions": [
+          "hardmode"
         ]
       }
     ],
@@ -55127,6 +55474,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "conditions": [
+          "hardmode"
         ]
       }
     ],
@@ -55149,6 +55499,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "conditions": [
+          "hardmode"
         ]
       }
     ],
@@ -55171,6 +55524,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "conditions": [
+          "hardmode"
         ]
       }
     ],
@@ -55193,6 +55549,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "conditions": [
+          "hardmode"
         ]
       }
     ],
@@ -55215,6 +55574,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "conditions": [
+          "hardmode"
         ]
       }
     ],
@@ -55237,6 +55599,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "conditions": [
+          "hardmode"
         ]
       }
     ],
@@ -55259,6 +55624,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "conditions": [
+          "hardmode"
         ]
       }
     ],
@@ -55281,6 +55649,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "conditions": [
+          "hardmode"
         ]
       }
     ],
@@ -55303,6 +55674,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "conditions": [
+          "hardmode"
         ]
       }
     ],
@@ -55325,6 +55699,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "conditions": [
+          "hardmode"
         ]
       }
     ],
@@ -55347,6 +55724,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "conditions": [
+          "hardmode"
         ]
       }
     ],
@@ -55369,6 +55749,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "conditions": [
+          "hardmode"
         ]
       }
     ],
@@ -55391,6 +55774,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "conditions": [
+          "hardmode"
         ]
       }
     ],
@@ -55413,6 +55799,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "conditions": [
+          "hardmode"
         ]
       }
     ],
@@ -55435,6 +55824,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "conditions": [
+          "hardmode"
         ]
       }
     ],
@@ -55457,6 +55849,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "conditions": [
+          "hardmode"
         ]
       }
     ],
@@ -55479,6 +55874,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "conditions": [
+          "hardmode"
         ]
       }
     ],
@@ -55501,6 +55899,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "conditions": [
+          "hardmode"
         ]
       }
     ],
@@ -55523,6 +55924,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "conditions": [
+          "hardmode"
         ]
       }
     ],
@@ -55545,6 +55949,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "conditions": [
+          "hardmode"
         ]
       }
     ],
@@ -55567,6 +55974,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "conditions": [
+          "hardmode"
         ]
       }
     ],
@@ -55589,6 +55999,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "conditions": [
+          "hardmode"
         ]
       }
     ],
@@ -55611,6 +56024,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "conditions": [
+          "hardmode"
         ]
       }
     ],
@@ -55633,6 +56049,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "conditions": [
+          "hardmode"
         ]
       }
     ],
@@ -55655,6 +56074,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "conditions": [
+          "hardmode"
         ]
       }
     ],
@@ -56999,6 +57421,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "biomes": [
+          "underground"
         ]
       },
       {
@@ -57041,6 +57466,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "biomes": [
+          "underground"
         ]
       },
       {
@@ -57083,6 +57511,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "biomes": [
+          "underground"
         ]
       },
       {
@@ -57125,6 +57556,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "biomes": [
+          "underground"
         ]
       },
       {
@@ -57167,6 +57601,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "biomes": [
+          "underground"
         ]
       },
       {
@@ -57209,6 +57646,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "biomes": [
+          "underground"
         ]
       },
       {
@@ -57251,6 +57691,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "biomes": [
+          "underground"
         ]
       },
       {
@@ -57373,6 +57816,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "biomes": [
+          "underground"
         ]
       }
     ],
@@ -57395,6 +57841,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "biomes": [
+          "underground"
         ]
       }
     ],
@@ -57437,6 +57886,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "biomes": [
+          "underground"
         ]
       }
     ],
@@ -57479,6 +57931,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "biomes": [
+          "underground"
         ]
       }
     ],
@@ -57501,6 +57956,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "biomes": [
+          "underground"
         ]
       }
     ],
@@ -57523,6 +57981,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "biomes": [
+          "underground"
         ]
       }
     ],
@@ -57545,6 +58006,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "biomes": [
+          "underground"
         ]
       }
     ],
@@ -57567,6 +58031,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "biomes": [
+          "underground"
         ]
       },
       {
@@ -57609,6 +58076,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "biomes": [
+          "underground"
         ]
       }
     ],
@@ -57673,6 +58143,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "biomes": [
+          "underground"
         ]
       }
     ],
@@ -57695,6 +58168,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "biomes": [
+          "underground"
         ]
       },
       {
@@ -57737,6 +58213,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "biomes": [
+          "underground"
         ]
       },
       {
@@ -57779,6 +58258,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "biomes": [
+          "underground"
         ]
       },
       {
@@ -57841,6 +58323,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "biomes": [
+          "underground"
         ]
       }
     ],
@@ -57883,6 +58368,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "biomes": [
+          "underground"
         ]
       }
     ],
@@ -57925,6 +58413,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "biomes": [
+          "underground"
         ]
       }
     ],
@@ -57947,6 +58438,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "biomes": [
+          "underground"
         ]
       }
     ],
@@ -57969,6 +58463,13 @@
           "normal",
           "expert",
           "master"
+        ],
+        "conditions": [
+          "seed-drunk",
+          "seed-rainbow-road"
+        ],
+        "biomes": [
+          "underground"
         ]
       },
       {
@@ -59357,6 +59858,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "conditions": [
+          "seed-constant"
         ]
       },
       {
@@ -59399,6 +59903,12 @@
           "normal",
           "expert",
           "master"
+        ],
+        "conditions": [
+          "seed-constant"
+        ],
+        "biomes": [
+          "underground"
         ]
       },
       {
@@ -61025,6 +61535,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "conditions": [
+          "seed-other"
         ]
       }
     ],
@@ -61053,7 +61566,8 @@
         "modes": [
           "expert",
           "master"
-        ]
+        ],
+        "note": "when no Portal Gun in inventory"
       },
       {
         "source": "chest",
@@ -61073,6 +61587,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "conditions": [
+          "seed-other"
         ]
       }
     ],
@@ -61095,6 +61612,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "conditions": [
+          "seed-constant"
         ]
       },
       {
@@ -61137,6 +61657,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "conditions": [
+          "seed-constant"
         ]
       },
       {
@@ -61179,6 +61702,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "conditions": [
+          "seed-constant"
         ]
       },
       {
@@ -61221,6 +61747,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "conditions": [
+          "seed-constant"
         ]
       },
       {
@@ -61263,6 +61792,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "conditions": [
+          "seed-constant"
         ]
       },
       {
@@ -61305,6 +61837,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "conditions": [
+          "seed-constant"
         ]
       },
       {
@@ -61347,6 +61882,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "conditions": [
+          "seed-constant"
         ]
       },
       {
@@ -61389,6 +61927,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "conditions": [
+          "seed-constant"
         ]
       },
       {
@@ -61431,6 +61972,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "conditions": [
+          "seed-constant"
         ]
       },
       {
@@ -61473,6 +62017,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "conditions": [
+          "seed-constant"
         ]
       }
     ],
@@ -61495,6 +62042,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "conditions": [
+          "seed-constant"
         ]
       }
     ],
@@ -61517,6 +62067,12 @@
           "normal",
           "expert",
           "master"
+        ],
+        "conditions": [
+          "seed-constant"
+        ],
+        "biomes": [
+          "underground"
         ]
       },
       {
@@ -61815,6 +62371,10 @@
           "normal",
           "expert",
           "master"
+        ],
+        "note": "if wind speed ≥ 20 mph",
+        "conditions": [
+          "windy"
         ]
       }
     ],
@@ -61831,6 +62391,10 @@
           "normal",
           "expert",
           "master"
+        ],
+        "note": "if wind speed ≥ 20 mph",
+        "conditions": [
+          "windy"
         ]
       }
     ],
@@ -61909,6 +62473,10 @@
           "normal",
           "expert",
           "master"
+        ],
+        "note": "if wind speed ≥ 20 mph",
+        "conditions": [
+          "windy"
         ]
       }
     ],
@@ -61925,6 +62493,10 @@
           "normal",
           "expert",
           "master"
+        ],
+        "note": "if wind speed ≥ 20 mph",
+        "conditions": [
+          "windy"
         ]
       }
     ],
@@ -62135,6 +62707,10 @@
           "normal",
           "expert",
           "master"
+        ],
+        "note": "if wind speed ≥ 20 mph",
+        "conditions": [
+          "windy"
         ]
       }
     ],
@@ -62173,6 +62749,10 @@
           "normal",
           "expert",
           "master"
+        ],
+        "note": "if wind speed ≥ 20 mph",
+        "conditions": [
+          "windy"
         ]
       },
       {
@@ -62187,6 +62767,10 @@
           "normal",
           "expert",
           "master"
+        ],
+        "note": "if wind speed ≥ 20 mph",
+        "conditions": [
+          "windy"
         ]
       },
       {
@@ -62201,6 +62785,10 @@
           "normal",
           "expert",
           "master"
+        ],
+        "note": "if wind speed ≥ 20 mph",
+        "conditions": [
+          "windy"
         ]
       },
       {
@@ -62215,6 +62803,10 @@
           "normal",
           "expert",
           "master"
+        ],
+        "note": "if wind speed ≥ 20 mph",
+        "conditions": [
+          "windy"
         ]
       }
     ],
@@ -62231,6 +62823,10 @@
           "normal",
           "expert",
           "master"
+        ],
+        "note": "if wind speed ≥ 20 mph",
+        "conditions": [
+          "windy"
         ]
       }
     ],
@@ -62306,6 +62902,10 @@
           "normal",
           "expert",
           "master"
+        ],
+        "note": "if wind speed ≥ 20 mph",
+        "conditions": [
+          "windy"
         ]
       }
     ],
@@ -65555,7 +66155,8 @@
           "normal",
           "expert",
           "master"
-        ]
+        ],
+        "note": "when the Dungeon is not present; ''see conditions''"
       }
     ],
     "BlueSlabWallUnsafe": [
@@ -65565,7 +66166,8 @@
           "normal",
           "expert",
           "master"
-        ]
+        ],
+        "note": "when the Dungeon is not present; ''see conditions''"
       }
     ],
     "BlueBrickWallUnsafe": [
@@ -65575,7 +66177,8 @@
           "normal",
           "expert",
           "master"
-        ]
+        ],
+        "note": "when the Dungeon is not present; ''see conditions''"
       }
     ],
     "GreenTiledWallUnsafe": [
@@ -65585,7 +66188,8 @@
           "normal",
           "expert",
           "master"
-        ]
+        ],
+        "note": "when the Dungeon is not present; ''see conditions''"
       }
     ],
     "GreenSlabWallUnsafe": [
@@ -65595,7 +66199,8 @@
           "normal",
           "expert",
           "master"
-        ]
+        ],
+        "note": "when the Dungeon is not present; ''see conditions''"
       }
     ],
     "GreenBrickWallUnsafe": [
@@ -65605,7 +66210,8 @@
           "normal",
           "expert",
           "master"
-        ]
+        ],
+        "note": "when the Dungeon is not present; ''see conditions''"
       }
     ],
     "PinkTiledWallUnsafe": [
@@ -65615,7 +66221,8 @@
           "normal",
           "expert",
           "master"
-        ]
+        ],
+        "note": "when the Dungeon is not present; ''see conditions''"
       }
     ],
     "PinkSlabWallUnsafe": [
@@ -65625,7 +66232,8 @@
           "normal",
           "expert",
           "master"
-        ]
+        ],
+        "note": "when the Dungeon is not present; ''see conditions''"
       }
     ],
     "PinkBrickWallUnsafe": [
@@ -65635,7 +66243,8 @@
           "normal",
           "expert",
           "master"
-        ]
+        ],
+        "note": "when the Dungeon is not present; ''see conditions''"
       }
     ],
     "Uzi": [
@@ -66877,6 +67486,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "biomes": [
+          "underground"
         ]
       }
     ],
@@ -66899,6 +67511,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "biomes": [
+          "underground"
         ]
       },
       {
@@ -66919,6 +67534,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "biomes": [
+          "underground"
         ]
       }
     ],
@@ -67335,7 +67953,8 @@
           "normal",
           "expert",
           "master"
-        ]
+        ],
+        "note": "when defeated on the same day as the Wall of Flesh"
       },
       {
         "source": "wall-of-flesh",
@@ -67349,7 +67968,8 @@
           "normal",
           "expert",
           "master"
-        ]
+        ],
+        "note": "when defeated on the same day as the Eye of Cthulhu"
       }
     ],
     "Binoculars": [
@@ -67464,7 +68084,8 @@
           "normal",
           "expert",
           "master"
-        ]
+        ],
+        "note": "when no altar is placed in world with additional conditions"
       }
     ],
     "CrimsonSeeds": [
@@ -67513,7 +68134,8 @@
           "normal",
           "expert",
           "master"
-        ]
+        ],
+        "note": "when no altar is placed in world with additional conditions"
       }
     ],
     "EyeMask": [
@@ -69011,7 +69633,8 @@
           "normal",
           "expert",
           "master"
-        ]
+        ],
+        "note": "During wave 15 and up"
       }
     ],
     "WitchBroom": [
@@ -69472,7 +70095,8 @@
           "normal",
           "expert",
           "master"
-        ]
+        ],
+        "note": "when the Jungle Temple is not present; ''see conditions''"
       },
       {
         "source": "treasure-bag-golem",
@@ -70705,7 +71329,8 @@
         "modes": [
           "expert",
           "master"
-        ]
+        ],
+        "note": "when no Demon Heart used yet"
       }
     ],
     "WallOfFleshGoatMountItem": [
@@ -71322,7 +71947,8 @@
           "normal",
           "expert",
           "master"
-        ]
+        ],
+        "note": "when the Jungle Temple is not present; ''see conditions''"
       }
     ],
     "LihzahrdWallUnsafe": [
@@ -71338,7 +71964,8 @@
           "normal",
           "expert",
           "master"
-        ]
+        ],
+        "note": "when the Jungle Temple is not present; ''see conditions''"
       }
     ],
     "LihzahrdAltar": [
@@ -71354,7 +71981,8 @@
           "normal",
           "expert",
           "master"
-        ]
+        ],
+        "note": "when the Jungle Temple is not present; ''see conditions''"
       }
     ]
   }

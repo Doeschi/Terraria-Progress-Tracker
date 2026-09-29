@@ -4,6 +4,7 @@ import html
 import re
 from collections import Counter, defaultdict
 
+from .conditions import condition_text
 from .common import (
     OTHER_SOURCES,
     file_from_wikitext,
@@ -68,8 +69,10 @@ class Drops:
     ("Golden furniture" -> every furniture item named "Golden ...").
     """
 
-    def __init__(self, drop_rows, npc_rows, items, include_kinds, containers=None, container_icons=None):
+    def __init__(self, drop_rows, npc_rows, items, include_kinds, containers=None, container_icons=None,
+                 conditions=None):
         self.include = set(include_kinds)
+        self.conditions = conditions
         self.containers = containers or {}
         self.container_icons = container_icons or {}
         by_name, by_page = defaultdict(list), defaultdict(list)
@@ -194,6 +197,16 @@ class Drops:
             "quantities": per_mode(quantity, modes, lambda q: q.strip() or None),
             "modes": modes,
         }
+        if self.conditions:
+            # conditions in the chance ("In [[Remix]] worlds", "[[Halloween]]") and in notes of
+            # the custom column ("(if [[Wind|wind speed]] ≥ 20 mph)")
+            notes = re.findall(r'<span class="note">(.*?)</span>', html.unescape(row["custom"]))
+            parsed = self.conditions.parse(" ".join([row["rate"], *notes]))
+            note = condition_text(" ".join(notes)).strip("() ")
+            entry["note"] = note or None
+            entry["conditions"] = parsed["condition"] or None
+            entry["events"] = parsed["event"] or None
+            entry["biomes"] = parsed["biome"] or None
         entry = {k: v for k, v in entry.items() if v is not None}
         for item in items:
             if entry not in self.drops[item["key"]]:
@@ -288,6 +301,7 @@ def derive_events(items, drops, events, bosses):
             # container drops (chests, crates, trees) add no events; they also make an item
             # obtainable outside of events
             if drops.sources[d["source"]]["kind"] != "container":
+                found |= set(d.get("events", ()))
                 text = d.get("rate", "")
                 found |= {eid for eid, words in drop_conditions.items()
                           if any(w.lower() in text.lower() for w in words)}
@@ -322,8 +336,9 @@ def spawn_biomes(environment, biomes):
 
 def derive_spawns(items, drops, mapping):
     """Biome and time of day per drop source (for display) and per item (filters):
-    where / when the enemies spawn that drop an item. Main bosses and enemies
-    that only spawn during events are left out."""
+    where / when the enemies spawn that drop an item. Main bosses, enemies that
+    only spawn during events and town NPCs are left out (a town NPC's environment
+    is where it is found before moving in, e.g. the Stylist in a Spider Nest)."""
     biomes, times = mapping.sections["biomes"], mapping.sections["times"]
     event_conditions = {eid: set(e.get("environments", [])) for eid, e in mapping.sections["events"].items()}
     time_conditions = {tid: set(t.get("environments", [])) for tid, t in times.items()}
@@ -334,6 +349,8 @@ def derive_spawns(items, drops, mapping):
     for sid, source in drops.sources.items():
         npc = drops.npc_for(source["name"]) if source["kind"] == "npc" else None
         if not npc or norm_name(source["name"]) in main_boss_sources:
+            continue
+        if npc["type"].strip().lower().startswith("npc"):  # town NPCs: "nPC", "nPC^goblin"
             continue
         env = npc["environment"]
         if spawn_events(env, event_conditions):

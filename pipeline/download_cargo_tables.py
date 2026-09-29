@@ -18,7 +18,8 @@ Outputs (in --out, default raw/ next to this script):
   page_wikitext.json  source text of a few wiki pages (Alternative crafting
                    ingredients: the items of the "Any ..." recipe groups;
                    Bestiary/List: all bestiary entries in the in-game order;
-                   MediaWiki:Common.css: the platform icons of {{eicons}})
+                   MediaWiki:Common.css: the platform icons of {{eicons}};
+                   the vendor pages: their shops with the conditions per item)
   page_html.json   rendered HTML of a few wiki pages (NPC IDs: internal names,
                    ids and images of all NPCs)
 
@@ -39,6 +40,7 @@ import os
 import re
 import sys
 import time
+import tomllib
 from pathlib import Path
 
 import requests
@@ -52,8 +54,9 @@ CONTACT_FILE = Path(__file__).resolve().parent / "contact.txt"
 DEFAULT_TABLES = ["Items", "Exclusive", "History", "Drops", "NPCs", "Equipinfo", "Recipes"]
 # Pages whose image lists are saved (icons for rarities and coins).
 DEFAULT_PAGES = ["Rarity", "Coins", "Difficulty"]
-# Pages whose wikitext is saved.
+# Pages whose wikitext is saved; the vendor pages of mapping.toml are added (their shops).
 DEFAULT_WIKITEXT = ["Alternative crafting ingredients", "Bestiary/List", "MediaWiki:Common.css"]
+MAPPING_FILE = Path(__file__).resolve().parent / "mapping.toml"
 # Pages whose rendered HTML is saved (tables filled by templates/queries).
 DEFAULT_HTML = ["NPC IDs"]
 PAGE_SIZE = 500
@@ -75,6 +78,14 @@ def safe_alias(field):
     """Result keys must be plain identifiers (e.g. '3ds' -> 'f_3ds')."""
     alias = re.sub(r"\W", "_", field).lstrip("_") or "f"
     return f"f_{alias}" if alias[0].isdigit() else alias
+
+
+def vendor_pages():
+    """Wiki pages of the vendors in mapping.toml ([vendors.*] `page`, else `name`)."""
+    if not MAPPING_FILE.exists():
+        return []
+    vendors = tomllib.loads(MAPPING_FILE.read_text(encoding="utf-8")).get("vendors", {})
+    return [v.get("page", v["name"]) for v in vendors.values()]
 
 
 def contact(cli_value=None):
@@ -212,10 +223,10 @@ def main():
                     help="output folder (default: raw/ next to this script)")
     ap.add_argument("--pages", nargs="*", default=DEFAULT_PAGES,
                     help="wiki pages whose image lists are saved (default: Rarity Coins Difficulty)")
-    ap.add_argument("--wikitext", nargs="*", default=DEFAULT_WIKITEXT,
-                    help="wiki pages whose source text is saved "
-                         "(default: 'Alternative crafting ingredients' 'Bestiary/List' "
-                         "'MediaWiki:Common.css')")
+    ap.add_argument("--wikitext", nargs="*", default=DEFAULT_WIKITEXT + vendor_pages(),
+                    help="wiki pages whose source text is saved (default: 'Alternative crafting "
+                         "ingredients' 'Bestiary/List' 'MediaWiki:Common.css' and the vendor "
+                         "pages of mapping.toml); added to the pages saved before")
     ap.add_argument("--html", nargs="*", default=DEFAULT_HTML,
                     help="wiki pages whose rendered HTML is saved (default: 'NPC IDs')")
     ap.add_argument("--delay", type=float, default=0.5, help="seconds between requests")
@@ -250,8 +261,10 @@ def main():
 
     if args.wikitext:
         log("Reading page wikitext…")
-        texts = {page: wiki.wikitext(page) for page in args.wikitext}
         texts_path = args.out / "page_wikitext.json"
+        # merge, so downloading only some pages keeps the others
+        texts = json.loads(texts_path.read_text(encoding="utf-8")) if texts_path.exists() else {}
+        texts.update({page: wiki.wikitext(page) for page in args.wikitext})
         texts_path.write_text(json.dumps(texts, indent=1, ensure_ascii=False), encoding="utf-8")
         log(f"wrote {texts_path}")
 

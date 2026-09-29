@@ -31,6 +31,8 @@ same files go to --readable (default data_readable/ next to this script):
   drops.json          drop sources (enemies, bosses, treasure bags, containers) and the drops per item
   bosses.json         curated bosses by stage with their drop sources (mapping.toml)
   containers.json     container groups (chests, crates, ...) with their drop sources (mapping.toml)
+  shops.json          per item the vendor shop rows (vendor, condition text and ids, moon phases)
+  conditions.json     condition groups and conditions (time, moon phase, bosses, wind, seeds, ...)
   recipes.json        crafting recipes (result, stations, ingredients), crafting
                       stations with the items that provide them, "Any ..."
                       ingredient groups, shimmer transmutations
@@ -76,6 +78,14 @@ from trackerdata.items import (
 from trackerdata.drops import derive_events, derive_spawns, Drops
 from trackerdata.recipes import missing_items_file, recipe_only_items, recipes_file
 from trackerdata.bestiary import bestiary_file
+from trackerdata.conditions import (
+    apply_conditions,
+    apply_page_rewards,
+    Conditions,
+    page_rewards,
+    shop_rows,
+    shops_file,
+)
 from trackerdata.icons import icon_files, platform_icons
 
 HERE = Path(__file__).resolve().parent
@@ -137,8 +147,9 @@ def build(raw_dir, mapping_path, out_dir, readable_dir=None):
                                update_starts(items, list(mapping.versions)))
     items.sort(key=lambda i: (i["id"], i["name"]))
     make_keys_unique(items)
+    conditions = Conditions(mapping, items)
     drops = Drops(read_csv(raw_dir / "drops.csv"), npc_rows, items, mapping.drop_kinds,
-                  mapping.containers, mapping.container_icons)
+                  mapping.containers, mapping.container_icons, conditions)
 
     for pattern, _ in mapping.manual:
         if not mapping.manual_used[pattern]:
@@ -163,10 +174,16 @@ def build(raw_dir, mapping_path, out_dir, readable_dir=None):
     derive_events(items, drops, mapping.sections["events"], mapping.bosses)
     derive_spawns(items, drops, mapping)
 
+    log("Shops and conditions…")
+    wikitext = json.loads((raw_dir / "page_wikitext.json").read_text(encoding="utf-8"))
+    shops = shop_rows(wikitext, mapping.sections["vendors"], drops.resolve, conditions)
+    rewards = page_rewards(mapping.sections["obtain"], wikitext, drops.resolve, conditions)
+    apply_page_rewards(items, rewards, mapping.sections["obtain"])
+    apply_conditions(items, drops, shops, conditions, mapping, rewards)
+
     outputs = {"items.json": items}
     for section in LIST_SECTIONS:
         outputs[f"{section}.json"] = section_file(section, mapping.sections[section], items)
-    wikitext = json.loads((raw_dir / "page_wikitext.json").read_text(encoding="utf-8"))
     p_icons = platform_icons(wikitext.get("MediaWiki:Common.css", ""))
     outputs["platforms.json"] = [
         {k: v for k, v in {"id": p, "name": PLATFORM_NAMES[p], "icon": p_icons.get(p),
@@ -179,6 +196,9 @@ def build(raw_dir, mapping_path, out_dir, readable_dir=None):
     outputs["drops.json"] = drops.drops_file()
     outputs["bosses.json"] = drops.bosses_file(mapping.boss_stages, mapping.bosses, mapping.boss_ignore_items)
     outputs["containers.json"] = drops.containers_file()
+    outputs["shops.json"] = shops_file(shops)
+    outputs["conditions.json"] = conditions.conditions_file(
+        items, {b["id"]: b["icon"] for b in outputs["bosses.json"]["bosses"] if b.get("icon")})
 
     log("Recipes…")
     outputs["recipes.json"] = recipes_file(recipe_rows, items, mapping,

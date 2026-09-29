@@ -3,7 +3,7 @@
     "id": "merchant",
     "name": "Merchant",
     "icon": "https://terraria.wiki.gg/images/Merchant.png",
-    "count": 30
+    "count": 31
   },
   {
     "id": "arms-dealer",
@@ -15,13 +15,13 @@
     "id": "demolitionist",
     "name": "Demolitionist",
     "icon": "https://terraria.wiki.gg/images/Demolitionist.png",
-    "count": 12
+    "count": 13
   },
   {
     "id": "dryad",
     "name": "Dryad",
     "icon": "https://terraria.wiki.gg/images/Dryad.png",
-    "count": 52
+    "count": 55
   },
   {
     "id": "painter",
@@ -45,7 +45,7 @@
     "id": "stylist",
     "name": "Stylist",
     "icon": "https://terraria.wiki.gg/images/Stylist.png",
-    "count": 14
+    "count": 15
   },
   {
     "id": "golfer",
@@ -57,7 +57,7 @@
     "id": "zoologist",
     "name": "Zoologist",
     "icon": "https://terraria.wiki.gg/images/Zoologist.png",
-    "count": 39
+    "count": 40
   },
   {
     "id": "goblin-tinkerer",
@@ -69,19 +69,19 @@
     "id": "witch-doctor",
     "name": "Witch Doctor",
     "icon": "https://terraria.wiki.gg/images/Witch_Doctor.png",
-    "count": 24
+    "count": 25
   },
   {
     "id": "clothier",
     "name": "Clothier",
     "icon": "https://terraria.wiki.gg/images/Clothier.png",
-    "count": 60
+    "count": 61
   },
   {
     "id": "mechanic",
     "name": "Mechanic",
     "icon": "https://terraria.wiki.gg/images/Mechanic.png",
-    "count": 31
+    "count": 32
   },
   {
     "id": "party-girl",
@@ -111,7 +111,7 @@
     "id": "steampunker",
     "name": "Steampunker",
     "icon": "https://terraria.wiki.gg/images/Steampunker.png",
-    "count": 37
+    "count": 38
   },
   {
     "id": "cyborg",
@@ -129,18 +129,18 @@
     "id": "princess",
     "name": "Princess",
     "icon": "https://terraria.wiki.gg/images/Princess.png",
-    "count": 24
+    "count": 30
   },
   {
     "id": "traveling-merchant",
     "name": "Traveling Merchant",
     "icon": "https://terraria.wiki.gg/images/Traveling_Merchant.png",
-    "count": 116
+    "count": 122
   },
   {
     "id": "skeleton-merchant",
     "name": "Skeleton Merchant",
     "icon": "https://terraria.wiki.gg/images/Skeleton_Merchant.png",
-    "count": 33
+    "count": 34
   }
 ]

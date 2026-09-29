@@ -17,7 +17,7 @@ export const GROUP_KEYS = [
   'boss',
   'event',
   'biome',
-  'time',
+  'condition',
   'rarity',
   'version',
 ] as const
@@ -36,7 +36,7 @@ export const emptySelection = (): Selection => ({
   container: [],
   event: [],
   biome: [],
-  time: [],
+  condition: [],
 })
 
 export type ViewMode = 'all' | 'missing' | 'obtained' | 'ignored'
@@ -81,7 +81,8 @@ const CRAFTING: { id: string; name: string; iconItem: string }[] = [
   { id: CRAFT_CHESTS, name: 'Craftable from your chests', iconItem: 'Chest' },
 ]
 
-/** Entry ids of nested groups are prefixed: "cat:" / "sub:", "stage:" / "boss:" and "cgroup:" / "cont:". */
+/** Entry ids of nested groups are prefixed: "cat:" / "sub:", "stage:" / "boss:", "cgroup:" / "cont:"
+ * and "cond-group:" / "cond:". */
 export function buildFilterGroups(data: GameData): FilterGroup[] {
   const categories: FilterEntry[] = data.categories.map((c) => ({
     ...c,
@@ -112,6 +113,23 @@ export function buildFilterGroups(data: GameData): FilterGroup[] {
       return { id: `cont:${s}`, name: source?.name ?? s, icon: source?.icon, count: perSource.get(s) ?? 0 }
     }),
   }))
+  // filterable conditions by group: Time of day, Moon phase, After a boss, Weather
+  const all = [...data.conditions.values()]
+  const conditions: FilterEntry[] = data.conditionGroups
+    .filter((g) => g.filter)
+    .map((g) => {
+      const children = all
+        .filter((c) => c.group === g.id && c.count > 0)
+        .map((c) => ({ id: `cond:${c.id}`, name: c.name, icon: c.icon, count: c.count }))
+      return {
+        id: `cond-group:${g.id}`,
+        name: g.name,
+        icon: children[0]?.icon,
+        count: children.reduce((n, c) => n + c.count, 0),
+        children,
+      }
+    })
+    .filter((g) => g.children.length > 0)
   const groups: FilterGroup[] = [
     {
       key: 'progression',
@@ -156,7 +174,7 @@ export function buildFilterGroups(data: GameData): FilterGroup[] {
     { key: 'container', label: 'Found in', entries: containers },
     { key: 'event', label: 'Events', entries: data.events },
     { key: 'biome', label: 'Biome', entries: data.biomes },
-    { key: 'time', label: 'Time of day', entries: data.times },
+    { key: 'condition', label: 'Conditions', entries: conditions },
   ]
   return groups.sort((a, b) => GROUP_KEYS.indexOf(a.key) - GROUP_KEYS.indexOf(b.key))
 }
@@ -169,6 +187,7 @@ export function itemEntries(
   bossStage: Map<string, string>,
   containers: string[],
   containerGroup: Map<string, string>,
+  conditionGroup: Map<string, string>,
 ): Record<GroupKey, string[]> {
   const stages = new Set(bosses.map((b) => bossStage.get(b)))
   const containerGroups = new Set(containers.map((c) => containerGroup.get(c)).filter((g) => g !== undefined))
@@ -184,7 +203,10 @@ export function itemEntries(
     container: [...[...containerGroups].map((g) => `cgroup:${g}`), ...containers.map((c) => `cont:${c}`)],
     event: item.events,
     biome: item.biomes ?? [],
-    time: item.times ?? [],
+    condition: [
+      ...new Set(item.conditions.map((c) => `cond-group:${conditionGroup.get(c)}`)),
+      ...item.conditions.map((c) => `cond:${c}`),
+    ],
   }
 }
 

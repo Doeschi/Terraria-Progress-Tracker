@@ -28,6 +28,8 @@ the unchanged downloads in [`pipeline/raw/`](pipeline/raw).
 |------|----------|
 | `items.json` | All 6,194 items (key = internal name; 45 of them only known from recipes, see below) with id, icons, wiki page, stats, rarity, prices, platforms, and – derived – categories and subcategories, how they are obtained, vendors, events, biomes, time of day, the game update that added them and whether they are Expert/Master-only |
 | `drops.json` | 419 drop sources (enemies, bosses, treasure bags, chests, crates, grab bags, shaking trees) and 3,404 drops with chance and quantity **per game mode** (Classic / Expert / Master) |
+| `shops.json` | 817 shop rows of 24 vendors (from the vendor pages): per item the vendor, the wiki's condition text and the parsed conditions, events, biomes and moon phases |
+| `conditions.json` | Conditions of shop rows and drops: time of day, moon phases, after a boss, wind, Hardmode, world seeds – with item counts |
 | `containers.json` | The container sources grouped into Chests, Crates, Other containers and Trees, with item counts |
 | `bosses.json` | Bosses by progression stage, each with all drop sources that count for it (parts, treasure bag) |
 | `recipes.json` | 3,610 crafting recipes (current versions, platform-limited ones marked), 42 crafting stations with the items that provide them (stronger stations included), 34 "Any …" ingredient groups resolved to items, 286 shimmer transmutations |

@@ -25,6 +25,9 @@ export interface Item {
   biomes: string[]
   /** "night" / "day": dropped by enemies that only spawn then */
   times: string[]
+  /** filterable conditions (conditions.json ids) of its sources: enemies that only spawn then,
+   * drops and shop rows with the condition */
+  conditions: string[]
   platforms: PlatformId[]
   platformsKnown: boolean
   /** Desktop patch that added the item, e.g. "1.4.0.1" */
@@ -145,6 +148,39 @@ export interface Drop {
   quantities?: Partial<Record<DropMode, string>>
   /** game modes the drop exists in */
   modes: DropMode[]
+  /** conditions (conditions.json ids), events and biomes the drop is bound to */
+  conditions?: string[]
+  events?: string[]
+  biomes?: string[]
+  /** extra condition text, e.g. "if wind speed ≥ 20 mph" */
+  note?: string
+}
+
+/** An item in a vendor's shop and when it is sold. */
+export interface ShopRow {
+  vendor: string
+  /** the wiki's condition text, e.g. "In Hardmode, during night, in a Jungle." */
+  text?: string
+  conditions?: string[]
+  events?: string[]
+  biomes?: string[]
+  /** moon phases 1 (full) - 8 */
+  moons?: number[]
+}
+
+export interface ConditionGroup {
+  id: string
+  name: string
+  /** part of the "Conditions" filter (else only shown) */
+  filter: boolean
+}
+
+export interface ConditionEntry {
+  id: string
+  name: string
+  group: string
+  icon?: string
+  count: number
 }
 
 /** A group of containers ("Found in" filter): Chests, Crates, Other containers, Trees. */
@@ -286,6 +322,10 @@ export interface GameData {
   /** generic drops (coins, healing potions) that never count for a boss */
   bossIgnoreItems: Set<string>
   containerGroups: ContainerGroup[]
+  /** item key -> the shop rows that sell it */
+  shops: Map<string, ShopRow[]>
+  conditionGroups: ConditionGroup[]
+  conditions: Map<string, ConditionEntry>
   recipes: RecipeData
   bestiary: { types: BestiaryType[]; entries: BestiaryEntry[] }
   /** difficulty -> icon of the wiki */

@@ -328,15 +328,53 @@ GitHub Actions.
   a biome if an enemy that drops it spawns there (not exclusive). Surface and underground
   variants of a biome are combined (e.g. Corruption = surface, underground, corrupted desert).
 - **BI2** The spawn locations come from the `environment` of the `NPCs` table, grouped into
-  biomes in `mapping.toml` (`[biomes.*] environments`). Main bosses (own filter) and enemies
-  that only spawn during events (Events filter) are left out. "Bonus drop" sources
+  biomes in `mapping.toml` (`[biomes.*] environments`). Main bosses (own filter), enemies
+  that only spawn during events (Events filter) and town NPCs are left out – a town NPC's
+  environment is where it is found before moving in (e.g. the Stylist in a Spider Nest). "Bonus drop" sources
   ("Blue Slime (bonus drop)") use the spawn data of the normal enemy.
-- **BI3** Filter group "Time of day" (Night, Day): items dropped by enemies that only spawn at
-  night / by day.
+- **BI3** Replaced by the "Conditions" group (CO3): Day and Night are conditions there.
 - **BI4** Table columns "Biome" and "Time of day" (group Source; Biome is part of the "Where to
   get it" preset), and in the detail panel each drop source shows where and when it spawns.
 - **BI5** Enemies without spawn data on the wiki (e.g. the new 1.4.5 slime variants) give no
   biome.
+
+## CO – Conditions (vendors and drops)
+
+- **CO1** Vendor shops come from the vendor pages (`{{shop row|item|condition}}` in their source,
+  downloaded with the other page sources; the vendor list is `[vendors]` in `mapping.toml`).
+  Each shop row gives the item, the vendor and the condition as text, e.g. "In Hardmode, during
+  night, in a Jungle, when Plantera has been defeated." Items of the shops that the Items table
+  does not tag with the vendor get the vendor too.
+- **CO2** Condition texts of shop rows and drop rows are mapped to condition ids with the links
+  and phrases in `mapping.toml`; negated parts ("before defeating …", "except in Remix worlds",
+  "but not …") give no id. The build reports unmapped links. Types:
+  - Time of day: Day, Night; moon phases 1–8 (from `{{moons|…}}`, with the wiki's moon icons)
+  - Progress: after a boss (the bosses of the Bosses filter, plus "any mechanical boss" / "all
+    mechanical bosses"); Hardmode / Pre-Hardmode only (shown, not filtered – see Progression)
+  - Weather: wind speed ≥ 20 mph (e.g. kites)
+  - Events and biomes: go into the existing Events and Biome groups (EV, BI)
+  - World seeds, bestiary progress, items in the inventory, NPC names, platforms, …: shown only
+- **CO3** Filter group "Conditions" (replaces "Time of day"), nested: Time of day (Day, Night),
+  Moon phase (8 phases), After a boss (the bosses, any / all mechanical bosses), Weather (Windy).
+  An item belongs to a condition only if it can *only* be obtained under it: within a condition
+  group (time of day, moon phase, boss, weather) every source must be restricted – shop rows,
+  drops (an enemy that only spawns at night counts as a night source) – and the item belongs to
+  the conditions of its sources in that group. Containers, crafting, fishing, other obtain
+  methods and vendors without a shop row are unrestricted sources; shop rows only in special
+  seeds do not count. E.g. Leaf Wings → Night, after Plantera; Glowstick (Merchant at night,
+  Skeleton Merchant by day, enemies any time) → none. Events and Biome keep "can be obtained
+  during / in" (EV2, BI1).
+- **CO4** Events and Biome also count shop rows and drop conditions, e.g. Leaf Wings → Jungle,
+  Throwing Knife (Merchant, Blood Moon) → Blood Moon. "Event only" (EV4) also considers shop
+  rows: an item sold only during events (and not obtainable otherwise) is event-only.
+- **CO4a** The wiki tags the Dye Trader's rewards for Strange Plants as "quest rewards" like the
+  Angler's. They get their own "Obtained by" entry "Strange Plant reward" (33 dyes) from the
+  "Rewards" section of the Dye Trader page (`[obtain.strange-plant]` `page` / `section` /
+  `replaces`); its headings ("After defeating [[Plantera]]") are the conditions of the reward
+  (CO3), e.g. Wisp Dye → after Plantera. "Angler quest reward" keeps the Angler's 43 items.
+- **CO5** Detail panel: "Sold by" lists each vendor with icon and its condition text (moon
+  phases as icons). Drop rows show their condition names below the source. Table column "Sold
+  by" shows the vendors with short condition names; "Time of day" becomes "Conditions".
 
 ## ID – Item detail panel
 
@@ -595,5 +633,14 @@ GitHub Actions.
   data (or a data version in the JSON files), a diff report between two downloads (added /
   changed / removed items, renamed keys), a key-alias list for renamed items, and a notice in
   the app when checked items no longer exist in the data.
-- **Chests and crates as sources:** enable the `container` kind (D11) so items show e.g. "Gold
-  Chest 20%" in "Dropped by" / the detail panel, and make them filterable (with the picker).
+- **Cloud storage for the tracking file:** open and save the tracking file in Dropbox (first)
+  and Google Drive (later), for devices without a sync client (phones, tablets). No maintained
+  library covers both for a browser-only app, so a small adapter per service (sign in, find,
+  load, save): Dropbox with the official `dropbox` SDK (PKCE sign-in, long-lived token, app
+  folder), Google Drive with Google Identity Services + the Drive REST API (`drive.file` or the
+  hidden app folder; 1-hour tokens renewed silently). Both need an app registration with the
+  Pages URL as redirect (client ids in the code are fine; Dropbox starts in development mode,
+  up to 500 users). Detect changes from other devices with the file's revision (Dropbox `rev`,
+  Drive version) and ask before overwriting. Same autosave rules as the local file. Open
+  questions: visible file or hidden app folder; File-menu entries and "Continue" for cloud
+  files. (Already works today on PCs: save the file in the Dropbox / Drive sync folder.)

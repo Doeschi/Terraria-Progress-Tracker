@@ -33,13 +33,13 @@
     "id": "blood-moon",
     "name": "Blood Moon",
     "icon": "https://terraria.wiki.gg/images/Bloody_Tear.png",
-    "count": 22
+    "count": 43
   },
   {
     "id": "solar-eclipse",
     "name": "Solar Eclipse",
     "icon": "https://terraria.wiki.gg/images/Solar_Tablet.png",
-    "count": 32
+    "count": 34
   },
   {
     "id": "pumpkin-moon",
@@ -63,13 +63,13 @@
     "id": "rain",
     "name": "Rain",
     "icon": "https://terraria.wiki.gg/images/Umbrella.png",
-    "count": 12
+    "count": 13
   },
   {
     "id": "windy-day",
     "name": "Windy Day",
     "icon": "https://terraria.wiki.gg/images/Blue_Kite.png",
-    "count": 10
+    "count": 11
   },
   {
     "id": "sandstorm",
@@ -84,10 +84,22 @@
     "count": 2
   },
   {
+    "id": "party",
+    "name": "Party",
+    "icon": "https://terraria.wiki.gg/images/Party_Hat.png",
+    "count": 18
+  },
+  {
+    "id": "lantern-night",
+    "name": "Lantern Night",
+    "icon": "https://terraria.wiki.gg/images/Confetti.png",
+    "count": 1
+  },
+  {
     "id": "halloween",
     "name": "Halloween",
     "icon": "https://terraria.wiki.gg/images/Goodie_Bag.png",
-    "count": 3
+    "count": 16
   },
   {
     "id": "christmas",
