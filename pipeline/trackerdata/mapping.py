@@ -19,10 +19,19 @@ class Mapping:
         self.drop_kinds = data.get("drops", {}).get("include_kinds", ["npc", "bag"])
         self.boss_ignore_items = data.get("drops", {}).get("boss_ignore_items", [])
         self.boss_stages = data.get("boss_stages", {})
+        # container groups ("Found in") and icons of containers that are no item
+        self.containers = data.get("containers", {})
+        for group in self.containers.values():
+            group["match"] = [p.lower() for p in group.get("match", [])]
+        self.container_icons = {norm_name(k): v for k, v in data.get("container_icons", {}).items()}
         self.bosses = data.get("bosses", {})
         self.recipes = data.get("recipes", {})
         self.recipe_groups = data.get("recipe_groups", {})
         self.stations = data.get("stations", {})
+        # items only known from recipes: name pattern -> similar item used as template
+        self.recipe_items = data.get("recipe_items", {})
+        # items the wiki marks unobtainable that count as obtainable after all (normalised names)
+        self.obtainable = {norm_name(n) for n in data.get("unobtainable", {}).get("obtainable", [])}
         self.bestiary = data.get("bestiary", {})
         self.sections = {s: data.get(s, {}) for s in LIST_SECTIONS}
         for entries in self.sections.values():

@@ -127,6 +127,17 @@ class History:
         return page_intro
 
 
+def update_starts(items, order):
+    """[(first item id, update)] in update order, from items with their own page."""
+    starts, prev = [], -1
+    for v in order:
+        ids = [i["id"] for i in items if i.get("version") == v and i["page"] == i["name"] and i["id"] >= prev]
+        if ids:
+            prev = min(ids)
+            starts.append((prev, v))
+    return starts
+
+
 def correct_versions_by_id(items, order):
     """Item ids grow with every update. On shared pages the notes often only say
     "Added Gothic furniture", so the page's older date is used. Derive the first
@@ -134,12 +145,7 @@ def correct_versions_by_id(items, order):
     whose id is newer to that update. Only moves later: some old items were
     re-numbered (e.g. Copper Shortsword got id 3507 in 1.3)."""
     rank = {v: n for n, v in enumerate(order)}
-    starts, prev = [], -1
-    for v in order:
-        ids = [i["id"] for i in items if i.get("version") == v and i["page"] == i["name"] and i["id"] >= prev]
-        if ids:
-            prev = min(ids)
-            starts.append((prev, v))
+    starts = update_starts(items, order)
     moved = 0
     for item in items:
         if "version" not in item or item["page"] == item["name"]:
@@ -183,11 +189,21 @@ def build_item(row, mapping, schema, exclusive, history, equip, extra_keys=()):
     keys += [f"equip:{f}" for f in sorted(equip.get(int(row["itemid"]), ()))]
     keys.append(f"page:{norm_value(row['_pageName'])}")
     groups, flags, unmatched = mapping.apply(keys, row["name"])
+    # Unobtainable items only belong to "Unobtainable": other labels the wiki gives them are
+    # former or nominal sources (e.g. presents dropped until 1.2.2). mapping.toml can override.
+    if norm_name(row["name"]) in mapping.obtainable:
+        flags["unobtainable"] = False
+        groups["obtain"] = [o for o in groups["obtain"] if o != "unobtainable"]
+    elif flags.get("unobtainable"):
+        groups["obtain"] = ["unobtainable"]
     unmatched = {k for k in unmatched if not k.startswith(("equip:", "page:", "npc:", "drop:"))}
     platforms, known = platforms_of(row, exclusive)
     page = html.unescape(row["_pageName"])
     name = html.unescape(row["name"])
     introduced = history.introduced(name, page)
+    # the image field can name several files: "King Slime Relic.png / King Slime Relic (placed).png"
+    images = [f.strip() for f in row["imagefile"].split(" / ") if f.strip()]
+    placed = next((f for f in images[1:] if "(placed)" in f), None)
     internal = row["internalname"].strip()
     if internal.lower() in ("", "none"):  # some old-gen/3DS-only items have none
         internal = None
@@ -199,8 +215,8 @@ def build_item(row, mapping, schema, exclusive, history, equip, extra_keys=()):
         "internalName": internal,
         "page": page,
         "url": page_url(page),
-        "icon": image_url(row["imagefile"]),
-        "iconPlaced": image_url(file_from_wikitext(row["imageplaced"])),
+        "icon": image_url(images[0]) if images else None,
+        "iconPlaced": image_url(file_from_wikitext(row["imageplaced"]) or placed),
         "iconEquipped": image_url(file_from_wikitext(row["imageequipped"])),
         **groups,
         "platforms": platforms,

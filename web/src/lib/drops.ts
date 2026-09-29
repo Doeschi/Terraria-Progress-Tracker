@@ -10,12 +10,25 @@ const MODES: Record<Difficulty, DropMode[]> = {
   journey: ['normal', 'expert', 'master'],
 }
 
-/** Drops of the item that exist in this difficulty, highest chance (for it) first. */
-export function dropsFor(data: GameData, item: Item, difficulty: Difficulty): Drop[] {
+/** "dropped": by enemies, bosses and treasure bags; "found": in containers (chests, crates, trees, …). */
+export type DropKind = 'dropped' | 'found'
+
+/** Whether a drop comes from a container or from an enemy / treasure bag. */
+export function dropKind(data: GameData, drop: Drop): DropKind {
+  return data.dropSources.get(drop.source)?.kind === 'container' ? 'found' : 'dropped'
+}
+
+/** Drops of the item that exist in this difficulty, highest chance (for it) first; optionally of one kind. */
+export function dropsFor(data: GameData, item: Item, difficulty: Difficulty, kind?: DropKind): Drop[] {
   const modes = MODES[difficulty]
   return (data.drops.get(item.key) ?? [])
-    .filter((d) => d.modes.some((m) => modes.includes(m)))
+    .filter((d) => d.modes.some((m) => modes.includes(m)) && (!kind || dropKind(data, d) === kind))
     .sort((a, b) => (chanceFor(b, difficulty) ?? -1) - (chanceFor(a, difficulty) ?? -1))
+}
+
+/** Containers (source ids) the item is found in, in this difficulty. */
+export function itemContainers(data: GameData, item: Item, difficulty: Difficulty): string[] {
+  return [...new Set(dropsFor(data, item, difficulty, 'found').map((d) => d.source))]
 }
 
 /** The game mode whose chances apply; Journey shows Normal (its slider can use all). */

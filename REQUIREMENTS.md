@@ -52,8 +52,14 @@ GitHub Actions.
   1.99%" – and per game mode, since 300 drops have other chances or amounts in Expert/Master). Drop rows name
   items as text; they are matched by name, without a disambiguation suffix ("… (item)"), by wiki
   page ("Vampire set") and as furniture set ("Golden furniture"). Unmatched names are reported.
-- **D11** Which source kinds are used is set in `mapping.toml` (`[drops] include_kinds`). Now:
-  enemies/bosses and boss treasure bags; containers (chests, crates) are prepared but off.
+- **D11** Which source kinds are used is set in `mapping.toml` (`[drops] include_kinds`): enemies/bosses,
+  boss treasure bags and containers (chests, crates, lock boxes, grab bags, shaking trees).
+- **D11a** Container sources get a group from `mapping.toml` (`[containers]`, matched by name):
+  Chests, Crates, Trees (shaking a tree) and Other containers (lock boxes, Goodie Bag, Present,
+  Geode, …). Sources that are no item themselves (e.g. "Gold Chest (Dungeon)", "Shaking Forest
+  tree") get the icon of the item without the suffix or of a configured item (the tree's wood).
+  Container drops do not add events, biomes or times of day, and an item found in a container is
+  not "only obtainable during events".
 - **D12** Bosses are curated in `mapping.toml` (`[bosses]`, `[boss_stages]`): name, stage
   (pre-Hardmode, Hardmode, event), map icon and the drop sources that count for the boss (the
   boss, its parts, its treasure bag). Written to `bosses.json`.
@@ -77,6 +83,10 @@ GitHub Actions.
   "Enemy drops" uses the Drops table (`drop:npc`, not for blocks/furniture/equipment),
   "Critters" the NPCs table (`npc:critter`). The build runs the mapping twice so rules can use
   drop information (`drop:npc`, `drop:boss`).
+- **D18a** Category "Developer items" (not an obtain method – they come from treasure bags): the
+  items the wiki tags as developer items, plus the developer wings, which sit on the shared
+  "Wings" page without that tag and are matched by developer name ("Red's *", …; Jim's Cap is
+  no developer item). No subcategory per developer: treasure bags always give the full set.
 - **D17** Mapping rules can remove an entry again with `exclude` (e.g. "Other banners" excludes
   items tagged as enemy banner).
   Subcategories can also use `with_categories` / `without_categories` (the item's other
@@ -88,6 +98,28 @@ GitHub Actions.
 - **D7** Items with rarity Expert (-12) or Master (-13) that can only be obtained from drops or
   treasure bags get `minDifficulty` `expert` / `master`. Items that can also be crafted or
   bought are not restricted.
+- **D19** Unobtainable items (the wiki's `unobtainable` field, tag or category "Unobtainable
+  items") only belong to the obtain method "Unobtainable"; other labels the wiki gives them (e.g.
+  "Dropped by enemies" for presents that were dropped until 1.2.2) are dropped. A list in
+  `mapping.toml` (`[unobtainable] obtainable`) can override the wiki for single items.
+- **D20** When a drop, recipe or ingredient names an item that exists several times (same name,
+  different id), obtainable items are preferred (e.g. "Ogre Mask": the vanity mask, not the unused
+  variant).
+- **D21** The build warns about items marked unobtainable that still have a current source (drop,
+  recipe, vendor), so wiki mistakes become visible.
+- **D22** Items the wiki's Items table lacks but its Recipes table names with an id (45 in 1.4.5:
+  new doors and candelabras, Magic Shimmer Dropper, Trusty Chillet) are tracked like other items:
+  name, id, icon and recipe from the Recipes table, obtained by crafting, game update from the
+  item id, and page, categories, platforms and placement flags from a similar item set in
+  `mapping.toml` (`[recipe_items]`, name pattern -> template item). They have no stats, rarity
+  or prices; the detail panel says so. Recipe items without a template are reported and stay in
+  `missing_items.json`. When the wiki adds such an item to the Items table, the next build uses
+  that instead (same key from the name).
+- **D23** Icons are direct links to the wiki's image files. An image field naming several files
+  ("King Slime Relic.png / King Slime Relic (placed).png") uses the first as icon and a
+  "(placed)" one as placed image. `check_icons.py` checks all linked images through the wiki API
+  in batches (no downloads) and saves image files that are only redirects (direct link = 404) to
+  `raw/image_redirects.json`; the build then links their targets.
 
 ## F – Save file
 
@@ -144,6 +176,9 @@ GitHub Actions.
 - **P4** Platform, difficulty and game version can be changed later; checked state of items is
   kept even for items that are hidden by the new settings.
 
+- **P7** A new playthrough starts with all unobtainable items (D19) ignored, so they do not count
+  towards progress; they can be un-ignored like any other item. Existing playthroughs are not
+  changed.
 ## I – Items
 
 - **I1** Items are shown in a virtualized table with icon (loaded lazily from the wiki) and name.
@@ -181,7 +216,7 @@ GitHub Actions.
 ## FL – Filters and progress
 
 - **FL1** Filter groups, in this order: Progression (Pre-Hardmode / Hardmode; icons: Copper Shortsword, Pwnhammer), Categories (with
-  their subcategories nested below), Obtained by, Crafting (RC6), Sold by, Bosses, Events, Biome, Time of day, Rarity (shown
+  their subcategories nested below), Obtained by, Crafting (RC6), Sold by, Found in (B3b), Bosses, Events, Biome, Time of day, Rarity (shown
   with the wiki's rarity images, in in-game order) and Added in (game update). The same order is
   used in the active-filter bar.
 - **FL2** Every filter entry shows its icon, name, `obtained / total` and percentage, plus a
@@ -250,6 +285,13 @@ GitHub Actions.
 - **B3** Table column "Dropped by" (group Source, part of the "Where to get it" preset): the
   sources of the playthrough's difficulty with their chance *in that difficulty* (Classic and
   Journey: Normal chances); sorting uses the best of these chances.
+- **B3a** Table column "Found in" (group Source, "Where to get it" preset): the containers with
+  their chance, like B3; "Dropped by" only lists enemies, bosses and treasure bags.
+- **B3b** Filter group "Found in" (after Sold by): the container groups (Chests, Crates, Other
+  containers, Trees) with their containers nested below (collapsed), with icons and progress,
+  e.g. everything from Skyware Chests. Only container drops of the playthrough's difficulty count.
+- **B3c** The detail panel shows container drops in their own section "Found in" (below "Dropped
+  by"), with quantity and chance like the drops.
 - **B4** Nested filter groups work generally (a parent and its own children are never selected
   together), so further grouped sources can be added the same way.
 
@@ -391,8 +433,8 @@ GitHub Actions.
 
 - **AM1** The areas dialog shows a schematic map of the attached world: the world outline with
   its depth layers (space, surface, underground, caverns, underworld – from the world header),
-  markers for spawn and dungeon, every chest (and display) as a dot, and the areas as
-  rectangles. Hovering shows the in-game coordinates (compass / depth) and tile position; chest
+  a marker for the spawn point (no dungeon marker), every chest (and display) as a dot, and the
+  areas as rectangles. Hovering shows the in-game coordinates (compass / depth) and tile position; chest
   dots show their name.
 - **AM2** Pan (drag in pan mode) and zoom (mouse wheel, buttons, "fit"). Works with mouse and touch.
 - **AM3** In draw mode, dragging on the map draws a new area; afterwards it is named in the area
@@ -411,8 +453,12 @@ GitHub Actions.
   as natural (world generation loot).
 - **PC2** D and N can be changed (map toolbar, "Detection"); stored in the browser. Map, sync and
   chest search use the same rule.
-- **PC3** The map has a switch "Player chests / All chests" (default: player chests); natural
-  chests are hidden in player mode.
+- **PC3** The map has a switch "Player chests / All chests" (default: player chests; the counts
+  include chests only); natural chests are hidden in player mode. The map toolbar is grouped with
+  small labels – "Tool" (draw / pan), "Zoom" and, separated by a line, "Chests shown on the map"
+  (the switch and the detection settings), which only changes the display.
+- **PC6** Wording: the UI speaks of "player chests" (not "your chests") in the areas dialog, the
+  map, the detection settings and the area selection of sync and chest search.
 - **PC4** Sync and chest search have the option "Only player-placed chests" (default on), so loot
   in untouched natural chests does not count as obtained.
 - **PC5** Limits: a single unnamed chest placed by the player (e.g. at a hellevator) counts as
@@ -422,7 +468,7 @@ GitHub Actions.
 
 - **SY1** A "Sync with world" button opens a dialog where one or more areas are selected.
   Default: all of the playthrough's own areas, or Full World if it has none. The selection
-  (areas, displays, only your chests) is remembered per playthrough in the browser (PR1) and
+  (areas, displays, only player chests) is remembered per playthrough in the browser (PR1) and
   restored on the next visit; areas deleted since are dropped, and if none are left the default
   applies again.
 - **SY2** The app scans all chests in the selected areas and shows a diff:
@@ -442,6 +488,13 @@ GitHub Actions.
   changes of both; the footer summarises both. In every list a ticked checkbox means "apply
   this change" (for "Checked but not found": uncheck the item; off by default).
 
+- **SY8** The area selection (sync and chest search) has two blocks: "Areas to scan" – "Full
+  World" (the entire world) set apart from the areas of the playthrough, with a "Manage areas…"
+  button that opens the areas dialog; its "Back to sync" / "Back to chest search" button returns
+  – and "Options" (only player chests, include displays).
+- **SY9** A third tab "Unknown items" lists the item ids of the scanned containers that the item
+  data does not know: amount, the containers with name and position, and – if known – the name
+  and icon from `missing_items.json` (recipe items without a template, see D22), or a hint when the id is higher than every known id (newer game version).
 ## CS – Chest search
 
 - **CS1** A chest search view lets the user select one or more areas and search for an item

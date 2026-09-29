@@ -4,6 +4,7 @@ import type {
   Boss,
   BossStage,
   CoinEntry,
+  ContainerGroup,
   Difficulty,
   Drop,
   DropSource,
@@ -42,9 +43,11 @@ export async function loadGameData(): Promise<GameData> {
     coins,
     drops,
     bosses,
+    containerGroups,
     recipes,
     bestiary,
     difficulties,
+    missingItems,
   ] = await Promise.all([
     fetchJson<Item[]>('items'),
     fetchJson<GroupEntry[]>('categories'),
@@ -60,9 +63,11 @@ export async function loadGameData(): Promise<GameData> {
     fetchJson<CoinEntry[]>('coins'),
     fetchJson<{ sources: Record<string, DropSource>; items: Record<string, Drop[]> }>('drops'),
     fetchJson<{ stages: BossStage[]; bosses: Boss[]; ignoreItems: string[] }>('bosses'),
+    fetchJson<ContainerGroup[]>('containers'),
     fetchJson<RecipesFile>('recipes'),
     fetchJson<{ types: BestiaryType[]; entries: Omit<BestiaryEntry, 'key'>[] }>('bestiary'),
     fetchJson<{ id: Difficulty; name: string; icon?: string }[]>('difficulties'),
+    fetchJson<{ id: number; name: string; icon?: string }[]>('missing_items'),
   ])
   const itemsByKey = new Map(items.map((i) => [i.key, i]))
   const itemsById = new Map<number, Item[]>()
@@ -91,9 +96,11 @@ export async function loadGameData(): Promise<GameData> {
     bossStages: bosses.stages,
     bosses: bosses.bosses,
     bossIgnoreItems: new Set(bosses.ignoreItems),
+    containerGroups,
     recipes: indexRecipes(recipes),
     bestiary: { types: bestiary.types, entries: bestiary.entries.map((e) => ({ ...e, key: e.id })) },
     difficultyIcons: Object.fromEntries(difficulties.map((d) => [d.id, d.icon])),
+    missingItems: new Map(missingItems.map((m) => [m.id, m])),
   }
 }
 

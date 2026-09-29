@@ -8669,6 +8669,23 @@
       ]
     },
     {
+      "result": "SnowCandelabra",
+      "amount": 1,
+      "stations": [
+        "Ice Machine"
+      ],
+      "ingredients": [
+        {
+          "item": "SnowBlock",
+          "amount": 5
+        },
+        {
+          "item": "Torch",
+          "amount": 3
+        }
+      ]
+    },
+    {
       "result": "SnowCandle",
       "amount": 1,
       "stations": [
@@ -8754,6 +8771,19 @@
         {
           "item": "SnowBlock",
           "amount": 10
+        }
+      ]
+    },
+    {
+      "result": "SnowDoor",
+      "amount": 1,
+      "stations": [
+        "Ice Machine"
+      ],
+      "ingredients": [
+        {
+          "item": "SnowBlock",
+          "amount": 6
         }
       ]
     },
@@ -9353,6 +9383,23 @@
       ]
     },
     {
+      "result": "FeywoodCandelabra",
+      "amount": 1,
+      "stations": [
+        "Living Loom"
+      ],
+      "ingredients": [
+        {
+          "item": "Feywood",
+          "amount": 5
+        },
+        {
+          "item": "Torch",
+          "amount": 3
+        }
+      ]
+    },
+    {
       "result": "FeywoodCandle",
       "amount": 1,
       "stations": [
@@ -9437,6 +9484,19 @@
         },
         {
           "item": "Glass",
+          "amount": 6
+        }
+      ]
+    },
+    {
+      "result": "FeywoodDoor",
+      "amount": 1,
+      "stations": [
+        "Living Loom"
+      ],
+      "ingredients": [
+        {
+          "item": "Feywood",
           "amount": 6
         }
       ]
@@ -10032,6 +10092,23 @@
       ]
     },
     {
+      "result": "HarpyCandelabra",
+      "amount": 1,
+      "stations": [
+        "Sky Mill"
+      ],
+      "ingredients": [
+        {
+          "item": "HarpyBlock",
+          "amount": 5
+        },
+        {
+          "item": "Torch",
+          "amount": 3
+        }
+      ]
+    },
+    {
       "result": "HarpyCandle",
       "amount": 1,
       "stations": [
@@ -10117,6 +10194,19 @@
         {
           "item": "HarpyBlock",
           "amount": 10
+        }
+      ]
+    },
+    {
+      "result": "HarpyDoor",
+      "amount": 1,
+      "stations": [
+        "Sky Mill"
+      ],
+      "ingredients": [
+        {
+          "item": "HarpyBlock",
+          "amount": 6
         }
       ]
     },
@@ -10309,6 +10399,23 @@
       ]
     },
     {
+      "result": "CloudCandelabra",
+      "amount": 1,
+      "stations": [
+        "Sky Mill"
+      ],
+      "ingredients": [
+        {
+          "item": "Cloud",
+          "amount": 5
+        },
+        {
+          "item": "Torch",
+          "amount": 3
+        }
+      ]
+    },
+    {
       "result": "CloudCandle",
       "amount": 1,
       "stations": [
@@ -10393,6 +10500,19 @@
         },
         {
           "item": "Glass",
+          "amount": 6
+        }
+      ]
+    },
+    {
+      "result": "CloudDoor",
+      "amount": 1,
+      "stations": [
+        "Sky Mill"
+      ],
+      "ingredients": [
+        {
+          "item": "Cloud",
           "amount": 6
         }
       ]
@@ -10586,6 +10706,23 @@
       ]
     },
     {
+      "result": "DuskwareCandelabra",
+      "amount": 1,
+      "stations": [
+        "Sky Mill"
+      ],
+      "ingredients": [
+        {
+          "item": "MoonplateBlock",
+          "amount": 5
+        },
+        {
+          "item": "Torch",
+          "amount": 3
+        }
+      ]
+    },
+    {
       "result": "MoonplateCandle",
       "amount": 1,
       "stations": [
@@ -10671,6 +10808,19 @@
         {
           "item": "MoonplateBlock",
           "amount": 10
+        }
+      ]
+    },
+    {
+      "result": "DuskwareDoor",
+      "amount": 1,
+      "stations": [
+        "Sky Mill"
+      ],
+      "ingredients": [
+        {
+          "item": "MoonplateBlock",
+          "amount": 6
         }
       ]
     },
@@ -11515,6 +11665,23 @@
       ]
     },
     {
+      "result": "GothicCandelabra",
+      "amount": 1,
+      "stations": [
+        "Bone Welder"
+      ],
+      "ingredients": [
+        {
+          "item": "GothicBrick",
+          "amount": 5
+        },
+        {
+          "item": "Torch",
+          "amount": 3
+        }
+      ]
+    },
+    {
       "result": "GothicCandle",
       "amount": 1,
       "stations": [
@@ -11600,6 +11767,19 @@
         {
           "item": "GothicBrick",
           "amount": 10
+        }
+      ]
+    },
+    {
+      "result": "GothicDoor",
+      "amount": 1,
+      "stations": [
+        "Bone Welder"
+      ],
+      "ingredients": [
+        {
+          "item": "GothicBrick",
+          "amount": 6
         }
       ]
     },
@@ -11887,6 +12067,23 @@
       ]
     },
     {
+      "result": "LibrarianCandelabra",
+      "amount": 1,
+      "stations": [
+        "Bookcase"
+      ],
+      "ingredients": [
+        {
+          "item": "LibrarianBlock",
+          "amount": 5
+        },
+        {
+          "item": "Torch",
+          "amount": 3
+        }
+      ]
+    },
+    {
       "result": "LibrarianCandle",
       "amount": 1,
       "stations": [
@@ -11972,6 +12169,19 @@
         {
           "item": "LibrarianBlock",
           "amount": 10
+        }
+      ]
+    },
+    {
+      "result": "LibrarianDoor",
+      "amount": 1,
+      "stations": [
+        "Bookcase"
+      ],
+      "ingredients": [
+        {
+          "item": "LibrarianBlock",
+          "amount": 6
         }
       ]
     },
@@ -21895,6 +22105,23 @@
       ]
     },
     {
+      "result": "StoneCandelabra",
+      "amount": 1,
+      "stations": [
+        "Heavy Assembler"
+      ],
+      "ingredients": [
+        {
+          "item": "GrayBrick",
+          "amount": 5
+        },
+        {
+          "item": "Torch",
+          "amount": 3
+        }
+      ]
+    },
+    {
       "result": "StoneCandle",
       "amount": 1,
       "stations": [
@@ -22172,6 +22399,23 @@
       ]
     },
     {
+      "result": "BoulderCandelabra",
+      "amount": 1,
+      "stations": [
+        "Heavy Assembler"
+      ],
+      "ingredients": [
+        {
+          "item": "BoulderBlock",
+          "amount": 5
+        },
+        {
+          "item": "Torch",
+          "amount": 3
+        }
+      ]
+    },
+    {
       "result": "BoulderCandle",
       "amount": 1,
       "stations": [
@@ -22256,6 +22500,19 @@
         },
         {
           "item": "Glass",
+          "amount": 6
+        }
+      ]
+    },
+    {
+      "result": "BoulderDoor",
+      "amount": 1,
+      "stations": [
+        "Heavy Assembler"
+      ],
+      "ingredients": [
+        {
+          "item": "BoulderBlock",
           "amount": 6
         }
       ]
@@ -30943,6 +31200,40 @@
       "ingredients": [
         {
           "item": "PalworldDigtoise",
+          "amount": 1
+        },
+        {
+          "item": "PalworldLittleKinshipPeach",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "result": "TrustyChillet",
+      "amount": 1,
+      "stations": [
+        "By Hand"
+      ],
+      "ingredients": [
+        {
+          "item": "PalworldPetChillet",
+          "amount": 1
+        },
+        {
+          "item": "PalworldLittleKinshipPeach",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "result": "TrustyChilletIgnis",
+      "amount": 1,
+      "stations": [
+        "By Hand"
+      ],
+      "ingredients": [
+        {
+          "item": "PalworldPetChilletIgnis",
           "amount": 1
         },
         {
@@ -44578,6 +44869,23 @@
       ]
     },
     {
+      "result": "AetheriumCandelabra",
+      "amount": 1,
+      "stations": [
+        "Work Bench"
+      ],
+      "ingredients": [
+        {
+          "item": "ShimmerBrick",
+          "amount": 5
+        },
+        {
+          "item": "Torch",
+          "amount": 3
+        }
+      ]
+    },
+    {
       "result": "AetheriumCandle",
       "amount": 1,
       "stations": [
@@ -44621,6 +44929,19 @@
         {
           "group": "Any Iron Bar",
           "amount": 2
+        }
+      ]
+    },
+    {
+      "result": "AetheriumDoor",
+      "amount": 1,
+      "stations": [
+        "Work Bench"
+      ],
+      "ingredients": [
+        {
+          "item": "ShimmerBrick",
+          "amount": 6
         }
       ]
     },
@@ -44689,6 +45010,23 @@
       ]
     },
     {
+      "result": "FallenStarCandelabra",
+      "amount": 1,
+      "stations": [
+        "Work Bench"
+      ],
+      "ingredients": [
+        {
+          "item": "FallenStarBlock",
+          "amount": 5
+        },
+        {
+          "item": "Torch",
+          "amount": 3
+        }
+      ]
+    },
+    {
       "result": "FallenStarCandle",
       "amount": 1,
       "stations": [
@@ -44732,6 +45070,19 @@
         {
           "item": "FallenStarBlock",
           "amount": 8
+        }
+      ]
+    },
+    {
+      "result": "FallenStarDoor",
+      "amount": 1,
+      "stations": [
+        "Work Bench"
+      ],
+      "ingredients": [
+        {
+          "item": "FallenStarBlock",
+          "amount": 6
         }
       ]
     },
@@ -44800,6 +45151,23 @@
       ]
     },
     {
+      "result": "HallowedCandelabra",
+      "amount": 1,
+      "stations": [
+        "Work Bench"
+      ],
+      "ingredients": [
+        {
+          "item": "HallowedBrick",
+          "amount": 5
+        },
+        {
+          "item": "Torch",
+          "amount": 3
+        }
+      ]
+    },
+    {
       "result": "HallowedCandle",
       "amount": 1,
       "stations": [
@@ -44843,6 +45211,19 @@
         {
           "item": "HallowedBrick",
           "amount": 8
+        }
+      ]
+    },
+    {
+      "result": "HallowedDoor",
+      "amount": 1,
+      "stations": [
+        "Work Bench"
+      ],
+      "ingredients": [
+        {
+          "item": "HallowedBrick",
+          "amount": 6
         }
       ]
     },
@@ -44911,6 +45292,23 @@
       ]
     },
     {
+      "result": "DemoniteCandelabra",
+      "amount": 1,
+      "stations": [
+        "Work Bench"
+      ],
+      "ingredients": [
+        {
+          "item": "DemoniteBrick",
+          "amount": 5
+        },
+        {
+          "item": "Torch",
+          "amount": 3
+        }
+      ]
+    },
+    {
       "result": "DemoniteCandle",
       "amount": 1,
       "stations": [
@@ -44954,6 +45352,19 @@
         {
           "item": "DemoniteBrick",
           "amount": 8
+        }
+      ]
+    },
+    {
+      "result": "DemoniteDoor",
+      "amount": 1,
+      "stations": [
+        "Work Bench"
+      ],
+      "ingredients": [
+        {
+          "item": "DemoniteBrick",
+          "amount": 6
         }
       ]
     },
@@ -45022,6 +45433,23 @@
       ]
     },
     {
+      "result": "CrimtaneCandelabra",
+      "amount": 1,
+      "stations": [
+        "Work Bench"
+      ],
+      "ingredients": [
+        {
+          "item": "CrimtaneBrick",
+          "amount": 5
+        },
+        {
+          "item": "Torch",
+          "amount": 3
+        }
+      ]
+    },
+    {
       "result": "CrimtaneCandle",
       "amount": 1,
       "stations": [
@@ -45065,6 +45493,19 @@
         {
           "item": "CrimtaneBrick",
           "amount": 8
+        }
+      ]
+    },
+    {
+      "result": "CrimtaneDoor",
+      "amount": 1,
+      "stations": [
+        "Work Bench"
+      ],
+      "ingredients": [
+        {
+          "item": "CrimtaneBrick",
+          "amount": 6
         }
       ]
     },
@@ -45133,6 +45574,23 @@
       ]
     },
     {
+      "result": "FlinxFurCandelabra",
+      "amount": 1,
+      "stations": [
+        "Work Bench"
+      ],
+      "ingredients": [
+        {
+          "item": "FlinxFurBlock",
+          "amount": 5
+        },
+        {
+          "item": "Torch",
+          "amount": 3
+        }
+      ]
+    },
+    {
       "result": "FlinxFurCandle",
       "amount": 1,
       "stations": [
@@ -45176,6 +45634,19 @@
         {
           "item": "FlinxFurBlock",
           "amount": 8
+        }
+      ]
+    },
+    {
+      "result": "FlinxFurDoor",
+      "amount": 1,
+      "stations": [
+        "Work Bench"
+      ],
+      "ingredients": [
+        {
+          "item": "FlinxFurBlock",
+          "amount": 6
         }
       ]
     },
@@ -45240,6 +45711,23 @@
         {
           "item": "FlinxFurBlock",
           "amount": 8
+        }
+      ]
+    },
+    {
+      "result": "PineCandelabra",
+      "amount": 1,
+      "stations": [
+        "Work Bench"
+      ],
+      "ingredients": [
+        {
+          "item": "PineTreeBlock",
+          "amount": 5
+        },
+        {
+          "item": "Torch",
+          "amount": 3
         }
       ]
     },
@@ -45325,6 +45813,23 @@
         {
           "item": "WaterBucket",
           "amount": 1
+        }
+      ]
+    },
+    {
+      "result": "PineCandelabra",
+      "amount": 1,
+      "stations": [
+        "Work Bench"
+      ],
+      "ingredients": [
+        {
+          "item": "PineWoodBlock",
+          "amount": 5
+        },
+        {
+          "item": "Torch",
+          "amount": 3
         }
       ]
     },
@@ -45453,6 +45958,23 @@
       ]
     },
     {
+      "result": "EasterCandelabra",
+      "amount": 1,
+      "stations": [
+        "Work Bench"
+      ],
+      "ingredients": [
+        {
+          "item": "EasterBlock",
+          "amount": 5
+        },
+        {
+          "item": "Torch",
+          "amount": 3
+        }
+      ]
+    },
+    {
       "result": "EasterCandle",
       "amount": 1,
       "stations": [
@@ -45496,6 +46018,19 @@
         {
           "item": "EasterBlock",
           "amount": 8
+        }
+      ]
+    },
+    {
+      "result": "EasterDoor",
+      "amount": 1,
+      "stations": [
+        "Work Bench"
+      ],
+      "ingredients": [
+        {
+          "item": "EasterBlock",
+          "amount": 6
         }
       ]
     },
@@ -45564,6 +46099,23 @@
       ]
     },
     {
+      "result": "JellyfishCandelabra",
+      "amount": 1,
+      "stations": [
+        "Work Bench"
+      ],
+      "ingredients": [
+        {
+          "item": "JellyfishBlock",
+          "amount": 5
+        },
+        {
+          "item": "Torch",
+          "amount": 3
+        }
+      ]
+    },
+    {
       "result": "JellyfishCandle",
       "amount": 1,
       "stations": [
@@ -45607,6 +46159,19 @@
         {
           "item": "JellyfishBlock",
           "amount": 8
+        }
+      ]
+    },
+    {
+      "result": "JellyfishDoor",
+      "amount": 1,
+      "stations": [
+        "Work Bench"
+      ],
+      "ingredients": [
+        {
+          "item": "JellyfishBlock",
+          "amount": 6
         }
       ]
     },
@@ -45675,6 +46240,23 @@
       ]
     },
     {
+      "result": "SpikeCandelabra",
+      "amount": 1,
+      "stations": [
+        "Work Bench"
+      ],
+      "ingredients": [
+        {
+          "item": "SpikeBlock",
+          "amount": 5
+        },
+        {
+          "item": "Torch",
+          "amount": 3
+        }
+      ]
+    },
+    {
       "result": "SpikeCandle",
       "amount": 1,
       "stations": [
@@ -45718,6 +46300,19 @@
         {
           "item": "SpikeBlock",
           "amount": 8
+        }
+      ]
+    },
+    {
+      "result": "SpikeDoor",
+      "amount": 1,
+      "stations": [
+        "Work Bench"
+      ],
+      "ingredients": [
+        {
+          "item": "SpikeBlock",
+          "amount": 6
         }
       ]
     },
@@ -45786,6 +46381,23 @@
       ]
     },
     {
+      "result": "OfficeCandelabra",
+      "amount": 1,
+      "stations": [
+        "Work Bench"
+      ],
+      "ingredients": [
+        {
+          "item": "OfficeBlock",
+          "amount": 5
+        },
+        {
+          "item": "Torch",
+          "amount": 3
+        }
+      ]
+    },
+    {
       "result": "OfficeCandle",
       "amount": 1,
       "stations": [
@@ -45829,6 +46441,19 @@
         {
           "item": "OfficeBlock",
           "amount": 8
+        }
+      ]
+    },
+    {
+      "result": "OfficeDoor",
+      "amount": 1,
+      "stations": [
+        "Work Bench"
+      ],
+      "ingredients": [
+        {
+          "item": "OfficeBlock",
+          "amount": 6
         }
       ]
     },
@@ -45897,6 +46522,23 @@
       ]
     },
     {
+      "result": "ForbiddenCandelabra",
+      "amount": 1,
+      "stations": [
+        "Work Bench"
+      ],
+      "ingredients": [
+        {
+          "item": "ForbiddenBlock",
+          "amount": 5
+        },
+        {
+          "item": "Torch",
+          "amount": 3
+        }
+      ]
+    },
+    {
       "result": "ForbiddenCandle",
       "amount": 1,
       "stations": [
@@ -45940,6 +46582,19 @@
         {
           "item": "ForbiddenBlock",
           "amount": 8
+        }
+      ]
+    },
+    {
+      "result": "ForbiddenDoor",
+      "amount": 1,
+      "stations": [
+        "Work Bench"
+      ],
+      "ingredients": [
+        {
+          "item": "ForbiddenBlock",
+          "amount": 6
         }
       ]
     },
@@ -46008,6 +46663,23 @@
       ]
     },
     {
+      "result": "AquariumCandelabra",
+      "amount": 1,
+      "stations": [
+        "Work Bench"
+      ],
+      "ingredients": [
+        {
+          "item": "WaterBlock",
+          "amount": 5
+        },
+        {
+          "item": "Torch",
+          "amount": 3
+        }
+      ]
+    },
+    {
       "result": "WaterFurnitureCandle",
       "amount": 1,
       "stations": [
@@ -46051,6 +46723,19 @@
         {
           "item": "WaterBlock",
           "amount": 8
+        }
+      ]
+    },
+    {
+      "result": "AquariumDoor",
+      "amount": 1,
+      "stations": [
+        "Work Bench"
+      ],
+      "ingredients": [
+        {
+          "item": "WaterBlock",
+          "amount": 6
         }
       ]
     },
@@ -59964,6 +60649,11 @@
     {
       "item": "FishermansGuide",
       "result": "Sextant",
+      "amount": 1
+    },
+    {
+      "item": "EmptyDropper",
+      "result": "MagicShimmerDropper",
       "amount": 1
     },
     {

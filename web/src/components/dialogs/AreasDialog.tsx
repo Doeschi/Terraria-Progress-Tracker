@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { ArrowRight, Lock, Pencil, Plus, Trash2 } from 'lucide-react'
+import { ArrowLeft, ArrowRight, Lock, Pencil, Plus, Trash2 } from 'lucide-react'
 import { useActivePlaythrough, useActiveWorld, useStore } from '@/store'
 import { useUi } from '@/ui'
 import { formatTilePosition, gameToTile, tileToGame, type GameCoord, type WorldDims } from '@/lib/coords'
@@ -26,10 +26,14 @@ export function AreasDialog() {
   const dialog = useUi((s) => s.dialog)
   const open = dialog.type === 'areas'
   const thenSync = open && !!dialog.thenSync
+  const returnTo = open ? dialog.returnTo : undefined
   const close = useUi((s) => s.close)
   const openDialog = useUi((s) => s.open)
-  // after attaching a new world the first sync follows, however the dialog is closed
-  const finish = () => (thenSync ? openDialog({ type: 'sync' }) : close())
+  // after attaching a new world the first sync follows; opened from another dialog, that one
+  // comes back - however this dialog is closed
+  const finish = () => (thenSync ? openDialog({ type: 'sync' }) : returnTo ? openDialog(returnTo) : close())
+  const backLabel =
+    returnTo?.type === 'sync' ? 'Back to sync' : returnTo?.type === 'chestSearch' ? 'Back to chest search' : 'Back'
   return (
     <Dialog open={open} onOpenChange={(o) => !o && finish()}>
       <DialogContent className="max-h-[95vh] overflow-y-auto sm:max-w-5xl">
@@ -37,13 +41,23 @@ export function AreasDialog() {
           <AreasManager
             // only in the area list, not while an area is edited
             footer={
-              thenSync && (
-                <div className="flex items-center justify-end gap-3 border-t pt-3">
-                  <span className="text-xs text-muted-foreground">Next: compare your progress with the world</span>
+              returnTo ? (
+                <div className="flex justify-end border-t pt-3">
                   <Button onClick={finish}>
-                    Continue: sync with world <ArrowRight />
+                    <ArrowLeft /> {backLabel}
                   </Button>
                 </div>
+              ) : (
+                thenSync && (
+                  <div className="flex items-center justify-end gap-3 border-t pt-3">
+                    <span className="text-xs text-muted-foreground">
+                      Next step: compare the playthrough with the world
+                    </span>
+                    <Button onClick={finish}>
+                      Continue: sync with world <ArrowRight />
+                    </Button>
+                  </div>
+                )
               )
             }
           />
@@ -92,12 +106,29 @@ function AreasManager({ footer }: { footer?: React.ReactNode }) {
   return (
     <>
       <DialogHeader>
-        <DialogTitle>Areas of {dims.name}</DialogTitle>
+        <DialogTitle>
+          Areas of <em>{dims.name}</em>
+        </DialogTitle>
         <DialogDescription>
-          Rectangles used to limit which chests are scanned when syncing or searching. Draw them on the map or enter
-          coordinates.
+          Areas define which parts of the world are scanned. When syncing with the world or searching chests, only the
+          player chests inside the selected areas are taken into account – for example those of a base or a storage
+          room.
         </DialogDescription>
       </DialogHeader>
+      <ol className="flex list-decimal flex-col gap-0.5 rounded-lg bg-muted px-3 py-2 pl-7 text-xs text-muted-foreground">
+        <li>
+          <span className="font-medium text-foreground">Create an area:</span> select the tool “Draw area” and drag a
+          rectangle on the map, or use “New area” to enter the corner coordinates from the game.
+        </li>
+        <li>
+          <span className="font-medium text-foreground">Adjust an area:</span> select it on the map or in the list, then
+          drag it to move it or drag its handles to resize it. The pencil in the list edits its name and coordinates.
+        </li>
+        <li>
+          <span className="font-medium text-foreground">Without areas:</span> “Full World” is always available and
+          includes all player chests.
+        </li>
+      </ol>
       <WorldMap
         dims={{ ...dims, rockLayer: world?.rockLayer }}
         world={world}
@@ -109,7 +140,7 @@ function AreasManager({ footer }: { footer?: React.ReactNode }) {
       />
       {!world && (
         <p className="text-xs text-muted-foreground">
-          Load the world file (World menu) to see chests, spawn and dungeon on the map.
+          Load the world file (World menu) to see the chests and the spawn point on the map.
         </p>
       )}
       <ul className="flex max-h-[30vh] flex-col gap-1.5 overflow-y-auto">
@@ -133,9 +164,9 @@ function AreasManager({ footer }: { footer?: React.ReactNode }) {
                 </div>
                 <div className="text-xs text-muted-foreground">
                   {fixed
-                    ? `${dims.width} × ${dims.height} tiles`
+                    ? `Entire world, always available · ${dims.width} × ${dims.height} tiles`
                     : `${formatTilePosition(a.x1, a.y1, dims)} → ${formatTilePosition(a.x2, a.y2, dims)}`}
-                  {n !== null && ` · ${n} of your chests`}
+                  {n !== null && ` · ${n} player chests`}
                 </div>
               </div>
               {!fixed && (
@@ -161,6 +192,11 @@ function AreasManager({ footer }: { footer?: React.ReactNode }) {
             </li>
           )
         })}
+        {pt.areas.length === 0 && (
+          <li className="rounded-lg border border-dashed px-3 py-2 text-xs text-muted-foreground">
+            No areas defined yet. Draw one on the map, for example around a base or a storage room.
+          </li>
+        )}
       </ul>
       <DialogFooter>
         <Button
@@ -215,8 +251,9 @@ function AreaForm({ area, dims, onDone }: { area: Area; dims: WorldDims; onDone:
       <DialogHeader>
         <DialogTitle>{area.id ? 'Edit area' : 'New area'}</DialogTitle>
         <DialogDescription>
-          Enter two opposite corners as shown by the in-game Compass (east/west) and Depth Meter (above/below), or a
-          Cell Phone / GPS.
+          Enter a name and two opposite corners of the area (e.g. top left and bottom right). In the game, the position
+          is shown by a Compass (east/west) and a Depth Meter (above/below), or by a GPS, Cell Phone or Shellphone
+          (both). The area can also be adjusted on the map afterwards.
         </DialogDescription>
       </DialogHeader>
       <div className="flex flex-col gap-2">
@@ -234,8 +271,9 @@ function AreaForm({ area, dims, onDone }: { area: Area; dims: WorldDims; onDone:
         <CornerInput label="Corner 2" value={b} onChange={setB} />
       </div>
       <p className="rounded-lg bg-muted px-3 py-2 text-xs text-muted-foreground">
-        Tiles ({rect.x1}, {rect.y1}) to ({rect.x2}, {rect.y2}) · {rect.x2 - rect.x1 + 1} × {rect.y2 - rect.y1 + 1} tiles
-        {chests !== null && ` · ${chests} of your chests inside`}
+        Covers tiles ({rect.x1}, {rect.y1}) to ({rect.x2}, {rect.y2}) · {rect.x2 - rect.x1 + 1} ×{' '}
+        {rect.y2 - rect.y1 + 1} tiles
+        {chests !== null && ` · ${chests} player chests inside`}
       </p>
       <DialogFooter>
         <Button type="button" variant="outline" onClick={() => onDone()}>

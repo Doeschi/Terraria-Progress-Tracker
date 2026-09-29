@@ -11,8 +11,8 @@ import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover
 import { Button } from '@/components/ui/button'
 import { ToggleGroup, ToggleGroupItem } from '@/components/ui/toggle-group'
 
-// Schematic world map (stage 1): depth layers from the world header, spawn and
-// dungeon markers, chests as dots and the areas as rectangles. SVG in tile
+// Schematic world map (stage 1): depth layers from the world header, the spawn
+// marker, chests as dots and the areas as rectangles. SVG in tile
 // coordinates; pan/zoom by changing the viewBox. Areas are drawn, moved and
 // resized directly on the map - or, read-only (editable=false), the map shows
 // highlighted containers, e.g. the chests a searched item is in.
@@ -95,7 +95,9 @@ export function WorldMap({
   const [showAll, setShowAll] = useState(false)
   const detection = usePrefs((s) => s.chestDetection)
   const player = world ? playerPlaced(world, detection) : []
-  const playerCount = player.filter(Boolean).length
+  // counts on the "chests shown" buttons: chests only (displays always count as player-placed)
+  const chestCount = world ? world.containers.filter((c) => c.kind === 'chest').length : 0
+  const playerChestCount = world ? world.containers.filter((c, i) => c.kind === 'chest' && player[i]).length : 0
 
   // world units per screen pixel
   const scale = size.w ? Math.max(view.w / size.w, view.h / size.h) : 1
@@ -294,24 +296,26 @@ export function WorldMap({
 
   return (
     <div className="flex flex-col gap-2">
-      <div className="flex flex-wrap items-center gap-2">
+      <div className="flex flex-wrap items-end gap-x-3 gap-y-2">
         {editable && (
-          <ToggleGroup
-            type="single"
-            variant="outline"
-            size="sm"
-            value={tool}
-            onValueChange={(v) => v && setTool(v as 'pan' | 'draw')}
-          >
-            <ToggleGroupItem value="draw" title="Drag on the map to draw a new area">
-              <SquareDashedMousePointer /> Draw area
-            </ToggleGroupItem>
-            <ToggleGroupItem value="pan" title="Drag to move the map (the middle mouse button always pans)">
-              <Hand /> Pan
-            </ToggleGroupItem>
-          </ToggleGroup>
+          <ControlGroup label="Tool">
+            <ToggleGroup
+              type="single"
+              variant="outline"
+              size="sm"
+              value={tool}
+              onValueChange={(v) => v && setTool(v as 'pan' | 'draw')}
+            >
+              <ToggleGroupItem value="draw" title="Drag on the map to draw a new area">
+                <SquareDashedMousePointer /> Draw area
+              </ToggleGroupItem>
+              <ToggleGroupItem value="pan" title="Drag to move the map (the middle mouse button always pans)">
+                <Hand /> Pan
+              </ToggleGroupItem>
+            </ToggleGroup>
+          </ControlGroup>
         )}
-        <div className="flex items-center gap-1">
+        <ControlGroup label="Zoom">
           <Button variant="outline" size="icon-sm" onClick={() => zoom(1 / 1.5)} aria-label="Zoom in" title="Zoom in">
             <Plus />
           </Button>
@@ -327,32 +331,36 @@ export function WorldMap({
           >
             <Maximize />
           </Button>
-        </div>
+        </ControlGroup>
         {world && (
-          <div className="flex items-center gap-1">
+          // only changes what the map shows - separated from the tools
+          <ControlGroup label="Chests shown on the map" className="border-l pl-3">
             <ToggleGroup
               type="single"
               variant="outline"
               size="sm"
               value={showAll ? 'all' : 'player'}
               onValueChange={(v) => v && setShowAll(v === 'all')}
+              aria-label="Chests shown on the map"
             >
-              <ToggleGroupItem value="player" title="Chests you placed: named, or grouped with other chests">
-                Your chests {playerCount}
+              <ToggleGroupItem
+                value="player"
+                title="Show only player chests: chests with a name, or placed near other chests"
+              >
+                Player chests <span className="text-muted-foreground">{playerChestCount}</span>
               </ToggleGroupItem>
-              <ToggleGroupItem value="all" title="Also natural chests from world generation">
-                All {world.containers.length}
+              <ToggleGroupItem value="all" title="Also show the loot chests placed by world generation">
+                All chests <span className="text-muted-foreground">{chestCount}</span>
               </ToggleGroupItem>
             </ToggleGroup>
-            <DetectionSettings total={world.containers.length} player={playerCount} />
-          </div>
+            <DetectionSettings total={chestCount} player={playerChestCount} />
+          </ControlGroup>
         )}
-        <div className="ml-auto flex flex-wrap items-center gap-3 text-xs text-muted-foreground">
+        <div className="ml-auto flex flex-wrap items-center gap-3 self-end pb-1.5 text-xs text-muted-foreground">
           {highlights && <Legend color="#34d399" label="Found here" ring />}
           <Legend color="#f5b642" label="Chest" />
           <Legend color="#c084fc" label="Display" />
           <Legend color="#ffffff" label="Spawn" ring />
-          <Legend color="#60a5fa" label="Dungeon" ring />
         </div>
       </div>
 
@@ -411,12 +419,7 @@ export function WorldMap({
             </circle>
           ),
         )}
-        {world && (
-          <>
-            <Marker x={world.spawnX} y={world.spawnY} color="#ffffff" label="Spawn" px={px} />
-            <Marker x={world.dungeonX} y={world.dungeonY} color="#60a5fa" label="Dungeon" px={px} />
-          </>
-        )}
+        {world && <Marker x={world.spawnX} y={world.spawnY} color="#ffffff" label="Spawn" px={px} />}
 
         {shown.map((a) => {
           const isSel = a.id === selectedId
@@ -502,12 +505,14 @@ export function WorldMap({
         </span>
         <span>
           {!editable
-            ? 'Mouse wheel zooms · drag to move the map · click a green marker to select it'
+            ? 'Mouse wheel zooms · drag to move the map · click a green marker to select its chest'
             : drag?.kind === 'draw'
               ? `${drag.rect.x2 - drag.rect.x1 + 1} × ${drag.rect.y2 - drag.rect.y1 + 1} tiles`
               : selected
-                ? 'Drag the area to move it, its handles to resize it'
-                : 'Mouse wheel zooms · click an area to select it'}
+                ? 'Drag the area to move it, its handles to resize it · click the empty map to deselect'
+                : tool === 'draw'
+                  ? 'Drag on the map to draw an area · click an area to select it · mouse wheel zooms'
+                  : 'Drag to move the map · click an area to select it · mouse wheel zooms'}
         </span>
       </div>
     </div>
@@ -525,17 +530,17 @@ function DetectionSettings({ total, player }: { total: number; player: number })
         <Button
           variant="outline"
           size="icon-sm"
-          aria-label="Detection of your chests"
-          title="How your chests are detected"
+          aria-label="How player chests are recognized"
+          title="How player chests are recognized"
         >
           <Settings2 />
         </Button>
       </PopoverTrigger>
       <PopoverContent className="w-80 text-sm" align="start">
         <p className="mb-3 text-xs text-muted-foreground">
-          The world file does not say who placed a chest. A chest counts as yours if it has a name, or if at least{' '}
-          <b>{detection.minGroup}</b> chests are within <b>{detection.distance}</b> tiles of each other. Used by the
-          map, sync and chest search.
+          The world file does not record who placed a chest. A chest counts as a player chest if it has a name, or if at
+          least <b>{detection.minGroup}</b> chests are within <b>{detection.distance}</b> tiles of each other. Used by
+          the map, sync and chest search.
         </p>
         <div className="grid grid-cols-2 gap-3">
           <div className="flex flex-col gap-1">
@@ -561,7 +566,7 @@ function DetectionSettings({ total, player }: { total: number; player: number })
         </div>
         <div className="mt-3 flex items-center justify-between text-xs text-muted-foreground">
           <span>
-            {player} of {total} count as yours
+            {player} of {total} chests are player chests
           </span>
           <Button variant="ghost" size="xs" onClick={() => setDetection(DEFAULT_DETECTION)}>
             Defaults
@@ -627,6 +632,24 @@ function Marker({
         {label}
       </text>
     </g>
+  )
+}
+
+/** A labelled group of map controls (like the fields in the header). */
+function ControlGroup({
+  label,
+  className,
+  children,
+}: {
+  label: string
+  className?: string
+  children: React.ReactNode
+}) {
+  return (
+    <div className={cn('flex flex-col gap-1', className)}>
+      <span className="text-[10px] font-medium tracking-wide text-muted-foreground uppercase">{label}</span>
+      <div className="flex items-center gap-1">{children}</div>
+    </div>
   )
 }
 

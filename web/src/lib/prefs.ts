@@ -27,7 +27,7 @@ interface Prefs {
   openSections: Record<string, boolean>
   /** save the tracking file automatically (Chrome/Edge, file on disk) */
   autosave: boolean
-  /** sync dialog settings (areas, displays, only your chests) per playthrough id */
+  /** sync dialog settings (areas, displays, only player chests) per playthrough id */
   syncScopes: Record<string, ScanScope>
   /** filter options moved to the "Hidden" section: "<prefix><group>/<id>" */
   hiddenFilters: string[]

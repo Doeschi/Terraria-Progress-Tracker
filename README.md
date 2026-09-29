@@ -26,19 +26,23 @@ the unchanged downloads in [`pipeline/raw/`](pipeline/raw).
 
 | File | Contents |
 |------|----------|
-| `items.json` | All 6,149 items (key = internal name) with id, icons, wiki page, stats, rarity, prices, platforms, and – derived – categories and subcategories, how they are obtained, vendors, events, biomes, time of day, the game update that added them and whether they are Expert/Master-only |
-| `drops.json` | 350 drop sources (enemies, bosses, treasure bags) and 1,780 drops with chance and quantity **per game mode** (Classic / Expert / Master) |
+| `items.json` | All 6,194 items (key = internal name; 45 of them only known from recipes, see below) with id, icons, wiki page, stats, rarity, prices, platforms, and – derived – categories and subcategories, how they are obtained, vendors, events, biomes, time of day, the game update that added them and whether they are Expert/Master-only |
+| `drops.json` | 419 drop sources (enemies, bosses, treasure bags, chests, crates, grab bags, shaking trees) and 3,404 drops with chance and quantity **per game mode** (Classic / Expert / Master) |
+| `containers.json` | The container sources grouped into Chests, Crates, Other containers and Trees, with item counts |
 | `bosses.json` | Bosses by progression stage, each with all drop sources that count for it (parts, treasure bag) |
 | `recipes.json` | 3,610 crafting recipes (current versions, platform-limited ones marked), 42 crafting stations with the items that provide them (stronger stations included), 34 "Any …" ingredient groups resolved to items, 286 shimmer transmutations |
 | `bestiary.json` | All 546 bestiary entries in the in-game order, with the internal name the world file uses, type, stars, biome / time / event filters, game update and platforms |
 | `categories.json`, `subcategories.json`, `obtain.json`, `vendors.json`, `events.json`, `biomes.json`, `times.json` | The groups used above, with names, icons and item counts |
+| `missing_items.json` | Items the wiki's Items table lacks, its Recipes table names with id, and that have no template in `[recipe_items]` (currently none) |
 | `versions.json`, `rarities.json`, `coins.json`, `difficulties.json`, `platforms.json` | Game updates (with names and a representative item), rarity images, coin values, game-mode and platform icons |
 
 What is derived rather than copied (see [`pipeline/trackerdata/`](pipeline/trackerdata) and
 [`pipeline/mapping.toml`](pipeline/mapping.toml)):
 
 - **Game update of an item** from the wiki's patch-note history (Desktop patches), corrected for
-  items on shared pages by item id ranges – known for 6,141 of 6,149 items.
+  items on shared pages by item id ranges – known for 6,186 of 6,194 items.
+- **Items missing from the wiki's Items table** (45 new 1.4.5 doors, candelabras and a few
+  others) from its Recipes table, with categories taken from a similar item.
 - **Event and biome of an item** from the spawn conditions of the enemies that drop it: 201 items
   are only obtainable during events, 299 have a biome.
 - **Expert/Master-only items** from their rarity, unless they can also be crafted, bought, found
@@ -60,7 +64,13 @@ Requires Python 3.11+ and `pip install requests`.
 ```bash
 python pipeline/download_cargo_tables.py   # step 1: wiki -> pipeline/raw/ (Cargo tables, page images/sources)
 python pipeline/build_tracker_data.py      # step 2: raw + mapping.toml -> web/public/data/*.json
+python pipeline/check_icons.py             # optional: check that all linked wiki images exist
 ```
+
+`check_icons.py` asks the wiki's API about all linked images in batches of 50 (about 180
+requests, no image downloads). It reports missing files and saves files that are only redirects
+– their direct link does not work – to `pipeline/raw/image_redirects.json`; run step 2 again and
+the targets are linked instead.
 
 wiki.gg asks scripts for a contact in their User-Agent: pass `--contact`, set `WIKI_CONTACT`, or
 put it in `pipeline/contact.txt` (not committed); otherwise the project URL is sent.

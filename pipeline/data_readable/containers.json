@@ -1,0 +1,103 @@
+[
+  {
+    "id": "chest",
+    "name": "Chests",
+    "icon": "https://terraria.wiki.gg/images/Gold_Chest.png",
+    "sources": [
+      "chest",
+      "corruption-chest",
+      "crimson-chest",
+      "dead-man-s-chest",
+      "desert-chest",
+      "frozen-chest",
+      "gold-chest",
+      "gold-chest-dungeon",
+      "gold-chest-pyramid",
+      "hallowed-chest",
+      "ice-chest",
+      "ivy-chest",
+      "jungle-chest",
+      "lihzahrd-chest",
+      "living-wood-chest",
+      "mushroom-chest",
+      "sandstone-chest",
+      "shadow-chest",
+      "skyware-chest",
+      "water-chest",
+      "web-covered-chest"
+    ],
+    "count": 257
+  },
+  {
+    "id": "crate",
+    "name": "Crates",
+    "icon": "https://terraria.wiki.gg/images/Wooden_Crate.png",
+    "sources": [
+      "azure-crate",
+      "boreal-crate",
+      "bramble-crate",
+      "corrupt-crate",
+      "crimson-crate",
+      "defiled-crate",
+      "divine-crate",
+      "dungeon-crate",
+      "frozen-crate",
+      "golden-crate",
+      "hallowed-crate",
+      "hellstone-crate",
+      "hematic-crate",
+      "iron-crate",
+      "jungle-crate",
+      "mirage-crate",
+      "mythril-crate",
+      "oasis-crate",
+      "obsidian-crate",
+      "ocean-crate",
+      "pearlwood-crate",
+      "seaside-crate",
+      "sky-crate",
+      "stockade-crate",
+      "titanium-crate",
+      "wooden-crate"
+    ],
+    "count": 208
+  },
+  {
+    "id": "other",
+    "name": "Other containers",
+    "icon": "https://terraria.wiki.gg/images/Golden_Lock_Box.png",
+    "sources": [
+      "can-of-worms",
+      "geode",
+      "golden-lock-box",
+      "goodie-bag",
+      "herb-bag",
+      "huge-dragon-egg",
+      "obsidian-lock-box",
+      "oyster",
+      "pigronata",
+      "present"
+    ],
+    "count": 140
+  },
+  {
+    "id": "tree",
+    "name": "Trees",
+    "icon": "https://terraria.wiki.gg/images/Acorn.png",
+    "sources": [
+      "shaking-ash-tree",
+      "shaking-boreal-tree",
+      "shaking-ebonwood-palm-tree",
+      "shaking-ebonwood-tree",
+      "shaking-forest-tree",
+      "shaking-giant-glowing-mushroom",
+      "shaking-mahogany-tree",
+      "shaking-palm-tree",
+      "shaking-pearlwood-palm-tree",
+      "shaking-pearlwood-tree",
+      "shaking-shadewood-palm-tree",
+      "shaking-shadewood-tree"
+    ],
+    "count": 29
+  }
+]

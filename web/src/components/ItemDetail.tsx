@@ -5,7 +5,7 @@ import { useUi } from '@/ui'
 import { cn } from '@/lib/utils'
 import { DIFFICULTY_LABELS } from '@/lib/availability'
 import { chestSearchHint } from '@/lib/world'
-import { chanceFor, dropsFor, modeLabel, otherChances, quantityFor } from '@/lib/drops'
+import { chanceFor, dropKind, dropsFor, modeLabel, otherChances, quantityFor, type DropKind } from '@/lib/drops'
 import type { Drop, GameData, Item } from '@/lib/types'
 import { Button } from '@/components/ui/button'
 import { Checkbox } from '@/components/ui/checkbox'
@@ -205,6 +205,12 @@ function DetailContent({ item, Title }: { item: Item; Title: TitleComponent }) {
       </div>
 
       <div className="flex flex-col gap-5 p-4">
+        {item.recipeOnly && (
+          <p className="rounded-lg border border-dashed px-3 py-2 text-xs text-muted-foreground">
+            The wiki has no item data for this item yet, only its recipe. Name, icon and recipe come from there,
+            categories from a similar item; stats, rarity and prices are missing.
+          </p>
+        )}
         {item.tooltip && (
           <p className="rounded-lg border bg-muted/30 px-3 py-2 text-sm whitespace-pre-line italic">{item.tooltip}</p>
         )}
@@ -234,7 +240,8 @@ function DetailContent({ item, Title }: { item: Item; Title: TitleComponent }) {
           )}
         </Section>
 
-        <DropsSection data={data} item={item} difficulty={pt.difficulty} />
+        <DropsSection data={data} item={item} difficulty={pt.difficulty} kind="dropped" />
+        <DropsSection data={data} item={item} difficulty={pt.difficulty} kind="found" />
 
         <RecipeSections data={data} item={item} platform={pt.platform} checked={checkedSet} />
 
@@ -259,17 +266,23 @@ function DetailContent({ item, Title }: { item: Item; Title: TitleComponent }) {
   )
 }
 
+/** "Dropped by" (enemies, bosses, treasure bags) or "Found in" (chests, crates, trees, …). */
 function DropsSection({
   data,
   item,
   difficulty,
+  kind,
 }: {
   data: GameData
   item: Item
   difficulty: Parameters<typeof dropsFor>[2]
+  kind: DropKind
 }) {
-  const all = data.drops.get(item.key) ?? []
-  const available = useMemo(() => new Set(dropsFor(data, item, difficulty)), [data, item, difficulty])
+  const all = useMemo(
+    () => (data.drops.get(item.key) ?? []).filter((d) => dropKind(data, d) === kind),
+    [data, item, kind],
+  )
+  const available = useMemo(() => new Set(dropsFor(data, item, difficulty, kind)), [data, item, difficulty, kind])
   const bossOf = useMemo(() => {
     const m = new Map<string, string>()
     for (const b of data.bosses) for (const s of b.sources) m.set(s, b.name)
@@ -279,7 +292,7 @@ function DropsSection({
   const hidden = all.length - available.size
 
   return (
-    <Section title="Dropped by">
+    <Section title={kind === 'found' ? 'Found in' : 'Dropped by'}>
       <ul className="divide-y rounded-lg border">
         {[...available, ...all.filter((d) => !available.has(d))].map((d, i) => (
           <DropRow

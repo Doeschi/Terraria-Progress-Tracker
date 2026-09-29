@@ -13,6 +13,7 @@ export const GROUP_KEYS = [
   'obtain',
   'crafting',
   'vendor',
+  'container',
   'boss',
   'event',
   'biome',
@@ -32,6 +33,7 @@ export const emptySelection = (): Selection => ({
   obtain: [],
   crafting: [],
   vendor: [],
+  container: [],
   event: [],
   biome: [],
   time: [],
@@ -79,7 +81,7 @@ const CRAFTING: { id: string; name: string; iconItem: string }[] = [
   { id: CRAFT_CHESTS, name: 'Craftable from your chests', iconItem: 'Chest' },
 ]
 
-/** Entry ids of nested groups are prefixed: "cat:" / "sub:" and "stage:" / "boss:". */
+/** Entry ids of nested groups are prefixed: "cat:" / "sub:", "stage:" / "boss:" and "cgroup:" / "cont:". */
 export function buildFilterGroups(data: GameData): FilterGroup[] {
   const categories: FilterEntry[] = data.categories.map((c) => ({
     ...c,
@@ -96,6 +98,20 @@ export function buildFilterGroups(data: GameData): FilterGroup[] {
       children: bosses.map((b) => ({ id: `boss:${b.id}`, name: b.name, icon: b.icon, count: b.count })),
     }
   })
+  // items per container (all game modes; the facets count per difficulty)
+  const perSource = new Map<string, number>()
+  for (const drops of data.drops.values())
+    for (const s of new Set(drops.map((d) => d.source))) perSource.set(s, (perSource.get(s) ?? 0) + 1)
+  const containers: FilterEntry[] = data.containerGroups.map((g) => ({
+    id: `cgroup:${g.id}`,
+    name: g.name,
+    icon: g.icon,
+    count: g.count,
+    children: g.sources.map((s) => {
+      const source = data.dropSources.get(s)
+      return { id: `cont:${s}`, name: source?.name ?? s, icon: source?.icon, count: perSource.get(s) ?? 0 }
+    }),
+  }))
   const groups: FilterGroup[] = [
     {
       key: 'progression',
@@ -137,6 +153,7 @@ export function buildFilterGroups(data: GameData): FilterGroup[] {
       })),
     },
     { key: 'vendor', label: 'Sold by', entries: data.vendors },
+    { key: 'container', label: 'Found in', entries: containers },
     { key: 'event', label: 'Events', entries: data.events },
     { key: 'biome', label: 'Biome', entries: data.biomes },
     { key: 'time', label: 'Time of day', entries: data.times },
@@ -144,10 +161,17 @@ export function buildFilterGroups(data: GameData): FilterGroup[] {
   return groups.sort((a, b) => GROUP_KEYS.indexOf(a.key) - GROUP_KEYS.indexOf(b.key))
 }
 
-/** Entry ids an item belongs to, per group. `bosses`/`bossStage` depend on the difficulty;
- * `crafting` is empty here and filled per playthrough state (see recipes.ts). */
-export function itemEntries(item: Item, bosses: string[], bossStage: Map<string, string>): Record<GroupKey, string[]> {
+/** Entry ids an item belongs to, per group. `bosses`/`bossStage` and `containers` (drop source ids)
+ * depend on the difficulty; `crafting` is empty here and filled per playthrough state (see recipes.ts). */
+export function itemEntries(
+  item: Item,
+  bosses: string[],
+  bossStage: Map<string, string>,
+  containers: string[],
+  containerGroup: Map<string, string>,
+): Record<GroupKey, string[]> {
   const stages = new Set(bosses.map((b) => bossStage.get(b)))
+  const containerGroups = new Set(containers.map((c) => containerGroup.get(c)).filter((g) => g !== undefined))
   return {
     progression: [item.hardmode ? 'hardmode' : 'prehardmode'],
     boss: [...[...stages].map((s) => `stage:${s}`), ...bosses.map((b) => `boss:${b}`)],
@@ -157,6 +181,7 @@ export function itemEntries(item: Item, bosses: string[], bossStage: Map<string,
     obtain: item.obtain,
     crafting: [],
     vendor: item.vendors,
+    container: [...[...containerGroups].map((g) => `cgroup:${g}`), ...containers.map((c) => `cont:${c}`)],
     event: item.events,
     biome: item.biomes ?? [],
     time: item.times ?? [],

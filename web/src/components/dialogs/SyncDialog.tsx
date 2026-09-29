@@ -3,7 +3,15 @@ import { toast } from 'sonner'
 import { useActivePlaythrough, useActiveWorld, useStore } from '@/store'
 import { useUi, type SyncSection } from '@/ui'
 import { usePrefs } from '@/lib/prefs'
-import { containersIn, scanContainers, type FoundItem, type WorldBestiary } from '@/lib/world'
+import {
+  CONTAINER_LABELS,
+  containersIn,
+  scanContainers,
+  type FoundItem,
+  type UnknownItem,
+  type WorldBestiary,
+} from '@/lib/world'
+import { formatTilePosition } from '@/lib/coords'
 import { availabilityCheck } from '@/lib/availability'
 import { bestiaryDiff, worldState } from '@/lib/bestiary'
 import { plural } from '@/lib/format'
@@ -61,6 +69,7 @@ function SyncView({ initial, onDone }: { initial: SyncSection; onDone: () => voi
   const setChecked = useStore((s) => s.setChecked)
   const setBestiary = useStore((s) => s.setBestiary)
   const updatePlaythrough = useStore((s) => s.updatePlaythrough)
+  const openDialog = useUi((s) => s.open)
   const areas = useAreas()
   const [section, setSection] = useState<SyncSection>(initial)
   const [scope, setScope] = useSyncScope()
@@ -164,15 +173,17 @@ function SyncView({ initial, onDone }: { initial: SyncSection; onDone: () => voi
 
       {section === 'items' ? (
         <div className="flex min-h-0 flex-1 flex-col gap-3">
-          <AreaSelector scope={scope} onChange={setScope} />
-          <p className="text-sm text-muted-foreground">
-            Scanned {items.scan.containers} containers.
-            {items.scan.unknownIds.size > 0 && ` ${items.scan.unknownIds.size} unknown item ids were skipped.`}
-          </p>
+          <AreaSelector
+            scope={scope}
+            onChange={setScope}
+            onManage={() => openDialog({ type: 'areas', returnTo: { type: 'sync', section: 'items' } })}
+          />
+          <p className="text-sm text-muted-foreground">Scanned {plural(items.scan.containers, 'container')}.</p>
           <Tabs defaultValue="check" className="min-h-0 flex-1">
             <TabsList>
               <TabsTrigger value="check">To be checked ({items.toCheck.length})</TabsTrigger>
               <TabsTrigger value="notFound">Checked but not found ({items.notFound.length})</TabsTrigger>
+              <TabsTrigger value="unknown">Unknown items ({items.scan.unknownIds.size})</TabsTrigger>
             </TabsList>
             <TabsContent value="check" className="flex min-h-0 flex-col gap-2">
               <ListHeader
@@ -212,6 +223,9 @@ function SyncView({ initial, onDone }: { initial: SyncSection; onDone: () => voi
                 }))}
                 onToggle={(id, on) => setUncheck((s) => withIds(s, [id], on))}
               />
+            </TabsContent>
+            <TabsContent value="unknown" className="flex min-h-0 flex-col gap-2">
+              <UnknownItems unknown={[...items.scan.unknownIds.values()]} />
             </TabsContent>
           </Tabs>
         </div>
@@ -270,6 +284,74 @@ function SyncView({ initial, onDone }: { initial: SyncSection; onDone: () => voi
           Apply
         </Button>
       </DialogFooter>
+    </>
+  )
+}
+
+/** Item ids in the world that the item data does not know - with everything the world tells. */
+function UnknownItems({ unknown }: { unknown: UnknownItem[] }) {
+  const data = useStore((s) => s.data)!
+  const world = useActiveWorld()!
+  const maxId = useMemo(() => Math.max(...data.items.map((i) => i.id)), [data])
+  if (!unknown.length)
+    return (
+      <p className="grid h-[40vh] place-items-center rounded-lg border text-sm text-muted-foreground">
+        Every item in the scanned containers is known.
+      </p>
+    )
+  return (
+    <>
+      <p className="text-xs text-muted-foreground">
+        Items that are not in the item list, so they cannot be checked or unchecked – items missing from the wiki's item
+        list (named from its recipes where possible), or items from a newer game version than the data. The world file
+        only stores the item id.
+      </p>
+      <ul className="h-[40vh] overflow-y-auto rounded-lg border">
+        {[...unknown]
+          .sort((a, b) => a.id - b.id)
+          .map((u) => {
+            const known = data.missingItems.get(u.id)
+            return (
+              <li key={u.id} className="flex flex-col gap-1 border-b px-3 py-2 text-sm last:border-b-0">
+                <div className="flex items-center gap-3">
+                  {known?.icon ? (
+                    <WikiIcon src={known.icon} alt="" size={28} />
+                  ) : (
+                    <span className="grid size-7 place-items-center rounded border bg-muted/40 text-xs text-muted-foreground">
+                      ?
+                    </span>
+                  )}
+                  <span className="flex-1 font-medium">
+                    {known ? known.name : `Item id ${u.id}`}
+                    {known && <span className="font-normal text-muted-foreground"> · id {u.id}</span>}
+                  </span>
+                  <span className="text-xs text-muted-foreground">
+                    {u.stack} in {plural(u.containers.length, 'container')}
+                  </span>
+                </div>
+                {known ? (
+                  <p className="pl-10 text-xs text-muted-foreground">
+                    Missing from the wiki's item list (the name comes from its recipes), so it is not tracked.
+                  </p>
+                ) : (
+                  u.id > maxId && (
+                    <p className="pl-10 text-xs text-muted-foreground">
+                      Higher than every known item id ({maxId}) – probably added in a newer game version.
+                    </p>
+                  )
+                )}
+                <ul className="pl-10 text-xs text-muted-foreground">
+                  {u.containers.map((c, i) => (
+                    <li key={i}>
+                      {CONTAINER_LABELS[c.kind]}
+                      {c.name && ` “${c.name}”`} · {formatTilePosition(c.x, c.y, world)} · tile {c.x}, {c.y}
+                    </li>
+                  ))}
+                </ul>
+              </li>
+            )
+          })}
+      </ul>
     </>
   )
 }

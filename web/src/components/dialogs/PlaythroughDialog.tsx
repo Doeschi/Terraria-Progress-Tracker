@@ -44,8 +44,9 @@ function PlaythroughForm({ onDone }: { onDone: () => void }) {
   const [world, setWorld] = useState<{ data: LoadedWorld; handle: FileSystemFileHandle | null } | null>(null)
   const [reading, setReading] = useState<number | null>(null) // progress in percent while reading
   // same rule as the tracker itself, so this is the total the progress will count
+  // (unobtainable items start ignored)
   const itemCount = useMemo(
-    () => itemsForPlaythrough(data, { platform, difficulty, gameVersion }).length,
+    () => itemsForPlaythrough(data, { platform, difficulty, gameVersion }).filter((i) => !i.unobtainable).length,
     [data, platform, difficulty, gameVersion],
   )
 
@@ -116,6 +117,42 @@ function PlaythroughForm({ onDone }: { onDone: () => void }) {
           </SelectContent>
         </Select>
       </div>
+      <div className="flex flex-col gap-2">
+        <Label>
+          World <span className="font-normal text-muted-foreground">(optional)</span>
+        </Label>
+        {world ? (
+          <div className="flex items-center gap-3 rounded-lg border px-3 py-2">
+            <Globe className="size-4 shrink-0 text-emerald-600 dark:text-emerald-400" />
+            <div className="min-w-0 flex-1">
+              <div className="truncate text-sm font-medium">{world.data.name}</div>
+              <div className="text-xs text-muted-foreground">
+                {world.data.width} × {world.data.height} tiles ·{' '}
+                {world.data.containers.filter((c) => c.kind === 'chest').length} chests ·{' '}
+                <span className="inline-flex items-center gap-1 align-bottom">
+                  <DifficultyIcon difficulty={GAME_MODE_DIFFICULTY[world.data.gameMode] ?? 'classic'} size={14} />
+                  {DIFFICULTY_LABELS[GAME_MODE_DIFFICULTY[world.data.gameMode] ?? 'classic']}
+                </span>
+              </div>
+            </div>
+            <Button
+              type="button"
+              variant="ghost"
+              size="icon-sm"
+              onClick={() => setWorld(null)}
+              aria-label="Remove world"
+            >
+              <X />
+            </Button>
+          </div>
+        ) : (
+          <Button type="button" variant="outline" onClick={() => void chooseWorld()} disabled={reading !== null}>
+            {reading !== null ? <Loader2 className="animate-spin" /> : <FolderOpen />}
+            {reading !== null ? `Reading world… ${reading}%` : 'Choose world file…'}
+          </Button>
+        )}
+        <p className="text-xs text-muted-foreground">The world is processed locally in your browser.</p>
+      </div>
       <div className="grid gap-4 sm:grid-cols-2">
         <div className="flex flex-col gap-2">
           <Label>Difficulty</Label>
@@ -154,44 +191,6 @@ function PlaythroughForm({ onDone }: { onDone: () => void }) {
           </Select>
         </div>
       </div>
-      <div className="flex flex-col gap-2">
-        <Label>
-          World <span className="font-normal text-muted-foreground">(optional)</span>
-        </Label>
-        {world ? (
-          <div className="flex items-center gap-3 rounded-lg border px-3 py-2">
-            <Globe className="size-4 shrink-0 text-emerald-600 dark:text-emerald-400" />
-            <div className="min-w-0 flex-1">
-              <div className="truncate text-sm font-medium">{world.data.name}</div>
-              <div className="text-xs text-muted-foreground">
-                {world.data.width} × {world.data.height} tiles ·{' '}
-                {world.data.containers.filter((c) => c.kind === 'chest').length} chests ·{' '}
-                <span className="inline-flex items-center gap-1 align-bottom">
-                  <DifficultyIcon difficulty={GAME_MODE_DIFFICULTY[world.data.gameMode] ?? 'classic'} size={14} />
-                  {DIFFICULTY_LABELS[GAME_MODE_DIFFICULTY[world.data.gameMode] ?? 'classic']}
-                </span>
-              </div>
-            </div>
-            <Button
-              type="button"
-              variant="ghost"
-              size="icon-sm"
-              onClick={() => setWorld(null)}
-              aria-label="Remove world"
-            >
-              <X />
-            </Button>
-          </div>
-        ) : (
-          <Button type="button" variant="outline" onClick={() => void chooseWorld()} disabled={reading !== null}>
-            {reading !== null ? <Loader2 className="animate-spin" /> : <FolderOpen />}
-            {reading !== null ? `Reading world… ${reading}%` : 'Choose world file…'}
-          </Button>
-        )}
-        <p className="text-xs text-muted-foreground">
-          Read locally, never uploaded. Sets the difficulty from the world; you can set up areas right after creating.
-        </p>
-      </div>
       <div className="flex items-center justify-between rounded-lg border bg-muted/40 px-3 py-2">
         <span className="text-sm text-muted-foreground">Items in this playthrough</span>
         <span className="text-lg font-semibold tabular-nums" aria-live="polite">
@@ -204,7 +203,7 @@ function PlaythroughForm({ onDone }: { onDone: () => void }) {
           : difficulty === 'expert'
             ? 'Master-only items (e.g. relics, Master pets) are not counted.'
             : 'All difficulty-specific items are counted.'}{' '}
-        All settings can be changed later in the header.
+        Unobtainable items are ignored. All settings can be changed later.
       </p>
       <DialogFooter>
         <Button type="submit" disabled={!name.trim()}>

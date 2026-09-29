@@ -12,7 +12,7 @@ import {
   type Counts,
 } from '@/lib/filtering'
 import { itemsForPlaythrough } from '@/lib/availability'
-import { bossesBySource, itemBosses } from '@/lib/drops'
+import { bossesBySource, itemBosses, itemContainers } from '@/lib/drops'
 import type { Item } from '@/lib/types'
 
 export interface TrackerView extends Counts {
@@ -50,12 +50,24 @@ export function useTrackerView(): TrackerView | null {
     () => (data && platform && difficulty ? itemsForPlaythrough(data, { platform, difficulty, gameVersion }) : []),
     [data, platform, difficulty, gameVersion],
   )
-  // filter memberships; boss drops depend on the difficulty
+  // filter memberships; boss and container drops depend on the difficulty
   const entries = useMemo(() => {
     if (!data || !difficulty) return new Map()
     const bySource = bossesBySource(data)
     const bossStage = new Map(data.bosses.map((b) => [b.id, b.stage]))
-    return new Map(data.items.map((i) => [i.key, itemEntries(i, itemBosses(data, i, difficulty, bySource), bossStage)]))
+    const containerGroup = new Map(data.containerGroups.flatMap((g) => g.sources.map((s) => [s, g.id] as const)))
+    return new Map(
+      data.items.map((i) => [
+        i.key,
+        itemEntries(
+          i,
+          itemBosses(data, i, difficulty, bySource),
+          bossStage,
+          itemContainers(data, i, difficulty),
+          containerGroup,
+        ),
+      ]),
+    )
   }, [data, difficulty])
   const fuse = useMemo(() => createSearch(platformItems), [platformItems])
   const ranks = useMemo(() => searchRanks(fuse, search), [fuse, search])

@@ -8,6 +8,7 @@ Inputs:
   raw/items.csv, exclusive.csv, history.csv, drops.csv, npcs.csv, recipes.csv,
   page_images.json, page_wikitext.json (incl. MediaWiki:Common.css), page_html.json,
   schema.json   (from step 1)
+  raw/image_redirects.json   image files that are redirects (optional, from check_icons.py)
   mapping.toml   how raw type/listcat/tag values become categories,
                  subcategories, obtain methods, vendors, events and flags
 
@@ -27,11 +28,15 @@ same files go to --readable (default data_readable/ next to this script):
   rarities.json       rarity levels with name and icon (from the wiki's Rarity page)
   coins.json          coin types with value in copper and icon (from the Coins page)
   difficulties.json   world difficulties with icon (from the Difficulty page)
-  drops.json          drop sources (enemies, bosses, treasure bags) and the drops per item
+  drops.json          drop sources (enemies, bosses, treasure bags, containers) and the drops per item
   bosses.json         curated bosses by stage with their drop sources (mapping.toml)
+  containers.json     container groups (chests, crates, ...) with their drop sources (mapping.toml)
   recipes.json        crafting recipes (result, stations, ingredients), crafting
                       stations with the items that provide them, "Any ..."
                       ingredient groups, shimmer transmutations
+  missing_items.json  items the Items table lacks but the Recipes table names (id,
+                      name, probable icon) and that have no template in [recipe_items]
+                      (the others are added to items.json) - to name such ids in world files
   bestiary.json       bestiary entries in the in-game order (type, biomes, times,
                       events, version, platforms) and the entry types
 
@@ -48,6 +53,7 @@ from collections import Counter, defaultdict
 from pathlib import Path
 
 from trackerdata.common import (
+    IMAGE_REDIRECTS,
     LIST_SECTIONS,
     PLATFORM_FIELDS,
     PLATFORM_NAMES,
@@ -64,10 +70,11 @@ from trackerdata.items import (
     pick_rows,
     read_equipinfo,
     section_file,
+    update_starts,
     versions_file,
 )
 from trackerdata.drops import derive_events, derive_spawns, Drops
-from trackerdata.recipes import recipes_file
+from trackerdata.recipes import missing_items_file, recipe_only_items, recipes_file
 from trackerdata.bestiary import bestiary_file
 from trackerdata.icons import icon_files, platform_icons
 
@@ -77,6 +84,10 @@ HERE = Path(__file__).resolve().parent
 def build(raw_dir, mapping_path, out_dir, readable_dir=None):
     mapping = Mapping(mapping_path)
     schema = json.loads((raw_dir / "schema.json").read_text(encoding="utf-8"))
+    # image files that are redirects on the wiki -> link their targets (see check_icons.py)
+    redirects_path = raw_dir / "image_redirects.json"
+    if redirects_path.exists():
+        IMAGE_REDIRECTS.update(json.loads(redirects_path.read_text(encoding="utf-8")))
     item_schema = schema["Items"]
 
     log("Reading raw tables…")
@@ -108,7 +119,8 @@ def build(raw_dir, mapping_path, out_dir, readable_dir=None):
     # may use them ("drop:npc", "drop:boss"), so the items are built again.
     log("Building items…")
     items, unmapped = build_items({})
-    drops = Drops(read_csv(raw_dir / "drops.csv"), npc_rows, items, mapping.drop_kinds)
+    drops = Drops(read_csv(raw_dir / "drops.csv"), npc_rows, items, mapping.drop_kinds,
+                  mapping.containers, mapping.container_icons)
     boss_sources = {norm_name(n) for b in mapping.bosses.values() for n in b.get("sources", [])}
     extra = defaultdict(set)
     for item in items:
@@ -119,7 +131,14 @@ def build(raw_dir, mapping_path, out_dir, readable_dir=None):
             if norm_name(source["name"]) in boss_sources:
                 extra[(item["id"], norm_name(item["name"]))].add("drop:boss")
     items, unmapped = build_items(extra)
-    drops = Drops(read_csv(raw_dir / "drops.csv"), npc_rows, items, mapping.drop_kinds)
+    # items the Items table lacks (e.g. 1.4.5 doors), from the Recipes table
+    recipe_rows = read_csv(raw_dir / "recipes.csv")
+    items += recipe_only_items(recipe_rows, items, mapping.recipe_items,
+                               update_starts(items, list(mapping.versions)))
+    items.sort(key=lambda i: (i["id"], i["name"]))
+    make_keys_unique(items)
+    drops = Drops(read_csv(raw_dir / "drops.csv"), npc_rows, items, mapping.drop_kinds,
+                  mapping.containers, mapping.container_icons)
 
     for pattern, _ in mapping.manual:
         if not mapping.manual_used[pattern]:
@@ -159,10 +178,21 @@ def build(raw_dir, mapping_path, out_dir, readable_dir=None):
 
     outputs["drops.json"] = drops.drops_file()
     outputs["bosses.json"] = drops.bosses_file(mapping.boss_stages, mapping.bosses, mapping.boss_ignore_items)
+    outputs["containers.json"] = drops.containers_file()
 
     log("Recipes…")
-    outputs["recipes.json"] = recipes_file(read_csv(raw_dir / "recipes.csv"), items, mapping,
+    outputs["recipes.json"] = recipes_file(recipe_rows, items, mapping,
                                            wikitext.get("Alternative crafting ingredients", ""))
+    outputs["missing_items.json"] = missing_items_file(recipe_rows, items)
+
+    # items marked unobtainable that still have a current source: probably a wiki mistake
+    crafted = {r["result"] for r in outputs["recipes.json"]["recipes"]}
+    conflicts = [f"{i['name']} ({', '.join(src)})" for i in items if i["unobtainable"]
+                 for src in [[s for s, has in (("drop", i["key"] in drops.drops), ("recipe", i["key"] in crafted),
+                                               ("vendor", bool(i["vendors"]))) if has]] if src]
+    if conflicts:
+        log(f"  warning: marked unobtainable but with a current source (check the wiki, or add them to "
+            f"[unobtainable] obtainable in mapping.toml): {conflicts}")
 
     log("Bestiary…")
     page_html = json.loads((raw_dir / "page_html.json").read_text(encoding="utf-8"))

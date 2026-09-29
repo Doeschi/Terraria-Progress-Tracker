@@ -15,7 +15,7 @@
     "id": "tool",
     "name": "Tools",
     "icon": "https://terraria.wiki.gg/images/Copper_Pickaxe.png",
-    "count": 303
+    "count": 304
   },
   {
     "id": "armor",
@@ -34,6 +34,12 @@
     "name": "Vanity",
     "icon": "https://terraria.wiki.gg/images/Top_Hat.png",
     "count": 563
+  },
+  {
+    "id": "developer",
+    "name": "Developer items",
+    "icon": "https://terraria.wiki.gg/images/Red%27s_Wings.png",
+    "count": 89
   },
   {
     "id": "dye",
@@ -81,13 +87,13 @@
     "id": "mount",
     "name": "Mounts",
     "icon": "https://terraria.wiki.gg/images/Slimy_Saddle.png",
-    "count": 64
+    "count": 66
   },
   {
     "id": "crafting-material",
     "name": "Crafting materials",
     "icon": "https://terraria.wiki.gg/images/Iron_Bar.png",
-    "count": 1358
+    "count": 1359
   },
   {
     "id": "crafting-station",
@@ -111,13 +117,13 @@
     "id": "furniture",
     "name": "Furniture",
     "icon": "https://terraria.wiki.gg/images/Wooden_Chair.png",
-    "count": 2736
+    "count": 2778
   },
   {
     "id": "light-source",
     "name": "Light sources",
     "icon": "https://terraria.wiki.gg/images/Torch.png",
-    "count": 365
+    "count": 387
   },
   {
     "id": "storage",
@@ -129,7 +135,7 @@
     "id": "mechanism",
     "name": "Mechanisms",
     "icon": "https://terraria.wiki.gg/images/Lever.png",
-    "count": 199
+    "count": 219
   },
   {
     "id": "bait",

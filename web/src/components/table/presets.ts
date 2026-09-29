@@ -18,7 +18,18 @@ export const COLUMN_PRESETS: ColumnPreset[] = [
   {
     id: 'sources',
     label: 'Where to get it',
-    columns: ['obtain', 'drops', 'vendors', 'events', 'biomes', 'difficulty', 'hardmode', 'introduced', 'buy'],
+    columns: [
+      'obtain',
+      'drops',
+      'containers',
+      'vendors',
+      'events',
+      'biomes',
+      'difficulty',
+      'hardmode',
+      'introduced',
+      'buy',
+    ],
   },
   {
     id: 'weapons',

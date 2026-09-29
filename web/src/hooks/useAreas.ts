@@ -14,7 +14,7 @@ export const defaultScope = (): ScanScope => ({ areaIds: [FULL_WORLD_ID], includ
 
 /**
  * The sync dialog's settings of the active playthrough, remembered in the browser. Default:
- * all of the playthrough's own areas (Full World if it has none), only your chests, no displays.
+ * all of the playthrough's own areas (Full World if it has none), only player chests, no displays.
  * Areas deleted since are dropped; if none are left, the default applies again.
  */
 export function useSyncScope(): [ScanScope, (scope: ScanScope) => void] {

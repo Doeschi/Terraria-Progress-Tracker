@@ -3222,7 +3222,7 @@
     "page": "Grass Seeds",
     "url": "https://terraria.wiki.gg/wiki/Grass_Seeds",
     "icon": "https://terraria.wiki.gg/images/Grass_Seeds.png",
-    "iconPlaced": "https://terraria.wiki.gg/images/Grass_Seeds_%28placed%29.png",
+    "iconPlaced": "https://terraria.wiki.gg/images/Grass.png",
     "categories": [
       "crafting-material",
       "seeds"
@@ -7574,7 +7574,7 @@
     "page": "Water Candle",
     "url": "https://terraria.wiki.gg/wiki/Water_Candle",
     "icon": "https://terraria.wiki.gg/images/Water_Candle.png",
-    "iconPlaced": "https://terraria.wiki.gg/images/Water_Candle_%28placed%29.png",
+    "iconPlaced": "https://terraria.wiki.gg/images/Water_Candle.png",
     "categories": [
       "furniture",
       "light-source",
@@ -8464,7 +8464,7 @@
     "page": "Water Bolt",
     "url": "https://terraria.wiki.gg/wiki/Water_Bolt",
     "icon": "https://terraria.wiki.gg/images/Water_Bolt.png",
-    "iconPlaced": "https://terraria.wiki.gg/images/Tiles_50_5.png",
+    "iconPlaced": "https://terraria.wiki.gg/images/Water_Bolt_%28placed%29.png",
     "categories": [
       "weapon"
     ],
@@ -9965,7 +9965,7 @@
     "page": "Mushroom Grass Seeds",
     "url": "https://terraria.wiki.gg/wiki/Mushroom_Grass_Seeds",
     "icon": "https://terraria.wiki.gg/images/Mushroom_Grass_Seeds.png",
-    "iconPlaced": "https://terraria.wiki.gg/images/Mushroom_Grass_Seeds_%28placed%29.png",
+    "iconPlaced": "https://terraria.wiki.gg/images/Mushroom_grass.png",
     "categories": [
       "crafting-material",
       "seeds"
@@ -10018,7 +10018,7 @@
     "page": "Jungle Grass Seeds",
     "url": "https://terraria.wiki.gg/wiki/Jungle_Grass_Seeds",
     "icon": "https://terraria.wiki.gg/images/Jungle_Grass_Seeds.png",
-    "iconPlaced": "https://terraria.wiki.gg/images/Jungle_Grass_Seeds_%28placed%29.png",
+    "iconPlaced": "https://terraria.wiki.gg/images/Jungle_grass.png",
     "categories": [
       "crafting-material",
       "seeds"
@@ -17907,7 +17907,7 @@
     "page": "Bowls",
     "url": "https://terraria.wiki.gg/wiki/Bowls",
     "icon": "https://terraria.wiki.gg/images/Bowl.png",
-    "iconPlaced": "https://terraria.wiki.gg/images/Bowl_%28placed%29.png",
+    "iconPlaced": "https://terraria.wiki.gg/images/Bowl.png",
     "categories": [
       "crafting-material",
       "furniture"
@@ -24398,7 +24398,7 @@
     "page": "Crystal Ball",
     "url": "https://terraria.wiki.gg/wiki/Crystal_Ball",
     "icon": "https://terraria.wiki.gg/images/Crystal_Ball.png",
-    "iconPlaced": "https://terraria.wiki.gg/images/Crystal_Ball_%28placed%29.png",
+    "iconPlaced": "https://terraria.wiki.gg/images/Crystal_Ball.png",
     "categories": [
       "crafting-station",
       "furniture"
@@ -25649,7 +25649,7 @@
     "page": "Active Stone Block",
     "url": "https://terraria.wiki.gg/wiki/Active_Stone_Block",
     "icon": "https://terraria.wiki.gg/images/Active_Stone_Block.png",
-    "iconPlaced": "https://terraria.wiki.gg/images/Active_Stone_Block_%28placed%29.png",
+    "iconPlaced": "https://terraria.wiki.gg/images/Stone_Block_%28placed%29.png",
     "categories": [
       "block",
       "mechanism"
@@ -30131,7 +30131,6 @@
     ],
     "subcategories": [],
     "obtain": [
-      "drop",
       "unobtainable"
     ],
     "vendors": [],
@@ -30174,7 +30173,6 @@
     ],
     "subcategories": [],
     "obtain": [
-      "drop",
       "unobtainable"
     ],
     "vendors": [],
@@ -30217,7 +30215,6 @@
     ],
     "subcategories": [],
     "obtain": [
-      "drop",
       "unobtainable"
     ],
     "vendors": [],
@@ -31874,7 +31871,7 @@
     "page": "Work Benches",
     "url": "https://terraria.wiki.gg/wiki/Work_Benches",
     "icon": "https://terraria.wiki.gg/images/Ebonwood_Work_Bench.png",
-    "iconPlaced": "https://terraria.wiki.gg/images/Ebonwood_Work_Bench_%28placed%29.png",
+    "iconPlaced": "https://terraria.wiki.gg/images/Ebonwood_Work_Bench.png",
     "categories": [
       "crafting-station",
       "furniture"
@@ -31925,7 +31922,7 @@
     "page": "Work Benches",
     "url": "https://terraria.wiki.gg/wiki/Work_Benches",
     "icon": "https://terraria.wiki.gg/images/Rich_Mahogany_Work_Bench.png",
-    "iconPlaced": "https://terraria.wiki.gg/images/Rich_Mahogany_Work_Bench_%28placed%29.png",
+    "iconPlaced": "https://terraria.wiki.gg/images/Rich_Mahogany_Work_Bench.png",
     "categories": [
       "crafting-station",
       "furniture"
@@ -31976,7 +31973,7 @@
     "page": "Work Benches",
     "url": "https://terraria.wiki.gg/wiki/Work_Benches",
     "icon": "https://terraria.wiki.gg/images/Pearlwood_Work_Bench.png",
-    "iconPlaced": "https://terraria.wiki.gg/images/Pearlwood_Work_Bench_%28placed%29.png",
+    "iconPlaced": "https://terraria.wiki.gg/images/Pearlwood_Work_Bench.png",
     "categories": [
       "crafting-station",
       "furniture"
@@ -33229,7 +33226,7 @@
     "internalName": "RainbowBrick",
     "page": "Rainbow Brick",
     "url": "https://terraria.wiki.gg/wiki/Rainbow_Brick",
-    "icon": "https://terraria.wiki.gg/images/Rainbow_Brick.png",
+    "icon": "https://terraria.wiki.gg/images/Rainbow_Brick.gif",
     "iconPlaced": "https://terraria.wiki.gg/images/Rainbow_Brick_%28placed%29.gif",
     "categories": [
       "crafting-material",
@@ -33282,7 +33279,7 @@
     "internalName": "RainbowBrickWall",
     "page": "Rainbow Brick Wall",
     "url": "https://terraria.wiki.gg/wiki/Rainbow_Brick_Wall",
-    "icon": "https://terraria.wiki.gg/images/Rainbow_Brick_Wall.png",
+    "icon": "https://terraria.wiki.gg/images/Rainbow_Brick_Wall.gif",
     "iconPlaced": "https://terraria.wiki.gg/images/Rainbow_Brick_Wall_%28placed%29.gif",
     "categories": [
       "crafting-material",
@@ -33383,7 +33380,8 @@
     "icon": "https://terraria.wiki.gg/images/Red%27s_Wings.png",
     "iconEquipped": "https://terraria.wiki.gg/images/Red%27s_Wings_%28equipped%29.png",
     "categories": [
-      "accessory"
+      "accessory",
+      "developer"
     ],
     "subcategories": [
       "wings"
@@ -33426,13 +33424,13 @@
     "url": "https://terraria.wiki.gg/wiki/Red%27s_set",
     "icon": "https://terraria.wiki.gg/images/Red%27s_Helmet.png",
     "categories": [
-      "vanity"
+      "vanity",
+      "developer"
     ],
     "subcategories": [],
     "obtain": [
       "bag",
-      "treasure-bag",
-      "developer"
+      "treasure-bag"
     ],
     "vendors": [],
     "events": [],
@@ -33470,13 +33468,13 @@
     "url": "https://terraria.wiki.gg/wiki/Red%27s_set",
     "icon": "https://terraria.wiki.gg/images/Red%27s_Breastplate.png",
     "categories": [
-      "vanity"
+      "vanity",
+      "developer"
     ],
     "subcategories": [],
     "obtain": [
       "bag",
-      "treasure-bag",
-      "developer"
+      "treasure-bag"
     ],
     "vendors": [],
     "events": [],
@@ -33514,13 +33512,13 @@
     "url": "https://terraria.wiki.gg/wiki/Red%27s_set",
     "icon": "https://terraria.wiki.gg/images/Red%27s_Leggings.png",
     "categories": [
-      "vanity"
+      "vanity",
+      "developer"
     ],
     "subcategories": [],
     "obtain": [
       "bag",
-      "treasure-bag",
-      "developer"
+      "treasure-bag"
     ],
     "vendors": [],
     "events": [],
@@ -33556,7 +33554,7 @@
     "internalName": "Fish",
     "page": "Fish (item)",
     "url": "https://terraria.wiki.gg/wiki/Fish_%28item%29",
-    "icon": "https://terraria.wiki.gg/images/Fish.png",
+    "icon": "https://terraria.wiki.gg/images/Fish_%28item%29.png",
     "categories": [
       "pet"
     ],
@@ -33775,7 +33773,7 @@
     "page": "Work Benches",
     "url": "https://terraria.wiki.gg/wiki/Work_Benches",
     "icon": "https://terraria.wiki.gg/images/Boreal_Wood_Work_Bench.png",
-    "iconPlaced": "https://terraria.wiki.gg/images/Boreal_Wood_Work_Bench_%28placed%29.png",
+    "iconPlaced": "https://terraria.wiki.gg/images/Boreal_Wood_Work_Bench.png",
     "categories": [
       "crafting-station",
       "furniture"
@@ -40638,7 +40636,7 @@
     "page": "Work Benches",
     "url": "https://terraria.wiki.gg/wiki/Work_Benches",
     "icon": "https://terraria.wiki.gg/images/Bone_Work_Bench.png",
-    "iconPlaced": "https://terraria.wiki.gg/images/Bone_Work_Bench_%28placed%29.png",
+    "iconPlaced": "https://terraria.wiki.gg/images/Bone_Work_Bench.png",
     "categories": [
       "crafting-station",
       "furniture"
@@ -40689,7 +40687,7 @@
     "page": "Work Benches",
     "url": "https://terraria.wiki.gg/wiki/Work_Benches",
     "icon": "https://terraria.wiki.gg/images/Cactus_Work_Bench.png",
-    "iconPlaced": "https://terraria.wiki.gg/images/Cactus_Work_Bench_%28placed%29.png",
+    "iconPlaced": "https://terraria.wiki.gg/images/Cactus_Work_Bench.png",
     "categories": [
       "crafting-station",
       "furniture"
@@ -40740,7 +40738,7 @@
     "page": "Work Benches",
     "url": "https://terraria.wiki.gg/wiki/Work_Benches",
     "icon": "https://terraria.wiki.gg/images/Flesh_Work_Bench.png",
-    "iconPlaced": "https://terraria.wiki.gg/images/Flesh_Work_Bench_%28placed%29.png",
+    "iconPlaced": "https://terraria.wiki.gg/images/Flesh_Work_Bench.png",
     "categories": [
       "crafting-station",
       "furniture"
@@ -40842,7 +40840,7 @@
     "page": "Work Benches",
     "url": "https://terraria.wiki.gg/wiki/Work_Benches",
     "icon": "https://terraria.wiki.gg/images/Slime_Work_Bench.png",
-    "iconPlaced": "https://terraria.wiki.gg/images/Slime_Work_Bench_%28placed%29.png",
+    "iconPlaced": "https://terraria.wiki.gg/images/Slime_Work_Bench.png",
     "categories": [
       "crafting-station",
       "furniture"
@@ -45051,8 +45049,7 @@
     "consumable": false,
     "placeable": false,
     "autoswing": false,
-    "tooltip": "During nighttime, grants minor increase to damage,\nmelee speed, critical strike chance, life regeneration,\ndefense, mining speed, and minion knockback",
-    "eventOnly": true
+    "tooltip": "During nighttime, grants minor increase to damage,\nmelee speed, critical strike chance, life regeneration,\ndefense, mining speed, and minion knockback"
   },
   {
     "key": "ArmorBracing",
@@ -45815,7 +45812,7 @@
     "page": "Work Benches",
     "url": "https://terraria.wiki.gg/wiki/Work_Benches",
     "icon": "https://terraria.wiki.gg/images/Shadewood_Work_Bench.png",
-    "iconPlaced": "https://terraria.wiki.gg/images/Shadewood_Work_Bench_%28placed%29.png",
+    "iconPlaced": "https://terraria.wiki.gg/images/Shadewood_Work_Bench.png",
     "categories": [
       "crafting-station",
       "furniture"
@@ -73356,7 +73353,7 @@
     "internalName": "Darkness",
     "page": "Paintings",
     "url": "https://terraria.wiki.gg/wiki/Paintings",
-    "icon": "https://terraria.wiki.gg/images/Darkness_%28Painting%29.png",
+    "icon": "https://terraria.wiki.gg/images/Darkness_%28item%29.png",
     "categories": [
       "furniture"
     ],
@@ -75172,7 +75169,7 @@
     "page": "Work Benches",
     "url": "https://terraria.wiki.gg/wiki/Work_Benches",
     "icon": "https://terraria.wiki.gg/images/Gothic_Work_Bench.png",
-    "iconPlaced": "https://terraria.wiki.gg/images/Gothic_Work_Bench_%28placed%29.png",
+    "iconPlaced": "https://terraria.wiki.gg/images/Gothic_Work_Bench.png",
     "categories": [
       "crafting-station",
       "furniture"
@@ -77236,13 +77233,13 @@
     "url": "https://terraria.wiki.gg/wiki/Cenx%27s_set",
     "icon": "https://terraria.wiki.gg/images/Cenx%27s_Tiara.png",
     "categories": [
-      "vanity"
+      "vanity",
+      "developer"
     ],
     "subcategories": [],
     "obtain": [
       "bag",
-      "treasure-bag",
-      "developer"
+      "treasure-bag"
     ],
     "vendors": [],
     "events": [],
@@ -77280,13 +77277,13 @@
     "url": "https://terraria.wiki.gg/wiki/Cenx%27s_set",
     "icon": "https://terraria.wiki.gg/images/Cenx%27s_Breastplate.png",
     "categories": [
-      "vanity"
+      "vanity",
+      "developer"
     ],
     "subcategories": [],
     "obtain": [
       "bag",
-      "treasure-bag",
-      "developer"
+      "treasure-bag"
     ],
     "vendors": [],
     "events": [],
@@ -77324,13 +77321,13 @@
     "url": "https://terraria.wiki.gg/wiki/Cenx%27s_set",
     "icon": "https://terraria.wiki.gg/images/Cenx%27s_Leggings.png",
     "categories": [
-      "vanity"
+      "vanity",
+      "developer"
     ],
     "subcategories": [],
     "obtain": [
       "bag",
-      "treasure-bag",
-      "developer"
+      "treasure-bag"
     ],
     "vendors": [],
     "events": [],
@@ -77368,13 +77365,13 @@
     "url": "https://terraria.wiki.gg/wiki/Crowno%27s_set",
     "icon": "https://terraria.wiki.gg/images/Crowno%27s_Mask.png",
     "categories": [
-      "vanity"
+      "vanity",
+      "developer"
     ],
     "subcategories": [],
     "obtain": [
       "bag",
-      "treasure-bag",
-      "developer"
+      "treasure-bag"
     ],
     "vendors": [],
     "events": [],
@@ -77412,13 +77409,13 @@
     "url": "https://terraria.wiki.gg/wiki/Crowno%27s_set",
     "icon": "https://terraria.wiki.gg/images/Crowno%27s_Breastplate.png",
     "categories": [
-      "vanity"
+      "vanity",
+      "developer"
     ],
     "subcategories": [],
     "obtain": [
       "bag",
-      "treasure-bag",
-      "developer"
+      "treasure-bag"
     ],
     "vendors": [],
     "events": [],
@@ -77456,13 +77453,13 @@
     "url": "https://terraria.wiki.gg/wiki/Crowno%27s_set",
     "icon": "https://terraria.wiki.gg/images/Crowno%27s_Leggings.png",
     "categories": [
-      "vanity"
+      "vanity",
+      "developer"
     ],
     "subcategories": [],
     "obtain": [
       "bag",
-      "treasure-bag",
-      "developer"
+      "treasure-bag"
     ],
     "vendors": [],
     "events": [],
@@ -77500,13 +77497,13 @@
     "url": "https://terraria.wiki.gg/wiki/Will%27s_set",
     "icon": "https://terraria.wiki.gg/images/Will%27s_Helmet.png",
     "categories": [
-      "vanity"
+      "vanity",
+      "developer"
     ],
     "subcategories": [],
     "obtain": [
       "bag",
-      "treasure-bag",
-      "developer"
+      "treasure-bag"
     ],
     "vendors": [],
     "events": [],
@@ -77544,13 +77541,13 @@
     "url": "https://terraria.wiki.gg/wiki/Will%27s_set",
     "icon": "https://terraria.wiki.gg/images/Will%27s_Breastplate.png",
     "categories": [
-      "vanity"
+      "vanity",
+      "developer"
     ],
     "subcategories": [],
     "obtain": [
       "bag",
-      "treasure-bag",
-      "developer"
+      "treasure-bag"
     ],
     "vendors": [],
     "events": [],
@@ -77588,13 +77585,13 @@
     "url": "https://terraria.wiki.gg/wiki/Will%27s_set",
     "icon": "https://terraria.wiki.gg/images/Will%27s_Leggings.png",
     "categories": [
-      "vanity"
+      "vanity",
+      "developer"
     ],
     "subcategories": [],
     "obtain": [
       "bag",
-      "treasure-bag",
-      "developer"
+      "treasure-bag"
     ],
     "vendors": [],
     "events": [],
@@ -77632,13 +77629,13 @@
     "url": "https://terraria.wiki.gg/wiki/Jim%27s_set",
     "icon": "https://terraria.wiki.gg/images/Jim%27s_Helmet.png",
     "categories": [
-      "vanity"
+      "vanity",
+      "developer"
     ],
     "subcategories": [],
     "obtain": [
       "bag",
-      "treasure-bag",
-      "developer"
+      "treasure-bag"
     ],
     "vendors": [],
     "events": [],
@@ -77676,13 +77673,13 @@
     "url": "https://terraria.wiki.gg/wiki/Jim%27s_set",
     "icon": "https://terraria.wiki.gg/images/Jim%27s_Breastplate.png",
     "categories": [
-      "vanity"
+      "vanity",
+      "developer"
     ],
     "subcategories": [],
     "obtain": [
       "bag",
-      "treasure-bag",
-      "developer"
+      "treasure-bag"
     ],
     "vendors": [],
     "events": [],
@@ -77720,13 +77717,13 @@
     "url": "https://terraria.wiki.gg/wiki/Jim%27s_set",
     "icon": "https://terraria.wiki.gg/images/Jim%27s_Leggings.png",
     "categories": [
-      "vanity"
+      "vanity",
+      "developer"
     ],
     "subcategories": [],
     "obtain": [
       "bag",
-      "treasure-bag",
-      "developer"
+      "treasure-bag"
     ],
     "vendors": [],
     "events": [],
@@ -77764,13 +77761,13 @@
     "url": "https://terraria.wiki.gg/wiki/Aaron%27s_set",
     "icon": "https://terraria.wiki.gg/images/Aaron%27s_Helmet.png",
     "categories": [
-      "vanity"
+      "vanity",
+      "developer"
     ],
     "subcategories": [],
     "obtain": [
       "bag",
-      "treasure-bag",
-      "developer"
+      "treasure-bag"
     ],
     "vendors": [],
     "events": [],
@@ -77808,13 +77805,13 @@
     "url": "https://terraria.wiki.gg/wiki/Aaron%27s_set",
     "icon": "https://terraria.wiki.gg/images/Aaron%27s_Breastplate.png",
     "categories": [
-      "vanity"
+      "vanity",
+      "developer"
     ],
     "subcategories": [],
     "obtain": [
       "bag",
-      "treasure-bag",
-      "developer"
+      "treasure-bag"
     ],
     "vendors": [],
     "events": [],
@@ -77852,13 +77849,13 @@
     "url": "https://terraria.wiki.gg/wiki/Aaron%27s_set",
     "icon": "https://terraria.wiki.gg/images/Aaron%27s_Leggings.png",
     "categories": [
-      "vanity"
+      "vanity",
+      "developer"
     ],
     "subcategories": [],
     "obtain": [
       "bag",
-      "treasure-bag",
-      "developer"
+      "treasure-bag"
     ],
     "vendors": [],
     "events": [],
@@ -78448,13 +78445,13 @@
     "url": "https://terraria.wiki.gg/wiki/D-Town%27s_set",
     "icon": "https://terraria.wiki.gg/images/D-Town%27s_Helmet.png",
     "categories": [
-      "vanity"
+      "vanity",
+      "developer"
     ],
     "subcategories": [],
     "obtain": [
       "bag",
-      "treasure-bag",
-      "developer"
+      "treasure-bag"
     ],
     "vendors": [],
     "events": [],
@@ -78492,13 +78489,13 @@
     "url": "https://terraria.wiki.gg/wiki/D-Town%27s_set",
     "icon": "https://terraria.wiki.gg/images/D-Town%27s_Breastplate.png",
     "categories": [
-      "vanity"
+      "vanity",
+      "developer"
     ],
     "subcategories": [],
     "obtain": [
       "bag",
-      "treasure-bag",
-      "developer"
+      "treasure-bag"
     ],
     "vendors": [],
     "events": [],
@@ -78536,13 +78533,13 @@
     "url": "https://terraria.wiki.gg/wiki/D-Town%27s_set",
     "icon": "https://terraria.wiki.gg/images/D-Town%27s_Leggings.png",
     "categories": [
-      "vanity"
+      "vanity",
+      "developer"
     ],
     "subcategories": [],
     "obtain": [
       "bag",
-      "treasure-bag",
-      "developer"
+      "treasure-bag"
     ],
     "vendors": [],
     "events": [],
@@ -78581,7 +78578,8 @@
     "icon": "https://terraria.wiki.gg/images/D-Town%27s_Wings.png",
     "iconEquipped": "https://terraria.wiki.gg/images/D-Town%27s_Wings_%28equipped%29.png",
     "categories": [
-      "accessory"
+      "accessory",
+      "developer"
     ],
     "subcategories": [
       "wings"
@@ -78625,7 +78623,8 @@
     "icon": "https://terraria.wiki.gg/images/Will%27s_Wings.png",
     "iconEquipped": "https://terraria.wiki.gg/images/Will%27s_Wings_%28equipped%29.png",
     "categories": [
-      "accessory"
+      "accessory",
+      "developer"
     ],
     "subcategories": [
       "wings"
@@ -78669,7 +78668,8 @@
     "icon": "https://terraria.wiki.gg/images/Crowno%27s_Wings.png",
     "iconEquipped": "https://terraria.wiki.gg/images/Crowno%27s_Wings_%28equipped%29.png",
     "categories": [
-      "accessory"
+      "accessory",
+      "developer"
     ],
     "subcategories": [
       "wings"
@@ -78713,7 +78713,8 @@
     "icon": "https://terraria.wiki.gg/images/Cenx%27s_Wings.png",
     "iconEquipped": "https://terraria.wiki.gg/images/Cenx%27s_Wings_%28equipped%29.png",
     "categories": [
-      "accessory"
+      "accessory",
+      "developer"
     ],
     "subcategories": [
       "wings"
@@ -78756,13 +78757,13 @@
     "url": "https://terraria.wiki.gg/wiki/Cenx%27s_Dress_set",
     "icon": "https://terraria.wiki.gg/images/Cenx%27s_Dress.png",
     "categories": [
-      "vanity"
+      "vanity",
+      "developer"
     ],
     "subcategories": [],
     "obtain": [
       "bag",
-      "treasure-bag",
-      "developer"
+      "treasure-bag"
     ],
     "vendors": [],
     "events": [],
@@ -78800,13 +78801,13 @@
     "url": "https://terraria.wiki.gg/wiki/Cenx%27s_Dress_set",
     "icon": "https://terraria.wiki.gg/images/Cenx%27s_Dress_Pants.png",
     "categories": [
-      "vanity"
+      "vanity",
+      "developer"
     ],
     "subcategories": [],
     "obtain": [
       "bag",
-      "treasure-bag",
-      "developer"
+      "treasure-bag"
     ],
     "vendors": [],
     "events": [],
@@ -88810,7 +88811,7 @@
     "page": "Work Benches",
     "url": "https://terraria.wiki.gg/wiki/Work_Benches",
     "icon": "https://terraria.wiki.gg/images/Pumpkin_Work_Bench.png",
-    "iconPlaced": "https://terraria.wiki.gg/images/Pumpkin_Work_Bench_%28placed%29.png",
+    "iconPlaced": "https://terraria.wiki.gg/images/Pumpkin_Work_Bench.png",
     "categories": [
       "crafting-station",
       "furniture"
@@ -91619,8 +91620,7 @@
     "consumable": false,
     "placeable": false,
     "autoswing": false,
-    "bodySlot": "social helmet",
-    "eventOnly": true
+    "bodySlot": "social helmet"
   },
   {
     "key": "SniperScope",
@@ -92202,8 +92202,7 @@
     "useTime": 15,
     "placedWidth": 1,
     "placedHeight": 1,
-    "tooltip": "Right click to open\nPress Up/Down to cycle through placement styles\nPress LT to open\nPress R1 to open\nPress ZL to open\nDouble tap to open",
-    "eventOnly": true
+    "tooltip": "Right click to open\nPress Up/Down to cycle through placement styles\nPress LT to open\nPress R1 to open\nPress ZL to open\nDouble tap to open"
   },
   {
     "key": "RedRyder",
@@ -109645,7 +109644,7 @@
     "page": "Bowls",
     "url": "https://terraria.wiki.gg/wiki/Bowls",
     "icon": "https://terraria.wiki.gg/images/Dynasty_Bowl.png",
-    "iconPlaced": "https://terraria.wiki.gg/images/Dynasty_Bowl_%28placed%29.png",
+    "iconPlaced": "https://terraria.wiki.gg/images/Dynasty_Bowl.png",
     "categories": [
       "furniture"
     ],
@@ -110022,7 +110021,7 @@
     "page": "Bowls",
     "url": "https://terraria.wiki.gg/wiki/Bowls",
     "icon": "https://terraria.wiki.gg/images/Glass_Bowl.png",
-    "iconPlaced": "https://terraria.wiki.gg/images/Glass_Bowl_%28placed%29.png",
+    "iconPlaced": "https://terraria.wiki.gg/images/Glass_Bowl.png",
     "categories": [
       "furniture"
     ],
@@ -110411,7 +110410,7 @@
     "page": "Work Benches",
     "url": "https://terraria.wiki.gg/wiki/Work_Benches",
     "icon": "https://terraria.wiki.gg/images/Honey_Work_Bench.png",
-    "iconPlaced": "https://terraria.wiki.gg/images/Honey_Work_Bench_%28placed%29.png",
+    "iconPlaced": "https://terraria.wiki.gg/images/Honey_Work_Bench.png",
     "categories": [
       "crafting-station",
       "furniture"
@@ -110462,7 +110461,7 @@
     "page": "Work Benches",
     "url": "https://terraria.wiki.gg/wiki/Work_Benches",
     "icon": "https://terraria.wiki.gg/images/Frozen_Work_Bench.png",
-    "iconPlaced": "https://terraria.wiki.gg/images/Frozen_Work_Bench_%28placed%29.png",
+    "iconPlaced": "https://terraria.wiki.gg/images/Frozen_Work_Bench.png",
     "categories": [
       "crafting-station",
       "furniture"
@@ -110511,7 +110510,7 @@
     "page": "Work Benches",
     "url": "https://terraria.wiki.gg/wiki/Work_Benches",
     "icon": "https://terraria.wiki.gg/images/Steampunk_Work_Bench.png",
-    "iconPlaced": "https://terraria.wiki.gg/images/Steampunk_Work_Bench_%28placed%29.png",
+    "iconPlaced": "https://terraria.wiki.gg/images/Steampunk_Work_Bench.png",
     "categories": [
       "crafting-station",
       "furniture"
@@ -114387,7 +114386,7 @@
     "page": "Wooden Crate",
     "url": "https://terraria.wiki.gg/wiki/Wooden_Crate",
     "icon": "https://terraria.wiki.gg/images/Wooden_Crate.png",
-    "iconPlaced": "https://terraria.wiki.gg/images/Wooden_Crate_%28placed%29.png",
+    "iconPlaced": "https://terraria.wiki.gg/images/Wooden_Crate.png",
     "categories": [
       "furniture",
       "crate",
@@ -115534,7 +115533,7 @@
     "page": "Shiverthorn Seeds",
     "url": "https://terraria.wiki.gg/wiki/Shiverthorn_Seeds",
     "icon": "https://terraria.wiki.gg/images/Shiverthorn_Seeds.png",
-    "iconPlaced": "https://terraria.wiki.gg/images/Shiverthorn_Seeds_%28placed%29.png",
+    "iconPlaced": "https://terraria.wiki.gg/images/Shiverthorn_%28placed%29_%28sprout%29.png",
     "categories": [
       "seeds"
     ],
@@ -123755,7 +123754,7 @@
     "page": "Work Benches",
     "url": "https://terraria.wiki.gg/wiki/Work_Benches",
     "icon": "https://terraria.wiki.gg/images/Palm_Wood_Work_Bench.png",
-    "iconPlaced": "https://terraria.wiki.gg/images/Palm_Wood_Work_Bench_%28placed%29.png",
+    "iconPlaced": "https://terraria.wiki.gg/images/Palm_Wood_Work_Bench.png",
     "categories": [
       "crafting-station",
       "furniture"
@@ -128498,7 +128497,7 @@
     "page": "Work Benches",
     "url": "https://terraria.wiki.gg/wiki/Work_Benches",
     "icon": "https://terraria.wiki.gg/images/Skyware_Work_Bench.png",
-    "iconPlaced": "https://terraria.wiki.gg/images/Skyware_Work_Bench_%28placed%29.png",
+    "iconPlaced": "https://terraria.wiki.gg/images/Skyware_Work_Bench.png",
     "categories": [
       "crafting-station",
       "furniture"
@@ -128547,7 +128546,7 @@
     "page": "Work Benches",
     "url": "https://terraria.wiki.gg/wiki/Work_Benches",
     "icon": "https://terraria.wiki.gg/images/Glass_Work_Bench.png",
-    "iconPlaced": "https://terraria.wiki.gg/images/Glass_Work_Bench_%28placed%29.png",
+    "iconPlaced": "https://terraria.wiki.gg/images/Glass_Work_Bench.png",
     "categories": [
       "crafting-station",
       "furniture"
@@ -128596,7 +128595,7 @@
     "page": "Work Benches",
     "url": "https://terraria.wiki.gg/wiki/Work_Benches",
     "icon": "https://terraria.wiki.gg/images/Living_Wood_Work_Bench.png",
-    "iconPlaced": "https://terraria.wiki.gg/images/Living_Wood_Work_Bench_%28placed%29.png",
+    "iconPlaced": "https://terraria.wiki.gg/images/Living_Wood_Work_Bench.png",
     "categories": [
       "crafting-station",
       "furniture"
@@ -137720,7 +137719,7 @@
     "page": "Work Benches",
     "url": "https://terraria.wiki.gg/wiki/Work_Benches",
     "icon": "https://terraria.wiki.gg/images/Martian_Work_Bench.png",
-    "iconPlaced": "https://terraria.wiki.gg/images/Martian_Work_Bench_%28placed%29.png",
+    "iconPlaced": "https://terraria.wiki.gg/images/Martian_Work_Bench.png",
     "categories": [
       "crafting-station",
       "furniture"
@@ -141268,7 +141267,6 @@
       "enemy-banner"
     ],
     "obtain": [
-      "drop",
       "unobtainable"
     ],
     "vendors": [],
@@ -145334,7 +145332,6 @@
       "enemy-banner"
     ],
     "obtain": [
-      "drop",
       "unobtainable"
     ],
     "vendors": [],
@@ -145381,7 +145378,6 @@
       "enemy-banner"
     ],
     "obtain": [
-      "drop",
       "unobtainable"
     ],
     "vendors": [],
@@ -145428,7 +145424,6 @@
       "enemy-banner"
     ],
     "obtain": [
-      "drop",
       "unobtainable"
     ],
     "vendors": [],
@@ -147038,6 +147033,7 @@
     "icon": "https://terraria.wiki.gg/images/Skiphs%27_Blood.png",
     "iconEquipped": "https://terraria.wiki.gg/images/Skiphs%27_Blood_%28equipped%29.gif",
     "categories": [
+      "developer",
       "dye"
     ],
     "subcategories": [
@@ -147045,8 +147041,7 @@
     ],
     "obtain": [
       "bag",
-      "quest-reward",
-      "developer"
+      "quest-reward"
     ],
     "vendors": [],
     "events": [],
@@ -152886,7 +152881,7 @@
     "page": "Sinks",
     "url": "https://terraria.wiki.gg/wiki/Sinks",
     "icon": "https://terraria.wiki.gg/images/Marble_Sink.png",
-    "iconPlaced": "https://terraria.wiki.gg/images/Marble_Sink_%28placed%29.png",
+    "iconPlaced": "https://terraria.wiki.gg/images/Marble_Sink.png",
     "categories": [
       "crafting-station",
       "furniture"
@@ -153253,7 +153248,7 @@
     "page": "Work Benches",
     "url": "https://terraria.wiki.gg/wiki/Work_Benches",
     "icon": "https://terraria.wiki.gg/images/Meteorite_Work_Bench.png",
-    "iconPlaced": "https://terraria.wiki.gg/images/Meteorite_Work_Bench_%28placed%29.png",
+    "iconPlaced": "https://terraria.wiki.gg/images/Meteorite_Work_Bench.png",
     "categories": [
       "crafting-station",
       "furniture"
@@ -153301,7 +153296,7 @@
     "page": "Work Benches",
     "url": "https://terraria.wiki.gg/wiki/Work_Benches",
     "icon": "https://terraria.wiki.gg/images/Marble_Work_Bench.png",
-    "iconPlaced": "https://terraria.wiki.gg/images/Marble_Work_Bench_%28placed%29.png",
+    "iconPlaced": "https://terraria.wiki.gg/images/Marble_Work_Bench.png",
     "categories": [
       "crafting-station",
       "furniture"
@@ -153349,7 +153344,7 @@
     "page": "Work Benches",
     "url": "https://terraria.wiki.gg/wiki/Work_Benches",
     "icon": "https://terraria.wiki.gg/images/Granite_Work_Bench.png",
-    "iconPlaced": "https://terraria.wiki.gg/images/Granite_Work_Bench_%28placed%29.png",
+    "iconPlaced": "https://terraria.wiki.gg/images/Granite_Work_Bench.png",
     "categories": [
       "crafting-station",
       "furniture"
@@ -156529,13 +156524,13 @@
     "url": "https://terraria.wiki.gg/wiki/Lazure%27s_set",
     "icon": "https://terraria.wiki.gg/images/Lazure%27s_Valkyrie_Circlet.png",
     "categories": [
-      "vanity"
+      "vanity",
+      "developer"
     ],
     "subcategories": [],
     "obtain": [
       "bag",
-      "treasure-bag",
-      "developer"
+      "treasure-bag"
     ],
     "vendors": [],
     "events": [],
@@ -156573,13 +156568,13 @@
     "url": "https://terraria.wiki.gg/wiki/Lazure%27s_set",
     "icon": "https://terraria.wiki.gg/images/Lazure%27s_Valkyrie_Cloak.png",
     "categories": [
-      "vanity"
+      "vanity",
+      "developer"
     ],
     "subcategories": [],
     "obtain": [
       "bag",
-      "treasure-bag",
-      "developer"
+      "treasure-bag"
     ],
     "vendors": [],
     "events": [],
@@ -156618,7 +156613,8 @@
     "icon": "https://terraria.wiki.gg/images/Lazure%27s_Barrier_Platform.png",
     "iconEquipped": "https://terraria.wiki.gg/images/Lazure%27s_Barrier_Platform_%28equipped%29.png",
     "categories": [
-      "accessory"
+      "accessory",
+      "developer"
     ],
     "subcategories": [
       "wings"
@@ -159368,15 +159364,15 @@
     "url": "https://terraria.wiki.gg/wiki/Red%27s_Throw",
     "icon": "https://terraria.wiki.gg/images/Red%27s_Throw.png",
     "categories": [
-      "weapon"
+      "weapon",
+      "developer"
     ],
     "subcategories": [
       "melee",
       "yoyo"
     ],
     "obtain": [
-      "bag",
-      "developer"
+      "bag"
     ],
     "vendors": [],
     "events": [],
@@ -159419,7 +159415,8 @@
     "url": "https://terraria.wiki.gg/wiki/Valkyrie_Yoyo",
     "icon": "https://terraria.wiki.gg/images/Valkyrie_Yoyo.png",
     "categories": [
-      "weapon"
+      "weapon",
+      "developer"
     ],
     "subcategories": [
       "melee",
@@ -159427,8 +159424,7 @@
     ],
     "obtain": [
       "bag",
-      "treasure-bag",
-      "developer"
+      "treasure-bag"
     ],
     "vendors": [],
     "events": [],
@@ -161343,7 +161339,6 @@
     ],
     "subcategories": [],
     "obtain": [
-      "drop",
       "unobtainable"
     ],
     "vendors": [],
@@ -163031,7 +163026,8 @@
     "url": "https://terraria.wiki.gg/wiki/Arkhalis",
     "icon": "https://terraria.wiki.gg/images/Arkhalis.png",
     "categories": [
-      "weapon"
+      "weapon",
+      "developer"
     ],
     "subcategories": [
       "melee",
@@ -163039,8 +163035,7 @@
     ],
     "obtain": [
       "bag",
-      "treasure-bag",
-      "developer"
+      "treasure-bag"
     ],
     "vendors": [],
     "events": [],
@@ -164446,7 +164441,6 @@
       "enemy-banner"
     ],
     "obtain": [
-      "drop",
       "unobtainable"
     ],
     "vendors": [],
@@ -164731,7 +164725,6 @@
       "enemy-banner"
     ],
     "obtain": [
-      "drop",
       "unobtainable"
     ],
     "vendors": [],
@@ -173084,13 +173077,13 @@
     "url": "https://terraria.wiki.gg/wiki/Yoraiz0r%27s_set",
     "icon": "https://terraria.wiki.gg/images/Yoraiz0r%27s_Uniform.png",
     "categories": [
-      "vanity"
+      "vanity",
+      "developer"
     ],
     "subcategories": [],
     "obtain": [
       "bag",
-      "treasure-bag",
-      "developer"
+      "treasure-bag"
     ],
     "vendors": [],
     "events": [],
@@ -173128,13 +173121,13 @@
     "url": "https://terraria.wiki.gg/wiki/Yoraiz0r%27s_set",
     "icon": "https://terraria.wiki.gg/images/Yoraiz0r%27s_Skirt.png",
     "categories": [
-      "vanity"
+      "vanity",
+      "developer"
     ],
     "subcategories": [],
     "obtain": [
       "bag",
-      "treasure-bag",
-      "developer"
+      "treasure-bag"
     ],
     "vendors": [],
     "events": [],
@@ -173173,14 +173166,14 @@
     "icon": "https://terraria.wiki.gg/images/Yoraiz0r%27s_Spell.gif",
     "iconEquipped": "https://terraria.wiki.gg/images/Yoraiz0r%27s_Spell_%28equipped%29.png",
     "categories": [
-      "accessory"
+      "accessory",
+      "developer"
     ],
     "subcategories": [
       "wings"
     ],
     "obtain": [
-      "bag",
-      "developer"
+      "bag"
     ],
     "vendors": [],
     "events": [],
@@ -173219,15 +173212,15 @@
     "iconEquipped": "https://terraria.wiki.gg/images/Yoraiz0r%27s_Scowl_%28equipped%29.png",
     "categories": [
       "accessory",
-      "vanity"
+      "vanity",
+      "developer"
     ],
     "subcategories": [
       "other-accessory"
     ],
     "obtain": [
       "bag",
-      "treasure-bag",
-      "developer"
+      "treasure-bag"
     ],
     "vendors": [],
     "events": [],
@@ -173265,7 +173258,8 @@
     "icon": "https://terraria.wiki.gg/images/Jim%27s_Wings.png",
     "iconEquipped": "https://terraria.wiki.gg/images/Jim%27s_Wings_%28equipped%29.png",
     "categories": [
-      "accessory"
+      "accessory",
+      "developer"
     ],
     "subcategories": [
       "wings"
@@ -173308,13 +173302,13 @@
     "url": "https://terraria.wiki.gg/wiki/Yoraiz0r%27s_set",
     "icon": "https://terraria.wiki.gg/images/Yoraiz0r%27s_Recolored_Goggles.png",
     "categories": [
-      "vanity"
+      "vanity",
+      "developer"
     ],
     "subcategories": [],
     "obtain": [
       "bag",
-      "treasure-bag",
-      "developer"
+      "treasure-bag"
     ],
     "vendors": [],
     "events": [],
@@ -173397,13 +173391,13 @@
     "url": "https://terraria.wiki.gg/wiki/Skiphs%27_set",
     "icon": "https://terraria.wiki.gg/images/Skiphs%27_Mask.png",
     "categories": [
-      "vanity"
+      "vanity",
+      "developer"
     ],
     "subcategories": [],
     "obtain": [
       "bag",
-      "treasure-bag",
-      "developer"
+      "treasure-bag"
     ],
     "vendors": [],
     "events": [],
@@ -173441,13 +173435,13 @@
     "url": "https://terraria.wiki.gg/wiki/Skiphs%27_set",
     "icon": "https://terraria.wiki.gg/images/Skiphs%27_Skin.png",
     "categories": [
-      "vanity"
+      "vanity",
+      "developer"
     ],
     "subcategories": [],
     "obtain": [
       "bag",
-      "treasure-bag",
-      "developer"
+      "treasure-bag"
     ],
     "vendors": [],
     "events": [],
@@ -173485,13 +173479,13 @@
     "url": "https://terraria.wiki.gg/wiki/Skiphs%27_set",
     "icon": "https://terraria.wiki.gg/images/Skiphs%27_Bear_Butt.png",
     "categories": [
-      "vanity"
+      "vanity",
+      "developer"
     ],
     "subcategories": [],
     "obtain": [
       "bag",
-      "treasure-bag",
-      "developer"
+      "treasure-bag"
     ],
     "vendors": [],
     "events": [],
@@ -173530,7 +173524,8 @@
     "icon": "https://terraria.wiki.gg/images/Skiphs%27_Paws.png",
     "iconEquipped": "https://terraria.wiki.gg/images/Skiphs%27_Paws_%28equipped%29.png",
     "categories": [
-      "accessory"
+      "accessory",
+      "developer"
     ],
     "subcategories": [
       "wings"
@@ -173573,13 +173568,13 @@
     "url": "https://terraria.wiki.gg/wiki/Loki%27s_set",
     "icon": "https://terraria.wiki.gg/images/Loki%27s_Helmet.png",
     "categories": [
-      "vanity"
+      "vanity",
+      "developer"
     ],
     "subcategories": [],
     "obtain": [
       "bag",
-      "treasure-bag",
-      "developer"
+      "treasure-bag"
     ],
     "vendors": [],
     "events": [],
@@ -173617,13 +173612,13 @@
     "url": "https://terraria.wiki.gg/wiki/Loki%27s_set",
     "icon": "https://terraria.wiki.gg/images/Loki%27s_Breastplate.png",
     "categories": [
-      "vanity"
+      "vanity",
+      "developer"
     ],
     "subcategories": [],
     "obtain": [
       "bag",
-      "treasure-bag",
-      "developer"
+      "treasure-bag"
     ],
     "vendors": [],
     "events": [],
@@ -173661,13 +173656,13 @@
     "url": "https://terraria.wiki.gg/wiki/Loki%27s_set",
     "icon": "https://terraria.wiki.gg/images/Loki%27s_Greaves.png",
     "categories": [
-      "vanity"
+      "vanity",
+      "developer"
     ],
     "subcategories": [],
     "obtain": [
       "bag",
-      "treasure-bag",
-      "developer"
+      "treasure-bag"
     ],
     "vendors": [],
     "events": [],
@@ -173706,7 +173701,8 @@
     "icon": "https://terraria.wiki.gg/images/Loki%27s_Wings.png",
     "iconEquipped": "https://terraria.wiki.gg/images/Loki%27s_Wings_%28equipped%29.png",
     "categories": [
-      "accessory"
+      "accessory",
+      "developer"
     ],
     "subcategories": [
       "wings"
@@ -174025,14 +174021,14 @@
     "icon": "https://terraria.wiki.gg/images/Loki%27s_Dye.png",
     "iconEquipped": "https://terraria.wiki.gg/images/Loki%27s_Dye_%28equipped%29.gif",
     "categories": [
+      "developer",
       "dye"
     ],
     "subcategories": [
       "other-dye"
     ],
     "obtain": [
-      "bag",
-      "developer"
+      "bag"
     ],
     "vendors": [],
     "events": [],
@@ -185776,9 +185772,7 @@
       "unobtainable"
     ],
     "vendors": [],
-    "events": [
-      "old-ones-army"
-    ],
+    "events": [],
     "biomes": [],
     "times": [],
     "platforms": [
@@ -185798,8 +185792,7 @@
     "stack": 9999,
     "consumable": false,
     "placeable": false,
-    "autoswing": false,
-    "eventOnly": true
+    "autoswing": false
   },
   {
     "key": "GoblinMask",
@@ -186411,7 +186404,6 @@
     ],
     "subcategories": [],
     "obtain": [
-      "drop",
       "unobtainable"
     ],
     "vendors": [],
@@ -186452,7 +186444,6 @@
     ],
     "subcategories": [],
     "obtain": [
-      "drop",
       "unobtainable"
     ],
     "vendors": [],
@@ -188667,7 +188658,7 @@
     "page": "Work Benches",
     "url": "https://terraria.wiki.gg/wiki/Work_Benches",
     "icon": "https://terraria.wiki.gg/images/Crystal_Work_Bench.png",
-    "iconPlaced": "https://terraria.wiki.gg/images/Crystal_Work_Bench_%28placed%29.png",
+    "iconPlaced": "https://terraria.wiki.gg/images/Crystal_Work_Bench.png",
     "categories": [
       "crafting-station",
       "furniture"
@@ -189226,13 +189217,13 @@
     "url": "https://terraria.wiki.gg/wiki/Arkhalis%27_set",
     "icon": "https://terraria.wiki.gg/images/Arkhalis%27_Hood.png",
     "categories": [
-      "vanity"
+      "vanity",
+      "developer"
     ],
     "subcategories": [],
     "obtain": [
       "bag",
-      "treasure-bag",
-      "developer"
+      "treasure-bag"
     ],
     "vendors": [],
     "events": [],
@@ -189270,13 +189261,13 @@
     "url": "https://terraria.wiki.gg/wiki/Arkhalis%27_set",
     "icon": "https://terraria.wiki.gg/images/Arkhalis%27_Bodice.png",
     "categories": [
-      "vanity"
+      "vanity",
+      "developer"
     ],
     "subcategories": [],
     "obtain": [
       "bag",
-      "treasure-bag",
-      "developer"
+      "treasure-bag"
     ],
     "vendors": [],
     "events": [],
@@ -189314,13 +189305,13 @@
     "url": "https://terraria.wiki.gg/wiki/Arkhalis%27_set",
     "icon": "https://terraria.wiki.gg/images/Arkhalis%27_Tights.png",
     "categories": [
-      "vanity"
+      "vanity",
+      "developer"
     ],
     "subcategories": [],
     "obtain": [
       "bag",
-      "treasure-bag",
-      "developer"
+      "treasure-bag"
     ],
     "vendors": [],
     "events": [],
@@ -189359,7 +189350,8 @@
     "icon": "https://terraria.wiki.gg/images/Arkhalis%27_Lightwings.png",
     "iconEquipped": "https://terraria.wiki.gg/images/Arkhalis%27_Lightwings_%28equipped%29.png",
     "categories": [
-      "accessory"
+      "accessory",
+      "developer"
     ],
     "subcategories": [
       "wings"
@@ -189402,13 +189394,13 @@
     "url": "https://terraria.wiki.gg/wiki/Leinfors%27_set",
     "icon": "https://terraria.wiki.gg/images/Leinfors%27_Hair_Protector.png",
     "categories": [
-      "vanity"
+      "vanity",
+      "developer"
     ],
     "subcategories": [],
     "obtain": [
       "bag",
-      "treasure-bag",
-      "developer"
+      "treasure-bag"
     ],
     "vendors": [],
     "events": [],
@@ -189446,13 +189438,13 @@
     "url": "https://terraria.wiki.gg/wiki/Leinfors%27_set",
     "icon": "https://terraria.wiki.gg/images/Leinfors%27_Excessive_Style.png",
     "categories": [
-      "vanity"
+      "vanity",
+      "developer"
     ],
     "subcategories": [],
     "obtain": [
       "bag",
-      "treasure-bag",
-      "developer"
+      "treasure-bag"
     ],
     "vendors": [],
     "events": [],
@@ -189490,13 +189482,13 @@
     "url": "https://terraria.wiki.gg/wiki/Leinfors%27_set",
     "icon": "https://terraria.wiki.gg/images/Leinfors%27_Fancypants.png",
     "categories": [
-      "vanity"
+      "vanity",
+      "developer"
     ],
     "subcategories": [],
     "obtain": [
       "bag",
-      "treasure-bag",
-      "developer"
+      "treasure-bag"
     ],
     "vendors": [],
     "events": [],
@@ -189535,7 +189527,8 @@
     "icon": "https://terraria.wiki.gg/images/Leinfors%27_Prehensile_Cloak.png",
     "iconEquipped": "https://terraria.wiki.gg/images/Leinfors%27_Prehensile_Cloak_%28equipped%29.png",
     "categories": [
-      "accessory"
+      "accessory",
+      "developer"
     ],
     "subcategories": [
       "wings"
@@ -189580,15 +189573,15 @@
     "iconEquipped": "https://terraria.wiki.gg/images/Leinfors%27_Luxury_Shampoo_%28equipped%29.gif",
     "categories": [
       "accessory",
-      "vanity"
+      "vanity",
+      "developer"
     ],
     "subcategories": [
       "other-accessory"
     ],
     "obtain": [
       "bag",
-      "treasure-bag",
-      "developer"
+      "treasure-bag"
     ],
     "vendors": [],
     "events": [],
@@ -190514,7 +190507,7 @@
     "page": "Work Benches",
     "url": "https://terraria.wiki.gg/wiki/Work_Benches",
     "icon": "https://terraria.wiki.gg/images/Spider_Work_Bench.png",
-    "iconPlaced": "https://terraria.wiki.gg/images/Spider_Work_Bench_%28placed%29.png",
+    "iconPlaced": "https://terraria.wiki.gg/images/Spider_Work_Bench.png",
     "categories": [
       "crafting-station",
       "furniture"
@@ -191720,7 +191713,7 @@
     "page": "Work Benches",
     "url": "https://terraria.wiki.gg/wiki/Work_Benches",
     "icon": "https://terraria.wiki.gg/images/Lesion_Work_Bench.png",
-    "iconPlaced": "https://terraria.wiki.gg/images/Lesion_Work_Bench_%28placed%29.png",
+    "iconPlaced": "https://terraria.wiki.gg/images/Lesion_Work_Bench.png",
     "categories": [
       "crafting-station",
       "furniture"
@@ -191860,7 +191853,7 @@
     "internalName": "ColorOnlyDye",
     "page": "Dyes",
     "url": "https://terraria.wiki.gg/wiki/Dyes",
-    "icon": "https://terraria.wiki.gg/images/Color_Only_Dye.png",
+    "icon": "https://terraria.wiki.gg/images/Unicorn_Wisp_Dye.png",
     "categories": [
       "dye"
     ],
@@ -196166,7 +196159,7 @@
     "page": "Seashells",
     "url": "https://terraria.wiki.gg/wiki/Seashells",
     "icon": "https://terraria.wiki.gg/images/Junonia_Shell.png",
-    "iconPlaced": "https://terraria.wiki.gg/images/Junonia_Shell_%28placed%29.png",
+    "iconPlaced": "https://terraria.wiki.gg/images/Junonia_Shell.png",
     "categories": [
       "crafting-material",
       "furniture"
@@ -196214,7 +196207,7 @@
     "page": "Seashells",
     "url": "https://terraria.wiki.gg/wiki/Seashells",
     "icon": "https://terraria.wiki.gg/images/Lightning_Whelk_Shell.png",
-    "iconPlaced": "https://terraria.wiki.gg/images/Lightning_Whelk_Shell_%28placed%29.png",
+    "iconPlaced": "https://terraria.wiki.gg/images/Lightning_Whelk_Shell.png",
     "categories": [
       "crafting-material",
       "furniture"
@@ -196262,7 +196255,7 @@
     "page": "Seashells",
     "url": "https://terraria.wiki.gg/wiki/Seashells",
     "icon": "https://terraria.wiki.gg/images/Tulip_Shell.png",
-    "iconPlaced": "https://terraria.wiki.gg/images/Tulip_Shell_%28placed%29.png",
+    "iconPlaced": "https://terraria.wiki.gg/images/Tulip_Shell.png",
     "categories": [
       "crafting-material",
       "furniture"
@@ -200408,7 +200401,7 @@
     "page": "Work Benches",
     "url": "https://terraria.wiki.gg/wiki/Work_Benches",
     "icon": "https://terraria.wiki.gg/images/Solar_Work_Bench.png",
-    "iconPlaced": "https://terraria.wiki.gg/images/Solar_Work_Bench_%28placed%29.png",
+    "iconPlaced": "https://terraria.wiki.gg/images/Solar_Work_Bench.png",
     "categories": [
       "crafting-station",
       "furniture"
@@ -201384,7 +201377,7 @@
     "page": "Work Benches",
     "url": "https://terraria.wiki.gg/wiki/Work_Benches",
     "icon": "https://terraria.wiki.gg/images/Vortex_Work_Bench.png",
-    "iconPlaced": "https://terraria.wiki.gg/images/Vortex_Work_Bench_%28placed%29.png",
+    "iconPlaced": "https://terraria.wiki.gg/images/Vortex_Work_Bench.png",
     "categories": [
       "crafting-station",
       "furniture"
@@ -202360,7 +202353,7 @@
     "page": "Work Benches",
     "url": "https://terraria.wiki.gg/wiki/Work_Benches",
     "icon": "https://terraria.wiki.gg/images/Nebula_Work_Bench.png",
-    "iconPlaced": "https://terraria.wiki.gg/images/Nebula_Work_Bench_%28placed%29.png",
+    "iconPlaced": "https://terraria.wiki.gg/images/Nebula_Work_Bench.png",
     "categories": [
       "crafting-station",
       "furniture"
@@ -207447,7 +207440,7 @@
     "page": "Work Benches",
     "url": "https://terraria.wiki.gg/wiki/Work_Benches",
     "icon": "https://terraria.wiki.gg/images/Sandstone_Work_Bench.png",
-    "iconPlaced": "https://terraria.wiki.gg/images/Sandstone_Work_Bench_%28placed%29.png",
+    "iconPlaced": "https://terraria.wiki.gg/images/Sandstone_Work_Bench.png",
     "categories": [
       "crafting-station",
       "furniture"
@@ -219862,7 +219855,7 @@
     "page": "Work Benches",
     "url": "https://terraria.wiki.gg/wiki/Work_Benches",
     "icon": "https://terraria.wiki.gg/images/Bamboo_Work_Bench.png",
-    "iconPlaced": "https://terraria.wiki.gg/images/Bamboo_Work_Bench_%28placed%29.png",
+    "iconPlaced": "https://terraria.wiki.gg/images/Bamboo_Work_Bench.png",
     "categories": [
       "crafting-station",
       "furniture"
@@ -220577,7 +220570,7 @@
     "page": "Golf trophies",
     "url": "https://terraria.wiki.gg/wiki/Golf_trophies",
     "icon": "https://terraria.wiki.gg/images/Bronze_Golf_Trophy.png",
-    "iconPlaced": "https://terraria.wiki.gg/images/Bronze_Golf_Trophy_%28placed%29.png",
+    "iconPlaced": "https://terraria.wiki.gg/images/Bronze_Golf_Trophy.png",
     "categories": [
       "furniture"
     ],
@@ -220626,7 +220619,7 @@
     "page": "Golf trophies",
     "url": "https://terraria.wiki.gg/wiki/Golf_trophies",
     "icon": "https://terraria.wiki.gg/images/Silver_Golf_Trophy.png",
-    "iconPlaced": "https://terraria.wiki.gg/images/Silver_Golf_Trophy_%28placed%29.png",
+    "iconPlaced": "https://terraria.wiki.gg/images/Silver_Golf_Trophy.png",
     "categories": [
       "furniture"
     ],
@@ -220675,7 +220668,7 @@
     "page": "Golf trophies",
     "url": "https://terraria.wiki.gg/wiki/Golf_trophies",
     "icon": "https://terraria.wiki.gg/images/Gold_Golf_Trophy.png",
-    "iconPlaced": "https://terraria.wiki.gg/images/Gold_Golf_Trophy_%28placed%29.png",
+    "iconPlaced": "https://terraria.wiki.gg/images/Gold_Golf_Trophy.png",
     "categories": [
       "furniture"
     ],
@@ -226466,7 +226459,7 @@
     "internalName": "Graveyard",
     "page": "Paintings",
     "url": "https://terraria.wiki.gg/wiki/Paintings",
-    "icon": "https://terraria.wiki.gg/images/Graveyard_%28Painting%29.png",
+    "icon": "https://terraria.wiki.gg/images/Graveyard_%28item%29.png",
     "categories": [
       "furniture"
     ],
@@ -226714,7 +226707,8 @@
     "icon": "https://terraria.wiki.gg/images/Ghostar%27s_Infinity_Eight.png",
     "iconEquipped": "https://terraria.wiki.gg/images/Ghostar%27s_Infinity_Eight_%28equipped%29.png",
     "categories": [
-      "accessory"
+      "accessory",
+      "developer"
     ],
     "subcategories": [
       "wings"
@@ -226805,13 +226799,13 @@
     "url": "https://terraria.wiki.gg/wiki/Ghostar%27s_set",
     "icon": "https://terraria.wiki.gg/images/Ghostar%27s_Soul_Jar.png",
     "categories": [
-      "vanity"
+      "vanity",
+      "developer"
     ],
     "subcategories": [],
     "obtain": [
       "bag",
-      "treasure-bag",
-      "developer"
+      "treasure-bag"
     ],
     "vendors": [],
     "events": [],
@@ -226849,13 +226843,13 @@
     "url": "https://terraria.wiki.gg/wiki/Ghostar%27s_set",
     "icon": "https://terraria.wiki.gg/images/Ghostar%27s_Garb.png",
     "categories": [
-      "vanity"
+      "vanity",
+      "developer"
     ],
     "subcategories": [],
     "obtain": [
       "bag",
-      "treasure-bag",
-      "developer"
+      "treasure-bag"
     ],
     "vendors": [],
     "events": [],
@@ -226893,13 +226887,13 @@
     "url": "https://terraria.wiki.gg/wiki/Ghostar%27s_set",
     "icon": "https://terraria.wiki.gg/images/Ghostar%27s_Tights.png",
     "categories": [
-      "vanity"
+      "vanity",
+      "developer"
     ],
     "subcategories": [],
     "obtain": [
       "bag",
-      "treasure-bag",
-      "developer"
+      "treasure-bag"
     ],
     "vendors": [],
     "events": [],
@@ -227111,8 +227105,7 @@
     "consumable": false,
     "placeable": false,
     "autoswing": false,
-    "bodySlot": "social helmet",
-    "eventOnly": true
+    "bodySlot": "social helmet"
   },
   {
     "key": "DrManFlyLabCoat",
@@ -227155,8 +227148,7 @@
     "consumable": false,
     "placeable": false,
     "autoswing": false,
-    "bodySlot": "social shirt",
-    "eventOnly": true
+    "bodySlot": "social shirt"
   },
   {
     "key": "ButcherMask",
@@ -227199,8 +227191,7 @@
     "consumable": false,
     "placeable": false,
     "autoswing": false,
-    "bodySlot": "social helmet",
-    "eventOnly": true
+    "bodySlot": "social helmet"
   },
   {
     "key": "ButcherApron",
@@ -227243,8 +227234,7 @@
     "consumable": false,
     "placeable": false,
     "autoswing": false,
-    "bodySlot": "social shirt",
-    "eventOnly": true
+    "bodySlot": "social shirt"
   },
   {
     "key": "ButcherPants",
@@ -227287,8 +227277,7 @@
     "consumable": false,
     "placeable": false,
     "autoswing": false,
-    "bodySlot": "social pants",
-    "eventOnly": true
+    "bodySlot": "social pants"
   },
   {
     "key": "Football",
@@ -227439,7 +227428,8 @@
     "icon": "https://terraria.wiki.gg/images/Safeman%27s_Blanket_Cape.png",
     "iconEquipped": "https://terraria.wiki.gg/images/Safeman%27s_Blanket_Cape_%28equipped%29.png",
     "categories": [
-      "accessory"
+      "accessory",
+      "developer"
     ],
     "subcategories": [
       "wings"
@@ -227482,13 +227472,13 @@
     "url": "https://terraria.wiki.gg/wiki/Safeman%27s_set",
     "icon": "https://terraria.wiki.gg/images/Safeman%27s_Sunny_Day.png",
     "categories": [
-      "vanity"
+      "vanity",
+      "developer"
     ],
     "subcategories": [],
     "obtain": [
       "bag",
-      "treasure-bag",
-      "developer"
+      "treasure-bag"
     ],
     "vendors": [],
     "events": [],
@@ -227526,13 +227516,13 @@
     "url": "https://terraria.wiki.gg/wiki/Safeman%27s_set",
     "icon": "https://terraria.wiki.gg/images/Safeman%27s_Sun_Dress.png",
     "categories": [
-      "vanity"
+      "vanity",
+      "developer"
     ],
     "subcategories": [],
     "obtain": [
       "bag",
-      "treasure-bag",
-      "developer"
+      "treasure-bag"
     ],
     "vendors": [],
     "events": [],
@@ -227570,13 +227560,13 @@
     "url": "https://terraria.wiki.gg/wiki/Safeman%27s_set",
     "icon": "https://terraria.wiki.gg/images/Safeman%27s_Pink_Leggings.png",
     "categories": [
-      "vanity"
+      "vanity",
+      "developer"
     ],
     "subcategories": [],
     "obtain": [
       "bag",
-      "treasure-bag",
-      "developer"
+      "treasure-bag"
     ],
     "vendors": [],
     "events": [],
@@ -227615,7 +227605,8 @@
     "icon": "https://terraria.wiki.gg/images/FoodBarbarian%27s_Tattered_Dragon_Wings.png",
     "iconEquipped": "https://terraria.wiki.gg/images/FoodBarbarian%27s_Tattered_Dragon_Wings_%28equipped%29.png",
     "categories": [
-      "accessory"
+      "accessory",
+      "developer"
     ],
     "subcategories": [
       "wings"
@@ -227658,13 +227649,13 @@
     "url": "https://terraria.wiki.gg/wiki/FoodBarbarian%27s_set",
     "icon": "https://terraria.wiki.gg/images/FoodBarbarian%27s_Horned_Helm.png",
     "categories": [
-      "vanity"
+      "vanity",
+      "developer"
     ],
     "subcategories": [],
     "obtain": [
       "bag",
-      "treasure-bag",
-      "developer"
+      "treasure-bag"
     ],
     "vendors": [],
     "events": [],
@@ -227702,13 +227693,13 @@
     "url": "https://terraria.wiki.gg/wiki/FoodBarbarian%27s_set",
     "icon": "https://terraria.wiki.gg/images/FoodBarbarian%27s_Wild_Wolf_Spaulders.png",
     "categories": [
-      "vanity"
+      "vanity",
+      "developer"
     ],
     "subcategories": [],
     "obtain": [
       "bag",
-      "treasure-bag",
-      "developer"
+      "treasure-bag"
     ],
     "vendors": [],
     "events": [],
@@ -227746,13 +227737,13 @@
     "url": "https://terraria.wiki.gg/wiki/FoodBarbarian%27s_set",
     "icon": "https://terraria.wiki.gg/images/FoodBarbarian%27s_Savage_Greaves.png",
     "categories": [
-      "vanity"
+      "vanity",
+      "developer"
     ],
     "subcategories": [],
     "obtain": [
       "bag",
-      "treasure-bag",
-      "developer"
+      "treasure-bag"
     ],
     "vendors": [],
     "events": [],
@@ -227791,7 +227782,8 @@
     "icon": "https://terraria.wiki.gg/images/Grox_The_Great%27s_Wings.png",
     "iconEquipped": "https://terraria.wiki.gg/images/Grox_The_Great%27s_Wings_%28equipped%29.png",
     "categories": [
-      "accessory"
+      "accessory",
+      "developer"
     ],
     "subcategories": [
       "wings"
@@ -227834,13 +227826,13 @@
     "url": "https://terraria.wiki.gg/wiki/Grox_The_Great%27s_set",
     "icon": "https://terraria.wiki.gg/images/Grox_The_Great%27s_Horned_Cowl.png",
     "categories": [
-      "vanity"
+      "vanity",
+      "developer"
     ],
     "subcategories": [],
     "obtain": [
       "bag",
-      "treasure-bag",
-      "developer"
+      "treasure-bag"
     ],
     "vendors": [],
     "events": [],
@@ -227878,13 +227870,13 @@
     "url": "https://terraria.wiki.gg/wiki/Grox_The_Great%27s_set",
     "icon": "https://terraria.wiki.gg/images/Grox_The_Great%27s_Chestplate.png",
     "categories": [
-      "vanity"
+      "vanity",
+      "developer"
     ],
     "subcategories": [],
     "obtain": [
       "bag",
-      "treasure-bag",
-      "developer"
+      "treasure-bag"
     ],
     "vendors": [],
     "events": [],
@@ -227922,13 +227914,13 @@
     "url": "https://terraria.wiki.gg/wiki/Grox_The_Great%27s_set",
     "icon": "https://terraria.wiki.gg/images/Grox_The_Great%27s_Greaves.png",
     "categories": [
-      "vanity"
+      "vanity",
+      "developer"
     ],
     "subcategories": [],
     "obtain": [
       "bag",
-      "treasure-bag",
-      "developer"
+      "treasure-bag"
     ],
     "vendors": [],
     "events": [],
@@ -231028,7 +231020,7 @@
     "page": "Wings",
     "url": "https://terraria.wiki.gg/wiki/Wings",
     "icon": "https://terraria.wiki.gg/images/Empress_Wings.png",
-    "iconEquipped": "https://terraria.wiki.gg/images/Empress_Wings_%28equipped%29.png",
+    "iconEquipped": "https://terraria.wiki.gg/images/Empress_Wings_%28equipped%29.gif",
     "categories": [
       "accessory"
     ],
@@ -233430,7 +233422,7 @@
     "page": "Obsidian Crate",
     "url": "https://terraria.wiki.gg/wiki/Obsidian_Crate",
     "icon": "https://terraria.wiki.gg/images/Obsidian_Crate.png",
-    "iconPlaced": "https://terraria.wiki.gg/images/Obsidian_Crate_%28placed%29.png",
+    "iconPlaced": "https://terraria.wiki.gg/images/Obsidian_Crate.png",
     "categories": [
       "furniture",
       "crate",
@@ -235598,7 +235590,8 @@
     "internalName": "EyeofCthulhuMasterTrophy",
     "page": "Relics",
     "url": "https://terraria.wiki.gg/wiki/Relics",
-    "icon": "https://terraria.wiki.gg/images/Eye_of_Cthulhu_Relic.png_/_Eye_of_Cthulhu_Relic_%28placed%29.png",
+    "icon": "https://terraria.wiki.gg/images/Eye_of_Cthulhu_Relic.png",
+    "iconPlaced": "https://terraria.wiki.gg/images/Eye_of_Cthulhu_Relic_%28placed%29.png",
     "categories": [
       "furniture"
     ],
@@ -235644,7 +235637,8 @@
     "internalName": "EaterofWorldsMasterTrophy",
     "page": "Relics",
     "url": "https://terraria.wiki.gg/wiki/Relics",
-    "icon": "https://terraria.wiki.gg/images/Eater_of_Worlds_Relic.png_/_Eater_of_Worlds_Relic_%28placed%29.png",
+    "icon": "https://terraria.wiki.gg/images/Eater_of_Worlds_Relic.png",
+    "iconPlaced": "https://terraria.wiki.gg/images/Eater_of_Worlds_Relic_%28placed%29.png",
     "categories": [
       "furniture"
     ],
@@ -235690,7 +235684,8 @@
     "internalName": "BrainofCthulhuMasterTrophy",
     "page": "Relics",
     "url": "https://terraria.wiki.gg/wiki/Relics",
-    "icon": "https://terraria.wiki.gg/images/Brain_of_Cthulhu_Relic.png_/_Brain_of_Cthulhu_Relic_%28placed%29.png",
+    "icon": "https://terraria.wiki.gg/images/Brain_of_Cthulhu_Relic.png",
+    "iconPlaced": "https://terraria.wiki.gg/images/Brain_of_Cthulhu_Relic_%28placed%29.png",
     "categories": [
       "furniture"
     ],
@@ -235736,7 +235731,8 @@
     "internalName": "SkeletronMasterTrophy",
     "page": "Relics",
     "url": "https://terraria.wiki.gg/wiki/Relics",
-    "icon": "https://terraria.wiki.gg/images/Skeletron_Relic.png_/_Skeletron_Relic_%28placed%29.png",
+    "icon": "https://terraria.wiki.gg/images/Skeletron_Relic.png",
+    "iconPlaced": "https://terraria.wiki.gg/images/Skeletron_Relic_%28placed%29.png",
     "categories": [
       "furniture"
     ],
@@ -235782,7 +235778,8 @@
     "internalName": "QueenBeeMasterTrophy",
     "page": "Relics",
     "url": "https://terraria.wiki.gg/wiki/Relics",
-    "icon": "https://terraria.wiki.gg/images/Queen_Bee_Relic.png_/_Queen_Bee_Relic_%28placed%29.png",
+    "icon": "https://terraria.wiki.gg/images/Queen_Bee_Relic.png",
+    "iconPlaced": "https://terraria.wiki.gg/images/Queen_Bee_Relic_%28placed%29.png",
     "categories": [
       "furniture"
     ],
@@ -235828,7 +235825,8 @@
     "internalName": "KingSlimeMasterTrophy",
     "page": "Relics",
     "url": "https://terraria.wiki.gg/wiki/Relics",
-    "icon": "https://terraria.wiki.gg/images/King_Slime_Relic.png_/_King_Slime_Relic_%28placed%29.png",
+    "icon": "https://terraria.wiki.gg/images/King_Slime_Relic.png",
+    "iconPlaced": "https://terraria.wiki.gg/images/King_Slime_Relic_%28placed%29.png",
     "categories": [
       "furniture"
     ],
@@ -235874,7 +235872,8 @@
     "internalName": "WallofFleshMasterTrophy",
     "page": "Relics",
     "url": "https://terraria.wiki.gg/wiki/Relics",
-    "icon": "https://terraria.wiki.gg/images/Wall_of_Flesh_Relic.png_/_Wall_of_Flesh_Relic_%28placed%29.png",
+    "icon": "https://terraria.wiki.gg/images/Wall_of_Flesh_Relic.png",
+    "iconPlaced": "https://terraria.wiki.gg/images/Wall_of_Flesh_Relic_%28placed%29.png",
     "categories": [
       "furniture"
     ],
@@ -235920,7 +235919,8 @@
     "internalName": "TwinsMasterTrophy",
     "page": "Relics",
     "url": "https://terraria.wiki.gg/wiki/Relics",
-    "icon": "https://terraria.wiki.gg/images/Twins_Relic.png_/_Twins_Relic_%28placed%29.png",
+    "icon": "https://terraria.wiki.gg/images/Twins_Relic.png",
+    "iconPlaced": "https://terraria.wiki.gg/images/Twins_Relic_%28placed%29.png",
     "categories": [
       "furniture"
     ],
@@ -235966,7 +235966,8 @@
     "internalName": "DestroyerMasterTrophy",
     "page": "Relics",
     "url": "https://terraria.wiki.gg/wiki/Relics",
-    "icon": "https://terraria.wiki.gg/images/Destroyer_Relic.png_/_Destroyer_Relic_%28placed%29.png",
+    "icon": "https://terraria.wiki.gg/images/Destroyer_Relic.png",
+    "iconPlaced": "https://terraria.wiki.gg/images/Destroyer_Relic_%28placed%29.png",
     "categories": [
       "furniture"
     ],
@@ -236012,7 +236013,8 @@
     "internalName": "SkeletronPrimeMasterTrophy",
     "page": "Relics",
     "url": "https://terraria.wiki.gg/wiki/Relics",
-    "icon": "https://terraria.wiki.gg/images/Skeletron_Prime_Relic.png_/_Skeletron_Prime_Relic_%28placed%29.png",
+    "icon": "https://terraria.wiki.gg/images/Skeletron_Prime_Relic.png",
+    "iconPlaced": "https://terraria.wiki.gg/images/Skeletron_Prime_Relic_%28placed%29.png",
     "categories": [
       "furniture"
     ],
@@ -236058,7 +236060,8 @@
     "internalName": "PlanteraMasterTrophy",
     "page": "Relics",
     "url": "https://terraria.wiki.gg/wiki/Relics",
-    "icon": "https://terraria.wiki.gg/images/Plantera_Relic.png_/_Plantera_Relic_%28placed%29.png",
+    "icon": "https://terraria.wiki.gg/images/Plantera_Relic.png",
+    "iconPlaced": "https://terraria.wiki.gg/images/Plantera_Relic_%28placed%29.png",
     "categories": [
       "furniture"
     ],
@@ -236104,7 +236107,8 @@
     "internalName": "GolemMasterTrophy",
     "page": "Relics",
     "url": "https://terraria.wiki.gg/wiki/Relics",
-    "icon": "https://terraria.wiki.gg/images/Golem_Relic.png_/_Golem_Relic_%28placed%29.png",
+    "icon": "https://terraria.wiki.gg/images/Golem_Relic.png",
+    "iconPlaced": "https://terraria.wiki.gg/images/Golem_Relic_%28placed%29.png",
     "categories": [
       "furniture"
     ],
@@ -236150,7 +236154,8 @@
     "internalName": "DukeFishronMasterTrophy",
     "page": "Relics",
     "url": "https://terraria.wiki.gg/wiki/Relics",
-    "icon": "https://terraria.wiki.gg/images/Duke_Fishron_Relic.png_/_Duke_Fishron_Relic_%28placed%29.png",
+    "icon": "https://terraria.wiki.gg/images/Duke_Fishron_Relic.png",
+    "iconPlaced": "https://terraria.wiki.gg/images/Duke_Fishron_Relic_%28placed%29.png",
     "categories": [
       "furniture"
     ],
@@ -236196,7 +236201,8 @@
     "internalName": "LunaticCultistMasterTrophy",
     "page": "Relics",
     "url": "https://terraria.wiki.gg/wiki/Relics",
-    "icon": "https://terraria.wiki.gg/images/Lunatic_Cultist_Relic.png_/_Lunatic_Cultist_Relic_%28placed%29.png",
+    "icon": "https://terraria.wiki.gg/images/Lunatic_Cultist_Relic.png",
+    "iconPlaced": "https://terraria.wiki.gg/images/Lunatic_Cultist_Relic_%28placed%29.png",
     "categories": [
       "furniture"
     ],
@@ -236242,7 +236248,8 @@
     "internalName": "MoonLordMasterTrophy",
     "page": "Relics",
     "url": "https://terraria.wiki.gg/wiki/Relics",
-    "icon": "https://terraria.wiki.gg/images/Moon_Lord_Relic.png_/_Moon_Lord_Relic_%28placed%29.png",
+    "icon": "https://terraria.wiki.gg/images/Moon_Lord_Relic.png",
+    "iconPlaced": "https://terraria.wiki.gg/images/Moon_Lord_Relic_%28placed%29.png",
     "categories": [
       "furniture"
     ],
@@ -236288,7 +236295,8 @@
     "internalName": "UFOMasterTrophy",
     "page": "Relics",
     "url": "https://terraria.wiki.gg/wiki/Relics",
-    "icon": "https://terraria.wiki.gg/images/Martian_Saucer_Relic.png_/_Martian_Saucer_Relic_%28placed%29.png",
+    "icon": "https://terraria.wiki.gg/images/Martian_Saucer_Relic.png",
+    "iconPlaced": "https://terraria.wiki.gg/images/Martian_Saucer_Relic_%28placed%29.png",
     "categories": [
       "furniture"
     ],
@@ -236337,7 +236345,8 @@
     "internalName": "FlyingDutchmanMasterTrophy",
     "page": "Relics",
     "url": "https://terraria.wiki.gg/wiki/Relics",
-    "icon": "https://terraria.wiki.gg/images/Flying_Dutchman_Relic.png_/_Flying_Dutchman_Relic_%28placed%29.png",
+    "icon": "https://terraria.wiki.gg/images/Flying_Dutchman_Relic.png",
+    "iconPlaced": "https://terraria.wiki.gg/images/Flying_Dutchman_Relic_%28placed%29.png",
     "categories": [
       "furniture"
     ],
@@ -236386,7 +236395,8 @@
     "internalName": "MourningWoodMasterTrophy",
     "page": "Relics",
     "url": "https://terraria.wiki.gg/wiki/Relics",
-    "icon": "https://terraria.wiki.gg/images/Mourning_Wood_Relic.png_/_Mourning_Wood_Relic_%28placed%29.png",
+    "icon": "https://terraria.wiki.gg/images/Mourning_Wood_Relic.png",
+    "iconPlaced": "https://terraria.wiki.gg/images/Mourning_Wood_Relic_%28placed%29.png",
     "categories": [
       "furniture"
     ],
@@ -236435,7 +236445,8 @@
     "internalName": "PumpkingMasterTrophy",
     "page": "Relics",
     "url": "https://terraria.wiki.gg/wiki/Relics",
-    "icon": "https://terraria.wiki.gg/images/Pumpking_Relic.png_/_Pumpking_Relic_%28placed%29.png",
+    "icon": "https://terraria.wiki.gg/images/Pumpking_Relic.png",
+    "iconPlaced": "https://terraria.wiki.gg/images/Pumpking_Relic_%28placed%29.png",
     "categories": [
       "furniture"
     ],
@@ -236484,7 +236495,8 @@
     "internalName": "IceQueenMasterTrophy",
     "page": "Relics",
     "url": "https://terraria.wiki.gg/wiki/Relics",
-    "icon": "https://terraria.wiki.gg/images/Ice_Queen_Relic.png_/_Ice_Queen_Relic_%28placed%29.png",
+    "icon": "https://terraria.wiki.gg/images/Ice_Queen_Relic.png",
+    "iconPlaced": "https://terraria.wiki.gg/images/Ice_Queen_Relic_%28placed%29.png",
     "categories": [
       "furniture"
     ],
@@ -236533,7 +236545,8 @@
     "internalName": "EverscreamMasterTrophy",
     "page": "Relics",
     "url": "https://terraria.wiki.gg/wiki/Relics",
-    "icon": "https://terraria.wiki.gg/images/Everscream_Relic.png_/_Everscream_Relic_%28placed%29.png",
+    "icon": "https://terraria.wiki.gg/images/Everscream_Relic.png",
+    "iconPlaced": "https://terraria.wiki.gg/images/Everscream_Relic_%28placed%29.png",
     "categories": [
       "furniture"
     ],
@@ -236582,7 +236595,8 @@
     "internalName": "SantankMasterTrophy",
     "page": "Relics",
     "url": "https://terraria.wiki.gg/wiki/Relics",
-    "icon": "https://terraria.wiki.gg/images/Santa-NK1_Relic.png_/_Santa-NK1_Relic_%28placed%29.png",
+    "icon": "https://terraria.wiki.gg/images/Santa-NK1_Relic.png",
+    "iconPlaced": "https://terraria.wiki.gg/images/Santa-NK1_Relic_%28placed%29.png",
     "categories": [
       "furniture"
     ],
@@ -236631,7 +236645,8 @@
     "internalName": "DarkMageMasterTrophy",
     "page": "Relics",
     "url": "https://terraria.wiki.gg/wiki/Relics",
-    "icon": "https://terraria.wiki.gg/images/Dark_Mage_Relic.png_/_Dark_Mage_Relic_%28placed%29.png",
+    "icon": "https://terraria.wiki.gg/images/Dark_Mage_Relic.png",
+    "iconPlaced": "https://terraria.wiki.gg/images/Dark_Mage_Relic_%28placed%29.png",
     "categories": [
       "furniture"
     ],
@@ -236680,7 +236695,8 @@
     "internalName": "OgreMasterTrophy",
     "page": "Relics",
     "url": "https://terraria.wiki.gg/wiki/Relics",
-    "icon": "https://terraria.wiki.gg/images/Ogre_Relic.png_/_Ogre_Relic_%28placed%29.png",
+    "icon": "https://terraria.wiki.gg/images/Ogre_Relic.png",
+    "iconPlaced": "https://terraria.wiki.gg/images/Ogre_Relic_%28placed%29.png",
     "categories": [
       "furniture"
     ],
@@ -236729,7 +236745,8 @@
     "internalName": "BetsyMasterTrophy",
     "page": "Relics",
     "url": "https://terraria.wiki.gg/wiki/Relics",
-    "icon": "https://terraria.wiki.gg/images/Betsy_Relic.png_/_Betsy_Relic_%28placed%29.png",
+    "icon": "https://terraria.wiki.gg/images/Betsy_Relic.png",
+    "iconPlaced": "https://terraria.wiki.gg/images/Betsy_Relic_%28placed%29.png",
     "categories": [
       "furniture"
     ],
@@ -236778,7 +236795,8 @@
     "internalName": "FairyQueenMasterTrophy",
     "page": "Relics",
     "url": "https://terraria.wiki.gg/wiki/Relics",
-    "icon": "https://terraria.wiki.gg/images/Empress_of_Light_Relic.png_/_Empress_of_Light_Relic_%28placed%29.png",
+    "icon": "https://terraria.wiki.gg/images/Empress_of_Light_Relic.png",
+    "iconPlaced": "https://terraria.wiki.gg/images/Empress_of_Light_Relic_%28placed%29.png",
     "categories": [
       "furniture"
     ],
@@ -236824,7 +236842,8 @@
     "internalName": "QueenSlimeMasterTrophy",
     "page": "Relics",
     "url": "https://terraria.wiki.gg/wiki/Relics",
-    "icon": "https://terraria.wiki.gg/images/Queen_Slime_Relic.png_/_Queen_Slime_Relic_%28placed%29.png",
+    "icon": "https://terraria.wiki.gg/images/Queen_Slime_Relic.png",
+    "iconPlaced": "https://terraria.wiki.gg/images/Queen_Slime_Relic_%28placed%29.png",
     "categories": [
       "furniture"
     ],
@@ -237382,8 +237401,8 @@
     "internalName": "AccentSlab",
     "page": "Stone Accent Slab",
     "url": "https://terraria.wiki.gg/wiki/Stone_Accent_Slab",
-    "icon": "https://terraria.wiki.gg/images/Stone_Accent_Slab.png",
-    "iconPlaced": "https://terraria.wiki.gg/images/Stone_Accent_Slab_%28placed%29.png",
+    "icon": "https://terraria.wiki.gg/images/Stone_Slab.png",
+    "iconPlaced": "https://terraria.wiki.gg/images/Stone_Slab_%28placed%29.png",
     "categories": [
       "block"
     ],
@@ -239235,7 +239254,7 @@
     "page": "Ocean Crate",
     "url": "https://terraria.wiki.gg/wiki/Ocean_Crate",
     "icon": "https://terraria.wiki.gg/images/Ocean_Crate.png",
-    "iconPlaced": "https://terraria.wiki.gg/images/Ocean_Crate_%28placed%29.png",
+    "iconPlaced": "https://terraria.wiki.gg/images/Ocean_Crate.png",
     "categories": [
       "furniture",
       "crate",
@@ -242328,7 +242347,7 @@
     "internalName": "BeeHive",
     "page": "Bee Hive",
     "url": "https://terraria.wiki.gg/wiki/Bee_Hive",
-    "icon": "https://terraria.wiki.gg/images/Bee_Hive.png",
+    "icon": "https://terraria.wiki.gg/images/Bee_Hive_%28item%29.png",
     "iconPlaced": "https://terraria.wiki.gg/images/Bee_Hive_%28placed%29.png",
     "categories": [
       "furniture"
@@ -244540,7 +244559,8 @@
     "internalName": "DeerclopsMasterTrophy",
     "page": "Relics",
     "url": "https://terraria.wiki.gg/wiki/Relics",
-    "icon": "https://terraria.wiki.gg/images/Deerclops_Relic.png_/_Deerclops_Relic_%28placed%29.png",
+    "icon": "https://terraria.wiki.gg/images/Deerclops_Relic.png",
+    "iconPlaced": "https://terraria.wiki.gg/images/Deerclops_Relic_%28placed%29.png",
     "categories": [
       "furniture"
     ],
@@ -245390,7 +245410,7 @@
     "internalName": "RainbowMoss",
     "page": "Moss",
     "url": "https://terraria.wiki.gg/wiki/Moss",
-    "icon": "https://terraria.wiki.gg/images/Helium_Moss.png",
+    "icon": "https://terraria.wiki.gg/images/Helium_Moss.gif",
     "iconPlaced": "https://terraria.wiki.gg/images/Helium_Moss_%28placed%29.gif",
     "categories": [
       "crafting-material",
@@ -246205,7 +246225,7 @@
     "internalName": "FishingBobberGlowingRainbow",
     "page": "Fishing Bobbers",
     "url": "https://terraria.wiki.gg/wiki/Fishing_Bobbers",
-    "icon": "https://terraria.wiki.gg/images/Helium_Moss_Fishing_Bobber.png",
+    "icon": "https://terraria.wiki.gg/images/Helium_Moss_Fishing_Bobber.gif",
     "categories": [
       "accessory"
     ],
@@ -247139,7 +247159,7 @@
     "page": "Work Benches",
     "url": "https://terraria.wiki.gg/wiki/Work_Benches",
     "icon": "https://terraria.wiki.gg/images/Reef_Work_Bench.png",
-    "iconPlaced": "https://terraria.wiki.gg/images/Reef_Work_Bench_%28placed%29.png",
+    "iconPlaced": "https://terraria.wiki.gg/images/Reef_Work_Bench.png",
     "categories": [
       "crafting-station",
       "furniture"
@@ -248116,7 +248136,7 @@
     "page": "Work Benches",
     "url": "https://terraria.wiki.gg/wiki/Work_Benches",
     "icon": "https://terraria.wiki.gg/images/Balloon_Work_Bench.png",
-    "iconPlaced": "https://terraria.wiki.gg/images/Balloon_Work_Bench_%28placed%29.png",
+    "iconPlaced": "https://terraria.wiki.gg/images/Balloon_Work_Bench.png",
     "categories": [
       "crafting-station",
       "furniture"
@@ -249093,7 +249113,7 @@
     "page": "Work Benches",
     "url": "https://terraria.wiki.gg/wiki/Work_Benches",
     "icon": "https://terraria.wiki.gg/images/Ash_Wood_Work_Bench.png",
-    "iconPlaced": "https://terraria.wiki.gg/images/Ash_Wood_Work_Bench_%28placed%29.png",
+    "iconPlaced": "https://terraria.wiki.gg/images/Ash_Wood_Work_Bench.png",
     "categories": [
       "crafting-station",
       "furniture"
@@ -252748,7 +252768,7 @@
     "page": "Repaired Life Crystal",
     "url": "https://terraria.wiki.gg/wiki/Repaired_Life_Crystal",
     "icon": "https://terraria.wiki.gg/images/Repaired_Life_Crystal.png",
-    "iconPlaced": "https://terraria.wiki.gg/images/Repaired_Life_Crystal_%28placed%29.gif",
+    "iconPlaced": "https://terraria.wiki.gg/images/Life_Crystal_%28placed%29.gif",
     "categories": [
       "furniture"
     ],
@@ -252794,7 +252814,7 @@
     "page": "Repaired Mana Crystal",
     "url": "https://terraria.wiki.gg/wiki/Repaired_Mana_Crystal",
     "icon": "https://terraria.wiki.gg/images/Repaired_Mana_Crystal.png",
-    "iconPlaced": "https://terraria.wiki.gg/images/Repaired_Mana_Crystal_%28placed%29.gif",
+    "iconPlaced": "https://terraria.wiki.gg/images/Mana_Crystal_%28placed%29.gif",
     "categories": [
       "furniture"
     ],
@@ -254307,7 +254327,7 @@
     "page": "Decorative Healing Potion",
     "url": "https://terraria.wiki.gg/wiki/Decorative_Healing_Potion",
     "icon": "https://terraria.wiki.gg/images/Decorative_Healing_Potion.png",
-    "iconPlaced": "https://terraria.wiki.gg/images/Decorative_Healing_Potion_%28placed%29.png",
+    "iconPlaced": "https://terraria.wiki.gg/images/Lesser_Healing_Potion_%28placed%29.png",
     "categories": [
       "furniture"
     ],
@@ -254353,7 +254373,7 @@
     "page": "Decorative Mana Potion",
     "url": "https://terraria.wiki.gg/wiki/Decorative_Mana_Potion",
     "icon": "https://terraria.wiki.gg/images/Decorative_Mana_Potion.png",
-    "iconPlaced": "https://terraria.wiki.gg/images/Decorative_Mana_Potion_%28placed%29.png",
+    "iconPlaced": "https://terraria.wiki.gg/images/Lesser_Mana_Potion_%28placed%29.png",
     "categories": [
       "furniture"
     ],
@@ -254399,7 +254419,7 @@
     "page": "Shadow Candle",
     "url": "https://terraria.wiki.gg/wiki/Shadow_Candle",
     "icon": "https://terraria.wiki.gg/images/Shadow_Candle.png",
-    "iconPlaced": "https://terraria.wiki.gg/images/Shadow_Candle_%28placed%29.png",
+    "iconPlaced": "https://terraria.wiki.gg/images/Shadow_Candle.png",
     "categories": [
       "crafting-material",
       "furniture",
@@ -256211,7 +256231,7 @@
     "page": "Spider Wall",
     "url": "https://terraria.wiki.gg/wiki/Spider_Wall",
     "icon": "https://terraria.wiki.gg/images/Infested_Spider_Wall.png",
-    "iconPlaced": "https://terraria.wiki.gg/images/Infested_Spider_Wall_%28placed%29.png",
+    "iconPlaced": "https://terraria.wiki.gg/images/Spider_Wall_%28placed%29.png",
     "categories": [
       "wall"
     ],
@@ -256296,7 +256316,7 @@
     "page": "Dungeon Brick Walls",
     "url": "https://terraria.wiki.gg/wiki/Dungeon_Brick_Walls",
     "icon": "https://terraria.wiki.gg/images/Cursed_Blue_Brick_Wall.png",
-    "iconPlaced": "https://terraria.wiki.gg/images/Cursed_Blue_Brick_Wall_%28placed%29.png",
+    "iconPlaced": "https://terraria.wiki.gg/images/Blue_Brick_Wall_%28placed%29.png",
     "categories": [
       "wall"
     ],
@@ -256336,7 +256356,7 @@
     "page": "Dungeon Brick Walls",
     "url": "https://terraria.wiki.gg/wiki/Dungeon_Brick_Walls",
     "icon": "https://terraria.wiki.gg/images/Cursed_Blue_Slab_Wall.png",
-    "iconPlaced": "https://terraria.wiki.gg/images/Cursed_Blue_Slab_Wall_%28placed%29.png",
+    "iconPlaced": "https://terraria.wiki.gg/images/Blue_Slab_Wall_%28placed%29.png",
     "categories": [
       "wall"
     ],
@@ -256376,7 +256396,7 @@
     "page": "Dungeon Brick Walls",
     "url": "https://terraria.wiki.gg/wiki/Dungeon_Brick_Walls",
     "icon": "https://terraria.wiki.gg/images/Cursed_Blue_Tiled_Wall.png",
-    "iconPlaced": "https://terraria.wiki.gg/images/Cursed_Blue_Tiled_Wall_%28placed%29.png",
+    "iconPlaced": "https://terraria.wiki.gg/images/Blue_Tiled_Wall_%28placed%29.png",
     "categories": [
       "wall"
     ],
@@ -256416,7 +256436,7 @@
     "page": "Dungeon Brick Walls",
     "url": "https://terraria.wiki.gg/wiki/Dungeon_Brick_Walls",
     "icon": "https://terraria.wiki.gg/images/Cursed_Pink_Brick_Wall.png",
-    "iconPlaced": "https://terraria.wiki.gg/images/Cursed_Pink_Brick_Wall_%28placed%29.png",
+    "iconPlaced": "https://terraria.wiki.gg/images/Pink_Brick_Wall_%28placed%29.png",
     "categories": [
       "wall"
     ],
@@ -256456,7 +256476,7 @@
     "page": "Dungeon Brick Walls",
     "url": "https://terraria.wiki.gg/wiki/Dungeon_Brick_Walls",
     "icon": "https://terraria.wiki.gg/images/Cursed_Pink_Slab_Wall.png",
-    "iconPlaced": "https://terraria.wiki.gg/images/Cursed_Pink_Slab_Wall_%28placed%29.png",
+    "iconPlaced": "https://terraria.wiki.gg/images/Pink_Slab_Wall_%28placed%29.png",
     "categories": [
       "wall"
     ],
@@ -256496,7 +256516,7 @@
     "page": "Dungeon Brick Walls",
     "url": "https://terraria.wiki.gg/wiki/Dungeon_Brick_Walls",
     "icon": "https://terraria.wiki.gg/images/Cursed_Pink_Tiled_Wall.png",
-    "iconPlaced": "https://terraria.wiki.gg/images/Cursed_Pink_Tiled_Wall_%28placed%29.png",
+    "iconPlaced": "https://terraria.wiki.gg/images/Pink_Tiled_Wall_%28placed%29.png",
     "categories": [
       "wall"
     ],
@@ -256536,7 +256556,7 @@
     "page": "Dungeon Brick Walls",
     "url": "https://terraria.wiki.gg/wiki/Dungeon_Brick_Walls",
     "icon": "https://terraria.wiki.gg/images/Cursed_Green_Brick_Wall.png",
-    "iconPlaced": "https://terraria.wiki.gg/images/Cursed_Green_Brick_Wall_%28placed%29.png",
+    "iconPlaced": "https://terraria.wiki.gg/images/Green_Brick_Wall_%28placed%29.png",
     "categories": [
       "wall"
     ],
@@ -256576,7 +256596,7 @@
     "page": "Dungeon Brick Walls",
     "url": "https://terraria.wiki.gg/wiki/Dungeon_Brick_Walls",
     "icon": "https://terraria.wiki.gg/images/Cursed_Green_Slab_Wall.png",
-    "iconPlaced": "https://terraria.wiki.gg/images/Cursed_Green_Slab_Wall_%28placed%29.png",
+    "iconPlaced": "https://terraria.wiki.gg/images/Green_Slab_Wall_%28placed%29.png",
     "categories": [
       "wall"
     ],
@@ -256616,7 +256636,7 @@
     "page": "Dungeon Brick Walls",
     "url": "https://terraria.wiki.gg/wiki/Dungeon_Brick_Walls",
     "icon": "https://terraria.wiki.gg/images/Cursed_Green_Tiled_Wall.png",
-    "iconPlaced": "https://terraria.wiki.gg/images/Cursed_Green_Tiled_Wall_%28placed%29.png",
+    "iconPlaced": "https://terraria.wiki.gg/images/Green_Tiled_Wall_%28placed%29.png",
     "categories": [
       "wall"
     ],
@@ -256656,7 +256676,7 @@
     "page": "Sandstone Walls",
     "url": "https://terraria.wiki.gg/wiki/Sandstone_Walls",
     "icon": "https://terraria.wiki.gg/images/Treacherous_Sandstone_Wall.png",
-    "iconPlaced": "https://terraria.wiki.gg/images/Treacherous_Sandstone_Wall_%28placed%29.png",
+    "iconPlaced": "https://terraria.wiki.gg/images/Sandstone_Wall_%28placed%29.png",
     "categories": [
       "wall"
     ],
@@ -256696,7 +256716,7 @@
     "page": "Hardened Sand Walls",
     "url": "https://terraria.wiki.gg/wiki/Hardened_Sand_Walls",
     "icon": "https://terraria.wiki.gg/images/Treacherous_Hardened_Sand_Wall.png",
-    "iconPlaced": "https://terraria.wiki.gg/images/Treacherous_Hardened_Sand_Wall_%28placed%29.png",
+    "iconPlaced": "https://terraria.wiki.gg/images/Hardened_Sand_Wall_%28placed%29.png",
     "categories": [
       "wall"
     ],
@@ -256736,7 +256756,7 @@
     "page": "Lihzahrd Brick Wall",
     "url": "https://terraria.wiki.gg/wiki/Lihzahrd_Brick_Wall",
     "icon": "https://terraria.wiki.gg/images/Forbidden_Lihzahrd_Brick_Wall.png",
-    "iconPlaced": "https://terraria.wiki.gg/images/Forbidden_Lihzahrd_Brick_Wall_%28placed%29.png",
+    "iconPlaced": "https://terraria.wiki.gg/images/Lihzahrd_Brick_Wall_%28placed%29.png",
     "categories": [
       "wall"
     ],
@@ -257112,7 +257132,7 @@
     "page": "Life Crystal Boulder",
     "url": "https://terraria.wiki.gg/wiki/Life_Crystal_Boulder",
     "icon": "https://terraria.wiki.gg/images/Life_Crystal_Boulder.png",
-    "iconPlaced": "https://terraria.wiki.gg/images/Life_Crystal_Boulder_%28placed%29.gif",
+    "iconPlaced": "https://terraria.wiki.gg/images/Life_Crystal_%28placed%29.gif",
     "categories": [
       "furniture",
       "mechanism"
@@ -257843,8 +257863,8 @@
     "internalName": "DirtiestBlock",
     "page": "The Dirtiest Block",
     "url": "https://terraria.wiki.gg/wiki/The_Dirtiest_Block",
-    "icon": "https://terraria.wiki.gg/images/The_Dirtiest_Block.png",
-    "iconPlaced": "https://terraria.wiki.gg/images/The_Dirtiest_Block_%28placed%29.png",
+    "icon": "https://terraria.wiki.gg/images/Dirt_Block.png",
+    "iconPlaced": "https://terraria.wiki.gg/images/Dirt_Block_%28placed%29.png",
     "categories": [
       "pet"
     ],
@@ -259869,7 +259889,7 @@
     "internalName": "RainbowMossBlock",
     "page": "Helium Moss Brick",
     "url": "https://terraria.wiki.gg/wiki/Helium_Moss_Brick",
-    "icon": "https://terraria.wiki.gg/images/Helium_Moss_Brick.png",
+    "icon": "https://terraria.wiki.gg/images/Helium_Moss_Brick.gif",
     "iconPlaced": "https://terraria.wiki.gg/images/Helium_Moss_Brick_%28placed%29.gif",
     "categories": [
       "crafting-material",
@@ -260136,7 +260156,7 @@
     "internalName": "RainbowMossBlockWall",
     "page": "Helium Moss Brick Wall",
     "url": "https://terraria.wiki.gg/wiki/Helium_Moss_Brick_Wall",
-    "icon": "https://terraria.wiki.gg/images/Helium_Moss_Brick_Wall.png",
+    "icon": "https://terraria.wiki.gg/images/Helium_Moss_Brick_Wall.gif",
     "iconPlaced": "https://terraria.wiki.gg/images/Helium_Moss_Brick_Wall_%28placed%29.gif",
     "categories": [
       "crafting-material",
@@ -261026,7 +261046,7 @@
     "page": "Replica Shadow Orb",
     "url": "https://terraria.wiki.gg/wiki/Replica_Shadow_Orb",
     "icon": "https://terraria.wiki.gg/images/Replica_Shadow_Orb.png",
-    "iconPlaced": "https://terraria.wiki.gg/images/Replica_Shadow_Orb_%28placed%29.gif",
+    "iconPlaced": "https://terraria.wiki.gg/images/Shadow_Orb.gif",
     "categories": [
       "furniture"
     ],
@@ -261073,7 +261093,7 @@
     "page": "Replica Crimson Heart",
     "url": "https://terraria.wiki.gg/wiki/Replica_Crimson_Heart",
     "icon": "https://terraria.wiki.gg/images/Replica_Crimson_Heart.png",
-    "iconPlaced": "https://terraria.wiki.gg/images/Replica_Crimson_Heart_%28placed%29.gif",
+    "iconPlaced": "https://terraria.wiki.gg/images/Crimson_Heart.gif",
     "categories": [
       "furniture"
     ],
@@ -261120,7 +261140,7 @@
     "page": "Decorative Cobweb",
     "url": "https://terraria.wiki.gg/wiki/Decorative_Cobweb",
     "icon": "https://terraria.wiki.gg/images/Decorative_Cobweb.png",
-    "iconPlaced": "https://terraria.wiki.gg/images/Decorative_Cobweb_%28placed%29.png",
+    "iconPlaced": "https://terraria.wiki.gg/images/Cobweb_%28placed%29.png",
     "categories": [
       "crafting-material",
       "block"
@@ -262114,6 +262134,48 @@
     "placedWidth": 6,
     "placedHeight": 4,
     "tooltip": "'J. T. Kjexrud'"
+  },
+  {
+    "key": "MagicShimmerDropper",
+    "id": 5492,
+    "name": "Magic Shimmer Dropper",
+    "page": "Magic Droppers",
+    "url": "https://terraria.wiki.gg/wiki/Magic_Droppers",
+    "icon": "https://terraria.wiki.gg/images/Magic_Shimmer_Dropper.png",
+    "categories": [
+      "tool",
+      "crafting-material"
+    ],
+    "subcategories": [
+      "material-equipment",
+      "other-tool"
+    ],
+    "platforms": [
+      "desktop",
+      "console",
+      "mobile"
+    ],
+    "hardmode": false,
+    "stack": 9999,
+    "research": 1,
+    "consumable": true,
+    "placeable": true,
+    "autoswing": true,
+    "obtain": [
+      "crafted"
+    ],
+    "vendors": [],
+    "events": [],
+    "biomes": [],
+    "times": [],
+    "platformsKnown": false,
+    "introduced": "1.4.5",
+    "version": "1.4.5",
+    "hardmodeOnly": false,
+    "unobtainable": false,
+    "banner": false,
+    "questFish": false,
+    "recipeOnly": true
   },
   {
     "key": "ShimmerFallBlock",
@@ -263466,7 +263528,7 @@
     "page": "Friendly Boulder",
     "url": "https://terraria.wiki.gg/wiki/Friendly_Boulder",
     "icon": "https://terraria.wiki.gg/images/Friendly_Boulder.png",
-    "iconPlaced": "https://terraria.wiki.gg/images/Friendly_Boulder_%28placed%29.png",
+    "iconPlaced": "https://terraria.wiki.gg/images/Boulder_%28placed%29.png",
     "categories": [
       "pet"
     ],
@@ -264785,6 +264847,47 @@
     "placedHeight": 2
   },
   {
+    "key": "AetheriumCandelabra",
+    "id": 5552,
+    "name": "Aetherium Candelabra",
+    "page": "Candelabras",
+    "url": "https://terraria.wiki.gg/wiki/Candelabras",
+    "icon": "https://terraria.wiki.gg/images/Aetherium_Candelabra.png",
+    "categories": [
+      "furniture",
+      "light-source"
+    ],
+    "subcategories": [
+      "candle"
+    ],
+    "platforms": [
+      "desktop",
+      "console",
+      "mobile"
+    ],
+    "hardmode": false,
+    "stack": 9999,
+    "research": 1,
+    "consumable": true,
+    "placeable": true,
+    "autoswing": true,
+    "obtain": [
+      "crafted"
+    ],
+    "vendors": [],
+    "events": [],
+    "biomes": [],
+    "times": [],
+    "platformsKnown": false,
+    "introduced": "1.4.5",
+    "version": "1.4.5",
+    "hardmodeOnly": false,
+    "unobtainable": false,
+    "banner": false,
+    "questFish": false,
+    "recipeOnly": true
+  },
+  {
     "key": "AetheriumCandle",
     "id": 5553,
     "name": "Aetherium Candle",
@@ -265015,6 +265118,47 @@
     "useTime": 15,
     "placedWidth": 2,
     "placedHeight": 5
+  },
+  {
+    "key": "AetheriumDoor",
+    "id": 5558,
+    "name": "Aetherium Door",
+    "page": "Doors",
+    "url": "https://terraria.wiki.gg/wiki/Doors",
+    "icon": "https://terraria.wiki.gg/images/Aetherium_Door.png",
+    "categories": [
+      "furniture",
+      "mechanism"
+    ],
+    "subcategories": [
+      "door"
+    ],
+    "platforms": [
+      "desktop",
+      "console",
+      "mobile"
+    ],
+    "hardmode": false,
+    "stack": 9999,
+    "research": 1,
+    "consumable": true,
+    "placeable": true,
+    "autoswing": true,
+    "obtain": [
+      "crafted"
+    ],
+    "vendors": [],
+    "events": [],
+    "biomes": [],
+    "times": [],
+    "platformsKnown": false,
+    "introduced": "1.4.5",
+    "version": "1.4.5",
+    "hardmodeOnly": false,
+    "unobtainable": false,
+    "banner": false,
+    "questFish": false,
+    "recipeOnly": true
   },
   {
     "key": "AetheriumLamp",
@@ -265351,7 +265495,7 @@
     "page": "Work Benches",
     "url": "https://terraria.wiki.gg/wiki/Work_Benches",
     "icon": "https://terraria.wiki.gg/images/Aetherium_Work_Bench.png",
-    "iconPlaced": "https://terraria.wiki.gg/images/Aetherium_Work_Bench_%28placed%29.png",
+    "iconPlaced": "https://terraria.wiki.gg/images/Aetherium_Work_Bench.png",
     "categories": [
       "crafting-station",
       "furniture"
@@ -266127,13 +266271,13 @@
     "url": "https://terraria.wiki.gg/wiki/Chicken_Bones%27_set",
     "icon": "https://terraria.wiki.gg/images/Chicken_Bones%27_Visor.png",
     "categories": [
-      "vanity"
+      "vanity",
+      "developer"
     ],
     "subcategories": [],
     "obtain": [
       "bag",
-      "treasure-bag",
-      "developer"
+      "treasure-bag"
     ],
     "vendors": [],
     "events": [],
@@ -266171,13 +266315,13 @@
     "url": "https://terraria.wiki.gg/wiki/Chicken_Bones%27_set",
     "icon": "https://terraria.wiki.gg/images/Chicken_Bones%27_Vest.png",
     "categories": [
-      "vanity"
+      "vanity",
+      "developer"
     ],
     "subcategories": [],
     "obtain": [
       "bag",
-      "treasure-bag",
-      "developer"
+      "treasure-bag"
     ],
     "vendors": [],
     "events": [],
@@ -266215,13 +266359,13 @@
     "url": "https://terraria.wiki.gg/wiki/Chicken_Bones%27_set",
     "icon": "https://terraria.wiki.gg/images/Chicken_Bones%27_Pants.png",
     "categories": [
-      "vanity"
+      "vanity",
+      "developer"
     ],
     "subcategories": [],
     "obtain": [
       "bag",
-      "treasure-bag",
-      "developer"
+      "treasure-bag"
     ],
     "vendors": [],
     "events": [],
@@ -266260,7 +266404,8 @@
     "icon": "https://terraria.wiki.gg/images/Chicken_Bones%27_Wings.png",
     "iconEquipped": "https://terraria.wiki.gg/images/Chicken_Bones%27_Wings_%28equipped%29.png",
     "categories": [
-      "accessory"
+      "accessory",
+      "developer"
     ],
     "subcategories": [
       "wings"
@@ -266304,15 +266449,15 @@
     "icon": "https://terraria.wiki.gg/images/Chicken_Bones%27_Robe.png",
     "categories": [
       "accessory",
-      "vanity"
+      "vanity",
+      "developer"
     ],
     "subcategories": [
       "other-accessory"
     ],
     "obtain": [
       "bag",
-      "treasure-bag",
-      "developer"
+      "treasure-bag"
     ],
     "vendors": [],
     "events": [],
@@ -266781,8 +266926,7 @@
     "autoswing": false,
     "useTime": 20,
     "buff": "Curse of the Bat",
-    "tooltip": "Inflicts the bearer with the curse of the bat",
-    "eventOnly": true
+    "tooltip": "Inflicts the bearer with the curse of the bat"
   },
   {
     "key": "CRTMonolith",
@@ -267123,6 +267267,47 @@
     "placedHeight": 2
   },
   {
+    "key": "FallenStarCandelabra",
+    "id": 5605,
+    "name": "Fallen Star Candelabra",
+    "page": "Candelabras",
+    "url": "https://terraria.wiki.gg/wiki/Candelabras",
+    "icon": "https://terraria.wiki.gg/images/Fallen_Star_Candelabra.png",
+    "categories": [
+      "furniture",
+      "light-source"
+    ],
+    "subcategories": [
+      "candle"
+    ],
+    "platforms": [
+      "desktop",
+      "console",
+      "mobile"
+    ],
+    "hardmode": false,
+    "stack": 9999,
+    "research": 1,
+    "consumable": true,
+    "placeable": true,
+    "autoswing": true,
+    "obtain": [
+      "crafted"
+    ],
+    "vendors": [],
+    "events": [],
+    "biomes": [],
+    "times": [],
+    "platformsKnown": false,
+    "introduced": "1.4.5",
+    "version": "1.4.5",
+    "hardmodeOnly": false,
+    "unobtainable": false,
+    "banner": false,
+    "questFish": false,
+    "recipeOnly": true
+  },
+  {
     "key": "FallenStarCandle",
     "id": 5606,
     "name": "Fallen Star Candle",
@@ -267353,6 +267538,47 @@
     "useTime": 15,
     "placedWidth": 2,
     "placedHeight": 5
+  },
+  {
+    "key": "FallenStarDoor",
+    "id": 5611,
+    "name": "Fallen Star Door",
+    "page": "Doors",
+    "url": "https://terraria.wiki.gg/wiki/Doors",
+    "icon": "https://terraria.wiki.gg/images/Fallen_Star_Door.png",
+    "categories": [
+      "furniture",
+      "mechanism"
+    ],
+    "subcategories": [
+      "door"
+    ],
+    "platforms": [
+      "desktop",
+      "console",
+      "mobile"
+    ],
+    "hardmode": false,
+    "stack": 9999,
+    "research": 1,
+    "consumable": true,
+    "placeable": true,
+    "autoswing": true,
+    "obtain": [
+      "crafted"
+    ],
+    "vendors": [],
+    "events": [],
+    "biomes": [],
+    "times": [],
+    "platformsKnown": false,
+    "introduced": "1.4.5",
+    "version": "1.4.5",
+    "hardmodeOnly": false,
+    "unobtainable": false,
+    "banner": false,
+    "questFish": false,
+    "recipeOnly": true
   },
   {
     "key": "FallenStarLamp",
@@ -267689,7 +267915,7 @@
     "page": "Work Benches",
     "url": "https://terraria.wiki.gg/wiki/Work_Benches",
     "icon": "https://terraria.wiki.gg/images/Fallen_Star_Work_Bench.png",
-    "iconPlaced": "https://terraria.wiki.gg/images/Fallen_Star_Work_Bench_%28placed%29.png",
+    "iconPlaced": "https://terraria.wiki.gg/images/Fallen_Star_Work_Bench.png",
     "categories": [
       "crafting-station",
       "furniture"
@@ -270566,13 +270792,13 @@
     "url": "https://terraria.wiki.gg/wiki/Kazzymodus%27_set",
     "icon": "https://terraria.wiki.gg/images/Kazzymodus%27_Hood.png",
     "categories": [
-      "vanity"
+      "vanity",
+      "developer"
     ],
     "subcategories": [],
     "obtain": [
       "bag",
-      "treasure-bag",
-      "developer"
+      "treasure-bag"
     ],
     "vendors": [],
     "events": [],
@@ -270610,13 +270836,13 @@
     "url": "https://terraria.wiki.gg/wiki/Kazzymodus%27_set",
     "icon": "https://terraria.wiki.gg/images/Kazzymodus%27_Chestpiece.png",
     "categories": [
-      "vanity"
+      "vanity",
+      "developer"
     ],
     "subcategories": [],
     "obtain": [
       "bag",
-      "treasure-bag",
-      "developer"
+      "treasure-bag"
     ],
     "vendors": [],
     "events": [],
@@ -270654,13 +270880,13 @@
     "url": "https://terraria.wiki.gg/wiki/Kazzymodus%27_set",
     "icon": "https://terraria.wiki.gg/images/Kazzymodus%27_Leggings.png",
     "categories": [
-      "vanity"
+      "vanity",
+      "developer"
     ],
     "subcategories": [],
     "obtain": [
       "bag",
-      "treasure-bag",
-      "developer"
+      "treasure-bag"
     ],
     "vendors": [],
     "events": [],
@@ -270699,7 +270925,8 @@
     "icon": "https://terraria.wiki.gg/images/Kazzymodus%27_Wings.png",
     "iconEquipped": "https://terraria.wiki.gg/images/Kazzymodus%27_Wings_%28equipped%29.png",
     "categories": [
-      "accessory"
+      "accessory",
+      "developer"
     ],
     "subcategories": [
       "wings"
@@ -271018,6 +271245,47 @@
     "placedHeight": 2
   },
   {
+    "key": "FeywoodCandelabra",
+    "id": 5693,
+    "name": "Feywood Candelabra",
+    "page": "Candelabras",
+    "url": "https://terraria.wiki.gg/wiki/Candelabras",
+    "icon": "https://terraria.wiki.gg/images/Feywood_Candelabra.png",
+    "categories": [
+      "furniture",
+      "light-source"
+    ],
+    "subcategories": [
+      "candle"
+    ],
+    "platforms": [
+      "desktop",
+      "console",
+      "mobile"
+    ],
+    "hardmode": false,
+    "stack": 9999,
+    "research": 1,
+    "consumable": true,
+    "placeable": true,
+    "autoswing": true,
+    "obtain": [
+      "crafted"
+    ],
+    "vendors": [],
+    "events": [],
+    "biomes": [],
+    "times": [],
+    "platformsKnown": false,
+    "introduced": "1.4.5",
+    "version": "1.4.5",
+    "hardmodeOnly": false,
+    "unobtainable": false,
+    "banner": false,
+    "questFish": false,
+    "recipeOnly": true
+  },
+  {
     "key": "FeywoodCandle",
     "id": 5694,
     "name": "Feywood Candle",
@@ -271248,6 +271516,47 @@
     "useTime": 15,
     "placedWidth": 2,
     "placedHeight": 5
+  },
+  {
+    "key": "FeywoodDoor",
+    "id": 5699,
+    "name": "Feywood Door",
+    "page": "Doors",
+    "url": "https://terraria.wiki.gg/wiki/Doors",
+    "icon": "https://terraria.wiki.gg/images/Feywood_Door.png",
+    "categories": [
+      "furniture",
+      "mechanism"
+    ],
+    "subcategories": [
+      "door"
+    ],
+    "platforms": [
+      "desktop",
+      "console",
+      "mobile"
+    ],
+    "hardmode": false,
+    "stack": 9999,
+    "research": 1,
+    "consumable": true,
+    "placeable": true,
+    "autoswing": true,
+    "obtain": [
+      "crafted"
+    ],
+    "vendors": [],
+    "events": [],
+    "biomes": [],
+    "times": [],
+    "platformsKnown": false,
+    "introduced": "1.4.5",
+    "version": "1.4.5",
+    "hardmodeOnly": false,
+    "unobtainable": false,
+    "banner": false,
+    "questFish": false,
+    "recipeOnly": true
   },
   {
     "key": "FeywoodLamp",
@@ -271991,6 +272300,47 @@
     "placedHeight": 2
   },
   {
+    "key": "HallowedCandelabra",
+    "id": 5716,
+    "name": "Hallowed Candelabra",
+    "page": "Candelabras",
+    "url": "https://terraria.wiki.gg/wiki/Candelabras",
+    "icon": "https://terraria.wiki.gg/images/Hallowed_Candelabra.png",
+    "categories": [
+      "furniture",
+      "light-source"
+    ],
+    "subcategories": [
+      "candle"
+    ],
+    "platforms": [
+      "desktop",
+      "console",
+      "mobile"
+    ],
+    "hardmode": false,
+    "stack": 9999,
+    "research": 1,
+    "consumable": true,
+    "placeable": true,
+    "autoswing": true,
+    "obtain": [
+      "crafted"
+    ],
+    "vendors": [],
+    "events": [],
+    "biomes": [],
+    "times": [],
+    "platformsKnown": false,
+    "introduced": "1.4.5",
+    "version": "1.4.5",
+    "hardmodeOnly": false,
+    "unobtainable": false,
+    "banner": false,
+    "questFish": false,
+    "recipeOnly": true
+  },
+  {
     "key": "HallowedCandle",
     "id": 5717,
     "name": "Hallowed Candle",
@@ -272221,6 +272571,47 @@
     "useTime": 15,
     "placedWidth": 2,
     "placedHeight": 5
+  },
+  {
+    "key": "HallowedDoor",
+    "id": 5722,
+    "name": "Hallowed Door",
+    "page": "Doors",
+    "url": "https://terraria.wiki.gg/wiki/Doors",
+    "icon": "https://terraria.wiki.gg/images/Hallowed_Door.png",
+    "categories": [
+      "furniture",
+      "mechanism"
+    ],
+    "subcategories": [
+      "door"
+    ],
+    "platforms": [
+      "desktop",
+      "console",
+      "mobile"
+    ],
+    "hardmode": false,
+    "stack": 9999,
+    "research": 1,
+    "consumable": true,
+    "placeable": true,
+    "autoswing": true,
+    "obtain": [
+      "crafted"
+    ],
+    "vendors": [],
+    "events": [],
+    "biomes": [],
+    "times": [],
+    "platformsKnown": false,
+    "introduced": "1.4.5",
+    "version": "1.4.5",
+    "hardmodeOnly": false,
+    "unobtainable": false,
+    "banner": false,
+    "questFish": false,
+    "recipeOnly": true
   },
   {
     "key": "HallowedLamp",
@@ -272557,7 +272948,7 @@
     "page": "Work Benches",
     "url": "https://terraria.wiki.gg/wiki/Work_Benches",
     "icon": "https://terraria.wiki.gg/images/Hallowed_Work_Bench.png",
-    "iconPlaced": "https://terraria.wiki.gg/images/Hallowed_Work_Bench_%28placed%29.png",
+    "iconPlaced": "https://terraria.wiki.gg/images/Hallowed_Work_Bench.png",
     "categories": [
       "crafting-station",
       "furniture"
@@ -273098,6 +273489,47 @@
     "placedHeight": 2
   },
   {
+    "key": "GothicCandelabra",
+    "id": 5742,
+    "name": "Gothic Candelabra",
+    "page": "Candelabras",
+    "url": "https://terraria.wiki.gg/wiki/Candelabras",
+    "icon": "https://terraria.wiki.gg/images/Gothic_Candelabra.png",
+    "categories": [
+      "furniture",
+      "light-source"
+    ],
+    "subcategories": [
+      "candle"
+    ],
+    "platforms": [
+      "desktop",
+      "console",
+      "mobile"
+    ],
+    "hardmode": false,
+    "stack": 9999,
+    "research": 1,
+    "consumable": true,
+    "placeable": true,
+    "autoswing": true,
+    "obtain": [
+      "crafted"
+    ],
+    "vendors": [],
+    "events": [],
+    "biomes": [],
+    "times": [],
+    "platformsKnown": false,
+    "introduced": "1.4.5",
+    "version": "1.4.5",
+    "hardmodeOnly": false,
+    "unobtainable": false,
+    "banner": false,
+    "questFish": false,
+    "recipeOnly": true
+  },
+  {
     "key": "GothicCandle",
     "id": 5743,
     "name": "Gothic Candle",
@@ -273283,6 +273715,47 @@
     "useTime": 15,
     "placedWidth": 2,
     "placedHeight": 5
+  },
+  {
+    "key": "GothicDoor",
+    "id": 5747,
+    "name": "Gothic Door",
+    "page": "Doors",
+    "url": "https://terraria.wiki.gg/wiki/Doors",
+    "icon": "https://terraria.wiki.gg/images/Gothic_Door.png",
+    "categories": [
+      "furniture",
+      "mechanism"
+    ],
+    "subcategories": [
+      "door"
+    ],
+    "platforms": [
+      "desktop",
+      "console",
+      "mobile"
+    ],
+    "hardmode": false,
+    "stack": 9999,
+    "research": 1,
+    "consumable": true,
+    "placeable": true,
+    "autoswing": true,
+    "obtain": [
+      "crafted"
+    ],
+    "vendors": [],
+    "events": [],
+    "biomes": [],
+    "times": [],
+    "platformsKnown": false,
+    "introduced": "1.4.5",
+    "version": "1.4.5",
+    "hardmodeOnly": false,
+    "unobtainable": false,
+    "banner": false,
+    "questFish": false,
+    "recipeOnly": true
   },
   {
     "key": "GothicLamp",
@@ -273795,6 +274268,47 @@
     "placedHeight": 4
   },
   {
+    "key": "DemoniteCandelabra",
+    "id": 5759,
+    "name": "Demonite Candelabra",
+    "page": "Candelabras",
+    "url": "https://terraria.wiki.gg/wiki/Candelabras",
+    "icon": "https://terraria.wiki.gg/images/Demonite_Candelabra.png",
+    "categories": [
+      "furniture",
+      "light-source"
+    ],
+    "subcategories": [
+      "candle"
+    ],
+    "platforms": [
+      "desktop",
+      "console",
+      "mobile"
+    ],
+    "hardmode": false,
+    "stack": 9999,
+    "research": 1,
+    "consumable": true,
+    "placeable": true,
+    "autoswing": true,
+    "obtain": [
+      "crafted"
+    ],
+    "vendors": [],
+    "events": [],
+    "biomes": [],
+    "times": [],
+    "platformsKnown": false,
+    "introduced": "1.4.5",
+    "version": "1.4.5",
+    "hardmodeOnly": false,
+    "unobtainable": false,
+    "banner": false,
+    "questFish": false,
+    "recipeOnly": true
+  },
+  {
     "key": "DemoniteCandle",
     "id": 5760,
     "name": "Demonite Candle",
@@ -274025,6 +274539,47 @@
     "useTime": 15,
     "placedWidth": 2,
     "placedHeight": 5
+  },
+  {
+    "key": "DemoniteDoor",
+    "id": 5765,
+    "name": "Demonite Door",
+    "page": "Doors",
+    "url": "https://terraria.wiki.gg/wiki/Doors",
+    "icon": "https://terraria.wiki.gg/images/Demonite_Door.png",
+    "categories": [
+      "furniture",
+      "mechanism"
+    ],
+    "subcategories": [
+      "door"
+    ],
+    "platforms": [
+      "desktop",
+      "console",
+      "mobile"
+    ],
+    "hardmode": false,
+    "stack": 9999,
+    "research": 1,
+    "consumable": true,
+    "placeable": true,
+    "autoswing": true,
+    "obtain": [
+      "crafted"
+    ],
+    "vendors": [],
+    "events": [],
+    "biomes": [],
+    "times": [],
+    "platformsKnown": false,
+    "introduced": "1.4.5",
+    "version": "1.4.5",
+    "hardmodeOnly": false,
+    "unobtainable": false,
+    "banner": false,
+    "questFish": false,
+    "recipeOnly": true
   },
   {
     "key": "DemoniteDresser",
@@ -274452,7 +275007,7 @@
     "page": "Work Benches",
     "url": "https://terraria.wiki.gg/wiki/Work_Benches",
     "icon": "https://terraria.wiki.gg/images/Demonite_Work_Bench.png",
-    "iconPlaced": "https://terraria.wiki.gg/images/Demonite_Work_Bench_%28placed%29.png",
+    "iconPlaced": "https://terraria.wiki.gg/images/Demonite_Work_Bench.png",
     "categories": [
       "crafting-station",
       "furniture"
@@ -274675,6 +275230,47 @@
     "useTime": 15,
     "placedWidth": 3,
     "placedHeight": 4
+  },
+  {
+    "key": "CrimtaneCandelabra",
+    "id": 5780,
+    "name": "Crimtane Candelabra",
+    "page": "Candelabras",
+    "url": "https://terraria.wiki.gg/wiki/Candelabras",
+    "icon": "https://terraria.wiki.gg/images/Crimtane_Candelabra.png",
+    "categories": [
+      "furniture",
+      "light-source"
+    ],
+    "subcategories": [
+      "candle"
+    ],
+    "platforms": [
+      "desktop",
+      "console",
+      "mobile"
+    ],
+    "hardmode": false,
+    "stack": 9999,
+    "research": 1,
+    "consumable": true,
+    "placeable": true,
+    "autoswing": true,
+    "obtain": [
+      "crafted"
+    ],
+    "vendors": [],
+    "events": [],
+    "biomes": [],
+    "times": [],
+    "platformsKnown": false,
+    "introduced": "1.4.5",
+    "version": "1.4.5",
+    "hardmodeOnly": false,
+    "unobtainable": false,
+    "banner": false,
+    "questFish": false,
+    "recipeOnly": true
   },
   {
     "key": "CrimtaneCandle",
@@ -274907,6 +275503,47 @@
     "useTime": 15,
     "placedWidth": 2,
     "placedHeight": 5
+  },
+  {
+    "key": "CrimtaneDoor",
+    "id": 5786,
+    "name": "Crimtane Door",
+    "page": "Doors",
+    "url": "https://terraria.wiki.gg/wiki/Doors",
+    "icon": "https://terraria.wiki.gg/images/Crimtane_Door.png",
+    "categories": [
+      "furniture",
+      "mechanism"
+    ],
+    "subcategories": [
+      "door"
+    ],
+    "platforms": [
+      "desktop",
+      "console",
+      "mobile"
+    ],
+    "hardmode": false,
+    "stack": 9999,
+    "research": 1,
+    "consumable": true,
+    "placeable": true,
+    "autoswing": true,
+    "obtain": [
+      "crafted"
+    ],
+    "vendors": [],
+    "events": [],
+    "biomes": [],
+    "times": [],
+    "platformsKnown": false,
+    "introduced": "1.4.5",
+    "version": "1.4.5",
+    "hardmodeOnly": false,
+    "unobtainable": false,
+    "banner": false,
+    "questFish": false,
+    "recipeOnly": true
   },
   {
     "key": "CrimtaneDresser",
@@ -275334,7 +275971,7 @@
     "page": "Work Benches",
     "url": "https://terraria.wiki.gg/wiki/Work_Benches",
     "icon": "https://terraria.wiki.gg/images/Crimtane_Work_Bench.png",
-    "iconPlaced": "https://terraria.wiki.gg/images/Crimtane_Work_Bench_%28placed%29.png",
+    "iconPlaced": "https://terraria.wiki.gg/images/Crimtane_Work_Bench.png",
     "categories": [
       "crafting-station",
       "furniture"
@@ -275557,6 +276194,47 @@
     "useTime": 15,
     "placedWidth": 3,
     "placedHeight": 4
+  },
+  {
+    "key": "SnowCandelabra",
+    "id": 5801,
+    "name": "Snow Candelabra",
+    "page": "Candelabras",
+    "url": "https://terraria.wiki.gg/wiki/Candelabras",
+    "icon": "https://terraria.wiki.gg/images/Snow_Candelabra.png",
+    "categories": [
+      "furniture",
+      "light-source"
+    ],
+    "subcategories": [
+      "candle"
+    ],
+    "platforms": [
+      "desktop",
+      "console",
+      "mobile"
+    ],
+    "hardmode": false,
+    "stack": 9999,
+    "research": 1,
+    "consumable": true,
+    "placeable": true,
+    "autoswing": true,
+    "obtain": [
+      "crafted"
+    ],
+    "vendors": [],
+    "events": [],
+    "biomes": [],
+    "times": [],
+    "platformsKnown": false,
+    "introduced": "1.4.5",
+    "version": "1.4.5",
+    "hardmodeOnly": false,
+    "unobtainable": false,
+    "banner": false,
+    "questFish": false,
+    "recipeOnly": true
   },
   {
     "key": "SnowCandle",
@@ -275789,6 +276467,47 @@
     "useTime": 15,
     "placedWidth": 2,
     "placedHeight": 5
+  },
+  {
+    "key": "SnowDoor",
+    "id": 5807,
+    "name": "Snow Door",
+    "page": "Doors",
+    "url": "https://terraria.wiki.gg/wiki/Doors",
+    "icon": "https://terraria.wiki.gg/images/Snow_Door.png",
+    "categories": [
+      "furniture",
+      "mechanism"
+    ],
+    "subcategories": [
+      "door"
+    ],
+    "platforms": [
+      "desktop",
+      "console",
+      "mobile"
+    ],
+    "hardmode": false,
+    "stack": 9999,
+    "research": 1,
+    "consumable": true,
+    "placeable": true,
+    "autoswing": true,
+    "obtain": [
+      "crafted"
+    ],
+    "vendors": [],
+    "events": [],
+    "biomes": [],
+    "times": [],
+    "platformsKnown": false,
+    "introduced": "1.4.5",
+    "version": "1.4.5",
+    "hardmodeOnly": false,
+    "unobtainable": false,
+    "banner": false,
+    "questFish": false,
+    "recipeOnly": true
   },
   {
     "key": "SnowDresser",
@@ -276216,7 +276935,7 @@
     "page": "Work Benches",
     "url": "https://terraria.wiki.gg/wiki/Work_Benches",
     "icon": "https://terraria.wiki.gg/images/Snow_Work_Bench.png",
-    "iconPlaced": "https://terraria.wiki.gg/images/Snow_Work_Bench_%28placed%29.png",
+    "iconPlaced": "https://terraria.wiki.gg/images/Snow_Work_Bench.png",
     "categories": [
       "crafting-station",
       "furniture"
@@ -276439,6 +277158,47 @@
     "useTime": 15,
     "placedWidth": 3,
     "placedHeight": 4
+  },
+  {
+    "key": "FlinxFurCandelabra",
+    "id": 5822,
+    "name": "Flinx Fur Candelabra",
+    "page": "Candelabras",
+    "url": "https://terraria.wiki.gg/wiki/Candelabras",
+    "icon": "https://terraria.wiki.gg/images/Flinx_Fur_Candelabra.png",
+    "categories": [
+      "furniture",
+      "light-source"
+    ],
+    "subcategories": [
+      "candle"
+    ],
+    "platforms": [
+      "desktop",
+      "console",
+      "mobile"
+    ],
+    "hardmode": false,
+    "stack": 9999,
+    "research": 1,
+    "consumable": true,
+    "placeable": true,
+    "autoswing": true,
+    "obtain": [
+      "crafted"
+    ],
+    "vendors": [],
+    "events": [],
+    "biomes": [],
+    "times": [],
+    "platformsKnown": false,
+    "introduced": "1.4.5",
+    "version": "1.4.5",
+    "hardmodeOnly": false,
+    "unobtainable": false,
+    "banner": false,
+    "questFish": false,
+    "recipeOnly": true
   },
   {
     "key": "FlinxFurCandle",
@@ -276671,6 +277431,47 @@
     "useTime": 15,
     "placedWidth": 2,
     "placedHeight": 5
+  },
+  {
+    "key": "FlinxFurDoor",
+    "id": 5828,
+    "name": "Flinx Fur Door",
+    "page": "Doors",
+    "url": "https://terraria.wiki.gg/wiki/Doors",
+    "icon": "https://terraria.wiki.gg/images/Flinx_Fur_Door.png",
+    "categories": [
+      "furniture",
+      "mechanism"
+    ],
+    "subcategories": [
+      "door"
+    ],
+    "platforms": [
+      "desktop",
+      "console",
+      "mobile"
+    ],
+    "hardmode": false,
+    "stack": 9999,
+    "research": 1,
+    "consumable": true,
+    "placeable": true,
+    "autoswing": true,
+    "obtain": [
+      "crafted"
+    ],
+    "vendors": [],
+    "events": [],
+    "biomes": [],
+    "times": [],
+    "platformsKnown": false,
+    "introduced": "1.4.5",
+    "version": "1.4.5",
+    "hardmodeOnly": false,
+    "unobtainable": false,
+    "banner": false,
+    "questFish": false,
+    "recipeOnly": true
   },
   {
     "key": "FlinxFurDresser",
@@ -277098,7 +277899,7 @@
     "page": "Work Benches",
     "url": "https://terraria.wiki.gg/wiki/Work_Benches",
     "icon": "https://terraria.wiki.gg/images/Flinx_Fur_Work_Bench.png",
-    "iconPlaced": "https://terraria.wiki.gg/images/Flinx_Fur_Work_Bench_%28placed%29.png",
+    "iconPlaced": "https://terraria.wiki.gg/images/Flinx_Fur_Work_Bench.png",
     "categories": [
       "crafting-station",
       "furniture"
@@ -277321,6 +278122,47 @@
     "useTime": 15,
     "placedWidth": 3,
     "placedHeight": 4
+  },
+  {
+    "key": "PineCandelabra",
+    "id": 5843,
+    "name": "Pine Candelabra",
+    "page": "Candelabras",
+    "url": "https://terraria.wiki.gg/wiki/Candelabras",
+    "icon": "https://terraria.wiki.gg/images/Pine_Candelabra.png",
+    "categories": [
+      "furniture",
+      "light-source"
+    ],
+    "subcategories": [
+      "candle"
+    ],
+    "platforms": [
+      "desktop",
+      "console",
+      "mobile"
+    ],
+    "hardmode": false,
+    "stack": 9999,
+    "research": 1,
+    "consumable": true,
+    "placeable": true,
+    "autoswing": true,
+    "obtain": [
+      "crafted"
+    ],
+    "vendors": [],
+    "events": [],
+    "biomes": [],
+    "times": [],
+    "platformsKnown": false,
+    "introduced": "1.4.5",
+    "version": "1.4.5",
+    "hardmodeOnly": false,
+    "unobtainable": false,
+    "banner": false,
+    "questFish": false,
+    "recipeOnly": true
   },
   {
     "key": "PineCandle",
@@ -277889,7 +278731,7 @@
     "page": "Work Benches",
     "url": "https://terraria.wiki.gg/wiki/Work_Benches",
     "icon": "https://terraria.wiki.gg/images/Pine_Work_Bench.png",
-    "iconPlaced": "https://terraria.wiki.gg/images/Pine_Work_Bench_%28placed%29.png",
+    "iconPlaced": "https://terraria.wiki.gg/images/Pine_Work_Bench.png",
     "categories": [
       "crafting-station",
       "furniture"
@@ -278112,6 +278954,47 @@
     "useTime": 15,
     "placedWidth": 3,
     "placedHeight": 4
+  },
+  {
+    "key": "EasterCandelabra",
+    "id": 5861,
+    "name": "Easter Candelabra",
+    "page": "Candelabras",
+    "url": "https://terraria.wiki.gg/wiki/Candelabras",
+    "icon": "https://terraria.wiki.gg/images/Easter_Candelabra.png",
+    "categories": [
+      "furniture",
+      "light-source"
+    ],
+    "subcategories": [
+      "candle"
+    ],
+    "platforms": [
+      "desktop",
+      "console",
+      "mobile"
+    ],
+    "hardmode": false,
+    "stack": 9999,
+    "research": 1,
+    "consumable": true,
+    "placeable": true,
+    "autoswing": true,
+    "obtain": [
+      "crafted"
+    ],
+    "vendors": [],
+    "events": [],
+    "biomes": [],
+    "times": [],
+    "platformsKnown": false,
+    "introduced": "1.4.5",
+    "version": "1.4.5",
+    "hardmodeOnly": false,
+    "unobtainable": false,
+    "banner": false,
+    "questFish": false,
+    "recipeOnly": true
   },
   {
     "key": "EasterCandle",
@@ -278344,6 +279227,47 @@
     "useTime": 15,
     "placedWidth": 2,
     "placedHeight": 5
+  },
+  {
+    "key": "EasterDoor",
+    "id": 5867,
+    "name": "Easter Door",
+    "page": "Doors",
+    "url": "https://terraria.wiki.gg/wiki/Doors",
+    "icon": "https://terraria.wiki.gg/images/Easter_Door.png",
+    "categories": [
+      "furniture",
+      "mechanism"
+    ],
+    "subcategories": [
+      "door"
+    ],
+    "platforms": [
+      "desktop",
+      "console",
+      "mobile"
+    ],
+    "hardmode": false,
+    "stack": 9999,
+    "research": 1,
+    "consumable": true,
+    "placeable": true,
+    "autoswing": true,
+    "obtain": [
+      "crafted"
+    ],
+    "vendors": [],
+    "events": [],
+    "biomes": [],
+    "times": [],
+    "platformsKnown": false,
+    "introduced": "1.4.5",
+    "version": "1.4.5",
+    "hardmodeOnly": false,
+    "unobtainable": false,
+    "banner": false,
+    "questFish": false,
+    "recipeOnly": true
   },
   {
     "key": "EasterDresser",
@@ -278771,7 +279695,7 @@
     "page": "Work Benches",
     "url": "https://terraria.wiki.gg/wiki/Work_Benches",
     "icon": "https://terraria.wiki.gg/images/Easter_Work_Bench.png",
-    "iconPlaced": "https://terraria.wiki.gg/images/Easter_Work_Bench_%28placed%29.png",
+    "iconPlaced": "https://terraria.wiki.gg/images/Easter_Work_Bench.png",
     "categories": [
       "crafting-station",
       "furniture"
@@ -278994,6 +279918,47 @@
     "useTime": 15,
     "placedWidth": 3,
     "placedHeight": 4
+  },
+  {
+    "key": "StoneCandelabra",
+    "id": 5882,
+    "name": "Stone Candelabra",
+    "page": "Candelabras",
+    "url": "https://terraria.wiki.gg/wiki/Candelabras",
+    "icon": "https://terraria.wiki.gg/images/Stone_Candelabra.png",
+    "categories": [
+      "furniture",
+      "light-source"
+    ],
+    "subcategories": [
+      "candle"
+    ],
+    "platforms": [
+      "desktop",
+      "console",
+      "mobile"
+    ],
+    "hardmode": false,
+    "stack": 9999,
+    "research": 1,
+    "consumable": true,
+    "placeable": true,
+    "autoswing": true,
+    "obtain": [
+      "crafted"
+    ],
+    "vendors": [],
+    "events": [],
+    "biomes": [],
+    "times": [],
+    "platformsKnown": false,
+    "introduced": "1.4.5",
+    "version": "1.4.5",
+    "hardmodeOnly": false,
+    "unobtainable": false,
+    "banner": false,
+    "questFish": false,
+    "recipeOnly": true
   },
   {
     "key": "StoneCandle",
@@ -279603,7 +280568,7 @@
     "page": "Work Benches",
     "url": "https://terraria.wiki.gg/wiki/Work_Benches",
     "icon": "https://terraria.wiki.gg/images/Stone_Work_Bench.png",
-    "iconPlaced": "https://terraria.wiki.gg/images/Stone_Work_Bench_%28placed%29.png",
+    "iconPlaced": "https://terraria.wiki.gg/images/Stone_Work_Bench.png",
     "categories": [
       "crafting-station",
       "furniture"
@@ -279826,6 +280791,47 @@
     "useTime": 15,
     "placedWidth": 3,
     "placedHeight": 4
+  },
+  {
+    "key": "JellyfishCandelabra",
+    "id": 5901,
+    "name": "Jellyfish Candelabra",
+    "page": "Candelabras",
+    "url": "https://terraria.wiki.gg/wiki/Candelabras",
+    "icon": "https://terraria.wiki.gg/images/Jellyfish_Candelabra.png",
+    "categories": [
+      "furniture",
+      "light-source"
+    ],
+    "subcategories": [
+      "candle"
+    ],
+    "platforms": [
+      "desktop",
+      "console",
+      "mobile"
+    ],
+    "hardmode": false,
+    "stack": 9999,
+    "research": 1,
+    "consumable": true,
+    "placeable": true,
+    "autoswing": true,
+    "obtain": [
+      "crafted"
+    ],
+    "vendors": [],
+    "events": [],
+    "biomes": [],
+    "times": [],
+    "platformsKnown": false,
+    "introduced": "1.4.5",
+    "version": "1.4.5",
+    "hardmodeOnly": false,
+    "unobtainable": false,
+    "banner": false,
+    "questFish": false,
+    "recipeOnly": true
   },
   {
     "key": "JellyfishCandle",
@@ -280059,6 +281065,47 @@
     "useTime": 15,
     "placedWidth": 2,
     "placedHeight": 5
+  },
+  {
+    "key": "JellyfishDoor",
+    "id": 5907,
+    "name": "Jellyfish Door",
+    "page": "Doors",
+    "url": "https://terraria.wiki.gg/wiki/Doors",
+    "icon": "https://terraria.wiki.gg/images/Jellyfish_Door.png",
+    "categories": [
+      "furniture",
+      "mechanism"
+    ],
+    "subcategories": [
+      "door"
+    ],
+    "platforms": [
+      "desktop",
+      "console",
+      "mobile"
+    ],
+    "hardmode": false,
+    "stack": 9999,
+    "research": 1,
+    "consumable": true,
+    "placeable": true,
+    "autoswing": true,
+    "obtain": [
+      "crafted"
+    ],
+    "vendors": [],
+    "events": [],
+    "biomes": [],
+    "times": [],
+    "platformsKnown": false,
+    "introduced": "1.4.5",
+    "version": "1.4.5",
+    "hardmodeOnly": false,
+    "unobtainable": false,
+    "banner": false,
+    "questFish": false,
+    "recipeOnly": true
   },
   {
     "key": "JellyfishDresser",
@@ -281316,6 +282363,47 @@
     "placedHeight": 4
   },
   {
+    "key": "HarpyCandelabra",
+    "id": 5935,
+    "name": "Harpy Candelabra",
+    "page": "Candelabras",
+    "url": "https://terraria.wiki.gg/wiki/Candelabras",
+    "icon": "https://terraria.wiki.gg/images/Harpy_Candelabra.png",
+    "categories": [
+      "furniture",
+      "light-source"
+    ],
+    "subcategories": [
+      "candle"
+    ],
+    "platforms": [
+      "desktop",
+      "console",
+      "mobile"
+    ],
+    "hardmode": false,
+    "stack": 9999,
+    "research": 1,
+    "consumable": true,
+    "placeable": true,
+    "autoswing": true,
+    "obtain": [
+      "crafted"
+    ],
+    "vendors": [],
+    "events": [],
+    "biomes": [],
+    "times": [],
+    "platformsKnown": false,
+    "introduced": "1.4.5",
+    "version": "1.4.5",
+    "hardmodeOnly": false,
+    "unobtainable": false,
+    "banner": false,
+    "questFish": false,
+    "recipeOnly": true
+  },
+  {
     "key": "HarpyCandle",
     "id": 5936,
     "name": "Harpy Candle",
@@ -281546,6 +282634,47 @@
     "useTime": 15,
     "placedWidth": 2,
     "placedHeight": 5
+  },
+  {
+    "key": "HarpyDoor",
+    "id": 5941,
+    "name": "Harpy Door",
+    "page": "Doors",
+    "url": "https://terraria.wiki.gg/wiki/Doors",
+    "icon": "https://terraria.wiki.gg/images/Harpy_Door.png",
+    "categories": [
+      "furniture",
+      "mechanism"
+    ],
+    "subcategories": [
+      "door"
+    ],
+    "platforms": [
+      "desktop",
+      "console",
+      "mobile"
+    ],
+    "hardmode": false,
+    "stack": 9999,
+    "research": 1,
+    "consumable": true,
+    "placeable": true,
+    "autoswing": true,
+    "obtain": [
+      "crafted"
+    ],
+    "vendors": [],
+    "events": [],
+    "biomes": [],
+    "times": [],
+    "platformsKnown": false,
+    "introduced": "1.4.5",
+    "version": "1.4.5",
+    "hardmodeOnly": false,
+    "unobtainable": false,
+    "banner": false,
+    "questFish": false,
+    "recipeOnly": true
   },
   {
     "key": "HarpyDresser",
@@ -281973,7 +283102,7 @@
     "page": "Work Benches",
     "url": "https://terraria.wiki.gg/wiki/Work_Benches",
     "icon": "https://terraria.wiki.gg/images/Harpy_Work_Bench.png",
-    "iconPlaced": "https://terraria.wiki.gg/images/Harpy_Work_Bench_%28placed%29.png",
+    "iconPlaced": "https://terraria.wiki.gg/images/Harpy_Work_Bench.png",
     "categories": [
       "crafting-station",
       "furniture"
@@ -282289,6 +283418,47 @@
     "placedHeight": 4
   },
   {
+    "key": "CloudCandelabra",
+    "id": 5958,
+    "name": "Cloud Candelabra",
+    "page": "Candelabras",
+    "url": "https://terraria.wiki.gg/wiki/Candelabras",
+    "icon": "https://terraria.wiki.gg/images/Cloud_Candelabra.png",
+    "categories": [
+      "furniture",
+      "light-source"
+    ],
+    "subcategories": [
+      "candle"
+    ],
+    "platforms": [
+      "desktop",
+      "console",
+      "mobile"
+    ],
+    "hardmode": false,
+    "stack": 9999,
+    "research": 1,
+    "consumable": true,
+    "placeable": true,
+    "autoswing": true,
+    "obtain": [
+      "crafted"
+    ],
+    "vendors": [],
+    "events": [],
+    "biomes": [],
+    "times": [],
+    "platformsKnown": false,
+    "introduced": "1.4.5",
+    "version": "1.4.5",
+    "hardmodeOnly": false,
+    "unobtainable": false,
+    "banner": false,
+    "questFish": false,
+    "recipeOnly": true
+  },
+  {
     "key": "CloudCandle",
     "id": 5959,
     "name": "Cloud Candle",
@@ -282520,6 +283690,47 @@
     "useTime": 15,
     "placedWidth": 2,
     "placedHeight": 5
+  },
+  {
+    "key": "CloudDoor",
+    "id": 5964,
+    "name": "Cloud Door",
+    "page": "Doors",
+    "url": "https://terraria.wiki.gg/wiki/Doors",
+    "icon": "https://terraria.wiki.gg/images/Cloud_Door.png",
+    "categories": [
+      "furniture",
+      "mechanism"
+    ],
+    "subcategories": [
+      "door"
+    ],
+    "platforms": [
+      "desktop",
+      "console",
+      "mobile"
+    ],
+    "hardmode": false,
+    "stack": 9999,
+    "research": 1,
+    "consumable": true,
+    "placeable": true,
+    "autoswing": true,
+    "obtain": [
+      "crafted"
+    ],
+    "vendors": [],
+    "events": [],
+    "biomes": [],
+    "times": [],
+    "platformsKnown": false,
+    "introduced": "1.4.5",
+    "version": "1.4.5",
+    "hardmodeOnly": false,
+    "unobtainable": false,
+    "banner": false,
+    "questFish": false,
+    "recipeOnly": true
   },
   {
     "key": "CloudDresser",
@@ -283122,6 +284333,47 @@
     "placedHeight": 4
   },
   {
+    "key": "DuskwareCandelabra",
+    "id": 5978,
+    "name": "Duskware Candelabra",
+    "page": "Candelabras",
+    "url": "https://terraria.wiki.gg/wiki/Candelabras",
+    "icon": "https://terraria.wiki.gg/images/Duskware_Candelabra.png",
+    "categories": [
+      "furniture",
+      "light-source"
+    ],
+    "subcategories": [
+      "candle"
+    ],
+    "platforms": [
+      "desktop",
+      "console",
+      "mobile"
+    ],
+    "hardmode": false,
+    "stack": 9999,
+    "research": 1,
+    "consumable": true,
+    "placeable": true,
+    "autoswing": true,
+    "obtain": [
+      "crafted"
+    ],
+    "vendors": [],
+    "events": [],
+    "biomes": [],
+    "times": [],
+    "platformsKnown": false,
+    "introduced": "1.4.5",
+    "version": "1.4.5",
+    "hardmodeOnly": false,
+    "unobtainable": false,
+    "banner": false,
+    "questFish": false,
+    "recipeOnly": true
+  },
+  {
     "key": "MoonplateCandle",
     "id": 5979,
     "name": "Duskware Candle",
@@ -283352,6 +284604,47 @@
     "useTime": 15,
     "placedWidth": 2,
     "placedHeight": 5
+  },
+  {
+    "key": "DuskwareDoor",
+    "id": 5984,
+    "name": "Duskware Door",
+    "page": "Doors",
+    "url": "https://terraria.wiki.gg/wiki/Doors",
+    "icon": "https://terraria.wiki.gg/images/Duskware_Door.png",
+    "categories": [
+      "furniture",
+      "mechanism"
+    ],
+    "subcategories": [
+      "door"
+    ],
+    "platforms": [
+      "desktop",
+      "console",
+      "mobile"
+    ],
+    "hardmode": false,
+    "stack": 9999,
+    "research": 1,
+    "consumable": true,
+    "placeable": true,
+    "autoswing": true,
+    "obtain": [
+      "crafted"
+    ],
+    "vendors": [],
+    "events": [],
+    "biomes": [],
+    "times": [],
+    "platformsKnown": false,
+    "introduced": "1.4.5",
+    "version": "1.4.5",
+    "hardmodeOnly": false,
+    "unobtainable": false,
+    "banner": false,
+    "questFish": false,
+    "recipeOnly": true
   },
   {
     "key": "MoonplateDresser",
@@ -283779,7 +285072,7 @@
     "page": "Work Benches",
     "url": "https://terraria.wiki.gg/wiki/Work_Benches",
     "icon": "https://terraria.wiki.gg/images/Duskware_Work_Bench.png",
-    "iconPlaced": "https://terraria.wiki.gg/images/Duskware_Work_Bench_%28placed%29.png",
+    "iconPlaced": "https://terraria.wiki.gg/images/Duskware_Work_Bench.png",
     "categories": [
       "crafting-station",
       "furniture"
@@ -284095,6 +285388,47 @@
     "placedHeight": 4
   },
   {
+    "key": "LibrarianCandelabra",
+    "id": 6001,
+    "name": "Librarian Candelabra",
+    "page": "Candelabras",
+    "url": "https://terraria.wiki.gg/wiki/Candelabras",
+    "icon": "https://terraria.wiki.gg/images/Librarian_Candelabra.png",
+    "categories": [
+      "furniture",
+      "light-source"
+    ],
+    "subcategories": [
+      "candle"
+    ],
+    "platforms": [
+      "desktop",
+      "console",
+      "mobile"
+    ],
+    "hardmode": false,
+    "stack": 9999,
+    "research": 1,
+    "consumable": true,
+    "placeable": true,
+    "autoswing": true,
+    "obtain": [
+      "crafted"
+    ],
+    "vendors": [],
+    "events": [],
+    "biomes": [],
+    "times": [],
+    "platformsKnown": false,
+    "introduced": "1.4.5",
+    "version": "1.4.5",
+    "hardmodeOnly": false,
+    "unobtainable": false,
+    "banner": false,
+    "questFish": false,
+    "recipeOnly": true
+  },
+  {
     "key": "LibrarianCandle",
     "id": 6002,
     "name": "Librarian Candle",
@@ -284325,6 +285659,47 @@
     "useTime": 15,
     "placedWidth": 2,
     "placedHeight": 5
+  },
+  {
+    "key": "LibrarianDoor",
+    "id": 6007,
+    "name": "Librarian Door",
+    "page": "Doors",
+    "url": "https://terraria.wiki.gg/wiki/Doors",
+    "icon": "https://terraria.wiki.gg/images/Librarian_Door.png",
+    "categories": [
+      "furniture",
+      "mechanism"
+    ],
+    "subcategories": [
+      "door"
+    ],
+    "platforms": [
+      "desktop",
+      "console",
+      "mobile"
+    ],
+    "hardmode": false,
+    "stack": 9999,
+    "research": 1,
+    "consumable": true,
+    "placeable": true,
+    "autoswing": true,
+    "obtain": [
+      "crafted"
+    ],
+    "vendors": [],
+    "events": [],
+    "biomes": [],
+    "times": [],
+    "platformsKnown": false,
+    "introduced": "1.4.5",
+    "version": "1.4.5",
+    "hardmodeOnly": false,
+    "unobtainable": false,
+    "banner": false,
+    "questFish": false,
+    "recipeOnly": true
   },
   {
     "key": "LibrarianDresser",
@@ -284752,7 +286127,7 @@
     "page": "Work Benches",
     "url": "https://terraria.wiki.gg/wiki/Work_Benches",
     "icon": "https://terraria.wiki.gg/images/Librarian_Work_Bench.png",
-    "iconPlaced": "https://terraria.wiki.gg/images/Librarian_Work_Bench_%28placed%29.png",
+    "iconPlaced": "https://terraria.wiki.gg/images/Librarian_Work_Bench.png",
     "categories": [
       "crafting-station",
       "furniture"
@@ -285068,6 +286443,47 @@
     "placedHeight": 4
   },
   {
+    "key": "SpikeCandelabra",
+    "id": 6024,
+    "name": "Spike Candelabra",
+    "page": "Candelabras",
+    "url": "https://terraria.wiki.gg/wiki/Candelabras",
+    "icon": "https://terraria.wiki.gg/images/Spike_Candelabra.png",
+    "categories": [
+      "furniture",
+      "light-source"
+    ],
+    "subcategories": [
+      "candle"
+    ],
+    "platforms": [
+      "desktop",
+      "console",
+      "mobile"
+    ],
+    "hardmode": false,
+    "stack": 9999,
+    "research": 1,
+    "consumable": true,
+    "placeable": true,
+    "autoswing": true,
+    "obtain": [
+      "crafted"
+    ],
+    "vendors": [],
+    "events": [],
+    "biomes": [],
+    "times": [],
+    "platformsKnown": false,
+    "introduced": "1.4.5",
+    "version": "1.4.5",
+    "hardmodeOnly": false,
+    "unobtainable": false,
+    "banner": false,
+    "questFish": false,
+    "recipeOnly": true
+  },
+  {
     "key": "SpikeCandle",
     "id": 6025,
     "name": "Spike Candle",
@@ -285298,6 +286714,47 @@
     "useTime": 15,
     "placedWidth": 2,
     "placedHeight": 5
+  },
+  {
+    "key": "SpikeDoor",
+    "id": 6030,
+    "name": "Spike Door",
+    "page": "Doors",
+    "url": "https://terraria.wiki.gg/wiki/Doors",
+    "icon": "https://terraria.wiki.gg/images/Spike_Door.png",
+    "categories": [
+      "furniture",
+      "mechanism"
+    ],
+    "subcategories": [
+      "door"
+    ],
+    "platforms": [
+      "desktop",
+      "console",
+      "mobile"
+    ],
+    "hardmode": false,
+    "stack": 9999,
+    "research": 1,
+    "consumable": true,
+    "placeable": true,
+    "autoswing": true,
+    "obtain": [
+      "crafted"
+    ],
+    "vendors": [],
+    "events": [],
+    "biomes": [],
+    "times": [],
+    "platformsKnown": false,
+    "introduced": "1.4.5",
+    "version": "1.4.5",
+    "hardmodeOnly": false,
+    "unobtainable": false,
+    "banner": false,
+    "questFish": false,
+    "recipeOnly": true
   },
   {
     "key": "SpikeDresser",
@@ -285725,7 +287182,7 @@
     "page": "Work Benches",
     "url": "https://terraria.wiki.gg/wiki/Work_Benches",
     "icon": "https://terraria.wiki.gg/images/Spike_Work_Bench.png",
-    "iconPlaced": "https://terraria.wiki.gg/images/Spike_Work_Bench_%28placed%29.png",
+    "iconPlaced": "https://terraria.wiki.gg/images/Spike_Work_Bench.png",
     "categories": [
       "crafting-station",
       "furniture"
@@ -286041,6 +287498,47 @@
     "placedHeight": 4
   },
   {
+    "key": "OfficeCandelabra",
+    "id": 6047,
+    "name": "Office Candelabra",
+    "page": "Candelabras",
+    "url": "https://terraria.wiki.gg/wiki/Candelabras",
+    "icon": "https://terraria.wiki.gg/images/Office_Candelabra.png",
+    "categories": [
+      "furniture",
+      "light-source"
+    ],
+    "subcategories": [
+      "candle"
+    ],
+    "platforms": [
+      "desktop",
+      "console",
+      "mobile"
+    ],
+    "hardmode": false,
+    "stack": 9999,
+    "research": 1,
+    "consumable": true,
+    "placeable": true,
+    "autoswing": true,
+    "obtain": [
+      "crafted"
+    ],
+    "vendors": [],
+    "events": [],
+    "biomes": [],
+    "times": [],
+    "platformsKnown": false,
+    "introduced": "1.4.5",
+    "version": "1.4.5",
+    "hardmodeOnly": false,
+    "unobtainable": false,
+    "banner": false,
+    "questFish": false,
+    "recipeOnly": true
+  },
+  {
     "key": "OfficeCandle",
     "id": 6048,
     "name": "Office Candle",
@@ -286271,6 +287769,47 @@
     "useTime": 15,
     "placedWidth": 2,
     "placedHeight": 5
+  },
+  {
+    "key": "OfficeDoor",
+    "id": 6053,
+    "name": "Office Door",
+    "page": "Doors",
+    "url": "https://terraria.wiki.gg/wiki/Doors",
+    "icon": "https://terraria.wiki.gg/images/Office_Door.png",
+    "categories": [
+      "furniture",
+      "mechanism"
+    ],
+    "subcategories": [
+      "door"
+    ],
+    "platforms": [
+      "desktop",
+      "console",
+      "mobile"
+    ],
+    "hardmode": false,
+    "stack": 9999,
+    "research": 1,
+    "consumable": true,
+    "placeable": true,
+    "autoswing": true,
+    "obtain": [
+      "crafted"
+    ],
+    "vendors": [],
+    "events": [],
+    "biomes": [],
+    "times": [],
+    "platformsKnown": false,
+    "introduced": "1.4.5",
+    "version": "1.4.5",
+    "hardmodeOnly": false,
+    "unobtainable": false,
+    "banner": false,
+    "questFish": false,
+    "recipeOnly": true
   },
   {
     "key": "OfficeDresser",
@@ -286698,7 +288237,7 @@
     "page": "Work Benches",
     "url": "https://terraria.wiki.gg/wiki/Work_Benches",
     "icon": "https://terraria.wiki.gg/images/Office_Work_Bench.png",
-    "iconPlaced": "https://terraria.wiki.gg/images/Office_Work_Bench_%28placed%29.png",
+    "iconPlaced": "https://terraria.wiki.gg/images/Office_Work_Bench.png",
     "categories": [
       "crafting-station",
       "furniture"
@@ -287014,6 +288553,47 @@
     "placedHeight": 4
   },
   {
+    "key": "ForbiddenCandelabra",
+    "id": 6070,
+    "name": "Forbidden Candelabra",
+    "page": "Candelabras",
+    "url": "https://terraria.wiki.gg/wiki/Candelabras",
+    "icon": "https://terraria.wiki.gg/images/Forbidden_Candelabra.png",
+    "categories": [
+      "furniture",
+      "light-source"
+    ],
+    "subcategories": [
+      "candle"
+    ],
+    "platforms": [
+      "desktop",
+      "console",
+      "mobile"
+    ],
+    "hardmode": false,
+    "stack": 9999,
+    "research": 1,
+    "consumable": true,
+    "placeable": true,
+    "autoswing": true,
+    "obtain": [
+      "crafted"
+    ],
+    "vendors": [],
+    "events": [],
+    "biomes": [],
+    "times": [],
+    "platformsKnown": false,
+    "introduced": "1.4.5",
+    "version": "1.4.5",
+    "hardmodeOnly": false,
+    "unobtainable": false,
+    "banner": false,
+    "questFish": false,
+    "recipeOnly": true
+  },
+  {
     "key": "ForbiddenCandle",
     "id": 6071,
     "name": "Forbidden Candle",
@@ -287244,6 +288824,47 @@
     "useTime": 15,
     "placedWidth": 2,
     "placedHeight": 5
+  },
+  {
+    "key": "ForbiddenDoor",
+    "id": 6076,
+    "name": "Forbidden Door",
+    "page": "Doors",
+    "url": "https://terraria.wiki.gg/wiki/Doors",
+    "icon": "https://terraria.wiki.gg/images/Forbidden_Door.png",
+    "categories": [
+      "furniture",
+      "mechanism"
+    ],
+    "subcategories": [
+      "door"
+    ],
+    "platforms": [
+      "desktop",
+      "console",
+      "mobile"
+    ],
+    "hardmode": false,
+    "stack": 9999,
+    "research": 1,
+    "consumable": true,
+    "placeable": true,
+    "autoswing": true,
+    "obtain": [
+      "crafted"
+    ],
+    "vendors": [],
+    "events": [],
+    "biomes": [],
+    "times": [],
+    "platformsKnown": false,
+    "introduced": "1.4.5",
+    "version": "1.4.5",
+    "hardmodeOnly": false,
+    "unobtainable": false,
+    "banner": false,
+    "questFish": false,
+    "recipeOnly": true
   },
   {
     "key": "ForbiddenDresser",
@@ -287671,7 +289292,7 @@
     "page": "Work Benches",
     "url": "https://terraria.wiki.gg/wiki/Work_Benches",
     "icon": "https://terraria.wiki.gg/images/Forbidden_Work_Bench.png",
-    "iconPlaced": "https://terraria.wiki.gg/images/Forbidden_Work_Bench_%28placed%29.png",
+    "iconPlaced": "https://terraria.wiki.gg/images/Forbidden_Work_Bench.png",
     "categories": [
       "crafting-station",
       "furniture"
@@ -287987,6 +289608,47 @@
     "placedHeight": 4
   },
   {
+    "key": "AquariumCandelabra",
+    "id": 6093,
+    "name": "Aquarium Candelabra",
+    "page": "Candelabras",
+    "url": "https://terraria.wiki.gg/wiki/Candelabras",
+    "icon": "https://terraria.wiki.gg/images/Aquarium_Candelabra.png",
+    "categories": [
+      "furniture",
+      "light-source"
+    ],
+    "subcategories": [
+      "candle"
+    ],
+    "platforms": [
+      "desktop",
+      "console",
+      "mobile"
+    ],
+    "hardmode": false,
+    "stack": 9999,
+    "research": 1,
+    "consumable": true,
+    "placeable": true,
+    "autoswing": true,
+    "obtain": [
+      "crafted"
+    ],
+    "vendors": [],
+    "events": [],
+    "biomes": [],
+    "times": [],
+    "platformsKnown": false,
+    "introduced": "1.4.5",
+    "version": "1.4.5",
+    "hardmodeOnly": false,
+    "unobtainable": false,
+    "banner": false,
+    "questFish": false,
+    "recipeOnly": true
+  },
+  {
     "key": "WaterFurnitureCandle",
     "id": 6094,
     "name": "Aquarium Candle",
@@ -288168,6 +289830,47 @@
     "useTime": 15,
     "placedWidth": 2,
     "placedHeight": 5
+  },
+  {
+    "key": "AquariumDoor",
+    "id": 6098,
+    "name": "Aquarium Door",
+    "page": "Doors",
+    "url": "https://terraria.wiki.gg/wiki/Doors",
+    "icon": "https://terraria.wiki.gg/images/Aquarium_Door.png",
+    "categories": [
+      "furniture",
+      "mechanism"
+    ],
+    "subcategories": [
+      "door"
+    ],
+    "platforms": [
+      "desktop",
+      "console",
+      "mobile"
+    ],
+    "hardmode": false,
+    "stack": 9999,
+    "research": 1,
+    "consumable": true,
+    "placeable": true,
+    "autoswing": true,
+    "obtain": [
+      "crafted"
+    ],
+    "vendors": [],
+    "events": [],
+    "biomes": [],
+    "times": [],
+    "platformsKnown": false,
+    "introduced": "1.4.5",
+    "version": "1.4.5",
+    "hardmodeOnly": false,
+    "unobtainable": false,
+    "banner": false,
+    "questFish": false,
+    "recipeOnly": true
   },
   {
     "key": "WaterDresser",
@@ -288595,7 +290298,7 @@
     "page": "Work Benches",
     "url": "https://terraria.wiki.gg/wiki/Work_Benches",
     "icon": "https://terraria.wiki.gg/images/Aquarium_Work_Bench.png",
-    "iconPlaced": "https://terraria.wiki.gg/images/Aquarium_Work_Bench_%28placed%29.png",
+    "iconPlaced": "https://terraria.wiki.gg/images/Aquarium_Work_Bench.png",
     "categories": [
       "crafting-station",
       "furniture"
@@ -288865,6 +290568,47 @@
     "placedHeight": 4
   },
   {
+    "key": "BoulderCandelabra",
+    "id": 6114,
+    "name": "Boulder Candelabra",
+    "page": "Candelabras",
+    "url": "https://terraria.wiki.gg/wiki/Candelabras",
+    "icon": "https://terraria.wiki.gg/images/Boulder_Candelabra.png",
+    "categories": [
+      "furniture",
+      "light-source"
+    ],
+    "subcategories": [
+      "candle"
+    ],
+    "platforms": [
+      "desktop",
+      "console",
+      "mobile"
+    ],
+    "hardmode": false,
+    "stack": 9999,
+    "research": 1,
+    "consumable": true,
+    "placeable": true,
+    "autoswing": true,
+    "obtain": [
+      "crafted"
+    ],
+    "vendors": [],
+    "events": [],
+    "biomes": [],
+    "times": [],
+    "platformsKnown": false,
+    "introduced": "1.4.5",
+    "version": "1.4.5",
+    "hardmodeOnly": false,
+    "unobtainable": false,
+    "banner": false,
+    "questFish": false,
+    "recipeOnly": true
+  },
+  {
     "key": "BoulderCandle",
     "id": 6115,
     "name": "Boulder Candle",
@@ -289095,6 +290839,47 @@
     "useTime": 15,
     "placedWidth": 2,
     "placedHeight": 5
+  },
+  {
+    "key": "BoulderDoor",
+    "id": 6120,
+    "name": "Boulder Door",
+    "page": "Doors",
+    "url": "https://terraria.wiki.gg/wiki/Doors",
+    "icon": "https://terraria.wiki.gg/images/Boulder_Door.png",
+    "categories": [
+      "furniture",
+      "mechanism"
+    ],
+    "subcategories": [
+      "door"
+    ],
+    "platforms": [
+      "desktop",
+      "console",
+      "mobile"
+    ],
+    "hardmode": false,
+    "stack": 9999,
+    "research": 1,
+    "consumable": true,
+    "placeable": true,
+    "autoswing": true,
+    "obtain": [
+      "crafted"
+    ],
+    "vendors": [],
+    "events": [],
+    "biomes": [],
+    "times": [],
+    "platformsKnown": false,
+    "introduced": "1.4.5",
+    "version": "1.4.5",
+    "hardmodeOnly": false,
+    "unobtainable": false,
+    "banner": false,
+    "questFish": false,
+    "recipeOnly": true
   },
   {
     "key": "BoulderDresser",
@@ -289522,7 +291307,7 @@
     "page": "Work Benches",
     "url": "https://terraria.wiki.gg/wiki/Work_Benches",
     "icon": "https://terraria.wiki.gg/images/Boulder_Work_Bench.png",
-    "iconPlaced": "https://terraria.wiki.gg/images/Boulder_Work_Bench_%28placed%29.png",
+    "iconPlaced": "https://terraria.wiki.gg/images/Boulder_Work_Bench.png",
     "categories": [
       "crafting-station",
       "furniture"
@@ -289757,13 +291542,13 @@
     "url": "https://terraria.wiki.gg/wiki/Luna%27s_set",
     "icon": "https://terraria.wiki.gg/images/Luna%27s_Runic_Pixie_Hood.png",
     "categories": [
-      "vanity"
+      "vanity",
+      "developer"
     ],
     "subcategories": [],
     "obtain": [
       "bag",
-      "treasure-bag",
-      "developer"
+      "treasure-bag"
     ],
     "vendors": [],
     "events": [],
@@ -289801,13 +291586,13 @@
     "url": "https://terraria.wiki.gg/wiki/Luna%27s_set",
     "icon": "https://terraria.wiki.gg/images/Luna%27s_Runic_Pixie_Shirt.png",
     "categories": [
-      "vanity"
+      "vanity",
+      "developer"
     ],
     "subcategories": [],
     "obtain": [
       "bag",
-      "treasure-bag",
-      "developer"
+      "treasure-bag"
     ],
     "vendors": [],
     "events": [],
@@ -289845,13 +291630,13 @@
     "url": "https://terraria.wiki.gg/wiki/Luna%27s_set",
     "icon": "https://terraria.wiki.gg/images/Luna%27s_Runic_Pixie_Pants.png",
     "categories": [
-      "vanity"
+      "vanity",
+      "developer"
     ],
     "subcategories": [],
     "obtain": [
       "bag",
-      "treasure-bag",
-      "developer"
+      "treasure-bag"
     ],
     "vendors": [],
     "events": [],
@@ -289890,7 +291675,8 @@
     "icon": "https://terraria.wiki.gg/images/Luna%27s_Runic_Pixie_Wings.png",
     "iconEquipped": "https://terraria.wiki.gg/images/Luna%27s_Runic_Pixie_Wings_%28equipped%29.png",
     "categories": [
-      "accessory"
+      "accessory",
+      "developer"
     ],
     "subcategories": [
       "wings"
@@ -289934,15 +291720,15 @@
     "icon": "https://terraria.wiki.gg/images/Luna%27s_Runic_Pixie_Cloak.png",
     "categories": [
       "accessory",
-      "vanity"
+      "vanity",
+      "developer"
     ],
     "subcategories": [
       "other-accessory"
     ],
     "obtain": [
       "bag",
-      "treasure-bag",
-      "developer"
+      "treasure-bag"
     ],
     "vendors": [],
     "events": [],
@@ -290204,7 +291990,7 @@
     "internalName": "PalworldMinionTrustyCattiva",
     "page": "Cattiva",
     "url": "https://terraria.wiki.gg/wiki/Cattiva",
-    "icon": "https://terraria.wiki.gg/images/Trusty_Cattiva.png",
+    "icon": "https://terraria.wiki.gg/images/Cattiva.png",
     "categories": [
       "weapon",
       "tool"
@@ -290256,7 +292042,7 @@
     "internalName": "PalworldMinionTrustyFoxsparks",
     "page": "Foxparks",
     "url": "https://terraria.wiki.gg/wiki/Foxparks",
-    "icon": "https://terraria.wiki.gg/images/Trusty_Foxparks.png",
+    "icon": "https://terraria.wiki.gg/images/Foxparks.png",
     "categories": [
       "weapon"
     ],
@@ -290299,6 +292085,86 @@
     "buff": "Trusty Foxparks",
     "debuff": "Hellfire",
     "tooltip": "Summons Trusty Foxparks to fight for you\nLeft click to use Foxparks' Huggy Fire skill, shooting flames!\nRight click to pet it!\nIts trust empowers it, and it learned 'Spirit Fire'!"
+  },
+  {
+    "key": "TrustyChillet",
+    "id": 6150,
+    "name": "Trusty Chillet",
+    "page": "Chillet",
+    "url": "https://terraria.wiki.gg/wiki/Chillet",
+    "icon": "https://terraria.wiki.gg/images/Chillet.png",
+    "categories": [
+      "mount"
+    ],
+    "subcategories": [
+      "other-mount"
+    ],
+    "platforms": [
+      "desktop",
+      "console",
+      "mobile"
+    ],
+    "hardmode": false,
+    "stack": 9999,
+    "research": 1,
+    "consumable": false,
+    "placeable": false,
+    "autoswing": false,
+    "obtain": [
+      "crafted"
+    ],
+    "vendors": [],
+    "events": [],
+    "biomes": [],
+    "times": [],
+    "platformsKnown": false,
+    "introduced": "1.4.5",
+    "version": "1.4.5",
+    "hardmodeOnly": false,
+    "unobtainable": false,
+    "banner": false,
+    "questFish": false,
+    "recipeOnly": true
+  },
+  {
+    "key": "TrustyChilletIgnis",
+    "id": 6151,
+    "name": "Trusty Chillet Ignis",
+    "page": "Chillet",
+    "url": "https://terraria.wiki.gg/wiki/Chillet",
+    "icon": "https://terraria.wiki.gg/images/Chillet_Ignis.png",
+    "categories": [
+      "mount"
+    ],
+    "subcategories": [
+      "other-mount"
+    ],
+    "platforms": [
+      "desktop",
+      "console",
+      "mobile"
+    ],
+    "hardmode": false,
+    "stack": 9999,
+    "research": 1,
+    "consumable": false,
+    "placeable": false,
+    "autoswing": false,
+    "obtain": [
+      "crafted"
+    ],
+    "vendors": [],
+    "events": [],
+    "biomes": [],
+    "times": [],
+    "platformsKnown": false,
+    "introduced": "1.4.5",
+    "version": "1.4.5",
+    "hardmodeOnly": false,
+    "unobtainable": false,
+    "banner": false,
+    "questFish": false,
+    "recipeOnly": true
   },
   {
     "key": "DaybloomStaff",
@@ -291350,7 +293216,7 @@
     "internalName": "PalworldTrustyDigtoise",
     "page": "Digtoise",
     "url": "https://terraria.wiki.gg/wiki/Digtoise",
-    "icon": "https://terraria.wiki.gg/images/Trusty_Digtoise.png",
+    "icon": "https://terraria.wiki.gg/images/Digtoise.png",
     "categories": [
       "tool",
       "pet"

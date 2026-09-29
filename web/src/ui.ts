@@ -8,8 +8,9 @@ export type SyncSection = 'items' | 'bestiary'
 export type DialogState =
   | { type: 'none' }
   | { type: 'newPlaythrough' }
-  /** thenSync: part of attaching a new world - the sync dialog follows when it closes */
-  | { type: 'areas'; thenSync?: boolean }
+  /** thenSync: part of attaching a new world - the sync dialog follows when it closes;
+   * returnTo: opened from another dialog ("Manage areas…") - it opens again when this closes */
+  | { type: 'areas'; thenSync?: boolean; returnTo?: DialogState }
   | { type: 'sync'; section?: SyncSection }
   | { type: 'chestSearch'; itemKey?: string }
 

@@ -3,7 +3,7 @@
     "id": "crafted",
     "name": "Crafted",
     "icon": "https://terraria.wiki.gg/images/Work_Bench.png",
-    "count": 3176
+    "count": 3221
   },
   {
     "id": "vendor",
@@ -15,7 +15,7 @@
     "id": "drop",
     "name": "Dropped by enemies",
     "icon": "https://terraria.wiki.gg/images/Gel.png",
-    "count": 987
+    "count": 975
   },
   {
     "id": "loot",
@@ -52,12 +52,6 @@
     "name": "Angler quest reward",
     "icon": "https://terraria.wiki.gg/images/Angler.png",
     "count": 76
-  },
-  {
-    "id": "developer",
-    "name": "Developer item",
-    "icon": "https://terraria.wiki.gg/images/Red%27s_Wings.png",
-    "count": 71
   },
   {
     "id": "unobtainable",

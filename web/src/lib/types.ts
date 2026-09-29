@@ -35,6 +35,8 @@ export interface Item {
   minDifficulty?: 'expert' | 'master'
   /** only obtainable during events (see `events`) */
   eventOnly?: boolean
+  /** not in the wiki's Items table, built from its recipe (no stats, rarity or prices) */
+  recipeOnly?: boolean
   hardmode: boolean
   hardmodeOnly: boolean
   unobtainable: boolean
@@ -117,11 +119,13 @@ export interface CoinEntry {
 export const DROP_MODES = ['normal', 'expert', 'master'] as const
 export type DropMode = (typeof DROP_MODES)[number]
 
-/** Something that drops items: an enemy/boss, a treasure bag, later chests and crates. */
+/** Something that drops items: an enemy/boss, a treasure bag, or a container (chest, crate, tree, …). */
 export interface DropSource {
   id: string
   name: string
   kind: 'npc' | 'bag' | 'container'
+  /** containers only: their group (containers.json id), e.g. "chest" */
+  group?: string
   icon?: string
   npcId?: number
   /** where / when the enemy spawns (biomes.json / times.json ids) */
@@ -141,6 +145,16 @@ export interface Drop {
   quantities?: Partial<Record<DropMode, string>>
   /** game modes the drop exists in */
   modes: DropMode[]
+}
+
+/** A group of containers ("Found in" filter): Chests, Crates, Other containers, Trees. */
+export interface ContainerGroup {
+  id: string
+  name: string
+  icon?: string
+  /** drop source ids, by name */
+  sources: string[]
+  count: number
 }
 
 export interface BossStage {
@@ -271,8 +285,11 @@ export interface GameData {
   bosses: Boss[]
   /** generic drops (coins, healing potions) that never count for a boss */
   bossIgnoreItems: Set<string>
+  containerGroups: ContainerGroup[]
   recipes: RecipeData
   bestiary: { types: BestiaryType[]; entries: BestiaryEntry[] }
   /** difficulty -> icon of the wiki */
   difficultyIcons: Partial<Record<Difficulty, string>>
+  /** items the wiki's item list lacks, known from its recipes (id -> name, probable icon) */
+  missingItems: Map<number, { id: number; name: string; icon?: string }>
 }

@@ -12,6 +12,10 @@ WIKI = "https://terraria.wiki.gg/wiki/"
 
 
 IMAGES = "https://terraria.wiki.gg/images/"
+# Image files that are only redirects on the wiki (their direct /images/ link is a 404):
+# file name -> target file. Filled by the build from raw/image_redirects.json, which
+# check_icons.py writes.
+IMAGE_REDIRECTS = {}
 
 
 CSV_DELIMITER = ";"
@@ -141,7 +145,9 @@ def file_from_wikitext(value):
 def image_url(filename):
     if not filename:
         return None
-    return IMAGES + quote(filename.strip().replace(" ", "_"))
+    name = filename.strip().replace("_", " ")
+    name = IMAGE_REDIRECTS.get(name, name)
+    return IMAGES + quote(name.replace(" ", "_"))
 
 
 def page_url(page):

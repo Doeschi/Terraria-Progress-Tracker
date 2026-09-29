@@ -178,21 +178,31 @@ export interface FoundItem {
   stack: number
 }
 
+/** An item id in the world that the item data does not know (e.g. from a newer game version). */
+export interface UnknownItem {
+  id: number
+  stack: number
+  containers: Container[]
+}
+
 export interface ScanResult {
   containers: number
   found: Map<string, FoundItem>
-  unknownIds: Map<number, number>
+  unknownIds: Map<number, UnknownItem>
 }
 
 export function scanContainers(data: GameData, containers: Container[], platform: PlatformId): ScanResult {
   const found = new Map<string, FoundItem>()
-  const unknownIds = new Map<number, number>()
+  const unknownIds = new Map<number, UnknownItem>()
   for (const c of containers) {
     const seen = new Set<string>()
     for (const slot of c.items) {
       const item = resolveItem(data, slot.id, platform)
       if (!item) {
-        unknownIds.set(slot.id, (unknownIds.get(slot.id) ?? 0) + slot.stack)
+        let unknown = unknownIds.get(slot.id)
+        if (!unknown) unknownIds.set(slot.id, (unknown = { id: slot.id, stack: 0, containers: [] }))
+        unknown.stack += slot.stack
+        if (!unknown.containers.includes(c)) unknown.containers.push(c)
         continue
       }
       let entry = found.get(item.key)

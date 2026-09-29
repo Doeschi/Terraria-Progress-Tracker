@@ -458,7 +458,7 @@
     "id": "material-equipment",
     "name": "Equipment",
     "icon": "https://terraria.wiki.gg/images/Hermes_Boots.png",
-    "count": 353,
+    "count": 354,
     "parent": "crafting-material"
   },
   {
@@ -549,7 +549,7 @@
     "id": "door",
     "name": "Doors",
     "icon": "https://terraria.wiki.gg/images/Wooden_Door.png",
-    "count": 48,
+    "count": 68,
     "parent": "furniture"
   },
   {
@@ -626,7 +626,7 @@
     "id": "candle",
     "name": "Candles & candelabras",
     "icon": "https://terraria.wiki.gg/images/Candle.png",
-    "count": 109,
+    "count": 131,
     "parent": "furniture"
   },
   {
@@ -719,7 +719,7 @@
     "id": "other-tool",
     "name": "Other tools",
     "icon": "https://terraria.wiki.gg/images/Magic_Mirror.png",
-    "count": 109,
+    "count": 110,
     "parent": "tool",
     "fallback": true
   },
@@ -759,7 +759,7 @@
     "id": "other-mount",
     "name": "Other mounts",
     "icon": "https://terraria.wiki.gg/images/Reindeer_Bells.png",
-    "count": 39,
+    "count": 41,
     "parent": "mount",
     "fallback": true
   },

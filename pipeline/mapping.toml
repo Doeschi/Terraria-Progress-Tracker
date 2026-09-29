@@ -97,6 +97,13 @@ name = "Vanity"
 icon = "Top Hat"
 match = ["type:vanity"]
 
+# Developer items: tagged by the wiki, plus the developer wings (see [manual])
+[categories.developer]
+name = "Developer items"
+icon = "Red's Wings"
+match = ["tag:developer", "listcat:developer items"]
+exclude = ["page:jim's cap"]  # a drop, not a developer item
+
 [categories.dye]
 name = "Dyes"
 icon = "Red Dye"
@@ -1023,11 +1030,6 @@ name = "Angler quest reward"
 icon_file = "Angler.png"
 match = ["tag:quest rewards", "listcat:quest rewards"]
 
-[obtain.developer]
-name = "Developer item"
-icon = "Red's Wings"
-match = ["tag:developer", "listcat:developer items"]
-
 [obtain.unobtainable]
 name = "Unobtainable"
 match = ["unobtainable:1", "tag:unobtainable", "listcat:unobtainable items"]
@@ -1388,16 +1390,24 @@ questFish = ["tag:quest fish"]
 # What the wiki's Drops table contributes (drops.json). Source kinds:
 #   npc        enemies and bosses (the table's "isfromnpc")
 #   bag        boss treasure bags ("Treasure Bag (...)")
-#   container  chests, crates, grab bags ... (not used yet)
+#   container  chests, crates, lock boxes, grab bags, shaking trees (grouped by [containers])
 
 [drops]
-include_kinds = ["npc", "bag"]
+include_kinds = ["npc", "bag", "container"]
 # Generic drops almost every boss has. They do not count for the
 # "Dropped by boss" filter (they still show in the item's drop list).
 boss_ignore_items = [
     "Copper Coin", "Silver Coin", "Gold Coin", "Platinum Coin",
     "Lesser Healing Potion", "Healing Potion", "Greater Healing Potion", "Super Healing Potion",
 ]
+
+
+# -------------------------------------------------------------- unobtainable
+# Items the wiki marks unobtainable (field, tag or category) only belong to the obtain
+# method "Unobtainable". Names listed here count as obtainable anyway (overrides the wiki).
+
+[unobtainable]
+obtainable = []
 
 
 # ------------------------------------------------------------------- recipes
@@ -1417,6 +1427,59 @@ shimmer = "Shimmer"
 [recipe_groups]
 "Any Torch" = ["torch", "* torch"]
 "Recorded Music Boxes" = ["music box (*)"]
+
+# Groups of container sources (filter "Found in"), in this order. Sources are
+# matched by name ("*" = wildcard); the first group that matches wins, a
+# `fallback` group takes the rest. `icon` = item whose icon the group shows.
+[containers.chest]
+name = "Chests"
+icon = "Gold Chest"
+match = ["chest", "* chest", "* chest (*)"]
+
+[containers.crate]
+name = "Crates"
+icon = "Wooden Crate"
+match = ["* crate"]
+
+[containers.other]
+name = "Other containers"
+icon = "Golden Lock Box"
+fallback = true
+
+[containers.tree]
+name = "Trees"
+icon = "Acorn"
+match = ["shaking *"]
+
+# Icons of container sources that are no item themselves (source name -> item).
+# Sources like "Gold Chest (Dungeon)" use the item without the suffix.
+[container_icons]
+"Shaking Forest tree" = "Wood"
+"Shaking Palm tree" = "Palm Wood"
+"Shaking Boreal tree" = "Boreal Wood"
+"Shaking Mahogany tree" = "Rich Mahogany"
+"Shaking Ash tree" = "Ash Wood"
+"Shaking Ebonwood tree" = "Ebonwood"
+"Shaking Ebonwood Palm tree" = "Ebonwood"
+"Shaking Shadewood tree" = "Shadewood"
+"Shaking Shadewood Palm tree" = "Shadewood"
+"Shaking Pearlwood tree" = "Pearlwood"
+"Shaking Pearlwood Palm tree" = "Pearlwood"
+"Shaking Giant Glowing Mushroom" = "Glowing Mushroom"
+
+
+# Items the wiki's Items table lacks but its Recipes table names with an id
+# (mostly 1.4.5 doors and candelabras). They are added to items.json with name,
+# id and icon from the recipe and, from a similar item (template), the page,
+# categories, platforms and placement flags (obtained: crafted) - no stats, rarity or
+# prices (marked "recipeOnly"). Name pattern ("*" = wildcard) -> template item.
+# Items that match nothing are reported and stay in missing_items.json.
+[recipe_items]
+"* Door" = "Ash Wood Door"
+"* Candelabra" = "Ash Wood Candelabra"
+"Magic Shimmer Dropper" = "Magic Water Dropper"
+"Trusty Chillet*" = "Chillet"
+
 
 # Station -> the items that provide it (name patterns, "*" = wildcard), stronger
 # stations included. Stations not listed here are provided by the item of the
@@ -1806,6 +1869,29 @@ keys = [
 # Items without a `type` on the wiki.
 
 [manual]
+# developer items by name: the developer wings sit on the shared "Wings" page without
+# the developer tag (Jim's Cap is excluded in [categories.developer])
+"Red's *" = ["categories:developer"]
+"Cenx's *" = ["categories:developer"]
+"Crowno's *" = ["categories:developer"]
+"Will's *" = ["categories:developer"]
+"Jim's *" = ["categories:developer"]
+"Aaron's *" = ["categories:developer"]
+"D-Town's *" = ["categories:developer"]
+"Lazure's *" = ["categories:developer"]
+"Yoraiz0r's *" = ["categories:developer"]
+"Skiphs' *" = ["categories:developer"]
+"Loki's *" = ["categories:developer"]
+"Arkhalis' *" = ["categories:developer"]
+"Leinfors' *" = ["categories:developer"]
+"Ghostar's *" = ["categories:developer"]
+"Safeman's *" = ["categories:developer"]
+"FoodBarbarian's *" = ["categories:developer"]
+"Grox The Great's *" = ["categories:developer"]
+"Chicken Bones' *" = ["categories:developer"]
+"Kazzymodus' *" = ["categories:developer"]
+"Luna's *" = ["categories:developer"]
+
 # decorative banners (colored, dungeon, underworld, War Table Banner, ...);
 # enemy banners are excluded in [subcategories.other-banner]
 "* Banner" = ["subcategories:other-banner"]

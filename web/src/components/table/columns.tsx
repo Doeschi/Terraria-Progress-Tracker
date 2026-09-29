@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react'
 import { compareVersions } from '@/lib/availability'
-import { chanceFor, dropsFor } from '@/lib/drops'
+import { chanceFor, dropsFor, type DropKind } from '@/lib/drops'
 import type { Difficulty, GameData, Item, PlatformId } from '@/lib/types'
 import { Coins, RarityIcon } from '../common'
 import { formatDate } from '@/lib/format'
@@ -56,6 +56,17 @@ export function buildColumns(data: GameData): ItemColumn[] {
   const sub = names(data.subcategories)
   const obtain = names(data.obtain)
   const vendor = names(data.vendors)
+  const bestChance = (i: Item, difficulty: Difficulty, kind: DropKind) => {
+    const best = dropsFor(data, i, difficulty, kind)[0]
+    return best ? (chanceFor(best, difficulty) ?? 0) : undefined
+  }
+  const dropList = (i: Item, difficulty: Difficulty, kind: DropKind) =>
+    dropsFor(data, i, difficulty, kind)
+      .map((d) => {
+        const c = chanceFor(d, difficulty)
+        return `${data.dropSources.get(d.source)?.name ?? d.source}${c !== undefined ? ` ${c}%` : ''}`
+      })
+      .join(', ')
   const event = names(data.events)
   const biome = names(data.biomes)
   const time = names(data.times)
@@ -132,18 +143,19 @@ export function buildColumns(data: GameData): ItemColumn[] {
       size: 260,
       descFirst: true,
       // sorts by the best chance; shows every source of the playthrough's difficulty
-      value: (i, t) => {
-        const best = dropsFor(data, i, t.difficulty)[0]
-        return best ? (chanceFor(best, t.difficulty) ?? 0) : undefined
-      },
+      value: (i, t) => bestChance(i, t.difficulty, 'dropped'),
       // chances of the playthrough's difficulty (Expert/Master often differ from Normal)
-      cell: (i, t) =>
-        dropsFor(data, i, t.difficulty)
-          .map((d) => {
-            const c = chanceFor(d, t.difficulty)
-            return `${data.dropSources.get(d.source)?.name ?? d.source}${c !== undefined ? ` ${c}%` : ''}`
-          })
-          .join(', '),
+      cell: (i, t) => dropList(i, t.difficulty, 'dropped'),
+    },
+    {
+      id: 'containers',
+      label: 'Found in',
+      group: 'Source',
+      size: 260,
+      descFirst: true,
+      // chests, crates, trees, … - like "Dropped by"
+      value: (i, t) => bestChance(i, t.difficulty, 'found'),
+      cell: (i, t) => dropList(i, t.difficulty, 'found'),
     },
     { id: 'vendors', label: 'Sold by', group: 'Source', size: 160, value: (i) => vendor(i.vendors) },
     {

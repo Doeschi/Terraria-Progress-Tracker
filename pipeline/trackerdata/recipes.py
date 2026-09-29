@@ -1,9 +1,10 @@
 """Crafting recipes (recipes.json): stations, ingredient groups and shimmer transmutations."""
+import fnmatch
 import html
 import re
 from collections import Counter, defaultdict
 
-from .common import flag, log, norm_name, number
+from .common import file_from_wikitext, flag, image_url, log, norm_name, number
 from .mapping import Mapping
 
 
@@ -35,11 +36,14 @@ def recipes_file(rows, items, mapping, wikitext):
 
     def resolve(name, item_id=None):
         """Item for a name ("Blue Jellyfish (bait)" -> "Blue Jellyfish");
-        with several candidates the one with the id, then the one on its own page."""
+        with several candidates the one with the id, then obtainable ones, then the one on
+        its own page."""
         n = norm_name(name)
         found = by_name.get(n) or by_name.get(re.sub(r"\s*\([^)]*\)$", "", n)) or []
         if len(found) > 1 and item_id is not None:
             found = [i for i in found if i["id"] == item_id] or found
+        if len(found) > 1:
+            found = [i for i in found if not i.get("unobtainable")] or found
         if len(found) > 1:
             found = [i for i in found if norm_name(i["page"]) == n] or found
         return found[0] if found else None
@@ -141,3 +145,74 @@ def recipes_file(rows, items, mapping, wikitext):
         log(f"  {sum(unmatched.values())} names not matched (items missing from the Items "
             f"table are skipped): {dict(unmatched.most_common(20))}")
     return {"stations": out_stations, "groups": out_groups, "recipes": recipes, "shimmer": shimmer}
+
+
+# fields a recipe-only item takes from its template item (what kind of item it is, not its stats)
+TEMPLATE_FIELDS = ("page", "categories", "subcategories", "platforms", "hardmode", "stack",
+                   "research", "consumable", "placeable", "autoswing")
+
+
+def recipe_only_items(rows, items, templates, starts):
+    """Items the Items table lacks but the Recipes table names with an id (e.g. 1.4.5 doors and
+    candelabras). Built from the recipe (name, id, icon; obtained by crafting) and a similar item
+    named in mapping.toml ([recipe_items], name pattern -> template item) for page, categories,
+    platforms and placement flags.
+    The game update comes from the item id. Items without a template are reported."""
+    known = {i["id"] for i in items}
+    by_name = {norm_name(i["name"]): i for i in items}
+    patterns = [(norm_name(p), t) for p, t in templates.items()]
+    added, missing = {}, []
+    for row in rows:
+        if flag(row["legacy"]) or not row["resultid"].strip():
+            continue
+        item_id = int(row["resultid"])
+        if item_id in known or item_id in added:
+            continue
+        name = html.unescape(row["result"]).strip()
+        template_name = next((t for p, t in patterns if fnmatch.fnmatchcase(norm_name(name), p)), None)
+        template = by_name.get(norm_name(template_name)) if template_name else None
+        if template_name and not template:
+            log(f"  warning: [recipe_items] template item '{template_name}' not found")
+        if not template:
+            missing.append(name)
+            continue
+        version = next((v for start, v in reversed(starts) if start <= item_id), None)
+        item = {
+            "key": re.sub(r"\W", "", name.title()),
+            "id": item_id,
+            "name": name,
+            "page": template["page"],
+            "url": template["url"],
+            "icon": image_url(file_from_wikitext(row["resultimage"]) or f"{name}.png"),
+            **{f: template[f] for f in TEMPLATE_FIELDS if f in template},
+            # known from a recipe (or a shimmer transmutation) - crafted
+            "obtain": ["crafted"],
+            "vendors": [], "events": [], "biomes": [], "times": [],
+            "platformsKnown": False,
+            "introduced": version,
+            "version": version,
+            "hardmodeOnly": False, "unobtainable": False, "banner": False, "questFish": False,
+            # not in the wiki's Items table: no stats, rarity or prices
+            "recipeOnly": True,
+        }
+        added[item_id] = {k: v for k, v in item.items() if v is not None}
+    log(f"  {len(added)} items added from recipes (not in the Items table)"
+        + (f"; without a template in [recipe_items]: {missing}" if missing else ""))
+    return sorted(added.values(), key=lambda i: i["id"])
+
+
+def missing_items_file(rows, items):
+    """Items the wiki's Items table lacks but its Recipes table names with an id (e.g. 1.4.5
+    furniture): id, name and the probable icon, so the app can name such ids in world files."""
+    known = {i["id"] for i in items}
+    missing = {}
+    for row in rows:
+        if flag(row["legacy"]) or not row["resultid"].strip():
+            continue
+        item_id = int(row["resultid"])
+        if item_id not in known and item_id not in missing:
+            name = html.unescape(row["result"]).strip()
+            missing[item_id] = {"id": item_id, "name": name,
+                                "icon": image_url(file_from_wikitext(row["resultimage"]) or f"{name}.png")}
+    log(f"  {len(missing)} items known only from recipes (not in the Items table)")
+    return sorted(missing.values(), key=lambda m: m["id"])

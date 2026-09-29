@@ -1,4 +1,5 @@
 """Drops (drops.json, bosses.json) and what is derived from them: events, biomes and time of day."""
+import fnmatch
 import html
 import re
 from collections import Counter, defaultdict
@@ -67,8 +68,10 @@ class Drops:
     ("Golden furniture" -> every furniture item named "Golden ...").
     """
 
-    def __init__(self, drop_rows, npc_rows, items, include_kinds):
+    def __init__(self, drop_rows, npc_rows, items, include_kinds, containers=None, container_icons=None):
         self.include = set(include_kinds)
+        self.containers = containers or {}
+        self.container_icons = container_icons or {}
         by_name, by_page = defaultdict(list), defaultdict(list)
         for item in items:
             by_name[norm_name(item["name"])].append(item)
@@ -92,6 +95,34 @@ class Drops:
             return "npc"
         return "bag" if row["nameraw"].startswith("Treasure Bag") else "container"
 
+    def container_group(self, name):
+        """[containers] group of a container source (first match, else the fallback group)."""
+        n = norm_name(name)
+        for gid, group in self.containers.items():
+            if any(fnmatch.fnmatchcase(n, p) for p in group.get("match", [])):
+                return gid
+        return next((gid for gid, g in self.containers.items() if g.get("fallback")), None)
+
+    def containers_file(self):
+        """containers.json: the container groups in mapping order, each with its sources (by
+        name), icon and the number of items found in them."""
+        items_by_source = defaultdict(set)
+        for key, entries in self.drops.items():
+            for d in entries:
+                items_by_source[d["source"]].add(key)
+        out = []
+        for gid, group in self.containers.items():
+            sids = sorted((sid for sid, s in self.sources.items() if s.get("group") == gid),
+                          key=lambda sid: self.sources[sid]["name"].lower())
+            found = self.by_name.get(norm_name(group.get("icon", "")))
+            if group.get("icon") and not found:
+                log(f"  warning: container group {gid}: icon item '{group['icon']}' not found")
+            icon = found[0].get("icon") if found else None
+            count = len(set().union(*(items_by_source[s] for s in sids))) if sids else 0
+            out.append({k: v for k, v in {"id": gid, "name": group.get("name", gid), "icon": icon,
+                                          "sources": sids, "count": count}.items() if v is not None})
+        return out
+
     def resolve(self, name):
         n = norm_name(name)
         found = self.by_name.get(n)
@@ -106,7 +137,9 @@ class Drops:
                 found = [i for items in self.by_name.values() for i in items
                          if norm_name(i["name"]).startswith(prefix) and "furniture" in i["categories"]]
         if found and len(found) > 1:
-            # same name, several items (e.g. "Seaweed"): prefer the item on its own page
+            # same name, several items: prefer obtainable ones (e.g. "Ogre Mask" has an unused,
+            # unobtainable variant), then the item on its own page (e.g. "Seaweed")
+            found = [i for i in found if not i.get("unobtainable")] or found
             own = [i for i in found if norm_name(i["page"]) == n]
             found = own or found
         return found or []
@@ -122,10 +155,14 @@ class Drops:
                 if npc["npcid"].strip():
                     record["npcId"] = int(npc["npcid"])
             else:
-                # bags and containers are items themselves
-                item = (self.resolve(name) or [None])[0]
+                # bags and containers are items themselves; "Gold Chest (Dungeon)" -> Gold Chest,
+                # trees use a configured item (their wood)
+                icon_name = self.container_icons.get(norm_name(name)) or re.sub(r"\s*\([^)]*\)$", "", name)
+                item = (self.resolve(name) or self.resolve(icon_name) or [None])[0]
                 if item and item.get("icon"):
                     record["icon"] = item["icon"]
+            if kind == "container":
+                record["group"] = self.container_group(name)
             self.sources[sid] = {k: v for k, v in record.items() if v is not None}
         return sid
 
@@ -248,9 +285,12 @@ def derive_events(items, drops, events, bosses):
         per_drop = []
         for d in entries:
             found = set(source_events.get(d["source"], ()))
-            text = d.get("rate", "")
-            found |= {eid for eid, words in drop_conditions.items()
-                      if any(w.lower() in text.lower() for w in words)}
+            # container drops (chests, crates, trees) add no events; they also make an item
+            # obtainable outside of events
+            if drops.sources[d["source"]]["kind"] != "container":
+                text = d.get("rate", "")
+                found |= {eid for eid, words in drop_conditions.items()
+                          if any(w.lower() in text.lower() for w in words)}
             per_drop.append(found)
         new = set().union(*per_drop) - set(item["events"])
         if new:

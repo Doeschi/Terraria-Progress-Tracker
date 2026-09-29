@@ -65,7 +65,7 @@ export function WelcomeScreen() {
     {
       icon: Swords,
       title: 'Drops & bosses',
-      text: 'Who drops what, with the chances for Classic, Expert and Master.',
+      text: 'Who drops what and which chests, crates and trees contain it – with the chances for Classic, Expert and Master.',
     },
     {
       icon: BookOpen,

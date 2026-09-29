@@ -224,7 +224,14 @@ export const useStore = create<State & Actions>()((set, get) => {
     },
 
     createPlaythrough(name, platform, difficulty, gameVersion) {
-      const p = newPlaythrough(name, platform, difficulty, gameVersion)
+      const p = {
+        ...newPlaythrough(name, platform, difficulty, gameVersion),
+        // unobtainable items do not count towards progress by default (they can be un-ignored)
+        ignored:
+          get()
+            .data?.items.filter((i) => i.unobtainable)
+            .map((i) => i.key) ?? [],
+      }
       mutateDoc((doc) => ({
         ...doc,
         playthroughs: [...doc.playthroughs, p],

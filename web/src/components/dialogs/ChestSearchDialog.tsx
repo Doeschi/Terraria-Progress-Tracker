@@ -68,7 +68,13 @@ function ChestSearch({ initialKey }: { initialKey?: string }) {
         <DialogTitle>Search chests in {world.name}</DialogTitle>
         <DialogDescription>Find where an item is stored.</DialogDescription>
       </DialogHeader>
-      <AreaSelector scope={scope} onChange={setScope} />
+      <AreaSelector
+        scope={scope}
+        onChange={setScope}
+        onManage={() =>
+          useUi.getState().open({ type: 'areas', returnTo: { type: 'chestSearch', itemKey: selectedKey } })
+        }
+      />
 
       {selected ? (
         <Locations
