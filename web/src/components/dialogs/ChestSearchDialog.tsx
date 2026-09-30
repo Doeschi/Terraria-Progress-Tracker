@@ -53,12 +53,13 @@ function ChestSearch({ initialKey }: { initialKey?: string }) {
   )
   const scan = useMemo(() => scanContainers(data, containers, pt.platform), [data, containers, pt.platform])
   const found = useMemo(() => [...scan.found.values()], [scan])
-  const fuse = useMemo(() => createSearch(found.map((f) => f.item)), [found])
+  const searcher = useMemo(() => createSearch(found.map((f) => f.item)), [found])
+  const searchMode = usePrefs((s) => s.searchMode)
   const results = useMemo(() => {
-    const ranks = searchRanks(fuse, query)
+    const ranks = searchRanks(searcher, query, searchMode)
     if (!ranks) return [...found].sort((a, b) => a.item.name.localeCompare(b.item.name))
     return found.filter((f) => ranks.has(f.item.key)).sort((a, b) => ranks.get(a.item.key)! - ranks.get(b.item.key)!)
-  }, [fuse, found, query])
+  }, [searcher, found, query, searchMode])
 
   const selected = selectedKey ? data.itemsByKey.get(selectedKey) : undefined
 

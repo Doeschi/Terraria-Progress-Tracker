@@ -21,7 +21,7 @@ class Mapping:
         self.boss_stages = data.get("boss_stages", {})
         # conditions of shop rows and drops (see conditions.py)
         self.conditions = data.get("conditions", {})
-        # milestones ("available from", see milestones.py)
+        # milestones ("available after", see milestones.py)
         self.milestones = {k: v for k, v in data.get("milestones", {}).items() if isinstance(v, dict)}
         self.milestone_conditions = data.get("milestone_conditions", {})
         self.container_milestones = data.get("container_milestones", {})

@@ -87,6 +87,34 @@ class Drops:
         self.skipped = Counter()
         for row in drop_rows:
             self.add(row)
+        if "npc" in self.include:
+            self.add_banners(npc_rows)
+
+    def add_banners(self, npc_rows):
+        """Enemy banners (every 50 kills) are not in the Drops table: the NPCs table names each
+        enemy's banner (`bannername`). They become drops of the enemy with the rate "Banner", so
+        biome, event and milestone follow from where the enemy spawns."""
+        added, unmatched = 0, []
+        for npc in npc_rows:
+            name = html.unescape(npc.get("bannername") or "").strip()
+            if not name or not npc["nameraw"].strip():
+                continue
+            items = self.resolve(name)
+            if not items:
+                unmatched.append(name)
+                continue
+            items = [i for i in items if not i.get("unobtainable")]  # e.g. unused cultist banners
+            if not items:
+                continue
+            sid = self.source({"nameraw": npc["nameraw"]}, "npc")
+            entry = {"source": sid, "quantity": "1", "rate": "Banner", "modes": list(DROP_MODES),
+                     "quantities": {m: "1" for m in DROP_MODES}}
+            for item in items:
+                if entry not in self.drops[item["key"]]:
+                    self.drops[item["key"]].append(entry)
+                    added += 1
+        log(f"  banners: {added} enemy banners linked to their enemy (NPCs table)"
+            + (f"; unknown banner items: {sorted(set(unmatched))[:10]}" if unmatched else ""))
 
     def npc_for(self, name):
         """NPCs-table row of a drop source; "Blue Slime (bonus drop)" -> "Blue Slime"."""

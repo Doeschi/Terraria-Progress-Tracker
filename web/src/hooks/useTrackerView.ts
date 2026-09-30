@@ -79,8 +79,9 @@ export function useTrackerView(): TrackerView | null {
       ]),
     )
   }, [data, difficulty, progressionMode])
-  const fuse = useMemo(() => createSearch(platformItems), [platformItems])
-  const ranks = useMemo(() => searchRanks(fuse, search), [fuse, search])
+  const searcher = useMemo(() => createSearch(platformItems), [platformItems])
+  const searchMode = usePrefs((s) => s.searchMode)
+  const ranks = useMemo(() => searchRanks(searcher, search, searchMode), [searcher, search, searchMode])
   const checked = useMemo(() => new Set(pt?.checked), [pt?.checked])
   const ignored = useMemo(() => new Set(pt?.ignored), [pt?.ignored])
 

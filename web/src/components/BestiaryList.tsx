@@ -21,7 +21,7 @@ import {
 } from '@/components/ui/dropdown-menu'
 import { BestiaryFilterSidebar } from './FilterSidebar'
 import { TallyBar, TallyText, WikiIcon } from './common'
-import { ActiveFilterBar, MobileFiltersButton, SearchField } from './ListParts'
+import { ActiveFilterBar, MobileFiltersButton, SearchField, SearchModeToggle } from './ListParts'
 import { formatDate, nameOf } from '@/lib/format'
 import { worldState } from '@/lib/bestiary'
 
@@ -71,6 +71,7 @@ function Toolbar({ view }: { view: BestiaryView }) {
           placeholder="Search the bestiary…"
           label="Search the bestiary"
         />
+        <SearchModeToggle />
         <MobileFilters view={view} />
       </div>
       <div className="flex flex-wrap items-center gap-x-4 gap-y-2">

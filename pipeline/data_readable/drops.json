@@ -3708,6 +3708,728 @@
       "name": "Treasure Bag (Plantera)",
       "kind": "bag",
       "icon": "https://terraria.wiki.gg/images/Treasure_Bag_%28Plantera%29.png"
+    },
+    "mushi-ladybug": {
+      "id": "mushi-ladybug",
+      "name": "Mushi Ladybug",
+      "kind": "npc",
+      "icon": "https://terraria.wiki.gg/images/Mushi_Ladybug.gif",
+      "npcId": 258,
+      "biomes": [
+        "glowing-mushroom"
+      ]
+    },
+    "kobold-glider": {
+      "id": "kobold-glider",
+      "name": "Kobold Glider",
+      "kind": "npc",
+      "icon": "https://terraria.wiki.gg/images/Kobold_Glider.gif",
+      "npcId": 575,
+      "events": [
+        "old-ones-army"
+      ]
+    },
+    "scutlix": {
+      "id": "scutlix",
+      "name": "Scutlix",
+      "kind": "npc",
+      "icon": "https://terraria.wiki.gg/images/Scutlix.gif",
+      "npcId": 391,
+      "events": [
+        "martian-madness"
+      ]
+    },
+    "blood-squid": {
+      "id": "blood-squid",
+      "name": "Blood Squid",
+      "kind": "npc",
+      "icon": "https://terraria.wiki.gg/images/Blood_Squid.gif",
+      "npcId": 619,
+      "events": [
+        "blood-moon"
+      ]
+    },
+    "etherian-goblin": {
+      "id": "etherian-goblin",
+      "name": "Etherian Goblin",
+      "kind": "npc",
+      "icon": "https://terraria.wiki.gg/images/Etherian_Goblin_3.gif",
+      "npcId": 554,
+      "events": [
+        "old-ones-army"
+      ]
+    },
+    "sroller": {
+      "id": "sroller",
+      "name": "Sroller",
+      "kind": "npc",
+      "icon": "https://terraria.wiki.gg/images/Sroller.gif",
+      "npcId": 417,
+      "events": [
+        "lunar-events"
+      ]
+    },
+    "arapaima": {
+      "id": "arapaima",
+      "name": "Arapaima",
+      "kind": "npc",
+      "icon": "https://terraria.wiki.gg/images/Arapaima.gif",
+      "npcId": 157,
+      "biomes": [
+        "jungle"
+      ]
+    },
+    "vulture": {
+      "id": "vulture",
+      "name": "Vulture",
+      "kind": "npc",
+      "icon": "https://terraria.wiki.gg/images/Vulture.png",
+      "npcId": 61,
+      "biomes": [
+        "desert"
+      ]
+    },
+    "etherian-lightning-bug": {
+      "id": "etherian-lightning-bug",
+      "name": "Etherian Lightning Bug",
+      "kind": "npc",
+      "icon": "https://terraria.wiki.gg/images/Etherian_Lightning_Bug.gif",
+      "npcId": 578,
+      "events": [
+        "old-ones-army"
+      ]
+    },
+    "krampus": {
+      "id": "krampus",
+      "name": "Krampus",
+      "kind": "npc",
+      "icon": "https://terraria.wiki.gg/images/Krampus.gif",
+      "npcId": 351,
+      "events": [
+        "frost-moon"
+      ]
+    },
+    "yeti": {
+      "id": "yeti",
+      "name": "Yeti",
+      "kind": "npc",
+      "icon": "https://terraria.wiki.gg/images/Yeti.gif",
+      "npcId": 343,
+      "events": [
+        "frost-moon"
+      ]
+    },
+    "alien-hornet": {
+      "id": "alien-hornet",
+      "name": "Alien Hornet",
+      "kind": "npc",
+      "icon": "https://terraria.wiki.gg/images/Alien_Hornet.gif",
+      "npcId": 427,
+      "events": [
+        "lunar-events"
+      ]
+    },
+    "mini-star-cell": {
+      "id": "mini-star-cell",
+      "name": "Mini Star Cell",
+      "kind": "npc",
+      "icon": "https://terraria.wiki.gg/images/Mini_Star_Cell.gif",
+      "npcId": 406,
+      "events": [
+        "lunar-events"
+      ]
+    },
+    "star-cell": {
+      "id": "star-cell",
+      "name": "Star Cell",
+      "kind": "npc",
+      "icon": "https://terraria.wiki.gg/images/Star_Cell.gif",
+      "npcId": 405,
+      "events": [
+        "lunar-events"
+      ]
+    },
+    "etherian-goblin-bomber": {
+      "id": "etherian-goblin-bomber",
+      "name": "Etherian Goblin Bomber",
+      "kind": "npc",
+      "icon": "https://terraria.wiki.gg/images/Etherian_Goblin_Bomber_3.gif",
+      "npcId": 557,
+      "events": [
+        "old-ones-army"
+      ]
+    },
+    "drakomire": {
+      "id": "drakomire",
+      "name": "Drakomire",
+      "kind": "npc",
+      "icon": "https://terraria.wiki.gg/images/Drakomire.gif",
+      "npcId": 415,
+      "events": [
+        "lunar-events"
+      ]
+    },
+    "brain-suckler": {
+      "id": "brain-suckler",
+      "name": "Brain Suckler",
+      "kind": "npc",
+      "icon": "https://terraria.wiki.gg/images/Brain_Suckler.gif",
+      "npcId": 421,
+      "events": [
+        "lunar-events"
+      ]
+    },
+    "flocko": {
+      "id": "flocko",
+      "name": "Flocko",
+      "kind": "npc",
+      "icon": "https://terraria.wiki.gg/images/Flocko.gif",
+      "npcId": 352,
+      "events": [
+        "frost-moon"
+      ]
+    },
+    "corite": {
+      "id": "corite",
+      "name": "Corite",
+      "kind": "npc",
+      "icon": "https://terraria.wiki.gg/images/Corite.gif",
+      "npcId": 418,
+      "events": [
+        "lunar-events"
+      ]
+    },
+    "drakin": {
+      "id": "drakin",
+      "name": "Drakin",
+      "kind": "npc",
+      "icon": "https://terraria.wiki.gg/images/Drakin_2.gif",
+      "npcId": 571,
+      "events": [
+        "old-ones-army"
+      ]
+    },
+    "alien-larva": {
+      "id": "alien-larva",
+      "name": "Alien Larva",
+      "kind": "npc",
+      "icon": "https://terraria.wiki.gg/images/Alien_Larva.gif",
+      "npcId": 428,
+      "events": [
+        "lunar-events"
+      ]
+    },
+    "drakomire-rider": {
+      "id": "drakomire-rider",
+      "name": "Drakomire Rider",
+      "kind": "npc",
+      "icon": "https://terraria.wiki.gg/images/Drakomire_Rider.gif",
+      "npcId": 416,
+      "events": [
+        "lunar-events"
+      ]
+    },
+    "dune-splicer": {
+      "id": "dune-splicer",
+      "name": "Dune Splicer",
+      "kind": "npc",
+      "icon": "https://terraria.wiki.gg/images/Dune_Splicer_%28Tail%29.png",
+      "npcId": 512,
+      "biomes": [
+        "desert"
+      ]
+    },
+    "spore-zombie": {
+      "id": "spore-zombie",
+      "name": "Spore Zombie",
+      "kind": "npc",
+      "icon": "https://terraria.wiki.gg/images/Mushroom_Zombie2.gif",
+      "npcId": 255,
+      "biomes": [
+        "glowing-mushroom"
+      ]
+    },
+    "anomura-fungus": {
+      "id": "anomura-fungus",
+      "name": "Anomura Fungus",
+      "kind": "npc",
+      "icon": "https://terraria.wiki.gg/images/Anomura_Fungus.gif",
+      "npcId": 257,
+      "biomes": [
+        "glowing-mushroom"
+      ]
+    },
+    "drakanian": {
+      "id": "drakanian",
+      "name": "Drakanian",
+      "kind": "npc",
+      "icon": "https://terraria.wiki.gg/images/Drakanian.gif",
+      "npcId": 518,
+      "events": [
+        "lunar-events"
+      ]
+    },
+    "elf-archer": {
+      "id": "elf-archer",
+      "name": "Elf Archer",
+      "kind": "npc",
+      "icon": "https://terraria.wiki.gg/images/Elf_Archer.gif",
+      "npcId": 350,
+      "events": [
+        "frost-moon"
+      ]
+    },
+    "maggot-zombie": {
+      "id": "maggot-zombie",
+      "name": "Maggot Zombie",
+      "kind": "npc",
+      "icon": "https://terraria.wiki.gg/images/Maggot_Zombie.gif",
+      "npcId": 632,
+      "biomes": [
+        "graveyard"
+      ]
+    },
+    "giant-antlion-swarmer": {
+      "id": "giant-antlion-swarmer",
+      "name": "Giant Antlion Swarmer",
+      "kind": "npc",
+      "icon": "https://terraria.wiki.gg/images/Giant_Antlion_Swarmer.gif",
+      "npcId": 509,
+      "biomes": [
+        "desert"
+      ]
+    },
+    "kobold": {
+      "id": "kobold",
+      "name": "Kobold",
+      "kind": "npc",
+      "icon": "https://terraria.wiki.gg/images/Kobold.gif",
+      "npcId": 573,
+      "events": [
+        "old-ones-army"
+      ]
+    },
+    "giant-fungi-bulb": {
+      "id": "giant-fungi-bulb",
+      "name": "Giant Fungi Bulb",
+      "kind": "npc",
+      "icon": "https://terraria.wiki.gg/images/Giant_Fungi_Bulb.png",
+      "npcId": 260,
+      "biomes": [
+        "glowing-mushroom"
+      ]
+    },
+    "shimmer-slime": {
+      "id": "shimmer-slime",
+      "name": "Shimmer Slime",
+      "kind": "npc",
+      "icon": "https://terraria.wiki.gg/images/Shimmer_Slime.gif",
+      "npcId": 676
+    },
+    "elf-copter": {
+      "id": "elf-copter",
+      "name": "Elf Copter",
+      "kind": "npc",
+      "icon": "https://terraria.wiki.gg/images/Elf_Copter.gif",
+      "npcId": 347,
+      "events": [
+        "frost-moon"
+      ]
+    },
+    "bunny": {
+      "id": "bunny",
+      "name": "Bunny",
+      "kind": "npc",
+      "icon": "https://terraria.wiki.gg/images/Party_Bunny.png",
+      "npcId": 540,
+      "biomes": [
+        "forest-surface"
+      ]
+    },
+    "corrupt-goldfish": {
+      "id": "corrupt-goldfish",
+      "name": "Corrupt Goldfish",
+      "kind": "npc",
+      "icon": "https://terraria.wiki.gg/images/Corrupt_Goldfish.gif",
+      "npcId": 57,
+      "biomes": [
+        "corruption"
+      ]
+    },
+    "vicious-goldfish": {
+      "id": "vicious-goldfish",
+      "name": "Vicious Goldfish",
+      "kind": "npc",
+      "icon": "https://terraria.wiki.gg/images/Vicious_Goldfish.gif",
+      "npcId": 465,
+      "biomes": [
+        "crimson"
+      ]
+    },
+    "goldfish": {
+      "id": "goldfish",
+      "name": "Goldfish",
+      "kind": "npc",
+      "icon": "https://terraria.wiki.gg/images/Goldfish_Walker.gif",
+      "npcId": 230,
+      "events": [
+        "rain"
+      ]
+    },
+    "giant-antlion-charger": {
+      "id": "giant-antlion-charger",
+      "name": "Giant Antlion Charger",
+      "kind": "npc",
+      "icon": "https://terraria.wiki.gg/images/Giant_Antlion_Charger.gif",
+      "npcId": 508,
+      "biomes": [
+        "desert"
+      ]
+    },
+    "twinkle-popper": {
+      "id": "twinkle-popper",
+      "name": "Twinkle Popper",
+      "kind": "npc",
+      "icon": "https://terraria.wiki.gg/images/Twinkle_Popper.gif",
+      "npcId": 409,
+      "events": [
+        "lunar-events"
+      ]
+    },
+    "milkyway-weaver": {
+      "id": "milkyway-weaver",
+      "name": "Milkyway Weaver",
+      "kind": "npc",
+      "icon": "https://terraria.wiki.gg/images/Milkyway_Weaver_%28Tail%29.png",
+      "npcId": 404,
+      "events": [
+        "lunar-events"
+      ]
+    },
+    "predictor": {
+      "id": "predictor",
+      "name": "Predictor",
+      "kind": "npc",
+      "icon": "https://terraria.wiki.gg/images/Predictor.gif",
+      "npcId": 424,
+      "events": [
+        "lunar-events"
+      ]
+    },
+    "nebula-floater": {
+      "id": "nebula-floater",
+      "name": "Nebula Floater",
+      "kind": "npc",
+      "icon": "https://terraria.wiki.gg/images/Nebula_Floater.gif",
+      "npcId": 420,
+      "events": [
+        "lunar-events"
+      ]
+    },
+    "flow-invader": {
+      "id": "flow-invader",
+      "name": "Flow Invader",
+      "kind": "npc",
+      "icon": "https://terraria.wiki.gg/images/Flow_Invader.gif",
+      "npcId": 407,
+      "events": [
+        "lunar-events"
+      ]
+    },
+    "vortexian": {
+      "id": "vortexian",
+      "name": "Vortexian",
+      "kind": "npc",
+      "icon": "https://terraria.wiki.gg/images/Vortexian.gif",
+      "npcId": 429,
+      "events": [
+        "lunar-events"
+      ]
+    },
+    "nutcracker": {
+      "id": "nutcracker",
+      "name": "Nutcracker",
+      "kind": "npc",
+      "icon": "https://terraria.wiki.gg/images/Nutcracker_2.gif",
+      "npcId": 349,
+      "events": [
+        "frost-moon"
+      ]
+    },
+    "etherian-wyvern": {
+      "id": "etherian-wyvern",
+      "name": "Etherian Wyvern",
+      "kind": "npc",
+      "icon": "https://terraria.wiki.gg/images/Etherian_Wyvern_3.gif",
+      "npcId": 560,
+      "events": [
+        "old-ones-army"
+      ]
+    },
+    "martian-drone": {
+      "id": "martian-drone",
+      "name": "Martian Drone",
+      "kind": "npc",
+      "icon": "https://terraria.wiki.gg/images/Martian_Drone.gif",
+      "npcId": 388,
+      "events": [
+        "martian-madness"
+      ]
+    },
+    "alien-queen": {
+      "id": "alien-queen",
+      "name": "Alien Queen",
+      "kind": "npc",
+      "icon": "https://terraria.wiki.gg/images/Alien_Queen.gif",
+      "npcId": 426,
+      "events": [
+        "lunar-events"
+      ]
+    },
+    "hoppin-jack": {
+      "id": "hoppin-jack",
+      "name": "Hoppin' Jack",
+      "kind": "npc",
+      "icon": "https://terraria.wiki.gg/images/Hoppin%27_Jack.gif",
+      "npcId": 304,
+      "biomes": [
+        "forest-surface",
+        "graveyard"
+      ]
+    },
+    "possessed-armor": {
+      "id": "possessed-armor",
+      "name": "Possessed Armor",
+      "kind": "npc",
+      "icon": "https://terraria.wiki.gg/images/Possessed_Armor.gif",
+      "npcId": 140,
+      "biomes": [
+        "forest-surface",
+        "underground"
+      ]
+    },
+    "selenian": {
+      "id": "selenian",
+      "name": "Selenian",
+      "kind": "npc",
+      "icon": "https://terraria.wiki.gg/images/Selenian.gif",
+      "npcId": 419,
+      "events": [
+        "lunar-events"
+      ]
+    },
+    "old-one-s-skeleton": {
+      "id": "old-one-s-skeleton",
+      "name": "Old One's Skeleton",
+      "kind": "npc",
+      "icon": "https://terraria.wiki.gg/images/Old_One%27s_Skeleton.gif",
+      "npcId": 567,
+      "events": [
+        "old-ones-army"
+      ]
+    },
+    "wither-beast": {
+      "id": "wither-beast",
+      "name": "Wither Beast",
+      "kind": "npc",
+      "icon": "https://terraria.wiki.gg/images/Wither_Beast.gif",
+      "npcId": 569,
+      "events": [
+        "old-ones-army"
+      ]
+    },
+    "jungle-creeper": {
+      "id": "jungle-creeper",
+      "name": "Jungle Creeper",
+      "kind": "npc",
+      "icon": "https://terraria.wiki.gg/images/Jungle_Creeper2.gif",
+      "npcId": 237,
+      "biomes": [
+        "jungle"
+      ]
+    },
+    "evolution-beast": {
+      "id": "evolution-beast",
+      "name": "Evolution Beast",
+      "kind": "npc",
+      "icon": "https://terraria.wiki.gg/images/Evolution_Beast.gif",
+      "npcId": 423,
+      "events": [
+        "lunar-events"
+      ]
+    },
+    "stargazer": {
+      "id": "stargazer",
+      "name": "Stargazer",
+      "kind": "npc",
+      "icon": "https://terraria.wiki.gg/images/Stargazer.gif",
+      "npcId": 411,
+      "events": [
+        "lunar-events"
+      ]
+    },
+    "bird": {
+      "id": "bird",
+      "name": "Bird",
+      "kind": "npc",
+      "icon": "https://terraria.wiki.gg/images/Bird_%28NPC%29.png",
+      "npcId": 74,
+      "biomes": [
+        "forest-surface",
+        "snow",
+        "hallow"
+      ]
+    },
+    "blue-jay": {
+      "id": "blue-jay",
+      "name": "Blue Jay",
+      "kind": "npc",
+      "icon": "https://terraria.wiki.gg/images/Blue_Jay.png",
+      "npcId": 297,
+      "biomes": [
+        "forest-surface",
+        "snow",
+        "hallow"
+      ]
+    },
+    "cardinal": {
+      "id": "cardinal",
+      "name": "Cardinal",
+      "kind": "npc",
+      "icon": "https://terraria.wiki.gg/images/Cardinal.png",
+      "npcId": 298,
+      "biomes": [
+        "forest-surface",
+        "snow",
+        "hallow"
+      ]
+    },
+    "penguin": {
+      "id": "penguin",
+      "name": "Penguin",
+      "kind": "npc",
+      "icon": "https://terraria.wiki.gg/images/Penguin_black.png",
+      "npcId": 149,
+      "biomes": [
+        "snow"
+      ]
+    },
+    "tesla-turret": {
+      "id": "tesla-turret",
+      "name": "Tesla Turret",
+      "kind": "npc",
+      "icon": "https://terraria.wiki.gg/images/Tesla_Turret.gif",
+      "npcId": 387,
+      "events": [
+        "martian-madness"
+      ]
+    },
+    "storm-diver": {
+      "id": "storm-diver",
+      "name": "Storm Diver",
+      "kind": "npc",
+      "icon": "https://terraria.wiki.gg/images/Storm_Diver.gif",
+      "npcId": 425,
+      "events": [
+        "lunar-events"
+      ]
+    },
+    "lava-slime": {
+      "id": "lava-slime",
+      "name": "Lava Slime",
+      "kind": "npc",
+      "icon": "https://terraria.wiki.gg/images/Lava_Slime.gif",
+      "npcId": 59,
+      "biomes": [
+        "underworld"
+      ]
+    },
+    "gnome": {
+      "id": "gnome",
+      "name": "Gnome",
+      "kind": "npc",
+      "icon": "https://terraria.wiki.gg/images/Gnome.gif",
+      "npcId": 624
+    },
+    "etherian-javelin-thrower": {
+      "id": "etherian-javelin-thrower",
+      "name": "Etherian Javelin Thrower",
+      "kind": "npc",
+      "icon": "https://terraria.wiki.gg/images/Etherian_Javelin_Thrower_3.gif",
+      "npcId": 563,
+      "events": [
+        "old-ones-army"
+      ]
+    },
+    "crawltipede": {
+      "id": "crawltipede",
+      "name": "Crawltipede",
+      "kind": "npc",
+      "icon": "https://terraria.wiki.gg/images/Crawltipede_%28Tail%29.png",
+      "npcId": 414,
+      "events": [
+        "lunar-events"
+      ]
+    },
+    "cultist-archer": {
+      "id": "cultist-archer",
+      "name": "Cultist Archer",
+      "kind": "npc",
+      "icon": "https://terraria.wiki.gg/images/Cultist_Archer.gif",
+      "npcId": 379,
+      "biomes": [
+        "dungeon"
+      ]
+    },
+    "lunatic-devotee": {
+      "id": "lunatic-devotee",
+      "name": "Lunatic Devotee",
+      "kind": "npc",
+      "icon": "https://terraria.wiki.gg/images/Lunatic_Devotee.gif",
+      "npcId": 438,
+      "biomes": [
+        "dungeon"
+      ]
+    },
+    "fungo-fish": {
+      "id": "fungo-fish",
+      "name": "Fungo Fish",
+      "kind": "npc",
+      "icon": "https://terraria.wiki.gg/images/Fungo_Fish.gif",
+      "npcId": 256,
+      "biomes": [
+        "glowing-mushroom"
+      ]
+    },
+    "ghost": {
+      "id": "ghost",
+      "name": "Ghost",
+      "kind": "npc",
+      "icon": "https://terraria.wiki.gg/images/Ghost_%28enemy%29.gif",
+      "npcId": 316,
+      "biomes": [
+        "graveyard"
+      ]
+    },
+    "fungi-bulb": {
+      "id": "fungi-bulb",
+      "name": "Fungi Bulb",
+      "kind": "npc",
+      "icon": "https://terraria.wiki.gg/images/Fungi_Bulb.png",
+      "npcId": 259,
+      "biomes": [
+        "glowing-mushroom"
+      ]
+    },
+    "parrot": {
+      "id": "parrot",
+      "name": "Parrot",
+      "kind": "npc",
+      "icon": "https://terraria.wiki.gg/images/Parrot.gif",
+      "npcId": 252,
+      "events": [
+        "pirate-invasion"
+      ]
     }
   },
   "items": {
@@ -7491,7 +8213,10 @@
           "expert",
           "master"
         ],
-        "note": "During wave 15 and up"
+        "note": "During wave 15 and up",
+        "conditions": [
+          "wave-15"
+        ]
       }
     ],
     "EverscreamPetItem": [
@@ -34726,7 +35451,10 @@
           "expert",
           "master"
         ],
-        "note": "when the Dungeon is not present; ''see conditions''"
+        "note": "when the Dungeon is not present; ''see conditions''",
+        "conditions": [
+          "no-dungeon"
+        ]
       },
       {
         "source": "dungeon-crate",
@@ -35265,7 +35993,10 @@
           "expert",
           "master"
         ],
-        "note": "when the Dungeon is not present; ''see conditions''"
+        "note": "when the Dungeon is not present; ''see conditions''",
+        "conditions": [
+          "no-dungeon"
+        ]
       },
       {
         "source": "dungeon-crate",
@@ -35322,7 +36053,10 @@
           "expert",
           "master"
         ],
-        "note": "when the Dungeon is not present; ''see conditions''"
+        "note": "when the Dungeon is not present; ''see conditions''",
+        "conditions": [
+          "no-dungeon"
+        ]
       },
       {
         "source": "dungeon-crate",
@@ -42127,7 +42861,10 @@
           "expert",
           "master"
         ],
-        "note": "when a Hellforge is not present; ''see conditions''"
+        "note": "when a Hellforge is not present; ''see conditions''",
+        "conditions": [
+          "no-hellforge"
+        ]
       },
       {
         "source": "hellstone-crate",
@@ -45914,7 +46651,10 @@
           "expert",
           "master"
         ],
-        "note": "During wave 15 and up"
+        "note": "During wave 15 and up",
+        "conditions": [
+          "wave-15"
+        ]
       }
     ],
     "PumpkingMasterTrophy": [
@@ -46051,7 +46791,10 @@
           "expert",
           "master"
         ],
-        "note": "During wave 15 and up"
+        "note": "During wave 15 and up",
+        "conditions": [
+          "wave-15"
+        ]
       }
     ],
     "IceQueenTrophy": [
@@ -46068,7 +46811,10 @@
           "expert",
           "master"
         ],
-        "note": "During wave 15 and up"
+        "note": "During wave 15 and up",
+        "conditions": [
+          "wave-15"
+        ]
       }
     ],
     "IceQueenPetItem": [
@@ -47994,7 +48740,10 @@
           "expert",
           "master"
         ],
-        "note": "Only if name is Jim"
+        "note": "Only if name is Jim",
+        "conditions": [
+          "npc-name-jim"
+        ]
       }
     ],
     "TaxCollectorsStickOfDoom": [
@@ -50067,7 +50816,10 @@
           "expert",
           "master"
         ],
-        "note": "During wave 15 and up"
+        "note": "During wave 15 and up",
+        "conditions": [
+          "wave-15"
+        ]
       }
     ],
     "SantankMountItem": [
@@ -53151,7 +53903,10 @@
           "expert",
           "master"
         ],
-        "note": "Only if name is Whitney"
+        "note": "Only if name is Whitney",
+        "conditions": [
+          "npc-name-whitney"
+        ]
       }
     ],
     "DjinnLamp": [
@@ -61822,7 +62577,10 @@
           "expert",
           "master"
         ],
-        "note": "when no Portal Gun in inventory"
+        "note": "when no Portal Gun in inventory",
+        "conditions": [
+          "no-portal-gun"
+        ]
       },
       {
         "source": "chest",
@@ -66411,7 +67169,10 @@
           "expert",
           "master"
         ],
-        "note": "when the Dungeon is not present; ''see conditions''"
+        "note": "when the Dungeon is not present; ''see conditions''",
+        "conditions": [
+          "no-dungeon"
+        ]
       }
     ],
     "BlueSlabWallUnsafe": [
@@ -66422,7 +67183,10 @@
           "expert",
           "master"
         ],
-        "note": "when the Dungeon is not present; ''see conditions''"
+        "note": "when the Dungeon is not present; ''see conditions''",
+        "conditions": [
+          "no-dungeon"
+        ]
       }
     ],
     "BlueBrickWallUnsafe": [
@@ -66433,7 +67197,10 @@
           "expert",
           "master"
         ],
-        "note": "when the Dungeon is not present; ''see conditions''"
+        "note": "when the Dungeon is not present; ''see conditions''",
+        "conditions": [
+          "no-dungeon"
+        ]
       }
     ],
     "GreenTiledWallUnsafe": [
@@ -66444,7 +67211,10 @@
           "expert",
           "master"
         ],
-        "note": "when the Dungeon is not present; ''see conditions''"
+        "note": "when the Dungeon is not present; ''see conditions''",
+        "conditions": [
+          "no-dungeon"
+        ]
       }
     ],
     "GreenSlabWallUnsafe": [
@@ -66455,7 +67225,10 @@
           "expert",
           "master"
         ],
-        "note": "when the Dungeon is not present; ''see conditions''"
+        "note": "when the Dungeon is not present; ''see conditions''",
+        "conditions": [
+          "no-dungeon"
+        ]
       }
     ],
     "GreenBrickWallUnsafe": [
@@ -66466,7 +67239,10 @@
           "expert",
           "master"
         ],
-        "note": "when the Dungeon is not present; ''see conditions''"
+        "note": "when the Dungeon is not present; ''see conditions''",
+        "conditions": [
+          "no-dungeon"
+        ]
       }
     ],
     "PinkTiledWallUnsafe": [
@@ -66477,7 +67253,10 @@
           "expert",
           "master"
         ],
-        "note": "when the Dungeon is not present; ''see conditions''"
+        "note": "when the Dungeon is not present; ''see conditions''",
+        "conditions": [
+          "no-dungeon"
+        ]
       }
     ],
     "PinkSlabWallUnsafe": [
@@ -66488,7 +67267,10 @@
           "expert",
           "master"
         ],
-        "note": "when the Dungeon is not present; ''see conditions''"
+        "note": "when the Dungeon is not present; ''see conditions''",
+        "conditions": [
+          "no-dungeon"
+        ]
       }
     ],
     "PinkBrickWallUnsafe": [
@@ -66499,7 +67281,10 @@
           "expert",
           "master"
         ],
-        "note": "when the Dungeon is not present; ''see conditions''"
+        "note": "when the Dungeon is not present; ''see conditions''",
+        "conditions": [
+          "no-dungeon"
+        ]
       }
     ],
     "Uzi": [
@@ -68209,7 +68994,10 @@
           "expert",
           "master"
         ],
-        "note": "when defeated on the same day as the Wall of Flesh"
+        "note": "when defeated on the same day as the Wall of Flesh",
+        "conditions": [
+          "same-day"
+        ]
       },
       {
         "source": "wall-of-flesh",
@@ -68224,7 +69012,10 @@
           "expert",
           "master"
         ],
-        "note": "when defeated on the same day as the Eye of Cthulhu"
+        "note": "when defeated on the same day as the Eye of Cthulhu",
+        "conditions": [
+          "same-day"
+        ]
       }
     ],
     "Binoculars": [
@@ -68340,7 +69131,10 @@
           "expert",
           "master"
         ],
-        "note": "when no altar is placed in world with additional conditions"
+        "note": "when no altar is placed in world with additional conditions",
+        "conditions": [
+          "no-altar"
+        ]
       }
     ],
     "CrimsonSeeds": [
@@ -68390,7 +69184,10 @@
           "expert",
           "master"
         ],
-        "note": "when no altar is placed in world with additional conditions"
+        "note": "when no altar is placed in world with additional conditions",
+        "conditions": [
+          "no-altar"
+        ]
       }
     ],
     "EyeMask": [
@@ -69889,7 +70686,10 @@
           "expert",
           "master"
         ],
-        "note": "During wave 15 and up"
+        "note": "During wave 15 and up",
+        "conditions": [
+          "wave-15"
+        ]
       }
     ],
     "WitchBroom": [
@@ -70351,7 +71151,10 @@
           "expert",
           "master"
         ],
-        "note": "when the Jungle Temple is not present; ''see conditions''"
+        "note": "when the Jungle Temple is not present; ''see conditions''",
+        "conditions": [
+          "no-temple"
+        ]
       },
       {
         "source": "treasure-bag-golem",
@@ -71585,7 +72388,10 @@
           "expert",
           "master"
         ],
-        "note": "when no Demon Heart used yet"
+        "note": "when no Demon Heart used yet",
+        "conditions": [
+          "no-demon-heart"
+        ]
       }
     ],
     "WallOfFleshGoatMountItem": [
@@ -72203,7 +73009,10 @@
           "expert",
           "master"
         ],
-        "note": "when the Jungle Temple is not present; ''see conditions''"
+        "note": "when the Jungle Temple is not present; ''see conditions''",
+        "conditions": [
+          "no-temple"
+        ]
       }
     ],
     "LihzahrdWallUnsafe": [
@@ -72220,7 +73029,10 @@
           "expert",
           "master"
         ],
-        "note": "when the Jungle Temple is not present; ''see conditions''"
+        "note": "when the Jungle Temple is not present; ''see conditions''",
+        "conditions": [
+          "no-temple"
+        ]
       }
     ],
     "LihzahrdAltar": [
@@ -72237,7 +73049,5157 @@
           "expert",
           "master"
         ],
-        "note": "when the Jungle Temple is not present; ''see conditions''"
+        "note": "when the Jungle Temple is not present; ''see conditions''",
+        "conditions": [
+          "no-temple"
+        ]
+      }
+    ],
+    "HellhoundBanner": [
+      {
+        "source": "hellhound",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "MushiLadybugBanner": [
+      {
+        "source": "mushi-ladybug",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "DD2KoboldFlyerBanner": [
+      {
+        "source": "kobold-glider",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "ScutlixBanner": [
+      {
+        "source": "scutlix",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "BloodSquidBanner": [
+      {
+        "source": "blood-squid",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "MartianScutlixGunnerBanner": [
+      {
+        "source": "scutlix-gunner",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "WolfBanner": [
+      {
+        "source": "wolf",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "DeadlySphereBanner": [
+      {
+        "source": "deadly-sphere",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "DD2GoblinBanner": [
+      {
+        "source": "etherian-goblin",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "RustyArmoredBonesBanner": [
+      {
+        "source": "rusty-armored-bones",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "MartianRaygunnerBanner": [
+      {
+        "source": "ray-gunner",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "HellArmoredBonesBanner": [
+      {
+        "source": "hell-armored-bones",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "MartianEngineerBanner": [
+      {
+        "source": "martian-engineer",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "CrimslimeBanner": [
+      {
+        "source": "crimslime",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "MartianGigazapperBanner": [
+      {
+        "source": "gigazapper",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "TortoiseBanner": [
+      {
+        "source": "giant-tortoise",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "UmbrellaSlimeBanner": [
+      {
+        "source": "umbrella-slime",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "SolarSrollerBanner": [
+      {
+        "source": "sroller",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "ArapaimaBanner": [
+      {
+        "source": "arapaima",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "SpikedJungleSlimeBanner": [
+      {
+        "source": "spiked-jungle-slime",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "VultureBanner": [
+      {
+        "source": "vulture",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "MothBanner": [
+      {
+        "source": "moth",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "BoneLeeBanner": [
+      {
+        "source": "bone-lee",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "PresentMimicBanner": [
+      {
+        "source": "present-mimic",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "DD2LightningBugBanner": [
+      {
+        "source": "etherian-lightning-bug",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "UndeadMinerBanner": [
+      {
+        "source": "undead-miner",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "IceSlimeBanner": [
+      {
+        "source": "ice-slime",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "GingerbreadManBanner": [
+      {
+        "source": "gingerbread-man",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "KrampusBanner": [
+      {
+        "source": "krampus",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "PiranhaBanner": [
+      {
+        "source": "piranha",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "YetiBanner": [
+      {
+        "source": "yeti",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "VortexHornetBanner": [
+      {
+        "source": "alien-hornet",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "SnatcherBanner": [
+      {
+        "source": "snatcher",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "ZombieElfBanner": [
+      {
+        "source": "zombie-elf",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "StardustSmallCellBanner": [
+      {
+        "source": "mini-star-cell",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "StardustLargeCellBanner": [
+      {
+        "source": "star-cell",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "DD2GoblinBomberBanner": [
+      {
+        "source": "etherian-goblin-bomber",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "DandelionBanner": [
+      {
+        "source": "angry-dandelion",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "DerplingBanner": [
+      {
+        "source": "derpling",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "SquidBanner": [
+      {
+        "source": "squid",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "CorruptSlimeBanner": [
+      {
+        "source": "corrupt-slime",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      },
+      {
+        "source": "slimeling",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "SolarDrakomireBanner": [
+      {
+        "source": "drakomire",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "DripplerBanner": [
+      {
+        "source": "drippler",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "EyeballFlyingFishBanner": [
+      {
+        "source": "wandering-eye-fish",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "ArmoredSkeletonBanner": [
+      {
+        "source": "armored-skeleton",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "LarvaeAntlionBanner": [
+      {
+        "source": "antlion-larva",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "NebulaHeadcrabBanner": [
+      {
+        "source": "brain-suckler",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "IceElementalBanner": [
+      {
+        "source": "ice-elemental",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "FlockoBanner": [
+      {
+        "source": "flocko",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "SolarCoriteBanner": [
+      {
+        "source": "corite",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "SlimeBanner": [
+      {
+        "source": "blue-slime",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      },
+      {
+        "source": "slime",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "DD2DrakinBanner": [
+      {
+        "source": "drakin",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "VortexLarvaBanner": [
+      {
+        "source": "alien-larva",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "DungeonSlimeBanner": [
+      {
+        "source": "dungeon-slime",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "CrabBanner": [
+      {
+        "source": "crab",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "HerplingBanner": [
+      {
+        "source": "herpling",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "SolarDrakomireRiderBanner": [
+      {
+        "source": "drakomire-rider",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      },
+      {
+        "source": "drakanian",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "AngryNimbusBanner": [
+      {
+        "source": "angry-nimbus",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "RavagerScorpionBanner": [
+      {
+        "source": "sand-poacher",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "RavenBanner": [
+      {
+        "source": "raven",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "GreekSkeletonBanner": [
+      {
+        "source": "hoplite",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "SpikedIceSlimeBanner": [
+      {
+        "source": "spiked-ice-slime",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "DuneSplicerBanner": [
+      {
+        "source": "dune-splicer",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "FloatyGrossBanner": [
+      {
+        "source": "floaty-gross",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "CorruptorBanner": [
+      {
+        "source": "corruptor",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "IchorStickerBanner": [
+      {
+        "source": "ichor-sticker",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "SporeZombieBanner": [
+      {
+        "source": "spore-zombie",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "GoblinWarriorBanner": [
+      {
+        "source": "goblin-warrior",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "GoblinPeonBanner": [
+      {
+        "source": "goblin-peon",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "CochinealBeetleBanner": [
+      {
+        "source": "cochineal-beetle",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "DesertBasiliskBanner": [
+      {
+        "source": "basilisk",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "AnomuraFungusBanner": [
+      {
+        "source": "anomura-fungus",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "MartianBrainscramblerBanner": [
+      {
+        "source": "brain-scrambler",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "CyanBeetleBanner": [
+      {
+        "source": "cyan-beetle",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "DoctorBonesBanner": [
+      {
+        "source": "doctor-bones",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "DrManFlyBanner": [
+      {
+        "source": "dr-man-fly",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "ElfArcherBanner": [
+      {
+        "source": "elf-archer",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "LacBeetleBanner": [
+      {
+        "source": "lac-beetle",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "ZombieBanner": [
+      {
+        "source": "maggot-zombie",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      },
+      {
+        "source": "zombie",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      },
+      {
+        "source": "moss-zombie",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "PaladinBanner": [
+      {
+        "source": "paladin",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "SeaSnailBanner": [
+      {
+        "source": "sea-snail",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "FlyingAntlionBanner": [
+      {
+        "source": "antlion-swarmer",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      },
+      {
+        "source": "giant-antlion-swarmer",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "DD2KoboldBanner": [
+      {
+        "source": "kobold",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "GiantCursedSkullBanner": [
+      {
+        "source": "giant-cursed-skull",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "FungiBulbBanner": [
+      {
+        "source": "giant-fungi-bulb",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      },
+      {
+        "source": "fungi-bulb",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "CursedSkullBanner": [
+      {
+        "source": "cursed-skull",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "IlluminantSlimeBanner": [
+      {
+        "source": "illuminant-slime",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "DesertGhoulBanner": [
+      {
+        "source": "vile-ghoul",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      },
+      {
+        "source": "ghoul",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      },
+      {
+        "source": "tainted-ghoul",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      },
+      {
+        "source": "dreamer-ghoul",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "LavaBatBanner": [
+      {
+        "source": "lava-bat",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "ShimmerSlimeBanner": [
+      {
+        "source": "shimmer-slime",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "AngryBonesBanner": [
+      {
+        "source": "angry-bones",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "IlluminantBatBanner": [
+      {
+        "source": "illuminant-bat",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "GiantFlyingFoxBanner": [
+      {
+        "source": "giant-flying-fox",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "ElfCopterBanner": [
+      {
+        "source": "elf-copter",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "TumbleweedBanner": [
+      {
+        "source": "angry-tumbler",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "DemonBanner": [
+      {
+        "source": "demon",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      },
+      {
+        "source": "voodoo-demon",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "SkeletonMageBanner": [
+      {
+        "source": "dark-caster",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "PoltergeistBanner": [
+      {
+        "source": "poltergeist",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "GreenSlimeBanner": [
+      {
+        "source": "green-slime",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "PurpleSlimeBanner": [
+      {
+        "source": "purple-slime",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "YellowSlimeBanner": [
+      {
+        "source": "yellow-slime",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "JungleSlimeBanner": [
+      {
+        "source": "jungle-slime",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "ScarecrowBanner": [
+      {
+        "source": "scarecrow",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "MartianOfficerBanner": [
+      {
+        "source": "martian-officer",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "RuneWizardBanner": [
+      {
+        "source": "rune-wizard",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "NecromancerBanner": [
+      {
+        "source": "necromancer",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "RaggedCasterBanner": [
+      {
+        "source": "ragged-caster",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "SpiderBanner": [
+      {
+        "source": "wall-creeper",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "BlackSlimeBanner": [
+      {
+        "source": "black-slime",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "MotherSlimeBanner": [
+      {
+        "source": "baby-slime",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      },
+      {
+        "source": "mother-slime",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "BunnyBanner": [
+      {
+        "source": "bunny",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "CorruptPenguinBanner": [
+      {
+        "source": "corrupt-penguin",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "CrimsonPenguinBanner": [
+      {
+        "source": "vicious-penguin",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "CorruptGoldfishBanner": [
+      {
+        "source": "corrupt-goldfish",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "CrimsonGoldfishBanner": [
+      {
+        "source": "vicious-goldfish",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "MartianGreyGruntBanner": [
+      {
+        "source": "gray-grunt",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "RaincoatZombieBanner": [
+      {
+        "source": "raincoat-zombie",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      },
+      {
+        "source": "zombie",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "IcyMermanBanner": [
+      {
+        "source": "icy-merman",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "BlueArmoredBonesBanner": [
+      {
+        "source": "blue-armored-bones",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "GoldfishBanner": [
+      {
+        "source": "goldfish",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "PirateCorsairBanner": [
+      {
+        "source": "pirate-corsair",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "PirateBanner": [
+      {
+        "source": "pirate-deckhand",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "PirateDeadeyeBanner": [
+      {
+        "source": "pirate-deadeye",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "IceGolemBanner": [
+      {
+        "source": "ice-golem",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "WalkingAntlionBanner": [
+      {
+        "source": "antlion-charger",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      },
+      {
+        "source": "giant-antlion-charger",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "WaterBoltMimicBanner": [
+      {
+        "source": "water-bolt-mimic",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "ZombieEskimoBanner": [
+      {
+        "source": "frozen-zombie",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "GoblinSorcererBanner": [
+      {
+        "source": "goblin-sorcerer",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "StardustSpiderBanner": [
+      {
+        "source": "twinkle-popper",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "StardustWormBanner": [
+      {
+        "source": "milkyway-weaver",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "NebulaSoldierBanner": [
+      {
+        "source": "predictor",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "NebulaBrainBanner": [
+      {
+        "source": "nebula-floater",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "StardustJellyfishBanner": [
+      {
+        "source": "flow-invader",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "VortexSoldierBanner": [
+      {
+        "source": "vortexian",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "BloodZombieBanner": [
+      {
+        "source": "blood-zombie",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "NutcrackerBanner": [
+      {
+        "source": "nutcracker",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "MartianWalkerBanner": [
+      {
+        "source": "martian-walker",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "SkeletonCommandoBanner": [
+      {
+        "source": "skeleton-commando",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "SkeletonSniperBanner": [
+      {
+        "source": "skeleton-sniper",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "ButcherBanner": [
+      {
+        "source": "butcher",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "TacticalSkeletonBanner": [
+      {
+        "source": "tactical-skeleton",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "FritzBanner": [
+      {
+        "source": "fritz",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "SwampThingBanner": [
+      {
+        "source": "swamp-thing",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "FrankensteinBanner": [
+      {
+        "source": "frankenstein",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "PsychoBanner": [
+      {
+        "source": "psycho",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "MisterStabbyBanner": [
+      {
+        "source": "mister-stabby",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "OrcaBanner": [
+      {
+        "source": "orca",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "TheBrideBanner": [
+      {
+        "source": "the-bride",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "PirateCrossbowerBanner": [
+      {
+        "source": "pirate-crossbower",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "MothronBanner": [
+      {
+        "source": "mothron",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "SporeSkeletonBanner": [
+      {
+        "source": "spore-skeleton",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "DD2WyvernBanner": [
+      {
+        "source": "etherian-wyvern",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "MartianDroneBanner": [
+      {
+        "source": "martian-drone",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "SkeletonArcherBanner": [
+      {
+        "source": "skeleton-archer",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "TombCrawlerBanner": [
+      {
+        "source": "tomb-crawler",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "FlyingFishBanner": [
+      {
+        "source": "flying-fish",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "PinkyBanner": [
+      {
+        "source": "pinky",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "VortexHornetQueenBanner": [
+      {
+        "source": "alien-queen",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "GiantShellyBanner": [
+      {
+        "source": "giant-shelly",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "AntlionBanner": [
+      {
+        "source": "antlion",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "DarkMummyBanner": [
+      {
+        "source": "dark-mummy",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "MummyBanner": [
+      {
+        "source": "mummy",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "BloodMummyBanner": [
+      {
+        "source": "blood-mummy",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "LightMummyBanner": [
+      {
+        "source": "light-mummy",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "HoppinJackBanner": [
+      {
+        "source": "hoppin-jack",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "IceTortoiseBanner": [
+      {
+        "source": "ice-tortoise",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "RedSlimeBanner": [
+      {
+        "source": "red-slime",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "SandSlimeBanner": [
+      {
+        "source": "sand-slime",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "CreatureFromTheDeepBanner": [
+      {
+        "source": "creature-from-the-deep",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "ZombieMermanBanner": [
+      {
+        "source": "zombie-merman",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "NypmhBanner": [
+      {
+        "source": "nymph",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      },
+      {
+        "source": "lost-girl",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "ThePossessedBanner": [
+      {
+        "source": "the-possessed",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "PossessedArmorBanner": [
+      {
+        "source": "possessed-armor",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "SplinterlingBanner": [
+      {
+        "source": "splinterling",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "TheGroomBanner": [
+      {
+        "source": "the-groom",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "ReaperBanner": [
+      {
+        "source": "reaper",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "SolarSolenianBanner": [
+      {
+        "source": "selenian",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "GoblinThiefBanner": [
+      {
+        "source": "goblin-thief",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "BloodEelBanner": [
+      {
+        "source": "blood-eel",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "WormBanner": [
+      {
+        "source": "giant-worm",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      },
+      {
+        "source": "digger",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "BloodNautilusBanner": [
+      {
+        "source": "dreadnautilus",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "DD2SkeletonBanner": [
+      {
+        "source": "old-one-s-skeleton",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "RainbowSlimeBanner": [
+      {
+        "source": "rainbow-slime",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "BloodFeederBanner": [
+      {
+        "source": "blood-feeder",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "FaceMonsterBanner": [
+      {
+        "source": "face-monster",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "BloodCrawlerBanner": [
+      {
+        "source": "blood-crawler",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "EaterofSoulsBanner": [
+      {
+        "source": "eater-of-souls",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "DD2WitherBeastBanner": [
+      {
+        "source": "wither-beast",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "MossHornetBanner": [
+      {
+        "source": "moss-hornet",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "EyezorBanner": [
+      {
+        "source": "eyezor",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "GoblinSharkBanner": [
+      {
+        "source": "hemogoblin-shark",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "PirateCaptainBanner": [
+      {
+        "source": "pirate-captain",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "MeteorHeadBanner": [
+      {
+        "source": "meteor-head",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "DungeonSpiritBanner": [
+      {
+        "source": "dungeon-spirit",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "DesertLamiaBanner": [
+      {
+        "source": "lamia",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "CrimeraBanner": [
+      {
+        "source": "crimera",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "JungleCreeperBanner": [
+      {
+        "source": "jungle-creeper",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "BlackRecluseBanner": [
+      {
+        "source": "black-recluse",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "SnowBallaBanner": [
+      {
+        "source": "snow-balla",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "SnowmanGangstaBanner": [
+      {
+        "source": "snowman-gangsta",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "NebulaBeastBanner": [
+      {
+        "source": "evolution-beast",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "MedusaBanner": [
+      {
+        "source": "medusa",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "HeadlessHorsemanBanner": [
+      {
+        "source": "headless-horseman",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "DiablolistBanner": [
+      {
+        "source": "diabolist",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "ClownBanner": [
+      {
+        "source": "clown",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "RedDevilBanner": [
+      {
+        "source": "red-devil",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "HornetBanner": [
+      {
+        "source": "hornet",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "LibrarianSkeletonBanner": [
+      {
+        "source": "librarian-skeleton",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "StardustSoldierBanner": [
+      {
+        "source": "stargazer",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "BirdBanner": [
+      {
+        "source": "bird",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      },
+      {
+        "source": "blue-jay",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      },
+      {
+        "source": "cardinal",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "PenguinBanner": [
+      {
+        "source": "penguin",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "MartianTeslaTurretBanner": [
+      {
+        "source": "tesla-turret",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "SlimerBanner": [
+      {
+        "source": "slimer",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "RockGolemBanner": [
+      {
+        "source": "rock-golem",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "TimBanner": [
+      {
+        "source": "tim",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "SalamanderBanner": [
+      {
+        "source": "salamander",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "VortexRiflemanBanner": [
+      {
+        "source": "storm-diver",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "SkeletonBanner": [
+      {
+        "source": "skeleton",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "ToxicSludgeBanner": [
+      {
+        "source": "toxic-sludge",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "DesertDjinnBanner": [
+      {
+        "source": "desert-spirit",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "PixieBanner": [
+      {
+        "source": "pixie",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "DevourerBanner": [
+      {
+        "source": "devourer",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "SandElementalBanner": [
+      {
+        "source": "sand-elemental",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "GoblinSummonerBanner": [
+      {
+        "source": "goblin-warlock",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "LavaSlimeBanner": [
+      {
+        "source": "lava-slime",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "GoblinArcherBanner": [
+      {
+        "source": "goblin-archer",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "UndeadVikingBanner": [
+      {
+        "source": "undead-viking",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "ArmoredVikingBanner": [
+      {
+        "source": "armored-viking",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "SporeBatBanner": [
+      {
+        "source": "spore-bat",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "IceBatBanner": [
+      {
+        "source": "ice-bat",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "GiantBatBanner": [
+      {
+        "source": "giant-bat",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "JungleBatBanner": [
+      {
+        "source": "jungle-bat",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "BatBanner": [
+      {
+        "source": "cave-bat",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "FireImpBanner": [
+      {
+        "source": "fire-imp",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "VampireBanner": [
+      {
+        "source": "vampire",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "GnomeBanner": [
+      {
+        "source": "gnome",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "DD2JavelinThrowerBanner": [
+      {
+        "source": "etherian-javelin-thrower",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "CursedHammerBanner": [
+      {
+        "source": "cursed-hammer",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "EnchantedSwordBanner": [
+      {
+        "source": "enchanted-sword",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "HarpyBanner": [
+      {
+        "source": "harpy",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "CrimsonAxeBanner": [
+      {
+        "source": "crimson-axe",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "GraniteGolemBanner": [
+      {
+        "source": "granite-golem",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "GraniteFlyerBanner": [
+      {
+        "source": "granite-elemental",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "CrawdadBanner": [
+      {
+        "source": "crawdad",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "AnglerFishBanner": [
+      {
+        "source": "angler-fish",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "SolarCrawltipedeBanner": [
+      {
+        "source": "crawltipede",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "BlueCultistArcherBanner": [
+      {
+        "source": "cultist-archer",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "BlueCultistCasterBanner": [
+      {
+        "source": "lunatic-devotee",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "CorruptBunnyBanner": [
+      {
+        "source": "corrupt-bunny",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "CrimsonBunnyBanner": [
+      {
+        "source": "vicious-bunny",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "PinkJellyfishBanner": [
+      {
+        "source": "pink-jellyfish",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "JellyfishBanner": [
+      {
+        "source": "blue-jellyfish",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "BloodJellyBanner": [
+      {
+        "source": "blood-jelly",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "GreenJellyfishBanner": [
+      {
+        "source": "green-jellyfish",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "FungoFishBanner": [
+      {
+        "source": "fungo-fish",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "SharkBanner": [
+      {
+        "source": "shark",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "BoneSerpentBanner": [
+      {
+        "source": "bone-serpent",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "WanderingEyeBanner": [
+      {
+        "source": "wandering-eye",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "UnicornBanner": [
+      {
+        "source": "unicorn",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "PigronBanner": [
+      {
+        "source": "pigron",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "SandsharkCorruptBanner": [
+      {
+        "source": "bone-biter",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "SandsharkBanner": [
+      {
+        "source": "sand-shark",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "SandsharkCrimsonBanner": [
+      {
+        "source": "flesh-reaver",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "SandsharkHallowedBanner": [
+      {
+        "source": "crystal-thresher",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "WorldFeederBanner": [
+      {
+        "source": "world-feeder",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "WyvernBanner": [
+      {
+        "source": "wyvern",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "GhostBanner": [
+      {
+        "source": "ghost",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "WraithBanner": [
+      {
+        "source": "wraith",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "LihzahrdBanner": [
+      {
+        "source": "lihzahrd",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "FlyingSnakeBanner": [
+      {
+        "source": "flying-snake",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "DemonEyeBanner": [
+      {
+        "source": "demon-eye",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "SnowFlinxBanner": [
+      {
+        "source": "snow-flinx",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "MimicBanner": [
+      {
+        "source": "ice-mimic",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      },
+      {
+        "source": "mimic",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "BigMimicCrimsonBanner": [
+      {
+        "source": "crimson-mimic",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "BigMimicCorruptionBanner": [
+      {
+        "source": "corrupt-mimic",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "BigMimicHallowBanner": [
+      {
+        "source": "hallowed-mimic",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "AngryTrapperBanner": [
+      {
+        "source": "angry-trapper",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "ManEaterBanner": [
+      {
+        "source": "man-eater",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "ClingerBanner": [
+      {
+        "source": "clinger",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "GastropodBanner": [
+      {
+        "source": "gastropod",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "ParrotBanner": [
+      {
+        "source": "parrot",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "ChaosElementalBanner": [
+      {
+        "source": "chaos-elemental",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "NailheadBanner": [
+      {
+        "source": "nailhead",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "GoblinScoutBanner": [
+      {
+        "source": "goblin-scout",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "HellbatBanner": [
+      {
+        "source": "hellbat",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
+      }
+    ],
+    "WerewolfBanner": [
+      {
+        "source": "werewolf",
+        "quantity": "1",
+        "rate": "Banner",
+        "modes": [
+          "normal",
+          "expert",
+          "master"
+        ],
+        "quantities": {
+          "normal": "1",
+          "expert": "1",
+          "master": "1"
+        }
       }
     ]
   }

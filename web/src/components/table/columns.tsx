@@ -2,9 +2,10 @@ import type { ReactNode } from 'react'
 import { compareVersions } from '@/lib/availability'
 import { chanceFor, dropsFor, type DropKind } from '@/lib/drops'
 import type { Difficulty, GameData, Item, PlatformId } from '@/lib/types'
-import { Coins, RarityIcon } from '../common'
+import { Coins, RarityIcon, WikiIcon } from '../common'
 import { formatDate, nameOf } from '@/lib/format'
-import { conditionNames } from '@/lib/conditions'
+import { conditionLabel, conditionNames } from '@/lib/conditions'
+import { ConditionsCell } from './cells'
 
 // Column catalogue of the item table. `value` is what the column sorts by,
 // `cell` how it is shown (defaults to the value).
@@ -71,7 +72,7 @@ export function buildColumns(data: GameData): ItemColumn[] {
   const event = names(data.events)
   const biome = names(data.biomes)
   const milestoneRank = new Map(data.milestones.map((m, n) => [m.id, n]))
-  const condition = (ids: string[]) => ids.map((id) => data.conditions.get(id)?.name ?? id).join(', ')
+  const condition = (ids: string[]) => ids.map((id) => conditionLabel(data, id)).join(', ')
   // "Merchant, Witch Doctor (Night, Jungle, after Plantera)" - conditions of the shop rows
   const soldBy = (i: Item) =>
     i.vendors
@@ -140,6 +141,25 @@ export function buildColumns(data: GameData): ItemColumn[] {
 
     // ---------------------------------------------------------- source
     {
+      id: 'milestone',
+      label: 'Available after',
+      group: 'Source',
+      size: 190,
+      defaultVisible: true,
+      // sorts in milestone order (Start … Moon Lord)
+      value: (i) => (i.milestone ? milestoneRank.get(i.milestone) : undefined),
+      cell: (i) => {
+        const m = i.milestone ? data.milestones.find((x) => x.id === i.milestone) : undefined
+        if (!m) return null
+        return (
+          <span className="inline-flex min-w-0 items-center gap-1.5" title={i.milestoneVia}>
+            <WikiIcon src={m.icon} alt="" size={18} />
+            <span className="truncate">{m.name}</span>
+          </span>
+        )
+      },
+    },
+    {
       id: 'obtain',
       label: 'Obtained by',
       group: 'Source',
@@ -167,15 +187,6 @@ export function buildColumns(data: GameData): ItemColumn[] {
       // chests, crates, trees, … - like "Dropped by"
       value: (i, t) => bestChance(i, t.difficulty, 'found'),
       cell: (i, t) => dropList(i, t.difficulty, 'found'),
-    },
-    {
-      id: 'milestone',
-      label: 'Available from',
-      group: 'Source',
-      size: 170,
-      // sorts in milestone order (Start … Moon Lord)
-      value: (i) => (i.milestone ? milestoneRank.get(i.milestone) : undefined),
-      cell: (i) => (i.milestone ? nameOf(data.milestones, i.milestone) : null),
     },
     {
       id: 'vendors',
@@ -208,7 +219,15 @@ export function buildColumns(data: GameData): ItemColumn[] {
         ) : null,
     },
     { id: 'biomes', label: 'Biome', group: 'Source', size: 200, value: (i) => biome(i.biomes ?? []) },
-    { id: 'conditions', label: 'Conditions', group: 'Source', size: 160, value: (i) => condition(i.conditions) },
+    {
+      id: 'conditions',
+      label: 'Conditions',
+      group: 'Source',
+      size: 180,
+      value: (i) => condition(i.conditions),
+      // moon phases as the wiki's moon icons, the rest as text
+      cell: (i) => <ConditionsCell data={data} ids={i.conditions} />,
+    },
     {
       id: 'platforms',
       label: 'Platforms',

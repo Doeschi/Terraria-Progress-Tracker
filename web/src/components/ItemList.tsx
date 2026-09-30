@@ -23,7 +23,7 @@ import { COLUMN_GROUPS, type ItemColumn } from './table/columns'
 import { activePreset, COLUMN_PRESETS, presetVisibility } from './table/presets'
 import { cn } from '@/lib/utils'
 import { TallyBar, TallyText } from './common'
-import { ActiveFilterBar, MobileFiltersButton, SearchField } from './ListParts'
+import { ActiveFilterBar, MobileFiltersButton, SearchField, SearchModeToggle } from './ListParts'
 
 export function ItemList({ view }: { view: TrackerView }) {
   return (
@@ -54,6 +54,7 @@ function Toolbar({ view }: { view: TrackerView }) {
     <div className="flex flex-col gap-2 border-b p-3">
       <div className="flex items-center gap-2">
         <SearchField value={search} onChange={setSearch} placeholder="Search items by name…" label="Search items" />
+        <SearchModeToggle />
         <MobileFilters view={view} />
       </div>
       <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
@@ -131,6 +132,7 @@ function ColumnsMenu({ custom }: { custom: boolean }) {
   const catalogue = useItemColumns()
   const visibility = useColumnVisibility(catalogue)
   const setColumns = usePrefs((s) => s.setColumns)
+  const setColumnSizes = usePrefs((s) => s.setColumnSizes)
   const shown = catalogue.filter((c) => visibility[c.id]).length
   const setAll = (fn: (c: ItemColumn) => boolean) => setColumns(Object.fromEntries(catalogue.map((c) => [c.id, fn(c)])))
 
@@ -158,6 +160,14 @@ function ColumnsMenu({ custom }: { custom: boolean }) {
           </Button>
           <Button variant="ghost" size="xs" onClick={() => setAll(() => false)}>
             None
+          </Button>
+          <Button
+            variant="ghost"
+            size="xs"
+            onClick={() => setColumnSizes({})}
+            title="Widths changed by dragging a column edge back to the defaults"
+          >
+            Reset widths
           </Button>
         </div>
         {COLUMN_GROUPS.map((group) => {

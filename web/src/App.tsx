@@ -7,7 +7,7 @@ import { Button } from '@/components/ui/button'
 import { Toaster } from '@/components/ui/sonner'
 import { TooltipProvider } from '@/components/ui/tooltip'
 import { ConfirmDialogHost } from '@/components/ConfirmDialog'
-import { Credits } from '@/components/Credits'
+import { AboutLink } from '@/components/About'
 import { BestiaryFilterSidebar, FilterSidebar } from '@/components/FilterSidebar'
 import { BestiaryList } from '@/components/BestiaryList'
 import { useBestiaryView } from '@/hooks/useBestiaryView'
@@ -72,7 +72,7 @@ function BestiaryScreen() {
       <aside className="hidden w-[22rem] shrink-0 flex-col overflow-y-auto border-r bg-sidebar md:flex">
         <BestiaryFilterSidebar facets={view.facets} groupTallies={view.groupTallies} available={view.available} />
         <div className="mt-auto p-4">
-          <Credits />
+          <AboutLink />
         </div>
       </aside>
       <main className="min-w-0 flex-1">
@@ -105,7 +105,7 @@ function Tracker() {
           <aside className="hidden w-[22rem] shrink-0 flex-col overflow-y-auto border-r bg-sidebar md:flex">
             <FilterSidebar facets={view.facets} groupTallies={view.groupTallies} available={view.available} />
             <div className="mt-auto p-4">
-              <Credits />
+              <AboutLink />
             </div>
           </aside>
           <main className="flex min-w-0 flex-1">

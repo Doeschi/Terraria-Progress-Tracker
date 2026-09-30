@@ -17,6 +17,10 @@ GitHub Actions.
 - **G2** Modern UI with dark and light mode (follows system setting, can be switched).
 - **G3** Desktop first, but usable on tablets and phones.
 - **G4** Credits the Terraria Wiki as data and icon source (CC BY-NC-SA 4.0) with a link.
+- **G4a** An "About" dialog (ⓘ in the top bar, and "License & credits" in a one-line note at the
+  bottom of the filter sidebar) with the data source and its license (also for the generated data
+  and sprite sheets), the code license (MIT) and repository, the trademark note, the libraries
+  used and the AI notice.
 - **G5** Deployed to GitHub Pages by a GitHub Actions workflow on push to `main`.
 - **G6** UI language: English.
 - **G7** Start page: a short tagline and the main features as a list with icons (items, filters
@@ -52,6 +56,11 @@ GitHub Actions.
   1.99%" – and per game mode, since 300 drops have other chances or amounts in Expert/Master). Drop rows name
   items as text; they are matched by name, without a disambiguation suffix ("… (item)"), by wiki
   page ("Vampire set") and as furniture set ("Golden furniture"). Unmatched names are reported.
+- **D10a** Enemy banners (every 50 kills) are missing from the `Drops` table; the `bannername` of
+  the `NPCs` table links 287 of 292 banners to their enemy. They become drops of the enemy with
+  the rate "Banner" (no chance), so "Dropped by", biome, event, conditions and milestone follow
+  from where and when the enemy spawns (e.g. Alien Hornet Banner → Lunar Events, Lunatic
+  Cultist). Banners marked unobtainable are left out.
 - **D11** Which source kinds are used is set in `mapping.toml` (`[drops] include_kinds`): enemies/bosses,
   boss treasure bags and containers (chests, crates, lock boxes, grab bags, shaking trees).
 - **D11a** Container sources get a group from `mapping.toml` (`[containers]`, matched by name):
@@ -185,7 +194,8 @@ GitHub Actions.
   an empty name is filled with the world name. On create the world is attached (and remembered
   like with "Attach world") and the areas dialog opens.
 - **P5** The header has three parts: the logo on the left, the labeled controls centered, and
-  the labeled theme switch on the right (logo and theme vertically centered). The centered part
+  the labeled theme switch on the right, followed by a GitHub icon (link to the repository) and
+  an ⓘ button for "About" (G4a) (logo and theme vertically centered). The centered part
   holds File and a box with everything that belongs to the active playthrough – Playthrough,
   Platform, Difficulty, Game version, World and the overall Progress. Platform, difficulty and
   version are changed directly there, without a dialog.
@@ -207,6 +217,10 @@ GitHub Actions.
   can be un-ignored.
 - **I5** Each item has a link that opens its wiki page in a new tab.
 - **I6** Without a sorted column, items are ordered by name (or by relevance while searching).
+- **I6a** Search mode next to the search field (items and bestiary; also used by the chest
+  search): "Fuzzy" (default, typos allowed – Fuse.js) or "Exact" (the text must appear in the
+  name or internal name, case-insensitive; exact name first, then names starting with it, then
+  matches at a word start, then anywhere). Remembered in the browser (PR1).
 - **I8** Each item shows the patch that added it and an "Expert" / "Master" badge if it is only
   obtainable in that difficulty.
 - **I10** The table has a column for every useful item field (categories, how to obtain, sold by,
@@ -222,10 +236,15 @@ GitHub Actions.
   sorts newest first) and as
   tooltip of the checkbox. Setting an item to the state it already has keeps its date.
 - **I14** Save format v3 adds these dates; older files are migrated without dates.
+- **I16** Table columns can be resized by dragging the right edge of their header (minimum
+  60 px, the name column 160 px); a double-click on the edge restores the default width, "Reset
+  widths" in the Columns menu all of them. Checkbox, icon and the last column have a fixed width.
 - **I15** Column presets are always-visible quick buttons above the table ("View"): Overview,
-  Where to get it, Weapons, Mining & tools, Armor & accessories, Potions & food, Fishing,
-  Building & furniture, Trading, Technical. A preset sets the visible columns and, for most, a
-  sort order (e.g. Weapons: damage high to low). The active preset is highlighted; after a manual
+  Where to get it, Progression (sorted by "Available after"), Weapons, Mining & tools, Armor &
+  accessories, Potions & food, Fishing, Building & furniture, Trading, Technical. A preset sets
+  the visible columns and, for most, a sort order (e.g. Weapons: damage high to low). "Available
+  from" is part of Overview, Where to get it, Progression, Weapons, Mining & tools, Armor &
+  accessories and Fishing; "Conditions" of Where to get it, Progression and Trading. The active preset is highlighted; after a manual
   change in the Columns menu the view counts as "Custom". Presets are defined in
   `web/src/components/table/presets.ts`.
 - **I7** Bulk actions for the currently visible items: check all, uncheck all, ignore all
@@ -248,7 +267,9 @@ GitHub Actions.
   grayed out (no jumping sidebar); only options without any items in the playthrough (e.g. an
   update not in the selected game version) are left out.
 - **FL5** The overall progress of the playthrough is always visible.
-- **FL6** Active filters are shown and can be cleared individually or all at once.
+- **FL6** Active filters are shown and can be cleared individually or all at once ("Clear all"
+  right after the last filter). Without filters and search the bar shows "No filters active"
+  at the same height, so the list below does not jump.
 - **FL7** The options of the groups categories (incl. subcategories), obtained by, sold by and
   events can be switched between the default order (as in `mapping.toml`) and A–Z.
 
@@ -289,7 +310,7 @@ GitHub Actions.
 ## PR – Remembered view settings
 
 - **PR1** Stored in the browser (localStorage), not in the tracking file: visible table columns,
-  the table's column sorting, and the option order (default / A–Z) per filter group. They are
+  their widths, the table's column sorting, and the option order (default / A–Z) per filter group. They are
   restored on the next visit. Settings that no longer apply (e.g. a removed column) are ignored.
 
 ## B – Bosses and drops
@@ -374,7 +395,12 @@ GitHub Actions.
     mechanical bosses"); Hardmode / Pre-Hardmode only (shown, not filtered – see Progression)
   - Weather: wind speed ≥ 20 mph (e.g. kites)
   - Events and biomes: go into the existing Events and Biome groups (EV, BI)
-  - World seeds, bestiary progress, items in the inventory, NPC names, platforms, …: shown only
+  - Special cases (group "Special", not filterable, but shown in the "Conditions" column like
+    the others): no altar placed in the world, NPC named Jim, item in the inventory, bestiary
+    ≥ N %, golf score over N, another NPC present, multiplayer, world without a Dungeon /
+    Jungle Temple, wave 15 and up, … (text patterns in `mapping.toml`; bestiary %, golf score
+    and NPC names get their number / name)
+  - World seeds, Hardmode / Pre-Hardmode, platforms: shown only in the detail panel
 - **CO3** Filter group "Conditions" (replaces "Time of day"), nested: Time of day (Day, Night),
   Moon phase (8 phases), After a boss (the bosses, any / all mechanical bosses), Weather (Windy).
   An item belongs to a condition only if it can *only* be obtained under it: within a condition
@@ -395,11 +421,12 @@ GitHub Actions.
   (CO3), e.g. Wisp Dye → after Plantera. "Angler quest reward" keeps the Angler's 43 items.
 - **CO5** Detail panel: "Sold by" lists each vendor with icon and its condition text (moon
   phases as icons). Drop rows show their condition names below the source. Table column "Sold
-  by" shows the vendors with short condition names; "Time of day" becomes "Conditions".
+  by" shows the vendors with short condition names; "Time of day" becomes "Conditions" (moon
+  phases as the wiki's moon icons, the name on hover).
 
-## MS – Milestones ("available from")
+## MS – Milestones ("available after")
 
-- **MS1** Milestones in a typical order, configurable in `mapping.toml` (`[milestones]`): Start,
+- **MS1** Milestones in a typical order, configurable in `mapping.toml` (`[milestones]`): World creation,
   King Slime, Eye of Cthulhu, Eater of Worlds / Brain of Cthulhu, Queen Bee, Deerclops,
   Skeletron, Wall of Flesh (Hardmode), Queen Slime, any mechanical boss, all three mechanical
   bosses, Plantera, Golem, Duke Fishron / Empress of Light, Lunatic Cultist, Moon Lord. Optional
@@ -428,9 +455,11 @@ GitHub Actions.
   icons. A switch in the group: "up to" (default, cumulative – a milestone contains every item
   available by then, e.g. Skeletron includes King Slime's) or "exactly" (only what becomes
   available at that milestone). The switch is remembered in the browser (PR1).
-- **MS4** Detail panel: "Available from: <milestone>" with the reason (e.g. "crafted – needs
-  Chlorophyte Ore", "sold by the Cyborg", "dropped by Plantera"). Table column "Available from"
-  (group Source, "Where to get it" preset), sorted in milestone order.
+- **MS4** Detail panel: "Available after: <milestone>" with the reason (e.g. "Crafted – needs
+  Chlorophyte Ore", "Sold by the Cyborg", "Dropped by Plantera"; without more precise data the
+  obtain method's name as in "Obtained by", e.g. "Collected in the world"). Table column "Available after"
+  (first of group Source, with the milestone icon, the reason on hover), sorted in milestone
+  order.
 
 ## ID – Item detail panel
 
@@ -446,7 +475,11 @@ GitHub Actions.
   difficulty, the other modes' chances small below when they differ, game modes; drops not in
   the playthrough's difficulty are greyed out and listed last), stats (all combat, tool, use/placement and economy
   values) and details (item id, internal name, platforms).
-- **ID3** The wiki link of an item moved from its name to the action buttons of the row.
+- **ID3** The name column of the table shows the name (opens the detail panel) and, aligned at
+  its right edge in every row, "Find in chests" and "Open on the wiki"; the last column only
+  has "Ignore". Expert/Master-only items (about 100) show the wiki's Expert or Master icon right
+  after their name (tooltip "Expert & Master only" / "Master only") instead of a column of their
+  own; the "Difficulty" column is in no view any more, only in the Columns menu (for sorting).
 
 ## V – Game version
 
@@ -677,8 +710,6 @@ GitHub Actions.
 - **Searchable source picker:** filter by any drop source, not only bosses – all enemies (about
   290) and containers – via a searchable picker instead of a sidebar list. The drop data
   (`drops.json` sources with kind) and the generic filter groups (B4) are prepared for it.
-- **Banners as drops:** enemy banners (292 items) are missing from the `Drops` table; derive
-  "dropped by <enemy>" from the `banner` field of the `NPCs` table.
 - **Vendor conditions:** the shop tables on the vendor wiki pages (`{{shop row|item|condition}}`)
   give when an item is sold (moon phase, night/day, Hardmode, after defeating a boss, biome …).
   First step: show the condition next to the vendor in the table ("Sold by") and the detail

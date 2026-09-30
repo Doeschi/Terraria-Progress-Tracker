@@ -3,12 +3,12 @@
     "id": "night",
     "name": "Night",
     "icon": "https://terraria.wiki.gg/images/Moon_Charm.png",
-    "count": 20
+    "count": 30
   },
   {
     "id": "day",
     "name": "Day",
     "icon": "https://terraria.wiki.gg/images/Sunflower.png",
-    "count": 24
+    "count": 26
   }
 ]

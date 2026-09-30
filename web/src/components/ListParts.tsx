@@ -1,12 +1,46 @@
 import { Fragment, useMemo } from 'react'
 import { Search, SlidersHorizontal, X } from 'lucide-react'
 import { cn } from '@/lib/utils'
-import type { FilterGroup } from '@/lib/filtering'
+import type { FilterGroup, SearchMode } from '@/lib/filtering'
+import { usePrefs } from '@/lib/prefs'
+import { ToggleGroup, ToggleGroupItem } from '@/components/ui/toggle-group'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Dialog, DialogContent, DialogTitle, DialogTrigger } from '@/components/ui/dialog'
 
 // Parts shared by the item list and the bestiary list (and the filter sidebar).
+
+/** "Fuzzy" (typos allowed, default) or "Exact" (the text must appear in the name) - for all searches. */
+export function SearchModeToggle() {
+  const mode = usePrefs((s) => s.searchMode)
+  const setMode = usePrefs((s) => s.setSearchMode)
+  return (
+    <ToggleGroup
+      type="single"
+      variant="outline"
+      size="sm"
+      value={mode}
+      onValueChange={(v) => v && setMode(v as SearchMode)}
+      aria-label="Search mode"
+      className="shrink-0"
+    >
+      <ToggleGroupItem
+        value="fuzzy"
+        className="px-2.5 text-xs data-[state=on]:bg-primary data-[state=on]:text-primary-foreground"
+        title="Fuzzy: finds names even with typos or missing letters"
+      >
+        Fuzzy
+      </ToggleGroupItem>
+      <ToggleGroupItem
+        value="exact"
+        className="px-2.5 text-xs data-[state=on]:bg-primary data-[state=on]:text-primary-foreground"
+        title="Exact: only names that contain the text as typed (upper/lower case does not matter)"
+      >
+        Exact
+      </ToggleGroupItem>
+    </ToggleGroup>
+  )
+}
 
 /** Search input with a magnifier and a clear button. */
 export function SearchField({
@@ -101,7 +135,18 @@ export function ActiveFilterBar<K extends string>({
     return m
   }, [groups])
   const active = groups.filter((g) => selection[g.key].length > 0)
-  if (!active.length && !search) return null
+
+  // always shown, so the list below does not jump when the first filter is added
+  if (!active.length && !search) {
+    return (
+      <div className="flex items-center border-b px-3 py-2 text-xs">
+        {/* same box as a filter chip, so the bar keeps its height */}
+        <span className="rounded-lg border border-dashed py-1 pr-2 pl-2 text-muted-foreground">
+          <span className="inline-block py-0.5">No filters active – choose options on the left or search</span>
+        </span>
+      </div>
+    )
+  }
 
   return (
     <div className="flex flex-wrap items-center gap-x-2 gap-y-1.5 border-b px-3 py-2 text-xs">
@@ -139,7 +184,8 @@ export function ActiveFilterBar<K extends string>({
           </div>
         </Fragment>
       ))}
-      <Button variant="ghost" size="xs" onClick={onClearAll} className="ml-auto">
+      {/* right after the last filter, not at the far edge */}
+      <Button variant="ghost" size="xs" onClick={onClearAll}>
         Clear all
       </Button>
     </div>

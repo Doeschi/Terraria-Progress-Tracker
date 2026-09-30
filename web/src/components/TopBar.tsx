@@ -9,6 +9,8 @@ import { Field } from './topbar/Field'
 import { FileMenu } from './topbar/FileMenu'
 import { PlaythroughMenu, PlaythroughSettings } from './topbar/PlaythroughControls'
 import { WorldMenu } from './topbar/WorldMenu'
+import { AboutButton } from './About'
+import { GitHubLink } from './topbar/GitHubLink'
 import { ThemeToggle } from './topbar/ThemeToggle'
 
 export function TopBar({ view }: { view: TrackerView | null }) {
@@ -51,7 +53,11 @@ export function TopBar({ view }: { view: TrackerView | null }) {
         )}
       </div>
       <Field label="Theme">
-        <ThemeToggle />
+        <div className="flex items-center gap-1">
+          <ThemeToggle />
+          <GitHubLink />
+          <AboutButton />
+        </div>
       </Field>
     </header>
   )

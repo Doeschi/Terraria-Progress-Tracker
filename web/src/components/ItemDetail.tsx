@@ -263,13 +263,13 @@ function DetailContent({ item, Title }: { item: Item; Title: TitleComponent }) {
   )
 }
 
-/** "Available from: Plantera – crafted – needs Chlorophyte Ore" (earliest milestone and why). */
+/** "Available after: Plantera (Crafted – needs Chlorophyte Ore)" (earliest milestone and why). */
 function MilestoneLine({ data, item }: { data: GameData; item: Item }) {
   const milestone = data.milestones.find((m) => m.id === item.milestone)
   if (!milestone) return null
   return (
     <p className="flex flex-wrap items-center gap-x-1.5 text-sm">
-      <span className="text-muted-foreground">Available from</span>
+      <span className="text-muted-foreground">Available after</span>
       <WikiIcon src={milestone.icon} alt="" size={18} />
       <span className="font-medium">{milestone.name}</span>
       {item.milestoneVia && <span className="text-xs text-muted-foreground">({item.milestoneVia})</span>}

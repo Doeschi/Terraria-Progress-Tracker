@@ -1,9 +1,9 @@
 [
   {
     "id": "start",
-    "name": "Start",
+    "name": "World creation",
     "icon": "https://terraria.wiki.gg/images/Copper_Shortsword.png",
-    "count": 3815
+    "count": 3785
   },
   {
     "id": "king-slime",
@@ -21,7 +21,7 @@
     "id": "evil-boss",
     "name": "Eater of Worlds / Brain of Cthulhu",
     "icon": "https://terraria.wiki.gg/images/Map_Icon_Eater_of_Worlds.png",
-    "count": 40
+    "count": 49
   },
   {
     "id": "queen-bee",
@@ -39,13 +39,13 @@
     "id": "skeletron",
     "name": "Skeletron",
     "icon": "https://terraria.wiki.gg/images/Map_Icon_Skeletron.png",
-    "count": 180
+    "count": 186
   },
   {
     "id": "wall-of-flesh",
     "name": "Wall of Flesh (Hardmode)",
     "icon": "https://terraria.wiki.gg/images/Map_Icon_Wall_of_Flesh.png",
-    "count": 1195
+    "count": 1135
   },
   {
     "id": "queen-slime",
@@ -57,7 +57,7 @@
     "id": "any-mech",
     "name": "Any mechanical boss",
     "icon": "https://terraria.wiki.gg/images/Map_Icon_Retinazer_%28first_form%29.png",
-    "count": 227
+    "count": 241
   },
   {
     "id": "all-mechs",
@@ -69,13 +69,13 @@
     "id": "plantera",
     "name": "Plantera",
     "icon": "https://terraria.wiki.gg/images/Map_Icon_Plantera_%28first_form%29.png",
-    "count": 197
+    "count": 226
   },
   {
     "id": "golem",
     "name": "Golem",
     "icon": "https://terraria.wiki.gg/images/Map_Icon_Golem.png",
-    "count": 110
+    "count": 121
   },
   {
     "id": "duke-empress",
@@ -87,7 +87,7 @@
     "id": "lunatic-cultist",
     "name": "Lunatic Cultist",
     "icon": "https://terraria.wiki.gg/images/Map_Icon_Lunatic_Cultist.png",
-    "count": 105
+    "count": 126
   },
   {
     "id": "moon-lord",

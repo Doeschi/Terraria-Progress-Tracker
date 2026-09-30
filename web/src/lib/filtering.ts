@@ -340,8 +340,19 @@ export function visibleItems(
 
 // ------------------------------------------------------------------ search
 
-export function createSearch(items: Item[]): Fuse<Item> {
-  return new Fuse(items, {
+/** "fuzzy": typos allowed (Fuse.js); "exact": the text must appear in the name */
+export type SearchMode = 'fuzzy' | 'exact'
+
+/** A list that can be searched both ways. */
+export interface Searcher<T> {
+  fuse: Fuse<T>
+  items: T[]
+  /** texts an exact search looks in, most important first */
+  names: (item: T) => (string | undefined)[]
+}
+
+export function createSearch(items: Item[]): Searcher<Item> {
+  const fuse = new Fuse(items, {
     keys: [
       { name: 'name', weight: 3 },
       { name: 'internalName', weight: 1 },
@@ -349,13 +360,46 @@ export function createSearch(items: Item[]): Fuse<Item> {
     threshold: 0.35,
     ignoreLocation: true,
   })
+  return { fuse, items, names: (i) => [i.name, i.internalName] }
+}
+
+/** How well a name contains the query: 0 equal, 1 starts with it, 2 at a word start, 3 anywhere. */
+function exactScore(name: string, q: string): number | undefined {
+  const n = name.toLowerCase()
+  const at = n.indexOf(q)
+  if (at < 0) return undefined
+  if (n === q) return 0
+  if (at === 0) return 1
+  let i = at
+  while (i >= 0) {
+    if (!/[a-z0-9]/.test(n[i - 1] ?? ' ')) return 2
+    i = n.indexOf(q, i + 1)
+  }
+  return 3
 }
 
 /** item key -> rank (0 = best), or null when the query is empty. */
-export function searchRanks<T extends { key: string }>(fuse: Fuse<T>, query: string): Map<string, number> | null {
+export function searchRanks<T extends { key: string }>(
+  searcher: Searcher<T>,
+  query: string,
+  mode: SearchMode = 'fuzzy',
+): Map<string, number> | null {
   const q = query.trim()
   if (!q) return null
-  return new Map(fuse.search(q).map((r, i) => [r.item.key, i]))
+  if (mode === 'fuzzy') return new Map(searcher.fuse.search(q).map((r, i) => [r.item.key, i]))
+  const lower = q.toLowerCase()
+  const hits: { key: string; score: number; name: string }[] = []
+  for (const item of searcher.items) {
+    const names = searcher.names(item)
+    const scores = names.flatMap((n, k) => {
+      const s = n ? exactScore(n, lower) : undefined
+      // a hit in a less important text (e.g. the internal name) ranks after the name's
+      return s === undefined ? [] : [s + k * 4]
+    })
+    if (scores.length) hits.push({ key: item.key, score: Math.min(...scores), name: names[0] ?? '' })
+  }
+  hits.sort((a, b) => a.score - b.score || collator.compare(a.name, b.name))
+  return new Map(hits.map((h, i) => [h.key, i]))
 }
 
 export const percent = (t: Tally) => (t.total ? (t.obtained / t.total) * 100 : 0)

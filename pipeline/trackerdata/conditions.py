@@ -11,6 +11,16 @@ from .common import OTHER_SOURCES, image_url, log, norm_name, slug, strip_markup
 NEGATION = re.compile(r"\b(before|except|not|without|unless|no|outside|same day)\b", re.I)
 LINK = re.compile(r"\[\[([^\]|#]+)(?:#[^\]|]*)?(?:\|([^\]]*))?\]\]")
 MOONS = re.compile(r"\{\{\s*moons\s*\|([^}]*)\}\}", re.I)
+# special conditions with a number or name: regex -> (id, name); shown in the Conditions column
+DYNAMIC = [
+    (re.compile(r"filled to at least (\d+)\s*%", re.I),
+     lambda m: (f"bestiary-{m.group(1)}", f"Bestiary ≥ {m.group(1)} %")),
+    (re.compile(r"bestiary has been filled completely", re.I), lambda m: ("bestiary-100", "Bestiary complete")),
+    (re.compile(r"all three fairies", re.I), lambda m: ("bestiary-fairies", "All three fairies in the Bestiary")),
+    (re.compile(r"golf score over (\d+)", re.I), lambda m: (f"golf-{m.group(1)}", f"Golf score over {m.group(1)}")),
+    (re.compile(r"only if name is (\w+)", re.I),
+     lambda m: (f"npc-name-{m.group(1).lower()}", f"NPC named {m.group(1)}")),
+]
 
 
 def templates(text, name):
@@ -156,9 +166,18 @@ class Conditions:
                         continue  # the {{moons}} numbers are exact
                     add(kind, cid)
             plain = strip_markup(clause)
+            neg_plain = NEGATION.search(plain)
             for regex, kind, cid in self.phrases:
-                if regex.search(plain) and not (neg and neg.start() < regex.search(plain).start()):
+                m = regex.search(plain)
+                if m and not (neg_plain and neg_plain.start() < m.start()):
                     add(kind, cid)
+        # special cases with a number or name of their own
+        plain = strip_markup(MOONS.sub("", text))
+        for regex, make in DYNAMIC:
+            for m in regex.finditer(plain):
+                cid, name = make(m)
+                self.entries.setdefault(cid, {"name": name, "group": "special"})
+                add("condition", cid)
         return {**found, "moons": moons}
 
     def filterable(self, cid):
@@ -314,7 +333,7 @@ def required_conditions(item, rows, drops, conditions, rewards=None):
         return []
     required = set()
     for group, conf in conditions.groups.items():
-        if not conf.get("filter"):
+        if not (conf.get("filter") or conf.get("column")):
             continue
         per_source = [{c for c in s if conditions.entries.get(c, {}).get("group") == group} for s in sources]
         if all(per_source):

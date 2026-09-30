@@ -158,7 +158,10 @@
   "BallOfFuseWire": [
     {
       "vendor": "zoologist",
-      "text": "When the Bestiary has been filled to at least 70%."
+      "text": "When the Bestiary has been filled to at least 70%.",
+      "conditions": [
+        "bestiary-70"
+      ]
     }
   ],
   "BallaHat": [
@@ -215,7 +218,10 @@
   "BewitchingTable": [
     {
       "vendor": "witch-doctor",
-      "text": "If the Wizard is present."
+      "text": "If the Wizard is present.",
+      "conditions": [
+        "npc-present"
+      ]
     }
   ],
   "BiomeHairDye": [
@@ -252,7 +258,10 @@
   "BlandWhip": [
     {
       "vendor": "zoologist",
-      "text": "When the Bestiary has been filled to at least 3%."
+      "text": "When the Bestiary has been filled to at least 3%.",
+      "conditions": [
+        "bestiary-3"
+      ]
     }
   ],
   "BlendOMatic": [
@@ -337,7 +346,10 @@
   "BlueFlare": [
     {
       "vendor": "merchant",
-      "text": "When the player has a Flare Gun in their inventory."
+      "text": "When the player has a Flare Gun in their inventory.",
+      "conditions": [
+        "inventory"
+      ]
     }
   ],
   "BlueLight": [
@@ -538,6 +550,7 @@
       "text": "In Hardmode, if the Party Girl is present, and any mechanical boss has been defeated.",
       "conditions": [
         "hardmode",
+        "npc-present",
         "after-any-mech"
       ]
     }
@@ -587,7 +600,10 @@
   "CandyCorn": [
     {
       "vendor": "arms-dealer",
-      "text": "When the player has a Candy Corn Rifle in their inventory."
+      "text": "When the player has a Candy Corn Rifle in their inventory.",
+      "conditions": [
+        "inventory"
+      ]
     }
   ],
   "Cannon": [
@@ -789,7 +805,10 @@
   "ConfettiCannon": [
     {
       "vendor": "party-girl",
-      "text": "If the Pirate is present."
+      "text": "If the Pirate is present.",
+      "conditions": [
+        "npc-present"
+      ]
     }
   ],
   "ConfettiGun": [
@@ -1012,7 +1031,10 @@
   "CritterShampoo": [
     {
       "vendor": "zoologist",
-      "text": "When the Bestiary has been filled to at least 30%."
+      "text": "When the Bestiary has been filled to at least 30%.",
+      "conditions": [
+        "bestiary-30"
+      ]
     }
   ],
   "CrystalBall": [
@@ -1184,7 +1206,10 @@
   "DarkHorseSaddle": [
     {
       "vendor": "zoologist",
-      "text": "When the Bestiary has been filled to at least 30%."
+      "text": "When the Bestiary has been filled to at least 30%.",
+      "conditions": [
+        "bestiary-30"
+      ]
     }
   ],
   "DarkSideHallow": [
@@ -1269,7 +1294,10 @@
   "DiggingMoleMinecart": [
     {
       "vendor": "zoologist",
-      "text": "When the Bestiary has been filled to at least 25%."
+      "text": "When the Bestiary has been filled to at least 25%.",
+      "conditions": [
+        "bestiary-25"
+      ]
     }
   ],
   "DirtRod": [
@@ -1386,7 +1414,10 @@
   "DryBomb": [
     {
       "vendor": "demolitionist",
-      "text": "When the player has a Dry Bomb in their inventory."
+      "text": "When the player has a Dry Bomb in their inventory.",
+      "conditions": [
+        "inventory"
+      ]
     }
   ],
   "DryRocket": [
@@ -1476,6 +1507,7 @@
       "vendor": "painter",
       "text": "In a Graveyard if the Mechanic is present. Available regardless of the Mechanic's presence after Plantera has been defeated.",
       "conditions": [
+        "npc-present",
         "after-plantera"
       ],
       "biomes": [
@@ -1520,7 +1552,10 @@
   "ExplosiveJackOLantern": [
     {
       "vendor": "arms-dealer",
-      "text": "When the player has a Jack 'O Lantern Launcher in their inventory."
+      "text": "When the player has a Jack 'O Lantern Launcher in their inventory.",
+      "conditions": [
+        "inventory"
+      ]
     }
   ],
   "ExplosivePowder": [
@@ -1541,7 +1576,10 @@
   "FairyGlowstick": [
     {
       "vendor": "zoologist",
-      "text": "When the entries of all three fairies have been unlocked in the Bestiary."
+      "text": "When the entries of all three fairies have been unlocked in the Bestiary.",
+      "conditions": [
+        "bestiary-fairies"
+      ]
     }
   ],
   "FallenTuxedoPants": [
@@ -1650,7 +1688,10 @@
   "Flare": [
     {
       "vendor": "merchant",
-      "text": "When the player has a Flare Gun in their inventory."
+      "text": "When the player has a Flare Gun in their inventory.",
+      "conditions": [
+        "inventory"
+      ]
     }
   ],
   "FlaskofParty": [
@@ -1775,7 +1816,10 @@
   "Football": [
     {
       "vendor": "party-girl",
-      "text": "Golf score over 500."
+      "text": "Golf score over 500.",
+      "conditions": [
+        "golf-500"
+      ]
     }
   ],
   "FoxEars": [
@@ -1993,14 +2037,18 @@
       "vendor": "golfer",
       "text": "Golf score over 2000 and Skeletron has been defeated",
       "conditions": [
-        "after-skeletron"
+        "after-skeletron",
+        "golf-2000"
       ]
     }
   ],
   "GolfChest": [
     {
       "vendor": "golfer",
-      "text": "Golf score over 500"
+      "text": "Golf score over 500",
+      "conditions": [
+        "golf-500"
+      ]
     }
   ],
   "GolfClubBronzeWedge": [
@@ -2011,55 +2059,82 @@
   "GolfClubChlorophyteDriver": [
     {
       "vendor": "golfer",
-      "text": "Golf score over 2000"
+      "text": "Golf score over 2000",
+      "conditions": [
+        "golf-2000"
+      ]
     }
   ],
   "GolfClubDiamondWedge": [
     {
       "vendor": "golfer",
-      "text": "Golf score over 2000"
+      "text": "Golf score over 2000",
+      "conditions": [
+        "golf-2000"
+      ]
     }
   ],
   "GolfClubDriver": [
     {
       "vendor": "golfer",
-      "text": "Golf score over 500"
+      "text": "Golf score over 500",
+      "conditions": [
+        "golf-500"
+      ]
     }
   ],
   "GolfClubGoldWedge": [
     {
       "vendor": "golfer",
-      "text": "Golf score over 1000"
+      "text": "Golf score over 1000",
+      "conditions": [
+        "golf-1000"
+      ]
     }
   ],
   "GolfClubIron": [
     {
       "vendor": "golfer",
-      "text": "Golf score over 500"
+      "text": "Golf score over 500",
+      "conditions": [
+        "golf-500"
+      ]
     }
   ],
   "GolfClubLeadPutter": [
     {
       "vendor": "golfer",
-      "text": "Golf score over 1000"
+      "text": "Golf score over 1000",
+      "conditions": [
+        "golf-1000"
+      ]
     }
   ],
   "GolfClubMythrilIron": [
     {
       "vendor": "golfer",
-      "text": "Golf score over 1000"
+      "text": "Golf score over 1000",
+      "conditions": [
+        "golf-1000"
+      ]
     }
   ],
   "GolfClubPearlwoodDriver": [
     {
       "vendor": "golfer",
-      "text": "Golf score over 1000"
+      "text": "Golf score over 1000",
+      "conditions": [
+        "golf-1000"
+      ]
     }
   ],
   "GolfClubPutter": [
     {
       "vendor": "golfer",
-      "text": "Golf score over 500"
+      "text": "Golf score over 500",
+      "conditions": [
+        "golf-500"
+      ]
     }
   ],
   "GolfClubRustyPutter": [
@@ -2070,7 +2145,10 @@
   "GolfClubShroomitePutter": [
     {
       "vendor": "golfer",
-      "text": "Golf score over 2000"
+      "text": "Golf score over 2000",
+      "conditions": [
+        "golf-2000"
+      ]
     }
   ],
   "GolfClubStoneIron": [
@@ -2081,13 +2159,19 @@
   "GolfClubTitaniumIron": [
     {
       "vendor": "golfer",
-      "text": "Golf score over 2000"
+      "text": "Golf score over 2000",
+      "conditions": [
+        "golf-2000"
+      ]
     }
   ],
   "GolfClubWedge": [
     {
       "vendor": "golfer",
-      "text": "Golf score over 500"
+      "text": "Golf score over 500",
+      "conditions": [
+        "golf-500"
+      ]
     }
   ],
   "GolfClubWoodDriver": [
@@ -2141,7 +2225,8 @@
       "text": "Golf score over 1999, during a full moon or a waning gibbous",
       "conditions": [
         "moon-1",
-        "moon-2"
+        "moon-2",
+        "golf-1999"
       ],
       "moons": [
         1,
@@ -2155,7 +2240,8 @@
       "text": "Golf score over 1999, during a third quarter or a waning crescent",
       "conditions": [
         "moon-3",
-        "moon-4"
+        "moon-4",
+        "golf-1999"
       ],
       "moons": [
         3,
@@ -2169,7 +2255,8 @@
       "text": "Golf score over 1999, during a new moon or a waxing crescent",
       "conditions": [
         "moon-5",
-        "moon-6"
+        "moon-6",
+        "golf-1999"
       ],
       "moons": [
         5,
@@ -2183,7 +2270,8 @@
       "text": "Golf score over 1999, during a first quarter or a waxing gibbous",
       "conditions": [
         "moon-7",
-        "moon-8"
+        "moon-8",
+        "golf-1999"
       ],
       "moons": [
         7,
@@ -2209,19 +2297,28 @@
   "GolfTrophyBronze": [
     {
       "vendor": "golfer",
-      "text": "Golf score over 500"
+      "text": "Golf score over 500",
+      "conditions": [
+        "golf-500"
+      ]
     }
   ],
   "GolfTrophyGold": [
     {
       "vendor": "golfer",
-      "text": "Golf score over 1999"
+      "text": "Golf score over 1999",
+      "conditions": [
+        "golf-1999"
+      ]
     }
   ],
   "GolfTrophySilver": [
     {
       "vendor": "golfer",
-      "text": "Golf score over 999"
+      "text": "Golf score over 999",
+      "conditions": [
+        "golf-999"
+      ]
     }
   ],
   "GolfVisor": [
@@ -2603,7 +2700,10 @@
   "HoneyBomb": [
     {
       "vendor": "demolitionist",
-      "text": "When the player has a Honey Bomb in their inventory."
+      "text": "When the player has a Honey Bomb in their inventory.",
+      "conditions": [
+        "inventory"
+      ]
     }
   ],
   "HoneyDispenser": [
@@ -2624,7 +2724,10 @@
   "HunterCloak": [
     {
       "vendor": "clothier",
-      "text": "Golf score over 1999."
+      "text": "Golf score over 1999.",
+      "conditions": [
+        "golf-1999"
+      ]
     },
     {
       "vendor": "traveling-merchant",
@@ -2762,7 +2865,8 @@
       "vendor": "zoologist",
       "text": "In Hardmode, when the Bestiary has been filled to at least 30%.",
       "conditions": [
-        "hardmode"
+        "hardmode",
+        "bestiary-30"
       ]
     }
   ],
@@ -2819,7 +2923,10 @@
   "KiteKoi": [
     {
       "vendor": "zoologist",
-      "text": "When the Bestiary has been filled to at least 10%."
+      "text": "When the Bestiary has been filled to at least 10%.",
+      "conditions": [
+        "bestiary-10"
+      ]
     }
   ],
   "KiteSpectrum": [
@@ -2853,7 +2960,10 @@
   "LavaBomb": [
     {
       "vendor": "demolitionist",
-      "text": "When the player has a Lava Bomb in their inventory."
+      "text": "When the player has a Lava Bomb in their inventory.",
+      "conditions": [
+        "inventory"
+      ]
     }
   ],
   "LavaLamp": [
@@ -2935,7 +3045,10 @@
   "LicenseBunny": [
     {
       "vendor": "zoologist",
-      "text": "When the Bestiary has been filled to at least 45%."
+      "text": "When the Bestiary has been filled to at least 45%.",
+      "conditions": [
+        "bestiary-45"
+      ]
     }
   ],
   "LicenseCat": [
@@ -2946,7 +3059,10 @@
   "LicenseDog": [
     {
       "vendor": "zoologist",
-      "text": "When the Bestiary has been filled to at least 25%."
+      "text": "When the Bestiary has been filled to at least 25%.",
+      "conditions": [
+        "bestiary-25"
+      ]
     }
   ],
   "LifeHairDye": [
@@ -2973,7 +3089,10 @@
   "LightningCarrot": [
     {
       "vendor": "zoologist",
-      "text": "When the Bestiary has been filled to at least 50%."
+      "text": "When the Bestiary has been filled to at least 50%.",
+      "conditions": [
+        "bestiary-50"
+      ]
     }
   ],
   "LihzahrdFurnace": [
@@ -3165,7 +3284,10 @@
   "MajesticHorseSaddle": [
     {
       "vendor": "zoologist",
-      "text": "When the Bestiary has been filled to at least 30%."
+      "text": "When the Bestiary has been filled to at least 30%.",
+      "conditions": [
+        "bestiary-30"
+      ]
     }
   ],
   "ManaHairDye": [
@@ -3211,7 +3333,8 @@
         "moon-2",
         "moon-4",
         "moon-6",
-        "moon-8"
+        "moon-8",
+        "npc-present"
       ],
       "moons": [
         2,
@@ -3248,13 +3371,19 @@
   "MolluskWhistle": [
     {
       "vendor": "zoologist",
-      "text": "When the Bestiary has been filled to at least 25%."
+      "text": "When the Bestiary has been filled to at least 25%.",
+      "conditions": [
+        "bestiary-25"
+      ]
     }
   ],
   "MoneyHairDye": [
     {
       "vendor": "stylist",
-      "text": "If the player has at least 1 platinum in their inventory."
+      "text": "If the player has at least 1 platinum in their inventory.",
+      "conditions": [
+        "inventory"
+      ]
     }
   ],
   "MonkAltHead": [
@@ -3314,7 +3443,10 @@
   "MoonGlobe": [
     {
       "vendor": "zoologist",
-      "text": "When the Bestiary has been filled to at least 50%."
+      "text": "When the Bestiary has been filled to at least 50%.",
+      "conditions": [
+        "bestiary-50"
+      ]
     }
   ],
   "MoonLordPainting": [
@@ -3421,11 +3553,17 @@
   "Nail": [
     {
       "vendor": "merchant",
-      "text": "When the player has a Nail Gun in their inventory."
+      "text": "When the player has a Nail Gun in their inventory.",
+      "conditions": [
+        "inventory"
+      ]
     },
     {
       "vendor": "arms-dealer",
-      "text": "When the player has a Nail Gun in their inventory."
+      "text": "When the player has a Nail Gun in their inventory.",
+      "conditions": [
+        "inventory"
+      ]
     }
   ],
   "Nanites": [
@@ -3555,7 +3693,10 @@
   "PaintedHorseSaddle": [
     {
       "vendor": "zoologist",
-      "text": "When the Bestiary has been filled to at least 30%."
+      "text": "When the Bestiary has been filled to at least 30%.",
+      "conditions": [
+        "bestiary-30"
+      ]
     }
   ],
   "PaintingAcorns": [
@@ -3597,7 +3738,10 @@
   "PaintingKaguya": [
     {
       "vendor": "zoologist",
-      "text": "When the Bestiary has been filled to at least 45%."
+      "text": "When the Bestiary has been filled to at least 45%.",
+      "conditions": [
+        "bestiary-45"
+      ]
     }
   ],
   "PaintingMartiaLisa": [
@@ -3689,13 +3833,19 @@
   "PalworldPalMetalArmorBody": [
     {
       "vendor": "traveling-merchant",
-      "text": "When the player has any of the following items in their inventory or in any portable storage item when speaking to the Traveling Merchant: Cattiva, Foxparks, Chillet, Chillet Ignis, Digtoise, or their \"Trusty\" variants."
+      "text": "When the player has any of the following items in their inventory or in any portable storage item when speaking to the Traveling Merchant: Cattiva, Foxparks, Chillet, Chillet Ignis, Digtoise, or their \"Trusty\" variants.",
+      "conditions": [
+        "inventory"
+      ]
     }
   ],
   "PalworldPalMetalArmorLegs": [
     {
       "vendor": "traveling-merchant",
-      "text": "When the player has any of the following items in their inventory or in any portable storage item when speaking to the Traveling Merchant: Cattiva, Foxparks, Chillet, Chillet Ignis, Digtoise, or their \"Trusty\" variants."
+      "text": "When the player has any of the following items in their inventory or in any portable storage item when speaking to the Traveling Merchant: Cattiva, Foxparks, Chillet, Chillet Ignis, Digtoise, or their \"Trusty\" variants.",
+      "conditions": [
+        "inventory"
+      ]
     }
   ],
   "PandaEars": [
@@ -3740,13 +3890,19 @@
   "PartyGirlGrenade": [
     {
       "vendor": "party-girl",
-      "text": "When the player has Happy Grenades in their inventory."
+      "text": "When the player has Happy Grenades in their inventory.",
+      "conditions": [
+        "inventory"
+      ]
     }
   ],
   "PartyHairDye": [
     {
       "vendor": "stylist",
-      "text": "If the Party Girl is present."
+      "text": "If the Party Girl is present.",
+      "conditions": [
+        "npc-present"
+      ]
     }
   ],
   "PartyHat": [
@@ -3923,7 +4079,10 @@
   "PortalGunStation": [
     {
       "vendor": "cyborg",
-      "text": "When the player has a Portal Gun or Portal Gun Station in their inventory."
+      "text": "When the player has a Portal Gun or Portal Gun Station in their inventory.",
+      "conditions": [
+        "inventory"
+      ]
     }
   ],
   "PottedCrystalPlantFern": [
@@ -4301,7 +4460,10 @@
   "RabbitOrder": [
     {
       "vendor": "zoologist",
-      "text": "When the Bestiary has been filled to at least 40%."
+      "text": "When the Bestiary has been filled to at least 40%.",
+      "conditions": [
+        "bestiary-40"
+      ]
     }
   ],
   "Radar": [
@@ -4992,6 +5154,7 @@
       "text": "When the player has a Flare Gun in their inventory, at night during any moon phase, or all day during a full moon",
       "conditions": [
         "moon-1",
+        "inventory",
         "night"
       ],
       "moons": [
@@ -5083,17 +5246,26 @@
   "SquirrelHook": [
     {
       "vendor": "zoologist",
-      "text": "When the Bestiary has been filled to at least 10%."
+      "text": "When the Bestiary has been filled to at least 10%.",
+      "conditions": [
+        "bestiary-10"
+      ]
     }
   ],
   "Stake": [
     {
       "vendor": "arms-dealer",
-      "text": "When the player has a Stake Launcher in their inventory."
+      "text": "When the player has a Stake Launcher in their inventory.",
+      "conditions": [
+        "inventory"
+      ]
     },
     {
       "vendor": "witch-doctor",
-      "text": "When the player has a Stake Launcher in their inventory."
+      "text": "When the player has a Stake Launcher in their inventory.",
+      "conditions": [
+        "inventory"
+      ]
     }
   ],
   "StarHairpin": [
@@ -5301,11 +5473,17 @@
   "StyngerBolt": [
     {
       "vendor": "arms-dealer",
-      "text": "When the player has a Stynger in their inventory."
+      "text": "When the player has a Stynger in their inventory.",
+      "conditions": [
+        "inventory"
+      ]
     },
     {
       "vendor": "witch-doctor",
-      "text": "When the player has a Stynger in their inventory."
+      "text": "When the player has a Stynger in their inventory.",
+      "conditions": [
+        "inventory"
+      ]
     }
   ],
   "SummerHat": [
@@ -5355,19 +5533,28 @@
   "TaxCollectorHat": [
     {
       "vendor": "clothier",
-      "text": "If the Tax Collector is present."
+      "text": "If the Tax Collector is present.",
+      "conditions": [
+        "npc-present"
+      ]
     }
   ],
   "TaxCollectorPants": [
     {
       "vendor": "clothier",
-      "text": "If the Tax Collector is present."
+      "text": "If the Tax Collector is present.",
+      "conditions": [
+        "npc-present"
+      ]
     }
   ],
   "TaxCollectorSuit": [
     {
       "vendor": "clothier",
-      "text": "If the Tax Collector is present."
+      "text": "If the Tax Collector is present.",
+      "conditions": [
+        "npc-present"
+      ]
     }
   ],
   "TealPaint": [
@@ -5450,19 +5637,28 @@
   "TeamDye": [
     {
       "vendor": "dye-trader",
-      "text": "On a multiplayer server."
+      "text": "On a multiplayer server.",
+      "conditions": [
+        "multiplayer"
+      ]
     }
   ],
   "TeamHairDye": [
     {
       "vendor": "stylist",
-      "text": "If the player is on a team in multiplayer."
+      "text": "If the player is on a team in multiplayer.",
+      "conditions": [
+        "multiplayer"
+      ]
     }
   ],
   "TeleportationPylonVictory": [
     {
       "vendor": "zoologist",
-      "text": "When the Bestiary has been filled completely."
+      "text": "When the Bestiary has been filled completely.",
+      "conditions": [
+        "bestiary-100"
+      ]
     }
   ],
   "Teleporter": [
@@ -5714,7 +5910,10 @@
   "TreeGlobe": [
     {
       "vendor": "zoologist",
-      "text": "When the Bestiary has been filled to at least 50%."
+      "text": "When the Bestiary has been filled to at least 50%.",
+      "conditions": [
+        "bestiary-50"
+      ]
     }
   ],
   "TungstenBullet": [
@@ -5807,13 +6006,19 @@
   "VanityTreeSakuraSeed": [
     {
       "vendor": "zoologist",
-      "text": "When the Bestiary has been filled to at least 30%."
+      "text": "When the Bestiary has been filled to at least 30%.",
+      "conditions": [
+        "bestiary-30"
+      ]
     }
   ],
   "VanityTreeYellowWillowSeed": [
     {
       "vendor": "zoologist",
-      "text": "When the Bestiary has been filled to at least 30%."
+      "text": "When the Bestiary has been filled to at least 30%.",
+      "conditions": [
+        "bestiary-30"
+      ]
     }
   ],
   "VialofVenom": [
@@ -5904,7 +6109,10 @@
   "WetBomb": [
     {
       "vendor": "demolitionist",
-      "text": "When the player has a Wet Bomb in their inventory."
+      "text": "When the player has a Wet Bomb in their inventory.",
+      "conditions": [
+        "inventory"
+      ]
     }
   ],
   "WhiteAndGreenBulb": [
@@ -6082,7 +6290,10 @@
   "WorldGlobe": [
     {
       "vendor": "zoologist",
-      "text": "When the Bestiary has been filled to at least 50%."
+      "text": "When the Bestiary has been filled to at least 50%.",
+      "conditions": [
+        "bestiary-50"
+      ]
     }
   ],
   "Wrench": [

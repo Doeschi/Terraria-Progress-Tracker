@@ -29,6 +29,11 @@
       "id": "seed",
       "name": "World seed",
       "filter": false
+    },
+    {
+      "id": "special",
+      "name": "Special",
+      "filter": false
     }
   ],
   "conditions": [
@@ -37,14 +42,14 @@
       "name": "Day",
       "group": "time",
       "icon": "https://terraria.wiki.gg/images/Sunflower.png",
-      "count": 5
+      "count": 7
     },
     {
       "id": "night",
       "name": "Night",
       "group": "time",
       "icon": "https://terraria.wiki.gg/images/Moon_Charm.png",
-      "count": 20
+      "count": 28
     },
     {
       "id": "moon-1",
@@ -136,6 +141,72 @@
       "group": "progress",
       "icon": "https://terraria.wiki.gg/images/Copper_Shortsword.png",
       "count": 0
+    },
+    {
+      "id": "no-altar",
+      "name": "No altar placed in the world",
+      "group": "special",
+      "count": 2
+    },
+    {
+      "id": "no-dungeon",
+      "name": "World without a Dungeon",
+      "group": "special",
+      "count": 9
+    },
+    {
+      "id": "no-temple",
+      "name": "World without a Jungle Temple",
+      "group": "special",
+      "count": 1
+    },
+    {
+      "id": "no-hellforge",
+      "name": "World without a Hellforge",
+      "group": "special",
+      "count": 0
+    },
+    {
+      "id": "no-portal-gun",
+      "name": "No Portal Gun in the inventory",
+      "group": "special",
+      "count": 0
+    },
+    {
+      "id": "no-demon-heart",
+      "name": "No Demon Heart used yet",
+      "group": "special",
+      "count": 1
+    },
+    {
+      "id": "inventory",
+      "name": "Item in the inventory",
+      "group": "special",
+      "count": 5
+    },
+    {
+      "id": "npc-present",
+      "name": "Another NPC present",
+      "group": "special",
+      "count": 8
+    },
+    {
+      "id": "multiplayer",
+      "name": "Multiplayer",
+      "group": "special",
+      "count": 2
+    },
+    {
+      "id": "wave-15",
+      "name": "Wave 15 and up",
+      "group": "special",
+      "count": 6
+    },
+    {
+      "id": "same-day",
+      "name": "Defeated on the same day as another boss",
+      "group": "special",
+      "count": 1
     },
     {
       "id": "seed-remix",
@@ -260,6 +331,108 @@
       "group": "boss",
       "icon": "https://terraria.wiki.gg/images/Map_Icon_Solar_Pillar.png",
       "count": 1
+    },
+    {
+      "id": "npc-name-jim",
+      "name": "NPC named Jim",
+      "group": "special",
+      "count": 1
+    },
+    {
+      "id": "npc-name-whitney",
+      "name": "NPC named Whitney",
+      "group": "special",
+      "count": 1
+    },
+    {
+      "id": "golf-2000",
+      "name": "Golf score over 2000",
+      "group": "special",
+      "count": 5
+    },
+    {
+      "id": "golf-1999",
+      "name": "Golf score over 1999",
+      "group": "special",
+      "count": 5
+    },
+    {
+      "id": "golf-500",
+      "name": "Golf score over 500",
+      "group": "special",
+      "count": 7
+    },
+    {
+      "id": "golf-1000",
+      "name": "Golf score over 1000",
+      "group": "special",
+      "count": 4
+    },
+    {
+      "id": "golf-999",
+      "name": "Golf score over 999",
+      "group": "special",
+      "count": 1
+    },
+    {
+      "id": "bestiary-fairies",
+      "name": "All three fairies in the Bestiary",
+      "group": "special",
+      "count": 1
+    },
+    {
+      "id": "bestiary-45",
+      "name": "Bestiary ≥ 45 %",
+      "group": "special",
+      "count": 2
+    },
+    {
+      "id": "bestiary-10",
+      "name": "Bestiary ≥ 10 %",
+      "group": "special",
+      "count": 2
+    },
+    {
+      "id": "bestiary-3",
+      "name": "Bestiary ≥ 3 %",
+      "group": "special",
+      "count": 1
+    },
+    {
+      "id": "bestiary-25",
+      "name": "Bestiary ≥ 25 %",
+      "group": "special",
+      "count": 3
+    },
+    {
+      "id": "bestiary-30",
+      "name": "Bestiary ≥ 30 %",
+      "group": "special",
+      "count": 7
+    },
+    {
+      "id": "bestiary-40",
+      "name": "Bestiary ≥ 40 %",
+      "group": "special",
+      "count": 1
+    },
+    {
+      "id": "bestiary-50",
+      "name": "Bestiary ≥ 50 %",
+      "group": "special",
+      "count": 4
+    },
+    {
+      "id": "bestiary-70",
+      "name": "Bestiary ≥ 70 %",
+      "group": "special",
+      "count": 1
+    },
+    {
+      "id": "bestiary-100",
+      "name": "Bestiary complete",
+      "group": "special",
+      "count": 0
     }
   ]
 }

@@ -1,6 +1,7 @@
 import { useDeferredValue, useMemo } from 'react'
 import { useActivePlaythrough, useStore } from '@/store'
 import { computeFacets, searchRanks, type Counts, type Tally } from '@/lib/filtering'
+import { usePrefs } from '@/lib/prefs'
 import {
   BESTIARY_GROUP_KEYS,
   bestiaryEntryGroups,
@@ -49,8 +50,9 @@ export function useBestiaryView(): BestiaryView {
   const view = useStore((s) => s.bestiaryView)
 
   const unlocked = useMemo(() => new Set(pt?.bestiary), [pt?.bestiary])
-  const fuse = useMemo(() => createBestiarySearch(entries), [entries])
-  const ranks = useMemo(() => searchRanks(fuse, search), [fuse, search])
+  const searcher = useMemo(() => createBestiarySearch(entries), [entries])
+  const searchMode = usePrefs((s) => s.searchMode)
+  const ranks = useMemo(() => searchRanks(searcher, search, searchMode), [searcher, search, searchMode])
 
   const counts = useMemo(
     () =>

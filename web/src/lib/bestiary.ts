@@ -1,5 +1,5 @@
 import Fuse from 'fuse.js'
-import type { FilterGroup } from './filtering'
+import type { FilterGroup, Searcher } from './filtering'
 import type { Playthrough } from './saveFile'
 import type { BestiaryEntry, GameData } from './types'
 import type { LoadedWorld, WorldBestiary } from './world'
@@ -135,8 +135,8 @@ export function bestiaryDiff(
   }
 }
 
-export function createBestiarySearch(entries: BestiaryEntry[]): Fuse<BestiaryEntry> {
-  return new Fuse(entries, {
+export function createBestiarySearch(entries: BestiaryEntry[]): Searcher<BestiaryEntry> {
+  const fuse = new Fuse(entries, {
     keys: [
       { name: 'name', weight: 3 },
       { name: 'id', weight: 1 },
@@ -144,4 +144,5 @@ export function createBestiarySearch(entries: BestiaryEntry[]): Fuse<BestiaryEnt
     threshold: 0.35,
     ignoreLocation: true,
   })
+  return { fuse, items: entries, names: (e) => [e.name, e.id] }
 }

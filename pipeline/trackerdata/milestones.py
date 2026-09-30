@@ -3,10 +3,8 @@ be obtained - see [milestones] in mapping.toml and REQUIREMENTS.md (MS)."""
 from .common import image_url, log, norm_name, slug
 
 # obtain methods that have no data of their own here: available from the start (the item's
-# minimum still applies, e.g. Hardmode fish)
-PLAIN_SOURCES = {"fishing": "fishing", "quest-reward": "Angler quest reward", "plunder": "found in the world",
-                 "loot": "found in chests", "crafted": "crafted", "vendor": "sold by NPCs",
-                 "drop": "dropped by enemies", "bag": "from grab bags", "treasure-bag": "from treasure bags"}
+# minimum still applies, e.g. Hardmode fish); the reason is the method's name in [obtain]
+PLAIN_SOURCES = {"fishing", "quest-reward", "plunder", "loot", "crafted", "vendor", "drop", "bag", "treasure-bag"}
 
 
 class Milestones:
@@ -27,6 +25,8 @@ class Milestones:
         self.vendor_milestone = {vid: v.get("milestone", self.order[0])
                                  for vid, v in mapping.sections["vendors"].items()}
         self.vendor_names = {vid: v["name"] for vid, v in mapping.sections["vendors"].items()}
+        # "Collected in the world", ... as in the "Obtained by" filter
+        self.obtain_names = {oid: o.get("name", oid) for oid, o in mapping.sections["obtain"].items()}
         self.container_milestone = {slug(k): v for k, v in mapping.container_milestones.items()}
         self.source_milestone = {slug(k): v for k, v in mapping.milestone_sources.items()}
         # item name pattern -> milestone, or {milestone, reason}
@@ -136,10 +136,10 @@ class Milestones:
                 if o in ("drop", "bag", "treasure-bag", "loot") and kinds:
                     continue
                 if o in PLAIN_SOURCES:
-                    offer(key, 0, PLAIN_SOURCES[o])
+                    offer(key, 0, self.obtain_names.get(o, o))
             if key not in base and key not in recipes["by_result"] and key not in recipes["shimmer_to"]:
                 # no source data at all (e.g. Fallen Star): from the start, the minimum still applies
-                offer(key, 0, "crafted" if "crafted" in item["obtain"] else None)
+                offer(key, 0, self.obtain_names["crafted"] if "crafted" in item["obtain"] else None)
 
         # recipes and shimmer, until nothing changes
         best = {}
@@ -208,7 +208,8 @@ class Milestones:
                 value, reason = best[item["key"]]
                 item["milestone"] = self.order[value]
                 if reason:
-                    item["milestoneVia"] = reason
+                    # "Crafted – needs Chlorophyte Ore", like the names in "Obtained by"
+                    item["milestoneVia"] = reason[:1].upper() + reason[1:]
         log(f"  milestones for {len(best)} items ({rounds} rounds)")
         raised = [i["name"] for i in items if i.get("milestoneVia") == "Hardmode item"]
         log(f"  {len(raised)} items raised to Hardmode by their Hardmode flag (Hardmode enemies are "

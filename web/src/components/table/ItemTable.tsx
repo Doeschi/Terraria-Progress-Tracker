@@ -1,5 +1,6 @@
 import { createContext, useContext, useMemo, useRef } from 'react'
 import {
+  columnResizingFeature,
   columnSizingFeature,
   columnVisibilityFeature,
   createColumnHelper,
@@ -7,6 +8,7 @@ import {
   rowSortingFeature,
   tableFeatures,
   useTable,
+  type ColumnSizingState,
   type SortingState,
   type Updater,
 } from '@tanstack/react-table'
@@ -20,7 +22,7 @@ import type { Item } from '@/lib/types'
 import { chestSearchHint } from '@/lib/world'
 import { Button } from '@/components/ui/button'
 import { Checkbox } from '@/components/ui/checkbox'
-import { WikiIcon } from '../common'
+import { DifficultyIcon, WikiIcon } from '../common'
 import { formatDate } from '@/lib/format'
 import { type ItemColumn, type TrackingState } from './columns'
 import { useColumnVisibility, useItemColumns } from './useColumns'
@@ -33,12 +35,13 @@ const features = tableFeatures({
   sortedRowModel: createSortedRowModel(),
   columnVisibilityFeature,
   columnSizingFeature,
+  columnResizingFeature,
 })
 const helper = createColumnHelper<typeof features, Item>()
 
 const ROW_HEIGHT = 40
 // pinned columns: checkbox, icon, name
-const PINNED = { check: { left: 0, size: 40 }, icon: { left: 40, size: 40 }, name: { left: 80, size: 220 } } as const
+const PINNED = { check: { left: 0, size: 40 }, icon: { left: 40, size: 40 }, name: { left: 80, size: 280 } } as const
 
 interface RowState extends TrackingState {
   checked: Set<string>
@@ -75,6 +78,7 @@ function useTableColumns(catalogue: ItemColumn[], tracking: React.RefObject<Trac
           header: () => null,
           cell: ({ row }) => <CheckCell item={row.original} />,
           size: PINNED.check.size,
+          enableResizing: false,
           enableHiding: false,
         }),
         helper.display({
@@ -82,12 +86,14 @@ function useTableColumns(catalogue: ItemColumn[], tracking: React.RefObject<Trac
           header: () => null,
           cell: ({ row }) => <WikiIcon src={row.original.icon} alt="" size={28} />,
           size: PINNED.icon.size,
+          enableResizing: false,
           enableHiding: false,
         }),
         helper.accessor((i) => i.name, {
           id: 'name',
           header: 'Name',
           size: PINNED.name.size,
+          minSize: 160,
           enableHiding: false,
           cell: ({ row }) => <NameCell item={row.original} />,
         }),
@@ -96,6 +102,7 @@ function useTableColumns(catalogue: ItemColumn[], tracking: React.RefObject<Trac
             id: c.id,
             header: c.label,
             size: c.size,
+            minSize: 60,
             sortUndefined: 'last',
             sortDescFirst: c.descFirst,
             sortFn: c.compare
@@ -109,8 +116,9 @@ function useTableColumns(catalogue: ItemColumn[], tracking: React.RefObject<Trac
           id: 'actions',
           header: () => null,
           cell: ({ row }) => <ActionsCell item={row.original} />,
-          size: 104,
+          size: 44,
           enableHiding: false,
+          enableResizing: false,
         }),
       ]),
     [catalogue, tracking],
@@ -138,13 +146,21 @@ export function ItemTable({ items, checked, ignored }: { items: Item[]; checked:
   const setSorting = (updater: Updater<SortingState>) =>
     setTableSorting(typeof updater === 'function' ? updater(sorting) : updater)
 
+  // column widths set by dragging a header's edge, remembered in the browser
+  const columnSizing = usePrefs((s) => s.columnSizes)
+  const setColumnSizes = usePrefs((s) => s.setColumnSizes)
+  const setSizing = (updater: Updater<ColumnSizingState>) =>
+    setColumnSizes(typeof updater === 'function' ? updater(columnSizing) : updater)
+
   const table = useTable({
     features,
     columns,
     data: items,
     getRowId: (row) => row.key,
-    state: { sorting, columnVisibility: visibility },
+    state: { sorting, columnVisibility: visibility, columnSizing },
     onSortingChange: setSorting,
+    onColumnSizingChange: setSizing,
+    columnResizeMode: 'onChange',
     onColumnVisibilityChange: () => {}, // changed through the Columns menu
   })
 
@@ -194,11 +210,24 @@ export function ItemTable({ items, checked, ignored }: { items: Item[]; checked:
                     key={h.id}
                     style={{ width: h.getSize(), left }}
                     className={cn(
-                      'h-9 border-b bg-card px-2 text-left text-xs font-medium whitespace-nowrap text-muted-foreground',
+                      'relative h-9 border-b bg-card px-2 text-left text-xs font-medium whitespace-nowrap text-muted-foreground',
                       left !== undefined && 'sticky z-10',
                       h.column.id === 'name' && 'border-r',
                     )}
                   >
+                    {h.column.getCanResize() && (
+                      // drag to resize, double-click for the default width
+                      <div
+                        onMouseDown={h.getResizeHandler()}
+                        onTouchStart={h.getResizeHandler()}
+                        onDoubleClick={() => h.column.resetSize()}
+                        title="Drag to resize · double-click: default width"
+                        className={cn(
+                          'absolute top-0 right-0 z-10 h-full w-1.5 cursor-col-resize touch-none select-none hover:bg-primary/40',
+                          h.column.getIsResizing() && 'bg-primary/60',
+                        )}
+                      />
+                    )}
                     {sortable && typeof h.column.columnDef.header === 'string' ? (
                       <button
                         onClick={h.column.getToggleSortingHandler()}
@@ -299,26 +328,29 @@ function CheckCell({ item }: { item: Item }) {
   )
 }
 
+/** The name (opens the detail panel) with "find in chests" and "open on the wiki" at the right edge,
+ * so the buttons of all rows line up. */
 function NameCell({ item }: { item: Item }) {
   const openDetail = useUi((s) => s.openDetail)
-  return (
-    <button
-      onClick={() => openDetail(item.key)}
-      className="block max-w-full truncate text-left font-medium hover:text-primary hover:underline"
-      title={`${item.name} – show details`}
-    >
-      {item.name}
-    </button>
-  )
-}
-
-function ActionsCell({ item }: { item: Item }) {
-  const { ignored, hasWorld, worldAttached } = useContext(RowStateContext)
-  const setIgnored = useStore((s) => s.setIgnored)
+  const { hasWorld, worldAttached } = useContext(RowStateContext)
   const openDialog = useUi((s) => s.open)
-  const isIgnored = ignored.has(item.key)
   return (
-    <span className="flex items-center justify-end gap-0.5">
+    <span className="flex items-center gap-1">
+      <span className="flex min-w-0 flex-1 items-center gap-1.5">
+        <button
+          onClick={() => openDetail(item.key)}
+          className="min-w-0 truncate text-left font-medium hover:text-primary hover:underline"
+          title={`${item.name} – show details`}
+        >
+          {item.name}
+        </button>
+        {/* the few Expert/Master-only items: marked here instead of a column of their own */}
+        {item.minDifficulty && (
+          <span className="shrink-0" title={item.minDifficulty === 'master' ? 'Master only' : 'Expert & Master only'}>
+            <DifficultyIcon difficulty={item.minDifficulty} size={16} />
+          </span>
+        )}
+      </span>
       {/* always shown; without a loaded world greyed out, the tooltip says what to do
           (aria-disabled instead of disabled, so the tooltip still appears) */}
       <Button
@@ -343,6 +375,16 @@ function ActionsCell({ item }: { item: Item }) {
           <ExternalLink />
         </a>
       </Button>
+    </span>
+  )
+}
+
+function ActionsCell({ item }: { item: Item }) {
+  const { ignored } = useContext(RowStateContext)
+  const setIgnored = useStore((s) => s.setIgnored)
+  const isIgnored = ignored.has(item.key)
+  return (
+    <span className="flex items-center justify-end">
       <Button
         variant="ghost"
         size="icon-xs"
