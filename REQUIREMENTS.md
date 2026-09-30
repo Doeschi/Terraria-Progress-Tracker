@@ -298,7 +298,7 @@ GitHub Actions.
   match are hidden; the field stays visible while scrolling; Escape or × clears it.
 - **FL9a** Keyboard in the filter search: the first match is highlighted (dashed frame) with a hint
   "↵ select <name> · ↑↓ 1 of n". ↑/↓ move between the matches in screen order ("Completed"
-  included; parents shown only for context are skipped). Enter selects the highlighted option (or
+  included; a parent shown because a subentry matched can be selected too). Enter selects the highlighted option (or
   unselects it if it is already selected) and clears the search, keeping the focus, so filters
   can be chained ("snow ↵ night ↵"). Escape clears the search. If the matching options have no
   items with the current selection, the sidebar says so instead of staying empty.
@@ -328,6 +328,14 @@ GitHub Actions.
   out; subgroups count. Computed over the whole playthrough (not the current filters), so the
   list does not change while filtering. It is a group like the others (open/closed remembered,
   reorderable in the settings) and starts at the top, also for a saved group order.
+- **FL16** "Filter complete!": when checking or ignoring items (by hand, bulk actions or a world
+  sync; bestiary entries too) brings filter options to 100 % over the whole playthrough, a
+  toast at the top centre in the style of Terraria's achievement pop-up (option icon, gold
+  title, dark blue panel) and a 3 s burst of pixel confetti in the game's confetti colours.
+  Changes within 0.4 s give one toast ("12 filters complete!", the first three named, "+9
+  more"). Not on loading a file, switching playthroughs or changing settings; hidden options
+  and the groups Progression and Crafting are left out. Setting "Celebrate completed filters"
+  (on by default); no confetti with reduced motion.
 
 ## LS – Layout and settings
 
@@ -576,6 +584,12 @@ GitHub Actions.
 
 - **S1** A search bar filters the list with fuzzy search on the item name.
 - **S2** Search combines with the active filters.
+- **S3** Keyboard shortcuts: the key left of 1 (§ on Swiss/German keyboards, ` on US ones – by
+  its position) or "/" jumps to the item search (bestiary search in the bestiary view), Shift +
+  that key to the filter search. The text is selected, so typing replaces it. Not while typing in
+  another field or with a dialog or menu open. The key is shown in the empty, unfocused field
+  (its label from the keyboard layout where the browser knows it). Escape clears the search, a
+  second Escape leaves the field.
 
 ## W – World file
 
@@ -595,6 +609,8 @@ GitHub Actions.
 - **W5** Chest items are matched by numeric item id to items available on the playthrough's
   platform. Ids that match no item are reported.
 - **W6** Unsupported or corrupted files show a clear error message.
+- **W6a** The world's name is set in italics wherever it appears in the UI (World button, dialog
+  titles, playthrough dialog, messages).
 - **W7** Worlds newer than the parser's known format are supported as long as the chest section
   is unchanged (the end of the header is not validated). Tile entities (displays) are read by the
   app itself, including the 1.4.5 Item Flask; if they cannot be read, the world still loads and
@@ -698,6 +714,9 @@ GitHub Actions.
   with every container the item is in highlighted; the other containers are dimmed, the searched
   areas shown faintly. Hovering or clicking a result emphasises its container (clicking also
   centers and zooms the map on it); clicking a marker selects its result.
+- **CS5** The area selection (areas, displays, only player chests) is remembered per playthrough
+  in the browser, like the sync dialog's. Default: the playthrough's own areas (Full World if it
+  has none), only player chests, displays included.
 
 ## RC – Crafting recipes
 

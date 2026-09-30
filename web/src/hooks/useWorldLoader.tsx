@@ -47,7 +47,12 @@ export function useWorldLoader() {
         toast.dismiss(toastId)
         const ok = await confirm({
           title: 'Different world',
-          description: `This playthrough is attached to "${attached.name}", but you selected "${world.name}". Attach the new world instead? Your areas are kept but may not fit the new world.`,
+          description: (
+            <>
+              This playthrough is attached to <em>{attached.name}</em>, but you selected <em>{world.name}</em>. Attach
+              the new world instead? Your areas are kept but may not fit the new world.
+            </>
+          ),
           confirmLabel: 'Attach new world',
         })
         if (!ok) return false
@@ -59,7 +64,12 @@ export function useWorldLoader() {
         toast.info(`Difficulty set to ${DIFFICULTY_LABELS[after]} from the world's game mode`)
       if (handle) void rememberWorldHandle(playthroughId, handle)
       const chests = world.containers.filter((c) => c.kind === 'chest').length
-      toast.success(`Loaded "${world.name}" – ${chests} chests`, { id: toastId })
+      toast.success(
+        <span>
+          Loaded <em>{world.name}</em> – {chests} chests
+        </span>,
+        { id: toastId },
+      )
       // a new world: areas, then the first sync (items and bestiary);
       // a reloaded world: the sync dialog only when the bestiary differs
       const { data, doc } = useStore.getState()

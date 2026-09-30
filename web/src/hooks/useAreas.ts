@@ -13,20 +13,26 @@ export interface ScanScope {
 export const defaultScope = (): ScanScope => ({ areaIds: [FULL_WORLD_ID], includeDisplays: false, onlyPlayer: true })
 
 /**
- * The sync dialog's settings of the active playthrough, remembered in the browser. Default:
- * all of the playthrough's own areas (Full World if it has none), only player chests, no displays.
- * Areas deleted since are dropped; if none are left, the default applies again.
+ * Area selection of the sync dialog ("sync") or the chest search ("chests") of the active
+ * playthrough, remembered in the browser. Default: all of the playthrough's own areas (Full
+ * World if it has none), only player chests; displays only in the chest search. Areas deleted
+ * since are dropped; if none are left, the default applies again.
  */
-export function useSyncScope(): [ScanScope, (scope: ScanScope) => void] {
+export function useScanScope(kind: 'sync' | 'chests'): [ScanScope, (scope: ScanScope) => void] {
   const pt = useActivePlaythrough()
-  const stored = usePrefs((s) => (pt ? s.syncScopes[pt.id] : undefined))
-  const setSyncScope = usePrefs((s) => s.setSyncScope)
+  const key = kind === 'sync' ? 'syncScopes' : 'chestScopes'
+  const stored = usePrefs((s) => (pt ? s[key][pt.id] : undefined))
+  const save = usePrefs((s) => (kind === 'sync' ? s.setSyncScope : s.setChestScope))
   const ownIds = pt?.areas.map((a) => a.id) ?? []
-  const fallback: ScanScope = { ...defaultScope(), areaIds: ownIds.length ? ownIds : [FULL_WORLD_ID] }
+  const fallback: ScanScope = {
+    ...defaultScope(),
+    areaIds: ownIds.length ? ownIds : [FULL_WORLD_ID],
+    includeDisplays: kind === 'chests',
+  }
   const valid = new Set([FULL_WORLD_ID, ...ownIds])
   const kept = stored?.areaIds.filter((id) => valid.has(id)) ?? []
   const scope = stored && kept.length ? { ...stored, areaIds: kept } : fallback
-  return [scope, (s) => pt && setSyncScope(pt.id, s)]
+  return [scope, (s) => pt && save(pt.id, s)]
 }
 
 /** The areas of the active playthrough, including "Full World". */

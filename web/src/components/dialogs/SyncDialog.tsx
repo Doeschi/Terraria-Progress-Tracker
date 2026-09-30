@@ -29,7 +29,7 @@ import {
   DialogTitle,
 } from '@/components/ui/dialog'
 import { WikiIcon } from '../common'
-import { useAreas, useSyncScope } from '@/hooks/useAreas'
+import { useAreas, useScanScope } from '@/hooks/useAreas'
 import { AreaSelector } from './AreaSelector'
 
 // Sync the playthrough with the attached world, in one dialog:
@@ -72,7 +72,7 @@ function SyncView({ initial, onDone }: { initial: SyncSection; onDone: () => voi
   const openDialog = useUi((s) => s.open)
   const areas = useAreas()
   const [section, setSection] = useState<SyncSection>(initial)
-  const [scope, setScope] = useSyncScope()
+  const [scope, setScope] = useScanScope('sync')
   const detection = usePrefs((s) => s.chestDetection)
   // items: "to be checked" the user deselected / "not found" the user chose to uncheck
   const [skipCheck, setSkipCheck] = useState<Set<string>>(new Set())
@@ -141,7 +141,9 @@ function SyncView({ initial, onDone }: { initial: SyncSection; onDone: () => voi
   return (
     <>
       <DialogHeader>
-        <DialogTitle>Sync with {world.name}</DialogTitle>
+        <DialogTitle>
+          Sync with <em>{world.name}</em>
+        </DialogTitle>
         <DialogDescription>
           Compare your progress with the items in the world's chests and with the world's bestiary. Nothing changes
           until you press Apply.

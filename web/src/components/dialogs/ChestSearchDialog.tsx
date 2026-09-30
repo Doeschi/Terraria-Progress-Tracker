@@ -13,7 +13,7 @@ import { WikiIcon } from '../common'
 import { cn } from '@/lib/utils'
 import type { Area } from '@/lib/saveFile'
 import { WorldMap } from './WorldMap'
-import { defaultScope, useAreas, type ScanScope } from '@/hooks/useAreas'
+import { useAreas, useScanScope } from '@/hooks/useAreas'
 import { AreaSelector } from './AreaSelector'
 import { plural } from '@/lib/format'
 
@@ -37,7 +37,8 @@ function ChestSearch({ initialKey }: { initialKey?: string }) {
   const pt = useActivePlaythrough()!
   const world = useActiveWorld()!
   const areas = useAreas()
-  const [scope, setScope] = useState<ScanScope>(() => ({ ...defaultScope(), includeDisplays: true }))
+  // remembered per playthrough, like the sync dialog's
+  const [scope, setScope] = useScanScope('chests')
   const [query, setQuery] = useState('')
   const [selectedKey, setSelectedKey] = useState<string | undefined>(initialKey)
 
@@ -66,7 +67,9 @@ function ChestSearch({ initialKey }: { initialKey?: string }) {
   return (
     <>
       <DialogHeader>
-        <DialogTitle>Search chests in {world.name}</DialogTitle>
+        <DialogTitle>
+          Search chests in <em>{world.name}</em>
+        </DialogTitle>
         <DialogDescription>Find where an item is stored.</DialogDescription>
       </DialogHeader>
       <AreaSelector

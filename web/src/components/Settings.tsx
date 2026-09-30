@@ -92,6 +92,11 @@ export function SettingsDialog({ open, onOpenChange }: { open: boolean; onOpenCh
               onChange={(optionBars) => setLayout({ optionBars })}
               label="Progress bar under every filter option"
             />
+            <Check
+              checked={layout.celebrate}
+              onChange={(celebrate) => setLayout({ celebrate })}
+              label="Celebrate completed filters (a message with confetti when an option reaches 100%)"
+            />
             <FilterGroupsEditor />
           </Part>
 

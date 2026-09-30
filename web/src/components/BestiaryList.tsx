@@ -72,6 +72,7 @@ function Toolbar({ view }: { view: BestiaryView }) {
           onChange={setSearch}
           placeholder="Search the bestiary…"
           label="Search the bestiary"
+          shortcut="list"
           withMode
         />
         <MobileFilters view={view} />

@@ -60,6 +60,7 @@ function Toolbar({ view }: { view: TrackerView }) {
           onChange={setSearch}
           placeholder="Search items by name…"
           label="Search items"
+          shortcut="list"
           withMode
         />
         <MobileFilters view={view} />

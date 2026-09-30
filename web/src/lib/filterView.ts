@@ -104,7 +104,7 @@ export interface SearchTarget {
 
 /**
  * Keyboard targets of the filter search, in screen order: shown options whose own name (or
- * group name) matches - parents shown only for context are skipped - then "Completed".
+ * group name) matches, and the parents shown for a matching subentry - then "Completed".
  */
 export function searchTargets(
   groups: AnyGroup[],
@@ -119,7 +119,8 @@ export function searchTargets(
   for (const g of groups) {
     const { entries, shownChild, groupMatch, expandFor } = groupView(g, orderedEntries(g, prefix, entryOrder), place, q)
     for (const e of entries) {
-      if (groupMatch || nameMatches(e.name, q)) out.push({ group: g.key, id: e.id, name: e.name })
+      // a parent shown for a matching subentry is a target too (screen order: parent, then children)
+      if (groupMatch || nameMatches(e.name, q) || expandFor(e)) out.push({ group: g.key, id: e.id, name: e.name })
       if (expandFor(e))
         for (const c of e.children ?? [])
           if (shownChild(e)(c) && nameMatches(c.name, q)) out.push({ group: g.key, id: c.id, name: c.name })
@@ -143,7 +144,7 @@ export function groupOrder(keys: string[], saved: string[]): string[] {
 }
 
 // options that are states or overlap each other, not collections to complete
-const NOT_RANKED = new Set(['progression', 'crafting'])
+export const NOT_RANKED = new Set(['progression', 'crafting'])
 
 export interface AlmostDone {
   group: AnyGroup

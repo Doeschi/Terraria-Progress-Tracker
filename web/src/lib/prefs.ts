@@ -31,6 +31,8 @@ export interface Layout {
   openGroups: Record<string, boolean>
   /** progress bar under every filter option */
   optionBars: boolean
+  /** toast with confetti when a filter option reaches 100% */
+  celebrate: boolean
   /** detail panel sections in this order; missing ones keep their place */
   detailOrder: string[]
   hiddenDetail: string[]
@@ -45,6 +47,7 @@ export const DEFAULT_LAYOUT: Layout = {
   filterBarAlways: true,
   groupOrder: {},
   optionBars: true,
+  celebrate: true,
   openGroups: {},
   detailOrder: [],
   hiddenDetail: [],
@@ -63,6 +66,7 @@ function readLayout(v: unknown): Layout {
     'showFilteredProgress',
     'filterBarAlways',
     'optionBars',
+    'celebrate',
   ] as const)
     if (typeof o[k] === 'boolean') out[k] = o[k] as boolean
   for (const k of ['favoriteViews', 'detailOrder', 'hiddenDetail'] as const) {
@@ -156,6 +160,8 @@ interface Prefs {
   autosave: boolean
   /** sync dialog settings (areas, displays, only player chests) per playthrough id */
   syncScopes: Record<string, ScanScope>
+  /** "Search chests" dialog settings per playthrough id */
+  chestScopes: Record<string, ScanScope>
   /** filter options moved to the "Hidden" section: "<prefix><group>/<id>" */
   hiddenFilters: string[]
   /** move options at 100% to the "Completed" section */
@@ -178,6 +184,7 @@ interface PrefsActions {
   setSectionOpen(id: string, open: boolean): void
   setAutosave(autosave: boolean): void
   setSyncScope(playthroughId: string, scope: ScanScope): void
+  setChestScope(playthroughId: string, scope: ScanScope): void
   toggleHiddenFilter(key: string): void
   setHideCompleted(hide: boolean): void
   setProgressionMode(mode: ProgressionMode): void
@@ -202,6 +209,7 @@ function load(): Prefs {
     openSections: {},
     autosave: false,
     syncScopes: {},
+    chestScopes: {},
     hiddenFilters: [],
     hideCompleted: true,
     progressionMode: 'upTo',
@@ -225,6 +233,7 @@ function load(): Prefs {
     if (p && typeof p.openSections === 'object') prefs.openSections = p.openSections
     if (typeof p.autosave === 'boolean') prefs.autosave = p.autosave
     if (p && typeof p.syncScopes === 'object') prefs.syncScopes = p.syncScopes
+    if (p && typeof p.chestScopes === 'object') prefs.chestScopes = p.chestScopes
     if (Array.isArray(p.hiddenFilters))
       prefs.hiddenFilters = p.hiddenFilters.filter((k: unknown) => typeof k === 'string')
     if (typeof p.hideCompleted === 'boolean') prefs.hideCompleted = p.hideCompleted
@@ -263,6 +272,7 @@ export const usePrefs = create<Prefs & PrefsActions>()((set, get) => {
     setSectionOpen: (id, open) => update({ openSections: { ...get().openSections, [id]: open } }),
     setAutosave: (autosave) => update({ autosave }),
     setSyncScope: (id, scope) => update({ syncScopes: { ...get().syncScopes, [id]: scope } }),
+    setChestScope: (id, scope) => update({ chestScopes: { ...get().chestScopes, [id]: scope } }),
     toggleHiddenFilter: (key) => {
       const list = get().hiddenFilters
       update({ hiddenFilters: list.includes(key) ? list.filter((k) => k !== key) : [...list, key] })

@@ -6,6 +6,7 @@ import { usePrefs } from '@/lib/prefs'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Dialog, DialogContent, DialogTitle, DialogTrigger } from '@/components/ui/dialog'
+import { useTopLeftKeyLabel, type SearchTarget } from '@/hooks/useSearchShortcuts'
 
 // Parts shared by the item list and the bestiary list (and the filter sidebar).
 
@@ -45,6 +46,7 @@ export function SearchField({
   className,
   onKeyDown,
   withMode = false,
+  shortcut,
 }: {
   value: string
   onChange: (value: string) => void
@@ -56,8 +58,19 @@ export function SearchField({
   onKeyDown?: (e: React.KeyboardEvent<HTMLInputElement>) => void
   /** Fuzzy / Exact switch inside the field (item and bestiary search) */
   withMode?: boolean
+  /** reachable with a keyboard shortcut (useSearchShortcuts); shows the key while empty */
+  shortcut?: SearchTarget
 }) {
   const icon = small ? 'size-3.5' : 'size-4'
+  const key = useTopLeftKeyLabel()
+  const keys = shortcut === 'filters' ? `⇧${key}` : `${key}`
+  // Escape clears the search, a second one leaves the field
+  const keyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    onKeyDown?.(e)
+    if (e.key !== 'Escape' || e.defaultPrevented) return
+    if (value) onChange('')
+    else e.currentTarget.blur()
+  }
   return (
     <div className={cn('relative min-w-0 flex-1', className)}>
       <Search
@@ -66,11 +79,25 @@ export function SearchField({
       <Input
         value={value}
         onChange={(e) => onChange(e.target.value)}
-        onKeyDown={onKeyDown}
+        onKeyDown={keyDown}
         placeholder={placeholder}
-        className={cn(small ? 'h-8 pr-7 pl-8 text-sm' : 'pr-8 pl-8', withMode && 'pr-24')}
+        className={cn('peer', small ? 'h-8 pr-7 pl-8 text-sm' : 'pr-8 pl-8', withMode && 'pr-24')}
         aria-label={label}
+        aria-keyshortcuts={shortcut ? (shortcut === 'filters' ? `Shift+${key}` : `${key} /`) : undefined}
+        data-shortcut={shortcut}
       />
+      {shortcut && !value && (
+        // the shortcut while the field is empty and not focused
+        <kbd
+          className={cn(
+            'pointer-events-none absolute top-1/2 -translate-y-1/2 rounded border bg-muted px-1 font-sans text-[10px] leading-4 text-muted-foreground peer-focus:hidden',
+            withMode ? 'right-[4.25rem]' : 'right-2',
+          )}
+          title={shortcut === 'filters' ? `Shift + ${key}` : `${key} or /`}
+        >
+          {keys}
+        </kbd>
+      )}
       <span className="absolute top-1/2 right-2 flex -translate-y-1/2 items-center gap-1">
         {value && (
           <button

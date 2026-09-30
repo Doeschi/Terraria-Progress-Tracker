@@ -259,6 +259,7 @@ function FilterPanel({
                     onKeyDown={onSearchKey}
                     placeholder="Find a filter…"
                     label="Find a filter"
+                    shortcut="filters"
                     small
                   />
                   <button

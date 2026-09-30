@@ -1,8 +1,9 @@
+import type { ReactNode } from 'react'
 import { create } from 'zustand'
 
 export interface ConfirmOptions {
   title: string
-  description?: string
+  description?: ReactNode
   confirmLabel?: string
   destructive?: boolean
 }

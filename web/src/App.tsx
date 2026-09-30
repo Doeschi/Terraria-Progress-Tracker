@@ -12,10 +12,12 @@ import { BestiaryFilterSidebar, FilterSidebar } from '@/components/FilterSidebar
 import { BestiaryList } from '@/components/BestiaryList'
 import { useBestiaryView } from '@/hooks/useBestiaryView'
 import { useAutosave } from '@/hooks/useAutosave'
+import { useSearchShortcuts } from '@/hooks/useSearchShortcuts'
 import { ItemList } from '@/components/ItemList'
 import { ItemDetailPanel, ItemDetailSheet } from '@/components/ItemDetail'
 import { useMediaQuery } from '@/hooks/useMediaQuery'
 import { TopBar } from '@/components/TopBar'
+import { useBestiaryCompletions, useItemCompletions } from '@/hooks/useCompletions'
 import { WelcomeScreen } from '@/components/WelcomeScreen'
 import { AreasDialog } from '@/components/dialogs/AreasDialog'
 import { ChestSearchDialog } from '@/components/dialogs/ChestSearchDialog'
@@ -88,8 +90,13 @@ function CenteredMessage({ children }: { children: React.ReactNode }) {
 
 function Tracker() {
   useAutosave()
+  // § / "/" to the item search, Shift+§ to the filter search
+  useSearchShortcuts()
   const pt = useActivePlaythrough()
   const view = useTrackerView()
+  // "Filter complete!" toasts with confetti
+  useItemCompletions(view?.available)
+  useBestiaryCompletions()
   const openDialog = useUi((s) => s.open)
   // wide screens: details docked right of the table; narrow: as overlay
   const docked = useMediaQuery('(min-width: 1024px)')
