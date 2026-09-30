@@ -21,6 +21,8 @@ export interface TrackerView extends Counts {
   checked: Set<string>
   ignored: Set<string>
   searching: boolean
+  /** item key -> amount in the player's chests (whole world); null without a loaded world */
+  chests: Map<string, number> | null
 }
 
 const NONE: string[] = []
@@ -126,7 +128,7 @@ export function useTrackerView(): TrackerView | null {
   )
 
   return useMemo(
-    () => (pt ? { ...counts, visible, platformItems, checked, ignored, searching: !!ranks } : null),
-    [pt, counts, visible, platformItems, checked, ignored, ranks],
+    () => (pt ? { ...counts, visible, platformItems, checked, ignored, searching: !!ranks, chests } : null),
+    [pt, counts, visible, platformItems, checked, ignored, ranks, chests],
   )
 }

@@ -70,7 +70,7 @@ export function WorldMenu() {
         <DropdownMenuTrigger asChild>
           <Button variant="outline" size="sm" disabled={loading} className="max-w-52">
             <Globe className={world ? 'text-emerald-600 dark:text-emerald-400' : 'text-muted-foreground'} />
-            <span className={cn('truncate', ref && 'italic')}>{ref ? ref.name : 'Attach world'}</span>
+            <span className="truncate">{ref ? ref.name : 'Attach world'}</span>
             {ref && !world && <span className="text-xs text-muted-foreground">(not loaded)</span>}
             <ChevronDown className="text-muted-foreground" />
           </Button>

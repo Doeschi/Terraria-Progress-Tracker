@@ -62,6 +62,7 @@ const RowStateContext = createContext<RowState>({
   difficulty: 'master',
   luck: null,
   done: () => false,
+  chests: null,
 })
 
 const blank = (v: unknown) => v === undefined || v === '' || v === false
@@ -130,7 +131,18 @@ function useTableColumns(catalogue: ItemColumn[], tracking: React.RefObject<Trac
   )
 }
 
-export function ItemTable({ items, checked, ignored }: { items: Item[]; checked: Set<string>; ignored: Set<string> }) {
+export function ItemTable({
+  items,
+  checked,
+  ignored,
+  chests,
+}: {
+  items: Item[]
+  checked: Set<string>
+  ignored: Set<string>
+  /** amount per item in the player's chests (world loaded) */
+  chests: Map<string, number> | null
+}) {
   const hasWorld = useStore((s) => !!s.doc?.activePlaythroughId && !!s.worlds[s.doc.activePlaythroughId])
   const catalogue = useItemColumns()
   const pt = useActivePlaythrough()
@@ -149,8 +161,8 @@ export function ItemTable({ items, checked, ignored }: { items: Item[]; checked:
     }
   }, [data, bestiary, difficulty])
   const done = (key: string) => checked.has(key) || ignored.has(key)
-  const tracking = useRef<TrackingState>({ changedAt: {}, difficulty, luck, done })
-  tracking.current = { changedAt: changedAt ?? {}, difficulty, luck, done }
+  const tracking = useRef<TrackingState>({ changedAt: {}, difficulty, luck, done, chests })
+  tracking.current = { changedAt: changedAt ?? {}, difficulty, luck, done, chests }
   // columns in the order of the applied view (the rest in catalogue order after them)
   const columnOrder = usePrefs((s) => s.columnOrder)
   const orderedCatalogue = useMemo(() => {
@@ -220,8 +232,9 @@ export function ItemTable({ items, checked, ignored }: { items: Item[]; checked:
       difficulty,
       luck,
       done: (key: string) => checked.has(key) || ignored.has(key),
+      chests,
     }),
-    [checked, ignored, hasWorld, worldAttached, changedAt, difficulty, luck],
+    [checked, ignored, hasWorld, worldAttached, changedAt, difficulty, luck, chests],
   )
 
   if (!items.length) {

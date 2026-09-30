@@ -23,6 +23,8 @@ export interface TrackingState {
   luck: ((item: Item) => Luck | undefined) | null
   /** checked or ignored: not "missing" */
   done: (key: string) => boolean
+  /** item key -> amount in the player's chests (null: no world loaded) */
+  chests: Map<string, number> | null
 }
 
 export interface ItemColumn {
@@ -36,7 +38,7 @@ export interface ItemColumn {
   descFirst?: boolean
   value: (item: Item, tracking: TrackingState) => string | number | boolean | undefined
   cell?: (item: Item, tracking: TrackingState) => ReactNode
-  /** only offered while a world is loaded (needs its bestiary kills) */
+  /** only offered while a world is loaded (its chests or bestiary kills) */
   needsWorld?: boolean
   /** custom comparison, e.g. version strings */
   compare?: (a: Item, b: Item) => number
@@ -434,6 +436,25 @@ export function buildColumns(data: GameData): ItemColumn[] {
       descFirst: true,
       value: (i, t) => t.changedAt[i.key], // ISO strings sort chronologically
       cell: (i, t) => <span className="tabular-nums">{formatDate(t.changedAt[i.key])}</span>,
+    },
+    {
+      // the same chests as "craftable from your chests": the ones the player placed, whole world
+      id: 'inChests',
+      label: 'In chests',
+      group: 'Tracking',
+      size: 95,
+      align: 'right',
+      descFirst: true,
+      needsWorld: true,
+      value: (i, t) => t.chests?.get(i.key),
+      cell: (i, t) => {
+        const n = t.chests?.get(i.key)
+        return n ? (
+          <span className="tabular-nums" title={`${n.toLocaleString('en')} in your chests (the whole world)`}>
+            {n.toLocaleString('en')}
+          </span>
+        ) : null
+      },
     },
     {
       // sorted by the chance to have got it by now: bad luck first when descending

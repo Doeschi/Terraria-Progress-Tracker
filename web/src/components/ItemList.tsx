@@ -18,7 +18,7 @@ import {
 import { confirm } from '@/lib/confirm'
 import { FilterSidebar } from './FilterSidebar'
 import { ItemTable } from './table/ItemTable'
-import { useColumnVisibility, useHasKills, useItemColumns, useShownColumns, useViews } from './table/useColumns'
+import { useColumnVisibility, useHasWorld, useItemColumns, useShownColumns, useViews } from './table/useColumns'
 import { COLUMN_GROUPS, type ItemColumn } from './table/columns'
 import { activeView, viewVisibility, type View } from './table/presets'
 import { ViewEditor, type ViewEditTarget } from './table/ViewEditor'
@@ -31,7 +31,7 @@ export function ItemList({ view }: { view: TrackerView }) {
     <div className="flex h-full min-h-0 flex-col">
       <Toolbar view={view} />
       <ActiveFilters />
-      <ItemTable items={view.visible} checked={view.checked} ignored={view.ignored} />
+      <ItemTable items={view.visible} checked={view.checked} ignored={view.ignored} chests={view.chests} />
     </div>
   )
 }
@@ -122,9 +122,9 @@ function PresetBar() {
   // set while a control inside a menu item (star, pencil) is pressed, so the item does not also select the view
   const controlHit = useRef(false)
   // views with world-only columns ("Bad luck") need a loaded world
-  const hasKills = useHasKills()
-  const usable = (v: View) => !v.needsWorld || hasKills
-  const NEEDS_WORLD = 'Needs a loaded world (its bestiary kills) – load the world file first'
+  const hasWorld = useHasWorld()
+  const usable = (v: View) => !v.needsWorld || hasWorld
+  const NEEDS_WORLD = 'Needs a loaded world – load the world file first'
   const active = activeView(views.filter(usable), shownIds)
 
   const apply = (v: ViewDef) => {

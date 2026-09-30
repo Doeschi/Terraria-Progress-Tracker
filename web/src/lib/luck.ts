@@ -1,4 +1,4 @@
-import { chanceFor, dropsFor } from './drops'
+import { chanceFor, dropsFor, quantityFor } from './drops'
 import type { Difficulty, Drop, GameData, Item } from './types'
 import type { WorldBestiary } from './world'
 
@@ -13,12 +13,14 @@ export interface LuckPart {
   kills: number
   /** chance per kill, 0–1 */
   chance: number
+  /** items per drop: the average of the range, e.g. 4 for "3–5" */
+  quantity: number
   /** bound to a condition, event or biome: every kill is counted anyway */
   approx: boolean
 }
 
 export interface Luck {
-  /** expected number of drops (drop events, not quantities) */
+  /** expected number of items: kills × chance × average quantity */
   expected: number
   /** chance to have got it at least once, 0–1 */
   atLeastOnce: number
@@ -99,13 +101,25 @@ export function itemLuck(data: GameData, item: Item, difficulty: Difficulty, kil
     const c = chanceFor(d, difficulty)
     if (n === undefined || c === undefined) continue
     const approx = !!(d.conditions?.length || d.events?.length || d.biomes?.length || d.note)
-    parts.push({ source: d.source, kills: n, chance: Math.min(c, 100) / 100, approx })
+    const quantity = averageQuantity(quantityFor(d, difficulty))
+    parts.push({ source: d.source, kills: n, chance: Math.min(c, 100) / 100, quantity, approx })
   }
   if (!parts.length) return undefined
-  const expected = parts.reduce((n, p) => n + p.kills * p.chance, 0)
+  const expected = parts.reduce((n, p) => n + p.kills * p.chance * p.quantity, 0)
   // log of the chance to have missed it every time (log1p(-1) = -Infinity: certain)
   const missLog = parts.reduce((n, p) => n + (p.kills ? p.kills * Math.log1p(-p.chance) : 0), 0)
   return { expected, atLeastOnce: 1 - Math.exp(missLog), approx: parts.some((p) => p.approx), parts }
+}
+
+/**
+ * Average items per drop from the wiki's quantity text: "3–5" -> 4, "2" -> 2; the first number or
+ * range counts ("~2–4", "5–14 (Underground)", "2–5 / 3–6" for other platforms), else 1.
+ */
+export function averageQuantity(text: string | undefined): number {
+  const m = text?.match(/(\d+)\s*(?:[–-]\s*(\d+))?/)
+  if (!m) return 1
+  const low = Number(m[1])
+  return m[2] ? (low + Number(m[2])) / 2 : low || 1
 }
 
 /** "2.4×", "0.03×", "120×" */

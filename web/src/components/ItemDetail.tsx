@@ -143,6 +143,7 @@ function DetailContent({ item, Title }: { item: Item; Title: TitleComponent }) {
     difficulty: pt.difficulty,
     luck: null,
     done: () => false,
+    chests: null,
   }
   // kills per drop source in the loaded world (expected drops)
   const bestiary = useActiveWorld()?.bestiary

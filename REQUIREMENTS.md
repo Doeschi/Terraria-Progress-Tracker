@@ -609,8 +609,8 @@ GitHub Actions.
 - **W5** Chest items are matched by numeric item id to items available on the playthrough's
   platform. Ids that match no item are reported.
 - **W6** Unsupported or corrupted files show a clear error message.
-- **W6a** The world's name is set in italics wherever it appears in the UI (World button, dialog
-  titles, playthrough dialog, messages).
+- **W6a** The world's name is set in italics wherever it appears in texts (dialog titles,
+  playthrough dialog, messages) – not on the World button in the header.
 - **W7** Worlds newer than the parser's known format are supported as long as the chest section
   is unchanged (the end of the header is not validated). Tile entities (displays) are read by the
   app itself, including the 1.4.5 Item Flask; if they cannot be read, the world still loads and
@@ -785,8 +785,9 @@ GitHub Actions.
 
 - **BL1** With a loaded world, the kill counts of its bestiary give the expected number of drops
   per item: Σ kills × chance over all enemies that drop it (chance of the playthrough's
-  difficulty), and the chance to have got it at least once: 1 − Π (1 − p)^kills. It counts drop
-  events, not quantities (1–3 counts as one).
+  difficulty) × the average quantity per drop (3–5 → 4; the first number or range of the wiki's
+  text), and the chance to have got it at least once: 1 − Π (1 − p)^kills (per drop, not per
+  item).
 - **BL2** Drop sources are matched to bestiary entries by NPC id, by name and by wiki page (all
   variants of an enemy count, e.g. every Zombie). Drops the wiki binds to one variant (Torch:
   Torch Zombie, Gel: Slimed Zombie) keep its NPC ids (`npcIds` in `drops.json`) and count only
@@ -798,9 +799,12 @@ GitHub Actions.
   counted with every kill (the world does not record where or when an enemy died) and are
   marked "≈". A missing item with a chance of 95 % or more is highlighted (amber). The tooltip
   lists every source: kills × chance = expected.
-- **BL4** Built-in view "Bad luck" (expected drops, drops, conditions, events, biome, available
-  after; sorted by the chance): only selectable while a world is loaded.
+- **BL4** Built-in view "Bad luck" (expected drops, in chests, drops, conditions, events, biome,
+  available after; sorted by the chance): only selectable while a world is loaded.
 - **BL5** Detail panel: each enemy drop source shows its kills in the loaded world.
+- **BL6** Column "In chests" (only offered while a world is loaded): the total amount of the item
+  in the chests the player placed, whole world – the same chests as "craftable from your chests"
+  (RC); empty for none.
 
 ## v2 / later
 

@@ -14,8 +14,13 @@ export function useSearchShortcuts() {
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
       if (e.ctrlKey || e.metaKey || e.altKey || e.defaultPrevented) return
-      const t = e.target as HTMLElement | null
-      if (t?.closest('input, textarea, select, [contenteditable]:not([contenteditable="false"])')) return
+      // the target can also be the document or window (keys sent to them)
+      const t = e.target
+      if (
+        t instanceof Element &&
+        t.closest('input, textarea, select, [contenteditable]:not([contenteditable="false"])')
+      )
+        return
       if (document.querySelector('[role="dialog"], [role="alertdialog"], [role="menu"]')) return
       const target: SearchTarget | null = isTopLeftKey(e)
         ? e.shiftKey
