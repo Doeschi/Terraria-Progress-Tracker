@@ -14,6 +14,7 @@ import {
 import { toast } from 'sonner'
 import { useActiveWorld, useStore } from '@/store'
 import { usePrefs, type ProgressionMode } from '@/lib/prefs'
+import { ordered } from '@/lib/layout'
 import { ToggleGroup, ToggleGroupItem } from '@/components/ui/toggle-group'
 import { cn } from '@/lib/utils'
 import {
@@ -81,22 +82,17 @@ const QueryContext = createContext('')
 /** Option highlighted by the filter search ("<group>/<id>"); Enter selects it. */
 const ActiveTargetContext = createContext<string | null>(null)
 
-/**
- * Sidebar-wide view state: the edit mode for hiding options, and the last "open all" /
- * "close all" (n counts the clicks; sections follow it until they are toggled themselves).
- */
+/** Sidebar-wide view state: the edit mode for hiding options. */
 interface SidebarUi {
   editMode: boolean
-  allOpen: { open: boolean; n: number }
 }
-const SidebarUiContext = createContext<SidebarUi>({ editMode: false, allOpen: { open: true, n: 0 } })
+const SidebarUiContext = createContext<SidebarUi>({ editMode: false })
 
-/** Open state of a section that follows "open all / close all" until it is toggled itself. */
-function useSectionOpen(defaultOpen: boolean): [boolean, (open: boolean) => void] {
-  const { allOpen } = useContext(SidebarUiContext)
-  const [local, setLocal] = useState({ n: 0, open: defaultOpen })
-  const open = allOpen.n > local.n ? allOpen.open : local.open
-  return [open, (o) => setLocal({ n: allOpen.n, open: o })]
+/** Open state of a group or section, remembered in the browser ("<prefix><key>"). */
+function useSectionOpen(key: string, defaultOpen: boolean): [boolean, (open: boolean) => void] {
+  const open = usePrefs((s) => s.layout.openGroups[key] ?? defaultOpen)
+  const setLayout = usePrefs((s) => s.setLayout)
+  return [open, (o) => setLayout({ openGroups: { ...usePrefs.getState().layout.openGroups, [key]: o } })]
 }
 
 const PlacementContext = createContext<Placement>({
@@ -154,7 +150,7 @@ export const BestiaryFilterSidebar = memo(function BestiaryFilterSidebar({
 })
 
 function FilterPanel({
-  groups,
+  groups: allGroups,
   facets,
   groupTallies,
   available,
@@ -169,6 +165,12 @@ function FilterPanel({
 }) {
   const [query, setQuery] = useState('')
   const q = query.trim().toLowerCase()
+  // group order from the settings (Layout)
+  const savedOrder = usePrefs((s) => s.layout.groupOrder[scope.prefix])
+  const groups = useMemo(() => {
+    const byKey = new Map(allGroups.map((g) => [g.key as string, g]))
+    return ordered([...byKey.keys()], savedOrder ?? []).map((k) => byKey.get(k)!)
+  }, [allGroups, savedOrder])
   const hiddenList = usePrefs((s) => s.hiddenFilters)
   const toggleHiddenFilter = usePrefs((s) => s.toggleHiddenFilter)
   const hideCompleted = usePrefs((s) => s.hideCompleted)
@@ -178,8 +180,13 @@ function FilterPanel({
   // keyboard selection in the filter search: index into the targets, reset on every change
   const [cursor, setCursor] = useState({ query: '', index: 0 })
   const [editMode, setEditMode] = useState(false)
-  const [allOpen, setAllOpen] = useState({ open: true, n: 0 })
-  const sidebarUi = useMemo(() => ({ editMode, allOpen }), [editMode, allOpen])
+  const sidebarUi = useMemo(() => ({ editMode }), [editMode])
+  // "open all / close all": every group of this sidebar; closes if any group is open
+  const openGroups = usePrefs((s) => s.layout.openGroups)
+  const setLayout = usePrefs((s) => s.setLayout)
+  const anyOpen = groups.some((g) => openGroups[scope.prefix + g.key] ?? true)
+  const setAllOpen = (open: boolean) =>
+    setLayout({ openGroups: { ...openGroups, ...Object.fromEntries(groups.map((g) => [scope.prefix + g.key, open])) } })
 
   const placement = useMemo<Placement>(() => {
     const hidden = new Set(hiddenList)
@@ -261,12 +268,12 @@ function FilterPanel({
                     <CircleCheckBig className="size-4" />
                   </button>
                   <button
-                    onClick={() => setAllOpen({ open: !allOpen.open, n: allOpen.n + 1 })}
+                    onClick={() => setAllOpen(!anyOpen)}
                     className="grid size-8 shrink-0 place-items-center rounded-md border bg-background text-muted-foreground hover:text-foreground"
-                    title={allOpen.open ? 'Close all filter groups' : 'Open all filter groups'}
-                    aria-label={allOpen.open ? 'Close all filter groups' : 'Open all filter groups'}
+                    title={anyOpen ? 'Close all filter groups' : 'Open all filter groups'}
+                    aria-label={anyOpen ? 'Close all filter groups' : 'Open all filter groups'}
                   >
-                    {allOpen.open ? <ChevronsDownUp className="size-4" /> : <ChevronsUpDown className="size-4" />}
+                    {anyOpen ? <ChevronsDownUp className="size-4" /> : <ChevronsUpDown className="size-4" />}
                   </button>
                   <button
                     onClick={() => setEditMode(!editMode)}
@@ -277,7 +284,7 @@ function FilterPanel({
                         ? 'border-primary bg-primary/15 text-primary'
                         : 'bg-background text-muted-foreground hover:text-foreground',
                     )}
-                    title={editMode ? 'Done hiding filters' : 'Hide filters: shows an eye button on every option'}
+                    title={editMode ? 'Done hiding filters' : 'Hide filters: allows to hide specific filters'}
                   >
                     <EyeOff className="size-4" />
                   </button>
@@ -350,7 +357,7 @@ function GroupSection({ group, facets, tally }: { group: AnyGroup; facets: AnyFa
   const scope = useContext(ScopeContext)
   const q = useContext(QueryContext)
   const place = useContext(PlacementContext)
-  const [openState, setOpen] = useSectionOpen(true)
+  const [openState, setOpen] = useSectionOpen(scope.prefix + group.key, true)
   // while searching, groups with matches are always open
   const open = openState || !!q
   const selected = scope.useSelection(group.key)
@@ -479,7 +486,8 @@ function MovedSection({
   const q = useContext(QueryContext)
   const place = useContext(PlacementContext)
   const { editMode } = useContext(SidebarUiContext)
-  const [openState, setOpen] = useSectionOpen(false)
+  const scope = useContext(ScopeContext)
+  const [openState, setOpen] = useSectionOpen(`${scope.prefix}moved:${kind}`, false)
   // in edit mode the hidden options are shown, to bring them back easily
   const open = openState || (kind === 'hidden' && editMode)
 
@@ -549,14 +557,14 @@ function ProgressionOptions() {
       >
         <ToggleGroupItem
           value="upTo"
-          className="h-6 px-2 text-xs data-[state=on]:bg-primary data-[state=on]:text-primary-foreground"
+          className="h-5 min-h-0 px-2 text-[11px] data-[state=on]:bg-primary data-[state=on]:text-primary-foreground"
           title="Everything available by this milestone"
         >
           up to
         </ToggleGroupItem>
         <ToggleGroupItem
           value="exactly"
-          className="h-6 px-2 text-xs data-[state=on]:bg-primary data-[state=on]:text-primary-foreground"
+          className="h-5 min-h-0 px-2 text-[11px] data-[state=on]:bg-primary data-[state=on]:text-primary-foreground"
           title="Only what becomes available at it"
         >
           exactly at
@@ -606,6 +614,8 @@ function EntryRow({
 }) {
   const scope = useContext(ScopeContext)
   const place = useContext(PlacementContext)
+  const optionBars = usePrefs((s) => s.layout.optionBars)
+  const compact = usePrefs((s) => s.layout.density === 'compact')
   const { editMode } = useContext(SidebarUiContext)
   // "hide" only in edit mode (safe from misclicks); "show" is always offered in "Hidden"
   const eye = action === 'show' || (action === 'hide' && editMode) ? action : undefined
@@ -653,7 +663,7 @@ function EntryRow({
         )}
         <button
           onClick={() => scope.toggle(group.key, entry.id)}
-          className="flex min-w-0 flex-1 flex-col gap-1 px-2 py-1.5 text-left"
+          className={cn('flex min-w-0 flex-1 flex-col gap-1 px-2 text-left', compact ? 'py-1' : 'py-1.5')}
           aria-pressed={selected}
         >
           <span className="flex items-center gap-2">
@@ -672,7 +682,7 @@ function EntryRow({
             )}
             <TallyText tally={tally} className="text-xs" />
           </span>
-          <TallyBar tally={tally} className="ml-7 w-auto" />
+          {optionBars && <TallyBar tally={tally} className="ml-7 w-auto" />}
         </button>
         {/* the slot is always reserved so rows with and without subcategories line up */}
         {group.entries.some((e) => e.children?.length) && (

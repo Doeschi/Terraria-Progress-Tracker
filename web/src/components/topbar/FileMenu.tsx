@@ -2,7 +2,7 @@ import { useEffect } from 'react'
 import { ChevronDown, CircleAlert, CloudCheck, FilePlus, FolderOpen, LogOut, Save, SaveAll, Upload } from 'lucide-react'
 import { useStore } from '@/store'
 import { cn } from '@/lib/utils'
-import { canSaveInPlace, requestWriteAccess } from '@/lib/files'
+import { canSaveInPlace, fileLabel, requestWriteAccess } from '@/lib/files'
 import { usePrefs } from '@/lib/prefs'
 import { confirmDiscard, openFileAction, saveAction } from '@/actions'
 import { Button } from '@/components/ui/button'
@@ -21,7 +21,7 @@ import { formatTime } from '@/lib/format'
 // File menu (save, open, new, close, autosave) and the autosave status.
 
 export function FileMenu() {
-  const fileName = useStore((s) => s.fileName)
+  const file = fileLabel(useStore((s) => s.fileName))
   const dirty = useStore((s) => s.dirty)
   const newFile = useStore((s) => s.newFile)
   const closeFile = useStore((s) => s.closeFile)
@@ -44,8 +44,8 @@ export function FileMenu() {
     <div className="flex items-center gap-2">
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
-          <Button variant="outline" size="sm" className="max-w-44">
-            <span className="truncate">{fileName ?? 'Unsaved file'}</span>
+          <Button variant="outline" size="sm" className="max-w-44" title={file.title}>
+            <span className="truncate">{file.label}</span>
             {dirty && <span className="size-2 shrink-0 rounded-full bg-amber-500" title="Unsaved changes" />}
             <ChevronDown className="text-muted-foreground" />
           </Button>

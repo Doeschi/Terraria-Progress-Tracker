@@ -1,7 +1,7 @@
-import { Fragment, useMemo } from 'react'
-import { ChevronDown, Columns3, Eye, EyeOff, ListChecks } from 'lucide-react'
+import { Fragment, useMemo, useRef, useState } from 'react'
+import { Check, ChevronDown, Columns3, Eye, EyeOff, ListChecks, Pencil, Plus, Save, Star } from 'lucide-react'
 import { useStore } from '@/store'
-import { usePrefs } from '@/lib/prefs'
+import { usePrefs, type ViewDef } from '@/lib/prefs'
 import { buildFilterGroups, GROUP_KEYS, type ViewMode } from '@/lib/filtering'
 import type { TrackerView } from '@/hooks/useTrackerView'
 import { Button } from '@/components/ui/button'
@@ -18,12 +18,13 @@ import {
 import { confirm } from '@/lib/confirm'
 import { FilterSidebar } from './FilterSidebar'
 import { ItemTable } from './table/ItemTable'
-import { useColumnVisibility, useItemColumns } from './table/useColumns'
+import { useColumnVisibility, useItemColumns, useShownColumns, useViews } from './table/useColumns'
 import { COLUMN_GROUPS, type ItemColumn } from './table/columns'
-import { activePreset, COLUMN_PRESETS, presetVisibility } from './table/presets'
+import { activeView, viewVisibility } from './table/presets'
+import { ViewEditor, type ViewEditTarget } from './table/ViewEditor'
 import { cn } from '@/lib/utils'
 import { TallyBar, TallyText } from './common'
-import { ActiveFilterBar, MobileFiltersButton, SearchField, SearchModeToggle } from './ListParts'
+import { ActiveFilterBar, MobileFiltersButton, SearchField } from './ListParts'
 
 export function ItemList({ view }: { view: TrackerView }) {
   return (
@@ -42,6 +43,7 @@ function Toolbar({ view }: { view: TrackerView }) {
   const setSearch = useStore((s) => s.setSearch)
   const mode = useStore((s) => s.view)
   const setView = useStore((s) => s.setView)
+  const showProgress = usePrefs((s) => s.layout.showFilteredProgress)
 
   const views: { value: ViewMode; label: string; tip: string }[] = [
     { value: 'all', label: 'All', tip: 'All items that count towards progress' },
@@ -53,10 +55,16 @@ function Toolbar({ view }: { view: TrackerView }) {
   return (
     <div className="flex flex-col gap-2 border-b p-3">
       <div className="flex items-center gap-2">
-        <SearchField value={search} onChange={setSearch} placeholder="Search items by name…" label="Search items" />
-        <SearchModeToggle />
+        <SearchField
+          value={search}
+          onChange={setSearch}
+          placeholder="Search items by name…"
+          label="Search items"
+          withMode
+        />
         <MobileFilters view={view} />
       </div>
+      {/* show switch, progress of the filtered items, bulk actions: one row */}
       <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
         <div className="flex items-center gap-2">
           <span className="text-xs font-medium text-muted-foreground">Show</span>
@@ -78,52 +86,166 @@ function Toolbar({ view }: { view: TrackerView }) {
             ))}
           </ToggleGroup>
         </div>
+        {showProgress && (
+          <div
+            className="flex items-center gap-2 text-xs text-muted-foreground"
+            title={view.searching ? 'Sorted by relevance until a column is sorted' : undefined}
+          >
+            Filtered
+            <TallyBar tally={view.filtered} className="w-20" />
+            <TallyText tally={view.filtered} />
+          </div>
+        )}
         <div className="ml-auto">
           <BulkActions view={view} />
         </div>
       </div>
       <PresetBar />
-      <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-xs text-muted-foreground">
-        Progress of filtered items
-        <TallyBar tally={view.filtered} className="w-24" />
-        <TallyText tally={view.filtered} />
-        {view.searching && <span>· sorted by relevance until a column is sorted</span>}
-      </div>
     </div>
   )
 }
 
-/** Column presets as always-visible quick buttons (like Jira quick filters). */
+/** Views: the favorites as buttons, all of them in a dropdown (✎ edit, ☆ favorite, new view). */
 function PresetBar() {
   const catalogue = useItemColumns()
-  const visibility = useColumnVisibility(catalogue)
+  const views = useViews(catalogue)
+  const shownIds = useShownColumns(catalogue)
   const setColumns = usePrefs((s) => s.setColumns)
+  const setColumnOrder = usePrefs((s) => s.setColumnOrder)
   const setTableSorting = usePrefs((s) => s.setTableSorting)
-  const active = activePreset(visibility, catalogue)
+  const tableSorting = usePrefs((s) => s.tableSorting)
+  const favorites = usePrefs((s) => s.layout.favoriteViews)
+  const setLayout = usePrefs((s) => s.setLayout)
+  const [editing, setEditing] = useState<ViewEditTarget | null>(null)
+  const [menuOpen, setMenuOpen] = useState(false)
+  // set while a control inside a menu item (star, pencil) is pressed, so the item does not also select the view
+  const controlHit = useRef(false)
+  const active = activeView(views, shownIds)
+
+  const apply = (v: ViewDef) => {
+    setColumns(viewVisibility(v, catalogue))
+    setColumnOrder(v.columns)
+    setTableSorting(v.sorting)
+  }
+  const toggleFavorite = (id: string) =>
+    setLayout({ favoriteViews: favorites.includes(id) ? favorites.filter((f) => f !== id) : [...favorites, id] })
+  // the table as it is now, as a starting point for a new view
+  const current: ViewDef = { id: '', label: 'My view', columns: shownIds, sorting: tableSorting }
+  // a control in a menu item: acts on its own, keeps the menu open and the view unchanged
+  const control = (run: () => void) => ({
+    onClick: (e: React.MouseEvent) => {
+      e.preventDefault()
+      e.stopPropagation()
+      run()
+      // the item may not have seen this click: do not swallow the next one
+      setTimeout(() => (controlHit.current = false))
+    },
+    onPointerDown: (e: React.PointerEvent) => {
+      controlHit.current = true
+      e.stopPropagation()
+    },
+    onPointerUp: (e: React.PointerEvent) => e.stopPropagation(),
+  })
+
+  const shown = views.filter((v) => favorites.includes(v.id))
+  // the dropdown names the active view if it is no favorite button
+  const activeElsewhere = active && !favorites.includes(active.id)
 
   return (
     <div className="flex flex-wrap items-center gap-1.5">
       <span className="mr-0.5 text-xs font-medium text-muted-foreground">View</span>
-      {COLUMN_PRESETS.map((p) => (
+      {shown.map((v) => (
         <button
-          key={p.id}
-          onClick={() => {
-            setColumns(presetVisibility(p, catalogue))
-            setTableSorting(p.sorting ?? [])
-          }}
-          aria-pressed={active?.id === p.id}
+          key={v.id}
+          onClick={() => apply(v)}
+          aria-pressed={active?.id === v.id}
           className={cn(
             'h-7 rounded-full border px-3 text-xs font-medium transition-colors',
-            active?.id === p.id
+            active?.id === v.id
               ? 'border-primary bg-primary text-primary-foreground'
               : 'bg-background text-foreground/80 hover:bg-muted hover:text-foreground',
           )}
-          title={`Show the ${p.label.toLowerCase()} columns`}
+          title={`Show the ${v.label.toLowerCase()} columns`}
         >
-          {p.label}
+          {v.label}
         </button>
       ))}
+      <DropdownMenu open={menuOpen} onOpenChange={setMenuOpen}>
+        <DropdownMenuTrigger asChild>
+          <Button
+            // the active view is no button: the dropdown shows it, filled like an active button
+            variant={activeElsewhere ? 'default' : 'outline'}
+            size="sm"
+            className="h-7 rounded-full"
+            title="All views – ✎ edit, ☆ show as a button"
+          >
+            {activeElsewhere ? active.label : shown.length ? 'More views' : 'Views'}
+            <ChevronDown className={activeElsewhere ? undefined : 'text-muted-foreground'} />
+          </Button>
+        </DropdownMenuTrigger>
+        <DropdownMenuContent align="start" className="w-64">
+          {views.map((v) => {
+            const fav = favorites.includes(v.id)
+            return (
+              <DropdownMenuItem
+                key={v.id}
+                onSelect={(e) => {
+                  if (controlHit.current) {
+                    controlHit.current = false
+                    e.preventDefault()
+                    return
+                  }
+                  apply(v)
+                }}
+              >
+                <Check className={active?.id === v.id ? '' : 'invisible'} />
+                <span className="flex-1 truncate">
+                  {v.label}
+                  {v.changed && <span className="ml-1.5 text-xs text-muted-foreground">(changed)</span>}
+                </span>
+                <button
+                  {...control(() => {
+                    setMenuOpen(false)
+                    setEditing({ view: v })
+                  })}
+                  className="-my-1 rounded p-1 hover:bg-foreground/10"
+                  title="Edit view"
+                  aria-label={`Edit ${v.label}`}
+                >
+                  <Pencil className="size-3.5 text-muted-foreground" />
+                </button>
+                <button
+                  {...control(() => toggleFavorite(v.id))}
+                  className="-my-1 -mr-1 rounded p-1 hover:bg-foreground/10"
+                  title={fav ? 'Remove from the buttons' : 'Show as a button'}
+                  aria-label={fav ? `Unfavorite ${v.label}` : `Favorite ${v.label}`}
+                >
+                  <Star className={cn('size-4', fav ? 'fill-amber-400 text-amber-400' : 'text-muted-foreground')} />
+                </button>
+              </DropdownMenuItem>
+            )
+          })}
+          <DropdownMenuSeparator />
+          <DropdownMenuItem onSelect={() => setEditing({ view: null, start: { ...current, label: 'New view' } })}>
+            <Plus /> New view…
+          </DropdownMenuItem>
+          {!active && (
+            <DropdownMenuItem onSelect={() => setEditing({ view: null, start: current })}>
+              <Save /> Save current table as view…
+            </DropdownMenuItem>
+          )}
+        </DropdownMenuContent>
+      </DropdownMenu>
       <ColumnsMenu custom={!active} />
+      {editing && (
+        <ViewEditor
+          target={editing}
+          catalogue={catalogue}
+          current={current}
+          onClose={() => setEditing(null)}
+          onApply={apply}
+        />
+      )}
     </div>
   )
 }
@@ -134,7 +256,11 @@ function ColumnsMenu({ custom }: { custom: boolean }) {
   const setColumns = usePrefs((s) => s.setColumns)
   const setColumnSizes = usePrefs((s) => s.setColumnSizes)
   const shown = catalogue.filter((c) => visibility[c.id]).length
-  const setAll = (fn: (c: ItemColumn) => boolean) => setColumns(Object.fromEntries(catalogue.map((c) => [c.id, fn(c)])))
+  const setColumnOrder = usePrefs((s) => s.setColumnOrder)
+  const setAll = (fn: (c: ItemColumn) => boolean) => {
+    setColumns(Object.fromEntries(catalogue.map((c) => [c.id, fn(c)])))
+    setColumnOrder([])
+  }
 
   return (
     <DropdownMenu>

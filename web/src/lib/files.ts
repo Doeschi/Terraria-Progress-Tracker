@@ -160,3 +160,17 @@ export async function openRememberedWorld(playthroughId: string): Promise<File |
   }
   return handle.getFile()
 }
+
+// ------------------------------------------------------------ file label
+
+/**
+ * What the file button shows. Without in-place saving the browser may rename downloads,
+ * so the page does not know the file on disk: it shows the copy kept in the browser.
+ */
+export function fileLabel(fileName: string | null): { label: string; title?: string } {
+  if (canSaveInPlace || !fileName) return { label: fileName ?? 'Unsaved file' }
+  return {
+    label: 'Browser copy',
+    title: `Your progress is kept in this browser; saving downloads a copy.\nLast file: ${fileName}`,
+  }
+}

@@ -1,4 +1,4 @@
-import { createContext, useContext, useMemo, useRef } from 'react'
+import { createContext, useContext, useEffect, useMemo, useRef } from 'react'
 import {
   columnResizingFeature,
   columnSizingFeature,
@@ -26,6 +26,7 @@ import { DifficultyIcon, WikiIcon } from '../common'
 import { formatDate } from '@/lib/format'
 import { type ItemColumn, type TrackingState } from './columns'
 import { useColumnVisibility, useItemColumns } from './useColumns'
+import { ordered } from '@/lib/layout'
 
 // Item table: every field as an optional column, sortable by header click,
 // rows virtualized. Checkbox, icon and name stay pinned on the left.
@@ -39,7 +40,8 @@ const features = tableFeatures({
 })
 const helper = createColumnHelper<typeof features, Item>()
 
-const ROW_HEIGHT = 40
+// row height per density (settings)
+const ROW_HEIGHT = { comfortable: 40, compact: 32 } as const
 // pinned columns: checkbox, icon, name
 const PINNED = { check: { left: 0, size: 40 }, icon: { left: 40, size: 40 }, name: { left: 80, size: 280 } } as const
 
@@ -84,7 +86,7 @@ function useTableColumns(catalogue: ItemColumn[], tracking: React.RefObject<Trac
         helper.display({
           id: 'icon',
           header: () => null,
-          cell: ({ row }) => <WikiIcon src={row.original.icon} alt="" size={28} />,
+          cell: ({ row }) => <IconCell src={row.original.icon} />,
           size: PINNED.icon.size,
           enableResizing: false,
           enableHiding: false,
@@ -133,7 +135,16 @@ export function ItemTable({ items, checked, ignored }: { items: Item[]; checked:
   const difficulty = pt?.difficulty ?? 'master'
   const tracking = useRef<TrackingState>({ changedAt: {}, difficulty })
   tracking.current = { changedAt: changedAt ?? {}, difficulty }
-  const columns = useTableColumns(catalogue, tracking)
+  // columns in the order of the applied view (the rest in catalogue order after them)
+  const columnOrder = usePrefs((s) => s.columnOrder)
+  const orderedCatalogue = useMemo(() => {
+    const byId = new Map(catalogue.map((c) => [c.id, c]))
+    return ordered(
+      catalogue.map((c) => c.id),
+      columnOrder,
+    ).map((id) => byId.get(id)!)
+  }, [catalogue, columnOrder])
+  const columns = useTableColumns(orderedCatalogue, tracking)
   const visibility = useColumnVisibility(catalogue)
   // no column sorted = the order of the incoming list (name / search relevance);
   // the sorting is remembered in the browser (columns that no longer exist are dropped)
@@ -165,13 +176,16 @@ export function ItemTable({ items, checked, ignored }: { items: Item[]; checked:
   })
 
   const rows = table.getRowModel().rows
+  const rowHeight = ROW_HEIGHT[usePrefs((s) => s.layout.density)]
   const scrollRef = useRef<HTMLDivElement>(null)
   const virtualizer = useVirtualizer({
     count: rows.length,
     getScrollElement: () => scrollRef.current,
-    estimateSize: () => ROW_HEIGHT,
+    estimateSize: () => rowHeight,
     overscan: 12,
   })
+  // a new density: measure the rows again
+  useEffect(() => virtualizer.measure(), [virtualizer, rowHeight])
   const virtualRows = virtualizer.getVirtualItems()
   const padTop = virtualRows[0]?.start ?? 0
   const padBottom = virtualizer.getTotalSize() - (virtualRows.at(-1)?.end ?? 0)
@@ -258,7 +272,7 @@ export function ItemTable({ items, checked, ignored }: { items: Item[]; checked:
               return (
                 <tr
                   key={row.id}
-                  style={{ height: ROW_HEIGHT }}
+                  style={{ height: rowHeight }}
                   className={cn('group cursor-pointer', isIgnored && 'opacity-60')}
                   aria-selected={isSelected}
                   onClick={(e) => {
@@ -311,6 +325,12 @@ export function ItemTable({ items, checked, ignored }: { items: Item[]; checked:
       </div>
     </RowStateContext.Provider>
   )
+}
+
+/** The item icon, smaller in the compact density. */
+function IconCell({ src }: { src?: string }) {
+  const compact = usePrefs((s) => s.layout.density === 'compact')
+  return <WikiIcon src={src} alt="" size={compact ? 22 : 28} />
 }
 
 function CheckCell({ item }: { item: Item }) {

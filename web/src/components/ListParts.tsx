@@ -1,44 +1,37 @@
 import { Fragment, useMemo } from 'react'
 import { Search, SlidersHorizontal, X } from 'lucide-react'
 import { cn } from '@/lib/utils'
-import type { FilterGroup, SearchMode } from '@/lib/filtering'
+import type { FilterGroup } from '@/lib/filtering'
 import { usePrefs } from '@/lib/prefs'
-import { ToggleGroup, ToggleGroupItem } from '@/components/ui/toggle-group'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Dialog, DialogContent, DialogTitle, DialogTrigger } from '@/components/ui/dialog'
 
 // Parts shared by the item list and the bestiary list (and the filter sidebar).
 
-/** "Fuzzy" (typos allowed, default) or "Exact" (the text must appear in the name) - for all searches. */
-export function SearchModeToggle() {
+/** "Fuzzy" (typos allowed, default) or "Exact" (the text must appear in the name), inside the
+ * search field; one setting for all searches. */
+function SearchModeSwitch() {
   const mode = usePrefs((s) => s.searchMode)
   const setMode = usePrefs((s) => s.setSearchMode)
   return (
-    <ToggleGroup
-      type="single"
-      variant="outline"
-      size="sm"
-      value={mode}
-      onValueChange={(v) => v && setMode(v as SearchMode)}
-      aria-label="Search mode"
-      className="shrink-0"
+    <button
+      onClick={() => setMode(mode === 'fuzzy' ? 'exact' : 'fuzzy')}
+      className={cn(
+        'rounded-md border px-1.5 py-0.5 text-[11px] font-medium',
+        mode === 'exact'
+          ? 'border-primary bg-primary text-primary-foreground'
+          : 'text-muted-foreground hover:text-foreground',
+      )}
+      title={
+        mode === 'fuzzy'
+          ? 'Fuzzy search: finds names even with typos – click for exact search'
+          : 'Exact search: only names that contain the text – click for fuzzy search'
+      }
+      aria-label={`Search mode: ${mode}`}
     >
-      <ToggleGroupItem
-        value="fuzzy"
-        className="px-2.5 text-xs data-[state=on]:bg-primary data-[state=on]:text-primary-foreground"
-        title="Fuzzy: finds names even with typos or missing letters"
-      >
-        Fuzzy
-      </ToggleGroupItem>
-      <ToggleGroupItem
-        value="exact"
-        className="px-2.5 text-xs data-[state=on]:bg-primary data-[state=on]:text-primary-foreground"
-        title="Exact: only names that contain the text as typed (upper/lower case does not matter)"
-      >
-        Exact
-      </ToggleGroupItem>
-    </ToggleGroup>
+      {mode === 'fuzzy' ? 'Fuzzy' : 'Exact'}
+    </button>
   )
 }
 
@@ -51,6 +44,7 @@ export function SearchField({
   small = false,
   className,
   onKeyDown,
+  withMode = false,
 }: {
   value: string
   onChange: (value: string) => void
@@ -60,6 +54,8 @@ export function SearchField({
   small?: boolean
   className?: string
   onKeyDown?: (e: React.KeyboardEvent<HTMLInputElement>) => void
+  /** Fuzzy / Exact switch inside the field (item and bestiary search) */
+  withMode?: boolean
 }) {
   const icon = small ? 'size-3.5' : 'size-4'
   return (
@@ -72,18 +68,21 @@ export function SearchField({
         onChange={(e) => onChange(e.target.value)}
         onKeyDown={onKeyDown}
         placeholder={placeholder}
-        className={small ? 'h-8 pr-7 pl-8 text-sm' : 'pr-8 pl-8'}
+        className={cn(small ? 'h-8 pr-7 pl-8 text-sm' : 'pr-8 pl-8', withMode && 'pr-24')}
         aria-label={label}
       />
-      {value && (
-        <button
-          onClick={() => onChange('')}
-          className="absolute top-1/2 right-2 -translate-y-1/2 rounded p-0.5 text-muted-foreground hover:text-foreground"
-          title="Clear"
-        >
-          <X className={icon} />
-        </button>
-      )}
+      <span className="absolute top-1/2 right-2 flex -translate-y-1/2 items-center gap-1">
+        {value && (
+          <button
+            onClick={() => onChange('')}
+            className="rounded p-0.5 text-muted-foreground hover:text-foreground"
+            title="Clear"
+          >
+            <X className={icon} />
+          </button>
+        )}
+        {withMode && <SearchModeSwitch />}
+      </span>
     </div>
   )
 }
@@ -136,8 +135,11 @@ export function ActiveFilterBar<K extends string>({
   }, [groups])
   const active = groups.filter((g) => selection[g.key].length > 0)
 
-  // always shown, so the list below does not jump when the first filter is added
+  const always = usePrefs((s) => s.layout.filterBarAlways)
+
+  // shown also without filters (setting), so the list below does not jump when the first filter is added
   if (!active.length && !search) {
+    if (!always) return null
     return (
       <div className="flex items-center border-b px-3 py-2 text-xs">
         {/* same box as a filter chip, so the bar keeps its height */}

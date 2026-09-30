@@ -8,6 +8,8 @@ export type SyncSection = 'items' | 'bestiary'
 export type DialogState =
   | { type: 'none' }
   | { type: 'newPlaythrough' }
+  /** the same dialog for the active playthrough: name, platform, world, difficulty, game version */
+  | { type: 'editPlaythrough' }
   /** thenSync: part of attaching a new world - the sync dialog follows when it closes;
    * returnTo: opened from another dialog ("Manage areas…") - it opens again when this closes */
   | { type: 'areas'; thenSync?: boolean; returnTo?: DialogState }

@@ -9,6 +9,7 @@ import {
   type ViewMode,
 } from './lib/filtering'
 import {
+  canSaveInPlace,
   canWriteQuietly,
   clearBackup,
   saveTrackingFile,
@@ -26,6 +27,8 @@ import {
   type SaveFile,
 } from './lib/saveFile'
 import { GAME_MODE_DIFFICULTY } from './lib/availability'
+import { loadView, saveView } from './lib/viewState'
+import { useUi } from './ui'
 import type { Difficulty, GameData, PlatformId } from './lib/types'
 import type { LoadedWorld } from './lib/world'
 import {
@@ -104,6 +107,17 @@ interface Actions {
 
 const DEFAULT_FILE_NAME = 'terraria-progress.json'
 
+/** `name_2026-09-30_14-32.json`: an earlier timestamp or a browser's `(1)` suffix is replaced. */
+function downloadName(fileName: string, now = new Date()): string {
+  const base = fileName
+    .replace(/\.json$/i, '')
+    .replace(/(\s*\(\d+\))+$/, '')
+    .replace(/_\d{4}-\d{2}-\d{2}_\d{2}-\d{2}$/, '')
+  const p = (n: number) => String(n).padStart(2, '0')
+  const stamp = `${now.getFullYear()}-${p(now.getMonth() + 1)}-${p(now.getDate())}_${p(now.getHours())}-${p(now.getMinutes())}`
+  return `${base || 'terraria-progress'}_${stamp}.json`
+}
+
 /** the game data load in progress (loadData is called twice in dev, see there) */
 let loading: Promise<void> | null = null
 
@@ -131,13 +145,12 @@ export const useStore = create<State & Actions>()((set, get) => {
     const id = get().doc?.activePlaythroughId
     if (id) mutatePlaythrough(id, fn)
   }
-  const resetView = {
-    selection: emptySelection(),
-    search: '',
-    view: 'all' as ViewMode,
-    bestiarySelection: emptyBestiarySelection(),
-    bestiarySearch: '',
-    bestiaryView: 'all' as BestiaryViewMode,
+  // the list's view of a playthrough, as it was left (remembered in the browser, viewState.ts);
+  // the item of the detail panel goes to the ui store
+  const viewOf = (playthroughId: string | null | undefined) => {
+    const { detailKey, ...view } = loadView(playthroughId)
+    useUi.setState({ detailKey, detailHistory: [] })
+    return view
   }
 
   return {
@@ -178,12 +191,21 @@ export const useStore = create<State & Actions>()((set, get) => {
         lastSavedAt: null,
         autosaveStatus: 'ok',
         worlds: {},
-        ...resetView,
+        ...viewOf(null),
       })
     },
 
     loadFile({ doc, fileName, handle }, dirty = false) {
-      set({ doc, fileName, handle, dirty, lastSavedAt: null, autosaveStatus: 'ok', worlds: {}, ...resetView })
+      set({
+        doc,
+        fileName,
+        handle,
+        dirty,
+        lastSavedAt: null,
+        autosaveStatus: 'ok',
+        worlds: {},
+        ...viewOf(doc.activePlaythroughId),
+      })
     },
 
     closeFile() {
@@ -193,7 +215,7 @@ export const useStore = create<State & Actions>()((set, get) => {
         handle: null,
         dirty: false,
         worlds: {},
-        ...resetView,
+        ...viewOf(null),
       })
       void clearBackup()
     },
@@ -201,7 +223,9 @@ export const useStore = create<State & Actions>()((set, get) => {
     async save(saveAs = false) {
       const { doc, fileName, handle } = get()
       if (!doc) return false
-      const result = await saveTrackingFile(doc, fileName ?? DEFAULT_FILE_NAME, saveAs ? null : handle)
+      // downloads get a timestamp: the browser may rename them, so each one is told apart by its time
+      const name = canSaveInPlace ? (fileName ?? DEFAULT_FILE_NAME) : downloadName(fileName ?? DEFAULT_FILE_NAME)
+      const result = await saveTrackingFile(doc, name, saveAs ? null : handle)
       if (!result) return false
       // only clear "dirty" if nothing changed while the save dialog was open
       set({
@@ -243,7 +267,7 @@ export const useStore = create<State & Actions>()((set, get) => {
         playthroughs: [...doc.playthroughs, p],
         activePlaythroughId: p.id,
       }))
-      set(resetView)
+      set(viewOf(p.id))
       return p.id
     },
 
@@ -262,7 +286,7 @@ export const useStore = create<State & Actions>()((set, get) => {
 
     setActivePlaythrough(id) {
       mutateDoc((doc) => ({ ...doc, activePlaythroughId: id }))
-      set(resetView)
+      set(viewOf(id))
     },
 
     setChecked(keys, value) {
@@ -294,11 +318,10 @@ export const useStore = create<State & Actions>()((set, get) => {
 
     setWorld(playthroughId, world) {
       set({ worlds: { ...get().worlds, [playthroughId]: world } })
-      mutatePlaythrough(playthroughId, (p) => ({
-        ...p,
+      mutatePlaythrough(playthroughId, (p) => {
         // the world's game mode decides the difficulty
-        difficulty: GAME_MODE_DIFFICULTY[world.gameMode] ?? p.difficulty,
-        world: {
+        const difficulty = GAME_MODE_DIFFICULTY[world.gameMode] ?? p.difficulty
+        const ref = {
           name: world.name,
           guid: world.guid,
           fileName: world.fileName,
@@ -306,8 +329,14 @@ export const useStore = create<State & Actions>()((set, get) => {
           height: world.height,
           worldSurface: world.worldSurface,
           lastSyncedAt: p.world?.guid === world.guid ? p.world.lastSyncedAt : null,
-        },
-      }))
+        }
+        // reloading the same world (e.g. on "Continue") changes nothing: the file stays unmodified
+        const same =
+          difficulty === p.difficulty &&
+          p.world !== null &&
+          (Object.keys(ref) as (keyof typeof ref)[]).every((k) => p.world![k] === ref[k])
+        return same ? p : { ...p, difficulty, world: ref }
+      })
     },
 
     detachWorld(playthroughId) {
@@ -393,6 +422,35 @@ function stamp(changedAt: Record<string, string>, keys: string[]): Record<string
 }
 
 // ------------------------------------------------------------ selectors
+
+// remember the list's view of the active playthrough (filters, search, …, detail item)
+let saveTimer: ReturnType<typeof setTimeout> | undefined
+function rememberView() {
+  clearTimeout(saveTimer)
+  saveTimer = setTimeout(() => {
+    const s = useStore.getState()
+    const id = s.doc?.activePlaythroughId
+    if (!id) return
+    const { selection, search, view, mode, bestiarySelection, bestiarySearch, bestiaryView } = s
+    const { detailKey } = useUi.getState()
+    saveView(id, { selection, search, view, mode, bestiarySelection, bestiarySearch, bestiaryView, detailKey })
+  }, 300)
+}
+useStore.subscribe((s, prev) => {
+  if (
+    s.selection !== prev.selection ||
+    s.search !== prev.search ||
+    s.view !== prev.view ||
+    s.mode !== prev.mode ||
+    s.bestiarySelection !== prev.bestiarySelection ||
+    s.bestiarySearch !== prev.bestiarySearch ||
+    s.bestiaryView !== prev.bestiaryView
+  )
+    rememberView()
+})
+useUi.subscribe((s, prev) => {
+  if (s.detailKey !== prev.detailKey) rememberView()
+})
 
 export function useActivePlaythrough(): Playthrough | null {
   return useStore((s) => activePlaythrough(s.doc) ?? null)

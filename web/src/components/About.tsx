@@ -1,5 +1,3 @@
-import { Info } from 'lucide-react'
-import { Button } from '@/components/ui/button'
 import {
   Dialog,
   DialogContent,
@@ -10,7 +8,7 @@ import {
 } from '@/components/ui/dialog'
 
 // "About": data source, licenses, trademark note, libraries and the AI notice in one place.
-// Opened from the (i) button in the top bar and from the sidebar's "License & credits".
+// Opened from the ⚙ menu (About…) and from the sidebar's "License & credits".
 
 const REPO = 'https://github.com/Doeschi/Terraria-Progress-Tracker'
 
@@ -53,11 +51,20 @@ function Part({ title, children }: { title: string; children: React.ReactNode })
   )
 }
 
-/** The About dialog; `children` is its trigger (a button or a link-like text). */
-export function AboutDialog({ children }: { children: React.ReactNode }) {
+/** The About dialog; `children` is its trigger (a button or a link-like text), or it is opened
+ * from outside with `open` / `onOpenChange` (the ⚙ menu). */
+export function AboutDialog({
+  children,
+  open,
+  onOpenChange,
+}: {
+  children?: React.ReactNode
+  open?: boolean
+  onOpenChange?: (open: boolean) => void
+}) {
   return (
-    <Dialog>
-      <DialogTrigger asChild>{children}</DialogTrigger>
+    <Dialog open={open} onOpenChange={onOpenChange}>
+      {children && <DialogTrigger asChild>{children}</DialogTrigger>}
       <DialogContent className="max-h-[85vh] overflow-y-auto sm:max-w-lg">
         <DialogHeader>
           <DialogTitle>About Terraria Progress Tracker</DialogTitle>
@@ -98,17 +105,6 @@ export function AboutDialog({ children }: { children: React.ReactNode }) {
         </div>
       </DialogContent>
     </Dialog>
-  )
-}
-
-/** The (i) button in the top bar. */
-export function AboutButton() {
-  return (
-    <AboutDialog>
-      <Button variant="ghost" size="icon-sm" title="About, licenses and credits" aria-label="About">
-        <Info />
-      </Button>
-    </AboutDialog>
   )
 }
 

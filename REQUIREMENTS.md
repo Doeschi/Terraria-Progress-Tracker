@@ -17,7 +17,7 @@ GitHub Actions.
 - **G2** Modern UI with dark and light mode (follows system setting, can be switched).
 - **G3** Desktop first, but usable on tablets and phones.
 - **G4** Credits the Terraria Wiki as data and icon source (CC BY-NC-SA 4.0) with a link.
-- **G4a** An "About" dialog (ⓘ in the top bar, and "License & credits" in a one-line note at the
+- **G4a** An "About" dialog (⚙ menu → About, and "License & credits" in a one-line note at the
   bottom of the filter sidebar) with the data source and its license (also for the generated data
   and sprite sheets), the code license (MIT) and repository, the trademark note, the libraries
   used and the AI notice.
@@ -153,6 +153,13 @@ GitHub Actions.
 - **F1** The user can create a new tracking file or open one from disk.
 - **F2** Save: in Chrome/Edge the app writes directly back to the opened file (File System
   Access API). In other browsers "Save" downloads the file.
+- **F2a** Download mode (no File System Access API): the browser may rename a download
+  (e.g. `name(1).json`) without telling the page, so the app never claims to know the file.
+  Every download gets the date and time in its name (`terraria-progress_2026-09-30_14-32.json`;
+  the base name of an opened file is kept, older timestamps and `(1)` suffixes removed), so the
+  newest file is easy to find. The file button and "Continue where you left off" show
+  "Browser copy" (the state kept in the browser); the tooltip names the last download or the
+  opened file.
 - **F3** "Save as" is always available.
 - **F4** Unsaved changes are shown in the UI, and the browser warns before the tab is
   closed with unsaved changes.
@@ -194,15 +201,19 @@ GitHub Actions.
   an empty name is filled with the world name. On create the world is attached (and remembered
   like with "Attach world") and the areas dialog opens.
 - **P5** The header has three parts: the logo on the left, the labeled controls centered, and
-  the labeled theme switch on the right, followed by a GitHub icon (link to the repository) and
-  an ⓘ button for "About" (G4a) (logo and theme vertically centered). The centered part
-  holds File and a box with everything that belongs to the active playthrough – Playthrough,
-  Platform, Difficulty, Game version, World and the overall Progress. Platform, difficulty and
-  version are changed directly there, without a dialog.
+  the ⚙ menu on the right (settings, theme, About, GitHub – LS1; logo and menu vertically
+  centered). The centered part
+  holds File and a box with everything that belongs to the active playthrough – Playthrough (switch,
+  new, edit, delete), a summary button "Desktop · Classic · Latest ✎" for platform, difficulty
+  and game version (opens P4a; in the settings it can be switched to three separate dropdowns),
+  World and the overall Progress.
 - **P3** Each playthrough has one platform. Only items available on that platform are shown
   and counted.
 - **P4** Platform, difficulty and game version can be changed later; checked state of items is
   kept even for items that are hidden by the new settings.
+- **P4a** "Edit playthrough…" (playthrough menu, or the summary button) opens the same dialog as
+  "New playthrough", filled with the active playthrough: name, platform, world (keep, change or
+  detach), difficulty, game version and the resulting item count; "Save".
 
 - **P7** A new playthrough starts with all unobtainable items (D19) ignored, so they do not count
   towards progress; they can be un-ignored like any other item. Existing playthroughs are not
@@ -217,7 +228,7 @@ GitHub Actions.
   can be un-ignored.
 - **I5** Each item has a link that opens its wiki page in a new tab.
 - **I6** Without a sorted column, items are ordered by name (or by relevance while searching).
-- **I6a** Search mode next to the search field (items and bestiary; also used by the chest
+- **I6a** Search mode inside the search field (items and bestiary; also used by the chest
   search): "Fuzzy" (default, typos allowed – Fuse.js) or "Exact" (the text must appear in the
   name or internal name, case-insensitive; exact name first, then names starting with it, then
   matches at a word start, then anywhere). Remembered in the browser (PR1).
@@ -239,7 +250,7 @@ GitHub Actions.
 - **I16** Table columns can be resized by dragging the right edge of their header (minimum
   60 px, the name column 160 px); a double-click on the edge restores the default width, "Reset
   widths" in the Columns menu all of them. Checkbox, icon and the last column have a fixed width.
-- **I15** Column presets are always-visible quick buttons above the table ("View"): Overview,
+- **I15** Column presets ("View": favorites as buttons, all in a dropdown – LS2): Overview,
   Where to get it, Progression (sorted by "Available after"), Weapons, Mining & tools, Armor &
   accessories, Potions & food, Fishing, Building & furniture, Trading, Technical. A preset sets
   the visible columns and, for most, a sort order (e.g. Weapons: damage high to low). "Available
@@ -269,7 +280,7 @@ GitHub Actions.
 - **FL5** The overall progress of the playthrough is always visible.
 - **FL6** Active filters are shown and can be cleared individually or all at once ("Clear all"
   right after the last filter). Without filters and search the bar shows "No filters active"
-  at the same height, so the list below does not jump.
+  at the same height, so the list below does not jump (can be switched off in the settings).
 - **FL7** The options of the groups categories (incl. subcategories), obtained by, sold by and
   events can be switched between the default order (as in `mapping.toml`) and A–Z.
 
@@ -295,7 +306,7 @@ GitHub Actions.
   message with "Undo". Hidden options still work as filters from there and can be shown in their
   group again (eye, always available in "Hidden"; the section opens in edit mode). The filter
   search (FL9) ignores hidden options.
-- **FL11** "Move completed filters" (toggle next to the filter search): options at 100 % in the
+- **FL11** "Move completed filters" (toggle next to the filter search, on by default): options at 100 % in the
   current context move to the "Completed" section, above "Hidden". Completed options stay
   usable and follow the filter search.
 - **FL12** Both sections list their options under the name of their group, are collapsed by
@@ -307,11 +318,48 @@ GitHub Actions.
 - **FL14** Every group header also shows how many of its options are completed, e.g. "✓ 2/18"
   (top-level options with items in the current context, hidden ones left out; green when all
   are complete).
+## LS – Layout and settings
+
+- **LS0** The top bar groups its fields in cards: File, the playthrough box (P) and the View
+  switch (items / bestiary) each in their own card.
+- **LS1** Top right: a single ⚙ menu instead of separate buttons – Settings…, Theme (light /
+  dark / system), About… (G4a) and GitHub.
+- **LS2** List header in three rows: search (with the Fuzzy / Exact switch inside the field);
+  Show (all / missing / …), progress of the filtered items and bulk actions; views. The views
+  are a dropdown with all presets; a star in the dropdown marks a view as favorite (default
+  Overview, Where to get it, Progression) – favorites are also shown as buttons next to it.
+- **LS3** Settings dialog (⚙ → Settings…), everything remembered in the browser (PR1):
+  - Appearance: theme; density (compact – default – or comfortable: compact has lower table
+    rows, smaller icons and tighter filter options)
+  - Top bar: show the bestiary progress bar; platform / difficulty / version as one button or
+    three dropdowns
+  - List: show "Progress of filtered items"; filter bar always or only with
+    active filters (the search mode is switched in the search field, I6a)
+  - Filter sidebar: reorder the filter groups (items and bestiary; single options are hidden in
+    the sidebar itself, FL10); progress bars of the single options on / off
+  - Detail panel: show / hide and reorder its sections
+  - each part of the dialog in its own bordered box
+  - "Reset all settings"
+
+- **LS4** Views are customizable: a view has a name, its columns **in order**, and a sorting.
+  In the views dropdown every view has ✎ (edit) and ☆ (favorite); below the list "New view…"
+  and, while the columns are "Custom", "Save current table as view…". The edit dialog: name,
+  columns (ordered list with ↑↓ and remove, "Add column" grouped like the Columns menu), sorting
+  (a column or none, ascending / descending), favorite, "Take current table"; built-in views get
+  "Restore default" (only when changed), own views "Delete". The table shows the columns in the
+  order of the applied view (columns added via the Columns menu come after them). The order of
+  the views in the dropdown is set in the settings (↑↓). Stored in the browser; changed built-in
+  views only keep their differences, so unchanged ones follow updates of the app.
+
 ## PR – Remembered view settings
 
 - **PR1** Stored in the browser (localStorage), not in the tracking file: visible table columns,
-  their widths, the table's column sorting, and the option order (default / A–Z) per filter group. They are
-  restored on the next visit. Settings that no longer apply (e.g. a removed column) are ignored.
+  their widths, the table's column sorting, and the option order (default / A–Z) per filter group,
+  and which filter groups are open or closed. They are restored on the next visit. Settings that
+  no longer apply (e.g. a removed column) are ignored.
+- **PR2** Per playthrough the browser also remembers what the list showed: selected filters,
+  search, "Show" switch, items or bestiary, and the item in the detail panel. It is restored
+  when the playthrough becomes active again – on the next visit or after switching playthroughs.
 
 ## B – Bosses and drops
 

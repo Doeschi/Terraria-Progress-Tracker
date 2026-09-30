@@ -3,6 +3,7 @@ import { ArrowDown, ArrowUp, ChevronDown, ExternalLink, ListChecks, RefreshCw, S
 import { useUi } from '@/ui'
 import { useActivePlaythrough, useActiveWorld, useStore } from '@/store'
 import { cn } from '@/lib/utils'
+import { usePrefs } from '@/lib/prefs'
 import { confirm } from '@/lib/confirm'
 import { BESTIARY_GROUP_KEYS, bestiaryExists, buildBestiaryGroups, type BestiaryViewMode } from '@/lib/bestiary'
 import type { BestiaryEntry, GameData } from '@/lib/types'
@@ -21,7 +22,7 @@ import {
 } from '@/components/ui/dropdown-menu'
 import { BestiaryFilterSidebar } from './FilterSidebar'
 import { TallyBar, TallyText, WikiIcon } from './common'
-import { ActiveFilterBar, MobileFiltersButton, SearchField, SearchModeToggle } from './ListParts'
+import { ActiveFilterBar, MobileFiltersButton, SearchField } from './ListParts'
 import { formatDate, nameOf } from '@/lib/format'
 import { worldState } from '@/lib/bestiary'
 
@@ -55,6 +56,7 @@ function Toolbar({ view }: { view: BestiaryView }) {
   const setView = useStore((s) => s.setBestiaryView)
   const world = useActiveWorld()
   const openDialog = useUi((s) => s.open)
+  const showProgress = usePrefs((s) => s.layout.showFilteredProgress)
 
   const views: { value: BestiaryViewMode; label: string; tip: string }[] = [
     { value: 'all', label: 'All', tip: 'All bestiary entries' },
@@ -70,8 +72,8 @@ function Toolbar({ view }: { view: BestiaryView }) {
           onChange={setSearch}
           placeholder="Search the bestiary…"
           label="Search the bestiary"
+          withMode
         />
-        <SearchModeToggle />
         <MobileFilters view={view} />
       </div>
       <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
@@ -92,6 +94,13 @@ function Toolbar({ view }: { view: BestiaryView }) {
             ))}
           </ToggleGroup>
         </div>
+        {showProgress && (
+          <div className="flex items-center gap-2 text-xs text-muted-foreground">
+            Filtered
+            <TallyBar tally={view.filtered} className="w-20" />
+            <TallyText tally={view.filtered} />
+          </div>
+        )}
         <div className="ml-auto flex gap-2">
           {world?.bestiary && (
             <Button variant="outline" size="sm" onClick={() => openDialog({ type: 'sync', section: 'bestiary' })}>
@@ -101,13 +110,11 @@ function Toolbar({ view }: { view: BestiaryView }) {
           <BulkActions view={view} />
         </div>
       </div>
-      <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-xs text-muted-foreground">
-        Progress of filtered entries
-        <TallyBar tally={view.filtered} className="w-24" />
-        <TallyText tally={view.filtered} />
-        {!world && <span>· attach the world to sync the bestiary with it</span>}
-        {world && !world.bestiary && <span>· the bestiary could not be read from the world</span>}
-      </div>
+      {(!world || !world.bestiary) && (
+        <p className="text-xs text-muted-foreground">
+          {!world ? 'Attach the world to sync the bestiary with it.' : 'The bestiary could not be read from the world.'}
+        </p>
+      )}
     </div>
   )
 }

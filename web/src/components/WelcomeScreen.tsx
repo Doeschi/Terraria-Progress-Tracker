@@ -16,7 +16,7 @@ import {
   Swords,
 } from 'lucide-react'
 import { useStore } from '@/store'
-import { canSaveInPlace, clearBackup, hasRememberedWorld, readBackup, type Backup } from '@/lib/files'
+import { canSaveInPlace, clearBackup, fileLabel, hasRememberedWorld, readBackup, type Backup } from '@/lib/files'
 import { useWorldLoader } from '@/hooks/useWorldLoader'
 import { activePlaythrough } from '@/lib/saveFile'
 import { Button } from '@/components/ui/button'
@@ -149,9 +149,11 @@ export function WelcomeScreen() {
 /** The last session: file name, when it was saved, unsaved changes and the active playthrough. */
 function ContinueButton({ backup, onClick }: { backup: Backup; onClick: () => void }) {
   const pt = activePlaythrough(backup.doc)
+  const file = fileLabel(backup.fileName)
   return (
     <button
       onClick={onClick}
+      title={file.title}
       className="group flex w-full items-center gap-3 rounded-lg bg-primary px-4 py-3 text-left text-primary-foreground shadow-sm transition-colors hover:bg-primary/90 focus-visible:ring-3 focus-visible:ring-ring/50 focus-visible:outline-none"
     >
       <History className="size-5 shrink-0" />
@@ -161,7 +163,7 @@ function ContinueButton({ backup, onClick }: { backup: Backup; onClick: () => vo
           <span className="flex min-w-0 items-center gap-1">
             <FileText className="size-3.5 shrink-0" />
             <span className="truncate">
-              {backup.fileName ?? 'Unsaved file'}
+              {file.label}
               {pt && ` · ${pt.name}`}
             </span>
           </span>

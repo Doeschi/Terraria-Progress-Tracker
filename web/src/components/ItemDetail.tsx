@@ -1,4 +1,4 @@
-import { useEffect, useMemo } from 'react'
+import { Fragment, useEffect, useMemo } from 'react'
 import { ArrowLeft, ExternalLink, Eye, EyeOff, PackageSearch, X } from 'lucide-react'
 import { useActivePlaythrough, useStore } from '@/store'
 import { useUi } from '@/ui'
@@ -16,6 +16,8 @@ import { RecipeSections } from './RecipeSections'
 import { formatDate, nameOf } from '@/lib/format'
 import { type ColumnGroup, type ItemColumn, type TrackingState } from './table/columns'
 import { useItemColumns } from './table/useColumns'
+import { usePrefs } from '@/lib/prefs'
+import { DETAIL_SECTIONS, ordered } from '@/lib/layout'
 
 // Everything known about one item, selected in the item table. On wide screens
 // it is docked right of the table (the table stays usable, clicking another row
@@ -136,6 +138,62 @@ function DetailContent({ item, Title }: { item: Item; Title: TitleComponent }) {
   const ignored = pt.ignored.includes(item.key)
   const tracking: TrackingState = { changedAt: pt.changedAt, difficulty: pt.difficulty }
   const changed = formatDate(pt.changedAt[item.key])
+  const detailOrder = usePrefs((s) => s.layout.detailOrder)
+  const hiddenDetail = usePrefs((s) => s.layout.hiddenDetail)
+
+  // the sections in the order and selection of the settings (Layout.detailOrder / hiddenDetail)
+  const sections: Record<string, React.ReactNode> = {
+    tooltip: item.tooltip && (
+      <p className="rounded-lg border bg-muted/30 px-3 py-2 text-sm whitespace-pre-line italic">{item.tooltip}</p>
+    ),
+    what: (
+      <Section title="What it is">
+        <Chips
+          values={[
+            ...item.categories.map((c) => nameOf(data.categories, c)),
+            ...item.subcategories.map((s) => nameOf(data.subcategories, s)),
+          ]}
+        />
+      </Section>
+    ),
+    how: (
+      <Section title="How to get it">
+        <Chips values={item.obtain.map((o) => nameOf(data.obtain, o))} empty="Unknown" />
+        {item.milestone && <MilestoneLine data={data} item={item} />}
+        {item.events.length > 0 && (
+          <p className="text-sm">
+            <span className="text-muted-foreground">{item.eventOnly ? 'Only during ' : 'During '}</span>
+            {item.events.map((e) => nameOf(data.events, e)).join(', ')}
+          </p>
+        )}
+      </Section>
+    ),
+    soldBy: <SoldBySection data={data} item={item} />,
+    dropped: <DropsSection data={data} item={item} difficulty={pt.difficulty} kind="dropped" />,
+    found: <DropsSection data={data} item={item} difficulty={pt.difficulty} kind="found" />,
+    recipes: <RecipeSections data={data} item={item} platform={pt.platform} checked={checkedSet} />,
+    stats: <StatsSection item={item} catalogue={catalogue} tracking={tracking} />,
+    details: (
+      <Section title="Details">
+        <dl className="grid grid-cols-[auto_1fr] gap-x-4 gap-y-1 text-sm">
+          <dt className="text-muted-foreground">Item ID</dt>
+          <dd className="tabular-nums">{item.id}</dd>
+          {item.internalName && (
+            <>
+              <dt className="text-muted-foreground">Internal name</dt>
+              <dd className="font-mono text-xs leading-5">{item.internalName}</dd>
+            </>
+          )}
+          <dt className="text-muted-foreground">Platforms</dt>
+          <dd>{item.platforms.map((p) => nameOf(data.platforms, p)).join(', ')}</dd>
+        </dl>
+      </Section>
+    ),
+  }
+  const sectionIds = ordered(
+    DETAIL_SECTIONS.map((d) => d.id),
+    detailOrder,
+  ).filter((id) => !hiddenDetail.includes(id))
 
   return (
     <>
@@ -212,52 +270,9 @@ function DetailContent({ item, Title }: { item: Item; Title: TitleComponent }) {
             categories from a similar item; stats, rarity and prices are missing.
           </p>
         )}
-        {item.tooltip && (
-          <p className="rounded-lg border bg-muted/30 px-3 py-2 text-sm whitespace-pre-line italic">{item.tooltip}</p>
-        )}
-
-        <Section title="What it is">
-          <Chips
-            values={[
-              ...item.categories.map((c) => nameOf(data.categories, c)),
-              ...item.subcategories.map((s) => nameOf(data.subcategories, s)),
-            ]}
-          />
-        </Section>
-
-        <Section title="How to get it">
-          <Chips values={item.obtain.map((o) => nameOf(data.obtain, o))} empty="Unknown" />
-          {item.milestone && <MilestoneLine data={data} item={item} />}
-          {item.events.length > 0 && (
-            <p className="text-sm">
-              <span className="text-muted-foreground">{item.eventOnly ? 'Only during ' : 'During '}</span>
-              {item.events.map((e) => nameOf(data.events, e)).join(', ')}
-            </p>
-          )}
-        </Section>
-
-        <SoldBySection data={data} item={item} />
-        <DropsSection data={data} item={item} difficulty={pt.difficulty} kind="dropped" />
-        <DropsSection data={data} item={item} difficulty={pt.difficulty} kind="found" />
-
-        <RecipeSections data={data} item={item} platform={pt.platform} checked={checkedSet} />
-
-        <StatsSection item={item} catalogue={catalogue} tracking={tracking} />
-
-        <Section title="Details">
-          <dl className="grid grid-cols-[auto_1fr] gap-x-4 gap-y-1 text-sm">
-            <dt className="text-muted-foreground">Item ID</dt>
-            <dd className="tabular-nums">{item.id}</dd>
-            {item.internalName && (
-              <>
-                <dt className="text-muted-foreground">Internal name</dt>
-                <dd className="font-mono text-xs leading-5">{item.internalName}</dd>
-              </>
-            )}
-            <dt className="text-muted-foreground">Platforms</dt>
-            <dd>{item.platforms.map((p) => nameOf(data.platforms, p)).join(', ')}</dd>
-          </dl>
-        </Section>
+        {sectionIds.map((id) => (
+          <Fragment key={id}>{sections[id]}</Fragment>
+        ))}
       </div>
     </>
   )
