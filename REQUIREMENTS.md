@@ -806,6 +806,41 @@ GitHub Actions.
   in the chests the player placed, whole world – the same chests as "craftable from your chests"
   (RC); empty for none.
 
+## PL – Player file
+
+Status: planned, not started. Reviewed before implementation (see also the v2 list).
+
+- **PL1** Parser package: a self-contained package in this repo, `packages/terraria-player-file/`
+  (own `package.json`, no imports from the app, own tests, MIT license), used by the web app like
+  an external library. Written from scratch (no code from the decompiled game or other tools).
+  Once stable and after surviving a Terraria update it may move to its own repository and be
+  published on npm (accounts and package name by the repo owner).
+- **PL2** Reading: `.plr` files are decrypted in the browser (Web Crypto AES-CBC with the game's
+  fixed key) and parsed in a Web Worker; nothing is uploaded. Supported: the 1.4.x formats up to
+  1.4.5; older or unknown newer versions give a clear error (or, where possible, what could be
+  read and what is missing, like the world file W7). Result: name, difficulty (incl. Journey),
+  game version / file version, and per item id + stack + prefix:
+  - inventory (50 slots, coins, ammo) and the trash slot
+  - equipment: armor, accessories, vanity, dyes; misc equipment (pet, light pet, minecart, mount,
+    hook) and their dyes; the 3 equipment loadouts
+  - storages: Piggy Bank, Safe, Defender's Forge, Void Vault (40 slots each)
+  - permanent upgrades used: Life Crystals, Life Fruit, Mana Crystals (from max life / mana),
+    Demon Heart, Vital Crystal, Aegis Fruit, Arcane Crystal, Galaxy Pearl, Gummy Worm, Ambrosia,
+    Artisan Loaf, Torch God's Favor, Minecart Upgrade Kit
+  - Journey research (item → amount researched), read now, used later (v2)
+  Test files: the owner's characters for development; for the package's own tests fresh, clean
+  characters (one Journey, one Classic) with items in every storage and a few used upgrades.
+- **PL3** Attach a player to a playthrough (one per playthrough for now), like the world (W):
+  attach, reload (Chrome/Edge remember the file), detach; the player's name in the header next
+  to the world. The tracking file stores a reference (name, file name), not the contents.
+- **PL4** Sync (SY): a "Player" section in the sync dialog marks items as obtained that are in
+  any of the player's storages; checkboxes per storage (inventory, equipment and loadouts, Piggy
+  Bank, Safe, Defender's Forge, Void Vault, trash), all on by default. Used permanent upgrades
+  count as obtained (they can never be found in a storage).
+- **PL5** Column "Owned" replaces "In chests" (BL6) when a player is loaded: chests + player
+  storages; the tooltip splits it up ("12 in chests · 3 in the Void Vault · 1 in the
+  inventory"). Only offered while a world or a player is loaded; "Bad luck" shows it.
+
 ## v2 / later
 
 - **Area map stage 2:** draw the actual world (block, wall and liquid colors) behind the
@@ -839,3 +874,7 @@ GitHub Actions.
   Drive version) and ask before overwriting. Same autosave rules as the local file. Open
   questions: visible file or hidden app folder; File-menu entries and "Continue" for cloud
   files. (Already works today on PCs: save the file in the Dropbox / Drive sync folder.)
+- **Player file extras (PL):** Journey research – column with the progress ("37/100"), filter
+  "fully researched / not yet", optional sync of researched items; chest search also finds items
+  on the player (inventory, banks, loadouts – no map marker); several players per playthrough
+  (all characters, or friends in multiplayer).
