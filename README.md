@@ -16,6 +16,7 @@ full feature list.
 | `pipeline/data_readable/`| The generated data, indented for reading (same content as `web/public/data`) |
 | `web/`                   | The web app (Vite, React, TypeScript, Tailwind, shadcn/ui)                   |
 | `web/public/data/`       | The generated data the app loads (minified JSON)                             |
+| `web/public/icons/`      | Sprite sheets of the small wiki icons (`build_icons.py`)                      |
 
 ## Data for other projects
 
@@ -30,6 +31,8 @@ the unchanged downloads in [`pipeline/raw/`](pipeline/raw).
 | `drops.json` | 419 drop sources (enemies, bosses, treasure bags, chests, crates, grab bags, shaking trees) and 3,404 drops with chance and quantity **per game mode** (Classic / Expert / Master) |
 | `shops.json` | 817 shop rows of 24 vendors (from the vendor pages): per item the vendor, the wiki's condition text and the parsed conditions, events, biomes and moon phases |
 | `conditions.json` | Conditions of shop rows and drops: time of day, moon phases, after a boss, wind, Hardmode, world seeds – with item counts |
+| `milestones.json` | Progression milestones (Start, King Slime, … Moon Lord); `items.json` gives each item its earliest milestone and the reason (e.g. "crafted – needs Chlorophyte Ore") |
+| `sprites.json` + `icons/` | The small wiki icons (about 6,300) packed into 3 sprite sheets, with each icon's sheet and position (`build_icons.py`) |
 | `containers.json` | The container sources grouped into Chests, Crates, Other containers and Trees, with item counts |
 | `bosses.json` | Bosses by progression stage, each with all drop sources that count for it (parts, treasure bag) |
 | `recipes.json` | 3,610 crafting recipes (current versions, platform-limited ones marked), 42 crafting stations with the items that provide them (stronger stations included), 34 "Any …" ingredient groups resolved to items, 286 shimmer transmutations |
@@ -54,6 +57,10 @@ What is derived rather than copied (see [`pipeline/trackerdata/`](pipeline/track
 - **Bestiary entries** matched to NPC ids and internal names (the keys of the bestiary in world
   files), with the game update from the NPC id history.
 - **Platform icons** extracted from the wiki's CSS.
+- **Earliest milestone of an item** from its drops (bosses, events, Dungeon / Temple enemies),
+  shops (when the vendor moves in, "after <boss>" conditions), recipes (latest ingredient or
+  station, repeated until stable), containers and a few rules for mining – see `[milestones]`
+  in `mapping.toml`.
 
 The web app also contains a small reader for the tile entities of 1.4.5 world files (item frames,
 weapon racks, mannequins, hat racks, plates and the new Item Flask) in
@@ -61,18 +68,24 @@ weapon racks, mannequins, hat racks, plates and the new Item Flask) in
 
 ## Updating the item data
 
-Requires Python 3.11+ and `pip install requests`.
+Requires Python 3.11+ and `pip install requests pillow`.
 
 ```bash
 python pipeline/download_cargo_tables.py   # step 1: wiki -> pipeline/raw/ (Cargo tables, page images/sources)
 python pipeline/build_tracker_data.py      # step 2: raw + mapping.toml -> web/public/data/*.json
 python pipeline/check_icons.py             # optional: check that all linked wiki images exist
+python pipeline/build_icons.py             # step 3: small icons -> sprite sheets in web/public/icons/
 ```
 
 `check_icons.py` asks the wiki's API about all linked images in batches of 50 (about 180
 requests, no image downloads). It reports missing files and saves files that are only redirects
 – their direct link does not work – to `pipeline/raw/image_redirects.json`; run step 2 again and
 the targets are linked instead.
+
+`build_icons.py` packs the small icons (PNG up to 128 × 64 px; about 6,300) into a few sprite sheets
+that are served with the app, so it does not load thousands of single images from the wiki. The
+files are downloaded once into `pipeline/icons_cache/` (not committed); later runs only fetch
+new ones (`--refresh` revalidates all). Larger images and animated GIFs stay links to the wiki.
 
 wiki.gg asks scripts for a contact in their User-Agent: pass `--contact`, set `WIKI_CONTACT`, or
 put it in `pipeline/contact.txt` (not committed); otherwise the project URL is sent.
@@ -104,7 +117,8 @@ The code is licensed under the [MIT License](LICENSE).
 
 Item data and icons come from the [Terraria Wiki](https://terraria.wiki.gg/) and are licensed under
 [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/); this applies to
-`pipeline/raw/`, `pipeline/data_readable/` and `web/public/data/` as well. World files are parsed
+`pipeline/raw/`, `pipeline/data_readable/`, `web/public/data/` and the icon sprite sheets in
+`web/public/icons/` as well. World files are parsed
 with [terraria-world-file](https://github.com/cokolele/terraria-world-file-ts). Terraria is a
 trademark of Re-Logic; this is an unofficial fan project. The app was built with the help of AI
 (Claude by Anthropic).

@@ -7,7 +7,50 @@ import { RARITIES } from './common-data'
 import type { Difficulty } from '@/lib/types'
 import { plural } from '@/lib/format'
 
-/** Icon loaded directly from the wiki. */
+const WIKI_IMAGES = 'https://terraria.wiki.gg/images/'
+
+interface Sprite {
+  file: string
+  sheetW: number
+  sheetH: number
+  x: number
+  y: number
+  w: number
+  h: number
+}
+
+/** The icon's place in the app's sprite sheets (build_icons.py), if it is packed there. */
+function useSprite(src?: string): Sprite | undefined {
+  const sprites = useStore((s) => s.data?.sprites)
+  const hit = src?.startsWith(WIKI_IMAGES) ? sprites?.icons.get(src.slice(WIKI_IMAGES.length)) : undefined
+  if (!hit || !sprites) return undefined
+  const [n, x, y, w, h] = hit
+  const sheet = sprites.sheets[n]
+  return { file: sheet.file, sheetW: sheet.w, sheetH: sheet.h, x, y, w, h }
+}
+
+/** A sprite drawn at `scale` (pixelated). */
+function SpriteImage({ sprite, scale, alt, title }: { sprite: Sprite; scale: number; alt: string; title?: string }) {
+  return (
+    <span
+      role="img"
+      aria-label={alt || undefined}
+      aria-hidden={alt ? undefined : true}
+      title={title}
+      className="inline-block shrink-0 [image-rendering:pixelated]"
+      style={{
+        width: sprite.w * scale,
+        height: sprite.h * scale,
+        backgroundImage: `url(${import.meta.env.BASE_URL}${sprite.file})`,
+        backgroundPosition: `${-sprite.x * scale}px ${-sprite.y * scale}px`,
+        backgroundSize: `${sprite.sheetW * scale}px ${sprite.sheetH * scale}px`,
+      }}
+    />
+  )
+}
+
+/** A wiki icon: from the app's sprite sheets if packed there (build_icons.py), else loaded from
+ * the wiki. Native size, scaled down to fit the box, pixelated. */
 export function WikiIcon({
   src,
   alt,
@@ -20,7 +63,15 @@ export function WikiIcon({
   className?: string
 }) {
   const [failed, setFailed] = useState(false)
+  const sprite = useSprite(src)
   const box = { width: size, height: size }
+  if (sprite) {
+    return (
+      <span style={box} className={cn('flex shrink-0 items-center justify-center', className)}>
+        <SpriteImage sprite={sprite} scale={Math.min(1, size / sprite.w, size / sprite.h)} alt={alt} />
+      </span>
+    )
+  }
   if (!src || failed) {
     return (
       <span style={box} className={cn('grid shrink-0 place-items-center text-muted-foreground/50', className)}>
@@ -82,14 +133,18 @@ export function DifficultyIcon({ difficulty, size = 16 }: { difficulty: Difficul
 
 export function RarityIcon({ rarity }: { rarity?: number }) {
   const entry = useStore((s) => (rarity === undefined ? undefined : s.data?.rarities.get(rarity)))
+  const sprite = useSprite(entry?.icon)
   if (rarity === undefined) return null
   const name = entry?.name ?? RARITIES[rarity]?.name ?? String(rarity)
   if (!entry?.icon) return <span>{name}</span>
+  const title = `Rarity: ${name} (${rarity})`
+  // 18 px high, like the image below
+  if (sprite) return <SpriteImage sprite={sprite} scale={18 / sprite.h} alt={name} title={title} />
   return (
     <img
       src={entry.icon}
       alt={name}
-      title={`Rarity: ${name} (${rarity})`}
+      title={title}
       loading="lazy"
       referrerPolicy="no-referrer"
       className="h-[18px] w-auto [image-rendering:pixelated]"
@@ -115,20 +170,25 @@ export function Coins({ value }: { value?: number }) {
         .map(({ coin, n }) => (
           <span key={coin.id} className="inline-flex items-center gap-0.5" title={plural(n, coin.name)}>
             {n}
-            {coin.icon ? (
-              <img
-                src={coin.icon}
-                alt={coin.name}
-                loading="lazy"
-                referrerPolicy="no-referrer"
-                className="h-4 w-auto [image-rendering:pixelated]"
-                draggable={false}
-              />
-            ) : (
-              coin.id[0]
-            )}
+            {coin.icon ? <CoinIcon src={coin.icon} name={coin.name} /> : coin.id[0]}
           </span>
         ))}
     </span>
+  )
+}
+
+/** A coin icon, 16 px high. */
+function CoinIcon({ src, name }: { src: string; name: string }) {
+  const sprite = useSprite(src)
+  if (sprite) return <SpriteImage sprite={sprite} scale={16 / sprite.h} alt={name} />
+  return (
+    <img
+      src={src}
+      alt={name}
+      loading="lazy"
+      referrerPolicy="no-referrer"
+      className="h-4 w-auto [image-rendering:pixelated]"
+      draggable={false}
+    />
   )
 }

@@ -104,6 +104,9 @@ interface Actions {
 
 const DEFAULT_FILE_NAME = 'terraria-progress.json'
 
+/** the game data load in progress (loadData is called twice in dev, see there) */
+let loading: Promise<void> | null = null
+
 export const useStore = create<State & Actions>()((set, get) => {
   const mutateDoc = (fn: (doc: SaveFile) => SaveFile) => {
     const doc = get().doc
@@ -155,12 +158,15 @@ export const useStore = create<State & Actions>()((set, get) => {
     bestiarySearch: '',
     bestiaryView: 'all',
 
-    async loadData() {
-      try {
-        set({ data: await loadGameData(), dataError: null })
-      } catch (err) {
-        set({ dataError: err instanceof Error ? err.message : String(err) })
-      }
+    loadData() {
+      // one load at a time: StrictMode (dev) runs the calling effect twice
+      loading ??= loadGameData()
+        .then((data) => set({ data, dataError: null }))
+        .catch((err) => set({ dataError: err instanceof Error ? err.message : String(err) }))
+        .finally(() => {
+          loading = null
+        })
+      return loading
     },
 
     newFile() {

@@ -146,6 +146,7 @@ def image_url(filename):
     if not filename:
         return None
     name = filename.strip().replace("_", " ")
+    name = name[:1].upper() + name[1:]  # MediaWiki file names start upper case ("r Terraria.png")
     name = IMAGE_REDIRECTS.get(name, name)
     return IMAGES + quote(name.replace(" ", "_"))
 

@@ -70,7 +70,7 @@ function BestiaryScreen() {
   return (
     <div className="flex min-h-0 flex-1">
       <aside className="hidden w-[22rem] shrink-0 flex-col overflow-y-auto border-r bg-sidebar md:flex">
-        <BestiaryFilterSidebar facets={view.facets} groupTallies={view.groupTallies} />
+        <BestiaryFilterSidebar facets={view.facets} groupTallies={view.groupTallies} available={view.available} />
         <div className="mt-auto p-4">
           <Credits />
         </div>
@@ -103,7 +103,7 @@ function Tracker() {
       ) : pt && view ? (
         <div className="flex min-h-0 flex-1">
           <aside className="hidden w-[22rem] shrink-0 flex-col overflow-y-auto border-r bg-sidebar md:flex">
-            <FilterSidebar facets={view.facets} groupTallies={view.groupTallies} />
+            <FilterSidebar facets={view.facets} groupTallies={view.groupTallies} available={view.available} />
             <div className="mt-auto p-4">
               <Credits />
             </div>

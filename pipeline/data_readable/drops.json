@@ -15,7 +15,10 @@
       "name": "Drippler",
       "kind": "npc",
       "icon": "https://terraria.wiki.gg/images/Drippler.gif",
-      "npcId": 490
+      "npcId": 490,
+      "events": [
+        "blood-moon"
+      ]
     },
     "dungeon-slime": {
       "id": "dungeon-slime",
@@ -32,14 +35,20 @@
       "name": "Gigazapper",
       "kind": "npc",
       "icon": "https://terraria.wiki.gg/images/Gigazapper.gif",
-      "npcId": 389
+      "npcId": 389,
+      "events": [
+        "martian-madness"
+      ]
     },
     "martian-engineer": {
       "id": "martian-engineer",
       "name": "Martian Engineer",
       "kind": "npc",
       "icon": "https://terraria.wiki.gg/images/Martian_Engineer.gif",
-      "npcId": 386
+      "npcId": 386,
+      "events": [
+        "martian-madness"
+      ]
     },
     "mythical-wyvern": {
       "id": "mythical-wyvern",
@@ -51,7 +60,10 @@
       "name": "Scutlix Gunner",
       "kind": "npc",
       "icon": "https://terraria.wiki.gg/images/Scutlix_Gunner.png",
-      "npcId": 390
+      "npcId": 390,
+      "events": [
+        "martian-madness"
+      ]
     },
     "bone-lee": {
       "id": "bone-lee",
@@ -95,7 +107,10 @@
       "name": "Angry Dandelion",
       "kind": "npc",
       "icon": "https://terraria.wiki.gg/images/Angry_Dandelion.gif",
-      "npcId": 628
+      "npcId": 628,
+      "events": [
+        "windy-day"
+      ]
     },
     "antlion-larva": {
       "id": "antlion-larva",
@@ -112,14 +127,20 @@
       "name": "Gingerbread Man",
       "kind": "npc",
       "icon": "https://terraria.wiki.gg/images/Gingerbread_Man.gif",
-      "npcId": 342
+      "npcId": 342,
+      "events": [
+        "frost-moon"
+      ]
     },
     "deadly-sphere": {
       "id": "deadly-sphere",
       "name": "Deadly Sphere",
       "kind": "npc",
       "icon": "https://terraria.wiki.gg/images/Deadly_Sphere.gif",
-      "npcId": 467
+      "npcId": 467,
+      "events": [
+        "solar-eclipse"
+      ]
     },
     "derpling": {
       "id": "derpling",
@@ -176,21 +197,30 @@
       "name": "Zombie Elf",
       "kind": "npc",
       "icon": "https://terraria.wiki.gg/images/Zombie_Elf_Girl.gif",
-      "npcId": 340
+      "npcId": 340,
+      "events": [
+        "frost-moon"
+      ]
     },
     "wandering-eye-fish": {
       "id": "wandering-eye-fish",
       "name": "Wandering Eye Fish",
       "kind": "npc",
       "icon": "https://terraria.wiki.gg/images/Wandering_Eye_Fish.gif",
-      "npcId": 587
+      "npcId": 587,
+      "events": [
+        "blood-moon"
+      ]
     },
     "everscream": {
       "id": "everscream",
       "name": "Everscream",
       "kind": "npc",
       "icon": "https://terraria.wiki.gg/images/Everscream.gif",
-      "npcId": 344
+      "npcId": 344,
+      "events": [
+        "frost-moon"
+      ]
     },
     "ice-slime": {
       "id": "ice-slime",
@@ -210,7 +240,10 @@
       "name": "Angry Nimbus",
       "kind": "npc",
       "icon": "https://terraria.wiki.gg/images/Angry_Nimbus.gif",
-      "npcId": 250
+      "npcId": 250,
+      "events": [
+        "rain"
+      ]
     },
     "undead-miner": {
       "id": "undead-miner",
@@ -244,7 +277,10 @@
       "name": "Windy Balloon",
       "kind": "npc",
       "icon": "https://terraria.wiki.gg/images/Windy_Balloon.png",
-      "npcId": 594
+      "npcId": 594,
+      "events": [
+        "windy-day"
+      ]
     },
     "blue-slime": {
       "id": "blue-slime",
@@ -293,7 +329,10 @@
       "name": "Ray Gunner",
       "kind": "npc",
       "icon": "https://terraria.wiki.gg/images/Ray_Gunner.gif",
-      "npcId": 382
+      "npcId": 382,
+      "events": [
+        "martian-madness"
+      ]
     },
     "giant-tortoise": {
       "id": "giant-tortoise",
@@ -340,14 +379,20 @@
       "name": "Umbrella Slime",
       "kind": "npc",
       "icon": "https://terraria.wiki.gg/images/Umbrella_Slime.gif",
-      "npcId": 225
+      "npcId": 225,
+      "events": [
+        "rain"
+      ]
     },
     "present-mimic": {
       "id": "present-mimic",
       "name": "Present Mimic",
       "kind": "npc",
       "icon": "https://terraria.wiki.gg/images/Present_Mimic.png",
-      "npcId": 341
+      "npcId": 341,
+      "events": [
+        "frost-moon"
+      ]
     },
     "piranha": {
       "id": "piranha",
@@ -385,14 +430,20 @@
       "name": "Hellhound",
       "kind": "npc",
       "icon": "https://terraria.wiki.gg/images/Hellhound.gif",
-      "npcId": 329
+      "npcId": 329,
+      "events": [
+        "pumpkin-moon"
+      ]
     },
     "flying-dutchman": {
       "id": "flying-dutchman",
       "name": "Flying Dutchman",
       "kind": "npc",
       "icon": "https://terraria.wiki.gg/images/Flying_Dutchman.gif",
-      "npcId": 491
+      "npcId": 491,
+      "events": [
+        "pirate-invasion"
+      ]
     },
     "raven": {
       "id": "raven",
@@ -460,14 +511,20 @@
       "name": "Goblin Warrior",
       "kind": "npc",
       "icon": "https://terraria.wiki.gg/images/Goblin_Warrior.gif",
-      "npcId": 28
+      "npcId": 28,
+      "events": [
+        "goblin-army"
+      ]
     },
     "goblin-peon": {
       "id": "goblin-peon",
       "name": "Goblin Peon",
       "kind": "npc",
       "icon": "https://terraria.wiki.gg/images/Goblin_Peon.gif",
-      "npcId": 26
+      "npcId": 26,
+      "events": [
+        "goblin-army"
+      ]
     },
     "cochineal-beetle": {
       "id": "cochineal-beetle",
@@ -494,7 +551,10 @@
       "name": "Brain Scrambler",
       "kind": "npc",
       "icon": "https://terraria.wiki.gg/images/Brain_Scrambler.gif",
-      "npcId": 381
+      "npcId": 381,
+      "events": [
+        "martian-madness"
+      ]
     },
     "cyan-beetle": {
       "id": "cyan-beetle",
@@ -521,7 +581,10 @@
       "name": "Dr. Man Fly",
       "kind": "npc",
       "icon": "https://terraria.wiki.gg/images/Dr._Man_Fly.gif",
-      "npcId": 468
+      "npcId": 468,
+      "events": [
+        "solar-eclipse"
+      ]
     },
     "lac-beetle": {
       "id": "lac-beetle",
@@ -698,7 +761,10 @@
       "name": "Angry Tumbler",
       "kind": "npc",
       "icon": "https://terraria.wiki.gg/images/Angry_Tumbler.png",
-      "npcId": 546
+      "npcId": 546,
+      "events": [
+        "sandstorm"
+      ]
     },
     "demon": {
       "id": "demon",
@@ -725,7 +791,10 @@
       "name": "Poltergeist",
       "kind": "npc",
       "icon": "https://terraria.wiki.gg/images/Poltergeist.gif",
-      "npcId": 330
+      "npcId": 330,
+      "events": [
+        "pumpkin-moon"
+      ]
     },
     "shadow-hammer": {
       "id": "shadow-hammer",
@@ -828,14 +897,20 @@
       "name": "Scarecrow",
       "kind": "npc",
       "icon": "https://terraria.wiki.gg/images/Scarecrow_10.gif",
-      "npcId": 314
+      "npcId": 314,
+      "events": [
+        "pumpkin-moon"
+      ]
     },
     "martian-officer": {
       "id": "martian-officer",
       "name": "Martian Officer",
       "kind": "npc",
       "icon": "https://terraria.wiki.gg/images/Martian_Officer.gif",
-      "npcId": 383
+      "npcId": 383,
+      "events": [
+        "martian-madness"
+      ]
     },
     "rune-wizard": {
       "id": "rune-wizard",
@@ -929,28 +1004,40 @@
       "name": "Corrupt Penguin",
       "kind": "npc",
       "icon": "https://terraria.wiki.gg/images/Corrupt_Penguin.gif",
-      "npcId": 168
+      "npcId": 168,
+      "events": [
+        "blood-moon"
+      ]
     },
     "vicious-penguin": {
       "id": "vicious-penguin",
       "name": "Vicious Penguin",
       "kind": "npc",
       "icon": "https://terraria.wiki.gg/images/Vicious_Penguin.gif",
-      "npcId": 470
+      "npcId": 470,
+      "events": [
+        "blood-moon"
+      ]
     },
     "gray-grunt": {
       "id": "gray-grunt",
       "name": "Gray Grunt",
       "kind": "npc",
       "icon": "https://terraria.wiki.gg/images/Gray_Grunt.gif",
-      "npcId": 385
+      "npcId": 385,
+      "events": [
+        "martian-madness"
+      ]
     },
     "raincoat-zombie": {
       "id": "raincoat-zombie",
       "name": "Raincoat Zombie",
       "kind": "npc",
       "icon": "https://terraria.wiki.gg/images/Raincoat_Zombie.gif",
-      "npcId": 223
+      "npcId": 223,
+      "events": [
+        "rain"
+      ]
     },
     "icy-merman": {
       "id": "icy-merman",
@@ -1103,28 +1190,40 @@
       "name": "Pirate Corsair",
       "kind": "npc",
       "icon": "https://terraria.wiki.gg/images/Pirate_Corsair.gif",
-      "npcId": 213
+      "npcId": 213,
+      "events": [
+        "pirate-invasion"
+      ]
     },
     "pirate-deckhand": {
       "id": "pirate-deckhand",
       "name": "Pirate Deckhand",
       "kind": "npc",
       "icon": "https://terraria.wiki.gg/images/Pirate_Deckhand.gif",
-      "npcId": 212
+      "npcId": 212,
+      "events": [
+        "pirate-invasion"
+      ]
     },
     "pirate-deadeye": {
       "id": "pirate-deadeye",
       "name": "Pirate Deadeye",
       "kind": "npc",
       "icon": "https://terraria.wiki.gg/images/Pirate_Deadeye.gif",
-      "npcId": 214
+      "npcId": 214,
+      "events": [
+        "pirate-invasion"
+      ]
     },
     "ice-golem": {
       "id": "ice-golem",
       "name": "Ice Golem",
       "kind": "npc",
       "icon": "https://terraria.wiki.gg/images/Ice_Golem.gif",
-      "npcId": 243
+      "npcId": 243,
+      "events": [
+        "blizzard"
+      ]
     },
     "antlion-charger": {
       "id": "antlion-charger",
@@ -1165,7 +1264,10 @@
       "name": "Betsy",
       "kind": "npc",
       "icon": "https://terraria.wiki.gg/images/Betsy.gif",
-      "npcId": 551
+      "npcId": 551,
+      "events": [
+        "old-ones-army"
+      ]
     },
     "treasure-bag-betsy": {
       "id": "treasure-bag-betsy",
@@ -1191,35 +1293,50 @@
       "name": "Pumpking",
       "kind": "npc",
       "icon": "https://terraria.wiki.gg/images/Pumpking_head.gif",
-      "npcId": 327
+      "npcId": 327,
+      "events": [
+        "pumpkin-moon"
+      ]
     },
     "ice-queen": {
       "id": "ice-queen",
       "name": "Ice Queen",
       "kind": "npc",
       "icon": "https://terraria.wiki.gg/images/Ice_Queen.png",
-      "npcId": 345
+      "npcId": 345,
+      "events": [
+        "frost-moon"
+      ]
     },
     "goblin-sorcerer": {
       "id": "goblin-sorcerer",
       "name": "Goblin Sorcerer",
       "kind": "npc",
       "icon": "https://terraria.wiki.gg/images/Goblin_Sorcerer.png",
-      "npcId": 29
+      "npcId": 29,
+      "events": [
+        "goblin-army"
+      ]
     },
     "blood-zombie": {
       "id": "blood-zombie",
       "name": "Blood Zombie",
       "kind": "npc",
       "icon": "https://terraria.wiki.gg/images/Blood_Zombie.gif",
-      "npcId": 489
+      "npcId": 489,
+      "events": [
+        "blood-moon"
+      ]
     },
     "martian-walker": {
       "id": "martian-walker",
       "name": "Martian Walker",
       "kind": "npc",
       "icon": "https://terraria.wiki.gg/images/Martian_Walker.gif",
-      "npcId": 520
+      "npcId": 520,
+      "events": [
+        "martian-madness"
+      ]
     },
     "skeleton-commando": {
       "id": "skeleton-commando",
@@ -1246,7 +1363,10 @@
       "name": "Butcher",
       "kind": "npc",
       "icon": "https://terraria.wiki.gg/images/Butcher.gif",
-      "npcId": 460
+      "npcId": 460,
+      "events": [
+        "solar-eclipse"
+      ]
     },
     "tactical-skeleton": {
       "id": "tactical-skeleton",
@@ -1263,35 +1383,50 @@
       "name": "Fritz",
       "kind": "npc",
       "icon": "https://terraria.wiki.gg/images/Fritz.gif",
-      "npcId": 462
+      "npcId": 462,
+      "events": [
+        "solar-eclipse"
+      ]
     },
     "swamp-thing": {
       "id": "swamp-thing",
       "name": "Swamp Thing",
       "kind": "npc",
       "icon": "https://terraria.wiki.gg/images/Swamp_Thing.gif",
-      "npcId": 166
+      "npcId": 166,
+      "events": [
+        "solar-eclipse"
+      ]
     },
     "frankenstein": {
       "id": "frankenstein",
       "name": "Frankenstein",
       "kind": "npc",
       "icon": "https://terraria.wiki.gg/images/Frankenstein.gif",
-      "npcId": 162
+      "npcId": 162,
+      "events": [
+        "solar-eclipse"
+      ]
     },
     "psycho": {
       "id": "psycho",
       "name": "Psycho",
       "kind": "npc",
       "icon": "https://terraria.wiki.gg/images/Psycho.gif",
-      "npcId": 466
+      "npcId": 466,
+      "events": [
+        "solar-eclipse"
+      ]
     },
     "mister-stabby": {
       "id": "mister-stabby",
       "name": "Mister Stabby",
       "kind": "npc",
       "icon": "https://terraria.wiki.gg/images/Mister_Stabby.gif",
-      "npcId": 144
+      "npcId": 144,
+      "events": [
+        "frost-legion"
+      ]
     },
     "orca": {
       "id": "orca",
@@ -1318,14 +1453,20 @@
       "name": "Pirate Crossbower",
       "kind": "npc",
       "icon": "https://terraria.wiki.gg/images/Pirate_Crossbower.gif",
-      "npcId": 215
+      "npcId": 215,
+      "events": [
+        "pirate-invasion"
+      ]
     },
     "mothron": {
       "id": "mothron",
       "name": "Mothron",
       "kind": "npc",
       "icon": "https://terraria.wiki.gg/images/Mothron.gif",
-      "npcId": 477
+      "npcId": 477,
+      "events": [
+        "solar-eclipse"
+      ]
     },
     "spore-skeleton": {
       "id": "spore-skeleton",
@@ -1376,7 +1517,10 @@
       "name": "Flying Fish",
       "kind": "npc",
       "icon": "https://terraria.wiki.gg/images/Flying_Fish.gif",
-      "npcId": 224
+      "npcId": 224,
+      "events": [
+        "rain"
+      ]
     },
     "pinky": {
       "id": "pinky",
@@ -1528,14 +1672,20 @@
       "name": "Creature from the Deep",
       "kind": "npc",
       "icon": "https://terraria.wiki.gg/images/Creature_from_the_Deep.gif",
-      "npcId": 461
+      "npcId": 461,
+      "events": [
+        "solar-eclipse"
+      ]
     },
     "zombie-merman": {
       "id": "zombie-merman",
       "name": "Zombie Merman",
       "kind": "npc",
       "icon": "https://terraria.wiki.gg/images/Zombie_Merman.gif",
-      "npcId": 586
+      "npcId": 586,
+      "events": [
+        "blood-moon"
+      ]
     },
     "nymph": {
       "id": "nymph",
@@ -1562,14 +1712,20 @@
       "name": "The Possessed",
       "kind": "npc",
       "icon": "https://terraria.wiki.gg/images/The_Possessed.gif",
-      "npcId": 469
+      "npcId": 469,
+      "events": [
+        "solar-eclipse"
+      ]
     },
     "splinterling": {
       "id": "splinterling",
       "name": "Splinterling",
       "kind": "npc",
       "icon": "https://terraria.wiki.gg/images/Splinterling.gif",
-      "npcId": 326
+      "npcId": 326,
+      "events": [
+        "pumpkin-moon"
+      ]
     },
     "the-groom": {
       "id": "the-groom",
@@ -1586,35 +1742,50 @@
       "name": "Reaper",
       "kind": "npc",
       "icon": "https://terraria.wiki.gg/images/Reaper.gif",
-      "npcId": 253
+      "npcId": 253,
+      "events": [
+        "solar-eclipse"
+      ]
     },
     "goblin-thief": {
       "id": "goblin-thief",
       "name": "Goblin Thief",
       "kind": "npc",
       "icon": "https://terraria.wiki.gg/images/Goblin_Thief.gif",
-      "npcId": 27
+      "npcId": 27,
+      "events": [
+        "goblin-army"
+      ]
     },
     "dark-mage": {
       "id": "dark-mage",
       "name": "Dark Mage",
       "kind": "npc",
       "icon": "https://terraria.wiki.gg/images/Dark_Mage.gif",
-      "npcId": 565
+      "npcId": 565,
+      "events": [
+        "old-ones-army"
+      ]
     },
     "ogre": {
       "id": "ogre",
       "name": "Ogre",
       "kind": "npc",
       "icon": "https://terraria.wiki.gg/images/Ogre.gif",
-      "npcId": 577
+      "npcId": 577,
+      "events": [
+        "old-ones-army"
+      ]
     },
     "blood-eel": {
       "id": "blood-eel",
       "name": "Blood Eel",
       "kind": "npc",
       "icon": "https://terraria.wiki.gg/images/Blood_Eel_Tail.png",
-      "npcId": 623
+      "npcId": 623,
+      "events": [
+        "blood-moon"
+      ]
     },
     "giant-worm": {
       "id": "giant-worm",
@@ -1641,7 +1812,10 @@
       "name": "Dreadnautilus",
       "kind": "npc",
       "icon": "https://terraria.wiki.gg/images/Dreadnautilus.gif",
-      "npcId": 618
+      "npcId": 618,
+      "events": [
+        "blood-moon"
+      ]
     },
     "leech": {
       "id": "leech",
@@ -1698,7 +1872,10 @@
       "name": "Rainbow Slime",
       "kind": "npc",
       "icon": "https://terraria.wiki.gg/images/Rainbow_Slime.gif",
-      "npcId": 244
+      "npcId": 244,
+      "events": [
+        "rain"
+      ]
     },
     "blood-feeder": {
       "id": "blood-feeder",
@@ -1781,21 +1958,30 @@
       "name": "Eyezor",
       "kind": "npc",
       "icon": "https://terraria.wiki.gg/images/Eyezor.gif",
-      "npcId": 251
+      "npcId": 251,
+      "events": [
+        "solar-eclipse"
+      ]
     },
     "hemogoblin-shark": {
       "id": "hemogoblin-shark",
       "name": "Hemogoblin Shark",
       "kind": "npc",
       "icon": "https://terraria.wiki.gg/images/Hemogoblin_Shark.gif",
-      "npcId": 620
+      "npcId": 620,
+      "events": [
+        "blood-moon"
+      ]
     },
     "pirate-captain": {
       "id": "pirate-captain",
       "name": "Pirate Captain",
       "kind": "npc",
       "icon": "https://terraria.wiki.gg/images/Pirate_Captain.gif",
-      "npcId": 216
+      "npcId": 216,
+      "events": [
+        "pirate-invasion"
+      ]
     },
     "zombie": {
       "id": "zombie",
@@ -1856,7 +2042,10 @@
       "name": "Santa-NK1",
       "kind": "npc",
       "icon": "https://terraria.wiki.gg/images/Santa-NK1_phase_1.gif",
-      "npcId": 346
+      "npcId": 346,
+      "events": [
+        "frost-moon"
+      ]
     },
     "black-recluse": {
       "id": "black-recluse",
@@ -1873,14 +2062,20 @@
       "name": "Snow Balla",
       "kind": "npc",
       "icon": "https://terraria.wiki.gg/images/Snow_Balla.gif",
-      "npcId": 145
+      "npcId": 145,
+      "events": [
+        "frost-legion"
+      ]
     },
     "snowman-gangsta": {
       "id": "snowman-gangsta",
       "name": "Snowman Gangsta",
       "kind": "npc",
       "icon": "https://terraria.wiki.gg/images/Snowman_Gangsta.gif",
-      "npcId": 143
+      "npcId": 143,
+      "events": [
+        "frost-legion"
+      ]
     },
     "medusa": {
       "id": "medusa",
@@ -1953,7 +2148,10 @@
       "name": "Headless Horseman",
       "kind": "npc",
       "icon": "https://terraria.wiki.gg/images/Headless_Horseman.gif",
-      "npcId": 315
+      "npcId": 315,
+      "events": [
+        "pumpkin-moon"
+      ]
     },
     "diabolist": {
       "id": "diabolist",
@@ -1970,7 +2168,10 @@
       "name": "Clown",
       "kind": "npc",
       "icon": "https://terraria.wiki.gg/images/Clown.gif",
-      "npcId": 109
+      "npcId": 109,
+      "events": [
+        "blood-moon"
+      ]
     },
     "red-devil": {
       "id": "red-devil",
@@ -2276,21 +2477,30 @@
       "name": "Sand Elemental",
       "kind": "npc",
       "icon": "https://terraria.wiki.gg/images/Sand_Elemental.gif",
-      "npcId": 541
+      "npcId": 541,
+      "events": [
+        "sandstorm"
+      ]
     },
     "goblin-warlock": {
       "id": "goblin-warlock",
       "name": "Goblin Warlock",
       "kind": "npc",
       "icon": "https://terraria.wiki.gg/images/Goblin_Warlock.gif",
-      "npcId": 471
+      "npcId": 471,
+      "events": [
+        "goblin-army"
+      ]
     },
     "martian-saucer": {
       "id": "martian-saucer",
       "name": "Martian Saucer",
       "kind": "npc",
       "icon": "https://terraria.wiki.gg/images/Martian_Saucer_Core.gif",
-      "npcId": 395
+      "npcId": 395,
+      "events": [
+        "martian-madness"
+      ]
     },
     "golden-lock-box": {
       "id": "golden-lock-box",
@@ -2325,7 +2535,10 @@
       "name": "Goblin Archer",
       "kind": "npc",
       "icon": "https://terraria.wiki.gg/images/Goblin_Archer.gif",
-      "npcId": 111
+      "npcId": 111,
+      "events": [
+        "goblin-army"
+      ]
     },
     "mother-slime": {
       "id": "mother-slime",
@@ -2432,7 +2645,10 @@
       "name": "Vampire",
       "kind": "npc",
       "icon": "https://terraria.wiki.gg/images/Vampire.gif",
-      "npcId": 159
+      "npcId": 159,
+      "events": [
+        "solar-eclipse"
+      ]
     },
     "voodoo-demon": {
       "id": "voodoo-demon",
@@ -2598,14 +2814,20 @@
       "name": "Corrupt Bunny",
       "kind": "npc",
       "icon": "https://terraria.wiki.gg/images/Corrupt_Bunny.gif",
-      "npcId": 47
+      "npcId": 47,
+      "events": [
+        "blood-moon"
+      ]
     },
     "vicious-bunny": {
       "id": "vicious-bunny",
       "name": "Vicious Bunny",
       "kind": "npc",
       "icon": "https://terraria.wiki.gg/images/Vicious_Bunny.gif",
-      "npcId": 464
+      "npcId": 464,
+      "events": [
+        "blood-moon"
+      ]
     },
     "pink-jellyfish": {
       "id": "pink-jellyfish",
@@ -2707,28 +2929,40 @@
       "name": "Bone Biter",
       "kind": "npc",
       "icon": "https://terraria.wiki.gg/images/Bone_Biter.gif",
-      "npcId": 543
+      "npcId": 543,
+      "events": [
+        "sandstorm"
+      ]
     },
     "sand-shark": {
       "id": "sand-shark",
       "name": "Sand Shark",
       "kind": "npc",
       "icon": "https://terraria.wiki.gg/images/Sand_Shark.gif",
-      "npcId": 542
+      "npcId": 542,
+      "events": [
+        "sandstorm"
+      ]
     },
     "flesh-reaver": {
       "id": "flesh-reaver",
       "name": "Flesh Reaver",
       "kind": "npc",
       "icon": "https://terraria.wiki.gg/images/Flesh_Reaver.gif",
-      "npcId": 544
+      "npcId": 544,
+      "events": [
+        "sandstorm"
+      ]
     },
     "crystal-thresher": {
       "id": "crystal-thresher",
       "name": "Crystal Thresher",
       "kind": "npc",
       "icon": "https://terraria.wiki.gg/images/Crystal_Thresher.gif",
-      "npcId": 545
+      "npcId": 545,
+      "events": [
+        "sandstorm"
+      ]
     },
     "world-feeder": {
       "id": "world-feeder",
@@ -2836,7 +3070,10 @@
       "name": "Slime",
       "kind": "npc",
       "icon": "https://terraria.wiki.gg/images/Red_Present_Slime.png",
-      "npcId": 336
+      "npcId": 336,
+      "events": [
+        "christmas"
+      ]
     },
     "dart-trap-slime": {
       "id": "dart-trap-slime",
@@ -3194,28 +3431,40 @@
       "name": "Solar Pillar",
       "kind": "npc",
       "icon": "https://terraria.wiki.gg/images/Solar_Pillar.png",
-      "npcId": 517
+      "npcId": 517,
+      "events": [
+        "lunar-events"
+      ]
     },
     "vortex-pillar": {
       "id": "vortex-pillar",
       "name": "Vortex Pillar",
       "kind": "npc",
       "icon": "https://terraria.wiki.gg/images/Vortex_Pillar.png",
-      "npcId": 422
+      "npcId": 422,
+      "events": [
+        "lunar-events"
+      ]
     },
     "nebula-pillar": {
       "id": "nebula-pillar",
       "name": "Nebula Pillar",
       "kind": "npc",
       "icon": "https://terraria.wiki.gg/images/Nebula_Pillar.png",
-      "npcId": 507
+      "npcId": 507,
+      "events": [
+        "lunar-events"
+      ]
     },
     "stardust-pillar": {
       "id": "stardust-pillar",
       "name": "Stardust Pillar",
       "kind": "npc",
       "icon": "https://terraria.wiki.gg/images/Stardust_Pillar.png",
-      "npcId": 493
+      "npcId": 493,
+      "events": [
+        "lunar-events"
+      ]
     },
     "chaos-elemental": {
       "id": "chaos-elemental",
@@ -3232,7 +3481,10 @@
       "name": "Nailhead",
       "kind": "npc",
       "icon": "https://terraria.wiki.gg/images/Nailhead.gif",
-      "npcId": 463
+      "npcId": 463,
+      "events": [
+        "solar-eclipse"
+      ]
     },
     "frozen-chest": {
       "id": "frozen-chest",
@@ -3370,7 +3622,10 @@
       "name": "Mourning Wood",
       "kind": "npc",
       "icon": "https://terraria.wiki.gg/images/Mourning_Wood.gif",
-      "npcId": 325
+      "npcId": 325,
+      "events": [
+        "pumpkin-moon"
+      ]
     },
     "golem": {
       "id": "golem",

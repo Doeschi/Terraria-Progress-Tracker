@@ -7,6 +7,9 @@ import type { ScanScope } from '@/hooks/useAreas'
 
 export type EntryOrder = 'default' | 'name'
 
+/** Progression filter: a milestone contains everything available by then, or only what it adds */
+export type ProgressionMode = 'upTo' | 'exactly'
+
 export interface ColumnSort {
   id: string
   desc: boolean
@@ -33,6 +36,7 @@ interface Prefs {
   hiddenFilters: string[]
   /** move options at 100% to the "Completed" section */
   hideCompleted: boolean
+  progressionMode: ProgressionMode
 }
 
 interface PrefsActions {
@@ -46,6 +50,7 @@ interface PrefsActions {
   setSyncScope(playthroughId: string, scope: ScanScope): void
   toggleHiddenFilter(key: string): void
   setHideCompleted(hide: boolean): void
+  setProgressionMode(mode: ProgressionMode): void
 }
 
 const KEY = 'view-prefs'
@@ -62,6 +67,7 @@ function load(): Prefs {
     syncScopes: {},
     hiddenFilters: [],
     hideCompleted: false,
+    progressionMode: 'upTo',
   }
   try {
     const p = JSON.parse(localStorage.getItem(KEY) ?? '{}')
@@ -81,6 +87,7 @@ function load(): Prefs {
     if (Array.isArray(p.hiddenFilters))
       prefs.hiddenFilters = p.hiddenFilters.filter((k: unknown) => typeof k === 'string')
     if (typeof p.hideCompleted === 'boolean') prefs.hideCompleted = p.hideCompleted
+    if (p.progressionMode === 'upTo' || p.progressionMode === 'exactly') prefs.progressionMode = p.progressionMode
   } catch {
     // storage unavailable or damaged - start with defaults
   }
@@ -115,5 +122,6 @@ export const usePrefs = create<Prefs & PrefsActions>()((set, get) => {
       update({ hiddenFilters: list.includes(key) ? list.filter((k) => k !== key) : [...list, key] })
     },
     setHideCompleted: (hideCompleted) => update({ hideCompleted }),
+    setProgressionMode: (progressionMode) => update({ progressionMode }),
   }
 })

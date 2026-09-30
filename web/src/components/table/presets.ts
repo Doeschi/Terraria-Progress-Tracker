@@ -26,7 +26,7 @@ export const COLUMN_PRESETS: ColumnPreset[] = [
       'events',
       'biomes',
       'difficulty',
-      'hardmode',
+      'milestone',
       'introduced',
       'buy',
     ],

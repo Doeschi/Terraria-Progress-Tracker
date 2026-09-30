@@ -21,8 +21,18 @@ import type {
   Station,
   RarityEntry,
   ShopRow,
+  Sprites,
   VersionEntry,
 } from './types'
+
+/** Like fetchJson, but a missing file gives `fallback` (e.g. no sprite sheets built yet). */
+async function fetchOptional<T>(name: string, fallback: T): Promise<T> {
+  try {
+    return await fetchJson<T>(name)
+  } catch {
+    return fallback
+  }
+}
 
 async function fetchJson<T>(name: string): Promise<T> {
   const res = await fetch(`${import.meta.env.BASE_URL}data/${name}.json`)
@@ -47,12 +57,14 @@ export async function loadGameData(): Promise<GameData> {
     drops,
     bosses,
     containerGroups,
+    milestones,
     shops,
     conditions,
     recipes,
     bestiary,
     difficulties,
     missingItems,
+    sprites,
   ] = await Promise.all([
     fetchJson<Item[]>('items'),
     fetchJson<GroupEntry[]>('categories'),
@@ -69,12 +81,17 @@ export async function loadGameData(): Promise<GameData> {
     fetchJson<{ sources: Record<string, DropSource>; items: Record<string, Drop[]> }>('drops'),
     fetchJson<{ stages: BossStage[]; bosses: Boss[]; ignoreItems: string[] }>('bosses'),
     fetchJson<ContainerGroup[]>('containers'),
+    fetchJson<GroupEntry[]>('milestones'),
     fetchJson<Record<string, ShopRow[]>>('shops'),
     fetchJson<{ groups: ConditionGroup[]; conditions: ConditionEntry[] }>('conditions'),
     fetchJson<RecipesFile>('recipes'),
     fetchJson<{ types: BestiaryType[]; entries: Omit<BestiaryEntry, 'key'>[] }>('bestiary'),
     fetchJson<{ id: Difficulty; name: string; icon?: string }[]>('difficulties'),
     fetchJson<{ id: number; name: string; icon?: string }[]>('missing_items'),
+    fetchOptional<{ sheets: Sprites['sheets']; icons: Record<string, [number, number, number, number, number]> }>(
+      'sprites',
+      { sheets: [], icons: {} },
+    ),
   ])
   const itemsByKey = new Map(items.map((i) => [i.key, i]))
   const itemsById = new Map<number, Item[]>()
@@ -104,6 +121,7 @@ export async function loadGameData(): Promise<GameData> {
     bosses: bosses.bosses,
     bossIgnoreItems: new Set(bosses.ignoreItems),
     containerGroups,
+    milestones,
     shops: new Map(Object.entries(shops)),
     conditionGroups: conditions.groups,
     conditions: new Map(conditions.conditions.map((c) => [c.id, c])),
@@ -111,6 +129,7 @@ export async function loadGameData(): Promise<GameData> {
     bestiary: { types: bestiary.types, entries: bestiary.entries.map((e) => ({ ...e, key: e.id })) },
     difficultyIcons: Object.fromEntries(difficulties.map((d) => [d.id, d.icon])),
     missingItems: new Map(missingItems.map((m) => [m.id, m])),
+    sprites: { sheets: sprites.sheets, icons: new Map(Object.entries(sprites.icons)) },
   }
 }
 

@@ -15,8 +15,11 @@ export interface Placement {
   isHidden(group: string, id: string): boolean
   /** at 100% and "move completed" is on */
   isDone(group: string, id: string): boolean
-  /** has items in the current context, or is selected */
+  /** has items in the current context (filters, search), or is selected */
   hasItems(group: string, id: string): boolean
+  /** has items in the playthrough at all (else never shown); options without items in the
+   * current context are shown grayed out instead of disappearing */
+  exists(group: string, id: string): boolean
   /** `name` for the "hidden – Undo" message */
   toggleHidden(group: string, id: string, name?: string): void
 }
@@ -55,7 +58,7 @@ export function orderedEntries(group: AnyGroup, prefix: string, entryOrder: Reco
  */
 export function groupView(group: AnyGroup, ordered: FilterEntry[], place: Placement, q: string) {
   const here = (e: FilterEntry) =>
-    place.hasItems(group.key, e.id) && !place.isHidden(group.key, e.id) && !place.isDone(group.key, e.id)
+    place.exists(group.key, e.id) && !place.isHidden(group.key, e.id) && !place.isDone(group.key, e.id)
   const groupMatch = !q || nameMatches(group.label, q)
   const shownChild = (parent: FilterEntry) => (c: FilterEntry) =>
     here(c) && (groupMatch || nameMatches(parent.name, q) || nameMatches(c.name, q))
@@ -63,7 +66,7 @@ export function groupView(group: AnyGroup, ordered: FilterEntry[], place: Placem
     (e) =>
       !place.isHidden(group.key, e.id) &&
       !place.isDone(group.key, e.id) &&
-      (place.hasItems(group.key, e.id) || !!e.children?.some(here)) &&
+      (place.exists(group.key, e.id) || !!e.children?.some(here)) &&
       (groupMatch || nameMatches(e.name, q) || !!e.children?.some(shownChild(e))),
   )
   // children shown only because they matched (the parent itself did not)

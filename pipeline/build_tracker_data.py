@@ -33,6 +33,8 @@ same files go to --readable (default data_readable/ next to this script):
   containers.json     container groups (chests, crates, ...) with their drop sources (mapping.toml)
   shops.json          per item the vendor shop rows (vendor, condition text and ids, moon phases)
   conditions.json     condition groups and conditions (time, moon phase, bosses, wind, seeds, ...)
+  milestones.json     progression milestones (Start, King Slime, ... Moon Lord) with item counts;
+                      items.json gets each item's earliest milestone and the reason
   recipes.json        crafting recipes (result, stations, ingredients), crafting
                       stations with the items that provide them, "Any ..."
                       ingredient groups, shimmer transmutations
@@ -78,6 +80,7 @@ from trackerdata.items import (
 from trackerdata.drops import derive_events, derive_spawns, Drops
 from trackerdata.recipes import missing_items_file, recipe_only_items, recipes_file
 from trackerdata.bestiary import bestiary_file
+from trackerdata.milestones import Milestones
 from trackerdata.conditions import (
     apply_conditions,
     apply_page_rewards,
@@ -204,6 +207,19 @@ def build(raw_dir, mapping_path, out_dir, readable_dir=None):
     outputs["recipes.json"] = recipes_file(recipe_rows, items, mapping,
                                            wikitext.get("Alternative crafting ingredients", ""))
     outputs["missing_items.json"] = missing_items_file(recipe_rows, items)
+
+    log("Milestones…")
+    milestones = Milestones(mapping, mapping.bosses)
+    recipe_index = {"stations": outputs["recipes.json"]["stations"], "groups": outputs["recipes.json"]["groups"],
+                    "by_result": defaultdict(list), "shimmer_to": defaultdict(list)}
+    for r in outputs["recipes.json"]["recipes"]:
+        recipe_index["by_result"][r["result"]].append(r)
+    for s in outputs["recipes.json"]["shimmer"]:
+        recipe_index["shimmer_to"][s["result"]].append(s)
+    milestones.compute(items, drops, shops, recipe_index, rewards)
+    outputs["milestones.json"] = milestones.milestones_file(
+        items, {b["id"]: b["icon"] for b in outputs["bosses.json"]["bosses"] if b.get("icon")},
+        {norm_name(i["name"]): i.get("icon") for i in items})
 
     # items marked unobtainable that still have a current source: probably a wiki mistake
     crafted = {r["result"] for r in outputs["recipes.json"]["recipes"]}

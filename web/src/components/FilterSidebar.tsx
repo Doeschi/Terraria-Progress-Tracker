@@ -13,7 +13,8 @@ import {
 } from 'lucide-react'
 import { toast } from 'sonner'
 import { useActiveWorld, useStore } from '@/store'
-import { usePrefs } from '@/lib/prefs'
+import { usePrefs, type ProgressionMode } from '@/lib/prefs'
+import { ToggleGroup, ToggleGroupItem } from '@/components/ui/toggle-group'
 import { cn } from '@/lib/utils'
 import {
   buildFilterGroups,
@@ -102,6 +103,7 @@ const PlacementContext = createContext<Placement>({
   isHidden: () => false,
   isDone: () => false,
   hasItems: () => true,
+  exists: () => true,
   toggleHidden: () => {},
 })
 
@@ -109,37 +111,60 @@ const PlacementContext = createContext<Placement>({
 export const FilterSidebar = memo(function FilterSidebar({
   facets,
   groupTallies,
+  available,
 }: {
   facets: Facets
   groupTallies: Record<GroupKey, Tally>
+  available: Record<GroupKey, Set<string>>
 }) {
   const data = useStore((s) => s.data)!
   const groups = useMemo(() => buildFilterGroups(data), [data])
-  return <FilterPanel groups={groups} facets={facets} groupTallies={groupTallies} scope={ITEMS_SCOPE} />
+  return (
+    <FilterPanel
+      groups={groups}
+      facets={facets}
+      groupTallies={groupTallies}
+      available={available}
+      scope={ITEMS_SCOPE}
+    />
+  )
 })
 
 /** Filters of the bestiary view. */
 export const BestiaryFilterSidebar = memo(function BestiaryFilterSidebar({
   facets,
   groupTallies,
+  available,
 }: {
   facets: Facets<BestiaryGroupKey>
   groupTallies: Record<BestiaryGroupKey, Tally>
+  available: Record<BestiaryGroupKey, Set<string>>
 }) {
   const data = useStore((s) => s.data)!
   const groups = useMemo(() => buildBestiaryGroups(data), [data])
-  return <FilterPanel groups={groups} facets={facets} groupTallies={groupTallies} scope={BESTIARY_SCOPE} />
+  return (
+    <FilterPanel
+      groups={groups}
+      facets={facets}
+      groupTallies={groupTallies}
+      available={available}
+      scope={BESTIARY_SCOPE}
+    />
+  )
 })
 
 function FilterPanel({
   groups,
   facets,
   groupTallies,
+  available,
   scope,
 }: {
   groups: AnyGroup[]
   facets: AnyFacets
   groupTallies: Record<string, Tally>
+  /** entry ids with items at all, per group (options without are never shown) */
+  available: Record<string, Set<string>>
   scope: FilterScope
 }) {
   const [query, setQuery] = useState('')
@@ -163,6 +188,7 @@ function FilterPanel({
       isHidden: (group, id) => hidden.has(key(group, id)),
       isDone: (group, id) => hideCompleted && complete(facets[group]?.get(id)),
       hasItems: (group, id) => (facets[group]?.get(id)?.total ?? 0) > 0 || !!selections[group]?.includes(id),
+      exists: (group, id) => !!available[group]?.has(id) || !!selections[group]?.includes(id),
       toggleHidden: (group, id, name) => {
         const k = key(group, id)
         const hiding = !hidden.has(k)
@@ -175,7 +201,7 @@ function FilterPanel({
           })
       },
     }
-  }, [hiddenList, hideCompleted, facets, selections, scope.prefix, toggleHiddenFilter])
+  }, [hiddenList, hideCompleted, facets, available, selections, scope.prefix, toggleHiddenFilter])
 
   const targets = useMemo(
     () => searchTargets(groups, placement, q, scope.prefix, entryOrder, hideCompleted),
@@ -339,7 +365,7 @@ function GroupSection({ group, facets, tally }: { group: AnyGroup; facets: AnyFa
   const { entries, shownChild, expandFor } = groupView(group, ordered, place, q)
   if (q && !entries.length) return null
   // everything moved away: a short note instead of an empty group
-  const moved = !entries.length && group.entries.some((e) => place.hasItems(group.key, e.id))
+  const moved = !entries.length && group.entries.some((e) => place.exists(group.key, e.id))
   // completed options: top-level options with items in the current context, hidden ones left out
   const facet = facets[group.key]
   const counted = group.entries.filter((e) => !place.isHidden(group.key, e.id) && (facet.get(e.id)?.total ?? 0) > 0)
@@ -411,6 +437,7 @@ function GroupSection({ group, facets, tally }: { group: AnyGroup; facets: AnyFa
         </div>
       </div>
       {open && scope === ITEMS_SCOPE && group.key === 'crafting' && <CraftingOptions />}
+      {open && scope === ITEMS_SCOPE && group.key === 'progression' && <ProgressionOptions />}
       {open && (
         <ul className="flex flex-col gap-px">
           {entries.length === 0 && (
@@ -493,7 +520,7 @@ function MovedSection({
                   group={group}
                   entry={e}
                   facets={facets}
-                  isVisible={(c) => place.hasItems(group.key, c.id)}
+                  isVisible={(c) => place.exists(group.key, c.id)}
                   action={kind === 'hidden' ? 'show' : undefined}
                 />
               ))}
@@ -505,6 +532,41 @@ function MovedSection({
 }
 
 /** Options of the "Crafting" group: station toggle, hint without a world. */
+/** "Up to" (a milestone contains everything available by then) or "exactly" (what it adds). */
+function ProgressionOptions() {
+  const mode = usePrefs((s) => s.progressionMode)
+  const setMode = usePrefs((s) => s.setProgressionMode)
+  return (
+    <div className="mb-1 flex items-center gap-2 px-2 pb-1 text-xs text-muted-foreground">
+      <span>Available</span>
+      <ToggleGroup
+        type="single"
+        variant="outline"
+        size="sm"
+        value={mode}
+        onValueChange={(v) => v && setMode(v as ProgressionMode)}
+        aria-label="Progression filter mode"
+      >
+        <ToggleGroupItem
+          value="upTo"
+          className="h-6 px-2 text-xs data-[state=on]:bg-primary data-[state=on]:text-primary-foreground"
+          title="Everything available by this milestone"
+        >
+          up to
+        </ToggleGroupItem>
+        <ToggleGroupItem
+          value="exactly"
+          className="h-6 px-2 text-xs data-[state=on]:bg-primary data-[state=on]:text-primary-foreground"
+          title="Only what becomes available at it"
+        >
+          exactly at
+        </ToggleGroupItem>
+      </ToggleGroup>
+      <span>the milestone</span>
+    </div>
+  )
+}
+
 function CraftingOptions() {
   const stationsRequired = usePrefs((s) => s.stationsRequired)
   const setStationsRequired = usePrefs((s) => s.setStationsRequired)
@@ -558,6 +620,8 @@ function EntryRow({
   const childSelected = entry.children?.some((c) => groupSelection.includes(c.id)) ?? false
   const [expanded, setExpanded] = useState(!!group.expanded)
   const tally = facets[group.key].get(entry.id) ?? EMPTY
+  // no matching items with the other filters / the search: grayed out, not removed (no jumps)
+  const empty = !place.hasItems(group.key, entry.id)
   const children = entry.children?.filter(isVisible) ?? []
   const showChildren = children.length > 0 && (expanded || childSelected || expand)
 
@@ -571,7 +635,9 @@ function EntryRow({
           // the option Enter would select in the filter search
           isTarget && 'outline-2 outline-offset-1 outline-primary outline-dashed',
           nested && 'ml-5',
+          empty && 'opacity-40',
         )}
+        title={empty ? 'No matching items with the current filters' : undefined}
       >
         {eye && (
           <button

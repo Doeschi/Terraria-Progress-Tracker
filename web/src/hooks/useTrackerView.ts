@@ -41,6 +41,7 @@ export function useTrackerView(): TrackerView | null {
   const selection = useStore((s) => s.selection)
   const search = useDeferredValue(useStore((s) => s.search))
   const view = useStore((s) => s.view)
+  const progressionMode = usePrefs((s) => s.progressionMode)
 
   // items that exist in this playthrough (platform, difficulty, game version)
   const platform = pt?.platform
@@ -57,11 +58,18 @@ export function useTrackerView(): TrackerView | null {
     const bossStage = new Map(data.bosses.map((b) => [b.id, b.stage]))
     const containerGroup = new Map(data.containerGroups.flatMap((g) => g.sources.map((s) => [s, g.id] as const)))
     const conditionGroup = new Map([...data.conditions.values()].map((c) => [c.id, c.group]))
+    const order = data.milestones.map((m) => m.id)
+    const milestonesOf = (item: Item) => {
+      const n = item.milestone ? order.indexOf(item.milestone) : -1
+      if (n < 0) return []
+      return progressionMode === 'upTo' ? order.slice(n) : [order[n]]
+    }
     return new Map(
       data.items.map((i) => [
         i.key,
         itemEntries(
           i,
+          milestonesOf(i),
           itemBosses(data, i, difficulty, bySource),
           bossStage,
           itemContainers(data, i, difficulty),
@@ -70,7 +78,7 @@ export function useTrackerView(): TrackerView | null {
         ),
       ]),
     )
-  }, [data, difficulty])
+  }, [data, difficulty, progressionMode])
   const fuse = useMemo(() => createSearch(platformItems), [platformItems])
   const ranks = useMemo(() => searchRanks(fuse, search), [fuse, search])
   const checked = useMemo(() => new Set(pt?.checked), [pt?.checked])

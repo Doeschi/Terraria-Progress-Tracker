@@ -289,6 +289,8 @@ def derive_events(items, drops, events, bosses):
             if npc:
                 found = spawn_events(npc["environment"], env_conditions)
         source_events[sid] = found
+        if found:
+            source["events"] = [e for e in events if e in found]  # also used for milestones
 
     order = list(events)
     by_key = {i["key"]: i for i in items}

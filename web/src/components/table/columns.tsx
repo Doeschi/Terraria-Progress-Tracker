@@ -70,6 +70,7 @@ export function buildColumns(data: GameData): ItemColumn[] {
       .join(', ')
   const event = names(data.events)
   const biome = names(data.biomes)
+  const milestoneRank = new Map(data.milestones.map((m, n) => [m.id, n]))
   const condition = (ids: string[]) => ids.map((id) => data.conditions.get(id)?.name ?? id).join(', ')
   // "Merchant, Witch Doctor (Night, Jungle, after Plantera)" - conditions of the shop rows
   const soldBy = (i: Item) =>
@@ -166,6 +167,15 @@ export function buildColumns(data: GameData): ItemColumn[] {
       // chests, crates, trees, … - like "Dropped by"
       value: (i, t) => bestChance(i, t.difficulty, 'found'),
       cell: (i, t) => dropList(i, t.difficulty, 'found'),
+    },
+    {
+      id: 'milestone',
+      label: 'Available from',
+      group: 'Source',
+      size: 170,
+      // sorts in milestone order (Start … Moon Lord)
+      value: (i) => (i.milestone ? milestoneRank.get(i.milestone) : undefined),
+      cell: (i) => (i.milestone ? nameOf(data.milestones, i.milestone) : null),
     },
     {
       id: 'vendors',

@@ -154,7 +154,7 @@ function MobileFilters({ view }: { view: BestiaryView }) {
   const active = useStore((s) => BESTIARY_GROUP_KEYS.reduce((n, g) => n + s.bestiarySelection[g].length, 0))
   return (
     <MobileFiltersButton active={active}>
-      <BestiaryFilterSidebar facets={view.facets} groupTallies={view.groupTallies} />
+      <BestiaryFilterSidebar facets={view.facets} groupTallies={view.groupTallies} available={view.available} />
     </MobileFiltersButton>
   )
 }

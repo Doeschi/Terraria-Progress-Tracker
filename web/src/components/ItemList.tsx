@@ -238,7 +238,7 @@ function MobileFilters({ view }: { view: TrackerView }) {
   const active = useStore((s) => GROUP_KEYS.reduce((n, g) => n + s.selection[g].length, 0))
   return (
     <MobileFiltersButton active={active}>
-      <FilterSidebar facets={view.facets} groupTallies={view.groupTallies} />
+      <FilterSidebar facets={view.facets} groupTallies={view.groupTallies} available={view.available} />
     </MobileFiltersButton>
   )
 }

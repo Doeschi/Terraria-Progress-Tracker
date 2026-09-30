@@ -38,6 +38,9 @@ export interface Item {
   minDifficulty?: 'expert' | 'master'
   /** only obtainable during events (see `events`) */
   eventOnly?: boolean
+  /** earliest milestone (milestones.json id) and why, e.g. "crafted – needs Chlorophyte Ore" */
+  milestone?: string
+  milestoneVia?: string
   /** not in the wiki's Items table, built from its recipe (no stats, rarity or prices) */
   recipeOnly?: boolean
   hardmode: boolean
@@ -296,6 +299,13 @@ export interface BestiaryType {
   count: number
 }
 
+/** Sprite sheets of the small wiki icons (sprites.json, pipeline/build_icons.py). */
+export interface Sprites {
+  sheets: { file: string; w: number; h: number }[]
+  /** wiki file (URL part after /images/) -> [sheet, x, y, width, height] */
+  icons: Map<string, [number, number, number, number, number]>
+}
+
 export interface GameData {
   items: Item[]
   itemsByKey: Map<string, Item>
@@ -322,6 +332,8 @@ export interface GameData {
   /** generic drops (coins, healing potions) that never count for a boss */
   bossIgnoreItems: Set<string>
   containerGroups: ContainerGroup[]
+  /** progression milestones in order (Start … Moon Lord) */
+  milestones: GroupEntry[]
   /** item key -> the shop rows that sell it */
   shops: Map<string, ShopRow[]>
   conditionGroups: ConditionGroup[]
@@ -330,6 +342,7 @@ export interface GameData {
   bestiary: { types: BestiaryType[]; entries: BestiaryEntry[] }
   /** difficulty -> icon of the wiki */
   difficultyIcons: Partial<Record<Difficulty, string>>
+  sprites: Sprites
   /** items the wiki's item list lacks, known from its recipes (id -> name, probable icon) */
   missingItems: Map<number, { id: number; name: string; icon?: string }>
 }

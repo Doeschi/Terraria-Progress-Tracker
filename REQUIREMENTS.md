@@ -121,6 +121,24 @@ GitHub Actions.
   in batches (no downloads) and saves image files that are only redirects (direct link = 404) to
   `raw/image_redirects.json`; the build then links their targets.
 
+## IC – Icons
+
+- **IC1** Small icons (PNG, at most 128 × 64 px – wide ones are the rarity name images) are packed into sprite sheets served with the app
+  instead of being loaded one by one from the wiki: fewer requests, no load on wiki.gg, and
+  icons do not break when the wiki renames a file. Larger images (placed / equipped images, NPC
+  sprites) and animated GIFs stay links to the wiki. Not included: bestiary images, placed and
+  equipped item images.
+- **IC2** `pipeline/build_icons.py` (step 3) collects the icon links of the generated data,
+  downloads missing files into a local cache (`pipeline/icons_cache/`, not committed; same
+  User-Agent as the download, a few requests in parallel, `--refresh` revalidates cached files),
+  and packs them into sheets (`web/public/icons/sheet-<n>.<hash>.png`, 1024 px wide, the hash in
+  the name so updates are not held back by caches) plus `web/public/data/sprites.json`
+  (sheet sizes and, per wiki file, sheet and position). A copy goes to `pipeline/data_readable/`
+  (`sprites.json` indented, the sheets in `icons/`).
+- **IC3** The app shows an icon from its sheet when `sprites.json` has it (same size rules as
+  before: native size, scaled down to fit the box, pixelated), otherwise it loads it from the
+  wiki.
+
 ## F – Save file
 
 - **F1** The user can create a new tracking file or open one from disk.
@@ -215,7 +233,7 @@ GitHub Actions.
 
 ## FL – Filters and progress
 
-- **FL1** Filter groups, in this order: Progression (Pre-Hardmode / Hardmode; icons: Copper Shortsword, Pwnhammer), Categories (with
+- **FL1** Filter groups, in this order: Progression (milestones, MS3), Categories (with
   their subcategories nested below), Obtained by, Crafting (RC6), Sold by, Found in (B3b), Bosses, Events, Biome, Time of day, Rarity (shown
   with the wiki's rarity images, in in-game order) and Added in (game update). The same order is
   used in the active-filter bar.
@@ -226,6 +244,9 @@ GitHub Actions.
 - **FL4** Totals only count items available in the playthrough (platform, difficulty, game
   version) that are not ignored. Entry counts
   are faceted: they respect the search and the selections of all *other* filter groups.
+- **FL4a** Options without matching items under the current filters or search stay in place,
+  grayed out (no jumping sidebar); only options without any items in the playthrough (e.g. an
+  update not in the selected game version) are left out.
 - **FL5** The overall progress of the playthrough is always visible.
 - **FL6** Active filters are shown and can be cleared individually or all at once.
 - **FL7** The options of the groups categories (incl. subcategories), obtained by, sold by and
@@ -375,6 +396,41 @@ GitHub Actions.
 - **CO5** Detail panel: "Sold by" lists each vendor with icon and its condition text (moon
   phases as icons). Drop rows show their condition names below the source. Table column "Sold
   by" shows the vendors with short condition names; "Time of day" becomes "Conditions".
+
+## MS – Milestones ("available from")
+
+- **MS1** Milestones in a typical order, configurable in `mapping.toml` (`[milestones]`): Start,
+  King Slime, Eye of Cthulhu, Eater of Worlds / Brain of Cthulhu, Queen Bee, Deerclops,
+  Skeletron, Wall of Flesh (Hardmode), Queen Slime, any mechanical boss, all three mechanical
+  bosses, Plantera, Golem, Duke Fishron / Empress of Light, Lunatic Cultist, Moon Lord. Optional
+  bosses sit where they are usually fought. Icons: the bosses' map icons.
+- **MS2** Every item gets its earliest milestone: the earliest of its sources, computed until
+  nothing changes (recipes depend on other items), but never earlier than its minimum:
+  - boss drops and treasure bags: the boss's milestone (mechanical bosses: any mechanical boss;
+    Lunar Pillars: Lunatic Cultist); event enemies: the event's milestone (`[milestones.*]
+    events`, e.g. Pumpkin Moon → Plantera, Martian Madness → Golem); enemies spawning in the
+    Dungeon → Skeletron, in the Jungle Temple → Plantera; other enemies → Start
+  - shop rows: the later of the vendor's move-in (`[vendors.*] milestone`, e.g. Cyborg →
+    Plantera) and the row's conditions (after a boss, Hardmode)
+  - recipes: the latest of the crafting stations (the earliest item providing each) and the
+    ingredients ("Any …" groups: their earliest item); shimmer: the source item
+  - containers: `[container_milestones]` (e.g. Shadow Chest → Skeletron, biome chests →
+    Plantera), else Start; rows only in special seeds do not count
+  - Strange Plant rewards: the conditions of their heading; other obtain methods (fishing,
+    quest rewards, …) → Start
+  - minimum: Hardmode items → Wall of Flesh; `[milestone_items]` (name patterns) for what the
+    data does not know, e.g. mining: Hellstone → evil boss, Hardmode ores → Wall of Flesh,
+    Chlorophyte Ore → all three mechanical bosses; `[milestone_sources]` for enemies that
+    appear later than their biome says (post-Plantera Dungeon enemies)
+  The build writes `milestones.json` (with item counts) and lists Hardmode items whose sources
+  say Start, to find missing rules.
+- **MS3** Filter group "Progression" (replaces Pre-Hardmode / Hardmode): the milestones with
+  icons. A switch in the group: "up to" (default, cumulative – a milestone contains every item
+  available by then, e.g. Skeletron includes King Slime's) or "exactly" (only what becomes
+  available at that milestone). The switch is remembered in the browser (PR1).
+- **MS4** Detail panel: "Available from: <milestone>" with the reason (e.g. "crafted – needs
+  Chlorophyte Ore", "sold by the Cyborg", "dropped by Plantera"). Table column "Available from"
+  (group Source, "Where to get it" preset), sorted in milestone order.
 
 ## ID – Item detail panel
 
@@ -633,6 +689,8 @@ GitHub Actions.
   data (or a data version in the JSON files), a diff report between two downloads (added /
   changed / removed items, renamed keys), a key-alias list for renamed items, and a notice in
   the app when checked items no longer exist in the data.
+- **Milestones from the world:** read which bosses the attached world has defeated (the world
+  file stores the "downed" flags) and highlight / filter "available now" (MS).
 - **Cloud storage for the tracking file:** open and save the tracking file in Dropbox (first)
   and Google Drive (later), for devices without a sync client (phones, tablets). No maintained
   library covers both for a browser-only app, so a small adapter per service (sign in, find,

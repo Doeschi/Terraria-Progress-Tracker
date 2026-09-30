@@ -14,3 +14,6 @@ pipeline/contact.txt
 # test world files never belong in the repo
 *.wld
 *.wld.bak*
+
+# downloaded wiki icons (build_icons.py)
+pipeline/icons_cache/

@@ -1067,6 +1067,7 @@ match = ["tag:vendor:demolitionist"]
 
 [vendors.dryad]
 name = "Dryad"
+milestone = "king-slime"
 icon_file = "Dryad.png"
 match = ["tag:vendor:dryad"]
 
@@ -1082,6 +1083,7 @@ match = ["tag:vendor:dye trader"]
 
 [vendors.tavernkeep]
 name = "Tavernkeep"
+milestone = "evil-boss"
 icon_file = "Tavernkeep.png"
 match = ["tag:vendor:tavernkeep"]
 
@@ -1107,16 +1109,19 @@ match = ["tag:vendor:goblin tinkerer"]
 
 [vendors.witch-doctor]
 name = "Witch Doctor"
+milestone = "queen-bee"
 icon_file = "Witch Doctor.png"
 match = ["tag:vendor:witch doctor"]
 
 [vendors.clothier]
 name = "Clothier"
+milestone = "skeletron"
 icon_file = "Clothier.png"
 match = ["tag:vendor:clothier"]
 
 [vendors.mechanic]
 name = "Mechanic"
+milestone = "skeletron"
 icon_file = "Mechanic.png"
 match = ["tag:vendor:mechanic"]
 
@@ -1127,31 +1132,37 @@ match = ["tag:vendor:party girl"]
 
 [vendors.wizard]
 name = "Wizard"
+milestone = "wall-of-flesh"
 icon_file = "Wizard.png"
 match = ["tag:vendor:wizard"]
 
 [vendors.truffle]
 name = "Truffle"
+milestone = "wall-of-flesh"
 icon_file = "Truffle.png"
 match = ["tag:vendor:truffle"]
 
 [vendors.pirate]
 name = "Pirate"
+milestone = "wall-of-flesh"
 icon_file = "Pirate.png"
 match = ["tag:vendor:pirate"]
 
 [vendors.steampunker]
 name = "Steampunker"
+milestone = "any-mech"
 icon_file = "Steampunker.png"
 match = ["tag:vendor:steampunker"]
 
 [vendors.cyborg]
 name = "Cyborg"
+milestone = "plantera"
 icon_file = "Cyborg.png"
 match = ["tag:vendor:cyborg"]
 
 [vendors.santa-claus]
 name = "Santa Claus"
+milestone = "wall-of-flesh"
 icon_file = "Santa Claus.png"
 match = ["tag:vendor:santa claus"]
 
@@ -1599,6 +1610,145 @@ links = ["rainbow road"]
 name = "Special seed"
 group = "seed"
 links = ["invisible plane", "winter is coming", "we don't even test for that", "secret world seeds"]
+
+
+# ---------------------------------------------------------------- milestones
+# "Available from": milestones of a typical playthrough, in this order (see
+# REQUIREMENTS.md, MS). An item gets the earliest milestone of its sources:
+#   bosses   boss ids ([bosses]) whose drops / treasure bags count for it
+#   events   events whose enemies count for it (e.g. Pumpkin Moon -> Plantera)
+# Vendors: [vendors.*] milestone = when they move in (default: start).
+# Icon: `icon` (item) / `icon_file`, else the map icon of the first boss.
+
+[milestones.start]
+name = "Start"
+icon = "Copper Shortsword"
+
+[milestones.king-slime]
+name = "King Slime"
+bosses = ["king-slime"]
+
+[milestones.eye-of-cthulhu]
+name = "Eye of Cthulhu"
+bosses = ["eye-of-cthulhu"]
+
+[milestones.evil-boss]
+name = "Eater of Worlds / Brain of Cthulhu"
+bosses = ["eater-of-worlds", "brain-of-cthulhu", "dark-mage"]
+events = ["old-ones-army"]
+
+[milestones.queen-bee]
+name = "Queen Bee"
+bosses = ["queen-bee"]
+
+[milestones.deerclops]
+name = "Deerclops"
+bosses = ["deerclops"]
+
+[milestones.skeletron]
+name = "Skeletron"
+bosses = ["skeletron"]
+
+[milestones.wall-of-flesh]
+name = "Wall of Flesh (Hardmode)"
+bosses = ["wall-of-flesh", "flying-dutchman"]
+events = ["pirate-invasion", "frost-legion"]
+
+[milestones.queen-slime]
+name = "Queen Slime"
+bosses = ["queen-slime"]
+
+[milestones.any-mech]
+name = "Any mechanical boss"
+bosses = ["the-twins", "the-destroyer", "skeletron-prime", "ogre"]
+events = ["solar-eclipse"]
+
+[milestones.all-mechs]
+name = "All three mechanical bosses"
+icon = "Mechanical Skull"
+
+[milestones.plantera]
+name = "Plantera"
+bosses = ["plantera", "mourning-wood", "pumpking", "everscream", "santa-nk1", "ice-queen"]
+events = ["pumpkin-moon", "frost-moon"]
+
+[milestones.golem]
+name = "Golem"
+bosses = ["golem", "betsy", "martian-saucer"]
+events = ["martian-madness"]
+
+[milestones.duke-empress]
+name = "Duke Fishron / Empress of Light"
+bosses = ["duke-fishron", "empress-of-light"]
+
+[milestones.lunatic-cultist]
+name = "Lunatic Cultist"
+bosses = ["lunatic-cultist", "solar-pillar", "nebula-pillar", "vortex-pillar", "stardust-pillar"]
+events = ["lunar-events"]
+
+[milestones.moon-lord]
+name = "Moon Lord"
+bosses = ["moon-lord"]
+
+# Conditions ([conditions]) that are milestones; "after-<boss>" come from the bosses above.
+[milestone_conditions]
+hardmode = "wall-of-flesh"
+after-any-mech = "any-mech"
+after-all-mechs = "all-mechs"
+
+# Containers (drop source names) that are only reachable later; others: start.
+[container_milestones]
+"Shadow Chest" = "skeletron"            # Shadow Key from the Dungeon
+"Gold Chest (Dungeon)" = "skeletron"
+"Golden Lock Box" = "skeletron"         # Golden Key from Dungeon enemies
+"Obsidian Lock Box" = "skeletron"       # Shadow Key
+"Dungeon Crate" = "skeletron"
+"Lihzahrd Chest" = "plantera"
+# Dungeon biome chests (keys from Hardmode biome enemies, locked until Plantera)
+"Corruption Chest" = "plantera"
+"Crimson Chest" = "plantera"
+"Hallowed Chest" = "plantera"
+"Ice Chest" = "plantera"
+"Jungle Chest" = "plantera"
+"Desert Chest" = "plantera"
+# Hardmode crates
+"Azure Crate" = "wall-of-flesh"
+"Bramble Crate" = "wall-of-flesh"
+"Boreal Crate" = "wall-of-flesh"
+"Defiled Crate" = "wall-of-flesh"
+"Hematic Crate" = "wall-of-flesh"
+"Divine Crate" = "wall-of-flesh"
+"Mirage Crate" = "wall-of-flesh"
+"Seaside Crate" = "wall-of-flesh"
+"Stockade Crate" = "wall-of-flesh"
+"Hellstone Crate" = "wall-of-flesh"
+"Mythril Crate" = "wall-of-flesh"
+"Titanium Crate" = "wall-of-flesh"
+"Pearlwood Crate" = "wall-of-flesh"
+
+# Enemies that appear later than their biome says (drop source names).
+[milestone_sources]
+# post-Plantera Dungeon
+"Paladin" = "plantera"
+"Skeleton Sniper" = "plantera"
+"Tactical Skeleton" = "plantera"
+"Skeleton Commando" = "plantera"
+"Ragged Caster" = "plantera"
+"Necromancer" = "plantera"
+"Diabolist" = "plantera"
+"Blue Armored Bones" = "plantera"
+"Rusty Armored Bones" = "plantera"
+"Hell Armored Bones" = "plantera"
+"Bone Lee" = "plantera"
+"Dungeon Spirit" = "plantera"
+"Giant Cursed Skull" = "plantera"
+
+# Minimum milestone of items the data cannot tell (name patterns, "*" at the end = prefix).
+[milestone_items]
+"Hellstone" = { milestone = "evil-boss", reason = "mined (needs a Nightmare Pickaxe / Deathbringer Pickaxe)" }
+"Chlorophyte Ore" = { milestone = "all-mechs", reason = "mined (needs a Pickaxe Axe / Drax)" }
+"Lihzahrd Brick" = { milestone = "golem", reason = "mined (needs the Picksaw)" }
+"Life Fruit" = { milestone = "any-mech", reason = "grows after any mechanical boss" }
 
 
 # --------------------------------------------------------------------- flags

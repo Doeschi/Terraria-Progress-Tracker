@@ -68,12 +68,6 @@ export const UNKNOWN_RARITY = 'none'
 // in-game order: gray, white … purple, then the special rarities
 const RARITY_ORDER = [-1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, -11, -12, -13]
 
-// icon = item whose icon is shown: the starting weapon / the hammer from the Wall of Flesh
-const PROGRESSION: { id: string; name: string; iconItem: string }[] = [
-  { id: 'prehardmode', name: 'Pre-Hardmode', iconItem: 'Copper Shortsword' },
-  { id: 'hardmode', name: 'Hardmode', iconItem: 'Pwnhammer' },
-]
-
 // "Crafting" entries; icon = item whose icon is shown
 const CRAFTING: { id: string; name: string; iconItem: string }[] = [
   { id: CRAFT_HAS_RECIPE, name: 'Has a recipe', iconItem: 'Work Bench' },
@@ -131,16 +125,7 @@ export function buildFilterGroups(data: GameData): FilterGroup[] {
     })
     .filter((g) => g.children.length > 0)
   const groups: FilterGroup[] = [
-    {
-      key: 'progression',
-      label: 'Progression',
-      entries: PROGRESSION.map((p) => ({
-        id: p.id,
-        name: p.name,
-        count: 0,
-        icon: data.items.find((i) => i.name === p.iconItem)?.icon,
-      })),
-    },
+    { key: 'progression', label: 'Progression', entries: data.milestones },
     { key: 'boss', label: 'Bosses', entries: bossStages, expanded: true },
     {
       key: 'version',
@@ -183,6 +168,8 @@ export function buildFilterGroups(data: GameData): FilterGroup[] {
  * depend on the difficulty; `crafting` is empty here and filled per playthrough state (see recipes.ts). */
 export function itemEntries(
   item: Item,
+  /** the item's milestones: its own, or (mode "up to") every milestone from it on */
+  milestones: string[],
   bosses: string[],
   bossStage: Map<string, string>,
   containers: string[],
@@ -192,7 +179,7 @@ export function itemEntries(
   const stages = new Set(bosses.map((b) => bossStage.get(b)))
   const containerGroups = new Set(containers.map((c) => containerGroup.get(c)).filter((g) => g !== undefined))
   return {
-    progression: [item.hardmode ? 'hardmode' : 'prehardmode'],
+    progression: milestones,
     boss: [...[...stages].map((s) => `stage:${s}`), ...bosses.map((b) => `boss:${b}`)],
     version: [item.version ?? UNKNOWN_VERSION],
     rarity: [item.rarity === undefined ? UNKNOWN_RARITY : String(item.rarity)],
@@ -243,6 +230,8 @@ export interface Counts<K extends string = GroupKey> {
   ignoredCount: number
   /** keys of items (ignored ones included) matching search and filters */
   matching: Set<string>
+  /** per group: entry ids with (non-ignored) items at all - without filters and search */
+  available: Record<K, Set<string>>
 }
 
 export function computeCounts(input: CountInput): Counts {
@@ -268,6 +257,7 @@ export function computeFacets<K extends string, T extends { key: string }>(input
   const overall: Tally = { total: 0, obtained: 0 }
   const filtered: Tally = { total: 0, obtained: 0 }
   const matching = new Set<string>()
+  const available = Object.fromEntries(GROUP_KEYS.map((g) => [g, new Set<string>()])) as Record<K, Set<string>>
   let ignoredCount = 0
 
   const add = (map: Map<string, Tally>, id: string, have: boolean) => {
@@ -285,9 +275,10 @@ export function computeFacets<K extends string, T extends { key: string }>(input
       overall.total++
       if (have) overall.obtained++
     }
+    const entries = input.entriesOf(item)
+    if (!isIgnored) for (const g of GROUP_KEYS) for (const id of entries[g]) available[g].add(id)
     if (searchRank && !searchRank.has(item.key)) continue
 
-    const entries = input.entriesOf(item)
     let failing = -1
     let failCount = 0
     for (let i = 0; i < GROUP_KEYS.length; i++) {
@@ -318,7 +309,7 @@ export function computeFacets<K extends string, T extends { key: string }>(input
     }
   }
 
-  return { facets, groupTallies, filtered, overall, ignoredCount, matching }
+  return { facets, groupTallies, filtered, overall, ignoredCount, matching, available }
 }
 
 const collator = new Intl.Collator('en', { sensitivity: 'base', numeric: true })

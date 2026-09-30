@@ -227,6 +227,7 @@ function DetailContent({ item, Title }: { item: Item; Title: TitleComponent }) {
 
         <Section title="How to get it">
           <Chips values={item.obtain.map((o) => nameOf(data.obtain, o))} empty="Unknown" />
+          {item.milestone && <MilestoneLine data={data} item={item} />}
           {item.events.length > 0 && (
             <p className="text-sm">
               <span className="text-muted-foreground">{item.eventOnly ? 'Only during ' : 'During '}</span>
@@ -262,6 +263,20 @@ function DetailContent({ item, Title }: { item: Item; Title: TitleComponent }) {
   )
 }
 
+/** "Available from: Plantera – crafted – needs Chlorophyte Ore" (earliest milestone and why). */
+function MilestoneLine({ data, item }: { data: GameData; item: Item }) {
+  const milestone = data.milestones.find((m) => m.id === item.milestone)
+  if (!milestone) return null
+  return (
+    <p className="flex flex-wrap items-center gap-x-1.5 text-sm">
+      <span className="text-muted-foreground">Available from</span>
+      <WikiIcon src={milestone.icon} alt="" size={18} />
+      <span className="font-medium">{milestone.name}</span>
+      {item.milestoneVia && <span className="text-xs text-muted-foreground">({item.milestoneVia})</span>}
+    </p>
+  )
+}
+
 /** Vendors with the conditions of their shop rows ("In Hardmode, during night, …", moon phases). */
 function SoldBySection({ data, item }: { data: GameData; item: Item }) {
   if (!item.vendors.length) return null
@@ -286,7 +301,7 @@ function SoldBySection({ data, item }: { data: GameData; item: Item }) {
                     const moon = data.conditions.get(`moon-${m}`)
                     return (
                       <span key={m} title={moon?.name}>
-                        <WikiIcon src={moon?.icon} alt={moon?.name ?? ''} size={18} />
+                        <WikiIcon src={moon?.icon} alt={moon?.name ?? ''} size={28} />
                       </span>
                     )
                   })}
