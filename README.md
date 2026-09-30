@@ -117,6 +117,8 @@ the new names. `build_icons.py` downloads the small ones once and packs them int
 6. **Shops and conditions:** the vendor pages give the shop rows; their condition texts become
    conditions (night, moon phase, after a boss, wind, Hardmode, world seeds), events and biomes.
    The Dye Trader's rewards get their own obtain method.
+   "Obtained by" is completed from our own data: drop sources, shimmer transmutations, critters
+   and music boxes; items without any method go under "Other".
 7. **Group files:** `categories.json`, `obtain.json`, … with names, icons and item counts, and
    platforms, game updates, rarities, coins and difficulties.
 8. **Drops, bosses, containers, shops, conditions** are written; `[bosses]` defines which drop
@@ -149,7 +151,7 @@ it (`*` is a wildcard). Example: the Starfury has `type: weapon^crafting materia
 |---------|--------------|
 | `[settings]` | which Items fields become keys |
 | `[categories.*]`, `[subcategories.*]` | the "Categories" filter: name, icon and `match` keys. Subcategories have a `parent`; they can be a `fallback` ("Other …"), be limited to items of some categories (`with_categories`, `without_categories`, `only_in_parent`), or be removed again by `exclude` keys |
-| `[obtain.*]` | the "Obtained by" filter (crafted, bought, dropped, chests, fishing, quest rewards, …); `page` / `section` / `replaces` fill an entry from a page section (the Strange Plant rewards) |
+| `[obtain.*]` | the "Obtained by" filter (crafted, bought, dropped, chests, fishing, quest rewards, caught, recorded, shimmer, other, …); `page` / `section` / `replaces` fill an entry from a page section (the Strange Plant rewards); `from_drops` / `from_containers` / `from_shimmer` / `names` add items from our own data; the `fallback` entry ("Other") takes items without any method |
 | `[vendors.*]` | the "Sold by" filter: the vendor's tag, icon, wiki page (for the shop) and `milestone` (when the vendor moves in) |
 | `[events.*]` | the "Events" filter: `environments` (spawn conditions of the event's enemies), `drop_conditions` (words in a drop's chance), `links` / `phrases` (in the condition texts of shops and drops) |
 | `[biomes.*]`, `[times.*]` | where and when enemies spawn (`environments`, `alone`), plus `links` / `phrases` for condition texts |

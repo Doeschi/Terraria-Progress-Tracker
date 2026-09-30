@@ -15,31 +15,31 @@
     "id": "drop",
     "name": "Dropped by enemies",
     "icon": "https://terraria.wiki.gg/images/Gel.png",
-    "count": 974
+    "count": 1142
   },
   {
     "id": "loot",
     "name": "Found in chests & pots",
     "icon": "https://terraria.wiki.gg/images/Chest.png",
-    "count": 267
+    "count": 349
   },
   {
     "id": "plunder",
     "name": "Collected in the world",
     "icon": "https://terraria.wiki.gg/images/Gold_Chest.png",
-    "count": 862
+    "count": 890
   },
   {
     "id": "bag",
     "name": "From grab bags & crates",
     "icon": "https://terraria.wiki.gg/images/Wooden_Crate.png",
-    "count": 485
+    "count": 572
   },
   {
     "id": "treasure-bag",
     "name": "From boss treasure bags",
     "icon": "https://terraria.wiki.gg/images/Treasure_Bag_%28Eye_of_Cthulhu%29.png",
-    "count": 190
+    "count": 229
   },
   {
     "id": "fishing",
@@ -58,6 +58,31 @@
     "name": "Strange Plant reward",
     "icon": "https://terraria.wiki.gg/images/Dye_Trader.png",
     "count": 33
+  },
+  {
+    "id": "caught",
+    "name": "Caught with a Bug Net",
+    "icon": "https://terraria.wiki.gg/images/Bug_Net.png",
+    "count": 96
+  },
+  {
+    "id": "recorded",
+    "name": "Recorded (Music Box)",
+    "icon": "https://terraria.wiki.gg/images/Music_Box.png",
+    "count": 101
+  },
+  {
+    "id": "shimmer",
+    "name": "Shimmer transformation",
+    "icon": "https://terraria.wiki.gg/images/Bottomless_Shimmer_Bucket.png",
+    "count": 242
+  },
+  {
+    "id": "other",
+    "name": "Other",
+    "icon": "https://terraria.wiki.gg/images/Tombstone.png",
+    "count": 50,
+    "fallback": true
   },
   {
     "id": "unobtainable",

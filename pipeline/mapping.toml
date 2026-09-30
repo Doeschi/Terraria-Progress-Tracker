@@ -657,7 +657,9 @@ name = "Critters"
 parent = "crafting-material"
 icon = "Bunny"
 only_in_parent = true
-match = ["npc:critter", "page:gem squirrels", "page:gem bunnies"]
+# the shared pages hold critters whose name differs from their NPC
+match = ["npc:critter", "page:gem squirrels", "page:gem bunnies", "page:butterflies", "page:ducks",
+         "page:scorpions", "page:jellyfish (bait)"]
 
 [subcategories.potion-ingredient]
 name = "Potion ingredients"
@@ -984,6 +986,12 @@ fallback = true
 # "what" ("Crafted", not "Crafting"), so they are not mistaken for categories.
 # loot = chests, pots, trees ...; plunder = placed in the world and collected
 # (dungeon furniture, statues, ores).
+# Our own data adds to the tags (derive_obtain in items.py):
+#   from_drops       drop source kinds that give this method ("npc", "bag")
+#   from_containers  container groups ([containers]) that give it
+#   from_shimmer     results of shimmer transmutations
+#   names            item name patterns
+#   fallback         items that got no method at all (kept last in the filter)
 
 [obtain.crafted]
 name = "Crafted"
@@ -999,26 +1007,31 @@ match = ["tag:vendor", "tag:buy", "tag:buyable", "tag:vendor:*"]
 name = "Dropped by enemies"
 icon = "Gel"
 match = ["tag:drop", "listcat:drop items"]
+from_drops = ["npc"]
 
 [obtain.loot]
 name = "Found in chests & pots"
 icon = "Chest"
 match = ["tag:loot", "listcat:loot items"]
+from_containers = ["chest"]
 
 [obtain.plunder]
 name = "Collected in the world"
 icon = "Gold Chest"
 match = ["tag:plunder", "tag:plunder:*", "listcat:plunder items"]
+from_containers = ["tree"]
 
 [obtain.bag]
 name = "From grab bags & crates"
 icon = "Wooden Crate"
 match = ["tag:bag loot", "listcat:bag loot items"]
+from_containers = ["crate", "other"]
 
 [obtain.treasure-bag]
 name = "From boss treasure bags"
 icon_file = "Treasure Bag (Eye of Cthulhu).png"
 match = ["tag:treasure bag loot", "listcat:treasure bag loot items"]
+from_drops = ["bag"]
 
 [obtain.fishing]
 name = "Fished"
@@ -1041,6 +1054,35 @@ match = []
 page = "Dye Trader"
 section = "Rewards"
 replaces = "quest-reward"
+
+# critters (NPCs of type critter / gold critter, and shared critter pages)
+[obtain.caught]
+name = "Caught with a Bug Net"
+icon = "Bug Net"
+# as [subcategories.critter]
+match = ["npc:critter", "page:gem squirrels", "page:gem bunnies", "page:butterflies", "page:ducks",
+         "page:scorpions", "page:jellyfish (bait)"]
+
+# playing the music near an empty Music Box
+[obtain.recorded]
+name = "Recorded (Music Box)"
+icon = "Music Box"
+match = []
+names = ["Music Box (*)", "Otherworldly Music Box (*)"]
+
+[obtain.shimmer]
+name = "Shimmer transformation"
+icon = "Bottomless Shimmer Bucket"
+match = []
+from_shimmer = true
+
+# everything with no other method: world items (Fallen Star, grave markers), other forms of an
+# item (Shellphone modes, "(Inactive)" versions), items the wiki has not tagged yet
+[obtain.other]
+name = "Other"
+icon = "Tombstone"
+match = []
+fallback = true
 
 [obtain.unobtainable]
 name = "Unobtainable"

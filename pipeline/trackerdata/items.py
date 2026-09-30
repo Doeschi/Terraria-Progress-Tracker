@@ -1,4 +1,5 @@
 """Items: rows of the Items table -> item records (platforms, versions from History, difficulty, sections)."""
+import fnmatch
 import html
 import re
 from collections import Counter, defaultdict
@@ -270,6 +271,36 @@ def make_keys_unique(items):
     dupes = [k for k, n in Counter(i["key"] for i in items).items() if n > 1]
     if dupes:
         log(f"  warning: duplicate item keys remain: {dupes}")
+
+
+def derive_obtain(items, drops, shimmer_results, obtain_sections):
+    """Obtain methods from our own data, added to the wiki's tags ([obtain] from_drops,
+    from_containers, from_shimmer, names); items with none at all get the fallback entry."""
+    order = list(obtain_sections)
+    fallback = next((oid for oid, o in obtain_sections.items() if o.get("fallback")), None)
+    added = Counter()
+    for item in items:
+        have = set(item["obtain"])
+        kinds, groups = set(), set()
+        for d in drops.drops.get(item["key"], ()):
+            source = drops.sources[d["source"]]
+            kinds.add(source["kind"])
+            if source.get("group"):
+                groups.add(source["group"])
+        name = norm_name(item["name"])
+        for oid, o in obtain_sections.items():
+            if oid in have:
+                continue
+            if (kinds & set(o.get("from_drops", ())) or groups & set(o.get("from_containers", ()))
+                    or (o.get("from_shimmer") and item["key"] in shimmer_results)
+                    or any(fnmatch.fnmatchcase(name, norm_name(p)) for p in o.get("names", ()))):
+                have.add(oid)
+                added[oid] += 1
+        if fallback and not have and not item.get("unobtainable"):
+            have.add(fallback)
+            added[fallback] += 1
+        item["obtain"] = sorted(have, key=order.index)
+    log(f"  obtain methods added from drops, shimmer and names: {dict(added)}")
 
 
 def section_file(section, entries, items):

@@ -423,7 +423,7 @@
     "id": "critter",
     "name": "Critters",
     "icon": "https://terraria.wiki.gg/images/Bunny.png",
-    "count": 82,
+    "count": 92,
     "parent": "crafting-material"
   },
   {
@@ -767,7 +767,7 @@
     "id": "other-crafting-material",
     "name": "Other crafting materials",
     "icon": "https://terraria.wiki.gg/images/Vile_Powder.png",
-    "count": 104,
+    "count": 94,
     "parent": "crafting-material",
     "fallback": true
   },

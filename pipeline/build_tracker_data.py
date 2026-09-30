@@ -69,6 +69,7 @@ from trackerdata.mapping import Mapping
 from trackerdata.items import (
     build_item,
     correct_versions_by_id,
+    derive_obtain,
     History,
     make_keys_unique,
     pick_rows,
@@ -187,6 +188,11 @@ def build(raw_dir, mapping_path, out_dir, readable_dir=None):
     apply_page_rewards(items, rewards, mapping.sections["obtain"])
     apply_conditions(items, drops, shops, conditions, mapping, rewards)
 
+    log("Recipes…")
+    recipes = recipes_file(recipe_rows, items, mapping, wikitext.get("Alternative crafting ingredients", ""))
+    # "Obtained by" also from our data (drops, containers, shimmer), the rest under "Other"
+    derive_obtain(items, drops, {s["result"] for s in recipes["shimmer"]}, mapping.sections["obtain"])
+
     outputs = {"items.json": items}
     for section in LIST_SECTIONS:
         outputs[f"{section}.json"] = section_file(section, mapping.sections[section], items)
@@ -206,9 +212,7 @@ def build(raw_dir, mapping_path, out_dir, readable_dir=None):
     outputs["conditions.json"] = conditions.conditions_file(
         items, {b["id"]: b["icon"] for b in outputs["bosses.json"]["bosses"] if b.get("icon")})
 
-    log("Recipes…")
-    outputs["recipes.json"] = recipes_file(recipe_rows, items, mapping,
-                                           wikitext.get("Alternative crafting ingredients", ""))
+    outputs["recipes.json"] = recipes
     outputs["missing_items.json"] = missing_items_file(recipe_rows, items)
 
     log("Milestones…")

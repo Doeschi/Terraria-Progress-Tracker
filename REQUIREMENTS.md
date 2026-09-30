@@ -104,6 +104,14 @@ GitHub Actions.
   items that fit no other subcategory; it is always listed last (also when sorted A–Z).
 - **D8** Obtain methods are named as *how* an item is obtained ("Crafted", "Found in chests &
   pots", "Collected in the world", …) so they are not mistaken for categories.
+- **D8a** "Obtained by" comes from the wiki's tags and from our own data: drops (enemies →
+  Dropped by enemies, boss treasure bags, chests → Found in chests & pots, crates and grab bags,
+  shaking trees → Collected in the world), shimmer transmutations ("Shimmer transformation"),
+  critters ("Caught with a Bug Net") and music boxes by name ("Recorded (Music Box)"). Every
+  obtainable item has at least one method: the rest (world items like Fallen Star, grave
+  markers, other forms of an item like the Shellphone modes, 1.4.5 items not tagged yet) are
+  under "Other". Critters whose name differs from their NPC (butterflies, ducks, scorpions,
+  jellyfish) come from their shared wiki page.
 - **D7** Items with rarity Expert (-12) or Master (-13) that can only be obtained from drops or
   treasure bags get `minDifficulty` `expert` / `master`. Items that can also be crafted or
   bought are not restricted.

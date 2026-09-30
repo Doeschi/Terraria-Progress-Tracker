@@ -73,7 +73,9 @@
     ],
     "obtain": [
       "crafted",
-      "plunder"
+      "drop",
+      "plunder",
+      "shimmer"
     ],
     "vendors": [],
     "events": [],
@@ -127,7 +129,9 @@
     ],
     "obtain": [
       "crafted",
-      "plunder"
+      "drop",
+      "plunder",
+      "shimmer"
     ],
     "vendors": [],
     "events": [],
@@ -236,7 +240,8 @@
       "potion-ingredient"
     ],
     "obtain": [
-      "plunder"
+      "plunder",
+      "shimmer"
     ],
     "vendors": [],
     "events": [],
@@ -472,7 +477,10 @@
     ],
     "obtain": [
       "crafted",
-      "plunder"
+      "drop",
+      "loot",
+      "plunder",
+      "shimmer"
     ],
     "vendors": [],
     "events": [],
@@ -583,7 +591,8 @@
       "drop",
       "loot",
       "plunder",
-      "bag"
+      "bag",
+      "shimmer"
     ],
     "vendors": [],
     "events": [],
@@ -645,7 +654,8 @@
       "drop",
       "loot",
       "plunder",
-      "bag"
+      "bag",
+      "shimmer"
     ],
     "vendors": [],
     "events": [],
@@ -708,7 +718,8 @@
       "drop",
       "loot",
       "plunder",
-      "bag"
+      "bag",
+      "shimmer"
     ],
     "vendors": [],
     "events": [],
@@ -770,7 +781,8 @@
       "drop",
       "loot",
       "plunder",
-      "bag"
+      "bag",
+      "shimmer"
     ],
     "vendors": [],
     "events": [],
@@ -1035,6 +1047,7 @@
     ],
     "obtain": [
       "crafted",
+      "loot",
       "bag"
     ],
     "vendors": [],
@@ -1142,6 +1155,7 @@
     ],
     "obtain": [
       "crafted",
+      "loot",
       "bag"
     ],
     "vendors": [],
@@ -1475,7 +1489,8 @@
     ],
     "obtain": [
       "vendor",
-      "loot"
+      "loot",
+      "plunder"
     ],
     "vendors": [
       "dryad"
@@ -1593,6 +1608,7 @@
       "enemy-drop"
     ],
     "obtain": [
+      "drop",
       "plunder",
       "bag"
     ],
@@ -2702,6 +2718,7 @@
       "material-equipment"
     ],
     "obtain": [
+      "drop",
       "loot"
     ],
     "vendors": [],
@@ -2760,6 +2777,7 @@
     ],
     "obtain": [
       "crafted",
+      "drop",
       "loot"
     ],
     "vendors": [],
@@ -2867,6 +2885,8 @@
       "statue"
     ],
     "obtain": [
+      "drop",
+      "loot",
       "plunder"
     ],
     "vendors": [],
@@ -2923,6 +2943,7 @@
       "material-equipment"
     ],
     "obtain": [
+      "drop",
       "loot"
     ],
     "vendors": [],
@@ -2979,6 +3000,7 @@
       "material-equipment"
     ],
     "obtain": [
+      "drop",
       "loot"
     ],
     "vendors": [],
@@ -3481,6 +3503,7 @@
       "wand"
     ],
     "obtain": [
+      "drop",
       "loot",
       "bag"
     ],
@@ -3598,7 +3621,8 @@
       "other-miscellaneous"
     ],
     "obtain": [
-      "vendor"
+      "vendor",
+      "shimmer"
     ],
     "vendors": [
       "dryad"
@@ -4009,7 +4033,8 @@
       "drop",
       "loot",
       "plunder",
-      "bag"
+      "bag",
+      "treasure-bag"
     ],
     "vendors": [],
     "events": [],
@@ -4128,7 +4153,9 @@
       "material-equipment",
       "other-ammunition"
     ],
-    "obtain": [],
+    "obtain": [
+      "other"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -4779,7 +4806,8 @@
       "material-equipment"
     ],
     "obtain": [
-      "vendor"
+      "vendor",
+      "drop"
     ],
     "vendors": [
       "merchant"
@@ -4881,7 +4909,8 @@
     ],
     "subcategories": [],
     "obtain": [
-      "crafted"
+      "crafted",
+      "shimmer"
     ],
     "vendors": [],
     "events": [],
@@ -4977,7 +5006,8 @@
     ],
     "subcategories": [],
     "obtain": [
-      "crafted"
+      "crafted",
+      "shimmer"
     ],
     "vendors": [],
     "events": [],
@@ -5192,6 +5222,7 @@
       "gun"
     ],
     "obtain": [
+      "drop",
       "loot",
       "bag"
     ],
@@ -5252,6 +5283,7 @@
     ],
     "obtain": [
       "vendor",
+      "drop",
       "loot",
       "bag"
     ],
@@ -5422,7 +5454,8 @@
     ],
     "subcategories": [],
     "obtain": [
-      "crafted"
+      "crafted",
+      "shimmer"
     ],
     "vendors": [],
     "events": [],
@@ -5471,7 +5504,8 @@
     ],
     "subcategories": [],
     "obtain": [
-      "crafted"
+      "crafted",
+      "shimmer"
     ],
     "vendors": [],
     "events": [],
@@ -5520,7 +5554,8 @@
     ],
     "subcategories": [],
     "obtain": [
-      "crafted"
+      "crafted",
+      "shimmer"
     ],
     "vendors": [],
     "events": [],
@@ -6011,6 +6046,7 @@
     ],
     "obtain": [
       "crafted",
+      "drop",
       "loot",
       "bag"
     ],
@@ -6062,6 +6098,7 @@
       "wand"
     ],
     "obtain": [
+      "drop",
       "loot",
       "bag"
     ],
@@ -6125,6 +6162,7 @@
       "material-equipment"
     ],
     "obtain": [
+      "loot",
       "bag"
     ],
     "vendors": [],
@@ -6235,6 +6273,7 @@
       "light-pet"
     ],
     "obtain": [
+      "drop",
       "loot",
       "bag"
     ],
@@ -7199,7 +7238,8 @@
       "other-block"
     ],
     "obtain": [
-      "plunder"
+      "plunder",
+      "shimmer"
     ],
     "vendors": [],
     "events": [],
@@ -7252,7 +7292,9 @@
       "brick"
     ],
     "obtain": [
-      "crafted"
+      "crafted",
+      "drop",
+      "bag"
     ],
     "vendors": [],
     "events": [],
@@ -7354,7 +7396,8 @@
       "lantern"
     ],
     "obtain": [
-      "plunder"
+      "plunder",
+      "shimmer"
     ],
     "vendors": [],
     "events": [],
@@ -7408,7 +7451,9 @@
       "brick"
     ],
     "obtain": [
-      "crafted"
+      "crafted",
+      "drop",
+      "bag"
     ],
     "vendors": [],
     "events": [],
@@ -7512,7 +7557,9 @@
       "brick"
     ],
     "obtain": [
-      "crafted"
+      "crafted",
+      "drop",
+      "bag"
     ],
     "vendors": [],
     "events": [],
@@ -7927,6 +7974,7 @@
       "other-block"
     ],
     "obtain": [
+      "drop",
       "plunder"
     ],
     "vendors": [],
@@ -8101,6 +8149,7 @@
     ],
     "obtain": [
       "crafted",
+      "drop",
       "plunder"
     ],
     "vendors": [],
@@ -8149,7 +8198,8 @@
     ],
     "subcategories": [],
     "obtain": [
-      "crafted"
+      "crafted",
+      "shimmer"
     ],
     "vendors": [],
     "events": [],
@@ -8419,6 +8469,7 @@
       "material-equipment"
     ],
     "obtain": [
+      "loot",
       "bag"
     ],
     "vendors": [],
@@ -8470,8 +8521,10 @@
       "wand"
     ],
     "obtain": [
+      "drop",
       "loot",
-      "bag"
+      "bag",
+      "treasure-bag"
     ],
     "vendors": [],
     "events": [],
@@ -8584,7 +8637,8 @@
     ],
     "obtain": [
       "loot",
-      "bag"
+      "bag",
+      "shimmer"
     ],
     "vendors": [],
     "events": [],
@@ -8752,6 +8806,7 @@
       "flail"
     ],
     "obtain": [
+      "drop",
       "loot",
       "bag"
     ],
@@ -8866,6 +8921,7 @@
       "material-equipment"
     ],
     "obtain": [
+      "loot",
       "bag"
     ],
     "vendors": [],
@@ -8922,6 +8978,7 @@
       "spell-book"
     ],
     "obtain": [
+      "drop",
       "plunder"
     ],
     "vendors": [],
@@ -9173,7 +9230,8 @@
       "other-ammunition"
     ],
     "obtain": [
-      "plunder"
+      "plunder",
+      "shimmer"
     ],
     "vendors": [],
     "events": [],
@@ -9496,7 +9554,8 @@
       "bar"
     ],
     "obtain": [
-      "crafted"
+      "crafted",
+      "bag"
     ],
     "vendors": [],
     "events": [],
@@ -9603,7 +9662,9 @@
       "gem"
     ],
     "obtain": [
-      "plunder"
+      "plunder",
+      "bag",
+      "shimmer"
     ],
     "vendors": [],
     "events": [],
@@ -9653,7 +9714,9 @@
       "gem"
     ],
     "obtain": [
-      "plunder"
+      "plunder",
+      "bag",
+      "shimmer"
     ],
     "vendors": [],
     "events": [],
@@ -9703,7 +9766,9 @@
       "gem"
     ],
     "obtain": [
-      "plunder"
+      "plunder",
+      "bag",
+      "shimmer"
     ],
     "vendors": [],
     "events": [],
@@ -9753,7 +9818,9 @@
       "gem"
     ],
     "obtain": [
-      "plunder"
+      "plunder",
+      "bag",
+      "shimmer"
     ],
     "vendors": [],
     "events": [],
@@ -9803,7 +9870,9 @@
       "gem"
     ],
     "obtain": [
-      "plunder"
+      "plunder",
+      "bag",
+      "shimmer"
     ],
     "vendors": [],
     "events": [],
@@ -9853,7 +9922,9 @@
       "gem"
     ],
     "obtain": [
-      "plunder"
+      "plunder",
+      "bag",
+      "shimmer"
     ],
     "vendors": [],
     "events": [],
@@ -10125,6 +10196,7 @@
       "crafted",
       "vendor",
       "drop",
+      "loot",
       "bag"
     ],
     "vendors": [
@@ -10465,7 +10537,8 @@
     "obtain": [
       "vendor",
       "loot",
-      "plunder"
+      "plunder",
+      "shimmer"
     ],
     "vendors": [
       "dryad"
@@ -10522,7 +10595,8 @@
     ],
     "obtain": [
       "crafted",
-      "plunder"
+      "plunder",
+      "shimmer"
     ],
     "vendors": [],
     "events": [],
@@ -11144,7 +11218,9 @@
       "other-crafting-material",
       "other-miscellaneous"
     ],
-    "obtain": [],
+    "obtain": [
+      "shimmer"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -11191,7 +11267,9 @@
     "subcategories": [
       "other-miscellaneous"
     ],
-    "obtain": [],
+    "obtain": [
+      "shimmer"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -11613,7 +11691,8 @@
       "other-accessory"
     ],
     "obtain": [
-      "drop"
+      "drop",
+      "shimmer"
     ],
     "vendors": [],
     "events": [],
@@ -11956,7 +12035,9 @@
       "other-furniture"
     ],
     "obtain": [
-      "plunder"
+      "drop",
+      "plunder",
+      "bag"
     ],
     "vendors": [],
     "events": [],
@@ -12062,7 +12143,9 @@
       "combat",
       "material-equipment"
     ],
-    "obtain": [],
+    "obtain": [
+      "other"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -12260,7 +12343,8 @@
     ],
     "subcategories": [],
     "obtain": [
-      "crafted"
+      "crafted",
+      "shimmer"
     ],
     "vendors": [],
     "events": [],
@@ -12309,7 +12393,8 @@
     ],
     "subcategories": [],
     "obtain": [
-      "crafted"
+      "crafted",
+      "shimmer"
     ],
     "vendors": [],
     "events": [],
@@ -12358,7 +12443,8 @@
     ],
     "subcategories": [],
     "obtain": [
-      "crafted"
+      "crafted",
+      "shimmer"
     ],
     "vendors": [],
     "events": [],
@@ -13063,7 +13149,9 @@
       "vanity"
     ],
     "subcategories": [],
-    "obtain": [],
+    "obtain": [
+      "drop"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [
@@ -13408,7 +13496,9 @@
       "vanity"
     ],
     "subcategories": [],
-    "obtain": [],
+    "obtain": [
+      "drop"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [
@@ -13647,7 +13737,8 @@
     "subcategories": [],
     "obtain": [
       "drop",
-      "bag"
+      "bag",
+      "treasure-bag"
     ],
     "vendors": [],
     "events": [],
@@ -13694,7 +13785,8 @@
     "subcategories": [],
     "obtain": [
       "drop",
-      "bag"
+      "bag",
+      "treasure-bag"
     ],
     "vendors": [],
     "events": [],
@@ -13741,7 +13833,8 @@
     "subcategories": [],
     "obtain": [
       "drop",
-      "bag"
+      "bag",
+      "treasure-bag"
     ],
     "vendors": [],
     "events": [],
@@ -13834,7 +13927,9 @@
       "vanity"
     ],
     "subcategories": [],
-    "obtain": [],
+    "obtain": [
+      "drop"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -13882,7 +13977,9 @@
     "subcategories": [
       "critter"
     ],
-    "obtain": [],
+    "obtain": [
+      "caught"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -14687,7 +14784,8 @@
     ],
     "obtain": [
       "crafted",
-      "plunder"
+      "plunder",
+      "shimmer"
     ],
     "vendors": [],
     "events": [],
@@ -14742,7 +14840,8 @@
     ],
     "obtain": [
       "loot",
-      "bag"
+      "bag",
+      "shimmer"
     ],
     "vendors": [],
     "events": [],
@@ -15363,6 +15462,7 @@
     ],
     "obtain": [
       "crafted",
+      "loot",
       "bag"
     ],
     "vendors": [],
@@ -15639,7 +15739,8 @@
       "other-potion"
     ],
     "obtain": [
-      "crafted"
+      "crafted",
+      "loot"
     ],
     "vendors": [],
     "events": [],
@@ -15691,6 +15792,7 @@
     ],
     "obtain": [
       "crafted",
+      "loot",
       "bag"
     ],
     "vendors": [],
@@ -15796,6 +15898,7 @@
     "obtain": [
       "crafted",
       "drop",
+      "loot",
       "bag"
     ],
     "vendors": [],
@@ -15906,7 +16009,8 @@
     ],
     "obtain": [
       "crafted",
-      "loot"
+      "loot",
+      "bag"
     ],
     "vendors": [],
     "events": [],
@@ -16010,7 +16114,8 @@
       "other-potion"
     ],
     "obtain": [
-      "crafted"
+      "crafted",
+      "loot"
     ],
     "vendors": [],
     "events": [],
@@ -16271,6 +16376,7 @@
     ],
     "obtain": [
       "crafted",
+      "loot",
       "bag"
     ],
     "vendors": [],
@@ -16720,6 +16826,7 @@
       "potion-ingredient"
     ],
     "obtain": [
+      "drop",
       "bag"
     ],
     "vendors": [],
@@ -17071,7 +17178,9 @@
     "subcategories": [
       "decoration"
     ],
-    "obtain": [],
+    "obtain": [
+      "other"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -17484,6 +17593,7 @@
     "subcategories": [],
     "obtain": [
       "drop",
+      "loot",
       "bag"
     ],
     "vendors": [],
@@ -18748,7 +18858,8 @@
     ],
     "obtain": [
       "crafted",
-      "vendor"
+      "vendor",
+      "shimmer"
     ],
     "vendors": [
       "tavernkeep"
@@ -19326,8 +19437,10 @@
       "enemy-drop"
     ],
     "obtain": [
+      "drop",
       "plunder",
-      "bag"
+      "bag",
+      "shimmer"
     ],
     "vendors": [],
     "events": [],
@@ -19380,9 +19493,11 @@
       "enemy-drop"
     ],
     "obtain": [
+      "drop",
       "loot",
       "plunder",
-      "bag"
+      "bag",
+      "shimmer"
     ],
     "vendors": [],
     "events": [],
@@ -19438,7 +19553,8 @@
       "drop",
       "loot",
       "plunder",
-      "bag"
+      "bag",
+      "shimmer"
     ],
     "vendors": [],
     "events": [],
@@ -19662,7 +19778,8 @@
       "other-ammunition"
     ],
     "obtain": [
-      "plunder"
+      "plunder",
+      "shimmer"
     ],
     "vendors": [],
     "events": [],
@@ -20221,6 +20338,7 @@
     ],
     "obtain": [
       "crafted",
+      "drop",
       "loot",
       "bag"
     ],
@@ -21672,7 +21790,8 @@
       "other-ammunition"
     ],
     "obtain": [
-      "plunder"
+      "plunder",
+      "shimmer"
     ],
     "vendors": [],
     "events": [],
@@ -21778,7 +21897,8 @@
       "material-equipment"
     ],
     "obtain": [
-      "drop"
+      "drop",
+      "shimmer"
     ],
     "vendors": [],
     "events": [],
@@ -21832,7 +21952,8 @@
       "material-equipment"
     ],
     "obtain": [
-      "drop"
+      "drop",
+      "shimmer"
     ],
     "vendors": [],
     "events": [],
@@ -25909,7 +26030,8 @@
     "obtain": [
       "drop",
       "bag",
-      "treasure-bag"
+      "treasure-bag",
+      "shimmer"
     ],
     "vendors": [],
     "events": [],
@@ -25962,7 +26084,8 @@
     "obtain": [
       "drop",
       "bag",
-      "treasure-bag"
+      "treasure-bag",
+      "shimmer"
     ],
     "vendors": [],
     "events": [],
@@ -26015,7 +26138,8 @@
     "obtain": [
       "drop",
       "bag",
-      "treasure-bag"
+      "treasure-bag",
+      "shimmer"
     ],
     "vendors": [],
     "events": [],
@@ -26514,6 +26638,7 @@
     ],
     "obtain": [
       "vendor",
+      "drop",
       "loot"
     ],
     "vendors": [
@@ -27445,8 +27570,8 @@
       "magic"
     ],
     "obtain": [
-      "drop",
-      "vendor"
+      "vendor",
+      "drop"
     ],
     "vendors": [
       "skeleton-merchant"
@@ -28663,6 +28788,7 @@
       "other-block"
     ],
     "obtain": [
+      "drop",
       "plunder"
     ],
     "vendors": [],
@@ -29880,7 +30006,9 @@
       "material-equipment",
       "furniture-music-box"
     ],
-    "obtain": [],
+    "obtain": [
+      "recorded"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -29933,7 +30061,9 @@
       "material-equipment",
       "furniture-music-box"
     ],
-    "obtain": [],
+    "obtain": [
+      "recorded"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -29986,7 +30116,9 @@
       "material-equipment",
       "furniture-music-box"
     ],
-    "obtain": [],
+    "obtain": [
+      "recorded"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -30037,7 +30169,8 @@
       "furniture-music-box"
     ],
     "obtain": [
-      "crafted"
+      "crafted",
+      "recorded"
     ],
     "vendors": [],
     "events": [],
@@ -30091,7 +30224,9 @@
       "material-equipment",
       "furniture-music-box"
     ],
-    "obtain": [],
+    "obtain": [
+      "recorded"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -30144,7 +30279,9 @@
       "material-equipment",
       "furniture-music-box"
     ],
-    "obtain": [],
+    "obtain": [
+      "recorded"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -30197,7 +30334,9 @@
       "material-equipment",
       "furniture-music-box"
     ],
-    "obtain": [],
+    "obtain": [
+      "recorded"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -30250,7 +30389,9 @@
       "material-equipment",
       "furniture-music-box"
     ],
-    "obtain": [],
+    "obtain": [
+      "recorded"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -30303,7 +30444,9 @@
       "material-equipment",
       "furniture-music-box"
     ],
-    "obtain": [],
+    "obtain": [
+      "recorded"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -30356,7 +30499,9 @@
       "material-equipment",
       "furniture-music-box"
     ],
-    "obtain": [],
+    "obtain": [
+      "recorded"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -30409,7 +30554,9 @@
       "material-equipment",
       "furniture-music-box"
     ],
-    "obtain": [],
+    "obtain": [
+      "recorded"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -30462,7 +30609,9 @@
       "material-equipment",
       "furniture-music-box"
     ],
-    "obtain": [],
+    "obtain": [
+      "recorded"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -30515,7 +30664,9 @@
       "material-equipment",
       "furniture-music-box"
     ],
-    "obtain": [],
+    "obtain": [
+      "recorded"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -30622,7 +30773,8 @@
     ],
     "obtain": [
       "vendor",
-      "plunder"
+      "plunder",
+      "shimmer"
     ],
     "vendors": [
       "wizard"
@@ -31538,7 +31690,8 @@
     "obtain": [
       "crafted",
       "drop",
-      "plunder"
+      "plunder",
+      "shimmer"
     ],
     "vendors": [],
     "events": [
@@ -32035,7 +32188,9 @@
     "subcategories": [
       "other-pet"
     ],
-    "obtain": [],
+    "obtain": [
+      "other"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -35545,8 +35700,10 @@
       "material-equipment"
     ],
     "obtain": [
+      "drop",
       "loot",
-      "bag"
+      "bag",
+      "shimmer"
     ],
     "vendors": [],
     "events": [],
@@ -36270,7 +36427,9 @@
       "wand"
     ],
     "obtain": [
-      "drop"
+      "drop",
+      "loot",
+      "bag"
     ],
     "vendors": [],
     "events": [],
@@ -37057,7 +37216,8 @@
       "drop",
       "loot",
       "plunder",
-      "bag"
+      "bag",
+      "shimmer"
     ],
     "vendors": [],
     "events": [],
@@ -37120,7 +37280,8 @@
       "drop",
       "loot",
       "plunder",
-      "bag"
+      "bag",
+      "shimmer"
     ],
     "vendors": [],
     "events": [],
@@ -37182,7 +37343,8 @@
       "drop",
       "loot",
       "plunder",
-      "bag"
+      "bag",
+      "shimmer"
     ],
     "vendors": [],
     "events": [],
@@ -37245,7 +37407,8 @@
       "drop",
       "loot",
       "plunder",
-      "bag"
+      "bag",
+      "shimmer"
     ],
     "vendors": [],
     "events": [],
@@ -37304,7 +37467,8 @@
     ],
     "obtain": [
       "crafted",
-      "loot"
+      "loot",
+      "bag"
     ],
     "vendors": [],
     "events": [],
@@ -37411,6 +37575,7 @@
     ],
     "obtain": [
       "crafted",
+      "loot",
       "bag"
     ],
     "vendors": [],
@@ -38409,8 +38574,10 @@
       "projectile-melee"
     ],
     "obtain": [
+      "drop",
       "loot",
-      "bag"
+      "bag",
+      "shimmer"
     ],
     "vendors": [],
     "events": [],
@@ -39802,6 +39969,7 @@
     ],
     "obtain": [
       "crafted",
+      "drop",
       "loot",
       "plunder",
       "bag"
@@ -40610,7 +40778,9 @@
     "subcategories": [
       "other-block"
     ],
-    "obtain": [],
+    "obtain": [
+      "other"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -41480,7 +41650,8 @@
       "other-ammunition"
     ],
     "obtain": [
-      "vendor"
+      "vendor",
+      "shimmer"
     ],
     "vendors": [
       "steampunker"
@@ -41590,7 +41761,8 @@
       "other-ammunition"
     ],
     "obtain": [
-      "vendor"
+      "vendor",
+      "shimmer"
     ],
     "vendors": [
       "steampunker"
@@ -42449,6 +42621,7 @@
       "gun"
     ],
     "obtain": [
+      "drop",
       "loot",
       "bag"
     ],
@@ -42560,6 +42733,7 @@
       "spear"
     ],
     "obtain": [
+      "drop",
       "loot",
       "bag"
     ],
@@ -42615,7 +42789,9 @@
     "subcategories": [
       "material-equipment"
     ],
-    "obtain": [],
+    "obtain": [
+      "drop"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [
@@ -42667,7 +42843,9 @@
     "subcategories": [
       "material-equipment"
     ],
-    "obtain": [],
+    "obtain": [
+      "drop"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [
@@ -42719,7 +42897,9 @@
     "subcategories": [
       "material-equipment"
     ],
-    "obtain": [],
+    "obtain": [
+      "drop"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [
@@ -43707,7 +43887,8 @@
     ],
     "obtain": [
       "crafted",
-      "plunder"
+      "plunder",
+      "shimmer"
     ],
     "vendors": [],
     "events": [],
@@ -43760,7 +43941,8 @@
     ],
     "obtain": [
       "crafted",
-      "plunder"
+      "plunder",
+      "shimmer"
     ],
     "vendors": [],
     "events": [],
@@ -44122,7 +44304,8 @@
       "other-tool"
     ],
     "obtain": [
-      "loot"
+      "loot",
+      "plunder"
     ],
     "vendors": [],
     "events": [],
@@ -44654,7 +44837,10 @@
       "vanity"
     ],
     "subcategories": [],
-    "obtain": [],
+    "obtain": [
+      "drop",
+      "treasure-bag"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -44699,7 +44885,10 @@
       "vanity"
     ],
     "subcategories": [],
-    "obtain": [],
+    "obtain": [
+      "drop",
+      "treasure-bag"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -44744,7 +44933,10 @@
       "vanity"
     ],
     "subcategories": [],
-    "obtain": [],
+    "obtain": [
+      "drop",
+      "treasure-bag"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -44943,7 +45135,8 @@
     ],
     "subcategories": [],
     "obtain": [
-      "loot"
+      "loot",
+      "shimmer"
     ],
     "vendors": [],
     "events": [],
@@ -45283,7 +45476,8 @@
     ],
     "obtain": [
       "vendor",
-      "drop"
+      "drop",
+      "shimmer"
     ],
     "vendors": [
       "princess"
@@ -45339,8 +45533,9 @@
       "material-equipment"
     ],
     "obtain": [
+      "vendor",
       "drop",
-      "vendor"
+      "shimmer"
     ],
     "vendors": [
       "princess"
@@ -45450,9 +45645,10 @@
     ],
     "obtain": [
       "crafted",
+      "vendor",
       "loot",
       "bag",
-      "vendor"
+      "shimmer"
     ],
     "vendors": [
       "princess"
@@ -45913,7 +46109,8 @@
     ],
     "subcategories": [],
     "obtain": [
-      "loot"
+      "loot",
+      "shimmer"
     ],
     "vendors": [],
     "events": [],
@@ -46902,7 +47099,8 @@
       "material-equipment"
     ],
     "obtain": [
-      "drop"
+      "drop",
+      "shimmer"
     ],
     "vendors": [],
     "events": [],
@@ -46960,7 +47158,8 @@
       "material-equipment"
     ],
     "obtain": [
-      "drop"
+      "drop",
+      "shimmer"
     ],
     "vendors": [],
     "events": [],
@@ -47014,7 +47213,8 @@
       "material-equipment"
     ],
     "obtain": [
-      "drop"
+      "drop",
+      "shimmer"
     ],
     "vendors": [],
     "events": [],
@@ -47069,7 +47269,8 @@
       "material-equipment"
     ],
     "obtain": [
-      "drop"
+      "drop",
+      "shimmer"
     ],
     "vendors": [],
     "events": [],
@@ -47123,7 +47324,8 @@
       "material-equipment"
     ],
     "obtain": [
-      "drop"
+      "drop",
+      "shimmer"
     ],
     "vendors": [],
     "events": [],
@@ -47180,7 +47382,8 @@
       "material-equipment"
     ],
     "obtain": [
-      "drop"
+      "drop",
+      "shimmer"
     ],
     "vendors": [],
     "events": [],
@@ -47236,7 +47439,8 @@
       "material-equipment"
     ],
     "obtain": [
-      "drop"
+      "drop",
+      "shimmer"
     ],
     "vendors": [],
     "events": [],
@@ -47292,7 +47496,8 @@
       "material-equipment"
     ],
     "obtain": [
-      "drop"
+      "drop",
+      "shimmer"
     ],
     "vendors": [],
     "events": [],
@@ -47346,7 +47551,8 @@
       "material-equipment"
     ],
     "obtain": [
-      "drop"
+      "drop",
+      "shimmer"
     ],
     "vendors": [],
     "events": [
@@ -47705,7 +47911,8 @@
       "material-equipment"
     ],
     "obtain": [
-      "drop"
+      "drop",
+      "loot"
     ],
     "vendors": [],
     "events": [
@@ -47960,8 +48167,8 @@
       "other-weapon"
     ],
     "obtain": [
-      "drop",
-      "vendor"
+      "vendor",
+      "drop"
     ],
     "vendors": [
       "princess"
@@ -48022,7 +48229,8 @@
     ],
     "obtain": [
       "loot",
-      "bag"
+      "bag",
+      "shimmer"
     ],
     "vendors": [],
     "events": [],
@@ -49292,6 +49500,7 @@
       "other-tool"
     ],
     "obtain": [
+      "drop",
       "loot"
     ],
     "vendors": [],
@@ -49350,7 +49559,8 @@
       "material-equipment"
     ],
     "obtain": [
-      "vendor"
+      "vendor",
+      "loot"
     ],
     "vendors": [
       "merchant"
@@ -49458,7 +49668,8 @@
       "other-tool"
     ],
     "obtain": [
-      "loot"
+      "loot",
+      "plunder"
     ],
     "vendors": [],
     "events": [],
@@ -49509,7 +49720,8 @@
       "movement"
     ],
     "obtain": [
-      "loot"
+      "loot",
+      "shimmer"
     ],
     "vendors": [],
     "events": [],
@@ -50228,7 +50440,8 @@
       "ore"
     ],
     "obtain": [
-      "plunder"
+      "plunder",
+      "shimmer"
     ],
     "vendors": [],
     "events": [],
@@ -50390,6 +50603,7 @@
       "material-equipment"
     ],
     "obtain": [
+      "drop",
       "loot",
       "bag"
     ],
@@ -50559,7 +50773,8 @@
     "obtain": [
       "vendor",
       "loot",
-      "bag"
+      "bag",
+      "shimmer"
     ],
     "vendors": [
       "skeleton-merchant"
@@ -50609,7 +50824,8 @@
     ],
     "subcategories": [],
     "obtain": [
-      "drop"
+      "drop",
+      "shimmer"
     ],
     "vendors": [],
     "events": [],
@@ -50660,7 +50876,8 @@
     ],
     "subcategories": [],
     "obtain": [
-      "drop"
+      "drop",
+      "shimmer"
     ],
     "vendors": [],
     "events": [],
@@ -50711,7 +50928,8 @@
     ],
     "subcategories": [],
     "obtain": [
-      "drop"
+      "drop",
+      "shimmer"
     ],
     "vendors": [],
     "events": [],
@@ -50762,7 +50980,8 @@
     ],
     "subcategories": [],
     "obtain": [
-      "drop"
+      "drop",
+      "shimmer"
     ],
     "vendors": [],
     "events": [],
@@ -50813,7 +51032,8 @@
     ],
     "subcategories": [],
     "obtain": [
-      "drop"
+      "drop",
+      "shimmer"
     ],
     "vendors": [],
     "events": [],
@@ -50864,7 +51084,8 @@
     ],
     "subcategories": [],
     "obtain": [
-      "drop"
+      "drop",
+      "shimmer"
     ],
     "vendors": [],
     "events": [],
@@ -50915,7 +51136,8 @@
     ],
     "subcategories": [],
     "obtain": [
-      "drop"
+      "drop",
+      "shimmer"
     ],
     "vendors": [],
     "events": [],
@@ -50966,7 +51188,8 @@
     ],
     "subcategories": [],
     "obtain": [
-      "drop"
+      "drop",
+      "shimmer"
     ],
     "vendors": [],
     "events": [],
@@ -51017,7 +51240,8 @@
     ],
     "subcategories": [],
     "obtain": [
-      "drop"
+      "drop",
+      "shimmer"
     ],
     "vendors": [],
     "events": [],
@@ -51410,7 +51634,9 @@
     "subcategories": [
       "other-potion"
     ],
-    "obtain": [],
+    "obtain": [
+      "other"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -51753,7 +51979,9 @@
       "material-equipment"
     ],
     "obtain": [
-      "loot"
+      "drop",
+      "loot",
+      "shimmer"
     ],
     "vendors": [],
     "events": [],
@@ -52364,6 +52592,7 @@
     ],
     "obtain": [
       "crafted",
+      "drop",
       "loot",
       "bag"
     ],
@@ -52922,6 +53151,7 @@
       "other-furniture"
     ],
     "obtain": [
+      "drop",
       "loot",
       "plunder",
       "bag"
@@ -53040,7 +53270,9 @@
       "potion-ingredient"
     ],
     "obtain": [
-      "loot"
+      "loot",
+      "bag",
+      "shimmer"
     ],
     "vendors": [],
     "events": [],
@@ -57935,6 +58167,7 @@
     ],
     "obtain": [
       "crafted",
+      "drop",
       "plunder"
     ],
     "vendors": [],
@@ -58037,6 +58270,7 @@
       "other-block"
     ],
     "obtain": [
+      "drop",
       "plunder"
     ],
     "vendors": [],
@@ -58091,9 +58325,11 @@
       "enemy-drop"
     ],
     "obtain": [
+      "drop",
       "loot",
       "plunder",
-      "bag"
+      "bag",
+      "shimmer"
     ],
     "vendors": [],
     "events": [],
@@ -58146,9 +58382,11 @@
       "enemy-drop"
     ],
     "obtain": [
+      "drop",
       "loot",
       "plunder",
-      "bag"
+      "bag",
+      "shimmer"
     ],
     "vendors": [],
     "events": [],
@@ -58201,9 +58439,11 @@
       "enemy-drop"
     ],
     "obtain": [
+      "drop",
       "loot",
       "plunder",
-      "bag"
+      "bag",
+      "shimmer"
     ],
     "vendors": [],
     "events": [],
@@ -59174,7 +59414,9 @@
     ],
     "obtain": [
       "crafted",
-      "plunder"
+      "drop",
+      "plunder",
+      "shimmer"
     ],
     "vendors": [],
     "events": [],
@@ -59229,6 +59471,7 @@
     ],
     "obtain": [
       "crafted",
+      "drop",
       "plunder"
     ],
     "vendors": [],
@@ -59384,7 +59627,8 @@
       "other-miscellaneous"
     ],
     "obtain": [
-      "crafted"
+      "crafted",
+      "shimmer"
     ],
     "vendors": [],
     "events": [],
@@ -59433,7 +59677,8 @@
       "other-tool"
     ],
     "obtain": [
-      "drop"
+      "drop",
+      "treasure-bag"
     ],
     "vendors": [],
     "events": [],
@@ -60313,7 +60558,8 @@
       "other-block"
     ],
     "obtain": [
-      "plunder"
+      "plunder",
+      "shimmer"
     ],
     "vendors": [],
     "events": [],
@@ -60367,7 +60613,8 @@
       "other-block"
     ],
     "obtain": [
-      "plunder"
+      "plunder",
+      "shimmer"
     ],
     "vendors": [],
     "events": [],
@@ -60421,7 +60668,8 @@
       "other-block"
     ],
     "obtain": [
-      "plunder"
+      "plunder",
+      "shimmer"
     ],
     "vendors": [],
     "events": [],
@@ -60474,7 +60722,8 @@
       "other-block"
     ],
     "obtain": [
-      "plunder"
+      "plunder",
+      "shimmer"
     ],
     "vendors": [],
     "events": [],
@@ -61773,7 +62022,9 @@
     "subcategories": [
       "decoration"
     ],
-    "obtain": [],
+    "obtain": [
+      "other"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -61820,7 +62071,9 @@
     "subcategories": [
       "decoration"
     ],
-    "obtain": [],
+    "obtain": [
+      "other"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -61867,7 +62120,9 @@
     "subcategories": [
       "decoration"
     ],
-    "obtain": [],
+    "obtain": [
+      "other"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -61914,7 +62169,9 @@
     "subcategories": [
       "decoration"
     ],
-    "obtain": [],
+    "obtain": [
+      "other"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -61961,7 +62218,9 @@
     "subcategories": [
       "decoration"
     ],
-    "obtain": [],
+    "obtain": [
+      "other"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -64511,7 +64770,8 @@
     ],
     "obtain": [
       "drop",
-      "bag"
+      "bag",
+      "treasure-bag"
     ],
     "vendors": [],
     "events": [],
@@ -65651,7 +65911,8 @@
       "other-ammunition"
     ],
     "obtain": [
-      "plunder"
+      "plunder",
+      "shimmer"
     ],
     "vendors": [],
     "events": [],
@@ -66190,6 +66451,7 @@
       "magic"
     ],
     "obtain": [
+      "drop",
       "loot",
       "bag"
     ],
@@ -67519,7 +67781,8 @@
     ],
     "subcategories": [],
     "obtain": [
-      "drop"
+      "drop",
+      "treasure-bag"
     ],
     "vendors": [],
     "events": [],
@@ -67971,6 +68234,7 @@
     ],
     "obtain": [
       "crafted",
+      "drop",
       "loot",
       "bag"
     ],
@@ -68078,6 +68342,7 @@
       "other-furniture"
     ],
     "obtain": [
+      "drop",
       "plunder"
     ],
     "vendors": [],
@@ -69038,7 +69303,8 @@
     "obtain": [
       "vendor",
       "drop",
-      "loot"
+      "loot",
+      "treasure-bag"
     ],
     "vendors": [
       "princess"
@@ -69385,7 +69651,9 @@
     "subcategories": [
       "event-summon"
     ],
-    "obtain": [],
+    "obtain": [
+      "other"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -69588,8 +69856,10 @@
       "ranged"
     ],
     "obtain": [
+      "drop",
       "loot",
-      "bag"
+      "bag",
+      "shimmer"
     ],
     "vendors": [],
     "events": [],
@@ -69760,7 +70030,8 @@
       "material-equipment"
     ],
     "obtain": [
-      "drop"
+      "drop",
+      "shimmer"
     ],
     "vendors": [],
     "events": [],
@@ -70640,7 +70911,8 @@
       "other-ammunition"
     ],
     "obtain": [
-      "crafted"
+      "crafted",
+      "caught"
     ],
     "vendors": [],
     "events": [],
@@ -71012,7 +71284,8 @@
       "enemy-drop"
     ],
     "obtain": [
-      "vendor"
+      "vendor",
+      "drop"
     ],
     "vendors": [
       "party-girl"
@@ -71217,7 +71490,8 @@
       "bullet"
     ],
     "obtain": [
-      "crafted"
+      "crafted",
+      "bag"
     ],
     "vendors": [],
     "events": [],
@@ -71687,7 +71961,8 @@
     ],
     "obtain": [
       "crafted",
-      "vendor"
+      "vendor",
+      "bag"
     ],
     "vendors": [
       "party-girl",
@@ -72417,7 +72692,8 @@
       "painting"
     ],
     "obtain": [
-      "plunder"
+      "plunder",
+      "bag"
     ],
     "vendors": [],
     "events": [],
@@ -72469,7 +72745,8 @@
       "painting"
     ],
     "obtain": [
-      "plunder"
+      "plunder",
+      "bag"
     ],
     "vendors": [],
     "events": [],
@@ -72521,7 +72798,8 @@
       "painting"
     ],
     "obtain": [
-      "plunder"
+      "plunder",
+      "bag"
     ],
     "vendors": [],
     "events": [],
@@ -72573,7 +72851,8 @@
       "painting"
     ],
     "obtain": [
-      "plunder"
+      "plunder",
+      "bag"
     ],
     "vendors": [],
     "events": [],
@@ -73370,7 +73649,8 @@
       "lantern"
     ],
     "obtain": [
-      "plunder"
+      "plunder",
+      "shimmer"
     ],
     "vendors": [],
     "events": [],
@@ -73422,7 +73702,8 @@
       "lantern"
     ],
     "obtain": [
-      "plunder"
+      "plunder",
+      "shimmer"
     ],
     "vendors": [],
     "events": [],
@@ -73474,7 +73755,8 @@
       "lantern"
     ],
     "obtain": [
-      "plunder"
+      "plunder",
+      "shimmer"
     ],
     "vendors": [],
     "events": [],
@@ -73526,7 +73808,8 @@
       "lantern"
     ],
     "obtain": [
-      "plunder"
+      "plunder",
+      "shimmer"
     ],
     "vendors": [],
     "events": [],
@@ -73578,7 +73861,8 @@
       "lantern"
     ],
     "obtain": [
-      "plunder"
+      "plunder",
+      "shimmer"
     ],
     "vendors": [],
     "events": [],
@@ -73630,7 +73914,8 @@
       "lantern"
     ],
     "obtain": [
-      "plunder"
+      "plunder",
+      "shimmer"
     ],
     "vendors": [],
     "events": [],
@@ -73783,7 +74068,9 @@
     "subcategories": [
       "work-bench"
     ],
-    "obtain": [],
+    "obtain": [
+      "other"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -73935,7 +74222,9 @@
     "subcategories": [
       "work-bench"
     ],
-    "obtain": [],
+    "obtain": [
+      "other"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -74087,7 +74376,9 @@
     "subcategories": [
       "work-bench"
     ],
-    "obtain": [],
+    "obtain": [
+      "other"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -74868,7 +75159,8 @@
       "painting"
     ],
     "obtain": [
-      "plunder"
+      "plunder",
+      "bag"
     ],
     "vendors": [],
     "events": [],
@@ -74920,7 +75212,8 @@
       "painting"
     ],
     "obtain": [
-      "plunder"
+      "plunder",
+      "bag"
     ],
     "vendors": [],
     "events": [],
@@ -74972,7 +75265,8 @@
       "painting"
     ],
     "obtain": [
-      "plunder"
+      "plunder",
+      "bag"
     ],
     "vendors": [],
     "events": [],
@@ -75024,7 +75318,8 @@
       "painting"
     ],
     "obtain": [
-      "plunder"
+      "plunder",
+      "bag"
     ],
     "vendors": [],
     "events": [],
@@ -75076,7 +75371,8 @@
       "painting"
     ],
     "obtain": [
-      "plunder"
+      "plunder",
+      "bag"
     ],
     "vendors": [],
     "events": [],
@@ -75128,7 +75424,8 @@
       "painting"
     ],
     "obtain": [
-      "plunder"
+      "plunder",
+      "bag"
     ],
     "vendors": [],
     "events": [],
@@ -75180,7 +75477,8 @@
       "painting"
     ],
     "obtain": [
-      "plunder"
+      "plunder",
+      "bag"
     ],
     "vendors": [],
     "events": [],
@@ -75232,7 +75530,8 @@
       "painting"
     ],
     "obtain": [
-      "plunder"
+      "plunder",
+      "bag"
     ],
     "vendors": [],
     "events": [],
@@ -75605,7 +75904,8 @@
       "painting"
     ],
     "obtain": [
-      "plunder"
+      "plunder",
+      "bag"
     ],
     "vendors": [],
     "events": [],
@@ -75657,7 +75957,8 @@
       "painting"
     ],
     "obtain": [
-      "plunder"
+      "plunder",
+      "bag"
     ],
     "vendors": [],
     "events": [],
@@ -75709,7 +76010,8 @@
       "painting"
     ],
     "obtain": [
-      "plunder"
+      "plunder",
+      "bag"
     ],
     "vendors": [],
     "events": [],
@@ -75761,7 +76063,8 @@
       "painting"
     ],
     "obtain": [
-      "plunder"
+      "plunder",
+      "bag"
     ],
     "vendors": [],
     "events": [],
@@ -75813,7 +76116,8 @@
       "painting"
     ],
     "obtain": [
-      "plunder"
+      "plunder",
+      "bag"
     ],
     "vendors": [],
     "events": [],
@@ -75865,7 +76169,8 @@
       "painting"
     ],
     "obtain": [
-      "plunder"
+      "plunder",
+      "bag"
     ],
     "vendors": [],
     "events": [],
@@ -75917,7 +76222,8 @@
       "painting"
     ],
     "obtain": [
-      "plunder"
+      "plunder",
+      "bag"
     ],
     "vendors": [],
     "events": [],
@@ -76021,7 +76327,8 @@
       "painting"
     ],
     "obtain": [
-      "plunder"
+      "plunder",
+      "bag"
     ],
     "vendors": [],
     "events": [],
@@ -77095,7 +77402,9 @@
     "subcategories": [
       "work-bench"
     ],
-    "obtain": [],
+    "obtain": [
+      "other"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -77814,7 +78123,8 @@
       "painting"
     ],
     "obtain": [
-      "plunder"
+      "plunder",
+      "bag"
     ],
     "vendors": [],
     "events": [],
@@ -77865,7 +78175,8 @@
       "painting"
     ],
     "obtain": [
-      "plunder"
+      "plunder",
+      "bag"
     ],
     "vendors": [],
     "events": [],
@@ -77969,7 +78280,8 @@
       "painting"
     ],
     "obtain": [
-      "plunder"
+      "plunder",
+      "bag"
     ],
     "vendors": [],
     "events": [],
@@ -78021,7 +78333,8 @@
       "painting"
     ],
     "obtain": [
-      "plunder"
+      "plunder",
+      "bag"
     ],
     "vendors": [],
     "events": [],
@@ -79044,7 +79357,8 @@
       "painting"
     ],
     "obtain": [
-      "plunder"
+      "plunder",
+      "bag"
     ],
     "vendors": [],
     "events": [],
@@ -79148,7 +79462,8 @@
       "painting"
     ],
     "obtain": [
-      "plunder"
+      "plunder",
+      "bag"
     ],
     "vendors": [],
     "events": [],
@@ -79200,7 +79515,8 @@
       "painting"
     ],
     "obtain": [
-      "plunder"
+      "plunder",
+      "bag"
     ],
     "vendors": [],
     "events": [],
@@ -79252,7 +79568,8 @@
       "painting"
     ],
     "obtain": [
-      "plunder"
+      "plunder",
+      "bag"
     ],
     "vendors": [],
     "events": [],
@@ -79304,7 +79621,8 @@
       "painting"
     ],
     "obtain": [
-      "plunder"
+      "plunder",
+      "bag"
     ],
     "vendors": [],
     "events": [],
@@ -80643,7 +80961,8 @@
       "chest"
     ],
     "obtain": [
-      "plunder"
+      "plunder",
+      "shimmer"
     ],
     "vendors": [],
     "events": [],
@@ -80697,7 +81016,8 @@
       "chest"
     ],
     "obtain": [
-      "plunder"
+      "plunder",
+      "shimmer"
     ],
     "vendors": [],
     "events": [],
@@ -80751,7 +81071,8 @@
       "chest"
     ],
     "obtain": [
-      "plunder"
+      "plunder",
+      "shimmer"
     ],
     "vendors": [],
     "events": [],
@@ -80805,7 +81126,8 @@
       "chest"
     ],
     "obtain": [
-      "plunder"
+      "plunder",
+      "shimmer"
     ],
     "vendors": [],
     "events": [],
@@ -80859,7 +81181,8 @@
       "chest"
     ],
     "obtain": [
-      "plunder"
+      "plunder",
+      "shimmer"
     ],
     "vendors": [],
     "events": [],
@@ -81140,7 +81463,8 @@
       "painting"
     ],
     "obtain": [
-      "plunder"
+      "plunder",
+      "bag"
     ],
     "vendors": [],
     "events": [],
@@ -81192,7 +81516,8 @@
       "painting"
     ],
     "obtain": [
-      "plunder"
+      "plunder",
+      "bag"
     ],
     "vendors": [],
     "events": [],
@@ -81244,7 +81569,8 @@
       "painting"
     ],
     "obtain": [
-      "plunder"
+      "plunder",
+      "bag"
     ],
     "vendors": [],
     "events": [],
@@ -81296,7 +81622,8 @@
       "painting"
     ],
     "obtain": [
-      "plunder"
+      "plunder",
+      "bag"
     ],
     "vendors": [],
     "events": [],
@@ -81348,7 +81675,8 @@
       "painting"
     ],
     "obtain": [
-      "plunder"
+      "plunder",
+      "bag"
     ],
     "vendors": [],
     "events": [],
@@ -82888,7 +83216,8 @@
       "painting"
     ],
     "obtain": [
-      "plunder"
+      "plunder",
+      "bag"
     ],
     "vendors": [],
     "events": [],
@@ -83202,6 +83531,7 @@
       "material-equipment"
     ],
     "obtain": [
+      "drop",
       "loot",
       "bag"
     ],
@@ -84045,7 +84375,9 @@
       "music-box",
       "furniture-music-box"
     ],
-    "obtain": [],
+    "obtain": [
+      "recorded"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -84095,7 +84427,9 @@
       "music-box",
       "furniture-music-box"
     ],
-    "obtain": [],
+    "obtain": [
+      "recorded"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -84145,7 +84479,9 @@
       "music-box",
       "furniture-music-box"
     ],
-    "obtain": [],
+    "obtain": [
+      "recorded"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -84195,7 +84531,9 @@
       "music-box",
       "furniture-music-box"
     ],
-    "obtain": [],
+    "obtain": [
+      "recorded"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -84245,7 +84583,9 @@
       "music-box",
       "furniture-music-box"
     ],
-    "obtain": [],
+    "obtain": [
+      "recorded"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -84295,7 +84635,9 @@
       "music-box",
       "furniture-music-box"
     ],
-    "obtain": [],
+    "obtain": [
+      "recorded"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -84348,7 +84690,9 @@
       "material-equipment",
       "furniture-music-box"
     ],
-    "obtain": [],
+    "obtain": [
+      "recorded"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -84401,7 +84745,9 @@
       "material-equipment",
       "furniture-music-box"
     ],
-    "obtain": [],
+    "obtain": [
+      "recorded"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -84451,7 +84797,9 @@
       "music-box",
       "furniture-music-box"
     ],
-    "obtain": [],
+    "obtain": [
+      "recorded"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -84501,7 +84849,9 @@
       "music-box",
       "furniture-music-box"
     ],
-    "obtain": [],
+    "obtain": [
+      "recorded"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -84551,7 +84901,9 @@
       "music-box",
       "furniture-music-box"
     ],
-    "obtain": [],
+    "obtain": [
+      "recorded"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -84604,7 +84956,9 @@
       "material-equipment",
       "furniture-music-box"
     ],
-    "obtain": [],
+    "obtain": [
+      "recorded"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -84654,7 +85008,9 @@
       "music-box",
       "furniture-music-box"
     ],
-    "obtain": [],
+    "obtain": [
+      "recorded"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -84704,7 +85060,9 @@
       "music-box",
       "furniture-music-box"
     ],
-    "obtain": [],
+    "obtain": [
+      "recorded"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -84754,7 +85112,9 @@
       "music-box",
       "furniture-music-box"
     ],
-    "obtain": [],
+    "obtain": [
+      "recorded"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -91054,7 +91414,8 @@
       "other-block"
     ],
     "obtain": [
-      "crafted"
+      "crafted",
+      "shimmer"
     ],
     "vendors": [],
     "events": [],
@@ -92315,6 +92676,7 @@
     ],
     "subcategories": [],
     "obtain": [
+      "loot",
       "bag"
     ],
     "vendors": [],
@@ -92362,6 +92724,7 @@
     ],
     "subcategories": [],
     "obtain": [
+      "loot",
       "bag"
     ],
     "vendors": [],
@@ -92832,6 +93195,7 @@
     ],
     "subcategories": [],
     "obtain": [
+      "loot",
       "bag"
     ],
     "vendors": [],
@@ -92879,6 +93243,7 @@
     ],
     "subcategories": [],
     "obtain": [
+      "loot",
       "bag"
     ],
     "vendors": [],
@@ -92926,6 +93291,7 @@
     ],
     "subcategories": [],
     "obtain": [
+      "loot",
       "bag"
     ],
     "vendors": [],
@@ -93305,8 +93671,8 @@
     ],
     "subcategories": [],
     "obtain": [
-      "bag",
-      "vendor"
+      "vendor",
+      "bag"
     ],
     "vendors": [
       "clothier"
@@ -93496,6 +93862,7 @@
     ],
     "subcategories": [],
     "obtain": [
+      "loot",
       "bag"
     ],
     "vendors": [],
@@ -93543,6 +93910,7 @@
     ],
     "subcategories": [],
     "obtain": [
+      "loot",
       "bag"
     ],
     "vendors": [],
@@ -94706,6 +95074,7 @@
       "hook"
     ],
     "obtain": [
+      "loot",
       "bag"
     ],
     "vendors": [],
@@ -94927,6 +95296,7 @@
     ],
     "obtain": [
       "loot",
+      "plunder",
       "bag"
     ],
     "vendors": [],
@@ -95451,6 +95821,7 @@
     ],
     "subcategories": [],
     "obtain": [
+      "loot",
       "bag"
     ],
     "vendors": [],
@@ -95498,6 +95869,7 @@
     ],
     "subcategories": [],
     "obtain": [
+      "loot",
       "bag"
     ],
     "vendors": [],
@@ -97393,7 +97765,8 @@
     ],
     "subcategories": [],
     "obtain": [
-      "drop"
+      "drop",
+      "loot"
     ],
     "vendors": [],
     "events": [
@@ -97916,7 +98289,8 @@
       "other-furniture"
     ],
     "obtain": [
-      "drop"
+      "drop",
+      "loot"
     ],
     "vendors": [],
     "events": [
@@ -98024,7 +98398,9 @@
     "subcategories": [
       "wings"
     ],
-    "obtain": [],
+    "obtain": [
+      "drop"
+    ],
     "vendors": [],
     "events": [
       "frost-moon"
@@ -102732,7 +103108,9 @@
       "music-box",
       "furniture-music-box"
     ],
-    "obtain": [],
+    "obtain": [
+      "recorded"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -102782,7 +103160,9 @@
       "music-box",
       "furniture-music-box"
     ],
-    "obtain": [],
+    "obtain": [
+      "recorded"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -102832,7 +103212,9 @@
       "music-box",
       "furniture-music-box"
     ],
-    "obtain": [],
+    "obtain": [
+      "recorded"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -104226,7 +104608,9 @@
     "subcategories": [
       "critter"
     ],
-    "obtain": [],
+    "obtain": [
+      "caught"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -104323,9 +104707,11 @@
       "bait"
     ],
     "subcategories": [
-      "other-crafting-material"
+      "critter"
     ],
-    "obtain": [],
+    "obtain": [
+      "caught"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -104371,9 +104757,11 @@
       "bait"
     ],
     "subcategories": [
-      "other-crafting-material"
+      "critter"
     ],
-    "obtain": [],
+    "obtain": [
+      "caught"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -104419,9 +104807,11 @@
       "bait"
     ],
     "subcategories": [
-      "other-crafting-material"
+      "critter"
     ],
-    "obtain": [],
+    "obtain": [
+      "caught"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -104467,9 +104857,11 @@
       "bait"
     ],
     "subcategories": [
-      "other-crafting-material"
+      "critter"
     ],
-    "obtain": [],
+    "obtain": [
+      "caught"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -104515,9 +104907,11 @@
       "bait"
     ],
     "subcategories": [
-      "other-crafting-material"
+      "critter"
     ],
-    "obtain": [],
+    "obtain": [
+      "caught"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -104563,9 +104957,11 @@
       "bait"
     ],
     "subcategories": [
-      "other-crafting-material"
+      "critter"
     ],
-    "obtain": [],
+    "obtain": [
+      "caught"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -104611,9 +105007,11 @@
       "bait"
     ],
     "subcategories": [
-      "other-crafting-material"
+      "critter"
     ],
-    "obtain": [],
+    "obtain": [
+      "caught"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -104659,9 +105057,11 @@
       "bait"
     ],
     "subcategories": [
-      "other-crafting-material"
+      "critter"
     ],
-    "obtain": [],
+    "obtain": [
+      "caught"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -104710,7 +105110,8 @@
       "critter"
     ],
     "obtain": [
-      "bag"
+      "bag",
+      "caught"
     ],
     "vendors": [],
     "events": [],
@@ -104759,7 +105160,9 @@
     "subcategories": [
       "critter"
     ],
-    "obtain": [],
+    "obtain": [
+      "caught"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -104806,7 +105209,9 @@
     "subcategories": [
       "critter"
     ],
-    "obtain": [],
+    "obtain": [
+      "caught"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -104905,7 +105310,9 @@
     "subcategories": [
       "critter"
     ],
-    "obtain": [],
+    "obtain": [
+      "caught"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -104953,7 +105360,9 @@
     "subcategories": [
       "critter"
     ],
-    "obtain": [],
+    "obtain": [
+      "caught"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -105343,7 +105752,9 @@
     "subcategories": [
       "critter"
     ],
-    "obtain": [],
+    "obtain": [
+      "caught"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -105389,7 +105800,9 @@
     "subcategories": [
       "critter"
     ],
-    "obtain": [],
+    "obtain": [
+      "caught"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -105435,7 +105848,9 @@
     "subcategories": [
       "critter"
     ],
-    "obtain": [],
+    "obtain": [
+      "caught"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -105481,7 +105896,9 @@
     "subcategories": [
       "critter"
     ],
-    "obtain": [],
+    "obtain": [
+      "caught"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -105527,7 +105944,9 @@
     "subcategories": [
       "critter"
     ],
-    "obtain": [],
+    "obtain": [
+      "caught"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -109862,7 +110281,8 @@
     ],
     "subcategories": [],
     "obtain": [
-      "drop"
+      "drop",
+      "treasure-bag"
     ],
     "vendors": [],
     "events": [],
@@ -109909,7 +110329,8 @@
     ],
     "subcategories": [],
     "obtain": [
-      "drop"
+      "drop",
+      "treasure-bag"
     ],
     "vendors": [],
     "events": [],
@@ -109956,7 +110377,8 @@
     ],
     "subcategories": [],
     "obtain": [
-      "drop"
+      "drop",
+      "treasure-bag"
     ],
     "vendors": [],
     "events": [],
@@ -110003,7 +110425,8 @@
     ],
     "subcategories": [],
     "obtain": [
-      "drop"
+      "drop",
+      "treasure-bag"
     ],
     "vendors": [],
     "events": [],
@@ -110050,7 +110473,8 @@
     ],
     "subcategories": [],
     "obtain": [
-      "drop"
+      "drop",
+      "treasure-bag"
     ],
     "vendors": [],
     "events": [],
@@ -110097,7 +110521,8 @@
     ],
     "subcategories": [],
     "obtain": [
-      "drop"
+      "drop",
+      "treasure-bag"
     ],
     "vendors": [],
     "events": [],
@@ -110144,7 +110569,8 @@
     ],
     "subcategories": [],
     "obtain": [
-      "drop"
+      "drop",
+      "treasure-bag"
     ],
     "vendors": [],
     "events": [],
@@ -110191,7 +110617,8 @@
     ],
     "subcategories": [],
     "obtain": [
-      "drop"
+      "drop",
+      "treasure-bag"
     ],
     "vendors": [],
     "events": [],
@@ -110238,7 +110665,8 @@
     ],
     "subcategories": [],
     "obtain": [
-      "drop"
+      "drop",
+      "treasure-bag"
     ],
     "vendors": [],
     "events": [],
@@ -110285,7 +110713,8 @@
     ],
     "subcategories": [],
     "obtain": [
-      "drop"
+      "drop",
+      "treasure-bag"
     ],
     "vendors": [],
     "events": [],
@@ -110683,7 +111112,9 @@
     "subcategories": [
       "critter"
     ],
-    "obtain": [],
+    "obtain": [
+      "caught"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -110727,9 +111158,11 @@
       "crafting-material"
     ],
     "subcategories": [
-      "other-crafting-material"
+      "critter"
     ],
-    "obtain": [],
+    "obtain": [
+      "caught"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -110775,7 +111208,9 @@
     "subcategories": [
       "critter"
     ],
-    "obtain": [],
+    "obtain": [
+      "caught"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -111488,6 +111923,7 @@
       "bookcase"
     ],
     "obtain": [
+      "drop",
       "plunder"
     ],
     "vendors": [],
@@ -112468,9 +112904,11 @@
       "bait"
     ],
     "subcategories": [
-      "other-crafting-material"
+      "critter"
     ],
-    "obtain": [],
+    "obtain": [
+      "caught"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -112518,7 +112956,9 @@
     "subcategories": [
       "critter"
     ],
-    "obtain": [],
+    "obtain": [
+      "caught"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -114536,7 +114976,9 @@
     "subcategories": [
       "other-furniture"
     ],
-    "obtain": [],
+    "obtain": [
+      "shimmer"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -114587,8 +115029,8 @@
       "other-furniture"
     ],
     "obtain": [
-      "loot",
-      "vendor"
+      "vendor",
+      "loot"
     ],
     "vendors": [
       "steampunker"
@@ -115010,7 +115452,9 @@
     "subcategories": [
       "critter"
     ],
-    "obtain": [],
+    "obtain": [
+      "caught"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -117863,7 +118307,8 @@
       "other-block"
     ],
     "obtain": [
-      "vendor"
+      "vendor",
+      "shimmer"
     ],
     "vendors": [
       "traveling-merchant"
@@ -117916,7 +118361,8 @@
       "other-block"
     ],
     "obtain": [
-      "vendor"
+      "vendor",
+      "shimmer"
     ],
     "vendors": [
       "traveling-merchant"
@@ -121004,6 +121450,7 @@
     ],
     "obtain": [
       "crafted",
+      "loot",
       "bag"
     ],
     "vendors": [],
@@ -121158,7 +121605,8 @@
       "other-potion"
     ],
     "obtain": [
-      "crafted"
+      "crafted",
+      "loot"
     ],
     "vendors": [],
     "events": [],
@@ -121208,7 +121656,8 @@
     ],
     "obtain": [
       "crafted",
-      "loot"
+      "loot",
+      "bag"
     ],
     "vendors": [],
     "events": [],
@@ -121309,6 +121758,7 @@
     ],
     "obtain": [
       "crafted",
+      "loot",
       "bag"
     ],
     "vendors": [],
@@ -121583,7 +122033,8 @@
       "other-furniture"
     ],
     "obtain": [
-      "fishing"
+      "fishing",
+      "shimmer"
     ],
     "vendors": [],
     "events": [],
@@ -121637,7 +122088,8 @@
       "other-furniture"
     ],
     "obtain": [
-      "fishing"
+      "fishing",
+      "shimmer"
     ],
     "vendors": [],
     "events": [],
@@ -121691,7 +122143,9 @@
       "other-furniture"
     ],
     "obtain": [
-      "fishing"
+      "drop",
+      "fishing",
+      "shimmer"
     ],
     "vendors": [],
     "events": [
@@ -122428,6 +122882,7 @@
     "obtain": [
       "crafted",
       "drop",
+      "loot",
       "bag"
     ],
     "vendors": [],
@@ -123595,7 +124050,8 @@
       "material-equipment"
     ],
     "obtain": [
-      "quest-reward"
+      "quest-reward",
+      "shimmer"
     ],
     "vendors": [],
     "events": [],
@@ -123646,7 +124102,8 @@
       "material-equipment"
     ],
     "obtain": [
-      "quest-reward"
+      "quest-reward",
+      "shimmer"
     ],
     "vendors": [],
     "events": [],
@@ -123697,7 +124154,8 @@
       "material-equipment"
     ],
     "obtain": [
-      "quest-reward"
+      "quest-reward",
+      "shimmer"
     ],
     "vendors": [],
     "events": [],
@@ -126735,7 +127193,9 @@
       "bait"
     ],
     "subcategories": [],
-    "obtain": [],
+    "obtain": [
+      "caught"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -126780,7 +127240,9 @@
       "bait"
     ],
     "subcategories": [],
-    "obtain": [],
+    "obtain": [
+      "caught"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -126826,7 +127288,9 @@
       "bait"
     ],
     "subcategories": [],
-    "obtain": [],
+    "obtain": [
+      "caught"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -129517,7 +129981,8 @@
     ],
     "subcategories": [],
     "obtain": [
-      "drop"
+      "drop",
+      "treasure-bag"
     ],
     "vendors": [],
     "events": [],
@@ -129566,7 +130031,9 @@
     "subcategories": [
       "wings"
     ],
-    "obtain": [],
+    "obtain": [
+      "other"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -134342,7 +134809,8 @@
     ],
     "subcategories": [],
     "obtain": [
-      "drop"
+      "drop",
+      "treasure-bag"
     ],
     "vendors": [],
     "events": [],
@@ -135389,7 +135857,9 @@
       "wings"
     ],
     "obtain": [
-      "bag"
+      "drop",
+      "bag",
+      "treasure-bag"
     ],
     "vendors": [],
     "events": [],
@@ -138679,7 +139149,9 @@
       "boss-summon",
       "critter"
     ],
-    "obtain": [],
+    "obtain": [
+      "caught"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -142088,7 +142560,9 @@
     "subcategories": [
       "critter"
     ],
-    "obtain": [],
+    "obtain": [
+      "caught"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -142186,7 +142660,9 @@
       "music-box",
       "furniture-music-box"
     ],
-    "obtain": [],
+    "obtain": [
+      "recorded"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -143566,7 +144042,9 @@
     "subcategories": [
       "wings"
     ],
-    "obtain": [],
+    "obtain": [
+      "drop"
+    ],
     "vendors": [],
     "events": [
       "solar-eclipse"
@@ -147218,7 +147696,9 @@
     "subcategories": [
       "sink"
     ],
-    "obtain": [],
+    "obtain": [
+      "drop"
+    ],
     "vendors": [],
     "events": [
       "pirate-invasion"
@@ -149103,7 +149583,9 @@
     "subcategories": [
       "other-miscellaneous"
     ],
-    "obtain": [],
+    "obtain": [
+      "other"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -149501,7 +149983,9 @@
     "subcategories": [
       "critter"
     ],
-    "obtain": [],
+    "obtain": [
+      "caught"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -149544,7 +150028,9 @@
     "subcategories": [
       "critter"
     ],
-    "obtain": [],
+    "obtain": [
+      "caught"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -149588,7 +150074,9 @@
     "subcategories": [
       "critter"
     ],
-    "obtain": [],
+    "obtain": [
+      "caught"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -149632,7 +150120,9 @@
     "subcategories": [
       "critter"
     ],
-    "obtain": [],
+    "obtain": [
+      "caught"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -149676,7 +150166,9 @@
     "subcategories": [
       "critter"
     ],
-    "obtain": [],
+    "obtain": [
+      "caught"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -149720,7 +150212,9 @@
     "subcategories": [
       "critter"
     ],
-    "obtain": [],
+    "obtain": [
+      "caught"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -149765,7 +150259,8 @@
       "critter"
     ],
     "obtain": [
-      "bag"
+      "bag",
+      "caught"
     ],
     "vendors": [],
     "events": [],
@@ -155014,7 +155509,8 @@
       "painting"
     ],
     "obtain": [
-      "plunder"
+      "plunder",
+      "bag"
     ],
     "vendors": [],
     "events": [],
@@ -155175,7 +155671,8 @@
     "obtain": [
       "drop",
       "bag",
-      "treasure-bag"
+      "treasure-bag",
+      "shimmer"
     ],
     "vendors": [],
     "events": [],
@@ -155223,7 +155720,8 @@
     ],
     "obtain": [
       "vendor",
-      "plunder"
+      "plunder",
+      "shimmer"
     ],
     "vendors": [
       "witch-doctor"
@@ -155279,7 +155777,8 @@
     ],
     "obtain": [
       "plunder",
-      "fishing"
+      "fishing",
+      "shimmer"
     ],
     "vendors": [],
     "events": [],
@@ -156079,7 +156578,8 @@
       "material-equipment"
     ],
     "obtain": [
-      "drop"
+      "drop",
+      "shimmer"
     ],
     "vendors": [],
     "events": [],
@@ -156129,7 +156629,8 @@
       "material-equipment"
     ],
     "obtain": [
-      "drop"
+      "drop",
+      "shimmer"
     ],
     "vendors": [],
     "events": [],
@@ -156885,7 +157386,8 @@
       "other-tool"
     ],
     "obtain": [
-      "quest-reward"
+      "quest-reward",
+      "shimmer"
     ],
     "vendors": [],
     "events": [],
@@ -156985,7 +157487,8 @@
       "material-equipment"
     ],
     "obtain": [
-      "drop"
+      "drop",
+      "shimmer"
     ],
     "vendors": [],
     "events": [
@@ -157178,7 +157681,8 @@
       "material-equipment"
     ],
     "obtain": [
-      "quest-reward"
+      "quest-reward",
+      "shimmer"
     ],
     "vendors": [],
     "events": [],
@@ -157508,7 +158012,9 @@
       "music-box",
       "furniture-music-box"
     ],
-    "obtain": [],
+    "obtain": [
+      "recorded"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -158442,6 +158948,7 @@
       "light-pet"
     ],
     "obtain": [
+      "drop",
       "loot",
       "bag"
     ],
@@ -158811,6 +159318,7 @@
     ],
     "obtain": [
       "vendor",
+      "drop",
       "loot"
     ],
     "vendors": [
@@ -159418,7 +159926,9 @@
     ],
     "obtain": [
       "crafted",
-      "plunder"
+      "drop",
+      "plunder",
+      "shimmer"
     ],
     "vendors": [],
     "events": [],
@@ -159662,7 +160172,8 @@
     "obtain": [
       "crafted",
       "drop",
-      "plunder"
+      "plunder",
+      "shimmer"
     ],
     "vendors": [],
     "events": [],
@@ -159991,7 +160502,8 @@
     ],
     "subcategories": [],
     "obtain": [
-      "loot"
+      "loot",
+      "shimmer"
     ],
     "vendors": [],
     "events": [],
@@ -160142,7 +160654,8 @@
       "material-equipment"
     ],
     "obtain": [
-      "quest-reward"
+      "quest-reward",
+      "shimmer"
     ],
     "vendors": [],
     "events": [],
@@ -161377,7 +161890,8 @@
       "material-equipment"
     ],
     "obtain": [
-      "quest-reward"
+      "quest-reward",
+      "shimmer"
     ],
     "vendors": [],
     "events": [],
@@ -164679,7 +165193,8 @@
     ],
     "subcategories": [],
     "obtain": [
-      "drop"
+      "drop",
+      "shimmer"
     ],
     "vendors": [],
     "events": [],
@@ -164726,7 +165241,8 @@
     ],
     "subcategories": [],
     "obtain": [
-      "drop"
+      "drop",
+      "shimmer"
     ],
     "vendors": [],
     "events": [],
@@ -164773,7 +165289,8 @@
     ],
     "subcategories": [],
     "obtain": [
-      "drop"
+      "drop",
+      "shimmer"
     ],
     "vendors": [],
     "events": [],
@@ -164870,7 +165387,8 @@
     ],
     "obtain": [
       "crafted",
-      "bag"
+      "bag",
+      "caught"
     ],
     "vendors": [],
     "events": [],
@@ -164917,7 +165435,9 @@
     "subcategories": [
       "critter"
     ],
-    "obtain": [],
+    "obtain": [
+      "caught"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -164962,7 +165482,9 @@
     "subcategories": [
       "critter"
     ],
-    "obtain": [],
+    "obtain": [
+      "caught"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -165007,7 +165529,9 @@
     "subcategories": [
       "critter"
     ],
-    "obtain": [],
+    "obtain": [
+      "caught"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -165456,7 +165980,8 @@
       "other-furniture"
     ],
     "obtain": [
-      "fishing"
+      "fishing",
+      "shimmer"
     ],
     "vendors": [],
     "events": [],
@@ -165507,7 +166032,8 @@
       "other-furniture"
     ],
     "obtain": [
-      "fishing"
+      "fishing",
+      "shimmer"
     ],
     "vendors": [],
     "events": [],
@@ -165558,7 +166084,8 @@
       "other-furniture"
     ],
     "obtain": [
-      "fishing"
+      "fishing",
+      "shimmer"
     ],
     "vendors": [],
     "events": [],
@@ -165609,7 +166136,8 @@
       "other-furniture"
     ],
     "obtain": [
-      "fishing"
+      "fishing",
+      "shimmer"
     ],
     "vendors": [],
     "events": [],
@@ -165660,7 +166188,8 @@
       "other-furniture"
     ],
     "obtain": [
-      "fishing"
+      "fishing",
+      "shimmer"
     ],
     "vendors": [],
     "events": [],
@@ -165711,7 +166240,8 @@
       "other-furniture"
     ],
     "obtain": [
-      "fishing"
+      "fishing",
+      "shimmer"
     ],
     "vendors": [],
     "events": [],
@@ -166782,7 +167312,9 @@
     "subcategories": [
       "decoration"
     ],
-    "obtain": [],
+    "obtain": [
+      "drop"
+    ],
     "vendors": [],
     "events": [
       "pirate-invasion"
@@ -166830,7 +167362,9 @@
     "subcategories": [
       "decoration"
     ],
-    "obtain": [],
+    "obtain": [
+      "drop"
+    ],
     "vendors": [],
     "events": [
       "pirate-invasion"
@@ -166878,7 +167412,9 @@
     "subcategories": [
       "decoration"
     ],
-    "obtain": [],
+    "obtain": [
+      "drop"
+    ],
     "vendors": [],
     "events": [
       "pirate-invasion"
@@ -166926,7 +167462,9 @@
     "subcategories": [
       "decoration"
     ],
-    "obtain": [],
+    "obtain": [
+      "drop"
+    ],
     "vendors": [],
     "events": [
       "pirate-invasion"
@@ -166974,7 +167512,9 @@
     "subcategories": [
       "decoration"
     ],
-    "obtain": [],
+    "obtain": [
+      "drop"
+    ],
     "vendors": [],
     "events": [
       "pirate-invasion"
@@ -167075,7 +167615,9 @@
       "music-box",
       "furniture-music-box"
     ],
-    "obtain": [],
+    "obtain": [
+      "recorded"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -167124,7 +167666,9 @@
       "music-box",
       "furniture-music-box"
     ],
-    "obtain": [],
+    "obtain": [
+      "recorded"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -167173,7 +167717,9 @@
       "music-box",
       "furniture-music-box"
     ],
-    "obtain": [],
+    "obtain": [
+      "recorded"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -169901,7 +170447,8 @@
       "projectile-melee"
     ],
     "obtain": [
-      "drop"
+      "drop",
+      "treasure-bag"
     ],
     "vendors": [],
     "events": [],
@@ -172567,7 +173114,8 @@
       "other-block"
     ],
     "obtain": [
-      "crafted"
+      "crafted",
+      "drop"
     ],
     "vendors": [],
     "events": [],
@@ -172872,7 +173420,9 @@
     "subcategories": [
       "minecart"
     ],
-    "obtain": [],
+    "obtain": [
+      "other"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -173212,7 +173762,8 @@
       "other-tool"
     ],
     "obtain": [
-      "loot"
+      "loot",
+      "plunder"
     ],
     "vendors": [],
     "events": [],
@@ -173259,7 +173810,8 @@
       "other-tool"
     ],
     "obtain": [
-      "loot"
+      "loot",
+      "plunder"
     ],
     "vendors": [],
     "events": [],
@@ -173718,7 +174270,9 @@
       "music-box",
       "furniture-music-box"
     ],
-    "obtain": [],
+    "obtain": [
+      "recorded"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -173767,7 +174321,9 @@
       "music-box",
       "furniture-music-box"
     ],
-    "obtain": [],
+    "obtain": [
+      "recorded"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -173856,7 +174412,8 @@
     ],
     "subcategories": [],
     "obtain": [
-      "drop"
+      "drop",
+      "treasure-bag"
     ],
     "vendors": [],
     "events": [],
@@ -174441,6 +174998,7 @@
       "other-furniture"
     ],
     "obtain": [
+      "loot",
       "plunder"
     ],
     "vendors": [],
@@ -174491,6 +175049,7 @@
       "other-furniture"
     ],
     "obtain": [
+      "loot",
       "plunder"
     ],
     "vendors": [],
@@ -174541,6 +175100,7 @@
       "other-furniture"
     ],
     "obtain": [
+      "loot",
       "plunder"
     ],
     "vendors": [],
@@ -174591,6 +175151,7 @@
       "other-furniture"
     ],
     "obtain": [
+      "loot",
       "plunder"
     ],
     "vendors": [],
@@ -182675,7 +183236,8 @@
       "healing"
     ],
     "obtain": [
-      "crafted"
+      "crafted",
+      "drop"
     ],
     "vendors": [],
     "events": [],
@@ -182724,7 +183286,9 @@
     "subcategories": [
       "other-furniture"
     ],
-    "obtain": [],
+    "obtain": [
+      "other"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -183578,7 +184142,9 @@
     "subcategories": [
       "critter"
     ],
-    "obtain": [],
+    "obtain": [
+      "caught"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -183621,7 +184187,9 @@
     "subcategories": [
       "critter"
     ],
-    "obtain": [],
+    "obtain": [
+      "caught"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -192124,7 +192692,8 @@
     ],
     "obtain": [
       "crafted",
-      "vendor"
+      "vendor",
+      "drop"
     ],
     "vendors": [
       "party-girl"
@@ -192182,7 +192751,8 @@
     ],
     "obtain": [
       "crafted",
-      "vendor"
+      "vendor",
+      "drop"
     ],
     "vendors": [
       "party-girl"
@@ -192240,7 +192810,8 @@
     ],
     "obtain": [
       "crafted",
-      "vendor"
+      "vendor",
+      "drop"
     ],
     "vendors": [
       "party-girl"
@@ -192910,7 +193481,9 @@
     "subcategories": [
       "other-furniture"
     ],
-    "obtain": [],
+    "obtain": [
+      "other"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -193541,6 +194114,7 @@
     ],
     "subcategories": [],
     "obtain": [
+      "drop",
       "bag",
       "treasure-bag"
     ],
@@ -194457,7 +195031,8 @@
       "material-equipment"
     ],
     "obtain": [
-      "drop"
+      "drop",
+      "shimmer"
     ],
     "vendors": [],
     "events": [],
@@ -195217,7 +195792,9 @@
       "music-box",
       "furniture-music-box"
     ],
-    "obtain": [],
+    "obtain": [
+      "recorded"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -196365,7 +196942,8 @@
       "sentry"
     ],
     "obtain": [
-      "vendor"
+      "vendor",
+      "shimmer"
     ],
     "vendors": [
       "tavernkeep"
@@ -196423,7 +197001,8 @@
       "sentry"
     ],
     "obtain": [
-      "vendor"
+      "vendor",
+      "shimmer"
     ],
     "vendors": [
       "tavernkeep"
@@ -196483,7 +197062,8 @@
       "sentry"
     ],
     "obtain": [
-      "vendor"
+      "vendor",
+      "shimmer"
     ],
     "vendors": [
       "tavernkeep"
@@ -196697,7 +197277,8 @@
       "sentry"
     ],
     "obtain": [
-      "vendor"
+      "vendor",
+      "shimmer"
     ],
     "vendors": [
       "tavernkeep"
@@ -196754,7 +197335,8 @@
       "sentry"
     ],
     "obtain": [
-      "vendor"
+      "vendor",
+      "shimmer"
     ],
     "vendors": [
       "tavernkeep"
@@ -196813,7 +197395,8 @@
       "sentry"
     ],
     "obtain": [
-      "vendor"
+      "vendor",
+      "shimmer"
     ],
     "vendors": [
       "tavernkeep"
@@ -196979,7 +197562,8 @@
       "sentry"
     ],
     "obtain": [
-      "vendor"
+      "vendor",
+      "shimmer"
     ],
     "vendors": [
       "tavernkeep"
@@ -197036,7 +197620,8 @@
       "sentry"
     ],
     "obtain": [
-      "vendor"
+      "vendor",
+      "shimmer"
     ],
     "vendors": [
       "tavernkeep"
@@ -197095,7 +197680,8 @@
       "sentry"
     ],
     "obtain": [
-      "vendor"
+      "vendor",
+      "shimmer"
     ],
     "vendors": [
       "tavernkeep"
@@ -197154,7 +197740,8 @@
       "sentry"
     ],
     "obtain": [
-      "vendor"
+      "vendor",
+      "shimmer"
     ],
     "vendors": [
       "tavernkeep"
@@ -197211,7 +197798,8 @@
       "sentry"
     ],
     "obtain": [
-      "vendor"
+      "vendor",
+      "shimmer"
     ],
     "vendors": [
       "tavernkeep"
@@ -197270,7 +197858,8 @@
       "sentry"
     ],
     "obtain": [
-      "vendor"
+      "vendor",
+      "shimmer"
     ],
     "vendors": [
       "tavernkeep"
@@ -198715,7 +199304,8 @@
     ],
     "subcategories": [],
     "obtain": [
-      "drop"
+      "drop",
+      "treasure-bag"
     ],
     "vendors": [],
     "events": [
@@ -199015,7 +199605,9 @@
       "music-box",
       "furniture-music-box"
     ],
-    "obtain": [],
+    "obtain": [
+      "recorded"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -199758,7 +200350,9 @@
       "wings"
     ],
     "obtain": [
-      "bag"
+      "drop",
+      "bag",
+      "treasure-bag"
     ],
     "vendors": [],
     "events": [
@@ -199861,6 +200455,7 @@
       "chest"
     ],
     "obtain": [
+      "drop",
       "plunder"
     ],
     "vendors": [],
@@ -201109,7 +201704,9 @@
     "subcategories": [
       "work-bench"
     ],
-    "obtain": [],
+    "obtain": [
+      "drop"
+    ],
     "vendors": [],
     "events": [
       "pirate-invasion"
@@ -205984,7 +206581,8 @@
       "other-crafting-material"
     ],
     "obtain": [
-      "loot"
+      "loot",
+      "plunder"
     ],
     "vendors": [],
     "events": [],
@@ -206075,7 +206673,9 @@
     "subcategories": [
       "other-potion"
     ],
-    "obtain": [],
+    "obtain": [
+      "drop"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [
@@ -206124,7 +206724,9 @@
     "subcategories": [
       "other-potion"
     ],
-    "obtain": [],
+    "obtain": [
+      "drop"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [
@@ -206173,7 +206775,9 @@
     "subcategories": [
       "other-potion"
     ],
-    "obtain": [],
+    "obtain": [
+      "drop"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [
@@ -206323,7 +206927,9 @@
     "subcategories": [
       "other-potion"
     ],
-    "obtain": [],
+    "obtain": [
+      "drop"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [
@@ -206372,7 +206978,9 @@
     "subcategories": [
       "other-potion"
     ],
-    "obtain": [],
+    "obtain": [
+      "drop"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [
@@ -206425,7 +207033,9 @@
     "subcategories": [
       "other-potion"
     ],
-    "obtain": [],
+    "obtain": [
+      "drop"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [
@@ -206575,7 +207185,9 @@
     "subcategories": [
       "other-potion"
     ],
-    "obtain": [],
+    "obtain": [
+      "drop"
+    ],
     "vendors": [],
     "events": [
       "rain"
@@ -206676,7 +207288,9 @@
       "enemy-drop",
       "other-potion"
     ],
-    "obtain": [],
+    "obtain": [
+      "drop"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [
@@ -206776,7 +207390,9 @@
     "subcategories": [
       "other-potion"
     ],
-    "obtain": [],
+    "obtain": [
+      "drop"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [
@@ -206825,7 +207441,9 @@
     "subcategories": [
       "other-potion"
     ],
-    "obtain": [],
+    "obtain": [
+      "drop"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [
@@ -206876,7 +207494,9 @@
     "subcategories": [
       "other-potion"
     ],
-    "obtain": [],
+    "obtain": [
+      "drop"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [
@@ -206925,7 +207545,9 @@
     "subcategories": [
       "other-potion"
     ],
-    "obtain": [],
+    "obtain": [
+      "drop"
+    ],
     "vendors": [],
     "events": [
       "sandstorm"
@@ -206975,7 +207597,9 @@
     "subcategories": [
       "other-potion"
     ],
-    "obtain": [],
+    "obtain": [
+      "drop"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [
@@ -207024,7 +207648,9 @@
     "subcategories": [
       "other-potion"
     ],
-    "obtain": [],
+    "obtain": [
+      "drop"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [
@@ -207269,7 +207895,9 @@
     "subcategories": [
       "other-potion"
     ],
-    "obtain": [],
+    "obtain": [
+      "drop"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [
@@ -207318,7 +207946,9 @@
     "subcategories": [
       "other-potion"
     ],
-    "obtain": [],
+    "obtain": [
+      "drop"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [
@@ -207367,7 +207997,9 @@
     "subcategories": [
       "other-potion"
     ],
-    "obtain": [],
+    "obtain": [
+      "drop"
+    ],
     "vendors": [],
     "events": [
       "solar-eclipse"
@@ -208197,7 +208829,9 @@
       "decoration",
       "other-accessory"
     ],
-    "obtain": [],
+    "obtain": [
+      "drop"
+    ],
     "vendors": [],
     "events": [
       "blood-moon"
@@ -208251,6 +208885,7 @@
       "material-equipment"
     ],
     "obtain": [
+      "loot",
       "bag"
     ],
     "vendors": [],
@@ -208299,6 +208934,7 @@
       "material-equipment"
     ],
     "obtain": [
+      "loot",
       "bag"
     ],
     "vendors": [],
@@ -208909,7 +209545,9 @@
     "subcategories": [
       "critter"
     ],
-    "obtain": [],
+    "obtain": [
+      "caught"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -208953,7 +209591,9 @@
     "subcategories": [
       "critter"
     ],
-    "obtain": [],
+    "obtain": [
+      "caught"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -208997,7 +209637,9 @@
     "subcategories": [
       "critter"
     ],
-    "obtain": [],
+    "obtain": [
+      "caught"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -209357,7 +209999,9 @@
       "material-equipment",
       "furniture-music-box"
     ],
-    "obtain": [],
+    "obtain": [
+      "recorded"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -209409,7 +210053,9 @@
       "material-equipment",
       "furniture-music-box"
     ],
-    "obtain": [],
+    "obtain": [
+      "recorded"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -209461,7 +210107,9 @@
       "material-equipment",
       "furniture-music-box"
     ],
-    "obtain": [],
+    "obtain": [
+      "recorded"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -209513,7 +210161,9 @@
       "material-equipment",
       "furniture-music-box"
     ],
-    "obtain": [],
+    "obtain": [
+      "recorded"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -209565,7 +210215,9 @@
       "material-equipment",
       "furniture-music-box"
     ],
-    "obtain": [],
+    "obtain": [
+      "recorded"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -209617,7 +210269,9 @@
       "material-equipment",
       "furniture-music-box"
     ],
-    "obtain": [],
+    "obtain": [
+      "recorded"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -212577,7 +213231,9 @@
     "subcategories": [
       "other-miscellaneous"
     ],
-    "obtain": [],
+    "obtain": [
+      "other"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -217227,7 +217883,8 @@
       "furniture-music-box"
     ],
     "obtain": [
-      "crafted"
+      "crafted",
+      "recorded"
     ],
     "vendors": [],
     "events": [],
@@ -218444,6 +219101,7 @@
       "other-tool"
     ],
     "obtain": [
+      "loot",
       "bag"
     ],
     "vendors": [],
@@ -218495,6 +219153,7 @@
       "other-miscellaneous"
     ],
     "obtain": [
+      "loot",
       "bag"
     ],
     "vendors": [],
@@ -218857,7 +219516,9 @@
     "subcategories": [
       "event-summon"
     ],
-    "obtain": [],
+    "obtain": [
+      "drop"
+    ],
     "vendors": [],
     "events": [
       "blood-moon"
@@ -219017,7 +219678,9 @@
     "subcategories": [
       "critter"
     ],
-    "obtain": [],
+    "obtain": [
+      "caught"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -219114,6 +219777,7 @@
       "other-furniture"
     ],
     "obtain": [
+      "loot",
       "bag"
     ],
     "vendors": [],
@@ -219360,7 +220024,8 @@
     ],
     "obtain": [
       "drop",
-      "loot"
+      "loot",
+      "shimmer"
     ],
     "vendors": [],
     "events": [],
@@ -219415,7 +220080,8 @@
       "other-crafting-material"
     ],
     "obtain": [
-      "loot"
+      "loot",
+      "plunder"
     ],
     "vendors": [],
     "events": [],
@@ -219466,7 +220132,8 @@
       "other-crafting-material"
     ],
     "obtain": [
-      "loot"
+      "loot",
+      "plunder"
     ],
     "vendors": [],
     "events": [],
@@ -219517,7 +220184,8 @@
       "other-crafting-material"
     ],
     "obtain": [
-      "loot"
+      "loot",
+      "plunder"
     ],
     "vendors": [],
     "events": [],
@@ -219568,7 +220236,8 @@
       "other-crafting-material"
     ],
     "obtain": [
-      "loot"
+      "loot",
+      "plunder"
     ],
     "vendors": [],
     "events": [],
@@ -219619,7 +220288,8 @@
       "other-crafting-material"
     ],
     "obtain": [
-      "loot"
+      "loot",
+      "plunder"
     ],
     "vendors": [],
     "events": [],
@@ -219670,7 +220340,8 @@
       "other-crafting-material"
     ],
     "obtain": [
-      "loot"
+      "loot",
+      "plunder"
     ],
     "vendors": [],
     "events": [],
@@ -219721,7 +220392,8 @@
       "other-crafting-material"
     ],
     "obtain": [
-      "loot"
+      "loot",
+      "plunder"
     ],
     "vendors": [],
     "events": [],
@@ -219772,7 +220444,8 @@
       "other-crafting-material"
     ],
     "obtain": [
-      "loot"
+      "loot",
+      "plunder"
     ],
     "vendors": [],
     "events": [],
@@ -219823,7 +220496,8 @@
       "other-crafting-material"
     ],
     "obtain": [
-      "loot"
+      "loot",
+      "plunder"
     ],
     "vendors": [],
     "events": [],
@@ -219874,7 +220548,8 @@
       "other-crafting-material"
     ],
     "obtain": [
-      "loot"
+      "loot",
+      "plunder"
     ],
     "vendors": [],
     "events": [],
@@ -219925,7 +220600,8 @@
       "other-crafting-material"
     ],
     "obtain": [
-      "loot"
+      "loot",
+      "plunder"
     ],
     "vendors": [],
     "events": [],
@@ -219976,7 +220652,8 @@
       "other-crafting-material"
     ],
     "obtain": [
-      "loot"
+      "loot",
+      "plunder"
     ],
     "vendors": [],
     "events": [],
@@ -220027,7 +220704,8 @@
       "other-crafting-material"
     ],
     "obtain": [
-      "loot"
+      "loot",
+      "plunder"
     ],
     "vendors": [],
     "events": [],
@@ -220078,7 +220756,8 @@
       "other-crafting-material"
     ],
     "obtain": [
-      "loot"
+      "loot",
+      "plunder"
     ],
     "vendors": [],
     "events": [],
@@ -220129,7 +220808,8 @@
       "other-crafting-material"
     ],
     "obtain": [
-      "loot"
+      "loot",
+      "plunder"
     ],
     "vendors": [],
     "events": [],
@@ -220180,7 +220860,8 @@
       "other-crafting-material"
     ],
     "obtain": [
-      "loot"
+      "loot",
+      "plunder"
     ],
     "vendors": [],
     "events": [],
@@ -222008,7 +222689,9 @@
     "subcategories": [
       "critter"
     ],
-    "obtain": [],
+    "obtain": [
+      "caught"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -222053,7 +222736,9 @@
     "subcategories": [
       "critter"
     ],
-    "obtain": [],
+    "obtain": [
+      "caught"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -222098,7 +222783,9 @@
     "subcategories": [
       "critter"
     ],
-    "obtain": [],
+    "obtain": [
+      "caught"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -222143,7 +222830,9 @@
     "subcategories": [
       "critter"
     ],
-    "obtain": [],
+    "obtain": [
+      "caught"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -222188,7 +222877,9 @@
     "subcategories": [
       "critter"
     ],
-    "obtain": [],
+    "obtain": [
+      "caught"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -222233,7 +222924,9 @@
     "subcategories": [
       "critter"
     ],
-    "obtain": [],
+    "obtain": [
+      "caught"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -222278,7 +222971,9 @@
     "subcategories": [
       "critter"
     ],
-    "obtain": [],
+    "obtain": [
+      "caught"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -222532,7 +223227,8 @@
     ],
     "subcategories": [],
     "obtain": [
-      "loot"
+      "loot",
+      "shimmer"
     ],
     "vendors": [],
     "events": [],
@@ -222742,7 +223438,8 @@
       "other-block"
     ],
     "obtain": [
-      "crafted"
+      "crafted",
+      "drop"
     ],
     "vendors": [],
     "events": [],
@@ -222797,7 +223494,8 @@
       "other-block"
     ],
     "obtain": [
-      "crafted"
+      "crafted",
+      "drop"
     ],
     "vendors": [],
     "events": [],
@@ -222852,7 +223550,8 @@
       "other-block"
     ],
     "obtain": [
-      "crafted"
+      "crafted",
+      "drop"
     ],
     "vendors": [],
     "events": [],
@@ -222907,7 +223606,8 @@
       "other-block"
     ],
     "obtain": [
-      "crafted"
+      "crafted",
+      "drop"
     ],
     "vendors": [],
     "events": [],
@@ -222962,7 +223662,8 @@
       "other-block"
     ],
     "obtain": [
-      "crafted"
+      "crafted",
+      "drop"
     ],
     "vendors": [],
     "events": [],
@@ -223016,7 +223717,9 @@
       "material-block",
       "other-block"
     ],
-    "obtain": [],
+    "obtain": [
+      "drop"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [
@@ -223117,7 +223820,8 @@
       "furniture-music-box"
     ],
     "obtain": [
-      "crafted"
+      "crafted",
+      "recorded"
     ],
     "vendors": [],
     "events": [],
@@ -223170,7 +223874,9 @@
       "material-equipment",
       "furniture-music-box"
     ],
-    "obtain": [],
+    "obtain": [
+      "recorded"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -223222,7 +223928,9 @@
       "material-equipment",
       "furniture-music-box"
     ],
-    "obtain": [],
+    "obtain": [
+      "recorded"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -223268,7 +223976,9 @@
     "subcategories": [
       "critter"
     ],
-    "obtain": [],
+    "obtain": [
+      "caught"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -223361,7 +224071,9 @@
     "subcategories": [
       "critter"
     ],
-    "obtain": [],
+    "obtain": [
+      "caught"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -223406,7 +224118,9 @@
     "subcategories": [
       "critter"
     ],
-    "obtain": [],
+    "obtain": [
+      "caught"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -223451,7 +224165,9 @@
     "subcategories": [
       "critter"
     ],
-    "obtain": [],
+    "obtain": [
+      "caught"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -223595,7 +224311,8 @@
       "other-pet"
     ],
     "obtain": [
-      "loot"
+      "loot",
+      "plunder"
     ],
     "vendors": [],
     "events": [],
@@ -223948,7 +224665,9 @@
     "subcategories": [
       "critter"
     ],
-    "obtain": [],
+    "obtain": [
+      "caught"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -223991,7 +224710,9 @@
     "subcategories": [
       "critter"
     ],
-    "obtain": [],
+    "obtain": [
+      "caught"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -224034,7 +224755,9 @@
     "subcategories": [
       "critter"
     ],
-    "obtain": [],
+    "obtain": [
+      "caught"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -224128,7 +224851,9 @@
       "material-block",
       "other-block"
     ],
-    "obtain": [],
+    "obtain": [
+      "drop"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [
@@ -224179,7 +224904,9 @@
       "material-block",
       "other-block"
     ],
-    "obtain": [],
+    "obtain": [
+      "drop"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [
@@ -224750,7 +225477,9 @@
       "material-block",
       "other-block"
     ],
-    "obtain": [],
+    "obtain": [
+      "drop"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [
@@ -225044,7 +225773,9 @@
     "subcategories": [
       "critter"
     ],
-    "obtain": [],
+    "obtain": [
+      "caught"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -225523,7 +226254,8 @@
       "other-furniture"
     ],
     "obtain": [
-      "fishing"
+      "fishing",
+      "shimmer"
     ],
     "vendors": [],
     "events": [],
@@ -225625,7 +226357,8 @@
       "other-furniture"
     ],
     "obtain": [
-      "fishing"
+      "fishing",
+      "shimmer"
     ],
     "vendors": [],
     "events": [],
@@ -226165,7 +226898,9 @@
     "subcategories": [
       "critter"
     ],
-    "obtain": [],
+    "obtain": [
+      "caught"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -226210,7 +226945,9 @@
     "subcategories": [
       "critter"
     ],
-    "obtain": [],
+    "obtain": [
+      "caught"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -226314,7 +227051,9 @@
       "material-equipment",
       "furniture-music-box"
     ],
-    "obtain": [],
+    "obtain": [
+      "recorded"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -227460,7 +228199,8 @@
       "minecart"
     ],
     "obtain": [
-      "loot"
+      "loot",
+      "bag"
     ],
     "vendors": [],
     "events": [],
@@ -228498,7 +229238,9 @@
     "subcategories": [
       "critter"
     ],
-    "obtain": [],
+    "obtain": [
+      "caught"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -228541,7 +229283,9 @@
     "subcategories": [
       "critter"
     ],
-    "obtain": [],
+    "obtain": [
+      "caught"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -228726,7 +229470,8 @@
       "minecart"
     ],
     "obtain": [
-      "drop"
+      "drop",
+      "treasure-bag"
     ],
     "vendors": [],
     "events": [],
@@ -229258,7 +230003,9 @@
     "subcategories": [
       "critter"
     ],
-    "obtain": [],
+    "obtain": [
+      "caught"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -229349,7 +230096,9 @@
     "subcategories": [
       "critter"
     ],
-    "obtain": [],
+    "obtain": [
+      "caught"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -235509,7 +236258,9 @@
       "material-equipment",
       "furniture-music-box"
     ],
-    "obtain": [],
+    "obtain": [
+      "recorded"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -235660,7 +236411,9 @@
       "other-furniture",
       "other-miscellaneous"
     ],
-    "obtain": [],
+    "obtain": [
+      "other"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -236503,7 +237256,8 @@
       "painting"
     ],
     "obtain": [
-      "plunder"
+      "plunder",
+      "bag"
     ],
     "vendors": [],
     "events": [],
@@ -236552,7 +237306,8 @@
       "painting"
     ],
     "obtain": [
-      "plunder"
+      "plunder",
+      "bag"
     ],
     "vendors": [],
     "events": [],
@@ -236601,7 +237356,8 @@
       "painting"
     ],
     "obtain": [
-      "plunder"
+      "plunder",
+      "bag"
     ],
     "vendors": [],
     "events": [],
@@ -236650,7 +237406,8 @@
       "painting"
     ],
     "obtain": [
-      "plunder"
+      "plunder",
+      "bag"
     ],
     "vendors": [],
     "events": [],
@@ -236699,7 +237456,8 @@
       "painting"
     ],
     "obtain": [
-      "plunder"
+      "plunder",
+      "bag"
     ],
     "vendors": [],
     "events": [],
@@ -236748,7 +237506,8 @@
       "painting"
     ],
     "obtain": [
-      "plunder"
+      "plunder",
+      "bag"
     ],
     "vendors": [],
     "events": [],
@@ -236797,7 +237556,8 @@
       "painting"
     ],
     "obtain": [
-      "plunder"
+      "plunder",
+      "bag"
     ],
     "vendors": [],
     "events": [],
@@ -236846,7 +237606,8 @@
       "painting"
     ],
     "obtain": [
-      "plunder"
+      "plunder",
+      "bag"
     ],
     "vendors": [],
     "events": [],
@@ -236895,7 +237656,8 @@
       "painting"
     ],
     "obtain": [
-      "plunder"
+      "plunder",
+      "bag"
     ],
     "vendors": [],
     "events": [],
@@ -236944,7 +237706,8 @@
       "painting"
     ],
     "obtain": [
-      "plunder"
+      "plunder",
+      "bag"
     ],
     "vendors": [],
     "events": [],
@@ -236993,7 +237756,8 @@
       "painting"
     ],
     "obtain": [
-      "plunder"
+      "plunder",
+      "bag"
     ],
     "vendors": [],
     "events": [],
@@ -237042,7 +237806,8 @@
       "painting"
     ],
     "obtain": [
-      "plunder"
+      "plunder",
+      "bag"
     ],
     "vendors": [],
     "events": [],
@@ -237091,7 +237856,8 @@
       "painting"
     ],
     "obtain": [
-      "plunder"
+      "plunder",
+      "bag"
     ],
     "vendors": [],
     "events": [],
@@ -237140,7 +237906,8 @@
       "painting"
     ],
     "obtain": [
-      "plunder"
+      "plunder",
+      "bag"
     ],
     "vendors": [],
     "events": [],
@@ -239468,7 +240235,8 @@
     ],
     "subcategories": [],
     "obtain": [
-      "vendor"
+      "vendor",
+      "loot"
     ],
     "vendors": [
       "clothier"
@@ -239517,7 +240285,8 @@
     ],
     "subcategories": [],
     "obtain": [
-      "vendor"
+      "vendor",
+      "loot"
     ],
     "vendors": [
       "clothier"
@@ -240841,7 +241610,8 @@
       "chest"
     ],
     "obtain": [
-      "plunder"
+      "plunder",
+      "shimmer"
     ],
     "vendors": [],
     "events": [],
@@ -240935,7 +241705,9 @@
       "key"
     ],
     "subcategories": [],
-    "obtain": [],
+    "obtain": [
+      "other"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -242155,7 +242927,8 @@
     ],
     "subcategories": [],
     "obtain": [
-      "drop"
+      "drop",
+      "loot"
     ],
     "vendors": [],
     "events": [
@@ -242201,7 +242974,8 @@
     ],
     "subcategories": [],
     "obtain": [
-      "drop"
+      "drop",
+      "loot"
     ],
     "vendors": [],
     "events": [
@@ -242247,7 +243021,8 @@
     ],
     "subcategories": [],
     "obtain": [
-      "drop"
+      "drop",
+      "loot"
     ],
     "vendors": [],
     "events": [
@@ -242293,7 +243068,8 @@
     ],
     "subcategories": [],
     "obtain": [
-      "drop"
+      "drop",
+      "loot"
     ],
     "vendors": [],
     "events": [
@@ -242339,7 +243115,8 @@
     ],
     "subcategories": [],
     "obtain": [
-      "drop"
+      "drop",
+      "loot"
     ],
     "vendors": [],
     "events": [
@@ -244428,7 +245205,8 @@
     ],
     "subcategories": [],
     "obtain": [
-      "drop"
+      "drop",
+      "treasure-bag"
     ],
     "vendors": [],
     "events": [],
@@ -246404,7 +247182,9 @@
       "wings"
     ],
     "obtain": [
-      "bag"
+      "drop",
+      "bag",
+      "treasure-bag"
     ],
     "vendors": [],
     "events": [],
@@ -246820,7 +247600,9 @@
     "subcategories": [
       "critter"
     ],
-    "obtain": [],
+    "obtain": [
+      "caught"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -246863,7 +247645,9 @@
     "subcategories": [
       "critter"
     ],
-    "obtain": [],
+    "obtain": [
+      "caught"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -246906,7 +247690,9 @@
     "subcategories": [
       "critter"
     ],
-    "obtain": [],
+    "obtain": [
+      "caught"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -246949,7 +247735,9 @@
     "subcategories": [
       "critter"
     ],
-    "obtain": [],
+    "obtain": [
+      "caught"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -246992,7 +247780,9 @@
     "subcategories": [
       "critter"
     ],
-    "obtain": [],
+    "obtain": [
+      "caught"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -247035,7 +247825,9 @@
     "subcategories": [
       "critter"
     ],
-    "obtain": [],
+    "obtain": [
+      "caught"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -247078,7 +247870,9 @@
     "subcategories": [
       "critter"
     ],
-    "obtain": [],
+    "obtain": [
+      "caught"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -247121,7 +247915,9 @@
     "subcategories": [
       "critter"
     ],
-    "obtain": [],
+    "obtain": [
+      "caught"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -247164,7 +247960,9 @@
     "subcategories": [
       "critter"
     ],
-    "obtain": [],
+    "obtain": [
+      "caught"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -247207,7 +248005,9 @@
     "subcategories": [
       "critter"
     ],
-    "obtain": [],
+    "obtain": [
+      "caught"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -247250,7 +248050,9 @@
     "subcategories": [
       "critter"
     ],
-    "obtain": [],
+    "obtain": [
+      "caught"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -247293,7 +248095,9 @@
     "subcategories": [
       "critter"
     ],
-    "obtain": [],
+    "obtain": [
+      "caught"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -247336,7 +248140,9 @@
     "subcategories": [
       "critter"
     ],
-    "obtain": [],
+    "obtain": [
+      "caught"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -247379,7 +248185,9 @@
     "subcategories": [
       "critter"
     ],
-    "obtain": [],
+    "obtain": [
+      "caught"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -247423,7 +248231,9 @@
     "subcategories": [
       "critter"
     ],
-    "obtain": [],
+    "obtain": [
+      "caught"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -247515,7 +248325,9 @@
     "subcategories": [
       "critter"
     ],
-    "obtain": [],
+    "obtain": [
+      "caught"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -247608,7 +248420,9 @@
     "subcategories": [
       "critter"
     ],
-    "obtain": [],
+    "obtain": [
+      "caught"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -248664,7 +249478,8 @@
     ],
     "subcategories": [],
     "obtain": [
-      "vendor"
+      "vendor",
+      "shimmer"
     ],
     "vendors": [
       "zoologist"
@@ -248716,7 +249531,9 @@
       "material-equipment",
       "other-tool"
     ],
-    "obtain": [],
+    "obtain": [
+      "other"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -248956,7 +249773,8 @@
       "other-furniture"
     ],
     "obtain": [
-      "fishing"
+      "fishing",
+      "shimmer"
     ],
     "vendors": [],
     "events": [],
@@ -250148,7 +250966,8 @@
       "decoration"
     ],
     "obtain": [
-      "loot"
+      "loot",
+      "bag"
     ],
     "vendors": [],
     "events": [],
@@ -250197,7 +251016,8 @@
       "decoration"
     ],
     "obtain": [
-      "loot"
+      "loot",
+      "bag"
     ],
     "vendors": [],
     "events": [],
@@ -250246,7 +251066,8 @@
       "decoration"
     ],
     "obtain": [
-      "loot"
+      "loot",
+      "bag"
     ],
     "vendors": [],
     "events": [],
@@ -250295,7 +251116,8 @@
       "decoration"
     ],
     "obtain": [
-      "loot"
+      "loot",
+      "bag"
     ],
     "vendors": [],
     "events": [],
@@ -250344,7 +251166,8 @@
       "decoration"
     ],
     "obtain": [
-      "loot"
+      "loot",
+      "bag"
     ],
     "vendors": [],
     "events": [],
@@ -250391,7 +251214,8 @@
     ],
     "subcategories": [],
     "obtain": [
-      "vendor"
+      "vendor",
+      "shimmer"
     ],
     "vendors": [
       "zoologist"
@@ -253052,7 +253876,8 @@
     ],
     "subcategories": [],
     "obtain": [
-      "drop"
+      "drop",
+      "treasure-bag"
     ],
     "vendors": [],
     "events": [],
@@ -253150,7 +253975,9 @@
       "boss-summon",
       "critter"
     ],
-    "obtain": [],
+    "obtain": [
+      "caught"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -254076,7 +254903,9 @@
       "material-equipment",
       "furniture-music-box"
     ],
-    "obtain": [],
+    "obtain": [
+      "recorded"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -254372,7 +255201,9 @@
       "material-equipment",
       "furniture-music-box"
     ],
-    "obtain": [],
+    "obtain": [
+      "recorded"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -254623,7 +255454,9 @@
       "material-equipment",
       "furniture-music-box"
     ],
-    "obtain": [],
+    "obtain": [
+      "recorded"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -254675,7 +255508,9 @@
       "material-equipment",
       "furniture-music-box"
     ],
-    "obtain": [],
+    "obtain": [
+      "recorded"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -254725,7 +255560,8 @@
       "furniture-music-box"
     ],
     "obtain": [
-      "crafted"
+      "crafted",
+      "recorded"
     ],
     "vendors": [],
     "events": [],
@@ -255215,7 +256051,8 @@
       "other-furniture"
     ],
     "obtain": [
-      "fishing"
+      "fishing",
+      "shimmer"
     ],
     "vendors": [],
     "events": [],
@@ -255421,7 +256258,9 @@
       "material-equipment",
       "furniture-music-box"
     ],
-    "obtain": [],
+    "obtain": [
+      "recorded"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -255665,7 +256504,10 @@
       "flail",
       "material-equipment"
     ],
-    "obtain": [],
+    "obtain": [
+      "drop",
+      "loot"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [
@@ -255819,7 +256661,9 @@
       "music-box",
       "furniture-music-box"
     ],
-    "obtain": [],
+    "obtain": [
+      "recorded"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -255868,7 +256712,9 @@
       "music-box",
       "furniture-music-box"
     ],
-    "obtain": [],
+    "obtain": [
+      "recorded"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -255917,7 +256763,9 @@
       "music-box",
       "furniture-music-box"
     ],
-    "obtain": [],
+    "obtain": [
+      "recorded"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -255966,7 +256814,9 @@
       "music-box",
       "furniture-music-box"
     ],
-    "obtain": [],
+    "obtain": [
+      "recorded"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -256015,7 +256865,9 @@
       "music-box",
       "furniture-music-box"
     ],
-    "obtain": [],
+    "obtain": [
+      "recorded"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -256064,7 +256916,9 @@
       "music-box",
       "furniture-music-box"
     ],
-    "obtain": [],
+    "obtain": [
+      "recorded"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -256113,7 +256967,9 @@
       "music-box",
       "furniture-music-box"
     ],
-    "obtain": [],
+    "obtain": [
+      "recorded"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -256162,7 +257018,9 @@
       "music-box",
       "furniture-music-box"
     ],
-    "obtain": [],
+    "obtain": [
+      "recorded"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -256211,7 +257069,9 @@
       "music-box",
       "furniture-music-box"
     ],
-    "obtain": [],
+    "obtain": [
+      "recorded"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -256260,7 +257120,9 @@
       "music-box",
       "furniture-music-box"
     ],
-    "obtain": [],
+    "obtain": [
+      "recorded"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -256309,7 +257171,9 @@
       "music-box",
       "furniture-music-box"
     ],
-    "obtain": [],
+    "obtain": [
+      "recorded"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -256358,7 +257222,9 @@
       "music-box",
       "furniture-music-box"
     ],
-    "obtain": [],
+    "obtain": [
+      "recorded"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -256407,7 +257273,9 @@
       "music-box",
       "furniture-music-box"
     ],
-    "obtain": [],
+    "obtain": [
+      "recorded"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -256456,7 +257324,9 @@
       "music-box",
       "furniture-music-box"
     ],
-    "obtain": [],
+    "obtain": [
+      "recorded"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -256505,7 +257375,9 @@
       "music-box",
       "furniture-music-box"
     ],
-    "obtain": [],
+    "obtain": [
+      "recorded"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -256554,7 +257426,9 @@
       "music-box",
       "furniture-music-box"
     ],
-    "obtain": [],
+    "obtain": [
+      "recorded"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -256603,7 +257477,9 @@
       "music-box",
       "furniture-music-box"
     ],
-    "obtain": [],
+    "obtain": [
+      "recorded"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -256652,7 +257528,9 @@
       "music-box",
       "furniture-music-box"
     ],
-    "obtain": [],
+    "obtain": [
+      "recorded"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -256701,7 +257579,9 @@
       "music-box",
       "furniture-music-box"
     ],
-    "obtain": [],
+    "obtain": [
+      "recorded"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -256750,7 +257630,9 @@
       "music-box",
       "furniture-music-box"
     ],
-    "obtain": [],
+    "obtain": [
+      "recorded"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -256799,7 +257681,9 @@
       "music-box",
       "furniture-music-box"
     ],
-    "obtain": [],
+    "obtain": [
+      "recorded"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -256848,7 +257732,9 @@
       "music-box",
       "furniture-music-box"
     ],
-    "obtain": [],
+    "obtain": [
+      "recorded"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -256942,7 +257828,9 @@
       "music-box",
       "furniture-music-box"
     ],
-    "obtain": [],
+    "obtain": [
+      "recorded"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -256991,7 +257879,9 @@
       "music-box",
       "furniture-music-box"
     ],
-    "obtain": [],
+    "obtain": [
+      "recorded"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -257040,7 +257930,9 @@
       "music-box",
       "furniture-music-box"
     ],
-    "obtain": [],
+    "obtain": [
+      "recorded"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -257089,7 +257981,9 @@
       "music-box",
       "furniture-music-box"
     ],
-    "obtain": [],
+    "obtain": [
+      "recorded"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -257138,7 +258032,9 @@
       "music-box",
       "furniture-music-box"
     ],
-    "obtain": [],
+    "obtain": [
+      "recorded"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -257185,7 +258081,9 @@
     "subcategories": [
       "other-potion"
     ],
-    "obtain": [],
+    "obtain": [
+      "drop"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [
@@ -257235,7 +258133,9 @@
     "subcategories": [
       "other-potion"
     ],
-    "obtain": [],
+    "obtain": [
+      "drop"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [
@@ -257333,7 +258233,8 @@
       "furniture-music-box"
     ],
     "obtain": [
-      "vendor"
+      "vendor",
+      "recorded"
     ],
     "vendors": [
       "princess"
@@ -258181,7 +259082,9 @@
       "vanity"
     ],
     "subcategories": [],
-    "obtain": [],
+    "obtain": [
+      "other"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -258990,7 +259893,9 @@
       "grab-bag"
     ],
     "subcategories": [],
-    "obtain": [],
+    "obtain": [
+      "other"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -259128,7 +260033,9 @@
       "vanity"
     ],
     "subcategories": [],
-    "obtain": [],
+    "obtain": [
+      "drop"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -259168,7 +260075,9 @@
       "vanity"
     ],
     "subcategories": [],
-    "obtain": [],
+    "obtain": [
+      "drop"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -260673,7 +261582,9 @@
       "material-equipment",
       "other-accessory"
     ],
-    "obtain": [],
+    "obtain": [
+      "other"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -260812,7 +261723,8 @@
     ],
     "subcategories": [],
     "obtain": [
-      "drop"
+      "drop",
+      "treasure-bag"
     ],
     "vendors": [],
     "events": [],
@@ -260954,7 +261866,9 @@
       "music-box",
       "furniture-music-box"
     ],
-    "obtain": [],
+    "obtain": [
+      "recorded"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -261363,7 +262277,8 @@
       "boss-summon"
     ],
     "obtain": [
-      "crafted"
+      "crafted",
+      "loot"
     ],
     "vendors": [],
     "events": [],
@@ -261714,7 +262629,9 @@
       "material-block",
       "other-block"
     ],
-    "obtain": [],
+    "obtain": [
+      "drop"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [
@@ -261765,7 +262682,9 @@
       "material-block",
       "other-block"
     ],
-    "obtain": [],
+    "obtain": [
+      "shimmer"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -261967,7 +262886,9 @@
     "subcategories": [
       "critter"
     ],
-    "obtain": [],
+    "obtain": [
+      "caught"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -262060,7 +262981,9 @@
     "subcategories": [
       "other-tool"
     ],
-    "obtain": [],
+    "obtain": [
+      "shimmer"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -265901,7 +266824,9 @@
     "subcategories": [
       "critter"
     ],
-    "obtain": [],
+    "obtain": [
+      "caught"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -266593,7 +267518,9 @@
       "painting"
     ],
     "obtain": [
-      "plunder"
+      "loot",
+      "plunder",
+      "bag"
     ],
     "vendors": [],
     "events": [],
@@ -267003,7 +267930,9 @@
       "painting"
     ],
     "obtain": [
-      "plunder"
+      "loot",
+      "plunder",
+      "bag"
     ],
     "vendors": [],
     "events": [],
@@ -267206,7 +268135,9 @@
     ],
     "obtain": [
       "crafted",
-      "plunder"
+      "loot",
+      "plunder",
+      "bag"
     ],
     "vendors": [],
     "events": [],
@@ -268024,7 +268955,9 @@
       "painting"
     ],
     "obtain": [
-      "plunder"
+      "loot",
+      "plunder",
+      "bag"
     ],
     "vendors": [],
     "events": [],
@@ -268073,7 +269006,9 @@
       "painting"
     ],
     "obtain": [
-      "plunder"
+      "loot",
+      "plunder",
+      "bag"
     ],
     "vendors": [],
     "events": [],
@@ -268225,7 +269160,9 @@
       "painting"
     ],
     "obtain": [
-      "plunder"
+      "loot",
+      "plunder",
+      "bag"
     ],
     "vendors": [],
     "events": [],
@@ -269122,7 +270059,9 @@
     "subcategories": [
       "other-pet"
     ],
-    "obtain": [],
+    "obtain": [
+      "other"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -269171,7 +270110,8 @@
       "other-crafting-material"
     ],
     "obtain": [
-      "loot"
+      "loot",
+      "plunder"
     ],
     "vendors": [],
     "events": [],
@@ -269222,7 +270162,8 @@
       "other-crafting-material"
     ],
     "obtain": [
-      "loot"
+      "loot",
+      "plunder"
     ],
     "vendors": [],
     "events": [],
@@ -270056,7 +270997,8 @@
       "axe"
     ],
     "obtain": [
-      "crafted"
+      "crafted",
+      "shimmer"
     ],
     "vendors": [],
     "events": [],
@@ -270313,7 +271255,9 @@
     "subcategories": [
       "critter"
     ],
-    "obtain": [],
+    "obtain": [
+      "caught"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -270454,7 +271398,9 @@
       "material-equipment",
       "other-tool"
     ],
-    "obtain": [],
+    "obtain": [
+      "other"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -270849,7 +271795,9 @@
     "subcategories": [
       "critter"
     ],
-    "obtain": [],
+    "obtain": [
+      "caught"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -270892,7 +271840,9 @@
     "subcategories": [
       "critter"
     ],
-    "obtain": [],
+    "obtain": [
+      "caught"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -270935,7 +271885,9 @@
     "subcategories": [
       "critter"
     ],
-    "obtain": [],
+    "obtain": [
+      "caught"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -271520,7 +272472,9 @@
     "subcategories": [
       "item-summon"
     ],
-    "obtain": [],
+    "obtain": [
+      "other"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -272011,7 +272965,9 @@
     "subcategories": [
       "other-tool"
     ],
-    "obtain": [],
+    "obtain": [
+      "shimmer"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -272054,7 +273010,9 @@
       "permanent-booster"
     ],
     "subcategories": [],
-    "obtain": [],
+    "obtain": [
+      "shimmer"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -272096,7 +273054,9 @@
       "permanent-booster"
     ],
     "subcategories": [],
-    "obtain": [],
+    "obtain": [
+      "shimmer"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -272139,7 +273099,9 @@
       "permanent-booster"
     ],
     "subcategories": [],
-    "obtain": [],
+    "obtain": [
+      "shimmer"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -272182,7 +273144,9 @@
       "permanent-booster"
     ],
     "subcategories": [],
-    "obtain": [],
+    "obtain": [
+      "shimmer"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -272225,7 +273189,9 @@
       "permanent-booster"
     ],
     "subcategories": [],
-    "obtain": [],
+    "obtain": [
+      "shimmer"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -272268,7 +273234,9 @@
       "permanent-booster"
     ],
     "subcategories": [],
-    "obtain": [],
+    "obtain": [
+      "shimmer"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -272311,7 +273279,9 @@
       "permanent-booster"
     ],
     "subcategories": [],
-    "obtain": [],
+    "obtain": [
+      "shimmer"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -272353,7 +273323,9 @@
       "permanent-booster"
     ],
     "subcategories": [],
-    "obtain": [],
+    "obtain": [
+      "shimmer"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -272507,7 +273479,9 @@
     "subcategories": [
       "other-miscellaneous"
     ],
-    "obtain": [],
+    "obtain": [
+      "shimmer"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -272556,7 +273530,9 @@
       "decoration",
       "other-accessory"
     ],
-    "obtain": [],
+    "obtain": [
+      "shimmer"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -272603,7 +273579,9 @@
     "subcategories": [
       "arrow"
     ],
-    "obtain": [],
+    "obtain": [
+      "shimmer"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -272655,7 +273633,8 @@
       "other-block"
     ],
     "obtain": [
-      "crafted"
+      "crafted",
+      "shimmer"
     ],
     "vendors": [],
     "events": [],
@@ -272701,7 +273680,9 @@
     "subcategories": [
       "critter"
     ],
-    "obtain": [],
+    "obtain": [
+      "caught"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -272845,7 +273826,9 @@
       "material-furniture",
       "torch-campfire"
     ],
-    "obtain": [],
+    "obtain": [
+      "shimmer"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -272940,7 +273923,9 @@
     "subcategories": [
       "defense-survival"
     ],
-    "obtain": [],
+    "obtain": [
+      "shimmer"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -273030,7 +274015,8 @@
       "torch-campfire"
     ],
     "obtain": [
-      "crafted"
+      "crafted",
+      "shimmer"
     ],
     "vendors": [],
     "events": [],
@@ -273078,7 +274064,9 @@
     "subcategories": [
       "other-tool"
     ],
-    "obtain": [],
+    "obtain": [
+      "other"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -273122,7 +274110,9 @@
     "subcategories": [
       "other-tool"
     ],
-    "obtain": [],
+    "obtain": [
+      "other"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -273166,7 +274156,9 @@
     "subcategories": [
       "other-tool"
     ],
-    "obtain": [],
+    "obtain": [
+      "other"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -273210,7 +274202,9 @@
     "subcategories": [
       "other-tool"
     ],
-    "obtain": [],
+    "obtain": [
+      "other"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -273257,7 +274251,9 @@
       "music-box",
       "furniture-music-box"
     ],
-    "obtain": [],
+    "obtain": [
+      "recorded"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -273302,7 +274298,9 @@
       "wall"
     ],
     "subcategories": [],
-    "obtain": [],
+    "obtain": [
+      "shimmer"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -273347,7 +274345,8 @@
       "other-tool"
     ],
     "obtain": [
-      "crafted"
+      "crafted",
+      "shimmer"
     ],
     "vendors": [],
     "events": [],
@@ -273393,7 +274392,10 @@
       "wall"
     ],
     "subcategories": [],
-    "obtain": [],
+    "obtain": [
+      "drop",
+      "shimmer"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -273438,7 +274440,10 @@
       "wall"
     ],
     "subcategories": [],
-    "obtain": [],
+    "obtain": [
+      "drop",
+      "shimmer"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -273483,7 +274488,10 @@
       "wall"
     ],
     "subcategories": [],
-    "obtain": [],
+    "obtain": [
+      "drop",
+      "shimmer"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -273528,7 +274536,10 @@
       "wall"
     ],
     "subcategories": [],
-    "obtain": [],
+    "obtain": [
+      "drop",
+      "shimmer"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -273573,7 +274584,10 @@
       "wall"
     ],
     "subcategories": [],
-    "obtain": [],
+    "obtain": [
+      "drop",
+      "shimmer"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -273618,7 +274632,10 @@
       "wall"
     ],
     "subcategories": [],
-    "obtain": [],
+    "obtain": [
+      "drop",
+      "shimmer"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -273663,7 +274680,10 @@
       "wall"
     ],
     "subcategories": [],
-    "obtain": [],
+    "obtain": [
+      "drop",
+      "shimmer"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -273708,7 +274728,10 @@
       "wall"
     ],
     "subcategories": [],
-    "obtain": [],
+    "obtain": [
+      "drop",
+      "shimmer"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -273753,7 +274776,10 @@
       "wall"
     ],
     "subcategories": [],
-    "obtain": [],
+    "obtain": [
+      "drop",
+      "shimmer"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -273798,7 +274824,9 @@
       "wall"
     ],
     "subcategories": [],
-    "obtain": [],
+    "obtain": [
+      "shimmer"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -273841,7 +274869,9 @@
       "wall"
     ],
     "subcategories": [],
-    "obtain": [],
+    "obtain": [
+      "shimmer"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -273884,7 +274914,10 @@
       "wall"
     ],
     "subcategories": [],
-    "obtain": [],
+    "obtain": [
+      "drop",
+      "shimmer"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -274085,7 +275118,9 @@
     "subcategories": [
       "flare"
     ],
-    "obtain": [],
+    "obtain": [
+      "shimmer"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -274135,7 +275170,9 @@
     "subcategories": [
       "other-furniture"
     ],
-    "obtain": [],
+    "obtain": [
+      "shimmer"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -274482,7 +275519,9 @@
       "painting"
     ],
     "obtain": [
-      "plunder"
+      "loot",
+      "plunder",
+      "bag"
     ],
     "vendors": [],
     "events": [],
@@ -274630,7 +275669,9 @@
     "subcategories": [
       "other-tool"
     ],
-    "obtain": [],
+    "obtain": [
+      "other"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -275125,7 +276166,8 @@
       "brick"
     ],
     "obtain": [
-      "crafted"
+      "crafted",
+      "shimmer"
     ],
     "vendors": [],
     "events": [],
@@ -275176,7 +276218,8 @@
       "brick"
     ],
     "obtain": [
-      "crafted"
+      "crafted",
+      "shimmer"
     ],
     "vendors": [],
     "events": [],
@@ -275227,7 +276270,8 @@
       "brick"
     ],
     "obtain": [
-      "crafted"
+      "crafted",
+      "shimmer"
     ],
     "vendors": [],
     "events": [],
@@ -275278,7 +276322,8 @@
       "brick"
     ],
     "obtain": [
-      "crafted"
+      "crafted",
+      "shimmer"
     ],
     "vendors": [],
     "events": [],
@@ -275329,7 +276374,8 @@
       "brick"
     ],
     "obtain": [
-      "crafted"
+      "crafted",
+      "shimmer"
     ],
     "vendors": [],
     "events": [],
@@ -275380,7 +276426,8 @@
       "brick"
     ],
     "obtain": [
-      "crafted"
+      "crafted",
+      "shimmer"
     ],
     "vendors": [],
     "events": [],
@@ -275431,7 +276478,8 @@
       "brick"
     ],
     "obtain": [
-      "crafted"
+      "crafted",
+      "shimmer"
     ],
     "vendors": [],
     "events": [],
@@ -275482,7 +276530,8 @@
       "brick"
     ],
     "obtain": [
-      "crafted"
+      "crafted",
+      "shimmer"
     ],
     "vendors": [],
     "events": [],
@@ -275917,7 +276966,8 @@
       "brick"
     ],
     "obtain": [
-      "crafted"
+      "crafted",
+      "shimmer"
     ],
     "vendors": [],
     "events": [],
@@ -276014,7 +277064,8 @@
       "brick"
     ],
     "obtain": [
-      "crafted"
+      "crafted",
+      "shimmer"
     ],
     "vendors": [],
     "events": [],
@@ -276111,7 +277162,8 @@
       "brick"
     ],
     "obtain": [
-      "crafted"
+      "crafted",
+      "shimmer"
     ],
     "vendors": [],
     "events": [],
@@ -276208,7 +277260,8 @@
       "brick"
     ],
     "obtain": [
-      "crafted"
+      "crafted",
+      "shimmer"
     ],
     "vendors": [],
     "events": [],
@@ -276305,7 +277358,8 @@
       "brick"
     ],
     "obtain": [
-      "crafted"
+      "crafted",
+      "shimmer"
     ],
     "vendors": [],
     "events": [],
@@ -276402,7 +277456,8 @@
       "brick"
     ],
     "obtain": [
-      "crafted"
+      "crafted",
+      "shimmer"
     ],
     "vendors": [],
     "events": [],
@@ -276499,7 +277554,8 @@
       "brick"
     ],
     "obtain": [
-      "crafted"
+      "crafted",
+      "shimmer"
     ],
     "vendors": [],
     "events": [],
@@ -276596,7 +277652,8 @@
       "brick"
     ],
     "obtain": [
-      "crafted"
+      "crafted",
+      "shimmer"
     ],
     "vendors": [],
     "events": [],
@@ -276693,7 +277750,8 @@
       "brick"
     ],
     "obtain": [
-      "crafted"
+      "crafted",
+      "shimmer"
     ],
     "vendors": [],
     "events": [],
@@ -276790,7 +277848,8 @@
       "brick"
     ],
     "obtain": [
-      "crafted"
+      "crafted",
+      "shimmer"
     ],
     "vendors": [],
     "events": [],
@@ -277766,7 +278825,9 @@
     "subcategories": [
       "other-tool"
     ],
-    "obtain": [],
+    "obtain": [
+      "other"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -278269,7 +279330,8 @@
       "movement"
     ],
     "obtain": [
-      "loot"
+      "loot",
+      "bag"
     ],
     "vendors": [],
     "events": [],
@@ -278876,7 +279938,10 @@
       "summon-weapon",
       "whip"
     ],
-    "obtain": [],
+    "obtain": [
+      "drop",
+      "treasure-bag"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -278926,7 +279991,10 @@
       "summon-weapon",
       "whip"
     ],
-    "obtain": [],
+    "obtain": [
+      "drop",
+      "treasure-bag"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -278977,7 +280045,9 @@
       "whip"
     ],
     "obtain": [
-      "crafted"
+      "crafted",
+      "loot",
+      "bag"
     ],
     "vendors": [],
     "events": [],
@@ -279028,7 +280098,10 @@
       "summon-weapon",
       "whip"
     ],
-    "obtain": [],
+    "obtain": [
+      "drop",
+      "treasure-bag"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -279130,7 +280203,9 @@
     "subcategories": [
       "other-furniture"
     ],
-    "obtain": [],
+    "obtain": [
+      "shimmer"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -279179,7 +280254,9 @@
       "painting"
     ],
     "obtain": [
-      "plunder"
+      "drop",
+      "plunder",
+      "treasure-bag"
     ],
     "vendors": [],
     "events": [],
@@ -279228,7 +280305,10 @@
     "subcategories": [
       "other-accessory"
     ],
-    "obtain": [],
+    "obtain": [
+      "drop",
+      "loot"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -279274,7 +280354,10 @@
     "subcategories": [
       "other-accessory"
     ],
-    "obtain": [],
+    "obtain": [
+      "drop",
+      "loot"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -279320,6 +280403,7 @@
       "painting"
     ],
     "obtain": [
+      "drop",
       "plunder"
     ],
     "vendors": [],
@@ -279423,6 +280507,7 @@
       "painting"
     ],
     "obtain": [
+      "drop",
       "plunder"
     ],
     "vendors": [],
@@ -279477,6 +280562,7 @@
       "painting"
     ],
     "obtain": [
+      "drop",
       "plunder"
     ],
     "vendors": [],
@@ -279647,7 +280733,8 @@
     "placeable": true,
     "autoswing": true,
     "obtain": [
-      "crafted"
+      "crafted",
+      "shimmer"
     ],
     "vendors": [],
     "events": [],
@@ -279683,7 +280770,8 @@
       "other-block"
     ],
     "obtain": [
-      "crafted"
+      "crafted",
+      "shimmer"
     ],
     "vendors": [],
     "events": [],
@@ -279776,7 +280864,9 @@
     "subcategories": [
       "other-tool"
     ],
-    "obtain": [],
+    "obtain": [
+      "shimmer"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -279971,7 +281061,10 @@
     "subcategories": [
       "other-accessory"
     ],
-    "obtain": [],
+    "obtain": [
+      "drop",
+      "loot"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -280017,7 +281110,10 @@
     "subcategories": [
       "other-accessory"
     ],
-    "obtain": [],
+    "obtain": [
+      "drop",
+      "loot"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -280063,7 +281159,10 @@
     "subcategories": [
       "other-accessory"
     ],
-    "obtain": [],
+    "obtain": [
+      "drop",
+      "loot"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -280109,7 +281208,10 @@
     "subcategories": [
       "other-accessory"
     ],
-    "obtain": [],
+    "obtain": [
+      "drop",
+      "loot"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -280155,7 +281257,10 @@
     "subcategories": [
       "other-accessory"
     ],
-    "obtain": [],
+    "obtain": [
+      "drop",
+      "loot"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -280201,7 +281306,10 @@
     "subcategories": [
       "other-accessory"
     ],
-    "obtain": [],
+    "obtain": [
+      "drop",
+      "loot"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -280247,7 +281355,10 @@
     "subcategories": [
       "other-accessory"
     ],
-    "obtain": [],
+    "obtain": [
+      "drop",
+      "loot"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -280293,7 +281404,10 @@
     "subcategories": [
       "other-accessory"
     ],
-    "obtain": [],
+    "obtain": [
+      "drop",
+      "loot"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -280339,7 +281453,10 @@
     "subcategories": [
       "other-accessory"
     ],
-    "obtain": [],
+    "obtain": [
+      "drop",
+      "loot"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -280385,7 +281502,10 @@
     "subcategories": [
       "other-accessory"
     ],
-    "obtain": [],
+    "obtain": [
+      "drop",
+      "loot"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -280431,7 +281551,10 @@
     "subcategories": [
       "other-accessory"
     ],
-    "obtain": [],
+    "obtain": [
+      "drop",
+      "loot"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -280524,7 +281647,9 @@
     "subcategories": [
       "critter"
     ],
-    "obtain": [],
+    "obtain": [
+      "caught"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -280715,7 +281840,10 @@
       "vanity"
     ],
     "subcategories": [],
-    "obtain": [],
+    "obtain": [
+      "loot",
+      "bag"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -280813,7 +281941,8 @@
       "other-pet"
     ],
     "obtain": [
-      "loot"
+      "loot",
+      "plunder"
     ],
     "vendors": [],
     "events": [],
@@ -280860,7 +281989,9 @@
     "subcategories": [
       "other-miscellaneous"
     ],
-    "obtain": [],
+    "obtain": [
+      "shimmer"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -280908,7 +282039,9 @@
       "boomerang",
       "axe"
     ],
-    "obtain": [],
+    "obtain": [
+      "shimmer"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -281113,7 +282246,8 @@
       "other-pet"
     ],
     "obtain": [
-      "plunder"
+      "plunder",
+      "shimmer"
     ],
     "vendors": [],
     "events": [],
@@ -281206,7 +282340,9 @@
     "subcategories": [
       "other-mount"
     ],
-    "obtain": [],
+    "obtain": [
+      "loot"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -281311,7 +282447,8 @@
       "painting"
     ],
     "obtain": [
-      "plunder"
+      "plunder",
+      "bag"
     ],
     "vendors": [],
     "events": [],
@@ -281360,6 +282497,7 @@
       "painting"
     ],
     "obtain": [
+      "loot",
       "plunder"
     ],
     "vendors": [],
@@ -281559,7 +282697,9 @@
       "crafting-station"
     ],
     "subcategories": [],
-    "obtain": [],
+    "obtain": [
+      "drop"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -281606,7 +282746,9 @@
       "crafting-station"
     ],
     "subcategories": [],
-    "obtain": [],
+    "obtain": [
+      "drop"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -281656,7 +282798,10 @@
     "subcategories": [
       "other-accessory"
     ],
-    "obtain": [],
+    "obtain": [
+      "drop",
+      "loot"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -281861,7 +283006,9 @@
       "music-box",
       "furniture-music-box"
     ],
-    "obtain": [],
+    "obtain": [
+      "recorded"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -281910,7 +283057,9 @@
       "music-box",
       "furniture-music-box"
     ],
-    "obtain": [],
+    "obtain": [
+      "recorded"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -282110,7 +283259,9 @@
     "subcategories": [
       "combat"
     ],
-    "obtain": [],
+    "obtain": [
+      "drop"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [
@@ -282207,7 +283358,9 @@
       "wall"
     ],
     "subcategories": [],
-    "obtain": [],
+    "obtain": [
+      "shimmer"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -282249,7 +283402,9 @@
       "wall"
     ],
     "subcategories": [],
-    "obtain": [],
+    "obtain": [
+      "shimmer"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -283613,7 +284768,9 @@
     "subcategories": [
       "other-tool"
     ],
-    "obtain": [],
+    "obtain": [
+      "other"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -283656,7 +284813,9 @@
     "subcategories": [
       "other-tool"
     ],
-    "obtain": [],
+    "obtain": [
+      "shimmer"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -283806,7 +284965,9 @@
       "music-box",
       "furniture-music-box"
     ],
-    "obtain": [],
+    "obtain": [
+      "recorded"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -283855,7 +285016,10 @@
       "music-box",
       "furniture-music-box"
     ],
-    "obtain": [],
+    "obtain": [
+      "recorded",
+      "shimmer"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -283904,7 +285068,9 @@
       "music-box",
       "furniture-music-box"
     ],
-    "obtain": [],
+    "obtain": [
+      "recorded"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -283953,7 +285119,9 @@
       "music-box",
       "furniture-music-box"
     ],
-    "obtain": [],
+    "obtain": [
+      "recorded"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -284002,7 +285170,9 @@
       "music-box",
       "furniture-music-box"
     ],
-    "obtain": [],
+    "obtain": [
+      "recorded"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -284711,7 +285881,10 @@
     "subcategories": [
       "other-mount"
     ],
-    "obtain": [],
+    "obtain": [
+      "drop",
+      "loot"
+    ],
     "vendors": [],
     "events": [
       "solar-eclipse"
@@ -286044,7 +287217,9 @@
       "vanity"
     ],
     "subcategories": [],
-    "obtain": [],
+    "obtain": [
+      "drop"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -286087,7 +287262,9 @@
       "vanity"
     ],
     "subcategories": [],
-    "obtain": [],
+    "obtain": [
+      "drop"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -286130,7 +287307,9 @@
       "vanity"
     ],
     "subcategories": [],
-    "obtain": [],
+    "obtain": [
+      "drop"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -286224,7 +287403,9 @@
     "subcategories": [
       "other-accessory"
     ],
-    "obtain": [],
+    "obtain": [
+      "drop"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -286270,7 +287451,10 @@
       "other-weapon",
       "other-tool"
     ],
-    "obtain": [],
+    "obtain": [
+      "loot",
+      "plunder"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -286421,6 +287605,7 @@
       "painting"
     ],
     "obtain": [
+      "drop",
       "plunder"
     ],
     "vendors": [],
@@ -286681,7 +287866,9 @@
       "music-box",
       "furniture-music-box"
     ],
-    "obtain": [],
+    "obtain": [
+      "recorded"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -286731,7 +287918,8 @@
       "furniture-music-box"
     ],
     "obtain": [
-      "crafted"
+      "crafted",
+      "recorded"
     ],
     "vendors": [],
     "events": [],
@@ -286781,7 +287969,10 @@
       "music-box",
       "furniture-music-box"
     ],
-    "obtain": [],
+    "obtain": [
+      "recorded",
+      "shimmer"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -286988,7 +288179,8 @@
     ],
     "subcategories": [],
     "obtain": [
-      "vendor"
+      "vendor",
+      "loot"
     ],
     "vendors": [
       "merchant"
@@ -287463,7 +288655,9 @@
     "subcategories": [
       "other-furniture"
     ],
-    "obtain": [],
+    "obtain": [
+      "shimmer"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -287508,7 +288702,9 @@
     "subcategories": [
       "other-pet"
     ],
-    "obtain": [],
+    "obtain": [
+      "shimmer"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -287558,7 +288754,9 @@
       "decoration",
       "other-accessory"
     ],
-    "obtain": [],
+    "obtain": [
+      "other"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -287602,7 +288800,9 @@
       "vanity"
     ],
     "subcategories": [],
-    "obtain": [],
+    "obtain": [
+      "other"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -287644,7 +288844,9 @@
       "vanity"
     ],
     "subcategories": [],
-    "obtain": [],
+    "obtain": [
+      "other"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -287686,7 +288888,9 @@
       "vanity"
     ],
     "subcategories": [],
-    "obtain": [],
+    "obtain": [
+      "other"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -287821,7 +289025,9 @@
     "subcategories": [
       "other-crafting-material"
     ],
-    "obtain": [],
+    "obtain": [
+      "other"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -287864,7 +289070,9 @@
     "subcategories": [
       "other-mount"
     ],
-    "obtain": [],
+    "obtain": [
+      "drop"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [
@@ -287919,7 +289127,9 @@
       "material-equipment",
       "other-tool"
     ],
-    "obtain": [],
+    "obtain": [
+      "other"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -287971,7 +289181,9 @@
       "minion",
       "material-equipment"
     ],
-    "obtain": [],
+    "obtain": [
+      "other"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -288121,7 +289333,9 @@
       "other-tool",
       "other-pet"
     ],
-    "obtain": [],
+    "obtain": [
+      "other"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -288208,7 +289422,9 @@
       "melee",
       "projectile-melee"
     ],
-    "obtain": [],
+    "obtain": [
+      "shimmer"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -288470,7 +289686,9 @@
     "subcategories": [
       "other-block"
     ],
-    "obtain": [],
+    "obtain": [
+      "shimmer"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -288515,7 +289733,9 @@
     "subcategories": [
       "other-block"
     ],
-    "obtain": [],
+    "obtain": [
+      "shimmer"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -288560,7 +289780,9 @@
     "subcategories": [
       "other-block"
     ],
-    "obtain": [],
+    "obtain": [
+      "shimmer"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -288605,7 +289827,9 @@
     "subcategories": [
       "other-block"
     ],
-    "obtain": [],
+    "obtain": [
+      "shimmer"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -288650,7 +289874,9 @@
     "subcategories": [
       "other-block"
     ],
-    "obtain": [],
+    "obtain": [
+      "shimmer"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -288695,7 +289921,9 @@
     "subcategories": [
       "other-block"
     ],
-    "obtain": [],
+    "obtain": [
+      "shimmer"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -304202,7 +305430,8 @@
       "other-block"
     ],
     "obtain": [
-      "crafted"
+      "crafted",
+      "shimmer"
     ],
     "vendors": [],
     "events": [],
@@ -304251,7 +305480,8 @@
       "material-block"
     ],
     "obtain": [
-      "crafted"
+      "crafted",
+      "shimmer"
     ],
     "vendors": [],
     "events": [],
@@ -311278,7 +312508,9 @@
       "music-box",
       "furniture-music-box"
     ],
-    "obtain": [],
+    "obtain": [
+      "recorded"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -311327,7 +312559,9 @@
       "music-box",
       "furniture-music-box"
     ],
-    "obtain": [],
+    "obtain": [
+      "recorded"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -311376,7 +312610,10 @@
       "music-box",
       "furniture-music-box"
     ],
-    "obtain": [],
+    "obtain": [
+      "recorded",
+      "shimmer"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -311726,7 +312963,12 @@
       "magic",
       "wand"
     ],
-    "obtain": [],
+    "obtain": [
+      "drop",
+      "loot",
+      "bag",
+      "shimmer"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [
@@ -311891,7 +313133,8 @@
       "material-equipment"
     ],
     "obtain": [
-      "loot"
+      "loot",
+      "bag"
     ],
     "vendors": [],
     "events": [],
@@ -311940,6 +313183,7 @@
       "material-equipment"
     ],
     "obtain": [
+      "drop",
       "loot"
     ],
     "vendors": [],
@@ -311991,7 +313235,9 @@
       "material-equipment"
     ],
     "obtain": [
-      "loot"
+      "drop",
+      "loot",
+      "treasure-bag"
     ],
     "vendors": [],
     "events": [],
@@ -312040,6 +313286,7 @@
       "material-equipment"
     ],
     "obtain": [
+      "drop",
       "loot"
     ],
     "vendors": [],
@@ -312433,6 +313680,7 @@
       "material-equipment"
     ],
     "obtain": [
+      "drop",
       "loot"
     ],
     "vendors": [],
@@ -312528,7 +313776,9 @@
     "subcategories": [
       "combat"
     ],
-    "obtain": [],
+    "obtain": [
+      "other"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -312669,6 +313919,7 @@
       "material-equipment"
     ],
     "obtain": [
+      "drop",
       "loot"
     ],
     "vendors": [],
@@ -313677,7 +314928,9 @@
     "subcategories": [
       "combat"
     ],
-    "obtain": [],
+    "obtain": [
+      "other"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -313720,7 +314973,9 @@
     "subcategories": [
       "combat"
     ],
-    "obtain": [],
+    "obtain": [
+      "other"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
@@ -313763,7 +315018,9 @@
     "subcategories": [
       "other-tool"
     ],
-    "obtain": [],
+    "obtain": [
+      "other"
+    ],
     "vendors": [],
     "events": [],
     "biomes": [],
