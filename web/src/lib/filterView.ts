@@ -1,4 +1,5 @@
 import type { FilterEntry, FilterGroup, Tally } from './filtering'
+import { ordered } from './layout'
 
 // What the filter sidebar shows where (pure logic, no React): the options of a group,
 // the "Completed" / "Hidden" sections, and the filter search with its keyboard targets.
@@ -128,4 +129,56 @@ export function searchTargets(
     for (const { group, list } of movedLists('completed', groups, place, q))
       for (const e of list) out.push({ group: group.key, id: e.id, name: e.name })
   return out
+}
+
+// ------------------------------------------------------------ almost done
+
+/** The "Almost done" group: a group key of its own in the saved group order. */
+export const ALMOST_DONE = 'almost-done'
+export const ALMOST_DONE_LABEL = 'Almost done'
+
+/** Group keys in the saved order; "Almost done" starts at the top (also for an older saved order). */
+export function groupOrder(keys: string[], saved: string[]): string[] {
+  return ordered([ALMOST_DONE, ...keys], saved.includes(ALMOST_DONE) ? saved : [ALMOST_DONE, ...saved])
+}
+
+// options that are states or overlap each other, not collections to complete
+const NOT_RANKED = new Set(['progression', 'crafting'])
+
+export interface AlmostDone {
+  group: AnyGroup
+  entry: FilterEntry
+  /** parent option of a subgroup, e.g. "Accessories" for "Wings" */
+  parent?: FilterEntry
+}
+
+/**
+ * The options closest to completion over the whole playthrough (`totals`, without filters):
+ * highest percentage first, then fewer missing; at least `min` items, started, not complete,
+ * not hidden. Subgroups count on their own.
+ */
+export function almostDone(groups: AnyGroup[], totals: AnyFacets, place: Placement, count = 5, min = 5): AlmostDone[] {
+  const out: (AlmostDone & { t: Tally })[] = []
+  const consider = (group: AnyGroup, entry: FilterEntry, parent?: FilterEntry) => {
+    const t = totals[group.key]?.get(entry.id)
+    if (!t || t.total < min || t.obtained === 0 || t.obtained === t.total) return
+    if (place.isHidden(group.key, entry.id)) return
+    out.push({ group, entry, parent, t })
+  }
+  for (const g of groups) {
+    if (NOT_RANKED.has(g.key)) continue
+    for (const e of g.entries) {
+      consider(g, e)
+      for (const c of e.children ?? []) consider(g, c, e)
+    }
+  }
+  const missing = (t: Tally) => t.total - t.obtained
+  return out
+    .sort(
+      (a, b) =>
+        b.t.obtained / b.t.total - a.t.obtained / a.t.total ||
+        missing(a.t) - missing(b.t) ||
+        a.entry.name.localeCompare(b.entry.name),
+    )
+    .slice(0, count)
 }

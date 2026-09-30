@@ -791,7 +791,7 @@
     "id": "other-miscellaneous",
     "name": "Other miscellaneous items",
     "icon": "https://terraria.wiki.gg/images/Magic_Mirror.png",
-    "count": 56,
+    "count": 47,
     "parent": "miscellaneous",
     "fallback": true
   }

@@ -122,16 +122,6 @@
         "desert"
       ]
     },
-    "gingerbread-man": {
-      "id": "gingerbread-man",
-      "name": "Gingerbread Man",
-      "kind": "npc",
-      "icon": "https://terraria.wiki.gg/images/Gingerbread_Man.gif",
-      "npcId": 342,
-      "events": [
-        "frost-moon"
-      ]
-    },
     "deadly-sphere": {
       "id": "deadly-sphere",
       "name": "Deadly Sphere",
@@ -423,16 +413,6 @@
       "npcId": 272,
       "biomes": [
         "dungeon"
-      ]
-    },
-    "hellhound": {
-      "id": "hellhound",
-      "name": "Hellhound",
-      "kind": "npc",
-      "icon": "https://terraria.wiki.gg/images/Hellhound.gif",
-      "npcId": 329,
-      "events": [
-        "pumpkin-moon"
       ]
     },
     "flying-dutchman": {
@@ -784,16 +764,6 @@
       "npcId": 32,
       "biomes": [
         "dungeon"
-      ]
-    },
-    "poltergeist": {
-      "id": "poltergeist",
-      "name": "Poltergeist",
-      "kind": "npc",
-      "icon": "https://terraria.wiki.gg/images/Poltergeist.gif",
-      "npcId": 330,
-      "events": [
-        "pumpkin-moon"
       ]
     },
     "shadow-hammer": {
@@ -1817,16 +1787,6 @@
         "blood-moon"
       ]
     },
-    "leech": {
-      "id": "leech",
-      "name": "Leech",
-      "kind": "npc",
-      "icon": "https://terraria.wiki.gg/images/Leech_Tail.png",
-      "npcId": 119,
-      "biomes": [
-        "underworld"
-      ]
-    },
     "heavenly-slime": {
       "id": "heavenly-slime",
       "name": "Heavenly Slime",
@@ -1928,20 +1888,6 @@
       "name": "Shadow Orb",
       "kind": "npc",
       "icon": "https://terraria.wiki.gg/images/Shadow_Orb.png"
-    },
-    "probe": {
-      "id": "probe",
-      "name": "Probe",
-      "kind": "npc",
-      "icon": "https://terraria.wiki.gg/images/Probe.png",
-      "npcId": 139,
-      "biomes": [
-        "forest-surface",
-        "space"
-      ],
-      "times": [
-        "night"
-      ]
     },
     "moss-hornet": {
       "id": "moss-hornet",
@@ -3673,16 +3619,6 @@
       "kind": "bag",
       "icon": "https://terraria.wiki.gg/images/Treasure_Bag_%28Wall_of_Flesh%29.png"
     },
-    "the-hungry": {
-      "id": "the-hungry",
-      "name": "The Hungry",
-      "kind": "npc",
-      "icon": "https://terraria.wiki.gg/images/The_Hungry.gif",
-      "npcId": 115,
-      "biomes": [
-        "underworld"
-      ]
-    },
     "werewolf": {
       "id": "werewolf",
       "name": "Werewolf",
@@ -3708,6 +3644,16 @@
       "name": "Treasure Bag (Plantera)",
       "kind": "bag",
       "icon": "https://terraria.wiki.gg/images/Treasure_Bag_%28Plantera%29.png"
+    },
+    "hellhound": {
+      "id": "hellhound",
+      "name": "Hellhound",
+      "kind": "npc",
+      "icon": "https://terraria.wiki.gg/images/Hellhound.gif",
+      "npcId": 329,
+      "events": [
+        "pumpkin-moon"
+      ]
     },
     "mushi-ladybug": {
       "id": "mushi-ladybug",
@@ -3797,6 +3743,16 @@
       "npcId": 578,
       "events": [
         "old-ones-army"
+      ]
+    },
+    "gingerbread-man": {
+      "id": "gingerbread-man",
+      "name": "Gingerbread Man",
+      "kind": "npc",
+      "icon": "https://terraria.wiki.gg/images/Gingerbread_Man.gif",
+      "npcId": 342,
+      "events": [
+        "frost-moon"
       ]
     },
     "krampus": {
@@ -4034,6 +3990,16 @@
       "npcId": 347,
       "events": [
         "frost-moon"
+      ]
+    },
+    "poltergeist": {
+      "id": "poltergeist",
+      "name": "Poltergeist",
+      "kind": "npc",
+      "icon": "https://terraria.wiki.gg/images/Poltergeist.gif",
+      "npcId": 330,
+      "events": [
+        "pumpkin-moon"
       ]
     },
     "bunny": {
@@ -6548,428 +6514,6 @@
         ]
       }
     ],
-    "Heart": [
-      {
-        "source": "present-mimic",
-        "quantity": "5–10",
-        "rate": "100%",
-        "chance": {
-          "normal": 100.0,
-          "expert": 100.0,
-          "master": 100.0
-        },
-        "quantities": {
-          "normal": "5–10",
-          "expert": "5–10",
-          "master": "5–10"
-        },
-        "modes": [
-          "normal",
-          "expert",
-          "master"
-        ]
-      },
-      {
-        "source": "leech",
-        "quantity": "1",
-        "rate": "100% · Expert: 20%",
-        "chance": {
-          "normal": 100.0,
-          "expert": 20.0,
-          "master": 20.0
-        },
-        "quantities": {
-          "normal": "1",
-          "expert": "1",
-          "master": "1"
-        },
-        "modes": [
-          "normal",
-          "expert",
-          "master"
-        ]
-      },
-      {
-        "source": "headless-horseman",
-        "quantity": "1",
-        "rate": "100%",
-        "chance": {
-          "normal": 100.0,
-          "expert": 100.0,
-          "master": 100.0
-        },
-        "quantities": {
-          "normal": "1",
-          "expert": "1",
-          "master": "1"
-        },
-        "modes": [
-          "normal",
-          "expert",
-          "master"
-        ]
-      },
-      {
-        "source": "the-hungry",
-        "quantity": "1",
-        "rate": "100% · Expert: 20%",
-        "chance": {
-          "normal": 100.0,
-          "expert": 20.0,
-          "master": 20.0
-        },
-        "quantities": {
-          "normal": "1",
-          "expert": "1",
-          "master": "1"
-        },
-        "modes": [
-          "normal",
-          "expert",
-          "master"
-        ]
-      },
-      {
-        "source": "gingerbread-man",
-        "quantity": "1",
-        "rate": "67%",
-        "chance": {
-          "normal": 67.0,
-          "expert": 67.0,
-          "master": 67.0
-        },
-        "quantities": {
-          "normal": "1",
-          "expert": "1",
-          "master": "1"
-        },
-        "modes": [
-          "normal",
-          "expert",
-          "master"
-        ]
-      },
-      {
-        "source": "creeper",
-        "quantity": "1",
-        "rate": "50%",
-        "chance": {
-          "normal": 50.0,
-          "expert": 50.0,
-          "master": 50.0
-        },
-        "quantities": {
-          "normal": "1",
-          "expert": "1",
-          "master": "1"
-        },
-        "modes": [
-          "normal",
-          "expert",
-          "master"
-        ]
-      },
-      {
-        "source": "probe",
-        "quantity": "1",
-        "rate": "50% · 100%",
-        "chance": {
-          "normal": 50.0,
-          "expert": 50.0,
-          "master": 50.0
-        },
-        "quantities": {
-          "normal": "1",
-          "expert": "1",
-          "master": "1"
-        },
-        "modes": [
-          "normal",
-          "expert",
-          "master"
-        ]
-      },
-      {
-        "source": "hellhound",
-        "quantity": "1",
-        "rate": "25%",
-        "chance": {
-          "normal": 25.0,
-          "expert": 25.0,
-          "master": 25.0
-        },
-        "quantities": {
-          "normal": "1",
-          "expert": "1",
-          "master": "1"
-        },
-        "modes": [
-          "normal",
-          "expert",
-          "master"
-        ]
-      },
-      {
-        "source": "poltergeist",
-        "quantity": "1",
-        "rate": "25%",
-        "chance": {
-          "normal": 25.0,
-          "expert": 25.0,
-          "master": 25.0
-        },
-        "quantities": {
-          "normal": "1",
-          "expert": "1",
-          "master": "1"
-        },
-        "modes": [
-          "normal",
-          "expert",
-          "master"
-        ]
-      },
-      {
-        "source": "scarecrow",
-        "quantity": "1",
-        "rate": "25%",
-        "chance": {
-          "normal": 25.0,
-          "expert": 25.0,
-          "master": 25.0
-        },
-        "quantities": {
-          "normal": "1",
-          "expert": "1",
-          "master": "1"
-        },
-        "modes": [
-          "normal",
-          "expert",
-          "master"
-        ]
-      },
-      {
-        "source": "zombie-elf",
-        "quantity": "1",
-        "rate": "20%",
-        "chance": {
-          "normal": 20.0,
-          "expert": 20.0,
-          "master": 20.0
-        },
-        "quantities": {
-          "normal": "1",
-          "expert": "1",
-          "master": "1"
-        },
-        "modes": [
-          "normal",
-          "expert",
-          "master"
-        ]
-      },
-      {
-        "source": "splinterling",
-        "quantity": "1",
-        "rate": "16.67%",
-        "chance": {
-          "normal": 16.67,
-          "expert": 16.67,
-          "master": 16.67
-        },
-        "quantities": {
-          "normal": "1",
-          "expert": "1",
-          "master": "1"
-        },
-        "modes": [
-          "normal",
-          "expert",
-          "master"
-        ]
-      },
-      {
-        "source": "blue-slime-bonus-drop",
-        "quantity": "1",
-        "rate": "1/320",
-        "chance": {
-          "normal": 0.31,
-          "expert": 0.31,
-          "master": 0.31
-        },
-        "quantities": {
-          "normal": "1",
-          "expert": "1",
-          "master": "1"
-        },
-        "modes": [
-          "normal",
-          "expert",
-          "master"
-        ]
-      },
-      {
-        "source": "green-slime-bonus-drop",
-        "quantity": "1",
-        "rate": "1/320",
-        "chance": {
-          "normal": 0.31,
-          "expert": 0.31,
-          "master": 0.31
-        },
-        "quantities": {
-          "normal": "1",
-          "expert": "1",
-          "master": "1"
-        },
-        "modes": [
-          "normal",
-          "expert",
-          "master"
-        ]
-      },
-      {
-        "source": "purple-slime-bonus-drop",
-        "quantity": "1",
-        "rate": "1/320",
-        "chance": {
-          "normal": 0.31,
-          "expert": 0.31,
-          "master": 0.31
-        },
-        "quantities": {
-          "normal": "1",
-          "expert": "1",
-          "master": "1"
-        },
-        "modes": [
-          "normal",
-          "expert",
-          "master"
-        ]
-      },
-      {
-        "source": "yellow-slime-bonus-drop",
-        "quantity": "1",
-        "rate": "1/320",
-        "chance": {
-          "normal": 0.31,
-          "expert": 0.31,
-          "master": 0.31
-        },
-        "quantities": {
-          "normal": "1",
-          "expert": "1",
-          "master": "1"
-        },
-        "modes": [
-          "normal",
-          "expert",
-          "master"
-        ]
-      },
-      {
-        "source": "jungle-slime-bonus-drop",
-        "quantity": "1",
-        "rate": "1/320",
-        "chance": {
-          "normal": 0.31,
-          "expert": 0.31,
-          "master": 0.31
-        },
-        "quantities": {
-          "normal": "1",
-          "expert": "1",
-          "master": "1"
-        },
-        "modes": [
-          "normal",
-          "expert",
-          "master"
-        ]
-      },
-      {
-        "source": "black-slime-bonus-drop",
-        "quantity": "1",
-        "rate": "1/320",
-        "chance": {
-          "normal": 0.31,
-          "expert": 0.31,
-          "master": 0.31
-        },
-        "quantities": {
-          "normal": "1",
-          "expert": "1",
-          "master": "1"
-        },
-        "modes": [
-          "normal",
-          "expert",
-          "master"
-        ]
-      },
-      {
-        "source": "baby-slime-bonus-drop",
-        "quantity": "1",
-        "rate": "1/320",
-        "chance": {
-          "normal": 0.31,
-          "expert": 0.31,
-          "master": 0.31
-        },
-        "quantities": {
-          "normal": "1",
-          "expert": "1",
-          "master": "1"
-        },
-        "modes": [
-          "normal",
-          "expert",
-          "master"
-        ]
-      },
-      {
-        "source": "pinky-bonus-drop",
-        "quantity": "1",
-        "rate": "1/320",
-        "chance": {
-          "normal": 0.31,
-          "expert": 0.31,
-          "master": 0.31
-        },
-        "quantities": {
-          "normal": "1",
-          "expert": "1",
-          "master": "1"
-        },
-        "modes": [
-          "normal",
-          "expert",
-          "master"
-        ]
-      },
-      {
-        "source": "red-slime-bonus-drop",
-        "quantity": "1",
-        "rate": "1/320",
-        "chance": {
-          "normal": 0.31,
-          "expert": 0.31,
-          "master": 0.31
-        },
-        "quantities": {
-          "normal": "1",
-          "expert": "1",
-          "master": "1"
-        },
-        "modes": [
-          "normal",
-          "expert",
-          "master"
-        ]
-      }
-    ],
     "DeadlySphereStaff": [
       {
         "source": "deadly-sphere",
@@ -7195,6 +6739,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "npcIds": [
+          -2
         ]
       },
       {
@@ -7517,6 +7064,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "npcIds": [
+          -2
         ]
       },
       {
@@ -7799,6 +7349,10 @@
           "normal",
           "expert",
           "master"
+        ],
+        "note": "Only after one mechanical boss has been defeated / At any time",
+        "conditions": [
+          "after-any-mech"
         ]
       }
     ],
@@ -8696,6 +8250,11 @@
           "normal",
           "expert",
           "master"
+        ],
+        "npcIds": [
+          -33,
+          -32,
+          187
         ]
       },
       {
@@ -8713,6 +8272,9 @@
         "modes": [
           "expert",
           "master"
+        ],
+        "npcIds": [
+          433
         ]
       },
       {
@@ -8753,6 +8315,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "npcIds": [
+          -2
         ]
       },
       {
@@ -8830,6 +8395,13 @@
           "normal",
           "expert",
           "master"
+        ],
+        "npcIds": [
+          302,
+          333,
+          334,
+          335,
+          336
         ]
       },
       {
@@ -9263,6 +8835,11 @@
           "normal",
           "expert",
           "master"
+        ],
+        "npcIds": [
+          -33,
+          -32,
+          187
         ]
       },
       {
@@ -9280,6 +8857,9 @@
         "modes": [
           "expert",
           "master"
+        ],
+        "npcIds": [
+          433
         ]
       },
       {
@@ -12605,6 +12185,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "npcIds": [
+          590
         ]
       },
       {
@@ -12622,6 +12205,9 @@
         "modes": [
           "expert",
           "master"
+        ],
+        "npcIds": [
+          591
         ]
       },
       {
@@ -19629,6 +19215,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "npcIds": [
+          -2
         ]
       }
     ],
@@ -19711,6 +19300,10 @@
           "normal",
           "expert",
           "master"
+        ],
+        "note": "During Christmas only",
+        "events": [
+          "christmas"
         ]
       },
       {
@@ -24409,6 +24002,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "npcIds": [
+          529
         ]
       },
       {
@@ -34911,6 +34507,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "npcIds": [
+          35
         ]
       },
       {
@@ -42864,6 +42463,9 @@
         "note": "when a Hellforge is not present; ''see conditions''",
         "conditions": [
           "no-hellforge"
+        ],
+        "npcIds": [
+          262
         ]
       },
       {
@@ -48975,6 +48577,10 @@
           "normal",
           "expert",
           "master"
+        ],
+        "npcIds": [
+          564,
+          565
         ]
       }
     ],
@@ -48997,6 +48603,10 @@
           "normal",
           "expert",
           "master"
+        ],
+        "npcIds": [
+          564,
+          565
         ]
       }
     ],
@@ -49019,6 +48629,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "npcIds": [
+          564
         ]
       },
       {
@@ -49039,6 +48652,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "npcIds": [
+          576
         ]
       },
       {
@@ -49059,6 +48675,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "npcIds": [
+          565
         ]
       },
       {
@@ -49079,6 +48698,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "npcIds": [
+          577
         ]
       }
     ],
@@ -49101,6 +48723,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "npcIds": [
+          564
         ]
       },
       {
@@ -49121,6 +48746,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "npcIds": [
+          576
         ]
       },
       {
@@ -49141,6 +48769,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "npcIds": [
+          565
         ]
       },
       {
@@ -49161,6 +48792,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "npcIds": [
+          577
         ]
       }
     ],
@@ -49183,6 +48817,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "npcIds": [
+          564
         ]
       },
       {
@@ -49203,6 +48840,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "npcIds": [
+          565
         ]
       }
     ],
@@ -49225,6 +48865,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "npcIds": [
+          564
         ]
       },
       {
@@ -49245,6 +48888,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "npcIds": [
+          565
         ]
       }
     ],
@@ -49267,6 +48913,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "npcIds": [
+          564
         ]
       },
       {
@@ -49287,6 +48936,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "npcIds": [
+          565
         ]
       }
     ],
@@ -49309,6 +48961,10 @@
           "normal",
           "expert",
           "master"
+        ],
+        "npcIds": [
+          564,
+          565
         ]
       }
     ],
@@ -49325,6 +48981,10 @@
         },
         "modes": [
           "master"
+        ],
+        "npcIds": [
+          564,
+          565
         ]
       }
     ],
@@ -49341,6 +49001,9 @@
         },
         "modes": [
           "master"
+        ],
+        "npcIds": [
+          565
         ]
       }
     ],
@@ -49363,6 +49026,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "npcIds": [
+          576
         ]
       },
       {
@@ -49383,6 +49049,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "npcIds": [
+          577
         ]
       }
     ],
@@ -49405,6 +49074,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "npcIds": [
+          576
         ]
       },
       {
@@ -49425,6 +49097,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "npcIds": [
+          577
         ]
       }
     ],
@@ -49447,6 +49122,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "npcIds": [
+          576
         ]
       },
       {
@@ -49467,6 +49145,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "npcIds": [
+          577
         ]
       }
     ],
@@ -49489,6 +49170,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "npcIds": [
+          576
         ]
       },
       {
@@ -49509,6 +49193,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "npcIds": [
+          577
         ]
       }
     ],
@@ -49531,6 +49218,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "npcIds": [
+          576
         ]
       },
       {
@@ -49551,6 +49241,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "npcIds": [
+          577
         ]
       }
     ],
@@ -49573,6 +49266,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "npcIds": [
+          576
         ]
       },
       {
@@ -49593,6 +49289,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "npcIds": [
+          577
         ]
       }
     ],
@@ -49615,6 +49314,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "npcIds": [
+          576
         ]
       },
       {
@@ -49635,6 +49337,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "npcIds": [
+          577
         ]
       }
     ],
@@ -49657,6 +49362,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "npcIds": [
+          576
         ]
       },
       {
@@ -49677,6 +49385,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "npcIds": [
+          577
         ]
       }
     ],
@@ -49699,6 +49410,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "npcIds": [
+          576
         ]
       },
       {
@@ -49719,6 +49433,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "npcIds": [
+          577
         ]
       }
     ],
@@ -49741,6 +49458,10 @@
           "normal",
           "expert",
           "master"
+        ],
+        "npcIds": [
+          576,
+          577
         ]
       }
     ],
@@ -49757,6 +49478,9 @@
         },
         "modes": [
           "master"
+        ],
+        "npcIds": [
+          577
         ]
       }
     ],
@@ -49773,6 +49497,9 @@
         },
         "modes": [
           "master"
+        ],
+        "npcIds": [
+          577
         ]
       }
     ],
@@ -50347,6 +50074,10 @@
           "normal",
           "expert",
           "master"
+        ],
+        "note": "Only after one mechanical boss has been defeated At any time",
+        "conditions": [
+          "after-any-mech"
         ]
       }
     ],
@@ -50497,6 +50228,11 @@
           "normal",
           "expert",
           "master"
+        ],
+        "npcIds": [
+          -31,
+          -30,
+          186
         ]
       },
       {
@@ -50514,6 +50250,9 @@
         "modes": [
           "expert",
           "master"
+        ],
+        "npcIds": [
+          432
         ]
       },
       {
@@ -50645,6 +50384,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "npcIds": [
+          529
         ]
       }
     ],
@@ -50667,6 +50409,10 @@
           "normal",
           "expert",
           "master"
+        ],
+        "npcIds": [
+          528,
+          529
         ]
       }
     ],
@@ -50689,6 +50435,10 @@
           "normal",
           "expert",
           "master"
+        ],
+        "npcIds": [
+          528,
+          529
         ]
       }
     ],
@@ -50711,6 +50461,10 @@
           "normal",
           "expert",
           "master"
+        ],
+        "npcIds": [
+          528,
+          529
         ]
       }
     ],
@@ -50733,6 +50487,10 @@
           "normal",
           "expert",
           "master"
+        ],
+        "npcIds": [
+          528,
+          529
         ]
       }
     ],
@@ -50755,6 +50513,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "npcIds": [
+          528
         ]
       }
     ],
@@ -51021,6 +50782,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "npcIds": [
+          629
         ]
       }
     ],
@@ -51103,6 +50867,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "npcIds": [
+          629
         ]
       }
     ],
@@ -51185,6 +50952,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "npcIds": [
+          629
         ]
       }
     ],
@@ -51201,6 +50971,10 @@
           "normal",
           "expert",
           "master"
+        ],
+        "note": "In Remix worlds",
+        "conditions": [
+          "seed-remix"
         ]
       },
       {
@@ -51275,6 +51049,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "npcIds": [
+          629
         ]
       }
     ],
@@ -51357,6 +51134,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "npcIds": [
+          629
         ]
       }
     ],
@@ -51439,6 +51219,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "npcIds": [
+          629
         ]
       }
     ],
@@ -51521,6 +51304,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "npcIds": [
+          629
         ]
       }
     ],
@@ -51927,6 +51713,10 @@
           "normal",
           "expert",
           "master"
+        ],
+        "note": "In Remix worlds",
+        "conditions": [
+          "seed-remix"
         ]
       }
     ],
@@ -51943,6 +51733,10 @@
           "normal",
           "expert",
           "master"
+        ],
+        "note": "In Remix worlds",
+        "conditions": [
+          "seed-remix"
         ]
       },
       {
@@ -52154,6 +51948,10 @@
           "normal",
           "expert",
           "master"
+        ],
+        "note": "In Remix worlds",
+        "conditions": [
+          "seed-remix"
         ]
       }
     ],
@@ -57125,6 +56923,10 @@
           "normal",
           "expert",
           "master"
+        ],
+        "note": "Only after one mechanical boss has been defeated",
+        "conditions": [
+          "after-any-mech"
         ]
       }
     ],
@@ -57829,6 +57631,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "npcIds": [
+          370
         ]
       },
       {
@@ -57849,6 +57654,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "npcIds": [
+          262
         ]
       }
     ],
@@ -58103,6 +57911,13 @@
         },
         "modes": [
           "normal"
+        ],
+        "note": "In Remix worlds",
+        "conditions": [
+          "seed-remix"
+        ],
+        "npcIds": [
+          370
         ]
       },
       {
@@ -58115,6 +57930,10 @@
         "modes": [
           "expert",
           "master"
+        ],
+        "note": "In Remix worlds",
+        "conditions": [
+          "seed-remix"
         ]
       }
     ],
@@ -58454,6 +58273,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "npcIds": [
+          85
         ]
       }
     ],
@@ -58499,6 +58321,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "npcIds": [
+          85
         ]
       }
     ],
@@ -58544,6 +58369,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "npcIds": [
+          85
         ]
       }
     ],
@@ -58589,6 +58417,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "npcIds": [
+          85
         ]
       }
     ],
@@ -58634,6 +58465,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "npcIds": [
+          85
         ]
       }
     ],
@@ -58679,6 +58513,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "npcIds": [
+          85
         ]
       }
     ],
@@ -58724,6 +58561,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "npcIds": [
+          629
         ]
       },
       {
@@ -58744,6 +58584,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "npcIds": [
+          85
         ]
       },
       {
@@ -58806,6 +58649,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "npcIds": [
+          85
         ]
       },
       {
@@ -61859,6 +61705,10 @@
           "normal",
           "expert",
           "master"
+        ],
+        "note": "In Remix worlds",
+        "conditions": [
+          "seed-remix"
         ]
       },
       {
@@ -64086,6 +63936,12 @@
           "normal",
           "expert",
           "master"
+        ],
+        "npcIds": [
+          333,
+          334,
+          335,
+          336
         ]
       }
     ],
@@ -65106,6 +64962,9 @@
         },
         "modes": [
           "normal"
+        ],
+        "npcIds": [
+          35
         ]
       }
     ],
@@ -65139,6 +64998,9 @@
         },
         "modes": [
           "normal"
+        ],
+        "npcIds": [
+          35
         ]
       }
     ],
@@ -65172,6 +65034,9 @@
         },
         "modes": [
           "normal"
+        ],
+        "npcIds": [
+          35
         ]
       }
     ],
@@ -65194,6 +65059,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "npcIds": [
+          35
         ]
       }
     ],
@@ -65216,6 +65084,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "npcIds": [
+          35
         ]
       }
     ],
@@ -65235,6 +65106,9 @@
         "modes": [
           "expert",
           "master"
+        ],
+        "npcIds": [
+          35
         ]
       }
     ],
@@ -65270,6 +65144,9 @@
         },
         "modes": [
           "master"
+        ],
+        "npcIds": [
+          35
         ]
       }
     ],
@@ -65286,6 +65163,9 @@
         },
         "modes": [
           "master"
+        ],
+        "npcIds": [
+          35
         ]
       }
     ],
@@ -66205,6 +66085,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "npcIds": [
+          629
         ]
       }
     ],
@@ -66235,6 +66118,13 @@
           "normal",
           "expert",
           "master"
+        ],
+        "note": "In Remix worlds",
+        "conditions": [
+          "seed-remix"
+        ],
+        "npcIds": [
+          629
         ]
       }
     ],
@@ -66916,6 +66806,11 @@
           "normal",
           "expert",
           "master"
+        ],
+        "npcIds": [
+          13,
+          14,
+          15
         ]
       }
     ],
@@ -67000,6 +66895,11 @@
           "normal",
           "expert",
           "master"
+        ],
+        "npcIds": [
+          13,
+          14,
+          15
         ]
       }
     ],
@@ -69366,6 +69266,10 @@
           "normal",
           "expert",
           "master"
+        ],
+        "note": "Only if name is Andrew",
+        "conditions": [
+          "npc-name-andrew"
         ]
       }
     ],
@@ -70369,6 +70273,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "npcIds": [
+          126
         ]
       }
     ],
@@ -70391,6 +70298,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "npcIds": [
+          125
         ]
       }
     ],
@@ -71154,6 +71064,9 @@
         "note": "when the Jungle Temple is not present; ''see conditions''",
         "conditions": [
           "no-temple"
+        ],
+        "npcIds": [
+          262
         ]
       },
       {
@@ -71634,6 +71547,9 @@
         },
         "modes": [
           "normal"
+        ],
+        "npcIds": [
+          370
         ]
       },
       {
@@ -71662,6 +71578,9 @@
         },
         "modes": [
           "normal"
+        ],
+        "npcIds": [
+          370
         ]
       },
       {
@@ -71695,6 +71614,9 @@
         },
         "modes": [
           "normal"
+        ],
+        "npcIds": [
+          370
         ]
       },
       {
@@ -71728,6 +71650,9 @@
         },
         "modes": [
           "normal"
+        ],
+        "npcIds": [
+          370
         ]
       },
       {
@@ -71761,6 +71686,9 @@
         },
         "modes": [
           "normal"
+        ],
+        "npcIds": [
+          370
         ]
       },
       {
@@ -71794,6 +71722,9 @@
         },
         "modes": [
           "normal"
+        ],
+        "npcIds": [
+          370
         ]
       },
       {
@@ -71827,6 +71758,9 @@
         },
         "modes": [
           "normal"
+        ],
+        "npcIds": [
+          370
         ]
       },
       {
@@ -71877,6 +71811,9 @@
         },
         "modes": [
           "normal"
+        ],
+        "npcIds": [
+          370
         ]
       }
     ],
@@ -71893,6 +71830,9 @@
         },
         "modes": [
           "normal"
+        ],
+        "npcIds": [
+          370
         ]
       },
       {
@@ -71932,6 +71872,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "npcIds": [
+          370
         ]
       }
     ],
@@ -71951,6 +71894,9 @@
         "modes": [
           "expert",
           "master"
+        ],
+        "npcIds": [
+          370
         ]
       }
     ],
@@ -71986,6 +71932,9 @@
         },
         "modes": [
           "master"
+        ],
+        "npcIds": [
+          370
         ]
       }
     ],
@@ -72002,6 +71951,9 @@
         },
         "modes": [
           "master"
+        ],
+        "npcIds": [
+          370
         ]
       }
     ],
@@ -72439,6 +72391,9 @@
         },
         "modes": [
           "normal"
+        ],
+        "npcIds": [
+          262
         ]
       },
       {
@@ -72468,6 +72423,10 @@
         },
         "modes": [
           "normal"
+        ],
+        "note": "will always drop the first time Plantera is defeated in a world that is neither in Expert nor Master Mode",
+        "npcIds": [
+          262
         ]
       },
       {
@@ -72492,6 +72451,10 @@
         },
         "modes": [
           "normal"
+        ],
+        "note": "will always drop the first time Plantera is defeated in a world that is neither in Expert nor Master Mode",
+        "npcIds": [
+          262
         ]
       },
       {
@@ -72520,6 +72483,9 @@
         },
         "modes": [
           "normal"
+        ],
+        "npcIds": [
+          262
         ]
       },
       {
@@ -72553,6 +72519,9 @@
         },
         "modes": [
           "normal"
+        ],
+        "npcIds": [
+          262
         ]
       },
       {
@@ -72586,6 +72555,9 @@
         },
         "modes": [
           "normal"
+        ],
+        "npcIds": [
+          262
         ]
       },
       {
@@ -72619,6 +72591,9 @@
         },
         "modes": [
           "normal"
+        ],
+        "npcIds": [
+          262
         ]
       },
       {
@@ -72652,6 +72627,9 @@
         },
         "modes": [
           "normal"
+        ],
+        "npcIds": [
+          262
         ]
       },
       {
@@ -72685,6 +72663,9 @@
         },
         "modes": [
           "normal"
+        ],
+        "npcIds": [
+          262
         ]
       },
       {
@@ -72718,6 +72699,9 @@
         },
         "modes": [
           "normal"
+        ],
+        "npcIds": [
+          262
         ]
       },
       {
@@ -72768,6 +72752,9 @@
         },
         "modes": [
           "normal"
+        ],
+        "npcIds": [
+          262
         ]
       }
     ],
@@ -72784,6 +72771,9 @@
         },
         "modes": [
           "normal"
+        ],
+        "npcIds": [
+          262
         ]
       },
       {
@@ -72834,6 +72824,9 @@
         },
         "modes": [
           "normal"
+        ],
+        "npcIds": [
+          262
         ]
       }
     ],
@@ -72867,6 +72860,9 @@
         },
         "modes": [
           "normal"
+        ],
+        "npcIds": [
+          262
         ]
       }
     ],
@@ -72883,6 +72879,9 @@
         },
         "modes": [
           "normal"
+        ],
+        "npcIds": [
+          262
         ]
       },
       {
@@ -72922,6 +72921,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "npcIds": [
+          262
         ]
       }
     ],
@@ -72941,6 +72943,9 @@
         "modes": [
           "expert",
           "master"
+        ],
+        "npcIds": [
+          262
         ]
       }
     ],
@@ -72976,6 +72981,9 @@
         },
         "modes": [
           "master"
+        ],
+        "npcIds": [
+          262
         ]
       }
     ],
@@ -72992,6 +73000,9 @@
         },
         "modes": [
           "master"
+        ],
+        "npcIds": [
+          262
         ]
       }
     ],
@@ -73012,6 +73023,9 @@
         "note": "when the Jungle Temple is not present; ''see conditions''",
         "conditions": [
           "no-temple"
+        ],
+        "npcIds": [
+          262
         ]
       }
     ],
@@ -73032,6 +73046,9 @@
         "note": "when the Jungle Temple is not present; ''see conditions''",
         "conditions": [
           "no-temple"
+        ],
+        "npcIds": [
+          262
         ]
       }
     ],
@@ -73052,6 +73069,9 @@
         "note": "when the Jungle Temple is not present; ''see conditions''",
         "conditions": [
           "no-temple"
+        ],
+        "npcIds": [
+          262
         ]
       }
     ],

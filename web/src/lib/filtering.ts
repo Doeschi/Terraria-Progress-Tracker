@@ -230,8 +230,9 @@ export interface Counts<K extends string = GroupKey> {
   ignoredCount: number
   /** keys of items (ignored ones included) matching search and filters */
   matching: Set<string>
-  /** per group: entry ids with (non-ignored) items at all - without filters and search */
-  available: Record<K, Set<string>>
+  /** per group: progress of every entry with (non-ignored) items at all - without filters and
+   * search (its keys: the entries that exist in the playthrough) */
+  available: Facets<K>
 }
 
 export function computeCounts(input: CountInput): Counts {
@@ -257,7 +258,7 @@ export function computeFacets<K extends string, T extends { key: string }>(input
   const overall: Tally = { total: 0, obtained: 0 }
   const filtered: Tally = { total: 0, obtained: 0 }
   const matching = new Set<string>()
-  const available = Object.fromEntries(GROUP_KEYS.map((g) => [g, new Set<string>()])) as Record<K, Set<string>>
+  const available = Object.fromEntries(GROUP_KEYS.map((g) => [g, new Map<string, Tally>()])) as Facets<K>
   let ignoredCount = 0
 
   const add = (map: Map<string, Tally>, id: string, have: boolean) => {
@@ -276,7 +277,7 @@ export function computeFacets<K extends string, T extends { key: string }>(input
       if (have) overall.obtained++
     }
     const entries = input.entriesOf(item)
-    if (!isIgnored) for (const g of GROUP_KEYS) for (const id of entries[g]) available[g].add(id)
+    if (!isIgnored) for (const g of GROUP_KEYS) for (const id of entries[g]) add(available[g], id, have)
     if (searchRank && !searchRank.has(item.key)) continue
 
     let failing = -1

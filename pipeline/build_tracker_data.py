@@ -105,6 +105,9 @@ def build(raw_dir, mapping_path, out_dir, readable_dir=None):
 
     log("Reading raw tables…")
     rows = pick_rows(read_csv(raw_dir / "items.csv"))
+    rows = [r for r in rows if html.unescape(r["name"]) not in mapping.pickups]
+    drop_rows = [r for r in read_csv(raw_dir / "drops.csv") if r["item"].strip() not in mapping.pickups]
+    log(f"  {len(mapping.pickups)} pickups left out ({', '.join(sorted(mapping.pickups))})")
     exclusive = {norm_name(r["_pageName"]): r for r in read_csv(raw_dir / "exclusive.csv")}
     history = History(read_csv(raw_dir / "history.csv"), {html.unescape(r["name"]) for r in rows})
     equip = read_equipinfo(raw_dir / "equipinfo.csv")
@@ -132,7 +135,7 @@ def build(raw_dir, mapping_path, out_dir, readable_dir=None):
     # may use them ("drop:npc", "drop:boss"), so the items are built again.
     log("Building items…")
     items, unmapped = build_items({})
-    drops = Drops(read_csv(raw_dir / "drops.csv"), npc_rows, items, mapping.drop_kinds,
+    drops = Drops(drop_rows, npc_rows, items, mapping.drop_kinds,
                   mapping.containers, mapping.container_icons)
     boss_sources = {norm_name(n) for b in mapping.bosses.values() for n in b.get("sources", [])}
     extra = defaultdict(set)
@@ -151,7 +154,7 @@ def build(raw_dir, mapping_path, out_dir, readable_dir=None):
     items.sort(key=lambda i: (i["id"], i["name"]))
     make_keys_unique(items)
     conditions = Conditions(mapping, items)
-    drops = Drops(read_csv(raw_dir / "drops.csv"), npc_rows, items, mapping.drop_kinds,
+    drops = Drops(drop_rows, npc_rows, items, mapping.drop_kinds,
                   mapping.containers, mapping.container_icons, conditions)
 
     for pattern, _ in mapping.manual:

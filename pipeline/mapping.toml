@@ -1545,6 +1545,8 @@ name = "Any mechanical boss"
 group = "boss"
 icon = "Mechanical Skull"
 links = ["mechanical boss"]
+# drop notes without a link: "(Only after one mechanical boss has been defeated)"
+phrases = ["one mechanical boss has been defeated"]
 after = true
 
 [conditions.after-all-mechs]
@@ -1834,6 +1836,15 @@ boss_ignore_items = [
     "Copper Coin", "Silver Coin", "Gold Coin", "Platinum Coin",
     "Lesser Healing Potion", "Healing Potion", "Greater Healing Potion", "Super Healing Potion",
 ]
+
+
+# ------------------------------------------------------------------- pickups
+# Picked up and used up on touch, never in the inventory (healing hearts, mana stars and
+# their seasonal variants, Nebula boosters): left out of the items entirely.
+
+[pickups]
+items = ["Heart", "Candy Apple", "Candy Cane", "Star", "Soul Cake", "Sugar Plum",
+         "Damage Booster", "Life Booster", "Mana Booster"]
 
 
 # -------------------------------------------------------------- unobtainable

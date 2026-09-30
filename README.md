@@ -27,8 +27,8 @@ the unchanged downloads in [`pipeline/raw/`](pipeline/raw).
 
 | File | Contents |
 |------|----------|
-| `items.json` | All 6,194 items (key = internal name; 45 of them only known from recipes, see below) with id, icons, wiki page, stats, rarity, prices, platforms, and – derived – categories and subcategories, how they are obtained, vendors, events, biomes, time of day, the game update that added them and whether they are Expert/Master-only |
-| `drops.json` | 491 drop sources (enemies, bosses, treasure bags, chests, crates, grab bags, shaking trees) and 3,709 drops (incl. 305 enemy banners from the NPCs table) with chance and quantity **per game mode** (Classic / Expert / Master) |
+| `items.json` | All 6,185 items (key = internal name; 45 of them only known from recipes, see below; pickups like Heart and Star are left out) with id, icons, wiki page, stats, rarity, prices, platforms, and – derived – categories and subcategories, how they are obtained, vendors, events, biomes, time of day, the game update that added them and whether they are Expert/Master-only |
+| `drops.json` | 488 drop sources (enemies, bosses, treasure bags, chests, crates, grab bags, shaking trees) and 3,688 drops (incl. 305 enemy banners from the NPCs table) with chance and quantity **per game mode** (Classic / Expert / Master) |
 | `shops.json` | 817 shop rows of 24 vendors (from the vendor pages): per item the vendor, the wiki's condition text and the parsed conditions, events, biomes and moon phases |
 | `conditions.json` | Conditions of shop rows and drops: time of day, moon phases, after a boss, wind, Hardmode, world seeds – with item counts |
 | `milestones.json` | Progression milestones (World creation, King Slime, … Moon Lord); `items.json` gives each item its earliest milestone and the reason (e.g. "Crafted – needs Chlorophyte Ore") |
@@ -72,7 +72,7 @@ stable base: fields with a fixed meaning, filled by the wiki's templates.
 | `Exclusive` | the platform columns per page (desktop, console, mobile, old-gen, 3DS, Japanese) | on which platforms an item exists |
 | `History` | patch notes per page (`patch`, `changes`) | the game update that added an item ("Added in") |
 | `Equipinfo` | which player values an equippable item changes | accessory subcategories (e.g. movement speed → "Movement"), as `equip:<field>` keys |
-| `Drops` | source (`nameraw`, `isfromnpc`), item, `quantity`, `rate`, `custom` (notes), game modes (`normal` / `expert` / `master`) | `drops.json`: who drops what with which chance per game mode; chests, crates, trees; drop conditions in the chance text and notes |
+| `Drops` | source (`nameraw`, `isfromnpc`, `id`), item, `quantity`, `rate`, `custom` (notes), game modes (`normal` / `expert` / `master`) | `drops.json`: who drops what with which chance per game mode; chests, crates, trees; drop conditions in the chance text and notes; the NPC ids of variant-only drops (e.g. Torch from the Torch Zombie) for the expected drops |
 | `NPCs` | `nameraw`, `type`, `environment`, `image`, `npcid`, `bannername` | icons of drop sources; bosses, town NPCs and critters (`type`); where and when an enemy spawns (`environment` → biomes, time of day, events); which enemy gives which banner |
 | `Recipes` | `result`, `resultid`, `resultimage`, `amount`, `station`, ingredients, `version`, `legacy` | `recipes.json`, shimmer transmutations, and the 45 items the Items table lacks |
 
@@ -170,7 +170,7 @@ it (`*` is a wildcard). Example: the Starfury has `type: weapon^crafting materia
 ### 4. What is derived rather than copied
 
 - **Game update of an item** from the patch-note history (Desktop patches), corrected for items
-  on shared pages by item id ranges – known for 6,186 of 6,194 items.
+  on shared pages by item id ranges – known for 6,177 of 6,185 items.
 - **Items missing from the wiki's Items table** (45 new 1.4.5 doors, candelabras and a few
   others) from its Recipes table, with categories taken from a similar item.
 - **Events, biomes and time of day of an item** from the spawn conditions of the enemies that

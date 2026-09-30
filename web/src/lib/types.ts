@@ -157,6 +157,8 @@ export interface Drop {
   biomes?: string[]
   /** extra condition text, e.g. "if wind speed ≥ 20 mph" */
   note?: string
+  /** only these variants of the source drop it (NPC ids), e.g. the Torch Zombie */
+  npcIds?: number[]
 }
 
 /** An item in a vendor's shop and when it is sold. */

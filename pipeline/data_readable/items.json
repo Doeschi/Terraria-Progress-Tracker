@@ -3186,64 +3186,6 @@
     "milestoneVia": "Crafted"
   },
   {
-    "key": "Heart",
-    "id": 58,
-    "name": "Heart",
-    "internalName": "Heart",
-    "page": "Heart",
-    "url": "https://terraria.wiki.gg/wiki/Heart",
-    "icon": "https://terraria.wiki.gg/images/Heart.png",
-    "categories": [
-      "miscellaneous"
-    ],
-    "subcategories": [
-      "other-miscellaneous"
-    ],
-    "obtain": [],
-    "vendors": [],
-    "events": [
-      "pumpkin-moon",
-      "frost-moon"
-    ],
-    "biomes": [
-      "forest-surface",
-      "underground",
-      "jungle",
-      "crimson",
-      "underworld",
-      "space"
-    ],
-    "times": [
-      "night",
-      "day"
-    ],
-    "platforms": [
-      "desktop",
-      "console",
-      "mobile",
-      "oldgen",
-      "3ds",
-      "japanese"
-    ],
-    "platformsKnown": false,
-    "introduced": "1.0",
-    "version": "1.0",
-    "hardmode": false,
-    "hardmodeOnly": false,
-    "unobtainable": false,
-    "banner": false,
-    "questFish": false,
-    "rarity": 0,
-    "stack": 1,
-    "consumable": false,
-    "placeable": false,
-    "autoswing": false,
-    "healLife": 20,
-    "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Dropped by Leech"
-  },
-  {
     "key": "CorruptSeeds",
     "id": 59,
     "name": "Corrupt Seeds",
@@ -6162,8 +6104,8 @@
     "debuff": "On Fire!",
     "tooltip": "Throws balls of fire",
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Dropped by Red Devil"
+    "milestone": "skeletron",
+    "milestoneVia": "Found in Obsidian Lock Box"
   },
   {
     "key": "MagicMissile",
@@ -10001,51 +9943,6 @@
     "conditions": [],
     "milestone": "start",
     "milestoneVia": "Collected in the world"
-  },
-  {
-    "key": "Star",
-    "id": 184,
-    "name": "Star",
-    "internalName": "Star",
-    "page": "Star",
-    "url": "https://terraria.wiki.gg/wiki/Star",
-    "icon": "https://terraria.wiki.gg/images/Star.png",
-    "categories": [
-      "miscellaneous"
-    ],
-    "subcategories": [
-      "other-miscellaneous"
-    ],
-    "obtain": [],
-    "vendors": [],
-    "events": [],
-    "biomes": [],
-    "times": [],
-    "platforms": [
-      "desktop",
-      "console",
-      "mobile",
-      "oldgen",
-      "3ds",
-      "japanese"
-    ],
-    "platformsKnown": false,
-    "introduced": "1.0",
-    "version": "1.0",
-    "hardmode": false,
-    "hardmodeOnly": false,
-    "unobtainable": false,
-    "banner": false,
-    "questFish": false,
-    "rarity": 0,
-    "stack": 1,
-    "consumable": false,
-    "placeable": false,
-    "autoswing": false,
-    "healMana": 100,
-    "buff": "Mana Surge",
-    "conditions": [],
-    "milestone": "start"
   },
   {
     "key": "IvyWhip",
@@ -39833,8 +39730,8 @@
     "autoswing": false,
     "tooltip": "Allows flight and slow fall",
     "conditions": [],
-    "milestone": "wall-of-flesh",
-    "milestoneVia": "Crafted – needs Mythril Anvil"
+    "milestone": "any-mech",
+    "milestoneVia": "Crafted – needs Butterfly Dust"
   },
   {
     "key": "CactusWall",
@@ -46095,7 +45992,9 @@
     "autoswing": false,
     "defense": 2,
     "bodySlot": "helmet",
-    "conditions": [],
+    "conditions": [
+      "npc-name-andrew"
+    ],
     "milestone": "start",
     "milestoneVia": "Dropped by Guide"
   },
@@ -69729,7 +69628,7 @@
     "useTime": 19,
     "conditions": [],
     "milestone": "start",
-    "milestoneVia": "Dropped by Ice Mimic"
+    "milestoneVia": "Found in Frozen Crate"
   },
   {
     "key": "BonePickaxe",
@@ -70068,7 +69967,7 @@
     "useTime": 20,
     "conditions": [],
     "milestone": "start",
-    "milestoneVia": "Dropped by Clown"
+    "milestoneVia": "Dropped by Cave Bat"
   },
   {
     "key": "RodofDiscord",
@@ -80119,8 +80018,8 @@
     "autoswing": false,
     "tooltip": "Allows flight and slow fall",
     "conditions": [],
-    "milestone": "wall-of-flesh",
-    "milestoneVia": "Crafted – needs Mythril Anvil"
+    "milestone": "any-mech",
+    "milestoneVia": "Crafted – needs Tattered Bee Wing"
   },
   {
     "key": "GiantHarpyFeather",
@@ -80420,9 +80319,11 @@
     "consumable": false,
     "placeable": false,
     "autoswing": false,
-    "conditions": [],
-    "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "conditions": [
+      "after-any-mech"
+    ],
+    "milestone": "any-mech",
+    "milestoneVia": "Dropped by Moss Hornet"
   },
   {
     "key": "LargeAmethyst",
@@ -84932,9 +84833,11 @@
     "consumable": false,
     "placeable": false,
     "autoswing": false,
-    "conditions": [],
-    "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "conditions": [
+      "after-any-mech"
+    ],
+    "milestone": "any-mech",
+    "milestoneVia": "Dropped by Moth"
   },
   {
     "key": "AnkhCharm",
@@ -91587,95 +91490,6 @@
     "milestoneVia": "Crafted"
   },
   {
-    "key": "CandyApple",
-    "id": 1734,
-    "name": "Candy Apple",
-    "internalName": "CandyApple",
-    "page": "Heart",
-    "url": "https://terraria.wiki.gg/wiki/Heart",
-    "icon": "https://terraria.wiki.gg/images/Candy_Apple.png",
-    "categories": [
-      "miscellaneous"
-    ],
-    "subcategories": [
-      "other-miscellaneous"
-    ],
-    "obtain": [],
-    "vendors": [],
-    "events": [],
-    "biomes": [],
-    "times": [],
-    "platforms": [
-      "desktop",
-      "console",
-      "mobile",
-      "oldgen",
-      "3ds",
-      "japanese"
-    ],
-    "platformsKnown": false,
-    "introduced": "1.2.1",
-    "version": "1.2",
-    "hardmode": false,
-    "hardmodeOnly": false,
-    "unobtainable": false,
-    "banner": false,
-    "questFish": false,
-    "rarity": 0,
-    "stack": 1,
-    "consumable": false,
-    "placeable": false,
-    "autoswing": false,
-    "healLife": 20,
-    "conditions": [],
-    "milestone": "start"
-  },
-  {
-    "key": "SoulCake",
-    "id": 1735,
-    "name": "Soul Cake",
-    "internalName": "SoulCake",
-    "page": "Star",
-    "url": "https://terraria.wiki.gg/wiki/Star",
-    "icon": "https://terraria.wiki.gg/images/Soul_Cake.png",
-    "categories": [
-      "miscellaneous"
-    ],
-    "subcategories": [
-      "other-miscellaneous"
-    ],
-    "obtain": [],
-    "vendors": [],
-    "events": [],
-    "biomes": [],
-    "times": [],
-    "platforms": [
-      "desktop",
-      "console",
-      "mobile",
-      "oldgen",
-      "3ds",
-      "japanese"
-    ],
-    "platformsKnown": false,
-    "introduced": "1.2",
-    "version": "1.2",
-    "hardmode": false,
-    "hardmodeOnly": false,
-    "unobtainable": false,
-    "banner": false,
-    "questFish": false,
-    "rarity": 0,
-    "stack": 1,
-    "consumable": false,
-    "placeable": false,
-    "autoswing": false,
-    "healMana": 100,
-    "buff": "Mana Surge",
-    "conditions": [],
-    "milestone": "start"
-  },
-  {
     "key": "NurseHat",
     "id": 1736,
     "name": "Nurse Hat",
@@ -98086,98 +97900,6 @@
     "milestoneVia": "Crafted – needs Shroomite Bar"
   },
   {
-    "key": "CandyCane",
-    "id": 1867,
-    "name": "Candy Cane",
-    "internalName": "CandyCane",
-    "page": "Heart",
-    "url": "https://terraria.wiki.gg/wiki/Heart",
-    "icon": "https://terraria.wiki.gg/images/Candy_Cane.png",
-    "categories": [
-      "miscellaneous"
-    ],
-    "subcategories": [
-      "other-miscellaneous"
-    ],
-    "obtain": [
-      "drop"
-    ],
-    "vendors": [],
-    "events": [],
-    "biomes": [],
-    "times": [],
-    "platforms": [
-      "desktop",
-      "console",
-      "mobile",
-      "oldgen",
-      "3ds",
-      "japanese"
-    ],
-    "platformsKnown": false,
-    "introduced": "1.2.2",
-    "version": "1.2",
-    "hardmode": false,
-    "hardmodeOnly": false,
-    "unobtainable": false,
-    "banner": false,
-    "questFish": false,
-    "rarity": 0,
-    "stack": 1,
-    "consumable": false,
-    "placeable": false,
-    "autoswing": false,
-    "healLife": 20,
-    "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Dropped by enemies"
-  },
-  {
-    "key": "SugarPlum",
-    "id": 1868,
-    "name": "Sugar Plum",
-    "internalName": "SugarPlum",
-    "page": "Star",
-    "url": "https://terraria.wiki.gg/wiki/Star",
-    "icon": "https://terraria.wiki.gg/images/Sugar_Plum.png",
-    "categories": [
-      "miscellaneous"
-    ],
-    "subcategories": [
-      "other-miscellaneous"
-    ],
-    "obtain": [],
-    "vendors": [],
-    "events": [],
-    "biomes": [],
-    "times": [],
-    "platforms": [
-      "desktop",
-      "console",
-      "mobile",
-      "oldgen",
-      "3ds",
-      "japanese"
-    ],
-    "platformsKnown": false,
-    "introduced": "1.2",
-    "version": "1.2",
-    "hardmode": false,
-    "hardmodeOnly": false,
-    "unobtainable": false,
-    "banner": false,
-    "questFish": false,
-    "rarity": 0,
-    "stack": 1,
-    "consumable": false,
-    "placeable": false,
-    "autoswing": false,
-    "healMana": 100,
-    "buff": "Mana Surge",
-    "conditions": [],
-    "milestone": "start"
-  },
-  {
     "key": "Present",
     "id": 1869,
     "name": "Present",
@@ -98198,7 +97920,8 @@
     ],
     "vendors": [],
     "events": [
-      "frost-moon"
+      "frost-moon",
+      "christmas"
     ],
     "biomes": [],
     "times": [],
@@ -159132,7 +158855,7 @@
     "tooltip": "Shoots a small spark",
     "conditions": [],
     "milestone": "start",
-    "milestoneVia": "Dropped by Mimic"
+    "milestoneVia": "Found in Chest"
   },
   {
     "key": "GoldBirdCage",
@@ -178278,132 +178001,6 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Ice Tortoise",
-    "conditions": [],
-    "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
-  },
-  {
-    "key": "NebulaPickup1",
-    "id": 3453,
-    "name": "Damage Booster",
-    "internalName": "NebulaPickup1",
-    "page": "Damage Booster",
-    "url": "https://terraria.wiki.gg/wiki/Damage_Booster",
-    "icon": "https://terraria.wiki.gg/images/Damage_Booster.gif",
-    "categories": [
-      "miscellaneous"
-    ],
-    "subcategories": [
-      "other-miscellaneous"
-    ],
-    "obtain": [],
-    "vendors": [],
-    "events": [],
-    "biomes": [],
-    "times": [],
-    "platforms": [
-      "desktop",
-      "console",
-      "mobile"
-    ],
-    "platformsKnown": true,
-    "introduced": "1.3.0.1",
-    "version": "1.3",
-    "hardmode": true,
-    "hardmodeOnly": false,
-    "unobtainable": false,
-    "banner": false,
-    "questFish": false,
-    "rarity": 0,
-    "stack": 1,
-    "consumable": false,
-    "placeable": false,
-    "autoswing": false,
-    "buff": "Damage Nebula",
-    "conditions": [],
-    "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
-  },
-  {
-    "key": "NebulaPickup2",
-    "id": 3454,
-    "name": "Life Booster",
-    "internalName": "NebulaPickup2",
-    "page": "Life Booster",
-    "url": "https://terraria.wiki.gg/wiki/Life_Booster",
-    "icon": "https://terraria.wiki.gg/images/Life_Booster.gif",
-    "categories": [
-      "miscellaneous"
-    ],
-    "subcategories": [
-      "other-miscellaneous"
-    ],
-    "obtain": [],
-    "vendors": [],
-    "events": [],
-    "biomes": [],
-    "times": [],
-    "platforms": [
-      "desktop",
-      "console",
-      "mobile"
-    ],
-    "platformsKnown": true,
-    "introduced": "1.3.0.1",
-    "version": "1.3",
-    "hardmode": true,
-    "hardmodeOnly": false,
-    "unobtainable": false,
-    "banner": false,
-    "questFish": false,
-    "rarity": 0,
-    "stack": 1,
-    "consumable": false,
-    "placeable": false,
-    "autoswing": false,
-    "buff": "Life Nebula",
-    "conditions": [],
-    "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
-  },
-  {
-    "key": "NebulaPickup3",
-    "id": 3455,
-    "name": "Mana Booster",
-    "internalName": "NebulaPickup3",
-    "page": "Mana Booster",
-    "url": "https://terraria.wiki.gg/wiki/Mana_Booster",
-    "icon": "https://terraria.wiki.gg/images/Mana_Booster.gif",
-    "categories": [
-      "miscellaneous"
-    ],
-    "subcategories": [
-      "other-miscellaneous"
-    ],
-    "obtain": [],
-    "vendors": [],
-    "events": [],
-    "biomes": [],
-    "times": [],
-    "platforms": [
-      "desktop",
-      "console",
-      "mobile"
-    ],
-    "platformsKnown": true,
-    "introduced": "1.3.0.1",
-    "version": "1.3",
-    "hardmode": true,
-    "hardmodeOnly": false,
-    "unobtainable": false,
-    "banner": false,
-    "questFish": false,
-    "rarity": 0,
-    "stack": 1,
-    "consumable": false,
-    "placeable": false,
-    "autoswing": false,
-    "buff": "Mana Nebula",
     "conditions": [],
     "milestone": "wall-of-flesh",
     "milestoneVia": "Hardmode item"
@@ -288297,8 +287894,10 @@
     "useTime": 20,
     "buff": "Form of the Fae",
     "tooltip": "Grants the user an air of a pixie\n'Great idea, Sprite! Too bad it’s terrible'",
-    "conditions": [],
-    "milestone": "start",
+    "conditions": [
+      "after-any-mech"
+    ],
+    "milestone": "any-mech",
     "milestoneVia": "Dropped by Pixie"
   },
   {

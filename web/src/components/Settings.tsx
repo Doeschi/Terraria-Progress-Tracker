@@ -1,6 +1,7 @@
 import { useMemo, useState } from 'react'
 import { ArrowDown, ArrowUp } from 'lucide-react'
 import { useStore } from '@/store'
+import { ALMOST_DONE, ALMOST_DONE_LABEL, groupOrder } from '@/lib/filterView'
 import { usePrefs, type Layout } from '@/lib/prefs'
 import { useTheme, type Theme } from '@/lib/theme'
 import { buildFilterGroups } from '@/lib/filtering'
@@ -140,10 +141,13 @@ function FilterGroupsEditor() {
   const [scope, setScope] = useState<'items' | 'bestiary'>('items')
   const groups = useMemo(() => {
     if (!data) return []
-    return (scope === 'items' ? buildFilterGroups(data) : buildBestiaryGroups(data)).map((g) => ({
-      id: g.key as string,
-      label: g.label,
-    }))
+    return [
+      { id: ALMOST_DONE, label: ALMOST_DONE_LABEL },
+      ...(scope === 'items' ? buildFilterGroups(data) : buildBestiaryGroups(data)).map((g) => ({
+        id: g.key as string,
+        label: g.label,
+      })),
+    ]
   }, [data, scope])
   if (!groups.length) return null
   const prefix = scope === 'items' ? '' : 'bestiary:'
@@ -161,7 +165,11 @@ function FilterGroupsEditor() {
         />
         <OrderEditor
           items={groups}
-          order={layout.groupOrder[prefix] ?? []}
+          // "Almost done" starts at the top, also for an order saved before it existed
+          order={groupOrder(
+            groups.map((g) => g.id),
+            layout.groupOrder[prefix] ?? [],
+          )}
           onChange={(order) => setLayout({ groupOrder: { ...layout.groupOrder, [prefix]: order } })}
         />
       </div>

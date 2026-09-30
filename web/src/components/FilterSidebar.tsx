@@ -14,7 +14,6 @@ import {
 import { toast } from 'sonner'
 import { useActiveWorld, useStore } from '@/store'
 import { usePrefs, type ProgressionMode } from '@/lib/prefs'
-import { ordered } from '@/lib/layout'
 import { ToggleGroup, ToggleGroupItem } from '@/components/ui/toggle-group'
 import { cn } from '@/lib/utils'
 import {
@@ -30,7 +29,11 @@ import { RarityIcon, TallyBar, TallyText, WikiIcon } from './common'
 import { Checkbox } from '@/components/ui/checkbox'
 import { SearchField } from './ListParts'
 import {
+  ALMOST_DONE,
+  ALMOST_DONE_LABEL,
+  almostDone,
   complete,
+  groupOrder,
   groupView,
   movedLists,
   nameMatches,
@@ -111,7 +114,7 @@ export const FilterSidebar = memo(function FilterSidebar({
 }: {
   facets: Facets
   groupTallies: Record<GroupKey, Tally>
-  available: Record<GroupKey, Set<string>>
+  available: Facets
 }) {
   const data = useStore((s) => s.data)!
   const groups = useMemo(() => buildFilterGroups(data), [data])
@@ -134,7 +137,7 @@ export const BestiaryFilterSidebar = memo(function BestiaryFilterSidebar({
 }: {
   facets: Facets<BestiaryGroupKey>
   groupTallies: Record<BestiaryGroupKey, Tally>
-  available: Record<BestiaryGroupKey, Set<string>>
+  available: Facets<BestiaryGroupKey>
 }) {
   const data = useStore((s) => s.data)!
   const groups = useMemo(() => buildBestiaryGroups(data), [data])
@@ -159,18 +162,26 @@ function FilterPanel({
   groups: AnyGroup[]
   facets: AnyFacets
   groupTallies: Record<string, Tally>
-  /** entry ids with items at all, per group (options without are never shown) */
-  available: Record<string, Set<string>>
+  /** per group: progress of the entries with items at all, without filters (options without
+   * items are never shown; "Almost done" ranks by it) */
+  available: AnyFacets
   scope: FilterScope
 }) {
   const [query, setQuery] = useState('')
   const q = query.trim().toLowerCase()
   // group order from the settings (Layout)
   const savedOrder = usePrefs((s) => s.layout.groupOrder[scope.prefix])
-  const groups = useMemo(() => {
-    const byKey = new Map(allGroups.map((g) => [g.key as string, g]))
-    return ordered([...byKey.keys()], savedOrder ?? []).map((k) => byKey.get(k)!)
-  }, [allGroups, savedOrder])
+  // group keys in the saved order, "Almost done" included (it starts at the top)
+  const order = useMemo(
+    () =>
+      groupOrder(
+        allGroups.map((g) => g.key as string),
+        savedOrder ?? [],
+      ),
+    [allGroups, savedOrder],
+  )
+  const byKey = useMemo(() => new Map(allGroups.map((g) => [g.key as string, g])), [allGroups])
+  const groups = useMemo(() => order.filter((k) => k !== ALMOST_DONE).map((k) => byKey.get(k)!), [order, byKey])
   const hiddenList = usePrefs((s) => s.hiddenFilters)
   const toggleHiddenFilter = usePrefs((s) => s.toggleHiddenFilter)
   const hideCompleted = usePrefs((s) => s.hideCompleted)
@@ -184,9 +195,9 @@ function FilterPanel({
   // "open all / close all": every group of this sidebar; closes if any group is open
   const openGroups = usePrefs((s) => s.layout.openGroups)
   const setLayout = usePrefs((s) => s.setLayout)
-  const anyOpen = groups.some((g) => openGroups[scope.prefix + g.key] ?? true)
+  const anyOpen = order.some((k) => openGroups[scope.prefix + k] ?? true)
   const setAllOpen = (open: boolean) =>
-    setLayout({ openGroups: { ...openGroups, ...Object.fromEntries(groups.map((g) => [scope.prefix + g.key, open])) } })
+    setLayout({ openGroups: { ...openGroups, ...Object.fromEntries(order.map((k) => [scope.prefix + k, open])) } })
 
   const placement = useMemo<Placement>(() => {
     const hidden = new Set(hiddenList)
@@ -314,9 +325,13 @@ function FilterPanel({
                     )}
                   </p>
                 )}
-                {groups.map((g) => (
-                  <GroupSection key={g.key} group={g} facets={facets} tally={groupTallies[g.key] ?? EMPTY} />
-                ))}
+                {order.map((k) =>
+                  k === ALMOST_DONE ? (
+                    <AlmostDoneSection key={k} groups={groups} facets={facets} totals={available} />
+                  ) : (
+                    <GroupSection key={k} group={byKey.get(k)!} facets={facets} tally={groupTallies[k] ?? EMPTY} />
+                  ),
+                )}
                 {q && !targets.length && <NoFilterMatch groups={groups} q={q} />}
                 {hideCompleted && <MovedSection kind="completed" groups={groups} facets={facets} />}
                 {/* hidden options are left out of the filter search */}
@@ -471,6 +486,49 @@ function GroupSection({ group, facets, tally }: { group: AnyGroup; facets: AnyFa
 }
 
 /**
+ * "Almost done": the options closest to completion (whole playthrough), duplicates of the
+ * options in their groups. Left out while searching the filters (the originals are found).
+ */
+function AlmostDoneSection({ groups, facets, totals }: { groups: AnyGroup[]; facets: AnyFacets; totals: AnyFacets }) {
+  const scope = useContext(ScopeContext)
+  const q = useContext(QueryContext)
+  const place = useContext(PlacementContext)
+  const [open, setOpen] = useSectionOpen(scope.prefix + ALMOST_DONE, true)
+  const list = useMemo(() => almostDone(groups, totals, place), [groups, totals, place])
+  if (q || !list.length) return null
+
+  return (
+    <section className="rounded-xl border bg-card p-1.5 shadow-xs">
+      <button
+        onClick={() => setOpen(!open)}
+        className={cn(
+          'flex w-full items-center gap-1.5 px-1.5 py-1 text-xs font-semibold tracking-wide text-foreground/80 uppercase hover:text-foreground',
+          open && 'mb-1 border-b pb-2',
+        )}
+        title="The options closest to completion (whole playthrough, at least 5 items) – the same filters as in their groups"
+      >
+        <ChevronRight className={cn('size-3.5 shrink-0 transition-transform', open && 'rotate-90')} />
+        <span className="truncate">{ALMOST_DONE_LABEL}</span>
+      </button>
+      {open && (
+        <ul className="flex flex-col gap-px">
+          {list.map(({ group, entry, parent }) => (
+            <EntryRow
+              key={`${group.key}/${entry.id}`}
+              group={group}
+              entry={entry}
+              facets={facets}
+              isVisible={() => false}
+              context={parent ? `${group.label} › ${parent.name}` : group.label}
+            />
+          ))}
+        </ul>
+      )}
+    </section>
+  )
+}
+
+/**
  * "Completed" / "Hidden" at the bottom: the options moved out of their groups,
  * listed under their group's name. A moved parent takes its children along.
  */
@@ -601,6 +659,7 @@ function EntryRow({
   action,
   expand = false,
   nested = false,
+  context,
 }: {
   group: AnyGroup
   entry: FilterEntry
@@ -611,6 +670,8 @@ function EntryRow({
   /** show the children without expanding (filter search) */
   expand?: boolean
   nested?: boolean
+  /** a duplicate outside its group ("Almost done"): the group it belongs to, no subgroups */
+  context?: string
 }) {
   const scope = useContext(ScopeContext)
   const place = useContext(PlacementContext)
@@ -671,12 +732,14 @@ function EntryRow({
               // the wiki's rarity image already shows the name in its color
               <span className="flex min-w-0 flex-1 items-center">
                 <RarityIcon rarity={Number(entry.id)} />
+                {context && <span className="ml-1.5 truncate text-[11px] text-muted-foreground">{context}</span>}
               </span>
             ) : (
               <>
                 {entry.icon ? <WikiIcon src={entry.icon} alt="" size={20} /> : <span className="w-5" />}
                 <span className={cn('min-w-0 flex-1 truncate text-sm', selected && 'font-medium')} title={entry.name}>
                   {entry.name}
+                  {context && <span className="ml-1.5 text-[11px] font-normal text-muted-foreground">{context}</span>}
                 </span>
               </>
             )}
@@ -685,7 +748,7 @@ function EntryRow({
           {optionBars && <TallyBar tally={tally} className="ml-7 w-auto" />}
         </button>
         {/* the slot is always reserved so rows with and without subcategories line up */}
-        {group.entries.some((e) => e.children?.length) && (
+        {!context && group.entries.some((e) => e.children?.length) && (
           <span className="mr-1 grid w-6 shrink-0 place-items-center">
             {children.length > 0 && (
               <button

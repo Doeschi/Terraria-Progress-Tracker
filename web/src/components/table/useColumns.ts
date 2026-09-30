@@ -1,12 +1,20 @@
 import { useMemo } from 'react'
-import { useStore } from '@/store'
+import { useActiveWorld, useStore } from '@/store'
 import { usePrefs } from '@/lib/prefs'
 import { buildColumns, type ItemColumn } from './columns'
 import { resolveViews, shownColumns, type View } from './presets'
 
+/** A world with bestiary kills is loaded: world-only columns and views are available. */
+export function useHasKills(): boolean {
+  return !!useActiveWorld()?.bestiary
+}
+
+/** The columns that can be shown now (world-only ones need a loaded world). */
 export function useItemColumns(): ItemColumn[] {
   const data = useStore((s) => s.data)!
-  return useMemo(() => buildColumns(data), [data])
+  const hasKills = useHasKills()
+  const all = useMemo(() => buildColumns(data), [data])
+  return useMemo(() => (hasKills ? all : all.filter((c) => !c.needsWorld)), [all, hasKills])
 }
 
 /** Visibility of the optional columns: saved preference, else the column default. */

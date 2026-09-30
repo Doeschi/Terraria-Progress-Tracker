@@ -5,7 +5,8 @@ import type { Difficulty, GameData, Item, PlatformId } from '@/lib/types'
 import { Coins, RarityIcon, WikiIcon } from '../common'
 import { formatDate, nameOf } from '@/lib/format'
 import { conditionLabel, conditionNames } from '@/lib/conditions'
-import { ConditionsCell } from './cells'
+import { ConditionsCell, LuckCell } from './cells'
+import type { Luck } from '@/lib/luck'
 
 // Column catalogue of the item table. `value` is what the column sorts by,
 // `cell` how it is shown (defaults to the value).
@@ -18,6 +19,10 @@ export interface TrackingState {
   changedAt: Record<string, string>
   /** difficulty of the playthrough (which drops exist) */
   difficulty: Difficulty
+  /** expected drops from the loaded world's kills (null: no world loaded) */
+  luck: ((item: Item) => Luck | undefined) | null
+  /** checked or ignored: not "missing" */
+  done: (key: string) => boolean
 }
 
 export interface ItemColumn {
@@ -31,6 +36,8 @@ export interface ItemColumn {
   descFirst?: boolean
   value: (item: Item, tracking: TrackingState) => string | number | boolean | undefined
   cell?: (item: Item, tracking: TrackingState) => ReactNode
+  /** only offered while a world is loaded (needs its bestiary kills) */
+  needsWorld?: boolean
   /** custom comparison, e.g. version strings */
   compare?: (a: Item, b: Item) => number
 }
@@ -427,6 +434,21 @@ export function buildColumns(data: GameData): ItemColumn[] {
       descFirst: true,
       value: (i, t) => t.changedAt[i.key], // ISO strings sort chronologically
       cell: (i, t) => <span className="tabular-nums">{formatDate(t.changedAt[i.key])}</span>,
+    },
+    {
+      // sorted by the chance to have got it by now: bad luck first when descending
+      id: 'expectedDrops',
+      label: 'Expected drops',
+      group: 'Tracking',
+      size: 130,
+      align: 'right',
+      descFirst: true,
+      needsWorld: true,
+      value: (i, t) => t.luck?.(i)?.atLeastOnce,
+      cell: (i, t) => {
+        const luck = t.luck?.(i)
+        return luck ? <LuckCell data={data} luck={luck} missing={!t.done(i.key)} /> : null
+      },
     },
   ]
 }

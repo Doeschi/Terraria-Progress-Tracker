@@ -45,13 +45,13 @@
     "id": "pumpkin-moon",
     "name": "Pumpkin Moon",
     "icon": "https://terraria.wiki.gg/images/Pumpkin_Moon_Medallion.png",
-    "count": 34
+    "count": 33
   },
   {
     "id": "frost-moon",
     "name": "Frost Moon",
     "icon": "https://terraria.wiki.gg/images/Naughty_Present.png",
-    "count": 34
+    "count": 33
   },
   {
     "id": "lunar-events",
@@ -105,6 +105,6 @@
     "id": "christmas",
     "name": "Christmas",
     "icon": "https://terraria.wiki.gg/images/Present.png",
-    "count": 13
+    "count": 14
   }
 ]

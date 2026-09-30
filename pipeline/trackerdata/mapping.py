@@ -16,6 +16,8 @@ class Mapping:
         self.versions = {v: e["name"] if isinstance(e, dict) else e for v, e in versions.items()}
         self.version_icons = {v: e["icon"] for v, e in versions.items()
                               if isinstance(e, dict) and e.get("icon")}
+        # pickups used up on touch (Heart, Star, ...): no inventory items, not tracked
+        self.pickups = set(data.get("pickups", {}).get("items", []))
         self.drop_kinds = data.get("drops", {}).get("include_kinds", ["npc", "bag"])
         self.boss_ignore_items = data.get("drops", {}).get("boss_ignore_items", [])
         self.boss_stages = data.get("boss_stages", {})

@@ -14,7 +14,8 @@ import {
 } from '@tanstack/react-table'
 import { useVirtualizer } from '@tanstack/react-virtual'
 import { ArrowDown, ArrowUp, ExternalLink, Eye, EyeOff, PackageSearch } from 'lucide-react'
-import { useActivePlaythrough, useStore } from '@/store'
+import { useActivePlaythrough, useActiveWorld, useStore } from '@/store'
+import { itemLuck, sourceKills, type Luck } from '@/lib/luck'
 import { usePrefs } from '@/lib/prefs'
 import { useUi } from '@/ui'
 import { cn } from '@/lib/utils'
@@ -59,6 +60,8 @@ const RowStateContext = createContext<RowState>({
   worldAttached: false,
   changedAt: {},
   difficulty: 'master',
+  luck: null,
+  done: () => false,
 })
 
 const blank = (v: unknown) => v === undefined || v === '' || v === false
@@ -133,8 +136,21 @@ export function ItemTable({ items, checked, ignored }: { items: Item[]; checked:
   const pt = useActivePlaythrough()
   const changedAt = pt?.changedAt
   const difficulty = pt?.difficulty ?? 'master'
-  const tracking = useRef<TrackingState>({ changedAt: {}, difficulty })
-  tracking.current = { changedAt: changedAt ?? {}, difficulty }
+  // expected drops from the loaded world's bestiary kills, computed once per item
+  const data = useStore((s) => s.data)!
+  const bestiary = useActiveWorld()?.bestiary
+  const luck = useMemo(() => {
+    if (!bestiary) return null
+    const kills = sourceKills(data, bestiary)
+    const cache = new Map<string, Luck | undefined>()
+    return (item: Item) => {
+      if (!cache.has(item.key)) cache.set(item.key, itemLuck(data, item, difficulty, kills))
+      return cache.get(item.key)
+    }
+  }, [data, bestiary, difficulty])
+  const done = (key: string) => checked.has(key) || ignored.has(key)
+  const tracking = useRef<TrackingState>({ changedAt: {}, difficulty, luck, done })
+  tracking.current = { changedAt: changedAt ?? {}, difficulty, luck, done }
   // columns in the order of the applied view (the rest in catalogue order after them)
   const columnOrder = usePrefs((s) => s.columnOrder)
   const orderedCatalogue = useMemo(() => {
@@ -195,8 +211,17 @@ export function ItemTable({ items, checked, ignored }: { items: Item[]; checked:
   const openDetail = useUi((s) => s.openDetail)
   const worldAttached = !!pt?.world
   const rowState = useMemo(
-    () => ({ checked, ignored, hasWorld, worldAttached, changedAt: changedAt ?? {}, difficulty }),
-    [checked, ignored, hasWorld, worldAttached, changedAt, difficulty],
+    () => ({
+      checked,
+      ignored,
+      hasWorld,
+      worldAttached,
+      changedAt: changedAt ?? {},
+      difficulty,
+      luck,
+      done: (key: string) => checked.has(key) || ignored.has(key),
+    }),
+    [checked, ignored, hasWorld, worldAttached, changedAt, difficulty, luck],
   )
 
   if (!items.length) {

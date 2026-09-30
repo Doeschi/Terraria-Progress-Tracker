@@ -3,13 +3,13 @@
     "id": "forest-surface",
     "name": "Forest & surface",
     "icon": "https://terraria.wiki.gg/images/Acorn.png",
-    "count": 68
+    "count": 67
   },
   {
     "id": "underground",
     "name": "Underground & caverns",
     "icon": "https://terraria.wiki.gg/images/Stone_Block.png",
-    "count": 105
+    "count": 104
   },
   {
     "id": "desert",
@@ -27,7 +27,7 @@
     "id": "jungle",
     "name": "Jungle",
     "icon": "https://terraria.wiki.gg/images/Mud_Block.png",
-    "count": 82
+    "count": 81
   },
   {
     "id": "jungle-temple",
@@ -45,7 +45,7 @@
     "id": "crimson",
     "name": "Crimson",
     "icon": "https://terraria.wiki.gg/images/Crimstone_Block.png",
-    "count": 61
+    "count": 60
   },
   {
     "id": "hallow",
@@ -69,13 +69,13 @@
     "id": "underworld",
     "name": "Underworld",
     "icon": "https://terraria.wiki.gg/images/Ash_Block.png",
-    "count": 36
+    "count": 35
   },
   {
     "id": "space",
     "name": "Space",
     "icon": "https://terraria.wiki.gg/images/Fallen_Star.gif",
-    "count": 11
+    "count": 10
   },
   {
     "id": "glowing-mushroom",

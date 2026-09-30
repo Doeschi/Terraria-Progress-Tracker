@@ -20,6 +20,10 @@ from .common import (
 DROP_MODES = ("normal", "expert", "master")
 
 
+def strip_ids(drop):
+    return {k: v for k, v in drop.items() if k != "npcIds"}
+
+
 def drop_text(value):
     """Rate/quantity wikitext -> plain text, e.g. '1% · Expert: 1.99%'."""
     text = html.unescape(value or "")
@@ -228,17 +232,33 @@ class Drops:
         if self.conditions:
             # conditions in the chance ("In [[Remix]] worlds", "[[Halloween]]") and in notes of
             # the custom column ("(if [[Wind|wind speed]] ≥ 20 mph)")
-            notes = re.findall(r'<span class="note">(.*?)</span>', html.unescape(row["custom"]))
+            # (also as <div class="note-text">, e.g. "(Only if name is Andrew)")
+            custom = html.unescape(row["custom"])
+            notes = [*re.findall(r'<span class="note">(.*?)</span>', custom),
+                     *re.findall(r'<div class="note-text[^"]*">(.*?)</div>', custom, re.S)]
             parsed = self.conditions.parse(" ".join([row["rate"], *notes]))
             note = condition_text(" ".join(notes)).strip("() ")
+            if note.lower() == "in regular worlds":
+                note = ""  # the default; its Remix counterpart has the condition
             entry["note"] = note or None
             entry["conditions"] = parsed["condition"] or None
             entry["events"] = parsed["event"] or None
             entry["biomes"] = parsed["biome"] or None
+        # a row of one variant only, e.g. Torch for the Torch Zombie on the Zombie page: its NPC ids
+        # (expected drops count only the kills of these variants)
+        # (the wiki names the variant in a note: "Zombie (Torch Zombie)")
+        if kind == "npc" and "note-text" in row["name"] and re.fullmatch(r"-?\d+", row["id"].strip()):
+            entry["npcIds"] = [int(row["id"])]
         entry = {k: v for k, v in entry.items() if v is not None}
         for item in items:
-            if entry not in self.drops[item["key"]]:
-                self.drops[item["key"]].append(entry)
+            same = next((d for d in self.drops[item["key"]] if strip_ids(d) == strip_ids(entry)), None)
+            if same is None:
+                self.drops[item["key"]].append(dict(entry))
+            elif "npcIds" in same and "npcIds" in entry:
+                # further variants with the same drop (Small / Big / Armed Slimed Zombie)
+                same["npcIds"] = sorted(set(same["npcIds"]) | set(entry["npcIds"]))
+            elif "npcIds" in same:
+                del same["npcIds"]  # also dropped by the main NPC: all variants count
 
     def drops_file(self):
         for key in self.drops:

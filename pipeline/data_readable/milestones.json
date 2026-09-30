@@ -3,7 +3,7 @@
     "id": "start",
     "name": "World creation",
     "icon": "https://terraria.wiki.gg/images/Copper_Shortsword.png",
-    "count": 3785
+    "count": 3777
   },
   {
     "id": "king-slime",
@@ -39,13 +39,13 @@
     "id": "skeletron",
     "name": "Skeletron",
     "icon": "https://terraria.wiki.gg/images/Map_Icon_Skeletron.png",
-    "count": 186
+    "count": 187
   },
   {
     "id": "wall-of-flesh",
     "name": "Wall of Flesh (Hardmode)",
     "icon": "https://terraria.wiki.gg/images/Map_Icon_Wall_of_Flesh.png",
-    "count": 1135
+    "count": 1128
   },
   {
     "id": "queen-slime",
@@ -57,7 +57,7 @@
     "id": "any-mech",
     "name": "Any mechanical boss",
     "icon": "https://terraria.wiki.gg/images/Map_Icon_Retinazer_%28first_form%29.png",
-    "count": 241
+    "count": 246
   },
   {
     "id": "all-mechs",

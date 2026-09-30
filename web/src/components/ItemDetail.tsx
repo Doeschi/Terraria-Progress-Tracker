@@ -1,6 +1,7 @@
 import { Fragment, useEffect, useMemo } from 'react'
 import { ArrowLeft, ExternalLink, Eye, EyeOff, PackageSearch, X } from 'lucide-react'
-import { useActivePlaythrough, useStore } from '@/store'
+import { useActivePlaythrough, useActiveWorld, useStore } from '@/store'
+import { dropKills, itemLuck, sourceKills, type KillCounts } from '@/lib/luck'
 import { useUi } from '@/ui'
 import { cn } from '@/lib/utils'
 import { DIFFICULTY_LABELS } from '@/lib/availability'
@@ -16,6 +17,7 @@ import { RecipeSections } from './RecipeSections'
 import { formatDate, nameOf } from '@/lib/format'
 import { type ColumnGroup, type ItemColumn, type TrackingState } from './table/columns'
 import { useItemColumns } from './table/useColumns'
+import { LuckCell } from './table/cells'
 import { usePrefs } from '@/lib/prefs'
 import { DETAIL_SECTIONS, ordered } from '@/lib/layout'
 
@@ -136,7 +138,15 @@ function DetailContent({ item, Title }: { item: Item; Title: TitleComponent }) {
   const checked = pt.checked.includes(item.key)
   const checkedSet = useMemo(() => new Set(pt.checked), [pt.checked])
   const ignored = pt.ignored.includes(item.key)
-  const tracking: TrackingState = { changedAt: pt.changedAt, difficulty: pt.difficulty }
+  const tracking: TrackingState = {
+    changedAt: pt.changedAt,
+    difficulty: pt.difficulty,
+    luck: null,
+    done: () => false,
+  }
+  // kills per drop source in the loaded world (expected drops)
+  const bestiary = useActiveWorld()?.bestiary
+  const kills = useMemo(() => (bestiary ? sourceKills(data, bestiary) : null), [data, bestiary])
   const changed = formatDate(pt.changedAt[item.key])
   const detailOrder = usePrefs((s) => s.layout.detailOrder)
   const hiddenDetail = usePrefs((s) => s.layout.hiddenDetail)
@@ -169,7 +179,16 @@ function DetailContent({ item, Title }: { item: Item; Title: TitleComponent }) {
       </Section>
     ),
     soldBy: <SoldBySection data={data} item={item} />,
-    dropped: <DropsSection data={data} item={item} difficulty={pt.difficulty} kind="dropped" />,
+    dropped: (
+      <DropsSection
+        data={data}
+        item={item}
+        difficulty={pt.difficulty}
+        kind="dropped"
+        kills={kills}
+        owned={checked || ignored}
+      />
+    ),
     found: <DropsSection data={data} item={item} difficulty={pt.difficulty} kind="found" />,
     recipes: <RecipeSections data={data} item={item} platform={pt.platform} checked={checkedSet} />,
     stats: <StatsSection item={item} catalogue={catalogue} tracking={tracking} />,
@@ -336,11 +355,17 @@ function DropsSection({
   item,
   difficulty,
   kind,
+  kills = null,
+  owned = false,
 }: {
   data: GameData
   item: Item
   difficulty: Parameters<typeof dropsFor>[2]
   kind: DropKind
+  /** kills per source in the loaded world */
+  kills?: KillCounts | null
+  /** checked or ignored: no bad-luck highlight */
+  owned?: boolean
 }) {
   const all = useMemo(
     () => (data.drops.get(item.key) ?? []).filter((d) => dropKind(data, d) === kind),
@@ -352,6 +377,10 @@ function DropsSection({
     for (const b of data.bosses) for (const s of b.sources) m.set(s, b.name)
     return m
   }, [data])
+  const luck = useMemo(
+    () => (kills ? itemLuck(data, item, difficulty, kills) : undefined),
+    [data, item, difficulty, kills],
+  )
   if (!all.length) return null
   const hidden = all.length - available.size
 
@@ -366,9 +395,15 @@ function DropsSection({
             boss={bossOf.get(d.source)}
             available={available.has(d)}
             difficulty={difficulty}
+            kills={kills ? dropKills(kills, d) : undefined}
           />
         ))}
       </ul>
+      {luck && (
+        <p className="text-xs text-muted-foreground">
+          Expected by now in this world: <LuckCell data={data} luck={luck} missing={!owned} />
+        </p>
+      )}
       {hidden > 0 && (
         <p className="text-xs text-muted-foreground">
           Greyed out: {hidden === 1 ? 'drop' : 'drops'} not available in {DIFFICULTY_LABELS[difficulty]}.
@@ -384,12 +419,15 @@ function DropRow({
   boss,
   available,
   difficulty,
+  kills,
 }: {
   drop: Drop
   data: GameData
   boss?: string
   available: boolean
   difficulty: Parameters<typeof dropsFor>[2]
+  /** kills of the source in the loaded world */
+  kills?: number
 }) {
   const source = data.dropSources.get(drop.source)
   const modes = modeLabel(drop.modes)
@@ -414,6 +452,11 @@ function DropRow({
           {spawn && <span>{spawn}</span>}
           {quantity && <span>× {quantity}</span>}
           {modes && <span>{modes}</span>}
+          {kills !== undefined && (
+            <span className="text-foreground/80">
+              {kills.toLocaleString('en')} {kills === 1 ? 'kill' : 'kills'} in this world
+            </span>
+          )}
         </div>
         {(conditions.length > 0 || drop.note) && (
           <div className="flex flex-wrap gap-1 pt-0.5">

@@ -18,9 +18,9 @@ import {
 import { confirm } from '@/lib/confirm'
 import { FilterSidebar } from './FilterSidebar'
 import { ItemTable } from './table/ItemTable'
-import { useColumnVisibility, useItemColumns, useShownColumns, useViews } from './table/useColumns'
+import { useColumnVisibility, useHasKills, useItemColumns, useShownColumns, useViews } from './table/useColumns'
 import { COLUMN_GROUPS, type ItemColumn } from './table/columns'
-import { activeView, viewVisibility } from './table/presets'
+import { activeView, viewVisibility, type View } from './table/presets'
 import { ViewEditor, type ViewEditTarget } from './table/ViewEditor'
 import { cn } from '@/lib/utils'
 import { TallyBar, TallyText } from './common'
@@ -120,7 +120,11 @@ function PresetBar() {
   const [menuOpen, setMenuOpen] = useState(false)
   // set while a control inside a menu item (star, pencil) is pressed, so the item does not also select the view
   const controlHit = useRef(false)
-  const active = activeView(views, shownIds)
+  // views with world-only columns ("Bad luck") need a loaded world
+  const hasKills = useHasKills()
+  const usable = (v: View) => !v.needsWorld || hasKills
+  const NEEDS_WORLD = 'Needs a loaded world (its bestiary kills) – load the world file first'
+  const active = activeView(views.filter(usable), shownIds)
 
   const apply = (v: ViewDef) => {
     setColumns(viewVisibility(v, catalogue))
@@ -158,14 +162,15 @@ function PresetBar() {
         <button
           key={v.id}
           onClick={() => apply(v)}
+          disabled={!usable(v)}
           aria-pressed={active?.id === v.id}
           className={cn(
-            'h-7 rounded-full border px-3 text-xs font-medium transition-colors',
+            'h-7 rounded-full border px-3 text-xs font-medium transition-colors disabled:opacity-50',
             active?.id === v.id
               ? 'border-primary bg-primary text-primary-foreground'
-              : 'bg-background text-foreground/80 hover:bg-muted hover:text-foreground',
+              : 'bg-background text-foreground/80 enabled:hover:bg-muted enabled:hover:text-foreground',
           )}
-          title={`Show the ${v.label.toLowerCase()} columns`}
+          title={usable(v) ? `Show the ${v.label.toLowerCase()} columns` : NEEDS_WORLD}
         >
           {v.label}
         </button>
@@ -190,20 +195,24 @@ function PresetBar() {
               <DropdownMenuItem
                 key={v.id}
                 onSelect={(e) => {
-                  if (controlHit.current) {
+                  if (controlHit.current || !usable(v)) {
                     controlHit.current = false
                     e.preventDefault()
                     return
                   }
                   apply(v)
                 }}
+                title={usable(v) ? undefined : NEEDS_WORLD}
               >
                 <Check className={active?.id === v.id ? '' : 'invisible'} />
-                <span className="flex-1 truncate">
+                <span className={cn('flex-1 truncate', !usable(v) && 'opacity-50')}>
                   {v.label}
                   {v.changed && <span className="ml-1.5 text-xs text-muted-foreground">(changed)</span>}
+                  {!usable(v) && <span className="ml-1.5 text-xs text-muted-foreground">(needs a world)</span>}
                 </span>
+                {/* editing needs its world-only columns in the catalogue */}
                 <button
+                  hidden={!usable(v)}
                   {...control(() => {
                     setMenuOpen(false)
                     setEditing({ view: v })

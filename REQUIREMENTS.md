@@ -107,6 +107,9 @@ GitHub Actions.
 - **D7** Items with rarity Expert (-12) or Master (-13) that can only be obtained from drops or
   treasure bags get `minDifficulty` `expert` / `master`. Items that can also be crafted or
   bought are not restricted.
+- **D18b** Pickups that are used up on touch and never reach the inventory (Heart, Star, their
+  seasonal variants Candy Apple, Candy Cane, Soul Cake, Sugar Plum, and the Nebula boosters) are
+  left out of the items (`[pickups]` in `mapping.toml`), together with their drop rows.
 - **D19** Unobtainable items (the wiki's `unobtainable` field, tag or category "Unobtainable
   items") only belong to the obtain method "Unobtainable"; other labels the wiki gives them (e.g.
   "Dropped by enemies" for presents that were dropped until 1.2.2) are dropped. A list in
@@ -318,6 +321,14 @@ GitHub Actions.
 - **FL14** Every group header also shows how many of its options are completed, e.g. "✓ 2/18"
   (top-level options with items in the current context, hidden ones left out; green when all
   are complete).
+- **FL15** Group "Almost done" (items and bestiary): the 5 options closest to completion, as
+  duplicates of the options in their groups (same selection; the group name is shown with each).
+  Ranked by percentage, ties by fewer missing; only options with at least 5 items, at least one
+  obtained and not complete; hidden options and the groups Progression and Crafting are left
+  out; subgroups count. Computed over the whole playthrough (not the current filters), so the
+  list does not change while filtering. It is a group like the others (open/closed remembered,
+  reorderable in the settings) and starts at the top, also for a saved group order.
+
 ## LS – Layout and settings
 
 - **LS0** The top bar groups its fields in cards: File, the playthrough box (P) and the View
@@ -437,7 +448,10 @@ GitHub Actions.
   does not tag with the vendor get the vendor too.
 - **CO2** Condition texts of shop rows and drop rows are mapped to condition ids with the links
   and phrases in `mapping.toml`; negated parts ("before defeating …", "except in Remix worlds",
-  "but not …") give no id. The build reports unmapped links. Types:
+  "but not …") give no id. Drop rows: the chance text and the notes of the custom column (both
+  `<span class="note">` and `<div class="note-text">`, e.g. Green Cap "(Only if name is
+  Andrew)", Chain Knife "(In Remix worlds)"); "In regular worlds" is the default and dropped.
+  The build reports unmapped links. Types:
   - Time of day: Day, Night; moon phases 1–8 (from `{{moons|…}}`, with the wiki's moon icons)
   - Progress: after a boss (the bosses of the Bosses filter, plus "any mechanical boss" / "all
     mechanical bosses"); Hardmode / Pre-Hardmode only (shown, not filtered – see Progression)
@@ -747,6 +761,27 @@ GitHub Actions.
 - **BE7** Header: a second progress bar for the bestiary below the item progress.
 - **BE8** Tracking file v4: `bestiary` (unlocked entry ids) and `bestiaryChangedAt` per
   playthrough.
+
+## BL – Expected drops ("bad luck")
+
+- **BL1** With a loaded world, the kill counts of its bestiary give the expected number of drops
+  per item: Σ kills × chance over all enemies that drop it (chance of the playthrough's
+  difficulty), and the chance to have got it at least once: 1 − Π (1 − p)^kills. It counts drop
+  events, not quantities (1–3 counts as one).
+- **BL2** Drop sources are matched to bestiary entries by NPC id, by name and by wiki page (all
+  variants of an enemy count, e.g. every Zombie). Drops the wiki binds to one variant (Torch:
+  Torch Zombie, Gel: Slimed Zombie) keep its NPC ids (`npcIds` in `drops.json`) and count only
+  that variant's kills; variants without an entry of their own are skipped. Treasure bags use the kills of their boss
+  (the highest of its parts, e.g. The Twins). Sources without bestiary data (Shadow Orbs,
+  slimes with an item inside, …) are left out.
+- **BL3** Column "Expected drops" (only offered while a world is loaded): `2.4× · 91%`, sorted by
+  the chance; empty for items no enemy drops. Drops bound to a condition, event or biome are
+  counted with every kill (the world does not record where or when an enemy died) and are
+  marked "≈". A missing item with a chance of 95 % or more is highlighted (amber). The tooltip
+  lists every source: kills × chance = expected.
+- **BL4** Built-in view "Bad luck" (expected drops, drops, conditions, events, biome, available
+  after; sorted by the chance): only selectable while a world is loaded.
+- **BL5** Detail panel: each enemy drop source shows its kills in the loaded world.
 
 ## v2 / later
 

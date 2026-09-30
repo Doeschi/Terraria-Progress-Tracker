@@ -12,6 +12,8 @@ export interface ColumnPreset {
   /** optional column ids; null = the columns' `defaultVisible` */
   columns: string[] | null
   sorting?: ColumnSort[]
+  /** only selectable while a world is loaded (a column needs its bestiary) */
+  needsWorld?: boolean
 }
 
 export const COLUMN_PRESETS: ColumnPreset[] = [
@@ -27,6 +29,14 @@ export const COLUMN_PRESETS: ColumnPreset[] = [
     label: 'Progression',
     columns: ['milestone', 'categories', 'rarity', 'obtain', 'drops', 'vendors', 'conditions'],
     sorting: [{ id: 'milestone', desc: false }],
+  },
+  {
+    // items that should have dropped by now (world bestiary kills)
+    id: 'bad-luck',
+    label: 'Bad luck',
+    columns: ['expectedDrops', 'drops', 'conditions', 'events', 'biomes', 'milestone'],
+    sorting: [{ id: 'expectedDrops', desc: true }],
+    needsWorld: true,
   },
   {
     id: 'weapons',
@@ -102,6 +112,8 @@ export interface View extends ViewDef {
   builtin: boolean
   /** built-in view that differs from its default (offers "Restore default") */
   changed: boolean
+  /** only selectable while a world is loaded */
+  needsWorld?: boolean
 }
 
 /** The default of a built-in view ("Overview": the columns' defaults, in catalogue order). */
@@ -128,6 +140,7 @@ export function resolveViews(catalogue: ItemColumn[], prefs: ViewsPrefs): View[]
       ...clean({ ...builtinDefault(p, catalogue), ...edit }),
       builtin: true,
       changed: Object.keys(edit).length > 0,
+      needsWorld: p.needsWorld,
     }
   })
   const own = prefs.custom.map((v): View => ({ ...clean(v), builtin: false, changed: false }))
