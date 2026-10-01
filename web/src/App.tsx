@@ -13,6 +13,7 @@ import { BestiaryList } from '@/components/BestiaryList'
 import { useBestiaryView } from '@/hooks/useBestiaryView'
 import { useAutosave } from '@/hooks/useAutosave'
 import { useSearchShortcuts } from '@/hooks/useSearchShortcuts'
+import { useEasterEggs, useProgressEggs } from '@/hooks/useEasterEggs'
 import { ItemList } from '@/components/ItemList'
 import { ItemDetailPanel, ItemDetailSheet } from '@/components/ItemDetail'
 import { useMediaQuery } from '@/hooks/useMediaQuery'
@@ -62,7 +63,8 @@ export default function App() {
       <SyncDialog />
       <ChestSearchDialog />
       <ConfirmDialogHost />
-      <Toaster position="bottom-right" />
+      {/* expanded: several toasts at once (e.g. "filters complete" and "everything collected") all stay readable */}
+      <Toaster position="bottom-right" expand />
     </TooltipProvider>
   )
 }
@@ -97,6 +99,8 @@ function Tracker() {
   // "Filter complete!" toasts with confetti
   useItemCompletions(view?.available)
   useBestiaryCompletions()
+  useEasterEggs()
+  useProgressEggs(view?.overall)
   const openDialog = useUi((s) => s.open)
   // wide screens: details docked right of the table; narrow: as overlay
   const docked = useMediaQuery('(min-width: 1024px)')

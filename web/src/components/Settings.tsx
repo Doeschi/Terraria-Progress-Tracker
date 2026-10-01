@@ -97,6 +97,11 @@ export function SettingsDialog({ open, onOpenChange }: { open: boolean; onOpenCh
               onChange={(celebrate) => setLayout({ celebrate })}
               label="Celebrate completed filters (a message with confetti when an option reaches 100%)"
             />
+            <Check
+              checked={layout.easterEggs}
+              onChange={(easterEggs) => setLayout({ easterEggs })}
+              label="Easter eggs (a few hidden Terraria references)"
+            />
             <FilterGroupsEditor />
           </Part>
 

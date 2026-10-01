@@ -11,6 +11,7 @@ import { FileMenu } from './topbar/FileMenu'
 import { PlaythroughMenu, PlaythroughSettings } from './topbar/PlaythroughControls'
 import { SyncButton, WorldMenu } from './topbar/WorldMenu'
 import { PlayerMenu } from './topbar/PlayerMenu'
+import { HeaderSnow } from './topbar/HeaderSnow'
 import { SettingsMenu } from './topbar/SettingsMenu'
 
 export function TopBar({ view }: { view: TrackerView | null }) {
@@ -18,7 +19,8 @@ export function TopBar({ view }: { view: TrackerView | null }) {
   const separateFields = usePrefs((s) => s.layout.playthroughFields)
   // three columns: logo (left) | file + playthrough (centered) | theme (right)
   return (
-    <header className="grid grid-cols-[auto_1fr_auto] items-center gap-3 border-b bg-background/80 px-3 py-2 backdrop-blur">
+    <header className="relative grid grid-cols-[auto_1fr_auto] items-center gap-3 border-b bg-background/80 px-3 py-2 backdrop-blur">
+      <HeaderSnow />
       <div className="flex items-center gap-2 font-semibold">
         <span className="grid size-8 place-items-center rounded-lg bg-primary text-primary-foreground">
           <Pickaxe className="size-4" />

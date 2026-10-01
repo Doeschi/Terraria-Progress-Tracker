@@ -16,6 +16,7 @@ import { useVirtualizer } from '@tanstack/react-virtual'
 import { ArrowDown, ArrowUp, ExternalLink, Eye, EyeOff, PackageSearch } from 'lucide-react'
 import { useActivePlaythrough, useActiveWorld, useStore } from '@/store'
 import { itemLuck, sourceKills, type Luck } from '@/lib/luck'
+import { rodOfDiscord } from '@/lib/eggs'
 import type { Owned } from '@/hooks/useTrackerView'
 import { usePrefs } from '@/lib/prefs'
 import { useUi } from '@/ui'
@@ -381,7 +382,10 @@ function CheckCell({ item }: { item: Item }) {
       title={date ? `Last changed: ${date}` : undefined}
       checked={checked.has(item.key)}
       disabled={ignored.has(item.key)}
-      onCheckedChange={(v) => setChecked([item.key], v === true)}
+      onCheckedChange={(v) => {
+        setChecked([item.key], v === true)
+        if (v === true && item.key === 'RodofDiscord') rodOfDiscord(document.activeElement)
+      }}
       aria-label={`Obtained: ${item.name}`}
     />
   )

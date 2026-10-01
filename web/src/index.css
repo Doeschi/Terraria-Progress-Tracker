@@ -139,3 +139,56 @@
     scrollbar-color: color-mix(in oklch, var(--foreground) 32%, transparent) transparent;
   }
 }
+
+/* Easter eggs (lib/eggs.tsx, G8) */
+html.egg-flip #root {
+  transform: rotate(180deg);
+  transition: transform 0.7s ease-in-out;
+}
+html.egg-unflip #root {
+  transition: transform 0.7s ease-in-out;
+}
+html.egg-drunk #root {
+  animation: egg-drunk 1.6s ease-in-out infinite;
+  filter: hue-rotate(160deg) saturate(1.3);
+}
+@keyframes egg-drunk {
+  0%,
+  100% {
+    transform: rotate(-0.6deg) skewX(-0.8deg);
+  }
+  50% {
+    transform: rotate(0.6deg) skewX(0.8deg);
+  }
+}
+/* "for the worthy": red accents until the page is reloaded */
+html.egg-worthy {
+  --primary: oklch(0.55 0.21 27);
+  --ring: oklch(0.65 0.2 27);
+}
+html.egg-worthy.dark {
+  --primary: oklch(0.65 0.21 27);
+  --primary-foreground: oklch(0.985 0 0);
+  --ring: oklch(0.55 0.2 27);
+}
+/* snow in the header at Christmas (HeaderSnow) */
+.egg-snowflake {
+  position: absolute;
+  top: -6px;
+  width: 4px;
+  height: 4px;
+  background: white;
+  opacity: 0.8;
+  animation: egg-snow linear infinite;
+}
+@keyframes egg-snow {
+  to {
+    transform: translate(18px, 90px);
+    opacity: 0;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .egg-snowflake {
+    display: none;
+  }
+}

@@ -29,6 +29,10 @@ GitHub Actions.
   playthrough, time of the last change ("today, 14:05") and an "unsaved changes" marker. Below,
   three notes with icons centered on their text: privacy, data source / license / unofficial
   fan project (G4), and that the app was built with the help of AI (Claude by Anthropic).
+- **G8** A few easter eggs (Terraria references; deliberately not listed here). They never block
+  the app or change data, are short, show no motion with "reduced motion", use only own texts and
+  the wiki's images, and can be turned off in the settings ("Easter eggs", on by default).
+
 ## D – Data
 
 - **D1** Repository layout: `pipeline/` (download + build scripts, `mapping.toml`, `raw/`),

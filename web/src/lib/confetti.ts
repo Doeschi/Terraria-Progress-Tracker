@@ -2,8 +2,12 @@
 // single-colored squares that tumble - flipping between wide and thin like a 2D sprite - and
 // fall. Drawn on a temporary full-screen canvas that ignores the mouse.
 
-// the game's confetti colors
-const COLORS = ['#ff4b4b', '#4bdc4b', '#4b8cff', '#ffd23c', '#ff6ee6']
+import { prefersReducedMotion, seasonOf } from './season'
+
+// the game's confetti colors; orange and purple at Halloween
+export const CONFETTI_COLORS = ['#ff4b4b', '#4bdc4b', '#4b8cff', '#ffd23c', '#ff6ee6']
+export const HALLOWEEN_COLORS = ['#ff7a1a', '#ffb02e', '#8a3cff', '#3d2a52', '#ff7a1a']
+export const GOLD_COLORS = ['#ffd23c', '#f5b81c', '#fff1a8', '#d9a93a', '#ffe680']
 // one "game pixel" in screen pixels: flakes are 2×2 game pixels, positions snap to it
 const PX = 2
 const DURATION = 3000
@@ -22,9 +26,13 @@ interface Flake {
   sway: number
 }
 
-/** Burst from a line around (x, y) (± `spread`) in viewport pixels, e.g. a toast. Skipped for reduced motion. */
-export function confettiBurst(x: number, y: number, count = 140, spread = 160) {
-  if (typeof window === 'undefined' || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
+/**
+ * Burst from a line around (x, y) (± `spread`) in viewport pixels, e.g. a toast. Skipped for
+ * reduced motion. Colors: the game's (orange at Halloween) unless given.
+ */
+export function confettiBurst(x: number, y: number, count = 140, spread = 160, colors?: string[]) {
+  if (typeof window === 'undefined' || prefersReducedMotion()) return
+  const palette = colors ?? (seasonOf() === 'halloween' ? HALLOWEEN_COLORS : CONFETTI_COLORS)
   const canvas = document.createElement('canvas')
   const dpr = window.devicePixelRatio || 1
   canvas.width = Math.round(window.innerWidth * dpr)
@@ -55,7 +63,7 @@ export function confettiBurst(x: number, y: number, count = 140, spread = 160) {
       vx: Math.cos(angle) * speed,
       vy: Math.sin(angle) * speed * 0.8,
       size: (Math.random() < 0.3 ? 3 : 2) * PX,
-      color: COLORS[Math.floor(Math.random() * COLORS.length)],
+      color: palette[Math.floor(Math.random() * palette.length)],
       spin: Math.random() * Math.PI,
       spinSpeed: 0.15 + Math.random() * 0.25,
       sway: Math.random() * Math.PI * 2,

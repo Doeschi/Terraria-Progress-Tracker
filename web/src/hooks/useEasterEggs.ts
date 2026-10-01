@@ -1,0 +1,168 @@
+import { useEffect, useRef } from 'react'
+import { useActivePlaythrough, useStore } from '@/store'
+import { usePrefs } from '@/lib/prefs'
+import { seasonOf } from '@/lib/season'
+import { confettiBurst } from '@/lib/confetti'
+import { achievement, bees, bigConfetti, bunny, drunk, flipPage, goldConfetti, itemIcon, worthy } from '@/lib/eggs'
+
+// Easter eggs (G8) that are not tied to a component: secret world seeds typed into the item or
+// bestiary search, the Konami code, Terraria's birthday and a rare bunny.
+
+/** "Don't Dig Up" -> "dont dig up" */
+const normalize = (s: string) => s.toLowerCase().replace(/['’]/g, '').replace(/\s+/g, ' ').trim()
+
+const SEEDS: Record<string, () => void> = {
+  'not the bees': () => {
+    bees()
+    achievement('Not the bees!', 'A whole hive of them, just for you.', itemIcon('Abeemination'))
+  },
+  'dont dig up': () => {
+    flipPage()
+    achievement('Everything is upside down', 'Dig up for a change.', itemIcon('CopperPickaxe'))
+  },
+  'for the worthy': () => {
+    worthy()
+    achievement('For the worthy', 'Everything is a little more dangerous now. Reload to calm down.', itemIcon('Skull'))
+  },
+  celebrationmk10: () => {
+    bigConfetti()
+    achievement('Party time!', 'Ten years of digging, building and fighting.', itemIcon('Confetti'))
+  },
+  'drunk world': () => {
+    drunk()
+    achievement('Hic!', 'The world is a bit wobbly today.', itemIcon('Ale'))
+  },
+  '05162020': () => SEEDS['drunk world'](),
+  '5162020': () => SEEDS['drunk world'](),
+  getfixedboi: () => {
+    flipPage(5000)
+    drunk(5000)
+    bees(20)
+    bigConfetti()
+    worthy(5000)
+    achievement('Get fixed, boi', 'All the secret worlds at once. Good luck.', itemIcon('Zenith'))
+  },
+}
+
+const KONAMI = [
+  'ArrowUp',
+  'ArrowUp',
+  'ArrowDown',
+  'ArrowDown',
+  'ArrowLeft',
+  'ArrowRight',
+  'ArrowLeft',
+  'ArrowRight',
+  'b',
+  'a',
+]
+
+export function useEasterEggs() {
+  const enabled = usePrefs((s) => s.layout.easterEggs)
+  const search = useStore((s) => s.search)
+  const bestiarySearch = useStore((s) => s.bestiarySearch)
+  const last = useRef('')
+
+  // secret world seeds in the search (once each time the text becomes one)
+  useEffect(() => {
+    if (!enabled) return
+    for (const text of [search, bestiarySearch]) {
+      const key = normalize(text)
+      if (SEEDS[key] && last.current !== key) {
+        last.current = key
+        SEEDS[key]()
+        return
+      }
+    }
+    if (!SEEDS[normalize(search)] && !SEEDS[normalize(bestiarySearch)]) last.current = ''
+  }, [enabled, search, bestiarySearch])
+
+  // Konami code
+  useEffect(() => {
+    if (!enabled) return
+    let pos = 0
+    const onKey = (e: KeyboardEvent) => {
+      const key = e.key.length === 1 ? e.key.toLowerCase() : e.key
+      pos = key === KONAMI[pos] ? pos + 1 : key === KONAMI[0] ? 1 : 0
+      if (pos === KONAMI.length) {
+        pos = 0
+        achievement(
+          'Achievement unlocked: Cheater?',
+          'Up, up, down, down… some codes never get old.',
+          itemIcon('GoldenKey'),
+        )
+        confettiBurst(window.innerWidth / 2, 70, 200)
+      }
+    }
+    window.addEventListener('keydown', onKey)
+    return () => window.removeEventListener('keydown', onKey)
+  }, [enabled])
+
+  // Terraria's birthday (May 16, 2011): once a year; and a rare bunny on some visits
+  useEffect(() => {
+    if (!enabled) return
+    const timers: ReturnType<typeof setTimeout>[] = []
+    const now = new Date()
+    if (seasonOf(now) === 'birthday') {
+      const key = 'egg-birthday'
+      let seen: string | null = null
+      try {
+        seen = localStorage.getItem(key)
+      } catch {
+        // storage unavailable: show it anyway
+      }
+      if (seen !== String(now.getFullYear())) {
+        try {
+          localStorage.setItem(key, String(now.getFullYear()))
+        } catch {
+          // ignore
+        }
+        timers.push(
+          setTimeout(() => {
+            achievement(
+              'Happy birthday, Terraria!',
+              `Released on May 16, 2011 – ${now.getFullYear() - 2011} years of digging.`,
+              itemIcon('SliceOfCake'),
+            )
+            bigConfetti()
+          }, 1500),
+        )
+      }
+    }
+    if (Math.random() < 1 / 500) timers.push(setTimeout(bunny, 4000))
+    return () => timers.forEach(clearTimeout)
+  }, [enabled])
+}
+
+/**
+ * Progress moments (G8): the first item of a playthrough, and everything collected. Only on a
+ * change of the checked items - not when a file is loaded or the playthrough switched.
+ */
+export function useProgressEggs(overall: { total: number; obtained: number } | undefined) {
+  const enabled = usePrefs((s) => s.layout.easterEggs)
+  const pt = useActivePlaythrough()
+  const prev = useRef<{ id?: string; checked?: string[]; obtained: number; total: number } | null>(null)
+
+  useEffect(() => {
+    const now = { id: pt?.id, checked: pt?.checked, obtained: overall?.obtained ?? 0, total: overall?.total ?? 0 }
+    const p = prev.current
+    prev.current = now
+    if (!enabled || !p || !pt || p.id !== now.id || p.checked === now.checked) return
+    if (p.checked?.length === 0 && pt.checked.length > 0)
+      achievement(
+        'Your adventure begins',
+        'The first item of this playthrough. Many more to go!',
+        itemIcon('CopperShortsword'),
+      )
+    // after the "filters complete" toast (it waits 0.4 s for more changes), so this one is on top
+    if (now.total > 0 && p.obtained < p.total && now.obtained === now.total)
+      setTimeout(() => {
+        achievement(
+          'Everything collected!',
+          `All ${now.total.toLocaleString('en')} items of this playthrough. Legendary.`,
+          itemIcon('Zenith'),
+        )
+        goldConfetti()
+      }, 700)
+  }, [enabled, pt, overall?.obtained, overall?.total])
+}

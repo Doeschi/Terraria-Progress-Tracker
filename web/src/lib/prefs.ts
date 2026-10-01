@@ -33,6 +33,8 @@ export interface Layout {
   optionBars: boolean
   /** toast with confetti when a filter option reaches 100% */
   celebrate: boolean
+  /** a few hidden Terraria references (G8) */
+  easterEggs: boolean
   /** detail panel sections in this order; missing ones keep their place */
   detailOrder: string[]
   hiddenDetail: string[]
@@ -48,6 +50,7 @@ export const DEFAULT_LAYOUT: Layout = {
   groupOrder: {},
   optionBars: true,
   celebrate: true,
+  easterEggs: true,
   openGroups: {},
   detailOrder: [],
   hiddenDetail: [],
@@ -67,6 +70,7 @@ function readLayout(v: unknown): Layout {
     'filterBarAlways',
     'optionBars',
     'celebrate',
+    'easterEggs',
   ] as const)
     if (typeof o[k] === 'boolean') out[k] = o[k] as boolean
   for (const k of ['favoriteViews', 'detailOrder', 'hiddenDetail'] as const) {
