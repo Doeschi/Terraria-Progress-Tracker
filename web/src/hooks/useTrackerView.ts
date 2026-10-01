@@ -1,5 +1,6 @@
 import { useDeferredValue, useMemo } from 'react'
-import { useActivePlaythrough, useActiveWorld, useStore } from '@/store'
+import { useActivePlayer, useActivePlaythrough, useActiveWorld, useStore } from '@/store'
+import { playerStock, STORAGE_TEXT } from '@/lib/player'
 import { usePrefs } from '@/lib/prefs'
 import { chestStock, craftingEntries } from '@/lib/recipes'
 import {
@@ -21,8 +22,15 @@ export interface TrackerView extends Counts {
   checked: Set<string>
   ignored: Set<string>
   searching: boolean
-  /** item key -> amount in the player's chests (whole world); null without a loaded world */
-  chests: Map<string, number> | null
+  /** item key -> amount owned: in the player's chests (whole world) and on the loaded player;
+   * null without a loaded world or player */
+  owned: Map<string, Owned> | null
+}
+
+/** How many of an item the player owns, and where ("in chests", "in the Void Vault", ...). */
+export interface Owned {
+  total: number
+  places: [where: string, amount: number][]
 }
 
 const NONE: string[] = []
@@ -103,6 +111,24 @@ export function useTrackerView(): TrackerView | null {
     [data, platformItems, platform, checked, chests, stationsRequired],
   )
 
+  // "Owned" column: the chests plus everything on the player
+  const player = useActivePlayer()
+  const owned = useMemo(() => {
+    if (!data || !platform || (!chests && !player)) return null
+    const out = new Map<string, Owned>()
+    const add = (key: string, where: string, n: number) => {
+      let o = out.get(key)
+      if (!o) out.set(key, (o = { total: 0, places: [] }))
+      o.total += n
+      o.places.push([where, n])
+    }
+    for (const [key, n] of chests ?? []) add(key, 'in chests', n)
+    if (player)
+      for (const [key, { places }] of playerStock(data, player, platform))
+        for (const [storage, n] of places) add(key, STORAGE_TEXT[storage], n)
+    return out
+  }, [data, platform, chests, player])
+
   // independent of view mode and sort order
   const counts = useMemo(
     () =>
@@ -128,7 +154,7 @@ export function useTrackerView(): TrackerView | null {
   )
 
   return useMemo(
-    () => (pt ? { ...counts, visible, platformItems, checked, ignored, searching: !!ranks, chests } : null),
-    [pt, counts, visible, platformItems, checked, ignored, ranks, chests],
+    () => (pt ? { ...counts, visible, platformItems, checked, ignored, searching: !!ranks, owned } : null),
+    [pt, counts, visible, platformItems, checked, ignored, ranks, owned],
   )
 }

@@ -31,6 +31,7 @@ import { loadView, saveView } from './lib/viewState'
 import { useUi } from './ui'
 import type { Difficulty, GameData, PlatformId } from './lib/types'
 import type { LoadedWorld } from './lib/world'
+import type { LoadedPlayer } from './lib/player'
 import {
   emptyBestiarySelection,
   type BestiaryGroupKey,
@@ -55,6 +56,8 @@ interface State {
 
   /** Parsed worlds of this session, by playthrough id. Never saved. */
   worlds: Record<string, LoadedWorld>
+  /** Parsed player files of this session, by playthrough id. Never saved. */
+  players: Record<string, LoadedPlayer>
 
   selection: Selection
   search: string
@@ -90,6 +93,8 @@ interface Actions {
 
   setWorld(playthroughId: string, world: LoadedWorld): void
   detachWorld(playthroughId: string): void
+  setPlayer(playthroughId: string, player: LoadedPlayer): void
+  detachPlayer(playthroughId: string): void
   saveArea(playthroughId: string, area: Area): void
   deleteArea(playthroughId: string, areaId: string): void
 
@@ -163,6 +168,7 @@ export const useStore = create<State & Actions>()((set, get) => {
     lastSavedAt: null,
     autosaveStatus: 'ok',
     worlds: {},
+    players: {},
     selection: emptySelection(),
     search: '',
     view: 'all',
@@ -191,6 +197,7 @@ export const useStore = create<State & Actions>()((set, get) => {
         lastSavedAt: null,
         autosaveStatus: 'ok',
         worlds: {},
+        players: {},
         ...viewOf(null),
       })
     },
@@ -204,6 +211,7 @@ export const useStore = create<State & Actions>()((set, get) => {
         lastSavedAt: null,
         autosaveStatus: 'ok',
         worlds: {},
+        players: {},
         ...viewOf(doc.activePlaythroughId),
       })
     },
@@ -215,6 +223,7 @@ export const useStore = create<State & Actions>()((set, get) => {
         handle: null,
         dirty: false,
         worlds: {},
+        players: {},
         ...viewOf(null),
       })
       void clearBackup()
@@ -281,7 +290,8 @@ export const useStore = create<State & Actions>()((set, get) => {
         return { ...doc, playthroughs, activePlaythroughId }
       })
       const { [id]: _removed, ...worlds } = get().worlds
-      set({ worlds })
+      const { [id]: _player, ...players } = get().players
+      set({ worlds, players })
     },
 
     setActivePlaythrough(id) {
@@ -337,6 +347,21 @@ export const useStore = create<State & Actions>()((set, get) => {
           (Object.keys(ref) as (keyof typeof ref)[]).every((k) => p.world![k] === ref[k])
         return same ? p : { ...p, difficulty, world: ref }
       })
+    },
+
+    setPlayer(playthroughId, player) {
+      set({ players: { ...get().players, [playthroughId]: player } })
+      mutatePlaythrough(playthroughId, (p) => {
+        // reloading the same file (e.g. on "Continue") changes nothing: the file stays unmodified
+        if (p.player && p.player.name === player.name && p.player.fileName === player.fileName) return p
+        return { ...p, player: { name: player.name, fileName: player.fileName, lastSyncedAt: null } }
+      })
+    },
+
+    detachPlayer(playthroughId) {
+      const { [playthroughId]: _removed, ...players } = get().players
+      set({ players })
+      mutatePlaythrough(playthroughId, (p) => ({ ...p, player: null }))
     },
 
     detachWorld(playthroughId) {
@@ -458,6 +483,10 @@ export function useActivePlaythrough(): Playthrough | null {
 
 export function useActiveWorld(): LoadedWorld | null {
   return useStore((s) => (s.doc?.activePlaythroughId ? (s.worlds[s.doc.activePlaythroughId] ?? null) : null))
+}
+
+export function useActivePlayer(): LoadedPlayer | null {
+  return useStore((s) => (s.doc?.activePlaythroughId ? (s.players[s.doc.activePlaythroughId] ?? null) : null))
 }
 
 // ------------------------------------------------------- local backup

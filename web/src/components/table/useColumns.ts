@@ -1,5 +1,5 @@
 import { useMemo } from 'react'
-import { useActiveWorld, useStore } from '@/store'
+import { useActivePlayer, useActiveWorld, useStore } from '@/store'
 import { usePrefs } from '@/lib/prefs'
 import { buildColumns, type ItemColumn } from './columns'
 import { resolveViews, shownColumns, type View } from './presets'
@@ -9,12 +9,16 @@ export function useHasWorld(): boolean {
   return !!useActiveWorld()
 }
 
-/** The columns that can be shown now (world-only ones need a loaded world). */
+/** The columns that can be shown now (some need a loaded world, or a world or player). */
 export function useItemColumns(): ItemColumn[] {
   const data = useStore((s) => s.data)!
   const hasWorld = useHasWorld()
+  const hasPlayer = !!useActivePlayer()
   const all = useMemo(() => buildColumns(data), [data])
-  return useMemo(() => (hasWorld ? all : all.filter((c) => !c.needsWorld)), [all, hasWorld])
+  return useMemo(
+    () => all.filter((c) => !c.needs || (c.needs === 'world' ? hasWorld : hasWorld || hasPlayer)),
+    [all, hasWorld, hasPlayer],
+  )
 }
 
 /** Visibility of the optional columns: saved preference, else the column default. */

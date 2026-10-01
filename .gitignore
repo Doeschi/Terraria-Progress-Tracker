@@ -17,3 +17,6 @@ pipeline/contact.txt
 
 # downloaded wiki icons (build_icons.py)
 pipeline/icons_cache/
+
+# built packages
+packages/*/dist/

@@ -3,7 +3,7 @@ import { DIFFICULTIES, PLATFORM_IDS, type Difficulty, type PlatformId } from './
 
 // Tracking file format. Bump SAVE_VERSION and add a step to MIGRATIONS when it changes.
 export const SAVE_FORMAT = 'terraria-progress-tracker'
-export const SAVE_VERSION = 4
+export const SAVE_VERSION = 5
 
 const AreaSchema = z.object({
   id: z.string(),
@@ -25,6 +25,12 @@ const WorldRefSchema = z.object({
   lastSyncedAt: z.nullable(z.string()),
 })
 
+const PlayerRefSchema = z.object({
+  name: z.string(),
+  fileName: z.string(),
+  lastSyncedAt: z.nullable(z.string()),
+})
+
 const PlaythroughSchema = z.object({
   id: z.string(),
   name: z.string(),
@@ -43,6 +49,8 @@ const PlaythroughSchema = z.object({
   /** bestiary entry id -> ISO time of the last change */
   bestiaryChangedAt: z.record(z.string(), z.string()),
   world: z.nullable(WorldRefSchema),
+  /** the attached player file (only a reference, the file is read each session) */
+  player: z.nullable(PlayerRefSchema),
   areas: z.array(AreaSchema),
 })
 
@@ -54,6 +62,7 @@ const SaveFileSchema = z.object({
 })
 
 export type Area = z.infer<typeof AreaSchema>
+export type PlayerRef = z.infer<typeof PlayerRefSchema>
 export type Playthrough = z.infer<typeof PlaythroughSchema>
 export type SaveFile = z.infer<typeof SaveFileSchema>
 
@@ -85,6 +94,12 @@ const MIGRATIONS: Record<number, (data: Record<string, unknown>) => Record<strin
       bestiary: [],
       bestiaryChangedAt: {},
     })),
+  }),
+  // v5: attached player file
+  4: (data) => ({
+    ...data,
+    version: 5,
+    playthroughs: (data.playthroughs as Record<string, unknown>[]).map((p) => ({ ...p, player: null })),
   }),
 }
 
@@ -162,6 +177,7 @@ export function newPlaythrough(
     bestiary: [],
     bestiaryChangedAt: {},
     world: null,
+    player: null,
     areas: [],
   }
 }

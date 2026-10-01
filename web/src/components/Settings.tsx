@@ -68,7 +68,7 @@ export function SettingsDialog({ open, onOpenChange }: { open: boolean; onOpenCh
             <Check
               checked={layout.playthroughFields}
               onChange={(playthroughFields) => setLayout({ playthroughFields })}
-              label="Platform, difficulty and game version as separate fields (instead of one button)"
+              label="Platform, difficulty and game version as separate fields (next to the playthrough)"
             />
           </Part>
 

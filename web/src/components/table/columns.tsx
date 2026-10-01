@@ -7,6 +7,7 @@ import { formatDate, nameOf } from '@/lib/format'
 import { conditionLabel, conditionNames } from '@/lib/conditions'
 import { ConditionsCell, LuckCell } from './cells'
 import type { Luck } from '@/lib/luck'
+import type { Owned } from '@/hooks/useTrackerView'
 
 // Column catalogue of the item table. `value` is what the column sorts by,
 // `cell` how it is shown (defaults to the value).
@@ -23,8 +24,8 @@ export interface TrackingState {
   luck: ((item: Item) => Luck | undefined) | null
   /** checked or ignored: not "missing" */
   done: (key: string) => boolean
-  /** item key -> amount in the player's chests (null: no world loaded) */
-  chests: Map<string, number> | null
+  /** item key -> amount owned, chests and player (null: no world or player loaded) */
+  owned: Map<string, Owned> | null
 }
 
 export interface ItemColumn {
@@ -38,8 +39,9 @@ export interface ItemColumn {
   descFirst?: boolean
   value: (item: Item, tracking: TrackingState) => string | number | boolean | undefined
   cell?: (item: Item, tracking: TrackingState) => ReactNode
-  /** only offered while a world is loaded (its chests or bestiary kills) */
-  needsWorld?: boolean
+  /** only offered while a world is loaded ("world": its bestiary kills) or a world or player
+   * ("items": chests, the player's storages) */
+  needs?: 'world' | 'items'
   /** custom comparison, e.g. version strings */
   compare?: (a: Item, b: Item) => number
 }
@@ -438,20 +440,24 @@ export function buildColumns(data: GameData): ItemColumn[] {
       cell: (i, t) => <span className="tabular-nums">{formatDate(t.changedAt[i.key])}</span>,
     },
     {
-      // the same chests as "craftable from your chests": the ones the player placed, whole world
+      // the same chests as "craftable from your chests" (the ones the player placed, whole world)
+      // plus everything on the loaded player; the id is kept from "In chests" (saved views)
       id: 'inChests',
-      label: 'In chests',
+      label: 'Owned',
       group: 'Tracking',
       size: 95,
       align: 'right',
       descFirst: true,
-      needsWorld: true,
-      value: (i, t) => t.chests?.get(i.key),
+      needs: 'items',
+      value: (i, t) => t.owned?.get(i.key)?.total,
       cell: (i, t) => {
-        const n = t.chests?.get(i.key)
-        return n ? (
-          <span className="tabular-nums" title={`${n.toLocaleString('en')} in your chests (the whole world)`}>
-            {n.toLocaleString('en')}
+        const o = t.owned?.get(i.key)
+        return o ? (
+          <span
+            className="tabular-nums"
+            title={o.places.map(([where, n]) => `${n.toLocaleString('en')} ${where}`).join(' · ')}
+          >
+            {o.total.toLocaleString('en')}
           </span>
         ) : null
       },
@@ -464,7 +470,7 @@ export function buildColumns(data: GameData): ItemColumn[] {
       size: 130,
       align: 'right',
       descFirst: true,
-      needsWorld: true,
+      needs: 'world',
       value: (i, t) => t.luck?.(i)?.atLeastOnce,
       cell: (i, t) => {
         const luck = t.luck?.(i)

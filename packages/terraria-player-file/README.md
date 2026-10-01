@@ -3,8 +3,8 @@
 Read Terraria player files (`.plr`) in the browser or in Node: inventory, equipment and loadouts,
 Piggy Bank, Safe, Defender's Forge and Void Vault, permanent upgrades and Journey research.
 
-> **Status: in development, not published yet.** The format of Terraria 1.4.5 (file version 326)
-> is worked out ([FORMAT.md](FORMAT.md)); the parser itself is being written. The package lives
+> **Status: in development, not published yet.** Reads Terraria 1.4.5 player files (file
+> version 326, [FORMAT.md](FORMAT.md)), tested against the test characters. The package lives
 > in the [Terraria Progress Tracker](https://github.com/Doeschi/Terraria-Progress-Tracker)
 > repository for now and will move to its own repository once it is stable.
 
@@ -14,7 +14,7 @@ There is no maintained JavaScript reader for current player files: the existing
 [terraria-player-parser](https://github.com/cokolele/terraria-player-parser) stopped at
 1.3.5.3 (2019), before the Void Vault, loadouts and Journey research existed.
 
-## Planned API
+## API
 
 ```js
 import { readPlayerFile } from 'terraria-player-file'
@@ -23,13 +23,19 @@ const player = await readPlayerFile(arrayBuffer) // the .plr file's bytes
 player.name            // "test_char_journey"
 player.difficulty      // "journey"
 player.inventory       // [{ slot: 0, id: 3509, stack: 1, prefix: 0, favorited: false }, ...]
+player.coins, player.ammo // the coin and ammo slots (0-3)
 player.voidVault       // same item shape, also piggyBank, safe, defendersForge
-player.equipment       // armor, accessories, vanity, dyes, misc slots, the 3 loadouts
+player.equipment       // armor, accessories, vanity, dyes; also player.misc and player.loadouts
 player.upgrades        // life crystals and fruit, mana crystals, Demon Heart, Aegis Fruit, ...
 player.research        // { Wood: 30, CopperPickaxe: 1, ... } (internal item names)
 ```
 
-- Works in the browser (Web Crypto, no Node APIs) and in Node 18+.
+`allItems(player)` lists every item with where it is (`inventory`, `voidVault`, `loadout:2`, …).
+Empty slots are left out of all lists. Other file versions throw an `UnsupportedVersionError`
+(`{ allowUnknownVersion: true }` tries the newest known layout anyway); a layout that does not
+fit throws a `FormatError` with the byte offset instead of returning wrong data.
+
+- Works in the browser (Web Crypto, no Node APIs) and in Node 20+.
 - No dependencies.
 - Unknown or unsupported file versions give a clear error instead of wrong data.
 - Item ids are the game's numeric ids; names are not included (the item list is up to the app).
@@ -65,6 +71,13 @@ When an update changes the format:
 1. Make a fresh test character in the new version, set up like the existing ones.
 2. Compare it with the spec; the first misread value shows where the format changed.
 3. Update FORMAT.md and the parser for the new file version, add the character to the tests.
+
+## Development
+
+```sh
+npm install
+npm test   # builds and checks the test characters
+```
 
 ## License
 

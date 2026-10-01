@@ -17,6 +17,8 @@ import {
 } from 'lucide-react'
 import { useStore } from '@/store'
 import { canSaveInPlace, clearBackup, fileLabel, hasRememberedWorld, readBackup, type Backup } from '@/lib/files'
+import { hasRememberedPlayer } from '@/lib/player'
+import { usePlayerLoader } from '@/hooks/usePlayerLoader'
 import { useWorldLoader } from '@/hooks/useWorldLoader'
 import { activePlaythrough } from '@/lib/saveFile'
 import { Button } from '@/components/ui/button'
@@ -30,20 +32,22 @@ export function WelcomeScreen() {
   const loadFile = useStore((s) => s.loadFile)
   const [backup, setBackup] = useState<Backup | null>(null)
   const { load } = useWorldLoader()
+  const { load: loadPlayer } = usePlayerLoader()
 
   useEffect(() => {
     readBackup().then(setBackup)
   }, [])
 
-  // Continue: restore the session, then reload the active playthrough's world file if the
-  // browser remembers it. Runs inside the click, so the browser may ask for read access
-  // to the file right away; without a remembered file the header offers "reconnect".
+  // Continue: restore the session, then reload the active playthrough's world and player files
+  // if the browser remembers them. Runs inside the click, so the browser may ask for read access
+  // right away; without a remembered file the header offers "reconnect".
   const continueSession = (b: Backup) => {
     loadFile({ doc: b.doc, fileName: b.fileName, handle: b.handle }, b.dirty)
     const pt = activePlaythrough(b.doc)
-    if (!pt?.world || !canSaveInPlace) return
+    if (!pt || !canSaveInPlace) return
     const id = pt.id
-    void hasRememberedWorld(id).then((remembered) => remembered && load(id, true, false))
+    if (pt.world) void hasRememberedWorld(id).then((remembered) => remembered && load(id, true, false))
+    if (pt.player) void hasRememberedPlayer(id).then((remembered) => remembered && loadPlayer(id, true, false))
   }
 
   const features = [

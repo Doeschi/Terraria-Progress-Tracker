@@ -41,11 +41,26 @@ export function PlaythroughMenu() {
     if (ok) deletePlaythrough(active.id)
   }
 
+  // platform, difficulty and game version as icons in the button (names on hover)
+  const platform = active && data.platforms.find((p) => p.id === active.platform)
+  const version =
+    active && (active.gameVersion ? data.versions.find((v) => v.id === active.gameVersion) : data.versions.at(-1))
+  const settings = active
+    ? `${platform?.name ?? active.platform} · ${DIFFICULTY_LABELS[active.difficulty]} · ${active.gameVersion ?? 'Latest'}`
+    : undefined
+
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="outline" size="sm" className="max-w-52 justify-between">
+        <Button variant="outline" size="sm" className="max-w-64 justify-between" title={settings}>
           <span className="truncate">{active ? active.name : 'No playthrough'}</span>
+          {active && (
+            <span className="flex shrink-0 items-center gap-1" aria-label={settings}>
+              <WikiIcon src={platform?.icon} alt="" size={16} />
+              <DifficultyIcon difficulty={active.difficulty} />
+              <WikiIcon src={version?.icon} alt="" size={16} />
+            </span>
+          )}
           <ChevronDown className="text-muted-foreground" />
         </Button>
       </DropdownMenuTrigger>
@@ -78,37 +93,6 @@ export function PlaythroughMenu() {
         )}
       </DropdownMenuContent>
     </DropdownMenu>
-  )
-}
-
-/** Platform, difficulty and game version as one compact button that opens the playthrough dialog. */
-export function PlaythroughSummary() {
-  const data = useStore((s) => s.data)!
-  const pt = useActivePlaythrough()
-  const openDialog = useUi((s) => s.open)
-  if (!pt) return null
-  const platform = data.platforms.find((p) => p.id === pt.platform)
-  const version = pt.gameVersion ? data.versions.find((v) => v.id === pt.gameVersion) : data.versions.at(-1)
-  return (
-    <Field label="Settings" title="Platform, difficulty and game version – click to change">
-      <Button
-        variant="outline"
-        size="sm"
-        onClick={() => openDialog({ type: 'editPlaythrough' })}
-        className="gap-1.5"
-        aria-label="Playthrough settings"
-      >
-        <WikiIcon src={platform?.icon} alt="" size={16} />
-        <span className="hidden xl:inline">{platform?.name}</span>
-        <span className="text-muted-foreground">·</span>
-        <DifficultyIcon difficulty={pt.difficulty} />
-        <span>{DIFFICULTY_LABELS[pt.difficulty]}</span>
-        <span className="text-muted-foreground">·</span>
-        <WikiIcon src={version?.icon} alt="" size={16} />
-        <span>{pt.gameVersion ?? 'Latest'}</span>
-        <Pencil className="text-muted-foreground" />
-      </Button>
-    </Field>
   )
 }
 

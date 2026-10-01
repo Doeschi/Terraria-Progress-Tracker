@@ -25,7 +25,10 @@
 
     /* Paths */
     "baseUrl": ".",
-    "paths": { "@/*": ["./src/*"] }
+    "paths": {
+      "@/*": ["./src/*"],
+      "terraria-player-file": ["../packages/terraria-player-file/src/index.ts"]
+    }
   },
   "include": ["src"]
 }

@@ -5,8 +5,9 @@
 Track which Terraria items and bestiary entries you have collected, per playthrough, platform,
 difficulty and game version – with filters and progress for categories, sources, bosses, events,
 biomes and crafting, recipes and drops per item, and sync with your world file (chests and
-bestiary). Runs entirely in the browser: progress is stored in a JSON file on your computer, world
-files are read locally, and nothing is uploaded. See [REQUIREMENTS.md](REQUIREMENTS.md) for the
+bestiary) and your player file (inventory, banks, Void Vault, used upgrades). Runs entirely in the
+browser: progress is stored in a JSON file on your computer, world and player files are read
+locally, and nothing is uploaded. See [REQUIREMENTS.md](REQUIREMENTS.md) for the
 full feature list.
 
 ## Layout
@@ -19,6 +20,7 @@ full feature list.
 | `web/`                   | The web app (Vite, React, TypeScript, Tailwind, shadcn/ui)                   |
 | `web/public/data/`       | The generated data the app loads (minified JSON)                             |
 | `web/public/icons/`      | Sprite sheets of the small wiki icons (`build_icons.py`)                      |
+| `packages/terraria-player-file/` | Reader for Terraria player files (`.plr`) with its format spec and test characters – a separate package, may be published on its own |
 
 ## Data for other projects
 

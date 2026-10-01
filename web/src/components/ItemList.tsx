@@ -31,7 +31,7 @@ export function ItemList({ view }: { view: TrackerView }) {
     <div className="flex h-full min-h-0 flex-col">
       <Toolbar view={view} />
       <ActiveFilters />
-      <ItemTable items={view.visible} checked={view.checked} ignored={view.ignored} chests={view.chests} />
+      <ItemTable items={view.visible} checked={view.checked} ignored={view.ignored} owned={view.owned} />
     </div>
   )
 }

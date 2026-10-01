@@ -16,6 +16,7 @@ import { useVirtualizer } from '@tanstack/react-virtual'
 import { ArrowDown, ArrowUp, ExternalLink, Eye, EyeOff, PackageSearch } from 'lucide-react'
 import { useActivePlaythrough, useActiveWorld, useStore } from '@/store'
 import { itemLuck, sourceKills, type Luck } from '@/lib/luck'
+import type { Owned } from '@/hooks/useTrackerView'
 import { usePrefs } from '@/lib/prefs'
 import { useUi } from '@/ui'
 import { cn } from '@/lib/utils'
@@ -62,7 +63,7 @@ const RowStateContext = createContext<RowState>({
   difficulty: 'master',
   luck: null,
   done: () => false,
-  chests: null,
+  owned: null,
 })
 
 const blank = (v: unknown) => v === undefined || v === '' || v === false
@@ -135,13 +136,13 @@ export function ItemTable({
   items,
   checked,
   ignored,
-  chests,
+  owned,
 }: {
   items: Item[]
   checked: Set<string>
   ignored: Set<string>
-  /** amount per item in the player's chests (world loaded) */
-  chests: Map<string, number> | null
+  /** amount per item owned: chests and player (world or player loaded) */
+  owned: Map<string, Owned> | null
 }) {
   const hasWorld = useStore((s) => !!s.doc?.activePlaythroughId && !!s.worlds[s.doc.activePlaythroughId])
   const catalogue = useItemColumns()
@@ -161,8 +162,8 @@ export function ItemTable({
     }
   }, [data, bestiary, difficulty])
   const done = (key: string) => checked.has(key) || ignored.has(key)
-  const tracking = useRef<TrackingState>({ changedAt: {}, difficulty, luck, done, chests })
-  tracking.current = { changedAt: changedAt ?? {}, difficulty, luck, done, chests }
+  const tracking = useRef<TrackingState>({ changedAt: {}, difficulty, luck, done, owned })
+  tracking.current = { changedAt: changedAt ?? {}, difficulty, luck, done, owned }
   // columns in the order of the applied view (the rest in catalogue order after them)
   const columnOrder = usePrefs((s) => s.columnOrder)
   const orderedCatalogue = useMemo(() => {
@@ -232,9 +233,9 @@ export function ItemTable({
       difficulty,
       luck,
       done: (key: string) => checked.has(key) || ignored.has(key),
-      chests,
+      owned,
     }),
-    [checked, ignored, hasWorld, worldAttached, changedAt, difficulty, luck, chests],
+    [checked, ignored, hasWorld, worldAttached, changedAt, difficulty, luck, owned],
   )
 
   if (!items.length) {

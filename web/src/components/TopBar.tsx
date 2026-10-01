@@ -8,8 +8,9 @@ import { TallyBar, TallyText } from './common'
 import { usePrefs } from '@/lib/prefs'
 import { Field } from './topbar/Field'
 import { FileMenu } from './topbar/FileMenu'
-import { PlaythroughMenu, PlaythroughSettings, PlaythroughSummary } from './topbar/PlaythroughControls'
-import { WorldMenu } from './topbar/WorldMenu'
+import { PlaythroughMenu, PlaythroughSettings } from './topbar/PlaythroughControls'
+import { SyncButton, WorldMenu } from './topbar/WorldMenu'
+import { PlayerMenu } from './topbar/PlayerMenu'
 import { SettingsMenu } from './topbar/SettingsMenu'
 
 export function TopBar({ view }: { view: TrackerView | null }) {
@@ -35,13 +36,21 @@ export function TopBar({ view }: { view: TrackerView | null }) {
           <Field label="Playthrough">
             <PlaythroughMenu />
           </Field>
-          {separateFields ? <PlaythroughSettings /> : <PlaythroughSummary />}
+          {/* the icons in the playthrough button show them; optionally as separate fields */}
+          {separateFields && <PlaythroughSettings />}
           {/* a world belongs to a playthrough: nothing to show without one */}
+          {hasPlaythrough && (
+            <Field label="Player">
+              <PlayerMenu />
+            </Field>
+          )}
           {hasPlaythrough && (
             <Field label="World">
               <WorldMenu />
             </Field>
           )}
+          {/* one sync for both: right of Player and World */}
+          {hasPlaythrough && <SyncButton />}
           {view && (
             <Field label="Progress" title="Overall progress of this playthrough">
               <ProgressBars view={view} />

@@ -1,12 +1,13 @@
 import { useMemo, useState } from 'react'
 import { toast } from 'sonner'
-import { FolderOpen, Globe, Loader2, X } from 'lucide-react'
+import { FolderOpen, Globe, Loader2, UserRound, X } from 'lucide-react'
 import { useActivePlaythrough, useStore } from '@/store'
 import { cn } from '@/lib/utils'
 import { useUi } from '@/ui'
 import { DIFFICULTY_LABELS, GAME_MODE_DIFFICULTY, itemsForPlaythrough, versionLabel } from '@/lib/availability'
 import { pickWorldFile, rememberWorldHandle } from '@/lib/files'
 import { parseWorldFile, type LoadedWorld } from '@/lib/world'
+import { parsePlayerFile, pickPlayerFile, rememberPlayerHandle, type LoadedPlayer } from '@/lib/player'
 import { DIFFICULTIES, type Difficulty, type PlatformId } from '@/lib/types'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
@@ -21,6 +22,8 @@ import {
   DialogHeader,
   DialogTitle,
 } from '@/components/ui/dialog'
+
+const PLAYER_MODES = { classic: 'Classic', mediumcore: 'Mediumcore', hardcore: 'Hardcore', journey: 'Journey' }
 
 export function PlaythroughDialog() {
   const dialog = useUi((s) => s.dialog)
@@ -41,9 +44,11 @@ function PlaythroughForm({ edit, onDone }: { edit: boolean; onDone: () => void }
   const createPlaythrough = useStore((s) => s.createPlaythrough)
   const updatePlaythrough = useStore((s) => s.updatePlaythrough)
   const detachWorld = useStore((s) => s.detachWorld)
+  const detachPlayer = useStore((s) => s.detachPlayer)
   const active = useActivePlaythrough()
   const pt = edit ? active : null
   const loadedWorld = useStore((s) => (pt ? s.worlds[pt.id] : undefined))
+  const loadedPlayer = useStore((s) => (pt ? s.players[pt.id] : undefined))
   const [name, setName] = useState(pt?.name ?? '')
   const [platform, setPlatform] = useState<PlatformId>(pt?.platform ?? 'desktop')
   const [difficulty, setDifficulty] = useState<Difficulty>(pt?.difficulty ?? 'classic')
@@ -54,6 +59,11 @@ function PlaythroughForm({ edit, onDone }: { edit: boolean; onDone: () => void }
   const [removeWorld, setRemoveWorld] = useState(false)
   const keptWorld = pt?.world && !removeWorld && !world ? pt.world : null
   const [reading, setReading] = useState<number | null>(null) // progress in percent while reading
+  // optional player file, like the world
+  const [player, setPlayer] = useState<{ data: LoadedPlayer; handle: FileSystemFileHandle | null } | null>(null)
+  const [removePlayer, setRemovePlayer] = useState(false)
+  const keptPlayer = pt?.player && !removePlayer && !player ? pt.player : null
+  const [readingPlayer, setReadingPlayer] = useState(false)
   // same rule as the tracker itself, so this is the total the progress will count
   // (unobtainable items start ignored)
   const itemCount = useMemo(
@@ -75,15 +85,35 @@ function PlaythroughForm({ edit, onDone }: { edit: boolean; onDone: () => void }
           : { ...p, name: trimmed, platform, difficulty, gameVersion },
       )
       if (removeWorld && !world) detachWorld(id)
+      if (removePlayer && !player) detachPlayer(id)
     } else {
       id = createPlaythrough(trimmed, platform, difficulty, gameVersion)
     }
     onDone()
+    if (player) {
+      useStore.getState().setPlayer(id, player.data)
+      if (player.handle) void rememberPlayerHandle(id, player.handle)
+    }
     if (world) {
       useStore.getState().setWorld(id, world.data)
       if (world.handle) void rememberWorldHandle(id, world.handle)
-      // continue with the areas of the new world, then the first sync
+      // continue with the areas of the new world, then the first sync (with the player, if any)
       useUi.getState().open({ type: 'areas', thenSync: true })
+    } else if (player) {
+      useUi.getState().open({ type: 'sync', section: 'player' })
+    }
+  }
+
+  const choosePlayer = async () => {
+    try {
+      const picked = await pickPlayerFile()
+      if (!picked) return
+      setReadingPlayer(true)
+      setPlayer({ data: await parsePlayerFile(picked.file), handle: picked.handle })
+    } catch (err) {
+      toast.error(err instanceof Error ? err.message : String(err))
+    } finally {
+      setReadingPlayer(false)
     }
   }
 
@@ -139,6 +169,75 @@ function PlaythroughForm({ edit, onDone }: { edit: boolean; onDone: () => void }
             ))}
           </SelectContent>
         </Select>
+      </div>
+      <div className="flex flex-col gap-2">
+        <Label>
+          Player <span className="font-normal text-muted-foreground">(optional)</span>
+        </Label>
+        {keptPlayer ? (
+          // editing: the attached player
+          <div className="flex items-center gap-3 rounded-lg border px-3 py-2">
+            <UserRound
+              className={cn(
+                'size-4 shrink-0',
+                loadedPlayer ? 'text-emerald-600 dark:text-emerald-400' : 'text-muted-foreground',
+              )}
+            />
+            <div className="min-w-0 flex-1">
+              <div className="truncate text-sm font-medium italic">{keptPlayer.name}</div>
+              <div className="text-xs text-muted-foreground">
+                {keptPlayer.fileName}
+                {!loadedPlayer && ' · not loaded in this session'}
+              </div>
+            </div>
+            <Button
+              type="button"
+              variant="ghost"
+              size="sm"
+              onClick={() => void choosePlayer()}
+              disabled={readingPlayer}
+            >
+              Change…
+            </Button>
+            <Button
+              type="button"
+              variant="ghost"
+              size="icon-sm"
+              onClick={() => setRemovePlayer(true)}
+              aria-label="Detach player"
+              title="Detach the player (checked items stay checked)"
+            >
+              <X />
+            </Button>
+          </div>
+        ) : player ? (
+          <div className="flex items-center gap-3 rounded-lg border px-3 py-2">
+            <UserRound className="size-4 shrink-0 text-emerald-600 dark:text-emerald-400" />
+            <div className="min-w-0 flex-1">
+              <div className="truncate text-sm font-medium italic">{player.data.name}</div>
+              <div className="text-xs text-muted-foreground">
+                {player.data.fileName} · {PLAYER_MODES[player.data.difficulty]}
+              </div>
+            </div>
+            <Button
+              type="button"
+              variant="ghost"
+              size="icon-sm"
+              onClick={() => setPlayer(null)}
+              aria-label="Remove player"
+            >
+              <X />
+            </Button>
+          </div>
+        ) : (
+          <Button type="button" variant="outline" onClick={() => void choosePlayer()} disabled={readingPlayer}>
+            {readingPlayer ? <Loader2 className="animate-spin" /> : <FolderOpen />}
+            {readingPlayer ? 'Reading player…' : 'Choose player file…'}
+          </Button>
+        )}
+        <p className="text-xs text-muted-foreground">
+          Inventory, banks and used upgrades for the sync; read locally in your browser.
+        </p>
       </div>
       <div className="flex flex-col gap-2">
         <Label>

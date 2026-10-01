@@ -66,7 +66,7 @@ export function useWorldLoader() {
       const chests = world.containers.filter((c) => c.kind === 'chest').length
       toast.success(
         <span>
-          Loaded <em>{world.name}</em> – {chests} chests
+          Loaded world <em>{world.name}</em> – {chests} chests
         </span>,
         { id: toastId },
       )

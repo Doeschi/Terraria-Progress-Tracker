@@ -10,9 +10,8 @@ import {
   RefreshCw,
   Unlink,
 } from 'lucide-react'
-import { useActivePlaythrough, useActiveWorld, useStore } from '@/store'
+import { useActivePlaythrough, useActivePlayer, useActiveWorld, useStore } from '@/store'
 import { useUi } from '@/ui'
-import { cn } from '@/lib/utils'
 import { canSaveInPlace, hasRememberedWorld } from '@/lib/files'
 import { useWorldLoader } from '@/hooks/useWorldLoader'
 import { Button } from '@/components/ui/button'
@@ -47,25 +46,34 @@ export function WorldMenu() {
   if (!pt) return null
   const ref = pt.world
 
-  // quick action next to the menu: sync a loaded world, or reconnect an attached one
-  const quick = !ref
-    ? null
-    : world
+  // an attached world that is not loaded: reconnect with one click (syncing: SyncButton in the header)
+  const quick =
+    ref && !world
       ? {
-          icon: <RefreshCw />,
-          title: 'Sync with world… (items and bestiary)',
-          run: () => openDialog({ type: 'sync' }),
-        }
-      : {
           icon: <PlugZap />,
           title: remembered
             ? `Reconnect the world: reload ${ref.fileName}`
             : `Reconnect the world: choose ${ref.fileName} again`,
           run: () => void load(pt.id, remembered),
         }
+      : null
 
   return (
     <div className="flex items-center gap-1">
+      {/* on the left, so it does not sit between World and Player */}
+      {quick && (
+        <Button
+          variant="outline"
+          size="icon-sm"
+          disabled={loading}
+          onClick={quick.run}
+          title={quick.title}
+          aria-label={quick.title}
+          className="text-amber-600 dark:text-amber-400"
+        >
+          {loading ? <Loader2 className="animate-spin" /> : quick.icon}
+        </Button>
+      )}
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
           <Button variant="outline" size="sm" disabled={loading} className="max-w-52">
@@ -124,19 +132,26 @@ export function WorldMenu() {
           )}
         </DropdownMenuContent>
       </DropdownMenu>
-      {quick && (
-        <Button
-          variant="outline"
-          size="icon-sm"
-          disabled={loading}
-          onClick={quick.run}
-          title={quick.title}
-          aria-label={quick.title}
-          className={cn(!world && 'text-amber-600 dark:text-amber-400')}
-        >
-          {loading ? <Loader2 className="animate-spin" /> : quick.icon}
-        </Button>
-      )}
     </div>
+  )
+}
+
+/** "Sync…" in the header, right of World and Player: world chests, bestiary and the player. */
+export function SyncButton() {
+  const world = useActiveWorld()
+  const player = useActivePlayer()
+  const openDialog = useUi((s) => s.open)
+  if (!world && !player) return null
+  const title = `Sync with ${[world && 'world (items and bestiary)', player && 'player'].filter(Boolean).join(' and ')}…`
+  return (
+    <Button
+      variant="outline"
+      size="icon-sm"
+      onClick={() => openDialog({ type: 'sync' })}
+      title={title}
+      aria-label={title}
+    >
+      <RefreshCw />
+    </Button>
   )
 }

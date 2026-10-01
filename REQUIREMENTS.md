@@ -189,6 +189,7 @@ GitHub Actions.
       changedAt: { itemKey: isoTime },           // last check/uncheck/ignore/un-ignore
       bestiary: [entryId], bestiaryChangedAt: { entryId: isoTime },   // v4
       world: { name, guid, fileName, width, height, worldSurface, lastSyncedAt } | null,
+      player: { name, fileName, lastSyncedAt } | null,   // v5
       areas: [{ id, name, x1, y1, x2, y2 }]      // tile coordinates
     }],
     activePlaythroughId
@@ -215,16 +216,18 @@ GitHub Actions.
   the ⚙ menu on the right (settings, theme, About, GitHub – LS1; logo and menu vertically
   centered). The centered part
   holds File and a box with everything that belongs to the active playthrough – Playthrough (switch,
-  new, edit, delete), a summary button "Desktop · Classic · Latest ✎" for platform, difficulty
-  and game version (opens P4a; in the settings it can be switched to three separate dropdowns),
-  World and the overall Progress.
+  new, edit, delete; the button shows the name and the icons of platform, difficulty and game
+  version, their names on hover; in the settings they can be shown as three separate dropdowns),
+  Player, World, one sync button for both, and the overall Progress.
 - **P3** Each playthrough has one platform. Only items available on that platform are shown
   and counted.
 - **P4** Platform, difficulty and game version can be changed later; checked state of items is
   kept even for items that are hidden by the new settings.
-- **P4a** "Edit playthrough…" (playthrough menu, or the summary button) opens the same dialog as
+- **P4a** "Edit playthrough…" (playthrough menu) opens the same dialog as
   "New playthrough", filled with the active playthrough: name, platform, world (keep, change or
-  detach), difficulty, game version and the resulting item count; "Save".
+  detach), player file (keep, change or detach – PL3), difficulty, game version and the resulting
+  item count; "Save". A player chosen here is attached on Create / Save; without a new world the
+  sync dialog opens on its Player section.
 
 - **P7** A new playthrough starts with all unobtainable items (D19) ignored, so they do not count
   towards progress; they can be un-ignored like any other item. Existing playthroughs are not
@@ -358,8 +361,8 @@ GitHub Actions.
 - **LS3** Settings dialog (⚙ → Settings…), everything remembered in the browser (PR1):
   - Appearance: theme; density (compact – default – or comfortable: compact has lower table
     rows, smaller icons and tighter filter options)
-  - Top bar: show the bestiary progress bar; platform / difficulty / version as one button or
-    three dropdowns
+  - Top bar: show the bestiary progress bar; platform / difficulty / version also as three
+    separate dropdowns (else only as icons in the playthrough button)
   - List: show "Progress of filtered items"; filter bar always or only with
     active filters (the search mode is switched in the search field, I6a)
   - Filter sidebar: reorder the filter groups (items and bestiary; single options are hidden in
@@ -816,7 +819,7 @@ GitHub Actions.
 
 ## PL – Player file
 
-Status: planned, not started. Reviewed before implementation (see also the v2 list).
+Status: parser done (PL1, PL2), app integration in progress (PL3–PL5).
 
 - **PL1** Parser package: a self-contained package in this repo, `packages/terraria-player-file/`
   (own `package.json`, no imports from the app, own tests, MIT license), used by the web app like
@@ -840,16 +843,26 @@ Status: planned, not started. Reviewed before implementation (see also the v2 li
   - Journey research (item → amount researched), read now, used later (v2)
   Test files: the owner's characters for development; for the package's own tests fresh, clean
   characters (one Journey, one Classic) with items in every storage and a few used upgrades.
-- **PL3** Attach a player to a playthrough (one per playthrough for now), like the world (W):
-  attach, reload (Chrome/Edge remember the file), detach; the player's name in the header next
-  to the world. The tracking file stores a reference (name, file name), not the contents.
-- **PL4** Sync (SY): a "Player" section in the sync dialog marks items as obtained that are in
-  any of the player's storages; checkboxes per storage (inventory, equipment and loadouts, Piggy
-  Bank, Safe, Defender's Forge, Void Vault), all on by default. Used permanent upgrades
-  count as obtained (they can never be found in a storage).
-- **PL5** Column "Owned" replaces "In chests" (BL6) when a player is loaded: chests + player
-  storages; the tooltip splits it up ("12 in chests · 3 in the Void Vault · 1 in the
-  inventory"). Only offered while a world or a player is loaded; "Bad luck" shows it.
+- **PL3** Attach a player to a playthrough (one per playthrough for now), like the world (W): in
+  the playthrough dialog (P4a, also when creating one; above the world) and in the "Player" field
+  in the header (before "World"), with a menu: attach / choose another file, reload
+  (Chrome/Edge remember the file), sync, detach; a quick button reconnects an attached player that
+  is not loaded. "Continue where you left off" also reloads a remembered player file. The
+  tracking file stores a reference per playthrough (name, file name, last sync – file version 5),
+  not the contents; the parsed player is kept for the session only. Files of unsupported game
+  versions give a clear message.
+- **PL4** Sync (SY): the sync dialog also opens with only a player loaded. Section "Player":
+  checkboxes per storage (inventory incl. coins and ammo, equipment / misc slots / loadouts, Piggy
+  Bank, Safe, Defender's Forge, Void Vault) and "permanent upgrades used", all on by default; the
+  list of items to be checked can be deselected like the world's. Used permanent upgrades count
+  as obtained (Life Crystal, Life Fruit, Mana Crystal, Demon Heart, Torch God's Favor, Artisan
+  Loaf, Vital Crystal, Aegis Fruit, Arcane Crystal, Galaxy Pearl, Gummy Worm, Ambrosia). The
+  player never unchecks anything; with a player loaded, the world's "checked but not found"
+  list leaves out what the player has.
+- **PL5** Column "Owned" (was "In chests", BL6): the amount in the player's chests (whole world)
+  plus, with a player loaded, everything on the player; the tooltip splits it up ("12 in chests ·
+  3 in the Void Vault · 1 in the inventory"). Offered while a world or a player is loaded; the
+  "Bad luck" view (needs a world) shows it.
 
 ## v2 / later
 

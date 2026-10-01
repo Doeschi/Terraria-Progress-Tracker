@@ -1,0 +1,34 @@
+{
+  "name": "terraria-player-file",
+  "version": "0.1.0",
+  "description": "Read Terraria player files (.plr): inventory, equipment, loadouts, banks, Void Vault, permanent upgrades and Journey research",
+  "license": "MIT",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "FORMAT.md"
+  ],
+  "keywords": [
+    "terraria",
+    "plr",
+    "player",
+    "parser",
+    "save file"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "npm run build && node --test test/fixtures.test.mjs"
+  },
+  "devDependencies": {
+    "typescript": "~5.8.3"
+  }
+}

@@ -9,8 +9,14 @@ export default defineConfig({
   base: './',
   plugins: [react(), tailwindcss()],
   resolve: {
-    alias: { '@': path.resolve(__dirname, './src') },
+    alias: {
+      '@': path.resolve(__dirname, './src'),
+      // the player file parser, used from its source (packages/, not published yet)
+      'terraria-player-file': path.resolve(__dirname, '../packages/terraria-player-file/src/index.ts'),
+    },
   },
+  // the dev server may serve the package source outside web/
+  server: { fs: { allow: [path.resolve(__dirname, '..')] } },
   build: {
     rollupOptions: {
       output: {

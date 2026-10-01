@@ -17,7 +17,7 @@ export interface Layout {
   density: 'comfortable' | 'compact'
   /** bestiary progress bar in the top bar */
   showBestiaryProgress: boolean
-  /** platform, difficulty and game version as separate dropdowns instead of one summary button */
+  /** platform, difficulty and game version also as separate dropdowns (else icons in the playthrough button) */
   playthroughFields: boolean
   /** column presets shown as buttons next to the views dropdown */
   favoriteViews: string[]

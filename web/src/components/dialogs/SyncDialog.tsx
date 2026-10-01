@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react'
 import { toast } from 'sonner'
-import { useActivePlaythrough, useActiveWorld, useStore } from '@/store'
+import { useActivePlaythrough, useActivePlayer, useActiveWorld, useStore } from '@/store'
 import { useUi, type SyncSection } from '@/ui'
 import { usePrefs } from '@/lib/prefs'
 import {
@@ -30,19 +30,23 @@ import {
 } from '@/components/ui/dialog'
 import { WikiIcon } from '../common'
 import { useAreas, useScanScope } from '@/hooks/useAreas'
+import { PLAYER_STORAGES, playerStock, STORAGE_TEXT, usedUpgrades, type PlayerStorage } from '@/lib/player'
 import { AreaSelector } from './AreaSelector'
 
-// Sync the playthrough with the attached world, in one dialog:
+// Sync the playthrough with the attached world and player, in one dialog:
 //   Items     - items in the world's chests (selected areas) vs. checked items
+//   Player    - items in the player's storages and used permanent upgrades (only checks)
 //   Bestiary  - the world's bestiary vs. the playthrough's
 // Every change can be deselected; nothing changes until Apply.
 
 export function SyncDialog() {
   const dialog = useUi((s) => s.dialog)
   const close = useUi((s) => s.close)
-  // needs a loaded world (e.g. it may be detached while the dialog is open)
-  const hasWorld = useActiveWorld() !== null
-  const open = dialog.type === 'sync' && hasWorld
+  // needs a loaded world or player (e.g. it may be detached while the dialog is open)
+  const world = useActiveWorld()
+  const player = useActivePlayer()
+  const hasSource = world !== null || player !== null
+  const open = dialog.type === 'sync' && hasSource
   return (
     <Dialog open={open} onOpenChange={(o) => !o && close()}>
       <DialogContent className="flex max-h-[90vh] flex-col sm:max-w-2xl">
@@ -65,13 +69,24 @@ function withIds(set: Set<string>, ids: string[], on: boolean): Set<string> {
 function SyncView({ initial, onDone }: { initial: SyncSection; onDone: () => void }) {
   const data = useStore((s) => s.data)!
   const pt = useActivePlaythrough()!
-  const world = useActiveWorld()!
+  const world = useActiveWorld()
+  const player = useActivePlayer()
   const setChecked = useStore((s) => s.setChecked)
   const setBestiary = useStore((s) => s.setBestiary)
   const updatePlaythrough = useStore((s) => s.updatePlaythrough)
   const openDialog = useUi((s) => s.open)
   const areas = useAreas()
-  const [section, setSection] = useState<SyncSection>(initial)
+  // the sections with a source: items and bestiary need the world, player the player file
+  const sections = (
+    [
+      ['items', 'Items', !!world],
+      ['player', 'Player', !!player],
+      ['bestiary', 'Bestiary', !!world],
+    ] as const
+  ).filter(([, , has]) => has)
+  const [section, setSection] = useState<SyncSection>(
+    sections.some(([id]) => id === initial) ? initial : sections[0][0],
+  )
   const [scope, setScope] = useScanScope('sync')
   const detection = usePrefs((s) => s.chestDetection)
   // items: "to be checked" the user deselected / "not found" the user chose to uncheck
@@ -79,37 +94,63 @@ function SyncView({ initial, onDone }: { initial: SyncSection; onDone: () => voi
   const [uncheck, setUncheck] = useState<Set<string>>(new Set())
   // bestiary: changes the user deselected
   const [skipBestiary, setSkipBestiary] = useState<Set<string>>(new Set())
+  // player: storages that count, used upgrades, items the user deselected
+  const [storages, setStorages] = useState<Set<PlayerStorage>>(new Set(PLAYER_STORAGES.map((x) => x.id)))
+  const [withUpgrades, setWithUpgrades] = useState(true)
+  const [skipPlayer, setSkipPlayer] = useState<Set<string>>(new Set())
 
-  const items = useMemo(() => {
-    const selected = areas.filter((a) => scope.areaIds.includes(a.id))
-    const scan = scanContainers(data, containersIn(world, selected, { ...scope, detection }), pt.platform)
-    const checked = new Set(pt.checked)
+  const checked = useMemo(() => new Set(pt.checked), [pt.checked])
+  const counts = useMemo(() => {
     const ignored = new Set(pt.ignored)
     const available = availabilityCheck(data, pt)
-    const counts = (item: Item) => available(item) && !ignored.has(item.key)
+    return (item: Item) => available(item) && !ignored.has(item.key)
+  }, [data, pt])
+  // everything on the player (all storages) - kept out of the world's "not found" list
+  const stock = useMemo(() => (player ? playerStock(data, player, pt.platform) : null), [data, player, pt.platform])
+
+  const playerItems = useMemo(() => {
+    if (!player || !stock) return []
+    const rows: { item: Item; detail: string }[] = []
+    for (const { item, places } of stock.values()) {
+      const where = [...places].filter(([st]) => storages.has(st))
+      if (!where.length || !counts(item) || checked.has(item.key)) continue
+      rows.push({ item, detail: where.map(([st, n]) => `${n} ${STORAGE_TEXT[st]}`).join(' · ') })
+    }
+    if (withUpgrades)
+      for (const key of usedUpgrades(player)) {
+        const item = data.itemsByKey.get(key)
+        if (item && counts(item) && !checked.has(key) && !rows.some((r) => r.item.key === key))
+          rows.push({ item, detail: 'used (permanent upgrade)' })
+      }
+    return rows.sort((a, b) => a.item.name.localeCompare(b.item.name))
+  }, [player, stock, storages, withUpgrades, counts, checked, data])
+
+  const items = useMemo(() => {
+    if (!world) return null
+    const selected = areas.filter((a) => scope.areaIds.includes(a.id))
+    const scan = scanContainers(data, containersIn(world, selected, { ...scope, detection }), pt.platform)
     const toCheck = [...scan.found.values()]
       .filter((f) => counts(f.item) && !checked.has(f.item.key))
       .sort((a, b) => a.item.name.localeCompare(b.item.name))
     const notFound = pt.checked
       .map((k) => data.itemsByKey.get(k))
-      .filter((i): i is Item => !!i && counts(i) && !scan.found.has(i.key))
+      .filter((i): i is Item => !!i && counts(i) && !scan.found.has(i.key) && !stock?.has(i.key))
       .sort((a, b) => a.name.localeCompare(b.name))
     return { scan, toCheck, notFound }
-  }, [data, world, pt, areas, scope, detection])
+  }, [data, world, pt, areas, scope, detection, counts, checked, stock])
 
-  const bestiary = useMemo(() => bestiaryDiff(data, pt, world), [data, pt, world])
+  const bestiary = useMemo(() => (world ? bestiaryDiff(data, pt, world) : null), [data, pt, world])
 
-  const willCheck = items.toCheck.filter((f) => !skipCheck.has(f.item.key))
-  const willUncheck = items.notFound.filter((i) => uncheck.has(i.key))
+  const willCheckWorld = items?.toCheck.filter((f) => !skipCheck.has(f.item.key)) ?? []
+  const willCheckPlayer = playerItems.filter((r) => !skipPlayer.has(r.item.key))
+  const willCheck = [...new Set([...willCheckWorld.map((f) => f.item.key), ...willCheckPlayer.map((r) => r.item.key)])]
+  const willUncheck = items?.notFound.filter((i) => uncheck.has(i.key)) ?? []
   const willUnlock = bestiary?.toCheck.filter((e) => !skipBestiary.has(e.id)) ?? []
   const willLock = bestiary?.toUncheck.filter((e) => !skipBestiary.has(e.id)) ?? []
   const nothing = !willCheck.length && !willUncheck.length && !willUnlock.length && !willLock.length
 
   const apply = () => {
-    setChecked(
-      willCheck.map((f) => f.item.key),
-      true,
-    )
+    setChecked(willCheck, true)
     setChecked(
       willUncheck.map((i) => i.key),
       false,
@@ -122,9 +163,11 @@ function SyncView({ initial, onDone }: { initial: SyncSection; onDone: () => voi
       willLock.map((e) => e.id),
       false,
     )
+    const now = new Date().toISOString()
     updatePlaythrough(pt.id, (p) => ({
       ...p,
-      world: p.world && { ...p.world, lastSyncedAt: new Date().toISOString() },
+      world: p.world && world ? { ...p.world, lastSyncedAt: now } : p.world,
+      player: p.player && player ? { ...p.player, lastSyncedAt: now } : p.player,
     }))
     const parts = []
     if (willCheck.length || willUncheck.length)
@@ -135,29 +178,35 @@ function SyncView({ initial, onDone }: { initial: SyncSection; onDone: () => voi
     onDone()
   }
 
-  const itemChanges = items.toCheck.length + items.notFound.length
-  const bestiaryChanges = bestiary ? bestiary.toCheck.length + bestiary.toUncheck.length : 0
+  const changes: Record<SyncSection, number> = {
+    items: items ? items.toCheck.length + items.notFound.length : 0,
+    player: playerItems.length,
+    bestiary: bestiary ? bestiary.toCheck.length + bestiary.toUncheck.length : 0,
+  }
 
   return (
     <>
       <DialogHeader>
         <DialogTitle>
-          Sync with <em>{world.name}</em>
+          Sync with {world && <em>{world.name}</em>}
+          {world && player && ' and '}
+          {player && <em>{player.name}</em>}
         </DialogTitle>
         <DialogDescription>
-          Compare your progress with the items in the world's chests and with the world's bestiary. Nothing changes
-          until you press Apply.
+          Compare your progress with {world && "the items in the world's chests and the world's bestiary"}
+          {world && player && ', and with '}
+          {player && "the player's inventory, banks and used upgrades"}. Nothing changes until you press Apply.
         </DialogDescription>
       </DialogHeader>
 
-      {/* section switch: items / bestiary */}
-      <div className="grid grid-cols-2 gap-1 rounded-lg bg-muted p-1" role="tablist" aria-label="What to sync">
-        {(
-          [
-            ['items', 'Items', itemChanges],
-            ['bestiary', 'Bestiary', bestiaryChanges],
-          ] as const
-        ).map(([id, label, n]) => (
+      {/* section switch: items / player / bestiary (the ones with a source) */}
+      <div
+        className="grid gap-1 rounded-lg bg-muted p-1"
+        style={{ gridTemplateColumns: `repeat(${sections.length}, minmax(0, 1fr))` }}
+        role="tablist"
+        aria-label="What to sync"
+      >
+        {sections.map(([id, label]) => (
           <button
             key={id}
             role="tab"
@@ -168,12 +217,61 @@ function SyncView({ initial, onDone }: { initial: SyncSection; onDone: () => voi
               section === id ? 'bg-background shadow-sm' : 'text-muted-foreground hover:text-foreground',
             )}
           >
-            {label} <span className="text-muted-foreground">({plural(n, 'difference')})</span>
+            {label} <span className="text-muted-foreground">({plural(changes[id], 'difference')})</span>
           </button>
         ))}
       </div>
 
-      {section === 'items' ? (
+      {section === 'player' && player ? (
+        <div className="flex min-h-0 flex-1 flex-col gap-3">
+          <div className="flex flex-col gap-1.5 rounded-lg border p-3">
+            <span className="text-sm font-medium">What counts</span>
+            <div className="flex flex-wrap gap-x-4 gap-y-1.5">
+              {PLAYER_STORAGES.map((st) => (
+                <label
+                  key={st.id}
+                  className="flex items-center gap-1.5 text-sm"
+                  title={'hint' in st ? st.hint : undefined}
+                >
+                  <Checkbox
+                    checked={storages.has(st.id)}
+                    onCheckedChange={(v) =>
+                      setStorages((cur) => {
+                        const next = new Set(cur)
+                        if (v === true) next.add(st.id)
+                        else next.delete(st.id)
+                        return next
+                      })
+                    }
+                  />
+                  {st.label}
+                </label>
+              ))}
+              <label className="flex items-center gap-1.5 text-sm">
+                <Checkbox checked={withUpgrades} onCheckedChange={(v) => setWithUpgrades(v === true)} />
+                Used permanent upgrades
+              </label>
+            </div>
+          </div>
+          <ListHeader
+            text="Items the player has (or has used) that are not checked yet. The player never unchecks anything."
+            ids={playerItems.map((r) => r.item.key)}
+            allOn={!playerItems.some((r) => skipPlayer.has(r.item.key))}
+            onAll={(ids, on) => setSkipPlayer((s) => withIds(s, ids, !on))}
+          />
+          <Rows
+            empty="Everything the player has is already checked."
+            rows={playerItems.map((r) => ({
+              id: r.item.key,
+              icon: r.item.icon,
+              name: r.item.name,
+              on: !skipPlayer.has(r.item.key),
+              detail: r.detail,
+            }))}
+            onToggle={(id, on) => setSkipPlayer((s) => withIds(s, [id], !on))}
+          />
+        </div>
+      ) : section === 'items' && items ? (
         <div className="flex min-h-0 flex-1 flex-col gap-3">
           <AreaSelector
             scope={scope}
@@ -231,7 +329,7 @@ function SyncView({ initial, onDone }: { initial: SyncSection; onDone: () => voi
             </TabsContent>
           </Tabs>
         </div>
-      ) : !bestiary ? (
+      ) : !world ? null : !bestiary ? (
         <p className="grid h-[45vh] place-items-center rounded-lg border text-sm text-muted-foreground">
           The bestiary could not be read from this world.
         </p>
@@ -253,7 +351,7 @@ function SyncView({ initial, onDone }: { initial: SyncSection; onDone: () => voi
             />
             <Rows
               empty="Everything unlocked in the world is already checked."
-              rows={entryRows(bestiary.toCheck, skipBestiary, world.bestiary!)}
+              rows={entryRows(bestiary.toCheck, skipBestiary, world!.bestiary!)}
               onToggle={(id, on) => setSkipBestiary((s) => withIds(s, [id], !on))}
             />
           </TabsContent>
@@ -266,7 +364,7 @@ function SyncView({ initial, onDone }: { initial: SyncSection; onDone: () => voi
             />
             <Rows
               empty="Every checked entry is unlocked in the world."
-              rows={entryRows(bestiary.toUncheck, skipBestiary, world.bestiary!)}
+              rows={entryRows(bestiary.toUncheck, skipBestiary, world!.bestiary!)}
               onToggle={(id, on) => setSkipBestiary((s) => withIds(s, [id], !on))}
             />
           </TabsContent>
@@ -275,9 +373,13 @@ function SyncView({ initial, onDone }: { initial: SyncSection; onDone: () => voi
 
       <DialogFooter className="items-center">
         <span className="mr-auto text-xs text-muted-foreground">
-          Items: {willCheck.length} to check · {willUncheck.length} to uncheck
-          <br />
-          Bestiary: {willUnlock.length} to check · {willLock.length} to uncheck
+          Items: {willCheck.length} to check{world && ` · ${willUncheck.length} to uncheck`}
+          {world && (
+            <>
+              <br />
+              Bestiary: {willUnlock.length} to check · {willLock.length} to uncheck
+            </>
+          )}
         </span>
         <Button variant="outline" onClick={onDone}>
           Cancel
