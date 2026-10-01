@@ -1,4 +1,3 @@
-import { Pickaxe } from 'lucide-react'
 import { useActivePlaythrough, useStore, type TrackerMode } from '@/store'
 import { useBestiaryProgress } from '@/hooks/useBestiaryView'
 import { bestiaryExists } from '@/lib/bestiary'
@@ -12,6 +11,7 @@ import { PlaythroughMenu, PlaythroughSettings } from './topbar/PlaythroughContro
 import { SyncButton, WorldMenu } from './topbar/WorldMenu'
 import { PlayerMenu } from './topbar/PlayerMenu'
 import { HeaderSnow } from './topbar/HeaderSnow'
+import { HeaderLogo } from './topbar/HeaderLogo'
 import { SettingsMenu } from './topbar/SettingsMenu'
 
 export function TopBar({ view }: { view: TrackerView | null }) {
@@ -19,13 +19,11 @@ export function TopBar({ view }: { view: TrackerView | null }) {
   const separateFields = usePrefs((s) => s.layout.playthroughFields)
   // three columns: logo (left) | file + playthrough (centered) | theme (right)
   return (
-    <header className="relative grid grid-cols-[auto_1fr_auto] items-center gap-3 border-b bg-background/80 px-3 py-2 backdrop-blur">
+    <header className="relative z-40 grid grid-cols-[auto_1fr_auto] items-center gap-3 border-b bg-background/80 px-3 py-2 backdrop-blur">
       <HeaderSnow />
       <div className="flex items-center gap-2 font-semibold">
-        <span className="grid size-8 place-items-center rounded-lg bg-primary text-primary-foreground">
-          <Pickaxe className="size-4" />
-        </span>
-        <span className="hidden 2xl:inline">Terraria Progress</span>
+        <HeaderLogo />
+        <span className="hidden 2xl:inline">Terraria Progress Tracker</span>
       </div>
       <div className="flex min-w-0 flex-wrap items-center justify-center gap-x-3 gap-y-2">
         <div className="rounded-xl border bg-card/60 px-2 pt-1 pb-1.5">

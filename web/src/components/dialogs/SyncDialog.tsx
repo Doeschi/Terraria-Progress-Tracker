@@ -79,8 +79,8 @@ function SyncView({ initial, onDone }: { initial: SyncSection; onDone: () => voi
   // the sections with a source: items and bestiary need the world, player the player file
   const sections = (
     [
-      ['items', 'Items', !!world],
-      ['player', 'Player', !!player],
+      ['items', 'Chests', !!world],
+      ['player', 'Inventory', !!player],
       ['bestiary', 'Bestiary', !!world],
     ] as const
   ).filter(([, , has]) => has)
@@ -254,7 +254,7 @@ function SyncView({ initial, onDone }: { initial: SyncSection; onDone: () => voi
             </div>
           </div>
           <ListHeader
-            text="Items the player has (or has used) that are not checked yet. The player never unchecks anything."
+            text="Items the player has (or has used) that are not checked yet."
             ids={playerItems.map((r) => r.item.key)}
             allOn={!playerItems.some((r) => skipPlayer.has(r.item.key))}
             onAll={(ids, on) => setSkipPlayer((s) => withIds(s, ids, !on))}

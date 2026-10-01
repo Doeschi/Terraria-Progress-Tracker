@@ -1,7 +1,8 @@
 import { useEffect, useRef } from 'react'
 import { useActivePlaythrough, useStore } from '@/store'
 import { usePrefs } from '@/lib/prefs'
-import { seasonOf } from '@/lib/season'
+import { dateOverridden, logoThemeOf, now as currentTime, seasonOf } from '@/lib/season'
+import { logoSvgMarkup } from '@/lib/logoArt'
 import { confettiBurst } from '@/lib/confetti'
 import { achievement, bees, bigConfetti, bunny, drunk, flipPage, goldConfetti, itemIcon, worthy } from '@/lib/eggs'
 
@@ -102,7 +103,7 @@ export function useEasterEggs() {
   useEffect(() => {
     if (!enabled) return
     const timers: ReturnType<typeof setTimeout>[] = []
-    const now = new Date()
+    const now = currentTime()
     if (seasonOf(now) === 'birthday') {
       const key = 'egg-birthday'
       let seen: string | null = null
@@ -111,9 +112,10 @@ export function useEasterEggs() {
       } catch {
         // storage unavailable: show it anyway
       }
-      if (seen !== String(now.getFullYear())) {
+      // with `?date=` (testing) always shown, and not remembered
+      if (dateOverridden || seen !== String(now.getFullYear())) {
         try {
-          localStorage.setItem(key, String(now.getFullYear()))
+          if (!dateOverridden) localStorage.setItem(key, String(now.getFullYear()))
         } catch {
           // ignore
         }
@@ -179,4 +181,19 @@ function firstItemSeen(playthroughId: string): boolean {
     // storage unavailable: show it
   }
   return false
+}
+
+/** The browser tab icon in the seasonal look of the logo (G8) - on every screen. */
+export function useSeasonalFavicon() {
+  const enabled = usePrefs((s) => s.layout.easterEggs)
+  useEffect(() => {
+    const theme = logoThemeOf()
+    const link = document.querySelector<HTMLLinkElement>('link[rel="icon"]')
+    if (!link || !enabled || !theme) return
+    const original = link.href
+    link.href = `data:image/svg+xml,${encodeURIComponent(logoSvgMarkup(theme))}`
+    return () => {
+      link.href = original
+    }
+  }, [enabled])
 }

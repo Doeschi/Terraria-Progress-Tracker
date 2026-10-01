@@ -192,3 +192,49 @@ html.egg-worthy.dark {
     display: none;
   }
 }
+/* fireflies around the logo late at night (HeaderLogo) */
+.egg-firefly {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background: #fff3a0;
+  animation:
+    egg-firefly-blink 2.4s ease-in-out infinite,
+    egg-firefly-drift 6s ease-in-out infinite alternate;
+}
+.egg-firefly-0 {
+  left: -6px;
+  top: 2px;
+}
+.egg-firefly-1 {
+  left: 34px;
+  top: 6px;
+  animation-delay: 0.8s, -2s;
+}
+.egg-firefly-2 {
+  left: 4px;
+  top: -4px;
+  animation-delay: 1.5s, -4s;
+}
+.egg-firefly-3 {
+  left: 28px;
+  top: 26px;
+  animation-delay: 0.3s, -1s;
+}
+@keyframes egg-firefly-blink {
+  0%,
+  100% {
+    opacity: 0.1;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+@keyframes egg-firefly-drift {
+  from {
+    transform: translate(0, 0);
+  }
+  to {
+    transform: translate(5px, -6px);
+  }
+}

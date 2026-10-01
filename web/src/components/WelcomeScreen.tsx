@@ -10,7 +10,6 @@ import {
   Hammer,
   History,
   ListChecks,
-  Pickaxe,
   ShieldCheck,
   SlidersHorizontal,
   Swords,
@@ -25,6 +24,7 @@ import { Button } from '@/components/ui/button'
 import { openFileAction } from '@/actions'
 import { AiNotice, Credits } from './Credits'
 import { formatRelativeDay } from '@/lib/format'
+import { Logo } from './Logo'
 
 export function WelcomeScreen() {
   const data = useStore((s) => s.data)!
@@ -87,9 +87,7 @@ export function WelcomeScreen() {
     <div className="grid min-h-svh place-items-center bg-gradient-to-b from-emerald-500/10 via-background to-background p-4">
       <div className="flex w-full max-w-2xl flex-col gap-8 py-6">
         <div className="flex flex-col items-center gap-3 text-center">
-          <span className="grid size-14 place-items-center rounded-2xl bg-primary text-primary-foreground shadow-lg">
-            <Pickaxe className="size-7" />
-          </span>
+          <Logo size={64} />
           <h1 className="text-2xl font-semibold">Terraria Progress Tracker</h1>
           <p className="max-w-md text-sm text-balance text-muted-foreground">
             Your companion for a 100% run: see what's still missing, how to get it – and let your world file do the

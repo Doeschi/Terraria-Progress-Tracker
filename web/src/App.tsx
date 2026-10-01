@@ -13,7 +13,7 @@ import { BestiaryList } from '@/components/BestiaryList'
 import { useBestiaryView } from '@/hooks/useBestiaryView'
 import { useAutosave } from '@/hooks/useAutosave'
 import { useSearchShortcuts } from '@/hooks/useSearchShortcuts'
-import { useEasterEggs, useProgressEggs } from '@/hooks/useEasterEggs'
+import { useEasterEggs, useProgressEggs, useSeasonalFavicon } from '@/hooks/useEasterEggs'
 import { ItemList } from '@/components/ItemList'
 import { ItemDetailPanel, ItemDetailSheet } from '@/components/ItemDetail'
 import { useMediaQuery } from '@/hooks/useMediaQuery'
@@ -30,6 +30,8 @@ export default function App() {
   const dataError = useStore((s) => s.dataError)
   const hasDoc = useStore((s) => !!s.doc)
   const loadData = useStore((s) => s.loadData)
+  // the tab icon in the seasonal look of the logo
+  useSeasonalFavicon()
 
   useEffect(() => {
     void loadData()

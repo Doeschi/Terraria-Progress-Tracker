@@ -17,7 +17,7 @@ GitHub Actions.
 - **G2** Modern UI with dark and light mode (follows system setting, can be switched).
 - **G3** Desktop first, but usable on tablets and phones.
 - **G4** Credits the Terraria Wiki as data and icon source (CC BY-NC-SA 4.0) with a link.
-- **G4a** An "About" dialog (⚙ menu → About, and "License & credits" in a one-line note at the
+- **G4a** An "About" dialog (ⓘ button at the top right, and "License & credits" in a one-line note at the
   bottom of the filter sidebar) with the data source and its license (also for the generated data
   and sprite sheets), the code license (MIT) and repository, the trademark note, the libraries
   used and the AI notice.
@@ -32,6 +32,8 @@ GitHub Actions.
 - **G8** A few easter eggs (Terraria references; deliberately not listed here). They never block
   the app or change data, are short, show no motion with "reduced motion", use only own texts and
   the wiki's images, and can be turned off in the settings ("Easter eggs", on by default).
+  Seasonal ones can be tested with `?date=YYYY-MM-DD` or `?date=YYYY-MM-DDTHH:MM` in the URL:
+  everything seasonal then uses that date and time (only what is shown; nothing is saved).
 
 ## D – Data
 
@@ -220,7 +222,7 @@ GitHub Actions.
   an empty name is filled with the world name. On create the world is attached (and remembered
   like with "Attach world") and the areas dialog opens.
 - **P5** The header has three parts: the logo on the left, the labeled controls centered, and
-  the ⚙ menu on the right (settings, theme, About, GitHub – LS1; logo and menu vertically
+  the small buttons on the right (GitHub, theme, About, settings – LS1; logo and buttons vertically
   centered). The centered part
   holds File and a box with everything that belongs to the active playthrough – Playthrough (switch,
   new, edit, delete; the button shows the name and the icons of platform, difficulty and game
@@ -366,8 +368,9 @@ GitHub Actions.
 
 - **LS0** The top bar groups its fields in cards: File, the playthrough box (P) and the View
   switch (items / bestiary) each in their own card.
-- **LS1** Top right: a single ⚙ menu instead of separate buttons – Settings…, Theme (light /
-  dark / system), About… (G4a) and GitHub.
+- **LS1** Top right, four small icon buttons: GitHub (link to the repository), theme (cycles light →
+  dark → system, the icon shows the current one), About (ⓘ, G4a) and settings (⚙, opens the
+  settings dialog).
 - **LS2** List header in three rows: search (with the Fuzzy / Exact switch inside the field);
   Show (all / missing / …), progress of the filtered items and bulk actions; views. The views
   are a dropdown with all presets; a star in the dropdown marks a view as favorite (default
@@ -862,7 +865,7 @@ Status: parser done (PL1, PL2), app integration in progress (PL3–PL5).
   tracking file stores a reference per playthrough (name, file name, last sync – F7),
   not the contents; the parsed player is kept for the session only. Files of unsupported game
   versions give a clear message.
-- **PL4** Sync (SY): the sync dialog also opens with only a player loaded. Section "Player":
+- **PL4** Sync (SY): the sync dialog also opens with only a player loaded. Section "Inventory" (next to "Chests" and "Bestiary"):
   checkboxes per storage (inventory incl. coins and ammo, equipment / misc slots / loadouts, Piggy
   Bank, Safe, Defender's Forge, Void Vault) and "permanent upgrades used", all on by default; the
   list of items to be checked can be deselected like the world's. Used permanent upgrades count
