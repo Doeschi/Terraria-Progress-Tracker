@@ -1,5 +1,7 @@
 # Terraria Progress Tracker
 
+**▶ Open the tracker: [doeschi.github.io/Terraria-Progress-Tracker](https://doeschi.github.io/Terraria-Progress-Tracker/)**
+
 Track which Terraria items and bestiary entries you have collected, per playthrough, platform,
 difficulty and game version – with filters and progress for categories, sources, bosses, events,
 biomes and crafting, recipes and drops per item, and sync with your world file (chests and

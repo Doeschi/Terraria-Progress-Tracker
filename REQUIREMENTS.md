@@ -823,12 +823,14 @@ Status: planned, not started. Reviewed before implementation (see also the v2 li
   an external library. Written from scratch (no code from the decompiled game or other tools).
   Once stable and after surviving a Terraria update it may move to its own repository and be
   published on npm (accounts and package name by the repo owner).
+  The format is documented in the package's `FORMAT.md` (worked out from the test characters,
+  each field marked verified / plausible / unknown), the approach in its `README.md`.
 - **PL2** Reading: `.plr` files are decrypted in the browser (Web Crypto AES-CBC with the game's
   fixed key) and parsed in a Web Worker; nothing is uploaded. Supported: the 1.4.x formats up to
   1.4.5; older or unknown newer versions give a clear error (or, where possible, what could be
   read and what is missing, like the world file W7). Result: name, difficulty (incl. Journey),
-  game version / file version, and per item id + stack + prefix:
-  - inventory (50 slots, coins, ammo) and the trash slot
+  game version / file version (1.4.5 = 326), and per item id + stack + prefix:
+  - inventory (50 slots, coins, ammo); the trash slot is not saved by the game
   - equipment: armor, accessories, vanity, dyes; misc equipment (pet, light pet, minecart, mount,
     hook) and their dyes; the 3 equipment loadouts
   - storages: Piggy Bank, Safe, Defender's Forge, Void Vault (40 slots each)
@@ -843,7 +845,7 @@ Status: planned, not started. Reviewed before implementation (see also the v2 li
   to the world. The tracking file stores a reference (name, file name), not the contents.
 - **PL4** Sync (SY): a "Player" section in the sync dialog marks items as obtained that are in
   any of the player's storages; checkboxes per storage (inventory, equipment and loadouts, Piggy
-  Bank, Safe, Defender's Forge, Void Vault, trash), all on by default. Used permanent upgrades
+  Bank, Safe, Defender's Forge, Void Vault), all on by default. Used permanent upgrades
   count as obtained (they can never be found in a storage).
 - **PL5** Column "Owned" replaces "In chests" (BL6) when a player is loaded: chests + player
   storages; the tooltip splits it up ("12 in chests · 3 in the Void Vault · 1 in the
