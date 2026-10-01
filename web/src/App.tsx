@@ -18,6 +18,7 @@ import { ItemList } from '@/components/ItemList'
 import { ItemDetailPanel, ItemDetailSheet } from '@/components/ItemDetail'
 import { useMediaQuery } from '@/hooks/useMediaQuery'
 import { TopBar } from '@/components/TopBar'
+import { WeaponLayer } from '@/components/WeaponLayer'
 import { useBestiaryCompletions, useItemCompletions } from '@/hooks/useCompletions'
 import { WelcomeScreen } from '@/components/WelcomeScreen'
 import { AreasDialog } from '@/components/dialogs/AreasDialog'
@@ -110,6 +111,8 @@ function Tracker() {
 
   return (
     <div className="flex h-svh flex-col">
+      {/* a picked-up weapon (easter egg) */}
+      <WeaponLayer />
       <TopBar view={view} />
       {pt && view && mode === 'bestiary' ? (
         <BestiaryScreen />

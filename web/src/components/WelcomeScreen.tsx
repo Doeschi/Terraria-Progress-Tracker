@@ -59,7 +59,7 @@ export function WelcomeScreen() {
     {
       icon: SlidersHorizontal,
       title: 'Filters with live progress',
-      text: 'Categories, sources, vendors, bosses, events, biomes, rarity and updates – each with its own progress bar.',
+      text: 'Categories, sources, vendors, bosses, events, biomes, rarity and updates – each with its own progress tracker.',
     },
     {
       icon: Hammer,
@@ -69,7 +69,7 @@ export function WelcomeScreen() {
     {
       icon: Swords,
       title: 'Drops & bosses',
-      text: 'Who drops what and which chests, crates and trees contain it – with the chances for Classic, Expert and Master.',
+      text: 'Who drops what and which chests, crates and trees contain it – with the chances for Classic, Expert and Master, and how often it should have dropped by now.',
     },
     {
       icon: BookOpen,
@@ -78,8 +78,8 @@ export function WelcomeScreen() {
     },
     {
       icon: Globe,
-      title: 'Sync with your world',
-      text: 'Sync items and bestiary from your world, and find any item in your chests on a map.',
+      title: 'Sync with your game',
+      text: 'Check off items from your inventory, chests and bestiary, and find any item in your chests on a map.',
     },
   ]
 
@@ -90,7 +90,7 @@ export function WelcomeScreen() {
           <Logo size={64} />
           <h1 className="text-2xl font-semibold">Terraria Progress Tracker</h1>
           <p className="max-w-md text-sm text-balance text-muted-foreground">
-            Your companion for a 100% run: see what's still missing, how to get it – and let your world file do the
+            Your companion for a 100% run: see what's still missing, how to get it – and let your game files do the
             tracking.
           </p>
         </div>
@@ -136,7 +136,7 @@ export function WelcomeScreen() {
           <p className="flex items-center gap-2 text-xs text-muted-foreground">
             <ShieldCheck className="size-4 shrink-0" />
             <span>
-              Everything runs in your browser. Tracking files and world files are never uploaded; only item icons are
+              Everything runs in your browser. Tracking files and game files are never uploaded; only item icons are
               loaded from the Terraria Wiki.
             </span>
           </p>

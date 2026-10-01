@@ -34,6 +34,7 @@ GitHub Actions.
   the wiki's images, and can be turned off in the settings ("Easter eggs", on by default).
   Seasonal ones can be tested with `?date=YYYY-MM-DD` or `?date=YYYY-MM-DDTHH:MM` in the URL:
   everything seasonal then uses that date and time (only what is shown; nothing is saved).
+  Ones that only appear on some visits can be forced with `?weapons=awake`.
 
 ## D – Data
 

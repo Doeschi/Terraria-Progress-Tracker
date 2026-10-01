@@ -16,6 +16,7 @@ import { useVirtualizer } from '@tanstack/react-virtual'
 import { ArrowDown, ArrowUp, ExternalLink, Eye, EyeOff, PackageSearch } from 'lucide-react'
 import { useActivePlaythrough, useActiveWorld, useStore } from '@/store'
 import { itemLuck, sourceKills, type Luck } from '@/lib/luck'
+import { canWield, useHeldWeapon, WEAPONS, weaponsAwake } from '@/lib/weapons'
 import { rodOfDiscord } from '@/lib/eggs'
 import type { Owned } from '@/hooks/useTrackerView'
 import { usePrefs } from '@/lib/prefs'
@@ -92,7 +93,7 @@ function useTableColumns(catalogue: ItemColumn[], tracking: React.RefObject<Trac
         helper.display({
           id: 'icon',
           header: () => null,
-          cell: ({ row }) => <IconCell src={row.original.icon} />,
+          cell: ({ row }) => <IconCell item={row.original} />,
           size: PINNED.icon.size,
           enableResizing: false,
           enableHiding: false,
@@ -148,6 +149,7 @@ export function ItemTable({
   const hasWorld = useStore((s) => !!s.doc?.activePlaythroughId && !!s.worlds[s.doc.activePlaythroughId])
   const catalogue = useItemColumns()
   const pt = useActivePlaythrough()
+  const eggs = usePrefs((s) => s.layout.easterEggs)
   const changedAt = pt?.changedAt
   const difficulty = pt?.difficulty ?? 'master'
   // expected drops from the loaded world's bestiary kills, computed once per item
@@ -308,6 +310,8 @@ export function ItemTable({
               const row = rows[vr.index]
               const isChecked = checked.has(row.id)
               const isIgnored = ignored.has(row.id)
+              // weapon easter egg: its big icon sticks out of the row, over the others
+              const bigIcon = isBigWeapon(row.id, isChecked && !isIgnored, eggs)
               const isSelected = selectedKey === row.id
               return (
                 <tr
@@ -326,7 +330,10 @@ export function ItemTable({
                     return (
                       <td
                         key={cell.id}
-                        style={{ left }}
+                        style={{
+                          left,
+                          ...(bigIcon && cell.column.id === 'icon' && { zIndex: 20, overflow: 'visible' }),
+                        }}
                         className={cn(
                           'overflow-hidden border-b border-border/60 px-2 whitespace-nowrap text-ellipsis',
                           // pinned cells need an opaque background to cover scrolled content
@@ -367,10 +374,47 @@ export function ItemTable({
   )
 }
 
-/** The item icon, smaller in the compact density. */
-function IconCell({ src }: { src?: string }) {
+/** The item icon, smaller in the compact density; a big one for awake weapons (easter egg). */
+function IconCell({ item }: { item: Item }) {
   const compact = usePrefs((s) => s.layout.density === 'compact')
-  return <WikiIcon src={src} alt="" size={compact ? 22 : 28} />
+  const eggs = usePrefs((s) => s.layout.easterEggs)
+  const { checked, ignored } = useContext(RowStateContext)
+  const size = compact ? 22 : 28
+  if (isBigWeapon(item.key, checked.has(item.key) && !ignored.has(item.key), eggs))
+    return <BigWeaponIcon item={item} size={size} />
+  return <WikiIcon src={item.icon} alt="" size={size} />
+}
+
+/** A weapon easter egg (lib/weapons.ts): on some visits, special weapons the player has show a
+ * big icon; click it to pick the weapon up. */
+const isBigWeapon = (key: string, owned: boolean, eggs: boolean) => eggs && owned && weaponsAwake && key in WEAPONS
+
+function BigWeaponIcon({ item, size }: { item: Item; size: number }) {
+  const pickUp = useHeldWeapon((s) => s.pickUp)
+  const held = useHeldWeapon((s) => s.held?.key === item.key)
+  const big = size * 2
+  return (
+    <span className="relative block" style={{ width: size, height: size }}>
+      <button
+        type="button"
+        onClick={(e) => {
+          if (!canWield()) return
+          // no focus ring left behind when the weapon is put back with Escape
+          e.currentTarget.blur()
+          pickUp(item.key, item.icon, e.clientX, e.clientY)
+        }}
+        className={cn(
+          'egg-weapon absolute cursor-grab rounded focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none',
+          held && 'opacity-30',
+        )}
+        style={{ left: (size - big) / 2, top: (size - big) / 2, width: big, height: big }}
+        aria-label={item.name}
+        data-weapon={item.key}
+      >
+        <WikiIcon src={item.icon} alt="" size={big} upscale />
+      </button>
+    </span>
+  )
 }
 
 function CheckCell({ item }: { item: Item }) {

@@ -3,30 +3,17 @@ import { ImageOff } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { formatPercent, percent, type Tally } from '@/lib/filtering'
 import { useStore } from '@/store'
+import { findSprite, type Sprite } from '@/lib/sprites'
 import { RARITIES } from './common-data'
 import type { Difficulty } from '@/lib/types'
 import { plural } from '@/lib/format'
 
-const WIKI_IMAGES = 'https://terraria.wiki.gg/images/'
-
-interface Sprite {
-  file: string
-  sheetW: number
-  sheetH: number
-  x: number
-  y: number
-  w: number
-  h: number
-}
-
 /** The icon's place in the app's sprite sheets (build_icons.py), if it is packed there. */
 function useSprite(src?: string): Sprite | undefined {
-  const sprites = useStore((s) => s.data?.sprites)
-  const hit = src?.startsWith(WIKI_IMAGES) ? sprites?.icons.get(src.slice(WIKI_IMAGES.length)) : undefined
-  if (!hit || !sprites) return undefined
-  const [n, x, y, w, h] = hit
-  const sheet = sprites.sheets[n]
-  return { file: sheet.file, sheetW: sheet.w, sheetH: sheet.h, x, y, w, h }
+  return findSprite(
+    useStore((s) => s.data?.sprites),
+    src,
+  )
 }
 
 /** A sprite drawn at `scale` (pixelated). */
@@ -56,11 +43,14 @@ export function WikiIcon({
   alt,
   size = 32,
   className,
+  upscale = false,
 }: {
   src?: string
   alt: string
   size?: number
   className?: string
+  /** also scale small icons up to fill the box (pixelated) */
+  upscale?: boolean
 }) {
   const [failed, setFailed] = useState(false)
   const sprite = useSprite(src)
@@ -68,7 +58,11 @@ export function WikiIcon({
   if (sprite) {
     return (
       <span style={box} className={cn('flex shrink-0 items-center justify-center', className)}>
-        <SpriteImage sprite={sprite} scale={Math.min(1, size / sprite.w, size / sprite.h)} alt={alt} />
+        <SpriteImage
+          sprite={sprite}
+          scale={Math.min(upscale ? Infinity : 1, size / sprite.w, size / sprite.h)}
+          alt={alt}
+        />
       </span>
     )
   }
@@ -90,7 +84,7 @@ export function WikiIcon({
         decoding="async"
         referrerPolicy="no-referrer"
         onError={() => setFailed(true)}
-        className="max-h-full max-w-full object-contain [image-rendering:pixelated]"
+        className={cn('max-h-full max-w-full object-contain [image-rendering:pixelated]', upscale && 'h-full w-full')}
         draggable={false}
       />
     </span>

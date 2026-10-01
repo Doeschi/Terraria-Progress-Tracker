@@ -238,3 +238,21 @@ html.egg-worthy.dark {
     transform: translate(5px, -6px);
   }
 }
+/* awake weapons bob like dropped items (weapon easter egg) */
+.egg-weapon {
+  animation: egg-bob 2.2s ease-in-out infinite;
+}
+@keyframes egg-bob {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .egg-weapon {
+    animation: none;
+  }
+}
