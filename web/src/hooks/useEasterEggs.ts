@@ -148,7 +148,8 @@ export function useProgressEggs(overall: { total: number; obtained: number } | u
     const p = prev.current
     prev.current = now
     if (!enabled || !p || !pt || p.id !== now.id || p.checked === now.checked) return
-    if (p.checked?.length === 0 && pt.checked.length > 0)
+    // once per playthrough (remembered in the browser), not again after unchecking everything
+    if (p.checked?.length === 0 && pt.checked.length > 0 && !firstItemSeen(pt.id))
       achievement(
         'Your adventure begins',
         'The first item of this playthrough. Many more to go!',
@@ -165,4 +166,17 @@ export function useProgressEggs(overall: { total: number; obtained: number } | u
         goldConfetti()
       }, 700)
   }, [enabled, pt, overall?.obtained, overall?.total])
+}
+
+/** Whether "Your adventure begins" was shown for a playthrough; marks it as shown. */
+function firstItemSeen(playthroughId: string): boolean {
+  const key = 'egg-first-item'
+  try {
+    const seen: string[] = JSON.parse(localStorage.getItem(key) ?? '[]')
+    if (seen.includes(playthroughId)) return true
+    localStorage.setItem(key, JSON.stringify([...seen, playthroughId]))
+  } catch {
+    // storage unavailable: show it
+  }
+  return false
 }

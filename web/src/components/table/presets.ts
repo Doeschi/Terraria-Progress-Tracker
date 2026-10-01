@@ -34,7 +34,7 @@ export const COLUMN_PRESETS: ColumnPreset[] = [
     // items that should have dropped by now (world bestiary kills)
     id: 'bad-luck',
     label: 'Bad luck',
-    columns: ['expectedDrops', 'inChests', 'drops', 'conditions', 'events', 'biomes', 'milestone'],
+    columns: ['expectedDrops', 'owned', 'drops', 'conditions', 'events', 'biomes', 'milestone'],
     sorting: [{ id: 'expectedDrops', desc: true }],
     needsWorld: true,
   },

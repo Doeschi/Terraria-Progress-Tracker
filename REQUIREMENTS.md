@@ -180,8 +180,10 @@ GitHub Actions.
   closed with unsaved changes.
 - **F5** A backup of the current state is kept locally in the browser (IndexedDB) after
   every change. On startup the app offers to restore it if it is newer than the last save.
-- **F6** The file is JSON with a format `version`. Loaded files are validated; older
-  versions are migrated. Item keys the app does not know are kept, not dropped.
+- **F6** The file is JSON with a format `version` (currently 1). Loaded files are validated;
+  files of another version are rejected with a message (once the format changes in a released
+  version, older files will be converted when loaded). Item keys the app does not know are kept,
+  not dropped.
 - **F7** File content:
   ```
   {
@@ -191,9 +193,10 @@ GitHub Actions.
       checked: [itemKey],
       ignored: [itemKey],
       changedAt: { itemKey: isoTime },           // last check/uncheck/ignore/un-ignore
-      bestiary: [entryId], bestiaryChangedAt: { entryId: isoTime },   // v4
+      bestiary: [entryId], bestiaryChangedAt: { entryId: isoTime },
+      completedAt: { "<group>/<id>" | "bestiary:<group>/<id>": isoTime },   // FL17
       world: { name, guid, fileName, width, height, worldSurface, lastSyncedAt } | null,
-      player: { name, fileName, lastSyncedAt } | null,   // v5
+      player: { name, fileName, lastSyncedAt } | null,
       areas: [{ id, name, x1, y1, x2, y2 }]      // tile coordinates
     }],
     activePlaythroughId
@@ -264,7 +267,7 @@ GitHub Actions.
   "Last changed" (group "Tracking", visible by default, always the last column, first click
   sorts newest first) and as
   tooltip of the checkbox. Setting an item to the state it already has keeps its date.
-- **I14** Save format v3 adds these dates; older files are migrated without dates.
+- **I14** The dates are stored in the tracking file (`changedAt`, F7).
 - **I16** Table columns can be resized by dragging the right edge of their header (minimum
   60 px, the name column 160 px); a double-click on the edge restores the default width, "Reset
   widths" in the Columns menu all of them. Checkbox, icon and the last column have a fixed width.
@@ -324,9 +327,10 @@ GitHub Actions.
   message with "Undo". Hidden options still work as filters from there and can be shown in their
   group again (eye, always available in "Hidden"; the section opens in edit mode). The filter
   search (FL9) ignores hidden options.
-- **FL11** "Move completed filters" (toggle next to the filter search, on by default): options at 100 % in the
-  current context move to the "Completed" section, above "Hidden". Completed options stay
-  usable and follow the filter search.
+- **FL11** "Move completed filters" (toggle next to the filter search, on by default): options at 100 % over
+  the whole playthrough (not the current filters and search) move to the "Completed" section,
+  above "Hidden". Completed options stay usable and follow the filter search; their counts follow
+  the current filters like everywhere (greyed out without matching items).
 - **FL12** Both sections list their options under the name of their group, are collapsed by
   default and only appear when they have options. Hidden options and the completed toggle are
   remembered in the browser (PR1); hidden options separately for items and bestiary, the
@@ -334,8 +338,8 @@ GitHub Actions.
 - **FL13** "Open all / close all" button next to the filter search: opens or closes every filter
   group and the "Completed" / "Hidden" sections; single groups can still be toggled afterwards.
 - **FL14** Every group header also shows how many of its options are completed, e.g. "✓ 2/18"
-  (top-level options with items in the current context, hidden ones left out; green when all
-  are complete).
+  (top-level options over the whole playthrough, like FL11; hidden ones left out; green when
+  all are complete).
 - **FL15** Group "Almost done" (items and bestiary): the 5 options closest to completion, as
   duplicates of the options in their groups (same selection; the group name is shown with each).
   Ranked by percentage, ties by fewer missing; only options with at least 5 items, at least one
@@ -347,10 +351,16 @@ GitHub Actions.
   sync; bestiary entries too) brings filter options to 100 % over the whole playthrough, a
   toast at the top centre in the style of Terraria's achievement pop-up (option icon, gold
   title, dark blue panel) and a 3 s burst of pixel confetti in the game's confetti colours.
-  Changes within 0.4 s give one toast ("12 filters complete!", the first three named, "+9
+  Changes within 0.4 s give one toast per kind – item filters and bestiary filters separately
+  ("12 item filters complete!", "3 bestiary filters complete!", the first three named, "+9
   more"). Not on loading a file, switching playthroughs or changing settings; hidden options
   and the groups Progression and Crafting are left out. Setting "Celebrate completed filters"
   (on by default); no confetti with reduced motion.
+- **FL17** The time a filter option was completed is kept per playthrough in the tracking file
+  (`completedAt`): set when the option reaches 100 % over the whole playthrough (item and
+  bestiary filters, hidden ones too), removed when it is no longer complete. Shown in the
+  "Completed" section next to the option ("today, 14:05") and in the tooltip of every completed
+  option ("Completed today, 14:05").
 
 ## LS – Layout and settings
 
@@ -585,8 +595,6 @@ GitHub Actions.
   Journey (difficulty slider up to Master) include everything.
 - **DF3** Loading a world sets the difficulty from the world's game mode; the user is told when
   it changes. It can still be changed manually in the playthrough dialog.
-- **DF4** Files from before this feature (format v1) are migrated to Master and "Latest", so
-  nothing that was counted before disappears.
 - **DF5** Difficulties are shown with the wiki's game-mode icons (page "Difficulty",
   `difficulties.json`): in both difficulty pickers, the world line of the new-playthrough dialog
   and the "Expert & Master" / "Master only" badges of the item detail panel.
@@ -793,8 +801,8 @@ GitHub Actions.
   Show all / missing / unlocked, and a table: in-game number (default order), icon, name, type,
   biomes, stars, kills in the attached world, unlocked checkbox, wiki link, last changed.
 - **BE7** Header: a second progress bar for the bestiary below the item progress.
-- **BE8** Tracking file v4: `bestiary` (unlocked entry ids) and `bestiaryChangedAt` per
-  playthrough.
+- **BE8** Tracking file: `bestiary` (unlocked entry ids) and `bestiaryChangedAt` per
+  playthrough (F7).
 
 ## BL – Expected drops ("bad luck")
 
@@ -817,9 +825,8 @@ GitHub Actions.
 - **BL4** Built-in view "Bad luck" (expected drops, in chests, drops, conditions, events, biome,
   available after; sorted by the chance): only selectable while a world is loaded.
 - **BL5** Detail panel: each enemy drop source shows its kills in the loaded world.
-- **BL6** Column "In chests" (only offered while a world is loaded): the total amount of the item
-  in the chests the player placed, whole world – the same chests as "craftable from your chests"
-  (RC); empty for none.
+- **BL6** The amount of the item in the chests the player placed, whole world – the same chests as
+  "craftable from your chests" (RC) – is part of the "Owned" column (PL5); empty for none.
 
 ## PL – Player file
 
@@ -852,7 +859,7 @@ Status: parser done (PL1, PL2), app integration in progress (PL3–PL5).
   in the header (before "World"), with a menu: attach / choose another file, reload
   (Chrome/Edge remember the file), sync, detach; a quick button reconnects an attached player that
   is not loaded. "Continue where you left off" also reloads a remembered player file. The
-  tracking file stores a reference per playthrough (name, file name, last sync – file version 5),
+  tracking file stores a reference per playthrough (name, file name, last sync – F7),
   not the contents; the parsed player is kept for the session only. Files of unsupported game
   versions give a clear message.
 - **PL4** Sync (SY): the sync dialog also opens with only a player loaded. Section "Player":
@@ -863,7 +870,7 @@ Status: parser done (PL1, PL2), app integration in progress (PL3–PL5).
   Loaf, Vital Crystal, Aegis Fruit, Arcane Crystal, Galaxy Pearl, Gummy Worm, Ambrosia). The
   player never unchecks anything; with a player loaded, the world's "checked but not found"
   list leaves out what the player has.
-- **PL5** Column "Owned" (was "In chests", BL6): the amount in the player's chests (whole world)
+- **PL5** Column "Owned" (BL6): the amount in the player's chests (whole world)
   plus, with a player loaded, everything on the player; the tooltip splits it up ("12 in chests ·
   3 in the Void Vault · 1 in the inventory"). Offered while a world or a player is loaded; the
   "Bad luck" view (needs a world) shows it.

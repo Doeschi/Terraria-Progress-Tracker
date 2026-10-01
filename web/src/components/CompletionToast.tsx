@@ -27,12 +27,17 @@ export function AchievementToast({ title, icon, children }: { title: string; ico
   )
 }
 
-/** "Filter complete!" (see useCompletions). */
-export function CompletionToast({ done }: { done: Completed[] }) {
+/** "Item filter complete!" / "3 bestiary filters complete!" (see useCompletions). */
+export function CompletionToast({ kind, done }: { kind: 'items' | 'bestiary'; done: Completed[] }) {
   const shown = done.slice(0, 3)
+  const what = kind === 'items' ? 'item' : 'bestiary'
   return (
     <AchievementToast
-      title={done.length === 1 ? 'Filter complete!' : `${done.length} filters complete!`}
+      title={
+        done.length === 1
+          ? `${what[0].toUpperCase()}${what.slice(1)} filter complete!`
+          : `${done.length} ${what} filters complete!`
+      }
       icon={done[0].icon}
     >
       {shown.map((c, i) => (

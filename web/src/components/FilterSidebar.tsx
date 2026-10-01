@@ -13,6 +13,8 @@ import {
 } from 'lucide-react'
 import { toast } from 'sonner'
 import { useActiveWorld, useStore } from '@/store'
+import { activePlaythrough } from '@/lib/saveFile'
+import { formatRelativeDay } from '@/lib/format'
 import { usePrefs, type ProgressionMode } from '@/lib/prefs'
 import { ToggleGroup, ToggleGroupItem } from '@/components/ui/toggle-group'
 import { cn } from '@/lib/utils'
@@ -84,6 +86,11 @@ const QueryContext = createContext('')
 
 /** Option highlighted by the filter search ("<group>/<id>"); Enter selects it. */
 const ActiveTargetContext = createContext<string | null>(null)
+
+/** When each filter option was completed (Playthrough.completedAt) - "<prefix><group>/<id>" -> time */
+function useCompletedAt(key: string): string | undefined {
+  return useStore((s) => activePlaythrough(s.doc)?.completedAt[key])
+}
 
 /** Sidebar-wide view state: the edit mode for hiding options. */
 interface SidebarUi {
@@ -204,7 +211,8 @@ function FilterPanel({
     const key = (group: string, id: string) => `${scope.prefix}${group}/${id}`
     return {
       isHidden: (group, id) => hidden.has(key(group, id)),
-      isDone: (group, id) => hideCompleted && complete(facets[group]?.get(id)),
+      // over the whole playthrough, not the current filters and search (FL11)
+      isDone: (group, id) => hideCompleted && complete(available[group]?.get(id)),
       hasItems: (group, id) => (facets[group]?.get(id)?.total ?? 0) > 0 || !!selections[group]?.includes(id),
       exists: (group, id) => !!available[group]?.has(id) || !!selections[group]?.includes(id),
       toggleHidden: (group, id, name) => {
@@ -330,7 +338,13 @@ function FilterPanel({
                   k === ALMOST_DONE ? (
                     <AlmostDoneSection key={k} groups={groups} facets={facets} totals={available} />
                   ) : (
-                    <GroupSection key={k} group={byKey.get(k)!} facets={facets} tally={groupTallies[k] ?? EMPTY} />
+                    <GroupSection
+                      key={k}
+                      group={byKey.get(k)!}
+                      facets={facets}
+                      totals={available}
+                      tally={groupTallies[k] ?? EMPTY}
+                    />
                   ),
                 )}
                 {q && !targets.length && <NoFilterMatch groups={groups} q={q} />}
@@ -369,7 +383,18 @@ function NoFilterMatch({ groups, q }: { groups: AnyGroup[]; q: string }) {
   )
 }
 
-function GroupSection({ group, facets, tally }: { group: AnyGroup; facets: AnyFacets; tally: Tally }) {
+function GroupSection({
+  group,
+  facets,
+  totals,
+  tally,
+}: {
+  group: AnyGroup
+  facets: AnyFacets
+  /** progress over the whole playthrough (for the completed count) */
+  totals: AnyFacets
+  tally: Tally
+}) {
   const scope = useContext(ScopeContext)
   const q = useContext(QueryContext)
   const place = useContext(PlacementContext)
@@ -390,9 +415,10 @@ function GroupSection({ group, facets, tally }: { group: AnyGroup; facets: AnyFa
   // everything moved away: a short note instead of an empty group
   const moved = !entries.length && group.entries.some((e) => place.exists(group.key, e.id))
   // completed options: top-level options with items in the current context, hidden ones left out
-  const facet = facets[group.key]
-  const counted = group.entries.filter((e) => !place.isHidden(group.key, e.id) && (facet.get(e.id)?.total ?? 0) > 0)
-  const done = counted.filter((e) => complete(facet.get(e.id))).length
+  // completed options over the whole playthrough, like "Completed" (FL11, FL14)
+  const total = totals[group.key]
+  const counted = group.entries.filter((e) => !place.isHidden(group.key, e.id) && (total?.get(e.id)?.total ?? 0) > 0)
+  const done = counted.filter((e) => complete(total?.get(e.id))).length
 
   return (
     <section className="rounded-xl border bg-card p-1.5 shadow-xs">
@@ -589,6 +615,7 @@ function MovedSection({
                   facets={facets}
                   isVisible={(c) => place.exists(group.key, c.id)}
                   action={kind === 'hidden' ? 'show' : undefined}
+                  showCompleted={kind === 'completed'}
                 />
               ))}
             </ul>
@@ -661,6 +688,7 @@ function EntryRow({
   expand = false,
   nested = false,
   context,
+  showCompleted = false,
 }: {
   group: AnyGroup
   entry: FilterEntry
@@ -673,6 +701,8 @@ function EntryRow({
   nested?: boolean
   /** a duplicate outside its group ("Almost done"): the group it belongs to, no subgroups */
   context?: string
+  /** the "Completed" section: the date it was completed next to the name */
+  showCompleted?: boolean
 }) {
   const scope = useContext(ScopeContext)
   const place = useContext(PlacementContext)
@@ -682,6 +712,7 @@ function EntryRow({
   // "hide" only in edit mode (safe from misclicks); "show" is always offered in "Hidden"
   const eye = action === 'show' || (action === 'hide' && editMode) ? action : undefined
   const isTarget = useContext(ActiveTargetContext) === `${group.key}/${entry.id}`
+  const completedAt = useCompletedAt(`${scope.prefix}${group.key}/${entry.id}`)
   const rowRef = useRef<HTMLDivElement>(null)
   // keep the option chosen with ↑/↓ in view
   useEffect(() => {
@@ -709,7 +740,14 @@ function EntryRow({
           nested && 'ml-5',
           empty && 'opacity-40',
         )}
-        title={empty ? 'No matching items with the current filters' : undefined}
+        title={
+          [
+            completedAt && `Completed ${formatRelativeDay(completedAt)}`,
+            empty && 'No matching items with the current filters',
+          ]
+            .filter(Boolean)
+            .join(' – ') || undefined
+        }
       >
         {eye && (
           <button
@@ -741,6 +779,11 @@ function EntryRow({
                 <span className={cn('min-w-0 flex-1 truncate text-sm', selected && 'font-medium')} title={entry.name}>
                   {entry.name}
                   {context && <span className="ml-1.5 text-[11px] font-normal text-muted-foreground">{context}</span>}
+                  {showCompleted && completedAt && (
+                    <span className="ml-1.5 text-[11px] font-normal text-muted-foreground">
+                      {formatRelativeDay(completedAt)}
+                    </span>
+                  )}
                 </span>
               </>
             )}

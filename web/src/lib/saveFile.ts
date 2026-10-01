@@ -1,9 +1,10 @@
 import { z } from 'zod/mini'
 import { DIFFICULTIES, PLATFORM_IDS, type Difficulty, type PlatformId } from './types'
 
-// Tracking file format. Bump SAVE_VERSION and add a step to MIGRATIONS when it changes.
+// Tracking file format. When it changes in a released version, bump SAVE_VERSION and convert
+// older files when they are loaded.
 export const SAVE_FORMAT = 'terraria-progress-tracker'
-export const SAVE_VERSION = 5
+export const SAVE_VERSION = 1
 
 const AreaSchema = z.object({
   id: z.string(),
@@ -48,6 +49,9 @@ const PlaythroughSchema = z.object({
   bestiary: z.array(z.string()),
   /** bestiary entry id -> ISO time of the last change */
   bestiaryChangedAt: z.record(z.string(), z.string()),
+  /** filter option ("<group>/<id>", bestiary ones "bestiary:<group>/<id>") -> ISO time it reached
+   * 100% over the whole playthrough; removed when it is no longer complete */
+  completedAt: z.record(z.string(), z.string()),
   world: z.nullable(WorldRefSchema),
   /** the attached player file (only a reference, the file is read each session) */
   player: z.nullable(PlayerRefSchema),
@@ -65,43 +69,6 @@ export type Area = z.infer<typeof AreaSchema>
 export type PlayerRef = z.infer<typeof PlayerRefSchema>
 export type Playthrough = z.infer<typeof PlaythroughSchema>
 export type SaveFile = z.infer<typeof SaveFileSchema>
-
-/** version n -> n+1 */
-const MIGRATIONS: Record<number, (data: Record<string, unknown>) => Record<string, unknown>> = {
-  // v2: difficulty and game version per playthrough. "master" keeps every
-  // item counted, like before.
-  1: (data) => ({
-    ...data,
-    version: 2,
-    playthroughs: (data.playthroughs as Record<string, unknown>[]).map((p) => ({
-      ...p,
-      difficulty: 'master',
-      gameVersion: null,
-    })),
-  }),
-  // v3: time of the last change per item (unknown for older changes)
-  2: (data) => ({
-    ...data,
-    version: 3,
-    playthroughs: (data.playthroughs as Record<string, unknown>[]).map((p) => ({ ...p, changedAt: {} })),
-  }),
-  // v4: bestiary
-  3: (data) => ({
-    ...data,
-    version: 4,
-    playthroughs: (data.playthroughs as Record<string, unknown>[]).map((p) => ({
-      ...p,
-      bestiary: [],
-      bestiaryChangedAt: {},
-    })),
-  }),
-  // v5: attached player file
-  4: (data) => ({
-    ...data,
-    version: 5,
-    playthroughs: (data.playthroughs as Record<string, unknown>[]).map((p) => ({ ...p, player: null })),
-  }),
-}
 
 /** A playthrough of a file by id. */
 export function findPlaythrough(
@@ -126,16 +93,11 @@ export function parseSaveFile(text: string): SaveFile {
   if (data?.format !== SAVE_FORMAT) {
     throw new SaveFileError('This is not a Terraria Progress Tracker file.')
   }
-  let version = Number(data.version)
+  const version = Number(data.version)
   if (version > SAVE_VERSION) {
     throw new SaveFileError('This file was made with a newer version of the tracker.')
   }
-  while (version < SAVE_VERSION) {
-    const migrate = MIGRATIONS[version]
-    if (!migrate) throw new SaveFileError(`Unsupported file version ${version}.`)
-    data = migrate(data)
-    version = Number(data.version)
-  }
+  if (version !== SAVE_VERSION) throw new SaveFileError(`Unsupported file version ${data.version}.`)
   const result = SaveFileSchema.safeParse(data)
   if (!result.success) {
     const issue = result.error.issues[0]
@@ -176,6 +138,7 @@ export function newPlaythrough(
     changedAt: {},
     bestiary: [],
     bestiaryChangedAt: {},
+    completedAt: {},
     world: null,
     player: null,
     areas: [],

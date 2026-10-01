@@ -441,8 +441,8 @@ export function buildColumns(data: GameData): ItemColumn[] {
     },
     {
       // the same chests as "craftable from your chests" (the ones the player placed, whole world)
-      // plus everything on the loaded player; the id is kept from "In chests" (saved views)
-      id: 'inChests',
+      // plus everything on the loaded player
+      id: 'owned',
       label: 'Owned',
       group: 'Tracking',
       size: 95,

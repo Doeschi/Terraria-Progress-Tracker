@@ -14,7 +14,7 @@ export type AnyFacets = Record<string, Map<string, Tally>>
 /** Where an option is shown: its group, "Completed" or "Hidden". */
 export interface Placement {
   isHidden(group: string, id: string): boolean
-  /** at 100% and "move completed" is on */
+  /** at 100% over the whole playthrough and "move completed" is on */
   isDone(group: string, id: string): boolean
   /** has items in the current context (filters, search), or is selected */
   hasItems(group: string, id: string): boolean
@@ -81,7 +81,7 @@ export function movedLists(kind: 'completed' | 'hidden', groups: AnyGroup[], pla
   const moved = (g: AnyGroup, e: FilterEntry) =>
     kind === 'hidden'
       ? place.isHidden(g.key, e.id)
-      : !place.isHidden(g.key, e.id) && place.isDone(g.key, e.id) && place.hasItems(g.key, e.id)
+      : !place.isHidden(g.key, e.id) && place.isDone(g.key, e.id) && place.exists(g.key, e.id)
   return groups
     .map((g) => {
       const list: FilterEntry[] = []
