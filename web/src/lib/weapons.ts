@@ -53,7 +53,6 @@ const PINK_STAR = pixelSprite(STAR_ROWS, { Y: '#ff6ec7', W: '#ffffff' }, 3)
 const GOLD_STAR = pixelSprite(STAR_ROWS, { Y: '#ffd23c', W: '#ffffff' }, 3)
 
 const BEAM_ROWS = ['...GGGGG....', '.GGLLLLLGG..', 'GLLWWWWWLLGG', '.GGLLLLLGG..', '...GGGGG....']
-const GREEN_BEAM = pixelSprite(BEAM_ROWS, { G: '#2fae4a', L: '#7ef08f', W: '#e9ffe9' }, 3)
 const PURPLE_BEAM = pixelSprite(BEAM_ROWS, { G: '#6a2bb0', L: '#a76bf0', W: '#f1e4ff' }, 4)
 
 const PUMPKIN = pixelSprite(
@@ -162,6 +161,44 @@ const beam =
       update: (p, _s, w, h) => p.x > -40 && p.x < w + 40 && p.y > -40 && p.y < h + 40,
     })
 
+/** Terra Blade: a green shockwave - crescents that grow out of the swing and fade. */
+const terraBlade: Effect = (o, d) => {
+  const wave = (delay: number, reach: number) =>
+    setTimeout(() => {
+      let t = 0
+      spawn({
+        x: o.x,
+        y: o.y,
+        vx: d.x * 2.5,
+        vy: d.y * 2.5,
+        rot: Math.atan2(d.y, d.x),
+        life: 750,
+        sprite: {
+          draw(ctx) {
+            const r = 20 + t * reach
+            ctx.lineCap = 'round'
+            for (const [color, width] of [
+              ['#1f8a3a', 18],
+              ['#5be37a', 10],
+              ['#e9ffe9', 4],
+            ] as const) {
+              ctx.strokeStyle = color
+              ctx.lineWidth = width * (1 - t * 0.7)
+              ctx.beginPath()
+              ctx.arc(0, 0, r, -1.1, 1.1)
+              ctx.stroke()
+            }
+          },
+        },
+        update(p) {
+          t = p.age! / p.life
+        },
+      })
+    }, delay)
+  wave(0, 180)
+  wave(120, 120)
+}
+
 /** Flaming pumpkin heads that bounce along the bottom of the window. */
 const horseman: Effect = (o, d) => {
   for (let k = 0; k < 3; k++) {
@@ -250,7 +287,7 @@ export const WEAPONS: Record<string, Weapon> = {
   Zenith: { effect: zenith },
   StarWrath: { effect: fallingStars(PINK_STAR, 3, ['#ff6ec7', '#ffffff', '#ffb3e0']) },
   Starfury: { effect: fallingStars(GOLD_STAR, 1, ['#ffd23c', '#ffffff', '#fff1a8']) },
-  TerraBlade: { effect: beam(GREEN_BEAM, 17) },
+  TerraBlade: { effect: terraBlade },
   NightsEdge: { effect: beam(PURPLE_BEAM, 11) },
   TheHorsemansBlade: { effect: horseman },
   BeeKeeper: { effect: beeKeeper },

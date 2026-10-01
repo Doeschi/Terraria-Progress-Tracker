@@ -57,9 +57,10 @@ export function WeaponLayer() {
       place()
       const len = Math.hypot(dir.x, dir.y) || 1
       const unit = { x: dir.x / len, y: dir.y / len }
+      // icons point to the top right: a stab goes that way
       if (weapon.stab)
         swordRef.current?.animate(
-          [{ transform: 'translateX(0)' }, { transform: 'translateX(18px)' }, { transform: 'translateX(0)' }],
+          [{ transform: 'translate(0, 0)' }, { transform: 'translate(13px, -13px)' }, { transform: 'translate(0, 0)' }],
           { duration: 220, easing: 'ease-out' },
         )
       else
