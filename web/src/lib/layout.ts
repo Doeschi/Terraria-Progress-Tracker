@@ -8,6 +8,7 @@ export const DETAIL_SECTIONS: { id: string; label: string }[] = [
   { id: 'soldBy', label: 'Sold by' },
   { id: 'dropped', label: 'Dropped by' },
   { id: 'found', label: 'Found in' },
+  { id: 'contains', label: 'Contains (treasure bags, crates, chests)' },
   { id: 'recipes', label: 'Crafting, used in, shimmer' },
   { id: 'stats', label: 'Stats' },
   { id: 'details', label: 'Details (id, internal name, platforms)' },

@@ -249,6 +249,7 @@ is shown in the item details, but counts for no filter.
 | `conditions` / `events` / `biomes` | what the drop is bound to (e.g. `seed-remix`, `blood-moon`) |
 | `note` | extra text, e.g. `"if wind speed ≥ 20 mph"`, `"In I am error worlds"` |
 | `npcIds` | only these variants of the source drop it (NPC ids), e.g. the Torch Zombie |
+| `variants` | the variants of the source the drop is for, as the wiki names them (`"Pre-Hardmode variant"`, `"Dark Lamia"`); missing = every variant |
 
 ## `bosses.json`
 

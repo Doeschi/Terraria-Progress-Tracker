@@ -23,7 +23,7 @@ DROP_MODES = ("normal", "expert", "master")
 
 
 def strip_ids(drop):
-    return {k: v for k, v in drop.items() if k != "npcIds"}
+    return {k: v for k, v in drop.items() if k not in ("npcIds", "variants")}
 
 
 def drop_text(value):
@@ -76,7 +76,7 @@ class Drops:
     """
 
     def __init__(self, drop_rows, npc_rows, items, include_kinds, containers=None, container_icons=None,
-                 conditions=None):
+                 conditions=None, default_variants=None):
         self.include = set(include_kinds)
         self.conditions = conditions
         self.containers = containers or {}
@@ -86,6 +86,8 @@ class Drops:
             by_name[norm_name(item["name"])].append(item)
             by_page[norm_name(item["page"])].append(item)
         self.by_name, self.by_page = by_name, by_page
+        # names of the rows without a variant note, per source ([drop_variants])
+        self.default_variants = {norm_name(k): v for k, v in (default_variants or {}).items()}
         self.npcs = {norm_name(r["nameraw"]): r for r in npc_rows}
         # first NPC row per wiki page (e.g. "Mythical Wyvern" -> its Head)
         self.npcs_by_page = {}
@@ -269,16 +271,28 @@ class Drops:
         # (the wiki names the variant in a note: "Zombie (Torch Zombie)")
         if kind == "npc" and "note-text" in row["name"] and re.fullmatch(r"-?\d+", row["id"].strip()):
             entry["npcIds"] = [int(row["id"])]
+        # the variant the row is for, as the wiki names it ("Pre-Hardmode variant", "Dark Lamia",
+        # "T3", "Second Form"); rows without one can get a name from [drop_variants]
+        if kind == "npc":
+            m = re.search(r'<div class="note-text[^"]*">(.*?)</div>', html.unescape(row["name"]), re.S)
+            variant = strip_markup(m.group(1)).strip("() ") if m else self.default_variants.get(norm_name(row["nameraw"]))
+            if variant:
+                entry["variants"] = [variant]
         entry = {k: v for k, v in entry.items() if v is not None}
         for item in items:
             same = next((d for d in self.drops[item["key"]] if strip_ids(d) == strip_ids(entry)), None)
             if same is None:
                 self.drops[item["key"]].append(dict(entry))
-            elif "npcIds" in same and "npcIds" in entry:
-                # further variants with the same drop (Small / Big / Armed Slimed Zombie)
-                same["npcIds"] = sorted(set(same["npcIds"]) | set(entry["npcIds"]))
-            elif "npcIds" in same:
-                del same["npcIds"]  # also dropped by the main NPC: all variants count
+            else:
+                if "npcIds" in same and "npcIds" in entry:
+                    # further variants with the same drop (Small / Big / Armed Slimed Zombie)
+                    same["npcIds"] = sorted(set(same["npcIds"]) | set(entry["npcIds"]))
+                elif "npcIds" in same:
+                    del same["npcIds"]  # also dropped by the main NPC: all variants count
+                if "variants" in same and "variants" in entry:
+                    same["variants"] += [v for v in entry["variants"] if v not in same["variants"]]
+                elif "variants" in same:
+                    del same["variants"]  # also dropped without a variant
 
     def drops_file(self):
         for key in self.drops:

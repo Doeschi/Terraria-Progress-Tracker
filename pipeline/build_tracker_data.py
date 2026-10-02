@@ -137,7 +137,7 @@ def build(raw_dir, mapping_path, out_dir, readable_dir=None):
     log("Building items…")
     items, unmapped = build_items({})
     drops = Drops(drop_rows, npc_rows, items, mapping.drop_kinds,
-                  mapping.containers, mapping.container_icons)
+                  mapping.containers, mapping.container_icons, default_variants=mapping.drop_variants)
     boss_sources = {norm_name(n) for b in mapping.bosses.values() for n in b.get("sources", [])}
     extra = defaultdict(set)
     for item in items:
@@ -156,7 +156,7 @@ def build(raw_dir, mapping_path, out_dir, readable_dir=None):
     make_keys_unique(items)
     conditions = Conditions(mapping, items)
     drops = Drops(drop_rows, npc_rows, items, mapping.drop_kinds,
-                  mapping.containers, mapping.container_icons, conditions)
+                  mapping.containers, mapping.container_icons, conditions, mapping.drop_variants)
 
     for pattern, _ in mapping.manual:
         if not mapping.manual_used[pattern]:

@@ -7,7 +7,7 @@ import { cn } from '@/lib/utils'
 import { DIFFICULTY_LABELS } from '@/lib/availability'
 import { chestSearchHint } from '@/lib/world'
 import { chanceFor, dropKind, dropsFor, modeLabel, otherChances, quantityFor, type DropKind } from '@/lib/drops'
-import type { Drop, GameData, Item, ShopRow } from '@/lib/types'
+import type { BestiaryEntry, Drop, GameData, Item, ShopRow } from '@/lib/types'
 import { conditionNames } from '@/lib/conditions'
 import { Button } from '@/components/ui/button'
 import { Checkbox } from '@/components/ui/checkbox'
@@ -15,7 +15,10 @@ import { Sheet, SheetContent, SheetDescription, SheetTitle } from '@/components/
 import { DifficultyIcon, RarityIcon, WikiIcon } from './common'
 import { ResizablePane } from './ResizablePane'
 import { DETAIL_WIDTH } from '@/lib/panes'
-import { RecipeSections } from './RecipeSections'
+import { CollapsibleSection, RecipeSections } from './RecipeSections'
+import { Badge, CardLink, Chips, Section, type TitleComponent } from './DetailParts'
+import { ContainsSection, NpcCard, SourceCard } from './NpcDetail'
+import { NPC_REF, refName, SOURCE_REF, sourceRef, vendorRef } from '@/lib/npcs'
 import { formatDate, nameOf } from '@/lib/format'
 import { type ColumnGroup, type ItemColumn, type TrackingState } from './table/columns'
 import { useItemColumns } from './table/useColumns'
@@ -30,9 +33,34 @@ import { DETAIL_SECTIONS, ordered } from '@/lib/layout'
 // stats shown in the "Stats" section, in this order
 const STAT_GROUPS: ColumnGroup[] = ['Combat', 'Tools', 'Use & placement', 'Economy']
 
-function useDetailItem(): Item | undefined {
-  const itemKey = useUi((s) => s.detailKey)
-  return useStore((s) => (itemKey ? s.data?.itemsByKey.get(itemKey) : undefined))
+/** What the detail panel shows: an item, an NPC (bestiary entry) or a drop source (ND1). */
+type DetailCard =
+  | { kind: 'item'; key: string; item: Item }
+  | { kind: 'npc'; key: string; entry: BestiaryEntry }
+  | { kind: 'source'; key: string; sourceId: string }
+
+function useDetailCard(): DetailCard | undefined {
+  const ref = useUi((s) => s.detailKey)
+  const data = useStore((s) => s.data)
+  return useMemo(() => {
+    if (!ref || !data) return undefined
+    if (ref.startsWith(NPC_REF)) {
+      const entry = data.bestiary.entries.find((e) => e.id === ref.slice(NPC_REF.length))
+      return entry ? { kind: 'npc', key: ref, entry } : undefined
+    }
+    if (ref.startsWith(SOURCE_REF)) {
+      const sourceId = ref.slice(SOURCE_REF.length)
+      return data.dropSources.has(sourceId) ? { kind: 'source', key: ref, sourceId } : undefined
+    }
+    const item = data.itemsByKey.get(ref)
+    return item ? { kind: 'item', key: ref, item } : undefined
+  }, [ref, data])
+}
+
+function CardContent({ card, Title }: { card: DetailCard; Title: TitleComponent }) {
+  if (card.kind === 'npc') return <NpcCard entry={card.entry} Title={Title} />
+  if (card.kind === 'source') return <SourceCard sourceId={card.sourceId} Title={Title} />
+  return <DetailContent item={card.item} Title={Title} />
 }
 
 /** Docked panel next to the table (wide screens). */
@@ -43,17 +71,17 @@ const LABEL = 'hidden @[430px]/actions:inline'
 const OBTAINED_LABEL = 'hidden @[250px]/actions:inline'
 
 export function ItemDetailPanel() {
-  const item = useDetailItem()
+  const card = useDetailCard()
   const closeDetail = useUi((s) => s.closeDetail)
-  if (!item) return null
+  if (!card) return null
   return (
     <ResizablePane
       widthKey="detailWidth"
       limits={DETAIL_WIDTH}
       edge="left"
-      label="item details"
+      label="details"
       innerClassName="relative overflow-y-auto border-l bg-card"
-      aria-label="Item details"
+      aria-label="Details"
     >
       <Button
         variant="ghost"
@@ -65,31 +93,35 @@ export function ItemDetailPanel() {
       >
         <X />
       </Button>
-      <DetailContent key={item.key} item={item} Title={PanelTitle} />
+      <BackButton />
+      <CardContent key={card.key} card={card} Title={PanelTitle} />
     </ResizablePane>
   )
 }
 
 /** Slide-in overlay (narrow screens). */
 export function ItemDetailSheet() {
-  const item = useDetailItem()
+  const card = useDetailCard()
   const closeDetail = useUi((s) => s.closeDetail)
   return (
-    <Sheet open={!!item} onOpenChange={(o) => !o && closeDetail()}>
+    <Sheet open={!!card} onOpenChange={(o) => !o && closeDetail()}>
       <SheetContent className="w-full gap-0 overflow-y-auto p-0 sm:max-w-lg">
-        {item && <DetailContent item={item} Title={SheetTitleText} />}
+        {card && (
+          <>
+            <BackButton />
+            <CardContent key={card.key} card={card} Title={SheetTitleText} />
+          </>
+        )}
       </SheetContent>
     </Sheet>
   )
 }
 
-type TitleComponent = (props: { children: React.ReactNode }) => React.ReactNode
-
 // the sheet needs Radix' accessible title/description; the docked panel plain elements
 const SheetTitleText: TitleComponent = ({ children }) => (
   <>
     <SheetTitle className="text-lg leading-tight">{children}</SheetTitle>
-    <SheetDescription className="sr-only">Item details</SheetDescription>
+    <SheetDescription className="sr-only">Details</SheetDescription>
   </>
 )
 const PanelTitle: TitleComponent = ({ children }) => <h2 className="text-lg leading-tight font-semibold">{children}</h2>
@@ -117,14 +149,14 @@ function useMouseBack() {
   }, [])
 }
 
-/** Back to the previous item; sits left of the close button. */
+/** Back to the previous card (item, NPC, source); sits left of the close button. */
 function BackButton() {
   const previous = useUi((s) => s.detailHistory[s.detailHistory.length - 1])
-  const previousName = useStore((s) => (previous ? s.data?.itemsByKey.get(previous)?.name : undefined))
+  const previousName = useStore((s) => (previous && s.data ? refName(s.data, previous) : undefined))
   const detailBack = useUi((s) => s.detailBack)
   useMouseBack()
   if (!previous) return null
-  const label = `Back to ${previousName ?? 'previous item'}`
+  const label = `Back to ${previousName ?? 'the previous card'}`
   return (
     <Button
       variant="ghost"
@@ -203,6 +235,7 @@ function DetailContent({ item, Title }: { item: Item; Title: TitleComponent }) {
       />
     ),
     found: <DropsSection data={data} item={item} difficulty={pt.difficulty} kind="found" />,
+    contains: <ContainsSection data={data} itemKey={item.key} />,
     recipes: <RecipeSections data={data} item={item} platform={pt.platform} checked={checkedSet} />,
     stats: <StatsSection item={item} catalogue={catalogue} tracking={tracking} />,
     details: (
@@ -229,7 +262,6 @@ function DetailContent({ item, Title }: { item: Item; Title: TitleComponent }) {
 
   return (
     <>
-      <BackButton />
       <div className="flex flex-col gap-3 border-b p-4 pr-20">
         <div className="flex items-start gap-3">
           <span className="grid size-14 shrink-0 place-items-center rounded-xl border bg-muted/40">
@@ -338,6 +370,7 @@ function MilestoneLine({ data, item }: { data: GameData; item: Item }) {
 
 /** Vendors with the conditions of their shop rows ("In Hardmode, during night, …", moon phases). */
 function SoldBySection({ data, item }: { data: GameData; item: Item }) {
+  const openDetail = useUi((s) => s.openDetail)
   const rows = data.shops.get(item.key) ?? []
   // the item's vendors plus those of shop rows only in special seeds (they count for no filter, CO6)
   const vendors = [...new Set([...item.vendors, ...rows.map((r) => r.vendor)])]
@@ -347,13 +380,22 @@ function SoldBySection({ data, item }: { data: GameData; item: Item }) {
       <ul className="divide-y rounded-lg border">
         {vendors.flatMap((v) => {
           const vendor = data.vendors.find((x) => x.id === v)
+          const ref = vendorRef(data, v)
           // a vendor without shop row (only tagged in the Items table) sells it without condition
           const own = rows.filter((r) => r.vendor === v)
           return (own.length ? own : [{ vendor: v } as ShopRow]).map((r, n) => (
             <li key={`${v}-${n}`} className="flex items-center gap-3 px-3 py-2">
               <WikiIcon src={vendor?.icon} alt="" size={32} />
               <div className="min-w-0 flex-1">
-                <div className="text-sm font-medium">{vendor?.name ?? v}</div>
+                <div className="text-sm font-medium">
+                  {ref ? (
+                    <CardLink onOpen={() => openDetail(ref)} title={`Open ${vendor?.name ?? v}`}>
+                      {vendor?.name ?? v}
+                    </CardLink>
+                  ) : (
+                    (vendor?.name ?? v)
+                  )}
+                </div>
                 {r.text && <div className="text-xs text-muted-foreground">{r.text}</div>}
               </div>
               {r.moons && (
@@ -412,7 +454,7 @@ function DropsSection({
   const hidden = all.length - available.size
 
   return (
-    <Section title={kind === 'found' ? 'Found in' : 'Dropped by'}>
+    <CollapsibleSection id={kind} title={kind === 'found' ? 'Found in' : 'Dropped by'} count={all.length}>
       <ul className="divide-y rounded-lg border">
         {[...available, ...all.filter((d) => !available.has(d))].map((d, i) => (
           <DropRow
@@ -436,7 +478,7 @@ function DropsSection({
           Greyed out: {hidden === 1 ? 'drop' : 'drops'} not available in {DIFFICULTY_LABELS[difficulty]}.
         </p>
       )}
-    </Section>
+    </CollapsibleSection>
   )
 }
 
@@ -456,6 +498,7 @@ function DropRow({
   /** kills of the source in the loaded world */
   kills?: number
 }) {
+  const openDetail = useUi((s) => s.openDetail)
   const source = data.dropSources.get(drop.source)
   const modes = modeLabel(drop.modes)
   const chance = chanceFor(drop, difficulty)
@@ -473,24 +516,29 @@ function DropRow({
     <li className={cn('flex items-center gap-3 px-3 py-2', !available && 'opacity-45')}>
       <WikiIcon src={source?.icon} alt="" size={32} />
       <div className="min-w-0 flex-1">
-        <div className="truncate text-sm font-medium">
-          {source?.url ? (
+        <div className="flex min-w-0 items-center gap-1 text-sm font-medium">
+          <CardLink
+            onOpen={() => openDetail(sourceRef(data, drop.source))}
+            title={`Open ${source?.name ?? drop.source}`}
+          >
+            {source?.name ?? drop.source}
+          </CardLink>
+          {source?.url && (
             <a
               href={source.url}
               target="_blank"
               rel="noreferrer noopener"
               title={`${source.name} on the wiki`}
-              className="group/link inline-flex max-w-full items-center gap-1 hover:underline"
+              aria-label={`${source.name} on the wiki`}
+              className="shrink-0 rounded p-0.5 text-muted-foreground opacity-60 hover:opacity-100"
             >
-              <span className="truncate">{source.name}</span>
-              <ExternalLink className="size-3 shrink-0 opacity-0 transition-opacity group-hover/link:opacity-60" />
+              <ExternalLink className="size-3" />
             </a>
-          ) : (
-            (source?.name ?? drop.source)
           )}
         </div>
         <div className="flex flex-wrap gap-x-2 text-xs text-muted-foreground">
           {boss && source?.name !== boss && <span>{boss}</span>}
+          {drop.variants && <span>{drop.variants.join(', ')}</span>}
           {spawn && <span>{spawn}</span>}
           {quantity && <span>× {quantity}</span>}
           {modes && <span>{modes}</span>}
@@ -544,30 +592,4 @@ function StatsSection({ item, catalogue, tracking }: { item: Item; catalogue: It
       </dl>
     </Section>
   )
-}
-
-function Section({ title, children }: { title: string; children: React.ReactNode }) {
-  return (
-    <section className="flex flex-col gap-2">
-      <h3 className="text-xs font-semibold tracking-wide text-muted-foreground uppercase">{title}</h3>
-      {children}
-    </section>
-  )
-}
-
-function Chips({ values, empty }: { values: string[]; empty?: string }) {
-  if (!values.length) return empty ? <p className="text-sm text-muted-foreground">{empty}</p> : null
-  return (
-    <div className="flex flex-wrap gap-1.5">
-      {values.map((v) => (
-        <span key={v} className="rounded-md border bg-card px-2 py-0.5 text-xs font-medium">
-          {v}
-        </span>
-      ))}
-    </div>
-  )
-}
-
-function Badge({ className, children }: { className?: string; children: React.ReactNode }) {
-  return <span className={cn('rounded px-1.5 py-0.5 text-[11px] font-medium', className)}>{children}</span>
 }

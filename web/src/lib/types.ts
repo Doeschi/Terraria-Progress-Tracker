@@ -159,6 +159,9 @@ export interface Drop {
   note?: string
   /** only these variants of the source drop it (NPC ids), e.g. the Torch Zombie */
   npcIds?: number[]
+  /** the variants of the source it is for, as the wiki names them, e.g. "Pre-Hardmode variant",
+   * "Dark Lamia" (missing: every variant) */
+  variants?: string[]
 }
 
 /** An item in a vendor's shop and when it is sold. */

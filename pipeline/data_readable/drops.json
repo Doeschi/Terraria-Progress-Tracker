@@ -7267,6 +7267,9 @@
         ],
         "npcIds": [
           -2
+        ],
+        "variants": [
+          "Without Wings"
         ]
       },
       {
@@ -7592,6 +7595,9 @@
         ],
         "npcIds": [
           -2
+        ],
+        "variants": [
+          "Without Wings"
         ]
       },
       {
@@ -8783,6 +8789,11 @@
           -33,
           -32,
           187
+        ],
+        "variants": [
+          "Slimed Zombie",
+          "Small Slimed Zombie",
+          "Big Slimed Zombie"
         ]
       },
       {
@@ -8803,6 +8814,9 @@
         ],
         "npcIds": [
           433
+        ],
+        "variants": [
+          "Armed Slimed Zombie"
         ]
       },
       {
@@ -8846,6 +8860,9 @@
         ],
         "npcIds": [
           -2
+        ],
+        "variants": [
+          "Without Wings"
         ]
       },
       {
@@ -8930,6 +8947,13 @@
           334,
           335,
           336
+        ],
+        "variants": [
+          "Bunny Slime",
+          "White Present Slime",
+          "Yellow Present Slime",
+          "Green Present Slime",
+          "Red Present Slime"
         ]
       },
       {
@@ -9368,6 +9392,11 @@
           -33,
           -32,
           187
+        ],
+        "variants": [
+          "Slimed Zombie",
+          "Small Slimed Zombie",
+          "Big Slimed Zombie"
         ]
       },
       {
@@ -9388,6 +9417,9 @@
         ],
         "npcIds": [
           433
+        ],
+        "variants": [
+          "Armed Slimed Zombie"
         ]
       },
       {
@@ -12719,6 +12751,9 @@
         ],
         "npcIds": [
           590
+        ],
+        "variants": [
+          "Torch Zombie"
         ]
       },
       {
@@ -12739,6 +12774,9 @@
         ],
         "npcIds": [
           591
+        ],
+        "variants": [
+          "Armed Torch Zombie"
         ]
       },
       {
@@ -19749,6 +19787,9 @@
         ],
         "npcIds": [
           -2
+        ],
+        "variants": [
+          "Without Wings"
         ]
       }
     ],
@@ -24536,6 +24577,9 @@
         ],
         "npcIds": [
           529
+        ],
+        "variants": [
+          "Dark Lamia"
         ]
       },
       {
@@ -35041,6 +35085,9 @@
         ],
         "npcIds": [
           35
+        ],
+        "variants": [
+          "Skeletron Head"
         ]
       },
       {
@@ -42997,6 +43044,9 @@
         ],
         "npcIds": [
           262
+        ],
+        "variants": [
+          "Skeletron Head"
         ]
       },
       {
@@ -49118,6 +49168,10 @@
         "npcIds": [
           564,
           565
+        ],
+        "variants": [
+          "T1",
+          "T3"
         ]
       }
     ],
@@ -49144,6 +49198,10 @@
         "npcIds": [
           564,
           565
+        ],
+        "variants": [
+          "T1",
+          "T3"
         ]
       }
     ],
@@ -49169,6 +49227,9 @@
         ],
         "npcIds": [
           564
+        ],
+        "variants": [
+          "T1"
         ]
       },
       {
@@ -49192,6 +49253,9 @@
         ],
         "npcIds": [
           576
+        ],
+        "variants": [
+          "T2"
         ]
       },
       {
@@ -49215,6 +49279,9 @@
         ],
         "npcIds": [
           565
+        ],
+        "variants": [
+          "T3"
         ]
       },
       {
@@ -49238,6 +49305,9 @@
         ],
         "npcIds": [
           577
+        ],
+        "variants": [
+          "T3"
         ]
       }
     ],
@@ -49263,6 +49333,9 @@
         ],
         "npcIds": [
           564
+        ],
+        "variants": [
+          "T1"
         ]
       },
       {
@@ -49286,6 +49359,9 @@
         ],
         "npcIds": [
           576
+        ],
+        "variants": [
+          "T2"
         ]
       },
       {
@@ -49309,6 +49385,9 @@
         ],
         "npcIds": [
           565
+        ],
+        "variants": [
+          "T3"
         ]
       },
       {
@@ -49332,6 +49411,9 @@
         ],
         "npcIds": [
           577
+        ],
+        "variants": [
+          "T3"
         ]
       }
     ],
@@ -49357,6 +49439,9 @@
         ],
         "npcIds": [
           564
+        ],
+        "variants": [
+          "T1"
         ]
       },
       {
@@ -49380,6 +49465,9 @@
         ],
         "npcIds": [
           565
+        ],
+        "variants": [
+          "T3"
         ]
       }
     ],
@@ -49405,6 +49493,9 @@
         ],
         "npcIds": [
           564
+        ],
+        "variants": [
+          "T1"
         ]
       },
       {
@@ -49428,6 +49519,9 @@
         ],
         "npcIds": [
           565
+        ],
+        "variants": [
+          "T3"
         ]
       }
     ],
@@ -49453,6 +49547,9 @@
         ],
         "npcIds": [
           564
+        ],
+        "variants": [
+          "T1"
         ]
       },
       {
@@ -49476,6 +49573,9 @@
         ],
         "npcIds": [
           565
+        ],
+        "variants": [
+          "T3"
         ]
       }
     ],
@@ -49502,6 +49602,10 @@
         "npcIds": [
           564,
           565
+        ],
+        "variants": [
+          "T1",
+          "T3"
         ]
       }
     ],
@@ -49522,6 +49626,10 @@
         "npcIds": [
           564,
           565
+        ],
+        "variants": [
+          "T1",
+          "T3"
         ]
       }
     ],
@@ -49541,6 +49649,9 @@
         ],
         "npcIds": [
           565
+        ],
+        "variants": [
+          "T3"
         ]
       }
     ],
@@ -49566,6 +49677,9 @@
         ],
         "npcIds": [
           576
+        ],
+        "variants": [
+          "T2"
         ]
       },
       {
@@ -49589,6 +49703,9 @@
         ],
         "npcIds": [
           577
+        ],
+        "variants": [
+          "T3"
         ]
       }
     ],
@@ -49614,6 +49731,9 @@
         ],
         "npcIds": [
           576
+        ],
+        "variants": [
+          "T2"
         ]
       },
       {
@@ -49637,6 +49757,9 @@
         ],
         "npcIds": [
           577
+        ],
+        "variants": [
+          "T3"
         ]
       }
     ],
@@ -49662,6 +49785,9 @@
         ],
         "npcIds": [
           576
+        ],
+        "variants": [
+          "T2"
         ]
       },
       {
@@ -49685,6 +49811,9 @@
         ],
         "npcIds": [
           577
+        ],
+        "variants": [
+          "T3"
         ]
       }
     ],
@@ -49710,6 +49839,9 @@
         ],
         "npcIds": [
           576
+        ],
+        "variants": [
+          "T2"
         ]
       },
       {
@@ -49733,6 +49865,9 @@
         ],
         "npcIds": [
           577
+        ],
+        "variants": [
+          "T3"
         ]
       }
     ],
@@ -49758,6 +49893,9 @@
         ],
         "npcIds": [
           576
+        ],
+        "variants": [
+          "T2"
         ]
       },
       {
@@ -49781,6 +49919,9 @@
         ],
         "npcIds": [
           577
+        ],
+        "variants": [
+          "T3"
         ]
       }
     ],
@@ -49806,6 +49947,9 @@
         ],
         "npcIds": [
           576
+        ],
+        "variants": [
+          "T2"
         ]
       },
       {
@@ -49829,6 +49973,9 @@
         ],
         "npcIds": [
           577
+        ],
+        "variants": [
+          "T3"
         ]
       }
     ],
@@ -49854,6 +50001,9 @@
         ],
         "npcIds": [
           576
+        ],
+        "variants": [
+          "T2"
         ]
       },
       {
@@ -49877,6 +50027,9 @@
         ],
         "npcIds": [
           577
+        ],
+        "variants": [
+          "T3"
         ]
       }
     ],
@@ -49902,6 +50055,9 @@
         ],
         "npcIds": [
           576
+        ],
+        "variants": [
+          "T2"
         ]
       },
       {
@@ -49925,6 +50081,9 @@
         ],
         "npcIds": [
           577
+        ],
+        "variants": [
+          "T3"
         ]
       }
     ],
@@ -49950,6 +50109,9 @@
         ],
         "npcIds": [
           576
+        ],
+        "variants": [
+          "T2"
         ]
       },
       {
@@ -49973,6 +50135,9 @@
         ],
         "npcIds": [
           577
+        ],
+        "variants": [
+          "T3"
         ]
       }
     ],
@@ -49999,6 +50164,10 @@
         "npcIds": [
           576,
           577
+        ],
+        "variants": [
+          "T2",
+          "T3"
         ]
       }
     ],
@@ -50018,6 +50187,9 @@
         ],
         "npcIds": [
           577
+        ],
+        "variants": [
+          "T3"
         ]
       }
     ],
@@ -50037,6 +50209,9 @@
         ],
         "npcIds": [
           577
+        ],
+        "variants": [
+          "T3"
         ]
       }
     ],
@@ -50770,6 +50945,11 @@
           -31,
           -30,
           186
+        ],
+        "variants": [
+          "Pincushion Zombie",
+          "Small Pincushion Zombie",
+          "Big Pincushion Zombie"
         ]
       },
       {
@@ -50790,6 +50970,9 @@
         ],
         "npcIds": [
           432
+        ],
+        "variants": [
+          "Armed Pincushion Zombie"
         ]
       },
       {
@@ -50924,6 +51107,9 @@
         ],
         "npcIds": [
           529
+        ],
+        "variants": [
+          "Dark Lamia"
         ]
       }
     ],
@@ -50950,6 +51136,10 @@
         "npcIds": [
           528,
           529
+        ],
+        "variants": [
+          "Dark Lamia",
+          "Light Lamia"
         ]
       }
     ],
@@ -50976,6 +51166,10 @@
         "npcIds": [
           528,
           529
+        ],
+        "variants": [
+          "Dark Lamia",
+          "Light Lamia"
         ]
       }
     ],
@@ -51002,6 +51196,10 @@
         "npcIds": [
           528,
           529
+        ],
+        "variants": [
+          "Dark Lamia",
+          "Light Lamia"
         ]
       }
     ],
@@ -51028,6 +51226,10 @@
         "npcIds": [
           528,
           529
+        ],
+        "variants": [
+          "Dark Lamia",
+          "Light Lamia"
         ]
       }
     ],
@@ -51053,6 +51255,9 @@
         ],
         "npcIds": [
           528
+        ],
+        "variants": [
+          "Light Lamia"
         ]
       }
     ],
@@ -51322,6 +51527,9 @@
         ],
         "npcIds": [
           629
+        ],
+        "variants": [
+          "Pre-Hardmode variant"
         ]
       }
     ],
@@ -51407,6 +51615,9 @@
         ],
         "npcIds": [
           629
+        ],
+        "variants": [
+          "Pre-Hardmode variant"
         ]
       }
     ],
@@ -51492,6 +51703,9 @@
         ],
         "npcIds": [
           629
+        ],
+        "variants": [
+          "Pre-Hardmode variant"
         ]
       }
     ],
@@ -51512,6 +51726,9 @@
         "note": "In Remix worlds",
         "conditions": [
           "seed-remix"
+        ],
+        "variants": [
+          "Hardmode variant"
         ]
       },
       {
@@ -51589,6 +51806,9 @@
         ],
         "npcIds": [
           629
+        ],
+        "variants": [
+          "Pre-Hardmode variant"
         ]
       }
     ],
@@ -51674,6 +51894,9 @@
         ],
         "npcIds": [
           629
+        ],
+        "variants": [
+          "Pre-Hardmode variant"
         ]
       }
     ],
@@ -51759,6 +51982,9 @@
         ],
         "npcIds": [
           629
+        ],
+        "variants": [
+          "Pre-Hardmode variant"
         ]
       }
     ],
@@ -51844,6 +52070,9 @@
         ],
         "npcIds": [
           629
+        ],
+        "variants": [
+          "Pre-Hardmode variant"
         ]
       }
     ],
@@ -58177,6 +58406,9 @@
         ],
         "npcIds": [
           370
+        ],
+        "variants": [
+          "Second/Third Phase"
         ]
       },
       {
@@ -58200,6 +58432,9 @@
         ],
         "npcIds": [
           262
+        ],
+        "variants": [
+          "Second Form"
         ]
       }
     ],
@@ -58461,6 +58696,9 @@
         ],
         "npcIds": [
           370
+        ],
+        "variants": [
+          "Second/Third Phase"
         ]
       },
       {
@@ -58819,6 +59057,9 @@
         ],
         "npcIds": [
           85
+        ],
+        "variants": [
+          "Pre-Hardmode variant"
         ]
       }
     ],
@@ -58867,6 +59108,9 @@
         ],
         "npcIds": [
           85
+        ],
+        "variants": [
+          "Pre-Hardmode variant"
         ]
       }
     ],
@@ -58915,6 +59159,9 @@
         ],
         "npcIds": [
           85
+        ],
+        "variants": [
+          "Pre-Hardmode variant"
         ]
       }
     ],
@@ -58963,6 +59210,9 @@
         ],
         "npcIds": [
           85
+        ],
+        "variants": [
+          "Pre-Hardmode variant"
         ]
       }
     ],
@@ -59011,6 +59261,9 @@
         ],
         "npcIds": [
           85
+        ],
+        "variants": [
+          "Pre-Hardmode variant"
         ]
       }
     ],
@@ -59059,6 +59312,9 @@
         ],
         "npcIds": [
           85
+        ],
+        "variants": [
+          "Pre-Hardmode variant"
         ]
       }
     ],
@@ -59107,6 +59363,9 @@
         ],
         "npcIds": [
           629
+        ],
+        "variants": [
+          "Pre-Hardmode variant"
         ]
       },
       {
@@ -59130,6 +59389,9 @@
         ],
         "npcIds": [
           85
+        ],
+        "variants": [
+          "Pre-Hardmode variant"
         ]
       },
       {
@@ -59195,6 +59457,9 @@
         ],
         "npcIds": [
           85
+        ],
+        "variants": [
+          "Pre-Hardmode variant"
         ]
       },
       {
@@ -62252,6 +62517,9 @@
         "note": "In Remix worlds",
         "conditions": [
           "seed-remix"
+        ],
+        "variants": [
+          "Hardmode variant"
         ]
       },
       {
@@ -64491,6 +64759,12 @@
           334,
           335,
           336
+        ],
+        "variants": [
+          "White Present Slime",
+          "Yellow Present Slime",
+          "Green Present Slime",
+          "Red Present Slime"
         ]
       }
     ],
@@ -65517,6 +65791,9 @@
         ],
         "npcIds": [
           35
+        ],
+        "variants": [
+          "Skeletron Head"
         ]
       }
     ],
@@ -65553,6 +65830,9 @@
         ],
         "npcIds": [
           35
+        ],
+        "variants": [
+          "Skeletron Head"
         ]
       }
     ],
@@ -65589,6 +65869,9 @@
         ],
         "npcIds": [
           35
+        ],
+        "variants": [
+          "Skeletron Head"
         ]
       }
     ],
@@ -65614,6 +65897,9 @@
         ],
         "npcIds": [
           35
+        ],
+        "variants": [
+          "Skeletron Head"
         ]
       }
     ],
@@ -65639,6 +65925,9 @@
         ],
         "npcIds": [
           35
+        ],
+        "variants": [
+          "Skeletron Head"
         ]
       }
     ],
@@ -65661,6 +65950,9 @@
         ],
         "npcIds": [
           35
+        ],
+        "variants": [
+          "Skeletron Head"
         ]
       }
     ],
@@ -65699,6 +65991,9 @@
         ],
         "npcIds": [
           35
+        ],
+        "variants": [
+          "Skeletron Head"
         ]
       }
     ],
@@ -65718,6 +66013,9 @@
         ],
         "npcIds": [
           35
+        ],
+        "variants": [
+          "Skeletron Head"
         ]
       }
     ],
@@ -65740,6 +66038,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "variants": [
+          "Red Hat Skeletron"
         ]
       }
     ],
@@ -65762,6 +66063,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "variants": [
+          "Red Hat Skeletron"
         ]
       }
     ],
@@ -65784,6 +66088,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "variants": [
+          "Red Hat Skeletron"
         ]
       }
     ],
@@ -65806,6 +66113,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "variants": [
+          "Red Hat Skeletron"
         ]
       }
     ],
@@ -65828,6 +66138,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "variants": [
+          "Red Hat Skeletron"
         ]
       }
     ],
@@ -66551,6 +66864,10 @@
           "normal",
           "expert",
           "master"
+        ],
+        "variants": [
+          "Hardmode variant",
+          "Pre-Hardmode variant"
         ]
       }
     ],
@@ -66573,6 +66890,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "variants": [
+          "Hardmode variant"
         ]
       }
     ],
@@ -66595,6 +66915,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "variants": [
+          "Hardmode variant"
         ]
       }
     ],
@@ -66617,6 +66940,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "variants": [
+          "Hardmode variant"
         ]
       },
       {
@@ -66640,6 +66966,9 @@
         ],
         "npcIds": [
           629
+        ],
+        "variants": [
+          "Pre-Hardmode variant"
         ]
       }
     ],
@@ -66656,6 +66985,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "variants": [
+          "Hardmode variant"
         ]
       },
       {
@@ -66677,6 +67009,9 @@
         ],
         "npcIds": [
           629
+        ],
+        "variants": [
+          "Pre-Hardmode variant"
         ]
       }
     ],
@@ -66699,6 +67034,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "variants": [
+          "Hardmode variant"
         ]
       }
     ],
@@ -66715,6 +67053,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "variants": [
+          "Hardmode variant"
         ]
       }
     ],
@@ -66737,6 +67078,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "variants": [
+          "Hardmode variant"
         ]
       }
     ],
@@ -66759,6 +67103,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "variants": [
+          "Hardmode variant"
         ]
       }
     ],
@@ -66781,6 +67128,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "variants": [
+          "Hardmode variant"
         ]
       }
     ],
@@ -66803,6 +67153,9 @@
           "normal",
           "expert",
           "master"
+        ],
+        "variants": [
+          "Hardmode variant"
         ]
       }
     ],
@@ -67363,6 +67716,11 @@
           13,
           14,
           15
+        ],
+        "variants": [
+          "Eater of Worlds Head",
+          "Eater of Worlds Body",
+          "Eater of Worlds Tail"
         ]
       }
     ],
@@ -67452,6 +67810,11 @@
           13,
           14,
           15
+        ],
+        "variants": [
+          "Eater of Worlds Head",
+          "Eater of Worlds Body",
+          "Eater of Worlds Tail"
         ]
       }
     ],
@@ -70828,6 +71191,9 @@
         ],
         "npcIds": [
           126
+        ],
+        "variants": [
+          "Second Form"
         ]
       }
     ],
@@ -70853,6 +71219,9 @@
         ],
         "npcIds": [
           125
+        ],
+        "variants": [
+          "Second Form"
         ]
       }
     ],
@@ -71685,6 +72054,9 @@
         ],
         "npcIds": [
           262
+        ],
+        "variants": [
+          "Second Form"
         ]
       },
       {
@@ -72168,6 +72540,9 @@
         ],
         "npcIds": [
           370
+        ],
+        "variants": [
+          "Second/Third Phase"
         ]
       },
       {
@@ -72199,6 +72574,9 @@
         ],
         "npcIds": [
           370
+        ],
+        "variants": [
+          "Second/Third Phase"
         ]
       },
       {
@@ -72235,6 +72613,9 @@
         ],
         "npcIds": [
           370
+        ],
+        "variants": [
+          "Second/Third Phase"
         ]
       },
       {
@@ -72271,6 +72652,9 @@
         ],
         "npcIds": [
           370
+        ],
+        "variants": [
+          "Second/Third Phase"
         ]
       },
       {
@@ -72307,6 +72691,9 @@
         ],
         "npcIds": [
           370
+        ],
+        "variants": [
+          "Second/Third Phase"
         ]
       },
       {
@@ -72343,6 +72730,9 @@
         ],
         "npcIds": [
           370
+        ],
+        "variants": [
+          "Second/Third Phase"
         ]
       },
       {
@@ -72379,6 +72769,9 @@
         ],
         "npcIds": [
           370
+        ],
+        "variants": [
+          "Second/Third Phase"
         ]
       },
       {
@@ -72432,6 +72825,9 @@
         ],
         "npcIds": [
           370
+        ],
+        "variants": [
+          "Second/Third Phase"
         ]
       }
     ],
@@ -72451,6 +72847,9 @@
         ],
         "npcIds": [
           370
+        ],
+        "variants": [
+          "Second/Third Phase"
         ]
       },
       {
@@ -72493,6 +72892,9 @@
         ],
         "npcIds": [
           370
+        ],
+        "variants": [
+          "Second/Third Phase"
         ]
       }
     ],
@@ -72515,6 +72917,9 @@
         ],
         "npcIds": [
           370
+        ],
+        "variants": [
+          "Second/Third Phase"
         ]
       }
     ],
@@ -72553,6 +72958,9 @@
         ],
         "npcIds": [
           370
+        ],
+        "variants": [
+          "Second/Third Phase"
         ]
       }
     ],
@@ -72572,6 +72980,9 @@
         ],
         "npcIds": [
           370
+        ],
+        "variants": [
+          "Second/Third Phase"
         ]
       }
     ],
@@ -73012,6 +73423,9 @@
         ],
         "npcIds": [
           262
+        ],
+        "variants": [
+          "Second Form"
         ]
       },
       {
@@ -73045,6 +73459,9 @@
         "note": "will always drop the first time Plantera is defeated in a world that is neither in Expert nor Master Mode",
         "npcIds": [
           262
+        ],
+        "variants": [
+          "Second Form"
         ]
       },
       {
@@ -73073,6 +73490,9 @@
         "note": "will always drop the first time Plantera is defeated in a world that is neither in Expert nor Master Mode",
         "npcIds": [
           262
+        ],
+        "variants": [
+          "Second Form"
         ]
       },
       {
@@ -73104,6 +73524,9 @@
         ],
         "npcIds": [
           262
+        ],
+        "variants": [
+          "Second Form"
         ]
       },
       {
@@ -73140,6 +73563,9 @@
         ],
         "npcIds": [
           262
+        ],
+        "variants": [
+          "Second Form"
         ]
       },
       {
@@ -73176,6 +73602,9 @@
         ],
         "npcIds": [
           262
+        ],
+        "variants": [
+          "Second Form"
         ]
       },
       {
@@ -73212,6 +73641,9 @@
         ],
         "npcIds": [
           262
+        ],
+        "variants": [
+          "Second Form"
         ]
       },
       {
@@ -73248,6 +73680,9 @@
         ],
         "npcIds": [
           262
+        ],
+        "variants": [
+          "Second Form"
         ]
       },
       {
@@ -73284,6 +73719,9 @@
         ],
         "npcIds": [
           262
+        ],
+        "variants": [
+          "Second Form"
         ]
       },
       {
@@ -73320,6 +73758,9 @@
         ],
         "npcIds": [
           262
+        ],
+        "variants": [
+          "Second Form"
         ]
       },
       {
@@ -73373,6 +73814,9 @@
         ],
         "npcIds": [
           262
+        ],
+        "variants": [
+          "Second Form"
         ]
       }
     ],
@@ -73392,6 +73836,9 @@
         ],
         "npcIds": [
           262
+        ],
+        "variants": [
+          "Second Form"
         ]
       },
       {
@@ -73445,6 +73892,9 @@
         ],
         "npcIds": [
           262
+        ],
+        "variants": [
+          "Second Form"
         ]
       }
     ],
@@ -73481,6 +73931,9 @@
         ],
         "npcIds": [
           262
+        ],
+        "variants": [
+          "Second Form"
         ]
       }
     ],
@@ -73500,6 +73953,9 @@
         ],
         "npcIds": [
           262
+        ],
+        "variants": [
+          "Second Form"
         ]
       },
       {
@@ -73542,6 +73998,9 @@
         ],
         "npcIds": [
           262
+        ],
+        "variants": [
+          "Second Form"
         ]
       }
     ],
@@ -73564,6 +74023,9 @@
         ],
         "npcIds": [
           262
+        ],
+        "variants": [
+          "Second Form"
         ]
       }
     ],
@@ -73602,6 +74064,9 @@
         ],
         "npcIds": [
           262
+        ],
+        "variants": [
+          "Second Form"
         ]
       }
     ],
@@ -73621,6 +74086,9 @@
         ],
         "npcIds": [
           262
+        ],
+        "variants": [
+          "Second Form"
         ]
       }
     ],
@@ -73644,6 +74112,9 @@
         ],
         "npcIds": [
           262
+        ],
+        "variants": [
+          "Second Form"
         ]
       }
     ],
@@ -73667,6 +74138,9 @@
         ],
         "npcIds": [
           262
+        ],
+        "variants": [
+          "Second Form"
         ]
       }
     ],
@@ -73690,6 +74164,9 @@
         ],
         "npcIds": [
           262
+        ],
+        "variants": [
+          "Second Form"
         ]
       }
     ],

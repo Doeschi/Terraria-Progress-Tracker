@@ -77,6 +77,8 @@ export default function App() {
 
 function BestiaryScreen() {
   const view = useBestiaryView()
+  // the NPC cards (ND5): docked right of the list on wide screens, else an overlay
+  const docked = useMediaQuery('(min-width: 1024px)')
   return (
     <div className="flex min-h-0 flex-1">
       <ResizablePane
@@ -92,9 +94,13 @@ function BestiaryScreen() {
           <AboutLink />
         </div>
       </ResizablePane>
-      <main className="min-w-0 flex-1">
-        <BestiaryList view={view} />
+      <main className="flex min-w-0 flex-1">
+        <div className="min-w-0 flex-1">
+          <BestiaryList view={view} />
+        </div>
+        {docked && <ItemDetailPanel />}
       </main>
+      {!docked && <ItemDetailSheet />}
     </div>
   )
 }

@@ -10,6 +10,10 @@ const MODES: Record<Difficulty, DropMode[]> = {
   journey: ['normal', 'expert', 'master'],
 }
 
+/** Whether a drop exists in this difficulty. */
+export const inDifficulty = (drop: Drop, difficulty: Difficulty) =>
+  drop.modes.some((m) => MODES[difficulty].includes(m))
+
 /** "dropped": by enemies, bosses and treasure bags; "found": in containers (chests, crates, trees, …). */
 export type DropKind = 'dropped' | 'found'
 

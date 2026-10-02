@@ -161,6 +161,8 @@ interface Prefs {
   tableSorting: ColumnSort[]
   /** table column id -> width in px set by dragging (missing = the column's default) */
   columnSizes: Record<string, number>
+  /** the same for the bestiary table */
+  bestiaryColumnSizes: Record<string, number>
   /** order of the table columns (from the applied view); columns not listed keep the catalogue order after them */
   columnOrder: string[]
   views: ViewsPrefs
@@ -192,6 +194,7 @@ interface PrefsActions {
   setColumns(columns: Record<string, boolean>): void
   setTableSorting(sorting: ColumnSort[]): void
   setColumnSizes(sizes: Record<string, number>): void
+  setBestiaryColumnSizes(sizes: Record<string, number>): void
   setColumnOrder(order: string[]): void
   setViews(views: ViewsPrefs): void
   setEntryOrder(group: string, order: EntryOrder): void
@@ -217,6 +220,7 @@ function load(): Prefs {
     columns: {},
     tableSorting: [],
     columnSizes: {},
+    bestiaryColumnSizes: {},
     columnOrder: [],
     views: { overrides: {}, custom: [], order: [] },
     entryOrder: {},
@@ -238,10 +242,15 @@ function load(): Prefs {
     if (Array.isArray(p.tableSorting)) prefs.tableSorting = p.tableSorting.filter(isSort)
     prefs.columnOrder = stringList(p?.columnOrder) ?? []
     prefs.views = readViews(p?.views)
-    if (p && typeof p.columnSizes === 'object' && p.columnSizes)
-      prefs.columnSizes = Object.fromEntries(
-        Object.entries(p.columnSizes).filter((e): e is [string, number] => typeof e[1] === 'number' && e[1] > 0),
+    const sizes = (v: unknown) =>
+      Object.fromEntries(
+        Object.entries(v as Record<string, unknown>).filter(
+          (e): e is [string, number] => typeof e[1] === 'number' && e[1] > 0,
+        ),
       )
+    if (p && typeof p.columnSizes === 'object' && p.columnSizes) prefs.columnSizes = sizes(p.columnSizes)
+    if (p && typeof p.bestiaryColumnSizes === 'object' && p.bestiaryColumnSizes)
+      prefs.bestiaryColumnSizes = sizes(p.bestiaryColumnSizes)
     if (p && typeof p.entryOrder === 'object') prefs.entryOrder = p.entryOrder
     const d = p?.chestDetection
     if (d && d.distance > 0 && d.minGroup > 1) prefs.chestDetection = { distance: +d.distance, minGroup: +d.minGroup }
@@ -280,6 +289,7 @@ export const usePrefs = create<Prefs & PrefsActions>()((set, get) => {
     setColumns: (columns) => update({ columns }),
     setTableSorting: (tableSorting) => update({ tableSorting }),
     setColumnSizes: (columnSizes) => update({ columnSizes }),
+    setBestiaryColumnSizes: (bestiaryColumnSizes) => update({ bestiaryColumnSizes }),
     setColumnOrder: (columnOrder) => update({ columnOrder }),
     setViews: (views) => update({ views }),
     setEntryOrder: (group, order) => update({ entryOrder: { ...get().entryOrder, [group]: order } }),

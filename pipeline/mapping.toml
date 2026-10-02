@@ -1899,6 +1899,12 @@ after-all-mechs = "all-mechs"
 "Titanium Crate" = "wall-of-flesh"
 "Pearlwood Crate" = "wall-of-flesh"
 
+# Drop rows of an enemy's variants: the wiki names the variant in a note ("Mimic (Pre-Hardmode
+# variant)"); rows without a note get the name given here (source name = name of the variant).
+[drop_variants]
+"Mimic" = "Hardmode variant"
+"Ice Mimic" = "Hardmode variant"
+
 # Enemies that appear later than their biome says (drop source names). Enemies in the wiki's
 # category "Hardmode-only NPCs" (raw/page_categories.json, by name or wiki page) count from the
 # Wall of Flesh; entries here override that, in both directions.

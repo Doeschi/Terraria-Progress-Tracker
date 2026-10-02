@@ -25,6 +25,8 @@ import { TallyBar, TallyText, WikiIcon } from './common'
 import { ActiveFilterBar, MobileFiltersButton, SearchField } from './ListParts'
 import { formatDate, nameOf } from '@/lib/format'
 import { worldState } from '@/lib/bestiary'
+import { inDifficulty, seedOnly } from '@/lib/drops'
+import { NPC_REF, npcIndex } from '@/lib/npcs'
 
 // The bestiary view: every entry of the in-game bestiary with its unlock state
 // (checked manually or taken from the attached world).
@@ -191,7 +193,22 @@ function ActiveFilters() {
 
 // -------------------------------------------------------------------- table
 
-type SortId = 'n' | 'name' | 'type' | 'stars' | 'world' | 'changed'
+type SortId = 'n' | 'name' | 'type' | 'stars' | 'drops' | 'world' | 'changed'
+
+/** Default column widths in px (the name column stays narrow: long names are rare) */
+const COLUMNS = {
+  check: 40,
+  n: 56,
+  name: 220,
+  type: 120,
+  where: 240,
+  stars: 100,
+  drops: 80,
+  world: 140,
+  changed: 160,
+} as const
+type ColumnId = keyof typeof COLUMNS
+const MIN_WIDTH = 40
 interface Sort {
   id: SortId
   desc: boolean
@@ -211,6 +228,29 @@ function BestiaryTable({ view }: { view: BestiaryView }) {
   const setBestiary = useStore((s) => s.setBestiary)
   const [sort, setSort] = useState<Sort | null>(null)
   const typeName = useMemo(() => new Map(data.bestiary.types.map((t) => [t.id, t.name])), [data])
+  const openDetail = useUi((s) => s.openDetail)
+  const selected = useUi((s) => s.detailKey)
+  // "Drops" (ND5): the different items an entry drops in this difficulty (not only in special
+  // seeds; a boss with its treasure bag), and how many of them are obtained
+  const drops = useMemo(() => {
+    const index = npcIndex(data)
+    const checked = new Set(pt.checked)
+    const out = new Map<string, { total: number; obtained: number }>()
+    for (const e of data.bestiary.entries) {
+      const sources = [...(index.sourcesOfEntry.get(e.id) ?? [])]
+      const bag = index.bagOfEntry.get(e.id)
+      if (bag) sources.push(bag)
+      const items = new Set(
+        sources.flatMap((s) =>
+          (index.dropsOfSource.get(s) ?? [])
+            .filter((d) => inDifficulty(d.drop, pt.difficulty) && !seedOnly(d.drop))
+            .map((d) => d.item.key),
+        ),
+      )
+      if (items.size) out.set(e.id, { total: items.size, obtained: [...items].filter((k) => checked.has(k)).length })
+    }
+    return out
+  }, [data, pt.checked, pt.difficulty])
 
   const rows = useMemo(() => {
     if (!sort) return view.visible
@@ -224,6 +264,8 @@ function BestiaryTable({ view }: { view: BestiaryView }) {
           return typeName.get(e.type) ?? e.type
         case 'stars':
           return e.stars ?? 0
+        case 'drops':
+          return drops.get(e.id)?.total ?? 0
         case 'world':
           return worldCell(world?.bestiary, e.id).value
         case 'changed':
@@ -236,17 +278,74 @@ function BestiaryTable({ view }: { view: BestiaryView }) {
       const kb = key(b)
       return (ka < kb ? -1 : ka > kb ? 1 : 0) * dir || a.n - b.n
     })
-  }, [view.visible, sort, typeName, world, pt.bestiaryChangedAt])
+  }, [view.visible, sort, typeName, world, pt.bestiaryChangedAt, drops])
 
-  const header = (id: SortId, label: string, className?: string) => (
-    <th className={cn('px-2 py-2 text-left font-medium', className)}>
-      <button
-        onClick={() => setSort(sort?.id === id ? (sort.desc ? null : { id, desc: true }) : { id, desc: false })}
-        className="inline-flex items-center gap-1 hover:text-foreground"
-      >
-        {label}
-        {sort?.id === id && (sort.desc ? <ArrowDown className="size-3" /> : <ArrowUp className="size-3" />)}
-      </button>
+  // column widths, set by dragging a header's right edge (remembered in the browser)
+  const savedSizes = usePrefs((s) => s.bestiaryColumnSizes)
+  const setSizes = usePrefs((s) => s.setBestiaryColumnSizes)
+  const [live, setLive] = useState<{ id: string; width: number } | null>(null)
+  const widthOf = (id: ColumnId) => (live?.id === id ? live.width : (savedSizes[id] ?? COLUMNS[id]))
+  const shown: ColumnId[] = [
+    'check',
+    'n',
+    'name',
+    'type',
+    'where',
+    'stars',
+    'drops',
+    ...(world ? ['world' as const] : []),
+    'changed',
+  ]
+  const startResize = (id: ColumnId, e: React.PointerEvent) => {
+    e.preventDefault()
+    const x = e.clientX
+    const start = widthOf(id)
+    let width = start
+    const move = (ev: PointerEvent) => {
+      width = Math.max(MIN_WIDTH, Math.round(start + ev.clientX - x))
+      setLive({ id, width })
+    }
+    const up = () => {
+      window.removeEventListener('pointermove', move)
+      window.removeEventListener('pointerup', up)
+      document.body.style.cursor = ''
+      setSizes({ ...usePrefs.getState().bestiaryColumnSizes, [id]: width })
+      setLive(null)
+    }
+    document.body.style.cursor = 'col-resize'
+    window.addEventListener('pointermove', move)
+    window.addEventListener('pointerup', up)
+  }
+  const resetWidth = (id: ColumnId) => {
+    const rest = { ...savedSizes }
+    delete rest[id]
+    setSizes(rest)
+  }
+
+  const header = (id: ColumnId, label: string, sortId?: SortId) => (
+    <th key={id} className="relative px-2 py-2 text-left font-medium">
+      {sortId ? (
+        <button
+          onClick={() =>
+            setSort(sort?.id === sortId ? (sort.desc ? null : { id: sortId, desc: true }) : { id: sortId, desc: false })
+          }
+          className="inline-flex max-w-full items-center gap-1 truncate hover:text-foreground"
+        >
+          {label}
+          {sort?.id === sortId && (sort.desc ? <ArrowDown className="size-3" /> : <ArrowUp className="size-3" />)}
+        </button>
+      ) : (
+        label
+      )}
+      <div
+        onPointerDown={(e) => startResize(id, e)}
+        onDoubleClick={() => resetWidth(id)}
+        title="Drag to resize · double-click: default width"
+        className={cn(
+          'absolute top-0 right-0 h-full w-1.5 cursor-col-resize touch-none select-none hover:bg-primary/40',
+          live?.id === id && 'bg-primary/60',
+        )}
+      />
     </th>
   )
 
@@ -254,17 +353,26 @@ function BestiaryTable({ view }: { view: BestiaryView }) {
 
   return (
     <div className="min-h-0 flex-1 overflow-auto">
-      <table className="w-full border-collapse text-sm">
+      <table
+        className="table-fixed border-collapse text-sm"
+        style={{ width: shown.reduce((n, id) => n + widthOf(id), 0) }}
+      >
+        <colgroup>
+          {shown.map((id) => (
+            <col key={id} style={{ width: widthOf(id) }} />
+          ))}
+        </colgroup>
         <thead className="sticky top-0 z-10 bg-background text-xs text-muted-foreground shadow-[0_1px_0_var(--border)]">
           <tr>
-            <th className="w-10 px-2 py-2" aria-label="Unlocked" />
-            {header('n', '#', 'w-12')}
-            {header('name', 'Name')}
-            {header('type', 'Type')}
-            <th className="px-2 py-2 text-left font-medium">Where / when</th>
-            {header('stars', 'Rarity')}
-            {world && header('world', 'In the world')}
-            {header('changed', 'Last changed')}
+            <th className="px-2 py-2" aria-label="Unlocked" />
+            {header('n', '#', 'n')}
+            {header('name', 'Name', 'name')}
+            {header('type', 'Type', 'type')}
+            {header('where', 'Where / when')}
+            {header('stars', 'Rarity', 'stars')}
+            {header('drops', 'Drops', 'drops')}
+            {world && header('world', 'In the world', 'world')}
+            {header('changed', 'Last changed', 'changed')}
           </tr>
         </thead>
         <tbody>
@@ -277,6 +385,9 @@ function BestiaryTable({ view }: { view: BestiaryView }) {
               unlocked={view.unlocked.has(e.id)}
               world={world ? worldCell(world.bestiary, e.id).text : null}
               changed={formatDate(pt.bestiaryChangedAt[e.id])}
+              drops={drops.get(e.id)}
+              selected={selected === NPC_REF + e.id}
+              onOpen={() => openDetail(NPC_REF + e.id)}
               onChange={(v) => setBestiary([e.id], v)}
             />
           ))}
@@ -293,6 +404,9 @@ function Row({
   unlocked,
   world,
   changed,
+  drops,
+  selected,
+  onOpen,
   onChange,
 }: {
   data: GameData
@@ -301,6 +415,11 @@ function Row({
   unlocked: boolean
   world: string | null
   changed: string | undefined
+  /** different items it drops, and how many of them are obtained */
+  drops?: { total: number; obtained: number }
+  /** shown in the detail panel */
+  selected: boolean
+  onOpen: () => void
   onChange: (value: boolean) => void
 }) {
   const where = [
@@ -311,7 +430,18 @@ function Row({
     .filter(Boolean)
     .join(' · ')
   return (
-    <tr className={cn('border-b border-border/60 hover:bg-muted/40', unlocked && 'bg-primary/[0.04]')}>
+    <tr
+      className={cn(
+        'cursor-pointer border-b border-border/60 hover:bg-muted/40 [&>td]:overflow-hidden [&>td]:text-ellipsis',
+        unlocked && 'bg-primary/[0.04]',
+        selected && 'bg-primary/15 hover:bg-primary/20',
+      )}
+      aria-selected={selected}
+      onClick={(ev) => {
+        // the checkbox and the wiki link do their own thing
+        if (!(ev.target as HTMLElement).closest('button, a, [role=checkbox]')) onOpen()
+      }}
+    >
       <td className="px-2 py-1 text-center">
         <Checkbox checked={unlocked} onCheckedChange={(v) => onChange(v === true)} aria-label={`${e.name} unlocked`} />
       </td>
@@ -319,7 +449,9 @@ function Row({
       <td className="px-2 py-1">
         <div className="flex items-center gap-2">
           <WikiIcon src={e.icon} alt="" size={32} />
-          <span className={cn('min-w-0', unlocked && 'text-muted-foreground')}>{e.name}</span>
+          <span className="min-w-0 truncate" title={e.name}>
+            {e.name}
+          </span>
           <a
             href={e.url}
             target="_blank"
@@ -332,7 +464,9 @@ function Row({
         </div>
       </td>
       <td className="px-2 py-1 whitespace-nowrap">{typeName}</td>
-      <td className="px-2 py-1 text-xs text-muted-foreground">{where}</td>
+      <td className="truncate px-2 py-1" title={where}>
+        {where}
+      </td>
       <td className="px-2 py-1 whitespace-nowrap" title={e.stars ? `${e.stars} of 5 stars` : undefined}>
         {e.stars ? (
           <span className="inline-flex text-amber-500">
@@ -342,8 +476,18 @@ function Row({
           </span>
         ) : null}
       </td>
-      {world !== null && <td className="px-2 py-1 whitespace-nowrap text-xs tabular-nums">{world}</td>}
-      <td className="px-2 py-1 whitespace-nowrap text-xs text-muted-foreground">{changed ?? ''}</td>
+      <td
+        className="px-2 py-1 whitespace-nowrap tabular-nums"
+        title={drops ? `${drops.obtained} of ${drops.total} items it drops are obtained` : undefined}
+      >
+        {drops ? (
+          <span className={cn(drops.obtained === drops.total && 'text-emerald-600 dark:text-emerald-400')}>
+            {drops.obtained} / {drops.total}
+          </span>
+        ) : null}
+      </td>
+      {world !== null && <td className="px-2 py-1 whitespace-nowrap tabular-nums">{world}</td>}
+      <td className="px-2 py-1 whitespace-nowrap tabular-nums">{changed ?? ''}</td>
     </tr>
   )
 }

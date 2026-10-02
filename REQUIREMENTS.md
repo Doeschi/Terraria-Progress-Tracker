@@ -630,6 +630,34 @@ GitHub Actions.
   after their name (tooltip "Expert & Master only" / "Master only") instead of a column of their
   own; the "Difficulty" column is in no view any more, only in the Columns menu (for sorting).
 
+## ND – NPC details
+
+- **ND1** The detail panel shows other cards than items, in the same panel, history and back
+  button (ID): an **NPC card** for every bestiary entry, a **source card** for drop sources that
+  have neither a bestiary entry nor an item (trees, boss parts). Drop sources that are items
+  (treasure bags, crates, chests) open their item card.
+- **ND2** NPC card: icon, name, type, bestiary number and stars, wiki link, the "Unlocked"
+  checkbox (bestiary progress of the playthrough – also when opened from an item); where and
+  when it appears (biomes, time of day, events); with a loaded world its kills. **Drops**: every
+  item it drops with chance and amount for the playthrough's difficulty, game modes, conditions
+  (rows only in special seeds with their seed), obtained items marked, with a loaded world the
+  expected drops. Bosses: the drops of all their parts, and the contents of their treasure bag as
+  an extra section. Drops of an enemy's variants (the wiki's notes: Pre-Hardmode / Hardmode Mimic,
+  Dark / Light Lamia, Zombie variants, Old One's Army tiers; rows without a note can be named in
+  `[drop_variants]`) are listed per variant, so the chances of each add up; drops of every variant
+  come last. The item card names the variant under "Dropped by". **Sells** (town NPCs that are vendors): every item of their shop with its
+  condition (moon phases as icons), obtained items marked. Other entries on the same wiki page
+  (variants) are listed.
+- **ND3** Item card: a section "Contains" for items that are drop sources (treasure bags,
+  crates, chests): their drops like ND2.
+- **ND4** Everything that refers to an NPC or a source opens its card: the sources in "Dropped
+  by" / "Found in", the vendors in "Sold by"; items in an NPC card open their item card. The
+  view does not change: from an item one stays in the item collection, in the bestiary one stays
+  in the bestiary.
+- **ND5** The bestiary list opens the NPC card when a row is clicked (not the checkbox or link),
+  docked like the item details (overlay on narrow screens). Column "Drops": how many different
+  items the entry drops and how many of them are obtained (e.g. "5 / 12"), sortable.
+
 ## V – Game version
 
 - **V1** Each playthrough has a game version: one of the game updates (1.0 … 1.4.5) or
@@ -945,6 +973,8 @@ Status: parser done (PL1, PL2), app integration in progress (PL3–PL5).
   data (or a data version in the JSON files), a diff report between two downloads (added /
   changed / removed items, renamed keys), a key-alias list for renamed items, and a notice in
   the app when checked items no longer exist in the data.
+- **Clickable events, biomes and conditions** in the details (ND): open a card of the event /
+  biome (its enemies, items, vendors) or apply the filter.
 - **Cloud storage for the progress file:** open and save the progress file in Dropbox (first)
   and Google Drive (later), for devices without a sync client (phones, tablets). No maintained
   library covers both for a browser-only app, so a small adapter per service (sign in, find,
