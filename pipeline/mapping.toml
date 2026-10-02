@@ -2096,6 +2096,11 @@ critter = "Critters"
 enemy = "Enemies"
 boss = "Bosses"
 
+# images instead of the bestiary list's, for entries whose image is a poor icon (entry id = internal
+# NPC name -> wiki file name)
+[bestiary.icons]
+MoonLordCore = "Moon Lord's Head.gif"  # the list shows his core (torso)
+
 # entry whose icon is shown for each type
 [bestiary.type_icons]
 town = "Guide"

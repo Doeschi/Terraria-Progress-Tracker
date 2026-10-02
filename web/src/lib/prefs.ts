@@ -4,7 +4,7 @@ import type { ScanScope } from '@/hooks/useAreas'
 import type { SearchMode } from './filtering'
 import { DETAIL_WIDTH, SIDEBAR_WIDTH } from './panes'
 
-// Per-browser view preferences (not part of the tracking file), kept in
+// Per-browser view preferences (not part of the progress file), kept in
 // localStorage so the page looks the same on the next visit.
 
 export type EntryOrder = 'default' | 'name'
@@ -172,7 +172,7 @@ interface Prefs {
   stationsRequired: boolean
   /** detail panel sections: id -> open (missing = the section's default) */
   openSections: Record<string, boolean>
-  /** save the tracking file automatically (Chrome/Edge, file on disk) */
+  /** save the progress file automatically (Chrome/Edge, file on disk) */
   autosave: boolean
   /** sync dialog settings (areas, displays, only player chests) per playthrough id */
   syncScopes: Record<string, ScanScope>

@@ -5,6 +5,9 @@ import { dateOverridden, logoThemeOf, now as currentTime, seasonOf } from '@/lib
 import { logoSvgMarkup } from '@/lib/logoArt'
 import { confettiBurst } from '@/lib/confetti'
 import { achievement, bees, bigConfetti, bunny, drunk, flipPage, goldConfetti, itemIcon, worthy } from '@/lib/eggs'
+import { critterParade } from '@/lib/parade'
+import { useEndCredits, useTrophies } from '@/lib/trophies'
+import { useBestiaryProgress } from './useBestiaryView'
 
 // Easter eggs (G8) that are not tied to a component: secret world seeds typed into the item or
 // bestiary search, the Konami code, Terraria's birthday and a rare bunny.
@@ -137,42 +140,89 @@ export function useEasterEggs() {
 }
 
 /**
- * Progress moments (G8): the first item of a playthrough, and everything collected. Only on a
- * change of the checked items - not when a file is loaded or the playthrough switched.
+ * Progress moments (G8): the first item of a playthrough, everything collected, the whole bestiary,
+ * and both (the end credits). Only on a change of the checked items or bestiary entries - not when a
+ * file is loaded or the playthrough switched. `?egg=bestiary` / `?egg=credits` show them for testing.
  */
 export function useProgressEggs(overall: { total: number; obtained: number } | undefined) {
   const enabled = usePrefs((s) => s.layout.easterEggs)
   const pt = useActivePlaythrough()
-  const prev = useRef<{ id?: string; checked?: string[]; obtained: number; total: number } | null>(null)
+  const bestiary = useBestiaryProgress()
+  const itemsDone = !!overall && overall.total > 0 && overall.obtained === overall.total
+  const bestiaryDone = bestiary.total > 0 && bestiary.obtained === bestiary.total
+  // game versions without a bestiary: the items alone complete the playthrough
+  const allDone = itemsDone && (bestiaryDone || bestiary.total === 0)
+  const prev = useRef<{
+    id?: string
+    checked?: string[]
+    unlocked?: string[]
+    itemsDone: boolean
+    bestiaryDone: boolean
+  } | null>(null)
+
+  // the lasting rewards (gold star, golden tree, credits in the menu) follow the progress
+  useEffect(() => {
+    useTrophies.setState({ items: itemsDone, bestiary: bestiaryDone, all: allDone })
+  }, [itemsDone, bestiaryDone, allDone])
 
   useEffect(() => {
-    const now = { id: pt?.id, checked: pt?.checked, obtained: overall?.obtained ?? 0, total: overall?.total ?? 0 }
+    const now = { id: pt?.id, checked: pt?.checked, unlocked: pt?.bestiary, itemsDone, bestiaryDone }
     const p = prev.current
     prev.current = now
-    if (!enabled || !p || !pt || p.id !== now.id || p.checked === now.checked) return
+    if (!enabled || !p || !pt || p.id !== now.id) return
+    if (p.checked === now.checked && p.unlocked === now.unlocked) return
     // once per playthrough (remembered in the browser), not again after unchecking everything
-    if (p.checked?.length === 0 && pt.checked.length > 0 && !firstItemSeen(pt.id))
+    if (p.checked?.length === 0 && pt.checked.length > 0 && !seenOnce('egg-first-item', pt.id))
       achievement(
         'Your adventure begins',
         'The first item of this playthrough. Many more to go!',
         itemIcon('CopperShortsword'),
       )
-    // after the "filters complete" toast (it waits 0.4 s for more changes), so this one is on top
-    if (now.total > 0 && p.obtained < p.total && now.obtained === now.total)
+    const itemsNow = !p.itemsDone && itemsDone
+    const bestiaryNow = !p.bestiaryDone && bestiaryDone
+    // the second of the two completes the playthrough: the credits instead of its own moment
+    // (once per playthrough; after the "filters complete" toast, which waits 0.4 s)
+    if (allDone && (itemsNow || bestiaryNow) && !seenOnce('egg-credits', pt.id)) {
+      setTimeout(() => useEndCredits.getState().show(), 1200)
+      return
+    }
+    if (itemsNow)
       setTimeout(() => {
         achievement(
           'Everything collected!',
-          `All ${now.total.toLocaleString('en')} items of this playthrough. Legendary.`,
+          `All ${overall!.total.toLocaleString('en')} items of this playthrough. Legendary.`,
           itemIcon('Zenith'),
         )
         goldConfetti()
       }, 700)
-  }, [enabled, pt, overall?.obtained, overall?.total])
+    if (bestiaryNow && !seenOnce('egg-bestiary', pt.id)) setTimeout(() => bestiaryComplete(bestiary.total), 700)
+  }, [enabled, pt, itemsDone, bestiaryDone, allDone, overall, bestiary.total])
+
+  // testing: ?egg=bestiary / ?egg=credits (once the playthrough is there)
+  const ready = !!pt && !!overall
+  useEffect(() => {
+    if (!enabled || !ready) return
+    const egg = new URLSearchParams(window.location.search).get('egg')
+    const timer = setTimeout(() => {
+      if (egg === 'bestiary') bestiaryComplete(useStore.getState().data?.bestiary.entries.length ?? 0)
+      if (egg === 'credits') useEndCredits.getState().show()
+    }, 1500)
+    return () => clearTimeout(timer)
+  }, [enabled, ready])
 }
 
-/** Whether "Your adventure begins" was shown for a playthrough; marks it as shown. */
-function firstItemSeen(playthroughId: string): boolean {
-  const key = 'egg-first-item'
+/** The whole bestiary: an achievement and a parade of critters. */
+function bestiaryComplete(total: number) {
+  achievement(
+    'Bestiary complete!',
+    `All ${total.toLocaleString('en')} entries. The Zoologist would be proud.`,
+    itemIcon('Bunny'),
+  )
+  critterParade()
+}
+
+/** Whether a once-per-playthrough moment ("egg-…") was shown for a playthrough; marks it as shown. */
+function seenOnce(key: string, playthroughId: string): boolean {
   try {
     const seen: string[] = JSON.parse(localStorage.getItem(key) ?? '[]')
     if (seen.includes(playthroughId)) return true

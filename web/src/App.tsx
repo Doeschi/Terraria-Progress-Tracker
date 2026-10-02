@@ -21,6 +21,7 @@ import { SIDEBAR_WIDTH } from '@/lib/panes'
 import { useMediaQuery } from '@/hooks/useMediaQuery'
 import { TopBar } from '@/components/TopBar'
 import { WeaponLayer } from '@/components/WeaponLayer'
+import { EndCredits } from '@/components/EndCredits'
 import { useBestiaryCompletions, useItemCompletions } from '@/hooks/useCompletions'
 import { WelcomeScreen } from '@/components/WelcomeScreen'
 import { AreasDialog } from '@/components/dialogs/AreasDialog'
@@ -122,6 +123,8 @@ function Tracker() {
     <div className="flex h-svh flex-col">
       {/* a picked-up weapon (easter egg) */}
       <WeaponLayer />
+      {/* the end credits of a completed playthrough (easter egg) */}
+      {pt && <EndCredits items={view?.overall} />}
       <TopBar view={view} />
       {pt && view && mode === 'bestiary' ? (
         <BestiaryScreen />
@@ -153,7 +156,7 @@ function Tracker() {
           <div className="flex max-w-sm flex-col items-center gap-3 text-center">
             <h2 className="text-lg font-semibold">No playthrough yet</h2>
             <p className="text-sm text-muted-foreground">
-              A tracking file can hold several playthroughs, each with its own platform and progress.
+              A progress file can hold several playthroughs, each with its own platform and progress.
             </p>
             <Button onClick={() => openDialog({ type: 'newPlaythrough' })}>
               <Plus /> Create playthrough

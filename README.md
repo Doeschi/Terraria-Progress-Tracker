@@ -10,16 +10,29 @@ browser: progress is stored in a JSON file on your computer, world and player fi
 locally, and nothing is uploaded. See [REQUIREMENTS.md](REQUIREMENTS.md) for the
 full feature list.
 
+## Contents
+
+- [Layout](#layout)
+- [Data for other projects](#data-for-other-projects)
+- [How the data is built](#how-the-data-is-built)
+  - [1. Where the information comes from](#1-where-the-information-comes-from)
+  - [2. What step 2 does, in order](#2-what-step-2-does-in-order)
+  - [3. The mapping file (`pipeline/mapping.toml`)](#3-the-mapping-file-pipelinemappingtoml)
+  - [4. What is derived rather than copied](#4-what-is-derived-rather-than-copied)
+- [Updating the item data](#updating-the-item-data)
+- [Running the app](#running-the-app)
+- [License and credits](#license-and-credits)
+
 ## Layout
 
 | Folder                   | Contents                                                                     |
 |--------------------------|------------------------------------------------------------------------------|
 | `pipeline/`              | Python scripts that turn the Terraria Wiki's Cargo tables into JSON          |
 | `pipeline/raw/`          | The downloaded wiki data, unchanged (Cargo tables as CSV, page sources)      |
-| `pipeline/data_readable/`| The generated data, indented for reading (same content as `web/public/data`) |
+| `pipeline/data_readable/`| The generated data, indented for reading (same content as `web/public/data`); every field is explained in its [README](pipeline/data_readable/README.md) |
 | `web/`                   | The web app (Vite, React, TypeScript, Tailwind, shadcn/ui)                   |
 | `web/public/data/`       | The generated data the app loads (minified JSON)                             |
-| `web/public/icons/`      | Sprite sheets of the small wiki icons (`build_icons.py`)                      |
+| `web/public/icons/`      | Sprite sheets of the wiki images the app shows (`build_icons.py`)             |
 | `packages/terraria-player-file/` | Reader for Terraria player files (`.plr`) with its format spec and test characters – a separate package, may be published on its own |
 
 ## Data for other projects
@@ -36,7 +49,7 @@ the unchanged downloads in [`pipeline/raw/`](pipeline/raw).
 | `shops.json` | 817 shop rows of 24 vendors (from the vendor pages): per item the vendor, the wiki's condition text and the parsed conditions, events, biomes and moon phases |
 | `conditions.json` | Conditions of shop rows and drops: time of day, moon phases, after a boss, wind, Hardmode, world seeds – with item counts |
 | `milestones.json` | Progression milestones (World creation, King Slime, … Moon Lord); `items.json` gives each item its earliest milestone and the reason (e.g. "Crafted – needs Chlorophyte Ore") |
-| `sprites.json` + `icons/` | The small wiki icons (about 6,300) packed into 3 sprite sheets, with each icon's sheet and position (`build_icons.py`) |
+| `sprites.json` + `icons/` | The wiki images the app shows (about 6,800: item and filter icons, enemies, bosses, critters) packed into 4 sprite sheets, with each image's sheet and position (`build_icons.py`) |
 | `containers.json` | The container sources grouped into Chests, Crates, Other containers and Trees, with item counts |
 | `bosses.json` | Bosses by progression stage, each with all drop sources that count for it (parts, treasure bag) |
 | `recipes.json` | 3,655 crafting recipes (current versions, platform-limited ones marked), 42 crafting stations with the items that provide them (stronger stations included), 34 "Any …" ingredient groups resolved to items, 287 shimmer transmutations |
@@ -60,7 +73,7 @@ three steps; only steps 1 and 3 talk to the wiki, step 2 works offline on the do
 step 1  download_cargo_tables.py   wiki -> pipeline/raw/   (tables, page sources, image lists)
 step 2  build_tracker_data.py      raw + mapping.toml -> web/public/data/*.json (+ data_readable/)
         check_icons.py (optional)  checks the linked images, notes renamed files for step 2
-step 3  build_icons.py             small icons -> web/public/icons/ sprite sheets + sprites.json
+step 3  build_icons.py             wiki images -> web/public/icons/ sprite sheets + sprites.json
 ```
 
 ### 1. Where the information comes from
@@ -100,7 +113,7 @@ the pages in the category "Hardmode-only NPCs" (their drops count from the Wall 
 **Images.** Icons are links to the wiki's image files (`https://terraria.wiki.gg/images/…`),
 built from the file names in the tables. `check_icons.py` asks the API about all of them (in
 batches of 50) and saves renamed files (redirects) to `raw/image_redirects.json`, so step 2 links
-the new names. `build_icons.py` downloads the small ones once and packs them into sprite sheets.
+the new names. `build_icons.py` downloads them once and packs them into sprite sheets.
 
 ### 2. What step 2 does, in order
 
@@ -204,7 +217,7 @@ Requires Python 3.11+ and `pip install requests pillow`.
 python pipeline/download_cargo_tables.py   # step 1: wiki -> pipeline/raw/ (Cargo tables, page images/sources)
 python pipeline/build_tracker_data.py      # step 2: raw + mapping.toml -> web/public/data/*.json
 python pipeline/check_icons.py             # optional: check that all linked wiki images exist
-python pipeline/build_icons.py             # step 3: small icons -> sprite sheets in web/public/icons/
+python pipeline/build_icons.py             # step 3: wiki images -> sprite sheets in web/public/icons/
 ```
 
 `check_icons.py` asks the wiki's API about all linked images in batches of 50 (about 180
@@ -212,10 +225,14 @@ requests, no image downloads). It reports missing files and saves files that are
 – their direct link does not work – to `pipeline/raw/image_redirects.json`; run step 2 again and
 the targets are linked instead.
 
-`build_icons.py` packs the small icons (PNG up to 128 × 64 px; about 6,300) into a few sprite sheets
-that are served with the app, so it does not load thousands of single images from the wiki. The
-files are downloaded once into `pipeline/icons_cache/` (not committed); later runs only fetch
-new ones (`--refresh` revalidates all). Larger images and animated GIFs stay links to the wiki.
+`build_icons.py` packs every wiki image the app shows (about 6,800: item and filter icons,
+enemies, bosses and critters) into a few sprite sheets that are served with the app, so it does
+not load thousands of single images from the wiki. Animated GIFs become their first frame; icons
+larger than 128 × 64 px and enemies / bosses / critters larger than 64 × 64 px are scaled down.
+Enemies, bosses and critters have a sheet of their own (only loaded in the bestiary and the item
+details). The files are downloaded once into `pipeline/icons_cache/` (not committed); later runs
+only fetch new ones (`--refresh` revalidates all). Only the animated rarity names and the images
+of the easter eggs (bees, the rare bunny, the critter parade) stay links to the wiki.
 
 wiki.gg asks scripts for a contact in their User-Agent: pass `--contact`, set `WIKI_CONTACT`, or
 put it in `pipeline/contact.txt` (not committed); otherwise the project URL is sent.

@@ -5,14 +5,14 @@ import type { Difficulty, GameData, Item, PlatformId } from '@/lib/types'
 import { Coins, RarityIcon, WikiIcon } from '../common'
 import { formatDate, nameOf } from '@/lib/format'
 import { conditionLabel, conditionNames } from '@/lib/conditions'
-import { ConditionsCell, LuckCell } from './cells'
+import { ConditionsCell, IconList, LuckCell, type IconEntry } from './cells'
 import type { Luck } from '@/lib/luck'
 import type { Owned } from '@/hooks/useTrackerView'
 
 // Column catalogue of the item table. `value` is what the column sorts by,
 // `cell` how it is shown (defaults to the value).
 
-export type ColumnGroup = 'Tracking' | 'Item' | 'Source' | 'Economy' | 'Combat' | 'Tools' | 'Use & placement' | 'Other'
+export type ColumnGroup = 'Progress' | 'Item' | 'Source' | 'Economy' | 'Combat' | 'Tools' | 'Use & placement' | 'Other'
 
 /** Per-playthrough state some columns show (not part of the item data). */
 export interface TrackingState {
@@ -73,27 +73,47 @@ export function buildColumns(data: GameData): ItemColumn[] {
     const best = regularDrops(data, i, difficulty, kind)[0]
     return best ? (chanceFor(best, difficulty) ?? 0) : undefined
   }
-  // without the rows only in special seeds, like the filters (CO6); the detail panel shows them
-  const dropList = (i: Item, difficulty: Difficulty, kind: DropKind) =>
-    regularDrops(data, i, difficulty, kind)
-      .map((d) => {
-        const c = chanceFor(d, difficulty)
-        return `${data.dropSources.get(d.source)?.name ?? d.source}${c !== undefined ? ` ${c}%` : ''}`
-      })
-      .join(', ')
+  // icons of list entries (name on hover)
+  const iconsOf = (list: { id: string; name: string; icon?: string }[]) => {
+    const m = new Map(list.map((e) => [e.id, e]))
+    return (ids: string[]): IconEntry[] =>
+      ids.map((id) => ({ key: id, icon: m.get(id)?.icon, name: m.get(id)?.name ?? id }))
+  }
+  const obtainIcons = iconsOf(data.obtain)
+  const eventIcons = iconsOf(data.events)
+  const biomeIcons = iconsOf(data.biomes)
+  const platformIcons = iconsOf(data.platforms)
+  // the sources' icons with their chance, best first; without the rows only in special seeds,
+  // like the filters (CO6) - the detail panel shows them
+  const dropIcons = (i: Item, difficulty: Difficulty, kind: DropKind): IconEntry[] =>
+    regularDrops(data, i, difficulty, kind).map((d, n) => {
+      const source = data.dropSources.get(d.source)
+      const c = chanceFor(d, difficulty)
+      return {
+        key: `${d.source}-${n}`,
+        icon: source?.icon,
+        name: source?.name ?? d.source,
+        label: c !== undefined ? `${c}%` : undefined,
+      }
+    })
   const event = names(data.events)
   const biome = names(data.biomes)
   const milestoneRank = new Map(data.milestones.map((m, n) => [m.id, n]))
   const condition = (ids: string[]) => ids.map((id) => conditionLabel(data, id)).join(', ')
-  // "Merchant, Witch Doctor (Night, Jungle, after Plantera)" - conditions of the shop rows
-  const soldBy = (i: Item) =>
-    i.vendors
-      .map((v) => {
-        const rows = (data.shops.get(i.key) ?? []).filter((r) => r.vendor === v)
-        const conds = [...new Set(rows.flatMap((r) => conditionNames(data, r)))]
-        return `${nameOf(data.vendors, v)}${conds.length ? ` (${conds.join(', ')})` : ''}`
-      })
-      .join(', ')
+  // the vendors' heads and names; the conditions of their shop rows on hover
+  const vendorIcons = (i: Item): IconEntry[] =>
+    i.vendors.map((v) => {
+      const rows = (data.shops.get(i.key) ?? []).filter((r) => r.vendor === v)
+      const conds = [...new Set(rows.flatMap((r) => conditionNames(data, r)))]
+      const name = nameOf(data.vendors, v)
+      return {
+        key: v,
+        icon: data.vendors.find((x) => x.id === v)?.icon,
+        name,
+        label: name,
+        detail: conds.join(', ') || undefined,
+      }
+    })
 
   return [
     // ------------------------------------------------------------ item
@@ -139,7 +159,15 @@ export function buildColumns(data: GameData): ItemColumn[] {
       group: 'Item',
       size: 100,
       value: (i) => (i.minDifficulty ? DIFFICULTY_RANK[i.minDifficulty] : undefined),
-      cell: (i) => (i.minDifficulty === 'master' ? 'Master only' : i.minDifficulty === 'expert' ? 'Expert+' : null),
+      cell: (i) => {
+        if (!i.minDifficulty) return null
+        const label = i.minDifficulty === 'master' ? 'Master only' : 'Expert+'
+        return (
+          <IconList
+            entries={[{ key: i.minDifficulty, icon: data.difficultyIcons[i.minDifficulty], name: label, label }]}
+          />
+        )
+      },
     },
     {
       id: 'hardmode',
@@ -175,9 +203,10 @@ export function buildColumns(data: GameData): ItemColumn[] {
       id: 'obtain',
       label: 'Obtained by',
       group: 'Source',
-      size: 220,
+      size: 160,
       defaultVisible: true,
       value: (i) => obtain(i.obtain),
+      cell: (i) => <IconList entries={obtainIcons(i.obtain)} max={6} />,
     },
     {
       id: 'drops',
@@ -188,7 +217,7 @@ export function buildColumns(data: GameData): ItemColumn[] {
       // sorts by the best chance; shows every source of the playthrough's difficulty
       value: (i, t) => bestChance(i, t.difficulty, 'dropped'),
       // chances of the playthrough's difficulty (Expert/Master often differ from Normal)
-      cell: (i, t) => dropList(i, t.difficulty, 'dropped'),
+      cell: (i, t) => <IconList entries={dropIcons(i, t.difficulty, 'dropped')} max={3} />,
     },
     {
       id: 'containers',
@@ -198,7 +227,7 @@ export function buildColumns(data: GameData): ItemColumn[] {
       descFirst: true,
       // chests, crates, trees, … - like "Dropped by"
       value: (i, t) => bestChance(i, t.difficulty, 'found'),
-      cell: (i, t) => dropList(i, t.difficulty, 'found'),
+      cell: (i, t) => <IconList entries={dropIcons(i, t.difficulty, 'found')} max={3} />,
     },
     {
       id: 'vendors',
@@ -207,7 +236,7 @@ export function buildColumns(data: GameData): ItemColumn[] {
       size: 220,
       // sorts by vendor name, shows the conditions of the shop rows
       value: (i) => vendor(i.vendors),
-      cell: (i) => soldBy(i),
+      cell: (i) => <IconList entries={vendorIcons(i)} max={3} />,
     },
     {
       id: 'events',
@@ -226,11 +255,18 @@ export function buildColumns(data: GameData): ItemColumn[] {
                 only
               </span>
             )}
-            <span className="truncate">{event(i.events)}</span>
+            <IconList entries={eventIcons(i.events)} max={6} />
           </span>
         ) : null,
     },
-    { id: 'biomes', label: 'Biome', group: 'Source', size: 200, value: (i) => biome(i.biomes ?? []) },
+    {
+      id: 'biomes',
+      label: 'Biome',
+      group: 'Source',
+      size: 160,
+      value: (i) => biome(i.biomes ?? []),
+      cell: (i) => <IconList entries={biomeIcons(i.biomes ?? [])} max={6} />,
+    },
     {
       id: 'conditions',
       label: 'Conditions',
@@ -244,8 +280,9 @@ export function buildColumns(data: GameData): ItemColumn[] {
       id: 'platforms',
       label: 'Platforms',
       group: 'Source',
-      size: 200,
+      size: 160,
       value: (i) => i.platforms.map((p) => PLATFORM_SHORT[p]).join(', '),
+      cell: (i) => <IconList entries={platformIcons(i.platforms)} max={6} />,
     },
     {
       id: 'unobtainable',
@@ -429,11 +466,11 @@ export function buildColumns(data: GameData): ItemColumn[] {
       cell: (i) => (i.placedWidth && i.placedHeight ? `${i.placedWidth} × ${i.placedHeight}` : null),
     },
 
-    // -------------------------------------------------------- tracking
+    // -------------------------------------------------------- progress
     {
       id: 'changedAt',
       label: 'Last changed',
-      group: 'Tracking',
+      group: 'Progress',
       size: 160,
       defaultVisible: true,
       descFirst: true,
@@ -445,7 +482,7 @@ export function buildColumns(data: GameData): ItemColumn[] {
       // plus everything on the loaded player
       id: 'owned',
       label: 'Owned',
-      group: 'Tracking',
+      group: 'Progress',
       size: 95,
       align: 'right',
       descFirst: true,
@@ -467,7 +504,7 @@ export function buildColumns(data: GameData): ItemColumn[] {
       // sorted by the chance to have got it by now: bad luck first when descending
       id: 'expectedDrops',
       label: 'Expected drops',
-      group: 'Tracking',
+      group: 'Progress',
       size: 130,
       align: 'right',
       descFirst: true,
@@ -488,6 +525,6 @@ export const COLUMN_GROUPS: ColumnGroup[] = [
   'Combat',
   'Tools',
   'Use & placement',
-  'Tracking',
+  'Progress',
   'Other',
 ]

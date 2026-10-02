@@ -166,3 +166,33 @@ function AtLeastOnceHow({ parts, atLeastOnce }: { parts: Luck['parts']; atLeastO
     </>
   )
 }
+
+export interface IconEntry {
+  key: string
+  icon?: string
+  name: string
+  /** short text after the icon (a chance, a vendor's name); without it only the icon */
+  label?: string
+  /** more on hover, e.g. the conditions of a shop row */
+  detail?: string
+}
+
+/** Entries of a table cell as icons (the name on hover), optionally with a short label each; after
+ * `max` entries "+N" (all of them on hover). Entries without an icon show their name. */
+export function IconList({ entries, max = 4 }: { entries: IconEntry[]; max?: number }) {
+  if (!entries.length) return null
+  const hover = (e: IconEntry) =>
+    [e.name, e.label && e.label !== e.name ? e.label : '', e.detail ? `(${e.detail})` : ''].filter(Boolean).join(' ')
+  const rest = entries.length - max
+  return (
+    <span className="inline-flex max-w-full min-w-0 items-center gap-2" title={entries.map(hover).join('\n')}>
+      {entries.slice(0, max).map((e) => (
+        <span key={e.key} className="inline-flex min-w-0 shrink-0 items-center gap-1" title={hover(e)}>
+          {e.icon ? <WikiIcon src={e.icon} alt={e.name} size={18} /> : <span>{e.name}</span>}
+          {e.label && <span className="truncate tabular-nums">{e.label}</span>}
+        </span>
+      ))}
+      {rest > 0 && <span className="shrink-0 text-xs text-muted-foreground">+{rest}</span>}
+    </span>
+  )
+}

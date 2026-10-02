@@ -3,7 +3,7 @@ import html
 import re
 from collections import Counter, defaultdict
 
-from .common import IMAGES, flag, log, norm_name, number, page_url
+from .common import IMAGES, flag, image_url, log, norm_name, number, page_url
 from .items import patch_version, version_group
 
 
@@ -57,6 +57,7 @@ def l10n_names(wikitext):
 
 def bestiary_file(wikitext, page_html, npc_rows, exclusive, mapping, version_names):
     conf = mapping.bestiary
+    icons = conf.get("icons", {})
     npc_ids = npc_id_table(page_html)
     id_versions = npc_id_versions(page_html)
     variants = l10n_names(wikitext)
@@ -109,7 +110,8 @@ def bestiary_file(wikitext, page_html, npc_rows, exclusive, mapping, version_nam
                     targets[section].append(tid)
         entry = {
             "id": key, "n": n, "name": name, "page": page, "url": page_url(page),
-            "icon": npc["image"] if npc else None, "type": etype,
+            # [bestiary.icons] replaces a poor image (e.g. Moon Lord: his core -> his head)
+            "icon": (image_url(icons[key]) if key in icons else npc["image"] if npc else None), "type": etype,
             "stars": number(stars), "npcId": npc_id,
             "biomes": targets["biomes"], "times": targets["times"], "events": targets["events"],
             "version": version, "platforms": plats,

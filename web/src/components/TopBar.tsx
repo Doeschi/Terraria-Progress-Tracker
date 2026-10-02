@@ -5,6 +5,9 @@ import { ToggleGroup, ToggleGroupItem } from '@/components/ui/toggle-group'
 import type { TrackerView } from '@/hooks/useTrackerView'
 import { TallyBar, TallyText } from './common'
 import { usePrefs } from '@/lib/prefs'
+import { useEndCredits, useTrophies } from '@/lib/trophies'
+import { Clapperboard, Star } from 'lucide-react'
+import { Button } from '@/components/ui/button'
 import { Field } from './topbar/Field'
 import { FileMenu } from './topbar/FileMenu'
 import { PlaythroughMenu, PlaythroughSettings } from './topbar/PlaythroughControls'
@@ -60,7 +63,7 @@ export function TopBar({ view }: { view: TrackerView | null }) {
         {view && (
           // in a card like the playthrough box
           <div className="rounded-xl border bg-card/60 px-2 pt-1 pb-1.5">
-            <Field label="View">
+            <Field label="Collection">
               <ModeSwitch />
             </Field>
           </div>
@@ -96,17 +99,40 @@ function ProgressBars({ view }: { view: TrackerView }) {
 function ModeSwitch() {
   const mode = useStore((s) => s.mode)
   const setMode = useStore((s) => s.setMode)
+  // easter egg (G8): a gold star once the whole bestiary is unlocked
+  const bestiaryDone = useTrophies((s) => s.bestiary)
+  const eggs = usePrefs((s) => s.layout.easterEggs)
+  const star = bestiaryDone && eggs
+  // ... and the end credits again, once the playthrough is complete
+  const allDone = useTrophies((s) => s.all)
+  const showCredits = useEndCredits((s) => s.show)
   return (
-    <ToggleGroup
-      type="single"
-      variant="outline"
-      size="sm"
-      value={mode}
-      onValueChange={(v) => v && setMode(v as TrackerMode)}
-      aria-label="Items or bestiary"
-    >
-      <ToggleGroupItem value="items">Items</ToggleGroupItem>
-      <ToggleGroupItem value="bestiary">Bestiary</ToggleGroupItem>
-    </ToggleGroup>
+    <div className="flex items-center gap-1">
+      <ToggleGroup
+        type="single"
+        variant="outline"
+        size="sm"
+        value={mode}
+        onValueChange={(v) => v && setMode(v as TrackerMode)}
+        aria-label="Items or bestiary"
+      >
+        <ToggleGroupItem value="items">Items</ToggleGroupItem>
+        <ToggleGroupItem value="bestiary" title={star ? 'Bestiary complete!' : undefined}>
+          Bestiary
+          {star && <Star className="size-3 fill-amber-400 text-amber-500" aria-label="complete" />}
+        </ToggleGroupItem>
+      </ToggleGroup>
+      {allDone && eggs && (
+        <Button
+          variant="outline"
+          size="icon-sm"
+          onClick={showCredits}
+          title="Watch the credits again"
+          aria-label="Watch the credits again"
+        >
+          <Clapperboard className="text-amber-500" />
+        </Button>
+      )}
+    </div>
   )
 }

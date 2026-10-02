@@ -1,19 +1,23 @@
 #!/usr/bin/env python3
 """
-Step 3 of the Terraria tracker pipeline: pack the small wiki icons the app shows into sprite
-sheets, so the app does not load thousands of single images from the wiki.
+Step 3 of the Terraria tracker pipeline: pack the wiki images the app shows into sprite sheets,
+so the app does not load hundreds of single images from the wiki.
 
-  1. collect the icon links of the generated data (../web/public/data/*.json): PNG files,
-     without the bestiary and the placed / equipped item images
+  1. collect the image links of the generated data (../web/public/data/*.json): item icons,
+     filter icons, enemies, bosses and critters (bestiary, drop sources)
   2. download the files not in the local cache yet (icons_cache/, not committed; --refresh
      asks the wiki again for every cached file and only downloads changed ones)
-  3. pack all icons of at most 128 x 64 px into sheets of 1024 x (at most) 2048 px
-     (../web/public/icons/sheet-<n>.<hash>.png) and write ../web/public/data/sprites.json:
+  3. pack them into sheets of 1024 x (at most) 2048 px (../web/public/icons/sheet-<n>.<hash>.png)
+     and write ../web/public/data/sprites.json:
      {"sheets": [{"file", "w", "h"}], "icons": {"<wiki file>": [sheet, x, y, w, h]}}
+     Animated images (GIF, APNG) become their first frame. Icons larger than 128 x 64 px, and
+     enemies / bosses / critters larger than 64 x 64 px, are scaled down to fit. Enemies, bosses
+     and critters get sheets of their own (only loaded where they are shown: bestiary, details).
   4. a copy in data_readable/ (sprites.json indented, the sheets in data_readable/icons/;
      skip with --no-readable)
 
-Larger images and animated GIFs stay links to the wiki.
+Animated images that stay links to the wiki: the rarity names (rarities.json) and the ones the
+easter eggs load themselves (bees, the rare bunny, the critter parade).
 
 Usage:  python build_icons.py
         python build_icons.py --refresh --workers 4 --contact you@example.com
@@ -36,33 +40,55 @@ from download_cargo_tables import PROJECT_URL, contact, log
 HERE = Path(__file__).resolve().parent
 IMAGES = "https://terraria.wiki.gg/images/"
 MAX_WIDTH, MAX_HEIGHT = 128, 64  # wide: rarity names like "Light Purple"
+NPC_MAX = 64  # enemies, bosses, critters: shown at 32 px
 SHEET_WIDTH = 1024
 SHEET_MAX_HEIGHT = 2048
 PAD = 1
-# fields whose images are not packed (large, only shown in the detail panel)
-SKIP_FIELDS = {"iconPlaced", "iconEquipped"}
-SKIP_FILES = {"bestiary.json", "sprites.json"}
+# animated images that stay links to the wiki (the shimmering Expert / Master rarity names)
+KEEP_ANIMATED = {"rarities.json"}
 
 
 def icon_links(data_dir):
-    """Wiki file names (as in the URL after /images/) of the PNG icons in the data."""
-    found = set()
+    """Wiki file names (as in the URL after /images/) -> "item" (icons) or "npc" (enemies,
+    bosses, critters: own sheets, at most 64 x 64 px). An image used as both is an item icon."""
+    found = {}
 
-    def walk(value, field=None):
+    def add(name, group):
+        if found.get(name) != "item":
+            found[name] = group
+
+    def walk(value, group, keep_animated=False):
         if isinstance(value, str):
-            if value.startswith(IMAGES) and value.lower().endswith(".png") and field not in SKIP_FIELDS:
-                found.add(value[len(IMAGES):])
+            if value.startswith(IMAGES):
+                name = value[len(IMAGES):]
+                if not (keep_animated and name.lower().endswith(".gif")):
+                    add(name, group)
         elif isinstance(value, dict):
-            for k, v in value.items():
-                walk(v, k)
+            for v in value.values():
+                walk(v, group, keep_animated)
         elif isinstance(value, list):
             for v in value:
-                walk(v, field)
+                walk(v, group, keep_animated)
 
     for path in sorted(data_dir.glob("*.json")):
-        if path.name not in SKIP_FILES:
-            walk(json.loads(path.read_text(encoding="utf-8")))
+        if path.name == "sprites.json":
+            continue
+        data = json.loads(path.read_text(encoding="utf-8"))
+        if path.name == "bestiary.json":
+            walk(data["entries"], "npc")
+            walk(data["types"], "item")
+        elif path.name == "drops.json":
+            for source in data["sources"].values():
+                walk(source, "npc" if source["kind"] == "npc" else "item")
+        else:
+            walk(data, "item", path.name in KEEP_ANIMATED)
     return found
+
+
+def fit(img, max_w, max_h):
+    """Scaled down to fit max_w x max_h (keeps the aspect ratio)."""
+    ratio = min(max_w / img.width, max_h / img.height)
+    return img.resize((max(1, round(img.width * ratio)), max(1, round(img.height * ratio))), Image.LANCZOS)
 
 
 class Cache:
@@ -153,8 +179,10 @@ def main():
     ap.add_argument("--contact", help="contact for the wiki's User-Agent (see download_cargo_tables.py)")
     args = ap.parse_args()
 
-    names = sorted(icon_links(args.data))
-    log(f"{len(names)} PNG icons linked from {args.data}")
+    groups = icon_links(args.data)
+    names = sorted(groups)
+    npcs = sum(1 for g in groups.values() if g == "npc")
+    log(f"{len(names)} images linked from {args.data} ({npcs} enemies, bosses and critters)")
     cache = Cache(args.cache, f"TerrariaProgressTracker/1.0 ({PROJECT_URL}; contact: {contact(args.contact)})",
                   args.delay)
     results = {}
@@ -171,25 +199,32 @@ def main():
     if problems:
         log(f"  not available ({len(problems)}; run check_icons.py): {[unquote(p) for p in problems[:20]]}")
 
-    images, too_big = [], 0
+    images = {"item": [], "npc": []}
+    scaled = 0
     for name in names:
         path = cache.path(name)
         if results.get(name) in ("missing", "error") or not path.exists():
             continue
         try:
             img = Image.open(io.BytesIO(path.read_bytes()))
-            if getattr(img, "is_animated", False):
-                continue  # APNG: stays a link
+            img.seek(0)  # animated GIF / APNG: the first frame
             img = img.convert("RGBA")
         except OSError:
             continue
-        if img.width > MAX_WIDTH or img.height > MAX_HEIGHT:
-            too_big += 1
-            continue
-        images.append((name, img))
-    log(f"  packing {len(images)} icons ({too_big} larger than {MAX_WIDTH} x {MAX_HEIGHT} px stay links)")
+        max_w, max_h = (NPC_MAX, NPC_MAX) if groups[name] == "npc" else (MAX_WIDTH, MAX_HEIGHT)
+        if img.width > max_w or img.height > max_h:
+            img = fit(img, max_w, max_h)
+            scaled += 1
+        images[groups[name]].append((name, img))
+    log(f"  packing {len(images['item'])} icons and {len(images['npc'])} enemies, bosses and critters "
+        f"({scaled} scaled down)")
 
-    sheets, sizes = pack(images)
+    # item icons first; enemies, bosses and critters in sheets of their own
+    sheets, sizes = [], []
+    for group in ("item", "npc"):
+        group_sheets, group_sizes = pack(images[group])
+        sheets += group_sheets
+        sizes += group_sizes
     readable_icons = None if args.no_readable else args.readable / "icons"
     for folder in filter(None, (args.out, readable_icons)):
         folder.mkdir(parents=True, exist_ok=True)

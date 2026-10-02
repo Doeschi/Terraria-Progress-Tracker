@@ -236,7 +236,7 @@ const beeKeeper: Effect = (o, d) => {
       vx: d.x * speed + rand(-1.5, 1.5),
       vy: d.y * speed + rand(-1.5, 1.5),
       life: 2600,
-      sprite: iconSprite('https://terraria.wiki.gg/images/Bee.gif', 1.2),
+      sprite: iconSprite('https://terraria.wiki.gg/images/Bee.gif', 1.2, true),
       update(p) {
         p.y += Math.sin(p.age! / 90 + phase) * 1.4
       },

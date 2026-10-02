@@ -2,7 +2,7 @@ import { fileOpen, fileSave, supported as fsAccessSupported } from 'browser-fs-a
 import { del, get, set } from 'idb-keyval'
 import { parseSaveFile, serializeSaveFile, type SaveFile } from './saveFile'
 
-// Opening/saving the tracking file, the local backup and remembered world files.
+// Opening/saving the progress file, the local backup and remembered world files.
 // With the File System Access API (Chrome/Edge) files are written in place;
 // other browsers get an upload dialog and a download.
 
@@ -17,7 +17,7 @@ export interface OpenedFile {
 export async function openTrackingFile(): Promise<OpenedFile | null> {
   let file: File & { handle?: FileSystemFileHandle }
   try {
-    file = await fileOpen({ description: 'Tracker file', extensions: ['.json'], mimeTypes: ['application/json'] })
+    file = await fileOpen({ description: 'Progress file', extensions: ['.json'], mimeTypes: ['application/json'] })
   } catch (err) {
     if (isAbort(err)) return null
     throw err
@@ -36,7 +36,7 @@ export async function saveTrackingFile(
   try {
     const newHandle = await fileSave(
       blob,
-      { fileName, extensions: ['.json'], description: 'Tracker file' },
+      { fileName, extensions: ['.json'], description: 'Progress file' },
       handle,
       false, // if the old handle is no longer usable, show a save dialog instead
     )
@@ -61,7 +61,7 @@ export async function requestWriteAccess(handle: FileSystemFileHandle): Promise<
   return (await h.requestPermission?.({ mode: 'readwrite' })) === 'granted'
 }
 
-/** Write the tracking file in place, never showing a dialog (autosave). */
+/** Write the progress file in place, never showing a dialog (autosave). */
 export async function writeTrackingFile(doc: SaveFile, handle: FileSystemFileHandle): Promise<void> {
   const writable = await handle.createWritable()
   await writable.write(serializeSaveFile(doc))

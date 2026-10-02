@@ -206,7 +206,6 @@ def build_item(row, mapping, schema, exclusive, history, equip, extra_keys=()):
     introduced = history.introduced(name, page)
     # the image field can name several files: "King Slime Relic.png / King Slime Relic (placed).png"
     images = [f.strip() for f in row["imagefile"].split(" / ") if f.strip()]
-    placed = next((f for f in images[1:] if "(placed)" in f), None)
     internal = row["internalname"].strip()
     if internal.lower() in ("", "none"):  # some old-gen/3DS-only items have none
         internal = None
@@ -219,8 +218,6 @@ def build_item(row, mapping, schema, exclusive, history, equip, extra_keys=()):
         "page": page,
         "url": page_url(page),
         "icon": image_url(images[0]) if images else None,
-        "iconPlaced": image_url(file_from_wikitext(row["imageplaced"]) or placed),
-        "iconEquipped": image_url(file_from_wikitext(row["imageequipped"])),
         **groups,
         "platforms": platforms,
         "platformsKnown": known,

@@ -30,7 +30,7 @@ export function SettingsDialog({ open, onOpenChange }: { open: boolean; onOpenCh
         <DialogHeader>
           <DialogTitle>Settings</DialogTitle>
           <DialogDescription>
-            What is shown where. Remembered in this browser, not in the tracking file.
+            What is shown where. Remembered in this browser, not in the progress file.
           </DialogDescription>
         </DialogHeader>
 

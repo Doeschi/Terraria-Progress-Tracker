@@ -34,7 +34,8 @@ GitHub Actions.
   the wiki's images, and can be turned off in the settings ("Easter eggs", on by default).
   Seasonal ones can be tested with `?date=YYYY-MM-DD` or `?date=YYYY-MM-DDTHH:MM` in the URL:
   everything seasonal then uses that date and time (only what is shown; nothing is saved).
-  Ones that only appear on some visits can be forced with `?weapons=awake`.
+  Ones that only appear on some visits can be forced with `?weapons=awake`; the completion ones
+  can be shown with `?egg=bestiary` and `?egg=credits`.
 
 ## D – Data
 
@@ -154,11 +155,15 @@ GitHub Actions.
 
 ## IC – Icons
 
-- **IC1** Small icons (PNG, at most 128 × 64 px – wide ones are the rarity name images) are packed into sprite sheets served with the app
-  instead of being loaded one by one from the wiki: fewer requests, no load on wiki.gg, and
-  icons do not break when the wiki renames a file. Larger images (placed / equipped images, NPC
-  sprites) and animated GIFs stay links to the wiki. Not included: bestiary images, placed and
-  equipped item images.
+- **IC1** Every wiki image the app shows – item and filter icons, enemies, bosses and critters
+  (bestiary, drop sources) – is packed into sprite sheets served with the app instead of being
+  loaded one by one from the wiki: fewer requests, no load on wiki.gg, and icons do not break
+  when the wiki renames a file. Animated GIFs become their first frame (still images); icons
+  larger than 128 × 64 px (wide ones are the rarity name images) and enemies / bosses / critters
+  larger than 64 × 64 px (shown at 32 px) are scaled down. Enemies, bosses and critters have
+  sheets of their own, loaded only where they are shown. Links to the wiki stay only for the
+  animated rarity names (Expert, Master) and the easter eggs, which keep their GIFs (bees, the
+  rare bunny, the critter parade). The data has no placed / equipped item images (unused).
 - **IC2** `pipeline/build_icons.py` (step 3) collects the icon links of the generated data,
   downloads missing files into a local cache (`pipeline/icons_cache/`, not committed; same
   User-Agent as the download, a few requests in parallel, `--refresh` revalidates cached files),
@@ -172,7 +177,7 @@ GitHub Actions.
 
 ## F – Save file
 
-- **F1** The user can create a new tracking file or open one from disk.
+- **F1** The user can create a new progress file or open one from disk.
 - **F2** Save: in Chrome/Edge the app writes directly back to the opened file (File System
   Access API). In other browsers "Save" downloads the file.
 - **F2a** Download mode (no File System Access API): the browser may rename a download
@@ -274,10 +279,15 @@ GitHub Actions.
   "Last changed" (group "Tracking", visible by default, always the last column, first click
   sorts newest first) and as
   tooltip of the checkbox. Setting an item to the state it already has keeps its date.
-- **I14** The dates are stored in the tracking file (`changedAt`, F7).
+- **I14** The dates are stored in the progress file (`changedAt`, F7).
 - **I16** Table columns can be resized by dragging the right edge of their header (minimum
   60 px, the name column 160 px); a double-click on the edge restores the default width, "Reset
   widths" in the Columns menu all of them. Checkbox, icon and the last column have a fixed width.
+- **I17** Icons in the table: "Dropped by" and "Found in" show each source's icon with its chance
+  (best first), "Sold by" the vendor's head and name (the shop conditions on hover), "Obtained
+  by", "Events", "Biome" and "Platforms" icons only, "Difficulty" the Expert / Master icon with
+  "Expert+" / "Master only". Names on hover; after 3 (sources, vendors) or 6 entries "+N", the
+  full list on hover. Sorting and searching are unchanged (by the names / the best chance).
 - **I15** Column presets ("View": favorites as buttons, all in a dropdown – LS2): Overview,
   Where to get it, Progression (sorted by "Available after"), Weapons, Mining & tools, Armor &
   accessories, Potions & food, Fishing, Building & furniture, Trading, Technical. A preset sets
@@ -367,7 +377,7 @@ GitHub Actions.
   parent is part of it (not counted or named separately, like the "Completed" section of FL11).
   Setting "Celebrate completed filters"
   (on by default); no confetti with reduced motion.
-- **FL17** The time a filter option was completed is kept per playthrough in the tracking file
+- **FL17** The time a filter option was completed is kept per playthrough in the progress file
   (`completedAt`): set when the option reaches 100 % over the whole playthrough (item and
   bestiary filters, hidden ones too), removed when it is no longer complete. Shown in the
   "Completed" section next to the option ("today, 14:05") and in the tooltip of every completed
@@ -414,7 +424,7 @@ GitHub Actions.
   panel they show only their icon ("Obtained" keeps its text longest).
 ## PR – Remembered view settings
 
-- **PR1** Stored in the browser (localStorage), not in the tracking file: visible table columns,
+- **PR1** Stored in the browser (localStorage), not in the progress file: visible table columns,
   their widths, the table's column sorting, and the option order (default / A–Z) per filter group,
   and which filter groups are open or closed. They are restored on the next visit. Settings that
   no longer apply (e.g. a removed column) are ignored.
@@ -661,7 +671,7 @@ GitHub Actions.
 ## W – World file
 
 - **W1** A world file (`.wld`) can be attached to a playthrough. The file is read locally
-  and never uploaded; only its name, GUID and size are stored in the tracking file.
+  and never uploaded; only its name, GUID and size are stored in the progress file.
 - **W1a** After a world is attached (first time, or a different world; also from the "New
   playthrough" dialog), the areas dialog with the map opens right away to set up areas. It has a
   "Continue: sync with world" button; however it is closed (button, X, Escape), the first sync
@@ -845,7 +855,7 @@ GitHub Actions.
   Show all / missing / unlocked, and a table: in-game number (default order), icon, name, type,
   biomes, stars, kills in the attached world, unlocked checkbox, wiki link, last changed.
 - **BE7** Header: a second progress bar for the bestiary below the item progress.
-- **BE8** Tracking file: `bestiary` (unlocked entry ids) and `bestiaryChangedAt` per
+- **BE8** Progress file: `bestiary` (unlocked entry ids) and `bestiaryChangedAt` per
   playthrough (F7).
 
 ## BL – Expected drops ("bad luck")
@@ -903,7 +913,7 @@ Status: parser done (PL1, PL2), app integration in progress (PL3–PL5).
   in the header (before "World"), with a menu: attach / choose another file, reload
   (Chrome/Edge remember the file), sync, detach; a quick button reconnects an attached player that
   is not loaded. "Continue where you left off" also reloads a remembered player file. The
-  tracking file stores a reference per playthrough (name, file name, last sync – F7),
+  progress file stores a reference per playthrough (name, file name, last sync – F7),
   not the contents; the parsed player is kept for the session only. Files of unsupported game
   versions give a clear message.
 - **PL4** Sync (SY): the sync dialog also opens with only a player loaded. Section "Inventory" (next to "Chests" and "Bestiary"):
@@ -930,12 +940,12 @@ Status: parser done (PL1, PL2), app integration in progress (PL3–PL5).
   290) and containers – via a searchable picker instead of a sidebar list. The drop data
   (`drops.json` sources with kind) and the generic filter groups (B4) are prepared for it.
 - **Wiki data updates:** decide how to handle new, changed and removed items when the data is
-  downloaded again. Tracking files store item keys (internal names), so renamed or removed
+  downloaded again. Progress files store item keys (internal names), so renamed or removed
   items would silently drop out of a playthrough. Ideas: keep versioned snapshots of the raw
   data (or a data version in the JSON files), a diff report between two downloads (added /
   changed / removed items, renamed keys), a key-alias list for renamed items, and a notice in
   the app when checked items no longer exist in the data.
-- **Cloud storage for the tracking file:** open and save the tracking file in Dropbox (first)
+- **Cloud storage for the progress file:** open and save the progress file in Dropbox (first)
   and Google Drive (later), for devices without a sync client (phones, tablets). No maintained
   library covers both for a browser-only app, so a small adapter per service (sign in, find,
   load, save): Dropbox with the official `dropbox` SDK (PKCE sign-in, long-lived token, app

@@ -6,7 +6,8 @@
 // "once a year" things are not used up.
 
 export type Season = 'halloween' | 'christmas' | 'birthday' | null
-export type LogoTheme = 'halloween' | 'christmas' | 'birthday' | 'aprilfools' | 'valentine' | null
+/** Seasonal looks of the logo; 'golden' is no season: the trophy of a completed playthrough. */
+export type LogoTheme = 'halloween' | 'christmas' | 'birthday' | 'aprilfools' | 'valentine' | 'golden' | null
 
 const override = (() => {
   try {

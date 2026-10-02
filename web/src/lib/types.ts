@@ -14,8 +14,6 @@ export interface Item {
   page: string
   url: string
   icon?: string
-  iconPlaced?: string
-  iconEquipped?: string
   categories: string[]
   subcategories: string[]
   obtain: string[]

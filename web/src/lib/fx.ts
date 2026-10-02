@@ -108,9 +108,11 @@ export function pixelSprite(rows: readonly string[], colors: Record<string, stri
   return { draw: (ctx) => ctx.drawImage(c, -w / 2, -h / 2) }
 }
 
-/** A wiki icon as a sprite (from the sprite sheets, else the wiki), `scale` times its size. */
-export function iconSprite(src: string | undefined, scale: number): Drawable {
-  const sprite = spriteOf(src)
+/** A wiki icon as a sprite (from the sprite sheets, else the wiki), `scale` times its size.
+ * `animated`: always the wiki's image - the sheets only have the first frame of a GIF (easter
+ * eggs: bees, critters). */
+export function iconSprite(src: string | undefined, scale: number, animated = false): Drawable {
+  const sprite = animated ? undefined : spriteOf(src)
   const img = new Image()
   img.src = sprite ? `${import.meta.env.BASE_URL}${sprite.file}` : (src ?? '')
   return {

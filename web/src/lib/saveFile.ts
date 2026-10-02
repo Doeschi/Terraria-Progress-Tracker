@@ -1,7 +1,7 @@
 import { z } from 'zod/mini'
 import { DIFFICULTIES, PLATFORM_IDS, type Difficulty, type PlatformId } from './types'
 
-// Tracking file format. When it changes in a released version, bump SAVE_VERSION and convert
+// Progress file format. When it changes in a released version, bump SAVE_VERSION and convert
 // older files when they are loaded.
 export const SAVE_FORMAT = 'terraria-progress-tracker'
 export const SAVE_VERSION = 1
@@ -95,7 +95,7 @@ export function parseSaveFile(text: string): SaveFile {
   }
   const version = Number(data.version)
   if (version > SAVE_VERSION) {
-    throw new SaveFileError('This file was made with a newer version of the tracker.')
+    throw new SaveFileError('This file was made with a newer version of Terraria Progress Tracker.')
   }
   if (version !== SAVE_VERSION) throw new SaveFileError(`Unsupported file version ${data.version}.`)
   const result = SaveFileSchema.safeParse(data)

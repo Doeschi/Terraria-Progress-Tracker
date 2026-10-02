@@ -22,7 +22,7 @@ const LIBRARIES: { name: string; url: string; what: string }[] = [
   { name: 'TanStack Table & Virtual', url: 'https://tanstack.com/', what: 'the item table' },
   { name: 'Zustand', url: 'https://github.com/pmndrs/zustand', what: 'app state' },
   { name: 'Fuse.js', url: 'https://www.fusejs.io/', what: 'fuzzy search' },
-  { name: 'Zod', url: 'https://zod.dev/', what: 'checking tracking files' },
+  { name: 'Zod', url: 'https://zod.dev/', what: 'checking progress files' },
   {
     name: 'browser-fs-access',
     url: 'https://github.com/GoogleChromeLabs/browser-fs-access',
@@ -69,8 +69,8 @@ export function AboutDialog({
         <DialogHeader>
           <DialogTitle>About Terraria Progress Tracker</DialogTitle>
           <DialogDescription>
-            Track your items and bestiary entries per playthrough. Everything runs in your browser; tracking and world
-            files are never uploaded.
+            Your progress on items and bestiary entries, per playthrough. Everything runs in your browser; progress and
+            game files are never uploaded.
           </DialogDescription>
         </DialogHeader>
         <div className="flex flex-col gap-4">

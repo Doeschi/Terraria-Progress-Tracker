@@ -234,6 +234,10 @@ const THEMES: Record<Exclude<LogoTheme, null>, ThemeArt> = {
     bar: (_i, shade) => (shade ? 'R' : 'P'),
   },
   aprilfools: { flip: true },
+  // items and bestiary complete (G8): a golden tree on a full golden bar
+  golden: {
+    palette: { G: '#f5c542', g: '#c9971c', S: '#d9ac3a', B: '#b8860b', b: '#8a6508' },
+  },
 }
 
 /** The bar (rows 11–14) with `fill` of its 14 inner pixels filled; the logo has 9. */

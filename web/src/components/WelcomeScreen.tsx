@@ -63,13 +63,13 @@ export function WelcomeScreen() {
   const features = [
     {
       icon: ListChecks,
-      title: 'Every item, tracked',
+      title: 'Every item, counted',
       text: `All ${itemCount.toLocaleString('en')} items from the Terraria Wiki – per playthrough, with its own platform, difficulty and game version.`,
     },
     {
       icon: SlidersHorizontal,
       title: 'Filters with live progress',
-      text: 'Categories, sources, vendors, bosses, events, biomes, rarity and updates – each with its own progress tracker.',
+      text: 'Categories, sources, vendors, bosses, events, biomes, rarity and updates – each with its own progress bar.',
     },
     {
       icon: Hammer,
@@ -127,7 +127,7 @@ export function WelcomeScreen() {
             className="justify-start"
             onClick={() => void openFileAction()}
           >
-            <FolderOpen /> Open tracking file…
+            <FolderOpen /> Open progress file…
           </Button>
           <Button
             size="lg"
@@ -138,7 +138,7 @@ export function WelcomeScreen() {
               newFile()
             }}
           >
-            <FilePlus /> Create new tracking file
+            <FilePlus /> Create new progress file
           </Button>
         </div>
 
@@ -146,7 +146,7 @@ export function WelcomeScreen() {
           <p className="flex items-center gap-2 text-xs text-muted-foreground">
             <ShieldCheck className="size-4 shrink-0" />
             <span>
-              Everything runs in your browser. Tracking files and game files are never uploaded; only item icons are
+              Everything runs in your browser. Progress files and game files are never uploaded; only item icons are
               loaded from the Terraria Wiki.
             </span>
           </p>

@@ -4,6 +4,7 @@ import { isNewYear, isNight, logoThemeOf, prefersReducedMotion } from '@/lib/sea
 import type { PlantStage } from '@/lib/logoArt'
 import { achievement, itemIcon } from '@/lib/eggs'
 import { confettiBurst } from '@/lib/confetti'
+import { useTrophies } from '@/lib/trophies'
 import { Logo } from '../Logo'
 import { LogoArt } from '../LogoArt'
 
@@ -11,13 +12,15 @@ import { LogoArt } from '../LogoArt'
 // progress bar a bit; after 10 clicks a tree grows out of it and stays in the logo; a few more
 // clicks chop it down. Only for this session; plain logo with easter eggs off.
 // Seasonal (lib/season.ts, `?date=` to test): the look of the logo and its tree, fireworks on
-// clicks at New Year, fireflies at night.
+// clicks at New Year, fireflies at night. A playthrough with all items and the whole bestiary
+// shows a golden tree (the trophy: it sways and sparkles, but cannot be chopped).
 
 const CLICKS_TO_GROW = 10
 const CHOPS = 3
 const LOGO_FILL = 9 // the bar of the normal logo
 const WOOD = ['#a8703a', '#6e4520', '#c48a4f', '#4cc96a']
 const FIREWORKS = ['#ffd23c', '#ff4b4b', '#4b8cff', '#ff6ee6', '#ffffff']
+const GOLD = ['#ffd23c', '#f5c542', '#fff1a8', '#ffffff']
 
 export function HeaderLogo() {
   const enabled = usePrefs((s) => s.layout.easterEggs)
@@ -29,6 +32,7 @@ export function HeaderLogo() {
   const plantRef = useRef<SVGGElement>(null)
   // fixed for the session (the date does not change while the page is open, near enough)
   const season = useMemo(() => ({ theme: logoThemeOf(), newYear: isNewYear(), night: isNight() }), [])
+  const golden = useTrophies((s) => s.all)
 
   if (!enabled) return <Logo size={32} />
 
@@ -103,6 +107,12 @@ export function HeaderLogo() {
   }
 
   const onClick = () => {
+    if (golden) {
+      const r = svgRef.current?.getBoundingClientRect()
+      if (r) confettiBurst(r.left + r.width / 2, r.top + r.height * 0.4, 24, 5, GOLD)
+      sway(6, 400)
+      return
+    }
     if (season.newYear) {
       const r = svgRef.current?.getBoundingClientRect()
       if (r) confettiBurst(r.left + r.width / 2, r.top + 4, 45, 6, FIREWORKS)
@@ -133,9 +143,9 @@ export function HeaderLogo() {
     >
       <LogoArt
         size={32}
-        stage={stage}
-        fill={fill}
-        theme={season.theme}
+        stage={golden ? 'tree' : stage}
+        fill={golden ? 14 : fill}
+        theme={golden ? 'golden' : season.theme}
         svgRef={svgRef}
         plantRef={plantRef}
         style={{ transformOrigin: '50% 50%' }}

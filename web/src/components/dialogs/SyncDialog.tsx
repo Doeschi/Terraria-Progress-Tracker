@@ -436,7 +436,7 @@ function UnknownItems({ unknown }: { unknown: UnknownItem[] }) {
                 </div>
                 {known ? (
                   <p className="pl-10 text-xs text-muted-foreground">
-                    Missing from the wiki's item list (the name comes from its recipes), so it is not tracked.
+                    Missing from the wiki's item list (the name comes from its recipes), so it has no progress here.
                   </p>
                 ) : (
                   u.id > maxId && (

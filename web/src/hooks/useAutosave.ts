@@ -4,7 +4,7 @@ import { useStore } from '@/store'
 import { usePrefs } from '@/lib/prefs'
 import { canSaveInPlace } from '@/lib/files'
 
-// Autosave (opt-in, Chrome/Edge): writes the tracking file in place every two
+// Autosave (opt-in, Chrome/Edge): writes the progress file in place every two
 // minutes while there are unsaved changes, and when the tab is hidden or the page
 // is closed. Never shows a dialog - without write permission it pauses.
 
