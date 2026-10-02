@@ -99,6 +99,10 @@ GitHub Actions.
   "Enemy drops" uses the Drops table (`drop:npc`, not for blocks/furniture/equipment),
   "Critters" the NPCs table (`npc:critter`). The build runs the mapping twice so rules can use
   drop information (`drop:npc`, `drop:boss`).
+- **D18b** Vanity subcategories: Head, Body and Legs (the wiki's equipment slot: social helmet /
+  shirt / pants), Accessories, Music boxes, Monoliths & sky effects (the wiki's "Monoliths"
+  page) – together every vanity item – plus Boss masks (the "Masks" page) and Voice
+  accessories (the "Voice accessories" page), which are also in Head / Accessories.
 - **D18a** Category "Developer items" (not an obtain method – they come from treasure bags): the
   items the wiki tags as developer items, plus the developer wings, which sit on the shared
   "Wings" page without that tag and are matched by developer name ("Red's *", …; Jim's Cap is
@@ -522,6 +526,14 @@ GitHub Actions.
   phases as icons). Drop rows show their condition names below the source. Table column "Sold
   by" shows the vendors with short condition names; "Time of day" becomes "Conditions" (moon
   phases as the wiki's moon icons, the name on hover).
+- **CO6** Rows only in special world seeds (shop rows and drop rows with a seed condition, e.g.
+  the Princess's stock "In Celebration Mk 10 and Zenith worlds", "I am error" chests, Remix
+  drops) are shown in the detail panel, but count for no filter and no milestone: no vendor,
+  obtain method, event, biome, time of day, condition, boss or container. A wiki tag that only
+  these rows explain is dropped too (e.g. "Found in chests & pots" of the Chain Knife). A row
+  that also describes the regular case in a sentence without a seed ("Always available. Only
+  … in worlds with For the Worthy.", "In a Jungle. Anywhere in worlds with …") is a regular row
+  with the conditions of those sentences.
 
 ## MS – Milestones ("available after")
 
@@ -546,8 +558,10 @@ GitHub Actions.
     quest rewards, …) → Start
   - minimum: Hardmode items → Wall of Flesh; `[milestone_items]` (name patterns) for what the
     data does not know, e.g. mining: Hellstone → evil boss, Hardmode ores → Wall of Flesh,
-    Chlorophyte Ore → all three mechanical bosses; `[milestone_sources]` for enemies that
-    appear later than their biome says (post-Plantera Dungeon enemies)
+    Chlorophyte Ore → all three mechanical bosses; enemies in the wiki's category "Hardmode-only
+    NPCs" → Wall of Flesh (by name or wiki page); `[milestone_sources]` for enemies that appear
+    later than their biome says (post-Plantera Dungeon enemies, Old One's Army tier 2) and for
+    exceptions to the category (pre-Hardmode enemies on a shared page, missing ones)
   The build writes `milestones.json` (with item counts) and lists Hardmode items whose sources
   say Start, to find missing rules.
 - **MS3** Filter group "Progression" (replaces Pre-Hardmode / Hardmode): the milestones with
@@ -559,6 +573,23 @@ GitHub Actions.
   obtain method's name as in "Obtained by", e.g. "Collected in the world"). Table column "Available after"
   (first of group Source, with the milestone icon, the reason on hover), sorted in milestone
   order.
+- **MS5** Progress of the loaded world: the world file stores which bosses were defeated
+  (`downed…` flags, Hardmode, the Old One's Army tiers). A milestone counts as reached when its
+  boss is defeated (Eater of Worlds / Brain of Cthulhu: either; Wall of Flesh: Hardmode; any /
+  all three mechanical bosses; Duke Fishron / Empress of Light: either). Eater of Worlds and
+  Brain of Cthulhu share one flag: the world's evil decides (both in a "drunk world").
+  Read again with every load / reload of the world; nothing is saved.
+- **MS6** With a loaded world, the Progression group marks reached milestones (icon, tooltip
+  "Reached in <world>") and highlights the next one; the Bosses group marks defeated bosses,
+  event bosses included (Pumpking, Ice Queen, Martian Saucer, the pillars, Old One's Army, …).
+- **MS7** Option "Available now" at the top of the Progression group (only with a loaded
+  world): the items whose milestone is reached in the world – also when bosses were defeated
+  out of order. Works like the other options (counts, progress, combinable); without a loaded
+  world it is ignored. Not celebrated as completed and no completion date (it changes with the
+  world). Limitation: an item has one milestone (the latest of what it needs, in the usual
+  order), so "available now" can be slightly early when bosses were skipped.
+- **MS8** Setting "Dim items not available yet" (Layout, off by default): with a loaded world,
+  item rows whose milestone is not reached are dimmed in the list.
 
 ## ID – Item detail panel
 
@@ -889,18 +920,12 @@ Status: parser done (PL1, PL2), app integration in progress (PL3–PL5).
 - **Searchable source picker:** filter by any drop source, not only bosses – all enemies (about
   290) and containers – via a searchable picker instead of a sidebar list. The drop data
   (`drops.json` sources with kind) and the generic filter groups (B4) are prepared for it.
-- **Vendor conditions:** the shop tables on the vendor wiki pages (`{{shop row|item|condition}}`)
-  give when an item is sold (moon phase, night/day, Hardmode, after defeating a boss, biome …).
-  First step: show the condition next to the vendor in the table ("Sold by") and the detail
-  panel, moon phases with icons. Filters on these conditions: to be discussed.
 - **Wiki data updates:** decide how to handle new, changed and removed items when the data is
   downloaded again. Tracking files store item keys (internal names), so renamed or removed
   items would silently drop out of a playthrough. Ideas: keep versioned snapshots of the raw
   data (or a data version in the JSON files), a diff report between two downloads (added /
   changed / removed items, renamed keys), a key-alias list for renamed items, and a notice in
   the app when checked items no longer exist in the data.
-- **Milestones from the world:** read which bosses the attached world has defeated (the world
-  file stores the "downed" flags) and highlight / filter "available now" (MS).
 - **Cloud storage for the tracking file:** open and save the tracking file in Dropbox (first)
   and Google Drive (later), for devices without a sync client (phones, tablets). No maintained
   library covers both for a browser-only app, so a small adapter per service (sign in, find,
@@ -912,6 +937,9 @@ Status: parser done (PL1, PL2), app integration in progress (PL3–PL5).
   Drive version) and ask before overwriting. Same autosave rules as the local file. Open
   questions: visible file or hidden app folder; File-menu entries and "Continue" for cloud
   files. (Already works today on PCs: save the file in the Dropbox / Drive sync folder.)
+- **Armor and vanity sets:** show the set an item belongs to in the detail panel (the wiki's
+  shared set pages, e.g. "Pirate set", about 124 for vanity), with its other pieces. With it a
+  category "Sets": every armor or vanity item that is part of a set.
 - **Player file extras (PL):** Journey research – column with the progress ("37/100"), filter
   "fully researched / not yet", optional sync of researched items; chest search also finds items
   on the player (inventory, banks, loadouts – no map marker); several players per playthrough

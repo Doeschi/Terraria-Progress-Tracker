@@ -47,6 +47,8 @@ export interface LoadedWorld extends WorldDims {
   displaysAvailable: boolean
   /** the world's bestiary; null if it could not be read */
   bestiary: WorldBestiary | null
+  /** boss ids the world has defeated (its "downed" flags, see worldProgress.ts) */
+  defeated: string[]
 }
 
 export interface WorldBestiary {

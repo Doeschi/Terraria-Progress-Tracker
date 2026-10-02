@@ -257,6 +257,12 @@
       "count": 0
     },
     {
+      "id": "seed-i-am-error",
+      "name": "I am error seed",
+      "group": "seed",
+      "count": 0
+    },
+    {
       "id": "seed-other",
       "name": "Special seed",
       "group": "seed",

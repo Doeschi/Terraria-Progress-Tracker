@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react'
 import { compareVersions } from '@/lib/availability'
-import { chanceFor, dropsFor, type DropKind } from '@/lib/drops'
+import { chanceFor, regularDrops, type DropKind } from '@/lib/drops'
 import type { Difficulty, GameData, Item, PlatformId } from '@/lib/types'
 import { Coins, RarityIcon, WikiIcon } from '../common'
 import { formatDate, nameOf } from '@/lib/format'
@@ -70,11 +70,12 @@ export function buildColumns(data: GameData): ItemColumn[] {
   const obtain = names(data.obtain)
   const vendor = names(data.vendors)
   const bestChance = (i: Item, difficulty: Difficulty, kind: DropKind) => {
-    const best = dropsFor(data, i, difficulty, kind)[0]
+    const best = regularDrops(data, i, difficulty, kind)[0]
     return best ? (chanceFor(best, difficulty) ?? 0) : undefined
   }
+  // without the rows only in special seeds, like the filters (CO6); the detail panel shows them
   const dropList = (i: Item, difficulty: Difficulty, kind: DropKind) =>
-    dropsFor(data, i, difficulty, kind)
+    regularDrops(data, i, difficulty, kind)
       .map((d) => {
         const c = chanceFor(d, difficulty)
         return `${data.dropSources.get(d.source)?.name ?? d.source}${c !== undefined ? ` ${c}%` : ''}`

@@ -329,6 +329,70 @@
     "parent": "accessory"
   },
   {
+    "id": "vanity-head",
+    "name": "Head",
+    "icon": "https://terraria.wiki.gg/images/Top_Hat.png",
+    "count": 179,
+    "parent": "vanity"
+  },
+  {
+    "id": "vanity-body",
+    "name": "Body",
+    "icon": "https://terraria.wiki.gg/images/Tuxedo_Shirt.png",
+    "count": 121,
+    "parent": "vanity"
+  },
+  {
+    "id": "vanity-legs",
+    "name": "Legs",
+    "icon": "https://terraria.wiki.gg/images/Tuxedo_Pants.png",
+    "count": 99,
+    "parent": "vanity"
+  },
+  {
+    "id": "vanity-accessory",
+    "name": "Accessories",
+    "icon": "https://terraria.wiki.gg/images/Red_Cape.png",
+    "count": 47,
+    "parent": "vanity"
+  },
+  {
+    "id": "vanity-music-box",
+    "name": "Music boxes",
+    "icon": "https://terraria.wiki.gg/images/Music_Box.png",
+    "count": 101,
+    "parent": "vanity"
+  },
+  {
+    "id": "vanity-monolith",
+    "name": "Monoliths & sky effects",
+    "icon": "https://terraria.wiki.gg/images/Void_Monolith.png",
+    "count": 11,
+    "parent": "vanity"
+  },
+  {
+    "id": "boss-mask",
+    "name": "Boss masks",
+    "icon": "https://terraria.wiki.gg/images/Eye_of_Cthulhu_Mask.png",
+    "count": 21,
+    "parent": "vanity"
+  },
+  {
+    "id": "voice-accessory",
+    "name": "Voice accessories",
+    "icon": "https://terraria.wiki.gg/images/Cow_Bell.png",
+    "count": 14,
+    "parent": "vanity"
+  },
+  {
+    "id": "other-vanity",
+    "name": "Other vanity",
+    "icon": "https://terraria.wiki.gg/images/Unicorn_on_a_Stick.png",
+    "count": 5,
+    "parent": "vanity",
+    "fallback": true
+  },
+  {
     "id": "hair-dye",
     "name": "Hair dyes",
     "icon": "https://terraria.wiki.gg/images/Life_Hair_Dye.png",

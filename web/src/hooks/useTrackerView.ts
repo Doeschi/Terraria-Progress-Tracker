@@ -15,6 +15,8 @@ import {
 import { itemsForPlaythrough } from '@/lib/availability'
 import { bossesBySource, itemBosses, itemContainers } from '@/lib/drops'
 import type { Item } from '@/lib/types'
+import { AVAILABLE_NOW } from '@/lib/worldProgress'
+import { useWorldProgress } from './useWorldProgress'
 
 export interface TrackerView extends Counts {
   visible: Item[]
@@ -52,6 +54,8 @@ export function useTrackerView(): TrackerView | null {
   const search = useDeferredValue(useStore((s) => s.search))
   const view = useStore((s) => s.view)
   const progressionMode = usePrefs((s) => s.progressionMode)
+  // milestones reached in the loaded world: the option "Available now" (MS7)
+  const reached = useWorldProgress()?.reached ?? null
 
   // items that exist in this playthrough (platform, difficulty, game version)
   const platform = pt?.platform
@@ -72,7 +76,8 @@ export function useTrackerView(): TrackerView | null {
     const milestonesOf = (item: Item) => {
       const n = item.milestone ? order.indexOf(item.milestone) : -1
       if (n < 0) return []
-      return progressionMode === 'upTo' ? order.slice(n) : [order[n]]
+      const own = progressionMode === 'upTo' ? order.slice(n) : [order[n]]
+      return reached?.has(order[n]) ? [AVAILABLE_NOW, ...own] : own
     }
     return new Map(
       data.items.map((i) => [
@@ -88,7 +93,7 @@ export function useTrackerView(): TrackerView | null {
         ),
       ]),
     )
-  }, [data, difficulty, progressionMode])
+  }, [data, difficulty, progressionMode, reached])
   const searcher = useMemo(() => createSearch(platformItems), [platformItems])
   const searchMode = usePrefs((s) => s.searchMode)
   const ranks = useMemo(() => searchRanks(searcher, search, searchMode), [searcher, search, searchMode])
@@ -129,6 +134,15 @@ export function useTrackerView(): TrackerView | null {
     return out
   }, [data, platform, chests, player])
 
+  // without a loaded world "Available now" is ignored (it stays selected for the next load)
+  const effectiveSelection = useMemo(
+    () =>
+      reached || !selection.progression.includes(AVAILABLE_NOW)
+        ? selection
+        : { ...selection, progression: selection.progression.filter((id) => id !== AVAILABLE_NOW) },
+    [selection, reached],
+  )
+
   // independent of view mode and sort order
   const counts = useMemo(
     () =>
@@ -137,10 +151,10 @@ export function useTrackerView(): TrackerView | null {
         entriesOf: (item) => ({ ...entries.get(item.key)!, crafting: crafting.get(item.key) ?? NONE }),
         checked,
         ignored,
-        selection,
+        selection: effectiveSelection,
         searchRank: ranks,
       }),
-    [platformItems, entries, crafting, checked, ignored, selection, ranks],
+    [platformItems, entries, crafting, checked, ignored, effectiveSelection, ranks],
   )
 
   const ordered = useMemo(

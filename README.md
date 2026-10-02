@@ -94,7 +94,8 @@ change.
 | "Dye Trader", section "Rewards" | the 33 Strange Plant rewards and the boss each needs |
 
 Also scraped: the rendered HTML of "NPC IDs" (internal NPC names and ids – the keys of the
-bestiary in world files) and the image lists of "Rarity", "Coins" and "Difficulty" (their icons).
+bestiary in world files), the image lists of "Rarity", "Coins" and "Difficulty" (their icons) and
+the pages in the category "Hardmode-only NPCs" (their drops count from the Wall of Flesh).
 
 **Images.** Icons are links to the wiki's image files (`https://terraria.wiki.gg/images/…`),
 built from the file names in the tables. `check_icons.py` asks the API about all of them (in
@@ -146,10 +147,11 @@ every run – editing it and running step 2 again is enough.
 `<field>:<value>` in lower case (`type:weapon`, `listcat:broadswords`, `tag:vendor:witch doctor`,
 `hardmode:1`). The build adds more keys: `equip:<field>` (Equipinfo), `page:<wiki page>`,
 `npc:critter`, `drop:npc`, `drop:boss`. An entry's `match` list says which keys put an item into
-it (`*` is a wildcard). Example: the Starfury has `type: weapon^crafting material`,
-`listcat: broadswords^…^loot items` and `tag: loot^bag loot`, so it ends up in
-`[categories.weapon]` (`type:weapon`), `[subcategories.broadsword]` (`listcat:broadswords`),
-`[obtain.loot]` (`tag:loot`) and `[obtain.bag]` (`tag:bag loot`).
+it (`*` is a wildcard). Example: the Shuriken has `type: weapon`,
+`listcat: loot items^ranged weapons` and `tag: loot^vendor^vendor:merchant`, so it ends up in
+`[categories.weapon]` (`type:weapon`), `[subcategories.ranged]` (`listcat:ranged weapons`),
+`[obtain.loot]` (`tag:loot`), `[obtain.vendor]` (`tag:vendor`) and `[vendors.merchant]`
+(`tag:vendor:merchant`).
 
 | Section | What it does |
 |---------|--------------|
@@ -164,7 +166,7 @@ it (`*` is a wildcard). Example: the Starfury has `type: weapon^crafting materia
 | `[flags]` | yes/no fields of an item: `hardmode`, `hardmodeOnly`, `unobtainable`, `banner`, `questFish` |
 | `[drops]` | which source kinds are used; `boss_ignore_items` (coins and potions do not count for a boss) |
 | `[containers.*]`, `[container_icons]` | the "Found in" groups (chests, crates, other, trees) and icons for sources that are no item (trees → their wood) |
-| `[unobtainable]` | items the wiki marks unobtainable that are obtainable after all |
+| `[unobtainable]` | overrides of the wiki: items it marks unobtainable that are obtainable after all (`obtainable`), and items that are unobtainable although it does not say so (`unobtainable`, e.g. the Red Envelope: never really added to the game) |
 | `[recipes]`, `[recipe_groups]`, `[stations]` | stations that need no item (water, lava, "By Hand"), "Any …" groups the wiki page lacks, and which items provide a station (a Mythril Anvil also counts as an Iron Anvil) |
 | `[recipe_items]` | template items for the items only known from recipes ("* Door" → Ash Wood Door) |
 | `[bestiary]` | entry types (town, critter, enemy, boss) and the bestiary's own filters → our biomes, times and events |

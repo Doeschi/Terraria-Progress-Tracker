@@ -1,6 +1,8 @@
 """Milestones (milestones.json): the earliest point of a typical playthrough from which an item can
 be obtained - see [milestones] in mapping.toml and REQUIREMENTS.md (MS)."""
-from .common import image_url, log, norm_name, slug
+from urllib.parse import unquote
+
+from .common import WIKI, image_url, log, norm_name, slug
 
 # obtain methods that have no data of their own here: available from the start (the item's
 # minimum still applies, e.g. Hardmode fish); the reason is the method's name in [obtain]
@@ -8,7 +10,7 @@ PLAIN_SOURCES = {"fishing", "quest-reward", "plunder", "loot", "crafted", "vendo
 
 
 class Milestones:
-    def __init__(self, mapping, bosses):
+    def __init__(self, mapping, bosses, hardmode_npcs=()):
         self.entries = mapping.milestones                   # id -> {name, bosses, events, ...}
         self.order = list(self.entries)
         self.index = {mid: n for n, mid in enumerate(self.order)}
@@ -29,6 +31,9 @@ class Milestones:
         self.obtain_names = {oid: o.get("name", oid) for oid, o in mapping.sections["obtain"].items()}
         self.container_milestone = {slug(k): v for k, v in mapping.container_milestones.items()}
         self.source_milestone = {slug(k): v for k, v in mapping.milestone_sources.items()}
+        # the wiki's "Hardmode-only NPCs": enemy names and pages (a group page like "Mimics" also
+        # holds pre-Hardmode enemies - [milestone_sources] overrides those)
+        self.hardmode_npcs = {norm_name(n) for n in hardmode_npcs}
         # item name pattern -> milestone, or {milestone, reason}
         self.item_rules = [(norm_name(p), m if isinstance(m, str) else m["milestone"],
                             None if isinstance(m, str) else m.get("reason"))
@@ -76,9 +81,15 @@ class Milestones:
                 base = self.index["skeletron"]
             else:
                 base = 0
+            if source["id"] not in self.source_milestone and self.hardmode_only(source):
+                base = max(base, self.index["wall-of-flesh"])
             base = max(base, self.of_events(d.get("events", [])))
             reason = f"dropped by {name}" if source["kind"] == "npc" else f"from the {name}"
         return max(base, cond), reason
+
+    def hardmode_only(self, source):
+        page = unquote(source.get("url", "")[len(WIKI):]).replace("_", " ")
+        return norm_name(source["name"]) in self.hardmode_npcs or norm_name(page) in self.hardmode_npcs
 
     def compute(self, items, drops, shops, recipes, rewards):
         """Set item["milestone"] and item["milestoneVia"] (reason)."""

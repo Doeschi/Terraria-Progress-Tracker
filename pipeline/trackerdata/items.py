@@ -20,6 +20,7 @@ from .common import (
     number,
     page_url,
     rarity,
+    seed_only,
     read_csv,
     strip_markup,
 )
@@ -195,9 +196,10 @@ def build_item(row, mapping, schema, exclusive, history, equip, extra_keys=()):
     if norm_name(row["name"]) in mapping.obtainable:
         flags["unobtainable"] = False
         groups["obtain"] = [o for o in groups["obtain"] if o != "unobtainable"]
-    elif flags.get("unobtainable"):
+    elif norm_name(row["name"]) in mapping.unobtainable or flags.get("unobtainable"):
+        flags["unobtainable"] = True
         groups["obtain"] = ["unobtainable"]
-    unmatched = {k for k in unmatched if not k.startswith(("equip:", "page:", "npc:", "drop:"))}
+    unmatched = {k for k in unmatched if not k.startswith(("equip:", "page:", "npc:", "drop:", "bodyslot:"))}
     platforms, known = platforms_of(row, exclusive)
     page = html.unescape(row["_pageName"])
     name = html.unescape(row["name"])
@@ -278,15 +280,28 @@ def derive_obtain(items, drops, shimmer_results, obtain_sections):
     from_containers, from_shimmer, names); items with none at all get the fallback entry."""
     order = list(obtain_sections)
     fallback = next((oid for oid, o in obtain_sections.items() if o.get("fallback")), None)
-    added = Counter()
+    added, removed = Counter(), Counter()
     for item in items:
+        # unobtainable items only belong to "Unobtainable" (see build_item)
+        if item.get("unobtainable"):
+            continue
         have = set(item["obtain"])
-        kinds, groups = set(), set()
+        # rows only in special world seeds do not make an obtain method (e.g. "I am error" chests)
+        kinds, groups, seed_kinds, seed_groups = set(), set(), set(), set()
         for d in drops.drops.get(item["key"], ()):
             source = drops.sources[d["source"]]
-            kinds.add(source["kind"])
+            seed = seed_only(d)
+            (seed_kinds if seed else kinds).add(source["kind"])
             if source.get("group"):
-                groups.add(source["group"])
+                (seed_groups if seed else groups).add(source["group"])
+        # the wiki tags an item from its drop rows too: a method it has only from seed-only rows goes
+        for oid in list(have):
+            o = obtain_sections.get(oid, {})
+            drops_of, containers_of = set(o.get("from_drops", ())), set(o.get("from_containers", ()))
+            if ((seed_kinds & drops_of or seed_groups & containers_of)
+                    and not (kinds & drops_of or groups & containers_of)):
+                have.discard(oid)
+                removed[oid] += 1
         name = norm_name(item["name"])
         for oid, o in obtain_sections.items():
             if oid in have:
@@ -296,11 +311,12 @@ def derive_obtain(items, drops, shimmer_results, obtain_sections):
                     or any(fnmatch.fnmatchcase(name, norm_name(p)) for p in o.get("names", ()))):
                 have.add(oid)
                 added[oid] += 1
-        if fallback and not have and not item.get("unobtainable"):
+        if fallback and not have:
             have.add(fallback)
             added[fallback] += 1
         item["obtain"] = sorted(have, key=order.index)
     log(f"  obtain methods added from drops, shimmer and names: {dict(added)}")
+    log(f"  obtain methods only from special seeds, removed: {dict(removed)}")
 
 
 def section_file(section, entries, items):

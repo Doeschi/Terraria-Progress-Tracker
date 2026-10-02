@@ -133,6 +133,8 @@ export interface DropSource {
   /** containers only: their group (containers.json id), e.g. "chest" */
   group?: string
   icon?: string
+  /** its wiki page */
+  url?: string
   npcId?: number
   /** where / when the enemy spawns (biomes.json / times.json ids) */
   biomes?: string[]

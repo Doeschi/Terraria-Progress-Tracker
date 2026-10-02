@@ -22,6 +22,8 @@ Outputs (in --out, default raw/ next to this script):
                    the vendor pages: their shops with the conditions per item)
   page_html.json   rendered HTML of a few wiki pages (NPC IDs: internal names,
                    ids and images of all NPCs)
+  page_categories.json  the pages in a few wiki categories (Hardmode-only NPCs: enemies
+                   that only appear in Hardmode, for the milestones)
 
 Requires:  pip install requests
 Contact:   wiki.gg asks for a contact in the User-Agent. Give it with --contact, the
@@ -59,6 +61,8 @@ DEFAULT_WIKITEXT = ["Alternative crafting ingredients", "Bestiary/List", "MediaW
 MAPPING_FILE = Path(__file__).resolve().parent / "mapping.toml"
 # Pages whose rendered HTML is saved (tables filled by templates/queries).
 DEFAULT_HTML = ["NPC IDs"]
+# Categories whose pages are listed.
+DEFAULT_CATEGORIES = ["Hardmode-only NPCs"]
 PAGE_SIZE = 500
 # Semicolon-separated CSV; values containing ";" are quoted by the csv module.
 CSV_DELIMITER = ";"
@@ -187,6 +191,17 @@ class Wiki:
         data = self.get(action="parse", page=page, prop="text")
         return data.get("parse", {}).get("text", "")
 
+    def category_members(self, category):
+        """Titles of the main-namespace pages in a category."""
+        titles, cont = [], {}
+        while True:
+            data = self.get(action="query", list="categorymembers", cmtitle=f"Category:{category}",
+                            cmnamespace="0", cmlimit="500", **cont)
+            titles += [m["title"] for m in data["query"]["categorymembers"]]
+            if "continue" not in data:
+                return titles
+            cont = {"cmcontinue": data["continue"]["cmcontinue"]}
+
     def download(self, table, fields):
         rows, offset = [], 0
         while True:
@@ -229,6 +244,8 @@ def main():
                          "pages of mapping.toml); added to the pages saved before")
     ap.add_argument("--html", nargs="*", default=DEFAULT_HTML,
                     help="wiki pages whose rendered HTML is saved (default: 'NPC IDs')")
+    ap.add_argument("--categories", nargs="*", default=DEFAULT_CATEGORIES,
+                    help="wiki categories whose pages are listed (default: 'Hardmode-only NPCs')")
     ap.add_argument("--delay", type=float, default=0.5, help="seconds between requests")
     ap.add_argument("--contact", help="contact for the wiki's User-Agent (default: WIKI_CONTACT, "
                                       "contact.txt or the project URL)")
@@ -274,6 +291,14 @@ def main():
         html_path = args.out / "page_html.json"
         html_path.write_text(json.dumps(texts, indent=1, ensure_ascii=False), encoding="utf-8")
         log(f"wrote {html_path}")
+
+    if args.categories:
+        log("Reading categories…")
+        cats_path = args.out / "page_categories.json"
+        cats = json.loads(cats_path.read_text(encoding="utf-8")) if cats_path.exists() else {}
+        cats.update({c: wiki.category_members(c) for c in args.categories})
+        cats_path.write_text(json.dumps(cats, indent=1, ensure_ascii=False), encoding="utf-8")
+        log(f"wrote {cats_path}")
 
     if schemas:
         # merge, so downloading only some tables keeps the schemas of the others

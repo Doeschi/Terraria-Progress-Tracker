@@ -26,9 +26,18 @@ export function dropsFor(data: GameData, item: Item, difficulty: Difficulty, kin
     .sort((a, b) => (chanceFor(b, difficulty) ?? -1) - (chanceFor(a, difficulty) ?? -1))
 }
 
+/** Rows only in special world seeds ("I am error" chests, Remix drops): shown in the detail panel,
+ * but they count for no filter, table column or expected drops (CO6). */
+export const seedOnly = (d: Drop) => !!d.conditions?.some((c) => c.startsWith('seed-'))
+
+/** The item's drops in this difficulty without the rows only in special seeds. */
+export function regularDrops(data: GameData, item: Item, difficulty: Difficulty, kind?: DropKind): Drop[] {
+  return dropsFor(data, item, difficulty, kind).filter((d) => !seedOnly(d))
+}
+
 /** Containers (source ids) the item is found in, in this difficulty. */
 export function itemContainers(data: GameData, item: Item, difficulty: Difficulty): string[] {
-  return [...new Set(dropsFor(data, item, difficulty, 'found').map((d) => d.source))]
+  return [...new Set(regularDrops(data, item, difficulty, 'found').map((d) => d.source))]
 }
 
 /** The game mode whose chances apply; Journey shows Normal (its slider can use all). */
@@ -74,7 +83,7 @@ export function itemBosses(
 ): string[] {
   if (data.bossIgnoreItems.has(item.key)) return []
   const ids = new Set<string>()
-  for (const d of dropsFor(data, item, difficulty)) for (const b of bySource.get(d.source) ?? []) ids.add(b)
+  for (const d of regularDrops(data, item, difficulty)) for (const b of bySource.get(d.source) ?? []) ids.add(b)
   return data.bosses.filter((b) => ids.has(b.id)).map((b) => b.id)
 }
 

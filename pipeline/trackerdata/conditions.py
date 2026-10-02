@@ -4,7 +4,7 @@ import html
 import re
 from collections import Counter, defaultdict
 
-from .common import OTHER_SOURCES, image_url, log, norm_name, slug, strip_markup
+from .common import OTHER_SOURCES, image_url, log, norm_name, seed_only, slug, strip_markup
 
 # words that negate the rest of a clause: "before defeating [[Golem]]", "except [[Remix]] worlds";
 # "defeated on the same day as the [[Wall of Flesh]]" is no "after" condition either
@@ -242,6 +242,13 @@ def shop_rows(wikitext_pages, vendors, resolve, conditions):
                 continue
             cond = args[1] if len(args) > 1 else ""
             parsed = conditions.parse(cond)
+            if seed_only({"conditions": parsed["condition"]}):
+                # a sentence without a seed ("Always available.", "In a Jungle.") is the regular
+                # case, the others describe special seeds: a regular row with those conditions
+                sentences = [x for x in re.split(r"(?<=\.)\s+|<br\s*/?>", cond) if strip_markup(x).strip(" .")]
+                regular = [x for x in sentences if not seed_only({"conditions": conditions.parse(x)["condition"]})]
+                if regular and len(regular) < len(sentences):
+                    parsed = conditions.parse(" ".join(regular))
             row = {"vendor": vid, "text": condition_text(cond) or None,
                    "conditions": parsed["condition"], "moons": parsed["moons"],
                    "events": parsed["event"], "biomes": parsed["biome"]}
@@ -308,11 +315,10 @@ def required_conditions(item, rows, drops, conditions, rewards=None):
     Sources: shop rows (not those only in special seeds), drops (an enemy's spawn times count
     as the drop's; containers are never restricted) and obtain methods without such data
     (crafting, fishing, ...; vendors without a shop row) as unrestricted."""
-    sources = []
-    for r in rows:
-        if not any(c.startswith("seed-") for c in r["conditions"]):
-            sources.append(set(r["conditions"]))
+    sources = [set(r["conditions"]) for r in rows if not seed_only(r)]
     for d in drops.drops.get(item["key"], []):
+        if seed_only(d):
+            continue
         source = drops.sources[d["source"]]
         if source["kind"] == "container":
             sources.append(set())
@@ -346,10 +352,20 @@ def apply_conditions(items, drops, shops, conditions, mapping, rewards=None):
     can be obtained), conditions (only obtainable then, see required_conditions), eventOnly."""
     event_order, biome_order = list(mapping.sections["events"]), list(mapping.sections["biomes"])
     by_key = {i["key"]: i for i in items}
-    added_vendors = 0
+    added_vendors = removed_vendors = 0
     for key, item in by_key.items():
         events, biomes = set(item["events"]), set(item["biomes"])
-        rows = shops.get(key, [])
+        # rows only in special world seeds count for nothing (CO6): a vendor that has only such
+        # rows is no vendor of the item (e.g. the Princess's Terragrim)
+        all_rows = shops.get(key, [])
+        rows = [r for r in all_rows if not seed_only(r)]
+        seed_vendors = {r["vendor"] for r in all_rows} - {r["vendor"] for r in rows}
+        if seed_vendors & set(item["vendors"]):
+            removed_vendors += len(seed_vendors & set(item["vendors"]))
+            item["vendors"] = [v for v in item["vendors"] if v not in seed_vendors]
+        # sold only in special seeds (also when the wiki tags it just "vendor"): not bought
+        if all_rows and not rows and not item["vendors"] and "vendor" in item["obtain"]:
+            item["obtain"].remove("vendor")
         for r in rows:
             if r["vendor"] not in item["vendors"]:
                 item["vendors"].append(r["vendor"])
@@ -360,15 +376,13 @@ def apply_conditions(items, drops, shops, conditions, mapping, rewards=None):
             item["obtain"].append("vendor")
         for d in drops.drops.get(key, []):
             # container drops (chest contents in special seeds, fruit at night) only show theirs
-            if drops.sources[d["source"]]["kind"] != "container":
+            if drops.sources[d["source"]]["kind"] != "container" and not seed_only(d):
                 events.update(d.get("events", []))
                 biomes.update(d.get("biomes", []))
         item["conditions"] = required_conditions(item, rows, drops, conditions, rewards)
         item["events"] = [e for e in event_order if e in events]
         item["biomes"] = [b for b in biome_order if b in biomes]
-        # event only: every drop (see derive_events) and every shop row is bound to an event;
-        # rows only in special world seeds do not count (e.g. Lucky Coin from the Princess)
-        rows = [r for r in rows if not any(c.startswith("seed-") for c in r["conditions"])]
+        # event only: every drop (see derive_events) and every shop row is bound to an event
         if rows:
             shop_events = all(r["events"] for r in rows)
             only_shops = not (OTHER_SOURCES - {"vendor"}) & set(item["obtain"]) and key not in drops.drops
@@ -377,7 +391,7 @@ def apply_conditions(items, drops, shops, conditions, mapping, rewards=None):
             elif shop_events and (only_shops or item.get("eventOnly")):
                 item["eventOnly"] = True
     log(f"  shops: {sum(len(v) for v in shops.values())} rows for {len(shops)} items "
-        f"({added_vendors} vendors added); conditions for "
+        f"({added_vendors} vendors added, {removed_vendors} only in special seeds removed); conditions for "
         f"{sum(1 for i in items if i['conditions'])} items")
     if conditions.unmapped:
         log(f"  condition links not mapped (add them to mapping.toml or [conditions] ignore_links): "

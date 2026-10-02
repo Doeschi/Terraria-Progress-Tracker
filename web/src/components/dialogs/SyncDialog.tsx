@@ -1,4 +1,5 @@
-import { useMemo, useState } from 'react'
+import { useMemo, useRef, useState } from 'react'
+import { useVirtualizer } from '@tanstack/react-virtual'
 import { toast } from 'sonner'
 import { useActivePlaythrough, useActivePlayer, useActiveWorld, useStore } from '@/store'
 import { useUi, type SyncSection } from '@/ui'
@@ -509,24 +510,40 @@ interface Row {
   detail?: string
 }
 
+/** Height of a row (28 px icon, padding, border) - the lists are virtualized: thousands of rows
+ * (e.g. everything checked but not found) would take seconds to render at once. */
+const ROW_HEIGHT = 41
+
 function Rows({ rows, onToggle, empty }: { rows: Row[]; onToggle: (id: string, on: boolean) => void; empty: string }) {
+  const scrollRef = useRef<HTMLDivElement>(null)
+  const virtualizer = useVirtualizer({
+    count: rows.length,
+    getScrollElement: () => scrollRef.current,
+    estimateSize: () => ROW_HEIGHT,
+    overscan: 10,
+  })
   if (!rows.length)
     return <p className="grid h-[40vh] place-items-center rounded-lg border text-sm text-muted-foreground">{empty}</p>
   return (
-    <ul className="h-[40vh] overflow-y-auto rounded-lg border">
-      {rows.map((r) => (
-        <li key={r.id} className="border-b last:border-b-0">
-          <label className="flex cursor-pointer items-center gap-3 px-3 py-1.5 hover:bg-muted/60">
-            <Checkbox checked={r.on} onCheckedChange={(v) => onToggle(r.id, v === true)} />
-            {r.number !== undefined && (
-              <span className="w-8 text-right text-xs text-muted-foreground tabular-nums">{r.number}</span>
-            )}
-            <WikiIcon src={r.icon} alt="" size={28} />
-            <span className="min-w-0 flex-1 truncate text-sm">{r.name}</span>
-            {r.detail && <span className="text-xs text-muted-foreground">{r.detail}</span>}
-          </label>
-        </li>
-      ))}
-    </ul>
+    <div ref={scrollRef} className="h-[40vh] overflow-y-auto rounded-lg border">
+      <ul className="relative" style={{ height: virtualizer.getTotalSize() }}>
+        {virtualizer.getVirtualItems().map((v) => {
+          const r = rows[v.index]
+          return (
+            <li key={r.id} className="absolute inset-x-0 border-b" style={{ top: v.start, height: ROW_HEIGHT }}>
+              <label className="flex h-full cursor-pointer items-center gap-3 px-3 hover:bg-muted/60">
+                <Checkbox checked={r.on} onCheckedChange={(on) => onToggle(r.id, on === true)} />
+                {r.number !== undefined && (
+                  <span className="w-8 text-right text-xs text-muted-foreground tabular-nums">{r.number}</span>
+                )}
+                <WikiIcon src={r.icon} alt="" size={28} />
+                <span className="min-w-0 flex-1 truncate text-sm">{r.name}</span>
+                {r.detail && <span className="text-xs text-muted-foreground">{r.detail}</span>}
+              </label>
+            </li>
+          )
+        })}
+      </ul>
+    </div>
   )
 }

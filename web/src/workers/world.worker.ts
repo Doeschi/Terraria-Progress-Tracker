@@ -1,6 +1,7 @@
 /// <reference lib="webworker" />
 import { FileReader, type ItemSlot } from 'terraria-world-file'
 import type { Container, ContainerItem, LoadedWorld, WorkerResponse } from '@/lib/world'
+import { defeatedBosses } from '@/lib/worldProgress'
 import { readTileEntities } from './tileEntities'
 
 // Parses a .wld file off the main thread. Only the header, chests and tile
@@ -65,6 +66,7 @@ self.onmessage = async (e: MessageEvent<{ buffer: ArrayBuffer; fileName: string 
         containers,
         displaysAvailable,
         bestiary,
+        defeated: defeatedBosses(h as unknown as Record<string, unknown>),
       },
     })
   } catch (err) {

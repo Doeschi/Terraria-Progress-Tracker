@@ -1,4 +1,4 @@
-import { chanceFor, dropsFor, quantityFor } from './drops'
+import { chanceFor, quantityFor, regularDrops } from './drops'
 import type { Difficulty, Drop, GameData, Item } from './types'
 import type { WorldBestiary } from './world'
 
@@ -96,7 +96,7 @@ export function dropKills(kills: KillCounts, drop: Drop): number | undefined {
 /** Expected drops of an item in this difficulty; undefined if no enemy with known kills drops it. */
 export function itemLuck(data: GameData, item: Item, difficulty: Difficulty, kills: KillCounts): Luck | undefined {
   const parts: LuckPart[] = []
-  for (const d of dropsFor(data, item, difficulty, 'dropped')) {
+  for (const d of regularDrops(data, item, difficulty, 'dropped')) {
     const n = dropKills(kills, d)
     const c = chanceFor(d, difficulty)
     if (n === undefined || c === undefined) continue

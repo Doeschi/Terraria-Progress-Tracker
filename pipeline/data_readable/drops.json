@@ -4,6 +4,7 @@
       "id": "armored-skeleton",
       "name": "Armored Skeleton",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Armored_Skeleton",
       "icon": "https://terraria.wiki.gg/images/Armored_Skeleton.gif",
       "npcId": -15,
       "biomes": [
@@ -14,6 +15,7 @@
       "id": "drippler",
       "name": "Drippler",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Drippler",
       "icon": "https://terraria.wiki.gg/images/Drippler.gif",
       "npcId": 490,
       "events": [
@@ -24,6 +26,7 @@
       "id": "dungeon-slime",
       "name": "Dungeon Slime",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Dungeon_Slime",
       "icon": "https://terraria.wiki.gg/images/Dungeon_Slime.gif",
       "npcId": 71,
       "biomes": [
@@ -34,6 +37,7 @@
       "id": "gigazapper",
       "name": "Gigazapper",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Gigazapper",
       "icon": "https://terraria.wiki.gg/images/Gigazapper.gif",
       "npcId": 389,
       "events": [
@@ -44,6 +48,7 @@
       "id": "martian-engineer",
       "name": "Martian Engineer",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Martian_Engineer",
       "icon": "https://terraria.wiki.gg/images/Martian_Engineer.gif",
       "npcId": 386,
       "events": [
@@ -53,12 +58,16 @@
     "mythical-wyvern": {
       "id": "mythical-wyvern",
       "name": "Mythical Wyvern",
-      "kind": "npc"
+      "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Mythical_Wyvern",
+      "icon": "https://terraria.wiki.gg/images/Mythical_Wyvern_Head.png",
+      "npcId": 1029
     },
     "scutlix-gunner": {
       "id": "scutlix-gunner",
       "name": "Scutlix Gunner",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Scutlix",
       "icon": "https://terraria.wiki.gg/images/Scutlix_Gunner.png",
       "npcId": 390,
       "events": [
@@ -69,6 +78,7 @@
       "id": "bone-lee",
       "name": "Bone Lee",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Bone_Lee",
       "icon": "https://terraria.wiki.gg/images/Bone_Lee.gif",
       "npcId": 287,
       "biomes": [
@@ -79,6 +89,7 @@
       "id": "wolf",
       "name": "Wolf",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Wolf",
       "icon": "https://terraria.wiki.gg/images/Wolf.gif",
       "npcId": 155,
       "biomes": [
@@ -92,6 +103,7 @@
       "id": "lihzahrd-chest",
       "name": "Lihzahrd Chest",
       "kind": "container",
+      "url": "https://terraria.wiki.gg/wiki/Lihzahrd_Chest",
       "icon": "https://terraria.wiki.gg/images/Lihzahrd_Chest.png",
       "group": "chest"
     },
@@ -99,6 +111,7 @@
       "id": "web-covered-chest",
       "name": "Web Covered Chest",
       "kind": "container",
+      "url": "https://terraria.wiki.gg/wiki/Web_Covered_Chest",
       "icon": "https://terraria.wiki.gg/images/Web_Covered_Chest.png",
       "group": "chest"
     },
@@ -106,6 +119,7 @@
       "id": "angry-dandelion",
       "name": "Angry Dandelion",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Angry_Dandelion",
       "icon": "https://terraria.wiki.gg/images/Angry_Dandelion.gif",
       "npcId": 628,
       "events": [
@@ -116,6 +130,7 @@
       "id": "antlion-larva",
       "name": "Antlion Larva",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Antlion_Larva",
       "icon": "https://terraria.wiki.gg/images/Antlion_Larva.gif",
       "npcId": 582,
       "biomes": [
@@ -126,6 +141,7 @@
       "id": "deadly-sphere",
       "name": "Deadly Sphere",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Deadly_Sphere",
       "icon": "https://terraria.wiki.gg/images/Deadly_Sphere.gif",
       "npcId": 467,
       "events": [
@@ -136,6 +152,7 @@
       "id": "derpling",
       "name": "Derpling",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Derpling",
       "icon": "https://terraria.wiki.gg/images/Derpling.gif",
       "npcId": 177,
       "biomes": [
@@ -146,6 +163,7 @@
       "id": "herpling",
       "name": "Herpling",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Herpling",
       "icon": "https://terraria.wiki.gg/images/Herpling.gif",
       "npcId": 174,
       "biomes": [
@@ -156,6 +174,7 @@
       "id": "ice-elemental",
       "name": "Ice Elemental",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Ice_Elemental",
       "icon": "https://terraria.wiki.gg/images/Ice_Elemental.gif",
       "npcId": 169,
       "biomes": [
@@ -166,6 +185,7 @@
       "id": "crab",
       "name": "Crab",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Crab",
       "icon": "https://terraria.wiki.gg/images/Crab.gif",
       "npcId": 67,
       "biomes": [
@@ -176,6 +196,7 @@
       "id": "moth",
       "name": "Moth",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Moth",
       "icon": "https://terraria.wiki.gg/images/Moth.gif",
       "npcId": 205,
       "biomes": [
@@ -186,6 +207,7 @@
       "id": "zombie-elf",
       "name": "Zombie Elf",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Zombie_Elf",
       "icon": "https://terraria.wiki.gg/images/Zombie_Elf_Girl.gif",
       "npcId": 340,
       "events": [
@@ -196,6 +218,7 @@
       "id": "wandering-eye-fish",
       "name": "Wandering Eye Fish",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Wandering_Eye_Fish",
       "icon": "https://terraria.wiki.gg/images/Wandering_Eye_Fish.gif",
       "npcId": 587,
       "events": [
@@ -206,6 +229,7 @@
       "id": "everscream",
       "name": "Everscream",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Everscream",
       "icon": "https://terraria.wiki.gg/images/Everscream.gif",
       "npcId": 344,
       "events": [
@@ -216,6 +240,7 @@
       "id": "ice-slime",
       "name": "Ice Slime",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Ice_Slime",
       "icon": "https://terraria.wiki.gg/images/Ice_Slime.gif",
       "npcId": 147,
       "biomes": [
@@ -229,6 +254,7 @@
       "id": "angry-nimbus",
       "name": "Angry Nimbus",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Angry_Nimbus",
       "icon": "https://terraria.wiki.gg/images/Angry_Nimbus.gif",
       "npcId": 250,
       "events": [
@@ -239,6 +265,7 @@
       "id": "undead-miner",
       "name": "Undead Miner",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Undead_Miner",
       "icon": "https://terraria.wiki.gg/images/Undead_Miner.gif",
       "npcId": 44,
       "biomes": [
@@ -249,6 +276,7 @@
       "id": "mushroom-chest",
       "name": "Mushroom Chest",
       "kind": "container",
+      "url": "https://terraria.wiki.gg/wiki/Mushroom_Chest",
       "icon": "https://terraria.wiki.gg/images/Mushroom_Chest.png",
       "group": "chest"
     },
@@ -256,6 +284,7 @@
       "id": "sand-poacher",
       "name": "Sand Poacher",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Sand_Poacher",
       "icon": "https://terraria.wiki.gg/images/Sand_Poacher2.gif",
       "npcId": 531,
       "biomes": [
@@ -266,6 +295,7 @@
       "id": "windy-balloon",
       "name": "Windy Balloon",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Windy_Balloon",
       "icon": "https://terraria.wiki.gg/images/Windy_Balloon.png",
       "npcId": 594,
       "events": [
@@ -276,6 +306,7 @@
       "id": "blue-slime",
       "name": "Blue Slime",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Blue_Slime",
       "icon": "https://terraria.wiki.gg/images/Blue_Slime.gif",
       "npcId": 1,
       "biomes": [
@@ -287,6 +318,7 @@
       "id": "blue-slime-bonus-drop",
       "name": "Blue Slime (bonus drop)",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Blue_Slime",
       "icon": "https://terraria.wiki.gg/images/Blue_Slime.gif",
       "npcId": 1,
       "biomes": [
@@ -298,6 +330,7 @@
       "id": "spiked-jungle-slime",
       "name": "Spiked Jungle Slime",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Spiked_Jungle_Slime",
       "icon": "https://terraria.wiki.gg/images/Spiked_Jungle_Slime.gif",
       "npcId": 204,
       "biomes": [
@@ -308,6 +341,7 @@
       "id": "crimslime",
       "name": "Crimslime",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Crimslime",
       "icon": "https://terraria.wiki.gg/images/Crimslime.gif",
       "npcId": -25,
       "biomes": [
@@ -318,6 +352,7 @@
       "id": "ray-gunner",
       "name": "Ray Gunner",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Ray_Gunner",
       "icon": "https://terraria.wiki.gg/images/Ray_Gunner.gif",
       "npcId": 382,
       "events": [
@@ -328,6 +363,7 @@
       "id": "giant-tortoise",
       "name": "Giant Tortoise",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Giant_Tortoise",
       "icon": "https://terraria.wiki.gg/images/Giant_Tortoise.gif",
       "npcId": 153,
       "biomes": [
@@ -338,6 +374,7 @@
       "id": "squid",
       "name": "Squid",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Squid",
       "icon": "https://terraria.wiki.gg/images/Squid.gif",
       "npcId": 221,
       "biomes": [
@@ -348,6 +385,7 @@
       "id": "corrupt-slime",
       "name": "Corrupt Slime",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Corrupt_Slime",
       "icon": "https://terraria.wiki.gg/images/Corrupt_Slime.gif",
       "npcId": 81,
       "biomes": [
@@ -358,6 +396,7 @@
       "id": "snatcher",
       "name": "Snatcher",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Snatcher",
       "icon": "https://terraria.wiki.gg/images/Snatcher.gif",
       "npcId": 56,
       "biomes": [
@@ -368,6 +407,7 @@
       "id": "umbrella-slime",
       "name": "Umbrella Slime",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Umbrella_Slime",
       "icon": "https://terraria.wiki.gg/images/Umbrella_Slime.gif",
       "npcId": 225,
       "events": [
@@ -378,6 +418,7 @@
       "id": "present-mimic",
       "name": "Present Mimic",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Present_Mimic",
       "icon": "https://terraria.wiki.gg/images/Present_Mimic.png",
       "npcId": 341,
       "events": [
@@ -388,6 +429,7 @@
       "id": "piranha",
       "name": "Piranha",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Piranha",
       "icon": "https://terraria.wiki.gg/images/Piranha.gif",
       "npcId": 58,
       "biomes": [
@@ -399,6 +441,7 @@
       "id": "hell-armored-bones",
       "name": "Hell Armored Bones",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Hell_Armored_Bones",
       "icon": "https://terraria.wiki.gg/images/Hell_Armored_Bones_4.gif",
       "npcId": 280,
       "biomes": [
@@ -409,6 +452,7 @@
       "id": "rusty-armored-bones",
       "name": "Rusty Armored Bones",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Rusty_Armored_Bones",
       "icon": "https://terraria.wiki.gg/images/Rusty_Armored_Bones_4.gif",
       "npcId": 272,
       "biomes": [
@@ -419,6 +463,7 @@
       "id": "flying-dutchman",
       "name": "Flying Dutchman",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Flying_Dutchman",
       "icon": "https://terraria.wiki.gg/images/Flying_Dutchman.gif",
       "npcId": 491,
       "events": [
@@ -429,6 +474,7 @@
       "id": "raven",
       "name": "Raven",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Raven",
       "icon": "https://terraria.wiki.gg/images/Raven.png",
       "npcId": 301,
       "biomes": [
@@ -440,6 +486,7 @@
       "id": "hoplite",
       "name": "Hoplite",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Hoplite",
       "icon": "https://terraria.wiki.gg/images/Hoplite.gif",
       "npcId": 481,
       "biomes": [
@@ -450,6 +497,7 @@
       "id": "spiked-ice-slime",
       "name": "Spiked Ice Slime",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Spiked_Ice_Slime",
       "icon": "https://terraria.wiki.gg/images/Spiked_Ice_Slime.gif",
       "npcId": 184,
       "biomes": [
@@ -460,6 +508,7 @@
       "id": "floaty-gross",
       "name": "Floaty Gross",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Floaty_Gross",
       "icon": "https://terraria.wiki.gg/images/Floaty_Gross.gif",
       "npcId": 182,
       "biomes": [
@@ -470,6 +519,7 @@
       "id": "corruptor",
       "name": "Corruptor",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Corruptor",
       "icon": "https://terraria.wiki.gg/images/Corruptor.gif",
       "npcId": 94,
       "biomes": [
@@ -480,6 +530,7 @@
       "id": "ichor-sticker",
       "name": "Ichor Sticker",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Ichor_Sticker",
       "icon": "https://terraria.wiki.gg/images/Ichor_Sticker.gif",
       "npcId": 268,
       "biomes": [
@@ -490,6 +541,7 @@
       "id": "goblin-warrior",
       "name": "Goblin Warrior",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Goblin_Warrior",
       "icon": "https://terraria.wiki.gg/images/Goblin_Warrior.gif",
       "npcId": 28,
       "events": [
@@ -500,6 +552,7 @@
       "id": "goblin-peon",
       "name": "Goblin Peon",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Goblin_Peon",
       "icon": "https://terraria.wiki.gg/images/Goblin_Peon.gif",
       "npcId": 26,
       "events": [
@@ -510,6 +563,7 @@
       "id": "cochineal-beetle",
       "name": "Cochineal Beetle",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Cochineal_Beetle",
       "icon": "https://terraria.wiki.gg/images/Cochineal_Beetle.gif",
       "npcId": 217,
       "biomes": [
@@ -520,6 +574,7 @@
       "id": "basilisk",
       "name": "Basilisk",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Basilisk",
       "icon": "https://terraria.wiki.gg/images/Basilisk.gif",
       "npcId": 532,
       "biomes": [
@@ -530,6 +585,7 @@
       "id": "brain-scrambler",
       "name": "Brain Scrambler",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Brain_Scrambler",
       "icon": "https://terraria.wiki.gg/images/Brain_Scrambler.gif",
       "npcId": 381,
       "events": [
@@ -540,6 +596,7 @@
       "id": "cyan-beetle",
       "name": "Cyan Beetle",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Cyan_Beetle",
       "icon": "https://terraria.wiki.gg/images/Cyan_Beetle.gif",
       "npcId": 218,
       "biomes": [
@@ -550,6 +607,7 @@
       "id": "doctor-bones",
       "name": "Doctor Bones",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Doctor_Bones",
       "icon": "https://terraria.wiki.gg/images/Doctor_Bones.gif",
       "npcId": 52,
       "biomes": [
@@ -560,6 +618,7 @@
       "id": "dr-man-fly",
       "name": "Dr. Man Fly",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Dr._Man_Fly",
       "icon": "https://terraria.wiki.gg/images/Dr._Man_Fly.gif",
       "npcId": 468,
       "events": [
@@ -570,6 +629,7 @@
       "id": "lac-beetle",
       "name": "Lac Beetle",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Lac_Beetle",
       "icon": "https://terraria.wiki.gg/images/Lac_Beetle.gif",
       "npcId": 219,
       "biomes": [
@@ -580,6 +640,7 @@
       "id": "paladin",
       "name": "Paladin",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Paladin",
       "icon": "https://terraria.wiki.gg/images/Paladin.gif",
       "npcId": 290,
       "biomes": [
@@ -590,6 +651,7 @@
       "id": "sea-snail",
       "name": "Sea Snail",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Sea_Snail",
       "icon": "https://terraria.wiki.gg/images/Sea_Snail.gif",
       "npcId": 220,
       "biomes": [
@@ -600,6 +662,7 @@
       "id": "antlion-swarmer",
       "name": "Antlion Swarmer",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Antlion_Swarmer",
       "icon": "https://terraria.wiki.gg/images/Antlion_Swarmer.gif",
       "npcId": 581,
       "biomes": [
@@ -610,6 +673,7 @@
       "id": "water-chest",
       "name": "Water Chest",
       "kind": "container",
+      "url": "https://terraria.wiki.gg/wiki/Water_Chest",
       "icon": "https://terraria.wiki.gg/images/Water_Chest.png",
       "group": "chest"
     },
@@ -617,6 +681,7 @@
       "id": "giant-cursed-skull",
       "name": "Giant Cursed Skull",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Giant_Cursed_Skull",
       "icon": "https://terraria.wiki.gg/images/Giant_Cursed_Skull.gif",
       "npcId": 289,
       "biomes": [
@@ -627,6 +692,7 @@
       "id": "cursed-skull",
       "name": "Cursed Skull",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Cursed_Skull",
       "icon": "https://terraria.wiki.gg/images/Cursed_Skull.gif",
       "npcId": 34,
       "biomes": [
@@ -637,6 +703,7 @@
       "id": "illuminant-slime",
       "name": "Illuminant Slime",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Illuminant_Slime",
       "icon": "https://terraria.wiki.gg/images/Illuminant_Slime.gif",
       "npcId": 138,
       "biomes": [
@@ -647,6 +714,7 @@
       "id": "vile-ghoul",
       "name": "Vile Ghoul",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Ghouls",
       "icon": "https://terraria.wiki.gg/images/Vile_Ghoul.gif",
       "npcId": 525,
       "biomes": [
@@ -658,6 +726,7 @@
       "id": "ghoul",
       "name": "Ghoul",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Ghouls",
       "icon": "https://terraria.wiki.gg/images/Ghoul.gif",
       "npcId": 524,
       "biomes": [
@@ -668,6 +737,7 @@
       "id": "tainted-ghoul",
       "name": "Tainted Ghoul",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Ghouls",
       "icon": "https://terraria.wiki.gg/images/Tainted_Ghoul.gif",
       "npcId": 526,
       "biomes": [
@@ -679,6 +749,7 @@
       "id": "dreamer-ghoul",
       "name": "Dreamer Ghoul",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Ghouls",
       "icon": "https://terraria.wiki.gg/images/Dreamer_Ghoul.gif",
       "npcId": 527,
       "biomes": [
@@ -690,6 +761,7 @@
       "id": "lava-bat",
       "name": "Lava Bat",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Lava_Bat",
       "icon": "https://terraria.wiki.gg/images/Lava_Bat.gif",
       "npcId": 151,
       "biomes": [
@@ -700,6 +772,7 @@
       "id": "angry-bones",
       "name": "Angry Bones",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Angry_Bones",
       "icon": "https://terraria.wiki.gg/images/Angry_Bones_4.gif",
       "npcId": 296,
       "biomes": [
@@ -710,6 +783,7 @@
       "id": "oyster",
       "name": "Oyster",
       "kind": "container",
+      "url": "https://terraria.wiki.gg/wiki/Oyster",
       "icon": "https://terraria.wiki.gg/images/Oyster.png",
       "group": "other"
     },
@@ -717,6 +791,7 @@
       "id": "illuminant-bat",
       "name": "Illuminant Bat",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Illuminant_Bat",
       "icon": "https://terraria.wiki.gg/images/Illuminant_Bat.gif",
       "npcId": 137,
       "biomes": [
@@ -727,6 +802,7 @@
       "id": "giant-flying-fox",
       "name": "Giant Flying Fox",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Giant_Flying_Fox",
       "icon": "https://terraria.wiki.gg/images/Giant_Flying_Fox.gif",
       "npcId": 152,
       "biomes": [
@@ -740,6 +816,7 @@
       "id": "angry-tumbler",
       "name": "Angry Tumbler",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Angry_Tumbler",
       "icon": "https://terraria.wiki.gg/images/Angry_Tumbler.png",
       "npcId": 546,
       "events": [
@@ -750,6 +827,7 @@
       "id": "demon",
       "name": "Demon",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Demon",
       "icon": "https://terraria.wiki.gg/images/Demon.gif",
       "npcId": 62,
       "biomes": [
@@ -760,6 +838,7 @@
       "id": "dark-caster",
       "name": "Dark Caster",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Dark_Caster",
       "icon": "https://terraria.wiki.gg/images/Dark_Caster.png",
       "npcId": 32,
       "biomes": [
@@ -770,6 +849,7 @@
       "id": "shadow-hammer",
       "name": "Shadow Hammer",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Shadow_Hammer",
       "icon": "https://terraria.wiki.gg/images/Shadow_Hammer.png",
       "npcId": 1005,
       "biomes": [
@@ -780,6 +860,7 @@
       "id": "green-slime",
       "name": "Green Slime",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Green_Slime",
       "icon": "https://terraria.wiki.gg/images/Green_Slime.gif",
       "npcId": -3,
       "biomes": [
@@ -790,6 +871,7 @@
       "id": "green-slime-bonus-drop",
       "name": "Green Slime (bonus drop)",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Green_Slime",
       "icon": "https://terraria.wiki.gg/images/Green_Slime.gif",
       "npcId": -3,
       "biomes": [
@@ -800,6 +882,7 @@
       "id": "purple-slime",
       "name": "Purple Slime",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Purple_Slime",
       "icon": "https://terraria.wiki.gg/images/Purple_Slime.gif",
       "npcId": -7,
       "biomes": [
@@ -810,6 +893,7 @@
       "id": "purple-slime-bonus-drop",
       "name": "Purple Slime (bonus drop)",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Purple_Slime",
       "icon": "https://terraria.wiki.gg/images/Purple_Slime.gif",
       "npcId": -7,
       "biomes": [
@@ -820,6 +904,7 @@
       "id": "yellow-slime",
       "name": "Yellow Slime",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Yellow_Slime",
       "icon": "https://terraria.wiki.gg/images/Yellow_Slime.gif",
       "npcId": -9,
       "biomes": [
@@ -830,6 +915,7 @@
       "id": "yellow-slime-bonus-drop",
       "name": "Yellow Slime (bonus drop)",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Yellow_Slime",
       "icon": "https://terraria.wiki.gg/images/Yellow_Slime.gif",
       "npcId": -9,
       "biomes": [
@@ -840,6 +926,7 @@
       "id": "jungle-slime",
       "name": "Jungle Slime",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Jungle_Slime",
       "icon": "https://terraria.wiki.gg/images/Jungle_Slime.gif",
       "npcId": -10,
       "biomes": [
@@ -853,6 +940,7 @@
       "id": "jungle-slime-bonus-drop",
       "name": "Jungle Slime (bonus drop)",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Jungle_Slime",
       "icon": "https://terraria.wiki.gg/images/Jungle_Slime.gif",
       "npcId": -10,
       "biomes": [
@@ -866,6 +954,7 @@
       "id": "scarecrow",
       "name": "Scarecrow",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Scarecrow",
       "icon": "https://terraria.wiki.gg/images/Scarecrow_10.gif",
       "npcId": 314,
       "events": [
@@ -876,6 +965,7 @@
       "id": "martian-officer",
       "name": "Martian Officer",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Martian_Officer",
       "icon": "https://terraria.wiki.gg/images/Martian_Officer.gif",
       "npcId": 383,
       "events": [
@@ -886,6 +976,7 @@
       "id": "rune-wizard",
       "name": "Rune Wizard",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Rune_Wizard",
       "icon": "https://terraria.wiki.gg/images/Rune_Wizard.png",
       "npcId": 172,
       "biomes": [
@@ -896,6 +987,7 @@
       "id": "necromancer",
       "name": "Necromancer",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Necromancer",
       "icon": "https://terraria.wiki.gg/images/Armored_Necromancer.png",
       "npcId": 284,
       "biomes": [
@@ -906,6 +998,7 @@
       "id": "ragged-caster",
       "name": "Ragged Caster",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Ragged_Caster",
       "icon": "https://terraria.wiki.gg/images/Open_Coat_Ragged_Caster.png",
       "npcId": 282,
       "biomes": [
@@ -916,6 +1009,7 @@
       "id": "wall-creeper",
       "name": "Wall Creeper",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Wall_Creeper",
       "icon": "https://terraria.wiki.gg/images/Wall_Creeper.gif",
       "npcId": 165,
       "biomes": [
@@ -926,6 +1020,7 @@
       "id": "black-slime",
       "name": "Black Slime",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Black_Slime",
       "icon": "https://terraria.wiki.gg/images/Black_Slime.gif",
       "npcId": -6,
       "biomes": [
@@ -936,6 +1031,7 @@
       "id": "black-slime-bonus-drop",
       "name": "Black Slime (bonus drop)",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Black_Slime",
       "icon": "https://terraria.wiki.gg/images/Black_Slime.gif",
       "npcId": -6,
       "biomes": [
@@ -946,6 +1042,7 @@
       "id": "baby-slime",
       "name": "Baby Slime",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Baby_Slime",
       "icon": "https://terraria.wiki.gg/images/Baby_Slime.gif",
       "npcId": -5,
       "biomes": [
@@ -956,6 +1053,7 @@
       "id": "baby-slime-bonus-drop",
       "name": "Baby Slime (bonus drop)",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Baby_Slime",
       "icon": "https://terraria.wiki.gg/images/Baby_Slime.gif",
       "npcId": -5,
       "biomes": [
@@ -966,6 +1064,7 @@
       "id": "herb-bag",
       "name": "Herb Bag",
       "kind": "container",
+      "url": "https://terraria.wiki.gg/wiki/Herb_Bag",
       "icon": "https://terraria.wiki.gg/images/Herb_Bag.png",
       "group": "other"
     },
@@ -973,6 +1072,7 @@
       "id": "corrupt-penguin",
       "name": "Corrupt Penguin",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Corrupt_Penguin",
       "icon": "https://terraria.wiki.gg/images/Corrupt_Penguin.gif",
       "npcId": 168,
       "events": [
@@ -983,6 +1083,7 @@
       "id": "vicious-penguin",
       "name": "Vicious Penguin",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Vicious_Penguin",
       "icon": "https://terraria.wiki.gg/images/Vicious_Penguin.gif",
       "npcId": 470,
       "events": [
@@ -993,6 +1094,7 @@
       "id": "gray-grunt",
       "name": "Gray Grunt",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Gray_Grunt",
       "icon": "https://terraria.wiki.gg/images/Gray_Grunt.gif",
       "npcId": 385,
       "events": [
@@ -1003,6 +1105,7 @@
       "id": "raincoat-zombie",
       "name": "Raincoat Zombie",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Raincoat_Zombie",
       "icon": "https://terraria.wiki.gg/images/Raincoat_Zombie.gif",
       "npcId": 223,
       "events": [
@@ -1013,6 +1116,7 @@
       "id": "icy-merman",
       "name": "Icy Merman",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Icy_Merman",
       "icon": "https://terraria.wiki.gg/images/Icy_Merman.gif",
       "npcId": 206,
       "biomes": [
@@ -1023,6 +1127,7 @@
       "id": "blue-armored-bones",
       "name": "Blue Armored Bones",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Blue_Armored_Bones",
       "icon": "https://terraria.wiki.gg/images/Blue_Armored_Bones_4.gif",
       "npcId": 276,
       "biomes": [
@@ -1033,6 +1138,7 @@
       "id": "corrupt-crate",
       "name": "Corrupt Crate",
       "kind": "container",
+      "url": "https://terraria.wiki.gg/wiki/Corrupt_Crate",
       "icon": "https://terraria.wiki.gg/images/Corrupt_Crate.png",
       "group": "crate"
     },
@@ -1040,6 +1146,7 @@
       "id": "crimson-crate",
       "name": "Crimson Crate",
       "kind": "container",
+      "url": "https://terraria.wiki.gg/wiki/Crimson_Crate",
       "icon": "https://terraria.wiki.gg/images/Crimson_Crate.png",
       "group": "crate"
     },
@@ -1047,6 +1154,7 @@
       "id": "dungeon-crate",
       "name": "Dungeon Crate",
       "kind": "container",
+      "url": "https://terraria.wiki.gg/wiki/Dungeon_Crate",
       "icon": "https://terraria.wiki.gg/images/Dungeon_Crate.png",
       "group": "crate"
     },
@@ -1054,6 +1162,7 @@
       "id": "jungle-crate",
       "name": "Jungle Crate",
       "kind": "container",
+      "url": "https://terraria.wiki.gg/wiki/Jungle_Crate",
       "icon": "https://terraria.wiki.gg/images/Jungle_Crate.png",
       "group": "crate"
     },
@@ -1061,6 +1170,7 @@
       "id": "oasis-crate",
       "name": "Oasis Crate",
       "kind": "container",
+      "url": "https://terraria.wiki.gg/wiki/Oasis_Crate",
       "icon": "https://terraria.wiki.gg/images/Oasis_Crate.png",
       "group": "crate"
     },
@@ -1068,6 +1178,7 @@
       "id": "stockade-crate",
       "name": "Stockade Crate",
       "kind": "container",
+      "url": "https://terraria.wiki.gg/wiki/Stockade_Crate",
       "icon": "https://terraria.wiki.gg/images/Stockade_Crate.png",
       "group": "crate"
     },
@@ -1075,6 +1186,7 @@
       "id": "hellstone-crate",
       "name": "Hellstone Crate",
       "kind": "container",
+      "url": "https://terraria.wiki.gg/wiki/Hellstone_Crate",
       "icon": "https://terraria.wiki.gg/images/Hellstone_Crate.png",
       "group": "crate"
     },
@@ -1082,6 +1194,7 @@
       "id": "bramble-crate",
       "name": "Bramble Crate",
       "kind": "container",
+      "url": "https://terraria.wiki.gg/wiki/Bramble_Crate",
       "icon": "https://terraria.wiki.gg/images/Bramble_Crate.png",
       "group": "crate"
     },
@@ -1089,6 +1202,7 @@
       "id": "mythril-crate",
       "name": "Mythril Crate",
       "kind": "container",
+      "url": "https://terraria.wiki.gg/wiki/Mythril_Crate",
       "icon": "https://terraria.wiki.gg/images/Mythril_Crate.png",
       "group": "crate"
     },
@@ -1096,6 +1210,7 @@
       "id": "divine-crate",
       "name": "Divine Crate",
       "kind": "container",
+      "url": "https://terraria.wiki.gg/wiki/Divine_Crate",
       "icon": "https://terraria.wiki.gg/images/Divine_Crate.png",
       "group": "crate"
     },
@@ -1103,6 +1218,7 @@
       "id": "seaside-crate",
       "name": "Seaside Crate",
       "kind": "container",
+      "url": "https://terraria.wiki.gg/wiki/Seaside_Crate",
       "icon": "https://terraria.wiki.gg/images/Seaside_Crate.png",
       "group": "crate"
     },
@@ -1110,6 +1226,7 @@
       "id": "golden-crate",
       "name": "Golden Crate",
       "kind": "container",
+      "url": "https://terraria.wiki.gg/wiki/Golden_Crate",
       "icon": "https://terraria.wiki.gg/images/Golden_Crate.png",
       "group": "crate"
     },
@@ -1117,6 +1234,7 @@
       "id": "iron-crate",
       "name": "Iron Crate",
       "kind": "container",
+      "url": "https://terraria.wiki.gg/wiki/Iron_Crate",
       "icon": "https://terraria.wiki.gg/images/Iron_Crate.png",
       "group": "crate"
     },
@@ -1124,6 +1242,7 @@
       "id": "titanium-crate",
       "name": "Titanium Crate",
       "kind": "container",
+      "url": "https://terraria.wiki.gg/wiki/Titanium_Crate",
       "icon": "https://terraria.wiki.gg/images/Titanium_Crate.png",
       "group": "crate"
     },
@@ -1131,6 +1250,7 @@
       "id": "hematic-crate",
       "name": "Hematic Crate",
       "kind": "container",
+      "url": "https://terraria.wiki.gg/wiki/Hematic_Crate",
       "icon": "https://terraria.wiki.gg/images/Hematic_Crate.png",
       "group": "crate"
     },
@@ -1138,6 +1258,7 @@
       "id": "mirage-crate",
       "name": "Mirage Crate",
       "kind": "container",
+      "url": "https://terraria.wiki.gg/wiki/Mirage_Crate",
       "icon": "https://terraria.wiki.gg/images/Mirage_Crate.png",
       "group": "crate"
     },
@@ -1145,6 +1266,7 @@
       "id": "hallowed-crate",
       "name": "Hallowed Crate",
       "kind": "container",
+      "url": "https://terraria.wiki.gg/wiki/Hallowed_Crate",
       "icon": "https://terraria.wiki.gg/images/Hallowed_Crate.png",
       "group": "crate"
     },
@@ -1152,6 +1274,7 @@
       "id": "defiled-crate",
       "name": "Defiled Crate",
       "kind": "container",
+      "url": "https://terraria.wiki.gg/wiki/Defiled_Crate",
       "icon": "https://terraria.wiki.gg/images/Defiled_Crate.png",
       "group": "crate"
     },
@@ -1159,6 +1282,7 @@
       "id": "pirate-corsair",
       "name": "Pirate Corsair",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Pirate_Corsair",
       "icon": "https://terraria.wiki.gg/images/Pirate_Corsair.gif",
       "npcId": 213,
       "events": [
@@ -1169,6 +1293,7 @@
       "id": "pirate-deckhand",
       "name": "Pirate Deckhand",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Pirate_Deckhand",
       "icon": "https://terraria.wiki.gg/images/Pirate_Deckhand.gif",
       "npcId": 212,
       "events": [
@@ -1179,6 +1304,7 @@
       "id": "pirate-deadeye",
       "name": "Pirate Deadeye",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Pirate_Deadeye",
       "icon": "https://terraria.wiki.gg/images/Pirate_Deadeye.gif",
       "npcId": 214,
       "events": [
@@ -1189,6 +1315,7 @@
       "id": "ice-golem",
       "name": "Ice Golem",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Ice_Golem",
       "icon": "https://terraria.wiki.gg/images/Ice_Golem.gif",
       "npcId": 243,
       "events": [
@@ -1199,6 +1326,7 @@
       "id": "antlion-charger",
       "name": "Antlion Charger",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Antlion_Charger",
       "icon": "https://terraria.wiki.gg/images/Antlion_Charger.gif",
       "npcId": 580,
       "biomes": [
@@ -1209,6 +1337,7 @@
       "id": "sandstone-chest",
       "name": "Sandstone Chest",
       "kind": "container",
+      "url": "https://terraria.wiki.gg/wiki/Sandstone_Chest",
       "icon": "https://terraria.wiki.gg/images/Sandstone_Chest.png",
       "group": "chest"
     },
@@ -1216,6 +1345,7 @@
       "id": "skyware-chest",
       "name": "Skyware Chest",
       "kind": "container",
+      "url": "https://terraria.wiki.gg/wiki/Skyware_Chest",
       "icon": "https://terraria.wiki.gg/images/Skyware_Chest.png",
       "group": "chest"
     },
@@ -1223,6 +1353,7 @@
       "id": "water-bolt-mimic",
       "name": "Water Bolt Mimic",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Water_Bolt_Mimic",
       "icon": "https://terraria.wiki.gg/images/Water_Bolt_Mimic.gif",
       "npcId": 694,
       "biomes": [
@@ -1233,6 +1364,7 @@
       "id": "betsy",
       "name": "Betsy",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Betsy",
       "icon": "https://terraria.wiki.gg/images/Betsy.gif",
       "npcId": 551,
       "events": [
@@ -1243,12 +1375,14 @@
       "id": "treasure-bag-betsy",
       "name": "Treasure Bag (Betsy)",
       "kind": "bag",
+      "url": "https://terraria.wiki.gg/wiki/Treasure_Bag_%28Betsy%29",
       "icon": "https://terraria.wiki.gg/images/Treasure_Bag_%28Betsy%29.png"
     },
     "frozen-zombie": {
       "id": "frozen-zombie",
       "name": "Frozen Zombie",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Frozen_Zombie",
       "icon": "https://terraria.wiki.gg/images/Armed_Frozen_Zombie.gif",
       "npcId": 431,
       "biomes": [
@@ -1262,6 +1396,7 @@
       "id": "pumpking",
       "name": "Pumpking",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Pumpking",
       "icon": "https://terraria.wiki.gg/images/Pumpking_head.gif",
       "npcId": 327,
       "events": [
@@ -1272,6 +1407,7 @@
       "id": "ice-queen",
       "name": "Ice Queen",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Ice_Queen",
       "icon": "https://terraria.wiki.gg/images/Ice_Queen.png",
       "npcId": 345,
       "events": [
@@ -1282,6 +1418,7 @@
       "id": "goblin-sorcerer",
       "name": "Goblin Sorcerer",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Goblin_Sorcerer",
       "icon": "https://terraria.wiki.gg/images/Goblin_Sorcerer.png",
       "npcId": 29,
       "events": [
@@ -1292,6 +1429,7 @@
       "id": "blood-zombie",
       "name": "Blood Zombie",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Blood_Zombie",
       "icon": "https://terraria.wiki.gg/images/Blood_Zombie.gif",
       "npcId": 489,
       "events": [
@@ -1302,6 +1440,7 @@
       "id": "martian-walker",
       "name": "Martian Walker",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Martian_Walker",
       "icon": "https://terraria.wiki.gg/images/Martian_Walker.gif",
       "npcId": 520,
       "events": [
@@ -1312,6 +1451,7 @@
       "id": "skeleton-commando",
       "name": "Skeleton Commando",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Skeleton_Commando",
       "icon": "https://terraria.wiki.gg/images/Skeleton_Commando.gif",
       "npcId": 293,
       "biomes": [
@@ -1322,6 +1462,7 @@
       "id": "skeleton-sniper",
       "name": "Skeleton Sniper",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Skeleton_Sniper",
       "icon": "https://terraria.wiki.gg/images/Skeleton_Sniper.gif",
       "npcId": 291,
       "biomes": [
@@ -1332,6 +1473,7 @@
       "id": "butcher",
       "name": "Butcher",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Butcher",
       "icon": "https://terraria.wiki.gg/images/Butcher.gif",
       "npcId": 460,
       "events": [
@@ -1342,6 +1484,7 @@
       "id": "tactical-skeleton",
       "name": "Tactical Skeleton",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Tactical_Skeleton",
       "icon": "https://terraria.wiki.gg/images/Tactical_Skeleton.gif",
       "npcId": 292,
       "biomes": [
@@ -1352,6 +1495,7 @@
       "id": "fritz",
       "name": "Fritz",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Fritz",
       "icon": "https://terraria.wiki.gg/images/Fritz.gif",
       "npcId": 462,
       "events": [
@@ -1362,6 +1506,7 @@
       "id": "swamp-thing",
       "name": "Swamp Thing",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Swamp_Thing",
       "icon": "https://terraria.wiki.gg/images/Swamp_Thing.gif",
       "npcId": 166,
       "events": [
@@ -1372,6 +1517,7 @@
       "id": "frankenstein",
       "name": "Frankenstein",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Frankenstein",
       "icon": "https://terraria.wiki.gg/images/Frankenstein.gif",
       "npcId": 162,
       "events": [
@@ -1382,6 +1528,7 @@
       "id": "psycho",
       "name": "Psycho",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Psycho",
       "icon": "https://terraria.wiki.gg/images/Psycho.gif",
       "npcId": 466,
       "events": [
@@ -1392,6 +1539,7 @@
       "id": "mister-stabby",
       "name": "Mister Stabby",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Mister_Stabby",
       "icon": "https://terraria.wiki.gg/images/Mister_Stabby.gif",
       "npcId": 144,
       "events": [
@@ -1402,6 +1550,7 @@
       "id": "orca",
       "name": "Orca",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Orca",
       "icon": "https://terraria.wiki.gg/images/Orca.gif",
       "npcId": 692,
       "biomes": [
@@ -1412,6 +1561,7 @@
       "id": "the-bride",
       "name": "The Bride",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/The_Bride",
       "icon": "https://terraria.wiki.gg/images/The_Bride.gif",
       "npcId": 536,
       "biomes": [
@@ -1422,6 +1572,7 @@
       "id": "pirate-crossbower",
       "name": "Pirate Crossbower",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Pirate_Crossbower",
       "icon": "https://terraria.wiki.gg/images/Pirate_Crossbower.gif",
       "npcId": 215,
       "events": [
@@ -1432,6 +1583,7 @@
       "id": "mothron",
       "name": "Mothron",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Mothron",
       "icon": "https://terraria.wiki.gg/images/Mothron.gif",
       "npcId": 477,
       "events": [
@@ -1442,6 +1594,7 @@
       "id": "spore-skeleton",
       "name": "Spore Skeleton",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Spore_Skeleton",
       "icon": "https://terraria.wiki.gg/images/Spore_Skeleton.gif",
       "npcId": 635,
       "biomes": [
@@ -1452,6 +1605,7 @@
       "id": "sky-crate",
       "name": "Sky Crate",
       "kind": "container",
+      "url": "https://terraria.wiki.gg/wiki/Sky_Crate",
       "icon": "https://terraria.wiki.gg/images/Sky_Crate.png",
       "group": "crate"
     },
@@ -1459,6 +1613,7 @@
       "id": "azure-crate",
       "name": "Azure Crate",
       "kind": "container",
+      "url": "https://terraria.wiki.gg/wiki/Azure_Crate",
       "icon": "https://terraria.wiki.gg/images/Azure_Crate.png",
       "group": "crate"
     },
@@ -1466,6 +1621,7 @@
       "id": "skeleton-archer",
       "name": "Skeleton Archer",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Skeleton_Archer",
       "icon": "https://terraria.wiki.gg/images/Skeleton_Archer.gif",
       "npcId": 110,
       "biomes": [
@@ -1476,6 +1632,7 @@
       "id": "tomb-crawler",
       "name": "Tomb Crawler",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Tomb_Crawler",
       "icon": "https://terraria.wiki.gg/images/Tomb_Crawler_%28Tail%29.png",
       "npcId": 515,
       "biomes": [
@@ -1486,6 +1643,7 @@
       "id": "flying-fish",
       "name": "Flying Fish",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Flying_Fish",
       "icon": "https://terraria.wiki.gg/images/Flying_Fish.gif",
       "npcId": 224,
       "events": [
@@ -1496,6 +1654,7 @@
       "id": "pinky",
       "name": "Pinky",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Pinky",
       "icon": "https://terraria.wiki.gg/images/Pinky.gif",
       "npcId": -4,
       "biomes": [
@@ -1508,6 +1667,7 @@
       "id": "pinky-bonus-drop",
       "name": "Pinky (bonus drop)",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Pinky",
       "icon": "https://terraria.wiki.gg/images/Pinky.gif",
       "npcId": -4,
       "biomes": [
@@ -1520,6 +1680,7 @@
       "id": "giant-shelly",
       "name": "Giant Shelly",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Giant_Shelly",
       "icon": "https://terraria.wiki.gg/images/Giant_Shelly_Orange.gif",
       "npcId": 497,
       "biomes": [
@@ -1530,6 +1691,7 @@
       "id": "antlion",
       "name": "Antlion",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Antlion",
       "icon": "https://terraria.wiki.gg/images/Antlion.gif",
       "npcId": 69,
       "biomes": [
@@ -1540,6 +1702,7 @@
       "id": "dark-mummy",
       "name": "Dark Mummy",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Mummies",
       "icon": "https://terraria.wiki.gg/images/Dark_Mummy.gif",
       "npcId": 79,
       "biomes": [
@@ -1550,6 +1713,7 @@
       "id": "mummy",
       "name": "Mummy",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Mummies",
       "icon": "https://terraria.wiki.gg/images/Mummy.gif",
       "npcId": 78,
       "biomes": [
@@ -1560,6 +1724,7 @@
       "id": "blood-mummy",
       "name": "Blood Mummy",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Mummies",
       "icon": "https://terraria.wiki.gg/images/Blood_Mummy.gif",
       "npcId": 630,
       "biomes": [
@@ -1570,6 +1735,7 @@
       "id": "light-mummy",
       "name": "Light Mummy",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Mummies",
       "icon": "https://terraria.wiki.gg/images/Light_Mummy.gif",
       "npcId": 80,
       "biomes": [
@@ -1580,6 +1746,7 @@
       "id": "ice-tortoise",
       "name": "Ice Tortoise",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Ice_Tortoise",
       "icon": "https://terraria.wiki.gg/images/Ice_Tortoise.gif",
       "npcId": 154,
       "biomes": [
@@ -1590,6 +1757,7 @@
       "id": "red-slime",
       "name": "Red Slime",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Red_Slime",
       "icon": "https://terraria.wiki.gg/images/Red_Slime.gif",
       "npcId": -8,
       "biomes": [
@@ -1600,6 +1768,7 @@
       "id": "red-slime-bonus-drop",
       "name": "Red Slime (bonus drop)",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Red_Slime",
       "icon": "https://terraria.wiki.gg/images/Red_Slime.gif",
       "npcId": -8,
       "biomes": [
@@ -1610,6 +1779,7 @@
       "id": "sand-slime",
       "name": "Sand Slime",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Sand_Slime",
       "icon": "https://terraria.wiki.gg/images/Sand_Slime.gif",
       "npcId": 537,
       "biomes": [
@@ -1620,6 +1790,7 @@
       "id": "dye-trader",
       "name": "Dye Trader",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Dye_Trader",
       "icon": "https://terraria.wiki.gg/images/Dye_Trader.png",
       "npcId": 207
     },
@@ -1627,6 +1798,7 @@
       "id": "painter",
       "name": "Painter",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Painter",
       "icon": "https://terraria.wiki.gg/images/Painter.png",
       "npcId": 227
     },
@@ -1634,6 +1806,7 @@
       "id": "tax-collector",
       "name": "Tax Collector",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Tax_Collector",
       "icon": "https://terraria.wiki.gg/images/Tax_Collector.png",
       "npcId": 441
     },
@@ -1641,6 +1814,7 @@
       "id": "creature-from-the-deep",
       "name": "Creature from the Deep",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Creature_from_the_Deep",
       "icon": "https://terraria.wiki.gg/images/Creature_from_the_Deep.gif",
       "npcId": 461,
       "events": [
@@ -1651,6 +1825,7 @@
       "id": "zombie-merman",
       "name": "Zombie Merman",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Zombie_Merman",
       "icon": "https://terraria.wiki.gg/images/Zombie_Merman.gif",
       "npcId": 586,
       "events": [
@@ -1661,6 +1836,7 @@
       "id": "nymph",
       "name": "Nymph",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Nymph",
       "icon": "https://terraria.wiki.gg/images/Nymph.gif",
       "npcId": 196,
       "biomes": [
@@ -1671,6 +1847,7 @@
       "id": "lost-girl",
       "name": "Lost Girl",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Nymph",
       "icon": "https://terraria.wiki.gg/images/Lost_Girl.png",
       "npcId": 195,
       "biomes": [
@@ -1681,6 +1858,7 @@
       "id": "the-possessed",
       "name": "The Possessed",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/The_Possessed",
       "icon": "https://terraria.wiki.gg/images/The_Possessed.gif",
       "npcId": 469,
       "events": [
@@ -1691,6 +1869,7 @@
       "id": "splinterling",
       "name": "Splinterling",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Splinterling",
       "icon": "https://terraria.wiki.gg/images/Splinterling.gif",
       "npcId": 326,
       "events": [
@@ -1701,6 +1880,7 @@
       "id": "the-groom",
       "name": "The Groom",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/The_Groom",
       "icon": "https://terraria.wiki.gg/images/The_Groom.gif",
       "npcId": 53,
       "biomes": [
@@ -1711,6 +1891,7 @@
       "id": "reaper",
       "name": "Reaper",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Reaper",
       "icon": "https://terraria.wiki.gg/images/Reaper.gif",
       "npcId": 253,
       "events": [
@@ -1721,6 +1902,7 @@
       "id": "goblin-thief",
       "name": "Goblin Thief",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Goblin_Thief",
       "icon": "https://terraria.wiki.gg/images/Goblin_Thief.gif",
       "npcId": 27,
       "events": [
@@ -1731,6 +1913,7 @@
       "id": "dark-mage",
       "name": "Dark Mage",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Dark_Mage",
       "icon": "https://terraria.wiki.gg/images/Dark_Mage.gif",
       "npcId": 565,
       "events": [
@@ -1741,6 +1924,7 @@
       "id": "ogre",
       "name": "Ogre",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Ogre",
       "icon": "https://terraria.wiki.gg/images/Ogre.gif",
       "npcId": 577,
       "events": [
@@ -1751,6 +1935,7 @@
       "id": "blood-eel",
       "name": "Blood Eel",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Blood_Eel",
       "icon": "https://terraria.wiki.gg/images/Blood_Eel_Tail.png",
       "npcId": 623,
       "events": [
@@ -1761,6 +1946,7 @@
       "id": "giant-worm",
       "name": "Giant Worm",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Giant_Worm",
       "icon": "https://terraria.wiki.gg/images/Giant_Worm_Tail.png",
       "npcId": 12,
       "biomes": [
@@ -1771,6 +1957,7 @@
       "id": "digger",
       "name": "Digger",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Digger",
       "icon": "https://terraria.wiki.gg/images/Digger_Tail.png",
       "npcId": 97,
       "biomes": [
@@ -1781,6 +1968,7 @@
       "id": "dreadnautilus",
       "name": "Dreadnautilus",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Dreadnautilus",
       "icon": "https://terraria.wiki.gg/images/Dreadnautilus.gif",
       "npcId": 618,
       "events": [
@@ -1791,6 +1979,7 @@
       "id": "heavenly-slime",
       "name": "Heavenly Slime",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Heavenly_Slime",
       "icon": "https://terraria.wiki.gg/images/Heavenly_Slime.gif",
       "npcId": 660,
       "biomes": [
@@ -1801,6 +1990,7 @@
       "id": "crystal-slime",
       "name": "Crystal Slime",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Crystal_Slime",
       "icon": "https://terraria.wiki.gg/images/Crystal_Slime.gif",
       "npcId": 658,
       "biomes": [
@@ -1811,6 +2001,7 @@
       "id": "creeper",
       "name": "Creeper",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Creeper",
       "icon": "https://terraria.wiki.gg/images/Creeper.png",
       "npcId": 267,
       "biomes": [
@@ -1821,6 +2012,7 @@
       "id": "bouncy-slime",
       "name": "Bouncy Slime",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Bouncy_Slime",
       "icon": "https://terraria.wiki.gg/images/Bouncy_Slime.gif",
       "npcId": 659,
       "biomes": [
@@ -1831,6 +2023,7 @@
       "id": "rainbow-slime",
       "name": "Rainbow Slime",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Rainbow_Slime",
       "icon": "https://terraria.wiki.gg/images/Rainbow_Slime.gif",
       "npcId": 244,
       "events": [
@@ -1841,6 +2034,7 @@
       "id": "blood-feeder",
       "name": "Blood Feeder",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Blood_Feeder",
       "icon": "https://terraria.wiki.gg/images/Blood_Feeder.gif",
       "npcId": 241,
       "biomes": [
@@ -1851,6 +2045,7 @@
       "id": "face-monster",
       "name": "Face Monster",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Face_Monster",
       "icon": "https://terraria.wiki.gg/images/Face_Monster.gif",
       "npcId": 181,
       "biomes": [
@@ -1861,6 +2056,7 @@
       "id": "blood-crawler",
       "name": "Blood Crawler",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Blood_Crawler",
       "icon": "https://terraria.wiki.gg/images/Blood_Crawler.gif",
       "npcId": 240,
       "biomes": [
@@ -1871,6 +2067,7 @@
       "id": "eater-of-souls",
       "name": "Eater of Souls",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Eater_of_Souls",
       "icon": "https://terraria.wiki.gg/images/Eater_of_Souls.png",
       "npcId": -12,
       "biomes": [
@@ -1881,18 +2078,21 @@
       "id": "crimson-heart",
       "name": "Crimson Heart",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Crimson_Heart",
       "icon": "https://terraria.wiki.gg/images/Crimson_Heart.png"
     },
     "shadow-orb": {
       "id": "shadow-orb",
       "name": "Shadow Orb",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Shadow_Orb",
       "icon": "https://terraria.wiki.gg/images/Shadow_Orb.png"
     },
     "moss-hornet": {
       "id": "moss-hornet",
       "name": "Moss Hornet",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Moss_Hornet",
       "icon": "https://terraria.wiki.gg/images/Moss_Hornet.gif",
       "npcId": -21,
       "biomes": [
@@ -1903,6 +2103,7 @@
       "id": "eyezor",
       "name": "Eyezor",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Eyezor",
       "icon": "https://terraria.wiki.gg/images/Eyezor.gif",
       "npcId": 251,
       "events": [
@@ -1913,6 +2114,7 @@
       "id": "hemogoblin-shark",
       "name": "Hemogoblin Shark",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Hemogoblin_Shark",
       "icon": "https://terraria.wiki.gg/images/Hemogoblin_Shark.gif",
       "npcId": 620,
       "events": [
@@ -1923,6 +2125,7 @@
       "id": "pirate-captain",
       "name": "Pirate Captain",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Pirate_Captain",
       "icon": "https://terraria.wiki.gg/images/Pirate_Captain.gif",
       "npcId": 216,
       "events": [
@@ -1933,6 +2136,7 @@
       "id": "zombie",
       "name": "Zombie",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Zombie",
       "icon": "https://terraria.wiki.gg/images/Sweater_Zombie.gif",
       "npcId": 332,
       "biomes": [
@@ -1946,6 +2150,7 @@
       "id": "meteor-head",
       "name": "Meteor Head",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Meteor_Head",
       "icon": "https://terraria.wiki.gg/images/Meteor_Head.gif",
       "npcId": 23,
       "biomes": [
@@ -1956,6 +2161,7 @@
       "id": "dungeon-spirit",
       "name": "Dungeon Spirit",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Dungeon_Spirit",
       "icon": "https://terraria.wiki.gg/images/Dungeon_Spirit.gif",
       "npcId": 288,
       "biomes": [
@@ -1966,6 +2172,7 @@
       "id": "lamia",
       "name": "Lamia",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Lamia",
       "icon": "https://terraria.wiki.gg/images/Lamia.gif",
       "npcId": 528,
       "biomes": [
@@ -1977,6 +2184,7 @@
       "id": "crimera",
       "name": "Crimera",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Crimera",
       "icon": "https://terraria.wiki.gg/images/Crimera.gif",
       "npcId": -23,
       "biomes": [
@@ -1987,6 +2195,7 @@
       "id": "santa-nk1",
       "name": "Santa-NK1",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Santa-NK1",
       "icon": "https://terraria.wiki.gg/images/Santa-NK1_phase_1.gif",
       "npcId": 346,
       "events": [
@@ -1997,6 +2206,7 @@
       "id": "black-recluse",
       "name": "Black Recluse",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Black_Recluse",
       "icon": "https://terraria.wiki.gg/images/Black_Recluse.gif",
       "npcId": 238,
       "biomes": [
@@ -2007,6 +2217,7 @@
       "id": "snow-balla",
       "name": "Snow Balla",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Snow_Balla",
       "icon": "https://terraria.wiki.gg/images/Snow_Balla.gif",
       "npcId": 145,
       "events": [
@@ -2017,6 +2228,7 @@
       "id": "snowman-gangsta",
       "name": "Snowman Gangsta",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Snowman_Gangsta",
       "icon": "https://terraria.wiki.gg/images/Snowman_Gangsta.gif",
       "npcId": 143,
       "events": [
@@ -2027,6 +2239,7 @@
       "id": "medusa",
       "name": "Medusa",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Medusa",
       "icon": "https://terraria.wiki.gg/images/Medusa.gif",
       "npcId": 480,
       "biomes": [
@@ -2037,6 +2250,7 @@
       "id": "frozen-crate",
       "name": "Frozen Crate",
       "kind": "container",
+      "url": "https://terraria.wiki.gg/wiki/Frozen_Crate",
       "icon": "https://terraria.wiki.gg/images/Frozen_Crate.png",
       "group": "crate"
     },
@@ -2044,6 +2258,7 @@
       "id": "boreal-crate",
       "name": "Boreal Crate",
       "kind": "container",
+      "url": "https://terraria.wiki.gg/wiki/Boreal_Crate",
       "icon": "https://terraria.wiki.gg/images/Boreal_Crate.png",
       "group": "crate"
     },
@@ -2051,6 +2266,7 @@
       "id": "jungle-chest",
       "name": "Jungle Chest",
       "kind": "container",
+      "url": "https://terraria.wiki.gg/wiki/Jungle_Chest",
       "icon": "https://terraria.wiki.gg/images/Jungle_Chest.png",
       "group": "chest"
     },
@@ -2058,6 +2274,7 @@
       "id": "corruption-chest",
       "name": "Corruption Chest",
       "kind": "container",
+      "url": "https://terraria.wiki.gg/wiki/Corruption_Chest",
       "icon": "https://terraria.wiki.gg/images/Corruption_Chest.png",
       "group": "chest"
     },
@@ -2065,6 +2282,7 @@
       "id": "crimson-chest",
       "name": "Crimson Chest",
       "kind": "container",
+      "url": "https://terraria.wiki.gg/wiki/Crimson_Chest",
       "icon": "https://terraria.wiki.gg/images/Crimson_Chest.png",
       "group": "chest"
     },
@@ -2072,6 +2290,7 @@
       "id": "hallowed-chest",
       "name": "Hallowed Chest",
       "kind": "container",
+      "url": "https://terraria.wiki.gg/wiki/Hallowed_Chest",
       "icon": "https://terraria.wiki.gg/images/Hallowed_Chest.png",
       "group": "chest"
     },
@@ -2079,6 +2298,7 @@
       "id": "ice-chest",
       "name": "Ice Chest",
       "kind": "container",
+      "url": "https://terraria.wiki.gg/wiki/Ice_Chest",
       "icon": "https://terraria.wiki.gg/images/Ice_Chest.png",
       "group": "chest"
     },
@@ -2086,6 +2306,7 @@
       "id": "desert-chest",
       "name": "Desert Chest",
       "kind": "container",
+      "url": "https://terraria.wiki.gg/wiki/Desert_Chest",
       "icon": "https://terraria.wiki.gg/images/Desert_Chest.png",
       "group": "chest"
     },
@@ -2093,6 +2314,7 @@
       "id": "headless-horseman",
       "name": "Headless Horseman",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Headless_Horseman",
       "icon": "https://terraria.wiki.gg/images/Headless_Horseman.gif",
       "npcId": 315,
       "events": [
@@ -2103,6 +2325,7 @@
       "id": "diabolist",
       "name": "Diabolist",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Diabolist",
       "icon": "https://terraria.wiki.gg/images/White_Diabolist.png",
       "npcId": 286,
       "biomes": [
@@ -2113,6 +2336,7 @@
       "id": "clown",
       "name": "Clown",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Clown",
       "icon": "https://terraria.wiki.gg/images/Clown.gif",
       "npcId": 109,
       "events": [
@@ -2123,6 +2347,7 @@
       "id": "red-devil",
       "name": "Red Devil",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Red_Devil",
       "icon": "https://terraria.wiki.gg/images/Red_Devil.gif",
       "npcId": 156,
       "biomes": [
@@ -2133,6 +2358,7 @@
       "id": "hornet",
       "name": "Hornet",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Hornet",
       "icon": "https://terraria.wiki.gg/images/Stingy_Hornet.gif",
       "npcId": -65,
       "biomes": [
@@ -2143,6 +2369,7 @@
       "id": "librarian-skeleton",
       "name": "Librarian Skeleton",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Librarian_Skeleton",
       "icon": "https://terraria.wiki.gg/images/Librarian_Skeleton.png",
       "npcId": 693,
       "biomes": [
@@ -2153,6 +2380,7 @@
       "id": "slimeling",
       "name": "Slimeling",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Slimeling",
       "icon": "https://terraria.wiki.gg/images/Slimeling.gif",
       "npcId": -1,
       "biomes": [
@@ -2163,6 +2391,7 @@
       "id": "dead-man-s-chest",
       "name": "Dead Man's Chest",
       "kind": "container",
+      "url": "https://terraria.wiki.gg/wiki/Dead_Man%27s_Chest",
       "icon": "https://terraria.wiki.gg/images/Dead_Man%27s_Chest.png",
       "group": "chest"
     },
@@ -2170,6 +2399,7 @@
       "id": "can-of-worms",
       "name": "Can Of Worms",
       "kind": "container",
+      "url": "https://terraria.wiki.gg/wiki/Can_Of_Worms",
       "icon": "https://terraria.wiki.gg/images/Can_Of_Worms.png",
       "group": "other"
     },
@@ -2177,6 +2407,7 @@
       "id": "obsidian-lock-box",
       "name": "Obsidian Lock Box",
       "kind": "container",
+      "url": "https://terraria.wiki.gg/wiki/Obsidian_Lock_Box",
       "icon": "https://terraria.wiki.gg/images/Obsidian_Lock_Box.png",
       "group": "other"
     },
@@ -2184,6 +2415,7 @@
       "id": "slimer",
       "name": "Slimer",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Slimer",
       "icon": "https://terraria.wiki.gg/images/Slimer.gif",
       "npcId": 121,
       "biomes": [
@@ -2194,6 +2426,7 @@
       "id": "moss-zombie",
       "name": "Moss Zombie",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Moss_Zombie",
       "icon": "https://terraria.wiki.gg/images/Moss_Zombie.png",
       "npcId": 691,
       "biomes": [
@@ -2204,6 +2437,7 @@
       "id": "rock-golem",
       "name": "Rock Golem",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Rock_Golem",
       "icon": "https://terraria.wiki.gg/images/Rock_Golem.gif",
       "npcId": 631,
       "biomes": [
@@ -2214,6 +2448,7 @@
       "id": "tim",
       "name": "Tim",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Tim",
       "icon": "https://terraria.wiki.gg/images/Tim.png",
       "npcId": 45,
       "biomes": [
@@ -2224,6 +2459,7 @@
       "id": "pearlwood-crate",
       "name": "Pearlwood Crate",
       "kind": "container",
+      "url": "https://terraria.wiki.gg/wiki/Pearlwood_Crate",
       "icon": "https://terraria.wiki.gg/images/Pearlwood_Crate.png",
       "group": "crate"
     },
@@ -2231,6 +2467,7 @@
       "id": "dungeon-guardian",
       "name": "Dungeon Guardian",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Dungeon_Guardian",
       "icon": "https://terraria.wiki.gg/images/Dungeon_Guardian.png",
       "npcId": 68,
       "biomes": [
@@ -2241,6 +2478,7 @@
       "id": "salamander",
       "name": "Salamander",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Salamander",
       "icon": "https://terraria.wiki.gg/images/Salamander_9.gif",
       "npcId": 506,
       "biomes": [
@@ -2251,6 +2489,7 @@
       "id": "steampunker",
       "name": "Steampunker",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Steampunker",
       "icon": "https://terraria.wiki.gg/images/Steampunker.png",
       "npcId": 178
     },
@@ -2258,6 +2497,7 @@
       "id": "skeleton",
       "name": "Skeleton",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Skeleton",
       "icon": "https://terraria.wiki.gg/images/Alien_Skeleton.gif",
       "npcId": 324,
       "biomes": [
@@ -2268,6 +2508,7 @@
       "id": "toxic-sludge",
       "name": "Toxic Sludge",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Toxic_Sludge",
       "icon": "https://terraria.wiki.gg/images/Toxic_Sludge.gif",
       "npcId": 141,
       "biomes": [
@@ -2278,6 +2519,7 @@
       "id": "desert-spirit",
       "name": "Desert Spirit",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Desert_Spirit",
       "icon": "https://terraria.wiki.gg/images/Desert_Spirit.gif",
       "npcId": 533,
       "biomes": [
@@ -2290,6 +2532,7 @@
       "id": "shaking-forest-tree",
       "name": "Shaking Forest tree",
       "kind": "container",
+      "url": "https://terraria.wiki.gg/wiki/Forest_tree",
       "icon": "https://terraria.wiki.gg/images/Wood.png",
       "group": "tree"
     },
@@ -2297,6 +2540,7 @@
       "id": "shaking-mahogany-tree",
       "name": "Shaking Mahogany tree",
       "kind": "container",
+      "url": "https://terraria.wiki.gg/wiki/Mahogany_tree",
       "icon": "https://terraria.wiki.gg/images/Rich_Mahogany.png",
       "group": "tree"
     },
@@ -2304,6 +2548,7 @@
       "id": "shaking-boreal-tree",
       "name": "Shaking Boreal tree",
       "kind": "container",
+      "url": "https://terraria.wiki.gg/wiki/Boreal_tree",
       "icon": "https://terraria.wiki.gg/images/Boreal_Wood.png",
       "group": "tree"
     },
@@ -2311,6 +2556,7 @@
       "id": "shaking-pearlwood-tree",
       "name": "Shaking Pearlwood tree",
       "kind": "container",
+      "url": "https://terraria.wiki.gg/wiki/Pearlwood_tree",
       "icon": "https://terraria.wiki.gg/images/Pearlwood.png",
       "group": "tree"
     },
@@ -2318,6 +2564,7 @@
       "id": "shaking-ash-tree",
       "name": "Shaking Ash tree",
       "kind": "container",
+      "url": "https://terraria.wiki.gg/wiki/Ash_tree",
       "icon": "https://terraria.wiki.gg/images/Ash_Wood.png",
       "group": "tree"
     },
@@ -2325,6 +2572,7 @@
       "id": "shaking-giant-glowing-mushroom",
       "name": "Shaking Giant Glowing Mushroom",
       "kind": "container",
+      "url": "https://terraria.wiki.gg/wiki/Giant_Glowing_Mushroom",
       "icon": "https://terraria.wiki.gg/images/Glowing_Mushroom.png",
       "group": "tree"
     },
@@ -2332,6 +2580,7 @@
       "id": "shaking-ebonwood-tree",
       "name": "Shaking Ebonwood tree",
       "kind": "container",
+      "url": "https://terraria.wiki.gg/wiki/Ebonwood_tree",
       "icon": "https://terraria.wiki.gg/images/Ebonwood.png",
       "group": "tree"
     },
@@ -2339,6 +2588,7 @@
       "id": "shaking-shadewood-tree",
       "name": "Shaking Shadewood tree",
       "kind": "container",
+      "url": "https://terraria.wiki.gg/wiki/Shadewood_tree",
       "icon": "https://terraria.wiki.gg/images/Shadewood.png",
       "group": "tree"
     },
@@ -2346,6 +2596,7 @@
       "id": "shaking-palm-tree",
       "name": "Shaking Palm tree",
       "kind": "container",
+      "url": "https://terraria.wiki.gg/wiki/Palm_tree",
       "icon": "https://terraria.wiki.gg/images/Palm_Wood.png",
       "group": "tree"
     },
@@ -2353,6 +2604,7 @@
       "id": "shaking-ebonwood-palm-tree",
       "name": "Shaking Ebonwood Palm tree",
       "kind": "container",
+      "url": "https://terraria.wiki.gg/wiki/Ebonwood_Palm_tree",
       "icon": "https://terraria.wiki.gg/images/Ebonwood.png",
       "group": "tree"
     },
@@ -2360,6 +2612,7 @@
       "id": "shaking-shadewood-palm-tree",
       "name": "Shaking Shadewood Palm tree",
       "kind": "container",
+      "url": "https://terraria.wiki.gg/wiki/Shadewood_Palm_tree",
       "icon": "https://terraria.wiki.gg/images/Shadewood.png",
       "group": "tree"
     },
@@ -2367,6 +2620,7 @@
       "id": "shaking-pearlwood-palm-tree",
       "name": "Shaking Pearlwood Palm tree",
       "kind": "container",
+      "url": "https://terraria.wiki.gg/wiki/Pearlwood_Palm_tree",
       "icon": "https://terraria.wiki.gg/images/Pearlwood.png",
       "group": "tree"
     },
@@ -2374,6 +2628,7 @@
       "id": "present",
       "name": "Present",
       "kind": "container",
+      "url": "https://terraria.wiki.gg/wiki/Present",
       "icon": "https://terraria.wiki.gg/images/Present.png",
       "group": "other"
     },
@@ -2381,6 +2636,7 @@
       "id": "pixie",
       "name": "Pixie",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Pixie",
       "icon": "https://terraria.wiki.gg/images/Pixie.gif",
       "npcId": 75,
       "biomes": [
@@ -2391,6 +2647,7 @@
       "id": "huge-dragon-egg",
       "name": "Huge Dragon Egg",
       "kind": "container",
+      "url": "https://terraria.wiki.gg/wiki/Huge_Dragon_Egg",
       "icon": "https://terraria.wiki.gg/images/Huge_Dragon_Egg.png",
       "group": "other"
     },
@@ -2398,6 +2655,7 @@
       "id": "devourer",
       "name": "Devourer",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Devourer",
       "icon": "https://terraria.wiki.gg/images/Devourer_Tail.png",
       "npcId": 9,
       "biomes": [
@@ -2408,6 +2666,7 @@
       "id": "geode",
       "name": "Geode",
       "kind": "container",
+      "url": "https://terraria.wiki.gg/wiki/Geode",
       "icon": "https://terraria.wiki.gg/images/Geode.png",
       "group": "other"
     },
@@ -2415,6 +2674,7 @@
       "id": "tavernkeep",
       "name": "Tavernkeep",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Tavernkeep",
       "icon": "https://terraria.wiki.gg/images/Tavernkeep.png",
       "npcId": 550
     },
@@ -2422,6 +2682,7 @@
       "id": "sand-elemental",
       "name": "Sand Elemental",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Sand_Elemental",
       "icon": "https://terraria.wiki.gg/images/Sand_Elemental.gif",
       "npcId": 541,
       "events": [
@@ -2432,6 +2693,7 @@
       "id": "goblin-warlock",
       "name": "Goblin Warlock",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Goblin_Warlock",
       "icon": "https://terraria.wiki.gg/images/Goblin_Warlock.gif",
       "npcId": 471,
       "events": [
@@ -2442,6 +2704,7 @@
       "id": "martian-saucer",
       "name": "Martian Saucer",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Martian_Saucer",
       "icon": "https://terraria.wiki.gg/images/Martian_Saucer_Core.gif",
       "npcId": 395,
       "events": [
@@ -2452,6 +2715,7 @@
       "id": "golden-lock-box",
       "name": "Golden Lock Box",
       "kind": "container",
+      "url": "https://terraria.wiki.gg/wiki/Golden_Lock_Box",
       "icon": "https://terraria.wiki.gg/images/Golden_Lock_Box.png",
       "group": "other"
     },
@@ -2459,6 +2723,7 @@
       "id": "gold-chest",
       "name": "Gold Chest",
       "kind": "container",
+      "url": "https://terraria.wiki.gg/wiki/Gold_Chest",
       "icon": "https://terraria.wiki.gg/images/Gold_Chest.png",
       "group": "chest"
     },
@@ -2466,6 +2731,7 @@
       "id": "gold-chest-dungeon",
       "name": "Gold Chest (Dungeon)",
       "kind": "container",
+      "url": "https://terraria.wiki.gg/wiki/Gold_Chest_%28Dungeon%29",
       "icon": "https://terraria.wiki.gg/images/Gold_Chest.png",
       "group": "chest"
     },
@@ -2473,6 +2739,7 @@
       "id": "gold-chest-pyramid",
       "name": "Gold Chest (Pyramid)",
       "kind": "container",
+      "url": "https://terraria.wiki.gg/wiki/Gold_Chest_%28Pyramid%29",
       "icon": "https://terraria.wiki.gg/images/Gold_Chest.png",
       "group": "chest"
     },
@@ -2480,6 +2747,7 @@
       "id": "goblin-archer",
       "name": "Goblin Archer",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Goblin_Archer",
       "icon": "https://terraria.wiki.gg/images/Goblin_Archer.gif",
       "npcId": 111,
       "events": [
@@ -2490,6 +2758,7 @@
       "id": "mother-slime",
       "name": "Mother Slime",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Mother_Slime",
       "icon": "https://terraria.wiki.gg/images/Mother_Slime.gif",
       "npcId": 16,
       "biomes": [
@@ -2500,6 +2769,7 @@
       "id": "undead-viking",
       "name": "Undead Viking",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Undead_Viking",
       "icon": "https://terraria.wiki.gg/images/Undead_Viking.gif",
       "npcId": 167,
       "biomes": [
@@ -2510,6 +2780,7 @@
       "id": "armored-viking",
       "name": "Armored Viking",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Armored_Viking",
       "icon": "https://terraria.wiki.gg/images/Armored_Viking.gif",
       "npcId": 197,
       "biomes": [
@@ -2520,6 +2791,7 @@
       "id": "spore-bat",
       "name": "Spore Bat",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Spore_Bat",
       "icon": "https://terraria.wiki.gg/images/Spore_Bat.gif",
       "npcId": 634,
       "biomes": [
@@ -2530,6 +2802,7 @@
       "id": "ice-bat",
       "name": "Ice Bat",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Ice_Bat",
       "icon": "https://terraria.wiki.gg/images/Ice_Bat.gif",
       "npcId": 150,
       "biomes": [
@@ -2540,6 +2813,7 @@
       "id": "giant-bat",
       "name": "Giant Bat",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Giant_Bat",
       "icon": "https://terraria.wiki.gg/images/Giant_Bat.gif",
       "npcId": 93,
       "biomes": [
@@ -2550,6 +2824,7 @@
       "id": "jungle-bat",
       "name": "Jungle Bat",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Jungle_Bat",
       "icon": "https://terraria.wiki.gg/images/Jungle_Bat.gif",
       "npcId": 51,
       "biomes": [
@@ -2560,6 +2835,7 @@
       "id": "cave-bat",
       "name": "Cave Bat",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Cave_Bat",
       "icon": "https://terraria.wiki.gg/images/Cave_Bat.gif",
       "npcId": 49,
       "biomes": [
@@ -2570,6 +2846,7 @@
       "id": "spiked-slime",
       "name": "Spiked Slime",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Spiked_Slime",
       "icon": "https://terraria.wiki.gg/images/Spiked_Slime.gif",
       "npcId": 535,
       "biomes": [
@@ -2580,6 +2857,7 @@
       "id": "fire-imp",
       "name": "Fire Imp",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Fire_Imp",
       "icon": "https://terraria.wiki.gg/images/Fire_Imp.gif",
       "npcId": 24,
       "biomes": [
@@ -2590,6 +2868,7 @@
       "id": "vampire",
       "name": "Vampire",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Vampire",
       "icon": "https://terraria.wiki.gg/images/Vampire.gif",
       "npcId": 159,
       "events": [
@@ -2600,6 +2879,7 @@
       "id": "voodoo-demon",
       "name": "Voodoo Demon",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Voodoo_Demon",
       "icon": "https://terraria.wiki.gg/images/Voodoo_Demon.gif",
       "npcId": 66,
       "biomes": [
@@ -2610,6 +2890,7 @@
       "id": "wooden-crate",
       "name": "Wooden Crate",
       "kind": "container",
+      "url": "https://terraria.wiki.gg/wiki/Wooden_Crate",
       "icon": "https://terraria.wiki.gg/images/Wooden_Crate.png",
       "group": "crate"
     },
@@ -2617,6 +2898,7 @@
       "id": "deerclops",
       "name": "Deerclops",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Deerclops",
       "icon": "https://terraria.wiki.gg/images/Deerclops.png",
       "npcId": 668
     },
@@ -2624,12 +2906,14 @@
       "id": "treasure-bag-deerclops",
       "name": "Treasure Bag (Deerclops)",
       "kind": "bag",
+      "url": "https://terraria.wiki.gg/wiki/Treasure_Bag_%28Deerclops%29",
       "icon": "https://terraria.wiki.gg/images/Treasure_Bag_%28Deerclops%29.png"
     },
     "empress-of-light": {
       "id": "empress-of-light",
       "name": "Empress of Light",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Empress_of_Light",
       "icon": "https://terraria.wiki.gg/images/Empress_of_Light.gif",
       "npcId": 636
     },
@@ -2637,12 +2921,14 @@
       "id": "treasure-bag-empress-of-light",
       "name": "Treasure Bag (Empress of Light)",
       "kind": "bag",
+      "url": "https://terraria.wiki.gg/wiki/Treasure_Bag_%28Empress_of_Light%29",
       "icon": "https://terraria.wiki.gg/images/Treasure_Bag_%28Empress_of_Light%29.png"
     },
     "chest": {
       "id": "chest",
       "name": "Chest",
       "kind": "container",
+      "url": "https://terraria.wiki.gg/wiki/Chest",
       "icon": "https://terraria.wiki.gg/images/Chest.png",
       "group": "chest"
     },
@@ -2650,6 +2936,7 @@
       "id": "living-wood-chest",
       "name": "Living Wood Chest",
       "kind": "container",
+      "url": "https://terraria.wiki.gg/wiki/Living_Wood_Chest",
       "icon": "https://terraria.wiki.gg/images/Living_Wood_Chest.png",
       "group": "chest"
     },
@@ -2657,6 +2944,7 @@
       "id": "ivy-chest",
       "name": "Ivy Chest",
       "kind": "container",
+      "url": "https://terraria.wiki.gg/wiki/Ivy_Chest",
       "icon": "https://terraria.wiki.gg/images/Ivy_Chest.png",
       "group": "chest"
     },
@@ -2664,6 +2952,7 @@
       "id": "cursed-hammer",
       "name": "Cursed Hammer",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Cursed_Hammer",
       "icon": "https://terraria.wiki.gg/images/Cursed_Hammer.gif",
       "npcId": 83,
       "biomes": [
@@ -2674,6 +2963,7 @@
       "id": "enchanted-sword",
       "name": "Enchanted Sword",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Enchanted_Sword_%28NPC%29",
       "icon": "https://terraria.wiki.gg/images/Enchanted_Sword_%28NPC%29.gif",
       "npcId": 84,
       "biomes": [
@@ -2684,6 +2974,7 @@
       "id": "harpy",
       "name": "Harpy",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Harpy",
       "icon": "https://terraria.wiki.gg/images/Harpy.gif",
       "npcId": 48,
       "biomes": [
@@ -2694,6 +2985,7 @@
       "id": "crimson-axe",
       "name": "Crimson Axe",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Crimson_Axe",
       "icon": "https://terraria.wiki.gg/images/Crimson_Axe.gif",
       "npcId": 179,
       "biomes": [
@@ -2704,6 +2996,7 @@
       "id": "granite-golem",
       "name": "Granite Golem",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Granite_Golem",
       "icon": "https://terraria.wiki.gg/images/Granite_Golem.gif",
       "npcId": 482,
       "biomes": [
@@ -2714,6 +3007,7 @@
       "id": "granite-elemental",
       "name": "Granite Elemental",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Granite_Elemental",
       "icon": "https://terraria.wiki.gg/images/Granite_Elemental.gif",
       "npcId": 483,
       "biomes": [
@@ -2724,6 +3018,7 @@
       "id": "crawdad",
       "name": "Crawdad",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Crawdad",
       "icon": "https://terraria.wiki.gg/images/Crawdad_Blue.gif",
       "npcId": 495,
       "biomes": [
@@ -2734,6 +3029,7 @@
       "id": "angler-fish",
       "name": "Angler Fish",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Angler_Fish",
       "icon": "https://terraria.wiki.gg/images/Angler_Fish.gif",
       "npcId": 102,
       "biomes": [
@@ -2745,6 +3041,7 @@
       "id": "ocean-crate",
       "name": "Ocean Crate",
       "kind": "container",
+      "url": "https://terraria.wiki.gg/wiki/Ocean_Crate",
       "icon": "https://terraria.wiki.gg/images/Ocean_Crate.png",
       "group": "crate"
     },
@@ -2752,6 +3049,7 @@
       "id": "shadow-chest",
       "name": "Shadow Chest",
       "kind": "container",
+      "url": "https://terraria.wiki.gg/wiki/Shadow_Chest",
       "icon": "https://terraria.wiki.gg/images/Shadow_Chest.png",
       "group": "chest"
     },
@@ -2759,6 +3057,7 @@
       "id": "corrupt-bunny",
       "name": "Corrupt Bunny",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Corrupt_Bunny",
       "icon": "https://terraria.wiki.gg/images/Corrupt_Bunny.gif",
       "npcId": 47,
       "events": [
@@ -2769,6 +3068,7 @@
       "id": "vicious-bunny",
       "name": "Vicious Bunny",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Vicious_Bunny",
       "icon": "https://terraria.wiki.gg/images/Vicious_Bunny.gif",
       "npcId": 464,
       "events": [
@@ -2779,6 +3079,7 @@
       "id": "pink-jellyfish",
       "name": "Pink Jellyfish",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Jellyfish",
       "icon": "https://terraria.wiki.gg/images/Pink_Jellyfish.gif",
       "npcId": 64,
       "biomes": [
@@ -2789,6 +3090,7 @@
       "id": "blue-jellyfish",
       "name": "Blue Jellyfish",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Jellyfish",
       "icon": "https://terraria.wiki.gg/images/Blue_Jellyfish.gif",
       "npcId": 63,
       "biomes": [
@@ -2799,6 +3101,7 @@
       "id": "blood-jelly",
       "name": "Blood Jelly",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Jellyfish",
       "icon": "https://terraria.wiki.gg/images/Blood_Jelly.gif",
       "npcId": 242,
       "biomes": [
@@ -2810,6 +3113,7 @@
       "id": "green-jellyfish",
       "name": "Green Jellyfish",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Jellyfish",
       "icon": "https://terraria.wiki.gg/images/Green_Jellyfish.gif",
       "npcId": 103,
       "biomes": [
@@ -2820,6 +3124,7 @@
       "id": "shark",
       "name": "Shark",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Shark",
       "icon": "https://terraria.wiki.gg/images/Shark.gif",
       "npcId": 65,
       "biomes": [
@@ -2830,6 +3135,7 @@
       "id": "bone-serpent",
       "name": "Bone Serpent",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Bone_Serpent",
       "icon": "https://terraria.wiki.gg/images/Bone_Serpent_Tail.png",
       "npcId": 41,
       "biomes": [
@@ -2840,6 +3146,7 @@
       "id": "wandering-eye",
       "name": "Wandering Eye",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Wandering_Eye",
       "icon": "https://terraria.wiki.gg/images/Wandering_Eye.gif",
       "npcId": 133,
       "biomes": [
@@ -2853,6 +3160,7 @@
       "id": "unicorn",
       "name": "Unicorn",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Unicorn",
       "icon": "https://terraria.wiki.gg/images/Unicorn.gif",
       "npcId": 86,
       "biomes": [
@@ -2863,6 +3171,7 @@
       "id": "pigron",
       "name": "Pigron",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Pigron",
       "icon": "https://terraria.wiki.gg/images/Crimson_Pigron.gif",
       "npcId": 180,
       "biomes": [
@@ -2874,6 +3183,7 @@
       "id": "bone-biter",
       "name": "Bone Biter",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Sand_Sharks",
       "icon": "https://terraria.wiki.gg/images/Bone_Biter.gif",
       "npcId": 543,
       "events": [
@@ -2884,6 +3194,7 @@
       "id": "sand-shark",
       "name": "Sand Shark",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Sand_Sharks",
       "icon": "https://terraria.wiki.gg/images/Sand_Shark.gif",
       "npcId": 542,
       "events": [
@@ -2894,6 +3205,7 @@
       "id": "flesh-reaver",
       "name": "Flesh Reaver",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Sand_Sharks",
       "icon": "https://terraria.wiki.gg/images/Flesh_Reaver.gif",
       "npcId": 544,
       "events": [
@@ -2904,6 +3216,7 @@
       "id": "crystal-thresher",
       "name": "Crystal Thresher",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Sand_Sharks",
       "icon": "https://terraria.wiki.gg/images/Crystal_Thresher.gif",
       "npcId": 545,
       "events": [
@@ -2914,6 +3227,7 @@
       "id": "world-feeder",
       "name": "World Feeder",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/World_Feeder",
       "icon": "https://terraria.wiki.gg/images/World_Feeder_Tail.png",
       "npcId": 100,
       "biomes": [
@@ -2924,6 +3238,7 @@
       "id": "princess",
       "name": "Princess",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Princess",
       "icon": "https://terraria.wiki.gg/images/Princess.png",
       "npcId": 663
     },
@@ -2931,6 +3246,7 @@
       "id": "stylist",
       "name": "Stylist",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Stylist",
       "icon": "https://terraria.wiki.gg/images/Stylist.png",
       "npcId": 353
     },
@@ -2938,6 +3254,7 @@
       "id": "wyvern",
       "name": "Wyvern",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Wyvern",
       "icon": "https://terraria.wiki.gg/images/Wyvern_Tail.png",
       "npcId": 92,
       "biomes": [
@@ -2948,6 +3265,7 @@
       "id": "mechanic",
       "name": "Mechanic",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Mechanic",
       "icon": "https://terraria.wiki.gg/images/Mechanic.png",
       "npcId": 124
     },
@@ -2955,6 +3273,7 @@
       "id": "clothier",
       "name": "Clothier",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Clothier",
       "icon": "https://terraria.wiki.gg/images/Clothier.png",
       "npcId": 54
     },
@@ -2962,6 +3281,7 @@
       "id": "wraith",
       "name": "Wraith",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Wraith",
       "icon": "https://terraria.wiki.gg/images/Wraith.gif",
       "npcId": 82,
       "biomes": [
@@ -2975,6 +3295,7 @@
       "id": "lihzahrd",
       "name": "Lihzahrd",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Lihzahrd",
       "icon": "https://terraria.wiki.gg/images/Lihzahrd_%28crawler%29.gif",
       "npcId": 199,
       "biomes": [
@@ -2985,6 +3306,7 @@
       "id": "flying-snake",
       "name": "Flying Snake",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Flying_Snake",
       "icon": "https://terraria.wiki.gg/images/Flying_Snake.gif",
       "npcId": 226,
       "biomes": [
@@ -2995,6 +3317,7 @@
       "id": "traveling-merchant",
       "name": "Traveling Merchant",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Traveling_Merchant",
       "icon": "https://terraria.wiki.gg/images/Traveling_Merchant.png",
       "npcId": 368
     },
@@ -3002,6 +3325,7 @@
       "id": "demon-eye",
       "name": "Demon Eye",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Demon_Eye",
       "icon": "https://terraria.wiki.gg/images/Spaceship_Demon_Eye.gif",
       "npcId": 318,
       "biomes": [
@@ -3015,6 +3339,7 @@
       "id": "slime",
       "name": "Slime",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Slimes",
       "icon": "https://terraria.wiki.gg/images/Red_Present_Slime.png",
       "npcId": 336,
       "events": [
@@ -3024,152 +3349,211 @@
     "dart-trap-slime": {
       "id": "dart-trap-slime",
       "name": "Dart Trap Slime",
-      "kind": "npc"
+      "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Slimes",
+      "icon": "https://terraria.wiki.gg/images/Dart_Trap_Slime.png"
     },
     "voice-accessory-slime": {
       "id": "voice-accessory-slime",
       "name": "Voice accessory Slime",
-      "kind": "npc"
+      "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Slimes",
+      "icon": "https://terraria.wiki.gg/images/Voice_accessory_Slime.png"
     },
     "dirt-slime": {
       "id": "dirt-slime",
       "name": "Dirt Slime",
-      "kind": "npc"
+      "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Slimes",
+      "icon": "https://terraria.wiki.gg/images/Dirt_Slime.png"
     },
     "stone-slime": {
       "id": "stone-slime",
       "name": "Stone Slime",
-      "kind": "npc"
+      "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Slimes",
+      "icon": "https://terraria.wiki.gg/images/Stone_Slime.png"
     },
     "cloud-slime": {
       "id": "cloud-slime",
       "name": "Cloud Slime",
-      "kind": "npc"
+      "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Slimes",
+      "icon": "https://terraria.wiki.gg/images/Cloud_Slime.png"
     },
     "web-slime": {
       "id": "web-slime",
       "name": "Web Slime",
-      "kind": "npc"
+      "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Slimes",
+      "icon": "https://terraria.wiki.gg/images/Web_Slime.png"
     },
     "wood-slime": {
       "id": "wood-slime",
       "name": "Wood Slime",
-      "kind": "npc"
+      "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Slimes",
+      "icon": "https://terraria.wiki.gg/images/Wood_Slime.png"
     },
     "granite-slime": {
       "id": "granite-slime",
       "name": "Granite Slime",
-      "kind": "npc"
+      "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Slimes",
+      "icon": "https://terraria.wiki.gg/images/Granite_Slime.png"
     },
     "marble-slime": {
       "id": "marble-slime",
       "name": "Marble Slime",
-      "kind": "npc"
+      "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Slimes",
+      "icon": "https://terraria.wiki.gg/images/Marble_Slime.png"
     },
     "spike-slime": {
       "id": "spike-slime",
       "name": "Spike Slime",
-      "kind": "npc"
+      "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Slimes",
+      "icon": "https://terraria.wiki.gg/images/Spike_Slime.png"
     },
     "torch-slime": {
       "id": "torch-slime",
       "name": "Torch Slime",
-      "kind": "npc"
+      "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Slimes",
+      "icon": "https://terraria.wiki.gg/images/Torch_Slime.png"
     },
     "poo-slime": {
       "id": "poo-slime",
       "name": "Poo Slime",
-      "kind": "npc"
+      "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Slimes",
+      "icon": "https://terraria.wiki.gg/images/Poo_Slime.png"
     },
     "hive-slime": {
       "id": "hive-slime",
       "name": "Hive Slime",
-      "kind": "npc"
+      "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Slimes",
+      "icon": "https://terraria.wiki.gg/images/Hive_Slime.png"
     },
     "honey-slime": {
       "id": "honey-slime",
       "name": "Honey Slime",
-      "kind": "npc"
+      "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Slimes",
+      "icon": "https://terraria.wiki.gg/images/Honey_Slime.png"
     },
     "herb-slime": {
       "id": "herb-slime",
       "name": "Herb Slime",
-      "kind": "npc"
+      "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Slimes",
+      "icon": "https://terraria.wiki.gg/images/Herb_Slime.png"
     },
     "balloon-slime": {
       "id": "balloon-slime",
       "name": "Balloon Slime",
-      "kind": "npc"
+      "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Slimes",
+      "icon": "https://terraria.wiki.gg/images/Balloon_Slime.png"
     },
     "confetti-slime": {
       "id": "confetti-slime",
       "name": "Confetti Slime",
-      "kind": "npc"
+      "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Slimes",
+      "icon": "https://terraria.wiki.gg/images/Confetti_Slime.png"
     },
     "slush-slime": {
       "id": "slush-slime",
       "name": "Slush Slime",
-      "kind": "npc"
+      "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Slimes",
+      "icon": "https://terraria.wiki.gg/images/Slush_Slime.png"
     },
     "snow-slime": {
       "id": "snow-slime",
       "name": "Snow Slime",
-      "kind": "npc"
+      "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Slimes",
+      "icon": "https://terraria.wiki.gg/images/Snow_Slime.png"
     },
     "fossil-slime": {
       "id": "fossil-slime",
       "name": "Fossil Slime",
-      "kind": "npc"
+      "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Slimes",
+      "icon": "https://terraria.wiki.gg/images/Fossil_Slime.png"
     },
     "heart-slime": {
       "id": "heart-slime",
       "name": "Heart Slime",
-      "kind": "npc"
+      "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Slimes",
+      "icon": "https://terraria.wiki.gg/images/Heart_Slime.png"
     },
     "hell-slime": {
       "id": "hell-slime",
       "name": "Hell Slime",
-      "kind": "npc"
+      "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Slimes",
+      "icon": "https://terraria.wiki.gg/images/Hell_Slime.png"
     },
     "conveyor-slime": {
       "id": "conveyor-slime",
       "name": "Conveyor Slime",
-      "kind": "npc"
+      "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Slimes",
+      "icon": "https://terraria.wiki.gg/images/Conveyor_Slime.png"
     },
     "cobalt-slime": {
       "id": "cobalt-slime",
       "name": "Cobalt Slime",
-      "kind": "npc"
+      "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Slimes",
+      "icon": "https://terraria.wiki.gg/images/Cobalt_Slime.png"
     },
     "palladium-slime": {
       "id": "palladium-slime",
       "name": "Palladium Slime",
-      "kind": "npc"
+      "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Slimes",
+      "icon": "https://terraria.wiki.gg/images/Palladium_Slime.png"
     },
     "mythril-slime": {
       "id": "mythril-slime",
       "name": "Mythril Slime",
-      "kind": "npc"
+      "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Slimes",
+      "icon": "https://terraria.wiki.gg/images/Mythril_Slime.png"
     },
     "orichalcum-slime": {
       "id": "orichalcum-slime",
       "name": "Orichalcum Slime",
-      "kind": "npc"
+      "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Slimes",
+      "icon": "https://terraria.wiki.gg/images/Orichalcum_Slime.png"
     },
     "adamantite-slime": {
       "id": "adamantite-slime",
       "name": "Adamantite Slime",
-      "kind": "npc"
+      "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Slimes",
+      "icon": "https://terraria.wiki.gg/images/Adamantite_Slime.png"
     },
     "titanium-slime": {
       "id": "titanium-slime",
       "name": "Titanium Slime",
-      "kind": "npc"
+      "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Slimes",
+      "icon": "https://terraria.wiki.gg/images/Titanium_Slime.png"
     },
     "brain-of-cthulhu": {
       "id": "brain-of-cthulhu",
       "name": "Brain of Cthulhu",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Brain_of_Cthulhu",
       "icon": "https://terraria.wiki.gg/images/Brain_of_Cthulhu_%28First_Phase%29.gif",
       "npcId": 266
     },
@@ -3177,12 +3561,14 @@
       "id": "treasure-bag-brain-of-cthulhu",
       "name": "Treasure Bag (Brain of Cthulhu)",
       "kind": "bag",
+      "url": "https://terraria.wiki.gg/wiki/Treasure_Bag_%28Brain_of_Cthulhu%29",
       "icon": "https://terraria.wiki.gg/images/Treasure_Bag_%28Brain_of_Cthulhu%29.png"
     },
     "queen-slime": {
       "id": "queen-slime",
       "name": "Queen Slime",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Queen_Slime",
       "icon": "https://terraria.wiki.gg/images/Queen_Slime.png",
       "npcId": 657
     },
@@ -3190,12 +3576,14 @@
       "id": "treasure-bag-queen-slime",
       "name": "Treasure Bag (Queen Slime)",
       "kind": "bag",
+      "url": "https://terraria.wiki.gg/wiki/Treasure_Bag_%28Queen_Slime%29",
       "icon": "https://terraria.wiki.gg/images/Treasure_Bag_%28Queen_Slime%29.png"
     },
     "snow-flinx": {
       "id": "snow-flinx",
       "name": "Snow Flinx",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Snow_Flinx",
       "icon": "https://terraria.wiki.gg/images/Snow_Flinx.gif",
       "npcId": 185,
       "biomes": [
@@ -3206,6 +3594,7 @@
       "id": "pigronata",
       "name": "Pigronata",
       "kind": "container",
+      "url": "https://terraria.wiki.gg/wiki/Pigronata",
       "icon": "https://terraria.wiki.gg/images/Pigronata.png",
       "group": "other"
     },
@@ -3213,6 +3602,7 @@
       "id": "skeletron",
       "name": "Skeletron",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Skeletron",
       "icon": "https://terraria.wiki.gg/images/Skeletron_Hand_%28NPC%29.png",
       "npcId": 36
     },
@@ -3220,24 +3610,29 @@
       "id": "treasure-bag-skeletron",
       "name": "Treasure Bag (Skeletron)",
       "kind": "bag",
+      "url": "https://terraria.wiki.gg/wiki/Treasure_Bag_%28Skeletron%29",
       "icon": "https://terraria.wiki.gg/images/Treasure_Bag_%28Skeletron%29.png"
     },
     "lunatic-cultist": {
       "id": "lunatic-cultist",
       "name": "Lunatic Cultist",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Lunatic_Cultist",
       "icon": "https://terraria.wiki.gg/images/Lunatic_Cultist.gif",
       "npcId": 439
     },
     "mechdusa": {
       "id": "mechdusa",
       "name": "Mechdusa",
-      "kind": "npc"
+      "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Mechdusa",
+      "icon": "https://terraria.wiki.gg/images/Mechdusa.png"
     },
     "moon-lord": {
       "id": "moon-lord",
       "name": "Moon Lord",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Moon_Lord",
       "icon": "https://terraria.wiki.gg/images/Moon_Lord%27s_Head.gif",
       "npcId": 396
     },
@@ -3245,12 +3640,14 @@
       "id": "treasure-bag-moon-lord",
       "name": "Treasure Bag (Moon Lord)",
       "kind": "bag",
+      "url": "https://terraria.wiki.gg/wiki/Treasure_Bag_%28Moon_Lord%29",
       "icon": "https://terraria.wiki.gg/images/Treasure_Bag_%28Moon_Lord%29.png"
     },
     "ice-mimic": {
       "id": "ice-mimic",
       "name": "Ice Mimic",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Mimics",
       "icon": "https://terraria.wiki.gg/images/Ice_Mimic.png",
       "npcId": 629,
       "biomes": [
@@ -3261,6 +3658,7 @@
       "id": "mimic",
       "name": "Mimic",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Mimics",
       "icon": "https://terraria.wiki.gg/images/Mimic.png",
       "npcId": 85,
       "biomes": [
@@ -3273,6 +3671,7 @@
       "id": "crimson-mimic",
       "name": "Crimson Mimic",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Mimics",
       "icon": "https://terraria.wiki.gg/images/Crimson_Mimic2.png",
       "npcId": 474,
       "biomes": [
@@ -3283,6 +3682,7 @@
       "id": "corrupt-mimic",
       "name": "Corrupt Mimic",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Mimics",
       "icon": "https://terraria.wiki.gg/images/Corrupt_Mimic2.png",
       "npcId": 473,
       "biomes": [
@@ -3293,6 +3693,7 @@
       "id": "hallowed-mimic",
       "name": "Hallowed Mimic",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Mimics",
       "icon": "https://terraria.wiki.gg/images/Hallowed_Mimic2.png",
       "npcId": 475,
       "biomes": [
@@ -3303,6 +3704,7 @@
       "id": "jungle-mimic",
       "name": "Jungle Mimic",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Mimics",
       "icon": "https://terraria.wiki.gg/images/Jungle_Mimic2.png",
       "npcId": 476,
       "biomes": [
@@ -3313,6 +3715,7 @@
       "id": "eater-of-worlds",
       "name": "Eater of Worlds",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Eater_of_Worlds",
       "icon": "https://terraria.wiki.gg/images/Eater_of_Worlds_Tail.png",
       "npcId": 15
     },
@@ -3320,12 +3723,14 @@
       "id": "treasure-bag-eater-of-worlds",
       "name": "Treasure Bag (Eater of Worlds)",
       "kind": "bag",
+      "url": "https://terraria.wiki.gg/wiki/Treasure_Bag_%28Eater_of_Worlds%29",
       "icon": "https://terraria.wiki.gg/images/Treasure_Bag_%28Eater_of_Worlds%29.png"
     },
     "angry-trapper": {
       "id": "angry-trapper",
       "name": "Angry Trapper",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Angry_Trapper",
       "icon": "https://terraria.wiki.gg/images/Angry_Trapper.gif",
       "npcId": 175,
       "biomes": [
@@ -3336,6 +3741,7 @@
       "id": "man-eater",
       "name": "Man Eater",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Man_Eater",
       "icon": "https://terraria.wiki.gg/images/Man_Eater.gif",
       "npcId": 43,
       "biomes": [
@@ -3346,6 +3752,7 @@
       "id": "clinger",
       "name": "Clinger",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Clinger",
       "icon": "https://terraria.wiki.gg/images/Clinger.gif",
       "npcId": 101,
       "biomes": [
@@ -3356,6 +3763,7 @@
       "id": "gastropod",
       "name": "Gastropod",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Gastropod",
       "icon": "https://terraria.wiki.gg/images/Gastropod.gif",
       "npcId": 122,
       "biomes": [
@@ -3369,6 +3777,7 @@
       "id": "goodie-bag",
       "name": "Goodie Bag",
       "kind": "container",
+      "url": "https://terraria.wiki.gg/wiki/Goodie_Bag",
       "icon": "https://terraria.wiki.gg/images/Goodie_Bag.png",
       "group": "other"
     },
@@ -3376,6 +3785,7 @@
       "id": "solar-pillar",
       "name": "Solar Pillar",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Celestial_Pillars",
       "icon": "https://terraria.wiki.gg/images/Solar_Pillar.png",
       "npcId": 517,
       "events": [
@@ -3386,6 +3796,7 @@
       "id": "vortex-pillar",
       "name": "Vortex Pillar",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Celestial_Pillars",
       "icon": "https://terraria.wiki.gg/images/Vortex_Pillar.png",
       "npcId": 422,
       "events": [
@@ -3396,6 +3807,7 @@
       "id": "nebula-pillar",
       "name": "Nebula Pillar",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Celestial_Pillars",
       "icon": "https://terraria.wiki.gg/images/Nebula_Pillar.png",
       "npcId": 507,
       "events": [
@@ -3406,6 +3818,7 @@
       "id": "stardust-pillar",
       "name": "Stardust Pillar",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Celestial_Pillars",
       "icon": "https://terraria.wiki.gg/images/Stardust_Pillar.png",
       "npcId": 493,
       "events": [
@@ -3416,6 +3829,7 @@
       "id": "chaos-elemental",
       "name": "Chaos Elemental",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Chaos_Elemental",
       "icon": "https://terraria.wiki.gg/images/Chaos_Elemental.gif",
       "npcId": 120,
       "biomes": [
@@ -3426,6 +3840,7 @@
       "id": "nailhead",
       "name": "Nailhead",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Nailhead",
       "icon": "https://terraria.wiki.gg/images/Nailhead.gif",
       "npcId": 463,
       "events": [
@@ -3436,6 +3851,7 @@
       "id": "frozen-chest",
       "name": "Frozen Chest",
       "kind": "container",
+      "url": "https://terraria.wiki.gg/wiki/Frozen_Chest",
       "icon": "https://terraria.wiki.gg/images/Frozen_Chest.png",
       "group": "chest"
     },
@@ -3443,6 +3859,7 @@
       "id": "king-slime",
       "name": "King Slime",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/King_Slime",
       "icon": "https://terraria.wiki.gg/images/King_Slime.gif",
       "npcId": 50
     },
@@ -3450,12 +3867,14 @@
       "id": "treasure-bag-king-slime",
       "name": "Treasure Bag (King Slime)",
       "kind": "bag",
+      "url": "https://terraria.wiki.gg/wiki/Treasure_Bag_%28King_Slime%29",
       "icon": "https://terraria.wiki.gg/images/Treasure_Bag_%28King_Slime%29.png"
     },
     "eye-of-cthulhu": {
       "id": "eye-of-cthulhu",
       "name": "Eye of Cthulhu",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Eye_of_Cthulhu",
       "icon": "https://terraria.wiki.gg/images/Eye_of_Cthulhu_%28Phase_1%29.gif",
       "npcId": 4
     },
@@ -3463,12 +3882,14 @@
       "id": "treasure-bag-eye-of-cthulhu",
       "name": "Treasure Bag (Eye of Cthulhu)",
       "kind": "bag",
+      "url": "https://terraria.wiki.gg/wiki/Treasure_Bag_%28Eye_of_Cthulhu%29",
       "icon": "https://terraria.wiki.gg/images/Treasure_Bag_%28Eye_of_Cthulhu%29.png"
     },
     "goblin-scout": {
       "id": "goblin-scout",
       "name": "Goblin Scout",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Goblin_Scout",
       "icon": "https://terraria.wiki.gg/images/Goblin_Scout.gif",
       "npcId": 73,
       "biomes": [
@@ -3479,6 +3900,7 @@
       "id": "hellbat",
       "name": "Hellbat",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Hellbat",
       "icon": "https://terraria.wiki.gg/images/Hellbat.gif",
       "npcId": 60,
       "biomes": [
@@ -3489,6 +3911,7 @@
       "id": "guide",
       "name": "Guide",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Guide",
       "icon": "https://terraria.wiki.gg/images/Guide.png",
       "npcId": 22
     },
@@ -3496,6 +3919,7 @@
       "id": "queen-bee",
       "name": "Queen Bee",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Queen_Bee",
       "icon": "https://terraria.wiki.gg/images/Queen_Bee.gif",
       "npcId": 222
     },
@@ -3503,12 +3927,14 @@
       "id": "treasure-bag-queen-bee",
       "name": "Treasure Bag (Queen Bee)",
       "kind": "bag",
+      "url": "https://terraria.wiki.gg/wiki/Treasure_Bag_%28Queen_Bee%29",
       "icon": "https://terraria.wiki.gg/images/Treasure_Bag_%28Queen_Bee%29.png"
     },
     "party-girl": {
       "id": "party-girl",
       "name": "Party Girl",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Party_Girl",
       "icon": "https://terraria.wiki.gg/images/Party_Girl.png",
       "npcId": 208
     },
@@ -3516,6 +3942,7 @@
       "id": "skeletron-prime",
       "name": "Skeletron Prime",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Skeletron_Prime",
       "icon": "https://terraria.wiki.gg/images/Skeletron_Prime_head.gif",
       "npcId": 127
     },
@@ -3523,23 +3950,29 @@
       "id": "treasure-bag-skeletron-prime",
       "name": "Treasure Bag (Skeletron Prime)",
       "kind": "bag",
+      "url": "https://terraria.wiki.gg/wiki/Treasure_Bag_%28Skeletron_Prime%29",
       "icon": "https://terraria.wiki.gg/images/Treasure_Bag_%28Skeletron_Prime%29.png"
     },
     "the-twins": {
       "id": "the-twins",
       "name": "The Twins",
-      "kind": "npc"
+      "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/The_Twins",
+      "icon": "https://terraria.wiki.gg/images/Spazmatism_%28first_form%29.gif",
+      "npcId": 126
     },
     "treasure-bag-the-twins": {
       "id": "treasure-bag-the-twins",
       "name": "Treasure Bag (The Twins)",
       "kind": "bag",
+      "url": "https://terraria.wiki.gg/wiki/Treasure_Bag_%28The_Twins%29",
       "icon": "https://terraria.wiki.gg/images/Treasure_Bag_%28The_Twins%29.png"
     },
     "spazmatism": {
       "id": "spazmatism",
       "name": "Spazmatism",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/The_Twins",
       "icon": "https://terraria.wiki.gg/images/Spazmatism_%28first_form%29.gif",
       "npcId": 126
     },
@@ -3547,6 +3980,7 @@
       "id": "retinazer",
       "name": "Retinazer",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/The_Twins",
       "icon": "https://terraria.wiki.gg/images/Retinazer_%28first_form%29.gif",
       "npcId": 125
     },
@@ -3554,6 +3988,7 @@
       "id": "the-destroyer",
       "name": "The Destroyer",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/The_Destroyer",
       "icon": "https://terraria.wiki.gg/images/The_Destroyer_Tail.png",
       "npcId": 136
     },
@@ -3561,12 +3996,14 @@
       "id": "treasure-bag-the-destroyer",
       "name": "Treasure Bag (The Destroyer)",
       "kind": "bag",
+      "url": "https://terraria.wiki.gg/wiki/Treasure_Bag_%28The_Destroyer%29",
       "icon": "https://terraria.wiki.gg/images/Treasure_Bag_%28The_Destroyer%29.png"
     },
     "mourning-wood": {
       "id": "mourning-wood",
       "name": "Mourning Wood",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Mourning_Wood",
       "icon": "https://terraria.wiki.gg/images/Mourning_Wood.gif",
       "npcId": 325,
       "events": [
@@ -3577,6 +4014,7 @@
       "id": "golem",
       "name": "Golem",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Golem",
       "icon": "https://terraria.wiki.gg/images/Golem_Core.png",
       "npcId": 245
     },
@@ -3584,12 +4022,14 @@
       "id": "treasure-bag-golem",
       "name": "Treasure Bag (Golem)",
       "kind": "bag",
+      "url": "https://terraria.wiki.gg/wiki/Treasure_Bag_%28Golem%29",
       "icon": "https://terraria.wiki.gg/images/Treasure_Bag_%28Golem%29.png"
     },
     "duke-fishron": {
       "id": "duke-fishron",
       "name": "Duke Fishron",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Duke_Fishron",
       "icon": "https://terraria.wiki.gg/images/Duke_Fishron_%28First_Form%29.gif",
       "npcId": 370
     },
@@ -3597,12 +4037,14 @@
       "id": "treasure-bag-duke-fishron",
       "name": "Treasure Bag (Duke Fishron)",
       "kind": "bag",
+      "url": "https://terraria.wiki.gg/wiki/Treasure_Bag_%28Duke_Fishron%29",
       "icon": "https://terraria.wiki.gg/images/Treasure_Bag_%28Duke_Fishron%29.png"
     },
     "obsidian-crate": {
       "id": "obsidian-crate",
       "name": "Obsidian Crate",
       "kind": "container",
+      "url": "https://terraria.wiki.gg/wiki/Obsidian_Crate",
       "icon": "https://terraria.wiki.gg/images/Obsidian_Crate.png",
       "group": "crate"
     },
@@ -3610,6 +4052,7 @@
       "id": "wall-of-flesh",
       "name": "Wall of Flesh",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Wall_of_Flesh",
       "icon": "https://terraria.wiki.gg/images/Wall_of_Flesh_Mouth.gif",
       "npcId": 113
     },
@@ -3617,12 +4060,14 @@
       "id": "treasure-bag-wall-of-flesh",
       "name": "Treasure Bag (Wall of Flesh)",
       "kind": "bag",
+      "url": "https://terraria.wiki.gg/wiki/Treasure_Bag_%28Wall_of_Flesh%29",
       "icon": "https://terraria.wiki.gg/images/Treasure_Bag_%28Wall_of_Flesh%29.png"
     },
     "werewolf": {
       "id": "werewolf",
       "name": "Werewolf",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Werewolf",
       "icon": "https://terraria.wiki.gg/images/Werewolf.gif",
       "npcId": 104,
       "biomes": [
@@ -3636,6 +4081,7 @@
       "id": "plantera",
       "name": "Plantera",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Plantera",
       "icon": "https://terraria.wiki.gg/images/Plantera_%28First_form%29.gif",
       "npcId": 262
     },
@@ -3643,12 +4089,14 @@
       "id": "treasure-bag-plantera",
       "name": "Treasure Bag (Plantera)",
       "kind": "bag",
+      "url": "https://terraria.wiki.gg/wiki/Treasure_Bag_%28Plantera%29",
       "icon": "https://terraria.wiki.gg/images/Treasure_Bag_%28Plantera%29.png"
     },
     "hellhound": {
       "id": "hellhound",
       "name": "Hellhound",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Hellhound",
       "icon": "https://terraria.wiki.gg/images/Hellhound.gif",
       "npcId": 329,
       "events": [
@@ -3659,6 +4107,7 @@
       "id": "mushi-ladybug",
       "name": "Mushi Ladybug",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Mushi_Ladybug",
       "icon": "https://terraria.wiki.gg/images/Mushi_Ladybug.gif",
       "npcId": 258,
       "biomes": [
@@ -3669,6 +4118,7 @@
       "id": "kobold-glider",
       "name": "Kobold Glider",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Kobold_Glider",
       "icon": "https://terraria.wiki.gg/images/Kobold_Glider.gif",
       "npcId": 575,
       "events": [
@@ -3679,6 +4129,7 @@
       "id": "scutlix",
       "name": "Scutlix",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Scutlix",
       "icon": "https://terraria.wiki.gg/images/Scutlix.gif",
       "npcId": 391,
       "events": [
@@ -3689,6 +4140,7 @@
       "id": "blood-squid",
       "name": "Blood Squid",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Blood_Squid",
       "icon": "https://terraria.wiki.gg/images/Blood_Squid.gif",
       "npcId": 619,
       "events": [
@@ -3699,6 +4151,7 @@
       "id": "etherian-goblin",
       "name": "Etherian Goblin",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Etherian_Goblin",
       "icon": "https://terraria.wiki.gg/images/Etherian_Goblin_3.gif",
       "npcId": 554,
       "events": [
@@ -3709,6 +4162,7 @@
       "id": "sroller",
       "name": "Sroller",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Sroller",
       "icon": "https://terraria.wiki.gg/images/Sroller.gif",
       "npcId": 417,
       "events": [
@@ -3719,6 +4173,7 @@
       "id": "arapaima",
       "name": "Arapaima",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Arapaima",
       "icon": "https://terraria.wiki.gg/images/Arapaima.gif",
       "npcId": 157,
       "biomes": [
@@ -3729,6 +4184,7 @@
       "id": "vulture",
       "name": "Vulture",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Vulture",
       "icon": "https://terraria.wiki.gg/images/Vulture.png",
       "npcId": 61,
       "biomes": [
@@ -3739,6 +4195,7 @@
       "id": "etherian-lightning-bug",
       "name": "Etherian Lightning Bug",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Etherian_Lightning_Bug",
       "icon": "https://terraria.wiki.gg/images/Etherian_Lightning_Bug.gif",
       "npcId": 578,
       "events": [
@@ -3749,6 +4206,7 @@
       "id": "gingerbread-man",
       "name": "Gingerbread Man",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Gingerbread_Man",
       "icon": "https://terraria.wiki.gg/images/Gingerbread_Man.gif",
       "npcId": 342,
       "events": [
@@ -3759,6 +4217,7 @@
       "id": "krampus",
       "name": "Krampus",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Krampus",
       "icon": "https://terraria.wiki.gg/images/Krampus.gif",
       "npcId": 351,
       "events": [
@@ -3769,6 +4228,7 @@
       "id": "yeti",
       "name": "Yeti",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Yeti",
       "icon": "https://terraria.wiki.gg/images/Yeti.gif",
       "npcId": 343,
       "events": [
@@ -3779,6 +4239,7 @@
       "id": "alien-hornet",
       "name": "Alien Hornet",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Alien_Hornet",
       "icon": "https://terraria.wiki.gg/images/Alien_Hornet.gif",
       "npcId": 427,
       "events": [
@@ -3789,6 +4250,7 @@
       "id": "mini-star-cell",
       "name": "Mini Star Cell",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Star_Cell",
       "icon": "https://terraria.wiki.gg/images/Mini_Star_Cell.gif",
       "npcId": 406,
       "events": [
@@ -3799,6 +4261,7 @@
       "id": "star-cell",
       "name": "Star Cell",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Star_Cell",
       "icon": "https://terraria.wiki.gg/images/Star_Cell.gif",
       "npcId": 405,
       "events": [
@@ -3809,6 +4272,7 @@
       "id": "etherian-goblin-bomber",
       "name": "Etherian Goblin Bomber",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Etherian_Goblin_Bomber",
       "icon": "https://terraria.wiki.gg/images/Etherian_Goblin_Bomber_3.gif",
       "npcId": 557,
       "events": [
@@ -3819,6 +4283,7 @@
       "id": "drakomire",
       "name": "Drakomire",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Drakomire",
       "icon": "https://terraria.wiki.gg/images/Drakomire.gif",
       "npcId": 415,
       "events": [
@@ -3829,6 +4294,7 @@
       "id": "brain-suckler",
       "name": "Brain Suckler",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Brain_Suckler",
       "icon": "https://terraria.wiki.gg/images/Brain_Suckler.gif",
       "npcId": 421,
       "events": [
@@ -3839,6 +4305,7 @@
       "id": "flocko",
       "name": "Flocko",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Flocko",
       "icon": "https://terraria.wiki.gg/images/Flocko.gif",
       "npcId": 352,
       "events": [
@@ -3849,6 +4316,7 @@
       "id": "corite",
       "name": "Corite",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Corite",
       "icon": "https://terraria.wiki.gg/images/Corite.gif",
       "npcId": 418,
       "events": [
@@ -3859,6 +4327,7 @@
       "id": "drakin",
       "name": "Drakin",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Drakin",
       "icon": "https://terraria.wiki.gg/images/Drakin_2.gif",
       "npcId": 571,
       "events": [
@@ -3869,6 +4338,7 @@
       "id": "alien-larva",
       "name": "Alien Larva",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Alien_Larva",
       "icon": "https://terraria.wiki.gg/images/Alien_Larva.gif",
       "npcId": 428,
       "events": [
@@ -3879,6 +4349,7 @@
       "id": "drakomire-rider",
       "name": "Drakomire Rider",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Drakomire_Rider",
       "icon": "https://terraria.wiki.gg/images/Drakomire_Rider.gif",
       "npcId": 416,
       "events": [
@@ -3889,6 +4360,7 @@
       "id": "dune-splicer",
       "name": "Dune Splicer",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Dune_Splicer",
       "icon": "https://terraria.wiki.gg/images/Dune_Splicer_%28Tail%29.png",
       "npcId": 512,
       "biomes": [
@@ -3899,6 +4371,7 @@
       "id": "spore-zombie",
       "name": "Spore Zombie",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Spore_Zombie",
       "icon": "https://terraria.wiki.gg/images/Mushroom_Zombie2.gif",
       "npcId": 255,
       "biomes": [
@@ -3909,6 +4382,7 @@
       "id": "anomura-fungus",
       "name": "Anomura Fungus",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Anomura_Fungus",
       "icon": "https://terraria.wiki.gg/images/Anomura_Fungus.gif",
       "npcId": 257,
       "biomes": [
@@ -3919,6 +4393,7 @@
       "id": "drakanian",
       "name": "Drakanian",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Drakanian",
       "icon": "https://terraria.wiki.gg/images/Drakanian.gif",
       "npcId": 518,
       "events": [
@@ -3929,6 +4404,7 @@
       "id": "elf-archer",
       "name": "Elf Archer",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Elf_Archer",
       "icon": "https://terraria.wiki.gg/images/Elf_Archer.gif",
       "npcId": 350,
       "events": [
@@ -3939,6 +4415,7 @@
       "id": "maggot-zombie",
       "name": "Maggot Zombie",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Maggot_Zombie",
       "icon": "https://terraria.wiki.gg/images/Maggot_Zombie.gif",
       "npcId": 632,
       "biomes": [
@@ -3949,6 +4426,7 @@
       "id": "giant-antlion-swarmer",
       "name": "Giant Antlion Swarmer",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Antlion_Swarmer",
       "icon": "https://terraria.wiki.gg/images/Giant_Antlion_Swarmer.gif",
       "npcId": 509,
       "biomes": [
@@ -3959,6 +4437,7 @@
       "id": "kobold",
       "name": "Kobold",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Kobold",
       "icon": "https://terraria.wiki.gg/images/Kobold.gif",
       "npcId": 573,
       "events": [
@@ -3969,6 +4448,7 @@
       "id": "giant-fungi-bulb",
       "name": "Giant Fungi Bulb",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Giant_Fungi_Bulb",
       "icon": "https://terraria.wiki.gg/images/Giant_Fungi_Bulb.png",
       "npcId": 260,
       "biomes": [
@@ -3979,6 +4459,7 @@
       "id": "shimmer-slime",
       "name": "Shimmer Slime",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Shimmer_Slime",
       "icon": "https://terraria.wiki.gg/images/Shimmer_Slime.gif",
       "npcId": 676
     },
@@ -3986,6 +4467,7 @@
       "id": "elf-copter",
       "name": "Elf Copter",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Elf_Copter",
       "icon": "https://terraria.wiki.gg/images/Elf_Copter.gif",
       "npcId": 347,
       "events": [
@@ -3996,6 +4478,7 @@
       "id": "poltergeist",
       "name": "Poltergeist",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Poltergeist",
       "icon": "https://terraria.wiki.gg/images/Poltergeist.gif",
       "npcId": 330,
       "events": [
@@ -4006,6 +4489,7 @@
       "id": "bunny",
       "name": "Bunny",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Bunny",
       "icon": "https://terraria.wiki.gg/images/Party_Bunny.png",
       "npcId": 540,
       "biomes": [
@@ -4016,6 +4500,7 @@
       "id": "corrupt-goldfish",
       "name": "Corrupt Goldfish",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Corrupt_Goldfish",
       "icon": "https://terraria.wiki.gg/images/Corrupt_Goldfish.gif",
       "npcId": 57,
       "biomes": [
@@ -4026,6 +4511,7 @@
       "id": "vicious-goldfish",
       "name": "Vicious Goldfish",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Vicious_Goldfish",
       "icon": "https://terraria.wiki.gg/images/Vicious_Goldfish.gif",
       "npcId": 465,
       "biomes": [
@@ -4036,6 +4522,7 @@
       "id": "goldfish",
       "name": "Goldfish",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Goldfish",
       "icon": "https://terraria.wiki.gg/images/Goldfish_Walker.gif",
       "npcId": 230,
       "events": [
@@ -4046,6 +4533,7 @@
       "id": "giant-antlion-charger",
       "name": "Giant Antlion Charger",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Antlion_Charger",
       "icon": "https://terraria.wiki.gg/images/Giant_Antlion_Charger.gif",
       "npcId": 508,
       "biomes": [
@@ -4056,6 +4544,7 @@
       "id": "twinkle-popper",
       "name": "Twinkle Popper",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Twinkle_Popper",
       "icon": "https://terraria.wiki.gg/images/Twinkle_Popper.gif",
       "npcId": 409,
       "events": [
@@ -4066,6 +4555,7 @@
       "id": "milkyway-weaver",
       "name": "Milkyway Weaver",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Milkyway_Weaver",
       "icon": "https://terraria.wiki.gg/images/Milkyway_Weaver_%28Tail%29.png",
       "npcId": 404,
       "events": [
@@ -4076,6 +4566,7 @@
       "id": "predictor",
       "name": "Predictor",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Predictor",
       "icon": "https://terraria.wiki.gg/images/Predictor.gif",
       "npcId": 424,
       "events": [
@@ -4086,6 +4577,7 @@
       "id": "nebula-floater",
       "name": "Nebula Floater",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Nebula_Floater",
       "icon": "https://terraria.wiki.gg/images/Nebula_Floater.gif",
       "npcId": 420,
       "events": [
@@ -4096,6 +4588,7 @@
       "id": "flow-invader",
       "name": "Flow Invader",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Flow_Invader",
       "icon": "https://terraria.wiki.gg/images/Flow_Invader.gif",
       "npcId": 407,
       "events": [
@@ -4106,6 +4599,7 @@
       "id": "vortexian",
       "name": "Vortexian",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Vortexian",
       "icon": "https://terraria.wiki.gg/images/Vortexian.gif",
       "npcId": 429,
       "events": [
@@ -4116,6 +4610,7 @@
       "id": "nutcracker",
       "name": "Nutcracker",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Nutcracker",
       "icon": "https://terraria.wiki.gg/images/Nutcracker_2.gif",
       "npcId": 349,
       "events": [
@@ -4126,6 +4621,7 @@
       "id": "etherian-wyvern",
       "name": "Etherian Wyvern",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Etherian_Wyvern",
       "icon": "https://terraria.wiki.gg/images/Etherian_Wyvern_3.gif",
       "npcId": 560,
       "events": [
@@ -4136,6 +4632,7 @@
       "id": "martian-drone",
       "name": "Martian Drone",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Martian_Drone",
       "icon": "https://terraria.wiki.gg/images/Martian_Drone.gif",
       "npcId": 388,
       "events": [
@@ -4146,6 +4643,7 @@
       "id": "alien-queen",
       "name": "Alien Queen",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Alien_Queen",
       "icon": "https://terraria.wiki.gg/images/Alien_Queen.gif",
       "npcId": 426,
       "events": [
@@ -4156,6 +4654,7 @@
       "id": "hoppin-jack",
       "name": "Hoppin' Jack",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Hoppin%27_Jack",
       "icon": "https://terraria.wiki.gg/images/Hoppin%27_Jack.gif",
       "npcId": 304,
       "biomes": [
@@ -4167,6 +4666,7 @@
       "id": "possessed-armor",
       "name": "Possessed Armor",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Possessed_Armor",
       "icon": "https://terraria.wiki.gg/images/Possessed_Armor.gif",
       "npcId": 140,
       "biomes": [
@@ -4178,6 +4678,7 @@
       "id": "selenian",
       "name": "Selenian",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Selenian",
       "icon": "https://terraria.wiki.gg/images/Selenian.gif",
       "npcId": 419,
       "events": [
@@ -4188,6 +4689,7 @@
       "id": "old-one-s-skeleton",
       "name": "Old One's Skeleton",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Old_One%27s_Skeleton",
       "icon": "https://terraria.wiki.gg/images/Old_One%27s_Skeleton.gif",
       "npcId": 567,
       "events": [
@@ -4198,6 +4700,7 @@
       "id": "wither-beast",
       "name": "Wither Beast",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Wither_Beast",
       "icon": "https://terraria.wiki.gg/images/Wither_Beast.gif",
       "npcId": 569,
       "events": [
@@ -4208,6 +4711,7 @@
       "id": "jungle-creeper",
       "name": "Jungle Creeper",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Jungle_Creeper",
       "icon": "https://terraria.wiki.gg/images/Jungle_Creeper2.gif",
       "npcId": 237,
       "biomes": [
@@ -4218,6 +4722,7 @@
       "id": "evolution-beast",
       "name": "Evolution Beast",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Evolution_Beast",
       "icon": "https://terraria.wiki.gg/images/Evolution_Beast.gif",
       "npcId": 423,
       "events": [
@@ -4228,6 +4733,7 @@
       "id": "stargazer",
       "name": "Stargazer",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Stargazer",
       "icon": "https://terraria.wiki.gg/images/Stargazer.gif",
       "npcId": 411,
       "events": [
@@ -4238,6 +4744,7 @@
       "id": "bird",
       "name": "Bird",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Birds",
       "icon": "https://terraria.wiki.gg/images/Bird_%28NPC%29.png",
       "npcId": 74,
       "biomes": [
@@ -4250,6 +4757,7 @@
       "id": "blue-jay",
       "name": "Blue Jay",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Birds",
       "icon": "https://terraria.wiki.gg/images/Blue_Jay.png",
       "npcId": 297,
       "biomes": [
@@ -4262,6 +4770,7 @@
       "id": "cardinal",
       "name": "Cardinal",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Birds",
       "icon": "https://terraria.wiki.gg/images/Cardinal.png",
       "npcId": 298,
       "biomes": [
@@ -4274,6 +4783,7 @@
       "id": "penguin",
       "name": "Penguin",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Penguin",
       "icon": "https://terraria.wiki.gg/images/Penguin_black.png",
       "npcId": 149,
       "biomes": [
@@ -4284,6 +4794,7 @@
       "id": "tesla-turret",
       "name": "Tesla Turret",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Tesla_Turret",
       "icon": "https://terraria.wiki.gg/images/Tesla_Turret.gif",
       "npcId": 387,
       "events": [
@@ -4294,6 +4805,7 @@
       "id": "storm-diver",
       "name": "Storm Diver",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Storm_Diver",
       "icon": "https://terraria.wiki.gg/images/Storm_Diver.gif",
       "npcId": 425,
       "events": [
@@ -4304,6 +4816,7 @@
       "id": "lava-slime",
       "name": "Lava Slime",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Lava_Slime",
       "icon": "https://terraria.wiki.gg/images/Lava_Slime.gif",
       "npcId": 59,
       "biomes": [
@@ -4314,6 +4827,7 @@
       "id": "gnome",
       "name": "Gnome",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Gnome",
       "icon": "https://terraria.wiki.gg/images/Gnome.gif",
       "npcId": 624
     },
@@ -4321,6 +4835,7 @@
       "id": "etherian-javelin-thrower",
       "name": "Etherian Javelin Thrower",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Etherian_Javelin_Thrower",
       "icon": "https://terraria.wiki.gg/images/Etherian_Javelin_Thrower_3.gif",
       "npcId": 563,
       "events": [
@@ -4331,6 +4846,7 @@
       "id": "crawltipede",
       "name": "Crawltipede",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Crawltipede",
       "icon": "https://terraria.wiki.gg/images/Crawltipede_%28Tail%29.png",
       "npcId": 414,
       "events": [
@@ -4341,6 +4857,7 @@
       "id": "cultist-archer",
       "name": "Cultist Archer",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Cultists",
       "icon": "https://terraria.wiki.gg/images/Cultist_Archer.gif",
       "npcId": 379,
       "biomes": [
@@ -4351,6 +4868,7 @@
       "id": "lunatic-devotee",
       "name": "Lunatic Devotee",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Cultists",
       "icon": "https://terraria.wiki.gg/images/Lunatic_Devotee.gif",
       "npcId": 438,
       "biomes": [
@@ -4361,6 +4879,7 @@
       "id": "fungo-fish",
       "name": "Fungo Fish",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Jellyfish",
       "icon": "https://terraria.wiki.gg/images/Fungo_Fish.gif",
       "npcId": 256,
       "biomes": [
@@ -4371,6 +4890,7 @@
       "id": "ghost",
       "name": "Ghost",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Ghost_%28enemy%29",
       "icon": "https://terraria.wiki.gg/images/Ghost_%28enemy%29.gif",
       "npcId": 316,
       "biomes": [
@@ -4381,6 +4901,7 @@
       "id": "fungi-bulb",
       "name": "Fungi Bulb",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Fungi_Bulb",
       "icon": "https://terraria.wiki.gg/images/Fungi_Bulb.png",
       "npcId": 259,
       "biomes": [
@@ -4391,6 +4912,7 @@
       "id": "parrot",
       "name": "Parrot",
       "kind": "npc",
+      "url": "https://terraria.wiki.gg/wiki/Parrot",
       "icon": "https://terraria.wiki.gg/images/Parrot.gif",
       "npcId": 252,
       "events": [
@@ -5379,7 +5901,6 @@
       {
         "source": "chest",
         "quantity": "1",
-        "rate": "More info (In I am error worlds)",
         "quantities": {
           "normal": "1",
           "expert": "1",
@@ -5389,6 +5910,10 @@
           "normal",
           "expert",
           "master"
+        ],
+        "note": "In I am error worlds",
+        "conditions": [
+          "seed-i-am-error"
         ]
       }
     ],
@@ -7568,7 +8093,6 @@
       {
         "source": "chest",
         "quantity": "1",
-        "rate": "More info (In I am error worlds)",
         "quantities": {
           "normal": "1",
           "expert": "1",
@@ -7578,6 +8102,10 @@
           "normal",
           "expert",
           "master"
+        ],
+        "note": "In I am error worlds",
+        "conditions": [
+          "seed-i-am-error"
         ]
       }
     ],
@@ -8942,7 +9470,6 @@
       {
         "source": "chest",
         "quantity": "1",
-        "rate": "More info (In I am error worlds)",
         "quantities": {
           "normal": "1",
           "expert": "1",
@@ -8952,6 +9479,10 @@
           "normal",
           "expert",
           "master"
+        ],
+        "note": "In I am error worlds",
+        "conditions": [
+          "seed-i-am-error"
         ]
       }
     ],
@@ -47436,7 +47967,6 @@
       {
         "source": "chest",
         "quantity": "1",
-        "rate": "More info (In I am error worlds)",
         "quantities": {
           "normal": "1",
           "expert": "1",
@@ -47446,6 +47976,10 @@
           "normal",
           "expert",
           "master"
+        ],
+        "note": "In I am error worlds",
+        "conditions": [
+          "seed-i-am-error"
         ]
       }
     ],
@@ -48315,7 +48849,6 @@
       {
         "source": "chest",
         "quantity": "1",
-        "rate": "More info (In I am error worlds)",
         "quantities": {
           "normal": "1",
           "expert": "1",
@@ -48325,6 +48858,10 @@
           "normal",
           "expert",
           "master"
+        ],
+        "note": "In I am error worlds",
+        "conditions": [
+          "seed-i-am-error"
         ]
       }
     ],
@@ -51756,7 +52293,6 @@
       {
         "source": "chest",
         "quantity": "1",
-        "rate": "More info (In I am error worlds)",
         "quantities": {
           "normal": "1",
           "expert": "1",
@@ -51766,6 +52302,10 @@
           "normal",
           "expert",
           "master"
+        ],
+        "note": "In I am error worlds",
+        "conditions": [
+          "seed-i-am-error"
         ]
       }
     ],
@@ -52709,7 +53249,6 @@
       {
         "source": "chest",
         "quantity": "1",
-        "rate": "More info (In I am error worlds)",
         "quantities": {
           "normal": "1",
           "expert": "1",
@@ -52719,6 +53258,10 @@
           "normal",
           "expert",
           "master"
+        ],
+        "note": "In I am error worlds",
+        "conditions": [
+          "seed-i-am-error"
         ]
       }
     ],
@@ -63739,7 +64282,6 @@
       {
         "source": "chest",
         "quantity": "1",
-        "rate": "More info (In I am error worlds)",
         "quantities": {
           "normal": "1",
           "expert": "1",
@@ -63749,6 +64291,10 @@
           "normal",
           "expert",
           "master"
+        ],
+        "note": "In I am error worlds",
+        "conditions": [
+          "seed-i-am-error"
         ]
       }
     ],
@@ -63818,7 +64364,6 @@
       {
         "source": "chest",
         "quantity": "1",
-        "rate": "More info (In I am error worlds)",
         "quantities": {
           "normal": "1",
           "expert": "1",
@@ -63828,6 +64373,10 @@
           "normal",
           "expert",
           "master"
+        ],
+        "note": "In I am error worlds",
+        "conditions": [
+          "seed-i-am-error"
         ]
       }
     ],
@@ -64706,7 +65255,6 @@
       {
         "source": "chest",
         "quantity": "1",
-        "rate": "More info (In I am error worlds)",
         "quantities": {
           "normal": "1",
           "expert": "1",
@@ -64716,6 +65264,10 @@
           "normal",
           "expert",
           "master"
+        ],
+        "note": "In I am error worlds",
+        "conditions": [
+          "seed-i-am-error"
         ]
       }
     ],
@@ -70657,7 +71209,6 @@
       {
         "source": "chest",
         "quantity": "1",
-        "rate": "More info (In I am error worlds)",
         "quantities": {
           "normal": "1",
           "expert": "1",
@@ -70667,6 +71218,10 @@
           "normal",
           "expert",
           "master"
+        ],
+        "note": "In I am error worlds",
+        "conditions": [
+          "seed-i-am-error"
         ]
       }
     ],
@@ -70674,7 +71229,6 @@
       {
         "source": "chest",
         "quantity": "1",
-        "rate": "More info (In I am error worlds)",
         "quantities": {
           "normal": "1",
           "expert": "1",
@@ -70684,6 +71238,10 @@
           "normal",
           "expert",
           "master"
+        ],
+        "note": "In I am error worlds",
+        "conditions": [
+          "seed-i-am-error"
         ]
       }
     ],
@@ -70691,7 +71249,6 @@
       {
         "source": "chest",
         "quantity": "1",
-        "rate": "More info (In I am error worlds)",
         "quantities": {
           "normal": "1",
           "expert": "1",
@@ -70701,6 +71258,10 @@
           "normal",
           "expert",
           "master"
+        ],
+        "note": "In I am error worlds",
+        "conditions": [
+          "seed-i-am-error"
         ]
       }
     ],
@@ -70708,7 +71269,6 @@
       {
         "source": "chest",
         "quantity": "1",
-        "rate": "More info (In I am error worlds)",
         "quantities": {
           "normal": "1",
           "expert": "1",
@@ -70718,6 +71278,10 @@
           "normal",
           "expert",
           "master"
+        ],
+        "note": "In I am error worlds",
+        "conditions": [
+          "seed-i-am-error"
         ]
       }
     ],
@@ -70725,7 +71289,6 @@
       {
         "source": "chest",
         "quantity": "1",
-        "rate": "More info (In I am error worlds)",
         "quantities": {
           "normal": "1",
           "expert": "1",
@@ -70735,6 +71298,10 @@
           "normal",
           "expert",
           "master"
+        ],
+        "note": "In I am error worlds",
+        "conditions": [
+          "seed-i-am-error"
         ]
       }
     ],
@@ -70742,7 +71309,6 @@
       {
         "source": "chest",
         "quantity": "1",
-        "rate": "More info (In I am error worlds)",
         "quantities": {
           "normal": "1",
           "expert": "1",
@@ -70752,6 +71318,10 @@
           "normal",
           "expert",
           "master"
+        ],
+        "note": "In I am error worlds",
+        "conditions": [
+          "seed-i-am-error"
         ]
       }
     ],
@@ -70759,7 +71329,6 @@
       {
         "source": "chest",
         "quantity": "1",
-        "rate": "More info (In I am error worlds)",
         "quantities": {
           "normal": "1",
           "expert": "1",
@@ -70769,6 +71338,10 @@
           "normal",
           "expert",
           "master"
+        ],
+        "note": "In I am error worlds",
+        "conditions": [
+          "seed-i-am-error"
         ]
       }
     ],
@@ -70776,7 +71349,6 @@
       {
         "source": "chest",
         "quantity": "1",
-        "rate": "More info (In I am error worlds)",
         "quantities": {
           "normal": "1",
           "expert": "1",
@@ -70786,6 +71358,10 @@
           "normal",
           "expert",
           "master"
+        ],
+        "note": "In I am error worlds",
+        "conditions": [
+          "seed-i-am-error"
         ]
       }
     ],
@@ -70793,7 +71369,6 @@
       {
         "source": "chest",
         "quantity": "1",
-        "rate": "More info (In I am error worlds)",
         "quantities": {
           "normal": "1",
           "expert": "1",
@@ -70803,6 +71378,10 @@
           "normal",
           "expert",
           "master"
+        ],
+        "note": "In I am error worlds",
+        "conditions": [
+          "seed-i-am-error"
         ]
       }
     ],
@@ -70810,7 +71389,6 @@
       {
         "source": "chest",
         "quantity": "1",
-        "rate": "More info (In I am error worlds)",
         "quantities": {
           "normal": "1",
           "expert": "1",
@@ -70820,6 +71398,10 @@
           "normal",
           "expert",
           "master"
+        ],
+        "note": "In I am error worlds",
+        "conditions": [
+          "seed-i-am-error"
         ]
       }
     ],
@@ -70847,7 +71429,6 @@
       {
         "source": "chest",
         "quantity": "1",
-        "rate": "More info (In I am error worlds)",
         "quantities": {
           "normal": "1",
           "expert": "1",
@@ -70857,6 +71438,10 @@
           "normal",
           "expert",
           "master"
+        ],
+        "note": "In I am error worlds",
+        "conditions": [
+          "seed-i-am-error"
         ]
       }
     ],
@@ -70864,7 +71449,6 @@
       {
         "source": "chest",
         "quantity": "1",
-        "rate": "More info (In I am error worlds)",
         "quantities": {
           "normal": "1",
           "expert": "1",
@@ -70874,6 +71458,10 @@
           "normal",
           "expert",
           "master"
+        ],
+        "note": "In I am error worlds",
+        "conditions": [
+          "seed-i-am-error"
         ]
       }
     ],
@@ -70881,7 +71469,6 @@
       {
         "source": "chest",
         "quantity": "1",
-        "rate": "More info (In I am error worlds)",
         "quantities": {
           "normal": "1",
           "expert": "1",
@@ -70891,6 +71478,10 @@
           "normal",
           "expert",
           "master"
+        ],
+        "note": "In I am error worlds",
+        "conditions": [
+          "seed-i-am-error"
         ]
       }
     ],
@@ -70898,7 +71489,6 @@
       {
         "source": "chest",
         "quantity": "1",
-        "rate": "More info (In I am error worlds)",
         "quantities": {
           "normal": "1",
           "expert": "1",
@@ -70908,6 +71498,10 @@
           "normal",
           "expert",
           "master"
+        ],
+        "note": "In I am error worlds",
+        "conditions": [
+          "seed-i-am-error"
         ]
       }
     ],
@@ -70915,7 +71509,6 @@
       {
         "source": "chest",
         "quantity": "1",
-        "rate": "More info (In I am error worlds)",
         "quantities": {
           "normal": "1",
           "expert": "1",
@@ -70925,6 +71518,10 @@
           "normal",
           "expert",
           "master"
+        ],
+        "note": "In I am error worlds",
+        "conditions": [
+          "seed-i-am-error"
         ]
       }
     ],
@@ -70932,7 +71529,6 @@
       {
         "source": "chest",
         "quantity": "1",
-        "rate": "More info (In I am error worlds)",
         "quantities": {
           "normal": "1",
           "expert": "1",
@@ -70942,6 +71538,10 @@
           "normal",
           "expert",
           "master"
+        ],
+        "note": "In I am error worlds",
+        "conditions": [
+          "seed-i-am-error"
         ]
       }
     ],
@@ -70949,7 +71549,6 @@
       {
         "source": "chest",
         "quantity": "1",
-        "rate": "More info (In I am error worlds)",
         "quantities": {
           "normal": "1",
           "expert": "1",
@@ -70959,6 +71558,10 @@
           "normal",
           "expert",
           "master"
+        ],
+        "note": "In I am error worlds",
+        "conditions": [
+          "seed-i-am-error"
         ]
       }
     ],
@@ -70966,7 +71569,6 @@
       {
         "source": "chest",
         "quantity": "1",
-        "rate": "More info (In I am error worlds)",
         "quantities": {
           "normal": "1",
           "expert": "1",
@@ -70976,6 +71578,10 @@
           "normal",
           "expert",
           "master"
+        ],
+        "note": "In I am error worlds",
+        "conditions": [
+          "seed-i-am-error"
         ]
       }
     ],
@@ -70983,7 +71589,6 @@
       {
         "source": "chest",
         "quantity": "1",
-        "rate": "More info (In I am error worlds)",
         "quantities": {
           "normal": "1",
           "expert": "1",
@@ -70993,6 +71598,10 @@
           "normal",
           "expert",
           "master"
+        ],
+        "note": "In I am error worlds",
+        "conditions": [
+          "seed-i-am-error"
         ]
       }
     ],
@@ -71000,7 +71609,6 @@
       {
         "source": "chest",
         "quantity": "1",
-        "rate": "More info (In I am error worlds)",
         "quantities": {
           "normal": "1",
           "expert": "1",
@@ -71010,6 +71618,10 @@
           "normal",
           "expert",
           "master"
+        ],
+        "note": "In I am error worlds",
+        "conditions": [
+          "seed-i-am-error"
         ]
       }
     ],
@@ -71017,7 +71629,6 @@
       {
         "source": "chest",
         "quantity": "1",
-        "rate": "More info (In I am error worlds)",
         "quantities": {
           "normal": "1",
           "expert": "1",
@@ -71027,6 +71638,10 @@
           "normal",
           "expert",
           "master"
+        ],
+        "note": "In I am error worlds",
+        "conditions": [
+          "seed-i-am-error"
         ]
       }
     ],
@@ -71034,7 +71649,6 @@
       {
         "source": "chest",
         "quantity": "1",
-        "rate": "More info (In I am error worlds)",
         "quantities": {
           "normal": "1",
           "expert": "1",
@@ -71044,6 +71658,10 @@
           "normal",
           "expert",
           "master"
+        ],
+        "note": "In I am error worlds",
+        "conditions": [
+          "seed-i-am-error"
         ]
       }
     ],

@@ -7,7 +7,7 @@ access - everything comes from the raw/ folder and mapping.toml.
 Inputs:
   raw/items.csv, exclusive.csv, history.csv, drops.csv, npcs.csv, recipes.csv,
   page_images.json, page_wikitext.json (incl. MediaWiki:Common.css), page_html.json,
-  schema.json   (from step 1)
+  page_categories.json (Hardmode-only NPCs), schema.json   (from step 1)
   raw/image_redirects.json   image files that are redirects (optional, from check_icons.py)
   mapping.toml   how raw type/listcat/tag values become categories,
                  subcategories, obtain methods, vendors, events and flags
@@ -205,8 +205,14 @@ def build(raw_dir, mapping_path, out_dir, readable_dir=None):
     outputs["versions.json"] = versions_file(items, mapping.versions, mapping.version_icons)
     outputs["rarities.json"], outputs["coins.json"], outputs["difficulties.json"] =         icon_files(raw_dir, items)
 
-    outputs["drops.json"] = drops.drops_file()
     outputs["bosses.json"] = drops.bosses_file(mapping.boss_stages, mapping.bosses, mapping.boss_ignore_items)
+    # boss sources without an NPC of their own (e.g. "The Twins"): the boss's icon
+    for boss in outputs["bosses.json"]["bosses"]:
+        for sid in boss["sources"]:
+            source = drops.sources.get(sid)
+            if source and not source.get("icon") and boss.get("icon"):
+                source["icon"] = boss["icon"]
+    outputs["drops.json"] = drops.drops_file()
     outputs["containers.json"] = drops.containers_file()
     outputs["shops.json"] = shops_file(shops)
     outputs["conditions.json"] = conditions.conditions_file(
@@ -216,7 +222,9 @@ def build(raw_dir, mapping_path, out_dir, readable_dir=None):
     outputs["missing_items.json"] = missing_items_file(recipe_rows, items)
 
     log("Milestones…")
-    milestones = Milestones(mapping, mapping.bosses)
+    categories_path = raw_dir / "page_categories.json"
+    page_categories = json.loads(categories_path.read_text(encoding="utf-8")) if categories_path.exists() else {}
+    milestones = Milestones(mapping, mapping.bosses, page_categories.get("Hardmode-only NPCs", []))
     recipe_index = {"stations": outputs["recipes.json"]["stations"], "groups": outputs["recipes.json"]["groups"],
                     "by_result": defaultdict(list), "shimmer_to": defaultdict(list)}
     for r in outputs["recipes.json"]["recipes"]:
@@ -229,8 +237,10 @@ def build(raw_dir, mapping_path, out_dir, readable_dir=None):
         {norm_name(i["name"]): i.get("icon") for i in items})
 
     # items marked unobtainable that still have a current source: probably a wiki mistake
+    # (not the ones mapping.toml makes unobtainable: their sources were never in the game)
     crafted = {r["result"] for r in outputs["recipes.json"]["recipes"]}
-    conflicts = [f"{i['name']} ({', '.join(src)})" for i in items if i["unobtainable"]
+    conflicts = [f"{i['name']} ({', '.join(src)})" for i in items
+                 if i["unobtainable"] and norm_name(i["name"]) not in mapping.unobtainable
                  for src in [[s for s, has in (("drop", i["key"] in drops.drops), ("recipe", i["key"] in crafted),
                                                ("vendor", bool(i["vendors"]))) if has]] if src]
     if conflicts:

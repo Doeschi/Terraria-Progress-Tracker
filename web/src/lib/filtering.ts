@@ -1,6 +1,7 @@
 import Fuse from 'fuse.js'
 import type { GameData, GroupEntry, Item } from './types'
 import { CRAFT_CHESTS, CRAFT_HAS_RECIPE, CRAFT_OBTAINED } from './recipes'
+import { AVAILABLE_NOW } from './worldProgress'
 
 // Filters are organised in groups. Entries within a group are combined with
 // OR, groups with AND. Counts per entry are "faceted": an entry's numbers
@@ -125,7 +126,20 @@ export function buildFilterGroups(data: GameData): FilterGroup[] {
     })
     .filter((g) => g.children.length > 0)
   const groups: FilterGroup[] = [
-    { key: 'progression', label: 'Progression', entries: data.milestones },
+    {
+      key: 'progression',
+      label: 'Progression',
+      // "Available now" (MS7): only has items while a world is loaded
+      entries: [
+        {
+          id: AVAILABLE_NOW,
+          name: 'Available now',
+          icon: data.items.find((i) => i.name === 'Gold Watch')?.icon,
+          count: 0,
+        },
+        ...data.milestones,
+      ],
+    },
     { key: 'boss', label: 'Bosses', entries: bossStages, expanded: true },
     {
       key: 'version',

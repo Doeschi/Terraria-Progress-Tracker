@@ -12,6 +12,8 @@ from .common import (
     image_url,
     log,
     norm_name,
+    page_url,
+    seed_only,
     slug,
     strip_markup,
 )
@@ -85,6 +87,10 @@ class Drops:
             by_page[norm_name(item["page"])].append(item)
         self.by_name, self.by_page = by_name, by_page
         self.npcs = {norm_name(r["nameraw"]): r for r in npc_rows}
+        # first NPC row per wiki page (e.g. "Mythical Wyvern" -> its Head)
+        self.npcs_by_page = {}
+        for r in npc_rows:
+            self.npcs_by_page.setdefault(norm_name(r["_pageName"]), r)
         self.sources = {}
         self.drops = defaultdict(list)
         self.unmatched = Counter()
@@ -110,7 +116,7 @@ class Drops:
             items = [i for i in items if not i.get("unobtainable")]  # e.g. unused cultist banners
             if not items:
                 continue
-            sid = self.source({"nameraw": npc["nameraw"]}, "npc")
+            sid = self.source({"nameraw": npc["nameraw"], "_pageName": npc["_pageName"]}, "npc")
             entry = {"source": sid, "quantity": "1", "rate": "Banner", "modes": list(DROP_MODES),
                      "quantities": {m: "1" for m in DROP_MODES}}
             for item in items:
@@ -183,8 +189,13 @@ class Drops:
         sid = slug(row["nameraw"])
         if sid not in self.sources:
             name = html.unescape(row["nameraw"])
-            record = {"id": sid, "name": name, "kind": kind}
+            # wiki page: the source's link in the Drops table, else the page the row is on
+            link = re.search(r"\[\[([^|\]#]+)", row.get("name") or "")
+            page = html.unescape(link.group(1).strip()) if link else row.get("_pageName")
+            record = {"id": sid, "name": name, "kind": kind, "url": page_url(page) if page else None}
             npc = self.npc_for(name)
+            if not npc and page and norm_name(page) == norm_name(name):
+                npc = self.npcs_by_page.get(norm_name(page))
             if npc:
                 record["icon"] = image_url(file_from_wikitext(npc["image"]))
                 if npc["npcid"].strip():
@@ -196,6 +207,10 @@ class Drops:
                 item = (self.resolve(name) or self.resolve(icon_name) or [None])[0]
                 if item and item.get("icon"):
                     record["icon"] = item["icon"]
+                # enemies without an NPC row (the item-carrying slimes on "Slimes", Mechdusa): the wiki
+                # names their image after them (check_icons.py reports it if not)
+                elif kind == "npc":
+                    record["icon"] = image_url(f"{name}.png")
             if kind == "container":
                 record["group"] = self.container_group(name)
             self.sources[sid] = {k: v for k, v in record.items() if v is not None}
@@ -217,6 +232,11 @@ class Drops:
             return
         sid = self.source(row, kind)
         rate = drop_text(row["rate"])
+        # a link to the wiki instead of a chance ("More info (In I am error worlds)"): no rate, the
+        # rest is a note
+        rate_note = ""
+        if rate.startswith("More info"):
+            rate, rate_note = "", rate[len("More info"):]
         quantity = drop_text(row["quantity"])
         modes = [m for m in DROP_MODES if flag(row[m])] or list(DROP_MODES)
         entry = {
@@ -237,7 +257,7 @@ class Drops:
             notes = [*re.findall(r'<span class="note">(.*?)</span>', custom),
                      *re.findall(r'<div class="note-text[^"]*">(.*?)</div>', custom, re.S)]
             parsed = self.conditions.parse(" ".join([row["rate"], *notes]))
-            note = condition_text(" ".join(notes)).strip("() ")
+            note = condition_text(" ".join([*notes, rate_note])).strip("() ")
             if note.lower() == "in regular worlds":
                 note = ""  # the default; its Remix counterpart has the condition
             entry["note"] = note or None
@@ -345,6 +365,9 @@ def derive_events(items, drops, events, bosses):
     added = Counter()
     for key, entries in drops.drops.items():
         item = by_key[key]
+        entries = [d for d in entries if not seed_only(d)]
+        if not entries:
+            continue
         per_drop = []
         for d in entries:
             found = set(source_events.get(d["source"], ()))
@@ -414,6 +437,7 @@ def derive_spawns(items, drops, mapping):
     by_key = {i["key"]: i for i in items}
     for key, entries in drops.drops.items():
         item = by_key[key]
+        entries = [d for d in entries if not seed_only(d)]
         b = set().union(*(source_biomes.get(d["source"], ()) for d in entries))
         t = set().union(*(source_times.get(d["source"], ()) for d in entries))
         item["biomes"] = [bid for bid in biomes if bid in b]

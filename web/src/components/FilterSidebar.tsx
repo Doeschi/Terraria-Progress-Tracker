@@ -1,6 +1,7 @@
 import { createContext, memo, useContext, useEffect, useMemo, useRef, useState } from 'react'
 import {
   ArrowDownAZ,
+  Check,
   ChevronRight,
   ChevronsDownUp,
   ChevronsUpDown,
@@ -30,6 +31,8 @@ import { buildBestiaryGroups, type BestiaryGroupKey } from '@/lib/bestiary'
 import { RarityIcon, TallyBar, TallyText, WikiIcon } from './common'
 import { Checkbox } from '@/components/ui/checkbox'
 import { SearchField } from './ListParts'
+import { useWorldProgress } from '@/hooks/useWorldProgress'
+import { AVAILABLE_NOW, type WorldProgress } from '@/lib/worldProgress'
 import {
   ALMOST_DONE,
   ALMOST_DONE_LABEL,
@@ -87,6 +90,32 @@ const QueryContext = createContext('')
 /** Option highlighted by the filter search ("<group>/<id>"); Enter selects it. */
 const ActiveTargetContext = createContext<string | null>(null)
 
+/** A mark of the loaded world next to an option (MS6): reached milestone or defeated boss, the
+ * next milestone - or only a tooltip ("Available now" without a world). */
+interface WorldMark {
+  kind: 'done' | 'next' | 'note'
+  title: string
+}
+type WorldMarks = (group: string, id: string) => WorldMark | null
+const WorldMarkContext = createContext<WorldMarks>(() => null)
+
+function worldMarks(p: WorldProgress | null): WorldMarks {
+  return (group, id) => {
+    if (group === 'progression') {
+      if (id === AVAILABLE_NOW)
+        return p
+          ? { kind: 'note', title: `Items whose milestone is reached in ${p.worldName}` }
+          : { kind: 'note', title: 'Needs a loaded world – ignored until the world is loaded' }
+      if (!p) return null
+      if (p.reached.has(id)) return { kind: 'done', title: `Reached in ${p.worldName}` }
+      if (id === p.next) return { kind: 'next', title: `The next milestone in ${p.worldName}` }
+    }
+    if (p && group === 'boss' && id.startsWith('boss:') && p.defeated.has(id.slice(5)))
+      return { kind: 'done', title: `Defeated in ${p.worldName}` }
+    return null
+  }
+}
+
 /** When each filter option was completed (Playthrough.completedAt) - "<prefix><group>/<id>" -> time */
 function useCompletedAt(key: string): string | undefined {
   return useStore((s) => activePlaythrough(s.doc)?.completedAt[key])
@@ -125,14 +154,18 @@ export const FilterSidebar = memo(function FilterSidebar({
 }) {
   const data = useStore((s) => s.data)!
   const groups = useMemo(() => buildFilterGroups(data), [data])
+  const progress = useWorldProgress()
+  const marks = useMemo(() => worldMarks(progress), [progress])
   return (
-    <FilterPanel
-      groups={groups}
-      facets={facets}
-      groupTallies={groupTallies}
-      available={available}
-      scope={ITEMS_SCOPE}
-    />
+    <WorldMarkContext.Provider value={marks}>
+      <FilterPanel
+        groups={groups}
+        facets={facets}
+        groupTallies={groupTallies}
+        available={available}
+        scope={ITEMS_SCOPE}
+      />
+    </WorldMarkContext.Provider>
   )
 })
 
@@ -713,6 +746,7 @@ function EntryRow({
   const eye = action === 'show' || (action === 'hide' && editMode) ? action : undefined
   const isTarget = useContext(ActiveTargetContext) === `${group.key}/${entry.id}`
   const completedAt = useCompletedAt(`${scope.prefix}${group.key}/${entry.id}`)
+  const mark = useContext(WorldMarkContext)(group.key, entry.id)
   const rowRef = useRef<HTMLDivElement>(null)
   // keep the option chosen with ↑/↓ in view
   useEffect(() => {
@@ -742,6 +776,7 @@ function EntryRow({
         )}
         title={
           [
+            mark?.title,
             completedAt && `Completed ${formatRelativeDay(completedAt)}`,
             empty && 'No matching items with the current filters',
           ]
@@ -786,6 +821,19 @@ function EntryRow({
                   )}
                 </span>
               </>
+            )}
+            {mark?.kind === 'done' && (
+              <span title={mark.title} className="shrink-0">
+                <Check className="size-3.5 text-emerald-600 dark:text-emerald-400" aria-label={mark.title} />
+              </span>
+            )}
+            {mark?.kind === 'next' && (
+              <span
+                title={mark.title}
+                className="shrink-0 rounded-full border border-primary/50 px-1.5 text-[10px] leading-4 text-primary"
+              >
+                next
+              </span>
             )}
             <TallyText tally={tally} className="text-xs" />
           </span>

@@ -314,12 +314,14 @@ function MilestoneLine({ data, item }: { data: GameData; item: Item }) {
 
 /** Vendors with the conditions of their shop rows ("In Hardmode, during night, …", moon phases). */
 function SoldBySection({ data, item }: { data: GameData; item: Item }) {
-  if (!item.vendors.length) return null
   const rows = data.shops.get(item.key) ?? []
+  // the item's vendors plus those of shop rows only in special seeds (they count for no filter, CO6)
+  const vendors = [...new Set([...item.vendors, ...rows.map((r) => r.vendor)])]
+  if (!vendors.length) return null
   return (
     <Section title="Sold by">
       <ul className="divide-y rounded-lg border">
-        {item.vendors.flatMap((v) => {
+        {vendors.flatMap((v) => {
           const vendor = data.vendors.find((x) => x.id === v)
           // a vendor without shop row (only tagged in the Items table) sells it without condition
           const own = rows.filter((r) => r.vendor === v)
@@ -447,7 +449,22 @@ function DropRow({
     <li className={cn('flex items-center gap-3 px-3 py-2', !available && 'opacity-45')}>
       <WikiIcon src={source?.icon} alt="" size={32} />
       <div className="min-w-0 flex-1">
-        <div className="truncate text-sm font-medium">{source?.name ?? drop.source}</div>
+        <div className="truncate text-sm font-medium">
+          {source?.url ? (
+            <a
+              href={source.url}
+              target="_blank"
+              rel="noreferrer noopener"
+              title={`${source.name} on the wiki`}
+              className="group/link inline-flex max-w-full items-center gap-1 hover:underline"
+            >
+              <span className="truncate">{source.name}</span>
+              <ExternalLink className="size-3 shrink-0 opacity-0 transition-opacity group-hover/link:opacity-60" />
+            </a>
+          ) : (
+            (source?.name ?? drop.source)
+          )}
+        </div>
         <div className="flex flex-wrap gap-x-2 text-xs text-muted-foreground">
           {boss && source?.name !== boss && <span>{boss}</span>}
           {spawn && <span>{spawn}</span>}

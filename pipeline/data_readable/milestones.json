@@ -3,7 +3,7 @@
     "id": "start",
     "name": "World creation",
     "icon": "https://terraria.wiki.gg/images/Copper_Shortsword.png",
-    "count": 3777
+    "count": 3757
   },
   {
     "id": "king-slime",
@@ -15,13 +15,13 @@
     "id": "eye-of-cthulhu",
     "name": "Eye of Cthulhu",
     "icon": "https://terraria.wiki.gg/images/Map_Icon_Eye_of_Cthulhu_%28first_form%29.png",
-    "count": 15
+    "count": 16
   },
   {
     "id": "evil-boss",
     "name": "Eater of Worlds / Brain of Cthulhu",
     "icon": "https://terraria.wiki.gg/images/Map_Icon_Eater_of_Worlds.png",
-    "count": 49
+    "count": 45
   },
   {
     "id": "queen-bee",
@@ -39,25 +39,25 @@
     "id": "skeletron",
     "name": "Skeletron",
     "icon": "https://terraria.wiki.gg/images/Map_Icon_Skeletron.png",
-    "count": 187
+    "count": 191
   },
   {
     "id": "wall-of-flesh",
     "name": "Wall of Flesh (Hardmode)",
     "icon": "https://terraria.wiki.gg/images/Map_Icon_Wall_of_Flesh.png",
-    "count": 1128
+    "count": 1132
   },
   {
     "id": "queen-slime",
     "name": "Queen Slime",
     "icon": "https://terraria.wiki.gg/images/Map_Icon_Queen_Slime.png",
-    "count": 13
+    "count": 14
   },
   {
     "id": "any-mech",
     "name": "Any mechanical boss",
     "icon": "https://terraria.wiki.gg/images/Map_Icon_Retinazer_%28first_form%29.png",
-    "count": 246
+    "count": 255
   },
   {
     "id": "all-mechs",
@@ -69,13 +69,13 @@
     "id": "plantera",
     "name": "Plantera",
     "icon": "https://terraria.wiki.gg/images/Map_Icon_Plantera_%28first_form%29.png",
-    "count": 226
+    "count": 227
   },
   {
     "id": "golem",
     "name": "Golem",
     "icon": "https://terraria.wiki.gg/images/Map_Icon_Golem.png",
-    "count": 121
+    "count": 122
   },
   {
     "id": "duke-empress",

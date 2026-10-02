@@ -3,7 +3,7 @@
     "id": "merchant",
     "name": "Merchant",
     "icon": "https://terraria.wiki.gg/images/Merchant.png",
-    "count": 31
+    "count": 30
   },
   {
     "id": "arms-dealer",
@@ -129,7 +129,7 @@
     "id": "princess",
     "name": "Princess",
     "icon": "https://terraria.wiki.gg/images/Princess.png",
-    "count": 30
+    "count": 21
   },
   {
     "id": "traveling-merchant",
@@ -141,6 +141,6 @@
     "id": "skeleton-merchant",
     "name": "Skeleton Merchant",
     "icon": "https://terraria.wiki.gg/images/Skeleton_Merchant.png",
-    "count": 34
+    "count": 33
   }
 ]

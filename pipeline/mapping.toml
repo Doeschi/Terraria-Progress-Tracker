@@ -61,7 +61,7 @@
 #       without a category are listed when the script runs.
 
 [settings]
-match_fields = ["type", "listcat", "tag", "hardmode", "unobtainable"]
+match_fields = ["type", "listcat", "tag", "hardmode", "unobtainable", "bodyslot"]
 
 
 # ---------------------------------------------------------------- categories
@@ -559,6 +559,71 @@ parent = "accessory"
 icon = "Music Box"
 only_in_parent = true
 match = []  # by name, see the manual section
+
+# Vanity: by equipment slot (`bodyslot`: social helmet / shirt / pants), the accessories and the
+# equippable furniture - together every vanity item - plus boss masks and voice accessories
+[subcategories.vanity-head]
+name = "Head"
+parent = "vanity"
+icon = "Top Hat"
+only_in_parent = true
+match = ["bodyslot:social helmet"]
+
+[subcategories.vanity-body]
+name = "Body"
+parent = "vanity"
+icon = "Tuxedo Shirt"
+only_in_parent = true
+match = ["bodyslot:social shirt"]
+
+[subcategories.vanity-legs]
+name = "Legs"
+parent = "vanity"
+icon = "Tuxedo Pants"
+only_in_parent = true
+match = ["bodyslot:social pants"]
+
+[subcategories.vanity-accessory]
+name = "Accessories"
+parent = "vanity"
+icon = "Red Cape"
+only_in_parent = true
+match = ["type:accessory"]
+exclude = ["page:music boxes", "page:monoliths"]
+
+[subcategories.vanity-music-box]
+name = "Music boxes"
+parent = "vanity"
+icon = "Music Box"
+only_in_parent = true
+match = ["page:music boxes"]
+
+[subcategories.vanity-monolith]
+name = "Monoliths & sky effects"
+parent = "vanity"
+icon = "Void Monolith"
+only_in_parent = true
+match = ["page:monoliths"]
+
+[subcategories.boss-mask]
+name = "Boss masks"
+parent = "vanity"
+icon = "Eye of Cthulhu Mask"
+only_in_parent = true
+match = ["page:masks"]
+
+[subcategories.voice-accessory]
+name = "Voice accessories"
+parent = "vanity"
+icon = "Cow Bell"
+only_in_parent = true
+match = ["page:voice accessories"]
+
+[subcategories.other-vanity]
+name = "Other vanity"
+parent = "vanity"
+match = []
+fallback = true
 
 # Dyes
 [subcategories.hair-dye]
@@ -1499,7 +1564,7 @@ environments = ["Day"]
 [conditions]
 ignore_links = [
     "moon phase", "pylons", "golf score", "health", "mana", "multiplayer", "vampirism",
-    "world is infected", "i am error", "npc drops", "coins", "altar", "clown", "tax collector",
+    "world is infected", "npc drops", "coins", "altar", "clown", "tax collector",
     "expert mode", "master mode", "portable storage", "fairies",
     # "if the Party Girl is present"
     "party girl", "mechanic", "wizard", "angler", "pirate",
@@ -1709,6 +1774,11 @@ name = "Rainbow Road seed"
 group = "seed"
 links = ["rainbow road"]
 
+[conditions.seed-i-am-error]
+name = "I am error seed"
+group = "seed"
+links = ["i am error"]
+
 [conditions.seed-other]
 name = "Special seed"
 group = "seed"
@@ -1829,8 +1899,24 @@ after-all-mechs = "all-mechs"
 "Titanium Crate" = "wall-of-flesh"
 "Pearlwood Crate" = "wall-of-flesh"
 
-# Enemies that appear later than their biome says (drop source names).
+# Enemies that appear later than their biome says (drop source names). Enemies in the wiki's
+# category "Hardmode-only NPCs" (raw/page_categories.json, by name or wiki page) count from the
+# Wall of Flesh; entries here override that, in both directions.
 [milestone_sources]
+# pre-Hardmode enemies on a shared page of the category ("Jellyfish", "Mimics")
+"Blue Jellyfish" = "start"
+"Pink Jellyfish" = "start"
+"Mimic" = "start"
+"Ice Mimic" = "start"
+# Hardmode-only, but missing from the category
+"Orca" = "wall-of-flesh"
+# Old One's Army tier 2 (after any mechanical boss)
+"Kobold" = "any-mech"
+"Kobold Glider" = "any-mech"
+"Drakin" = "any-mech"
+"Wither Beast" = "any-mech"
+"Etherian Lightning Bug" = "any-mech"
+"Ogre" = "any-mech"
 # post-Plantera Dungeon
 "Paladin" = "plantera"
 "Skeleton Sniper" = "plantera"
@@ -1891,10 +1977,12 @@ items = ["Heart", "Candy Apple", "Candy Cane", "Star", "Soul Cake", "Sugar Plum"
 
 # -------------------------------------------------------------- unobtainable
 # Items the wiki marks unobtainable (field, tag or category) only belong to the obtain
-# method "Unobtainable". Names listed here count as obtainable anyway (overrides the wiki).
+# method "Unobtainable". Overrides of the wiki: names in `obtainable` count as obtainable,
+# names in `unobtainable` as unobtainable (items that were never really added to the game).
 
 [unobtainable]
 obtainable = []
+unobtainable = ["Red Envelope", "Mythical Lion Mask", "Mythical Robe"]
 
 
 # ------------------------------------------------------------------- recipes

@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import {
   BookOpen,
   ChevronRight,
@@ -20,6 +20,7 @@ import { hasRememberedPlayer } from '@/lib/player'
 import { usePlayerLoader } from '@/hooks/usePlayerLoader'
 import { useWorldLoader } from '@/hooks/useWorldLoader'
 import { activePlaythrough } from '@/lib/saveFile'
+import { itemsForPlaythrough } from '@/lib/availability'
 import { Button } from '@/components/ui/button'
 import { openFileAction } from '@/actions'
 import { AiNotice, Credits } from './Credits'
@@ -50,11 +51,20 @@ export function WelcomeScreen() {
     if (pt.player) void hasRememberedPlayer(id).then((remembered) => remembered && loadPlayer(id, true, false))
   }
 
+  // as the progress of a new PC playthrough counts them: unobtainable items are ignored by default
+  const itemCount = useMemo(
+    () =>
+      itemsForPlaythrough(data, { platform: 'desktop', difficulty: 'master', gameVersion: null }).filter(
+        (i) => !i.unobtainable,
+      ).length,
+    [data],
+  )
+
   const features = [
     {
       icon: ListChecks,
       title: 'Every item, tracked',
-      text: `All ${data.items.length.toLocaleString('en')} items from the Terraria Wiki – per playthrough, with its own platform, difficulty and game version.`,
+      text: `All ${itemCount.toLocaleString('en')} items from the Terraria Wiki – per playthrough, with its own platform, difficulty and game version.`,
     },
     {
       icon: SlidersHorizontal,

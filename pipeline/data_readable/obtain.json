@@ -9,19 +9,19 @@
     "id": "vendor",
     "name": "Bought from NPCs",
     "icon": "https://terraria.wiki.gg/images/Gold_Coin.png",
-    "count": 807
+    "count": 797
   },
   {
     "id": "drop",
     "name": "Dropped by enemies",
     "icon": "https://terraria.wiki.gg/images/Gel.png",
-    "count": 1142
+    "count": 1137
   },
   {
     "id": "loot",
     "name": "Found in chests & pots",
     "icon": "https://terraria.wiki.gg/images/Chest.png",
-    "count": 349
+    "count": 293
   },
   {
     "id": "plunder",
@@ -33,13 +33,13 @@
     "id": "bag",
     "name": "From grab bags & crates",
     "icon": "https://terraria.wiki.gg/images/Wooden_Crate.png",
-    "count": 572
+    "count": 571
   },
   {
     "id": "treasure-bag",
     "name": "From boss treasure bags",
     "icon": "https://terraria.wiki.gg/images/Treasure_Bag_%28Eye_of_Cthulhu%29.png",
-    "count": 229
+    "count": 228
   },
   {
     "id": "fishing",
@@ -81,13 +81,13 @@
     "id": "other",
     "name": "Other",
     "icon": "https://terraria.wiki.gg/images/Tombstone.png",
-    "count": 50,
+    "count": 49,
     "fallback": true
   },
   {
     "id": "unobtainable",
     "name": "Unobtainable",
     "icon": "https://terraria.wiki.gg/images/Blue_Present.png",
-    "count": 46
+    "count": 49
   }
 ]

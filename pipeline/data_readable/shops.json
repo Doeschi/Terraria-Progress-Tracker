@@ -267,11 +267,7 @@
   "BlendOMatic": [
     {
       "vendor": "steampunker",
-      "text": "Always available. Only available in Hardmode in worlds with For the Worthy.",
-      "conditions": [
-        "hardmode",
-        "seed-ftw"
-      ]
+      "text": "Always available. Only available in Hardmode in worlds with For the Worthy."
     }
   ],
   "BlinkrootPlanterBox": [
@@ -1903,10 +1899,6 @@
     {
       "vendor": "merchant",
       "text": "In a Jungle. Anywhere in worlds with both Celebration Mk 10 and Not the Bees, but not Remix.",
-      "conditions": [
-        "seed-drunk",
-        "seed-ntb"
-      ],
       "biomes": [
         "jungle"
       ]

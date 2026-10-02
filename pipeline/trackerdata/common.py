@@ -79,6 +79,12 @@ DIFFICULTIES = {"classic": "Classic", "expert": "Expert", "master": "Master", "j
 RARITY_WORDS = {"quest": -11, "expert": -12, "master": -13}
 
 
+def seed_only(row):
+    """A shop or drop row only in special world seeds (Princess's stock in Celebration Mk 10 worlds,
+    "I am error" chests, Remix drops): shown, but it counts for no filter (REQUIREMENTS CO6)."""
+    return any(c.startswith("seed-") for c in row.get("conditions") or ())
+
+
 def log(*args):
     print(*args, file=sys.stderr, flush=True)
 

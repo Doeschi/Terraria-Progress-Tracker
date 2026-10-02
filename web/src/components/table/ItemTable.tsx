@@ -17,6 +17,7 @@ import { ArrowDown, ArrowUp, ExternalLink, Eye, EyeOff, PackageSearch } from 'lu
 import { useActivePlaythrough, useActiveWorld, useStore } from '@/store'
 import { itemLuck, sourceKills, type Luck } from '@/lib/luck'
 import { canWield, useHeldWeapon, WEAPONS, weaponsAwake } from '@/lib/weapons'
+import { useWorldProgress } from '@/hooks/useWorldProgress'
 import { rodOfDiscord } from '@/lib/eggs'
 import type { Owned } from '@/hooks/useTrackerView'
 import { usePrefs } from '@/lib/prefs'
@@ -150,6 +151,9 @@ export function ItemTable({
   const catalogue = useItemColumns()
   const pt = useActivePlaythrough()
   const eggs = usePrefs((s) => s.layout.easterEggs)
+  // MS8: rows whose milestone the loaded world has not reached yet are dimmed (if enabled)
+  const dimUnavailable = usePrefs((s) => s.layout.dimUnavailable)
+  const progress = useWorldProgress()
   const changedAt = pt?.changedAt
   const difficulty = pt?.difficulty ?? 'master'
   // expected drops from the loaded world's bestiary kills, computed once per item
@@ -313,11 +317,20 @@ export function ItemTable({
               // weapon easter egg: its big icon sticks out of the row, over the others
               const bigIcon = isBigWeapon(row.id, isChecked && !isIgnored, eggs)
               const isSelected = selectedKey === row.id
+              const milestone = row.original.milestone
+              const notYet =
+                dimUnavailable &&
+                !!progress &&
+                !isChecked &&
+                !isIgnored &&
+                !!milestone &&
+                !progress.reached.has(milestone)
               return (
                 <tr
                   key={row.id}
                   style={{ height: rowHeight }}
-                  className={cn('group cursor-pointer', isIgnored && 'opacity-60')}
+                  className={cn('group cursor-pointer', isIgnored && 'opacity-60', notYet && 'opacity-40')}
+                  title={notYet ? `Not available yet in ${progress.worldName}` : undefined}
                   aria-selected={isSelected}
                   onClick={(e) => {
                     // clicks on the checkbox, buttons and links do their own thing

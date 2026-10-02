@@ -166,7 +166,7 @@
     "placedHeight": 1,
     "conditions": [],
     "milestone": "start",
-    "milestoneVia": "Dropped by Rock Golem"
+    "milestoneVia": "Dropped by Stone Slime"
   },
   {
     "key": "IronBroadsword",
@@ -1864,7 +1864,7 @@
     "tooltip": "Used for smelting ore",
     "conditions": [],
     "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestoneVia": "Sold by the Merchant"
   },
   {
     "key": "WoodenChair",
@@ -2134,7 +2134,7 @@
       "night"
     ],
     "milestone": "start",
-    "milestoneVia": "Dropped by Wandering Eye"
+    "milestoneVia": "Dropped by Demon Eye"
   },
   {
     "key": "WoodenBow",
@@ -2923,7 +2923,7 @@
     "placedHeight": 3,
     "conditions": [],
     "milestone": "start",
-    "milestoneVia": "Dropped by Jungle Mimic"
+    "milestoneVia": "Found in Gold Chest"
   },
   {
     "key": "CloudinaBottle",
@@ -3772,7 +3772,7 @@
     "tooltip": "'Looks tasty!'",
     "conditions": [],
     "milestone": "start",
-    "milestoneVia": "Dropped by Corruptor"
+    "milestoneVia": "Dropped by Eater of Souls"
   },
   {
     "key": "WormTooth",
@@ -6098,15 +6098,12 @@
       "wand"
     ],
     "obtain": [
-      "drop",
       "loot",
       "bag"
     ],
     "vendors": [],
     "events": [],
-    "biomes": [
-      "underworld"
-    ],
+    "biomes": [],
     "times": [],
     "platforms": [
       "desktop",
@@ -8521,10 +8518,8 @@
       "wand"
     ],
     "obtain": [
-      "drop",
       "loot",
-      "bag",
-      "treasure-bag"
+      "bag"
     ],
     "vendors": [],
     "events": [],
@@ -11317,6 +11312,7 @@
       "vanity"
     ],
     "subcategories": [
+      "vanity-accessory",
       "other-accessory"
     ],
     "obtain": [
@@ -11687,6 +11683,7 @@
       "crafting-material"
     ],
     "subcategories": [
+      "vanity-accessory",
       "material-equipment",
       "other-accessory"
     ],
@@ -12786,7 +12783,7 @@
       "night"
     ],
     "milestone": "start",
-    "milestoneVia": "Dropped by Wandering Eye"
+    "milestoneVia": "Dropped by Demon Eye"
   },
   {
     "key": "Sunglasses",
@@ -12800,7 +12797,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head"
+    ],
     "obtain": [
       "crafted"
     ],
@@ -12851,8 +12850,7 @@
     ],
     "subcategories": [],
     "obtain": [
-      "drop",
-      "loot"
+      "drop"
     ],
     "vendors": [],
     "events": [],
@@ -12901,7 +12899,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head"
+    ],
     "obtain": [
       "drop"
     ],
@@ -12950,7 +12950,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-body"
+    ],
     "obtain": [
       "crafted"
     ],
@@ -12997,7 +12999,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-legs"
+    ],
     "obtain": [
       "crafted"
     ],
@@ -13045,7 +13049,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head"
+    ],
     "obtain": [
       "vendor"
     ],
@@ -13098,7 +13104,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head"
+    ],
     "obtain": [
       "drop"
     ],
@@ -13148,7 +13156,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head"
+    ],
     "obtain": [
       "drop"
     ],
@@ -13197,7 +13207,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-body"
+    ],
     "obtain": [
       "vendor"
     ],
@@ -13249,7 +13261,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-legs"
+    ],
     "obtain": [
       "vendor"
     ],
@@ -13301,7 +13315,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head"
+    ],
     "obtain": [
       "crafted"
     ],
@@ -13348,7 +13364,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-body"
+    ],
     "obtain": [
       "crafted"
     ],
@@ -13395,7 +13413,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-legs"
+    ],
     "obtain": [
       "crafted"
     ],
@@ -13444,6 +13464,7 @@
       "furniture"
     ],
     "subcategories": [
+      "vanity-head",
       "cage-jar"
     ],
     "obtain": [
@@ -13495,7 +13516,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head"
+    ],
     "obtain": [
       "drop"
     ],
@@ -13544,7 +13567,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-body"
+    ],
     "obtain": [
       "crafted"
     ],
@@ -13591,7 +13616,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-legs"
+    ],
     "obtain": [
       "crafted"
     ],
@@ -13926,7 +13953,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head"
+    ],
     "obtain": [
       "drop"
     ],
@@ -14026,6 +14055,7 @@
       "crafting-material"
     ],
     "subcategories": [
+      "vanity-body",
       "material-equipment"
     ],
     "obtain": [
@@ -14075,7 +14105,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head"
+    ],
     "obtain": [
       "drop"
     ],
@@ -14128,6 +14160,7 @@
       "crafting-material"
     ],
     "subcategories": [
+      "vanity-head",
       "material-equipment"
     ],
     "obtain": [
@@ -14383,7 +14416,7 @@
     "tooltip": "Greatly extends underwater breathing",
     "conditions": [],
     "milestone": "start",
-    "milestoneVia": "Dropped by Orca"
+    "milestoneVia": "Dropped by Shark"
   },
   {
     "key": "FamiliarShirt",
@@ -14396,7 +14429,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-body"
+    ],
     "obtain": [
       "vendor"
     ],
@@ -14446,7 +14481,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-legs"
+    ],
     "obtain": [
       "vendor"
     ],
@@ -14496,7 +14533,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head"
+    ],
     "obtain": [
       "vendor"
     ],
@@ -17111,7 +17150,7 @@
     "autoswing": false,
     "conditions": [],
     "milestone": "start",
-    "milestoneVia": "Dropped by Orca"
+    "milestoneVia": "Dropped by Shark"
   },
   {
     "key": "Feather",
@@ -17225,7 +17264,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head"
+    ],
     "obtain": [
       "vendor"
     ],
@@ -17383,7 +17424,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-body"
+    ],
     "obtain": [
       "vendor"
     ],
@@ -17435,7 +17478,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-legs"
+    ],
     "obtain": [
       "vendor"
     ],
@@ -20376,7 +20421,7 @@
     "placedHeight": 1,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Shadow Hammer"
   },
   {
     "key": "MythrilBar",
@@ -20433,7 +20478,7 @@
     "placedHeight": 1,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Shadow Hammer"
   },
   {
     "key": "CobaltChainsaw",
@@ -20946,7 +20991,7 @@
     "placedHeight": 1,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Shadow Hammer"
   },
   {
     "key": "GlassWall",
@@ -25801,8 +25846,7 @@
       "material-equipment"
     ],
     "obtain": [
-      "drop",
-      "loot"
+      "drop"
     ],
     "vendors": [],
     "events": [],
@@ -25839,7 +25883,7 @@
     "tooltip": "Turns the holder into a werewolf at night",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Werewolf"
   },
   {
     "key": "Ruler",
@@ -26616,7 +26660,7 @@
     "healLife": 150,
     "debuff": "Potion Sickness",
     "conditions": [],
-    "milestone": "start",
+    "milestone": "wall-of-flesh",
     "milestoneVia": "Dropped by Crimson Mimic"
   },
   {
@@ -26680,7 +26724,7 @@
     "debuff": "Mana Sickness",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Crimson Mimic"
   },
   {
     "key": "PixieDust",
@@ -26731,7 +26775,7 @@
     "autoswing": false,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Pixie"
   },
   {
     "key": "CrystalShard",
@@ -26801,7 +26845,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head"
+    ],
     "obtain": [
       "vendor"
     ],
@@ -26851,7 +26897,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-body"
+    ],
     "obtain": [
       "vendor"
     ],
@@ -26901,7 +26949,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-legs"
+    ],
     "obtain": [
       "vendor"
     ],
@@ -27570,12 +27620,9 @@
       "magic"
     ],
     "obtain": [
-      "vendor",
       "drop"
     ],
-    "vendors": [
-      "skeleton-merchant"
-    ],
+    "vendors": [],
     "events": [],
     "biomes": [
       "forest-surface",
@@ -27884,7 +27931,7 @@
     "tooltip": "'Not even water can put the flame out'",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by World Feeder"
   },
   {
     "key": "CursedTorch",
@@ -28098,7 +28145,7 @@
     "tooltip": "'Sharp and magical!'",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Unicorn"
   },
   {
     "key": "DarkShard",
@@ -28153,7 +28200,7 @@
     "tooltip": "'Sometimes carried by creatures in dark deserts'",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Dark Mummy"
   },
   {
     "key": "LightShard",
@@ -28207,7 +28254,7 @@
     "tooltip": "'Sometimes carried by creatures in light deserts'",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Light Mummy"
   },
   {
     "key": "RedPressurePlate",
@@ -30002,6 +30049,7 @@
     ],
     "subcategories": [
       "music-box",
+      "vanity-music-box",
       "material-furniture",
       "material-equipment",
       "furniture-music-box"
@@ -30057,6 +30105,7 @@
     ],
     "subcategories": [
       "music-box",
+      "vanity-music-box",
       "material-furniture",
       "material-equipment",
       "furniture-music-box"
@@ -30112,6 +30161,7 @@
     ],
     "subcategories": [
       "music-box",
+      "vanity-music-box",
       "material-furniture",
       "material-equipment",
       "furniture-music-box"
@@ -30166,6 +30216,7 @@
     ],
     "subcategories": [
       "music-box",
+      "vanity-music-box",
       "furniture-music-box"
     ],
     "obtain": [
@@ -30220,6 +30271,7 @@
     ],
     "subcategories": [
       "music-box",
+      "vanity-music-box",
       "material-furniture",
       "material-equipment",
       "furniture-music-box"
@@ -30275,6 +30327,7 @@
     ],
     "subcategories": [
       "music-box",
+      "vanity-music-box",
       "material-furniture",
       "material-equipment",
       "furniture-music-box"
@@ -30330,6 +30383,7 @@
     ],
     "subcategories": [
       "music-box",
+      "vanity-music-box",
       "material-furniture",
       "material-equipment",
       "furniture-music-box"
@@ -30385,6 +30439,7 @@
     ],
     "subcategories": [
       "music-box",
+      "vanity-music-box",
       "material-furniture",
       "material-equipment",
       "furniture-music-box"
@@ -30440,6 +30495,7 @@
     ],
     "subcategories": [
       "music-box",
+      "vanity-music-box",
       "material-furniture",
       "material-equipment",
       "furniture-music-box"
@@ -30495,6 +30551,7 @@
     ],
     "subcategories": [
       "music-box",
+      "vanity-music-box",
       "material-furniture",
       "material-equipment",
       "furniture-music-box"
@@ -30550,6 +30607,7 @@
     ],
     "subcategories": [
       "music-box",
+      "vanity-music-box",
       "material-furniture",
       "material-equipment",
       "furniture-music-box"
@@ -30605,6 +30663,7 @@
     ],
     "subcategories": [
       "music-box",
+      "vanity-music-box",
       "material-furniture",
       "material-equipment",
       "furniture-music-box"
@@ -30660,6 +30719,7 @@
     ],
     "subcategories": [
       "music-box",
+      "vanity-music-box",
       "material-furniture",
       "material-equipment",
       "furniture-music-box"
@@ -30749,7 +30809,7 @@
     "tooltip": "'The essence of powerful flying creatures'",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Wyvern"
   },
   {
     "key": "MusicBox",
@@ -31427,7 +31487,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head"
+    ],
     "obtain": [
       "vendor"
     ],
@@ -31477,7 +31539,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-body"
+    ],
     "obtain": [
       "vendor"
     ],
@@ -31527,7 +31591,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-legs"
+    ],
     "obtain": [
       "vendor"
     ],
@@ -35335,7 +35401,7 @@
     "placedHeight": 1,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Rainbow Slime"
   },
   {
     "key": "RainbowBrickWall",
@@ -35501,7 +35567,9 @@
       "vanity",
       "developer"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head"
+    ],
     "obtain": [
       "bag",
       "treasure-bag"
@@ -35548,7 +35616,9 @@
       "vanity",
       "developer"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-body"
+    ],
     "obtain": [
       "bag",
       "treasure-bag"
@@ -35595,7 +35665,9 @@
       "vanity",
       "developer"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-legs"
+    ],
     "obtain": [
       "bag",
       "treasure-bag"
@@ -36184,7 +36256,7 @@
     "useTime": 17,
     "tooltip": "'Only for those who are worthy'",
     "conditions": [],
-    "milestone": "start",
+    "milestone": "wall-of-flesh",
     "milestoneVia": "Dropped by Jungle Mimic"
   },
   {
@@ -36409,7 +36481,7 @@
     "tooltip": "Shoots fast bone arrows that shatter into shards",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Skeleton Archer"
   },
   {
     "key": "UnholyTrident",
@@ -36427,9 +36499,7 @@
       "wand"
     ],
     "obtain": [
-      "drop",
-      "loot",
-      "bag"
+      "drop"
     ],
     "vendors": [],
     "events": [],
@@ -36471,7 +36541,7 @@
     "tooltip": "Summons the Devil's trident",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Red Devil"
   },
   {
     "key": "FrostHelmet",
@@ -38095,6 +38165,7 @@
       "crafting-material"
     ],
     "subcategories": [
+      "vanity-head",
       "material-equipment"
     ],
     "obtain": [
@@ -38555,7 +38626,7 @@
     "tooltip": "Shoots a beam of light",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Armored Skeleton"
   },
   {
     "key": "IceBlade",
@@ -38735,7 +38806,7 @@
     "tooltip": "Shoots a stream of frost",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Ice Elemental"
   },
   {
     "key": "WoodHelmet",
@@ -39812,8 +39883,7 @@
       "wings"
     ],
     "obtain": [
-      "vendor",
-      "loot"
+      "vendor"
     ],
     "vendors": [
       "steampunker"
@@ -39847,8 +39917,8 @@
     "autoswing": false,
     "tooltip": "Allows flight and slow fall\nHold Up to boost faster!",
     "conditions": [],
-    "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestone": "any-mech",
+    "milestoneVia": "Sold by the Steampunker"
   },
   {
     "key": "ButterflyWings",
@@ -40122,7 +40192,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head"
+    ],
     "obtain": [
       "drop"
     ],
@@ -40158,7 +40230,7 @@
     "bodySlot": "social helmet",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Rune Wizard"
   },
   {
     "key": "RuneRobe",
@@ -40171,7 +40243,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-body"
+    ],
     "obtain": [
       "drop"
     ],
@@ -40207,7 +40281,7 @@
     "bodySlot": "social shirt",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Rune Wizard"
   },
   {
     "key": "MushroomSpear",
@@ -41302,7 +41376,7 @@
     "placedHeight": 1,
     "tooltip": "Increases running speed",
     "conditions": [],
-    "milestone": "wall-of-flesh",
+    "milestone": "any-mech",
     "milestoneVia": "Crafted – needs Blend-O-Matic"
   },
   {
@@ -44671,7 +44745,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head"
+    ],
     "obtain": [
       "vendor"
     ],
@@ -44726,7 +44802,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-body"
+    ],
     "obtain": [
       "vendor"
     ],
@@ -44781,7 +44859,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-legs"
+    ],
     "obtain": [
       "vendor"
     ],
@@ -44836,7 +44916,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head"
+    ],
     "obtain": [
       "drop",
       "treasure-bag"
@@ -44884,7 +44966,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-body"
+    ],
     "obtain": [
       "drop",
       "treasure-bag"
@@ -44932,7 +45016,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-legs"
+    ],
     "obtain": [
       "drop",
       "treasure-bag"
@@ -45133,7 +45219,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head"
+    ],
     "obtain": [
       "loot",
       "shimmer"
@@ -45475,13 +45563,10 @@
       "material-equipment"
     ],
     "obtain": [
-      "vendor",
       "drop",
       "shimmer"
     ],
-    "vendors": [
-      "princess"
-    ],
+    "vendors": [],
     "events": [
       "pirate-invasion"
     ],
@@ -45533,13 +45618,10 @@
       "material-equipment"
     ],
     "obtain": [
-      "vendor",
       "drop",
       "shimmer"
     ],
-    "vendors": [
-      "princess"
-    ],
+    "vendors": [],
     "events": [
       "pirate-invasion"
     ],
@@ -45587,6 +45669,7 @@
       "miscellaneous"
     ],
     "subcategories": [
+      "other-vanity",
       "novelty"
     ],
     "obtain": [
@@ -45624,7 +45707,7 @@
     "tooltip": "'Having a wonderful time!'",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Unicorn"
   },
   {
     "key": "SandstorminaBottle",
@@ -45645,18 +45728,13 @@
     ],
     "obtain": [
       "crafted",
-      "vendor",
       "loot",
       "bag",
       "shimmer"
     ],
-    "vendors": [
-      "princess"
-    ],
+    "vendors": [],
     "events": [],
-    "biomes": [
-      "desert"
-    ],
+    "biomes": [],
     "times": [],
     "platforms": [
       "desktop",
@@ -46003,7 +46081,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head"
+    ],
     "obtain": [
       "vendor"
     ],
@@ -46055,7 +46135,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-body"
+    ],
     "obtain": [
       "vendor"
     ],
@@ -46107,7 +46189,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-body"
+    ],
     "obtain": [
       "loot",
       "shimmer"
@@ -46207,7 +46291,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head"
+    ],
     "obtain": [
       "vendor"
     ],
@@ -46258,7 +46344,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head"
+    ],
     "obtain": [
       "vendor"
     ],
@@ -46310,7 +46398,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head"
+    ],
     "obtain": [
       "drop"
     ],
@@ -46349,7 +46439,7 @@
     "bodySlot": "social helmet",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Dark Mummy"
   },
   {
     "key": "MummyShirt",
@@ -46362,7 +46452,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-body"
+    ],
     "obtain": [
       "drop"
     ],
@@ -46401,7 +46493,7 @@
     "bodySlot": "social shirt",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Dark Mummy"
   },
   {
     "key": "MummyPants",
@@ -46414,7 +46506,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-legs"
+    ],
     "obtain": [
       "drop"
     ],
@@ -46453,7 +46547,7 @@
     "bodySlot": "social pants",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Dark Mummy"
   },
   {
     "key": "CowboyHat",
@@ -46466,7 +46560,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head"
+    ],
     "obtain": [
       "vendor"
     ],
@@ -46518,7 +46614,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-body"
+    ],
     "obtain": [
       "vendor"
     ],
@@ -46570,7 +46668,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-legs"
+    ],
     "obtain": [
       "vendor"
     ],
@@ -46622,7 +46722,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head"
+    ],
     "obtain": [
       "vendor"
     ],
@@ -46672,7 +46774,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-body"
+    ],
     "obtain": [
       "vendor"
     ],
@@ -46722,7 +46826,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-legs"
+    ],
     "obtain": [
       "vendor"
     ],
@@ -47139,7 +47245,7 @@
     "tooltip": "Grants immunity to Bleeding",
     "conditions": [],
     "milestone": "start",
-    "milestoneVia": "Dropped by Angler Fish"
+    "milestoneVia": "Shimmer from Bezoar"
   },
   {
     "key": "ArmorPolish",
@@ -47194,7 +47300,7 @@
     "tooltip": "Grants immunity to Broken Armor",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Armored Skeleton"
   },
   {
     "key": "Bezoar",
@@ -47249,7 +47355,7 @@
     "tooltip": "Grants immunity to Poisoned",
     "conditions": [],
     "milestone": "start",
-    "milestoneVia": "Dropped by Moss Hornet"
+    "milestoneVia": "Dropped by Hornet"
   },
   {
     "key": "Blindfold",
@@ -47305,7 +47411,7 @@
     "tooltip": "Grants immunity to Darkness",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Crimslime"
   },
   {
     "key": "FastClock",
@@ -47363,7 +47469,7 @@
     "tooltip": "Grants immunity to Slow",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Mummy"
   },
   {
     "key": "Megaphone",
@@ -47419,8 +47525,8 @@
     "autoswing": false,
     "tooltip": "Grants immunity to Silenced",
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Dropped by Dark Mummy"
+    "milestone": "skeletron",
+    "milestoneVia": "Shimmer from Nazar"
   },
   {
     "key": "Nazar",
@@ -47476,8 +47582,8 @@
     "autoswing": false,
     "tooltip": "Grants immunity to Cursed",
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Dropped by Cursed Hammer"
+    "milestone": "skeletron",
+    "milestoneVia": "Dropped by Cursed Skull"
   },
   {
     "key": "Vitamins",
@@ -47532,7 +47638,7 @@
     "tooltip": "Grants immunity to Weakness",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Corruptor"
   },
   {
     "key": "TrifoldMap",
@@ -47589,7 +47695,7 @@
     "tooltip": "Grants immunity to Confusion",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Light Mummy"
   },
   {
     "key": "CactusHelmet",
@@ -47911,8 +48017,7 @@
       "material-equipment"
     ],
     "obtain": [
-      "drop",
-      "loot"
+      "drop"
     ],
     "vendors": [],
     "events": [
@@ -47944,6 +48049,7 @@
     "placeable": false,
     "autoswing": false,
     "tooltip": "During nighttime, grants minor increase to damage,\nmelee speed, critical strike chance, life regeneration,\ndefense, mining speed, and minion knockback",
+    "eventOnly": true,
     "conditions": [],
     "milestone": "any-mech",
     "milestoneVia": "Dropped by Vampire"
@@ -48149,8 +48255,8 @@
     "autoswing": false,
     "tooltip": "Grants immunity to Silenced and Cursed",
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Megaphone"
   },
   {
     "key": "CoinGun",
@@ -48167,12 +48273,9 @@
       "other-weapon"
     ],
     "obtain": [
-      "vendor",
       "drop"
     ],
-    "vendors": [
-      "princess"
-    ],
+    "vendors": [],
     "events": [
       "pirate-invasion"
     ],
@@ -53073,8 +53176,8 @@
     "placedHeight": 2,
     "tooltip": "Used to craft objects",
     "conditions": [],
-    "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestone": "any-mech",
+    "milestoneVia": "Sold by the Steampunker"
   },
   {
     "key": "MeatGrinder",
@@ -53131,7 +53234,7 @@
     "tooltip": "Used to craft objects",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Herpling"
   },
   {
     "key": "Extractinator",
@@ -65741,7 +65844,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head"
+    ],
     "obtain": [
       "drop"
     ],
@@ -65836,7 +65941,7 @@
     "eventOnly": true,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Angry Nimbus"
   },
   {
     "key": "OrangeTorch",
@@ -66318,7 +66423,7 @@
     "tooltip": "Puts a shell around the owner when below 50% life that reduces damage by 25%",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Ice Tortoise"
   },
   {
     "key": "SniperRifle",
@@ -67010,7 +67115,7 @@
     "tooltip": "Shoots a powerful, high velocity bullet",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Angry Trapper"
   },
   {
     "key": "MagnetSphere",
@@ -67423,7 +67528,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head"
+    ],
     "obtain": [
       "drop"
     ],
@@ -67473,7 +67580,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head"
+    ],
     "obtain": [
       "vendor"
     ],
@@ -67526,7 +67635,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head"
+    ],
     "obtain": [
       "vendor"
     ],
@@ -67578,7 +67689,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head"
+    ],
     "obtain": [
       "drop"
     ],
@@ -67629,7 +67742,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head"
+    ],
     "obtain": [
       "drop"
     ],
@@ -67679,7 +67794,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-body"
+    ],
     "obtain": [
       "drop"
     ],
@@ -67729,7 +67846,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-legs"
+    ],
     "obtain": [
       "drop"
     ],
@@ -67779,7 +67898,10 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head",
+      "boss-mask"
+    ],
     "obtain": [
       "drop",
       "treasure-bag"
@@ -68126,7 +68248,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-body"
+    ],
     "obtain": [
       "vendor"
     ],
@@ -68176,7 +68300,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-legs"
+    ],
     "obtain": [
       "vendor"
     ],
@@ -69168,7 +69294,7 @@
     "tooltip": "Shoots an icy sickle",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Ice Elemental"
   },
   {
     "key": "ClothierVoodooDoll",
@@ -69283,7 +69409,7 @@
     "tooltip": "Shoots a poison fang that pierces multiple enemies",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Black Recluse"
   },
   {
     "key": "SlimeStaff",
@@ -69301,14 +69427,10 @@
       "minion"
     ],
     "obtain": [
-      "vendor",
       "drop",
-      "loot",
       "treasure-bag"
     ],
-    "vendors": [
-      "princess"
-    ],
+    "vendors": [],
     "events": [],
     "biomes": [
       "forest-surface",
@@ -69599,9 +69721,7 @@
     "events": [
       "blood-moon"
     ],
-    "biomes": [
-      "underground"
-    ],
+    "biomes": [],
     "times": [],
     "platforms": [
       "desktop",
@@ -69633,9 +69753,10 @@
     "velocity": 15.0,
     "useTime": 28,
     "tooltip": "Shoots a boxing glove",
+    "eventOnly": true,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Clown"
   },
   {
     "key": "PirateMap",
@@ -69976,8 +70097,7 @@
       "material-equipment"
     ],
     "obtain": [
-      "drop",
-      "loot"
+      "drop"
     ],
     "vendors": [],
     "events": [],
@@ -70011,7 +70131,7 @@
     "tooltip": "Increases arrow damage by 10% and greatly increases arrow speed\n20% chance to not consume arrows",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Skeleton Archer"
   },
   {
     "key": "MagmaStone",
@@ -70066,7 +70186,7 @@
     "tooltip": "Melee attacks inflict fire damage",
     "conditions": [],
     "milestone": "start",
-    "milestoneVia": "Dropped by Lava Bat"
+    "milestoneVia": "Dropped by Hellbat"
   },
   {
     "key": "ObsidianRose",
@@ -70178,7 +70298,7 @@
     "eventOnly": true,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Clown"
   },
   {
     "key": "ChainKnife",
@@ -70196,13 +70316,10 @@
       "flail"
     ],
     "obtain": [
-      "drop",
-      "loot"
+      "drop"
     ],
     "vendors": [],
-    "events": [
-      "blood-moon"
-    ],
+    "events": [],
     "biomes": [
       "underground"
     ],
@@ -70291,7 +70408,7 @@
     "tooltip": "Teleports you to the position of the cursor\nCauses the chaos state ()\nTeleports you to the position of the cursor ()",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Chaos Elemental"
   },
   {
     "key": "DeathSickle",
@@ -70401,7 +70518,7 @@
     "autoswing": false,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Giant Tortoise"
   },
   {
     "key": "TissueSample",
@@ -70505,7 +70622,7 @@
     "autoswing": false,
     "conditions": [],
     "milestone": "start",
-    "milestoneVia": "Dropped by Floaty Gross"
+    "milestoneVia": "Dropped by Face Monster"
   },
   {
     "key": "BloodySpine",
@@ -70608,7 +70725,7 @@
     "tooltip": "'The blood of gods'",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Ichor Sticker"
   },
   {
     "key": "IchorTorch",
@@ -70832,7 +70949,7 @@
     "tooltip": "Sprays a shower of ichor\nDecreases target's defense",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Jungle Mimic"
   },
   {
     "key": "BunnyCannon",
@@ -71965,8 +72082,7 @@
       "bag"
     ],
     "vendors": [
-      "party-girl",
-      "princess"
+      "party-girl"
     ],
     "events": [],
     "biomes": [],
@@ -75684,7 +75800,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head"
+    ],
     "obtain": [
       "vendor"
     ],
@@ -80251,7 +80369,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head"
+    ],
     "obtain": [
       "drop"
     ],
@@ -80487,7 +80607,7 @@
     "autoswing": false,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Red Devil"
   },
   {
     "key": "IceFeather",
@@ -80538,7 +80658,7 @@
     "eventOnly": true,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Ice Golem"
   },
   {
     "key": "BrokenBatWing",
@@ -82289,7 +82409,9 @@
       "vanity",
       "developer"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head"
+    ],
     "obtain": [
       "bag",
       "treasure-bag"
@@ -82336,7 +82458,9 @@
       "vanity",
       "developer"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-body"
+    ],
     "obtain": [
       "bag",
       "treasure-bag"
@@ -82383,7 +82507,9 @@
       "vanity",
       "developer"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-legs"
+    ],
     "obtain": [
       "bag",
       "treasure-bag"
@@ -82430,7 +82556,9 @@
       "vanity",
       "developer"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head"
+    ],
     "obtain": [
       "bag",
       "treasure-bag"
@@ -82477,7 +82605,9 @@
       "vanity",
       "developer"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-body"
+    ],
     "obtain": [
       "bag",
       "treasure-bag"
@@ -82524,7 +82654,9 @@
       "vanity",
       "developer"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-legs"
+    ],
     "obtain": [
       "bag",
       "treasure-bag"
@@ -82571,7 +82703,9 @@
       "vanity",
       "developer"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head"
+    ],
     "obtain": [
       "bag",
       "treasure-bag"
@@ -82618,7 +82752,9 @@
       "vanity",
       "developer"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-body"
+    ],
     "obtain": [
       "bag",
       "treasure-bag"
@@ -82665,7 +82801,9 @@
       "vanity",
       "developer"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-legs"
+    ],
     "obtain": [
       "bag",
       "treasure-bag"
@@ -82712,7 +82850,9 @@
       "vanity",
       "developer"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head"
+    ],
     "obtain": [
       "bag",
       "treasure-bag"
@@ -82759,7 +82899,9 @@
       "vanity",
       "developer"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-body"
+    ],
     "obtain": [
       "bag",
       "treasure-bag"
@@ -82806,7 +82948,9 @@
       "vanity",
       "developer"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-legs"
+    ],
     "obtain": [
       "bag",
       "treasure-bag"
@@ -82853,7 +82997,9 @@
       "vanity",
       "developer"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head"
+    ],
     "obtain": [
       "bag",
       "treasure-bag"
@@ -82900,7 +83046,9 @@
       "vanity",
       "developer"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-body"
+    ],
     "obtain": [
       "bag",
       "treasure-bag"
@@ -82947,7 +83095,9 @@
       "vanity",
       "developer"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-legs"
+    ],
     "obtain": [
       "bag",
       "treasure-bag"
@@ -83581,7 +83731,9 @@
       "vanity",
       "developer"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head"
+    ],
     "obtain": [
       "bag",
       "treasure-bag"
@@ -83628,7 +83780,9 @@
       "vanity",
       "developer"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-body"
+    ],
     "obtain": [
       "bag",
       "treasure-bag"
@@ -83675,7 +83829,9 @@
       "vanity",
       "developer"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-legs"
+    ],
     "obtain": [
       "bag",
       "treasure-bag"
@@ -83914,7 +84070,9 @@
       "vanity",
       "developer"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-body"
+    ],
     "obtain": [
       "bag",
       "treasure-bag"
@@ -83961,7 +84119,9 @@
       "vanity",
       "developer"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-legs"
+    ],
     "obtain": [
       "bag",
       "treasure-bag"
@@ -84373,6 +84533,7 @@
     ],
     "subcategories": [
       "music-box",
+      "vanity-music-box",
       "furniture-music-box"
     ],
     "obtain": [
@@ -84425,6 +84586,7 @@
     ],
     "subcategories": [
       "music-box",
+      "vanity-music-box",
       "furniture-music-box"
     ],
     "obtain": [
@@ -84477,6 +84639,7 @@
     ],
     "subcategories": [
       "music-box",
+      "vanity-music-box",
       "furniture-music-box"
     ],
     "obtain": [
@@ -84529,6 +84692,7 @@
     ],
     "subcategories": [
       "music-box",
+      "vanity-music-box",
       "furniture-music-box"
     ],
     "obtain": [
@@ -84581,6 +84745,7 @@
     ],
     "subcategories": [
       "music-box",
+      "vanity-music-box",
       "furniture-music-box"
     ],
     "obtain": [
@@ -84633,6 +84798,7 @@
     ],
     "subcategories": [
       "music-box",
+      "vanity-music-box",
       "furniture-music-box"
     ],
     "obtain": [
@@ -84686,6 +84852,7 @@
     ],
     "subcategories": [
       "music-box",
+      "vanity-music-box",
       "material-furniture",
       "material-equipment",
       "furniture-music-box"
@@ -84741,6 +84908,7 @@
     ],
     "subcategories": [
       "music-box",
+      "vanity-music-box",
       "material-furniture",
       "material-equipment",
       "furniture-music-box"
@@ -84795,6 +84963,7 @@
     ],
     "subcategories": [
       "music-box",
+      "vanity-music-box",
       "furniture-music-box"
     ],
     "obtain": [
@@ -84847,6 +85016,7 @@
     ],
     "subcategories": [
       "music-box",
+      "vanity-music-box",
       "furniture-music-box"
     ],
     "obtain": [
@@ -84899,6 +85069,7 @@
     ],
     "subcategories": [
       "music-box",
+      "vanity-music-box",
       "furniture-music-box"
     ],
     "obtain": [
@@ -84952,6 +85123,7 @@
     ],
     "subcategories": [
       "music-box",
+      "vanity-music-box",
       "material-furniture",
       "material-equipment",
       "furniture-music-box"
@@ -85006,6 +85178,7 @@
     ],
     "subcategories": [
       "music-box",
+      "vanity-music-box",
       "furniture-music-box"
     ],
     "obtain": [
@@ -85058,6 +85231,7 @@
     ],
     "subcategories": [
       "music-box",
+      "vanity-music-box",
       "furniture-music-box"
     ],
     "obtain": [
@@ -85110,6 +85284,7 @@
     ],
     "subcategories": [
       "music-box",
+      "vanity-music-box",
       "furniture-music-box"
     ],
     "obtain": [
@@ -85413,7 +85588,7 @@
     "tooltip": "Nearby players get a bonus against: Angler Fish",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Angler Fish"
   },
   {
     "key": "AngryNimbusBanner",
@@ -85469,7 +85644,7 @@
     "eventOnly": true,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Angry Nimbus"
   },
   {
     "key": "AnomuraFungusBanner",
@@ -85634,7 +85809,7 @@
     "tooltip": "Nearby players get a bonus against: Arapaima",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Arapaima"
   },
   {
     "key": "ArmoredSkeletonBanner",
@@ -85688,7 +85863,7 @@
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Armored Skeleton",
     "conditions": [],
-    "milestone": "start",
+    "milestone": "wall-of-flesh",
     "milestoneVia": "Dropped by Armored Skeleton"
   },
   {
@@ -85856,7 +86031,7 @@
     "tooltip": "Nearby players get a bonus against: Black Recluse",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Black Recluse"
   },
   {
     "key": "BloodFeederBanner",
@@ -85911,7 +86086,7 @@
     "tooltip": "Nearby players get a bonus against: Blood Feeder",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Blood Feeder"
   },
   {
     "key": "BloodJellyBanner",
@@ -85967,7 +86142,7 @@
     "tooltip": "Nearby players get a bonus against: Blood Jelly",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Blood Jelly"
   },
   {
     "key": "BloodCrawlerBanner",
@@ -86187,7 +86362,7 @@
     "tooltip": "Nearby players get a bonus against: Chaos Elemental",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Chaos Elemental"
   },
   {
     "key": "MimicBanner",
@@ -86301,7 +86476,7 @@
     "eventOnly": true,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Clown"
   },
   {
     "key": "CorruptBunnyBanner",
@@ -86577,7 +86752,7 @@
     "tooltip": "Nearby players get a bonus against: Crimson Axe",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Crimson Axe"
   },
   {
     "key": "CursedHammerBanner",
@@ -86632,7 +86807,7 @@
     "tooltip": "Nearby players get a bonus against: Cursed Hammer",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Cursed Hammer"
   },
   {
     "key": "DemonBanner",
@@ -86801,7 +86976,7 @@
     "tooltip": "Nearby players get a bonus against: Derpling",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Derpling"
   },
   {
     "key": "EaterofSoulsBanner",
@@ -86911,7 +87086,7 @@
     "tooltip": "Nearby players get a bonus against: Enchanted Sword",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Enchanted Sword"
   },
   {
     "key": "ZombieEskimoBanner",
@@ -87080,7 +87255,7 @@
     "tooltip": "Nearby players get a bonus against: Floaty Gross",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Floaty Gross"
   },
   {
     "key": "FlyingFishBanner",
@@ -87302,7 +87477,7 @@
     "tooltip": "Nearby players get a bonus against: Fungi Bulb",
     "conditions": [],
     "milestone": "start",
-    "milestoneVia": "Dropped by Giant Fungi Bulb"
+    "milestoneVia": "Dropped by Fungi Bulb"
   },
   {
     "key": "FungoFishBanner",
@@ -87357,7 +87532,7 @@
     "tooltip": "Nearby players get a bonus against: Fungo Fish",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Fungo Fish"
   },
   {
     "key": "GastropodBanner",
@@ -87416,7 +87591,7 @@
       "night"
     ],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Gastropod"
   },
   {
     "key": "GoblinThiefBanner",
@@ -87916,7 +88091,7 @@
     "tooltip": "Nearby players get a bonus against: Herpling",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Herpling"
   },
   {
     "key": "HornetBanner",
@@ -88026,7 +88201,7 @@
     "tooltip": "Nearby players get a bonus against: Ice Elemental",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Ice Elemental"
   },
   {
     "key": "IcyMermanBanner",
@@ -88081,7 +88256,7 @@
     "tooltip": "Nearby players get a bonus against: Icy Merman",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Icy Merman"
   },
   {
     "key": "FireImpBanner",
@@ -88246,7 +88421,7 @@
     "tooltip": "Nearby players get a bonus against: Jungle Creeper",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Jungle Creeper"
   },
   {
     "key": "LihzahrdBanner",
@@ -88466,7 +88641,7 @@
     "tooltip": "Nearby players get a bonus against: Moth",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Moth"
   },
   {
     "key": "MummyBanner",
@@ -88521,7 +88696,7 @@
     "tooltip": "Nearby players get a bonus against: Mummy",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Mummy"
   },
   {
     "key": "MushiLadybugBanner",
@@ -88688,7 +88863,7 @@
     "tooltip": "Nearby players get a bonus against: Pigron",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Pigron"
   },
   {
     "key": "PiranhaBanner",
@@ -88855,7 +89030,7 @@
     "tooltip": "Nearby players get a bonus against: Pixie",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Pixie"
   },
   {
     "key": "RaincoatZombieBanner",
@@ -89466,7 +89641,7 @@
     "tooltip": "Nearby players get a bonus against: Giant Tortoise",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Giant Tortoise"
   },
   {
     "key": "ToxicSludgeBanner",
@@ -89521,7 +89696,7 @@
     "tooltip": "Nearby players get a bonus against: Toxic Sludge",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Toxic Sludge"
   },
   {
     "key": "UmbrellaSlimeBanner",
@@ -89632,7 +89807,7 @@
     "tooltip": "Nearby players get a bonus against: Unicorn",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Unicorn"
   },
   {
     "key": "VampireBanner",
@@ -89857,7 +90032,7 @@
       "night"
     ],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Werewolf"
   },
   {
     "key": "WolfBanner",
@@ -89916,7 +90091,7 @@
       "night"
     ],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Wolf"
   },
   {
     "key": "WorldFeederBanner",
@@ -89970,7 +90145,7 @@
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: World Feeder",
     "conditions": [],
-    "milestone": "start",
+    "milestone": "wall-of-flesh",
     "milestoneVia": "Dropped by World Feeder"
   },
   {
@@ -90085,7 +90260,7 @@
       "night"
     ],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Wraith"
   },
   {
     "key": "WyvernBanner",
@@ -90139,7 +90314,7 @@
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Wyvern",
     "conditions": [],
-    "milestone": "start",
+    "milestone": "wall-of-flesh",
     "milestoneVia": "Dropped by Wyvern"
   },
   {
@@ -91394,7 +91569,7 @@
     "tooltip": "Allows the holder to double jump",
     "conditions": [],
     "milestone": "start",
-    "milestoneVia": "Dropped by Jungle Mimic"
+    "milestoneVia": "Crafted"
   },
   {
     "key": "Pumpkin",
@@ -91861,7 +92036,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head"
+    ],
     "obtain": [
       "vendor"
     ],
@@ -91914,7 +92091,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-body"
+    ],
     "obtain": [
       "vendor"
     ],
@@ -91967,7 +92146,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-legs"
+    ],
     "obtain": [
       "vendor"
     ],
@@ -92021,7 +92202,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head"
+    ],
     "obtain": [
       "vendor"
     ],
@@ -92075,7 +92258,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head"
+    ],
     "obtain": [
       "vendor"
     ],
@@ -92128,7 +92313,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-body"
+    ],
     "obtain": [
       "vendor"
     ],
@@ -92180,7 +92367,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head"
+    ],
     "obtain": [
       "vendor"
     ],
@@ -92233,7 +92422,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head"
+    ],
     "obtain": [
       "vendor"
     ],
@@ -92286,7 +92477,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-body"
+    ],
     "obtain": [
       "vendor"
     ],
@@ -92339,7 +92532,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-legs"
+    ],
     "obtain": [
       "vendor"
     ],
@@ -92392,7 +92587,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head"
+    ],
     "obtain": [
       "bag"
     ],
@@ -92439,7 +92636,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-body"
+    ],
     "obtain": [
       "bag"
     ],
@@ -92486,7 +92685,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-legs"
+    ],
     "obtain": [
       "bag"
     ],
@@ -92533,7 +92734,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head"
+    ],
     "obtain": [
       "bag"
     ],
@@ -92580,7 +92783,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-body"
+    ],
     "obtain": [
       "bag"
     ],
@@ -92627,7 +92832,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-legs"
+    ],
     "obtain": [
       "bag"
     ],
@@ -92674,9 +92881,10 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head"
+    ],
     "obtain": [
-      "loot",
       "bag"
     ],
     "vendors": [],
@@ -92722,9 +92930,10 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-body"
+    ],
     "obtain": [
-      "loot",
       "bag"
     ],
     "vendors": [],
@@ -92770,7 +92979,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head"
+    ],
     "obtain": [
       "bag"
     ],
@@ -92817,7 +93028,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-body"
+    ],
     "obtain": [
       "bag"
     ],
@@ -92864,7 +93077,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-legs"
+    ],
     "obtain": [
       "bag"
     ],
@@ -92911,7 +93126,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head"
+    ],
     "obtain": [
       "bag"
     ],
@@ -92958,7 +93175,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-body"
+    ],
     "obtain": [
       "bag"
     ],
@@ -93005,7 +93224,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-legs"
+    ],
     "obtain": [
       "bag"
     ],
@@ -93052,7 +93273,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head"
+    ],
     "obtain": [
       "bag"
     ],
@@ -93099,7 +93322,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-body"
+    ],
     "obtain": [
       "bag"
     ],
@@ -93146,7 +93371,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-legs"
+    ],
     "obtain": [
       "bag"
     ],
@@ -93193,9 +93420,10 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head"
+    ],
     "obtain": [
-      "loot",
       "bag"
     ],
     "vendors": [],
@@ -93241,9 +93469,10 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-body"
+    ],
     "obtain": [
-      "loot",
       "bag"
     ],
     "vendors": [],
@@ -93289,9 +93518,10 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-legs"
+    ],
     "obtain": [
-      "loot",
       "bag"
     ],
     "vendors": [],
@@ -93337,7 +93567,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head"
+    ],
     "obtain": [
       "bag"
     ],
@@ -93384,7 +93616,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head"
+    ],
     "obtain": [
       "bag"
     ],
@@ -93432,7 +93666,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-body"
+    ],
     "obtain": [
       "bag"
     ],
@@ -93480,7 +93716,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-legs"
+    ],
     "obtain": [
       "bag"
     ],
@@ -93528,7 +93766,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-body"
+    ],
     "obtain": [
       "bag"
     ],
@@ -93575,7 +93815,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-legs"
+    ],
     "obtain": [
       "bag"
     ],
@@ -93622,7 +93864,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head"
+    ],
     "obtain": [
       "bag"
     ],
@@ -93669,7 +93913,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-body"
+    ],
     "obtain": [
       "vendor",
       "bag"
@@ -93766,7 +94012,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-body"
+    ],
     "obtain": [
       "bag"
     ],
@@ -93813,7 +94061,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-legs"
+    ],
     "obtain": [
       "bag"
     ],
@@ -93860,9 +94110,10 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head"
+    ],
     "obtain": [
-      "loot",
       "bag"
     ],
     "vendors": [],
@@ -93908,9 +94159,10 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-body"
+    ],
     "obtain": [
-      "loot",
       "bag"
     ],
     "vendors": [],
@@ -93956,7 +94208,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head"
+    ],
     "obtain": [
       "bag"
     ],
@@ -94003,7 +94257,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-body"
+    ],
     "obtain": [
       "bag"
     ],
@@ -94050,7 +94306,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-legs"
+    ],
     "obtain": [
       "bag"
     ],
@@ -94441,7 +94699,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head"
+    ],
     "obtain": [
       "drop"
     ],
@@ -94491,7 +94751,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-body"
+    ],
     "obtain": [
       "drop"
     ],
@@ -94541,7 +94803,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-legs"
+    ],
     "obtain": [
       "drop"
     ],
@@ -95074,7 +95338,6 @@
       "hook"
     ],
     "obtain": [
-      "loot",
       "bag"
     ],
     "vendors": [],
@@ -95819,9 +96082,10 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head"
+    ],
     "obtain": [
-      "loot",
       "bag"
     ],
     "vendors": [],
@@ -95867,9 +96131,10 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-body"
+    ],
     "obtain": [
-      "loot",
       "bag"
     ],
     "vendors": [],
@@ -95915,7 +96180,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head"
+    ],
     "obtain": [
       "bag"
     ],
@@ -95962,7 +96229,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-body"
+    ],
     "obtain": [
       "bag"
     ],
@@ -96009,7 +96278,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-legs"
+    ],
     "obtain": [
       "bag"
     ],
@@ -96057,7 +96328,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head"
+    ],
     "obtain": [
       "bag"
     ],
@@ -96109,8 +96382,7 @@
       "boomerang"
     ],
     "obtain": [
-      "drop",
-      "loot"
+      "drop"
     ],
     "vendors": [],
     "events": [],
@@ -96147,8 +96419,7 @@
     "useTime": 15,
     "debuff": "Bleeding",
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Found in Chest"
+    "milestone": "start"
   },
   {
     "key": "TheHorsemansBlade",
@@ -96803,7 +97074,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head"
+    ],
     "obtain": [
       "bag"
     ],
@@ -96850,7 +97123,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-body"
+    ],
     "obtain": [
       "bag"
     ],
@@ -96897,7 +97172,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-legs"
+    ],
     "obtain": [
       "bag"
     ],
@@ -96944,7 +97221,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head"
+    ],
     "obtain": [
       "bag"
     ],
@@ -96991,7 +97270,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-body"
+    ],
     "obtain": [
       "bag"
     ],
@@ -97038,7 +97319,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-legs"
+    ],
     "obtain": [
       "bag"
     ],
@@ -97448,7 +97731,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-body"
+    ],
     "obtain": [
       "bag"
     ],
@@ -97495,7 +97780,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-legs"
+    ],
     "obtain": [
       "bag"
     ],
@@ -97542,7 +97829,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-body"
+    ],
     "obtain": [
       "vendor"
     ],
@@ -97595,7 +97884,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-legs"
+    ],
     "obtain": [
       "vendor"
     ],
@@ -97763,10 +98054,11 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head"
+    ],
     "obtain": [
-      "drop",
-      "loot"
+      "drop"
     ],
     "vendors": [],
     "events": [
@@ -97798,6 +98090,7 @@
     "placeable": false,
     "autoswing": false,
     "bodySlot": "social helmet",
+    "eventOnly": true,
     "conditions": [],
     "milestone": "plantera",
     "milestoneVia": "Dropped by Headless Horseman"
@@ -97871,12 +98164,9 @@
     ],
     "obtain": [
       "crafted",
-      "vendor",
       "loot"
     ],
-    "vendors": [
-      "princess"
-    ],
+    "vendors": [],
     "events": [],
     "biomes": [],
     "times": [],
@@ -98087,8 +98377,7 @@
       "material-equipment"
     ],
     "obtain": [
-      "crafted",
-      "loot"
+      "crafted"
     ],
     "vendors": [],
     "events": [],
@@ -98120,7 +98409,7 @@
     "tooltip": "Allows the holder to double jump\nIncreases jump height",
     "conditions": [],
     "milestone": "start",
-    "milestoneVia": "Found in Chest"
+    "milestoneVia": "Crafted"
   },
   {
     "key": "PapyrusScarab",
@@ -98289,8 +98578,7 @@
       "other-furniture"
     ],
     "obtain": [
-      "drop",
-      "loot"
+      "drop"
     ],
     "vendors": [],
     "events": [
@@ -98325,6 +98613,7 @@
     "placedWidth": 1,
     "placedHeight": 1,
     "tooltip": "Right click to open\nPress Up/Down to cycle through placement styles\nPress LT to open\nPress R1 to open\nPress ZL to open\nDouble tap to open",
+    "eventOnly": true,
     "conditions": [],
     "milestone": "plantera",
     "milestoneVia": "Dropped by Present Mimic"
@@ -100187,7 +100476,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head"
+    ],
     "obtain": [
       "drop"
     ],
@@ -100238,7 +100529,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head"
+    ],
     "obtain": [
       "bag"
     ],
@@ -101045,7 +101338,7 @@
     "autoswing": false,
     "tooltip": "'You've been naughty this year'",
     "conditions": [],
-    "milestone": "start",
+    "milestone": "wall-of-flesh",
     "milestoneVia": "Dropped by Jungle Mimic"
   },
   {
@@ -101542,7 +101835,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head"
+    ],
     "obtain": [
       "bag"
     ],
@@ -101587,7 +101882,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-body"
+    ],
     "obtain": [
       "bag"
     ],
@@ -101632,7 +101929,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-legs"
+    ],
     "obtain": [
       "bag"
     ],
@@ -101677,7 +101976,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head"
+    ],
     "obtain": [
       "bag"
     ],
@@ -101722,7 +102023,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-body"
+    ],
     "obtain": [
       "bag"
     ],
@@ -101767,7 +102070,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-legs"
+    ],
     "obtain": [
       "bag"
     ],
@@ -101813,7 +102118,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head"
+    ],
     "obtain": [
       "bag"
     ],
@@ -101859,7 +102166,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-body"
+    ],
     "obtain": [
       "bag"
     ],
@@ -101904,7 +102213,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head"
+    ],
     "obtain": [
       "bag"
     ],
@@ -101949,7 +102260,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-body"
+    ],
     "obtain": [
       "bag"
     ],
@@ -101994,7 +102307,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-legs"
+    ],
     "obtain": [
       "bag"
     ],
@@ -102039,7 +102354,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head"
+    ],
     "obtain": [
       "drop"
     ],
@@ -102089,7 +102406,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-body"
+    ],
     "obtain": [
       "drop"
     ],
@@ -102139,7 +102458,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-legs"
+    ],
     "obtain": [
       "drop"
     ],
@@ -103106,6 +103427,7 @@
     ],
     "subcategories": [
       "music-box",
+      "vanity-music-box",
       "furniture-music-box"
     ],
     "obtain": [
@@ -103158,6 +103480,7 @@
     ],
     "subcategories": [
       "music-box",
+      "vanity-music-box",
       "furniture-music-box"
     ],
     "obtain": [
@@ -103210,6 +103533,7 @@
     ],
     "subcategories": [
       "music-box",
+      "vanity-music-box",
       "furniture-music-box"
     ],
     "obtain": [
@@ -104349,6 +104673,7 @@
       "vanity"
     ],
     "subcategories": [
+      "vanity-accessory",
       "other-accessory"
     ],
     "obtain": [
@@ -104398,7 +104723,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head"
+    ],
     "obtain": [
       "vendor"
     ],
@@ -110279,7 +110606,10 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head",
+      "boss-mask"
+    ],
     "obtain": [
       "drop",
       "treasure-bag"
@@ -110327,7 +110657,10 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head",
+      "boss-mask"
+    ],
     "obtain": [
       "drop",
       "treasure-bag"
@@ -110375,7 +110708,10 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head",
+      "boss-mask"
+    ],
     "obtain": [
       "drop",
       "treasure-bag"
@@ -110423,7 +110759,10 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head",
+      "boss-mask"
+    ],
     "obtain": [
       "drop",
       "treasure-bag"
@@ -110471,7 +110810,10 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head",
+      "boss-mask"
+    ],
     "obtain": [
       "drop",
       "treasure-bag"
@@ -110519,7 +110861,10 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head",
+      "boss-mask"
+    ],
     "obtain": [
       "drop",
       "treasure-bag"
@@ -110567,7 +110912,10 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head",
+      "boss-mask"
+    ],
     "obtain": [
       "drop",
       "treasure-bag"
@@ -110615,7 +110963,10 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head",
+      "boss-mask"
+    ],
     "obtain": [
       "drop",
       "treasure-bag"
@@ -110663,7 +111014,10 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head",
+      "boss-mask"
+    ],
     "obtain": [
       "drop",
       "treasure-bag"
@@ -110711,7 +111065,10 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head",
+      "boss-mask"
+    ],
     "obtain": [
       "drop",
       "treasure-bag"
@@ -113185,7 +113542,7 @@
     "eventOnly": true,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Ice Golem"
   },
   {
     "key": "BunnyCage",
@@ -116320,7 +116677,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head"
+    ],
     "obtain": [
       "drop"
     ],
@@ -118919,7 +119278,7 @@
     "tooltip": "Squirts a stream of water that can turn most lights off\nWet players and creatures become immune to fire",
     "conditions": [],
     "milestone": "start",
-    "milestoneVia": "Dropped by Jungle Mimic"
+    "milestoneVia": "Sold by the Traveling Merchant"
   },
   {
     "key": "Katana",
@@ -119045,8 +119404,7 @@
     ],
     "subcategories": [],
     "obtain": [
-      "vendor",
-      "loot"
+      "vendor"
     ],
     "vendors": [
       "traveling-merchant"
@@ -119081,7 +119439,7 @@
     "tooltip": "6% increased magic damage and critical strike chance",
     "conditions": [],
     "milestone": "start",
-    "milestoneVia": "Found in Chest"
+    "milestoneVia": "Sold by the Traveling Merchant"
   },
   {
     "key": "DiamondRing",
@@ -119097,6 +119455,7 @@
       "vanity"
     ],
     "subcategories": [
+      "vanity-accessory",
       "other-accessory"
     ],
     "obtain": [
@@ -119197,7 +119556,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-body"
+    ],
     "obtain": [
       "vendor"
     ],
@@ -119505,6 +119866,7 @@
       "vanity"
     ],
     "subcategories": [
+      "vanity-accessory",
       "other-accessory"
     ],
     "obtain": [
@@ -119556,6 +119918,7 @@
       "vanity"
     ],
     "subcategories": [
+      "vanity-accessory",
       "other-accessory"
     ],
     "obtain": [
@@ -119607,6 +119970,7 @@
       "vanity"
     ],
     "subcategories": [
+      "vanity-accessory",
       "other-accessory"
     ],
     "obtain": [
@@ -119658,6 +120022,7 @@
       "vanity"
     ],
     "subcategories": [
+      "vanity-accessory",
       "other-accessory"
     ],
     "obtain": [
@@ -122403,7 +122768,6 @@
       "pickaxe"
     ],
     "obtain": [
-      "loot",
       "fishing"
     ],
     "vendors": [],
@@ -122442,7 +122806,7 @@
     "toolSpeed": 13,
     "conditions": [],
     "milestone": "start",
-    "milestoneVia": "Found in Chest"
+    "milestoneVia": "Fished"
   },
   {
     "key": "SawtoothShark",
@@ -122459,7 +122823,6 @@
       "chainsaw"
     ],
     "obtain": [
-      "loot",
       "fishing"
     ],
     "vendors": [],
@@ -122500,7 +122863,7 @@
     "rangeBonus": -1,
     "conditions": [],
     "milestone": "start",
-    "milestoneVia": "Found in Chest"
+    "milestoneVia": "Fished"
   },
   {
     "key": "Minecart",
@@ -123078,7 +123441,7 @@
     "tooltip": "Throw this to make someone smell terrible",
     "conditions": [],
     "milestone": "start",
-    "milestoneVia": "Dropped by Jungle Mimic"
+    "milestoneVia": "Crafted"
   },
   {
     "key": "FishingPotion",
@@ -126237,7 +126600,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head"
+    ],
     "obtain": [
       "quest-reward"
     ],
@@ -126284,7 +126649,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-body"
+    ],
     "obtain": [
       "quest-reward"
     ],
@@ -126331,7 +126698,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-legs"
+    ],
     "obtain": [
       "quest-reward"
     ],
@@ -129979,7 +130348,10 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head",
+      "boss-mask"
+    ],
     "obtain": [
       "drop",
       "treasure-bag"
@@ -130233,7 +130605,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head"
+    ],
     "obtain": [
       "quest-reward"
     ],
@@ -130280,7 +130654,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-body"
+    ],
     "obtain": [
       "quest-reward"
     ],
@@ -130327,7 +130703,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-legs"
+    ],
     "obtain": [
       "quest-reward"
     ],
@@ -130377,6 +130755,7 @@
       "vanity"
     ],
     "subcategories": [
+      "vanity-accessory",
       "other-accessory"
     ],
     "obtain": [
@@ -134597,12 +134976,9 @@
       "minion"
     ],
     "obtain": [
-      "vendor",
       "drop"
     ],
-    "vendors": [
-      "princess"
-    ],
+    "vendors": [],
     "events": [
       "pirate-invasion"
     ],
@@ -134807,7 +135183,10 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head",
+      "boss-mask"
+    ],
     "obtain": [
       "drop",
       "treasure-bag"
@@ -135784,7 +136163,7 @@
     "autoswing": false,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Black Recluse"
   },
   {
     "key": "FalconBlade",
@@ -142658,6 +143037,7 @@
     ],
     "subcategories": [
       "music-box",
+      "vanity-music-box",
       "furniture-music-box"
     ],
     "obtain": [
@@ -145579,8 +145959,7 @@
       "hook"
     ],
     "obtain": [
-      "drop",
-      "loot"
+      "drop"
     ],
     "vendors": [],
     "events": [
@@ -145611,8 +145990,8 @@
     "velocity": 14.0,
     "tooltip": "Press Grapple to launch hook",
     "conditions": [],
-    "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestone": "golem",
+    "milestoneVia": "Dropped by Gigazapper"
   },
   {
     "key": "MoonMask",
@@ -145626,7 +146005,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head"
+    ],
     "obtain": [
       "drop"
     ],
@@ -145659,7 +146040,7 @@
     "bodySlot": "social helmet",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Lamia"
   },
   {
     "key": "SunMask",
@@ -145673,7 +146054,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head"
+    ],
     "obtain": [
       "drop"
     ],
@@ -145706,7 +146089,7 @@
     "bodySlot": "social helmet",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Lamia"
   },
   {
     "key": "MartianCostumeMask",
@@ -145719,7 +146102,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head"
+    ],
     "obtain": [
       "drop"
     ],
@@ -145766,7 +146151,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-body"
+    ],
     "obtain": [
       "drop"
     ],
@@ -145813,7 +146200,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-legs"
+    ],
     "obtain": [
       "drop"
     ],
@@ -145860,7 +146249,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head"
+    ],
     "obtain": [
       "drop"
     ],
@@ -145907,7 +146298,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-body"
+    ],
     "obtain": [
       "drop"
     ],
@@ -145954,7 +146347,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-legs"
+    ],
     "obtain": [
       "drop"
     ],
@@ -148344,7 +148739,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head"
+    ],
     "obtain": [
       "vendor"
     ],
@@ -148394,7 +148791,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head"
+    ],
     "obtain": [
       "vendor"
     ],
@@ -148444,7 +148843,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-body"
+    ],
     "obtain": [
       "vendor"
     ],
@@ -148494,7 +148895,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-body"
+    ],
     "obtain": [
       "vendor"
     ],
@@ -148645,7 +149048,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head"
+    ],
     "obtain": [
       "vendor"
     ],
@@ -150392,7 +150797,7 @@
     "tooltip": "Nearby players get a bonus against: Angry Trapper",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Angry Trapper"
   },
   {
     "key": "ArmoredVikingBanner",
@@ -150444,7 +150849,7 @@
     "tooltip": "Nearby players get a bonus against: Armored Viking",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Armored Viking"
   },
   {
     "key": "BlackSlimeBanner",
@@ -150601,7 +151006,7 @@
     "tooltip": "Nearby players get a bonus against: Cultist Archer",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Cultist Archer"
   },
   {
     "key": "BlueCultistCasterBanner",
@@ -150653,7 +151058,7 @@
     "tooltip": "Nearby players get a bonus against: Lunatic Devotee",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Lunatic Devotee"
   },
   {
     "key": "BlueCultistFighterBanner",
@@ -150804,7 +151209,7 @@
     "tooltip": "Nearby players get a bonus against: Clinger",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Clinger"
   },
   {
     "key": "CochinealBeetleBanner",
@@ -150961,7 +151366,7 @@
     "tooltip": "Nearby players get a bonus against: Corrupt Slime",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Corrupt Slime"
   },
   {
     "key": "CorruptorBanner",
@@ -151014,7 +151419,7 @@
     "tooltip": "Nearby players get a bonus against: Corruptor",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Corruptor"
   },
   {
     "key": "CrimslimeBanner",
@@ -151066,7 +151471,7 @@
     "tooltip": "Nearby players get a bonus against: Crimslime",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Crimslime"
   },
   {
     "key": "CursedSkullBanner",
@@ -151751,7 +152156,7 @@
     "tooltip": "Nearby players get a bonus against: Giant Bat",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Giant Bat"
   },
   {
     "key": "GiantCursedSkullBanner",
@@ -151860,7 +152265,7 @@
       "night"
     ],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Giant Flying Fox"
   },
   {
     "key": "GingerbreadManBanner",
@@ -152233,7 +152638,7 @@
     "tooltip": "Nearby players get a bonus against: Hoppin' Jack",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Hoppin' Jack"
   },
   {
     "key": "IceBatBanner",
@@ -152338,7 +152743,7 @@
     "eventOnly": true,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Ice Golem"
   },
   {
     "key": "IceSlimeBanner",
@@ -152447,7 +152852,7 @@
     "tooltip": "Nearby players get a bonus against: Ichor Sticker",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Ichor Sticker"
   },
   {
     "key": "IlluminantBatBanner",
@@ -152500,7 +152905,7 @@
     "tooltip": "Nearby players get a bonus against: Illuminant Bat",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Illuminant Bat"
   },
   {
     "key": "IlluminantSlimeBanner",
@@ -152552,7 +152957,7 @@
     "tooltip": "Nearby players get a bonus against: Illuminant Slime",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Illuminant Slime"
   },
   {
     "key": "JungleBatBanner",
@@ -152818,7 +153223,7 @@
     "tooltip": "Nearby players get a bonus against: Lava Bat",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Lava Bat"
   },
   {
     "key": "LavaSlimeBanner",
@@ -153825,7 +154230,7 @@
     "tooltip": "Nearby players get a bonus against: Possessed Armor",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Possessed Armor"
   },
   {
     "key": "PresentMimicBanner",
@@ -154036,7 +154441,7 @@
     "eventOnly": true,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Rainbow Slime"
   },
   {
     "key": "RavenBanner",
@@ -154193,7 +154598,7 @@
     "tooltip": "Nearby players get a bonus against: Rune Wizard",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Rune Wizard"
   },
   {
     "key": "RustyArmoredBonesBanner",
@@ -154406,7 +154811,7 @@
     "tooltip": "Nearby players get a bonus against: Skeleton Archer",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Skeleton Archer"
   },
   {
     "key": "SkeletonCommandoBanner",
@@ -154563,7 +154968,7 @@
     "tooltip": "Nearby players get a bonus against: Slimer",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Slimer"
   },
   {
     "key": "SnatcherBanner",
@@ -156136,7 +156541,7 @@
     "tooltip": "Drains life from enemies",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Crimson Mimic"
   },
   {
     "key": "DartPistol",
@@ -156189,7 +156594,7 @@
     "useTime": 22,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Crimson Mimic"
   },
   {
     "key": "DartRifle",
@@ -156242,7 +156647,7 @@
     "useTime": 38,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Corrupt Mimic"
   },
   {
     "key": "CrystalDart",
@@ -156448,7 +156853,7 @@
     "useTime": 14,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Corrupt Mimic"
   },
   {
     "key": "FetidBaghnakhs",
@@ -156501,7 +156906,7 @@
     "useTime": 8,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Crimson Mimic"
   },
   {
     "key": "ClingerStaff",
@@ -156557,7 +156962,7 @@
     "tooltip": "Summons a wall of cursed flames",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Corrupt Mimic"
   },
   {
     "key": "PutridScent",
@@ -156610,7 +157015,7 @@
     "tooltip": "Enemies are less likely to target you\n5% increased damage and critical strike chance",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Corrupt Mimic"
   },
   {
     "key": "FleshKnuckles",
@@ -156662,7 +157067,7 @@
     "tooltip": "Enemies are more likely to target you",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Crimson Mimic"
   },
   {
     "key": "FlowerBoots",
@@ -156874,7 +157279,7 @@
     "tooltip": "Press Grapple to launch hook",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Crimson Mimic"
   },
   {
     "key": "ThornHook",
@@ -156974,7 +157379,7 @@
     "tooltip": "Press Grapple to launch hook",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Hallowed Mimic"
   },
   {
     "key": "WormHook",
@@ -157024,7 +157429,7 @@
     "tooltip": "Press Grapple to launch hook",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Corrupt Mimic"
   },
   {
     "key": "DevDye",
@@ -157312,7 +157717,7 @@
     "tooltip": "Shoots arrows from the sky",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Hallowed Mimic"
   },
   {
     "key": "FlyingKnife",
@@ -157367,7 +157772,7 @@
     "tooltip": "Throws a controllable flying knife",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Hallowed Mimic"
   },
   {
     "key": "BottomlessBucket",
@@ -157958,8 +158363,7 @@
       "light-pet"
     ],
     "obtain": [
-      "vendor",
-      "loot"
+      "vendor"
     ],
     "vendors": [
       "skeleton-merchant"
@@ -157993,7 +158397,7 @@
     "tooltip": "Summons a magic lantern that exposes nearby treasure",
     "conditions": [],
     "milestone": "start",
-    "milestoneVia": "Found in Chest"
+    "milestoneVia": "Sold by the Skeleton Merchant"
   },
   {
     "key": "MusicBoxLunarBoss",
@@ -158010,6 +158414,7 @@
     ],
     "subcategories": [
       "music-box",
+      "vanity-music-box",
       "furniture-music-box"
     ],
     "obtain": [
@@ -158401,7 +158806,7 @@
     "tooltip": "Summons a massive crystal spike\nIgnores 10 points of enemy Defense",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Hallowed Mimic"
   },
   {
     "key": "ShadowFlameBow",
@@ -158458,7 +158863,7 @@
     "eventOnly": true,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Goblin Warlock"
   },
   {
     "key": "ShadowFlameHexDoll",
@@ -158515,7 +158920,7 @@
     "eventOnly": true,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Goblin Warlock"
   },
   {
     "key": "ShadowFlameKnife",
@@ -158572,7 +158977,7 @@
     "eventOnly": true,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Goblin Warlock"
   },
   {
     "key": "PaintingAcorns",
@@ -159318,18 +159723,13 @@
     ],
     "obtain": [
       "vendor",
-      "drop",
       "loot"
     ],
     "vendors": [
       "skeleton-merchant"
     ],
     "events": [],
-    "biomes": [
-      "forest-surface",
-      "underground",
-      "underworld"
-    ],
+    "biomes": [],
     "times": [],
     "platforms": [
       "desktop",
@@ -167168,7 +167568,9 @@
       "vanity",
       "developer"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head"
+    ],
     "obtain": [
       "bag",
       "treasure-bag"
@@ -167215,7 +167617,9 @@
       "vanity",
       "developer"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-body"
+    ],
     "obtain": [
       "bag",
       "treasure-bag"
@@ -167613,6 +168017,7 @@
     ],
     "subcategories": [
       "music-box",
+      "vanity-music-box",
       "furniture-music-box"
     ],
     "obtain": [
@@ -167664,6 +168069,7 @@
     ],
     "subcategories": [
       "music-box",
+      "vanity-music-box",
       "furniture-music-box"
     ],
     "obtain": [
@@ -167715,6 +168121,7 @@
     ],
     "subcategories": [
       "music-box",
+      "vanity-music-box",
       "furniture-music-box"
     ],
     "obtain": [
@@ -167956,7 +168363,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head"
+    ],
     "obtain": [
       "vendor"
     ],
@@ -168005,7 +168414,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-body"
+    ],
     "obtain": [
       "vendor"
     ],
@@ -168054,7 +168465,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-legs"
+    ],
     "obtain": [
       "vendor"
     ],
@@ -168152,7 +168565,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-body"
+    ],
     "obtain": [
       "vendor"
     ],
@@ -168202,7 +168617,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-legs"
+    ],
     "obtain": [
       "vendor"
     ],
@@ -168252,7 +168669,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head"
+    ],
     "obtain": [
       "vendor"
     ],
@@ -168891,7 +169310,7 @@
     "tooltip": "Summons a rideable unicorn mount",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Unicorn"
   },
   {
     "key": "SpectreBar",
@@ -168958,8 +169377,7 @@
       "yoyo"
     ],
     "obtain": [
-      "vendor",
-      "loot"
+      "vendor"
     ],
     "vendors": [
       "traveling-merchant"
@@ -168995,8 +169413,8 @@
     "velocity": 16.0,
     "useTime": 25,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Found in Chest"
+    "milestone": "eye-of-cthulhu",
+    "milestoneVia": "Sold by the Traveling Merchant"
   },
   {
     "key": "BuccaneerBandana",
@@ -169009,7 +169427,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head"
+    ],
     "obtain": [
       "drop"
     ],
@@ -169056,7 +169476,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-body"
+    ],
     "obtain": [
       "drop"
     ],
@@ -169103,7 +169525,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-legs"
+    ],
     "obtain": [
       "drop"
     ],
@@ -169329,7 +169753,7 @@
     "mana": 15,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Medusa"
   },
   {
     "key": "ItemFrame",
@@ -172483,8 +172907,7 @@
       "material-equipment"
     ],
     "obtain": [
-      "vendor",
-      "loot"
+      "vendor"
     ],
     "vendors": [
       "skeleton-merchant"
@@ -172516,7 +172939,7 @@
     "tooltip": "Allows the use of two yoyos at once",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Sold by the Skeleton Merchant"
   },
   {
     "key": "DemonHeart",
@@ -173262,8 +173685,7 @@
       "ranged"
     ],
     "obtain": [
-      "drop",
-      "loot"
+      "drop"
     ],
     "vendors": [],
     "events": [],
@@ -173349,7 +173771,7 @@
     "tooltip": "Enables rapid tax collection",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Tax Collector"
   },
   {
     "key": "StylistKilLaKillScissorsIWish",
@@ -173368,8 +173790,7 @@
       "projectile-melee"
     ],
     "obtain": [
-      "drop",
-      "loot"
+      "drop"
     ],
     "vendors": [],
     "events": [],
@@ -173854,7 +174275,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-body"
+    ],
     "obtain": [
       "vendor"
     ],
@@ -173904,7 +174327,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-legs"
+    ],
     "obtain": [
       "vendor"
     ],
@@ -174268,6 +174693,7 @@
     ],
     "subcategories": [
       "music-box",
+      "vanity-music-box",
       "furniture-music-box"
     ],
     "obtain": [
@@ -174319,6 +174745,7 @@
     ],
     "subcategories": [
       "music-box",
+      "vanity-music-box",
       "furniture-music-box"
     ],
     "obtain": [
@@ -174366,7 +174793,10 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head",
+      "boss-mask"
+    ],
     "obtain": [
       "drop"
     ],
@@ -174410,7 +174840,10 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head",
+      "boss-mask"
+    ],
     "obtain": [
       "drop",
       "treasure-bag"
@@ -174790,7 +175223,7 @@
     "placedHeight": 1,
     "conditions": [],
     "milestone": "start",
-    "milestoneVia": "Dropped by Basilisk"
+    "milestoneVia": "Found in Oasis Crate"
   },
   {
     "key": "StardustHelmet",
@@ -174946,7 +175379,6 @@
     ],
     "obtain": [
       "drop",
-      "loot",
       "bag",
       "treasure-bag"
     ],
@@ -174998,7 +175430,6 @@
       "other-furniture"
     ],
     "obtain": [
-      "loot",
       "plunder"
     ],
     "vendors": [],
@@ -175049,7 +175480,6 @@
       "other-furniture"
     ],
     "obtain": [
-      "loot",
       "plunder"
     ],
     "vendors": [],
@@ -175100,7 +175530,6 @@
       "other-furniture"
     ],
     "obtain": [
-      "loot",
       "plunder"
     ],
     "vendors": [],
@@ -175151,7 +175580,6 @@
       "other-furniture"
     ],
     "obtain": [
-      "loot",
       "plunder"
     ],
     "vendors": [],
@@ -175292,7 +175720,7 @@
     "eventOnly": true,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Goblin Warlock"
   },
   {
     "key": "SalamanderBanner",
@@ -176082,7 +176510,7 @@
     "tooltip": "Nearby players get a bonus against: Medusa",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Medusa"
   },
   {
     "key": "GreekSkeletonBanner",
@@ -176447,7 +176875,7 @@
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Dune Splicer",
     "conditions": [],
-    "milestone": "start",
+    "milestone": "wall-of-flesh",
     "milestoneVia": "Dropped by Dune Splicer"
   },
   {
@@ -176607,7 +177035,7 @@
     "tooltip": "Nearby players get a bonus against: Ghoul",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Vile Ghoul"
   },
   {
     "key": "DesertLamiaBanner",
@@ -176660,7 +177088,7 @@
     "tooltip": "Nearby players get a bonus against: Lamia",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Lamia"
   },
   {
     "key": "DesertDjinnBanner",
@@ -176714,7 +177142,7 @@
     "tooltip": "Nearby players get a bonus against: Desert Spirit",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Desert Spirit"
   },
   {
     "key": "DesertBasiliskBanner",
@@ -176766,7 +177194,7 @@
     "tooltip": "Nearby players get a bonus against: Basilisk",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Basilisk"
   },
   {
     "key": "RavagerScorpionBanner",
@@ -176818,7 +177246,7 @@
     "tooltip": "Nearby players get a bonus against: Sand Poacher",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Sand Poacher"
   },
   {
     "key": "StardustSoldierBanner",
@@ -178252,7 +178680,7 @@
     "tooltip": "Nearby players get a bonus against: Red Devil",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Red Devil"
   },
   {
     "key": "PinkJellyfishBanner",
@@ -178356,7 +178784,7 @@
     "tooltip": "Nearby players get a bonus against: Green Jellyfish",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Green Jellyfish"
   },
   {
     "key": "DarkMummyBanner",
@@ -178408,7 +178836,7 @@
     "tooltip": "Nearby players get a bonus against: Dark Mummy",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Dark Mummy"
   },
   {
     "key": "LightMummyBanner",
@@ -178460,7 +178888,7 @@
     "tooltip": "Nearby players get a bonus against: Light Mummy",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Light Mummy"
   },
   {
     "key": "AngryBonesBanner",
@@ -178564,7 +178992,7 @@
     "tooltip": "Nearby players get a bonus against: Ice Tortoise",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Ice Tortoise"
   },
   {
     "key": "FragmentVortex",
@@ -179693,7 +180121,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head"
+    ],
     "obtain": [
       "drop"
     ],
@@ -179740,7 +180170,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-body"
+    ],
     "obtain": [
       "drop"
     ],
@@ -182651,7 +183083,7 @@
     "buff": "Exquisitely Stuffed",
     "tooltip": "Major improvements to all stats\n'Bacon? Bacon.'",
     "conditions": [],
-    "milestone": "start",
+    "milestone": "wall-of-flesh",
     "milestoneVia": "Dropped by Pigron"
   },
   {
@@ -182809,6 +183241,7 @@
       "mechanism"
     ],
     "subcategories": [
+      "vanity-monolith",
       "decoration",
       "other-accessory"
     ],
@@ -182862,6 +183295,7 @@
       "mechanism"
     ],
     "subcategories": [
+      "vanity-monolith",
       "decoration",
       "other-accessory"
     ],
@@ -182915,6 +183349,7 @@
       "mechanism"
     ],
     "subcategories": [
+      "vanity-monolith",
       "decoration",
       "other-accessory"
     ],
@@ -182968,6 +183403,7 @@
       "mechanism"
     ],
     "subcategories": [
+      "vanity-monolith",
       "decoration",
       "other-accessory"
     ],
@@ -184880,7 +185316,9 @@
       "vanity",
       "developer"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-body"
+    ],
     "obtain": [
       "bag",
       "treasure-bag"
@@ -184927,7 +185365,9 @@
       "vanity",
       "developer"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-legs"
+    ],
     "obtain": [
       "bag",
       "treasure-bag"
@@ -185025,6 +185465,7 @@
       "developer"
     ],
     "subcategories": [
+      "vanity-accessory",
       "other-accessory"
     ],
     "obtain": [
@@ -185120,7 +185561,9 @@
       "vanity",
       "developer"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head"
+    ],
     "obtain": [
       "bag",
       "treasure-bag"
@@ -185215,7 +185658,9 @@
       "vanity",
       "developer"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head"
+    ],
     "obtain": [
       "bag",
       "treasure-bag"
@@ -185262,7 +185707,9 @@
       "vanity",
       "developer"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-body"
+    ],
     "obtain": [
       "bag",
       "treasure-bag"
@@ -185309,7 +185756,9 @@
       "vanity",
       "developer"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-legs"
+    ],
     "obtain": [
       "bag",
       "treasure-bag"
@@ -185404,7 +185853,9 @@
       "vanity",
       "developer"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head"
+    ],
     "obtain": [
       "bag",
       "treasure-bag"
@@ -185451,7 +185902,9 @@
       "vanity",
       "developer"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-body"
+    ],
     "obtain": [
       "bag",
       "treasure-bag"
@@ -185498,7 +185951,9 @@
       "vanity",
       "developer"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-legs"
+    ],
     "obtain": [
       "bag",
       "treasure-bag"
@@ -187113,8 +187568,7 @@
       "hook"
     ],
     "obtain": [
-      "vendor",
-      "loot"
+      "vendor"
     ],
     "vendors": [
       "steampunker"
@@ -187146,8 +187600,8 @@
     "velocity": 16.0,
     "tooltip": "Press Grapple to launch hook",
     "conditions": [],
-    "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestone": "any-mech",
+    "milestoneVia": "Sold by the Steampunker"
   },
   {
     "key": "ActuationAccessory",
@@ -187314,7 +187768,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head"
+    ],
     "obtain": [
       "vendor"
     ],
@@ -192383,6 +192839,7 @@
       "vanity"
     ],
     "subcategories": [
+      "vanity-accessory",
       "other-accessory"
     ],
     "obtain": [
@@ -192436,6 +192893,7 @@
       "vanity"
     ],
     "subcategories": [
+      "vanity-accessory",
       "other-accessory"
     ],
     "obtain": [
@@ -192487,7 +192945,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head"
+    ],
     "obtain": [
       "vendor"
     ],
@@ -192534,7 +192994,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head"
+    ],
     "obtain": [
       "vendor"
     ],
@@ -192584,7 +193046,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-body"
+    ],
     "obtain": [
       "vendor"
     ],
@@ -192634,7 +193098,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-legs"
+    ],
     "obtain": [
       "vendor"
     ],
@@ -193823,7 +194289,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head"
+    ],
     "obtain": [
       "drop"
     ],
@@ -193871,7 +194339,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-body"
+    ],
     "obtain": [
       "drop"
     ],
@@ -193919,7 +194389,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-legs"
+    ],
     "obtain": [
       "drop"
     ],
@@ -194112,7 +194584,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head"
+    ],
     "obtain": [
       "drop",
       "bag",
@@ -194532,7 +195006,7 @@
     "tooltip": "Grants slow fall in exchange for your feet",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Desert Spirit"
   },
   {
     "key": "AncientHorn",
@@ -194582,7 +195056,7 @@
     "tooltip": "Summons a rideable basilisk mount",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Basilisk"
   },
   {
     "key": "AntlionClaw",
@@ -194650,7 +195124,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head"
+    ],
     "obtain": [
       "crafted"
     ],
@@ -194694,7 +195170,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-body"
+    ],
     "obtain": [
       "crafted"
     ],
@@ -194738,7 +195216,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-legs"
+    ],
     "obtain": [
       "crafted"
     ],
@@ -195012,7 +195492,7 @@
     "eventOnly": true,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Sand Elemental"
   },
   {
     "key": "PocketMirror",
@@ -195063,7 +195543,7 @@
     "tooltip": "Grants immunity to Stoned",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Medusa"
   },
   {
     "key": "MagicSandDropper",
@@ -195158,7 +195638,7 @@
     "eventOnly": true,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Sand Elemental"
   },
   {
     "key": "LamiaPants",
@@ -195171,7 +195651,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-legs"
+    ],
     "obtain": [
       "drop"
     ],
@@ -195205,7 +195687,7 @@
     "bodySlot": "social pants",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Lamia"
   },
   {
     "key": "LamiaShirt",
@@ -195218,7 +195700,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-body"
+    ],
     "obtain": [
       "drop"
     ],
@@ -195252,7 +195736,7 @@
     "bodySlot": "social shirt",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Lamia"
   },
   {
     "key": "LamiaHat",
@@ -195265,7 +195749,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head"
+    ],
     "obtain": [
       "drop"
     ],
@@ -195299,7 +195785,7 @@
     "bodySlot": "social helmet",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Lamia"
   },
   {
     "key": "SkyFracture",
@@ -195457,7 +195943,7 @@
     "eventOnly": true,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Sand Shark"
   },
   {
     "key": "SandsharkCorruptBanner",
@@ -195510,7 +195996,7 @@
     "eventOnly": true,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Bone Biter"
   },
   {
     "key": "SandsharkCrimsonBanner",
@@ -195563,7 +196049,7 @@
     "eventOnly": true,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Flesh Reaver"
   },
   {
     "key": "SandsharkHallowedBanner",
@@ -195616,7 +196102,7 @@
     "eventOnly": true,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Crystal Thresher"
   },
   {
     "key": "TumbleweedBanner",
@@ -195719,7 +196205,7 @@
     "autoswing": false,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Vile Ghoul"
   },
   {
     "key": "DjinnLamp",
@@ -195773,7 +196259,7 @@
     "placedHeight": 1,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Desert Spirit"
   },
   {
     "key": "MusicBoxSandstorm",
@@ -195790,6 +196276,7 @@
     ],
     "subcategories": [
       "music-box",
+      "vanity-music-box",
       "furniture-music-box"
     ],
     "obtain": [
@@ -198223,7 +198710,7 @@
     "tooltip": "Nearby players get a small bonus against: Drakin",
     "eventOnly": true,
     "conditions": [],
-    "milestone": "evil-boss",
+    "milestone": "any-mech",
     "milestoneVia": "Dropped by Drakin"
   },
   {
@@ -198276,7 +198763,7 @@
     "tooltip": "Nearby players get a small bonus against: Kobold Glider",
     "eventOnly": true,
     "conditions": [],
-    "milestone": "evil-boss",
+    "milestone": "any-mech",
     "milestoneVia": "Dropped by Kobold Glider"
   },
   {
@@ -198329,7 +198816,7 @@
     "tooltip": "Nearby players get a small bonus against: Kobold",
     "eventOnly": true,
     "conditions": [],
-    "milestone": "evil-boss",
+    "milestone": "any-mech",
     "milestoneVia": "Dropped by Kobold"
   },
   {
@@ -198382,7 +198869,7 @@
     "tooltip": "Nearby players get a small bonus against: Wither Beast",
     "eventOnly": true,
     "conditions": [],
-    "milestone": "evil-boss",
+    "milestone": "any-mech",
     "milestoneVia": "Dropped by Wither Beast"
   },
   {
@@ -198541,8 +199028,8 @@
     "tooltip": "Nearby players get a small bonus against: Etherian Lightning Bug",
     "eventOnly": true,
     "conditions": [],
-    "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestone": "any-mech",
+    "milestoneVia": "Dropped by Etherian Lightning Bug"
   },
   {
     "key": "OgreMask",
@@ -198555,7 +199042,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "other-vanity"
+    ],
     "obtain": [
       "unobtainable"
     ],
@@ -198594,7 +199083,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "other-vanity"
+    ],
     "obtain": [
       "unobtainable"
     ],
@@ -198633,7 +199124,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "other-vanity"
+    ],
     "obtain": [
       "unobtainable"
     ],
@@ -198713,7 +199206,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "other-vanity"
+    ],
     "obtain": [
       "unobtainable"
     ],
@@ -199302,7 +199797,10 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head",
+      "boss-mask"
+    ],
     "obtain": [
       "drop",
       "treasure-bag"
@@ -199349,7 +199847,10 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head",
+      "boss-mask"
+    ],
     "obtain": [
       "drop"
     ],
@@ -199396,7 +199897,10 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head",
+      "boss-mask"
+    ],
     "obtain": [
       "drop"
     ],
@@ -199603,6 +200107,7 @@
     ],
     "subcategories": [
       "music-box",
+      "vanity-music-box",
       "furniture-music-box"
     ],
     "obtain": [
@@ -202246,7 +202751,9 @@
       "vanity",
       "developer"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head"
+    ],
     "obtain": [
       "bag",
       "treasure-bag"
@@ -202293,7 +202800,9 @@
       "vanity",
       "developer"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-body"
+    ],
     "obtain": [
       "bag",
       "treasure-bag"
@@ -202340,7 +202849,9 @@
       "vanity",
       "developer"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-legs"
+    ],
     "obtain": [
       "bag",
       "treasure-bag"
@@ -202435,7 +202946,9 @@
       "vanity",
       "developer"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head"
+    ],
     "obtain": [
       "bag",
       "treasure-bag"
@@ -202482,7 +202995,9 @@
       "vanity",
       "developer"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-body"
+    ],
     "obtain": [
       "bag",
       "treasure-bag"
@@ -202529,7 +203044,9 @@
       "vanity",
       "developer"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-legs"
+    ],
     "obtain": [
       "bag",
       "treasure-bag"
@@ -202627,6 +203144,7 @@
       "developer"
     ],
     "subcategories": [
+      "vanity-accessory",
       "other-accessory"
     ],
     "obtain": [
@@ -206529,8 +207047,7 @@
     ],
     "subcategories": [],
     "obtain": [
-      "crafted",
-      "loot"
+      "crafted"
     ],
     "vendors": [],
     "events": [],
@@ -206561,7 +207078,7 @@
     "tooltip": "Improves vision and provides light when worn\n'The darkness holds no secrets for you'",
     "conditions": [],
     "milestone": "start",
-    "milestoneVia": "Found in Chest"
+    "milestoneVia": "Crafted"
   },
   {
     "key": "Apple",
@@ -206707,7 +207224,7 @@
     "tooltip": "Major improvements to all stats\n'Nothing is as Terrarian as apple pie.'",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Illuminant Slime"
   },
   {
     "key": "BananaSplit",
@@ -207016,7 +207533,7 @@
       "night"
     ],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Gastropod"
   },
   {
     "key": "CreamSoda",
@@ -207168,7 +207685,7 @@
     "tooltip": "Medium improvements to all stats\n'Sunny side up!'",
     "conditions": [],
     "milestone": "start",
-    "milestoneVia": "Dropped by Sand Poacher"
+    "milestoneVia": "Dropped by Wall Creeper"
   },
   {
     "key": "Fries",
@@ -207324,7 +207841,7 @@
     "tooltip": "Medium improvements to all stats\n'Wrath not included.'",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Derpling"
   },
   {
     "key": "GrilledSquirrel",
@@ -207424,7 +207941,7 @@
     "tooltip": "Major improvements to all stats\n'Hot diggity!'",
     "conditions": [],
     "milestone": "start",
-    "milestoneVia": "Dropped by Red Devil"
+    "milestoneVia": "Dropped by Bone Serpent"
   },
   {
     "key": "IceCream",
@@ -207528,7 +208045,7 @@
     "tooltip": "Major improvements to all stats\n'It brings the boys to the yard!'",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Icy Merman"
   },
   {
     "key": "Nachos",
@@ -208826,6 +209343,7 @@
       "mechanism"
     ],
     "subcategories": [
+      "vanity-monolith",
       "decoration",
       "other-accessory"
     ],
@@ -208864,7 +209382,7 @@
     "tooltip": "'Sustain a bloody fraction of the Moon'",
     "eventOnly": true,
     "conditions": [],
-    "milestone": "start",
+    "milestone": "wall-of-flesh",
     "milestoneVia": "Dropped by Dreadnautilus"
   },
   {
@@ -209995,6 +210513,7 @@
     ],
     "subcategories": [
       "music-box",
+      "vanity-music-box",
       "material-furniture",
       "material-equipment",
       "furniture-music-box"
@@ -210049,6 +210568,7 @@
     ],
     "subcategories": [
       "music-box",
+      "vanity-music-box",
       "material-furniture",
       "material-equipment",
       "furniture-music-box"
@@ -210103,6 +210623,7 @@
     ],
     "subcategories": [
       "music-box",
+      "vanity-music-box",
       "material-furniture",
       "material-equipment",
       "furniture-music-box"
@@ -210157,6 +210678,7 @@
     ],
     "subcategories": [
       "music-box",
+      "vanity-music-box",
       "material-furniture",
       "material-equipment",
       "furniture-music-box"
@@ -210211,6 +210733,7 @@
     ],
     "subcategories": [
       "music-box",
+      "vanity-music-box",
       "material-furniture",
       "material-equipment",
       "furniture-music-box"
@@ -210265,6 +210788,7 @@
     ],
     "subcategories": [
       "music-box",
+      "vanity-music-box",
       "material-furniture",
       "material-equipment",
       "furniture-music-box"
@@ -212523,7 +213047,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head"
+    ],
     "obtain": [
       "crafted"
     ],
@@ -212567,7 +213093,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-body"
+    ],
     "obtain": [
       "crafted"
     ],
@@ -212611,7 +213139,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-legs"
+    ],
     "obtain": [
       "crafted"
     ],
@@ -212704,7 +213234,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head"
+    ],
     "obtain": [
       "crafted"
     ],
@@ -212748,7 +213280,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-body"
+    ],
     "obtain": [
       "crafted"
     ],
@@ -212792,7 +213326,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-legs"
+    ],
     "obtain": [
       "crafted"
     ],
@@ -212836,7 +213372,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head"
+    ],
     "obtain": [
       "vendor"
     ],
@@ -212883,7 +213421,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-body"
+    ],
     "obtain": [
       "vendor"
     ],
@@ -212930,7 +213470,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-legs"
+    ],
     "obtain": [
       "vendor"
     ],
@@ -212977,7 +213519,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head"
+    ],
     "obtain": [
       "vendor"
     ],
@@ -213277,16 +213821,10 @@
       "projectile-melee"
     ],
     "obtain": [
-      "vendor",
-      "loot",
       "plunder"
     ],
-    "vendors": [
-      "princess"
-    ],
-    "events": [
-      "blood-moon"
-    ],
+    "vendors": [],
+    "events": [],
     "biomes": [],
     "times": [],
     "platforms": [
@@ -213319,7 +213857,7 @@
     "tooltip": "Unleashes a dicing flurry",
     "conditions": [],
     "milestone": "start",
-    "milestoneVia": "Found in Chest"
+    "milestoneVia": "Collected in the world"
   },
   {
     "key": "SolarBathtub",
@@ -217880,6 +218418,7 @@
     ],
     "subcategories": [
       "music-box",
+      "vanity-music-box",
       "furniture-music-box"
     ],
     "obtain": [
@@ -219500,7 +220039,7 @@
     "eventOnly": true,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Dreadnautilus"
   },
   {
     "key": "BloodMoonStarter",
@@ -219550,7 +220089,7 @@
     "tooltip": "Summons the Blood Moon\n'What a horrible night to have a curse.'",
     "conditions": [],
     "milestone": "start",
-    "milestoneVia": "Dropped by Dreadnautilus"
+    "milestoneVia": "Dropped by The Bride"
   },
   {
     "key": "DripplerFlail",
@@ -219606,7 +220145,7 @@
     "eventOnly": true,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Blood Eel"
   },
   {
     "key": "VampireFrogStaff",
@@ -219624,8 +220163,7 @@
       "minion"
     ],
     "obtain": [
-      "drop",
-      "loot"
+      "drop"
     ],
     "vendors": [],
     "events": [
@@ -219723,6 +220261,7 @@
       "furniture"
     ],
     "subcategories": [
+      "vanity-head",
       "cage-jar"
     ],
     "obtain": [
@@ -221886,7 +222425,7 @@
     "eventOnly": true,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Blood Eel"
   },
   {
     "key": "VoidMonolith",
@@ -221903,6 +222442,7 @@
       "mechanism"
     ],
     "subcategories": [
+      "vanity-monolith",
       "decoration",
       "other-accessory"
     ],
@@ -222056,7 +222596,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-body"
+    ],
     "obtain": [
       "vendor"
     ],
@@ -222104,7 +222646,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-legs"
+    ],
     "obtain": [
       "vendor"
     ],
@@ -222152,7 +222696,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head"
+    ],
     "obtain": [
       "vendor"
     ],
@@ -222199,7 +222745,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-body"
+    ],
     "obtain": [
       "vendor"
     ],
@@ -223321,8 +223869,7 @@
       "magic-gun"
     ],
     "obtain": [
-      "vendor",
-      "loot"
+      "vendor"
     ],
     "vendors": [
       "traveling-merchant"
@@ -223360,8 +223907,8 @@
     "mana": 16,
     "tooltip": "'It might be broken'",
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Found in Chest"
+    "milestone": "skeletron",
+    "milestoneVia": "Sold by the Traveling Merchant"
   },
   {
     "key": "ZapinatorOrange",
@@ -223817,6 +224364,7 @@
     ],
     "subcategories": [
       "music-box",
+      "vanity-music-box",
       "furniture-music-box"
     ],
     "obtain": [
@@ -223870,6 +224418,7 @@
     ],
     "subcategories": [
       "music-box",
+      "vanity-music-box",
       "material-furniture",
       "material-equipment",
       "furniture-music-box"
@@ -223924,6 +224473,7 @@
     ],
     "subcategories": [
       "music-box",
+      "vanity-music-box",
       "material-furniture",
       "material-equipment",
       "furniture-music-box"
@@ -224649,7 +225199,7 @@
       "npc-name-whitney"
     ],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Steampunker"
   },
   {
     "key": "Pupfish",
@@ -224990,7 +225540,7 @@
       "windy"
     ],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Wyvern"
   },
   {
     "key": "LadybugCage",
@@ -225424,12 +225974,9 @@
       "torch-campfire"
     ],
     "obtain": [
-      "crafted",
-      "vendor"
+      "crafted"
     ],
-    "vendors": [
-      "merchant"
-    ],
+    "vendors": [],
     "events": [],
     "biomes": [],
     "times": [],
@@ -226459,8 +227006,7 @@
       "informational"
     ],
     "obtain": [
-      "vendor",
-      "loot"
+      "vendor"
     ],
     "vendors": [
       "cyborg",
@@ -226993,8 +227539,7 @@
       "other-furniture"
     ],
     "obtain": [
-      "vendor",
-      "loot"
+      "vendor"
     ],
     "vendors": [
       "traveling-merchant"
@@ -227029,7 +227574,7 @@
     "tooltip": "Press Up/Down to cycle through placement styles",
     "conditions": [],
     "milestone": "start",
-    "milestoneVia": "Found in Chest"
+    "milestoneVia": "Sold by the Traveling Merchant"
   },
   {
     "key": "MusicBoxUndergroundJungle",
@@ -227047,6 +227592,7 @@
     ],
     "subcategories": [
       "music-box",
+      "vanity-music-box",
       "material-furniture",
       "material-equipment",
       "furniture-music-box"
@@ -227428,7 +227974,7 @@
     "tooltip": "'Powered by Bacon!'",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Pigron"
   },
   {
     "key": "SunflowerMinecart",
@@ -233152,7 +233698,7 @@
     "eventOnly": true,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Blood Squid"
   },
   {
     "key": "BloodEelBanner",
@@ -233204,7 +233750,7 @@
     "tooltip": "Nearby players get a bonus against: Blood Eel",
     "eventOnly": true,
     "conditions": [],
-    "milestone": "start",
+    "milestone": "wall-of-flesh",
     "milestoneVia": "Dropped by Blood Eel"
   },
   {
@@ -233258,7 +233804,7 @@
     "eventOnly": true,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Hemogoblin Shark"
   },
   {
     "key": "LargeBambooBlock",
@@ -233370,7 +233916,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head"
+    ],
     "obtain": [
       "vendor"
     ],
@@ -233677,7 +234225,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head"
+    ],
     "obtain": [
       "vendor"
     ],
@@ -233725,7 +234275,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-body"
+    ],
     "obtain": [
       "vendor"
     ],
@@ -233772,7 +234324,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-legs"
+    ],
     "obtain": [
       "vendor"
     ],
@@ -233820,7 +234374,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head"
+    ],
     "obtain": [
       "vendor"
     ],
@@ -233868,7 +234424,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head"
+    ],
     "obtain": [
       "vendor"
     ],
@@ -233915,7 +234473,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head"
+    ],
     "obtain": [
       "vendor"
     ],
@@ -233966,7 +234526,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head"
+    ],
     "obtain": [
       "vendor"
     ],
@@ -234014,7 +234576,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head"
+    ],
     "obtain": [
       "vendor"
     ],
@@ -234065,6 +234629,7 @@
       "vanity"
     ],
     "subcategories": [
+      "vanity-accessory",
       "other-accessory"
     ],
     "obtain": [
@@ -236083,7 +236648,7 @@
     "eventOnly": true,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Dreadnautilus"
   },
   {
     "key": "BirdieRattle",
@@ -236254,6 +236819,7 @@
     ],
     "subcategories": [
       "music-box",
+      "vanity-music-box",
       "material-furniture",
       "material-equipment",
       "furniture-music-box"
@@ -236547,7 +237113,7 @@
       "windy"
     ],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by World Feeder"
   },
   {
     "key": "KiteBunny",
@@ -236651,7 +237217,7 @@
       "windy"
     ],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Pigron"
   },
   {
     "key": "AppleJuice",
@@ -238552,7 +239118,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head"
+    ],
     "obtain": [
       "crafted"
     ],
@@ -238596,7 +239164,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-body"
+    ],
     "obtain": [
       "crafted"
     ],
@@ -238640,7 +239210,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-legs"
+    ],
     "obtain": [
       "crafted"
     ],
@@ -239152,7 +239724,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-body"
+    ],
     "obtain": [
       "vendor"
     ],
@@ -239199,7 +239773,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-legs"
+    ],
     "obtain": [
       "vendor"
     ],
@@ -239246,7 +239822,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head"
+    ],
     "obtain": [
       "vendor"
     ],
@@ -239437,7 +240015,7 @@
       "windy"
     ],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Bone Biter"
   },
   {
     "key": "KiteBunnyCorrupt",
@@ -240233,10 +240811,11 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head"
+    ],
     "obtain": [
-      "vendor",
-      "loot"
+      "vendor"
     ],
     "vendors": [
       "clothier"
@@ -240283,10 +240862,11 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-body"
+    ],
     "obtain": [
-      "vendor",
-      "loot"
+      "vendor"
     ],
     "vendors": [
       "clothier"
@@ -241197,7 +241777,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head"
+    ],
     "obtain": [
       "vendor"
     ],
@@ -241246,7 +241828,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-body"
+    ],
     "obtain": [
       "vendor"
     ],
@@ -241295,7 +241879,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-legs"
+    ],
     "obtain": [
       "vendor"
     ],
@@ -241402,7 +241988,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head"
+    ],
     "obtain": [
       "vendor"
     ],
@@ -241451,7 +242039,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-body"
+    ],
     "obtain": [
       "vendor"
     ],
@@ -241554,8 +242144,7 @@
       "other-tool"
     ],
     "obtain": [
-      "crafted",
-      "loot"
+      "crafted"
     ],
     "vendors": [],
     "events": [],
@@ -241590,7 +242179,7 @@
     "tooltip": "Digs in a bigger area than a pickaxe\nOnly digs up soft tiles\n'Can you dig it?'",
     "conditions": [],
     "milestone": "start",
-    "milestoneVia": "Found in Chest"
+    "milestoneVia": "Crafted"
   },
   {
     "key": "DungeonDesertChest",
@@ -242629,7 +243218,9 @@
       "vanity",
       "developer"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head"
+    ],
     "obtain": [
       "bag",
       "treasure-bag"
@@ -242676,7 +243267,9 @@
       "vanity",
       "developer"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-body"
+    ],
     "obtain": [
       "bag",
       "treasure-bag"
@@ -242723,7 +243316,9 @@
       "vanity",
       "developer"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-legs"
+    ],
     "obtain": [
       "bag",
       "treasure-bag"
@@ -242925,10 +243520,11 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head"
+    ],
     "obtain": [
-      "drop",
-      "loot"
+      "drop"
     ],
     "vendors": [],
     "events": [
@@ -242957,6 +243553,7 @@
     "placeable": false,
     "autoswing": false,
     "bodySlot": "social helmet",
+    "eventOnly": true,
     "conditions": [],
     "milestone": "any-mech",
     "milestoneVia": "Dropped by Dr. Man Fly"
@@ -242972,10 +243569,11 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-body"
+    ],
     "obtain": [
-      "drop",
-      "loot"
+      "drop"
     ],
     "vendors": [],
     "events": [
@@ -243004,6 +243602,7 @@
     "placeable": false,
     "autoswing": false,
     "bodySlot": "social shirt",
+    "eventOnly": true,
     "conditions": [],
     "milestone": "any-mech",
     "milestoneVia": "Dropped by Dr. Man Fly"
@@ -243019,10 +243618,11 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head"
+    ],
     "obtain": [
-      "drop",
-      "loot"
+      "drop"
     ],
     "vendors": [],
     "events": [
@@ -243051,6 +243651,7 @@
     "placeable": false,
     "autoswing": false,
     "bodySlot": "social helmet",
+    "eventOnly": true,
     "conditions": [],
     "milestone": "any-mech",
     "milestoneVia": "Dropped by Butcher"
@@ -243066,10 +243667,11 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-body"
+    ],
     "obtain": [
-      "drop",
-      "loot"
+      "drop"
     ],
     "vendors": [],
     "events": [
@@ -243098,6 +243700,7 @@
     "placeable": false,
     "autoswing": false,
     "bodySlot": "social shirt",
+    "eventOnly": true,
     "conditions": [],
     "milestone": "any-mech",
     "milestoneVia": "Dropped by Butcher"
@@ -243113,10 +243716,11 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-legs"
+    ],
     "obtain": [
-      "drop",
-      "loot"
+      "drop"
     ],
     "vendors": [],
     "events": [
@@ -243145,6 +243749,7 @@
     "placeable": false,
     "autoswing": false,
     "bodySlot": "social pants",
+    "eventOnly": true,
     "conditions": [],
     "milestone": "any-mech",
     "milestoneVia": "Dropped by Butcher"
@@ -243216,6 +243821,7 @@
       "vanity"
     ],
     "subcategories": [
+      "vanity-accessory",
       "other-accessory"
     ],
     "obtain": [
@@ -243359,7 +243965,9 @@
       "vanity",
       "developer"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head"
+    ],
     "obtain": [
       "bag",
       "treasure-bag"
@@ -243406,7 +244014,9 @@
       "vanity",
       "developer"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-body"
+    ],
     "obtain": [
       "bag",
       "treasure-bag"
@@ -243453,7 +244063,9 @@
       "vanity",
       "developer"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-legs"
+    ],
     "obtain": [
       "bag",
       "treasure-bag"
@@ -243548,7 +244160,9 @@
       "vanity",
       "developer"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head"
+    ],
     "obtain": [
       "bag",
       "treasure-bag"
@@ -243595,7 +244209,9 @@
       "vanity",
       "developer"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-body"
+    ],
     "obtain": [
       "bag",
       "treasure-bag"
@@ -243642,7 +244258,9 @@
       "vanity",
       "developer"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-legs"
+    ],
     "obtain": [
       "bag",
       "treasure-bag"
@@ -243737,7 +244355,9 @@
       "vanity",
       "developer"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head"
+    ],
     "obtain": [
       "bag",
       "treasure-bag"
@@ -243784,7 +244404,9 @@
       "vanity",
       "developer"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-body"
+    ],
     "obtain": [
       "bag",
       "treasure-bag"
@@ -243831,7 +244453,9 @@
       "vanity",
       "developer"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-legs"
+    ],
     "obtain": [
       "bag",
       "treasure-bag"
@@ -244046,6 +244670,7 @@
       "furniture"
     ],
     "subcategories": [
+      "vanity-head",
       "other-furniture"
     ],
     "obtain": [
@@ -244082,7 +244707,7 @@
     "placedHeight": 1,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Rock Golem"
   },
   {
     "key": "CritterShampoo",
@@ -244097,6 +244722,7 @@
       "vanity"
     ],
     "subcategories": [
+      "vanity-accessory",
       "other-accessory"
     ],
     "obtain": [
@@ -244418,7 +245044,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head"
+    ],
     "obtain": [
       "vendor"
     ],
@@ -244471,6 +245099,7 @@
       "vanity"
     ],
     "subcategories": [
+      "vanity-accessory",
       "other-accessory"
     ],
     "obtain": [
@@ -244521,7 +245150,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head"
+    ],
     "obtain": [
       "vendor"
     ],
@@ -244574,6 +245205,7 @@
       "vanity"
     ],
     "subcategories": [
+      "vanity-accessory",
       "other-accessory"
     ],
     "obtain": [
@@ -244624,7 +245256,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head"
+    ],
     "obtain": [
       "vendor"
     ],
@@ -244677,6 +245311,7 @@
       "vanity"
     ],
     "subcategories": [
+      "vanity-accessory",
       "other-accessory"
     ],
     "obtain": [
@@ -244728,7 +245363,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head"
+    ],
     "obtain": [
       "vendor"
     ],
@@ -244778,6 +245415,7 @@
       "vanity"
     ],
     "subcategories": [
+      "vanity-accessory",
       "other-accessory"
     ],
     "obtain": [
@@ -244981,7 +245619,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head"
+    ],
     "obtain": [
       "loot"
     ],
@@ -245024,7 +245664,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-body"
+    ],
     "obtain": [
       "loot"
     ],
@@ -245067,7 +245709,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-legs"
+    ],
     "obtain": [
       "loot"
     ],
@@ -245203,7 +245847,10 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head",
+      "boss-mask"
+    ],
     "obtain": [
       "drop",
       "treasure-bag"
@@ -246932,8 +247579,7 @@
       "boomerang"
     ],
     "obtain": [
-      "drop",
-      "loot"
+      "drop"
     ],
     "vendors": [],
     "events": [],
@@ -247132,6 +247778,7 @@
     ],
     "subcategories": [
       "movement",
+      "vanity-accessory",
       "material-equipment"
     ],
     "obtain": [
@@ -253474,8 +254121,7 @@
       "other-furniture"
     ],
     "obtain": [
-      "vendor",
-      "loot"
+      "vendor"
     ],
     "vendors": [
       "zoologist"
@@ -253679,7 +254325,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head"
+    ],
     "obtain": [
       "vendor"
     ],
@@ -253874,7 +254522,10 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head",
+      "boss-mask"
+    ],
     "obtain": [
       "drop",
       "treasure-bag"
@@ -254203,7 +254854,7 @@
     "tooltip": "Nearby players get a bonus against: Rock Golem",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Rock Golem"
   },
   {
     "key": "BloodMummyBanner",
@@ -254255,7 +254906,7 @@
     "tooltip": "Nearby players get a bonus against: Blood Mummy",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Blood Mummy"
   },
   {
     "key": "SporeSkeletonBanner",
@@ -254621,7 +255272,7 @@
     "tooltip": "Nearby players get a bonus against: Corrupt Mimic",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Corrupt Mimic"
   },
   {
     "key": "BigMimicCrimsonBanner",
@@ -254673,7 +255324,7 @@
     "tooltip": "Nearby players get a bonus against: Crimson Mimic",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Crimson Mimic"
   },
   {
     "key": "BigMimicHallowBanner",
@@ -254725,7 +255376,7 @@
     "tooltip": "Nearby players get a bonus against: Hallowed Mimic",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Hallowed Mimic"
   },
   {
     "key": "MossHornetBanner",
@@ -254777,7 +255428,7 @@
     "tooltip": "Nearby players get a bonus against: Moss Hornet",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Moss Hornet"
   },
   {
     "key": "WanderingEyeBanner",
@@ -254833,7 +255484,7 @@
       "night"
     ],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Wandering Eye"
   },
   {
     "key": "CreativeWings",
@@ -254899,6 +255550,7 @@
     ],
     "subcategories": [
       "music-box",
+      "vanity-music-box",
       "material-furniture",
       "material-equipment",
       "furniture-music-box"
@@ -254953,7 +255605,6 @@
     ],
     "obtain": [
       "drop",
-      "loot",
       "bag",
       "treasure-bag"
     ],
@@ -254984,8 +255635,8 @@
     "velocity": 16.0,
     "tooltip": "Teleports you to the location of the hook\nPress Grapple to launch hook",
     "conditions": [],
-    "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestone": "queen-slime",
+    "milestoneVia": "From the Treasure Bag (Queen Slime)"
   },
   {
     "key": "QueenSlimeMountSaddle",
@@ -255197,6 +255848,7 @@
     ],
     "subcategories": [
       "music-box",
+      "vanity-music-box",
       "material-furniture",
       "material-equipment",
       "furniture-music-box"
@@ -255286,7 +255938,7 @@
     "tooltip": "'Filled with Party Girl bathwater'",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Jungle Mimic"
   },
   {
     "key": "VolatileGelatin",
@@ -255450,6 +256102,7 @@
     ],
     "subcategories": [
       "music-box",
+      "vanity-music-box",
       "material-furniture",
       "material-equipment",
       "furniture-music-box"
@@ -255504,6 +256157,7 @@
     ],
     "subcategories": [
       "music-box",
+      "vanity-music-box",
       "material-furniture",
       "material-equipment",
       "furniture-music-box"
@@ -255557,6 +256211,7 @@
     ],
     "subcategories": [
       "music-box",
+      "vanity-music-box",
       "furniture-music-box"
     ],
     "obtain": [
@@ -255655,7 +256310,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head"
+    ],
     "obtain": [
       "vendor"
     ],
@@ -255704,7 +256361,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head"
+    ],
     "obtain": [
       "vendor"
     ],
@@ -255753,7 +256412,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head"
+    ],
     "obtain": [
       "vendor"
     ],
@@ -255802,7 +256463,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-body"
+    ],
     "obtain": [
       "vendor"
     ],
@@ -255851,7 +256514,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-body"
+    ],
     "obtain": [
       "vendor"
     ],
@@ -255900,7 +256565,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-body"
+    ],
     "obtain": [
       "vendor"
     ],
@@ -256149,7 +256816,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head"
+    ],
     "obtain": [
       "drop"
     ],
@@ -256254,6 +256923,7 @@
     ],
     "subcategories": [
       "music-box",
+      "vanity-music-box",
       "material-furniture",
       "material-equipment",
       "furniture-music-box"
@@ -256659,6 +257329,7 @@
     ],
     "subcategories": [
       "music-box",
+      "vanity-music-box",
       "furniture-music-box"
     ],
     "obtain": [
@@ -256710,6 +257381,7 @@
     ],
     "subcategories": [
       "music-box",
+      "vanity-music-box",
       "furniture-music-box"
     ],
     "obtain": [
@@ -256761,6 +257433,7 @@
     ],
     "subcategories": [
       "music-box",
+      "vanity-music-box",
       "furniture-music-box"
     ],
     "obtain": [
@@ -256812,6 +257485,7 @@
     ],
     "subcategories": [
       "music-box",
+      "vanity-music-box",
       "furniture-music-box"
     ],
     "obtain": [
@@ -256863,6 +257537,7 @@
     ],
     "subcategories": [
       "music-box",
+      "vanity-music-box",
       "furniture-music-box"
     ],
     "obtain": [
@@ -256914,6 +257589,7 @@
     ],
     "subcategories": [
       "music-box",
+      "vanity-music-box",
       "furniture-music-box"
     ],
     "obtain": [
@@ -256965,6 +257641,7 @@
     ],
     "subcategories": [
       "music-box",
+      "vanity-music-box",
       "furniture-music-box"
     ],
     "obtain": [
@@ -257016,6 +257693,7 @@
     ],
     "subcategories": [
       "music-box",
+      "vanity-music-box",
       "furniture-music-box"
     ],
     "obtain": [
@@ -257067,6 +257745,7 @@
     ],
     "subcategories": [
       "music-box",
+      "vanity-music-box",
       "furniture-music-box"
     ],
     "obtain": [
@@ -257118,6 +257797,7 @@
     ],
     "subcategories": [
       "music-box",
+      "vanity-music-box",
       "furniture-music-box"
     ],
     "obtain": [
@@ -257169,6 +257849,7 @@
     ],
     "subcategories": [
       "music-box",
+      "vanity-music-box",
       "furniture-music-box"
     ],
     "obtain": [
@@ -257220,6 +257901,7 @@
     ],
     "subcategories": [
       "music-box",
+      "vanity-music-box",
       "furniture-music-box"
     ],
     "obtain": [
@@ -257271,6 +257953,7 @@
     ],
     "subcategories": [
       "music-box",
+      "vanity-music-box",
       "furniture-music-box"
     ],
     "obtain": [
@@ -257322,6 +258005,7 @@
     ],
     "subcategories": [
       "music-box",
+      "vanity-music-box",
       "furniture-music-box"
     ],
     "obtain": [
@@ -257373,6 +258057,7 @@
     ],
     "subcategories": [
       "music-box",
+      "vanity-music-box",
       "furniture-music-box"
     ],
     "obtain": [
@@ -257424,6 +258109,7 @@
     ],
     "subcategories": [
       "music-box",
+      "vanity-music-box",
       "furniture-music-box"
     ],
     "obtain": [
@@ -257475,6 +258161,7 @@
     ],
     "subcategories": [
       "music-box",
+      "vanity-music-box",
       "furniture-music-box"
     ],
     "obtain": [
@@ -257526,6 +258213,7 @@
     ],
     "subcategories": [
       "music-box",
+      "vanity-music-box",
       "furniture-music-box"
     ],
     "obtain": [
@@ -257577,6 +258265,7 @@
     ],
     "subcategories": [
       "music-box",
+      "vanity-music-box",
       "furniture-music-box"
     ],
     "obtain": [
@@ -257628,6 +258317,7 @@
     ],
     "subcategories": [
       "music-box",
+      "vanity-music-box",
       "furniture-music-box"
     ],
     "obtain": [
@@ -257679,6 +258369,7 @@
     ],
     "subcategories": [
       "music-box",
+      "vanity-music-box",
       "furniture-music-box"
     ],
     "obtain": [
@@ -257730,6 +258421,7 @@
     ],
     "subcategories": [
       "music-box",
+      "vanity-music-box",
       "furniture-music-box"
     ],
     "obtain": [
@@ -257826,6 +258518,7 @@
     ],
     "subcategories": [
       "music-box",
+      "vanity-music-box",
       "furniture-music-box"
     ],
     "obtain": [
@@ -257877,6 +258570,7 @@
     ],
     "subcategories": [
       "music-box",
+      "vanity-music-box",
       "furniture-music-box"
     ],
     "obtain": [
@@ -257928,6 +258622,7 @@
     ],
     "subcategories": [
       "music-box",
+      "vanity-music-box",
       "furniture-music-box"
     ],
     "obtain": [
@@ -257979,6 +258674,7 @@
     ],
     "subcategories": [
       "music-box",
+      "vanity-music-box",
       "furniture-music-box"
     ],
     "obtain": [
@@ -258030,6 +258726,7 @@
     ],
     "subcategories": [
       "music-box",
+      "vanity-music-box",
       "furniture-music-box"
     ],
     "obtain": [
@@ -258230,6 +258927,7 @@
     ],
     "subcategories": [
       "music-box",
+      "vanity-music-box",
       "furniture-music-box"
     ],
     "obtain": [
@@ -258283,7 +258981,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head"
+    ],
     "obtain": [
       "crafted"
     ],
@@ -258328,7 +259028,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-body"
+    ],
     "obtain": [
       "crafted"
     ],
@@ -258373,7 +259075,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-legs"
+    ],
     "obtain": [
       "crafted"
     ],
@@ -258462,7 +259166,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head"
+    ],
     "obtain": [
       "crafted"
     ],
@@ -258507,7 +259213,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-body"
+    ],
     "obtain": [
       "crafted"
     ],
@@ -258552,7 +259260,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-legs"
+    ],
     "obtain": [
       "crafted"
     ],
@@ -258597,7 +259307,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head"
+    ],
     "obtain": [
       "crafted"
     ],
@@ -258680,7 +259392,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-body"
+    ],
     "obtain": [
       "crafted"
     ],
@@ -258725,7 +259439,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-legs"
+    ],
     "obtain": [
       "crafted"
     ],
@@ -258770,7 +259486,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head"
+    ],
     "obtain": [
       "crafted"
     ],
@@ -258858,7 +259576,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-body"
+    ],
     "obtain": [
       "crafted"
     ],
@@ -258946,7 +259666,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-legs"
+    ],
     "obtain": [
       "crafted"
     ],
@@ -258991,7 +259713,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head"
+    ],
     "obtain": [
       "crafted"
     ],
@@ -259036,7 +259760,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-body"
+    ],
     "obtain": [
       "crafted"
     ],
@@ -259081,7 +259807,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-legs"
+    ],
     "obtain": [
       "other"
     ],
@@ -259125,7 +259853,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-legs"
+    ],
     "obtain": [
       "crafted"
     ],
@@ -259170,7 +259900,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head"
+    ],
     "obtain": [
       "crafted"
     ],
@@ -259215,7 +259947,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-body"
+    ],
     "obtain": [
       "crafted"
     ],
@@ -259260,7 +259994,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-legs"
+    ],
     "obtain": [
       "crafted"
     ],
@@ -259392,7 +260128,7 @@
     "mana": 18,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Princess"
   },
   {
     "key": "BeeHive",
@@ -259651,7 +260387,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head"
+    ],
     "obtain": [
       "vendor"
     ],
@@ -259698,7 +260436,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-body"
+    ],
     "obtain": [
       "vendor"
     ],
@@ -259745,7 +260485,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-legs"
+    ],
     "obtain": [
       "vendor"
     ],
@@ -259846,6 +260588,7 @@
       "vanity"
     ],
     "subcategories": [
+      "vanity-accessory",
       "other-accessory"
     ],
     "obtain": [
@@ -259894,7 +260637,7 @@
     ],
     "subcategories": [],
     "obtain": [
-      "other"
+      "unobtainable"
     ],
     "vendors": [],
     "events": [],
@@ -259911,7 +260654,7 @@
     "platformsKnown": false,
     "hardmode": false,
     "hardmodeOnly": false,
-    "unobtainable": false,
+    "unobtainable": true,
     "banner": false,
     "questFish": false,
     "rarity": 3,
@@ -259919,8 +260662,7 @@
     "consumable": true,
     "placeable": false,
     "autoswing": false,
-    "conditions": [],
-    "milestone": "start"
+    "conditions": []
   },
   {
     "key": "RoyalScepter",
@@ -259936,6 +260678,7 @@
       "vanity"
     ],
     "subcategories": [
+      "vanity-accessory",
       "other-accessory"
     ],
     "obtain": [
@@ -259986,6 +260729,7 @@
       "vanity"
     ],
     "subcategories": [
+      "vanity-accessory",
       "other-accessory"
     ],
     "obtain": [
@@ -260032,9 +260776,11 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-body"
+    ],
     "obtain": [
-      "drop"
+      "unobtainable"
     ],
     "vendors": [],
     "events": [],
@@ -260051,7 +260797,7 @@
     "platformsKnown": false,
     "hardmode": false,
     "hardmodeOnly": false,
-    "unobtainable": false,
+    "unobtainable": true,
     "banner": false,
     "questFish": false,
     "rarity": 0,
@@ -260060,9 +260806,7 @@
     "placeable": false,
     "autoswing": false,
     "bodySlot": "social shirt",
-    "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Dropped by Mythical Wyvern"
+    "conditions": []
   },
   {
     "key": "MythicalLionMask",
@@ -260074,9 +260818,11 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head"
+    ],
     "obtain": [
-      "drop"
+      "unobtainable"
     ],
     "vendors": [],
     "events": [],
@@ -260093,7 +260839,7 @@
     "platformsKnown": false,
     "hardmode": false,
     "hardmodeOnly": false,
-    "unobtainable": false,
+    "unobtainable": true,
     "banner": false,
     "questFish": false,
     "rarity": 0,
@@ -260103,9 +260849,7 @@
     "placeable": false,
     "autoswing": false,
     "bodySlot": "social helmet",
-    "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Dropped by Mythical Wyvern"
+    "conditions": []
   },
   {
     "key": "PrinceUniform",
@@ -260118,7 +260862,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-body"
+    ],
     "obtain": [
       "vendor"
     ],
@@ -260208,7 +260954,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-legs"
+    ],
     "obtain": [
       "vendor"
     ],
@@ -260258,6 +261006,7 @@
       "vanity"
     ],
     "subcategories": [
+      "vanity-accessory",
       "other-accessory"
     ],
     "obtain": [
@@ -260753,7 +261502,7 @@
     "tooltip": "Summons a Glommer\n'The petals shimmer in the light'",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Derpling"
   },
   {
     "key": "DeerclopsPetItem",
@@ -260854,7 +261603,7 @@
     "tooltip": "Summons a small Pig Man\n'Gross. It's full of hairs.'",
     "conditions": [],
     "milestone": "start",
-    "milestoneVia": "Dropped by Herpling"
+    "milestoneVia": "Dropped by Face Monster"
   },
   {
     "key": "MonsterLasagna",
@@ -261118,7 +261867,7 @@
     "tooltip": "Grows more powerful the better fed you are\nDefeating enemies temporarily improves healing\n'TIS A WEAPON O' PIG BUTT!'",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Pigron"
   },
   {
     "key": "BatBat",
@@ -261179,7 +261928,7 @@
     "tooltip": "Heals user slightly on hit\n'Maybe I could bat some bats with this.'",
     "conditions": [],
     "milestone": "start",
-    "milestoneVia": "Dropped by Lava Bat"
+    "milestoneVia": "Dropped by Spore Bat"
   },
   {
     "key": "ChesterPetItem",
@@ -261243,7 +261992,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head"
+    ],
     "obtain": [
       "crafted"
     ],
@@ -261338,7 +262089,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head"
+    ],
     "obtain": [
       "drop",
       "bag",
@@ -261385,7 +262138,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-body"
+    ],
     "obtain": [
       "crafted"
     ],
@@ -261429,7 +262184,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-legs"
+    ],
     "obtain": [
       "crafted"
     ],
@@ -261476,6 +262233,7 @@
       "vanity"
     ],
     "subcategories": [
+      "vanity-accessory",
       "other-accessory"
     ],
     "obtain": [
@@ -261529,6 +262287,7 @@
       "crafting-material"
     ],
     "subcategories": [
+      "vanity-accessory",
       "material-equipment",
       "other-accessory"
     ],
@@ -261579,6 +262338,7 @@
       "crafting-material"
     ],
     "subcategories": [
+      "vanity-accessory",
       "material-equipment",
       "other-accessory"
     ],
@@ -261721,7 +262481,10 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head",
+      "boss-mask"
+    ],
     "obtain": [
       "drop",
       "treasure-bag"
@@ -261864,6 +262627,7 @@
     ],
     "subcategories": [
       "music-box",
+      "vanity-music-box",
       "furniture-music-box"
     ],
     "obtain": [
@@ -261915,6 +262679,7 @@
       "mechanism"
     ],
     "subcategories": [
+      "vanity-monolith",
       "decoration",
       "other-accessory"
     ],
@@ -262020,7 +262785,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-body"
+    ],
     "obtain": [
       "crafted"
     ],
@@ -262064,7 +262831,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-legs"
+    ],
     "obtain": [
       "crafted"
     ],
@@ -262820,7 +263589,7 @@
     "conditions": [
       "night"
     ],
-    "milestone": "start",
+    "milestone": "wall-of-flesh",
     "milestoneVia": "Dropped by Wolf"
   },
   {
@@ -263079,7 +263848,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head"
+    ],
     "obtain": [
       "vendor"
     ],
@@ -270739,7 +271510,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head"
+    ],
     "obtain": [
       "drop"
     ],
@@ -271491,7 +272264,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head"
+    ],
     "obtain": [
       "vendor"
     ],
@@ -273428,6 +274203,7 @@
     ],
     "subcategories": [
       "informational",
+      "vanity-accessory",
       "other-furniture"
     ],
     "obtain": [
@@ -273527,6 +274303,7 @@
       "mechanism"
     ],
     "subcategories": [
+      "vanity-monolith",
       "decoration",
       "other-accessory"
     ],
@@ -274249,6 +275026,7 @@
     ],
     "subcategories": [
       "music-box",
+      "vanity-music-box",
       "furniture-music-box"
     ],
     "obtain": [
@@ -275258,7 +276036,7 @@
     "tooltip": "'It's Waffle Time!'",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Mechdusa"
   },
   {
     "key": "BouncyBoulder",
@@ -275372,7 +276150,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head"
+    ],
     "obtain": [
       "drop",
       "bag",
@@ -275419,7 +276199,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-body"
+    ],
     "obtain": [
       "vendor"
     ],
@@ -275467,7 +276249,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-legs"
+    ],
     "obtain": [
       "vendor"
     ],
@@ -275618,7 +276402,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head"
+    ],
     "obtain": [
       "vendor"
     ],
@@ -278622,8 +279408,7 @@
       "novelty"
     ],
     "obtain": [
-      "vendor",
-      "loot"
+      "vendor"
     ],
     "vendors": [
       "cyborg"
@@ -278656,8 +279441,8 @@
     "useTime": 32,
     "tooltip": "Rotate Left/Right to steer & Press Up to accelerate\n'First rule of Flight Club, we don't talk about Flight Club'",
     "conditions": [],
-    "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestone": "plantera",
+    "milestoneVia": "Sold by the Cyborg"
   },
   {
     "key": "JimsDroneVisor",
@@ -278920,7 +279705,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head"
+    ],
     "obtain": [
       "crafted"
     ],
@@ -278965,7 +279752,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-body"
+    ],
     "obtain": [
       "crafted"
     ],
@@ -279010,7 +279799,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-legs"
+    ],
     "obtain": [
       "crafted"
     ],
@@ -280303,6 +281094,8 @@
       "vanity"
     ],
     "subcategories": [
+      "vanity-accessory",
+      "voice-accessory",
       "other-accessory"
     ],
     "obtain": [
@@ -280352,6 +281145,8 @@
       "vanity"
     ],
     "subcategories": [
+      "vanity-accessory",
+      "voice-accessory",
       "other-accessory"
     ],
     "obtain": [
@@ -280545,7 +281340,7 @@
     "tooltip": "'G. Kalinkin'",
     "conditions": [],
     "milestone": "start",
-    "milestoneVia": "Dropped by Illuminant Slime"
+    "milestoneVia": "Collected in the world"
   },
   {
     "key": "EaterOfLife",
@@ -280601,7 +281396,7 @@
     "tooltip": "'G. Kalinkin'",
     "conditions": [],
     "milestone": "start",
-    "milestoneVia": "Dropped by Floaty Gross"
+    "milestoneVia": "Collected in the world"
   },
   {
     "key": "ThisIsCanonNow",
@@ -281059,6 +281854,8 @@
       "vanity"
     ],
     "subcategories": [
+      "vanity-accessory",
+      "voice-accessory",
       "other-accessory"
     ],
     "obtain": [
@@ -281108,6 +281905,8 @@
       "vanity"
     ],
     "subcategories": [
+      "vanity-accessory",
+      "voice-accessory",
       "other-accessory"
     ],
     "obtain": [
@@ -281157,6 +281956,8 @@
       "vanity"
     ],
     "subcategories": [
+      "vanity-accessory",
+      "voice-accessory",
       "other-accessory"
     ],
     "obtain": [
@@ -281206,6 +282007,8 @@
       "vanity"
     ],
     "subcategories": [
+      "vanity-accessory",
+      "voice-accessory",
       "other-accessory"
     ],
     "obtain": [
@@ -281255,6 +282058,8 @@
       "vanity"
     ],
     "subcategories": [
+      "vanity-accessory",
+      "voice-accessory",
       "other-accessory"
     ],
     "obtain": [
@@ -281304,6 +282109,8 @@
       "vanity"
     ],
     "subcategories": [
+      "vanity-accessory",
+      "voice-accessory",
       "other-accessory"
     ],
     "obtain": [
@@ -281353,6 +282160,8 @@
       "vanity"
     ],
     "subcategories": [
+      "vanity-accessory",
+      "voice-accessory",
       "other-accessory"
     ],
     "obtain": [
@@ -281402,6 +282211,8 @@
       "vanity"
     ],
     "subcategories": [
+      "vanity-accessory",
+      "voice-accessory",
       "other-accessory"
     ],
     "obtain": [
@@ -281451,6 +282262,8 @@
       "vanity"
     ],
     "subcategories": [
+      "vanity-accessory",
+      "voice-accessory",
       "other-accessory"
     ],
     "obtain": [
@@ -281500,6 +282313,8 @@
       "vanity"
     ],
     "subcategories": [
+      "vanity-accessory",
+      "voice-accessory",
       "other-accessory"
     ],
     "obtain": [
@@ -281549,6 +282364,8 @@
       "vanity"
     ],
     "subcategories": [
+      "vanity-accessory",
+      "voice-accessory",
       "other-accessory"
     ],
     "obtain": [
@@ -281839,7 +282656,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-body"
+    ],
     "obtain": [
       "loot",
       "bag"
@@ -282796,6 +283615,8 @@
       "vanity"
     ],
     "subcategories": [
+      "vanity-accessory",
+      "voice-accessory",
       "other-accessory"
     ],
     "obtain": [
@@ -283004,6 +283825,7 @@
     ],
     "subcategories": [
       "music-box",
+      "vanity-music-box",
       "furniture-music-box"
     ],
     "obtain": [
@@ -283055,6 +283877,7 @@
     ],
     "subcategories": [
       "music-box",
+      "vanity-music-box",
       "furniture-music-box"
     ],
     "obtain": [
@@ -284963,6 +285786,7 @@
     ],
     "subcategories": [
       "music-box",
+      "vanity-music-box",
       "furniture-music-box"
     ],
     "obtain": [
@@ -285014,6 +285838,7 @@
     ],
     "subcategories": [
       "music-box",
+      "vanity-music-box",
       "furniture-music-box"
     ],
     "obtain": [
@@ -285066,6 +285891,7 @@
     ],
     "subcategories": [
       "music-box",
+      "vanity-music-box",
       "furniture-music-box"
     ],
     "obtain": [
@@ -285117,6 +285943,7 @@
     ],
     "subcategories": [
       "music-box",
+      "vanity-music-box",
       "furniture-music-box"
     ],
     "obtain": [
@@ -285168,6 +285995,7 @@
     ],
     "subcategories": [
       "music-box",
+      "vanity-music-box",
       "furniture-music-box"
     ],
     "obtain": [
@@ -285216,7 +286044,9 @@
       "vanity",
       "developer"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head"
+    ],
     "obtain": [
       "bag",
       "treasure-bag"
@@ -285263,7 +286093,9 @@
       "vanity",
       "developer"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-body"
+    ],
     "obtain": [
       "bag",
       "treasure-bag"
@@ -285310,7 +286142,9 @@
       "vanity",
       "developer"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-legs"
+    ],
     "obtain": [
       "bag",
       "treasure-bag"
@@ -285407,6 +286241,7 @@
       "developer"
     ],
     "subcategories": [
+      "vanity-accessory",
       "other-accessory"
     ],
     "obtain": [
@@ -285834,6 +286669,7 @@
       "vanity"
     ],
     "subcategories": [
+      "vanity-accessory",
       "other-accessory"
     ],
     "obtain": [
@@ -285882,8 +286718,7 @@
       "other-mount"
     ],
     "obtain": [
-      "drop",
-      "loot"
+      "drop"
     ],
     "vendors": [],
     "events": [
@@ -285914,6 +286749,7 @@
     "useTime": 20,
     "buff": "Curse of the Bat",
     "tooltip": "Inflicts the bearer with the curse of the bat",
+    "eventOnly": true,
     "conditions": [],
     "milestone": "any-mech",
     "milestoneVia": "Dropped by Vampire"
@@ -285933,6 +286769,7 @@
       "mechanism"
     ],
     "subcategories": [
+      "vanity-monolith",
       "decoration",
       "other-accessory"
     ],
@@ -285989,6 +286826,7 @@
       "mechanism"
     ],
     "subcategories": [
+      "vanity-monolith",
       "decoration",
       "other-accessory"
     ],
@@ -287216,7 +288054,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head"
+    ],
     "obtain": [
       "drop"
     ],
@@ -287261,7 +288101,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-body"
+    ],
     "obtain": [
       "drop"
     ],
@@ -287306,7 +288148,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-legs"
+    ],
     "obtain": [
       "drop"
     ],
@@ -287401,6 +288245,7 @@
       "vanity"
     ],
     "subcategories": [
+      "vanity-accessory",
       "other-accessory"
     ],
     "obtain": [
@@ -287864,6 +288709,7 @@
     ],
     "subcategories": [
       "music-box",
+      "vanity-music-box",
       "furniture-music-box"
     ],
     "obtain": [
@@ -287915,6 +288761,7 @@
     ],
     "subcategories": [
       "music-box",
+      "vanity-music-box",
       "furniture-music-box"
     ],
     "obtain": [
@@ -287967,6 +288814,7 @@
     ],
     "subcategories": [
       "music-box",
+      "vanity-music-box",
       "furniture-music-box"
     ],
     "obtain": [
@@ -288326,7 +289174,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-body"
+    ],
     "obtain": [
       "crafted"
     ],
@@ -288370,7 +289220,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-legs"
+    ],
     "obtain": [
       "crafted"
     ],
@@ -288415,7 +289267,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-body"
+    ],
     "obtain": [
       "crafted"
     ],
@@ -288460,7 +289314,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-legs"
+    ],
     "obtain": [
       "crafted"
     ],
@@ -288505,7 +289361,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-legs"
+    ],
     "obtain": [
       "crafted"
     ],
@@ -288588,7 +289446,7 @@
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Orca",
     "conditions": [],
-    "milestone": "start",
+    "milestone": "wall-of-flesh",
     "milestoneVia": "Dropped by Orca"
   },
   {
@@ -288751,6 +289609,7 @@
       "mechanism"
     ],
     "subcategories": [
+      "vanity-monolith",
       "decoration",
       "other-accessory"
     ],
@@ -288799,7 +289658,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head"
+    ],
     "obtain": [
       "other"
     ],
@@ -288843,7 +289704,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-body"
+    ],
     "obtain": [
       "other"
     ],
@@ -288887,7 +289750,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-legs"
+    ],
     "obtain": [
       "other"
     ],
@@ -288978,7 +289843,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head"
+    ],
     "obtain": [
       "crafted"
     ],
@@ -289964,7 +290831,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head"
+    ],
     "obtain": [
       "vendor"
     ],
@@ -290011,7 +290880,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-body"
+    ],
     "obtain": [
       "vendor"
     ],
@@ -290058,7 +290929,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-legs"
+    ],
     "obtain": [
       "vendor"
     ],
@@ -290106,7 +290979,9 @@
       "vanity",
       "developer"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head"
+    ],
     "obtain": [
       "bag",
       "treasure-bag"
@@ -290153,7 +291028,9 @@
       "vanity",
       "developer"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-body"
+    ],
     "obtain": [
       "bag",
       "treasure-bag"
@@ -290200,7 +291077,9 @@
       "vanity",
       "developer"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-legs"
+    ],
     "obtain": [
       "bag",
       "treasure-bag"
@@ -292648,7 +293527,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-body"
+    ],
     "obtain": [
       "vendor"
     ],
@@ -292698,7 +293579,9 @@
     "categories": [
       "vanity"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-legs"
+    ],
     "obtain": [
       "vendor"
     ],
@@ -312218,7 +313101,9 @@
       "vanity",
       "developer"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-head"
+    ],
     "obtain": [
       "bag",
       "treasure-bag"
@@ -312265,7 +313150,9 @@
       "vanity",
       "developer"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-body"
+    ],
     "obtain": [
       "bag",
       "treasure-bag"
@@ -312312,7 +313199,9 @@
       "vanity",
       "developer"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "vanity-legs"
+    ],
     "obtain": [
       "bag",
       "treasure-bag"
@@ -312409,6 +313298,7 @@
       "developer"
     ],
     "subcategories": [
+      "vanity-accessory",
       "other-accessory"
     ],
     "obtain": [
@@ -312506,6 +313396,7 @@
     ],
     "subcategories": [
       "music-box",
+      "vanity-music-box",
       "furniture-music-box"
     ],
     "obtain": [
@@ -312557,6 +313448,7 @@
     ],
     "subcategories": [
       "music-box",
+      "vanity-music-box",
       "furniture-music-box"
     ],
     "obtain": [
@@ -312608,6 +313500,7 @@
     ],
     "subcategories": [
       "music-box",
+      "vanity-music-box",
       "furniture-music-box"
     ],
     "obtain": [
@@ -313216,7 +314109,7 @@
     "tooltip": "Every 3 swings, joins and attacks with your second whip\n'When a problem comes along, you must whip it...'",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Lamia"
   },
   {
     "key": "MobiusStrip",
@@ -313319,7 +314212,7 @@
     "tooltip": "Increases your max number of summon tag effects by 1\nIncreases whip knockback",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Cursed Hammer"
   },
   {
     "key": "SharpBarb",
@@ -313760,7 +314653,7 @@
     "autoswing": false,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Hallowed Mimic"
   },
   {
     "key": "AmmoCyclerFullInv",

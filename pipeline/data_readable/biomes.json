@@ -3,19 +3,19 @@
     "id": "forest-surface",
     "name": "Forest & surface",
     "icon": "https://terraria.wiki.gg/images/Acorn.png",
-    "count": 67
+    "count": 66
   },
   {
     "id": "underground",
     "name": "Underground & caverns",
     "icon": "https://terraria.wiki.gg/images/Stone_Block.png",
-    "count": 104
+    "count": 102
   },
   {
     "id": "desert",
     "name": "Desert",
     "icon": "https://terraria.wiki.gg/images/Sand_Block.png",
-    "count": 43
+    "count": 42
   },
   {
     "id": "snow",
@@ -69,7 +69,7 @@
     "id": "underworld",
     "name": "Underworld",
     "icon": "https://terraria.wiki.gg/images/Ash_Block.png",
-    "count": 35
+    "count": 33
   },
   {
     "id": "space",

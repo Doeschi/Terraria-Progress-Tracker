@@ -35,6 +35,8 @@ export interface Layout {
   celebrate: boolean
   /** a few hidden Terraria references (G8) */
   easterEggs: boolean
+  /** with a loaded world: dim items whose milestone it has not reached (MS8) */
+  dimUnavailable: boolean
   /** detail panel sections in this order; missing ones keep their place */
   detailOrder: string[]
   hiddenDetail: string[]
@@ -51,6 +53,7 @@ export const DEFAULT_LAYOUT: Layout = {
   optionBars: true,
   celebrate: true,
   easterEggs: true,
+  dimUnavailable: false,
   openGroups: {},
   detailOrder: [],
   hiddenDetail: [],
@@ -71,6 +74,7 @@ function readLayout(v: unknown): Layout {
     'optionBars',
     'celebrate',
     'easterEggs',
+    'dimUnavailable',
   ] as const)
     if (typeof o[k] === 'boolean') out[k] = o[k] as boolean
   for (const k of ['favoriteViews', 'detailOrder', 'hiddenDetail'] as const) {
