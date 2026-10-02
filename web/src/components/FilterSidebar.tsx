@@ -369,7 +369,7 @@ function FilterPanel({
                   </p>
                 )}
                 {active && (
-                  <p className="-mt-2 px-1 text-[11px] text-muted-foreground">
+                  <p className="-mt-2 px-1 text-[11px] text-muted-foreground pointer-coarse:hidden">
                     <kbd className="rounded border bg-muted px-1 font-sans">↵</kbd>{' '}
                     {activeSelected ? 'unselect' : 'select'}{' '}
                     <span className="font-medium text-foreground">{active.name}</span>
@@ -504,7 +504,7 @@ function GroupSection({
               <button
                 onClick={() => setEntryOrder(prefKey, order === 'name' ? 'default' : 'name')}
                 className={cn(
-                  'rounded p-0.5 hover:bg-muted hover:text-foreground',
+                  'rounded p-0.5 hover:bg-muted hover:text-foreground pointer-coarse:p-2',
                   order === 'name' ? 'text-foreground' : 'text-muted-foreground',
                 )}
                 title={
@@ -518,7 +518,7 @@ function GroupSection({
             {selected.length > 0 && (
               <button
                 onClick={() => scope.clear(group.key)}
-                className="rounded p-0.5 text-muted-foreground hover:bg-muted hover:text-foreground"
+                className="rounded p-0.5 text-muted-foreground hover:bg-muted hover:text-foreground pointer-coarse:p-2"
                 title="Clear"
               >
                 <X className="size-3.5" />
@@ -854,7 +854,7 @@ function EntryRow({
         {eye && (
           <button
             onClick={() => place.toggleHidden(group.key, entry.id, entry.name)}
-            className="ml-1 grid size-6 shrink-0 place-items-center rounded text-muted-foreground hover:bg-foreground/10 hover:text-foreground"
+            className="ml-1 grid size-6 shrink-0 place-items-center rounded text-muted-foreground hover:bg-foreground/10 hover:text-foreground pointer-coarse:size-9"
             title={
               eye === 'hide' ? `Hide “${entry.name}” (moves it to “Hidden” at the bottom)` : 'Show in its group again'
             }
@@ -866,7 +866,7 @@ function EntryRow({
         {action === 'remove' && (
           <button
             onClick={() => useStore.getState().unpickSource(entry.id)}
-            className="ml-1 grid size-6 shrink-0 place-items-center rounded text-muted-foreground hover:bg-foreground/10 hover:text-foreground"
+            className="ml-1 grid size-6 shrink-0 place-items-center rounded text-muted-foreground hover:bg-foreground/10 hover:text-foreground pointer-coarse:size-9"
             title={`Remove “${entry.name}” from the group`}
             aria-label={`Remove ${entry.name}`}
           >
@@ -922,7 +922,7 @@ function EntryRow({
             {children.length > 0 && (
               <button
                 onClick={() => setExpanded(!showChildren)}
-                className="rounded p-1 text-muted-foreground hover:bg-foreground/10 hover:text-foreground"
+                className="rounded p-1 text-muted-foreground hover:bg-foreground/10 hover:text-foreground pointer-coarse:p-2.5"
                 title={showChildren ? 'Hide subcategories' : 'Show subcategories'}
               >
                 <ChevronRight className={cn('size-3.5 transition-transform', showChildren && 'rotate-90')} />

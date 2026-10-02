@@ -33,10 +33,11 @@ import {
   usePublishRows,
 } from '@/lib/listCursor'
 import { IconList, type IconEntry } from './table/cells'
-import { formatDate } from '@/lib/format'
+import { formatDate, nameOf } from '@/lib/format'
 import { worldState } from '@/lib/bestiary'
 import { inDifficulty, seedOnly } from '@/lib/drops'
 import { NPC_REF, npcIndex } from '@/lib/npcs'
+import { useIsPhone } from '@/hooks/useIsPhone'
 
 // The bestiary view: every entry of the in-game bestiary with its unlock state
 // (checked manually or taken from the attached world).
@@ -50,18 +51,24 @@ export function BestiaryList({ view }: { view: BestiaryView }) {
         The bestiary was added in 1.4.0 – it does not exist in the game version of this playthrough.
       </div>
     )
+  return <BestiaryScreenBody view={view} />
+}
+
+function BestiaryScreenBody({ view }: { view: BestiaryView }) {
+  // phones: compact header, cards instead of the table (MO2, MO5)
+  const phone = useIsPhone()
   return (
     <div className="flex h-full min-h-0 flex-col">
-      <Toolbar view={view} />
-      <ActiveFilters />
-      <BestiaryTable view={view} />
+      <Toolbar view={view} phone={phone} />
+      <ActiveFilters onlyActive={phone} />
+      <BestiaryTable view={view} phone={phone} />
     </div>
   )
 }
 
 // ------------------------------------------------------------------ toolbar
 
-function Toolbar({ view }: { view: BestiaryView }) {
+function Toolbar({ view, phone = false }: { view: BestiaryView; phone?: boolean }) {
   const search = useStore((s) => s.bestiarySearch)
   const setSearch = useStore((s) => s.setBestiarySearch)
   const openDetail = useUi((s) => s.openDetail)
@@ -76,23 +83,24 @@ function Toolbar({ view }: { view: BestiaryView }) {
   ]
 
   return (
-    <div className="flex flex-col gap-2 border-b p-3">
+    <div className={cn('flex flex-col border-b', phone ? 'gap-1.5 p-2' : 'gap-2 p-3')}>
       <div className="flex items-center gap-2">
         <SearchField
           value={search}
           onChange={setSearch}
           onKeyDown={(e) => handleListKey(e, search, openDetail)}
-          placeholder="Search the bestiary…"
+          placeholder={phone ? 'Search…' : 'Search the bestiary…'}
           label="Search the bestiary"
           shortcut="list"
           withMode
         />
         <MobileFilters view={view} />
+        {phone && <BulkActions view={view} compact />}
       </div>
       <SearchHint search={search} />
-      <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
+      <div className={cn('flex items-center', phone ? 'gap-2' : 'flex-wrap gap-x-4 gap-y-2')}>
         <div className="flex items-center gap-2">
-          <span className="text-xs font-medium text-muted-foreground">Show</span>
+          {!phone && <span className="text-xs font-medium text-muted-foreground">Show</span>}
           <ToggleGroup
             type="single"
             variant="outline"
@@ -108,17 +116,23 @@ function Toolbar({ view }: { view: BestiaryView }) {
             ))}
           </ToggleGroup>
         </div>
-        <div className="flex items-center gap-2 text-xs text-muted-foreground">
-          Filtered
-          <TallyBar tally={view.filtered} className="w-20" />
-          <TallyText tally={view.filtered} />
-        </div>
-        {/* syncing with the world: the sync button in the top bar */}
-        <div className="ml-auto flex gap-2">
-          <BulkActions view={view} />
-        </div>
+        {phone ? (
+          <TallyText tally={view.filtered} className="ml-auto shrink-0 text-xs" />
+        ) : (
+          <>
+            <div className="flex items-center gap-2 text-xs text-muted-foreground">
+              Filtered
+              <TallyBar tally={view.filtered} className="w-20" />
+              <TallyText tally={view.filtered} />
+            </div>
+            {/* syncing with the world: the sync button in the top bar */}
+            <div className="ml-auto flex gap-2">
+              <BulkActions view={view} />
+            </div>
+          </>
+        )}
       </div>
-      {(!world || !world.bestiary) && (
+      {!phone && (!world || !world.bestiary) && (
         <p className="text-xs text-muted-foreground">
           {!world ? 'Attach the world to sync the bestiary with it.' : 'The bestiary could not be read from the world.'}
         </p>
@@ -127,7 +141,7 @@ function Toolbar({ view }: { view: BestiaryView }) {
   )
 }
 
-function BulkActions({ view }: { view: BestiaryView }) {
+function BulkActions({ view, compact = false }: { view: BestiaryView; compact?: boolean }) {
   const setBestiary = useStore((s) => s.setBestiary)
   const ids = view.visible.map((e) => e.id)
   const n = ids.length
@@ -145,10 +159,22 @@ function BulkActions({ view }: { view: BestiaryView }) {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="outline" size="sm" disabled={!n} title="Mark all entries in the list">
-          <ListChecks /> Bulk actions
-          <ChevronDown className="text-muted-foreground" />
-        </Button>
+        {compact ? (
+          <Button
+            variant="outline"
+            size="icon-sm"
+            disabled={!n}
+            title="Bulk actions: mark all entries in the list"
+            aria-label="Bulk actions"
+          >
+            <ListChecks />
+          </Button>
+        ) : (
+          <Button variant="outline" size="sm" disabled={!n} title="Mark all entries in the list">
+            <ListChecks /> Bulk actions
+            <ChevronDown className="text-muted-foreground" />
+          </Button>
+        )}
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
         <DropdownMenuLabel className="font-normal text-muted-foreground">
@@ -175,7 +201,7 @@ function MobileFilters({ view }: { view: BestiaryView }) {
   )
 }
 
-function ActiveFilters() {
+function ActiveFilters({ onlyActive = false }: { onlyActive?: boolean }) {
   const data = useStore((s) => s.data)!
   const groups = useMemo(() => buildBestiaryGroups(data), [data])
   const selection = useStore((s) => s.bestiarySelection)
@@ -192,6 +218,7 @@ function ActiveFilters() {
         clearBestiaryFilter()
         setBestiarySearch('')
       }}
+      onlyActive={onlyActive}
     />
   )
 }
@@ -216,6 +243,8 @@ const COLUMNS = {
 type ColumnId = keyof typeof COLUMNS
 /** height of a row: the 32 px icon, its padding and the border */
 const ROW_HEIGHT = 41
+/** height of a card on phones (MO5) */
+const CARD_HEIGHT = 60
 /** the items an entry drops (highest chance first), and how many of them are obtained */
 interface DropSummary {
   items: Item[]
@@ -235,7 +264,7 @@ function worldCell(b: WorldBestiary | null | undefined, id: string): { text: str
   return { text: state.text ?? '–', value: state.value }
 }
 
-function BestiaryTable({ view }: { view: BestiaryView }) {
+function BestiaryTable({ view, phone = false }: { view: BestiaryView; phone?: boolean }) {
   const data = useStore((s) => s.data)!
   const pt = useActivePlaythrough()!
   const world = useActiveWorld()
@@ -394,6 +423,20 @@ function BestiaryTable({ view }: { view: BestiaryView }) {
   )
 
   if (!rows.length) return <p className="p-6 text-center text-sm text-muted-foreground">No bestiary entries match.</p>
+  if (phone)
+    return (
+      <BestiaryCards
+        data={data}
+        rows={rows}
+        drops={drops}
+        unlocked={view.unlocked}
+        typeName={typeName}
+        selected={selected}
+        active={activeRef}
+        onOpen={(e) => openDetail(NPC_REF + e.id)}
+        onChange={(e, v) => setBestiary([e.id], v)}
+      />
+    )
 
   return (
     <div
@@ -585,5 +628,100 @@ function Row({
       {world !== null && <td className="px-2 py-1 whitespace-nowrap tabular-nums">{world}</td>}
       <td className="px-2 py-1 whitespace-nowrap tabular-nums">{changed ?? ''}</td>
     </tr>
+  )
+}
+
+/** Phones (MO5): the entries as cards - unlocked checkbox, icon, name, type and where / when, and
+ * on the right the drops progress. Tapping opens the NPC card. */
+function BestiaryCards({
+  data,
+  rows,
+  drops,
+  unlocked,
+  typeName,
+  selected,
+  active,
+  onOpen,
+  onChange,
+}: {
+  data: GameData
+  rows: BestiaryEntry[]
+  drops: Map<string, DropSummary>
+  unlocked: Set<string>
+  typeName: Map<string, string>
+  selected: string | null
+  active: string | undefined
+  onOpen: (e: BestiaryEntry) => void
+  onChange: (e: BestiaryEntry, value: boolean) => void
+}) {
+  const scrollRef = useRef<HTMLDivElement>(null)
+  const virtualizer = useVirtualizer({
+    count: rows.length,
+    getScrollElement: () => scrollRef.current,
+    estimateSize: () => CARD_HEIGHT,
+    overscan: 10,
+  })
+  const where = (e: BestiaryEntry) =>
+    [
+      ...e.biomes.map((b) => nameOf(data.biomes, b)),
+      ...e.times.map((t) => nameOf(data.times, t)),
+      ...e.events.map((v) => nameOf(data.events, v)),
+    ]
+      .slice(0, 3)
+      .join(', ')
+  return (
+    <div ref={scrollRef} className="min-h-0 flex-1 overflow-auto">
+      <ul className="relative" style={{ height: virtualizer.getTotalSize() }}>
+        {virtualizer.getVirtualItems().map((vr) => {
+          const e = rows[vr.index]
+          const on = unlocked.has(e.id)
+          const d = drops.get(e.id)
+          const ref = NPC_REF + e.id
+          return (
+            <li
+              key={e.id}
+              className={cn(
+                'absolute inset-x-0 flex items-center gap-2 border-b border-border/60 pr-3',
+                on && 'bg-primary/[0.04]',
+                selected === ref && 'bg-primary/15',
+                active === ref && 'outline-2 -outline-offset-2 outline-primary outline-dashed',
+              )}
+              style={{ top: vr.start, height: CARD_HEIGHT }}
+            >
+              <label className="grid h-full w-11 shrink-0 cursor-pointer place-items-center">
+                <Checkbox
+                  checked={on}
+                  onCheckedChange={(v) => onChange(e, v === true)}
+                  aria-label={`${e.name} unlocked`}
+                />
+              </label>
+              <button
+                type="button"
+                onClick={() => onOpen(e)}
+                className="flex h-full min-w-0 flex-1 items-center gap-2.5 text-left"
+              >
+                <WikiIcon src={e.icon} alt="" size={32} />
+                <span className="flex min-w-0 flex-1 flex-col">
+                  <span className="truncate text-sm font-medium">{e.name}</span>
+                  <span className="truncate text-xs text-muted-foreground">
+                    {[typeName.get(e.type) ?? e.type, where(e)].filter(Boolean).join(' · ')}
+                  </span>
+                </span>
+                {d && (
+                  <span
+                    className={cn(
+                      'shrink-0 text-xs tabular-nums',
+                      d.obtained === d.total ? 'text-emerald-600 dark:text-emerald-400' : 'text-muted-foreground',
+                    )}
+                  >
+                    {d.obtained} / {d.total}
+                  </span>
+                )}
+              </button>
+            </li>
+          )
+        })}
+      </ul>
+    </div>
   )
 }

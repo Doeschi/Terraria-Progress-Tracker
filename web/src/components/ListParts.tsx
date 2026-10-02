@@ -124,7 +124,8 @@ export function SearchField({
         // the shortcut while the field is empty and not focused
         <kbd
           className={cn(
-            'pointer-events-none absolute top-1/2 -translate-y-1/2 rounded border bg-muted px-1 font-sans text-[10px] leading-4 text-muted-foreground peer-focus:hidden',
+            // keyboard shortcuts mean nothing on a touch screen (MO6)
+            'pointer-events-none absolute top-1/2 -translate-y-1/2 rounded border bg-muted px-1 font-sans text-[10px] leading-4 text-muted-foreground peer-focus:hidden pointer-coarse:hidden',
             withMode ? (withNpcs ? 'right-[7.25rem]' : 'right-[4.25rem]') : 'right-2',
           )}
           title={shortcut === 'filters' ? `Shift + ${key}` : `${key} or /`}
@@ -136,7 +137,7 @@ export function SearchField({
         {value && (
           <button
             onClick={() => onChange('')}
-            className="rounded p-0.5 text-muted-foreground hover:text-foreground"
+            className="rounded p-0.5 text-muted-foreground hover:text-foreground pointer-coarse:p-1.5"
             title="Clear"
           >
             <X className={icon} />
@@ -158,7 +159,8 @@ export function SearchHint({ search }: { search: string }) {
   return (
     <div
       role="status"
-      className="pointer-events-none fixed bottom-4 left-1/2 z-40 -translate-x-1/2 rounded-full border bg-popover/95 px-3 py-1 text-xs whitespace-nowrap text-muted-foreground shadow-lg backdrop-blur"
+      // the keyboard hint bar: not on touch screens (MO6)
+      className="pointer-events-none fixed pointer-coarse:hidden bottom-4 left-1/2 z-40 -translate-x-1/2 rounded-full border bg-popover/95 px-3 py-1 text-xs whitespace-nowrap text-muted-foreground shadow-lg backdrop-blur"
     >
       <kbd className="rounded border bg-muted px-1 font-sans">↵</kbd> open{' '}
       <span className="font-medium text-foreground">{row.name}</span>
@@ -183,8 +185,21 @@ export function MobileFiltersButton({ active, children }: { active: number; chil
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button variant="outline" size="sm" className="md:hidden">
-          <SlidersHorizontal /> Filters{active > 0 && ` (${active})`}
+        {/* phones: only the icon, the number of active filters as a badge (room for the search) */}
+        <Button
+          variant="outline"
+          size="sm"
+          className="relative md:hidden max-sm:size-8 max-sm:p-0"
+          title="Filters"
+          aria-label={`Filters${active > 0 ? ` (${active} active)` : ''}`}
+        >
+          <SlidersHorizontal />
+          <span className="max-sm:hidden">Filters{active > 0 && ` (${active})`}</span>
+          {active > 0 && (
+            <span className="absolute -top-1.5 -right-1.5 rounded-full bg-primary px-1.5 text-[10px] leading-4 text-primary-foreground sm:hidden">
+              {active}
+            </span>
+          )}
         </Button>
       </DialogTrigger>
       <DialogContent className="max-h-[85vh] overflow-y-auto p-0">
@@ -206,6 +221,7 @@ export function ActiveFilterBar<K extends string>({
   onRemove,
   onClearSearch,
   onClearAll,
+  onlyActive = false,
 }: {
   groups: FilterGroup<K>[]
   selection: Record<K, string[]>
@@ -213,6 +229,8 @@ export function ActiveFilterBar<K extends string>({
   onRemove: (group: K, id: string) => void
   onClearSearch: () => void
   onClearAll: () => void
+  /** phones (MO2): no "No filters active" line, the room is for the list */
+  onlyActive?: boolean
 }) {
   // "<group>/<id>" -> option name, children included
   const names = useMemo(() => {
@@ -228,6 +246,7 @@ export function ActiveFilterBar<K extends string>({
 
   // shown also without filters, so the list below does not jump when the first filter is added
   if (!active.length && !search) {
+    if (onlyActive) return null
     return (
       <div className="flex items-center border-b px-3 py-2 text-xs">
         {/* same box as a filter chip, so the bar keeps its height */}

@@ -120,7 +120,8 @@ export function ItemDetailSheet() {
   const closeDetail = useUi((s) => s.closeDetail)
   return (
     <Sheet open={!!card} onOpenChange={(o) => !o && closeDetail()}>
-      <SheetContent className="w-full gap-0 overflow-y-auto p-0 sm:max-w-lg">
+      {/* phones: the whole screen (MO4); the side variant's 3/4 width needs the same prefix to be overridden */}
+      <SheetContent className="gap-0 overflow-y-auto p-0 data-[side=right]:w-full data-[side=right]:sm:max-w-lg">
         {card && (
           <>
             <BackButton />

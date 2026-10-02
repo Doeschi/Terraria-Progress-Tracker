@@ -6,7 +6,9 @@ import type { TrackerView } from '@/hooks/useTrackerView'
 import { TallyBar, TallyText } from './common'
 import { usePrefs } from '@/lib/prefs'
 import { useEndCredits, useTrophies } from '@/lib/trophies'
-import { Clapperboard, Star } from 'lucide-react'
+import { Clapperboard, Menu, Star } from 'lucide-react'
+import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet'
+import { useIsPhone } from '@/hooks/useIsPhone'
 import { Button } from '@/components/ui/button'
 import { Field } from './topbar/Field'
 import { AutosaveStatus, FileMenu } from './topbar/FileMenu'
@@ -18,6 +20,72 @@ import { HeaderLogo } from './topbar/HeaderLogo'
 import { SettingsMenu } from './topbar/SettingsMenu'
 
 export function TopBar({ view }: { view: TrackerView | null }) {
+  const phone = useIsPhone()
+  if (phone) return <PhoneTopBar view={view} />
+  return <DesktopTopBar view={view} />
+}
+
+/** Phones (MO1): one slim row - logo, playthrough, Items / Bestiary and a menu (☰) with the rest
+ * of the desktop top bar; the item progress as a thin line below it. */
+function PhoneTopBar({ view }: { view: TrackerView | null }) {
+  const hasPlaythrough = useActivePlaythrough() !== null
+  const overall = view?.overall
+  return (
+    <header className="relative z-40 border-b bg-background/80 backdrop-blur">
+      <HeaderSnow />
+      <div className="flex items-center gap-2 px-2 py-1.5">
+        <HeaderLogo />
+        {/* the playthrough button takes the room that is left */}
+        <div className="flex min-w-0 flex-1 [&_button]:max-w-full">{hasPlaythrough && <PlaythroughMenu />}</div>
+        {view && <ModeSwitch />}
+        <Sheet>
+          <SheetTrigger asChild>
+            <Button variant="outline" size="icon-sm" title="Menu" aria-label="Menu">
+              <Menu />
+            </Button>
+          </SheetTrigger>
+          <SheetContent side="right" className="w-80 gap-0 overflow-y-auto">
+            <SheetHeader>
+              <SheetTitle>Terraria Progress Tracker</SheetTitle>
+              <SheetDescription className="sr-only">File, player, world, progress and settings</SheetDescription>
+            </SheetHeader>
+            <div className="flex flex-col gap-4 px-4 pb-6">
+              <Field label="File" extra={<AutosaveStatus />}>
+                <FileMenu />
+              </Field>
+              {hasPlaythrough && (
+                <div className="flex flex-wrap items-end gap-2">
+                  <Field label="Player">
+                    <PlayerMenu />
+                  </Field>
+                  <Field label="World">
+                    <WorldMenu />
+                  </Field>
+                  <SyncButton />
+                </div>
+              )}
+              {view && (
+                <Field label="Progress" title="Overall progress of this playthrough">
+                  <ProgressBars view={view} />
+                </Field>
+              )}
+              <SettingsMenu />
+            </div>
+          </SheetContent>
+        </Sheet>
+      </div>
+      {overall && overall.total > 0 && (
+        <div
+          className="h-0.5 bg-primary"
+          style={{ width: `${(100 * overall.obtained) / overall.total}%` }}
+          title={`${overall.obtained} of ${overall.total} items`}
+        />
+      )}
+    </header>
+  )
+}
+
+function DesktopTopBar({ view }: { view: TrackerView | null }) {
   const hasPlaythrough = useActivePlaythrough() !== null
   // three columns: logo (left) | file + playthrough (centered) | theme (right)
   return (

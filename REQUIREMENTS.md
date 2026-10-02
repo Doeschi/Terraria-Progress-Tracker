@@ -495,6 +495,33 @@ needs a decision is reported, and parsers that read page text must not silently 
   of the window). Remembered in the browser; double-click on the edge resets, arrow keys on the
   focused edge change it in steps. The detail panel's buttons stay on one line: in a narrow
   panel they show only their icon ("Obtained" keeps its text longest).
+## MO – Phones
+
+Below 640 px width (phones) the layout changes; tablets and desktops stay as they are (G3).
+
+- **MO1** Slim top bar (one row): logo, the playthrough button,
+  the Items / Bestiary switch and a menu (☰); the overall item progress as a thin line under
+  the bar. The menu holds what the desktop top bar shows besides: File (with the autosave
+  status), Player, World, the sync button, the item and bestiary progress bars, settings, About,
+  theme and GitHub.
+- **MO2** Compact list header: row 1 the search field ("Search…"), then Filters, sorting and
+  bulk actions as icon buttons (the number of active filters as a badge); row 2 Show (all /
+  missing / …) and the filtered numbers. The filter bar only with active filters. Views and
+  columns do not apply to the cards.
+- **MO3** Items as cards instead of the table: per item a row with the checkbox, icon, name and a
+  second line (first category, "obtained by" as short names, available after); tapping it opens
+  the detail sheet. Obtained items marked like in the table (green), ignored ones faded.
+  Sorting (the sort button): name (or relevance while searching), rarity, added in, available after, last
+  changed. Virtualized like the table; Enter from the search opens the first card (S4).
+- **MO4** The detail panel is a full-screen sheet with the back button (already the overlay on
+  narrow screens, ID).
+- **MO5** Bestiary as cards too: checkbox (unlocked), icon, name, second line type and where /
+  when; on the right the drops progress. Tapping opens the NPC card.
+- **MO6** Touch (any device with a coarse pointer, also tablets): comfortable density by default
+  (as long as the layout was never changed in the settings); keyboard hints (shortcut keys, ↵ / ↑↓ hint bar)
+  hidden; buttons that are only icons (× of "Sources & sets", eye, sort, …) at least 36 px; on
+  the cards, information that the table only shows on hover is written out.
+
 ## PR – Remembered view settings
 
 - **PR1** Stored in the browser (localStorage), not in the progress file: visible table columns,

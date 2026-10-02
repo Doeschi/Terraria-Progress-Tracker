@@ -28,8 +28,21 @@ import { ActiveFilterBar, MobileFiltersButton, SearchField, SearchHint } from '.
 import { handleListKey } from '@/lib/listCursor'
 import { NpcSuggestions } from './NpcSuggestions'
 import { useUi } from '@/ui'
+import { useIsPhone } from '@/hooks/useIsPhone'
+import { CardSortMenu, ItemCards, type CardSort } from './ItemCards'
 
 export function ItemList({ view }: { view: TrackerView }) {
+  const phone = useIsPhone()
+  // phones: cards instead of the table, sorted by this (MO3)
+  const [cardSort, setCardSort] = useState<CardSort>('list')
+  if (phone)
+    return (
+      <div className="flex h-full min-h-0 flex-col">
+        <Toolbar view={view} phone cardSort={cardSort} onCardSort={setCardSort} />
+        <ActiveFilters onlyActive />
+        <ItemCards items={view.visible} checked={view.checked} ignored={view.ignored} sort={cardSort} />
+      </div>
+    )
   return (
     <div className="flex h-full min-h-0 flex-col">
       <Toolbar view={view} />
@@ -41,7 +54,19 @@ export function ItemList({ view }: { view: TrackerView }) {
 
 // ------------------------------------------------------------------ toolbar
 
-function Toolbar({ view }: { view: TrackerView }) {
+function Toolbar({
+  view,
+  phone = false,
+  cardSort,
+  onCardSort,
+}: {
+  view: TrackerView
+  /** phones (MO2): search, Filters, sort and bulk actions in one row; Show and the filtered
+   * progress in the second; no views */
+  phone?: boolean
+  cardSort?: CardSort
+  onCardSort?: (sort: CardSort) => void
+}) {
   const search = useStore((s) => s.search)
   const setSearch = useStore((s) => s.setSearch)
   const openDetail = useUi((s) => s.openDetail)
@@ -58,7 +83,7 @@ function Toolbar({ view }: { view: TrackerView }) {
   ]
 
   return (
-    <div className="flex flex-col gap-2 border-b p-3">
+    <div className={cn('flex flex-col border-b', phone ? 'gap-1.5 p-2' : 'gap-2 p-3')}>
       <div className="flex items-center gap-2">
         {/* the NPCs matching the search, in a list under the field while it has the focus (S5) */}
         <div className="relative min-w-0 flex-1" onFocus={() => setFocused(true)} onBlur={() => setFocused(false)}>
@@ -66,7 +91,7 @@ function Toolbar({ view }: { view: TrackerView }) {
             value={search}
             onChange={setSearch}
             onKeyDown={(e) => handleListKey(e, search, openDetail)}
-            placeholder={searchNpcs ? 'Search items or NPCs by name…' : 'Search items by name…'}
+            placeholder={phone ? 'Search…' : searchNpcs ? 'Search items or NPCs by name…' : 'Search items by name…'}
             label="Search items"
             shortcut="list"
             withMode
@@ -75,12 +100,14 @@ function Toolbar({ view }: { view: TrackerView }) {
           <NpcSuggestions search={search} open={searchNpcs && focused && !!search.trim()} />
         </div>
         <MobileFilters view={view} />
+        {phone && cardSort && onCardSort && <CardSortMenu sort={cardSort} onChange={onCardSort} />}
+        {phone && <BulkActions view={view} compact />}
       </div>
       <SearchHint search={search} />
       {/* show switch, progress of the filtered items, bulk actions: one row */}
-      <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
+      <div className={cn('flex items-center', phone ? 'gap-2' : 'flex-wrap gap-x-4 gap-y-2')}>
         <div className="flex items-center gap-2">
-          <span className="text-xs font-medium text-muted-foreground">Show</span>
+          {!phone && <span className="text-xs font-medium text-muted-foreground">Show</span>}
           <ToggleGroup
             type="single"
             variant="outline"
@@ -99,19 +126,26 @@ function Toolbar({ view }: { view: TrackerView }) {
             ))}
           </ToggleGroup>
         </div>
-        <div
-          className="flex items-center gap-2 text-xs text-muted-foreground"
-          title={view.searching ? 'Sorted by relevance until a column is sorted' : undefined}
-        >
-          Filtered
-          <TallyBar tally={view.filtered} className="w-20" />
-          <TallyText tally={view.filtered} />
-        </div>
-        <div className="ml-auto">
-          <BulkActions view={view} />
-        </div>
+        {phone ? (
+          // the numbers only, right-aligned: the toggle needs the width
+          <TallyText tally={view.filtered} className="ml-auto shrink-0 text-xs" />
+        ) : (
+          <>
+            <div
+              className="flex items-center gap-2 text-xs text-muted-foreground"
+              title={view.searching ? 'Sorted by relevance until a column is sorted' : undefined}
+            >
+              Filtered
+              <TallyBar tally={view.filtered} className="w-20" />
+              <TallyText tally={view.filtered} />
+            </div>
+            <div className="ml-auto">
+              <BulkActions view={view} />
+            </div>
+          </>
+        )}
       </div>
-      <PresetBar />
+      {!phone && <PresetBar />}
     </div>
   )
 }
@@ -342,7 +376,7 @@ function ColumnsMenu({ custom }: { custom: boolean }) {
   )
 }
 
-function BulkActions({ view }: { view: TrackerView }) {
+function BulkActions({ view, compact = false }: { view: TrackerView; compact?: boolean }) {
   const setChecked = useStore((s) => s.setChecked)
   const setIgnored = useStore((s) => s.setIgnored)
   const keys = view.visible.map((i) => i.key)
@@ -357,10 +391,22 @@ function BulkActions({ view }: { view: TrackerView }) {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="outline" size="sm" disabled={!n} title="Check, uncheck or ignore all items in the list">
-          <ListChecks /> Bulk actions
-          <ChevronDown className="text-muted-foreground" />
-        </Button>
+        {compact ? (
+          <Button
+            variant="outline"
+            size="icon-sm"
+            disabled={!n}
+            title="Bulk actions: check, uncheck or ignore all items in the list"
+            aria-label="Bulk actions"
+          >
+            <ListChecks />
+          </Button>
+        ) : (
+          <Button variant="outline" size="sm" disabled={!n} title="Check, uncheck or ignore all items in the list">
+            <ListChecks /> Bulk actions
+            <ChevronDown className="text-muted-foreground" />
+          </Button>
+        )}
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
         <DropdownMenuLabel className="font-normal text-muted-foreground">
@@ -399,7 +445,7 @@ function MobileFilters({ view }: { view: TrackerView }) {
   )
 }
 
-function ActiveFilters() {
+function ActiveFilters({ onlyActive = false }: { onlyActive?: boolean }) {
   const data = useStore((s) => s.data)!
   const groups = useMemo(() => buildFilterGroups(data), [data])
   const selection = useStore((s) => s.selection)
@@ -416,6 +462,7 @@ function ActiveFilters() {
         clearFilter()
         setSearch('')
       }}
+      onlyActive={onlyActive}
     />
   )
 }

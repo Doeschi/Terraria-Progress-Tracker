@@ -1,0 +1,207 @@
+import { useMemo, useRef } from 'react'
+import { useVirtualizer } from '@tanstack/react-virtual'
+import { ArrowDownUp, Check } from 'lucide-react'
+import { useActivePlaythrough, useStore } from '@/store'
+import { useUi } from '@/ui'
+import { cn } from '@/lib/utils'
+import { nameOf } from '@/lib/format'
+import { shownObtain } from '@/lib/filtering'
+import { useActiveRow, usePublishRows } from '@/lib/listCursor'
+import { rodOfDiscord } from '@/lib/eggs'
+import type { GameData, Item } from '@/lib/types'
+import { Button } from '@/components/ui/button'
+import { Checkbox } from '@/components/ui/checkbox'
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuLabel,
+  DropdownMenuRadioGroup,
+  DropdownMenuRadioItem,
+  DropdownMenuTrigger,
+} from '@/components/ui/dropdown-menu'
+import { WikiIcon } from './common'
+
+// Phones (REQUIREMENTS MO3): the items as cards instead of the table - checkbox, icon, name and a
+// line with what the table shows in columns (category, how to get it, available after).
+
+export type CardSort = 'list' | 'rarity' | 'added' | 'milestone' | 'changed'
+
+const SORTS: [CardSort, string][] = [
+  ['list', 'Name (relevance while searching)'],
+  ['rarity', 'Rarity (highest first)'],
+  ['added', 'Added in (newest first)'],
+  ['milestone', 'Available after (earliest first)'],
+  ['changed', 'Last changed (latest first)'],
+]
+
+/** Height of a card: two lines of text next to a 32 px icon. */
+const CARD_HEIGHT = 60
+
+/** "Sort" for the cards (the table sorts by its columns). */
+export function CardSortMenu({ sort, onChange }: { sort: CardSort; onChange: (sort: CardSort) => void }) {
+  return (
+    <DropdownMenu>
+      <DropdownMenuTrigger asChild>
+        <Button variant="outline" size="icon-sm" title="Sort" aria-label="Sort">
+          <ArrowDownUp />
+        </Button>
+      </DropdownMenuTrigger>
+      <DropdownMenuContent align="end">
+        <DropdownMenuLabel className="font-normal text-muted-foreground">Sort by</DropdownMenuLabel>
+        <DropdownMenuRadioGroup value={sort} onValueChange={(v) => onChange(v as CardSort)}>
+          {SORTS.map(([id, label]) => (
+            <DropdownMenuRadioItem key={id} value={id}>
+              {label}
+            </DropdownMenuRadioItem>
+          ))}
+        </DropdownMenuRadioGroup>
+      </DropdownMenuContent>
+    </DropdownMenu>
+  )
+}
+
+function sortItems(data: GameData, items: Item[], sort: CardSort, changedAt: Record<string, string>): Item[] {
+  if (sort === 'list') return items
+  const versionRank = new Map(data.versions.map((v, n) => [v.id, n]))
+  const milestoneRank = new Map(data.milestones.map((m, n) => [m.id, n]))
+  const key = (i: Item): number | string => {
+    switch (sort) {
+      case 'rarity':
+        return -(i.rarity ?? -99)
+      case 'added':
+        return -(versionRank.get(i.version ?? '') ?? -1)
+      case 'milestone':
+        return milestoneRank.get(i.milestone ?? '') ?? 999
+      case 'changed':
+        return changedAt[i.key] ? -Date.parse(changedAt[i.key]) : Infinity
+    }
+  }
+  return [...items].sort((a, b) => {
+    const ka = key(a)
+    const kb = key(b)
+    return ka < kb ? -1 : ka > kb ? 1 : 0
+  })
+}
+
+export function ItemCards({
+  items,
+  checked,
+  ignored,
+  sort,
+}: {
+  items: Item[]
+  checked: Set<string>
+  ignored: Set<string>
+  sort: CardSort
+}) {
+  const data = useStore((s) => s.data)!
+  const changedAt = useActivePlaythrough()?.changedAt
+  const rows = useMemo(() => sortItems(data, items, sort, changedAt ?? {}), [data, items, sort, changedAt])
+  const scrollRef = useRef<HTMLDivElement>(null)
+  const virtualizer = useVirtualizer({
+    count: rows.length,
+    getScrollElement: () => scrollRef.current,
+    estimateSize: () => CARD_HEIGHT,
+    overscan: 10,
+  })
+  const selected = useUi((s) => s.detailKey)
+  // Enter in the search opens the first card (S4)
+  usePublishRows(useMemo(() => rows.map((i) => ({ ref: i.key, name: i.name })), [rows]))
+  const active = useActiveRow(useStore((s) => s.search)).row?.ref
+
+  if (!rows.length) return <p className="p-6 text-center text-sm text-muted-foreground">No items match.</p>
+  const virtualRows = virtualizer.getVirtualItems()
+  return (
+    <div ref={scrollRef} className="min-h-0 flex-1 overflow-auto">
+      <ul className="relative" style={{ height: virtualizer.getTotalSize() }}>
+        {virtualRows.map((vr) => {
+          const item = rows[vr.index]
+          return (
+            <ItemCard
+              key={item.key}
+              data={data}
+              item={item}
+              own={checked.has(item.key)}
+              ignored={ignored.has(item.key)}
+              selected={selected === item.key}
+              active={active === item.key}
+              top={vr.start}
+            />
+          )
+        })}
+      </ul>
+    </div>
+  )
+}
+
+function ItemCard({
+  data,
+  item,
+  own,
+  ignored,
+  selected,
+  active,
+  top,
+}: {
+  data: GameData
+  item: Item
+  own: boolean
+  ignored: boolean
+  selected: boolean
+  active: boolean
+  top: number
+}) {
+  const openDetail = useUi((s) => s.openDetail)
+  const setChecked = useStore((s) => s.setChecked)
+  // what the table shows in columns, written out (no hover on phones)
+  const category = item.categories[0] ? nameOf(data.categories, item.categories[0]) : undefined
+  const obtain = shownObtain(data, item.obtain)
+    .map((o) => nameOf(data.obtain, o))
+    .join(', ')
+  // "after World creation" says nothing
+  const milestone =
+    item.milestone && item.milestone !== data.milestones[0]?.id ? nameOf(data.milestones, item.milestone) : undefined
+  return (
+    <li
+      className={cn(
+        'absolute inset-x-0 flex items-center gap-2 border-b border-border/60 pr-3',
+        own && !ignored && 'bg-emerald-50 dark:bg-[oklch(0.25_0.03_160)]',
+        ignored && 'opacity-60',
+        selected && 'bg-primary/15',
+        active && 'outline-2 -outline-offset-2 outline-primary outline-dashed',
+      )}
+      style={{ top, height: CARD_HEIGHT }}
+    >
+      {/* the whole left edge is the checkbox's tap area */}
+      <label className="grid h-full w-11 shrink-0 cursor-pointer place-items-center">
+        <Checkbox
+          checked={own}
+          disabled={ignored}
+          onCheckedChange={(v) => {
+            setChecked([item.key], v === true)
+            if (v === true && item.key === 'RodofDiscord') rodOfDiscord(document.activeElement)
+          }}
+          aria-label={`Obtained: ${item.name}`}
+        />
+      </label>
+      <button
+        type="button"
+        onClick={() => openDetail(item.key)}
+        className="flex h-full min-w-0 flex-1 items-center gap-2.5 text-left"
+      >
+        <WikiIcon src={item.icon} alt="" size={32} />
+        <span className="flex min-w-0 flex-1 flex-col">
+          <span className="flex items-center gap-1.5 truncate text-sm font-medium">
+            <span className="truncate">{item.name}</span>
+            {own && (
+              <Check className="size-3.5 shrink-0 text-emerald-600 dark:text-emerald-400" aria-label="obtained" />
+            )}
+          </span>
+          <span className="truncate text-xs text-muted-foreground">
+            {[category, obtain, milestone && `after ${milestone}`].filter(Boolean).join(' · ')}
+          </span>
+        </span>
+      </button>
+    </li>
+  )
+}
