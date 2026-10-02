@@ -44,9 +44,10 @@ function celebrate(kind: CompletionKind, done: Completed[]) {
   confettiBurst(window.innerWidth / 2, 70)
 }
 
-/** Options at 100% (at least one item), hidden ones and non-collections left out. */
+/** Options at 100% (at least one item), hidden ones and non-collections left out; a sub-option
+ * knows its parent's key ("group/id"). */
 function completedOptions(groups: AnyGroup[], totals: AnyFacets, hidden: Set<string>, prefix: string) {
-  const out = new Map<string, Completed>()
+  const out = new Map<string, Completed & { parent?: string }>()
   for (const g of groups) {
     if (NOT_RANKED.has(g.key)) continue
     const check = (e: AnyGroup['entries'][number], parent?: AnyGroup['entries'][number]) => {
@@ -56,6 +57,7 @@ function completedOptions(groups: AnyGroup[], totals: AnyFacets, hidden: Set<str
         name: e.name,
         icon: e.icon,
         context: parent ? `${g.label} › ${parent.name}` : g.label,
+        parent: parent && `${g.key}/${parent.id}`,
       })
     }
     for (const e of g.entries) {
@@ -88,7 +90,10 @@ function useCompletions(
     const p = prev.current
     prev.current = { id: playthroughId, progress, done }
     if (!enabled || !p || p.id !== playthroughId || p.progress === progress) return
-    const newly = [...done].filter(([k]) => !p.done.has(k)).map(([, c]) => c)
+    // like the "Completed" section: a sub-option completed together with its parent is part of it
+    const newly = [...done]
+      .filter(([k, c]) => !p.done.has(k) && !(c.parent && done.has(c.parent) && !p.done.has(c.parent)))
+      .map(([, c]) => c)
     if (newly.length) queue(prefix ? 'bestiary' : 'items', newly)
   }, [groups, totals, hidden, prefix, playthroughId, progress, enabled])
 }

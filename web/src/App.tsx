@@ -16,6 +16,8 @@ import { useSearchShortcuts } from '@/hooks/useSearchShortcuts'
 import { useEasterEggs, useProgressEggs, useSeasonalFavicon } from '@/hooks/useEasterEggs'
 import { ItemList } from '@/components/ItemList'
 import { ItemDetailPanel, ItemDetailSheet } from '@/components/ItemDetail'
+import { ResizablePane } from '@/components/ResizablePane'
+import { SIDEBAR_WIDTH } from '@/lib/panes'
 import { useMediaQuery } from '@/hooks/useMediaQuery'
 import { TopBar } from '@/components/TopBar'
 import { WeaponLayer } from '@/components/WeaponLayer'
@@ -76,12 +78,19 @@ function BestiaryScreen() {
   const view = useBestiaryView()
   return (
     <div className="flex min-h-0 flex-1">
-      <aside className="hidden w-[22rem] shrink-0 flex-col overflow-y-auto border-r bg-sidebar md:flex">
+      <ResizablePane
+        widthKey="sidebarWidth"
+        limits={SIDEBAR_WIDTH}
+        edge="right"
+        label="filters"
+        className="hidden md:flex"
+        innerClassName="overflow-y-auto border-r bg-sidebar"
+      >
         <BestiaryFilterSidebar facets={view.facets} groupTallies={view.groupTallies} available={view.available} />
         <div className="mt-auto p-4">
           <AboutLink />
         </div>
-      </aside>
+      </ResizablePane>
       <main className="min-w-0 flex-1">
         <BestiaryList view={view} />
       </main>
@@ -118,12 +127,19 @@ function Tracker() {
         <BestiaryScreen />
       ) : pt && view ? (
         <div className="flex min-h-0 flex-1">
-          <aside className="hidden w-[22rem] shrink-0 flex-col overflow-y-auto border-r bg-sidebar md:flex">
+          <ResizablePane
+            widthKey="sidebarWidth"
+            limits={SIDEBAR_WIDTH}
+            edge="right"
+            label="filters"
+            className="hidden md:flex"
+            innerClassName="overflow-y-auto border-r bg-sidebar"
+          >
             <FilterSidebar facets={view.facets} groupTallies={view.groupTallies} available={view.available} />
             <div className="mt-auto p-4">
               <AboutLink />
             </div>
-          </aside>
+          </ResizablePane>
           <main className="flex min-w-0 flex-1">
             <div className="min-w-0 flex-1">
               <ItemList view={view} />

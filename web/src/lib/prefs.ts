@@ -2,6 +2,7 @@ import { create } from 'zustand'
 import { DEFAULT_DETECTION, type ChestDetection } from './world'
 import type { ScanScope } from '@/hooks/useAreas'
 import type { SearchMode } from './filtering'
+import { DETAIL_WIDTH, SIDEBAR_WIDTH } from './panes'
 
 // Per-browser view preferences (not part of the tracking file), kept in
 // localStorage so the page looks the same on the next visit.
@@ -37,6 +38,9 @@ export interface Layout {
   easterEggs: boolean
   /** with a loaded world: dim items whose milestone it has not reached (MS8) */
   dimUnavailable: boolean
+  /** widths in px of the filter sidebar and the docked detail panel, set by dragging their edge */
+  sidebarWidth: number
+  detailWidth: number
   /** detail panel sections in this order; missing ones keep their place */
   detailOrder: string[]
   hiddenDetail: string[]
@@ -54,6 +58,8 @@ export const DEFAULT_LAYOUT: Layout = {
   celebrate: true,
   easterEggs: true,
   dimUnavailable: false,
+  sidebarWidth: SIDEBAR_WIDTH.initial,
+  detailWidth: DETAIL_WIDTH.initial,
   openGroups: {},
   detailOrder: [],
   hiddenDetail: [],
@@ -77,6 +83,8 @@ function readLayout(v: unknown): Layout {
     'dimUnavailable',
   ] as const)
     if (typeof o[k] === 'boolean') out[k] = o[k] as boolean
+  for (const k of ['sidebarWidth', 'detailWidth'] as const)
+    if (typeof o[k] === 'number' && Number.isFinite(o[k])) out[k] = o[k] as number
   for (const k of ['favoriteViews', 'detailOrder', 'hiddenDetail'] as const) {
     const list = strings(o[k])
     if (list) out[k] = list

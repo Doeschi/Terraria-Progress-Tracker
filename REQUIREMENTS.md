@@ -337,7 +337,9 @@ GitHub Actions.
 - **FL11** "Move completed filters" (toggle next to the filter search, on by default): options at 100 % over
   the whole playthrough (not the current filters and search) move to the "Completed" section,
   above "Hidden". Completed options stay usable and follow the filter search; their counts follow
-  the current filters like everywhere (greyed out without matching items).
+  the current filters like everywhere (greyed out without matching items). A completed option
+  takes its sub-options along. The groups Progression and Crafting are no collections: their
+  options stay in their group (like FL15, FL16).
 - **FL12** Both sections list their options under the name of their group, are collapsed by
   default and only appear when they have options. Hidden options and the completed toggle are
   remembered in the browser (PR1); hidden options separately for items and bestiary, the
@@ -361,7 +363,9 @@ GitHub Actions.
   Changes within 0.4 s give one toast per kind – item filters and bestiary filters separately
   ("12 item filters complete!", "3 bestiary filters complete!", the first three named, "+9
   more"). Not on loading a file, switching playthroughs or changing settings; hidden options
-  and the groups Progression and Crafting are left out. Setting "Celebrate completed filters"
+  and the groups Progression and Crafting are left out; a sub-option completed together with its
+  parent is part of it (not counted or named separately, like the "Completed" section of FL11).
+  Setting "Celebrate completed filters"
   (on by default); no confetti with reduced motion.
 - **FL17** The time a filter option was completed is kept per playthrough in the tracking file
   (`completedAt`): set when the option reaches 100 % over the whole playthrough (item and
@@ -403,6 +407,11 @@ GitHub Actions.
   the views in the dropdown is set in the settings (↑↓). Stored in the browser; changed built-in
   views only keep their differences, so unchanged ones follow updates of the app.
 
+- **LS5** The filter sidebar and the docked detail panel can be resized by dragging their inner
+  edge (sidebar 260–560 px, default 352; detail panel 320–760 px, default 448; each at most 45 %
+  of the window). Remembered in the browser; double-click on the edge resets, arrow keys on the
+  focused edge change it in steps. The detail panel's buttons stay on one line: in a narrow
+  panel they show only their icon ("Obtained" keeps its text longest).
 ## PR – Remembered view settings
 
 - **PR1** Stored in the browser (localStorage), not in the tracking file: visible table columns,

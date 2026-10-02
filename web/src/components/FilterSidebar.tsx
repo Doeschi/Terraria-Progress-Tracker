@@ -42,6 +42,7 @@ import {
   groupView,
   movedLists,
   nameMatches,
+  NOT_RANKED,
   searchTargets,
   sortEntries,
   SORTABLE,
@@ -245,7 +246,9 @@ function FilterPanel({
     return {
       isHidden: (group, id) => hidden.has(key(group, id)),
       // over the whole playthrough, not the current filters and search (FL11)
-      isDone: (group, id) => hideCompleted && complete(available[group]?.get(id)),
+      // Progression and Crafting are no collections (milestones count cumulatively, crafting
+      // follows the chests): their options stay in their group, like they get no toast
+      isDone: (group, id) => hideCompleted && !NOT_RANKED.has(group) && complete(available[group]?.get(id)),
       hasItems: (group, id) => (facets[group]?.get(id)?.total ?? 0) > 0 || !!selections[group]?.includes(id),
       exists: (group, id) => !!available[group]?.has(id) || !!selections[group]?.includes(id),
       toggleHidden: (group, id, name) => {

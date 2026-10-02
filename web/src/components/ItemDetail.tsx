@@ -13,6 +13,8 @@ import { Button } from '@/components/ui/button'
 import { Checkbox } from '@/components/ui/checkbox'
 import { Sheet, SheetContent, SheetDescription, SheetTitle } from '@/components/ui/sheet'
 import { DifficultyIcon, RarityIcon, WikiIcon } from './common'
+import { ResizablePane } from './ResizablePane'
+import { DETAIL_WIDTH } from '@/lib/panes'
 import { RecipeSections } from './RecipeSections'
 import { formatDate, nameOf } from '@/lib/format'
 import { type ColumnGroup, type ItemColumn, type TrackingState } from './table/columns'
@@ -34,13 +36,23 @@ function useDetailItem(): Item | undefined {
 }
 
 /** Docked panel next to the table (wide screens). */
+
+/** Button labels of the detail panel, hidden when the button row is too narrow for them (one line,
+ * no wrapping): first the labels of Ignore / Find in chests / Wiki, "Obtained" last. */
+const LABEL = 'hidden @[430px]/actions:inline'
+const OBTAINED_LABEL = 'hidden @[250px]/actions:inline'
+
 export function ItemDetailPanel() {
   const item = useDetailItem()
   const closeDetail = useUi((s) => s.closeDetail)
   if (!item) return null
   return (
-    <aside
-      className="relative flex w-[28rem] shrink-0 flex-col overflow-y-auto border-l bg-card"
+    <ResizablePane
+      widthKey="detailWidth"
+      limits={DETAIL_WIDTH}
+      edge="left"
+      label="item details"
+      innerClassName="relative overflow-y-auto border-l bg-card"
       aria-label="Item details"
     >
       <Button
@@ -54,7 +66,7 @@ export function ItemDetailPanel() {
         <X />
       </Button>
       <DetailContent key={item.key} item={item} Title={PanelTitle} />
-    </aside>
+    </ResizablePane>
   )
 }
 
@@ -247,38 +259,50 @@ function DetailContent({ item, Title }: { item: Item; Title: TitleComponent }) {
             </div>
           </div>
         </div>
-        <div className="flex flex-wrap items-center gap-2">
-          <label
-            className={cn(
-              'flex items-center gap-2 rounded-lg border px-3 py-1.5',
-              checked && 'border-primary/50 bg-primary/10',
-            )}
-          >
-            <Checkbox
-              checked={checked}
-              disabled={ignored}
-              onCheckedChange={(v) => setChecked([item.key], v === true)}
-            />
-            <span className="text-sm font-medium">Obtained</span>
-          </label>
-          <Button variant="outline" size="sm" onClick={() => setIgnored([item.key], !ignored)}>
-            {ignored ? <Eye /> : <EyeOff />} {ignored ? 'Un-ignore' : 'Ignore'}
-          </Button>
-          <Button
-            variant="outline"
-            size="sm"
-            onClick={() => hasWorld && openDialog({ type: 'chestSearch', itemKey: item.key })}
-            title={chestSearchHint(hasWorld, !!pt.world)}
-            aria-disabled={!hasWorld}
-            className={cn(!hasWorld && 'cursor-not-allowed opacity-50 hover:bg-transparent')}
-          >
-            <PackageSearch /> Find in chests
-          </Button>
-          <Button variant="outline" size="sm" asChild>
-            <a href={item.url} target="_blank" rel="noreferrer noopener">
-              <ExternalLink /> Wiki
-            </a>
-          </Button>
+        {/* one line: in a narrow panel the buttons show only their icon (the label on hover) */}
+        <div className="@container/actions">
+          <div className="flex items-center gap-2">
+            <label
+              className={cn(
+                'flex shrink-0 items-center gap-2 rounded-lg border px-3 py-1.5',
+                checked && 'border-primary/50 bg-primary/10',
+              )}
+              title="Obtained"
+            >
+              <Checkbox
+                checked={checked}
+                disabled={ignored}
+                onCheckedChange={(v) => setChecked([item.key], v === true)}
+                aria-label="Obtained"
+              />
+              <span className={cn('text-sm font-medium', OBTAINED_LABEL)}>Obtained</span>
+            </label>
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={() => setIgnored([item.key], !ignored)}
+              title={ignored ? 'Un-ignore' : 'Ignore'}
+              aria-label={ignored ? 'Un-ignore' : 'Ignore'}
+            >
+              {ignored ? <Eye /> : <EyeOff />} <span className={LABEL}>{ignored ? 'Un-ignore' : 'Ignore'}</span>
+            </Button>
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={() => hasWorld && openDialog({ type: 'chestSearch', itemKey: item.key })}
+              title={chestSearchHint(hasWorld, !!pt.world)}
+              aria-label="Find in chests"
+              aria-disabled={!hasWorld}
+              className={cn(!hasWorld && 'cursor-not-allowed opacity-50 hover:bg-transparent')}
+            >
+              <PackageSearch /> <span className={LABEL}>Find in chests</span>
+            </Button>
+            <Button variant="outline" size="sm" asChild>
+              <a href={item.url} target="_blank" rel="noreferrer noopener" title="Open on the wiki" aria-label="Wiki">
+                <ExternalLink /> <span className={LABEL}>Wiki</span>
+              </a>
+            </Button>
+          </div>
         </div>
         {changed && <p className="text-xs text-muted-foreground">Last changed: {changed}</p>}
       </div>
