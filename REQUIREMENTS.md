@@ -456,20 +456,31 @@ GitHub Actions.
 - **B4** Nested filter groups work generally (a parent and its own children are never selected
   together), so further grouped sources can be added the same way.
 
-- **B5** Drop groups (planned): many bosses, chests, crates and grab bags drop one item of a group
+- **B5** Drop groups: many bosses, chests, crates and grab bags drop one item of a group
   ("One of the following 8 items will always be dropped" – Plantera's weapons; Orca: Diving
   Helmet 5 % or Shark Fin 95 %), or a group with a chance of its own ("1/12, then one of these
-  14" – the voice accessories in a Gold Chest, shown today as 1/168 each). The Cargo Drops table
-  does not have this; the page sources do: `|:group:start|<text>` … `|:group:end` (each row with
-  its chance) or `|:group:start|<amount>|<chance>` … (rows without a chance) in the infobox drop
-  lists. About 112 pages (wiki search `insource:"group:start"`; the treasure bags are on their
-  boss's page). Plan:
-  - step 1 downloads the source of these pages (found by the search) into `raw/` like the vendor
-    pages
-  - step 2 reads the groups and attaches them to the drop rows (same source page and item):
-    `group` = its text / amount / chance; pages the parser does not understand are reported
-  - NPC cards and "Contains" show the rows of a group together in a framed block ("One of these
-    8 – always", "1/12: one of these 14"); "Dropped by" in the item card notes "one of 8"
+  14" – the voice accessories in a Gold Chest, 1/168 each). The Cargo Drops table does not have
+  this; the page sources do: `|:group:start|<text>` … `|:group:end` (each row with its chance) or
+  `|:group:start|<amount>|<chance>` … (rows without a chance) in the drop lists. About 112 pages
+  (wiki search `insource:"group:start"`; the treasure bags are on their boss's page).
+  - step 1 downloads the source of these pages (found by the search) into `raw/drop_groups.json`
+  - step 2 reads the groups and attaches them to the drop rows of the same page and item
+    (`group` in `drops.json`; its text, amount, chance, how many of its items drop and their
+    number in `groups`). The same group listed twice (per layer, normal and treasure bag) counts
+    once; an item in several groups takes the one that fits the row's game mode, amount, source
+    (all items of the group dropped by it, same variant) and chance (the Ogre's tiers). Where the
+    wiki lists the bag's group apart, the group is given per game mode. Containers with other
+    items per layer (Gold Chest: Underground, Cavern, lava layer; Frozen Chest) have one Drops row
+    per item with the chances per layer in notes; these rows are split into one drop per layer
+    (`[drop_areas]` in `mapping.toml`, the layer as variant), and a group under a layer's page
+    heading belongs to that layer. Rows that still fit several groups (Shadow Chest potions;
+    Toy Sled of both Ice Mimics) stay without a group; step 2 names these pages
+  - "Contains" shows one block per place of the item (Gold Chest: caverns, Dungeon, Pyramid) and
+    in it one list per layer ("In every layer" last), like the variants of an NPC
+  - NPC cards and "Contains" show the rows of a group together in a framed block with the wiki's
+    text or "1/12: one of these 14" and how many of them are obtained; groups that are
+    conditions ("Only in Corrupt worlds") are framed too. "Dropped by" in the item card notes
+    "one of 8" (the full text as tooltip)
   - expected drops and "at least once" stay as they are (each item's own chance is correct)
 
 ## EV – Events
@@ -661,7 +672,12 @@ GitHub Actions.
   an extra section. Drops of an enemy's variants (the wiki's notes: Pre-Hardmode / Hardmode Mimic,
   Dark / Light Lamia, Zombie variants, Old One's Army tiers; rows without a note can be named in
   `[drop_variants]`) are listed per variant, so the chances of each add up; drops of every variant
-  come last. The item card names the variant under "Dropped by". **Sells** (town NPCs that are vendors): every item of their shop with its
+  come last. The item card names the variant under "Dropped by". A drop source belongs to the
+  entry of the same name, else to the entry with its NPC id (a source of a page with variants
+  carries the id of the page's first NPC row: "Zombie" would be Zombie (Sweater)); an entry
+  without a source of its own (Zombie (Female), Scarecrow (Pumpkin Head), Diabolist (Red)) gets
+  the source named like its wiki page, without the rows the wiki binds to other variants (Torch
+  only for the Torch Zombie). The bestiary's "Drops" column uses the same. **Sells** (town NPCs that are vendors): every item of their shop with its
   condition (moon phases as icons), obtained items marked. Other entries on the same wiki page
   (variants) are listed.
 - **ND3** Item card: a section "Contains" for items that are drop sources (treasure bags,
@@ -711,6 +727,16 @@ GitHub Actions.
   another field or with a dialog or menu open. The key is shown in the empty, unfocused field
   (its label from the keyboard layout where the browser knows it). Escape clears the search, a
   second Escape leaves the field.
+- **S4** While something is searched, the first row of the list (in its sort order) is outlined
+  and Enter opens its card in the detail panel; ↑/↓ move through the matches (wrapping around,
+  the row is scrolled into view). A line under the field names it ("↵ open Night's Edge · ↑↓ 2
+  of 117"), like the filter search. Item list and bestiary.
+- **S5** NPCs in the item search: while something is searched, a small list under the field shows
+  up to 5 bestiary entries whose name contains every searched word (same name first, then names
+  starting with it, then shorter names), with icon and type, and "+N more – show in the
+  bestiary" (switches to the bestiary with the same search). A click opens the NPC card in the
+  detail panel. With the keyboard they come before the item rows: ↑/↓ moves through the NPCs and
+  then the items, Enter opens the highlighted one. Shown while the field has the focus.
 
 ## W – World file
 
@@ -1002,6 +1028,9 @@ Status: parser done (PL1, PL2), app integration in progress (PL3–PL5).
   Drive version) and ask before overwriting. Same autosave rules as the local file. Open
   questions: visible file or hidden app folder; File-menu entries and "Continue" for cloud
   files. (Already works today on PCs: save the file in the Dropbox / Drive sync folder.)
+- **"Show its items in the table"** in the NPC card (S5): filter the item list to the items of
+  one NPC – its drops, its treasure bag's contents and its shop – shown as a chip ("Items of:
+  Plantera") in the active filters. Ties in with the searchable source picker.
 - **Armor and vanity sets:** show the set an item belongs to in the detail panel (the wiki's
   shared set pages, e.g. "Pirate set", about 124 for vanity), with its other pieces. With it a
   category "Sets": every armor or vanity item that is part of a set.

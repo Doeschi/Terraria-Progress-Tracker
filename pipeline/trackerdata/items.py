@@ -340,6 +340,11 @@ def section_file(section, entries, items):
             icon = None
         record = {"id": entry_id, "name": entry.get("name", entry_id),
                   "icon": icon or found[0].get("icon"), "count": len(found)}
+        # vendors: their head as on the map ("Map Icon Merchant.png") for the filters and the table;
+        # the full body ("icon") stays for the detail panel
+        head = entry.get("head_file") or (f"Map Icon {record['name']}.png" if section == "vendors" else None)
+        if head:
+            record["head"] = image_url(head)
         if entry.get("parent"):
             record["parent"] = entry["parent"]
         if entry.get("fallback"):

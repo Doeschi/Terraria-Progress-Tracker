@@ -17,8 +17,12 @@ export interface SourceDrop {
 export interface NpcIndex {
   /** drop source id -> bestiary entry id */
   entryOfSource: Map<string, string>
-  /** bestiary entry id -> its drop source ids (a boss: all its parts, without the treasure bag) */
+  /** bestiary entry id -> its drop source ids (a boss: all its parts, without the treasure bag; a
+   * variant without a source of its own, e.g. Zombie (Female): the source of its wiki page) */
   sourcesOfEntry: Map<string, string[]>
+  /** bestiary entry id -> what it drops (without the treasure bag): the drops of its sources
+   * without the rows of other variants (Torch: only the Torch Zombie) */
+  dropsOfEntry: Map<string, SourceDrop[]>
   /** bestiary entry id of a boss -> the drop source id of its treasure bag */
   bagOfEntry: Map<string, string>
   /** drop source id -> the items it drops */
@@ -48,7 +52,9 @@ export function npcIndex(data: GameData): NpcIndex {
   const cached = cache.get(data)
   if (cached) return cached
 
-  // sources -> entries: by NPC id, else by name (no shared pages: "Mimics" has several enemies)
+  // sources -> entries: by name, else by NPC id (no shared pages: "Mimics" has several enemies). The
+  // name first: a source of a page with variants has the NPC id of the page's first NPC row
+  // ("Zombie" -> Zombie (Sweater))
   const entryByNpcId = new Map<number, string>()
   const entryByName = new Map<string, string>()
   for (const e of data.bestiary.entries) {
@@ -58,11 +64,29 @@ export function npcIndex(data: GameData): NpcIndex {
   const entryOfSource = new Map<string, string>()
   for (const s of data.dropSources.values()) {
     if (s.kind !== 'npc') continue
-    const id = (s.npcId !== undefined && entryByNpcId.get(s.npcId)) || entryByName.get(s.name.toLowerCase())
+    const id = entryByName.get(s.name.toLowerCase()) || (s.npcId !== undefined && entryByNpcId.get(s.npcId))
     if (id) entryOfSource.set(s.id, id)
   }
   const sourcesOfEntry = new Map<string, string[]>()
   for (const [source, entry] of entryOfSource) push(sourcesOfEntry, entry, source)
+  // variants without a source of their own: the source named like their wiki page or linking it
+  // ("Zombie (Female)", "Scarecrow (Pumpkin Head)", "Diabolist (Red)")
+  const sourceOfPage = new Map<string, string>()
+  for (const s of data.dropSources.values()) {
+    if (s.kind !== 'npc') continue
+    const page = s.url
+      ? decodeURIComponent(s.url.split('/wiki/')[1] ?? '')
+          .replace(/_/g, ' ')
+          .toLowerCase()
+      : ''
+    for (const key of [s.name.toLowerCase(), page])
+      if (key && (!sourceOfPage.has(key) || key === s.name.toLowerCase())) sourceOfPage.set(key, s.id)
+  }
+  for (const e of data.bestiary.entries) {
+    if (sourcesOfEntry.has(e.id)) continue
+    const source = sourceOfPage.get(e.page.toLowerCase())
+    if (source) sourcesOfEntry.set(e.id, [source])
+  }
 
   // bosses: every entry of a boss gets all its parts (e.g. Retinazer: also "The Twins") and its bag
   const bagOfEntry = new Map<string, string>()
@@ -81,6 +105,17 @@ export function npcIndex(data: GameData): NpcIndex {
   for (const [key, drops] of data.drops) {
     const item = data.itemsByKey.get(key)
     if (item) for (const drop of drops) push(dropsOfSource, drop.source, { item, drop })
+  }
+  // an entry's drops: rows the wiki binds to other variants left out (bosses: their parts' rows)
+  const bossEntries = new Set(bagOfEntry.keys())
+  const dropsOfEntry = new Map<string, SourceDrop[]>()
+  for (const e of data.bestiary.entries) {
+    const drops = (sourcesOfEntry.get(e.id) ?? []).flatMap((s) => dropsOfSource.get(s) ?? [])
+    const own =
+      e.npcId === undefined || bossEntries.has(e.id)
+        ? drops
+        : drops.filter((d) => !d.drop.npcIds || d.drop.npcIds.includes(e.npcId!))
+    if (own.length) dropsOfEntry.set(e.id, own)
   }
 
   // bags and containers that are items: "Treasure Bag (Plantera)", "Gold Chest (Dungeon)" -> Gold Chest
@@ -126,6 +161,7 @@ export function npcIndex(data: GameData): NpcIndex {
   const index = {
     entryOfSource,
     sourcesOfEntry,
+    dropsOfEntry,
     bagOfEntry,
     dropsOfSource,
     itemOfSource,

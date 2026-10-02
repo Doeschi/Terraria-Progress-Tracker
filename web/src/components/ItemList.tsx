@@ -24,7 +24,10 @@ import { activeView, viewVisibility, type View } from './table/presets'
 import { ViewEditor, type ViewEditTarget } from './table/ViewEditor'
 import { cn } from '@/lib/utils'
 import { TallyBar, TallyText } from './common'
-import { ActiveFilterBar, MobileFiltersButton, SearchField } from './ListParts'
+import { ActiveFilterBar, MobileFiltersButton, SearchField, SearchHint } from './ListParts'
+import { handleListKey } from '@/lib/listCursor'
+import { NpcSuggestions } from './NpcSuggestions'
+import { useUi } from '@/ui'
 
 export function ItemList({ view }: { view: TrackerView }) {
   return (
@@ -41,6 +44,8 @@ export function ItemList({ view }: { view: TrackerView }) {
 function Toolbar({ view }: { view: TrackerView }) {
   const search = useStore((s) => s.search)
   const setSearch = useStore((s) => s.setSearch)
+  const openDetail = useUi((s) => s.openDetail)
+  const [focused, setFocused] = useState(false)
   const mode = useStore((s) => s.view)
   const setView = useStore((s) => s.setView)
   const showProgress = usePrefs((s) => s.layout.showFilteredProgress)
@@ -55,16 +60,22 @@ function Toolbar({ view }: { view: TrackerView }) {
   return (
     <div className="flex flex-col gap-2 border-b p-3">
       <div className="flex items-center gap-2">
-        <SearchField
-          value={search}
-          onChange={setSearch}
-          placeholder="Search items by name…"
-          label="Search items"
-          shortcut="list"
-          withMode
-        />
+        {/* the NPCs matching the search, in a list under the field while it has the focus (S5) */}
+        <div className="relative min-w-0 flex-1" onFocus={() => setFocused(true)} onBlur={() => setFocused(false)}>
+          <SearchField
+            value={search}
+            onChange={setSearch}
+            onKeyDown={(e) => handleListKey(e, search, openDetail)}
+            placeholder="Search items by name…"
+            label="Search items"
+            shortcut="list"
+            withMode
+          />
+          <NpcSuggestions search={search} open={focused && !!search.trim()} />
+        </div>
         <MobileFilters view={view} />
       </div>
+      <SearchHint search={search} />
       {/* show switch, progress of the filtered items, bulk actions: one row */}
       <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
         <div className="flex items-center gap-2">

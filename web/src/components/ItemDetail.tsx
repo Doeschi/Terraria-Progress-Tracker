@@ -6,7 +6,18 @@ import { useUi } from '@/ui'
 import { cn } from '@/lib/utils'
 import { DIFFICULTY_LABELS } from '@/lib/availability'
 import { chestSearchHint } from '@/lib/world'
-import { chanceFor, dropKind, dropsFor, modeLabel, otherChances, quantityFor, type DropKind } from '@/lib/drops'
+import {
+  chanceFor,
+  dropKind,
+  dropsFor,
+  groupNote,
+  groupOf,
+  groupText,
+  modeLabel,
+  otherChances,
+  quantityFor,
+  type DropKind,
+} from '@/lib/drops'
 import type { BestiaryEntry, Drop, GameData, Item, ShopRow } from '@/lib/types'
 import { conditionNames } from '@/lib/conditions'
 import { Button } from '@/components/ui/button'
@@ -470,7 +481,7 @@ function DropsSection({
       </ul>
       {luck && (
         <p className="text-xs text-muted-foreground">
-          Expected by now in this world: <LuckCell data={data} luck={luck} missing={!owned} />
+          Expected drops by now in this world: <LuckCell data={data} luck={luck} missing={!owned} />
         </p>
       )}
       {hidden > 0 && (
@@ -505,6 +516,8 @@ function DropRow({
   const others = otherChances(drop, difficulty)
   const quantity = quantityFor(drop, difficulty)
   const conditions = conditionNames(data, drop)
+  const groupId = groupOf(drop, difficulty)
+  const group = groupId ? data.dropGroups.get(groupId) : undefined
   // where / when the enemy spawns, e.g. "Forest & surface · night"
   const spawn = [
     (source?.biomes ?? []).map((b) => nameOf(data.biomes, b)).join(', '),
@@ -542,6 +555,11 @@ function DropRow({
           {spawn && <span>{spawn}</span>}
           {quantity && <span>× {quantity}</span>}
           {modes && <span>{modes}</span>}
+          {group && (
+            <span className="rounded bg-primary/10 px-1.5 text-[11px] text-foreground/80" title={groupText(group)}>
+              {groupNote(group)}
+            </span>
+          )}
           {kills !== undefined && (
             <span className="text-foreground/80">
               {kills.toLocaleString('en')} {kills === 1 ? 'kill' : 'kills'} in this world

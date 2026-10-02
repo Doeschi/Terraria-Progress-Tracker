@@ -106,9 +106,10 @@ export function buildColumns(data: GameData): ItemColumn[] {
       const rows = (data.shops.get(i.key) ?? []).filter((r) => r.vendor === v)
       const conds = [...new Set(rows.flatMap((r) => conditionNames(data, r)))]
       const name = nameOf(data.vendors, v)
+      const vendor = data.vendors.find((x) => x.id === v)
       return {
         key: v,
-        icon: data.vendors.find((x) => x.id === v)?.icon,
+        icon: vendor?.head ?? vendor?.icon,
         name,
         label: name,
         detail: conds.join(', ') || undefined,

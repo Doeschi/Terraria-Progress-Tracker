@@ -9,6 +9,7 @@ import type {
   ContainerGroup,
   Difficulty,
   Drop,
+  DropGroup,
   DropSource,
   GameData,
   GroupEntry,
@@ -78,7 +79,12 @@ export async function loadGameData(): Promise<GameData> {
     fetchJson<VersionEntry[]>('versions'),
     fetchJson<RarityEntry[]>('rarities'),
     fetchJson<CoinEntry[]>('coins'),
-    fetchJson<{ sources: Record<string, DropSource>; items: Record<string, Drop[]> }>('drops'),
+    fetchJson<{
+      sources: Record<string, DropSource>
+      items: Record<string, Drop[]>
+      groups?: Record<string, DropGroup>
+      areas?: string[]
+    }>('drops'),
     fetchJson<{ stages: BossStage[]; bosses: Boss[]; ignoreItems: string[] }>('bosses'),
     fetchJson<ContainerGroup[]>('containers'),
     fetchJson<GroupEntry[]>('milestones'),
@@ -117,6 +123,8 @@ export async function loadGameData(): Promise<GameData> {
     coins: [...coins].sort((a, b) => b.value - a.value),
     dropSources: new Map(Object.entries(drops.sources)),
     drops: new Map(Object.entries(drops.items)),
+    dropGroups: new Map(Object.entries(drops.groups ?? {})),
+    dropAreas: drops.areas ?? [],
     bossStages: bosses.stages,
     bosses: bosses.bosses,
     bossIgnoreItems: new Set(bosses.ignoreItems),

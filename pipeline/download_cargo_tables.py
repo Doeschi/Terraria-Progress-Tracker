@@ -24,6 +24,8 @@ Outputs (in --out, default raw/ next to this script):
                    ids and images of all NPCs)
   page_categories.json  the pages in a few wiki categories (Hardmode-only NPCs: enemies
                    that only appear in Hardmode, for the milestones)
+  drop_groups.json source text of the pages whose drop lists have groups ("one of the
+                   following items"; found by the wiki search insource:"group:start")
 
 Requires:  pip install requests
 Contact:   wiki.gg asks for a contact in the User-Agent. Give it with --contact, the
@@ -63,6 +65,8 @@ MAPPING_FILE = Path(__file__).resolve().parent / "mapping.toml"
 DEFAULT_HTML = ["NPC IDs"]
 # Categories whose pages are listed.
 DEFAULT_CATEGORIES = ["Hardmode-only NPCs"]
+# Wiki search for the pages with drop groups (their source text is saved).
+DROP_GROUP_SEARCH = 'insource:"group:start"'
 PAGE_SIZE = 500
 # Semicolon-separated CSV; values containing ";" are quoted by the csv module.
 CSV_DELIMITER = ";"
@@ -202,6 +206,29 @@ class Wiki:
                 return titles
             cont = {"cmcontinue": data["continue"]["cmcontinue"]}
 
+    def search(self, query):
+        """Titles of the main-namespace pages a wiki search finds."""
+        titles, cont = [], {}
+        while True:
+            data = self.get(action="query", list="search", srsearch=query, srnamespace="0",
+                            srlimit="500", srwhat="text", srprop="", **cont)
+            titles += [r["title"] for r in data["query"]["search"]]
+            if "continue" not in data:
+                return titles
+            cont = {"sroffset": data["continue"]["sroffset"]}
+
+    def wikitexts(self, titles):
+        """{title: source text}, 50 pages per request."""
+        texts = {}
+        for i in range(0, len(titles), 50):
+            data = self.get(action="query", prop="revisions", rvprop="content", rvslots="main",
+                            titles="|".join(titles[i:i + 50]))
+            for page in data["query"]["pages"]:
+                if page.get("revisions"):
+                    texts[page["title"]] = page["revisions"][0]["slots"]["main"]["content"]
+            log(f"  {len(texts)} of {len(titles)} pages")
+        return texts
+
     def download(self, table, fields):
         rows, offset = [], 0
         while True:
@@ -246,6 +273,8 @@ def main():
                     help="wiki pages whose rendered HTML is saved (default: 'NPC IDs')")
     ap.add_argument("--categories", nargs="*", default=DEFAULT_CATEGORIES,
                     help="wiki categories whose pages are listed (default: 'Hardmode-only NPCs')")
+    ap.add_argument("--no-drop-groups", dest="drop_groups", action="store_false",
+                    help="don't download the pages with drop groups")
     ap.add_argument("--delay", type=float, default=0.5, help="seconds between requests")
     ap.add_argument("--contact", help="contact for the wiki's User-Agent (default: WIKI_CONTACT, "
                                       "contact.txt or the project URL)")
@@ -299,6 +328,15 @@ def main():
         cats.update({c: wiki.category_members(c) for c in args.categories})
         cats_path.write_text(json.dumps(cats, indent=1, ensure_ascii=False), encoding="utf-8")
         log(f"wrote {cats_path}")
+
+    if args.drop_groups:
+        log("Reading the pages with drop groups…")
+        titles = wiki.search(DROP_GROUP_SEARCH)
+        log(f"  {len(titles)} pages found")
+        groups_path = args.out / "drop_groups.json"
+        texts = dict(sorted(wiki.wikitexts(titles).items()))
+        groups_path.write_text(json.dumps(texts, indent=1, ensure_ascii=False), encoding="utf-8")
+        log(f"wrote {groups_path}")
 
     if schemas:
         # merge, so downloading only some tables keeps the schemas of the others

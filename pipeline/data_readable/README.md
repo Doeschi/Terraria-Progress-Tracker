@@ -166,6 +166,7 @@ A list of all items (one entry per item id), sorted by id.
 | `id` | the id items refer to |
 | `name` | display name |
 | `icon` | image (an item, NPC, map icon, …) |
+| `head` | `vendors.json` only: the NPC's head as on the map (`Map Icon Merchant.png`), shown in the filters and the table; `icon` (full body) in the detail panel |
 | `count` | items in it (not in `difficulties.json`) |
 
 The order is the order shown in the app; `milestones.json` is in playthrough order (World
@@ -223,6 +224,8 @@ is shown in the item details, but counts for no filter.
 |---|---|
 | `sources` | object: source id → drop source |
 | `items` | object: item key → list of drops of that item |
+| `groups` | object: group id → drop group (items of a source that drop together) |
+| `areas` | the layers of containers with other items per layer, in order (`"Underground"`, `"Cavern"`, `"Cavern (lava layer)"`; `[drop_areas]` in `mapping.toml`) |
 
 **Drop source** (`sources`)
 
@@ -249,7 +252,18 @@ is shown in the item details, but counts for no filter.
 | `conditions` / `events` / `biomes` | what the drop is bound to (e.g. `seed-remix`, `blood-moon`) |
 | `note` | extra text, e.g. `"if wind speed ≥ 20 mph"`, `"In I am error worlds"` |
 | `npcIds` | only these variants of the source drop it (NPC ids), e.g. the Torch Zombie |
-| `variants` | the variants of the source the drop is for, as the wiki names them (`"Pre-Hardmode variant"`, `"Dark Lamia"`); missing = every variant |
+| `variants` | the variants of the source the drop is for, as the wiki names them (`"Pre-Hardmode variant"`, `"Dark Lamia"`), or a container's layer (`"Underground"`, one of `areas`); missing = every variant / layer |
+| `group` | the drop group it is in (`groups` id), e.g. `"plantera-1"`; or the group per game mode (`{"normal": "angry-bones-1", "expert": "angry-bones-2"}`) when the wiki lists the treasure bag's / Expert group apart |
+
+**Drop group** (`groups`) – from the drop lists of the wiki pages, not the Drops table
+
+| Field | Meaning |
+|---|---|
+| `text` | the wiki's text, e.g. `"One of the following 8 items will always be dropped"`, `"Only in Corrupt worlds"` |
+| `amount` | the amount of the item that is dropped (groups without text), e.g. `"1–3"` |
+| `chance` | the chance of the group (groups without text), e.g. `"1/12"`: with this chance, one of its items |
+| `pick` | how many of its items drop (`1`, `2`); missing = a condition, all of them can drop |
+| `size` | its number of items (an item dropped with another, like Rockets with the Grenade Launcher, counts once) |
 
 ## `bosses.json`
 

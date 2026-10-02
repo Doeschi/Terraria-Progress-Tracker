@@ -1,4 +1,12 @@
-import { DROP_MODES, type Difficulty, type Drop, type DropMode, type GameData, type Item } from './types'
+import {
+  DROP_MODES,
+  type Difficulty,
+  type Drop,
+  type DropGroup,
+  type DropMode,
+  type GameData,
+  type Item,
+} from './types'
 
 // Drops of an item that exist in a playthrough's difficulty, and the bosses
 // they come from. Journey worlds can use every mode (difficulty slider).
@@ -54,6 +62,29 @@ export function chanceFor(drop: Drop, difficulty: Difficulty): number | undefine
   const c = drop.chance
   if (!c) return undefined
   return c[primaryMode(difficulty)] ?? c[drop.modes[0]]
+}
+
+/** The drop group a drop is in, in this difficulty (B5). */
+export function groupOf(drop: Drop, difficulty: Difficulty): string | undefined {
+  const g = drop.group
+  if (!g || typeof g === 'string') return g
+  return g[primaryMode(difficulty)] ?? g[drop.modes[0]]
+}
+
+/** Heading of a drop group: the wiki's text, else "1/12: one of these 14 (1–3 each)" or "Only one
+ * of these 3" (rows with their own chances that exclude each other). */
+export function groupText(group: DropGroup): string {
+  if (group.text) return group.text
+  const text = group.chance ? `${group.chance}: one of these ${group.size}` : `Only one of these ${group.size}`
+  return group.amount && group.amount !== '1' ? `${text} (${group.amount} each)` : text
+}
+
+/** Short note of a drop's group for the item card: "one of 8", "1/12: one of 14", "two of 10",
+ * or the condition ("Only in Corrupt worlds"). */
+export function groupNote(group: DropGroup): string {
+  if (!group.pick) return group.text ?? ''
+  const what = `${group.pick === 2 ? 'two' : 'one'} of ${group.size}`
+  return group.chance ? `${group.chance}: ${what}` : what
 }
 
 export function quantityFor(drop: Drop, difficulty: Difficulty): string | undefined {

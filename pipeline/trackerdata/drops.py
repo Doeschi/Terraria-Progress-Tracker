@@ -23,7 +23,7 @@ DROP_MODES = ("normal", "expert", "master")
 
 
 def strip_ids(drop):
-    return {k: v for k, v in drop.items() if k not in ("npcIds", "variants")}
+    return {k: v for k, v in drop.items() if k not in ("npcIds", "variants", "_pages")}
 
 
 def drop_text(value):
@@ -41,6 +41,18 @@ def drop_chance(text):
         return float(m.group(1))
     m = re.search(r"(\d+)\s*/\s*(\d+)", text)
     return round(int(m.group(1)) / int(m.group(2)) * 100, 2) if m else None
+
+
+def chance_values(text):
+    """All chances in a text, in percent: '16.66% (Expert: 25%)' -> {16.66, 25.0}."""
+    values = {float(v) for v in re.findall(r"(\d+(?:\.\d+)?)\s*%", text)}
+    values |= {round(int(a) / int(b) * 100, 2) for a, b in re.findall(r"(\d+)\s*/\s*(\d+)", text) if int(b)}
+    return values
+
+
+def amounts(text):
+    """The amounts in a text: '5–14 (Underground) · 3-10 (Cavern)' -> {'5–14', '3–10'}."""
+    return {re.sub(r"\s*[–-]\s*", "–", a) for a in re.findall(r"\d+(?:\s*[–-]\s*\d+)?", text or "")}
 
 
 def per_mode(text, modes, convert):
@@ -76,7 +88,7 @@ class Drops:
     """
 
     def __init__(self, drop_rows, npc_rows, items, include_kinds, containers=None, container_icons=None,
-                 conditions=None, default_variants=None):
+                 conditions=None, default_variants=None, groups=None, areas=None):
         self.include = set(include_kinds)
         self.conditions = conditions
         self.containers = containers or {}
@@ -86,6 +98,8 @@ class Drops:
             by_name[norm_name(item["name"])].append(item)
             by_page[norm_name(item["page"])].append(item)
         self.by_name, self.by_page = by_name, by_page
+        # layers of containers, by the note naming them ([drop_areas])
+        self.areas = {norm_name(k): v for k, v in (areas or {}).items()}
         # names of the rows without a variant note, per source ([drop_variants])
         self.default_variants = {norm_name(k): v for k, v in (default_variants or {}).items()}
         self.npcs = {norm_name(r["nameraw"]): r for r in npc_rows}
@@ -101,12 +115,19 @@ class Drops:
             self.add(row)
         if "npc" in self.include:
             self.add_banners(npc_rows)
+        self.groups = {}
+        self.group_report = Counter()
+        self.group_pages = Counter()  # pages with rows or groups that could not be matched
+        self.attach_groups(groups or {})
 
     def add_banners(self, npc_rows):
         """Enemy banners (every 50 kills) are not in the Drops table: the NPCs table names each
         enemy's banner (`bannername`). They become drops of the enemy with the rate "Banner", so
         biome, event and milestone follow from where the enemy spawns."""
         added, unmatched = 0, []
+        # a row named after the main NPC of another page (Raincoat Zombie's variants are named
+        # "Zombie") is its own page's NPC, not that other one
+        main_pages = {norm_name(r["_pageName"]) for r in npc_rows if norm_name(r["nameraw"]) == norm_name(r["_pageName"])}
         for npc in npc_rows:
             name = html.unescape(npc.get("bannername") or "").strip()
             if not name or not npc["nameraw"].strip():
@@ -118,7 +139,9 @@ class Drops:
             items = [i for i in items if not i.get("unobtainable")]  # e.g. unused cultist banners
             if not items:
                 continue
-            sid = self.source({"nameraw": npc["nameraw"], "_pageName": npc["_pageName"]}, "npc")
+            name_n, page_n = norm_name(npc["nameraw"]), norm_name(npc["_pageName"])
+            owner = npc["_pageName"] if name_n != page_n and name_n in main_pages and page_n in main_pages else npc["nameraw"]
+            sid = self.source({"nameraw": owner, "_pageName": npc["_pageName"]}, "npc")
             entry = {"source": sid, "quantity": "1", "rate": "Banner", "modes": list(DROP_MODES),
                      "quantities": {m: "1" for m in DROP_MODES}}
             for item in items:
@@ -279,6 +302,43 @@ class Drops:
             if variant:
                 entry["variants"] = [variant]
         entry = {k: v for k, v in entry.items() if v is not None}
+        entry["_pages"] = [norm_name(row["_pageName"])]  # for the drop groups, removed in drops_file
+        for entry in self.split_areas(entry):
+            self.add_entry(items, entry)
+
+    def split_areas(self, entry):
+        """A container row with chances or amounts per layer ("1/6 (16.67%) (Underground) · 2/15
+        (13.33%) (Cavern)") -> one drop per layer, the layer as its variant ([drop_areas]). Parts
+        without a layer apply to every layer of the row."""
+        if not self.areas or "Expert:" in entry.get("rate", "") + entry.get("quantity", ""):
+            return [entry]
+
+        def parts(text):
+            out = {}
+            for part in (text or "").split(" · "):
+                m = re.match(r"(.*?)\s*\(([^()]*)\)$", part.strip())
+                label = norm_name(m.group(2).strip('" ').split(",")[0]) if m else ""
+                area = self.areas.get(label)
+                out.setdefault(area, []).append(m.group(1) if area else part.strip())
+            return out
+
+        rates, quantities = parts(entry.get("rate")), parts(entry.get("quantity"))
+        layers = [a for a in dict.fromkeys(self.areas.values()) if a in rates or a in quantities]
+        if not layers:
+            return [entry]
+        split = []
+        for area in layers:
+            rate = " · ".join(rates.get(area) or rates.get(None) or [])
+            quantity = " · ".join(quantities.get(area) or quantities.get(None) or [])
+            if not rate and not quantity:
+                continue
+            e = {**entry, "rate": rate or None, "quantity": quantity or None, "variants": [area],
+                 "chance": per_mode(rate, entry["modes"], drop_chance),
+                 "quantities": per_mode(quantity, entry["modes"], lambda q: q.strip() or None)}
+            split.append({k: v for k, v in e.items() if v is not None})
+        return split
+
+    def add_entry(self, items, entry):
         for item in items:
             same = next((d for d in self.drops[item["key"]] if strip_ids(d) == strip_ids(entry)), None)
             if same is None:
@@ -293,11 +353,98 @@ class Drops:
                     same["variants"] += [v for v in entry["variants"] if v not in same["variants"]]
                 elif "variants" in same:
                     del same["variants"]  # also dropped without a variant
+                same["_pages"] = sorted(set(same.get("_pages", ())) | set(entry["_pages"]))
+
+    def attach_groups(self, page_groups):
+        """Drop groups (REQUIREMENTS B5): rows of the same page whose item is in a group of that page
+        get the group's id. An item in several groups of a page (Gold Chest per layer, the mimics,
+        normal / expert) takes the one that fits the row's game modes and whose items are all dropped
+        by the row's source (and variant)."""
+        layers = set(self.areas.values())
+
+        def fits_area(group, d):
+            # a group under a layer's heading (Gold Chest: "Underground") is for that layer's rows
+            areas = {s for s in group.get("sections", ()) if s in layers}
+            return not areas or not d.get("variants") or not set(d["variants"]) & layers or areas & set(d["variants"])
+
+        def fits_variant(a, b):
+            return not a.get("variants") or not b.get("variants") or set(a["variants"]) & set(b["variants"])
+
+        for page, groups in page_groups.items():
+            # the same group in several places (layers, normal + expert; its text may differ
+            # slightly: "three" / "3"): once, with the first text
+            merged = []
+            for g in groups:
+                same = next((m for m in merged if same_group(m, g)), None)
+                if same is None:
+                    merged.append(dict(g))
+                    continue
+                same["sections"] = list(dict.fromkeys(same.get("sections", []) + g.get("sections", [])))
+                if "modes" in same:
+                    same["modes"] = sorted(set(same["modes"]) | set(g["modes"])) if "modes" in g else None
+                    if same["modes"] is None:
+                        del same["modes"]
+            keyed = []
+            for n, g in enumerate(merged, 1):
+                keys = {i["key"] for name in g["items"] for i in self.resolve(name)}
+                keyed.append((f"{slug(page)}-{n}", g, keys))
+            used = set()
+            for key in {k for _, _, keys in keyed for k in keys}:
+                for d in self.drops.get(key, ()):
+                    if page not in d.get("_pages", ()):
+                        continue
+                    # per game mode: a row can be for all modes while the wiki lists the group of
+                    # the treasure bag apart (Angry Bones: Bone is only in the normal mode's group)
+                    per_mode = {}
+                    for mode in d["modes"]:
+                        found = [(gid, g, keys) for gid, g, keys in keyed
+                                 if key in keys and mode in (g.get("modes") or DROP_MODES)
+                                 and fits_area(g, d)]
+                        # a row of another table of the page with the same item (Gold Chest: Torch
+                        # 10–20 on the surface, 15–29 in the group of the caverns)
+                        quantity = amounts((d.get("quantities") or {}).get(mode, ""))
+                        found = [(gid, g, keys) for gid, g, keys in found
+                                 if not quantity or all(
+                                     not amounts(a) or amounts(a) & quantity
+                                     for name, a in zip(g["items"], g["amounts"])
+                                     if key in {i["key"] for i in self.resolve(name)})]
+                        if len(found) > 1:
+                            found = [(gid, g, keys) for gid, g, keys in found
+                                     if all(any(o["source"] == d["source"] and fits_variant(o, d)
+                                                for o in self.drops.get(k, ())) for k in keys)]
+                        if len(found) > 1:
+                            # the same items with other chances (the Ogre's tiers): the one listing
+                            # the row's chance
+                            own = (d.get("chance") or {}).get(mode)
+                            found = [(gid, g, keys) for gid, g, keys in found
+                                     if own is not None and any(
+                                         own in chance_values(c) for name, c in zip(g["items"], g["chances"])
+                                         if c and key in {i["key"] for i in self.resolve(name)})] or found
+                        if len(found) == 1:
+                            per_mode[mode] = found[0][0]
+                        elif found:
+                            self.group_report["ambiguous rows"] += 1
+                            self.group_pages[page] += 1
+                    if per_mode:
+                        ids = set(per_mode.values())
+                        # one group for all its modes, else the group per mode
+                        d["group"] = ids.pop() if len(ids) == 1 and len(per_mode) == len(d["modes"]) else per_mode
+                        used.update(per_mode.values())
+            for gid, g, keys in keyed:
+                if gid not in used:
+                    self.group_report["groups without drop rows"] += 1
+                    self.group_pages[page] += 1
+                    continue
+                self.group_report["groups"] += 1
+                self.groups[gid] = group_record(g)
 
     def drops_file(self):
         for key in self.drops:
             self.drops[key].sort(key=lambda d: -max((d.get("chance") or {}).values(), default=0))
-        return {"sources": self.sources, "items": dict(self.drops)}
+            for d in self.drops[key]:
+                d.pop("_pages", None)
+        return {"sources": self.sources, "items": dict(self.drops), "groups": self.groups,
+                "areas": list(dict.fromkeys(self.areas.values()))}
 
     def bosses_file(self, stages, bosses, ignore_items):
         ignored = set()
@@ -342,6 +489,34 @@ class Drops:
         return {"stages": [stage(k, v) for k, v in stages.items()], "bosses": out,
                 # item keys that never count for a boss (generic drops like coins, potions)
                 "ignoreItems": sorted(ignored)}
+
+
+PICK = {"one": 1, "two": 2, "1": 1, "2": 2}
+
+
+def same_group(a, b):
+    """The same group listed twice: same items, amount and chance; texts may differ if the items'
+    chances are the same ("three" / "3"), else they are groups of other variants (the Ogre's tiers)."""
+    def chances(g):
+        return [re.sub(r"[@#]\w+", "", c).strip() for c in g.get("chances", ())]
+
+    return all(a.get(k) == b.get(k) for k in ("items", "amount", "chance")) and (
+        a.get("text") == b.get("text") or chances(a) == chances(b))
+
+
+def group_record(group):
+    """A group in drops.json: its wiki text or amount and chance, how many of its items are dropped
+    ("pick": "One of the following 8 items" -> 1; none: a condition like "Only in Corrupt worlds"),
+    and its number of rows (an item dropped with another counts once: Grenade Launcher + Rockets)."""
+    record = {k: group[k] for k in ("text", "amount", "chance") if k in group}
+    text = group.get("text", "").lower()
+    m = re.search(r"\b(one|two|\d+)\b[^.]*\bof the following|\bonly (one|1)\b", text)
+    if m:
+        record["pick"] = PICK.get(m.group(1) or m.group(2), 1)
+    elif not text:
+        record["pick"] = 1  # "1|1/12": one of these; "|": rows that exclude each other
+    record["size"] = group["size"]
+    return record
 
 
 def spawn_events(environment, conditions):

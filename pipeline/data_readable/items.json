@@ -16029,7 +16029,7 @@
     "tooltip": "Increases night vision",
     "conditions": [],
     "milestone": "start",
-    "milestoneVia": "Found in Chest"
+    "milestoneVia": "Found in Gold Chest"
   },
   {
     "key": "BattlePotion",
@@ -49343,7 +49343,7 @@
     "useTime": 18,
     "conditions": [],
     "milestone": "start",
-    "milestoneVia": "Dropped by Mimic"
+    "milestoneVia": "Found in Gold Chest"
   },
   {
     "key": "Flare",
@@ -88533,12 +88533,8 @@
     "events": [
       "rain"
     ],
-    "biomes": [
-      "forest-surface"
-    ],
-    "times": [
-      "night"
-    ],
+    "biomes": [],
+    "times": [],
     "platforms": [
       "desktop",
       "console",
@@ -88566,6 +88562,7 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Raincoat Zombie",
+    "eventOnly": true,
     "conditions": [],
     "milestone": "start",
     "milestoneVia": "Dropped by Raincoat Zombie"

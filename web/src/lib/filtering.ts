@@ -169,7 +169,8 @@ export function buildFilterGroups(data: GameData): FilterGroup[] {
         icon: data.items.find((i) => i.name === c.iconItem)?.icon,
       })),
     },
-    { key: 'vendor', label: 'Sold by', entries: data.vendors },
+    // the vendors' heads (their map icons) instead of the full body
+    { key: 'vendor', label: 'Sold by', entries: data.vendors.map((v) => ({ ...v, icon: v.head ?? v.icon })) },
     { key: 'container', label: 'Found in', entries: containers },
     { key: 'event', label: 'Events', entries: data.events },
     { key: 'biome', label: 'Biome', entries: data.biomes },

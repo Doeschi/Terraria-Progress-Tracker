@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { ArrowDown, ArrowUp, ChevronDown, ExternalLink, ListChecks, RefreshCw, Star } from 'lucide-react'
 import { useUi } from '@/ui'
 import { useActivePlaythrough, useActiveWorld, useStore } from '@/store'
@@ -6,7 +6,7 @@ import { cn } from '@/lib/utils'
 import { usePrefs } from '@/lib/prefs'
 import { confirm } from '@/lib/confirm'
 import { BESTIARY_GROUP_KEYS, bestiaryExists, buildBestiaryGroups, type BestiaryViewMode } from '@/lib/bestiary'
-import type { BestiaryEntry, GameData } from '@/lib/types'
+import type { BestiaryEntry, GameData, GroupEntry, Item } from '@/lib/types'
 import type { WorldBestiary } from '@/lib/world'
 import type { BestiaryView } from '@/hooks/useBestiaryView'
 import { Button } from '@/components/ui/button'
@@ -22,8 +22,10 @@ import {
 } from '@/components/ui/dropdown-menu'
 import { BestiaryFilterSidebar } from './FilterSidebar'
 import { TallyBar, TallyText, WikiIcon } from './common'
-import { ActiveFilterBar, MobileFiltersButton, SearchField } from './ListParts'
-import { formatDate, nameOf } from '@/lib/format'
+import { ActiveFilterBar, MobileFiltersButton, SearchField, SearchHint } from './ListParts'
+import { handleListKey, useActiveRow, usePublishRows } from '@/lib/listCursor'
+import { IconList, type IconEntry } from './table/cells'
+import { formatDate } from '@/lib/format'
 import { worldState } from '@/lib/bestiary'
 import { inDifficulty, seedOnly } from '@/lib/drops'
 import { NPC_REF, npcIndex } from '@/lib/npcs'
@@ -54,6 +56,7 @@ export function BestiaryList({ view }: { view: BestiaryView }) {
 function Toolbar({ view }: { view: BestiaryView }) {
   const search = useStore((s) => s.bestiarySearch)
   const setSearch = useStore((s) => s.setBestiarySearch)
+  const openDetail = useUi((s) => s.openDetail)
   const mode = useStore((s) => s.bestiaryView)
   const setView = useStore((s) => s.setBestiaryView)
   const world = useActiveWorld()
@@ -72,6 +75,7 @@ function Toolbar({ view }: { view: BestiaryView }) {
         <SearchField
           value={search}
           onChange={setSearch}
+          onKeyDown={(e) => handleListKey(e, search, openDetail)}
           placeholder="Search the bestiary…"
           label="Search the bestiary"
           shortcut="list"
@@ -79,6 +83,7 @@ function Toolbar({ view }: { view: BestiaryView }) {
         />
         <MobileFilters view={view} />
       </div>
+      <SearchHint search={search} />
       <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
         <div className="flex items-center gap-2">
           <span className="text-xs font-medium text-muted-foreground">Show</span>
@@ -193,7 +198,7 @@ function ActiveFilters() {
 
 // -------------------------------------------------------------------- table
 
-type SortId = 'n' | 'name' | 'type' | 'stars' | 'drops' | 'world' | 'changed'
+type SortId = 'n' | 'name' | 'type' | 'stars' | 'drops' | 'added' | 'world' | 'changed'
 
 /** Default column widths in px (the name column stays narrow: long names are rare) */
 const COLUMNS = {
@@ -203,11 +208,18 @@ const COLUMNS = {
   type: 120,
   where: 240,
   stars: 100,
-  drops: 80,
+  drops: 200,
+  added: 90,
   world: 140,
   changed: 160,
 } as const
 type ColumnId = keyof typeof COLUMNS
+/** the items an entry drops (highest chance first), and how many of them are obtained */
+interface DropSummary {
+  items: Item[]
+  total: number
+  obtained: number
+}
 const MIN_WIDTH = 40
 interface Sort {
   id: SortId
@@ -235,22 +247,30 @@ function BestiaryTable({ view }: { view: BestiaryView }) {
   const drops = useMemo(() => {
     const index = npcIndex(data)
     const checked = new Set(pt.checked)
-    const out = new Map<string, { total: number; obtained: number }>()
+    const out = new Map<string, DropSummary>()
     for (const e of data.bestiary.entries) {
-      const sources = [...(index.sourcesOfEntry.get(e.id) ?? [])]
       const bag = index.bagOfEntry.get(e.id)
-      if (bag) sources.push(bag)
-      const items = new Set(
-        sources.flatMap((s) =>
-          (index.dropsOfSource.get(s) ?? [])
-            .filter((d) => inDifficulty(d.drop, pt.difficulty) && !seedOnly(d.drop))
-            .map((d) => d.item.key),
-        ),
+      // each item once: the ones still missing first, rarer items (item rarity) before common ones
+      const list = [...(index.dropsOfEntry.get(e.id) ?? []), ...((bag && index.dropsOfSource.get(bag)) || [])].filter(
+        (d) => inDifficulty(d.drop, pt.difficulty) && !seedOnly(d.drop),
       )
-      if (items.size) out.set(e.id, { total: items.size, obtained: [...items].filter((k) => checked.has(k)).length })
+      const items = [...new Map(list.map((d) => [d.item.key, d.item])).values()].sort(
+        (a, b) =>
+          Number(checked.has(a.key)) - Number(checked.has(b.key)) ||
+          (b.rarity ?? -1) - (a.rarity ?? -1) ||
+          a.name.localeCompare(b.name),
+      )
+      if (items.length)
+        out.set(e.id, {
+          items,
+          total: items.length,
+          obtained: items.filter((i) => checked.has(i.key)).length,
+        })
     }
     return out
   }, [data, pt.checked, pt.difficulty])
+
+  const versionRank = useMemo(() => new Map(data.versions.map((v, n) => [v.id, n])), [data])
 
   const rows = useMemo(() => {
     if (!sort) return view.visible
@@ -266,6 +286,8 @@ function BestiaryTable({ view }: { view: BestiaryView }) {
           return e.stars ?? 0
         case 'drops':
           return drops.get(e.id)?.total ?? 0
+        case 'added':
+          return versionRank.get(e.version) ?? -1
         case 'world':
           return worldCell(world?.bestiary, e.id).value
         case 'changed':
@@ -278,7 +300,14 @@ function BestiaryTable({ view }: { view: BestiaryView }) {
       const kb = key(b)
       return (ka < kb ? -1 : ka > kb ? 1 : 0) * dir || a.n - b.n
     })
-  }, [view.visible, sort, typeName, world, pt.bestiaryChangedAt, drops])
+  }, [view.visible, sort, typeName, world, pt.bestiaryChangedAt, drops, versionRank])
+  // keyboard selection from the search field (↑/↓, Enter opens the card)
+  usePublishRows(useMemo(() => rows.map((e) => ({ ref: NPC_REF + e.id, name: e.name })), [rows]))
+  const activeRef = useActiveRow(useStore((s) => s.bestiarySearch)).row?.ref
+  useEffect(() => {
+    if (activeRef)
+      document.querySelector(`tr[data-ref="${CSS.escape(activeRef)}"]`)?.scrollIntoView({ block: 'nearest' })
+  }, [activeRef])
 
   // column widths, set by dragging a header's right edge (remembered in the browser)
   const savedSizes = usePrefs((s) => s.bestiaryColumnSizes)
@@ -293,6 +322,7 @@ function BestiaryTable({ view }: { view: BestiaryView }) {
     'where',
     'stars',
     'drops',
+    'added',
     ...(world ? ['world' as const] : []),
     'changed',
   ]
@@ -371,6 +401,7 @@ function BestiaryTable({ view }: { view: BestiaryView }) {
             {header('where', 'Where / when')}
             {header('stars', 'Rarity', 'stars')}
             {header('drops', 'Drops', 'drops')}
+            {header('added', 'Added in', 'added')}
             {world && header('world', 'In the world', 'world')}
             {header('changed', 'Last changed', 'changed')}
           </tr>
@@ -387,6 +418,7 @@ function BestiaryTable({ view }: { view: BestiaryView }) {
               changed={formatDate(pt.bestiaryChangedAt[e.id])}
               drops={drops.get(e.id)}
               selected={selected === NPC_REF + e.id}
+              active={activeRef === NPC_REF + e.id}
               onOpen={() => openDetail(NPC_REF + e.id)}
               onChange={(v) => setBestiary([e.id], v)}
             />
@@ -406,6 +438,7 @@ function Row({
   changed,
   drops,
   selected,
+  active,
   onOpen,
   onChange,
 }: {
@@ -415,28 +448,34 @@ function Row({
   unlocked: boolean
   world: string | null
   changed: string | undefined
-  /** different items it drops, and how many of them are obtained */
-  drops?: { total: number; obtained: number }
+  /** the different items it drops, and how many of them are obtained */
+  drops?: DropSummary
   /** shown in the detail panel */
   selected: boolean
+  /** highlighted by the search (Enter opens it) */
+  active: boolean
   onOpen: () => void
   onChange: (value: boolean) => void
 }) {
-  const where = [
-    e.biomes.map((b) => nameOf(data.biomes, b)).join(', '),
-    e.times.map((t) => nameOf(data.times, t).toLowerCase()).join(', '),
-    e.events.map((ev) => nameOf(data.events, ev)).join(', '),
-  ]
-    .filter(Boolean)
-    .join(' · ')
+  // where and when it spawns as icons (the names on hover), like the items table
+  const icons = (list: GroupEntry[], ids: string[]): IconEntry[] =>
+    ids.map((id) => {
+      const entry = list.find((x) => x.id === id)
+      return { key: id, icon: entry?.icon, name: entry?.name ?? id }
+    })
+  const where = [...icons(data.biomes, e.biomes), ...icons(data.times, e.times), ...icons(data.events, e.events)]
+  const type = data.bestiary.types.find((t) => t.id === e.type)
+  const version = data.versions.find((v) => v.id === e.version)
   return (
     <tr
       className={cn(
         'cursor-pointer border-b border-border/60 hover:bg-muted/40 [&>td]:overflow-hidden [&>td]:text-ellipsis',
         unlocked && 'bg-primary/[0.04]',
         selected && 'bg-primary/15 hover:bg-primary/20',
+        active && 'outline-2 -outline-offset-2 outline-primary',
       )}
       aria-selected={selected}
+      data-ref={NPC_REF + e.id}
       onClick={(ev) => {
         // the checkbox and the wiki link do their own thing
         if (!(ev.target as HTMLElement).closest('button, a, [role=checkbox]')) onOpen()
@@ -463,9 +502,14 @@ function Row({
           </a>
         </div>
       </td>
-      <td className="px-2 py-1 whitespace-nowrap">{typeName}</td>
-      <td className="truncate px-2 py-1" title={where}>
-        {where}
+      <td className="px-2 py-1 whitespace-nowrap">
+        <span className="flex items-center gap-1.5">
+          {type?.icon && <WikiIcon src={type.icon} alt="" size={18} />}
+          <span className="min-w-0 truncate">{typeName}</span>
+        </span>
+      </td>
+      <td className="px-2 py-1">
+        <IconList entries={where} max={6} />
       </td>
       <td className="px-2 py-1 whitespace-nowrap" title={e.stars ? `${e.stars} of 5 stars` : undefined}>
         {e.stars ? (
@@ -481,10 +525,21 @@ function Row({
         title={drops ? `${drops.obtained} of ${drops.total} items it drops are obtained` : undefined}
       >
         {drops ? (
-          <span className={cn(drops.obtained === drops.total && 'text-emerald-600 dark:text-emerald-400')}>
-            {drops.obtained} / {drops.total}
+          <span className="flex items-center gap-2">
+            <span
+              className={cn('shrink-0', drops.obtained === drops.total && 'text-emerald-600 dark:text-emerald-400')}
+            >
+              {drops.obtained} / {drops.total}
+            </span>
+            <IconList entries={drops.items.map((i) => ({ key: i.key, icon: i.icon, name: i.name }))} max={4} />
           </span>
         ) : null}
+      </td>
+      <td className="px-2 py-1 whitespace-nowrap" title={version?.name}>
+        <span className="flex items-center gap-1.5">
+          {version?.icon && <WikiIcon src={version.icon} alt="" size={18} />}
+          <span className="tabular-nums">{e.version}</span>
+        </span>
       </td>
       {world !== null && <td className="px-2 py-1 whitespace-nowrap tabular-nums">{world}</td>}
       <td className="px-2 py-1 whitespace-nowrap tabular-nums">{changed ?? ''}</td>

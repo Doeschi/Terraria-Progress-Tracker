@@ -83,6 +83,8 @@ export interface GroupEntry {
   id: string
   name: string
   icon?: string
+  /** vendors: their head (map icon), for the filters and the table; `icon` is the full body */
+  head?: string
   count: number
   parent?: string
   /** "Other …" subcategory: the parent's items that fit no other subcategory */
@@ -162,6 +164,23 @@ export interface Drop {
   /** the variants of the source it is for, as the wiki names them, e.g. "Pre-Hardmode variant",
    * "Dark Lamia" (missing: every variant) */
   variants?: string[]
+  /** the drop group it is in (DropGroup id), or the group per game mode when the wiki lists the
+   * treasure bag's group apart (B5) */
+  group?: string | Partial<Record<DropMode, string>>
+}
+
+/** Items of a source that drop together (B5): "One of the following 8 items will always be
+ * dropped", "1/12: one of these 14", or a condition ("Only in Corrupt worlds"). */
+export interface DropGroup {
+  /** the wiki's text */
+  text?: string
+  /** amount of the item that is dropped, and the chance of the group */
+  amount?: string
+  chance?: string
+  /** how many of its items are dropped (missing: a condition, all of them can drop) */
+  pick?: number
+  /** number of items */
+  size: number
 }
 
 /** An item in a vendor's shop and when it is sold. */
@@ -332,6 +351,11 @@ export interface GameData {
   dropSources: Map<string, DropSource>
   /** item key -> drops, highest chance first */
   drops: Map<string, Drop[]>
+  /** drop groups by id */
+  dropGroups: Map<string, DropGroup>
+  /** layers of containers with other items per layer (Gold Chest: Underground, Cavern, …), in order;
+   * their drops name them as variants */
+  dropAreas: string[]
   bossStages: BossStage[]
   bosses: Boss[]
   /** generic drops (coins, healing potions) that never count for a boss */

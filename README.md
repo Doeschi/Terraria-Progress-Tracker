@@ -45,7 +45,7 @@ the unchanged downloads in [`pipeline/raw/`](pipeline/raw).
 | File | Contents |
 |------|----------|
 | `items.json` | All 6,185 items (key = internal name; 45 of them only known from recipes, see below; pickups like Heart and Star are left out) with id, icons, wiki page, stats, rarity, prices, platforms, and – derived – categories and subcategories, how they are obtained, vendors, events, biomes, time of day, the game update that added them and whether they are Expert/Master-only |
-| `drops.json` | 488 drop sources (enemies, bosses, treasure bags, chests, crates, grab bags, shaking trees) and 3,688 drops (incl. 305 enemy banners from the NPCs table) with chance and quantity **per game mode** (Classic / Expert / Master) |
+| `drops.json` | 488 drop sources (enemies, bosses, treasure bags, chests, crates, grab bags, shaking trees) and 3,688 drops (incl. 305 enemy banners from the NPCs table) with chance and quantity **per game mode** (Classic / Expert / Master), and 313 drop groups ("one of the following 8 items") |
 | `shops.json` | 817 shop rows of 24 vendors (from the vendor pages): per item the vendor, the wiki's condition text and the parsed conditions, events, biomes and moon phases |
 | `conditions.json` | Conditions of shop rows and drops: time of day, moon phases, after a boss, wind, Hardmode, world seeds – with item counts |
 | `milestones.json` | Progression milestones (World creation, King Slime, … Moon Lord); `items.json` gives each item its earliest milestone and the reason (e.g. "Crafted – needs Chlorophyte Ore") |
@@ -105,6 +105,7 @@ change.
 | "MediaWiki:Common.css" | the platform icons (embedded as images in the wiki's style sheet) |
 | the 24 vendor pages (Merchant, …; the list is `[vendors]` in `mapping.toml`) | the shops: `{{shop row\|item\|condition}}` with the condition text ("In Hardmode, during night, …") and moon phases |
 | "Dye Trader", section "Rewards" | the 33 Strange Plant rewards and the boss each needs |
+| the ~112 pages with drop groups (found by the wiki search `insource:"group:start"`) | which drops belong together: "One of the following 8 items will always be dropped", "1/12: one of these 14" (`group` in `drops.json`) |
 
 Also scraped: the rendered HTML of "NPC IDs" (internal NPC names and ids – the keys of the
 bestiary in world files), the image lists of "Rarity", "Coins" and "Difficulty" (their icons) and

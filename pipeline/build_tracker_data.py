@@ -6,7 +6,7 @@ access - everything comes from the raw/ folder and mapping.toml.
 
 Inputs:
   raw/items.csv, exclusive.csv, history.csv, drops.csv, npcs.csv, recipes.csv,
-  page_images.json, page_wikitext.json (incl. MediaWiki:Common.css), page_html.json,
+  page_images.json, page_wikitext.json (incl. MediaWiki:Common.css), page_html.json, drop_groups.json,
   page_categories.json (Hardmode-only NPCs), schema.json   (from step 1)
   raw/image_redirects.json   image files that are redirects (optional, from check_icons.py)
   mapping.toml   how raw type/listcat/tag values become categories,
@@ -79,6 +79,7 @@ from trackerdata.items import (
     versions_file,
 )
 from trackerdata.drops import derive_events, derive_spawns, Drops
+from trackerdata.groups import read_groups
 from trackerdata.recipes import missing_items_file, recipe_only_items, recipes_file
 from trackerdata.bestiary import bestiary_file
 from trackerdata.milestones import Milestones
@@ -155,8 +156,12 @@ def build(raw_dir, mapping_path, out_dir, readable_dir=None):
     items.sort(key=lambda i: (i["id"], i["name"]))
     make_keys_unique(items)
     conditions = Conditions(mapping, items)
+    # drop groups ("one of the following items") from the page sources (REQUIREMENTS B5)
+    groups_path = raw_dir / "drop_groups.json"
+    groups = read_groups(json.loads(groups_path.read_text(encoding="utf-8"))) if groups_path.exists() else {}
     drops = Drops(drop_rows, npc_rows, items, mapping.drop_kinds,
-                  mapping.containers, mapping.container_icons, conditions, mapping.drop_variants)
+                  mapping.containers, mapping.container_icons, conditions, mapping.drop_variants, groups,
+                  mapping.drop_areas)
 
     for pattern, _ in mapping.manual:
         if not mapping.manual_used[pattern]:
@@ -178,6 +183,9 @@ def build(raw_dir, mapping_path, out_dir, readable_dir=None):
         f"from {len(drops.sources)} sources; skipped kinds: {dict(drops.skipped)}")
     if drops.unmatched:
         log(f"  drop rows naming no known item: {dict(drops.unmatched.most_common(15))}")
+    log(f"  drop groups of {len(groups)} pages: {dict(drops.group_report)}")
+    if drops.group_pages:
+        log(f"  drop groups not matched (several fit a row, or no drop rows) on: {dict(drops.group_pages)}")
     derive_events(items, drops, mapping.sections["events"], mapping.bosses)
     derive_spawns(items, drops, mapping)
 

@@ -29,6 +29,7 @@ import { Button } from '@/components/ui/button'
 import { Checkbox } from '@/components/ui/checkbox'
 import { DifficultyIcon, WikiIcon } from '../common'
 import { formatDate } from '@/lib/format'
+import { useActiveRow, usePublishRows } from '@/lib/listCursor'
 import { type ItemColumn, type TrackingState } from './columns'
 import { useColumnVisibility, useItemColumns } from './useColumns'
 import { ordered } from '@/lib/layout'
@@ -229,6 +230,16 @@ export function ItemTable({
   const width = headers.reduce((n, h) => n + h.getSize(), 0)
   const selectedKey = useUi((s) => s.detailKey)
   const openDetail = useUi((s) => s.openDetail)
+  // keyboard selection from the search field (↑/↓, Enter opens the card): the highlighted row is
+  // scrolled into view
+  usePublishRows(useMemo(() => rows.map((r) => ({ ref: r.id, name: r.original.name })), [rows]))
+  const active = useActiveRow(useStore((s) => s.search))
+  const activeKey = active.row?.ref
+  useEffect(() => {
+    // the row's own index (NPC suggestions come before the rows)
+    const index = activeKey ? rows.findIndex((r) => r.id === activeKey) : -1
+    if (index >= 0) virtualizer.scrollToIndex(index, { align: 'auto' })
+  }, [activeKey, rows, virtualizer])
   const worldAttached = !!pt?.world
   const rowState = useMemo(
     () => ({
@@ -317,6 +328,7 @@ export function ItemTable({
               // weapon easter egg: its big icon sticks out of the row, over the others
               const bigIcon = isBigWeapon(row.id, isChecked && !isIgnored, eggs)
               const isSelected = selectedKey === row.id
+              const isActive = activeKey === row.id
               const milestone = row.original.milestone
               const notYet =
                 dimUnavailable &&
@@ -329,7 +341,12 @@ export function ItemTable({
                 <tr
                   key={row.id}
                   style={{ height: rowHeight }}
-                  className={cn('group cursor-pointer', isIgnored && 'opacity-60', notYet && 'opacity-40')}
+                  className={cn(
+                    'group cursor-pointer',
+                    isIgnored && 'opacity-60',
+                    notYet && 'opacity-40',
+                    isActive && 'outline-2 -outline-offset-2 outline-primary',
+                  )}
                   title={notYet ? `Not available yet in ${progress.worldName}` : undefined}
                   aria-selected={isSelected}
                   onClick={(e) => {

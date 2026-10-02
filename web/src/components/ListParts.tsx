@@ -7,6 +7,7 @@ import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Dialog, DialogContent, DialogTitle, DialogTrigger } from '@/components/ui/dialog'
 import { useTopLeftKeyLabel, type SearchTarget } from '@/hooks/useSearchShortcuts'
+import { useActiveRow } from '@/lib/listCursor'
 
 // Parts shared by the item list and the bestiary list (and the filter sidebar).
 
@@ -115,6 +116,24 @@ export function SearchField({
 }
 
 /** "Filters" button for narrow screens: the filter sidebar in a dialog. */
+/** Under the item / bestiary search: which row Enter opens, and ↑/↓ through the matches. */
+export function SearchHint({ search }: { search: string }) {
+  const { row, index, count } = useActiveRow(search)
+  if (!row) return null
+  return (
+    <p className="-mt-1 px-1 text-[11px] text-muted-foreground">
+      <kbd className="rounded border bg-muted px-1 font-sans">↵</kbd> open{' '}
+      <span className="font-medium text-foreground">{row.name}</span>
+      {count > 1 && (
+        <>
+          {' '}
+          · <kbd className="rounded border bg-muted px-1 font-sans">↑↓</kbd> {index + 1} of {count}
+        </>
+      )}
+    </p>
+  )
+}
+
 export function MobileFiltersButton({ active, children }: { active: number; children: React.ReactNode }) {
   return (
     <Dialog>

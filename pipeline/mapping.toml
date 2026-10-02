@@ -1905,6 +1905,16 @@ after-all-mechs = "all-mechs"
 "Mimic" = "Hardmode variant"
 "Ice Mimic" = "Hardmode variant"
 
+# Containers with other items per layer (Gold Chest, Frozen Chest): the Drops table has one row per
+# item with the chance per layer in notes ("1/6 (Underground) · 2/15 (Cavern) · 19/150 ("lava
+# layer")"). Rows with these notes are split into one drop per layer (shown as variants; the
+# drop groups under a page heading of that name belong to it). Note -> layer, in display order.
+[drop_areas]
+"Underground" = "Underground"
+"Cavern" = "Cavern"
+"lava layer" = "Cavern (lava layer)"
+"within bottom 250 tiles of world" = "Cavern"
+
 # Enemies that appear later than their biome says (drop source names). Enemies in the wiki's
 # category "Hardmode-only NPCs" (raw/page_categories.json, by name or wiki page) count from the
 # Wall of Flesh; entries here override that, in both directions.
