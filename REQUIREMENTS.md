@@ -456,6 +456,22 @@ GitHub Actions.
 - **B4** Nested filter groups work generally (a parent and its own children are never selected
   together), so further grouped sources can be added the same way.
 
+- **B5** Drop groups (planned): many bosses, chests, crates and grab bags drop one item of a group
+  ("One of the following 8 items will always be dropped" – Plantera's weapons; Orca: Diving
+  Helmet 5 % or Shark Fin 95 %), or a group with a chance of its own ("1/12, then one of these
+  14" – the voice accessories in a Gold Chest, shown today as 1/168 each). The Cargo Drops table
+  does not have this; the page sources do: `|:group:start|<text>` … `|:group:end` (each row with
+  its chance) or `|:group:start|<amount>|<chance>` … (rows without a chance) in the infobox drop
+  lists. About 112 pages (wiki search `insource:"group:start"`; the treasure bags are on their
+  boss's page). Plan:
+  - step 1 downloads the source of these pages (found by the search) into `raw/` like the vendor
+    pages
+  - step 2 reads the groups and attaches them to the drop rows (same source page and item):
+    `group` = its text / amount / chance; pages the parser does not understand are reported
+  - NPC cards and "Contains" show the rows of a group together in a framed block ("One of these
+    8 – always", "1/12: one of these 14"); "Dropped by" in the item card notes "one of 8"
+  - expected drops and "at least once" stay as they are (each item's own chance is correct)
+
 ## EV – Events
 
 - **EV1** The "Events" filter group lists game events as a flat list that can be sorted (default
