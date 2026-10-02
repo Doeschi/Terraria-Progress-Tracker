@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
+import { useVirtualizer } from '@tanstack/react-virtual'
 import { ArrowDown, ArrowUp, ChevronDown, ExternalLink, ListChecks, RefreshCw, Star } from 'lucide-react'
 import { useUi } from '@/ui'
 import { useActivePlaythrough, useActiveWorld, useStore } from '@/store'
@@ -221,6 +222,8 @@ const COLUMNS = {
   changed: 160,
 } as const
 type ColumnId = keyof typeof COLUMNS
+/** height of a row: the 32 px icon, its padding and the border */
+const ROW_HEIGHT = 41
 /** the items an entry drops (highest chance first), and how many of them are obtained */
 interface DropSummary {
   items: Item[]
@@ -312,10 +315,21 @@ function BestiaryTable({ view }: { view: BestiaryView }) {
   // keyboard selection from the search field (↑/↓, Enter opens the card)
   usePublishRows(useMemo(() => rows.map((e) => ({ ref: NPC_REF + e.id, name: e.name })), [rows]))
   const activeRef = useActiveRow(useStore((s) => s.bestiarySearch)).row?.ref
+  // only the rows in view are rendered (546 rows with their icons made switching to the bestiary
+  // and every search keystroke slow), like the item table
+  const virtualizer = useVirtualizer({
+    count: rows.length,
+    getScrollElement: () => scrollRef.current,
+    estimateSize: () => ROW_HEIGHT,
+    overscan: 12,
+  })
+  const virtualRows = virtualizer.getVirtualItems()
+  const padTop = virtualRows[0]?.start ?? 0
+  const padBottom = virtualizer.getTotalSize() - (virtualRows.at(-1)?.end ?? 0)
   useEffect(() => {
-    if (activeRef)
-      document.querySelector(`tr[data-ref="${CSS.escape(activeRef)}"]`)?.scrollIntoView({ block: 'nearest' })
-  }, [activeRef])
+    const index = activeRef ? rows.findIndex((e) => NPC_REF + e.id === activeRef) : -1
+    if (index >= 0) virtualizer.scrollToIndex(index, { align: 'auto' })
+  }, [activeRef, rows, virtualizer])
 
   // column widths, set by dragging a header's right edge (remembered in the browser)
   const savedSizes = usePrefs((s) => s.bestiaryColumnSizes)
@@ -423,27 +437,40 @@ function BestiaryTable({ view }: { view: BestiaryView }) {
           </tr>
         </thead>
         <tbody>
-          {rows.map((e) => (
-            <Row
-              key={e.id}
-              data={data}
-              entry={e}
-              typeName={typeName.get(e.type) ?? e.type}
-              unlocked={view.unlocked.has(e.id)}
-              world={world ? worldCell(world.bestiary, e.id).text : null}
-              changed={formatDate(pt.bestiaryChangedAt[e.id])}
-              drops={drops.get(e.id)}
-              selected={selected === NPC_REF + e.id}
-              active={activeRef === NPC_REF + e.id}
-              onOpen={() => {
-                openDetail(NPC_REF + e.id)
-                // the table takes the keyboard: ↑/↓ from this row, Enter opens (S6)
-                tableRowClicked(NPC_REF + e.id)
-                scrollRef.current?.focus({ preventScroll: true })
-              }}
-              onChange={(v) => setBestiary([e.id], v)}
-            />
-          ))}
+          {padTop > 0 && (
+            <tr aria-hidden style={{ height: padTop }}>
+              <td colSpan={shown.length} />
+            </tr>
+          )}
+          {virtualRows.map((vr) => {
+            const e = rows[vr.index]
+            return (
+              <Row
+                key={e.id}
+                data={data}
+                entry={e}
+                typeName={typeName.get(e.type) ?? e.type}
+                unlocked={view.unlocked.has(e.id)}
+                world={world ? worldCell(world.bestiary, e.id).text : null}
+                changed={formatDate(pt.bestiaryChangedAt[e.id])}
+                drops={drops.get(e.id)}
+                selected={selected === NPC_REF + e.id}
+                active={activeRef === NPC_REF + e.id}
+                onOpen={() => {
+                  openDetail(NPC_REF + e.id)
+                  // the table takes the keyboard: ↑/↓ from this row, Enter opens (S6)
+                  tableRowClicked(NPC_REF + e.id)
+                  scrollRef.current?.focus({ preventScroll: true })
+                }}
+                onChange={(v) => setBestiary([e.id], v)}
+              />
+            )
+          })}
+          {padBottom > 0 && (
+            <tr aria-hidden style={{ height: padBottom }}>
+              <td colSpan={shown.length} />
+            </tr>
+          )}
         </tbody>
       </table>
     </div>
@@ -497,6 +524,7 @@ function Row({
       )}
       aria-selected={selected}
       data-ref={NPC_REF + e.id}
+      style={{ height: ROW_HEIGHT }}
       onClick={(ev) => {
         // the checkbox and the wiki link do their own thing
         if (!(ev.target as HTMLElement).closest('button, a, [role=checkbox]')) onOpen()
