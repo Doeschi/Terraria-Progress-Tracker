@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import { ChevronDown, CircleAlert, CloudCheck, FilePlus, FolderOpen, LogOut, Save, SaveAll, Upload } from 'lucide-react'
+import { ChevronDown, CircleAlert, FileCheck, FilePlus, FolderOpen, LogOut, Save, SaveAll, Upload } from 'lucide-react'
 import { useStore } from '@/store'
 import { cn } from '@/lib/utils'
 import { canSaveInPlace, fileLabel, requestWriteAccess } from '@/lib/files'
@@ -90,13 +90,13 @@ export function FileMenu() {
           </DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>
-      <AutosaveStatus />
     </div>
   )
 }
 
 /** Autosave state next to the file: last save, or why it is not saving. */
-function AutosaveStatus() {
+/** The autosave state, small, next to the "File" label: when it last saved, or why it does not. */
+export function AutosaveStatus() {
   const enabled = usePrefs((s) => s.autosave) && canSaveInPlace
   const handle = useStore((s) => s.handle)
   const status = useStore((s) => s.autosaveStatus)
@@ -106,7 +106,7 @@ function AutosaveStatus() {
 
   if (!handle)
     return (
-      <span className="text-xs text-muted-foreground" title="Autosave needs a file on disk: save once with Ctrl+S">
+      <span className="text-[10px] text-muted-foreground" title="Autosave needs a file on disk: save once with Ctrl+S">
         Autosave: save once first
       </span>
     )
@@ -119,7 +119,7 @@ function AutosaveStatus() {
       <button
         onClick={() => void resume()}
         className={cn(
-          'flex items-center gap-1 rounded px-1 text-xs hover:bg-muted',
+          'flex items-center gap-1 rounded px-1 text-[10px] hover:bg-muted',
           status === 'error' ? 'text-destructive' : 'text-amber-600 dark:text-amber-400',
         )}
         title={
@@ -128,17 +128,18 @@ function AutosaveStatus() {
             : 'The browser needs your permission to write the file again – click to allow it'
         }
       >
-        <CircleAlert className="size-3.5" />
+        <CircleAlert className="size-3" />
         {status === 'error' ? 'Autosave failed' : 'Autosave paused'}
       </button>
     )
   }
   return (
     <span
-      className="flex items-center gap-1 text-xs text-muted-foreground"
+      className="flex items-center gap-1 text-[10px] text-muted-foreground"
       title={dirty ? 'Unsaved changes are saved within 2 minutes' : 'All changes are saved'}
     >
-      <CloudCheck className="size-3.5" />
+      {/* a file on this computer, nothing is uploaded */}
+      <FileCheck className="size-3" />
       {lastSavedAt ? `Saved ${formatTime(lastSavedAt)}` : 'Autosave on'}
     </span>
   )

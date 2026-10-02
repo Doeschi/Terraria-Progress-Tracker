@@ -16,16 +16,8 @@ export type ProgressionMode = 'upTo' | 'exactly'
 export interface Layout {
   /** compact: lower table rows, smaller icons, tighter filter options */
   density: 'comfortable' | 'compact'
-  /** bestiary progress bar in the top bar */
-  showBestiaryProgress: boolean
-  /** platform, difficulty and game version also as separate dropdowns (else icons in the playthrough button) */
-  playthroughFields: boolean
   /** column presets shown as buttons next to the views dropdown */
   favoriteViews: string[]
-  /** "Progress of filtered items" line above the table */
-  showFilteredProgress: boolean
-  /** filter bar also without active filters ("No filters active") */
-  filterBarAlways: boolean
   /** filter group order per sidebar ("" items, "bestiary:" bestiary); missing groups keep their place */
   groupOrder: Record<string, string[]>
   /** filter groups (and the Completed / Hidden sections) that are closed / open: "<prefix><key>" -> open */
@@ -48,11 +40,7 @@ export interface Layout {
 
 export const DEFAULT_LAYOUT: Layout = {
   density: 'compact',
-  showBestiaryProgress: true,
-  playthroughFields: false,
   favoriteViews: ['overview', 'sources', 'progression'],
-  showFilteredProgress: true,
-  filterBarAlways: true,
   groupOrder: {},
   optionBars: true,
   celebrate: true,
@@ -72,16 +60,7 @@ function readLayout(v: unknown): Layout {
   const o = v as Record<string, unknown>
   const strings = (x: unknown) => (Array.isArray(x) ? x.filter((s): s is string => typeof s === 'string') : undefined)
   if (o.density === 'comfortable' || o.density === 'compact') out.density = o.density
-  for (const k of [
-    'showBestiaryProgress',
-    'playthroughFields',
-    'showFilteredProgress',
-    'filterBarAlways',
-    'optionBars',
-    'celebrate',
-    'easterEggs',
-    'dimUnavailable',
-  ] as const)
+  for (const k of ['optionBars', 'celebrate', 'easterEggs', 'dimUnavailable'] as const)
     if (typeof o[k] === 'boolean') out[k] = o[k] as boolean
   for (const k of ['sidebarWidth', 'detailWidth'] as const)
     if (typeof o[k] === 'number' && Number.isFinite(o[k])) out[k] = o[k] as number

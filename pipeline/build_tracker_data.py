@@ -38,6 +38,9 @@ same files go to --readable (default data_readable/ next to this script):
   recipes.json        crafting recipes (result, stations, ingredients), crafting
                       stations with the items that provide them, "Any ..."
                       ingredient groups, shimmer transmutations
+  meta.json           data version (download date), newest game version, and the change log of
+                      earlier data updates (kept; compare_data.py adds to it)
+  sets.json           armor and vanity sets (the items of a wiki page "... armor" / "... set")
   extractinator.json  what the Extractinator and the Chlorophyte Extractinator give (per input,
                       chance, amount) and always convert (Copper Ore -> Tin Ore)
   missing_items.json  items the Items table lacks but the Recipes table names (id,
@@ -55,6 +58,8 @@ Wiki content is CC BY-NC-SA 4.0 - credit the Terraria Wiki if you publish this d
 import argparse
 import html
 import json
+import sys
+import time
 from collections import Counter, defaultdict
 from pathlib import Path
 
@@ -66,6 +71,8 @@ from trackerdata.common import (
     log,
     norm_name,
     read_csv,
+    WARNINGS,
+    warn,
 )
 from trackerdata.mapping import Mapping
 from trackerdata.items import (
@@ -83,6 +90,7 @@ from trackerdata.items import (
 from trackerdata.drops import derive_events, derive_spawns, Drops
 from trackerdata.groups import read_groups
 from trackerdata.extractinator import extractinator_file
+from trackerdata.sets import find_sets
 from trackerdata.recipes import missing_items_file, recipe_only_items, recipes_file
 from trackerdata.bestiary import bestiary_file
 from trackerdata.milestones import Milestones
@@ -99,7 +107,26 @@ from trackerdata.icons import icon_files, platform_icons
 HERE = Path(__file__).resolve().parent
 
 
-def build(raw_dir, mapping_path, out_dir, readable_dir=None):
+def sanity_min(conf, name):
+    """Minimum of a count from [sanity]; "extractinator_results.<machine>" uses
+    "extractinator_results" (per machine)."""
+    return conf.get(name, conf.get(name.split(".")[0]))
+
+
+def check_sanity(counts, conf):
+    """[(name, count, minimum)] of the counts below their minimum (REQUIREMENTS DU2)."""
+    failed = []
+    for name, count in counts.items():
+        minimum = sanity_min(conf, name)
+        if minimum is None:
+            warn(f"[sanity] has no minimum for '{name}' ({count})")
+        elif count < minimum:
+            failed.append((name, count, minimum))
+    log("  sanity: " + ", ".join(f"{k} {v}" for k, v in counts.items()))
+    return failed
+
+
+def build(raw_dir, mapping_path, out_dir, readable_dir=None, no_sanity=False):
     mapping = Mapping(mapping_path)
     schema = json.loads((raw_dir / "schema.json").read_text(encoding="utf-8"))
     # image files that are redirects on the wiki -> link their targets (see check_icons.py)
@@ -151,6 +178,11 @@ def build(raw_dir, mapping_path, out_dir, readable_dir=None):
                 extra[(item["id"], norm_name(item["name"]))].add("drop:npc")
             if norm_name(source["name"]) in boss_sources:
                 extra[(item["id"], norm_name(item["name"]))].add("drop:boss")
+    # armor and vanity sets (D18c): "set:armor" / "set:vanity" for the category "Sets"
+    by_key = {i["key"]: i for i in items}
+    for s in find_sets(items, mapping.sets):
+        for key in s["items"]:
+            extra[(by_key[key]["id"], norm_name(by_key[key]["name"]))].add(f"set:{s['kind']}")
     items, unmapped = build_items(extra)
     # items the Items table lacks (e.g. 1.4.5 doors), from the Recipes table
     recipe_rows = read_csv(raw_dir / "recipes.csv")
@@ -175,20 +207,19 @@ def build(raw_dir, mapping_path, out_dir, readable_dir=None):
         f"{sum(1 for i in items if 'version' in i)} with version, "
         f"{sum(1 for i in items if 'minDifficulty' in i)} Expert/Master-only")
     if no_cat:
-        log(f"  without category (add them to [manual] in mapping.toml): {no_cat}")
+        warn(f"without category (add them to [manual] in mapping.toml): {no_cat}")
     if unmapped:
-        log(f"  unmapped raw values (add them to mapping.toml or [ignore]):")
-        for key, n in unmapped.most_common():
-            log(f"    {n:5}  {key}")
+        warn("unmapped raw values (add them to mapping.toml or [ignore]): "
+             + ", ".join(f"{key} ({n})" for key, n in unmapped.most_common()))
 
     log("Drops…")
     log(f"  {sum(len(v) for v in drops.drops.values())} drops of {len(drops.drops)} items "
         f"from {len(drops.sources)} sources; skipped kinds: {dict(drops.skipped)}")
     if drops.unmatched:
-        log(f"  drop rows naming no known item: {dict(drops.unmatched.most_common(15))}")
+        warn(f"drop rows naming no known item: {dict(drops.unmatched.most_common(15))}")
     log(f"  drop groups of {len(groups)} pages: {dict(drops.group_report)}")
     if drops.group_pages:
-        log(f"  drop groups not matched (several fit a row, or no drop rows) on: {dict(drops.group_pages)}")
+        warn(f"drop groups not matched (several fit a row, or no drop rows) on: {dict(drops.group_pages)}")
     derive_events(items, drops, mapping.sections["events"], mapping.bosses)
     derive_spawns(items, drops, mapping)
 
@@ -236,6 +267,10 @@ def build(raw_dir, mapping_path, out_dir, readable_dir=None):
 
     outputs["recipes.json"] = recipes
     outputs["extractinator.json"] = extractinator
+    outputs["sets.json"] = find_sets(items, mapping.sets)
+    for s in outputs["sets.json"]:
+        for key in s["items"]:
+            next(i for i in items if i["key"] == key)["set"] = s["id"]
     outputs["missing_items.json"] = missing_items_file(recipe_rows, items)
 
     log("Milestones…")
@@ -275,6 +310,45 @@ def build(raw_dir, mapping_path, out_dir, readable_dir=None):
                                              page_html.get("NPC IDs", ""), npc_rows, exclusive,
                                              mapping, mapping.versions)
 
+    # DU3: the data version (download date) and the newest game version; the change log written
+    # by compare_data.py (DU4) is kept
+    info_path = raw_dir / "download_info.json"
+    if info_path.exists():
+        data_version = json.loads(info_path.read_text(encoding="utf-8"))["date"]
+    else:
+        data_version = time.strftime("%Y-%m-%d", time.localtime((raw_dir / "items.csv").stat().st_mtime))
+    meta_path = out_dir / "meta.json"
+    old_meta = json.loads(meta_path.read_text(encoding="utf-8")) if meta_path.exists() else {}
+    outputs["meta.json"] = {"dataVersion": data_version, "gameVersion": list(mapping.versions)[-1],
+                            "updates": old_meta.get("updates", [])}
+
+    # DU2: the parts read from page text must not shrink silently (a changed wiki template)
+    counts = {
+        "shop_rows": sum(len(v) for v in shops.values()),
+        "bestiary_entries": len(outputs["bestiary.json"]["entries"]),
+        "npc_ids": sum(1 for e in outputs["bestiary.json"]["entries"] if e.get("npcId") is not None),
+        "ingredient_groups": len(outputs["recipes.json"]["groups"]),
+        "platform_icons": len(p_icons),
+        "drop_group_pages": len(groups),
+        "strange_plant_rewards": sum(len(v) for v in rewards.values()),
+        **{f"extractinator_results.{m['id']}": sum(1 for r in extractinator["results"] if r["machine"] == m["id"])
+           for m in extractinator["machines"]},
+    }
+    failed = check_sanity(counts, mapping.sanity)
+    warnings_path = HERE / "build_warnings.json"
+    # the items and drops are built twice (two passes): their warnings once
+    warnings = list(dict.fromkeys(WARNINGS))
+    warnings_path.write_text(json.dumps({"warnings": warnings, "sanity": {
+        k: {"count": v, "min": sanity_min(mapping.sanity, k)} for k, v in counts.items()}},
+        ensure_ascii=False, indent=2), encoding="utf-8")
+    log(f"Wrote {warnings_path} ({len(warnings)} warnings)")
+    if failed and not no_sanity:
+        for name, count, minimum in failed:
+            log(f"error: {name}: {count}, expected at least {minimum} ([sanity] in mapping.toml) - "
+                f"probably a changed wiki template")
+        log("Stopped before writing the data (--no-sanity builds anyway).")
+        sys.exit(1)
+
     out_dir.mkdir(parents=True, exist_ok=True)
     for filename, data in outputs.items():
         path = out_dir / filename
@@ -301,8 +375,11 @@ def main():
                     help="folder for indented copies of the output (default: data_readable/ "
                          "next to this script)")
     ap.add_argument("--no-readable", action="store_true", help="skip the indented copies")
+    ap.add_argument("--no-sanity", action="store_true",
+                    help="write the data even if a part read from page text is below its minimum "
+                         "([sanity] in mapping.toml)")
     args = ap.parse_args()
-    build(args.raw, args.mapping, args.out, None if args.no_readable else args.readable)
+    build(args.raw, args.mapping, args.out, None if args.no_readable else args.readable, args.no_sanity)
 
 
 if __name__ == "__main__":

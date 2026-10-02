@@ -18,5 +18,9 @@ pipeline/contact.txt
 # downloaded wiki icons (build_icons.py)
 pipeline/icons_cache/
 
+# per-run output of a data update (step 2 warnings, step 4 report)
+pipeline/build_warnings.json
+pipeline/update_report.md
+
 # built packages
 packages/*/dist/

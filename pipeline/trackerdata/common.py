@@ -85,8 +85,20 @@ def seed_only(row):
     return any(c.startswith("seed-") for c in row.get("conditions") or ())
 
 
+# what step 2 reports for a decision (REQUIREMENTS DU1): written to build_warnings.json
+WARNINGS = []
+
+
 def log(*args):
     print(*args, file=sys.stderr, flush=True)
+    text = " ".join(str(a) for a in args).strip()
+    if text.startswith("warning:"):
+        WARNINGS.append(text[len("warning:"):].strip())
+
+
+def warn(text):
+    """A finding that needs a decision (mapping.toml or the wiki): logged and collected."""
+    log(f"  warning: {text}")
 
 
 def strip_markup(value):

@@ -25,6 +25,7 @@ Outputs (in --out, default raw/ next to this script):
                    ids and images of all NPCs)
   page_categories.json  the pages in a few wiki categories (Hardmode-only NPCs: enemies
                    that only appear in Hardmode, for the milestones)
+  download_info.json  date of the download (the data version, REQUIREMENTS DU3)
   drop_groups.json source text of the pages whose drop lists have groups ("one of the
                    following items"; found by the wiki search insource:"group:start")
 
@@ -285,6 +286,10 @@ def main():
 
     wiki = Wiki(args.delay, contact(args.contact))
     args.out.mkdir(parents=True, exist_ok=True)
+    if args.tables:
+        # the data version (REQUIREMENTS DU3): the day the tables were downloaded
+        info_path = args.out / "download_info.json"
+        info_path.write_text(json.dumps({"date": time.strftime("%Y-%m-%d")}, indent=1), encoding="utf-8")
     schemas = {}
     for table in args.tables:
         log(f"{table}: reading schema…")

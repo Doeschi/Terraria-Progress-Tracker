@@ -31,6 +31,7 @@ import { cardRow } from '@/lib/cardRow'
 import { Badge, CardLink, Chips, Section, type TitleComponent } from './DetailParts'
 import { ContainsSection, NpcCard, SourceCard } from './NpcDetail'
 import { ExtractinatorSection } from './ExtractinatorSection'
+import { SetSection } from './SetSection'
 import { shownObtain } from '@/lib/filtering'
 import { NPC_REF, refName, SOURCE_REF, sourceRef, vendorRef } from '@/lib/npcs'
 import { formatDate, nameOf } from '@/lib/format'
@@ -237,6 +238,7 @@ function DetailContent({ item, Title }: { item: Item; Title: TitleComponent }) {
         )}
       </Section>
     ),
+    set: <SetSection data={data} item={item} checked={checkedSet} />,
     soldBy: <SoldBySection data={data} item={item} />,
     dropped: (
       <DropsSection

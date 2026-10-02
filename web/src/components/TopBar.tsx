@@ -9,8 +9,8 @@ import { useEndCredits, useTrophies } from '@/lib/trophies'
 import { Clapperboard, Star } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Field } from './topbar/Field'
-import { FileMenu } from './topbar/FileMenu'
-import { PlaythroughMenu, PlaythroughSettings } from './topbar/PlaythroughControls'
+import { AutosaveStatus, FileMenu } from './topbar/FileMenu'
+import { PlaythroughMenu } from './topbar/PlaythroughControls'
 import { SyncButton, WorldMenu } from './topbar/WorldMenu'
 import { PlayerMenu } from './topbar/PlayerMenu'
 import { HeaderSnow } from './topbar/HeaderSnow'
@@ -19,7 +19,6 @@ import { SettingsMenu } from './topbar/SettingsMenu'
 
 export function TopBar({ view }: { view: TrackerView | null }) {
   const hasPlaythrough = useActivePlaythrough() !== null
-  const separateFields = usePrefs((s) => s.layout.playthroughFields)
   // three columns: logo (left) | file + playthrough (centered) | theme (right)
   return (
     <header className="relative z-40 grid grid-cols-[auto_1fr_auto] items-center gap-3 border-b bg-background/80 px-3 py-2 backdrop-blur">
@@ -30,7 +29,7 @@ export function TopBar({ view }: { view: TrackerView | null }) {
       </div>
       <div className="flex min-w-0 flex-wrap items-center justify-center gap-x-3 gap-y-2">
         <div className="rounded-xl border bg-card/60 px-2 pt-1 pb-1.5">
-          <Field label="File">
+          <Field label="File" extra={<AutosaveStatus />}>
             <FileMenu />
           </Field>
         </div>
@@ -39,8 +38,6 @@ export function TopBar({ view }: { view: TrackerView | null }) {
           <Field label="Playthrough">
             <PlaythroughMenu />
           </Field>
-          {/* the icons in the playthrough button show them; optionally as separate fields */}
-          {separateFields && <PlaythroughSettings />}
           {/* a world belongs to a playthrough: nothing to show without one */}
           {hasPlaythrough && (
             <Field label="Player">
@@ -79,9 +76,8 @@ function ProgressBars({ view }: { view: TrackerView }) {
   const data = useStore((s) => s.data)!
   const gameVersion = useActivePlaythrough()?.gameVersion ?? null
   const bestiary = useBestiaryProgress()
-  const showBestiary = usePrefs((s) => s.layout.showBestiaryProgress)
   const rows = [{ label: 'Items', tally: view.overall }]
-  if (showBestiary && bestiaryExists(data, gameVersion)) rows.push({ label: 'Bestiary', tally: bestiary })
+  if (bestiaryExists(data, gameVersion)) rows.push({ label: 'Bestiary', tally: bestiary })
   return (
     <div className="flex h-8 flex-col justify-center gap-0.5 px-1 text-xs">
       {rows.map((r) => (

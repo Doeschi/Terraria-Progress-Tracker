@@ -49,7 +49,6 @@ function Toolbar({ view }: { view: TrackerView }) {
   const searchNpcs = usePrefs((s) => s.searchNpcs)
   const mode = useStore((s) => s.view)
   const setView = useStore((s) => s.setView)
-  const showProgress = usePrefs((s) => s.layout.showFilteredProgress)
 
   const views: { value: ViewMode; label: string; tip: string }[] = [
     { value: 'all', label: 'All', tip: 'All items that count towards progress' },
@@ -100,16 +99,14 @@ function Toolbar({ view }: { view: TrackerView }) {
             ))}
           </ToggleGroup>
         </div>
-        {showProgress && (
-          <div
-            className="flex items-center gap-2 text-xs text-muted-foreground"
-            title={view.searching ? 'Sorted by relevance until a column is sorted' : undefined}
-          >
-            Filtered
-            <TallyBar tally={view.filtered} className="w-20" />
-            <TallyText tally={view.filtered} />
-          </div>
-        )}
+        <div
+          className="flex items-center gap-2 text-xs text-muted-foreground"
+          title={view.searching ? 'Sorted by relevance until a column is sorted' : undefined}
+        >
+          Filtered
+          <TallyBar tally={view.filtered} className="w-20" />
+          <TallyText tally={view.filtered} />
+        </div>
         <div className="ml-auto">
           <BulkActions view={view} />
         </div>

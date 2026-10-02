@@ -378,6 +378,20 @@
     "parent": "vanity"
   },
   {
+    "id": "armor-sets",
+    "name": "Armor sets",
+    "icon": "https://terraria.wiki.gg/images/Hallowed_Helmet.png",
+    "count": 234,
+    "parent": "sets"
+  },
+  {
+    "id": "vanity-sets",
+    "name": "Vanity sets",
+    "icon": "https://terraria.wiki.gg/images/Pirate_Hat.png",
+    "count": 328,
+    "parent": "sets"
+  },
+  {
     "id": "voice-accessory",
     "name": "Voice accessories",
     "icon": "https://terraria.wiki.gg/images/Cow_Bell.png",

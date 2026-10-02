@@ -6,7 +6,8 @@ from .common import WIKI, image_url, log, norm_name, slug
 
 # obtain methods that have no data of their own here: available from the start (the item's
 # minimum still applies, e.g. Hardmode fish); the reason is the method's name in [obtain]
-PLAIN_SOURCES = {"fishing", "quest-reward", "plunder", "loot", "crafted", "vendor", "drop", "bag", "treasure-bag"}
+PLAIN_SOURCES = {"fishing", "quest-reward", "plunder", "loot", "crafted", "vendor", "drop", "bag", "treasure-bag",
+                 "player-death"}
 
 
 class Milestones:

@@ -1,3 +1,4 @@
+import { itemSources } from '@/lib/sources'
 import { useDeferredValue, useMemo } from 'react'
 import { useActivePlayer, useActivePlaythrough, useActiveWorld, useStore } from '@/store'
 import { playerStock, STORAGE_TEXT } from '@/lib/player'
@@ -54,6 +55,7 @@ export function useTrackerView(): TrackerView | null {
   const search = useDeferredValue(useStore((s) => s.search))
   const view = useStore((s) => s.view)
   const progressionMode = usePrefs((s) => s.progressionMode)
+  const picked = useStore((s) => s.picked)
   // milestones reached in the loaded world: the option "Available now" (MS7)
   const reached = useWorldProgress()?.reached ?? null
 
@@ -73,6 +75,10 @@ export function useTrackerView(): TrackerView | null {
     const containerGroup = new Map(data.containerGroups.flatMap((g) => g.sources.map((s) => [s, g.id] as const)))
     const conditionGroup = new Map([...data.conditions.values()].map((c) => [c.id, c.group]))
     const order = data.milestones.map((m) => m.id)
+    // "Sources & sets": only the picked options (FL18; the picker counts all of them itself)
+    const allSources = itemSources(data, difficulty)
+    const pickedSet = new Set(picked)
+    const sources = new Map([...allSources].map(([k, ids]) => [k, ids.filter((id) => pickedSet.has(id))]))
     const milestonesOf = (item: Item) => {
       const n = item.milestone ? order.indexOf(item.milestone) : -1
       if (n < 0) return []
@@ -90,10 +96,11 @@ export function useTrackerView(): TrackerView | null {
           itemContainers(data, i, difficulty),
           containerGroup,
           conditionGroup,
+          sources.get(i.key),
         ),
       ]),
     )
-  }, [data, difficulty, progressionMode, reached])
+  }, [data, difficulty, progressionMode, reached, picked])
   const searcher = useMemo(() => createSearch(platformItems), [platformItems])
   const searchMode = usePrefs((s) => s.searchMode)
   const ranks = useMemo(() => searchRanks(searcher, search, searchMode), [searcher, search, searchMode])

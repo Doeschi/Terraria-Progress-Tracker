@@ -1,3 +1,4 @@
+import { useStore } from '@/store'
 import {
   Dialog,
   DialogContent,
@@ -79,6 +80,7 @@ export function AboutDialog({
             <A href="https://terraria.wiki.gg/">Terraria Wiki</A> and are licensed under{' '}
             <A href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</A>. This also applies to the
             generated data files and the icon sprite sheets of this app.
+            <DataVersion />
           </Part>
           <Part title="Code">
             The source code is on <A href={REPO}>GitHub</A> under the{' '}
@@ -105,6 +107,17 @@ export function AboutDialog({
         </div>
       </DialogContent>
     </Dialog>
+  )
+}
+
+/** The version of the item data (DU3): when it was downloaded, the newest game version in it. */
+function DataVersion() {
+  const meta = useStore((s) => s.data?.meta)
+  if (!meta?.dataVersion) return null
+  return (
+    <span className="mt-1 block text-xs text-muted-foreground">
+      Item data: downloaded {meta.dataVersion}, game version {meta.gameVersion}.
+    </span>
   )
 }
 

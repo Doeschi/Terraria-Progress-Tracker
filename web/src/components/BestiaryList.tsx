@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { useVirtualizer } from '@tanstack/react-virtual'
-import { ArrowDown, ArrowUp, ChevronDown, ExternalLink, ListChecks, RefreshCw, Star } from 'lucide-react'
+import { ArrowDown, ArrowUp, ChevronDown, ExternalLink, ListChecks, Star } from 'lucide-react'
 import { useUi } from '@/ui'
 import { useActivePlaythrough, useActiveWorld, useStore } from '@/store'
 import { cn } from '@/lib/utils'
@@ -68,8 +68,6 @@ function Toolbar({ view }: { view: BestiaryView }) {
   const mode = useStore((s) => s.bestiaryView)
   const setView = useStore((s) => s.setBestiaryView)
   const world = useActiveWorld()
-  const openDialog = useUi((s) => s.open)
-  const showProgress = usePrefs((s) => s.layout.showFilteredProgress)
 
   const views: { value: BestiaryViewMode; label: string; tip: string }[] = [
     { value: 'all', label: 'All', tip: 'All bestiary entries' },
@@ -110,19 +108,13 @@ function Toolbar({ view }: { view: BestiaryView }) {
             ))}
           </ToggleGroup>
         </div>
-        {showProgress && (
-          <div className="flex items-center gap-2 text-xs text-muted-foreground">
-            Filtered
-            <TallyBar tally={view.filtered} className="w-20" />
-            <TallyText tally={view.filtered} />
-          </div>
-        )}
+        <div className="flex items-center gap-2 text-xs text-muted-foreground">
+          Filtered
+          <TallyBar tally={view.filtered} className="w-20" />
+          <TallyText tally={view.filtered} />
+        </div>
+        {/* syncing with the world: the sync button in the top bar */}
         <div className="ml-auto flex gap-2">
-          {world?.bestiary && (
-            <Button variant="outline" size="sm" onClick={() => openDialog({ type: 'sync', section: 'bestiary' })}>
-              <RefreshCw /> Sync with world
-            </Button>
-          )}
           <BulkActions view={view} />
         </div>
       </div>

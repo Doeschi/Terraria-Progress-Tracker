@@ -29,6 +29,7 @@ import {
 import { GAME_MODE_DIFFICULTY } from './lib/availability'
 import { loadView, saveView } from './lib/viewState'
 import { useUi } from './ui'
+import { carryOver } from './lib/dataUpdate'
 import type { Difficulty, GameData, PlatformId } from './lib/types'
 import type { LoadedWorld } from './lib/world'
 import type { LoadedPlayer } from './lib/player'
@@ -60,6 +61,8 @@ interface State {
   players: Record<string, LoadedPlayer>
 
   selection: Selection
+  /** options of "Sources & sets" shown in the sidebar (FL18) */
+  picked: string[]
   search: string
   view: ViewMode
 
@@ -100,6 +103,12 @@ interface Actions {
 
   toggleFilter(group: GroupKey, id: string): void
   clearFilter(group?: GroupKey): void
+  /** add an option to "Sources & sets" (and select it) */
+  pickSource(id: string): void
+  /** remove it from the group (and from the selection) */
+  unpickSource(id: string): void
+  /** "Show its items in the table": only this option selected, no search, the item list */
+  showSourceItems(id: string): void
   setSearch(search: string): void
   setView(view: ViewMode): void
 
@@ -170,6 +179,7 @@ export const useStore = create<State & Actions>()((set, get) => {
     worlds: {},
     players: {},
     selection: emptySelection(),
+    picked: [],
     search: '',
     view: 'all',
     mode: 'items',
@@ -190,7 +200,7 @@ export const useStore = create<State & Actions>()((set, get) => {
 
     newFile() {
       set({
-        doc: newSaveFile(),
+        doc: { ...newSaveFile(), dataVersion: get().data?.meta.dataVersion || undefined },
         fileName: null,
         handle: null,
         dirty: true,
@@ -202,12 +212,17 @@ export const useStore = create<State & Actions>()((set, get) => {
       })
     },
 
-    loadFile({ doc, fileName, handle }, dirty = false) {
+    loadFile({ doc: opened, fileName, handle }, dirty = false) {
+      // newer item data than the file was last used with: renamed keys move along, the changes are
+      // shown once (DU5)
+      const data = get().data
+      const { doc, report } = data ? carryOver(opened, data) : { doc: opened, report: null }
+      if (report) useUi.getState().open({ type: 'dataUpdate', report })
       set({
         doc,
         fileName,
         handle,
-        dirty,
+        dirty: dirty || doc !== opened,
         lastSavedAt: null,
         autosaveStatus: 'ok',
         worlds: {},
@@ -406,6 +421,30 @@ export const useStore = create<State & Actions>()((set, get) => {
       })
     },
 
+    pickSource(id) {
+      const { picked, selection } = get()
+      set({
+        picked: picked.includes(id) ? picked : [...picked, id],
+        selection: selection.source.includes(id) ? selection : { ...selection, source: [...selection.source, id] },
+      })
+    },
+    unpickSource(id) {
+      const { picked, selection } = get()
+      set({
+        picked: picked.filter((x) => x !== id),
+        selection: { ...selection, source: selection.source.filter((x) => x !== id) },
+      })
+    },
+    showSourceItems(id) {
+      const { picked } = get()
+      set({
+        picked: picked.includes(id) ? picked : [...picked, id],
+        selection: { ...emptySelection(), source: [id] },
+        search: '',
+        mode: 'items',
+      })
+    },
+
     setSearch: (search) => set({ search }),
     setView: (view) => set({ view }),
 
@@ -456,9 +495,9 @@ function rememberView() {
     const s = useStore.getState()
     const id = s.doc?.activePlaythroughId
     if (!id) return
-    const { selection, search, view, mode, bestiarySelection, bestiarySearch, bestiaryView } = s
+    const { selection, search, view, mode, bestiarySelection, bestiarySearch, bestiaryView, picked } = s
     const { detailKey } = useUi.getState()
-    saveView(id, { selection, search, view, mode, bestiarySelection, bestiarySearch, bestiaryView, detailKey })
+    saveView(id, { selection, search, view, mode, bestiarySelection, bestiarySearch, bestiaryView, detailKey, picked })
   }, 300)
 }
 useStore.subscribe((s, prev) => {
@@ -469,7 +508,8 @@ useStore.subscribe((s, prev) => {
     s.mode !== prev.mode ||
     s.bestiarySelection !== prev.bestiarySelection ||
     s.bestiarySearch !== prev.bestiarySearch ||
-    s.bestiaryView !== prev.bestiaryView
+    s.bestiaryView !== prev.bestiaryView ||
+    s.picked !== prev.picked
   )
     rememberView()
 })

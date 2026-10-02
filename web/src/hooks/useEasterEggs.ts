@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react'
 import { useActivePlaythrough, useStore } from '@/store'
 import { usePrefs } from '@/lib/prefs'
 import { dateOverridden, logoThemeOf, now as currentTime, seasonOf } from '@/lib/season'
+import { useSeasonClock } from './useSeasonClock'
 import { logoSvgMarkup } from '@/lib/logoArt'
 import { confettiBurst } from '@/lib/confetti'
 import { achievement, bees, bigConfetti, bunny, drunk, flipPage, goldConfetti, itemIcon, worthy } from '@/lib/eggs'
@@ -63,6 +64,7 @@ const KONAMI = [
 
 export function useEasterEggs() {
   const enabled = usePrefs((s) => s.layout.easterEggs)
+  const season = useSeasonClock()
   const search = useStore((s) => s.search)
   const bestiarySearch = useStore((s) => s.bestiarySearch)
   const last = useRef('')
@@ -102,7 +104,8 @@ export function useEasterEggs() {
     return () => window.removeEventListener('keydown', onKey)
   }, [enabled])
 
-  // Terraria's birthday (May 16, 2011): once a year; and a rare bunny on some visits
+  // Terraria's birthday (May 16, 2011): once a year - checked again when the date changes while the
+  // app stays open (the season clock)
   useEffect(() => {
     if (!enabled) return
     const timers: ReturnType<typeof setTimeout>[] = []
@@ -134,8 +137,14 @@ export function useEasterEggs() {
         )
       }
     }
-    if (Math.random() < 1 / 500) timers.push(setTimeout(bunny, 4000))
     return () => timers.forEach(clearTimeout)
+  }, [enabled, season])
+
+  // a rare bunny on some visits
+  useEffect(() => {
+    if (!enabled || Math.random() >= 1 / 500) return
+    const timer = setTimeout(bunny, 4000)
+    return () => clearTimeout(timer)
   }, [enabled])
 }
 
@@ -236,6 +245,7 @@ function seenOnce(key: string, playthroughId: string): boolean {
 /** The browser tab icon in the seasonal look of the logo (G8) - on every screen. */
 export function useSeasonalFavicon() {
   const enabled = usePrefs((s) => s.layout.easterEggs)
+  const season = useSeasonClock()
   useEffect(() => {
     const theme = logoThemeOf()
     const link = document.querySelector<HTMLLinkElement>('link[rel="icon"]')
@@ -245,5 +255,5 @@ export function useSeasonalFavicon() {
     return () => {
       link.href = original
     }
-  }, [enabled])
+  }, [enabled, season])
 }

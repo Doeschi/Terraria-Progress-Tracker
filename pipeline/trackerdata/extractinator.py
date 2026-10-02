@@ -7,7 +7,7 @@ amount, sometimes under a heading row "[[Hardmode]] only" – and a table "Speci
 """
 import re
 
-from .common import log
+from .common import log, warn
 from .groups import plain
 
 MACHINES = [
@@ -134,6 +134,7 @@ def extractinator_file(wikitext, resolve, items, aliases=None):
     for r in results:
         sources.setdefault(r["item"], set()).add(r["machine"])
     log(f"  extractinators: {len(results)} results of {len(sources)} items "
-        f"({sum(1 for r in results if r.get('conversion'))} conversions)"
-        + (f"; unknown items: {sorted(unknown)}" if unknown else ""))
+        f"({sum(1 for r in results if r.get('conversion'))} conversions)")
+    if unknown:
+        warn(f"Extractinator: unknown items {sorted(unknown)} (add them to [extractinator_inputs])")
     return {"machines": machines, "results": results}, sources

@@ -8,12 +8,13 @@ import { conditionNames } from '@/lib/conditions'
 import { chanceFor, groupOf, groupText, inDifficulty, modeLabel, quantityFor } from '@/lib/drops'
 import { nameOf } from '@/lib/format'
 import { averageQuantity, dropKills, formatExpected, sourceKills, type KillCounts } from '@/lib/luck'
-import { NPC_REF, npcIndex, type SourceDrop } from '@/lib/npcs'
+import { NPC_REF, SOURCE_REF, npcIndex, type SourceDrop } from '@/lib/npcs'
 import type { BestiaryEntry, Difficulty, DropGroup, GameData, ShopRow } from '@/lib/types'
 import { Button } from '@/components/ui/button'
 import { Checkbox } from '@/components/ui/checkbox'
 import { ObtainedMark, WikiIcon } from './common'
 import { CollapsibleSection } from './RecipeSections'
+import { ShowItemsButton } from './ShowItemsButton'
 import { cardRow } from '@/lib/cardRow'
 import { Badge, CardLink, Section, type TitleComponent } from './DetailParts'
 
@@ -83,6 +84,7 @@ export function NpcCard({ entry, Title }: { entry: BestiaryEntry; Title: TitleCo
               <ExternalLink /> Wiki
             </a>
           </Button>
+          <ShowItemsButton id={NPC_REF + entry.id} />
         </div>
       </div>
 
@@ -182,15 +184,16 @@ export function SourceCard({ sourceId, Title }: { sourceId: string; Title: Title
             </div>
           </div>
         </div>
-        {source.url && (
-          <div>
+        <div className="flex items-center gap-2">
+          {source.url && (
             <Button variant="outline" size="sm" asChild>
               <a href={source.url} target="_blank" rel="noreferrer noopener" title="Open on the wiki">
                 <ExternalLink /> Wiki
               </a>
             </Button>
-          </div>
-        )}
+          )}
+          <ShowItemsButton id={SOURCE_REF + sourceId} />
+        </div>
       </div>
       <div className="flex flex-col gap-5 p-4">
         <Section title={source.kind === 'container' ? 'Contains' : 'Drops'}>

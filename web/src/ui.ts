@@ -1,4 +1,5 @@
 import { create } from 'zustand'
+import type { DataUpdateReport } from './lib/dataUpdate'
 
 // Which dialog is open. Kept separate from the data store.
 
@@ -15,6 +16,8 @@ export type DialogState =
   | { type: 'areas'; thenSync?: boolean; returnTo?: DialogState }
   | { type: 'sync'; section?: SyncSection }
   | { type: 'chestSearch'; itemKey?: string }
+  /** what changed in the item data since the opened file was last used (DU5) */
+  | { type: 'dataUpdate'; report: DataUpdateReport }
 
 interface UiState {
   dialog: DialogState

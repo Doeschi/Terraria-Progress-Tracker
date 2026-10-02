@@ -11,6 +11,7 @@ import {
   EyeOff,
   ListOrdered,
   X,
+  Plus,
 } from 'lucide-react'
 import { toast } from 'sonner'
 import { useActiveWorld, useStore } from '@/store'
@@ -31,6 +32,7 @@ import { buildBestiaryGroups, type BestiaryGroupKey } from '@/lib/bestiary'
 import { RarityIcon, TallyBar, TallyText, WikiIcon } from './common'
 import { Checkbox } from '@/components/ui/checkbox'
 import { SearchField } from './ListParts'
+import { SourcePicker } from './SourcePicker'
 import { useWorldProgress } from '@/hooks/useWorldProgress'
 import { AVAILABLE_NOW, type WorldProgress } from '@/lib/worldProgress'
 import {
@@ -154,7 +156,17 @@ export const FilterSidebar = memo(function FilterSidebar({
   available: Facets
 }) {
   const data = useStore((s) => s.data)!
-  const groups = useMemo(() => buildFilterGroups(data), [data])
+  // "Sources & sets" (FL18): only the picked options, in the order they were picked
+  const picked = useStore((s) => s.picked)
+  const groups = useMemo(
+    () =>
+      buildFilterGroups(data).map((g) => {
+        if (g.key !== 'source') return g
+        const byId = new Map(g.entries.map((e) => [e.id, e]))
+        return { ...g, entries: picked.map((id) => byId.get(id)).filter((e) => e !== undefined) }
+      }),
+    [data, picked],
+  )
   const progress = useWorldProgress()
   const marks = useMemo(() => worldMarks(progress), [progress])
   return (
@@ -447,6 +459,9 @@ function GroupSection({
     [group.entries, sortable, order],
   )
   const { entries, shownChild, expandFor } = groupView(group, ordered, place, q)
+  const [picking, setPicking] = useState(false)
+  // "Sources & sets": the picked options, removable, and the picker (FL18)
+  const isSources = scope === ITEMS_SCOPE && group.key === 'source'
   if (q && !entries.length) return null
   // everything moved away: a short note instead of an empty group
   const moved = !entries.length && group.entries.some((e) => place.exists(group.key, e.id))
@@ -522,12 +537,21 @@ function GroupSection({
         </div>
       </div>
       {open && scope === ITEMS_SCOPE && group.key === 'crafting' && <CraftingOptions />}
-      {open && scope === ITEMS_SCOPE && group.key === 'progression' && <ProgressionOptions />}
+      {open && scope === ITEMS_SCOPE && group.key === 'progression' && (
+        <>
+          <ProgressionOptions />
+          <DimOption />
+        </>
+      )}
       {open && (
         <ul className="flex flex-col gap-px">
           {entries.length === 0 && (
             <li className="px-2 py-1 text-xs text-muted-foreground">
-              {moved ? 'All options are completed or hidden' : 'No matching items'}
+              {isSources
+                ? 'Filter by any NPC, container or set.'
+                : moved
+                  ? 'All options are completed or hidden'
+                  : 'No matching items'}
             </li>
           )}
           {entries.map((e) => (
@@ -537,12 +561,23 @@ function GroupSection({
               entry={e}
               facets={facets}
               isVisible={shownChild(e)}
-              action="hide"
+              action={isSources ? 'remove' : 'hide'}
               // while searching, show the children that matched
               expand={expandFor(e)}
             />
           ))}
         </ul>
+      )}
+      {open && isSources && !q && (
+        <>
+          <button
+            onClick={() => setPicking(true)}
+            className="mt-1 flex w-full items-center gap-1.5 rounded-md px-2 py-1.5 text-left text-xs text-muted-foreground hover:bg-foreground/[0.06] hover:text-foreground"
+          >
+            <Plus className="size-3.5" /> Add an NPC, container or set…
+          </button>
+          <SourcePicker open={picking} onOpenChange={setPicking} />
+        </>
       )}
     </section>
   )
@@ -697,6 +732,34 @@ function ProgressionOptions() {
   )
 }
 
+/** With a loaded world: dim the items it has not reached yet (MS8), right under the mode switch. */
+function DimOption() {
+  const dim = usePrefs((s) => s.layout.dimUnavailable)
+  const setLayout = usePrefs((s) => s.setLayout)
+  const progress = useWorldProgress()
+  return (
+    <label
+      className={cn(
+        'mb-1 flex items-center gap-2 px-2 pb-1 text-xs text-muted-foreground',
+        progress ? 'cursor-pointer' : 'opacity-50',
+      )}
+      title={
+        progress
+          ? `Dim the items ${progress.worldName} has not reached yet (after a boss it has not defeated)`
+          : 'Needs a loaded world: dims the items it has not reached yet'
+      }
+    >
+      <Checkbox
+        checked={dim}
+        disabled={!progress}
+        onCheckedChange={(v) => setLayout({ dimUnavailable: v === true })}
+        className="size-3.5"
+      />
+      Dim items not available yet in the world
+    </label>
+  )
+}
+
 function CraftingOptions() {
   const stationsRequired = usePrefs((s) => s.stationsRequired)
   const setStationsRequired = usePrefs((s) => s.setStationsRequired)
@@ -730,8 +793,9 @@ function EntryRow({
   entry: FilterEntry
   facets: AnyFacets
   isVisible: (e: FilterEntry) => boolean
-  /** eye button: hide the option, or show a hidden one in its group again */
-  action?: 'hide' | 'show'
+  /** eye button: hide the option, or show a hidden one in its group again; "remove": take it out
+   * of "Sources & sets" (FL18) */
+  action?: 'hide' | 'show' | 'remove'
   /** show the children without expanding (filter search) */
   expand?: boolean
   nested?: boolean
@@ -797,6 +861,16 @@ function EntryRow({
             aria-label={eye === 'hide' ? `Hide ${entry.name}` : `Show ${entry.name} again`}
           >
             {eye === 'hide' ? <EyeOff className="size-3.5" /> : <Eye className="size-3.5" />}
+          </button>
+        )}
+        {action === 'remove' && (
+          <button
+            onClick={() => useStore.getState().unpickSource(entry.id)}
+            className="ml-1 grid size-6 shrink-0 place-items-center rounded text-muted-foreground hover:bg-foreground/10 hover:text-foreground"
+            title={`Remove “${entry.name}” from the group`}
+            aria-label={`Remove ${entry.name}`}
+          >
+            <X className="size-3.5" />
           </button>
         )}
         <button

@@ -16,6 +16,8 @@ export interface Item {
   icon?: string
   categories: string[]
   subcategories: string[]
+  /** the armor or vanity set it belongs to (sets.json id) */
+  set?: string
   obtain: string[]
   vendors: string[]
   events: string[]
@@ -181,6 +183,34 @@ export interface DropGroup {
   pick?: number
   /** number of items */
   size: number
+}
+
+/** The version of the item data and its change log (meta.json; REQUIREMENTS DU3, DU4). */
+export interface DataMeta {
+  /** the day the wiki data was downloaded, e.g. "2026-10-02" */
+  dataVersion: string
+  /** the newest game version in the data */
+  gameVersion: string
+  /** what changed with each data version (oldest first) */
+  updates: DataUpdate[]
+}
+
+export interface DataUpdate {
+  dataVersion: string
+  added: string[]
+  removed: { key: string; name: string }[]
+  /** old item key -> new item key */
+  renamed: Record<string, string>
+}
+
+/** An armor or vanity set: the items of a wiki page "… armor" / "… set" (D18c). */
+export interface ItemSet {
+  id: string
+  name: string
+  url: string
+  kind: 'armor' | 'vanity'
+  /** item keys */
+  items: string[]
 }
 
 /** What the Extractinator and the Chlorophyte Extractinator turn blocks into (B6). */
@@ -378,6 +408,10 @@ export interface GameData {
   /** drop groups by id */
   dropGroups: Map<string, DropGroup>
   extractinator: ExtractinatorData
+  /** armor and vanity sets by id (D18c) */
+  sets: Map<string, ItemSet>
+  /** data version and change log (DU3, DU4) */
+  meta: DataMeta
   /** layers of containers with other items per layer (Gold Chest: Underground, Cavern, …), in order;
    * their drops name them as variants */
   dropAreas: string[]

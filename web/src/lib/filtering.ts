@@ -2,6 +2,7 @@ import Fuse from 'fuse.js'
 import type { GameData, GroupEntry, Item } from './types'
 import { CRAFT_CHESTS, CRAFT_HAS_RECIPE, CRAFT_OBTAINED } from './recipes'
 import { AVAILABLE_NOW } from './worldProgress'
+import { sourceCandidates } from './sources'
 
 // Filters are organised in groups. Entries within a group are combined with
 // OR, groups with AND. Counts per entry are "faceted": an entry's numbers
@@ -9,6 +10,8 @@ import { AVAILABLE_NOW } from './worldProgress'
 
 // also the order of the filter groups in the sidebar and in the active-filter bar
 export const GROUP_KEYS = [
+  // right below "Almost done" (FL18)
+  'source',
   'progression',
   'category',
   'obtain',
@@ -35,6 +38,7 @@ export const emptySelection = (): Selection => ({
   crafting: [],
   vendor: [],
   container: [],
+  source: [],
   event: [],
   biome: [],
   condition: [],
@@ -189,6 +193,8 @@ export function buildFilterGroups(data: GameData): FilterGroup[] {
     // the vendors' heads (their map icons) instead of the full body
     { key: 'vendor', label: 'Sold by', entries: data.vendors.map((v) => ({ ...v, icon: v.head ?? v.icon })) },
     { key: 'container', label: 'Found in', entries: containers },
+    // any NPC, container or set (FL18): the sidebar shows only the picked ones
+    { key: 'source', label: 'Sources & sets', entries: sourceCandidates(data) },
     { key: 'event', label: 'Events', entries: data.events },
     { key: 'biome', label: 'Biome', entries: data.biomes },
     { key: 'condition', label: 'Conditions', entries: conditions },
@@ -207,6 +213,8 @@ export function itemEntries(
   containers: string[],
   containerGroup: Map<string, string>,
   conditionGroup: Map<string, string>,
+  /** "Sources & sets" options (FL18) */
+  sources: string[] = [],
 ): Record<GroupKey, string[]> {
   const stages = new Set(bosses.map((b) => bossStage.get(b)))
   const containerGroups = new Set(containers.map((c) => containerGroup.get(c)).filter((g) => g !== undefined))
@@ -220,6 +228,7 @@ export function itemEntries(
     crafting: [],
     vendor: item.vendors,
     container: [...[...containerGroups].map((g) => `cgroup:${g}`), ...containers.map((c) => `cont:${c}`)],
+    source: sources,
     event: item.events,
     biome: item.biomes ?? [],
     condition: [

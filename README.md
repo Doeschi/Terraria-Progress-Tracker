@@ -54,6 +54,7 @@ the unchanged downloads in [`pipeline/raw/`](pipeline/raw).
 | `bosses.json` | Bosses by progression stage, each with all drop sources that count for it (parts, treasure bag) |
 | `recipes.json` | 3,655 crafting recipes (current versions, platform-limited ones marked), 42 crafting stations with the items that provide them (stronger stations included), 34 "Any …" ingredient groups resolved to items, 287 shimmer transmutations |
 | `extractinator.json` | 198 results of the Extractinator and the Chlorophyte Extractinator for 74 items: per input (Silt / Slush, Desert Fossil, moss, junk, Poo) with chance and amount, and 57 conversions (Copper Ore → Tin Ore, Demonite → Crimtane, …) |
+| `sets.json` | 185 armor and vanity sets (69 armor, 116 vanity, 562 items): the items of a wiki page "… armor" / "… set"; category "Sets" with "Armor sets" and "Vanity sets" |
 | `bestiary.json` | All 546 bestiary entries in the in-game order, with the internal name the world file uses, type, stars, biome / time / event filters, game update and platforms |
 | `categories.json`, `subcategories.json`, `obtain.json`, `vendors.json`, `events.json`, `biomes.json`, `times.json` | The groups used above, with names, icons and item counts |
 | `missing_items.json` | Items the wiki's Items table lacks, its Recipes table names with id, and that have no template in `[recipe_items]` (currently none) |
@@ -68,13 +69,14 @@ weapon racks, mannequins, hat racks, plates and the new Item Flask) in
 ## How the data is built
 
 Everything comes from the [Terraria Wiki](https://terraria.wiki.gg/) (wiki.gg). The pipeline has
-three steps; only steps 1 and 3 talk to the wiki, step 2 works offline on the downloaded files.
+four steps; only steps 1 and 3 talk to the wiki, steps 2 and 4 work offline.
 
 ```
 step 1  download_cargo_tables.py   wiki -> pipeline/raw/   (tables, page sources, image lists)
 step 2  build_tracker_data.py      raw + mapping.toml -> web/public/data/*.json (+ data_readable/)
         check_icons.py (optional)  checks the linked images, notes renamed files for step 2
 step 3  build_icons.py             wiki images -> web/public/icons/ sprite sheets + sprites.json
+step 4  compare_data.py            new data vs. the committed data -> pipeline/update_report.md
 ```
 
 ### 1. Where the information comes from
@@ -221,7 +223,29 @@ python pipeline/download_cargo_tables.py   # step 1: wiki -> pipeline/raw/ (Carg
 python pipeline/build_tracker_data.py      # step 2: raw + mapping.toml -> web/public/data/*.json
 python pipeline/check_icons.py             # optional: check that all linked wiki images exist
 python pipeline/build_icons.py             # step 3: wiki images -> sprite sheets in web/public/icons/
+python pipeline/compare_data.py            # step 4: what changed -> pipeline/update_report.md
 ```
+
+**Before committing new data, read `pipeline/update_report.md`** (not committed). It lists:
+- **Renamed items:** same item id, another key. Their checkmarks drop out of progress files.
+- **Added and removed items.**
+- **Changed items:** per item, changes in categories, "Obtained by", milestone, vendors and
+  unobtainable, with the same change of many items in one line.
+- **Counts per data file,** before and after.
+
+Step 4 also adds the added, removed and renamed items to the change log in
+`web/public/data/meta.json`. When a progress file is opened, the app uses it to move the
+checkmarks of renamed items along and to show once what changed since the file was last used.
+Renames with the same item id are found automatically; others go into `[renamed_items]` of
+`mapping.toml`.
+- **Step 2's warnings:** unmapped raw values, items without a category, unknown names, unmatched
+  drop groups – each a decision for `mapping.toml` or a wiki error.
+
+The parts that step 2 reads from page text (shops, Bestiary/List, the drop groups, the
+Extractinator tables, …) have minimum counts in `[sanity]` of `mapping.toml`. Below one, step 2
+stops before writing anything, because a changed wiki template would otherwise ship half the data
+without a warning. `--no-sanity` builds anyway, to look at the result. When the game grows, raise
+the minimums; `pipeline/build_warnings.json` has the current counts.
 
 `check_icons.py` asks the wiki's API about all linked images in batches of 50 (about 180
 requests, no image downloads). It reports missing files and saves files that are only redirects

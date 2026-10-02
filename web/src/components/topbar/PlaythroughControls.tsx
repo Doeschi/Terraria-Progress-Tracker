@@ -1,11 +1,8 @@
 import { Check, ChevronDown, Pencil, Plus, Trash2 } from 'lucide-react'
 import { useActivePlaythrough, useStore } from '@/store'
 import { useUi } from '@/ui'
-import { DIFFICULTY_LABELS, versionLabel } from '@/lib/availability'
-import type { Playthrough } from '@/lib/saveFile'
-import { DIFFICULTIES, type Difficulty, type PlatformId } from '@/lib/types'
+import { DIFFICULTY_LABELS } from '@/lib/availability'
 import { Button } from '@/components/ui/button'
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -17,9 +14,9 @@ import {
 import { confirm } from '@/lib/confirm'
 import { DifficultyIcon, WikiIcon } from '../common'
 import { nameOf } from '@/lib/format'
-import { Field } from './Field'
 
-// Playthrough menu (switch, new, edit, delete) and its platform, difficulty and game version.
+// Playthrough menu (switch, new, edit, delete); platform, difficulty and game version are shown
+// as icons in its button and changed in the edit dialog.
 
 export function PlaythroughMenu() {
   const doc = useStore((s) => s.doc)!
@@ -93,78 +90,5 @@ export function PlaythroughMenu() {
         )}
       </DropdownMenuContent>
     </DropdownMenu>
-  )
-}
-
-/** Platform, difficulty and game version of the active playthrough, edited in place. */
-export function PlaythroughSettings() {
-  const data = useStore((s) => s.data)!
-  const pt = useActivePlaythrough()
-  const updatePlaythrough = useStore((s) => s.updatePlaythrough)
-  if (!pt) return null
-  const update = (patch: Partial<Playthrough>) => updatePlaythrough(pt.id, (p) => ({ ...p, ...patch }))
-
-  return (
-    <>
-      <Field label="Platform">
-        <Select value={pt.platform} onValueChange={(v) => update({ platform: v as PlatformId })}>
-          <SelectTrigger size="sm" className="w-40">
-            <SelectValue />
-          </SelectTrigger>
-          <SelectContent>
-            {data.platforms.map((p) => (
-              <SelectItem key={p.id} value={p.id}>
-                <WikiIcon src={p.icon} alt="" size={16} />
-                {p.name}
-              </SelectItem>
-            ))}
-          </SelectContent>
-        </Select>
-      </Field>
-      <Field
-        label="Difficulty"
-        title={
-          pt.world
-            ? "Set from the world's game mode when the world is loaded"
-            : 'Classic hides Expert- and Master-only items, Expert hides Master-only items'
-        }
-      >
-        <Select value={pt.difficulty} onValueChange={(v) => update({ difficulty: v as Difficulty })}>
-          <SelectTrigger size="sm" className="w-32">
-            <SelectValue />
-          </SelectTrigger>
-          <SelectContent>
-            {DIFFICULTIES.map((d) => (
-              <SelectItem key={d} value={d}>
-                <DifficultyIcon difficulty={d} />
-                {DIFFICULTY_LABELS[d]}
-              </SelectItem>
-            ))}
-          </SelectContent>
-        </Select>
-      </Field>
-      <Field label="Game version" title="Items added in later updates are not shown or counted">
-        <Select
-          value={pt.gameVersion ?? 'latest'}
-          onValueChange={(v) => update({ gameVersion: v === 'latest' ? null : v })}
-        >
-          <SelectTrigger size="sm" className="w-44" title={versionLabel(data, pt.gameVersion)}>
-            <SelectValue />
-          </SelectTrigger>
-          <SelectContent>
-            <SelectItem value="latest">
-              <WikiIcon src={data.versions.at(-1)?.icon} alt="" size={16} />
-              {versionLabel(data, null)}
-            </SelectItem>
-            {[...data.versions].reverse().map((v) => (
-              <SelectItem key={v.id} value={v.id}>
-                <WikiIcon src={v.icon} alt="" size={16} />
-                {v.name}
-              </SelectItem>
-            ))}
-          </SelectContent>
-        </Select>
-      </Field>
-    </>
   )
 }

@@ -1,6 +1,7 @@
 import { useMemo, useRef, useState } from 'react'
 import { usePrefs } from '@/lib/prefs'
 import { isNewYear, isNight, logoThemeOf, prefersReducedMotion } from '@/lib/season'
+import { useSeasonClock } from '@/hooks/useSeasonClock'
 import type { PlantStage } from '@/lib/logoArt'
 import { achievement, itemIcon } from '@/lib/eggs'
 import { confettiBurst } from '@/lib/confetti'
@@ -31,7 +32,10 @@ export function HeaderLogo() {
   const svgRef = useRef<SVGSVGElement>(null)
   const plantRef = useRef<SVGGElement>(null)
   // fixed for the session (the date does not change while the page is open, near enough)
-  const season = useMemo(() => ({ theme: logoThemeOf(), newYear: isNewYear(), night: isNight() }), [])
+  // follows the clock while the app stays open: fireflies from midnight, the look of a special day
+  const clock = useSeasonClock()
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const season = useMemo(() => ({ theme: logoThemeOf(), newYear: isNewYear(), night: isNight() }), [clock])
   const golden = useTrophies((s) => s.all)
 
   if (!enabled) return <Logo size={32} />

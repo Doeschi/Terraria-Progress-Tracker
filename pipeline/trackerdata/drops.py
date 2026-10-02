@@ -15,6 +15,7 @@ from .common import (
     page_url,
     seed_only,
     slug,
+    warn,
     strip_markup,
 )
 
@@ -148,8 +149,9 @@ class Drops:
                 if entry not in self.drops[item["key"]]:
                     self.drops[item["key"]].append(entry)
                     added += 1
-        log(f"  banners: {added} enemy banners linked to their enemy (NPCs table)"
-            + (f"; unknown banner items: {sorted(set(unmatched))[:10]}" if unmatched else ""))
+        log(f"  banners: {added} enemy banners linked to their enemy (NPCs table)")
+        if unmatched:
+            warn(f"unknown banner items: {sorted(set(unmatched))[:10]}")
 
     def npc_for(self, name):
         """NPCs-table row of a drop source; "Blue Slime (bonus drop)" -> "Blue Slime"."""

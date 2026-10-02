@@ -61,6 +61,9 @@ const PlaythroughSchema = z.object({
 const SaveFileSchema = z.object({
   format: z.literal(SAVE_FORMAT),
   version: z.literal(SAVE_VERSION),
+  /** the item data version the file was last used with (meta.json, REQUIREMENTS DU5); missing in
+   * files from before data versions */
+  dataVersion: z.optional(z.string()),
   playthroughs: z.array(PlaythroughSchema),
   activePlaythroughId: z.nullable(z.string()),
 })

@@ -104,6 +104,13 @@ icon = "Red's Wings"
 match = ["tag:developer", "listcat:developer items"]
 exclude = ["page:jim's cap"]  # a drop, not a developer item
 
+# Armor and vanity sets (D18c): items of a wiki page "... armor" / "... set" (build_tracker_data.py
+# adds "set:armor" / "set:vanity"; [sets] below)
+[categories.sets]
+name = "Sets"
+icon = "Pirate Hat"
+match = ["set:armor", "set:vanity"]
+
 [categories.dye]
 name = "Dyes"
 icon = "Red Dye"
@@ -611,6 +618,20 @@ parent = "vanity"
 icon = "Eye of Cthulhu Mask"
 only_in_parent = true
 match = ["page:masks"]
+
+[subcategories.armor-sets]
+name = "Armor sets"
+parent = "sets"
+icon = "Hallowed Helmet"
+only_in_parent = true
+match = ["set:armor"]
+
+[subcategories.vanity-sets]
+name = "Vanity sets"
+parent = "sets"
+icon = "Pirate Hat"
+only_in_parent = true
+match = ["set:vanity"]
 
 [subcategories.voice-accessory]
 name = "Voice accessories"
@@ -1158,6 +1179,30 @@ icon = "Chlorophyte Extractinator"
 match = []
 from_extractinator = ["chlorophyte-extractinator"]
 
+# Armor and vanity sets (D18c): a wiki page whose name ends in "armor" or "set" with at least 2
+# items is a set; `include` adds pages with other names, `exclude` leaves pages out
+[sets]
+include = []
+exclude = []
+
+# Minimums of the parts read from page text (REQUIREMENTS DU2): below one, step 2 stops before
+# writing the data (a changed wiki template, not a smaller game). About 90 % of the counts of the
+# last download; raise them when the game grows (build_warnings.json has the current counts).
+[sanity]
+shop_rows = 700               # rows of the vendor pages' shops (817)
+bestiary_entries = 500        # Bestiary/List (546)
+npc_ids = 500                 # bestiary entries with an NPC id from "NPC IDs" (546)
+ingredient_groups = 30        # "Any ..." groups of "Alternative crafting ingredients" (34)
+platform_icons = 6            # icons in MediaWiki:Common.css (6)
+drop_group_pages = 80         # pages with drop groups (93)
+strange_plant_rewards = 30    # the Dye Trader's rewards (33)
+extractinator_results = 50    # per machine (56 / 142)
+
+# Renamed items the update report cannot detect (their item id changed too): old key = new key.
+# compare_data.py adds them to the change log in meta.json; the app moves the checkmarks of
+# progress files along (REQUIREMENTS DU4, DU5). Renames with the same item id are found by itself.
+[renamed_items]
+
 # Extractinator inputs the wiki names differently from the items (REQUIREMENTS B6): name -> items
 [extractinator_inputs]
 "Glowing Moss" = ["Lava Moss", "Krypton Moss", "Xenon Moss", "Argon Moss", "Neon Moss", "Helium Moss"]
@@ -1170,11 +1215,12 @@ match = []
 from_shimmer = true
 
 # special sources the wiki tags do not name (by item name)
+# every grave marker on the page "Tombstones"; the golden ones when dying with at least 10 gold
+# coins (pirates drop them too)
 [obtain.player-death]
 name = "Player death"
 icon = "Tombstone"
-match = []
-names = ["Tombstone", "Grave Marker", "Cross Grave Marker", "Headstone", "Gravestone", "Obelisk"]
+match = ["page:tombstones"]
 
 [obtain.other-form]
 name = "Other form of an item"

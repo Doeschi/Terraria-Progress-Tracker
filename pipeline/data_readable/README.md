@@ -22,6 +22,8 @@ Data and images come from the [Terraria Wiki](https://terraria.wiki.gg/) (CC BY-
 - [`bosses.json`](#bossesjson) · [`containers.json`](#containersjson) · [`conditions.json`](#conditionsjson)
 - [`recipes.json`](#recipesjson)
 - [`extractinator.json`](#extractinatorjson)
+- [`sets.json`](#setsjson)
+- [`meta.json`](#metajson)
 - [`bestiary.json`](#bestiaryjson)
 - [`missing_items.json`](#missing_itemsjson)
 - [`sprites.json`](#spritesjson)
@@ -63,6 +65,8 @@ Data and images come from the [Terraria Wiki](https://terraria.wiki.gg/) (CC BY-
 | [`platforms.json`](#list-files) / [`difficulties.json`](#list-files) / [`coins.json`](#coinsjson) | platforms, difficulties, coin values |
 | [`recipes.json`](#recipesjson) | crafting recipes, stations, ingredient groups, shimmer |
 | [`extractinator.json`](#extractinatorjson) | what the Extractinator and the Chlorophyte Extractinator give |
+| [`sets.json`](#setsjson) | armor and vanity sets |
+| [`meta.json`](#metajson) | data version and the change log of data updates |
 | [`bestiary.json`](#bestiaryjson) | the bestiary entries and their types |
 | [`missing_items.json`](#missing_itemsjson) | item ids known only from recipes |
 | [`sprites.json`](#spritesjson) | where each icon is in the sprite sheets (`icons/`) |
@@ -93,6 +97,7 @@ A list of all items (one entry per item id), sorted by id.
 | `categories` | `categories.json` ids (Weapons, Vanity, Furniture, …) |
 | `subcategories` | `subcategories.json` ids (Broadswords, Head, Chairs, …) |
 | `obtain` | `obtain.json` ids: how it is obtained (Crafted, Dropped by enemies, …) |
+| `set` | `sets.json` id of the armor or vanity set it belongs to |
 | `vendors` | `vendors.json` ids: NPCs that sell it (not counting rows only in special world seeds) |
 | `events` | `events.json` ids: events in which it can be obtained (enemies, drops, shop rows) |
 | `biomes` | `biomes.json` ids: biomes of the enemies that drop it, and of its shop rows |
@@ -323,6 +328,26 @@ From the tables of the wiki pages "Extractinator" and "Chlorophyte Extractinator
 | `chance` / `quantity` | e.g. `"0.3333%"` / `"1–16"`; no chance for conversions |
 | `phase` | `prehardmode` / `hardmode`: only in such worlds (the Chlorophyte Extractinator's ores) |
 | `conversion` | `true`: the input always becomes this item (Copper Ore → Tin Ore, Hive → Honey Block) |
+
+## `sets.json`
+
+Armor and vanity sets: the items of a wiki page whose name ends in "armor" or "set", at least 2
+(`[sets]` in `mapping.toml` adds or excludes pages). A list of:
+
+| Field | Meaning |
+|---|---|
+| `id` / `name` | the set, named like its wiki page (`"Pirate set"`, `"Hallowed armor"`) |
+| `url` | its wiki page |
+| `kind` | `armor` (most pieces are armor) or `vanity` (developer sets too) |
+| `items` | the item keys of its pieces |
+
+## `meta.json`
+
+| Field | Meaning |
+|---|---|
+| `dataVersion` | the day the wiki data was downloaded (step 1, `raw/download_info.json`), e.g. `"2026-09-28"` |
+| `gameVersion` | the newest game version in the data, e.g. `"1.4.5"` |
+| `updates` | the change log, oldest first: per data version the items `added` (keys), `removed` (`key`, `name`) and `renamed` (old key → new key). Written by `compare_data.py`; the app uses it to move the checkmarks of renamed items in progress files along and to show what changed |
 
 ## `bestiary.json`
 

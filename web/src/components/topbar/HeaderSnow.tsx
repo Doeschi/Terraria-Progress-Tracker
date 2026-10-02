@@ -1,6 +1,7 @@
 import { useMemo } from 'react'
 import { usePrefs } from '@/lib/prefs'
 import { seasonOf } from '@/lib/season'
+import { useSeasonClock } from '@/hooks/useSeasonClock'
 
 /** A little pixel snow falling in the header at Christmas (G8; CSS in index.css). */
 export function HeaderSnow() {
@@ -16,6 +17,7 @@ export function HeaderSnow() {
       })),
     [],
   )
+  useSeasonClock() // rendered again when the season changes (the app stays open)
   if (!enabled || seasonOf() !== 'christmas') return null
   return (
     <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">

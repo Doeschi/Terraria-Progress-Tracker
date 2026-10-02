@@ -4,7 +4,7 @@ import html
 import re
 from collections import Counter, defaultdict
 
-from .common import OTHER_SOURCES, image_url, log, norm_name, seed_only, slug, strip_markup
+from .common import OTHER_SOURCES, image_url, log, norm_name, seed_only, slug, strip_markup, warn
 
 # words that negate the rest of a clause: "before defeating [[Golem]]", "except [[Remix]] worlds";
 # "defeated on the same day as the [[Wall of Flesh]]" is no "after" condition either
@@ -256,7 +256,7 @@ def shop_rows(wikitext_pages, vendors, resolve, conditions):
                 if row not in rows[item["key"]]:
                     rows[item["key"]].append(row)
     if unmatched:
-        log(f"  shop rows naming no known item: {dict(unmatched.most_common(15))}")
+        warn(f"shop rows naming no known item: {dict(unmatched.most_common(15))}")
     return rows
 
 
@@ -394,5 +394,5 @@ def apply_conditions(items, drops, shops, conditions, mapping, rewards=None):
         f"({added_vendors} vendors added, {removed_vendors} only in special seeds removed); conditions for "
         f"{sum(1 for i in items if i['conditions'])} items")
     if conditions.unmapped:
-        log(f"  condition links not mapped (add them to mapping.toml or [conditions] ignore_links): "
-            f"{dict(conditions.unmapped.most_common(30))}")
+        warn(f"condition links not mapped (add them to mapping.toml or [conditions] ignore_links): "
+             f"{dict(conditions.unmapped.most_common(30))}")

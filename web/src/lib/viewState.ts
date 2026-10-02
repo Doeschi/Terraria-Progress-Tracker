@@ -15,6 +15,8 @@ export interface SavedView {
   bestiaryView: BestiaryViewMode
   /** item shown in the detail panel */
   detailKey: string | null
+  /** options of "Sources & sets" shown in the sidebar (FL18) */
+  picked: string[]
 }
 
 const KEY = 'view-state'
@@ -30,6 +32,7 @@ export const defaultView = (): SavedView => ({
   bestiarySearch: '',
   bestiaryView: 'all',
   detailKey: null,
+  picked: [],
 })
 
 function readAll(): Record<string, unknown> {
@@ -70,6 +73,7 @@ export function loadView(playthroughId: string | null | undefined): SavedView {
   if (BESTIARY_VIEWS.includes(v.bestiaryView as BestiaryViewMode)) out.bestiaryView = v.bestiaryView as BestiaryViewMode
   if (v.mode === 'items' || v.mode === 'bestiary') out.mode = v.mode
   if (typeof v.detailKey === 'string') out.detailKey = v.detailKey
+  if (Array.isArray(v.picked)) out.picked = v.picked.filter((x): x is string => typeof x === 'string')
   return out
 }
 

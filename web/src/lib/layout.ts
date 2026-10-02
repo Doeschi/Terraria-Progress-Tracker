@@ -4,6 +4,7 @@
 export const DETAIL_SECTIONS: { id: string; label: string }[] = [
   { id: 'tooltip', label: 'Tooltip' },
   { id: 'what', label: 'What it is' },
+  { id: 'set', label: 'Set (armor and vanity sets)' },
   { id: 'how', label: 'How to get it' },
   { id: 'soldBy', label: 'Sold by' },
   { id: 'dropped', label: 'Dropped by' },
@@ -16,14 +17,22 @@ export const DETAIL_SECTIONS: { id: string; label: string }[] = [
 ]
 
 /**
- * Ids in the saved order: saved ids first (if they still exist), then the others in their
- * default order - so new sections or groups appear without a reset.
+ * Ids in the saved order (if they still exist); ids the saved order does not know yet (new
+ * sections, groups or columns) appear without a reset, at their default place: right after the
+ * id before them in the default order.
  */
 export function ordered(defaults: string[], saved: string[]): string[] {
   const known = new Set(defaults)
-  const first = saved.filter((id) => known.has(id))
-  const seen = new Set(first)
-  return [...first, ...defaults.filter((id) => !seen.has(id))]
+  const out = saved.filter((id) => known.has(id))
+  const seen = new Set(out)
+  defaults.forEach((id, n) => {
+    if (seen.has(id)) return
+    let before = n - 1
+    while (before >= 0 && !seen.has(defaults[before])) before--
+    out.splice(before < 0 ? 0 : out.indexOf(defaults[before]) + 1, 0, id)
+    seen.add(id)
+  })
+  return out
 }
 
 /** `ids` with `id` moved one place up (-1) or down (+1). */

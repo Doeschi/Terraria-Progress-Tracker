@@ -226,11 +226,8 @@ export function ActiveFilterBar<K extends string>({
   }, [groups])
   const active = groups.filter((g) => selection[g.key].length > 0)
 
-  const always = usePrefs((s) => s.layout.filterBarAlways)
-
-  // shown also without filters (setting), so the list below does not jump when the first filter is added
+  // shown also without filters, so the list below does not jump when the first filter is added
   if (!active.length && !search) {
-    if (!always) return null
     return (
       <div className="flex items-center border-b px-3 py-2 text-xs">
         {/* same box as a filter chip, so the bar keeps its height */}

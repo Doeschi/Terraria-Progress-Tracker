@@ -59,35 +59,12 @@ export function SettingsDialog({ open, onOpenChange }: { open: boolean; onOpenCh
             </Row>
           </Part>
 
-          <Part title="Top bar">
-            <Check
-              checked={layout.showBestiaryProgress}
-              onChange={(showBestiaryProgress) => setLayout({ showBestiaryProgress })}
-              label="Show the bestiary progress"
-            />
-            <Check
-              checked={layout.playthroughFields}
-              onChange={(playthroughFields) => setLayout({ playthroughFields })}
-              label="Platform, difficulty and game version as separate fields (next to the playthrough)"
-            />
-          </Part>
-
           <Part title="Item list">
             <ViewOrderEditor />
             <Check
-              checked={layout.showFilteredProgress}
-              onChange={(showFilteredProgress) => setLayout({ showFilteredProgress })}
-              label="Show the progress of the filtered items"
-            />
-            <Check
-              checked={layout.filterBarAlways}
-              onChange={(filterBarAlways) => setLayout({ filterBarAlways })}
-              label="Show the filter bar also without active filters (the list does not move)"
-            />
-            <Check
               checked={layout.dimUnavailable}
               onChange={(dimUnavailable) => setLayout({ dimUnavailable })}
-              label="Dim items not available yet (with a loaded world: items after a boss it has not defeated)"
+              label="Dim items not available yet (with a loaded world: items after a boss it has not defeated; also in the Progression filter)"
             />
           </Part>
 
@@ -96,16 +73,6 @@ export function SettingsDialog({ open, onOpenChange }: { open: boolean; onOpenCh
               checked={layout.optionBars}
               onChange={(optionBars) => setLayout({ optionBars })}
               label="Progress bar under every filter option"
-            />
-            <Check
-              checked={layout.celebrate}
-              onChange={(celebrate) => setLayout({ celebrate })}
-              label="Celebrate completed filters (a message with confetti when an option reaches 100%)"
-            />
-            <Check
-              checked={layout.easterEggs}
-              onChange={(easterEggs) => setLayout({ easterEggs })}
-              label="Easter eggs (a few hidden Terraria references)"
             />
             <FilterGroupsEditor />
           </Part>
@@ -116,6 +83,19 @@ export function SettingsDialog({ open, onOpenChange }: { open: boolean; onOpenCh
               order={layout.detailOrder}
               hidden={layout.hiddenDetail}
               onChange={(detailOrder, hiddenDetail) => setLayout({ detailOrder, hiddenDetail })}
+            />
+          </Part>
+
+          <Part title="Other">
+            <Check
+              checked={layout.celebrate}
+              onChange={(celebrate) => setLayout({ celebrate })}
+              label="Celebrate completed filters (a message with confetti when a filter reaches 100%)"
+            />
+            <Check
+              checked={layout.easterEggs}
+              onChange={(easterEggs) => setLayout({ easterEggs })}
+              label="Easter eggs (a few hidden Terraria references)"
             />
           </Part>
 
@@ -260,12 +240,13 @@ function Part({ title, children }: { title: string; children: React.ReactNode })
 
 function Row({ label, hint, children }: { label: string; hint?: string; children: React.ReactNode }) {
   return (
-    <div className="grid gap-1.5 sm:grid-cols-[10rem_1fr] sm:gap-4">
-      <div>
+    <div className="flex flex-col gap-1">
+      <div className="grid items-center gap-1.5 sm:grid-cols-[10rem_1fr] sm:gap-4">
         <div className="text-sm font-medium">{label}</div>
-        {hint && <div className="text-xs text-muted-foreground">{hint}</div>}
+        <div>{children}</div>
       </div>
-      <div>{children}</div>
+      {/* the full width: no wrapping in the narrow label column */}
+      {hint && <div className="text-xs text-muted-foreground">{hint}</div>}
     </div>
   )
 }

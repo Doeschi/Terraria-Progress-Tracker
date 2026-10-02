@@ -101,7 +101,7 @@
     "id": "player-death",
     "name": "Player death",
     "icon": "https://terraria.wiki.gg/images/Tombstone.png",
-    "count": 6
+    "count": 11
   },
   {
     "id": "other-form",

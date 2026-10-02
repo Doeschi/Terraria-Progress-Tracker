@@ -34,6 +34,8 @@ GitHub Actions.
   the wiki's images, and can be turned off in the settings ("Easter eggs", on by default).
   Seasonal ones can be tested with `?date=YYYY-MM-DD` or `?date=YYYY-MM-DDTHH:MM` in the URL:
   everything seasonal then uses that date and time (only what is shown; nothing is saved).
+  Seasonal ones follow the clock while the app stays open: the date is checked once a minute, and
+  a change (a special day, the night after midnight) shows without reloading.
   Ones that only appear on some visits can be forced with `?weapons=awake`; the completion ones
   can be shown with `?egg=bestiary` and `?egg=credits`.
 
@@ -104,6 +106,15 @@ GitHub Actions.
   shirt / pants), Accessories, Music boxes, Monoliths & sky effects (the wiki's "Monoliths"
   page) – together every vanity item – plus Boss masks (the "Masks" page) and Voice
   accessories (the "Voice accessories" page), which are also in Head / Accessories.
+- **D18c** Armor and vanity sets: the pieces of a set share a wiki page whose name ends in "armor"
+  or "set" ("Hallowed armor", "Pirate set", "Yoraiz0r's set"); such a page with at least 2 items
+  is a set (185; `[sets]` in `mapping.toml` adds or excludes pages). A set is an armor set when
+  most of its pieces are armor, else a vanity set (developer sets too). `sets.json`: id, name,
+  wiki link, kind, items; items get `set`. Category "Sets" with the subcategories "Armor sets"
+  and "Vanity sets" (the items keep their other categories). Detail panel: collapsible section
+  "Set: Pirate set" with "2 / 3 obtained", armor / vanity set, the wiki link and every piece
+  (clickable rows, obtained marked, the current item highlighted). No set bonus yet (not in the
+  Cargo tables).
 - **D18a** Category "Developer items" (not an obtain method – they come from treasure bags): the
   items the wiki tags as developer items, plus the developer wings, which sit on the shared
   "Wings" page without that tag and are matched by developer name ("Red's *", …; Jim's Cap is
@@ -120,7 +131,8 @@ GitHub Actions.
   Dropped by enemies, boss treasure bags, chests → Found in chests & pots, crates and grab bags,
   shaking trees → Collected in the world), shimmer transmutations ("Shimmer transformation"),
   critters ("Caught with a Bug Net"), the Extractinators (B6), and by name: music boxes
-  ("Recorded (Music Box)"), grave markers ("Player death"), other forms of an item – Shellphone
+  ("Recorded (Music Box)"), grave markers of the page "Tombstones" ("Player death"; the golden
+  ones when dying with at least 10 gold coins – from the start, though pirates drop them too), other forms of an item – Shellphone
   and Chaos Cylinder modes, "(Inactive)" versions ("Other form of an item"). Every obtainable
   item has at least one method: the rest (world items like Fallen Star, items the wiki has not
   tagged yet, about 30) are under "Other". Critters whose name differs from their NPC (butterflies, ducks, scorpions,
@@ -153,6 +165,49 @@ GitHub Actions.
   "(placed)" one as placed image. `check_icons.py` checks all linked images through the wiki API
   in batches (no downloads) and saves image files that are only redirects (direct link = 404) to
   `raw/image_redirects.json`; the build then links their targets.
+
+## DU – Data updates
+
+Downloading the wiki data again (steps 1–3) updates everything the tables and pages hold; what
+needs a decision is reported, and parsers that read page text must not silently lose data.
+
+- **DU1** Update report: `compare_data.py` (step 4) compares the newly built data with the
+  previous one (the committed `web/public/data`, `git show HEAD:…`) and writes a Markdown report
+  (`pipeline/update_report.md`, not committed):
+  - items added and removed; renamed ones (same item id, different key) listed apart – they
+    break progress files
+  - per item: changes of categories, subcategories, "Obtained by", milestone, vendors,
+    unobtainable (a list per kind, item names)
+  - counts per data file before / after (items, drops, sources, recipes, shop rows, bestiary
+    entries, drop groups, Extractinator results, sets, …)
+  - the warnings of step 2 in one list (unmapped raw values, items without category, unknown
+    names, rules that match nothing, unmatched drop groups, …): step 2 also writes them to a file
+    (`pipeline/build_warnings.json`) instead of only to the log
+  The report is read before committing new data.
+- **DU2** Parser sanity checks: each part read from page text (shops of the vendor pages,
+  Bestiary/List, "Any …" ingredient groups, platform icons from MediaWiki:Common.css, NPC IDs,
+  drop groups, Extractinator tables, Strange Plant rewards) has a minimum in `mapping.toml`
+  (`[sanity]`, about 90 % of the last download: shop rows ≥ 700, drop group pages ≥ 80, results
+  per Extractinator ≥ 50, bestiary entries ≥ 500, …; `build_warnings.json` has the counts). Below it, step 2 stops with an error naming the part, the count and
+  the minimum (a changed wiki template, not a silently smaller data set). `--no-sanity` builds
+  anyway, e.g. to look at the result.
+- **DU3** Data version: step 1 writes the download date (`raw/download_info.json`); step 2 writes
+  `meta.json` with it as `dataVersion` ("2026-10-02") and the newest game version. The About
+  dialog shows them ("Item data: downloaded 2026-10-02, game version 1.4.5"). Progress files
+  remember the data version they last used (`dataVersion`, optional – older files have none).
+- **DU4** Change log: step 4 adds an entry to `meta.json` `updates` for the new data version
+  (replacing one of the same version): items added (keys), removed (key and name) and renamed
+  (old key → new key: same item id; plus `[renamed_items]` in `mapping.toml` for renames the
+  report cannot detect). Step 2 keeps the `updates` of the existing `meta.json`.
+- **DU5** Opening a progress file (or continuing from the backup) with an older data version:
+  - renamed keys are replaced in every playthrough (checked, ignored, last changed), so the
+    checkmarks move along
+  - a dialog "Item data updated" lists what changed since the file's data version: renamed items
+    (kept), new items, and the file's checked / ignored items that no longer exist (their keys
+    stay in the file in case they come back, but count nowhere). Files without a data version
+    only get the last part. No dialog when nothing concerns the file.
+  - the file's `dataVersion` becomes the current one (the file has unsaved changes then); new
+    files get the current one.
 
 ## IC – Icons
 
@@ -221,8 +276,9 @@ GitHub Actions.
   the first manual save / when opened). While there are unsaved changes it saves every 2
   minutes, and also when the tab is hidden or the page is closed. It never shows a dialog: if
   the browser has no write permission in this session (e.g. after a reload) autosave pauses;
-  next to the file name the header shows "Saved 14:05", "Autosave paused" or "Autosave failed"
-  (both clickable: ask for permission / retry), or "save once first".
+  next to the label "File" the header shows "Saved 14:05" (a file icon with a check – a file on
+  this computer, nothing is uploaded), "Autosave paused" or "Autosave failed" (both clickable:
+  ask for permission / retry), or "save once first".
 ## P – Playthroughs
 
 - **P1** A file holds any number of playthroughs.
@@ -384,6 +440,19 @@ GitHub Actions.
   "Completed" section next to the option ("today, 14:05") and in the tooltip of every completed
   option ("Completed today, 14:05").
 
+- **FL18** Group "Sources & sets": filter by any NPC, container or set – too many for a sidebar
+  list (about 800), so the group shows only the picked ones, and "+ Add an NPC, container or
+  set…" opens a searchable list (sections NPCs – bestiary entries; Containers & bags – chests,
+  crates, grab bags, trees; Sets – D18c), each with icon, name, kind and "obtained / total".
+  - an NPC's items: its drops (its variant's, like the NPC card), its treasure bag's contents and
+    its shop; a container's: what it contains; a set's: its pieces. In the playthrough's
+    difficulty, without rows only in special seeds (CO6)
+  - picked entries are options like the others (progress, select / unselect, chips) and stay in
+    the group until removed with their × (always shown); remembered per playthrough with the other view settings (PR)
+  - not in "Almost done", "Completed" or the completion toasts (like Progression and Crafting)
+  - "Show its items in the table" in the NPC card, the source card and the "Set" section: picks
+    the entry, clears the other filters and the search, selects only it and switches to the
+    Items collection
 ## LS – Layout and settings
 
 - **LS0** The top bar groups its fields in cards: File, the playthrough box (P) and the View
@@ -397,16 +466,19 @@ GitHub Actions.
   Overview, Where to get it, Progression) – favorites are also shown as buttons next to it.
 - **LS3** Settings dialog (⚙ → Settings…), everything remembered in the browser (PR1):
   - Appearance: theme; density (compact – default – or comfortable: compact has lower table
-    rows, smaller icons and tighter filter options)
-  - Top bar: show the bestiary progress bar; platform / difficulty / version also as three
-    separate dropdowns (else only as icons in the playthrough button)
-  - List: show "Progress of filtered items"; filter bar always or only with
-    active filters (the search mode is switched in the search field, I6a)
+    rows, smaller icons and tighter filter options; the explanation below the row, over the full
+    width)
+  - Item list: order of the views; "Dim items not available yet" (MS8)
   - Filter sidebar: reorder the filter groups (items and bestiary; single options are hidden in
     the sidebar itself, FL10); progress bars of the single options on / off
   - Detail panel: show / hide and reorder its sections
+  - Other: celebrate completed filters (FL16), easter eggs (G8)
   - each part of the dialog in its own bordered box
   - "Reset all settings"
+  Always shown, without a setting: the bestiary progress in the top bar, the progress of the
+  filtered items and the filter bar (also without active filters, so the list does not move).
+  Platform, difficulty and game version are icons in the playthrough button and changed in the
+  playthrough dialog.
 
 - **LS4** Views are customizable: a view has a name, its columns **in order**, and a sorting.
   In the views dropdown every view has ✎ (edit) and ☆ (favorite); below the list "New view…"
@@ -657,7 +729,8 @@ GitHub Actions.
   world). Limitation: an item has one milestone (the latest of what it needs, in the usual
   order), so "available now" can be slightly early when bosses were skipped.
 - **MS8** Setting "Dim items not available yet" (Layout, off by default): with a loaded world,
-  item rows whose milestone is not reached are dimmed in the list.
+  item rows whose milestone is not reached are dimmed in the list. Also switched in the filter
+  group Progression, under "Available up to / exactly at" (greyed out without a loaded world).
 
 ## ID – Item detail panel
 
@@ -949,7 +1022,8 @@ GitHub Actions.
   world), each entry with what the world says (kills / seen / talked to) and selectable. The
   dialog opens on this section after re-loading the world when the bestiary differs; for a
   newly attached world (areas dialog first) a message offers it. It can also be opened from the
-  World menu ("Sync with world…") and the bestiary toolbar.
+  World menu ("Sync with world…") and the sync button in the top bar (the bestiary toolbar has
+  none).
 - **BE6** Separate view: "Items | Bestiary" switch in the header. The bestiary view has its own
   filters (Type, Biome, Time of day, Events, Added in – faceted like FL3/FL4), its own search,
   Show all / missing / unlocked, and a table: in-game number (default order), icon, name, type,
@@ -1036,15 +1110,6 @@ Status: parser done (PL1, PL2), app integration in progress (PL3–PL5).
   per-tile objects need too much memory), a map color table (license to check if taken from a
   tool like TEdit), tiled/scaled canvas (Safari canvas size limit) and caching per world.
   Extras: chest search hits and sync results on the map.
-- **Searchable source picker:** filter by any drop source, not only bosses – all enemies (about
-  290) and containers – via a searchable picker instead of a sidebar list. The drop data
-  (`drops.json` sources with kind) and the generic filter groups (B4) are prepared for it.
-- **Wiki data updates:** decide how to handle new, changed and removed items when the data is
-  downloaded again. Progress files store item keys (internal names), so renamed or removed
-  items would silently drop out of a playthrough. Ideas: keep versioned snapshots of the raw
-  data (or a data version in the JSON files), a diff report between two downloads (added /
-  changed / removed items, renamed keys), a key-alias list for renamed items, and a notice in
-  the app when checked items no longer exist in the data.
 - **Clickable events, biomes and conditions** in the details (ND): open a card of the event /
   biome (its enemies, items, vendors) or apply the filter.
 - **Cloud storage for the progress file:** open and save the progress file in Dropbox (first)
@@ -1058,9 +1123,6 @@ Status: parser done (PL1, PL2), app integration in progress (PL3–PL5).
   Drive version) and ask before overwriting. Same autosave rules as the local file. Open
   questions: visible file or hidden app folder; File-menu entries and "Continue" for cloud
   files. (Already works today on PCs: save the file in the Dropbox / Drive sync folder.)
-- **"Show its items in the table"** in the NPC card (S5): filter the item list to the items of
-  one NPC – its drops, its treasure bag's contents and its shop – shown as a chip ("Items of:
-  Plantera") in the active filters. Ties in with the searchable source picker.
 - **Drop groups – open cases (B5):** rows that fit several groups stay without one: the
   Shadow Chest's potions (the same potion in two groups of the chest) and the Toy Sled of both
   Ice Mimics (one Drops row for both variants, a group per variant) – could be solved with a
@@ -1068,9 +1130,8 @@ Status: parser done (PL1, PL2), app integration in progress (PL3–PL5).
   so alternatives per world ("Silver / Tungsten Bar") give "0 / 4" under "one of these 2" –
   count rows of one alternative once. The NPC search's "N more" counts plain name matches, the
   bestiary's fuzzy search may find one or two more.
-- **Armor and vanity sets:** show the set an item belongs to in the detail panel (the wiki's
-  shared set pages, e.g. "Pirate set", about 124 for vanity), with its other pieces. With it a
-  category "Sets": every armor or vanity item that is part of a set.
+- **Set bonuses** (D18c): scrape the set bonus of each armor set from its page and show it in the
+  "Set" section.
 - **Player file extras (PL):** Journey research – column with the progress ("37/100"), filter
   "fully researched / not yet", optional sync of researched items; chest search also finds items
   on the player (inventory, banks, loadouts – no map marker); several players per playthrough

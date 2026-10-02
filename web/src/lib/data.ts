@@ -6,12 +6,14 @@ import type {
   CoinEntry,
   ConditionEntry,
   ConditionGroup,
+  DataMeta,
   ContainerGroup,
   Difficulty,
   Drop,
   DropGroup,
   DropSource,
   ExtractinatorData,
+  ItemSet,
   GameData,
   GroupEntry,
   IngredientGroup,
@@ -68,6 +70,8 @@ export async function loadGameData(): Promise<GameData> {
     missingItems,
     sprites,
     extractinator,
+    sets,
+    meta,
   ] = await Promise.all([
     fetchJson<Item[]>('items'),
     fetchJson<GroupEntry[]>('categories'),
@@ -101,6 +105,8 @@ export async function loadGameData(): Promise<GameData> {
       { sheets: [], icons: {} },
     ),
     fetchOptional<ExtractinatorData>('extractinator', { machines: [], results: [] }),
+    fetchOptional<ItemSet[]>('sets', []),
+    fetchOptional<DataMeta>('meta', { dataVersion: '', gameVersion: '', updates: [] }),
   ])
   const itemsByKey = new Map(items.map((i) => [i.key, i]))
   const itemsById = new Map<number, Item[]>()
@@ -129,6 +135,8 @@ export async function loadGameData(): Promise<GameData> {
     dropGroups: new Map(Object.entries(drops.groups ?? {})),
     dropAreas: drops.areas ?? [],
     extractinator,
+    sets: new Map(sets.map((s) => [s.id, s])),
+    meta,
     bossStages: bosses.stages,
     bosses: bosses.bosses,
     bossIgnoreItems: new Set(bosses.ignoreItems),

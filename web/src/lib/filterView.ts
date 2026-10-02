@@ -143,8 +143,9 @@ export function groupOrder(keys: string[], saved: string[]): string[] {
   return ordered([ALMOST_DONE, ...keys], saved.includes(ALMOST_DONE) ? saved : [ALMOST_DONE, ...saved])
 }
 
-// options that are states or overlap each other, not collections to complete
-export const NOT_RANKED = new Set(['progression', 'crafting'])
+// options that are states or overlap each other, not collections to complete; "Sources & sets"
+// has hundreds of options (FL18)
+export const NOT_RANKED = new Set(['progression', 'crafting', 'source'])
 
 export interface AlmostDone {
   group: AnyGroup
