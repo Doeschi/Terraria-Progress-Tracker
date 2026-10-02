@@ -55,6 +55,13 @@ export interface FilterGroup<K extends string = GroupKey> {
   expanded?: boolean
 }
 
+/** An item's obtain methods to show (chips, table): a parent without its sub-options, which say
+ * more ("Extractinators" + "Chlorophyte Extractinator" -> only the latter). */
+export function shownObtain(data: GameData, ids: string[]): string[] {
+  const parents = new Set(ids.map((id) => data.obtain.find((o) => o.id === id)?.parent).filter(Boolean))
+  return ids.filter((id) => !parents.has(id))
+}
+
 /** child entry id -> parent entry id, per group (a parent and its children are never selected together) */
 export function parentMap(groups: FilterGroup[]): Map<string, string> {
   const map = new Map<string, string>()
@@ -158,7 +165,17 @@ export function buildFilterGroups(data: GameData): FilterGroup[] {
       ],
     },
     { key: 'category', label: 'Categories', entries: categories },
-    { key: 'obtain', label: 'Obtained by', entries: data.obtain },
+    // sub-options (the two Extractinators) under their parent
+    {
+      key: 'obtain',
+      label: 'Obtained by',
+      entries: data.obtain
+        .filter((o) => !o.parent)
+        .map((o) => {
+          const children = data.obtain.filter((c) => c.parent === o.id)
+          return children.length ? { ...o, children } : o
+        }),
+    },
     {
       key: 'crafting',
       label: 'Crafting',

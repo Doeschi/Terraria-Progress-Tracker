@@ -272,9 +272,11 @@ def make_keys_unique(items):
         log(f"  warning: duplicate item keys remain: {dupes}")
 
 
-def derive_obtain(items, drops, shimmer_results, obtain_sections):
+def derive_obtain(items, drops, shimmer_results, obtain_sections, extractinator=None):
     """Obtain methods from our own data, added to the wiki's tags ([obtain] from_drops,
-    from_containers, from_shimmer, names); items with none at all get the fallback entry."""
+    from_containers, from_shimmer, from_extractinator, names); items with none at all get the
+    fallback entry. `extractinator`: item key -> machine ids it comes from."""
+    extractinator = extractinator or {}
     order = list(obtain_sections)
     fallback = next((oid for oid, o in obtain_sections.items() if o.get("fallback")), None)
     added, removed = Counter(), Counter()
@@ -305,6 +307,7 @@ def derive_obtain(items, drops, shimmer_results, obtain_sections):
                 continue
             if (kinds & set(o.get("from_drops", ())) or groups & set(o.get("from_containers", ()))
                     or (o.get("from_shimmer") and item["key"] in shimmer_results)
+                    or set(o.get("from_extractinator", ())) & extractinator.get(item["key"], set())
                     or any(fnmatch.fnmatchcase(name, norm_name(p)) for p in o.get("names", ()))):
                 have.add(oid)
                 added[oid] += 1

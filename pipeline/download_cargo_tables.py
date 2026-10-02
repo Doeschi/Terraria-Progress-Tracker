@@ -19,7 +19,8 @@ Outputs (in --out, default raw/ next to this script):
                    ingredients: the items of the "Any ..." recipe groups;
                    Bestiary/List: all bestiary entries in the in-game order;
                    MediaWiki:Common.css: the platform icons of {{eicons}};
-                   the vendor pages: their shops with the conditions per item)
+                   the vendor pages: their shops with the conditions per item;
+                   Extractinator, Chlorophyte Extractinator: what they turn blocks into)
   page_html.json   rendered HTML of a few wiki pages (NPC IDs: internal names,
                    ids and images of all NPCs)
   page_categories.json  the pages in a few wiki categories (Hardmode-only NPCs: enemies
@@ -59,7 +60,8 @@ DEFAULT_TABLES = ["Items", "Exclusive", "History", "Drops", "NPCs", "Equipinfo",
 # Pages whose image lists are saved (icons for rarities and coins).
 DEFAULT_PAGES = ["Rarity", "Coins", "Difficulty"]
 # Pages whose wikitext is saved; the vendor pages of mapping.toml are added (their shops).
-DEFAULT_WIKITEXT = ["Alternative crafting ingredients", "Bestiary/List", "MediaWiki:Common.css"]
+DEFAULT_WIKITEXT = ["Alternative crafting ingredients", "Bestiary/List", "MediaWiki:Common.css",
+                    "Extractinator", "Chlorophyte Extractinator"]
 MAPPING_FILE = Path(__file__).resolve().parent / "mapping.toml"
 # Pages whose rendered HTML is saved (tables filled by templates/queries).
 DEFAULT_HTML = ["NPC IDs"]
@@ -267,8 +269,9 @@ def main():
                     help="wiki pages whose image lists are saved (default: Rarity Coins Difficulty)")
     ap.add_argument("--wikitext", nargs="*", default=DEFAULT_WIKITEXT + vendor_pages(),
                     help="wiki pages whose source text is saved (default: 'Alternative crafting "
-                         "ingredients' 'Bestiary/List' 'MediaWiki:Common.css' and the vendor "
-                         "pages of mapping.toml); added to the pages saved before")
+                         "ingredients' 'Bestiary/List' 'MediaWiki:Common.css' 'Extractinator' "
+                         "'Chlorophyte Extractinator' and the vendor pages of mapping.toml); added "
+                         "to the pages saved before")
     ap.add_argument("--html", nargs="*", default=DEFAULT_HTML,
                     help="wiki pages whose rendered HTML is saved (default: 'NPC IDs')")
     ap.add_argument("--categories", nargs="*", default=DEFAULT_CATEGORIES,

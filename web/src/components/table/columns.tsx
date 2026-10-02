@@ -6,6 +6,7 @@ import { Coins, RarityIcon, WikiIcon } from '../common'
 import { formatDate, nameOf } from '@/lib/format'
 import { conditionLabel, conditionNames } from '@/lib/conditions'
 import { ConditionsCell, IconList, LuckCell, type IconEntry } from './cells'
+import { shownObtain } from '@/lib/filtering'
 import type { Luck } from '@/lib/luck'
 import type { Owned } from '@/hooks/useTrackerView'
 
@@ -207,7 +208,7 @@ export function buildColumns(data: GameData): ItemColumn[] {
       size: 160,
       defaultVisible: true,
       value: (i) => obtain(i.obtain),
-      cell: (i) => <IconList entries={obtainIcons(i.obtain)} max={6} />,
+      cell: (i) => <IconList entries={obtainIcons(shownObtain(data, i.obtain))} max={6} />,
     },
     {
       id: 'drops',

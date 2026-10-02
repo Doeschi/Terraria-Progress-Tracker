@@ -3,13 +3,13 @@
     "id": "start",
     "name": "World creation",
     "icon": "https://terraria.wiki.gg/images/Copper_Shortsword.png",
-    "count": 3757
+    "count": 3742
   },
   {
     "id": "king-slime",
     "name": "King Slime",
     "icon": "https://terraria.wiki.gg/images/Map_Icon_King_Slime.png",
-    "count": 51
+    "count": 47
   },
   {
     "id": "eye-of-cthulhu",
@@ -21,7 +21,7 @@
     "id": "evil-boss",
     "name": "Eater of Worlds / Brain of Cthulhu",
     "icon": "https://terraria.wiki.gg/images/Map_Icon_Eater_of_Worlds.png",
-    "count": 45
+    "count": 64
   },
   {
     "id": "queen-bee",
@@ -45,7 +45,7 @@
     "id": "wall-of-flesh",
     "name": "Wall of Flesh (Hardmode)",
     "icon": "https://terraria.wiki.gg/images/Map_Icon_Wall_of_Flesh.png",
-    "count": 1132
+    "count": 1131
   },
   {
     "id": "queen-slime",
@@ -63,7 +63,7 @@
     "id": "all-mechs",
     "name": "All three mechanical bosses",
     "icon": "https://terraria.wiki.gg/images/Mechanical_Skull.png",
-    "count": 30
+    "count": 31
   },
   {
     "id": "plantera",

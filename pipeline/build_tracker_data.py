@@ -38,6 +38,8 @@ same files go to --readable (default data_readable/ next to this script):
   recipes.json        crafting recipes (result, stations, ingredients), crafting
                       stations with the items that provide them, "Any ..."
                       ingredient groups, shimmer transmutations
+  extractinator.json  what the Extractinator and the Chlorophyte Extractinator give (per input,
+                      chance, amount) and always convert (Copper Ore -> Tin Ore)
   missing_items.json  items the Items table lacks but the Recipes table names (id,
                       name, probable icon) and that have no template in [recipe_items]
                       (the others are added to items.json) - to name such ids in world files
@@ -80,6 +82,7 @@ from trackerdata.items import (
 )
 from trackerdata.drops import derive_events, derive_spawns, Drops
 from trackerdata.groups import read_groups
+from trackerdata.extractinator import extractinator_file
 from trackerdata.recipes import missing_items_file, recipe_only_items, recipes_file
 from trackerdata.bestiary import bestiary_file
 from trackerdata.milestones import Milestones
@@ -198,8 +201,13 @@ def build(raw_dir, mapping_path, out_dir, readable_dir=None):
 
     log("Recipes…")
     recipes = recipes_file(recipe_rows, items, mapping, wikitext.get("Alternative crafting ingredients", ""))
-    # "Obtained by" also from our data (drops, containers, shimmer), the rest under "Other"
-    derive_obtain(items, drops, {s["result"] for s in recipes["shimmer"]}, mapping.sections["obtain"])
+    log("Extractinators…")
+    extractinator, extractinator_sources = extractinator_file(wikitext, drops.resolve, items,
+                                                                   mapping.extractinator_inputs)
+    # "Obtained by" also from our data (drops, containers, shimmer, extractinators), the rest under
+    # "Other"
+    derive_obtain(items, drops, {s["result"] for s in recipes["shimmer"]}, mapping.sections["obtain"],
+                  extractinator_sources)
 
     outputs = {"items.json": items}
     for section in LIST_SECTIONS:
@@ -227,6 +235,7 @@ def build(raw_dir, mapping_path, out_dir, readable_dir=None):
         items, {b["id"]: b["icon"] for b in outputs["bosses.json"]["bosses"] if b.get("icon")})
 
     outputs["recipes.json"] = recipes
+    outputs["extractinator.json"] = extractinator
     outputs["missing_items.json"] = missing_items_file(recipe_rows, items)
 
     log("Milestones…")
@@ -239,6 +248,11 @@ def build(raw_dir, mapping_path, out_dir, readable_dir=None):
         recipe_index["by_result"][r["result"]].append(r)
     for s in outputs["recipes.json"]["shimmer"]:
         recipe_index["shimmer_to"][s["result"]].append(s)
+    machines = {m["id"]: m for m in extractinator["machines"]}
+    recipe_index["extractinator_to"] = defaultdict(list)
+    for r in extractinator["results"]:
+        recipe_index["extractinator_to"][r["item"]].append({**r, "machine_item": machines[r["machine"]]["item"],
+                                                            "machine_name": machines[r["machine"]]["name"]})
     milestones.compute(items, drops, shops, recipe_index, rewards)
     outputs["milestones.json"] = milestones.milestones_file(
         items, {b["id"]: b["icon"] for b in outputs["bosses.json"]["bosses"] if b.get("icon")},

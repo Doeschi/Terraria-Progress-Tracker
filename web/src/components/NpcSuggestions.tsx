@@ -7,10 +7,10 @@ import { NPC_REF } from '@/lib/npcs'
 import type { BestiaryEntry, GameData } from '@/lib/types'
 import { WikiIcon } from './common'
 
-// NPCs in the item search (S5): up to 5 bestiary entries matching the search, under the field; a
-// click (or ↑/↓ + Enter, before the item rows) opens the NPC card.
+// NPCs in the item search (S5): the best-matching bestiary entry, under the field; a click (or
+// Enter, before the item rows) opens the NPC card.
 
-const MAX = 5
+const MAX = 1
 
 /** Bestiary entries whose name contains every searched word: the same name first, then names
  * starting with the search, then shorter names. */
@@ -51,7 +51,7 @@ export function NpcSuggestions({ search, open }: { search: string; open: boolean
       role="listbox"
       aria-label="NPCs"
     >
-      <div className="px-2.5 pt-1.5 pb-1 text-[11px] font-medium text-muted-foreground uppercase">NPCs</div>
+      <div className="px-2.5 pt-1.5 pb-1 text-[11px] font-medium text-muted-foreground uppercase">NPC</div>
       {shown.map((e) => {
         const ref = NPC_REF + e.id
         return (
@@ -63,7 +63,7 @@ export function NpcSuggestions({ search, open }: { search: string; open: boolean
             onClick={() => openDetail(ref)}
             className={cn(
               'flex w-full items-center gap-2.5 px-2.5 py-1 text-left text-sm hover:bg-muted',
-              active === ref && 'bg-primary/15 hover:bg-primary/20',
+              active === ref && 'outline-2 -outline-offset-2 outline-primary outline-dashed',
             )}
           >
             <WikiIcon src={e.icon} alt="" size={24} />
@@ -78,7 +78,7 @@ export function NpcSuggestions({ search, open }: { search: string; open: boolean
           onClick={showAll}
           className="w-full border-t px-2.5 py-1.5 text-left text-xs text-muted-foreground hover:bg-muted hover:text-foreground"
         >
-          +{matches.length - MAX} more – show in the bestiary
+          {matches.length - MAX} more {matches.length - MAX === 1 ? 'NPC' : 'NPCs'} – show in the bestiary
         </button>
       )}
     </div>

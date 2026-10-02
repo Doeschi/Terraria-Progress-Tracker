@@ -1,0 +1,2129 @@
+{
+  "machines": [
+    {
+      "id": "extractinator",
+      "name": "Extractinator",
+      "item": "Extractinator"
+    },
+    {
+      "id": "chlorophyte-extractinator",
+      "name": "Chlorophyte Extractinator",
+      "item": "ChlorophyteExtractinator"
+    }
+  ],
+  "results": [
+    {
+      "machine": "extractinator",
+      "item": "PlatinumCoin",
+      "inputs": [
+        "SiltBlock",
+        "SlushBlock"
+      ],
+      "input": "Silt Block / Slush Block",
+      "chance": "0.0073%",
+      "quantity": "1–11"
+    },
+    {
+      "machine": "extractinator",
+      "item": "GoldCoin",
+      "inputs": [
+        "SiltBlock",
+        "SlushBlock"
+      ],
+      "input": "Silt Block / Slush Block",
+      "chance": "0.1017%",
+      "quantity": "1–100"
+    },
+    {
+      "machine": "extractinator",
+      "item": "SilverCoin",
+      "inputs": [
+        "SiltBlock",
+        "SlushBlock"
+      ],
+      "input": "Silt Block / Slush Block",
+      "chance": "1.3534%",
+      "quantity": "1–100"
+    },
+    {
+      "machine": "extractinator",
+      "item": "CopperCoin",
+      "inputs": [
+        "SiltBlock",
+        "SlushBlock"
+      ],
+      "input": "Silt Block / Slush Block",
+      "chance": "64.2145%",
+      "quantity": "1–100"
+    },
+    {
+      "machine": "extractinator",
+      "item": "AmberMosquito",
+      "inputs": [
+        "SiltBlock",
+        "SlushBlock"
+      ],
+      "input": "Silt Block / Slush Block",
+      "chance": "0.01%",
+      "quantity": "1"
+    },
+    {
+      "machine": "extractinator",
+      "item": "Amethyst",
+      "inputs": [
+        "SiltBlock",
+        "SlushBlock"
+      ],
+      "input": "Silt Block / Slush Block",
+      "chance": "0.3333%",
+      "quantity": "1–16"
+    },
+    {
+      "machine": "extractinator",
+      "item": "Topaz",
+      "inputs": [
+        "SiltBlock",
+        "SlushBlock"
+      ],
+      "input": "Silt Block / Slush Block",
+      "chance": "0.3333%",
+      "quantity": "1–16"
+    },
+    {
+      "machine": "extractinator",
+      "item": "Sapphire",
+      "inputs": [
+        "SiltBlock",
+        "SlushBlock"
+      ],
+      "input": "Silt Block / Slush Block",
+      "chance": "0.3333%",
+      "quantity": "1–16"
+    },
+    {
+      "machine": "extractinator",
+      "item": "Emerald",
+      "inputs": [
+        "SiltBlock",
+        "SlushBlock"
+      ],
+      "input": "Silt Block / Slush Block",
+      "chance": "0.3333%",
+      "quantity": "1–16"
+    },
+    {
+      "machine": "extractinator",
+      "item": "Ruby",
+      "inputs": [
+        "SiltBlock",
+        "SlushBlock"
+      ],
+      "input": "Silt Block / Slush Block",
+      "chance": "0.3333%",
+      "quantity": "1–16"
+    },
+    {
+      "machine": "extractinator",
+      "item": "Diamond",
+      "inputs": [
+        "SiltBlock",
+        "SlushBlock"
+      ],
+      "input": "Silt Block / Slush Block",
+      "chance": "0.3333%",
+      "quantity": "1–16"
+    },
+    {
+      "machine": "extractinator",
+      "item": "Amber",
+      "inputs": [
+        "SiltBlock",
+        "SlushBlock"
+      ],
+      "input": "Silt Block / Slush Block",
+      "chance": "0.9598%",
+      "quantity": "1–16"
+    },
+    {
+      "machine": "extractinator",
+      "item": "CopperOre",
+      "inputs": [
+        "SiltBlock",
+        "SlushBlock"
+      ],
+      "input": "Silt Block / Slush Block",
+      "chance": "3.9192%",
+      "quantity": "1–16"
+    },
+    {
+      "machine": "extractinator",
+      "item": "TinOre",
+      "inputs": [
+        "SiltBlock",
+        "SlushBlock"
+      ],
+      "input": "Silt Block / Slush Block",
+      "chance": "3.9192%",
+      "quantity": "1–16"
+    },
+    {
+      "machine": "extractinator",
+      "item": "IronOre",
+      "inputs": [
+        "SiltBlock",
+        "SlushBlock"
+      ],
+      "input": "Silt Block / Slush Block",
+      "chance": "3.9192%",
+      "quantity": "1–16"
+    },
+    {
+      "machine": "extractinator",
+      "item": "LeadOre",
+      "inputs": [
+        "SiltBlock",
+        "SlushBlock"
+      ],
+      "input": "Silt Block / Slush Block",
+      "chance": "3.9192%",
+      "quantity": "1–16"
+    },
+    {
+      "machine": "extractinator",
+      "item": "SilverOre",
+      "inputs": [
+        "SiltBlock",
+        "SlushBlock"
+      ],
+      "input": "Silt Block / Slush Block",
+      "chance": "3.9192%",
+      "quantity": "1–16"
+    },
+    {
+      "machine": "extractinator",
+      "item": "TungstenOre",
+      "inputs": [
+        "SiltBlock",
+        "SlushBlock"
+      ],
+      "input": "Silt Block / Slush Block",
+      "chance": "3.9192%",
+      "quantity": "1–16"
+    },
+    {
+      "machine": "extractinator",
+      "item": "GoldOre",
+      "inputs": [
+        "SiltBlock",
+        "SlushBlock"
+      ],
+      "input": "Silt Block / Slush Block",
+      "chance": "3.9192%",
+      "quantity": "1–16"
+    },
+    {
+      "machine": "extractinator",
+      "item": "PlatinumOre",
+      "inputs": [
+        "SiltBlock",
+        "SlushBlock"
+      ],
+      "input": "Silt Block / Slush Block",
+      "chance": "3.9192%",
+      "quantity": "1–16"
+    },
+    {
+      "machine": "extractinator",
+      "item": "FossilOre",
+      "inputs": [
+        "DesertFossil"
+      ],
+      "input": "Desert Fossil",
+      "chance": "10%",
+      "quantity": "1–7"
+    },
+    {
+      "machine": "extractinator",
+      "item": "PlatinumCoin",
+      "inputs": [
+        "DesertFossil"
+      ],
+      "input": "Desert Fossil",
+      "chance": "0.0065%",
+      "quantity": "1–11"
+    },
+    {
+      "machine": "extractinator",
+      "item": "GoldCoin",
+      "inputs": [
+        "DesertFossil"
+      ],
+      "input": "Desert Fossil",
+      "chance": "0.0911%",
+      "quantity": "1–100"
+    },
+    {
+      "machine": "extractinator",
+      "item": "SilverCoin",
+      "inputs": [
+        "DesertFossil"
+      ],
+      "input": "Desert Fossil",
+      "chance": "1.213%",
+      "quantity": "1–100"
+    },
+    {
+      "machine": "extractinator",
+      "item": "CopperCoin",
+      "inputs": [
+        "DesertFossil"
+      ],
+      "input": "Desert Fossil",
+      "chance": "57.646%",
+      "quantity": "1–100"
+    },
+    {
+      "machine": "extractinator",
+      "item": "AmberMosquito",
+      "inputs": [
+        "DesertFossil"
+      ],
+      "input": "Desert Fossil",
+      "chance": "0.027%",
+      "quantity": "1"
+    },
+    {
+      "machine": "extractinator",
+      "item": "Amethyst",
+      "inputs": [
+        "DesertFossil"
+      ],
+      "input": "Desert Fossil",
+      "chance": "0.1499%",
+      "quantity": "1–16"
+    },
+    {
+      "machine": "extractinator",
+      "item": "Topaz",
+      "inputs": [
+        "DesertFossil"
+      ],
+      "input": "Desert Fossil",
+      "chance": "0.1499%",
+      "quantity": "1–16"
+    },
+    {
+      "machine": "extractinator",
+      "item": "Sapphire",
+      "inputs": [
+        "DesertFossil"
+      ],
+      "input": "Desert Fossil",
+      "chance": "0.1499%",
+      "quantity": "1–16"
+    },
+    {
+      "machine": "extractinator",
+      "item": "Emerald",
+      "inputs": [
+        "DesertFossil"
+      ],
+      "input": "Desert Fossil",
+      "chance": "0.1499%",
+      "quantity": "1–16"
+    },
+    {
+      "machine": "extractinator",
+      "item": "Ruby",
+      "inputs": [
+        "DesertFossil"
+      ],
+      "input": "Desert Fossil",
+      "chance": "0.1499%",
+      "quantity": "1–16"
+    },
+    {
+      "machine": "extractinator",
+      "item": "Diamond",
+      "inputs": [
+        "DesertFossil"
+      ],
+      "input": "Desert Fossil",
+      "chance": "0.1499%",
+      "quantity": "1–16"
+    },
+    {
+      "machine": "extractinator",
+      "item": "Amber",
+      "inputs": [
+        "DesertFossil"
+      ],
+      "input": "Desert Fossil",
+      "chance": "2.2036%",
+      "quantity": "1–16"
+    },
+    {
+      "machine": "extractinator",
+      "item": "CopperOre",
+      "inputs": [
+        "DesertFossil"
+      ],
+      "input": "Desert Fossil",
+      "chance": "3.4892%",
+      "quantity": "1–16"
+    },
+    {
+      "machine": "extractinator",
+      "item": "TinOre",
+      "inputs": [
+        "DesertFossil"
+      ],
+      "input": "Desert Fossil",
+      "chance": "3.4892%",
+      "quantity": "1–16"
+    },
+    {
+      "machine": "extractinator",
+      "item": "IronOre",
+      "inputs": [
+        "DesertFossil"
+      ],
+      "input": "Desert Fossil",
+      "chance": "3.4892%",
+      "quantity": "1–16"
+    },
+    {
+      "machine": "extractinator",
+      "item": "LeadOre",
+      "inputs": [
+        "DesertFossil"
+      ],
+      "input": "Desert Fossil",
+      "chance": "3.4892%",
+      "quantity": "1–16"
+    },
+    {
+      "machine": "extractinator",
+      "item": "SilverOre",
+      "inputs": [
+        "DesertFossil"
+      ],
+      "input": "Desert Fossil",
+      "chance": "3.4892%",
+      "quantity": "1–16"
+    },
+    {
+      "machine": "extractinator",
+      "item": "TungstenOre",
+      "inputs": [
+        "DesertFossil"
+      ],
+      "input": "Desert Fossil",
+      "chance": "3.4892%",
+      "quantity": "1–16"
+    },
+    {
+      "machine": "extractinator",
+      "item": "GoldOre",
+      "inputs": [
+        "DesertFossil"
+      ],
+      "input": "Desert Fossil",
+      "chance": "3.4892%",
+      "quantity": "1–16"
+    },
+    {
+      "machine": "extractinator",
+      "item": "PlatinumOre",
+      "inputs": [
+        "DesertFossil"
+      ],
+      "input": "Desert Fossil",
+      "chance": "3.4892%",
+      "quantity": "1–16"
+    },
+    {
+      "machine": "extractinator",
+      "item": "GreenMoss",
+      "inputs": [
+        "LavaMoss",
+        "KryptonMoss",
+        "XenonMoss",
+        "ArgonMoss",
+        "VioletMoss",
+        "RainbowMoss"
+      ],
+      "input": "Glowing Moss",
+      "chance": "20%",
+      "quantity": "1"
+    },
+    {
+      "machine": "extractinator",
+      "item": "BrownMoss",
+      "inputs": [
+        "LavaMoss",
+        "KryptonMoss",
+        "XenonMoss",
+        "ArgonMoss",
+        "VioletMoss",
+        "RainbowMoss"
+      ],
+      "input": "Glowing Moss",
+      "chance": "20%",
+      "quantity": "1"
+    },
+    {
+      "machine": "extractinator",
+      "item": "RedMoss",
+      "inputs": [
+        "LavaMoss",
+        "KryptonMoss",
+        "XenonMoss",
+        "ArgonMoss",
+        "VioletMoss",
+        "RainbowMoss"
+      ],
+      "input": "Glowing Moss",
+      "chance": "20%",
+      "quantity": "1"
+    },
+    {
+      "machine": "extractinator",
+      "item": "BlueMoss",
+      "inputs": [
+        "LavaMoss",
+        "KryptonMoss",
+        "XenonMoss",
+        "ArgonMoss",
+        "VioletMoss",
+        "RainbowMoss"
+      ],
+      "input": "Glowing Moss",
+      "chance": "20%",
+      "quantity": "1"
+    },
+    {
+      "machine": "extractinator",
+      "item": "PurpleMoss",
+      "inputs": [
+        "LavaMoss",
+        "KryptonMoss",
+        "XenonMoss",
+        "ArgonMoss",
+        "VioletMoss",
+        "RainbowMoss"
+      ],
+      "input": "Glowing Moss",
+      "chance": "20%",
+      "quantity": "1"
+    },
+    {
+      "machine": "extractinator",
+      "item": "Snail",
+      "inputs": [
+        "OldShoe",
+        "FishingSeaweed",
+        "TinCan"
+      ],
+      "input": "Old Shoe / Seaweed (junk) / Tin Can",
+      "chance": "16.67%",
+      "quantity": "1"
+    },
+    {
+      "machine": "extractinator",
+      "item": "ApprenticeBait",
+      "inputs": [
+        "OldShoe",
+        "FishingSeaweed",
+        "TinCan"
+      ],
+      "input": "Old Shoe / Seaweed (junk) / Tin Can",
+      "chance": "75%",
+      "quantity": "1"
+    },
+    {
+      "machine": "extractinator",
+      "item": "Worm",
+      "inputs": [
+        "OldShoe",
+        "FishingSeaweed",
+        "TinCan"
+      ],
+      "input": "Old Shoe / Seaweed (junk) / Tin Can",
+      "chance": "5.56%",
+      "quantity": "1"
+    },
+    {
+      "machine": "extractinator",
+      "item": "JourneymanBait",
+      "inputs": [
+        "OldShoe",
+        "FishingSeaweed",
+        "TinCan"
+      ],
+      "input": "Old Shoe / Seaweed (junk) / Tin Can",
+      "chance": "2.78%",
+      "quantity": "1"
+    },
+    {
+      "machine": "extractinator",
+      "item": "DirtBlock",
+      "inputs": [
+        "PoopBlock"
+      ],
+      "input": "Poo",
+      "chance": "49/50",
+      "quantity": "1"
+    },
+    {
+      "machine": "extractinator",
+      "item": "GrassSeeds",
+      "inputs": [
+        "PoopBlock"
+      ],
+      "input": "Poo",
+      "chance": "1/150",
+      "quantity": "1"
+    },
+    {
+      "machine": "extractinator",
+      "item": "JungleGrassSeeds",
+      "inputs": [
+        "PoopBlock"
+      ],
+      "input": "Poo",
+      "chance": "1/150",
+      "quantity": "1"
+    },
+    {
+      "machine": "extractinator",
+      "item": "MushroomGrassSeeds",
+      "inputs": [
+        "PoopBlock"
+      ],
+      "input": "Poo",
+      "chance": "1/150",
+      "quantity": "1"
+    },
+    {
+      "machine": "extractinator",
+      "item": "HoneyBlock",
+      "inputs": [
+        "Hive"
+      ],
+      "input": "Hive",
+      "conversion": true
+    },
+    {
+      "machine": "extractinator",
+      "item": "SandBlock",
+      "inputs": [
+        "ShellPileBlock",
+        "Obsidian"
+      ],
+      "input": "Shell Pile / Obsidian",
+      "conversion": true
+    },
+    {
+      "machine": "chlorophyte-extractinator",
+      "item": "PlatinumCoin",
+      "inputs": [
+        "SiltBlock",
+        "SlushBlock"
+      ],
+      "input": "Silt Block / Slush Block",
+      "chance": "0.0073%",
+      "quantity": "1–11"
+    },
+    {
+      "machine": "chlorophyte-extractinator",
+      "item": "GoldCoin",
+      "inputs": [
+        "SiltBlock",
+        "SlushBlock"
+      ],
+      "input": "Silt Block / Slush Block",
+      "chance": "0.1017%",
+      "quantity": "1–100"
+    },
+    {
+      "machine": "chlorophyte-extractinator",
+      "item": "SilverCoin",
+      "inputs": [
+        "SiltBlock",
+        "SlushBlock"
+      ],
+      "input": "Silt Block / Slush Block",
+      "chance": "1.3534%",
+      "quantity": "1–100"
+    },
+    {
+      "machine": "chlorophyte-extractinator",
+      "item": "CopperCoin",
+      "inputs": [
+        "SiltBlock",
+        "SlushBlock"
+      ],
+      "input": "Silt Block / Slush Block",
+      "chance": "64.2145%",
+      "quantity": "1–100"
+    },
+    {
+      "machine": "chlorophyte-extractinator",
+      "item": "AmberMosquito",
+      "inputs": [
+        "SiltBlock",
+        "SlushBlock"
+      ],
+      "input": "Silt Block / Slush Block",
+      "chance": "0.01%",
+      "quantity": "1"
+    },
+    {
+      "machine": "chlorophyte-extractinator",
+      "item": "Amethyst",
+      "inputs": [
+        "SiltBlock",
+        "SlushBlock"
+      ],
+      "input": "Silt Block / Slush Block",
+      "chance": "0.3333%",
+      "quantity": "1–16"
+    },
+    {
+      "machine": "chlorophyte-extractinator",
+      "item": "Topaz",
+      "inputs": [
+        "SiltBlock",
+        "SlushBlock"
+      ],
+      "input": "Silt Block / Slush Block",
+      "chance": "0.3333%",
+      "quantity": "1–16"
+    },
+    {
+      "machine": "chlorophyte-extractinator",
+      "item": "Sapphire",
+      "inputs": [
+        "SiltBlock",
+        "SlushBlock"
+      ],
+      "input": "Silt Block / Slush Block",
+      "chance": "0.3333%",
+      "quantity": "1–16"
+    },
+    {
+      "machine": "chlorophyte-extractinator",
+      "item": "Emerald",
+      "inputs": [
+        "SiltBlock",
+        "SlushBlock"
+      ],
+      "input": "Silt Block / Slush Block",
+      "chance": "0.3333%",
+      "quantity": "1–16"
+    },
+    {
+      "machine": "chlorophyte-extractinator",
+      "item": "Ruby",
+      "inputs": [
+        "SiltBlock",
+        "SlushBlock"
+      ],
+      "input": "Silt Block / Slush Block",
+      "chance": "0.3333%",
+      "quantity": "1–16"
+    },
+    {
+      "machine": "chlorophyte-extractinator",
+      "item": "Diamond",
+      "inputs": [
+        "SiltBlock",
+        "SlushBlock"
+      ],
+      "input": "Silt Block / Slush Block",
+      "chance": "0.3333%",
+      "quantity": "1–16"
+    },
+    {
+      "machine": "chlorophyte-extractinator",
+      "item": "Amber",
+      "inputs": [
+        "SiltBlock",
+        "SlushBlock"
+      ],
+      "input": "Silt Block / Slush Block",
+      "chance": "0.9598%",
+      "quantity": "1–16"
+    },
+    {
+      "machine": "chlorophyte-extractinator",
+      "item": "CopperOre",
+      "inputs": [
+        "SiltBlock",
+        "SlushBlock"
+      ],
+      "input": "Silt Block / Slush Block",
+      "chance": "3.9192%",
+      "quantity": "1–16",
+      "phase": "prehardmode"
+    },
+    {
+      "machine": "chlorophyte-extractinator",
+      "item": "TinOre",
+      "inputs": [
+        "SiltBlock",
+        "SlushBlock"
+      ],
+      "input": "Silt Block / Slush Block",
+      "chance": "3.9192%",
+      "quantity": "1–16",
+      "phase": "prehardmode"
+    },
+    {
+      "machine": "chlorophyte-extractinator",
+      "item": "IronOre",
+      "inputs": [
+        "SiltBlock",
+        "SlushBlock"
+      ],
+      "input": "Silt Block / Slush Block",
+      "chance": "3.9192%",
+      "quantity": "1–16",
+      "phase": "prehardmode"
+    },
+    {
+      "machine": "chlorophyte-extractinator",
+      "item": "LeadOre",
+      "inputs": [
+        "SiltBlock",
+        "SlushBlock"
+      ],
+      "input": "Silt Block / Slush Block",
+      "chance": "3.9192%",
+      "quantity": "1–16",
+      "phase": "prehardmode"
+    },
+    {
+      "machine": "chlorophyte-extractinator",
+      "item": "SilverOre",
+      "inputs": [
+        "SiltBlock",
+        "SlushBlock"
+      ],
+      "input": "Silt Block / Slush Block",
+      "chance": "3.9192%",
+      "quantity": "1–16",
+      "phase": "prehardmode"
+    },
+    {
+      "machine": "chlorophyte-extractinator",
+      "item": "TungstenOre",
+      "inputs": [
+        "SiltBlock",
+        "SlushBlock"
+      ],
+      "input": "Silt Block / Slush Block",
+      "chance": "3.9192%",
+      "quantity": "1–16",
+      "phase": "prehardmode"
+    },
+    {
+      "machine": "chlorophyte-extractinator",
+      "item": "GoldOre",
+      "inputs": [
+        "SiltBlock",
+        "SlushBlock"
+      ],
+      "input": "Silt Block / Slush Block",
+      "chance": "3.9192%",
+      "quantity": "1–16",
+      "phase": "prehardmode"
+    },
+    {
+      "machine": "chlorophyte-extractinator",
+      "item": "PlatinumOre",
+      "inputs": [
+        "SiltBlock",
+        "SlushBlock"
+      ],
+      "input": "Silt Block / Slush Block",
+      "chance": "3.9192%",
+      "quantity": "1–16",
+      "phase": "prehardmode"
+    },
+    {
+      "machine": "chlorophyte-extractinator",
+      "item": "CopperOre",
+      "inputs": [
+        "SiltBlock",
+        "SlushBlock"
+      ],
+      "input": "Silt Block / Slush Block",
+      "chance": "2.2396%",
+      "quantity": "1–16",
+      "phase": "hardmode"
+    },
+    {
+      "machine": "chlorophyte-extractinator",
+      "item": "TinOre",
+      "inputs": [
+        "SiltBlock",
+        "SlushBlock"
+      ],
+      "input": "Silt Block / Slush Block",
+      "chance": "2.2396%",
+      "quantity": "1–16",
+      "phase": "hardmode"
+    },
+    {
+      "machine": "chlorophyte-extractinator",
+      "item": "IronOre",
+      "inputs": [
+        "SiltBlock",
+        "SlushBlock"
+      ],
+      "input": "Silt Block / Slush Block",
+      "chance": "2.2396%",
+      "quantity": "1–16",
+      "phase": "hardmode"
+    },
+    {
+      "machine": "chlorophyte-extractinator",
+      "item": "LeadOre",
+      "inputs": [
+        "SiltBlock",
+        "SlushBlock"
+      ],
+      "input": "Silt Block / Slush Block",
+      "chance": "2.2396%",
+      "quantity": "1–16",
+      "phase": "hardmode"
+    },
+    {
+      "machine": "chlorophyte-extractinator",
+      "item": "SilverOre",
+      "inputs": [
+        "SiltBlock",
+        "SlushBlock"
+      ],
+      "input": "Silt Block / Slush Block",
+      "chance": "2.2396%",
+      "quantity": "1–16",
+      "phase": "hardmode"
+    },
+    {
+      "machine": "chlorophyte-extractinator",
+      "item": "TungstenOre",
+      "inputs": [
+        "SiltBlock",
+        "SlushBlock"
+      ],
+      "input": "Silt Block / Slush Block",
+      "chance": "2.2396%",
+      "quantity": "1–16",
+      "phase": "hardmode"
+    },
+    {
+      "machine": "chlorophyte-extractinator",
+      "item": "GoldOre",
+      "inputs": [
+        "SiltBlock",
+        "SlushBlock"
+      ],
+      "input": "Silt Block / Slush Block",
+      "chance": "2.2396%",
+      "quantity": "1–16",
+      "phase": "hardmode"
+    },
+    {
+      "machine": "chlorophyte-extractinator",
+      "item": "PlatinumOre",
+      "inputs": [
+        "SiltBlock",
+        "SlushBlock"
+      ],
+      "input": "Silt Block / Slush Block",
+      "chance": "2.2396%",
+      "quantity": "1–16",
+      "phase": "hardmode"
+    },
+    {
+      "machine": "chlorophyte-extractinator",
+      "item": "CobaltOre",
+      "inputs": [
+        "SiltBlock",
+        "SlushBlock"
+      ],
+      "input": "Silt Block / Slush Block",
+      "chance": "2.2396%",
+      "quantity": "1–16",
+      "phase": "hardmode"
+    },
+    {
+      "machine": "chlorophyte-extractinator",
+      "item": "PalladiumOre",
+      "inputs": [
+        "SiltBlock",
+        "SlushBlock"
+      ],
+      "input": "Silt Block / Slush Block",
+      "chance": "2.2396%",
+      "quantity": "1–16",
+      "phase": "hardmode"
+    },
+    {
+      "machine": "chlorophyte-extractinator",
+      "item": "MythrilOre",
+      "inputs": [
+        "SiltBlock",
+        "SlushBlock"
+      ],
+      "input": "Silt Block / Slush Block",
+      "chance": "2.2396%",
+      "quantity": "1–16",
+      "phase": "hardmode"
+    },
+    {
+      "machine": "chlorophyte-extractinator",
+      "item": "OrichalcumOre",
+      "inputs": [
+        "SiltBlock",
+        "SlushBlock"
+      ],
+      "input": "Silt Block / Slush Block",
+      "chance": "2.2396%",
+      "quantity": "1–16",
+      "phase": "hardmode"
+    },
+    {
+      "machine": "chlorophyte-extractinator",
+      "item": "AdamantiteOre",
+      "inputs": [
+        "SiltBlock",
+        "SlushBlock"
+      ],
+      "input": "Silt Block / Slush Block",
+      "chance": "2.2396%",
+      "quantity": "1–16",
+      "phase": "hardmode"
+    },
+    {
+      "machine": "chlorophyte-extractinator",
+      "item": "TitaniumOre",
+      "inputs": [
+        "SiltBlock",
+        "SlushBlock"
+      ],
+      "input": "Silt Block / Slush Block",
+      "chance": "2.2396%",
+      "quantity": "1–16",
+      "phase": "hardmode"
+    },
+    {
+      "machine": "chlorophyte-extractinator",
+      "item": "FossilOre",
+      "inputs": [
+        "DesertFossil"
+      ],
+      "input": "Desert Fossil",
+      "chance": "10%",
+      "quantity": "1–7"
+    },
+    {
+      "machine": "chlorophyte-extractinator",
+      "item": "PlatinumCoin",
+      "inputs": [
+        "DesertFossil"
+      ],
+      "input": "Desert Fossil",
+      "chance": "0.0065%",
+      "quantity": "1–11"
+    },
+    {
+      "machine": "chlorophyte-extractinator",
+      "item": "GoldCoin",
+      "inputs": [
+        "DesertFossil"
+      ],
+      "input": "Desert Fossil",
+      "chance": "0.0911%",
+      "quantity": "1–100"
+    },
+    {
+      "machine": "chlorophyte-extractinator",
+      "item": "SilverCoin",
+      "inputs": [
+        "DesertFossil"
+      ],
+      "input": "Desert Fossil",
+      "chance": "1.213%",
+      "quantity": "1–100"
+    },
+    {
+      "machine": "chlorophyte-extractinator",
+      "item": "CopperCoin",
+      "inputs": [
+        "DesertFossil"
+      ],
+      "input": "Desert Fossil",
+      "chance": "57.646%",
+      "quantity": "1–100"
+    },
+    {
+      "machine": "chlorophyte-extractinator",
+      "item": "AmberMosquito",
+      "inputs": [
+        "DesertFossil"
+      ],
+      "input": "Desert Fossil",
+      "chance": "0.027%",
+      "quantity": "1"
+    },
+    {
+      "machine": "chlorophyte-extractinator",
+      "item": "Amethyst",
+      "inputs": [
+        "DesertFossil"
+      ],
+      "input": "Desert Fossil",
+      "chance": "0.1499%",
+      "quantity": "1–16"
+    },
+    {
+      "machine": "chlorophyte-extractinator",
+      "item": "Topaz",
+      "inputs": [
+        "DesertFossil"
+      ],
+      "input": "Desert Fossil",
+      "chance": "0.1499%",
+      "quantity": "1–16"
+    },
+    {
+      "machine": "chlorophyte-extractinator",
+      "item": "Sapphire",
+      "inputs": [
+        "DesertFossil"
+      ],
+      "input": "Desert Fossil",
+      "chance": "0.1499%",
+      "quantity": "1–16"
+    },
+    {
+      "machine": "chlorophyte-extractinator",
+      "item": "Emerald",
+      "inputs": [
+        "DesertFossil"
+      ],
+      "input": "Desert Fossil",
+      "chance": "0.1499%",
+      "quantity": "1–16"
+    },
+    {
+      "machine": "chlorophyte-extractinator",
+      "item": "Ruby",
+      "inputs": [
+        "DesertFossil"
+      ],
+      "input": "Desert Fossil",
+      "chance": "0.1499%",
+      "quantity": "1–16"
+    },
+    {
+      "machine": "chlorophyte-extractinator",
+      "item": "Diamond",
+      "inputs": [
+        "DesertFossil"
+      ],
+      "input": "Desert Fossil",
+      "chance": "0.1499%",
+      "quantity": "1–16"
+    },
+    {
+      "machine": "chlorophyte-extractinator",
+      "item": "Amber",
+      "inputs": [
+        "DesertFossil"
+      ],
+      "input": "Desert Fossil",
+      "chance": "2.2037%",
+      "quantity": "1–16"
+    },
+    {
+      "machine": "chlorophyte-extractinator",
+      "item": "CopperOre",
+      "inputs": [
+        "DesertFossil"
+      ],
+      "input": "Desert Fossil",
+      "chance": "3.4892%",
+      "quantity": "1–16",
+      "phase": "prehardmode"
+    },
+    {
+      "machine": "chlorophyte-extractinator",
+      "item": "TinOre",
+      "inputs": [
+        "DesertFossil"
+      ],
+      "input": "Desert Fossil",
+      "chance": "3.4892%",
+      "quantity": "1–16",
+      "phase": "prehardmode"
+    },
+    {
+      "machine": "chlorophyte-extractinator",
+      "item": "IronOre",
+      "inputs": [
+        "DesertFossil"
+      ],
+      "input": "Desert Fossil",
+      "chance": "3.4892%",
+      "quantity": "1–16",
+      "phase": "prehardmode"
+    },
+    {
+      "machine": "chlorophyte-extractinator",
+      "item": "LeadOre",
+      "inputs": [
+        "DesertFossil"
+      ],
+      "input": "Desert Fossil",
+      "chance": "3.4892%",
+      "quantity": "1–16",
+      "phase": "prehardmode"
+    },
+    {
+      "machine": "chlorophyte-extractinator",
+      "item": "SilverOre",
+      "inputs": [
+        "DesertFossil"
+      ],
+      "input": "Desert Fossil",
+      "chance": "3.4892%",
+      "quantity": "1–16",
+      "phase": "prehardmode"
+    },
+    {
+      "machine": "chlorophyte-extractinator",
+      "item": "TungstenOre",
+      "inputs": [
+        "DesertFossil"
+      ],
+      "input": "Desert Fossil",
+      "chance": "3.4892%",
+      "quantity": "1–16",
+      "phase": "prehardmode"
+    },
+    {
+      "machine": "chlorophyte-extractinator",
+      "item": "GoldOre",
+      "inputs": [
+        "DesertFossil"
+      ],
+      "input": "Desert Fossil",
+      "chance": "3.4892%",
+      "quantity": "1–16",
+      "phase": "prehardmode"
+    },
+    {
+      "machine": "chlorophyte-extractinator",
+      "item": "PlatinumOre",
+      "inputs": [
+        "DesertFossil"
+      ],
+      "input": "Desert Fossil",
+      "chance": "3.4892%",
+      "quantity": "1–16",
+      "phase": "prehardmode"
+    },
+    {
+      "machine": "chlorophyte-extractinator",
+      "item": "CopperOre",
+      "inputs": [
+        "DesertFossil"
+      ],
+      "input": "Desert Fossil",
+      "chance": "1.9938%",
+      "quantity": "1–16",
+      "phase": "hardmode"
+    },
+    {
+      "machine": "chlorophyte-extractinator",
+      "item": "TinOre",
+      "inputs": [
+        "DesertFossil"
+      ],
+      "input": "Desert Fossil",
+      "chance": "1.9938%",
+      "quantity": "1–16",
+      "phase": "hardmode"
+    },
+    {
+      "machine": "chlorophyte-extractinator",
+      "item": "IronOre",
+      "inputs": [
+        "DesertFossil"
+      ],
+      "input": "Desert Fossil",
+      "chance": "1.9938%",
+      "quantity": "1–16",
+      "phase": "hardmode"
+    },
+    {
+      "machine": "chlorophyte-extractinator",
+      "item": "LeadOre",
+      "inputs": [
+        "DesertFossil"
+      ],
+      "input": "Desert Fossil",
+      "chance": "1.9938%",
+      "quantity": "1–16",
+      "phase": "hardmode"
+    },
+    {
+      "machine": "chlorophyte-extractinator",
+      "item": "SilverOre",
+      "inputs": [
+        "DesertFossil"
+      ],
+      "input": "Desert Fossil",
+      "chance": "1.9938%",
+      "quantity": "1–16",
+      "phase": "hardmode"
+    },
+    {
+      "machine": "chlorophyte-extractinator",
+      "item": "TungstenOre",
+      "inputs": [
+        "DesertFossil"
+      ],
+      "input": "Desert Fossil",
+      "chance": "1.9938%",
+      "quantity": "1–16",
+      "phase": "hardmode"
+    },
+    {
+      "machine": "chlorophyte-extractinator",
+      "item": "GoldOre",
+      "inputs": [
+        "DesertFossil"
+      ],
+      "input": "Desert Fossil",
+      "chance": "1.9938%",
+      "quantity": "1–16",
+      "phase": "hardmode"
+    },
+    {
+      "machine": "chlorophyte-extractinator",
+      "item": "PlatinumOre",
+      "inputs": [
+        "DesertFossil"
+      ],
+      "input": "Desert Fossil",
+      "chance": "1.9938%",
+      "quantity": "1–16",
+      "phase": "hardmode"
+    },
+    {
+      "machine": "chlorophyte-extractinator",
+      "item": "CobaltOre",
+      "inputs": [
+        "DesertFossil"
+      ],
+      "input": "Desert Fossil",
+      "chance": "1.9938%",
+      "quantity": "1–16",
+      "phase": "hardmode"
+    },
+    {
+      "machine": "chlorophyte-extractinator",
+      "item": "PalladiumOre",
+      "inputs": [
+        "DesertFossil"
+      ],
+      "input": "Desert Fossil",
+      "chance": "1.9938%",
+      "quantity": "1–16",
+      "phase": "hardmode"
+    },
+    {
+      "machine": "chlorophyte-extractinator",
+      "item": "MythrilOre",
+      "inputs": [
+        "DesertFossil"
+      ],
+      "input": "Desert Fossil",
+      "chance": "1.9938%",
+      "quantity": "1–16",
+      "phase": "hardmode"
+    },
+    {
+      "machine": "chlorophyte-extractinator",
+      "item": "OrichalcumOre",
+      "inputs": [
+        "DesertFossil"
+      ],
+      "input": "Desert Fossil",
+      "chance": "1.9938%",
+      "quantity": "1–16",
+      "phase": "hardmode"
+    },
+    {
+      "machine": "chlorophyte-extractinator",
+      "item": "AdamantiteOre",
+      "inputs": [
+        "DesertFossil"
+      ],
+      "input": "Desert Fossil",
+      "chance": "1.9938%",
+      "quantity": "1–16",
+      "phase": "hardmode"
+    },
+    {
+      "machine": "chlorophyte-extractinator",
+      "item": "TitaniumOre",
+      "inputs": [
+        "DesertFossil"
+      ],
+      "input": "Desert Fossil",
+      "chance": "1.9938%",
+      "quantity": "1–16",
+      "phase": "hardmode"
+    },
+    {
+      "machine": "chlorophyte-extractinator",
+      "item": "GreenMoss",
+      "inputs": [
+        "LavaMoss",
+        "KryptonMoss",
+        "XenonMoss",
+        "ArgonMoss",
+        "VioletMoss",
+        "RainbowMoss"
+      ],
+      "input": "Glowing Moss",
+      "chance": "18%",
+      "quantity": "1"
+    },
+    {
+      "machine": "chlorophyte-extractinator",
+      "item": "BrownMoss",
+      "inputs": [
+        "LavaMoss",
+        "KryptonMoss",
+        "XenonMoss",
+        "ArgonMoss",
+        "VioletMoss",
+        "RainbowMoss"
+      ],
+      "input": "Glowing Moss",
+      "chance": "18%",
+      "quantity": "1"
+    },
+    {
+      "machine": "chlorophyte-extractinator",
+      "item": "RedMoss",
+      "inputs": [
+        "LavaMoss",
+        "KryptonMoss",
+        "XenonMoss",
+        "ArgonMoss",
+        "VioletMoss",
+        "RainbowMoss"
+      ],
+      "input": "Glowing Moss",
+      "chance": "18%",
+      "quantity": "1"
+    },
+    {
+      "machine": "chlorophyte-extractinator",
+      "item": "BlueMoss",
+      "inputs": [
+        "LavaMoss",
+        "KryptonMoss",
+        "XenonMoss",
+        "ArgonMoss",
+        "VioletMoss",
+        "RainbowMoss"
+      ],
+      "input": "Glowing Moss",
+      "chance": "18%",
+      "quantity": "1"
+    },
+    {
+      "machine": "chlorophyte-extractinator",
+      "item": "PurpleMoss",
+      "inputs": [
+        "LavaMoss",
+        "KryptonMoss",
+        "XenonMoss",
+        "ArgonMoss",
+        "VioletMoss",
+        "RainbowMoss"
+      ],
+      "input": "Glowing Moss",
+      "chance": "18%",
+      "quantity": "1"
+    },
+    {
+      "machine": "chlorophyte-extractinator",
+      "item": "LavaMoss",
+      "inputs": [
+        "LavaMoss",
+        "KryptonMoss",
+        "XenonMoss",
+        "ArgonMoss",
+        "VioletMoss",
+        "RainbowMoss"
+      ],
+      "input": "Glowing Moss",
+      "chance": "2%",
+      "quantity": "1"
+    },
+    {
+      "machine": "chlorophyte-extractinator",
+      "item": "KryptonMoss",
+      "inputs": [
+        "LavaMoss",
+        "KryptonMoss",
+        "XenonMoss",
+        "ArgonMoss",
+        "VioletMoss",
+        "RainbowMoss"
+      ],
+      "input": "Glowing Moss",
+      "chance": "2%",
+      "quantity": "1"
+    },
+    {
+      "machine": "chlorophyte-extractinator",
+      "item": "XenonMoss",
+      "inputs": [
+        "LavaMoss",
+        "KryptonMoss",
+        "XenonMoss",
+        "ArgonMoss",
+        "VioletMoss",
+        "RainbowMoss"
+      ],
+      "input": "Glowing Moss",
+      "chance": "2%",
+      "quantity": "1"
+    },
+    {
+      "machine": "chlorophyte-extractinator",
+      "item": "ArgonMoss",
+      "inputs": [
+        "LavaMoss",
+        "KryptonMoss",
+        "XenonMoss",
+        "ArgonMoss",
+        "VioletMoss",
+        "RainbowMoss"
+      ],
+      "input": "Glowing Moss",
+      "chance": "2%",
+      "quantity": "1"
+    },
+    {
+      "machine": "chlorophyte-extractinator",
+      "item": "VioletMoss",
+      "inputs": [
+        "LavaMoss",
+        "KryptonMoss",
+        "XenonMoss",
+        "ArgonMoss",
+        "VioletMoss",
+        "RainbowMoss"
+      ],
+      "input": "Glowing Moss",
+      "chance": "2%",
+      "quantity": "1"
+    },
+    {
+      "machine": "chlorophyte-extractinator",
+      "item": "Snail",
+      "inputs": [
+        "OldShoe",
+        "FishingSeaweed",
+        "TinCan"
+      ],
+      "input": "Old Shoe / Seaweed (junk) / Tin Can",
+      "chance": "16.67%",
+      "quantity": "1"
+    },
+    {
+      "machine": "chlorophyte-extractinator",
+      "item": "ApprenticeBait",
+      "inputs": [
+        "OldShoe",
+        "FishingSeaweed",
+        "TinCan"
+      ],
+      "input": "Old Shoe / Seaweed (junk) / Tin Can",
+      "chance": "75%",
+      "quantity": "1"
+    },
+    {
+      "machine": "chlorophyte-extractinator",
+      "item": "Worm",
+      "inputs": [
+        "OldShoe",
+        "FishingSeaweed",
+        "TinCan"
+      ],
+      "input": "Old Shoe / Seaweed (junk) / Tin Can",
+      "chance": "5.56%",
+      "quantity": "1"
+    },
+    {
+      "machine": "chlorophyte-extractinator",
+      "item": "JourneymanBait",
+      "inputs": [
+        "OldShoe",
+        "FishingSeaweed",
+        "TinCan"
+      ],
+      "input": "Old Shoe / Seaweed (junk) / Tin Can",
+      "chance": "2.78%",
+      "quantity": "1"
+    },
+    {
+      "machine": "chlorophyte-extractinator",
+      "item": "DirtBlock",
+      "inputs": [
+        "PoopBlock"
+      ],
+      "input": "Poo",
+      "chance": "49/50",
+      "quantity": "1"
+    },
+    {
+      "machine": "chlorophyte-extractinator",
+      "item": "GrassSeeds",
+      "inputs": [
+        "PoopBlock"
+      ],
+      "input": "Poo",
+      "chance": "1/150",
+      "quantity": "1"
+    },
+    {
+      "machine": "chlorophyte-extractinator",
+      "item": "JungleGrassSeeds",
+      "inputs": [
+        "PoopBlock"
+      ],
+      "input": "Poo",
+      "chance": "1/150",
+      "quantity": "1"
+    },
+    {
+      "machine": "chlorophyte-extractinator",
+      "item": "MushroomGrassSeeds",
+      "inputs": [
+        "PoopBlock"
+      ],
+      "input": "Poo",
+      "chance": "1/150",
+      "quantity": "1"
+    },
+    {
+      "machine": "chlorophyte-extractinator",
+      "item": "TinOre",
+      "inputs": [
+        "CopperOre"
+      ],
+      "input": "Copper Ore",
+      "conversion": true
+    },
+    {
+      "machine": "chlorophyte-extractinator",
+      "item": "CopperOre",
+      "inputs": [
+        "TinOre"
+      ],
+      "input": "Tin Ore",
+      "conversion": true
+    },
+    {
+      "machine": "chlorophyte-extractinator",
+      "item": "LeadOre",
+      "inputs": [
+        "IronOre"
+      ],
+      "input": "Iron Ore",
+      "conversion": true
+    },
+    {
+      "machine": "chlorophyte-extractinator",
+      "item": "IronOre",
+      "inputs": [
+        "LeadOre"
+      ],
+      "input": "Lead Ore",
+      "conversion": true
+    },
+    {
+      "machine": "chlorophyte-extractinator",
+      "item": "TungstenOre",
+      "inputs": [
+        "SilverOre"
+      ],
+      "input": "Silver Ore",
+      "conversion": true
+    },
+    {
+      "machine": "chlorophyte-extractinator",
+      "item": "SilverOre",
+      "inputs": [
+        "TungstenOre"
+      ],
+      "input": "Tungsten Ore",
+      "conversion": true
+    },
+    {
+      "machine": "chlorophyte-extractinator",
+      "item": "PlatinumOre",
+      "inputs": [
+        "GoldOre"
+      ],
+      "input": "Gold Ore",
+      "conversion": true
+    },
+    {
+      "machine": "chlorophyte-extractinator",
+      "item": "GoldOre",
+      "inputs": [
+        "PlatinumOre"
+      ],
+      "input": "Platinum Ore",
+      "conversion": true
+    },
+    {
+      "machine": "chlorophyte-extractinator",
+      "item": "CrimtaneOre",
+      "inputs": [
+        "DemoniteOre"
+      ],
+      "input": "Demonite Ore",
+      "conversion": true
+    },
+    {
+      "machine": "chlorophyte-extractinator",
+      "item": "DemoniteOre",
+      "inputs": [
+        "CrimtaneOre"
+      ],
+      "input": "Crimtane Ore",
+      "conversion": true
+    },
+    {
+      "machine": "chlorophyte-extractinator",
+      "item": "PalladiumOre",
+      "inputs": [
+        "CobaltOre"
+      ],
+      "input": "Cobalt Ore",
+      "conversion": true
+    },
+    {
+      "machine": "chlorophyte-extractinator",
+      "item": "CobaltOre",
+      "inputs": [
+        "PalladiumOre"
+      ],
+      "input": "Palladium Ore",
+      "conversion": true
+    },
+    {
+      "machine": "chlorophyte-extractinator",
+      "item": "OrichalcumOre",
+      "inputs": [
+        "MythrilOre"
+      ],
+      "input": "Mythril Ore",
+      "conversion": true
+    },
+    {
+      "machine": "chlorophyte-extractinator",
+      "item": "MythrilOre",
+      "inputs": [
+        "OrichalcumOre"
+      ],
+      "input": "Orichalcum Ore",
+      "conversion": true
+    },
+    {
+      "machine": "chlorophyte-extractinator",
+      "item": "TitaniumOre",
+      "inputs": [
+        "AdamantiteOre"
+      ],
+      "input": "Adamantite Ore",
+      "conversion": true
+    },
+    {
+      "machine": "chlorophyte-extractinator",
+      "item": "AdamantiteOre",
+      "inputs": [
+        "TitaniumOre"
+      ],
+      "input": "Titanium Ore",
+      "conversion": true
+    },
+    {
+      "machine": "chlorophyte-extractinator",
+      "item": "TinBar",
+      "inputs": [
+        "CopperBar"
+      ],
+      "input": "Copper Bar",
+      "conversion": true
+    },
+    {
+      "machine": "chlorophyte-extractinator",
+      "item": "CopperBar",
+      "inputs": [
+        "TinBar"
+      ],
+      "input": "Tin Bar",
+      "conversion": true
+    },
+    {
+      "machine": "chlorophyte-extractinator",
+      "item": "LeadBar",
+      "inputs": [
+        "IronBar"
+      ],
+      "input": "Iron Bar",
+      "conversion": true
+    },
+    {
+      "machine": "chlorophyte-extractinator",
+      "item": "IronBar",
+      "inputs": [
+        "LeadBar"
+      ],
+      "input": "Lead Bar",
+      "conversion": true
+    },
+    {
+      "machine": "chlorophyte-extractinator",
+      "item": "TungstenBar",
+      "inputs": [
+        "SilverBar"
+      ],
+      "input": "Silver Bar",
+      "conversion": true
+    },
+    {
+      "machine": "chlorophyte-extractinator",
+      "item": "SilverBar",
+      "inputs": [
+        "TungstenBar"
+      ],
+      "input": "Tungsten Bar",
+      "conversion": true
+    },
+    {
+      "machine": "chlorophyte-extractinator",
+      "item": "PlatinumBar",
+      "inputs": [
+        "GoldBar"
+      ],
+      "input": "Gold Bar",
+      "conversion": true
+    },
+    {
+      "machine": "chlorophyte-extractinator",
+      "item": "GoldBar",
+      "inputs": [
+        "PlatinumBar"
+      ],
+      "input": "Platinum Bar",
+      "conversion": true
+    },
+    {
+      "machine": "chlorophyte-extractinator",
+      "item": "CrimtaneBar",
+      "inputs": [
+        "DemoniteBar"
+      ],
+      "input": "Demonite Bar",
+      "conversion": true
+    },
+    {
+      "machine": "chlorophyte-extractinator",
+      "item": "DemoniteBar",
+      "inputs": [
+        "CrimtaneBar"
+      ],
+      "input": "Crimtane Bar",
+      "conversion": true
+    },
+    {
+      "machine": "chlorophyte-extractinator",
+      "item": "PalladiumBar",
+      "inputs": [
+        "CobaltBar"
+      ],
+      "input": "Cobalt Bar",
+      "conversion": true
+    },
+    {
+      "machine": "chlorophyte-extractinator",
+      "item": "CobaltBar",
+      "inputs": [
+        "PalladiumBar"
+      ],
+      "input": "Palladium Bar",
+      "conversion": true
+    },
+    {
+      "machine": "chlorophyte-extractinator",
+      "item": "OrichalcumBar",
+      "inputs": [
+        "MythrilBar"
+      ],
+      "input": "Mythril Bar",
+      "conversion": true
+    },
+    {
+      "machine": "chlorophyte-extractinator",
+      "item": "MythrilBar",
+      "inputs": [
+        "OrichalcumBar"
+      ],
+      "input": "Orichalcum Bar",
+      "conversion": true
+    },
+    {
+      "machine": "chlorophyte-extractinator",
+      "item": "TitaniumBar",
+      "inputs": [
+        "AdamantiteBar"
+      ],
+      "input": "Adamantite Bar",
+      "conversion": true
+    },
+    {
+      "machine": "chlorophyte-extractinator",
+      "item": "AdamantiteBar",
+      "inputs": [
+        "TitaniumBar"
+      ],
+      "input": "Titanium Bar",
+      "conversion": true
+    },
+    {
+      "machine": "chlorophyte-extractinator",
+      "item": "TissueSample",
+      "inputs": [
+        "ShadowScale"
+      ],
+      "input": "Shadow Scale",
+      "conversion": true
+    },
+    {
+      "machine": "chlorophyte-extractinator",
+      "item": "ShadowScale",
+      "inputs": [
+        "TissueSample"
+      ],
+      "input": "Tissue Sample",
+      "conversion": true
+    },
+    {
+      "machine": "chlorophyte-extractinator",
+      "item": "StoneBlock",
+      "inputs": [
+        "EbonstoneBlock"
+      ],
+      "input": "Ebonstone Block",
+      "conversion": true
+    },
+    {
+      "machine": "chlorophyte-extractinator",
+      "item": "StoneBlock",
+      "inputs": [
+        "CrimstoneBlock"
+      ],
+      "input": "Crimstone Block",
+      "conversion": true
+    },
+    {
+      "machine": "chlorophyte-extractinator",
+      "item": "StoneBlock",
+      "inputs": [
+        "PearlstoneBlock"
+      ],
+      "input": "Pearlstone Block",
+      "conversion": true
+    },
+    {
+      "machine": "chlorophyte-extractinator",
+      "item": "SandBlock",
+      "inputs": [
+        "EbonsandBlock"
+      ],
+      "input": "Ebonsand Block",
+      "conversion": true
+    },
+    {
+      "machine": "chlorophyte-extractinator",
+      "item": "SandBlock",
+      "inputs": [
+        "CrimsandBlock"
+      ],
+      "input": "Crimsand Block",
+      "conversion": true
+    },
+    {
+      "machine": "chlorophyte-extractinator",
+      "item": "SandBlock",
+      "inputs": [
+        "PearlsandBlock"
+      ],
+      "input": "Pearlsand Block",
+      "conversion": true
+    },
+    {
+      "machine": "chlorophyte-extractinator",
+      "item": "SandBlock",
+      "inputs": [
+        "ShellPileBlock"
+      ],
+      "input": "Shell Pile",
+      "conversion": true
+    },
+    {
+      "machine": "chlorophyte-extractinator",
+      "item": "SandBlock",
+      "inputs": [
+        "Obsidian"
+      ],
+      "input": "Obsidian",
+      "conversion": true
+    },
+    {
+      "machine": "chlorophyte-extractinator",
+      "item": "Sandstone",
+      "inputs": [
+        "CorruptSandstone"
+      ],
+      "input": "Ebonsandstone Block",
+      "conversion": true
+    },
+    {
+      "machine": "chlorophyte-extractinator",
+      "item": "Sandstone",
+      "inputs": [
+        "CrimsonSandstone"
+      ],
+      "input": "Crimsandstone Block",
+      "conversion": true
+    },
+    {
+      "machine": "chlorophyte-extractinator",
+      "item": "Sandstone",
+      "inputs": [
+        "HallowSandstone"
+      ],
+      "input": "Pearlsandstone Block",
+      "conversion": true
+    },
+    {
+      "machine": "chlorophyte-extractinator",
+      "item": "HardenedSand",
+      "inputs": [
+        "CorruptHardenedSand"
+      ],
+      "input": "Hardened Ebonsand Block",
+      "conversion": true
+    },
+    {
+      "machine": "chlorophyte-extractinator",
+      "item": "HardenedSand",
+      "inputs": [
+        "CrimsonHardenedSand"
+      ],
+      "input": "Hardened Crimsand Block",
+      "conversion": true
+    },
+    {
+      "machine": "chlorophyte-extractinator",
+      "item": "HardenedSand",
+      "inputs": [
+        "HallowHardenedSand"
+      ],
+      "input": "Hardened Pearlsand Block",
+      "conversion": true
+    },
+    {
+      "machine": "chlorophyte-extractinator",
+      "item": "IceBlock",
+      "inputs": [
+        "PurpleIceBlock"
+      ],
+      "input": "Purple Ice Block",
+      "conversion": true
+    },
+    {
+      "machine": "chlorophyte-extractinator",
+      "item": "IceBlock",
+      "inputs": [
+        "RedIceBlock"
+      ],
+      "input": "Red Ice Block",
+      "conversion": true
+    },
+    {
+      "machine": "chlorophyte-extractinator",
+      "item": "IceBlock",
+      "inputs": [
+        "PinkIceBlock"
+      ],
+      "input": "Pink Ice Block",
+      "conversion": true
+    },
+    {
+      "machine": "chlorophyte-extractinator",
+      "item": "HoneyBlock",
+      "inputs": [
+        "Hive"
+      ],
+      "input": "Hive",
+      "conversion": true
+    },
+    {
+      "machine": "chlorophyte-extractinator",
+      "item": "BlueBrick",
+      "inputs": [
+        "PinkBrick"
+      ],
+      "input": "Pink Brick",
+      "conversion": true
+    },
+    {
+      "machine": "chlorophyte-extractinator",
+      "item": "GreenBrick",
+      "inputs": [
+        "BlueBrick"
+      ],
+      "input": "Blue Brick",
+      "conversion": true
+    },
+    {
+      "machine": "chlorophyte-extractinator",
+      "item": "PinkBrick",
+      "inputs": [
+        "GreenBrick"
+      ],
+      "input": "Green Brick",
+      "conversion": true
+    }
+  ]
+}

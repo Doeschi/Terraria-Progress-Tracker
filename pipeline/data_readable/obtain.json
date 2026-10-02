@@ -72,16 +72,48 @@
     "count": 101
   },
   {
+    "id": "extractinator",
+    "name": "Extractinators",
+    "icon": "https://terraria.wiki.gg/images/Extractinator.png",
+    "count": 74
+  },
+  {
+    "id": "extractinator-regular",
+    "name": "Extractinator",
+    "icon": "https://terraria.wiki.gg/images/Extractinator.png",
+    "count": 36,
+    "parent": "extractinator"
+  },
+  {
+    "id": "chlorophyte-extractinator",
+    "name": "Chlorophyte Extractinator",
+    "icon": "https://terraria.wiki.gg/images/Chlorophyte_Extractinator.png",
+    "count": 74,
+    "parent": "extractinator"
+  },
+  {
     "id": "shimmer",
     "name": "Shimmer transformation",
     "icon": "https://terraria.wiki.gg/images/Bottomless_Shimmer_Bucket.png",
     "count": 242
   },
   {
+    "id": "player-death",
+    "name": "Player death",
+    "icon": "https://terraria.wiki.gg/images/Tombstone.png",
+    "count": 6
+  },
+  {
+    "id": "other-form",
+    "name": "Other form of an item",
+    "icon": "https://terraria.wiki.gg/images/Shellphone.png",
+    "count": 13
+  },
+  {
     "id": "other",
     "name": "Other",
     "icon": "https://terraria.wiki.gg/images/Tombstone.png",
-    "count": 49,
+    "count": 33,
     "fallback": true
   },
   {

@@ -119,10 +119,11 @@ GitHub Actions.
 - **D8a** "Obtained by" comes from the wiki's tags and from our own data: drops (enemies →
   Dropped by enemies, boss treasure bags, chests → Found in chests & pots, crates and grab bags,
   shaking trees → Collected in the world), shimmer transmutations ("Shimmer transformation"),
-  critters ("Caught with a Bug Net") and music boxes by name ("Recorded (Music Box)"). Every
-  obtainable item has at least one method: the rest (world items like Fallen Star, grave
-  markers, other forms of an item like the Shellphone modes, 1.4.5 items not tagged yet) are
-  under "Other". Critters whose name differs from their NPC (butterflies, ducks, scorpions,
+  critters ("Caught with a Bug Net"), the Extractinators (B6), and by name: music boxes
+  ("Recorded (Music Box)"), grave markers ("Player death"), other forms of an item – Shellphone
+  and Chaos Cylinder modes, "(Inactive)" versions ("Other form of an item"). Every obtainable
+  item has at least one method: the rest (world items like Fallen Star, items the wiki has not
+  tagged yet, about 30) are under "Other". Critters whose name differs from their NPC (butterflies, ducks, scorpions,
   jellyfish) come from their shared wiki page.
 - **D7** Items with rarity Expert (-12) or Master (-13) that can only be obtained from drops or
   treasure bags get `minDifficulty` `expert` / `master`. Items that can also be crafted or
@@ -482,6 +483,26 @@ GitHub Actions.
     conditions ("Only in Corrupt worlds") are framed too. "Dropped by" in the item card notes
     "one of 8" (the full text as tooltip)
   - expected drops and "at least once" stay as they are (each item's own chance is correct)
+- **B6** Extractinator: what the Extractinator and the Chlorophyte Extractinator turn blocks into.
+  Not in the Cargo tables; the pages "Extractinator" and "Chlorophyte Extractinator" (their
+  source, step 1 like the vendor pages) have tables in "Possible conversions": per input (Silt /
+  Slush, Desert Fossil, Glowing Moss, junk, Poo) the results with chance and amount, some only in
+  Pre-Hardmode or Hardmode ("Hardmode only": Cobalt … Titanium Ore); and "Special conversions":
+  an input always becomes another item (Hive → Honey Block; with the Chlorophyte Extractinator
+  about 50 swaps: Copper ↔ Tin Ore, Demonite ↔ Crimtane, Shadow Scale ↔ Tissue Sample, the
+  biome blocks, Dungeon bricks).
+  - step 2 writes `extractinator.json` (machines, and per result: machine, input items, chance,
+    amount, Pre-Hardmode / Hardmode only, conversion); unknown item names are reported
+  - "Obtained by" gets "Extractinators" with the sub-options "Extractinator" and "Chlorophyte
+    Extractinator" (`[obtain]` entries with `parent`)
+  - milestones (MS): a result counts from the latest of its machine, its input and its phase
+    ("Hardmode only": Wall of Flesh). The Chlorophyte Extractinator counts from "All three
+    mechanical bosses" (Chlorophyte needs a Pickaxe Axe / Drax from Hallowed Bars); its own item
+    too (the wiki tags it "plunder", which made it a plain Hardmode item)
+  - item card: collapsible section "From the Extractinator": machine, input (opens its card),
+    chance and amount, Pre-Hardmode / Hardmode only; conversions as "Converts Demonite Ore"
+  - the machines' item cards: collapsible "Results": one list per input, like "Contains"
+  - table column "Obtained by" shows the Extractinator icons; no expected drops (no kills)
 
 ## EV – Events
 
@@ -604,7 +625,8 @@ GitHub Actions.
     quest rewards, …) → Start
   - minimum: Hardmode items → Wall of Flesh; `[milestone_items]` (name patterns) for what the
     data does not know, e.g. mining: Hellstone → evil boss, Hardmode ores → Wall of Flesh,
-    Chlorophyte Ore → all three mechanical bosses; enemies in the wiki's category "Hardmode-only
+    Chlorophyte Ore → all three mechanical bosses, Meteorite → evil boss (a meteor lands only
+    after the Eater of Worlds / Brain of Cthulhu; the Meteor Head too, `[milestone_sources]`); enemies in the wiki's category "Hardmode-only
     NPCs" → Wall of Flesh (by name or wiki page); `[milestone_sources]` for enemies that appear
     later than their biome says (post-Plantera Dungeon enemies, Old One's Army tier 2) and for
     exceptions to the category (pre-Hardmode enemies on a shared page, missing ones)
@@ -663,6 +685,9 @@ GitHub Actions.
   button (ID): an **NPC card** for every bestiary entry, a **source card** for drop sources that
   have neither a bestiary entry nor an item (trees, boss parts). Drop sources that are items
   (treasure bags, crates, chests) open their item card.
+  Rows that open another card (drops, "Dropped by" / "Found in", "Sold by", shop) are clickable as
+  a whole, not only their name – except when text in them was selected (copying a chance) or the
+  click was on a link of their own.
 - **ND2** NPC card: icon, name, type, bestiary number and stars, wiki link, the "Unlocked"
   checkbox (bestiary progress of the playthrough – also when opened from an item); where and
   when it appears (biomes, time of day, events); with a loaded world its kills. **Drops**: every
@@ -731,12 +756,17 @@ GitHub Actions.
   and Enter opens its card in the detail panel; ↑/↓ move through the matches (wrapping around,
   the row is scrolled into view). A line under the field names it ("↵ open Night's Edge · ↑↓ 2
   of 117"), like the filter search. Item list and bestiary.
-- **S5** NPCs in the item search: while something is searched, a small list under the field shows
-  up to 5 bestiary entries whose name contains every searched word (same name first, then names
-  starting with it, then shorter names), with icon and type, and "+N more – show in the
-  bestiary" (switches to the bestiary with the same search). A click opens the NPC card in the
-  detail panel. With the keyboard they come before the item rows: ↑/↓ moves through the NPCs and
-  then the items, Enter opens the highlighted one. Shown while the field has the focus.
+- **S5** NPCs in the item search: an "NPCs" switch in the field (next to Fuzzy / Exact; on by
+  default, remembered in the browser; the placeholder then says "Search items or NPCs by
+  name…"). While something is searched, the best-matching bestiary entry (its name contains every
+  searched word; the same name first, then names starting with it, then shorter names) is shown
+  under the field with icon and type, plus "N more NPCs – show in the bestiary" (switches to the
+  bestiary with the same search). A click opens the NPC card in the detail panel. With the
+  keyboard it comes before the item rows: Enter opens it, ↓ goes on to the items. Shown while the
+  field has the focus.
+- **S6** A click on a row of the item list or the bestiary gives the table the keyboard: ↑/↓
+  move the dashed highlight from that row, Enter opens the highlighted card, Escape or leaving
+  the table ends it.
 
 ## W – World file
 
@@ -1031,6 +1061,13 @@ Status: parser done (PL1, PL2), app integration in progress (PL3–PL5).
 - **"Show its items in the table"** in the NPC card (S5): filter the item list to the items of
   one NPC – its drops, its treasure bag's contents and its shop – shown as a chip ("Items of:
   Plantera") in the active filters. Ties in with the searchable source picker.
+- **Drop groups – open cases (B5):** rows that fit several groups stay without one: the
+  Shadow Chest's potions (the same potion in two groups of the chest) and the Toy Sled of both
+  Ice Mimics (one Drops row for both variants, a group per variant) – could be solved with a
+  group per variant or a manual mapping. The obtained counter of a group block counts its rows,
+  so alternatives per world ("Silver / Tungsten Bar") give "0 / 4" under "one of these 2" –
+  count rows of one alternative once. The NPC search's "N more" counts plain name matches, the
+  bestiary's fuzzy search may find one or two more.
 - **Armor and vanity sets:** show the set an item belongs to in the detail panel (the wiki's
   shared set pages, e.g. "Pirate set", about 124 for vanity), with its other pieces. With it a
   category "Sets": every armor or vanity item that is part of a set.

@@ -27,8 +27,11 @@ import { DifficultyIcon, RarityIcon, WikiIcon } from './common'
 import { ResizablePane } from './ResizablePane'
 import { DETAIL_WIDTH } from '@/lib/panes'
 import { CollapsibleSection, RecipeSections } from './RecipeSections'
+import { cardRow } from '@/lib/cardRow'
 import { Badge, CardLink, Chips, Section, type TitleComponent } from './DetailParts'
 import { ContainsSection, NpcCard, SourceCard } from './NpcDetail'
+import { ExtractinatorSection } from './ExtractinatorSection'
+import { shownObtain } from '@/lib/filtering'
 import { NPC_REF, refName, SOURCE_REF, sourceRef, vendorRef } from '@/lib/npcs'
 import { formatDate, nameOf } from '@/lib/format'
 import { type ColumnGroup, type ItemColumn, type TrackingState } from './table/columns'
@@ -224,7 +227,7 @@ function DetailContent({ item, Title }: { item: Item; Title: TitleComponent }) {
     ),
     how: (
       <Section title="How to get it">
-        <Chips values={item.obtain.map((o) => nameOf(data.obtain, o))} empty="Unknown" />
+        <Chips values={shownObtain(data, item.obtain).map((o) => nameOf(data.obtain, o))} empty="Unknown" />
         {item.milestone && <MilestoneLine data={data} item={item} />}
         {item.events.length > 0 && (
           <p className="text-sm">
@@ -247,6 +250,7 @@ function DetailContent({ item, Title }: { item: Item; Title: TitleComponent }) {
     ),
     found: <DropsSection data={data} item={item} difficulty={pt.difficulty} kind="found" />,
     contains: <ContainsSection data={data} itemKey={item.key} />,
+    extractinator: <ExtractinatorSection data={data} item={item} checked={checkedSet} />,
     recipes: <RecipeSections data={data} item={item} platform={pt.platform} checked={checkedSet} />,
     stats: <StatsSection item={item} catalogue={catalogue} tracking={tracking} />,
     details: (
@@ -394,8 +398,9 @@ function SoldBySection({ data, item }: { data: GameData; item: Item }) {
           const ref = vendorRef(data, v)
           // a vendor without shop row (only tagged in the Items table) sells it without condition
           const own = rows.filter((r) => r.vendor === v)
+          const row = cardRow(ref ? () => openDetail(ref) : undefined)
           return (own.length ? own : [{ vendor: v } as ShopRow]).map((r, n) => (
-            <li key={`${v}-${n}`} className="flex items-center gap-3 px-3 py-2">
+            <li key={`${v}-${n}`} {...row} className={cn('flex items-center gap-3 px-3 py-2', row.className)}>
               <WikiIcon src={vendor?.icon} alt="" size={32} />
               <div className="min-w-0 flex-1">
                 <div className="text-sm font-medium">
@@ -525,8 +530,9 @@ function DropRow({
   ]
     .filter(Boolean)
     .join(' · ')
+  const row = cardRow(() => openDetail(sourceRef(data, drop.source)))
   return (
-    <li className={cn('flex items-center gap-3 px-3 py-2', !available && 'opacity-45')}>
+    <li {...row} className={cn('flex items-center gap-3 px-3 py-2', row.className, !available && 'opacity-45')}>
       <WikiIcon src={source?.icon} alt="" size={32} />
       <div className="min-w-0 flex-1">
         <div className="flex min-w-0 items-center gap-1 text-sm font-medium">

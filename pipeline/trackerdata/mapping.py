@@ -30,6 +30,7 @@ class Mapping:
         self.milestone_sources = data.get("milestone_sources", {})
         self.drop_variants = data.get("drop_variants", {})
         self.drop_areas = data.get("drop_areas", {})
+        self.extractinator_inputs = data.get("extractinator_inputs", {})
         self.milestone_items = data.get("milestone_items", {})
         # container groups ("Found in") and icons of containers that are no item
         self.containers = data.get("containers", {})

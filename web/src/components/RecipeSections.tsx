@@ -1,11 +1,11 @@
 import { useMemo, useState } from 'react'
-import { Check, ChevronRight } from 'lucide-react'
+import { ChevronRight } from 'lucide-react'
 import { useUi } from '@/ui'
 import { usePrefs } from '@/lib/prefs'
 import { cn } from '@/lib/utils'
 import { ingredientItems, recipeOnPlatform, recipesFor } from '@/lib/recipes'
 import type { GameData, Ingredient, Item, PlatformId, Recipe, Shimmer } from '@/lib/types'
-import { WikiIcon } from './common'
+import { ObtainedMark, WikiIcon } from './common'
 import { nameOf } from '@/lib/format'
 
 // Detail panel sections for crafting: how the item is crafted, what it is used
@@ -69,7 +69,7 @@ function RecipeCard({ data, recipe, checked }: { data: GameData; recipe: Recipe;
             >
               <WikiIcon src={st.icon} alt="" size={16} />
               {name}
-              {have && <Check className="size-3 text-emerald-600 dark:text-emerald-400" aria-label="obtained" />}
+              {have && <ObtainedMark small />}
             </button>
           )
         })}
@@ -111,7 +111,7 @@ function IngredientRow({
     <>
       <WikiIcon src={icon} alt="" size={24} />
       <span className="min-w-0 flex-1 truncate">{name}</span>
-      {have && <Check className="size-3.5 shrink-0 text-emerald-600 dark:text-emerald-400" aria-label="obtained" />}
+      {have && <ObtainedMark />}
       <span className="w-10 shrink-0 text-right tabular-nums text-muted-foreground">× {ingredient.amount}</span>
     </>
   )
@@ -217,9 +217,7 @@ function ItemGrid({
           >
             <WikiIcon src={item.icon} alt="" size={20} />
             <span className="min-w-0 flex-1 truncate">{label ?? item.name}</span>
-            {checked.has(item.key) && (
-              <Check className="size-3 shrink-0 text-emerald-600 dark:text-emerald-400" aria-label="obtained" />
-            )}
+            {checked.has(item.key) && <ObtainedMark small />}
             {note && <span className="shrink-0 tabular-nums text-muted-foreground">{note}</span>}
           </button>
         </li>

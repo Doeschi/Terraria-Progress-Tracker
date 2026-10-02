@@ -21,6 +21,7 @@ Data and images come from the [Terraria Wiki](https://terraria.wiki.gg/) (CC BY-
 - [`drops.json`](#dropsjson)
 - [`bosses.json`](#bossesjson) · [`containers.json`](#containersjson) · [`conditions.json`](#conditionsjson)
 - [`recipes.json`](#recipesjson)
+- [`extractinator.json`](#extractinatorjson)
 - [`bestiary.json`](#bestiaryjson)
 - [`missing_items.json`](#missing_itemsjson)
 - [`sprites.json`](#spritesjson)
@@ -61,6 +62,7 @@ Data and images come from the [Terraria Wiki](https://terraria.wiki.gg/) (CC BY-
 | [`rarities.json`](#raritiesjson) | rarity tiers |
 | [`platforms.json`](#list-files) / [`difficulties.json`](#list-files) / [`coins.json`](#coinsjson) | platforms, difficulties, coin values |
 | [`recipes.json`](#recipesjson) | crafting recipes, stations, ingredient groups, shimmer |
+| [`extractinator.json`](#extractinatorjson) | what the Extractinator and the Chlorophyte Extractinator give |
 | [`bestiary.json`](#bestiaryjson) | the bestiary entries and their types |
 | [`missing_items.json`](#missing_itemsjson) | item ids known only from recipes |
 | [`sprites.json`](#spritesjson) | where each icon is in the sprite sheets (`icons/`) |
@@ -183,7 +185,9 @@ Like the list files, plus:
 
 ## `obtain.json`
 
-Like the list files, plus `fallback`: `true` for "Other" – items with no other obtain method.
+Like the list files, plus `fallback`: `true` for "Other" – items with no other obtain method, and
+`parent`: a sub-option ("Extractinator" and "Chlorophyte Extractinator" under "Extractinators");
+items list the parent and their sub-options.
 
 ## `versions.json`
 
@@ -298,6 +302,27 @@ The groups of the "Found in" filter:
 | `stations` | object: station name → `items` (item keys that provide it, stronger ones included), `icon`; or `condition: true` for something that needs no item (By Hand, Water, Lava, Honey, Snow Biome, Ecto Mist, Demon Altar) |
 | `groups` | object: "Any …" ingredient group (`"Any Wood"`) → `items` (item keys), `icon` |
 | `shimmer` | shimmer transmutations: `item` (item key) or `group` (an "Any …" group, e.g. `"Any Fruit"`) → `result` (item key), `amount` |
+
+## `extractinator.json`
+
+From the tables of the wiki pages "Extractinator" and "Chlorophyte Extractinator".
+
+| Field | Meaning |
+|---|---|
+| `machines` | `id` (`extractinator`, `chlorophyte-extractinator`), `name`, `item` (its item key) |
+| `results` | what they give, see below |
+
+**Result** (`results`)
+
+| Field | Meaning |
+|---|---|
+| `machine` | the machine id |
+| `item` | the item key of the result |
+| `inputs` | item keys that give it (any of them), e.g. Silt Block and Slush Block |
+| `input` | the wiki's name of the input(s), e.g. `"Silt Block / Slush Block"`, `"Glowing Moss"` |
+| `chance` / `quantity` | e.g. `"0.3333%"` / `"1–16"`; no chance for conversions |
+| `phase` | `prehardmode` / `hardmode`: only in such worlds (the Chlorophyte Extractinator's ores) |
+| `conversion` | `true`: the input always becomes this item (Copper Ore → Tin Ore, Hive → Honey Block) |
 
 ## `bestiary.json`
 

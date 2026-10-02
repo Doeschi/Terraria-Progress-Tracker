@@ -1055,6 +1055,7 @@ fallback = true
 #   from_drops       drop source kinds that give this method ("npc", "bag")
 #   from_containers  container groups ([containers]) that give it
 #   from_shimmer     results of shimmer transmutations
+#   from_extractinator  results of these machines (extractinator.json; REQUIREMENTS B6)
 #   names            item name patterns
 #   fallback         items that got no method at all (kept last in the filter)
 
@@ -1135,14 +1136,54 @@ icon = "Music Box"
 match = []
 names = ["Music Box (*)", "Otherworldly Music Box (*)"]
 
+# Extractinator and Chlorophyte Extractinator (their pages' tables, REQUIREMENTS B6); the two
+# machines as sub-options
+[obtain.extractinator]
+name = "Extractinators"
+icon = "Extractinator"
+match = []
+from_extractinator = ["extractinator", "chlorophyte-extractinator"]
+
+[obtain.extractinator-regular]
+name = "Extractinator"
+parent = "extractinator"
+icon = "Extractinator"
+match = []
+from_extractinator = ["extractinator"]
+
+[obtain.chlorophyte-extractinator]
+name = "Chlorophyte Extractinator"
+parent = "extractinator"
+icon = "Chlorophyte Extractinator"
+match = []
+from_extractinator = ["chlorophyte-extractinator"]
+
+# Extractinator inputs the wiki names differently from the items (REQUIREMENTS B6): name -> items
+[extractinator_inputs]
+"Glowing Moss" = ["Lava Moss", "Krypton Moss", "Xenon Moss", "Argon Moss", "Neon Moss", "Helium Moss"]
+"Seaweed (junk)" = ["FishingSeaweed"]
+
 [obtain.shimmer]
 name = "Shimmer transformation"
 icon = "Bottomless Shimmer Bucket"
 match = []
 from_shimmer = true
 
-# everything with no other method: world items (Fallen Star, grave markers), other forms of an
-# item (Shellphone modes, "(Inactive)" versions), items the wiki has not tagged yet
+# special sources the wiki tags do not name (by item name)
+[obtain.player-death]
+name = "Player death"
+icon = "Tombstone"
+match = []
+names = ["Tombstone", "Grave Marker", "Cross Grave Marker", "Headstone", "Gravestone", "Obelisk"]
+
+[obtain.other-form]
+name = "Other form of an item"
+icon = "Shellphone"
+match = []
+# switched in the inventory (right-click) or by using the item
+names = ["Shellphone (*)", "Chaos Cylinder (*)", "* (Inactive)"]
+
+# everything with no other method: world items (Fallen Star), items the wiki has not tagged yet
 [obtain.other]
 name = "Other"
 icon = "Tombstone"
@@ -1926,6 +1967,8 @@ after-all-mechs = "all-mechs"
 "Ice Mimic" = "start"
 # Hardmode-only, but missing from the category
 "Orca" = "wall-of-flesh"
+# spawns only near a fallen meteor: one lands only after the Eater of Worlds / Brain of Cthulhu
+"Meteor Head" = "evil-boss"
 # Old One's Army tier 2 (after any mechanical boss)
 "Kobold" = "any-mech"
 "Kobold Glider" = "any-mech"
@@ -1952,8 +1995,11 @@ after-all-mechs = "all-mechs"
 [milestone_items]
 "Hellstone" = { milestone = "evil-boss", reason = "mined (needs a Nightmare Pickaxe / Deathbringer Pickaxe)" }
 "Chlorophyte Ore" = { milestone = "all-mechs", reason = "mined (needs a Pickaxe Axe / Drax)" }
+"Meteorite" = { milestone = "evil-boss", reason = "a meteor lands only after the Eater of Worlds / Brain of Cthulhu" }
 "Lihzahrd Brick" = { milestone = "golem", reason = "mined (needs the Picksaw)" }
 "Life Fruit" = { milestone = "any-mech", reason = "grows after any mechanical boss" }
+# crafted from Chlorophyte Bars (the wiki tags it "plunder", which would make it a plain Hardmode item)
+"Chlorophyte Extractinator" = { milestone = "all-mechs", reason = "crafted – needs Chlorophyte Bars" }
 
 
 # --------------------------------------------------------------------- flags

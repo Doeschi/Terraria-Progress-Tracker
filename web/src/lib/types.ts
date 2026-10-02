@@ -183,6 +183,30 @@ export interface DropGroup {
   size: number
 }
 
+/** What the Extractinator and the Chlorophyte Extractinator turn blocks into (B6). */
+export interface ExtractinatorData {
+  /** the machines, with their item key */
+  machines: { id: string; name: string; item?: string }[]
+  results: ExtractinatorResult[]
+}
+
+export interface ExtractinatorResult {
+  machine: string
+  /** item key of the result */
+  item: string
+  /** items that give it (any of them), e.g. Silt Block and Slush Block */
+  inputs: string[]
+  /** the wiki's name of the input(s), e.g. "Silt Block / Slush Block", "Glowing Moss" */
+  input: string
+  /** e.g. "0.3333%"; missing for conversions */
+  chance?: string
+  quantity?: string
+  /** only in Pre-Hardmode / Hardmode worlds */
+  phase?: 'prehardmode' | 'hardmode'
+  /** the input always becomes this item (Copper Ore -> Tin Ore) */
+  conversion?: boolean
+}
+
 /** An item in a vendor's shop and when it is sold. */
 export interface ShopRow {
   vendor: string
@@ -353,6 +377,7 @@ export interface GameData {
   drops: Map<string, Drop[]>
   /** drop groups by id */
   dropGroups: Map<string, DropGroup>
+  extractinator: ExtractinatorData
   /** layers of containers with other items per layer (Gold Chest: Underground, Cavern, …), in order;
    * their drops name them as variants */
   dropAreas: string[]

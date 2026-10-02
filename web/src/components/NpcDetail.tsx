@@ -1,5 +1,5 @@
 import { useMemo } from 'react'
-import { Check, ExternalLink, Star } from 'lucide-react'
+import { ExternalLink, Star } from 'lucide-react'
 import { useActivePlaythrough, useActiveWorld, useStore } from '@/store'
 import { useUi } from '@/ui'
 import { cn } from '@/lib/utils'
@@ -12,7 +12,9 @@ import { NPC_REF, npcIndex, type SourceDrop } from '@/lib/npcs'
 import type { BestiaryEntry, Difficulty, DropGroup, GameData, ShopRow } from '@/lib/types'
 import { Button } from '@/components/ui/button'
 import { Checkbox } from '@/components/ui/checkbox'
-import { WikiIcon } from './common'
+import { ObtainedMark, WikiIcon } from './common'
+import { CollapsibleSection } from './RecipeSections'
+import { cardRow } from '@/lib/cardRow'
 import { Badge, CardLink, Section, type TitleComponent } from './DetailParts'
 
 // The NPC card (a bestiary entry: what it drops and sells) and the source card (a drop source
@@ -128,9 +130,9 @@ export function NpcCard({ entry, Title }: { entry: BestiaryEntry; Title: TitleCo
           </Section>
         )}
         {stock.length > 0 && (
-          <Section title="Sells">
+          <CollapsibleSection id="sells" title="Sells" count={stock.length}>
             <StockList data={data} stock={stock} checked={checked} />
-          </Section>
+          </CollapsibleSection>
         )}
         {variants.length > 0 && (
           <Section title="Variants">
@@ -405,15 +407,16 @@ function DropRow({
   const conditions = conditionNames(data, inLayer ? { ...drop, biomes: undefined } : drop)
   const k = kills ? dropKills(kills, drop) : undefined
   const expected = k !== undefined && chance !== undefined ? k * (chance / 100) * averageQuantity(quantity) : undefined
+  const row = cardRow(() => openDetail(item.key))
   return (
-    <li className={cn('flex items-center gap-3 px-3 py-1.5', dimmed && 'opacity-45')}>
+    <li {...row} className={cn('flex items-center gap-3 px-3 py-1.5', row.className, dimmed && 'opacity-45')}>
       <WikiIcon src={item.icon} alt="" size={28} />
       <div className="min-w-0 flex-1">
         <div className="flex items-center gap-1.5 text-sm font-medium">
           <CardLink onOpen={() => openDetail(item.key)} className={cn(own && 'text-muted-foreground')}>
             {item.name}
           </CardLink>
-          {own && <Check className="size-3.5 shrink-0 text-emerald-600 dark:text-emerald-400" aria-label="obtained" />}
+          {own && <ObtainedMark />}
         </div>
         <div className="flex flex-wrap gap-x-2 text-xs text-muted-foreground">
           {showSource && <span>{data.dropSources.get(drop.source)?.name}</span>}
@@ -452,6 +455,7 @@ function StockList({
 }) {
   const openDetail = useUi((s) => s.openDetail)
   const rows = [...stock].sort((a, b) => a.item.name.localeCompare(b.item.name))
+  const rowOf = (key: string) => cardRow(() => openDetail(key))
   return (
     <ul className="divide-y rounded-lg border">
       {rows.map(({ item, rows: shopRows }) => {
@@ -459,16 +463,18 @@ function StockList({
         const text = shopRows.map((r) => r.text).filter(Boolean)
         const moons = [...new Set(shopRows.flatMap((r) => r.moons ?? []))]
         return (
-          <li key={item.key} className="flex items-center gap-3 px-3 py-1.5">
+          <li
+            key={item.key}
+            {...rowOf(item.key)}
+            className={cn('flex items-center gap-3 px-3 py-1.5', rowOf(item.key).className)}
+          >
             <WikiIcon src={item.icon} alt="" size={28} />
             <div className="min-w-0 flex-1">
               <div className="flex items-center gap-1.5 text-sm font-medium">
                 <CardLink onOpen={() => openDetail(item.key)} className={cn(own && 'text-muted-foreground')}>
                   {item.name}
                 </CardLink>
-                {own && (
-                  <Check className="size-3.5 shrink-0 text-emerald-600 dark:text-emerald-400" aria-label="obtained" />
-                )}
+                {own && <ObtainedMark />}
               </div>
               {text.length > 0 && <div className="text-xs text-muted-foreground">{text.join(' · ')}</div>}
             </div>

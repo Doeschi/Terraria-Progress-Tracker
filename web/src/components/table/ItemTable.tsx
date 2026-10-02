@@ -29,7 +29,7 @@ import { Button } from '@/components/ui/button'
 import { Checkbox } from '@/components/ui/checkbox'
 import { DifficultyIcon, WikiIcon } from '../common'
 import { formatDate } from '@/lib/format'
-import { useActiveRow, usePublishRows } from '@/lib/listCursor'
+import { handleTableKey, tableRowClicked, useActiveRow, useListCursor, usePublishRows } from '@/lib/listCursor'
 import { type ItemColumn, type TrackingState } from './columns'
 import { useColumnVisibility, useItemColumns } from './useColumns'
 import { ordered } from '@/lib/layout'
@@ -268,7 +268,15 @@ export function ItemTable({
 
   return (
     <RowStateContext.Provider value={rowState}>
-      <div ref={scrollRef} className="min-h-0 flex-1 overflow-auto">
+      <div
+        ref={scrollRef}
+        tabIndex={-1}
+        onKeyDown={(e) => handleTableKey(e, openDetail)}
+        onBlur={(e) => {
+          if (!e.currentTarget.contains(e.relatedTarget)) useListCursor.getState().setTableIndex(null)
+        }}
+        className="min-h-0 flex-1 overflow-auto outline-none"
+      >
         <table className="table-fixed border-separate border-spacing-0 text-sm" style={{ width }}>
           <thead className="sticky top-0 z-20">
             <tr>
@@ -341,20 +349,19 @@ export function ItemTable({
                 <tr
                   key={row.id}
                   style={{ height: rowHeight }}
-                  className={cn(
-                    'group cursor-pointer',
-                    isIgnored && 'opacity-60',
-                    notYet && 'opacity-40',
-                    isActive && 'outline-2 -outline-offset-2 outline-primary',
-                  )}
+                  className={cn('group cursor-pointer', isIgnored && 'opacity-60', notYet && 'opacity-40')}
                   title={notYet ? `Not available yet in ${progress.worldName}` : undefined}
                   aria-selected={isSelected}
                   onClick={(e) => {
                     // clicks on the checkbox, buttons and links do their own thing
-                    if (!(e.target as HTMLElement).closest('button, a, [role=checkbox]')) openDetail(row.id)
+                    if ((e.target as HTMLElement).closest('button, a, [role=checkbox]')) return
+                    openDetail(row.id)
+                    // the table takes the keyboard: ↑/↓ from this row, Enter opens (S6)
+                    tableRowClicked(row.id)
+                    scrollRef.current?.focus({ preventScroll: true })
                   }}
                 >
-                  {row.getVisibleCells().map((cell) => {
+                  {row.getVisibleCells().map((cell, ci, cells) => {
                     const left = pinned(cell.column.id)
                     const col = catalogue.find((c) => c.id === cell.column.id)
                     return (
@@ -362,6 +369,10 @@ export function ItemTable({
                         key={cell.id}
                         style={{
                           left,
+                          // highlighted by the search (Enter opens it): a dashed frame around the whole
+                          // row like the filter search's, drawn in every cell (pinned cells would cover
+                          // an outline of the row)
+                          ...(isActive && dashedFrame(ci === 0, ci === cells.length - 1)),
                           ...(bigIcon && cell.column.id === 'icon' && { zIndex: 20, overflow: 'visible' }),
                         }}
                         className={cn(
@@ -533,4 +544,24 @@ function ActionsCell({ item }: { item: Item }) {
       </Button>
     </span>
   )
+}
+
+const DASH_X = 'repeating-linear-gradient(90deg, var(--primary) 0 6px, transparent 6px 10px)'
+const DASH_Y = 'repeating-linear-gradient(180deg, var(--primary) 0 6px, transparent 6px 10px)'
+
+/** A cell's part of a dashed frame around its row: top and bottom, the left / right edge on the
+ * first / last cell (background images, over the cell's own color). */
+function dashedFrame(first: boolean, last: boolean): React.CSSProperties {
+  const parts: [string, string, string][] = [
+    [DASH_X, '100% 2px', 'left top'],
+    [DASH_X, '100% 2px', 'left bottom'],
+  ]
+  if (first) parts.push([DASH_Y, '2px 100%', 'left top'])
+  if (last) parts.push([DASH_Y, '2px 100%', 'right top'])
+  return {
+    backgroundImage: parts.map((p) => p[0]).join(', '),
+    backgroundSize: parts.map((p) => p[1]).join(', '),
+    backgroundPosition: parts.map((p) => p[2]).join(', '),
+    backgroundRepeat: 'no-repeat',
+  }
 }

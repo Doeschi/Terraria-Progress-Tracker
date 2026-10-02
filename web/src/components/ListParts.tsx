@@ -7,7 +7,7 @@ import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Dialog, DialogContent, DialogTitle, DialogTrigger } from '@/components/ui/dialog'
 import { useTopLeftKeyLabel, type SearchTarget } from '@/hooks/useSearchShortcuts'
-import { useActiveRow } from '@/lib/listCursor'
+import { useActiveRow, useListCursor } from '@/lib/listCursor'
 
 // Parts shared by the item list and the bestiary list (and the filter sidebar).
 
@@ -37,6 +37,29 @@ function SearchModeSwitch() {
   )
 }
 
+/** "NPCs" in the item search: also suggest the best-matching NPC (S5). */
+function NpcSearchSwitch() {
+  const on = usePrefs((s) => s.searchNpcs)
+  const setOn = usePrefs((s) => s.setSearchNpcs)
+  return (
+    <button
+      onClick={() => setOn(!on)}
+      aria-pressed={on}
+      className={cn(
+        'rounded-md border px-1.5 py-0.5 text-[11px] font-medium',
+        on ? 'border-primary bg-primary text-primary-foreground' : 'text-muted-foreground hover:text-foreground',
+      )}
+      title={
+        on
+          ? 'NPCs: the best-matching NPC is suggested under the field – click to search items only'
+          : 'Items only – click to also suggest the best-matching NPC'
+      }
+    >
+      NPCs
+    </button>
+  )
+}
+
 /** Search input with a magnifier and a clear button. */
 export function SearchField({
   value,
@@ -47,6 +70,7 @@ export function SearchField({
   className,
   onKeyDown,
   withMode = false,
+  withNpcs = false,
   shortcut,
 }: {
   value: string
@@ -59,6 +83,8 @@ export function SearchField({
   onKeyDown?: (e: React.KeyboardEvent<HTMLInputElement>) => void
   /** Fuzzy / Exact switch inside the field (item and bestiary search) */
   withMode?: boolean
+  /** "NPCs" switch inside the field (item search) */
+  withNpcs?: boolean
   /** reachable with a keyboard shortcut (useSearchShortcuts); shows the key while empty */
   shortcut?: SearchTarget
 }) {
@@ -81,8 +107,15 @@ export function SearchField({
         value={value}
         onChange={(e) => onChange(e.target.value)}
         onKeyDown={keyDown}
+        // the item / bestiary search takes over the keyboard from the table (S6)
+        onFocus={withMode ? () => useListCursor.getState().setTableIndex(null) : undefined}
         placeholder={placeholder}
-        className={cn('peer', small ? 'h-8 pr-7 pl-8 text-sm' : 'pr-8 pl-8', withMode && 'pr-24')}
+        className={cn(
+          'peer',
+          small ? 'h-8 pr-7 pl-8 text-sm' : 'pr-8 pl-8',
+          withMode && 'pr-24',
+          withMode && withNpcs && 'pr-36',
+        )}
         aria-label={label}
         aria-keyshortcuts={shortcut ? (shortcut === 'filters' ? `Shift+${key}` : `${key} /`) : undefined}
         data-shortcut={shortcut}
@@ -92,7 +125,7 @@ export function SearchField({
         <kbd
           className={cn(
             'pointer-events-none absolute top-1/2 -translate-y-1/2 rounded border bg-muted px-1 font-sans text-[10px] leading-4 text-muted-foreground peer-focus:hidden',
-            withMode ? 'right-[4.25rem]' : 'right-2',
+            withMode ? (withNpcs ? 'right-[7.25rem]' : 'right-[4.25rem]') : 'right-2',
           )}
           title={shortcut === 'filters' ? `Shift + ${key}` : `${key} or /`}
         >
@@ -109,19 +142,24 @@ export function SearchField({
             <X className={icon} />
           </button>
         )}
+        {withNpcs && <NpcSearchSwitch />}
         {withMode && <SearchModeSwitch />}
       </span>
     </div>
   )
 }
 
-/** "Filters" button for narrow screens: the filter sidebar in a dialog. */
-/** Under the item / bestiary search: which row Enter opens, and ↑/↓ through the matches. */
+/** Which row Enter opens, and ↑/↓ through the rows (S4, S6): a small bar at the bottom of the
+ * screen, while searching and while the table has the keyboard. */
 export function SearchHint({ search }: { search: string }) {
   const { row, index, count } = useActiveRow(search)
+  const inTable = useListCursor((s) => s.tableIndex !== null)
   if (!row) return null
   return (
-    <p className="-mt-1 px-1 text-[11px] text-muted-foreground">
+    <div
+      role="status"
+      className="pointer-events-none fixed bottom-4 left-1/2 z-40 -translate-x-1/2 rounded-full border bg-popover/95 px-3 py-1 text-xs whitespace-nowrap text-muted-foreground shadow-lg backdrop-blur"
+    >
       <kbd className="rounded border bg-muted px-1 font-sans">↵</kbd> open{' '}
       <span className="font-medium text-foreground">{row.name}</span>
       {count > 1 && (
@@ -130,10 +168,17 @@ export function SearchHint({ search }: { search: string }) {
           · <kbd className="rounded border bg-muted px-1 font-sans">↑↓</kbd> {index + 1} of {count}
         </>
       )}
-    </p>
+      {inTable && (
+        <>
+          {' '}
+          · <kbd className="rounded border bg-muted px-1 font-sans">Esc</kbd> done
+        </>
+      )}
+    </div>
   )
 }
 
+/** "Filters" button for narrow screens: the filter sidebar in a dialog. */
 export function MobileFiltersButton({ active, children }: { active: number; children: React.ReactNode }) {
   return (
     <Dialog>

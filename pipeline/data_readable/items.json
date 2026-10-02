@@ -74,6 +74,9 @@
       "crafted",
       "drop",
       "plunder",
+      "extractinator",
+      "extractinator-regular",
+      "chlorophyte-extractinator",
       "shimmer"
     ],
     "vendors": [],
@@ -129,6 +132,8 @@
       "crafted",
       "drop",
       "plunder",
+      "extractinator",
+      "chlorophyte-extractinator",
       "shimmer"
     ],
     "vendors": [],
@@ -588,6 +593,9 @@
       "loot",
       "plunder",
       "bag",
+      "extractinator",
+      "extractinator-regular",
+      "chlorophyte-extractinator",
       "shimmer"
     ],
     "vendors": [],
@@ -650,6 +658,9 @@
       "loot",
       "plunder",
       "bag",
+      "extractinator",
+      "extractinator-regular",
+      "chlorophyte-extractinator",
       "shimmer"
     ],
     "vendors": [],
@@ -713,6 +724,9 @@
       "loot",
       "plunder",
       "bag",
+      "extractinator",
+      "extractinator-regular",
+      "chlorophyte-extractinator",
       "shimmer"
     ],
     "vendors": [],
@@ -775,6 +789,9 @@
       "loot",
       "plunder",
       "bag",
+      "extractinator",
+      "extractinator-regular",
+      "chlorophyte-extractinator",
       "shimmer"
     ],
     "vendors": [],
@@ -1037,7 +1054,9 @@
     "obtain": [
       "crafted",
       "loot",
-      "bag"
+      "bag",
+      "extractinator",
+      "chlorophyte-extractinator"
     ],
     "vendors": [],
     "events": [],
@@ -1090,7 +1109,9 @@
     "obtain": [
       "crafted",
       "loot",
-      "bag"
+      "bag",
+      "extractinator",
+      "chlorophyte-extractinator"
     ],
     "vendors": [],
     "events": [],
@@ -1143,7 +1164,9 @@
     "obtain": [
       "crafted",
       "loot",
-      "bag"
+      "bag",
+      "extractinator",
+      "chlorophyte-extractinator"
     ],
     "vendors": [],
     "events": [],
@@ -1196,7 +1219,9 @@
     "obtain": [
       "crafted",
       "loot",
-      "bag"
+      "bag",
+      "extractinator",
+      "chlorophyte-extractinator"
     ],
     "vendors": [],
     "events": [],
@@ -3090,7 +3115,9 @@
       "drop",
       "plunder",
       "bag",
-      "treasure-bag"
+      "treasure-bag",
+      "extractinator",
+      "chlorophyte-extractinator"
     ],
     "vendors": [],
     "events": [],
@@ -3142,7 +3169,9 @@
       "bar"
     ],
     "obtain": [
-      "crafted"
+      "crafted",
+      "extractinator",
+      "chlorophyte-extractinator"
     ],
     "vendors": [],
     "events": [],
@@ -3359,7 +3388,10 @@
     ],
     "obtain": [
       "crafted",
-      "vendor"
+      "vendor",
+      "extractinator",
+      "extractinator-regular",
+      "chlorophyte-extractinator"
     ],
     "vendors": [
       "dryad"
@@ -3393,8 +3425,8 @@
     "autoswing": true,
     "useTime": 15,
     "conditions": [],
-    "milestone": "king-slime",
-    "milestoneVia": "Sold by the Dryad"
+    "milestone": "start",
+    "milestoneVia": "From the Extractinator (Poo)"
   },
   {
     "key": "Sunflower",
@@ -3865,7 +3897,10 @@
       "drop",
       "loot",
       "plunder",
-      "bag"
+      "bag",
+      "extractinator",
+      "extractinator-regular",
+      "chlorophyte-extractinator"
     ],
     "vendors": [],
     "events": [],
@@ -3931,7 +3966,10 @@
       "drop",
       "loot",
       "plunder",
-      "bag"
+      "bag",
+      "extractinator",
+      "extractinator-regular",
+      "chlorophyte-extractinator"
     ],
     "vendors": [],
     "events": [],
@@ -3998,7 +4036,10 @@
       "loot",
       "plunder",
       "bag",
-      "treasure-bag"
+      "treasure-bag",
+      "extractinator",
+      "extractinator-regular",
+      "chlorophyte-extractinator"
     ],
     "vendors": [],
     "events": [],
@@ -4063,7 +4104,10 @@
       "drop",
       "loot",
       "plunder",
-      "bag"
+      "bag",
+      "extractinator",
+      "extractinator-regular",
+      "chlorophyte-extractinator"
     ],
     "vendors": [],
     "events": [],
@@ -4662,7 +4706,9 @@
     "obtain": [
       "drop",
       "bag",
-      "treasure-bag"
+      "treasure-bag",
+      "extractinator",
+      "chlorophyte-extractinator"
     ],
     "vendors": [],
     "events": [],
@@ -6320,8 +6366,8 @@
     "debuff": "Burning",
     "tooltip": "Burns you when touched without special protection",
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Dropped by Meteor Head"
+    "milestone": "evil-boss",
+    "milestoneVia": "A meteor lands only after the Eater of Worlds / Brain of Cthulhu"
   },
   {
     "key": "MeteoriteBar",
@@ -7240,7 +7286,9 @@
     "obtain": [
       "crafted",
       "drop",
-      "bag"
+      "bag",
+      "extractinator",
+      "chlorophyte-extractinator"
     ],
     "vendors": [],
     "events": [],
@@ -7397,7 +7445,9 @@
     "obtain": [
       "crafted",
       "drop",
-      "bag"
+      "bag",
+      "extractinator",
+      "chlorophyte-extractinator"
     ],
     "vendors": [],
     "events": [],
@@ -7501,7 +7551,9 @@
     "obtain": [
       "crafted",
       "drop",
-      "bag"
+      "bag",
+      "extractinator",
+      "chlorophyte-extractinator"
     ],
     "vendors": [],
     "events": [],
@@ -9156,6 +9208,9 @@
     ],
     "obtain": [
       "plunder",
+      "extractinator",
+      "extractinator-regular",
+      "chlorophyte-extractinator",
       "shimmer"
     ],
     "vendors": [],
@@ -9581,6 +9636,9 @@
     "obtain": [
       "plunder",
       "bag",
+      "extractinator",
+      "extractinator-regular",
+      "chlorophyte-extractinator",
       "shimmer"
     ],
     "vendors": [],
@@ -9632,6 +9690,9 @@
     "obtain": [
       "plunder",
       "bag",
+      "extractinator",
+      "extractinator-regular",
+      "chlorophyte-extractinator",
       "shimmer"
     ],
     "vendors": [],
@@ -9683,6 +9744,9 @@
     "obtain": [
       "plunder",
       "bag",
+      "extractinator",
+      "extractinator-regular",
+      "chlorophyte-extractinator",
       "shimmer"
     ],
     "vendors": [],
@@ -9734,6 +9798,9 @@
     "obtain": [
       "plunder",
       "bag",
+      "extractinator",
+      "extractinator-regular",
+      "chlorophyte-extractinator",
       "shimmer"
     ],
     "vendors": [],
@@ -9785,6 +9852,9 @@
     "obtain": [
       "plunder",
       "bag",
+      "extractinator",
+      "extractinator-regular",
+      "chlorophyte-extractinator",
       "shimmer"
     ],
     "vendors": [],
@@ -9836,6 +9906,9 @@
     "obtain": [
       "plunder",
       "bag",
+      "extractinator",
+      "extractinator-regular",
+      "chlorophyte-extractinator",
       "shimmer"
     ],
     "vendors": [],
@@ -10446,6 +10519,9 @@
       "vendor",
       "loot",
       "plunder",
+      "extractinator",
+      "extractinator-regular",
+      "chlorophyte-extractinator",
       "shimmer"
     ],
     "vendors": [
@@ -10503,6 +10579,9 @@
     "obtain": [
       "crafted",
       "plunder",
+      "extractinator",
+      "extractinator-regular",
+      "chlorophyte-extractinator",
       "shimmer"
     ],
     "vendors": [],
@@ -17105,7 +17184,7 @@
       "decoration"
     ],
     "obtain": [
-      "other"
+      "player-death"
     ],
     "vendors": [],
     "events": [],
@@ -19354,6 +19433,8 @@
       "drop",
       "plunder",
       "bag",
+      "extractinator",
+      "chlorophyte-extractinator",
       "shimmer"
     ],
     "vendors": [],
@@ -19410,6 +19491,8 @@
       "loot",
       "plunder",
       "bag",
+      "extractinator",
+      "chlorophyte-extractinator",
       "shimmer"
     ],
     "vendors": [],
@@ -19466,6 +19549,8 @@
       "loot",
       "plunder",
       "bag",
+      "extractinator",
+      "chlorophyte-extractinator",
       "shimmer"
     ],
     "vendors": [],
@@ -20250,7 +20335,9 @@
       "crafted",
       "drop",
       "loot",
-      "bag"
+      "bag",
+      "extractinator",
+      "chlorophyte-extractinator"
     ],
     "vendors": [],
     "events": [],
@@ -20306,7 +20393,9 @@
     "obtain": [
       "crafted",
       "drop",
-      "bag"
+      "bag",
+      "extractinator",
+      "chlorophyte-extractinator"
     ],
     "vendors": [],
     "events": [],
@@ -20818,7 +20907,9 @@
     "obtain": [
       "crafted",
       "drop",
-      "bag"
+      "bag",
+      "extractinator",
+      "chlorophyte-extractinator"
     ],
     "vendors": [],
     "events": [],
@@ -35255,7 +35346,9 @@
     ],
     "obtain": [
       "crafted",
-      "plunder"
+      "plunder",
+      "extractinator",
+      "chlorophyte-extractinator"
     ],
     "vendors": [],
     "events": [],
@@ -37067,6 +37160,9 @@
       "loot",
       "plunder",
       "bag",
+      "extractinator",
+      "extractinator-regular",
+      "chlorophyte-extractinator",
       "shimmer"
     ],
     "vendors": [],
@@ -37130,6 +37226,9 @@
       "loot",
       "plunder",
       "bag",
+      "extractinator",
+      "extractinator-regular",
+      "chlorophyte-extractinator",
       "shimmer"
     ],
     "vendors": [],
@@ -37192,6 +37291,9 @@
       "loot",
       "plunder",
       "bag",
+      "extractinator",
+      "extractinator-regular",
+      "chlorophyte-extractinator",
       "shimmer"
     ],
     "vendors": [],
@@ -37255,6 +37357,9 @@
       "loot",
       "plunder",
       "bag",
+      "extractinator",
+      "extractinator-regular",
+      "chlorophyte-extractinator",
       "shimmer"
     ],
     "vendors": [],
@@ -37314,7 +37419,9 @@
     "obtain": [
       "crafted",
       "loot",
-      "bag"
+      "bag",
+      "extractinator",
+      "chlorophyte-extractinator"
     ],
     "vendors": [],
     "events": [],
@@ -37367,7 +37474,9 @@
     "obtain": [
       "crafted",
       "loot",
-      "bag"
+      "bag",
+      "extractinator",
+      "chlorophyte-extractinator"
     ],
     "vendors": [],
     "events": [],
@@ -37420,7 +37529,9 @@
     "obtain": [
       "crafted",
       "loot",
-      "bag"
+      "bag",
+      "extractinator",
+      "chlorophyte-extractinator"
     ],
     "vendors": [],
     "events": [],
@@ -37473,7 +37584,9 @@
     "obtain": [
       "crafted",
       "loot",
-      "bag"
+      "bag",
+      "extractinator",
+      "chlorophyte-extractinator"
     ],
     "vendors": [],
     "events": [],
@@ -46655,7 +46768,9 @@
       "drop",
       "plunder",
       "bag",
-      "treasure-bag"
+      "treasure-bag",
+      "extractinator",
+      "chlorophyte-extractinator"
     ],
     "vendors": [],
     "events": [],
@@ -53051,6 +53166,9 @@
     "obtain": [
       "loot",
       "bag",
+      "extractinator",
+      "extractinator-regular",
+      "chlorophyte-extractinator",
       "shimmer"
     ],
     "vendors": [],
@@ -58103,6 +58221,8 @@
       "loot",
       "plunder",
       "bag",
+      "extractinator",
+      "chlorophyte-extractinator",
       "shimmer"
     ],
     "vendors": [],
@@ -58159,6 +58279,8 @@
       "loot",
       "plunder",
       "bag",
+      "extractinator",
+      "chlorophyte-extractinator",
       "shimmer"
     ],
     "vendors": [],
@@ -58215,6 +58337,8 @@
       "loot",
       "plunder",
       "bag",
+      "extractinator",
+      "chlorophyte-extractinator",
       "shimmer"
     ],
     "vendors": [],
@@ -59233,7 +59357,10 @@
     "obtain": [
       "crafted",
       "drop",
-      "plunder"
+      "plunder",
+      "extractinator",
+      "extractinator-regular",
+      "chlorophyte-extractinator"
     ],
     "vendors": [],
     "events": [],
@@ -61775,7 +61902,7 @@
       "decoration"
     ],
     "obtain": [
-      "other"
+      "player-death"
     ],
     "vendors": [],
     "events": [],
@@ -61824,7 +61951,7 @@
       "decoration"
     ],
     "obtain": [
-      "other"
+      "player-death"
     ],
     "vendors": [],
     "events": [],
@@ -61873,7 +62000,7 @@
       "decoration"
     ],
     "obtain": [
-      "other"
+      "player-death"
     ],
     "vendors": [],
     "events": [],
@@ -61922,7 +62049,7 @@
       "decoration"
     ],
     "obtain": [
-      "other"
+      "player-death"
     ],
     "vendors": [],
     "events": [],
@@ -61971,7 +62098,7 @@
       "decoration"
     ],
     "obtain": [
-      "other"
+      "player-death"
     ],
     "vendors": [],
     "events": [],
@@ -62350,7 +62477,9 @@
     "obtain": [
       "crafted",
       "loot",
-      "bag"
+      "bag",
+      "extractinator",
+      "chlorophyte-extractinator"
     ],
     "vendors": [],
     "events": [],
@@ -62737,7 +62866,9 @@
     ],
     "obtain": [
       "crafted",
-      "bag"
+      "bag",
+      "extractinator",
+      "chlorophyte-extractinator"
     ],
     "vendors": [],
     "events": [],
@@ -63124,7 +63255,9 @@
     ],
     "obtain": [
       "crafted",
-      "bag"
+      "bag",
+      "extractinator",
+      "chlorophyte-extractinator"
     ],
     "vendors": [],
     "events": [],
@@ -65439,7 +65572,10 @@
       "other-pet"
     ],
     "obtain": [
-      "loot"
+      "loot",
+      "extractinator",
+      "extractinator-regular",
+      "chlorophyte-extractinator"
     ],
     "vendors": [],
     "events": [],
@@ -66249,7 +66385,9 @@
       "bar"
     ],
     "obtain": [
-      "crafted"
+      "crafted",
+      "extractinator",
+      "chlorophyte-extractinator"
     ],
     "vendors": [],
     "events": [],
@@ -70147,7 +70285,9 @@
     "obtain": [
       "drop",
       "bag",
-      "treasure-bag"
+      "treasure-bag",
+      "extractinator",
+      "chlorophyte-extractinator"
     ],
     "vendors": [],
     "events": [],
@@ -88073,7 +88213,7 @@
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Meteor Head",
     "conditions": [],
-    "milestone": "start",
+    "milestone": "evil-boss",
     "milestoneVia": "Dropped by Meteor Head"
   },
   {
@@ -104830,7 +104970,10 @@
     ],
     "obtain": [
       "bag",
-      "caught"
+      "caught",
+      "extractinator",
+      "extractinator-regular",
+      "chlorophyte-extractinator"
     ],
     "vendors": [],
     "events": [],
@@ -105030,7 +105173,10 @@
       "critter"
     ],
     "obtain": [
-      "caught"
+      "caught",
+      "extractinator",
+      "extractinator-regular",
+      "chlorophyte-extractinator"
     ],
     "vendors": [],
     "events": [],
@@ -105062,7 +105208,8 @@
     "useTime": 15,
     "baitPower": 10,
     "conditions": [],
-    "milestone": "start"
+    "milestone": "start",
+    "milestoneVia": "From the Extractinator (Old Shoe / Seaweed (junk) / Tin Can)"
   },
   {
     "key": "GlowingSnail",
@@ -138771,7 +138918,10 @@
     ],
     "subcategories": [],
     "obtain": [
-      "bag"
+      "bag",
+      "extractinator",
+      "extractinator-regular",
+      "chlorophyte-extractinator"
     ],
     "vendors": [],
     "events": [],
@@ -138818,7 +138968,10 @@
     ],
     "subcategories": [],
     "obtain": [
-      "bag"
+      "bag",
+      "extractinator",
+      "extractinator-regular",
+      "chlorophyte-extractinator"
     ],
     "vendors": [],
     "events": [],
@@ -160263,8 +160416,8 @@
     "placedWidth": 1,
     "placedHeight": 1,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "evil-boss",
+    "milestoneVia": "Crafted – needs Meteorite"
   },
   {
     "key": "MeteoriteBrickWall",
@@ -160309,8 +160462,8 @@
     "autoswing": true,
     "useTime": 15,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "evil-boss",
+    "milestoneVia": "Crafted – needs Meteorite Brick"
   },
   {
     "key": "MetalDetector",
@@ -161573,8 +161726,8 @@
     "placedWidth": 2,
     "placedHeight": 5,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "evil-boss",
+    "milestoneVia": "Crafted – needs Meteorite Brick"
   },
   {
     "key": "MarbleClock",
@@ -161718,8 +161871,8 @@
     "placedWidth": 2,
     "placedHeight": 3,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "evil-boss",
+    "milestoneVia": "Crafted – needs Meteorite Brick"
   },
   {
     "key": "MarbleDoor",
@@ -161864,8 +162017,8 @@
     "placedWidth": 3,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "evil-boss",
+    "milestoneVia": "Crafted – needs Meteorite Brick"
   },
   {
     "key": "MarbleDresser",
@@ -162009,8 +162162,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "evil-boss",
+    "milestoneVia": "Crafted – needs Meteorite Brick"
   },
   {
     "key": "MarbleLamp",
@@ -162156,8 +162309,8 @@
     "placedWidth": 1,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "evil-boss",
+    "milestoneVia": "Crafted – needs Meteorite Brick"
   },
   {
     "key": "MarbleLantern",
@@ -162454,8 +162607,8 @@
     "placedHeight": 1,
     "tooltip": "Press Down to fall through",
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "evil-boss",
+    "milestoneVia": "Crafted – needs Meteorite Brick"
   },
   {
     "key": "MarblePlatform",
@@ -162609,8 +162762,8 @@
     "placedWidth": 2,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "evil-boss",
+    "milestoneVia": "Crafted – needs Meteorite Brick"
   },
   {
     "key": "MarbleSink",
@@ -162755,8 +162908,8 @@
     "placedWidth": 3,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "evil-boss",
+    "milestoneVia": "Crafted – needs Meteorite Brick"
   },
   {
     "key": "MarbleSofa",
@@ -163048,8 +163201,8 @@
     "placedHeight": 1,
     "tooltip": "Used for basic crafting",
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "evil-boss",
+    "milestoneVia": "Crafted – needs Meteorite Brick"
   },
   {
     "key": "MarbleWorkBench",
@@ -163196,8 +163349,8 @@
     "placedWidth": 4,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "evil-boss",
+    "milestoneVia": "Crafted – needs Meteorite Brick"
   },
   {
     "key": "MarbleBathtub",
@@ -163341,8 +163494,8 @@
     "placedHeight": 2,
     "tooltip": "Allows you to set your spawn point if placed in a valid house\nCan be used to sleep, speeding up time",
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "evil-boss",
+    "milestoneVia": "Crafted – needs Meteorite Brick"
   },
   {
     "key": "MarbleBed",
@@ -163638,8 +163791,8 @@
     "placedWidth": 2,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "evil-boss",
+    "milestoneVia": "Crafted – needs Meteorite Brick"
   },
   {
     "key": "MarbleCandelabra",
@@ -163785,8 +163938,8 @@
     "placedWidth": 1,
     "placedHeight": 1,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "evil-boss",
+    "milestoneVia": "Crafted – needs Meteorite Brick"
   },
   {
     "key": "MarbleCandle",
@@ -163931,8 +164084,8 @@
     "placedWidth": 1,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "evil-boss",
+    "milestoneVia": "Crafted – needs Meteorite Brick"
   },
   {
     "key": "MarbleChair",
@@ -168732,7 +168885,9 @@
     ],
     "obtain": [
       "crafted",
-      "plunder"
+      "plunder",
+      "extractinator",
+      "chlorophyte-extractinator"
     ],
     "vendors": [],
     "events": [],
@@ -168782,7 +168937,9 @@
     ],
     "obtain": [
       "crafted",
-      "plunder"
+      "plunder",
+      "extractinator",
+      "chlorophyte-extractinator"
     ],
     "vendors": [],
     "events": [],
@@ -174074,7 +174231,10 @@
     ],
     "obtain": [
       "drop",
-      "bag"
+      "bag",
+      "extractinator",
+      "extractinator-regular",
+      "chlorophyte-extractinator"
     ],
     "vendors": [],
     "events": [],
@@ -212315,8 +212475,8 @@
     "placedWidth": 1,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "evil-boss",
+    "milestoneVia": "Crafted – needs Meteorite Brick"
   },
   {
     "key": "LesionStation",
@@ -222543,7 +222703,10 @@
     ],
     "obtain": [
       "crafted",
-      "drop"
+      "drop",
+      "extractinator",
+      "extractinator-regular",
+      "chlorophyte-extractinator"
     ],
     "vendors": [],
     "events": [],
@@ -222598,7 +222761,10 @@
     ],
     "obtain": [
       "crafted",
-      "drop"
+      "drop",
+      "extractinator",
+      "extractinator-regular",
+      "chlorophyte-extractinator"
     ],
     "vendors": [],
     "events": [],
@@ -222653,7 +222819,10 @@
     ],
     "obtain": [
       "crafted",
-      "drop"
+      "drop",
+      "extractinator",
+      "extractinator-regular",
+      "chlorophyte-extractinator"
     ],
     "vendors": [],
     "events": [],
@@ -222708,7 +222877,10 @@
     ],
     "obtain": [
       "crafted",
-      "drop"
+      "drop",
+      "extractinator",
+      "extractinator-regular",
+      "chlorophyte-extractinator"
     ],
     "vendors": [],
     "events": [],
@@ -222763,7 +222935,10 @@
     ],
     "obtain": [
       "crafted",
-      "drop"
+      "drop",
+      "extractinator",
+      "extractinator-regular",
+      "chlorophyte-extractinator"
     ],
     "vendors": [],
     "events": [],
@@ -222817,7 +222992,9 @@
       "other-block"
     ],
     "obtain": [
-      "drop"
+      "drop",
+      "extractinator",
+      "chlorophyte-extractinator"
     ],
     "vendors": [],
     "events": [],
@@ -223951,7 +224128,9 @@
       "other-block"
     ],
     "obtain": [
-      "drop"
+      "drop",
+      "extractinator",
+      "chlorophyte-extractinator"
     ],
     "vendors": [],
     "events": [],
@@ -224003,7 +224182,9 @@
       "other-block"
     ],
     "obtain": [
-      "drop"
+      "drop",
+      "extractinator",
+      "chlorophyte-extractinator"
     ],
     "vendors": [],
     "events": [],
@@ -224571,7 +224752,9 @@
       "other-block"
     ],
     "obtain": [
-      "drop"
+      "drop",
+      "extractinator",
+      "chlorophyte-extractinator"
     ],
     "vendors": [],
     "events": [],
@@ -231441,8 +231624,8 @@
     "autoswing": true,
     "useTime": 15,
     "conditions": [],
-    "milestone": "king-slime",
-    "milestoneVia": "Crafted – needs Grass Seeds"
+    "milestone": "start",
+    "milestoneVia": "Crafted"
   },
   {
     "key": "Jungle2Echo",
@@ -231533,8 +231716,8 @@
     "autoswing": true,
     "useTime": 15,
     "conditions": [],
-    "milestone": "king-slime",
-    "milestoneVia": "Crafted – needs Grass Seeds"
+    "milestone": "start",
+    "milestoneVia": "Crafted"
   },
   {
     "key": "Jungle4Echo",
@@ -261667,7 +261850,9 @@
       "other-block"
     ],
     "obtain": [
-      "drop"
+      "drop",
+      "extractinator",
+      "chlorophyte-extractinator"
     ],
     "vendors": [],
     "events": [],
@@ -265819,8 +266004,8 @@
     "buff": "Biome Sight",
     "tooltip": "Shows the location of infected blocks",
     "conditions": [],
-    "milestone": "king-slime",
-    "milestoneVia": "Crafted – needs Grass Seeds"
+    "milestone": "start",
+    "milestoneVia": "Crafted"
   },
   {
     "key": "ScarletMacaw",
@@ -270088,8 +270273,8 @@
     "placedHeight": 3,
     "tooltip": "Placing some items into the extractinator turns them into something more useful\nPlace contaminated blocks into the extractinator to purify them\nOther items placed inside may have interesting effects\nProcesses items from adjacent chests when signalled",
     "conditions": [],
-    "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestone": "all-mechs",
+    "milestoneVia": "Crafted – needs Chlorophyte Bars"
   },
   {
     "key": "BlueEgg",
@@ -273052,7 +273237,7 @@
       "other-tool"
     ],
     "obtain": [
-      "other"
+      "other-form"
     ],
     "vendors": [],
     "events": [],
@@ -273098,7 +273283,7 @@
       "other-tool"
     ],
     "obtain": [
-      "other"
+      "other-form"
     ],
     "vendors": [],
     "events": [],
@@ -273144,7 +273329,7 @@
       "other-tool"
     ],
     "obtain": [
-      "other"
+      "other-form"
     ],
     "vendors": [],
     "events": [],
@@ -273190,7 +273375,7 @@
       "other-tool"
     ],
     "obtain": [
-      "other"
+      "other-form"
     ],
     "vendors": [],
     "events": [],
@@ -277649,7 +277834,8 @@
       "other-tool"
     ],
     "obtain": [
-      "vendor"
+      "vendor",
+      "other-form"
     ],
     "vendors": [
       "zoologist"
@@ -277700,7 +277886,8 @@
       "other-tool"
     ],
     "obtain": [
-      "vendor"
+      "vendor",
+      "other-form"
     ],
     "vendors": [
       "dryad"
@@ -277749,7 +277936,7 @@
       "other-tool"
     ],
     "obtain": [
-      "other"
+      "other-form"
     ],
     "vendors": [],
     "events": [],
@@ -279366,7 +279553,7 @@
     "tooltip": "'R. Teare'",
     "conditions": [],
     "milestone": "start",
-    "milestoneVia": "Dropped by Meteor Head"
+    "milestoneVia": "Collected in the world"
   },
   {
     "key": "HeroesFromAnotherWorld",
@@ -287991,7 +288178,7 @@
       "other-crafting-material"
     ],
     "obtain": [
-      "other"
+      "other-form"
     ],
     "vendors": [],
     "events": [],
@@ -291712,7 +291899,8 @@
       "enemy-drop"
     ],
     "obtain": [
-      "drop"
+      "drop",
+      "other-form"
     ],
     "vendors": [],
     "events": [],
@@ -312637,7 +312825,7 @@
       "combat"
     ],
     "obtain": [
-      "other"
+      "other-form"
     ],
     "vendors": [],
     "events": [],
@@ -313778,7 +313966,7 @@
       "combat"
     ],
     "obtain": [
-      "other"
+      "other-form"
     ],
     "vendors": [],
     "events": [],
@@ -313823,7 +314011,7 @@
       "combat"
     ],
     "obtain": [
-      "other"
+      "other-form"
     ],
     "vendors": [],
     "events": [],
@@ -313868,7 +314056,7 @@
       "other-tool"
     ],
     "obtain": [
-      "other"
+      "other-form"
     ],
     "vendors": [],
     "events": [],

@@ -46,6 +46,7 @@ function Toolbar({ view }: { view: TrackerView }) {
   const setSearch = useStore((s) => s.setSearch)
   const openDetail = useUi((s) => s.openDetail)
   const [focused, setFocused] = useState(false)
+  const searchNpcs = usePrefs((s) => s.searchNpcs)
   const mode = useStore((s) => s.view)
   const setView = useStore((s) => s.setView)
   const showProgress = usePrefs((s) => s.layout.showFilteredProgress)
@@ -66,12 +67,13 @@ function Toolbar({ view }: { view: TrackerView }) {
             value={search}
             onChange={setSearch}
             onKeyDown={(e) => handleListKey(e, search, openDetail)}
-            placeholder="Search items by name…"
+            placeholder={searchNpcs ? 'Search items or NPCs by name…' : 'Search items by name…'}
             label="Search items"
             shortcut="list"
             withMode
+            withNpcs
           />
-          <NpcSuggestions search={search} open={focused && !!search.trim()} />
+          <NpcSuggestions search={search} open={searchNpcs && focused && !!search.trim()} />
         </div>
         <MobileFilters view={view} />
       </div>

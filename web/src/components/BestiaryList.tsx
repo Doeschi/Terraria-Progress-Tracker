@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import { ArrowDown, ArrowUp, ChevronDown, ExternalLink, ListChecks, RefreshCw, Star } from 'lucide-react'
 import { useUi } from '@/ui'
 import { useActivePlaythrough, useActiveWorld, useStore } from '@/store'
@@ -23,7 +23,14 @@ import {
 import { BestiaryFilterSidebar } from './FilterSidebar'
 import { TallyBar, TallyText, WikiIcon } from './common'
 import { ActiveFilterBar, MobileFiltersButton, SearchField, SearchHint } from './ListParts'
-import { handleListKey, useActiveRow, usePublishRows } from '@/lib/listCursor'
+import {
+  handleListKey,
+  handleTableKey,
+  tableRowClicked,
+  useActiveRow,
+  useListCursor,
+  usePublishRows,
+} from '@/lib/listCursor'
 import { IconList, type IconEntry } from './table/cells'
 import { formatDate } from '@/lib/format'
 import { worldState } from '@/lib/bestiary'
@@ -301,6 +308,7 @@ function BestiaryTable({ view }: { view: BestiaryView }) {
       return (ka < kb ? -1 : ka > kb ? 1 : 0) * dir || a.n - b.n
     })
   }, [view.visible, sort, typeName, world, pt.bestiaryChangedAt, drops, versionRank])
+  const scrollRef = useRef<HTMLDivElement>(null)
   // keyboard selection from the search field (↑/↓, Enter opens the card)
   usePublishRows(useMemo(() => rows.map((e) => ({ ref: NPC_REF + e.id, name: e.name })), [rows]))
   const activeRef = useActiveRow(useStore((s) => s.bestiarySearch)).row?.ref
@@ -382,7 +390,15 @@ function BestiaryTable({ view }: { view: BestiaryView }) {
   if (!rows.length) return <p className="p-6 text-center text-sm text-muted-foreground">No bestiary entries match.</p>
 
   return (
-    <div className="min-h-0 flex-1 overflow-auto">
+    <div
+      ref={scrollRef}
+      tabIndex={-1}
+      onKeyDown={(e) => handleTableKey(e, openDetail)}
+      onBlur={(e) => {
+        if (!e.currentTarget.contains(e.relatedTarget)) useListCursor.getState().setTableIndex(null)
+      }}
+      className="min-h-0 flex-1 overflow-auto outline-none"
+    >
       <table
         className="table-fixed border-collapse text-sm"
         style={{ width: shown.reduce((n, id) => n + widthOf(id), 0) }}
@@ -419,7 +435,12 @@ function BestiaryTable({ view }: { view: BestiaryView }) {
               drops={drops.get(e.id)}
               selected={selected === NPC_REF + e.id}
               active={activeRef === NPC_REF + e.id}
-              onOpen={() => openDetail(NPC_REF + e.id)}
+              onOpen={() => {
+                openDetail(NPC_REF + e.id)
+                // the table takes the keyboard: ↑/↓ from this row, Enter opens (S6)
+                tableRowClicked(NPC_REF + e.id)
+                scrollRef.current?.focus({ preventScroll: true })
+              }}
               onChange={(v) => setBestiary([e.id], v)}
             />
           ))}
@@ -472,7 +493,7 @@ function Row({
         'cursor-pointer border-b border-border/60 hover:bg-muted/40 [&>td]:overflow-hidden [&>td]:text-ellipsis',
         unlocked && 'bg-primary/[0.04]',
         selected && 'bg-primary/15 hover:bg-primary/20',
-        active && 'outline-2 -outline-offset-2 outline-primary',
+        active && 'outline-2 -outline-offset-2 outline-primary outline-dashed',
       )}
       aria-selected={selected}
       data-ref={NPC_REF + e.id}

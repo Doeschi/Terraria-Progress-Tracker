@@ -148,7 +148,8 @@ class Milestones:
                     continue
                 if o in PLAIN_SOURCES:
                     offer(key, 0, self.obtain_names.get(o, o))
-            if key not in base and key not in recipes["by_result"] and key not in recipes["shimmer_to"]:
+            if (key not in base and key not in recipes["by_result"] and key not in recipes["shimmer_to"]
+                    and key not in recipes.get("extractinator_to", {})):
                 # no source data at all (e.g. Fallen Star): from the start, the minimum still applies
                 offer(key, 0, self.obtain_names["crafted"] if "crafted" in item["obtain"] else None)
 
@@ -196,6 +197,15 @@ class Milestones:
                 for s in recipes["shimmer_to"].get(key, []):
                     if s.get("item"):
                         candidates.append((value_of(s["item"]), f"shimmer from {by_key[s['item']]['name']}"))
+                # Extractinator results (B6): the latest of the machine, the input (any of them) and
+                # "Hardmode only"
+                for r in recipes.get("extractinator_to", {}).get(key, []):
+                    values = [value_of(r["machine_item"])] if r.get("machine_item") else []
+                    if r["inputs"]:
+                        values.append(min(value_of(k) for k in r["inputs"]))
+                    if r.get("phase") == "hardmode":
+                        values.append(self.index["wall-of-flesh"])
+                    candidates.append((max(values, default=0), f"from the {r['machine_name']} ({r['input']})"))
                 if not candidates:
                     continue
                 # earliest; on a tie the one with a reason

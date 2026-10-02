@@ -187,6 +187,8 @@ interface Prefs {
   progressionMode: ProgressionMode
   /** item, bestiary and chest search: typos allowed or the exact text */
   searchMode: SearchMode
+  /** item search: also suggest the best-matching NPC (S5) */
+  searchNpcs: boolean
   layout: Layout
 }
 
@@ -208,6 +210,7 @@ interface PrefsActions {
   setHideCompleted(hide: boolean): void
   setProgressionMode(mode: ProgressionMode): void
   setSearchMode(mode: SearchMode): void
+  setSearchNpcs(on: boolean): void
   setLayout(patch: Partial<Layout>): void
   /** settings dialog: layout and search mode back to the defaults */
   resetLayout(): void
@@ -234,6 +237,7 @@ function load(): Prefs {
     hideCompleted: true,
     progressionMode: 'upTo',
     searchMode: 'fuzzy',
+    searchNpcs: true,
     layout: DEFAULT_LAYOUT,
   }
   try {
@@ -264,6 +268,7 @@ function load(): Prefs {
     if (typeof p.hideCompleted === 'boolean') prefs.hideCompleted = p.hideCompleted
     if (p.progressionMode === 'upTo' || p.progressionMode === 'exactly') prefs.progressionMode = p.progressionMode
     if (p.searchMode === 'fuzzy' || p.searchMode === 'exact') prefs.searchMode = p.searchMode
+    if (typeof p.searchNpcs === 'boolean') prefs.searchNpcs = p.searchNpcs
     prefs.layout = readLayout(p?.layout)
   } catch {
     // storage unavailable or damaged - start with defaults
@@ -306,6 +311,7 @@ export const usePrefs = create<Prefs & PrefsActions>()((set, get) => {
     setHideCompleted: (hideCompleted) => update({ hideCompleted }),
     setProgressionMode: (progressionMode) => update({ progressionMode }),
     setSearchMode: (searchMode) => update({ searchMode }),
+    setSearchNpcs: (searchNpcs) => update({ searchNpcs }),
     setLayout: (patch) => update({ layout: { ...get().layout, ...patch } }),
     resetLayout: () => update({ layout: DEFAULT_LAYOUT, searchMode: 'fuzzy' }),
   }

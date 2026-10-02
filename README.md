@@ -53,6 +53,7 @@ the unchanged downloads in [`pipeline/raw/`](pipeline/raw).
 | `containers.json` | The container sources grouped into Chests, Crates, Other containers and Trees, with item counts |
 | `bosses.json` | Bosses by progression stage, each with all drop sources that count for it (parts, treasure bag) |
 | `recipes.json` | 3,655 crafting recipes (current versions, platform-limited ones marked), 42 crafting stations with the items that provide them (stronger stations included), 34 "Any …" ingredient groups resolved to items, 287 shimmer transmutations |
+| `extractinator.json` | 198 results of the Extractinator and the Chlorophyte Extractinator for 74 items: per input (Silt / Slush, Desert Fossil, moss, junk, Poo) with chance and amount, and 57 conversions (Copper Ore → Tin Ore, Demonite → Crimtane, …) |
 | `bestiary.json` | All 546 bestiary entries in the in-game order, with the internal name the world file uses, type, stars, biome / time / event filters, game update and platforms |
 | `categories.json`, `subcategories.json`, `obtain.json`, `vendors.json`, `events.json`, `biomes.json`, `times.json` | The groups used above, with names, icons and item counts |
 | `missing_items.json` | Items the wiki's Items table lacks, its Recipes table names with id, and that have no template in `[recipe_items]` (currently none) |
@@ -105,6 +106,7 @@ change.
 | "MediaWiki:Common.css" | the platform icons (embedded as images in the wiki's style sheet) |
 | the 24 vendor pages (Merchant, …; the list is `[vendors]` in `mapping.toml`) | the shops: `{{shop row\|item\|condition}}` with the condition text ("In Hardmode, during night, …") and moon phases |
 | "Dye Trader", section "Rewards" | the 33 Strange Plant rewards and the boss each needs |
+| "Extractinator", "Chlorophyte Extractinator", section "Possible conversions" | what they give per input (chance, amount, Pre-Hardmode / Hardmode only) and always convert (`extractinator.json`) |
 | the ~112 pages with drop groups (found by the wiki search `insource:"group:start"`) | which drops belong together: "One of the following 8 items will always be dropped", "1/12: one of these 14" (`group` in `drops.json`) |
 
 Also scraped: the rendered HTML of "NPC IDs" (internal NPC names and ids – the keys of the

@@ -20,8 +20,9 @@ import re
 
 from .common import norm_name, strip_markup
 
-# templates whose first parameter is their text ({{item|Grenade Launcher}}, {{tr|Cavern}})
-TEXT_TEMPLATES = {"item", "tr", "chance", "eil", "i", "l"}
+# templates whose first parameter is their text ({{item|Grenade Launcher}}, {{tr|Cavern}},
+# {{percent|0.33%}})
+TEXT_TEMPLATES = {"item", "tr", "chance", "eil", "i", "l", "percent"}
 
 
 def plain(text):

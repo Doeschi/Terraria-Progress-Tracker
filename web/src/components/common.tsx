@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { ImageOff } from 'lucide-react'
+import { Check, ImageOff } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { formatPercent, percent, type Tally } from '@/lib/filtering'
 import { useStore } from '@/store'
@@ -184,5 +184,17 @@ function CoinIcon({ src, name }: { src: string; name: string }) {
       className="h-4 w-auto [image-rendering:pixelated]"
       draggable={false}
     />
+  )
+}
+
+/** Green checkmark of an obtained item (detail panel lists), "Obtained" on hover. */
+export function ObtainedMark({ small = false }: { small?: boolean }) {
+  return (
+    <span title="Obtained" className="inline-flex shrink-0">
+      <Check
+        className={cn(small ? 'size-3' : 'size-3.5', 'text-emerald-600 dark:text-emerald-400')}
+        aria-label="Obtained"
+      />
+    </span>
   )
 }
