@@ -747,11 +747,22 @@ only_in_parent = true
 match = ["npc:critter", "page:gem squirrels", "page:gem bunnies", "page:butterflies", "page:ducks",
          "page:scorpions", "page:jellyfish (bait)"]
 
+# fish from fishing (most are potion ingredients; Neon Tetra, Golden Carp and Honeyfin only for
+# cooking) - not Balloon Pufferfish, Frog Leg or Demon Conch (equipment)
+[subcategories.fish]
+name = "Fish"
+parent = "crafting-material"
+icon = "Bass"
+only_in_parent = true
+match = ["listcat:fished items"]
+without_categories = ["accessory", "tool"]
+
 [subcategories.potion-ingredient]
-name = "Potion ingredients"
+name = "Other potion ingredients"
 parent = "crafting-material"
 icon = "Daybloom"
 match = ["tag:potion ingredients", "listcat:potion ingredients"]
+exclude = ["listcat:fished items"]  # in "Fish"
 
 [subcategories.thread-cloth]
 name = "Threads & cloth"

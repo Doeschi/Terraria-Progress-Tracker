@@ -505,10 +505,17 @@
     "parent": "crafting-material"
   },
   {
+    "id": "fish",
+    "name": "Fish",
+    "icon": "https://terraria.wiki.gg/images/Bass.png",
+    "count": 27,
+    "parent": "crafting-material"
+  },
+  {
     "id": "potion-ingredient",
-    "name": "Potion ingredients",
+    "name": "Other potion ingredients",
     "icon": "https://terraria.wiki.gg/images/Daybloom.png",
-    "count": 72,
+    "count": 48,
     "parent": "crafting-material"
   },
   {
@@ -845,7 +852,7 @@
     "id": "other-crafting-material",
     "name": "Other crafting materials",
     "icon": "https://terraria.wiki.gg/images/Vile_Powder.png",
-    "count": 94,
+    "count": 91,
     "parent": "crafting-material",
     "fallback": true
   },
