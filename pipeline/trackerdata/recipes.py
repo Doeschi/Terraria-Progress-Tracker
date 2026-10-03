@@ -22,6 +22,22 @@ def recipe_group_ids(wikitext):
     return groups
 
 
+def shimmer_conditions(note, unmatched):
+    """Condition ids (conditions.json) of a shimmer note: "#note_post_moon_lord" -> after-moon-lord,
+    "#note_post_golem" -> after-golem, "#note_moon_3" -> moon-3 (a moon phase)."""
+    note = html.unescape(note or "").strip()
+    if not note:
+        return []
+    m = re.fullmatch(r"#note_post_(\w+)", note)
+    if m:
+        return ["after-" + m.group(1).replace("_", "-")]
+    m = re.fullmatch(r"#note_moon_(\d)", note)
+    if m:
+        return [f"moon-{m.group(1)}"]
+    unmatched[f"shimmer note {note}"] += 1
+    return []
+
+
 def recipes_file(rows, items, mapping, wikitext):
     """recipes.json: crafting recipes, stations, ingredient groups and shimmer
     transmutations. Items are referenced by key."""
@@ -114,10 +130,13 @@ def recipes_file(rows, items, mapping, wikitext):
                 unmatched[f"platform {w}"] += 1
         platforms = [RECIPE_PLATFORMS[w] for w in words if w in RECIPE_PLATFORMS]
         if [norm_name(n) for n in station_names] == [shimmer_station]:
-            # transmutation: one ingredient -> result
+            # transmutation: one ingredient -> result; a note of the Shimmer page is its condition
+            # ("#note_post_moon_lord": only after Moon Lord, "#note_moon_1": in a full moon)
+            conditions = shimmer_conditions(row.get("resulttext", ""), unmatched)
             for ing in ingredients:
                 entry = {k: v for k, v in ing.items() if k != "amount"}
-                shimmer.append({**entry, "result": result["key"], "amount": amount})
+                shimmer.append({**entry, "result": result["key"], "amount": amount,
+                                **({"conditions": conditions} if conditions else {})})
             continue
         recipe = {"result": result["key"], "amount": amount,
                   "stations": [station(n) for n in station_names],

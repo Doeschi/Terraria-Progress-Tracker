@@ -12,6 +12,7 @@ import { BestiaryFilterSidebar, FilterSidebar } from '@/components/FilterSidebar
 import { BestiaryList } from '@/components/BestiaryList'
 import { useBestiaryView } from '@/hooks/useBestiaryView'
 import { useAutosave } from '@/hooks/useAutosave'
+import { useFileChangeNotice } from '@/hooks/useFileSync'
 import { useSearchShortcuts } from '@/hooks/useSearchShortcuts'
 import { useEasterEggs, useProgressEggs, useSeasonalFavicon } from '@/hooks/useEasterEggs'
 import { ItemList } from '@/components/ItemList'
@@ -113,6 +114,8 @@ function CenteredMessage({ children }: { children: React.ReactNode }) {
 
 function Tracker() {
   useAutosave()
+  // "World changed in the game" when coming back to the tab (W11)
+  useFileChangeNotice()
   // § / "/" to the item search, Shift+§ to the filter search
   useSearchShortcuts()
   const pt = useActivePlaythrough()

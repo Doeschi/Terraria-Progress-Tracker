@@ -149,19 +149,19 @@
       "count": 2
     },
     {
-      "id": "no-dungeon",
+      "id": "seed-no-dungeon",
       "name": "World without a Dungeon",
       "group": "special",
-      "count": 9
+      "count": 0
     },
     {
-      "id": "no-temple",
+      "id": "seed-no-temple",
       "name": "World without a Jungle Temple",
       "group": "special",
-      "count": 1
+      "count": 0
     },
     {
-      "id": "no-hellforge",
+      "id": "seed-no-hellforge",
       "name": "World without a Hellforge",
       "group": "special",
       "count": 0

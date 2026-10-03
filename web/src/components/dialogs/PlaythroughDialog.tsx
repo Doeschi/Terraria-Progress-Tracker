@@ -1,11 +1,20 @@
 import { useMemo, useState } from 'react'
 import { toast } from 'sonner'
-import { FolderOpen, Globe, Loader2, UserRound, X } from 'lucide-react'
+import { FolderOpen, FolderSearch, Globe, Loader2, UserRound, X } from 'lucide-react'
 import { useActivePlaythrough, useStore } from '@/store'
-import { cn } from '@/lib/utils'
+import { cn, isTouchScreen } from '@/lib/utils'
 import { useUi } from '@/ui'
 import { DIFFICULTY_LABELS, GAME_MODE_DIFFICULTY, itemsForPlaythrough, versionLabel } from '@/lib/availability'
-import { pickWorldFile, rememberWorldHandle } from '@/lib/files'
+import {
+  ATTACH_DIFFERENCE,
+  attachHints,
+  canSaveInPlace,
+  pickFileClassic,
+  pickWorldFile,
+  rememberWorldHandle,
+  setClassicFile,
+  setLoadedModified,
+} from '@/lib/files'
 import { parseWorldFile, type LoadedWorld } from '@/lib/world'
 import { parsePlayerFile, pickPlayerFile, rememberPlayerHandle, type LoadedPlayer } from '@/lib/player'
 import { DIFFICULTIES, type Difficulty, type PlatformId } from '@/lib/types'
@@ -13,6 +22,7 @@ import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from '@/components/ui/dropdown-menu'
 import { DifficultyIcon, WikiIcon } from '../common'
 import {
   Dialog,
@@ -38,6 +48,110 @@ export function PlaythroughDialog() {
   )
 }
 
+/** A world / player file chosen in the dialog, attached on create / save. `classic`: chosen with
+ * the classic dialog (Steam Cloud, W10) - no handle, chosen again for each sync. */
+interface ChosenFile<T> {
+  data: T
+  handle: FileSystemFileHandle | null
+  classic: boolean
+  lastModified: number
+}
+
+const pickClassic = async (accept: string) => {
+  const file = await pickFileClassic(accept)
+  return file ? { file, handle: null } : null
+}
+
+const chosen = (picked: { file: File; handle: FileSystemFileHandle | null }, classic: boolean) => ({
+  handle: picked.handle,
+  classic,
+  lastModified: picked.file.lastModified,
+})
+
+/** Remember how the file was chosen (W10) and which version is loaded (W11). */
+function attached(kind: 'world' | 'player', id: string, file: ChosenFile<unknown>) {
+  if (canSaveInPlace) setClassicFile(kind, id, file.classic)
+  setLoadedModified(kind, id, file.lastModified)
+}
+
+/** Choosing a world / player file: Chrome/Edge offer the normal picker and the classic dialog for
+ * Steam Cloud saves (W10), the other browsers have one dialog. */
+function ChooseFileButtons({
+  kind,
+  busy,
+  busyLabel,
+  onChoose,
+}: {
+  kind: 'world' | 'player'
+  busy: boolean
+  busyLabel: string
+  onChoose: (classic: boolean) => void
+}) {
+  if (busy)
+    return (
+      <Button type="button" variant="outline" disabled>
+        <Loader2 className="animate-spin" /> {busyLabel}
+      </Button>
+    )
+  if (!canSaveInPlace)
+    return (
+      <Button type="button" variant="outline" onClick={() => onChoose(false)}>
+        <FolderOpen /> Choose {kind} file…
+      </Button>
+    )
+  const hints = attachHints(kind)
+  return (
+    <div className="grid gap-2 sm:grid-cols-2">
+      <Button type="button" variant="outline" title={hints.local} onClick={() => onChoose(false)}>
+        <FolderOpen /> Non-Steam Cloud…
+      </Button>
+      <Button type="button" variant="outline" title={hints.steam} onClick={() => onChoose(true)}>
+        <FolderSearch /> Steam Cloud…
+      </Button>
+    </div>
+  )
+}
+
+/** "Change…" of an attached world / player: both ways in a menu (Chrome/Edge). */
+function ChangeFileButton({
+  kind,
+  busy,
+  busyLabel,
+  onChoose,
+}: {
+  kind: 'world' | 'player'
+  busy: boolean
+  busyLabel: string
+  onChoose: (classic: boolean) => void
+}) {
+  const button = (
+    <Button
+      type="button"
+      variant="ghost"
+      size="sm"
+      disabled={busy}
+      onClick={canSaveInPlace ? undefined : () => onChoose(false)}
+    >
+      {busy ? busyLabel : 'Change…'}
+    </Button>
+  )
+  if (!canSaveInPlace) return button
+  const hints = attachHints(kind)
+  return (
+    <DropdownMenu>
+      <DropdownMenuTrigger asChild>{button}</DropdownMenuTrigger>
+      <DropdownMenuContent align="end">
+        <DropdownMenuItem title={hints.local} onSelect={() => onChoose(false)}>
+          <FolderOpen /> Non-Steam Cloud {kind}…
+        </DropdownMenuItem>
+        <DropdownMenuItem title={hints.steam} onSelect={() => onChoose(true)}>
+          <FolderSearch /> Steam Cloud {kind}…
+        </DropdownMenuItem>
+      </DropdownMenuContent>
+    </DropdownMenu>
+  )
+}
+
 /** Creating a playthrough, or (`edit`) changing the active one - the same fields. */
 function PlaythroughForm({ edit, onDone }: { edit: boolean; onDone: () => void }) {
   const data = useStore((s) => s.data)!
@@ -54,13 +168,13 @@ function PlaythroughForm({ edit, onDone }: { edit: boolean; onDone: () => void }
   const [difficulty, setDifficulty] = useState<Difficulty>(pt?.difficulty ?? 'classic')
   const [gameVersion, setGameVersion] = useState<string | null>(pt?.gameVersion ?? null)
   // optional world: read right away, attached on create / save
-  const [world, setWorld] = useState<{ data: LoadedWorld; handle: FileSystemFileHandle | null } | null>(null)
+  const [world, setWorld] = useState<ChosenFile<LoadedWorld> | null>(null)
   // editing: the attached world is kept unless removed or replaced
   const [removeWorld, setRemoveWorld] = useState(false)
   const keptWorld = pt?.world && !removeWorld && !world ? pt.world : null
   const [reading, setReading] = useState<number | null>(null) // progress in percent while reading
   // optional player file, like the world
-  const [player, setPlayer] = useState<{ data: LoadedPlayer; handle: FileSystemFileHandle | null } | null>(null)
+  const [player, setPlayer] = useState<ChosenFile<LoadedPlayer> | null>(null)
   const [removePlayer, setRemovePlayer] = useState(false)
   const keptPlayer = pt?.player && !removePlayer && !player ? pt.player : null
   const [readingPlayer, setReadingPlayer] = useState(false)
@@ -92,11 +206,13 @@ function PlaythroughForm({ edit, onDone }: { edit: boolean; onDone: () => void }
     onDone()
     if (player) {
       useStore.getState().setPlayer(id, player.data)
-      if (player.handle) void rememberPlayerHandle(id, player.handle)
+      void rememberPlayerHandle(id, player.handle)
+      attached('player', id, player)
     }
     if (world) {
       useStore.getState().setWorld(id, world.data)
-      if (world.handle) void rememberWorldHandle(id, world.handle)
+      void rememberWorldHandle(id, world.handle)
+      attached('world', id, world)
       // continue with the areas of the new world, then the first sync (with the player, if any)
       useUi.getState().open({ type: 'areas', thenSync: true })
     } else if (player) {
@@ -104,12 +220,12 @@ function PlaythroughForm({ edit, onDone }: { edit: boolean; onDone: () => void }
     }
   }
 
-  const choosePlayer = async () => {
+  const choosePlayer = async (classic = false) => {
     try {
-      const picked = await pickPlayerFile()
+      const picked = classic ? await pickClassic('.plr') : await pickPlayerFile()
       if (!picked) return
       setReadingPlayer(true)
-      setPlayer({ data: await parsePlayerFile(picked.file), handle: picked.handle })
+      setPlayer({ data: await parsePlayerFile(picked.file), ...chosen(picked, classic) })
     } catch (err) {
       toast.error(err instanceof Error ? err.message : String(err))
     } finally {
@@ -117,13 +233,13 @@ function PlaythroughForm({ edit, onDone }: { edit: boolean; onDone: () => void }
     }
   }
 
-  const chooseWorld = async () => {
+  const chooseWorld = async (classic = false) => {
     try {
-      const picked = await pickWorldFile()
+      const picked = classic ? await pickClassic('.wld') : await pickWorldFile()
       if (!picked) return
       setReading(0)
       const data = await parseWorldFile(picked.file, setReading)
-      setWorld({ data, handle: picked.handle })
+      setWorld({ data, ...chosen(picked, classic) })
       // the world decides the difficulty; its name is a good default name
       setDifficulty(GAME_MODE_DIFFICULTY[data.gameMode] ?? difficulty)
       if (!name.trim()) setName(data.name)
@@ -145,13 +261,17 @@ function PlaythroughForm({ edit, onDone }: { edit: boolean; onDone: () => void }
         </DialogDescription>
       </DialogHeader>
       <div className="flex flex-col gap-2">
-        <Label htmlFor="pt-name">Name</Label>
+        <Label htmlFor="pt-name">
+          Name <span className="font-normal text-muted-foreground">(required)</span>
+        </Label>
         <Input
           id="pt-name"
+          required
           value={name}
           onChange={(e) => setName(e.target.value)}
           placeholder="e.g. Master mode summoner"
-          autoFocus={!pt}
+          // touch screens: no keyboard popping up while the dialog appears
+          autoFocus={!pt && !isTouchScreen()}
         />
       </div>
       <div className="flex flex-col gap-2">
@@ -190,15 +310,12 @@ function PlaythroughForm({ edit, onDone }: { edit: boolean; onDone: () => void }
                 {!loadedPlayer && ' · not loaded in this session'}
               </div>
             </div>
-            <Button
-              type="button"
-              variant="ghost"
-              size="sm"
-              onClick={() => void choosePlayer()}
-              disabled={readingPlayer}
-            >
-              Change…
-            </Button>
+            <ChangeFileButton
+              kind="player"
+              busy={readingPlayer}
+              busyLabel="Reading…"
+              onChoose={(classic) => void choosePlayer(classic)}
+            />
             <Button
               type="button"
               variant="ghost"
@@ -230,10 +347,12 @@ function PlaythroughForm({ edit, onDone }: { edit: boolean; onDone: () => void }
             </Button>
           </div>
         ) : (
-          <Button type="button" variant="outline" onClick={() => void choosePlayer()} disabled={readingPlayer}>
-            {readingPlayer ? <Loader2 className="animate-spin" /> : <FolderOpen />}
-            {readingPlayer ? 'Reading player…' : 'Choose player file…'}
-          </Button>
+          <ChooseFileButtons
+            kind="player"
+            busy={readingPlayer}
+            busyLabel="Reading player…"
+            onChoose={(classic) => void choosePlayer(classic)}
+          />
         )}
         <p className="text-xs text-muted-foreground">
           Inventory, banks and used upgrades for the sync; read locally in your browser.
@@ -261,15 +380,12 @@ function PlaythroughForm({ edit, onDone }: { edit: boolean; onDone: () => void }
                   : ' · not loaded in this session'}
               </div>
             </div>
-            <Button
-              type="button"
-              variant="ghost"
-              size="sm"
-              onClick={() => void chooseWorld()}
-              disabled={reading !== null}
-            >
-              {reading !== null ? `${reading}%` : 'Change…'}
-            </Button>
+            <ChangeFileButton
+              kind="world"
+              busy={reading !== null}
+              busyLabel={`${reading}%`}
+              onChoose={(classic) => void chooseWorld(classic)}
+            />
             <Button
               type="button"
               variant="ghost"
@@ -306,13 +422,17 @@ function PlaythroughForm({ edit, onDone }: { edit: boolean; onDone: () => void }
             </Button>
           </div>
         ) : (
-          <Button type="button" variant="outline" onClick={() => void chooseWorld()} disabled={reading !== null}>
-            {reading !== null ? <Loader2 className="animate-spin" /> : <FolderOpen />}
-            {reading !== null ? `Reading world… ${reading}%` : 'Choose world file…'}
-          </Button>
+          <ChooseFileButtons
+            kind="world"
+            busy={reading !== null}
+            busyLabel={`Reading world… ${reading}%`}
+            onChoose={(classic) => void chooseWorld(classic)}
+          />
         )}
         <p className="text-xs text-muted-foreground">The world is processed locally in your browser.</p>
       </div>
+      {/* the two ways to choose a file (W10), once for player and world */}
+      {canSaveInPlace && <p className="-mt-2 text-xs text-muted-foreground">{ATTACH_DIFFERENCE}</p>}
       <div className="grid gap-4 sm:grid-cols-2">
         <div className="flex flex-col gap-2">
           <Label>Difficulty</Label>

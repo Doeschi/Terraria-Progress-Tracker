@@ -328,6 +328,8 @@ export interface Shimmer {
   name?: string
   result: string
   amount: number
+  /** only then (conditions.json ids): "after-moon-lord", a moon phase "moon-3" */
+  conditions?: string[]
 }
 
 export interface RecipeData {

@@ -10,7 +10,7 @@ import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from '@/components/ui/dialog'
 import { WikiIcon } from '../common'
-import { cn } from '@/lib/utils'
+import { cn, isTouchScreen } from '@/lib/utils'
 import type { Area } from '@/lib/saveFile'
 import { WorldMap } from './WorldMap'
 import { useAreas, useScanScope } from '@/hooks/useAreas'
@@ -97,7 +97,7 @@ function ChestSearch({ initialKey }: { initialKey?: string }) {
               onChange={(e) => setQuery(e.target.value)}
               placeholder={`Search ${found.length} different items in ${containers.length} containers…`}
               className="pl-8"
-              autoFocus
+              autoFocus={!isTouchScreen()}
             />
           </div>
           <ul className="min-h-0 flex-1 overflow-y-auto rounded-lg border">

@@ -60154,17 +60154,26 @@
     {
       "item": "Clentaminator",
       "result": "Clentaminator2",
-      "amount": 1
+      "amount": 1,
+      "conditions": [
+        "after-moon-lord"
+      ]
     },
     {
       "item": "PurpleSolution",
       "result": "RedSolution",
-      "amount": 1
+      "amount": 1,
+      "conditions": [
+        "after-moon-lord"
+      ]
     },
     {
       "item": "RedSolution",
       "result": "PurpleSolution",
-      "amount": 1
+      "amount": 1,
+      "conditions": [
+        "after-moon-lord"
+      ]
     },
     {
       "item": "SunplateBlock",
@@ -60404,7 +60413,10 @@
     {
       "item": "RodofDiscord",
       "result": "RodOfHarmony",
-      "amount": 1
+      "amount": 1,
+      "conditions": [
+        "after-moon-lord"
+      ]
     },
     {
       "item": "BlueSlabWall",
@@ -60609,7 +60621,10 @@
     {
       "item": "BottomlessBucket",
       "result": "BottomlessShimmerBucket",
-      "amount": 1
+      "amount": 1,
+      "conditions": [
+        "after-moon-lord"
+      ]
     },
     {
       "item": "GoldRing",
@@ -61104,7 +61119,10 @@
     {
       "item": "BottomlessShimmerBucket",
       "result": "BottomlessBucket",
-      "amount": 1
+      "amount": 1,
+      "conditions": [
+        "after-moon-lord"
+      ]
     },
     {
       "item": "Fertilizer",
@@ -61164,47 +61182,74 @@
     {
       "item": "LunarBrick",
       "result": "HeavenforgeBrick",
-      "amount": 1
+      "amount": 1,
+      "conditions": [
+        "moon-1"
+      ]
     },
     {
       "item": "LunarBrick",
       "result": "LunarRustBrick",
-      "amount": 1
+      "amount": 1,
+      "conditions": [
+        "moon-2"
+      ]
     },
     {
       "item": "LunarBrick",
       "result": "AstraBrick",
-      "amount": 1
+      "amount": 1,
+      "conditions": [
+        "moon-3"
+      ]
     },
     {
       "item": "LunarBrick",
       "result": "DarkCelestialBrick",
-      "amount": 1
+      "amount": 1,
+      "conditions": [
+        "moon-4"
+      ]
     },
     {
       "item": "LunarBrick",
       "result": "MercuryBrick",
-      "amount": 1
+      "amount": 1,
+      "conditions": [
+        "moon-5"
+      ]
     },
     {
       "item": "LunarBrick",
       "result": "StarRoyaleBrick",
-      "amount": 1
+      "amount": 1,
+      "conditions": [
+        "moon-6"
+      ]
     },
     {
       "item": "LunarBrick",
       "result": "CryocoreBrick",
-      "amount": 1
+      "amount": 1,
+      "conditions": [
+        "moon-7"
+      ]
     },
     {
       "item": "LunarBrick",
       "result": "CosmicEmberBrick",
-      "amount": 1
+      "amount": 1,
+      "conditions": [
+        "moon-8"
+      ]
     },
     {
       "item": "LihzahrdBrickWall",
       "result": "LihzahrdWallUnsafe",
-      "amount": 1
+      "amount": 1,
+      "conditions": [
+        "after-golem"
+      ]
     },
     {
       "group": "Recorded Music Boxes",

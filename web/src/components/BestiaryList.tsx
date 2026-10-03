@@ -38,6 +38,7 @@ import { worldState } from '@/lib/bestiary'
 import { inDifficulty, seedOnly } from '@/lib/drops'
 import { NPC_REF, npcIndex } from '@/lib/npcs'
 import { useIsPhone } from '@/hooks/useIsPhone'
+import { useCardSize } from '@/hooks/useCardSize'
 
 // The bestiary view: every entry of the in-game bestiary with its unlock state
 // (checked manually or taken from the attached world).
@@ -243,8 +244,6 @@ const COLUMNS = {
 type ColumnId = keyof typeof COLUMNS
 /** height of a row: the 32 px icon, its padding and the border */
 const ROW_HEIGHT = 41
-/** height of a card on phones (MO5) */
-const CARD_HEIGHT = 60
 /** the items an entry drops (highest chance first), and how many of them are obtained */
 interface DropSummary {
   items: Item[]
@@ -555,7 +554,7 @@ function Row({
         'cursor-pointer border-b border-border/60 hover:bg-muted/40 [&>td]:overflow-hidden [&>td]:text-ellipsis',
         unlocked && 'bg-primary/[0.04]',
         selected && 'bg-primary/15 hover:bg-primary/20',
-        active && 'outline-2 -outline-offset-2 outline-primary outline-dashed',
+        active && 'outline-2 -outline-offset-2 outline-primary outline-dashed pointer-coarse:outline-none',
       )}
       aria-selected={selected}
       data-ref={NPC_REF + e.id}
@@ -654,13 +653,17 @@ function BestiaryCards({
   onOpen: (e: BestiaryEntry) => void
   onChange: (e: BestiaryEntry, value: boolean) => void
 }) {
+  // card height and icon from the density setting
+  const size = useCardSize()
   const scrollRef = useRef<HTMLDivElement>(null)
   const virtualizer = useVirtualizer({
     count: rows.length,
     getScrollElement: () => scrollRef.current,
-    estimateSize: () => CARD_HEIGHT,
+    estimateSize: () => size.height,
     overscan: 10,
   })
+  // another density: measure the cards again
+  useEffect(() => virtualizer.measure(), [virtualizer, size])
   const where = (e: BestiaryEntry) =>
     [
       ...e.biomes.map((b) => nameOf(data.biomes, b)),
@@ -684,9 +687,10 @@ function BestiaryCards({
                 'absolute inset-x-0 flex items-center gap-2 border-b border-border/60 pr-3',
                 on && 'bg-primary/[0.04]',
                 selected === ref && 'bg-primary/15',
-                active === ref && 'outline-2 -outline-offset-2 outline-primary outline-dashed',
+                active === ref &&
+                  'outline-2 -outline-offset-2 outline-primary outline-dashed pointer-coarse:outline-none',
               )}
-              style={{ top: vr.start, height: CARD_HEIGHT }}
+              style={{ top: vr.start, height: size.height }}
             >
               <label className="grid h-full w-11 shrink-0 cursor-pointer place-items-center">
                 <Checkbox
@@ -700,10 +704,10 @@ function BestiaryCards({
                 onClick={() => onOpen(e)}
                 className="flex h-full min-w-0 flex-1 items-center gap-2.5 text-left"
               >
-                <WikiIcon src={e.icon} alt="" size={32} />
+                <WikiIcon src={e.icon} alt="" size={size.icon} />
                 <span className="flex min-w-0 flex-1 flex-col">
-                  <span className="truncate text-sm font-medium">{e.name}</span>
-                  <span className="truncate text-xs text-muted-foreground">
+                  <span className={cn('truncate font-medium', size.name)}>{e.name}</span>
+                  <span className={cn('truncate text-muted-foreground', size.line)}>
                     {[typeName.get(e.type) ?? e.type, where(e)].filter(Boolean).join(' · ')}
                   </span>
                 </span>

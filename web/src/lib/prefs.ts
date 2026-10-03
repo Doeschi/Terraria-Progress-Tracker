@@ -1,3 +1,4 @@
+import { isTouchScreen } from './utils'
 import { create } from 'zustand'
 import { DEFAULT_DETECTION, type ChestDetection } from './world'
 import type { ScanScope } from '@/hooks/useAreas'
@@ -38,12 +39,9 @@ export interface Layout {
   hiddenDetail: string[]
 }
 
-/** A touch screen (coarse pointer): bigger targets by default (MO6). */
-const touchDevice = () => typeof window !== 'undefined' && window.matchMedia('(pointer: coarse)').matches
-
 export const DEFAULT_LAYOUT: Layout = {
   // touch screens: comfortable (bigger rows and options) until chosen in the settings (MO6)
-  density: touchDevice() ? 'comfortable' : 'compact',
+  density: isTouchScreen() ? 'comfortable' : 'compact',
   favoriteViews: ['overview', 'sources', 'progression'],
   groupOrder: {},
   optionBars: true,

@@ -1,3 +1,4 @@
+import { conditionLabel } from '@/lib/conditions'
 import { useMemo, useState } from 'react'
 import { ChevronRight } from 'lucide-react'
 import { useUi } from '@/ui'
@@ -163,6 +164,8 @@ function ShimmerSection({ data, item, checked }: Props) {
   const into = data.recipes.shimmerFrom.get(item.key) ?? []
   const from = data.recipes.shimmerTo.get(item.key) ?? []
   if (!into.length && !from.length) return null
+  // the condition of a transmutation: "after Moon Lord", "Full moon"
+  const when = (s: Shimmer) => s.conditions?.map((c) => conditionLabel(data, c)).join(', ') || undefined
   const source = (s: Shimmer) => {
     const keys = s.item ? [s.item] : s.group ? (data.recipes.groups.get(s.group)?.items ?? []) : []
     return { item: data.itemsByKey.get(keys[0] ?? ''), label: s.group ?? s.name }
@@ -175,7 +178,7 @@ function ShimmerSection({ data, item, checked }: Props) {
           <ItemGrid
             entries={into.flatMap((s) => {
               const result = data.itemsByKey.get(s.result)
-              return result ? [{ item: result, note: s.amount > 1 ? `× ${s.amount}` : undefined }] : []
+              return result ? [{ item: result, note: s.amount > 1 ? `× ${s.amount}` : undefined, detail: when(s) }] : []
             })}
             checked={checked}
           />
@@ -187,7 +190,7 @@ function ShimmerSection({ data, item, checked }: Props) {
           <ItemGrid
             entries={from.flatMap((s) => {
               const { item: src, label } = source(s)
-              return src ? [{ item: src, label }] : []
+              return src ? [{ item: src, label, detail: when(s) }] : []
             })}
             checked={checked}
           />
@@ -202,13 +205,14 @@ function ItemGrid({
   entries,
   checked,
 }: {
-  entries: { item: Item; note?: string; label?: string }[]
+  /** detail: a second line under the name, e.g. the condition of a transmutation */
+  entries: { item: Item; note?: string; label?: string; detail?: string }[]
   checked: Set<string>
 }) {
   const openDetail = useUi((s) => s.openDetail)
   return (
     <ul className="grid grid-cols-2 gap-1">
-      {entries.map(({ item, note, label }, i) => (
+      {entries.map(({ item, note, label, detail }, i) => (
         <li key={i}>
           <button
             onClick={() => openDetail(item.key)}
@@ -216,7 +220,10 @@ function ItemGrid({
             title={label ? `${label} (e.g. ${item.name})` : item.name}
           >
             <WikiIcon src={item.icon} alt="" size={20} />
-            <span className="min-w-0 flex-1 truncate">{label ?? item.name}</span>
+            <span className="flex min-w-0 flex-1 flex-col">
+              <span className="truncate">{label ?? item.name}</span>
+              {detail && <span className="truncate text-[11px] text-amber-600 dark:text-amber-400">{detail}</span>}
+            </span>
             {checked.has(item.key) && <ObtainedMark small />}
             {note && <span className="shrink-0 tabular-nums text-muted-foreground">{note}</span>}
           </button>

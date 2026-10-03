@@ -19,7 +19,8 @@ import { canSaveInPlace, clearBackup, fileLabel, hasRememberedWorld, readBackup,
 import { hasRememberedPlayer } from '@/lib/player'
 import { usePlayerLoader } from '@/hooks/usePlayerLoader'
 import { useWorldLoader } from '@/hooks/useWorldLoader'
-import { activePlaythrough } from '@/lib/saveFile'
+import { findPlaythrough } from '@/lib/saveFile'
+import { chooseActive } from '@/lib/viewState'
 import { itemsForPlaythrough } from '@/lib/availability'
 import { Button } from '@/components/ui/button'
 import { openFileAction } from '@/actions'
@@ -44,7 +45,7 @@ export function WelcomeScreen() {
   // right away; without a remembered file the header offers "reconnect".
   const continueSession = (b: Backup) => {
     loadFile({ doc: b.doc, fileName: b.fileName, handle: b.handle }, b.dirty)
-    const pt = activePlaythrough(b.doc)
+    const pt = findPlaythrough(b.doc, chooseActive(b.doc))
     if (!pt || !canSaveInPlace) return
     const id = pt.id
     if (pt.world) void hasRememberedWorld(id).then((remembered) => remembered && load(id, true, false))
@@ -160,7 +161,7 @@ export function WelcomeScreen() {
 
 /** The last session: file name, when it was saved, unsaved changes and the active playthrough. */
 function ContinueButton({ backup, onClick }: { backup: Backup; onClick: () => void }) {
-  const pt = activePlaythrough(backup.doc)
+  const pt = findPlaythrough(backup.doc, chooseActive(backup.doc))
   const file = fileLabel(backup.fileName)
   return (
     <button

@@ -197,7 +197,10 @@ class Milestones:
                     candidates.append((worst, f"crafted – needs {why}" if why else "crafted"))
                 for s in recipes["shimmer_to"].get(key, []):
                     if s.get("item"):
-                        candidates.append((value_of(s["item"]), f"shimmer from {by_key[s['item']]['name']}"))
+                        # a note can restrict it: "only after Moon Lord" (the Bottomless Shimmer Bucket)
+                        after = self.of_conditions(s.get("conditions", [])) or 0
+                        candidates.append((max(value_of(s["item"]), after),
+                                           f"shimmer from {by_key[s['item']]['name']}"))
                 # Extractinator results (B6): the latest of the machine, the input (any of them) and
                 # "Hardmode only"
                 for r in recipes.get("extractinator_to", {}).get(key, []):

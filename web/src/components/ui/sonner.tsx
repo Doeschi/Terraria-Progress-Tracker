@@ -32,6 +32,9 @@ const Toaster = ({ ...props }: ToasterProps) => {
           "--normal-text": "var(--popover-foreground)",
           "--normal-border": "var(--border)",
           "--border-radius": "var(--radius)",
+          // clickable also while a dialog is open (it switches off pointer events outside itself):
+          // e.g. "Undo" after hiding a filter in the Filters dialog on phones
+          pointerEvents: "auto",
         } as React.CSSProperties
       }
       toastOptions={{

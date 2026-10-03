@@ -1771,17 +1771,21 @@ name = "No altar placed in the world"
 group = "special"
 phrases = ['\bno altar\b']
 
-[conditions.no-dungeon]
+# Worlds without one of these structures: the drops that replace it (Dungeon bricks from the Eater of
+# Worlds, the Jungle Temple's items from Plantera, a Hellforge from Skeletron) are for unusual worlds
+# like the special seeds: their id starts with "seed-", so they are shown but count for no filter
+# and no milestone (CO6) - the Forbidden Lihzahrd Brick Wall counts from Golem, not Plantera.
+[conditions.seed-no-dungeon]
 name = "World without a Dungeon"
 group = "special"
 phrases = ['dungeon is ?not present']
 
-[conditions.no-temple]
+[conditions.seed-no-temple]
 name = "World without a Jungle Temple"
 group = "special"
 phrases = ['jungle temple is ?not present']
 
-[conditions.no-hellforge]
+[conditions.seed-no-hellforge]
 name = "World without a Hellforge"
 group = "special"
 phrases = ['hellforge is ?not present']

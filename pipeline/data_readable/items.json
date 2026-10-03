@@ -7360,7 +7360,6 @@
     ],
     "obtain": [
       "crafted",
-      "drop",
       "bag",
       "extractinator",
       "chlorophyte-extractinator"
@@ -7519,7 +7518,6 @@
     ],
     "obtain": [
       "crafted",
-      "drop",
       "bag",
       "extractinator",
       "chlorophyte-extractinator"
@@ -7625,7 +7623,6 @@
     ],
     "obtain": [
       "crafted",
-      "drop",
       "bag",
       "extractinator",
       "chlorophyte-extractinator"
@@ -12103,7 +12100,6 @@
       "other-furniture"
     ],
     "obtain": [
-      "drop",
       "plunder",
       "bag"
     ],
@@ -58626,7 +58622,6 @@
     ],
     "obtain": [
       "crafted",
-      "drop",
       "plunder"
     ],
     "vendors": [],
@@ -68884,7 +68879,6 @@
       "other-furniture"
     ],
     "obtain": [
-      "drop",
       "plunder"
     ],
     "vendors": [],
@@ -69031,8 +69025,8 @@
     "rangeBonus": 1,
     "tooltip": "Capable of mining Lihzahrd Bricks",
     "conditions": [],
-    "milestone": "plantera",
-    "milestoneVia": "Dropped by Plantera"
+    "milestone": "golem",
+    "milestoneVia": "From the Treasure Bag (Golem)"
   },
   {
     "key": "HeatRay",
@@ -264013,7 +264007,7 @@
     "useTime": 30,
     "tooltip": "Creates and destroys biomes when sprayed\nUses colored solution\n33% chance to save ammo",
     "conditions": [],
-    "milestone": "any-mech",
+    "milestone": "moon-lord",
     "milestoneVia": "Shimmer from Clentaminator"
   },
   {
@@ -273964,7 +273958,7 @@
     "useTime": 20,
     "tooltip": "Teleports you to the position of the cursor",
     "conditions": [],
-    "milestone": "wall-of-flesh",
+    "milestone": "moon-lord",
     "milestoneVia": "Shimmer from Rod of Discord"
   },
   {
@@ -275341,8 +275335,8 @@
     "rangeBonus": 2,
     "tooltip": "Contains an endless amount of Shimmer\nCan be poured out",
     "conditions": [],
-    "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestone": "moon-lord",
+    "milestoneVia": "Shimmer from Bottomless Water Bucket"
   },
   {
     "key": "BlueBrickWallUnsafe",
@@ -275357,7 +275351,6 @@
     ],
     "subcategories": [],
     "obtain": [
-      "drop",
       "shimmer"
     ],
     "vendors": [],
@@ -275385,9 +275378,7 @@
     "autoswing": true,
     "useTime": 15,
     "tooltip": "A cursed segment of Dungeon wall that will spawn monsters",
-    "conditions": [
-      "no-dungeon"
-    ],
+    "conditions": [],
     "milestone": "start",
     "milestoneVia": "Shimmer from Blue Brick Wall"
   },
@@ -275404,7 +275395,6 @@
     ],
     "subcategories": [],
     "obtain": [
-      "drop",
       "shimmer"
     ],
     "vendors": [],
@@ -275432,9 +275422,7 @@
     "autoswing": true,
     "useTime": 15,
     "tooltip": "A cursed segment of Dungeon wall that will spawn monsters",
-    "conditions": [
-      "no-dungeon"
-    ],
+    "conditions": [],
     "milestone": "start",
     "milestoneVia": "Shimmer from Blue Slab Wall"
   },
@@ -275451,7 +275439,6 @@
     ],
     "subcategories": [],
     "obtain": [
-      "drop",
       "shimmer"
     ],
     "vendors": [],
@@ -275479,9 +275466,7 @@
     "autoswing": true,
     "useTime": 15,
     "tooltip": "A cursed segment of Dungeon wall that will spawn monsters",
-    "conditions": [
-      "no-dungeon"
-    ],
+    "conditions": [],
     "milestone": "start",
     "milestoneVia": "Shimmer from Blue Tiled Wall"
   },
@@ -275498,7 +275483,6 @@
     ],
     "subcategories": [],
     "obtain": [
-      "drop",
       "shimmer"
     ],
     "vendors": [],
@@ -275526,9 +275510,7 @@
     "autoswing": true,
     "useTime": 15,
     "tooltip": "A cursed segment of Dungeon wall that will spawn monsters",
-    "conditions": [
-      "no-dungeon"
-    ],
+    "conditions": [],
     "milestone": "start",
     "milestoneVia": "Shimmer from Pink Brick Wall"
   },
@@ -275545,7 +275527,6 @@
     ],
     "subcategories": [],
     "obtain": [
-      "drop",
       "shimmer"
     ],
     "vendors": [],
@@ -275573,9 +275554,7 @@
     "autoswing": true,
     "useTime": 15,
     "tooltip": "A cursed segment of Dungeon wall that will spawn monsters",
-    "conditions": [
-      "no-dungeon"
-    ],
+    "conditions": [],
     "milestone": "start",
     "milestoneVia": "Shimmer from Pink Slab Wall"
   },
@@ -275592,7 +275571,6 @@
     ],
     "subcategories": [],
     "obtain": [
-      "drop",
       "shimmer"
     ],
     "vendors": [],
@@ -275620,9 +275598,7 @@
     "autoswing": true,
     "useTime": 15,
     "tooltip": "A cursed segment of Dungeon wall that will spawn monsters",
-    "conditions": [
-      "no-dungeon"
-    ],
+    "conditions": [],
     "milestone": "start",
     "milestoneVia": "Shimmer from Pink Tiled Wall"
   },
@@ -275639,7 +275615,6 @@
     ],
     "subcategories": [],
     "obtain": [
-      "drop",
       "shimmer"
     ],
     "vendors": [],
@@ -275667,9 +275642,7 @@
     "autoswing": true,
     "useTime": 15,
     "tooltip": "A cursed segment of Dungeon wall that will spawn monsters",
-    "conditions": [
-      "no-dungeon"
-    ],
+    "conditions": [],
     "milestone": "start",
     "milestoneVia": "Shimmer from Green Brick Wall"
   },
@@ -275686,7 +275659,6 @@
     ],
     "subcategories": [],
     "obtain": [
-      "drop",
       "shimmer"
     ],
     "vendors": [],
@@ -275714,9 +275686,7 @@
     "autoswing": true,
     "useTime": 15,
     "tooltip": "A cursed segment of Dungeon wall that will spawn monsters",
-    "conditions": [
-      "no-dungeon"
-    ],
+    "conditions": [],
     "milestone": "start",
     "milestoneVia": "Shimmer from Green Slab Wall"
   },
@@ -275733,7 +275703,6 @@
     ],
     "subcategories": [],
     "obtain": [
-      "drop",
       "shimmer"
     ],
     "vendors": [],
@@ -275761,9 +275730,7 @@
     "autoswing": true,
     "useTime": 15,
     "tooltip": "A cursed segment of Dungeon wall that will spawn monsters",
-    "conditions": [
-      "no-dungeon"
-    ],
+    "conditions": [],
     "milestone": "start",
     "milestoneVia": "Shimmer from Green Tiled Wall"
   },
@@ -275868,7 +275835,6 @@
     ],
     "subcategories": [],
     "obtain": [
-      "drop",
       "shimmer"
     ],
     "vendors": [],
@@ -275896,10 +275862,8 @@
     "autoswing": true,
     "useTime": 15,
     "tooltip": "An ancient segment of Temple wall that will spawn Lihzahrds",
-    "conditions": [
-      "no-temple"
-    ],
-    "milestone": "wall-of-flesh",
+    "conditions": [],
+    "milestone": "golem",
     "milestoneVia": "Shimmer from Lihzahrd Brick Wall"
   },
   {

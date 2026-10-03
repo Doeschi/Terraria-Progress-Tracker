@@ -174,3 +174,86 @@ export function fileLabel(fileName: string | null): { label: string; title?: str
     title: `Your progress is kept in this browser; saving downloads a copy.\nLast file: ${fileName}`,
   }
 }
+
+// ------------------------------------------------- classic file dialog (W10)
+
+/**
+ * The classic file dialog (`<input type="file">`): no permanent access to the file, but no
+ * folder is refused - Chrome/Edge do not open Steam's folder under Program Files (Steam Cloud
+ * saves) with the File System Access API's picker.
+ */
+export function pickFileClassic(accept: string): Promise<File | null> {
+  return new Promise((resolve) => {
+    const input = document.createElement('input')
+    input.type = 'file'
+    input.accept = accept
+    input.addEventListener('change', () => resolve(input.files?.[0] ?? null), { once: true })
+    input.addEventListener('cancel', () => resolve(null), { once: true })
+    input.click()
+  })
+}
+
+const classicKey = (kind: 'world' | 'player', playthroughId: string) => `classic-file:${kind}:${playthroughId}`
+
+/** Whether the playthrough's world / player file was chosen with the classic dialog: then it is
+ * chosen that way again when reconnecting (W10). */
+export function isClassicFile(kind: 'world' | 'player', playthroughId: string): boolean {
+  try {
+    return localStorage.getItem(classicKey(kind, playthroughId)) === '1'
+  } catch {
+    return false
+  }
+}
+
+export function setClassicFile(kind: 'world' | 'player', playthroughId: string, classic: boolean) {
+  try {
+    if (classic) localStorage.setItem(classicKey(kind, playthroughId), '1')
+    else localStorage.removeItem(classicKey(kind, playthroughId))
+  } catch {
+    // storage unavailable: the normal dialog is offered again
+  }
+}
+
+// -------------------------------------------------- changes in the game (W11)
+
+type FileKind = 'world' | 'player'
+
+/** The modification time of the loaded copy of each world / player file (this session). */
+const loadedModified = new Map<string, number>()
+
+export function setLoadedModified(kind: FileKind, playthroughId: string, lastModified: number) {
+  loadedModified.set(`${kind}:${playthroughId}`, lastModified)
+}
+
+export function getLoadedModified(kind: FileKind, playthroughId: string): number | undefined {
+  return loadedModified.get(`${kind}:${playthroughId}`)
+}
+
+/** The remembered file if it can be read without asking (read access granted), else null. */
+export async function peekRememberedFile(kind: FileKind, playthroughId: string): Promise<File | null> {
+  try {
+    // the keys of rememberWorldHandle / rememberPlayerHandle
+    const handle = await get<FileSystemFileHandle & PermissionHandle>(`${kind}-handle:${playthroughId}`)
+    if (!handle || (await handle.queryPermission?.({ mode: 'read' })) !== 'granted') return null
+    return await handle.getFile()
+  } catch {
+    return null
+  }
+}
+
+/** Hover texts of the two ways to attach a world / player file (W10). */
+export function attachHints(kind: FileKind) {
+  const folder = kind === 'world' ? 'Worlds' : 'Players'
+  return {
+    local: `Saved locally (Documents\\My Games\\Terraria\\${folder}): can be automatically read when changes are synced`,
+    steam:
+      `Saved in the Steam Cloud (C:\\Program Files (x86)\\Steam\\userdata\\…\\105600\\remote\\${folder.toLowerCase()}): ` +
+      'the browser does not allow permanent access for files in a system directory. These files must be reselected ' +
+      'when synchronising the progress.',
+  }
+}
+
+/** How the two ways differ, as a sentence under the buttons (W10). */
+export const ATTACH_DIFFERENCE =
+  'Non-Steam Cloud files are read again by themselves when you sync; Steam Cloud files are in a system folder ' +
+  'the browser cannot keep access to, so they must be chosen again for each sync.'

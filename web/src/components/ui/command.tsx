@@ -54,6 +54,8 @@ function CommandDialog({
           className
         )}
         showCloseButton={showCloseButton}
+        // the search is what the picker is for: the keyboard may come
+        touchAutoFocus
       >
         {/* inside the content: outside it, the title would be rendered where the dialog is used */}
         <DialogHeader className="sr-only">
@@ -76,7 +78,7 @@ function CommandInput({
         <CommandPrimitive.Input
           data-slot="command-input"
           className={cn(
-            "w-full text-sm outline-hidden disabled:cursor-not-allowed disabled:opacity-50",
+            "w-full text-sm outline-hidden disabled:cursor-not-allowed disabled:opacity-50 pointer-coarse:text-base",
             className
           )}
           {...props}

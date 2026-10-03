@@ -15,7 +15,7 @@ import {
 } from 'lucide-react'
 import { toast } from 'sonner'
 import { useActiveWorld, useStore } from '@/store'
-import { activePlaythrough } from '@/lib/saveFile'
+import { findPlaythrough } from '@/lib/saveFile'
 import { formatRelativeDay } from '@/lib/format'
 import { usePrefs, type ProgressionMode } from '@/lib/prefs'
 import { ToggleGroup, ToggleGroupItem } from '@/components/ui/toggle-group'
@@ -121,7 +121,7 @@ function worldMarks(p: WorldProgress | null): WorldMarks {
 
 /** When each filter option was completed (Playthrough.completedAt) - "<prefix><group>/<id>" -> time */
 function useCompletedAt(key: string): string | undefined {
-  return useStore((s) => activePlaythrough(s.doc)?.completedAt[key])
+  return useStore((s) => findPlaythrough(s.doc, s.activeId)?.completedAt[key])
 }
 
 /** Sidebar-wide view state: the edit mode for hiding options. */
@@ -837,7 +837,7 @@ function EntryRow({
           'group flex items-center rounded-md',
           selected ? 'bg-primary/15 ring-1 ring-primary/40' : 'hover:bg-foreground/[0.06]',
           // the option Enter would select in the filter search
-          isTarget && 'outline-2 outline-offset-1 outline-primary outline-dashed',
+          isTarget && 'outline-2 outline-offset-1 outline-primary outline-dashed pointer-coarse:outline-none',
           nested && 'ml-5',
           empty && 'opacity-40',
         )}

@@ -45,7 +45,7 @@
     "id": "wall-of-flesh",
     "name": "Wall of Flesh (Hardmode)",
     "icon": "https://terraria.wiki.gg/images/Map_Icon_Wall_of_Flesh.png",
-    "count": 1126
+    "count": 1123
   },
   {
     "id": "queen-slime",
@@ -57,7 +57,7 @@
     "id": "any-mech",
     "name": "Any mechanical boss",
     "icon": "https://terraria.wiki.gg/images/Map_Icon_Retinazer_%28first_form%29.png",
-    "count": 255
+    "count": 254
   },
   {
     "id": "all-mechs",
@@ -69,13 +69,13 @@
     "id": "plantera",
     "name": "Plantera",
     "icon": "https://terraria.wiki.gg/images/Map_Icon_Plantera_%28first_form%29.png",
-    "count": 227
+    "count": 226
   },
   {
     "id": "golem",
     "name": "Golem",
     "icon": "https://terraria.wiki.gg/images/Map_Icon_Golem.png",
-    "count": 122
+    "count": 124
   },
   {
     "id": "duke-empress",
@@ -93,6 +93,6 @@
     "id": "moon-lord",
     "name": "Moon Lord",
     "icon": "https://terraria.wiki.gg/images/Map_Icon_Moon_Lord.png",
-    "count": 82
+    "count": 85
   }
 ]

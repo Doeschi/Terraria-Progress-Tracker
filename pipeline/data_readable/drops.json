@@ -36664,7 +36664,7 @@
         ],
         "note": "when the Dungeon is not present; ''see conditions''",
         "conditions": [
-          "no-dungeon"
+          "seed-no-dungeon"
         ],
         "group": "eater-of-worlds-1"
       },
@@ -37233,7 +37233,7 @@
         ],
         "note": "when the Dungeon is not present; ''see conditions''",
         "conditions": [
-          "no-dungeon"
+          "seed-no-dungeon"
         ]
       },
       {
@@ -37295,7 +37295,7 @@
         ],
         "note": "when the Dungeon is not present; ''see conditions''",
         "conditions": [
-          "no-dungeon"
+          "seed-no-dungeon"
         ]
       },
       {
@@ -44399,7 +44399,7 @@
         ],
         "note": "when a Hellforge is not present; ''see conditions''",
         "conditions": [
-          "no-hellforge"
+          "seed-no-hellforge"
         ],
         "npcIds": [
           262
@@ -70410,7 +70410,7 @@
         ],
         "note": "when the Dungeon is not present; ''see conditions''",
         "conditions": [
-          "no-dungeon"
+          "seed-no-dungeon"
         ],
         "group": "eater-of-worlds-1"
       }
@@ -70425,7 +70425,7 @@
         ],
         "note": "when the Dungeon is not present; ''see conditions''",
         "conditions": [
-          "no-dungeon"
+          "seed-no-dungeon"
         ],
         "group": "eater-of-worlds-1"
       }
@@ -70440,7 +70440,7 @@
         ],
         "note": "when the Dungeon is not present; ''see conditions''",
         "conditions": [
-          "no-dungeon"
+          "seed-no-dungeon"
         ],
         "group": "eater-of-worlds-1"
       }
@@ -70455,7 +70455,7 @@
         ],
         "note": "when the Dungeon is not present; ''see conditions''",
         "conditions": [
-          "no-dungeon"
+          "seed-no-dungeon"
         ],
         "group": "eater-of-worlds-2"
       }
@@ -70470,7 +70470,7 @@
         ],
         "note": "when the Dungeon is not present; ''see conditions''",
         "conditions": [
-          "no-dungeon"
+          "seed-no-dungeon"
         ],
         "group": "eater-of-worlds-2"
       }
@@ -70485,7 +70485,7 @@
         ],
         "note": "when the Dungeon is not present; ''see conditions''",
         "conditions": [
-          "no-dungeon"
+          "seed-no-dungeon"
         ],
         "group": "eater-of-worlds-2"
       }
@@ -70500,7 +70500,7 @@
         ],
         "note": "when the Dungeon is not present; ''see conditions''",
         "conditions": [
-          "no-dungeon"
+          "seed-no-dungeon"
         ],
         "group": "eater-of-worlds-3"
       }
@@ -70515,7 +70515,7 @@
         ],
         "note": "when the Dungeon is not present; ''see conditions''",
         "conditions": [
-          "no-dungeon"
+          "seed-no-dungeon"
         ],
         "group": "eater-of-worlds-3"
       }
@@ -70530,7 +70530,7 @@
         ],
         "note": "when the Dungeon is not present; ''see conditions''",
         "conditions": [
-          "no-dungeon"
+          "seed-no-dungeon"
         ],
         "group": "eater-of-worlds-3"
       }
@@ -74570,7 +74570,7 @@
         ],
         "note": "when the Jungle Temple is not present; ''see conditions''",
         "conditions": [
-          "no-temple"
+          "seed-no-temple"
         ],
         "npcIds": [
           262
@@ -76693,7 +76693,7 @@
         ],
         "note": "when the Jungle Temple is not present; ''see conditions''",
         "conditions": [
-          "no-temple"
+          "seed-no-temple"
         ],
         "npcIds": [
           262
@@ -76720,7 +76720,7 @@
         ],
         "note": "when the Jungle Temple is not present; ''see conditions''",
         "conditions": [
-          "no-temple"
+          "seed-no-temple"
         ],
         "npcIds": [
           262
@@ -76747,7 +76747,7 @@
         ],
         "note": "when the Jungle Temple is not present; ''see conditions''",
         "conditions": [
-          "no-temple"
+          "seed-no-temple"
         ],
         "npcIds": [
           262

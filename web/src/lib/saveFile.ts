@@ -65,7 +65,9 @@ const SaveFileSchema = z.object({
    * files from before data versions */
   dataVersion: z.optional(z.string()),
   playthroughs: z.array(PlaythroughSchema),
-  activePlaythroughId: z.nullable(z.string()),
+  /** older files: the selected playthrough - now kept in the browser (viewState.ts), so switching
+   * does not modify the file; only read as a fallback, never written */
+  activePlaythroughId: z.optional(z.nullable(z.string())),
 })
 
 export type Area = z.infer<typeof AreaSchema>
@@ -80,9 +82,6 @@ export function findPlaythrough(
 ): Playthrough | undefined {
   return id ? doc?.playthroughs.find((p) => p.id === id) : undefined
 }
-
-/** The file's active playthrough. */
-export const activePlaythrough = (doc: SaveFile | null | undefined) => findPlaythrough(doc, doc?.activePlaythroughId)
 
 export class SaveFileError extends Error {}
 
@@ -110,15 +109,23 @@ export function parseSaveFile(text: string): SaveFile {
 }
 
 export function serializeSaveFile(doc: SaveFile): string {
-  return JSON.stringify(doc, null, 1)
+  const { activePlaythroughId: _selected, ...rest } = doc
+  return JSON.stringify(rest, null, 1)
 }
 
 export function newSaveFile(): SaveFile {
-  return { format: SAVE_FORMAT, version: SAVE_VERSION, playthroughs: [], activePlaythroughId: null }
+  return { format: SAVE_FORMAT, version: SAVE_VERSION, playthroughs: [] }
 }
 
 export function newId(): string {
-  return crypto.randomUUID()
+  // randomUUID only exists in secure contexts (https, localhost) - not when the dev server is opened
+  // over the local network (http://192.168.…), e.g. from a phone
+  if (typeof crypto.randomUUID === 'function') return crypto.randomUUID()
+  const b = crypto.getRandomValues(new Uint8Array(16))
+  b[6] = (b[6] & 0x0f) | 0x40 // version 4
+  b[8] = (b[8] & 0x3f) | 0x80 // variant
+  const h = [...b].map((x) => x.toString(16).padStart(2, '0')).join('')
+  return `${h.slice(0, 8)}-${h.slice(8, 12)}-${h.slice(12, 16)}-${h.slice(16, 20)}-${h.slice(20)}`
 }
 
 export function newPlaythrough(

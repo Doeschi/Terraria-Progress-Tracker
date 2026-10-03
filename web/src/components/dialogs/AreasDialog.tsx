@@ -18,7 +18,7 @@ import {
   DialogTitle,
 } from '@/components/ui/dialog'
 import { confirm } from '@/lib/confirm'
-import { cn } from '@/lib/utils'
+import { cn, isTouchScreen } from '@/lib/utils'
 import { usePrefs } from '@/lib/prefs'
 import { WorldMap } from './WorldMap'
 
@@ -257,13 +257,16 @@ function AreaForm({ area, dims, onDone }: { area: Area; dims: WorldDims; onDone:
         </DialogDescription>
       </DialogHeader>
       <div className="flex flex-col gap-2">
-        <Label htmlFor="area-name">Name</Label>
+        <Label htmlFor="area-name">
+          Name <span className="font-normal text-muted-foreground">(required)</span>
+        </Label>
         <Input
           id="area-name"
+          required
           value={name}
           onChange={(e) => setName(e.target.value)}
           placeholder="e.g. Main base"
-          autoFocus
+          autoFocus={!isTouchScreen()}
         />
       </div>
       <div className="grid gap-4 sm:grid-cols-2">

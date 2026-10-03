@@ -266,10 +266,12 @@ needs a decision is reported, and parsers that read page text must not silently 
       world: { name, guid, fileName, width, height, worldSurface, lastSyncedAt } | null,
       player: { name, fileName, lastSyncedAt } | null,
       areas: [{ id, name, x1, y1, x2, y2 }]      // tile coordinates
-    }],
-    activePlaythroughId
+    }]
   }
   ```
+  The selected playthrough is not in the file but remembered in the browser (switching
+  playthroughs is no change to the file); older files with `activePlaythroughId` are read once as a
+  fallback, otherwise the first playthrough is selected.
 
 - **F8** Autosave (off by default; switch in the File menu, remembered in the browser, PR1): only
   where the file is written in place (Chrome/Edge) and only once the file exists on disk (after
@@ -512,15 +514,30 @@ Below 640 px width (phones) the layout changes; tablets and desktops stay as the
   second line (first category, "obtained by" as short names, available after); tapping it opens
   the detail sheet. Obtained items marked like in the table (green), ignored ones faded.
   Sorting (the sort button): name (or relevance while searching), rarity, added in, available after, last
-  changed. Virtualized like the table; Enter from the search opens the first card (S4).
+  changed. Virtualized like the table; Enter from the search opens the first card (S4). The
+  density setting applies to the cards too (also the bestiary's, MO5): comfortable 60 px with a
+  32 px icon, compact 48 px with a 24 px icon and smaller text (about 14 instead of 11 cards on
+  a phone screen).
 - **MO4** The detail panel is a full-screen sheet with the back button (already the overlay on
   narrow screens, ID).
 - **MO5** Bestiary as cards too: checkbox (unlocked), icon, name, second line type and where /
   when; on the right the drops progress. Tapping opens the NPC card.
 - **MO6** Touch (any device with a coarse pointer, also tablets): comfortable density by default
   (as long as the layout was never changed in the settings); keyboard hints (shortcut keys, ↵ / ↑↓ hint bar)
-  hidden; buttons that are only icons (× of "Sources & sets", eye, sort, …) at least 36 px; on
+  hidden, also the dashed highlight of the search's match (filters, rows, cards, the NPC
+  suggestion); buttons that are only icons (× of "Sources & sets", eye, sort, …) at least 36 px; on
   the cards, information that the table only shows on hover is written out.
+- **MO7** On-screen keyboard: text inputs use 16 px on touch screens (iOS zooms into smaller ones
+  when they get the focus); dialogs do not move the focus into their first input on touch
+  screens (the keyboard would open while the dialog appears; except the source picker, whose
+  search is its purpose); on phones dialogs sit near the top and scroll inside, their close
+  button sticks to the top and their footer (Create, Save, …) to the bottom (below 768 px); the
+  Filters dialog keeps its title and close button above the scrolling filters; the page shrinks
+  with the keyboard on Android (`interactive-widget=resizes-content`; iPhones – Safari and
+  Chrome – keep the page size, hence the sticky buttons).
+- **MO8** Toasts stay clickable while a dialog or sheet is open (they switch off the page outside
+  themselves), and a tap on a toast does not close the dialog: e.g. "Undo" after hiding a filter
+  in the Filters dialog.
 
 ## PR – Remembered view settings
 
@@ -694,7 +711,10 @@ Below 640 px width (phones) the layout changes; tablets and desktops stay as the
   phases as the wiki's moon icons, the name on hover).
 - **CO6** Rows only in special world seeds (shop rows and drop rows with a seed condition, e.g.
   the Princess's stock "In Celebration Mk 10 and Zenith worlds", "I am error" chests, Remix
-  drops) are shown in the detail panel, but count for no filter and no milestone: no vendor,
+  drops) – and drops for worlds without a structure, which replace it (the Jungle Temple's items
+  from Plantera "when the Jungle Temple is not present", Dungeon bricks from the Eater of Worlds,
+  a Hellforge from Skeletron; their condition ids start with "seed-" too) – are shown in the
+  detail panel, but count for no filter and no milestone: no vendor,
   obtain method, event, biome, time of day, condition, boss or container. A wiki tag that only
   these rows explain is dropped too (e.g. "Found in chests & pots" of the Chain Knife). A row
   that also describes the regular case in a sentence without a seed ("Always available. Only
@@ -717,7 +737,8 @@ Below 640 px width (phones) the layout changes; tablets and desktops stay as the
   - shop rows: the later of the vendor's move-in (`[vendors.*] milestone`, e.g. Cyborg →
     Plantera) and the row's conditions (after a boss, Hardmode)
   - recipes: the latest of the crafting stations (the earliest item providing each) and the
-    ingredients ("Any …" groups: their earliest item); shimmer: the source item
+    ingredients ("Any …" groups: their earliest item); shimmer: the source item, and the boss of
+    its note (RC4)
   - containers: `[container_milestones]` (e.g. Shadow Chest → Skeletron, biome chests →
     Plantera), else Start; rows only in special seeds do not count
   - Strange Plant rewards: the conditions of their heading; other obtain methods (fishing,
@@ -900,6 +921,30 @@ Below 640 px width (phones) the layout changes; tablets and desktops stay as the
   the browser remembers it (Chrome/Edge; the browser may ask once for read access). No file
   picker opens: without a remembered file, or if access is denied, the world stays "not loaded"
   and the reconnect button (W8) is shown.
+- **W10** Steam Cloud files: Terraria's cloud saves are in Steam's folder
+  (`C:\Program Files (x86)\Steam\userdata\<number>\105600\remote\players` / `…\worlds`), which
+  Chrome and Edge do not open with the file picker of the File System Access API (a system
+  folder). The World and Player menus (Chrome/Edge) offer two entries: "Attach non-Steam Cloud
+  world" (the normal picker) and "Attach Steam Cloud world" (the classic file dialog,
+  `<input type="file">`); the explanation and the path are in their hover texts. A file chosen
+  the classic way cannot be read again by itself, like in Firefox and Safari: the playthrough
+  remembers that (in the browser), and reconnecting / reloading / syncing opens the classic
+  dialog again. Choosing a file the normal way switches back. The playthrough dialog (P6, PL3)
+  offers both too: two buttons "Non-Steam Cloud…" / "Steam Cloud…" (with the hover texts) and
+  "Change…" with both in a menu, with one sentence on how they differ.
+- **W11** Changes in the game: a loaded world (and player) is a copy from the time it was read.
+  - "Sync with world…", "Sync with player…" and the quick sync button (W8) read the file again
+    before the sync dialog opens: the remembered file without a dialog (Chrome/Edge; the
+    browser may ask for read access once per session), otherwise the file dialog (classic
+    files, Firefox/Safari). Cancelling the dialog does not open the sync. Unchanged files (same
+    modification time) are not parsed again.
+  - The World / Player menus always offer "Reload {file}" for an attached file the app can read
+    again (also while it is loaded).
+  - Coming back to the tab (it becomes visible / gets the focus), the app checks whether a
+    loaded, remembered file has changed (only with read access already granted, nothing is
+    parsed) and shows a toast "World changed in the game" (or player, or both) with a "Sync"
+    button; once per change.
+
 ## A – Areas
 
 - **A1** Each playthrough has a list of areas (rectangles in the world).
@@ -1009,7 +1054,11 @@ Below 640 px width (phones) the layout changes; tablets and desktops stay as the
   Orichalcum Anvil; Work Bench = every work bench). Environment conditions (By Hand, Water,
   Honey, Lava, Snow Biome, Ecto Mist, Demon Altar) need no item.
 - **RC4** Shimmer transmutations (station "Shimmer") are kept apart from crafting recipes: they
-  show in their own section and do not count for the crafting filter.
+  show in their own section and do not count for the crafting filter. The note of the Shimmer
+  page (the row's `resulttext`) is its condition: "#note_post_moon_lord" → after Moon Lord (the
+  Bottomless Shimmer Bucket, Rod of Harmony, Terraformer), "#note_post_golem" → after Golem,
+  "#note_moon_3" → a moon phase (the Luminite brick variants); shown under the item in the
+  Shimmer section ("after Moon Lord", "Full moon"). Unknown notes are reported.
 - **RC5** Detail panel, collapsible sections (open/closed is remembered, PR1):
   - "Crafting": every recipe for the item – result amount, stations, ingredients with amounts and
     icons; ingredients the playthrough has obtained are marked.

@@ -5,7 +5,7 @@ import type { FilterGroup } from '@/lib/filtering'
 import { usePrefs } from '@/lib/prefs'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
-import { Dialog, DialogContent, DialogTitle, DialogTrigger } from '@/components/ui/dialog'
+import { Dialog, DialogClose, DialogContent, DialogTitle, DialogTrigger } from '@/components/ui/dialog'
 import { useTopLeftKeyLabel, type SearchTarget } from '@/hooks/useSearchShortcuts'
 import { useActiveRow, useListCursor } from '@/lib/listCursor'
 
@@ -112,7 +112,8 @@ export function SearchField({
         placeholder={placeholder}
         className={cn(
           'peer',
-          small ? 'h-8 pr-7 pl-8 text-sm' : 'pr-8 pl-8',
+          // touch screens: 16 px, iOS zooms into smaller inputs when they get the focus
+          small ? 'h-8 pr-7 pl-8 text-sm pointer-coarse:text-base' : 'pr-8 pl-8',
           withMode && 'pr-24',
           withMode && withNpcs && 'pr-36',
         )}
@@ -202,9 +203,18 @@ export function MobileFiltersButton({ active, children }: { active: number; chil
           )}
         </Button>
       </DialogTrigger>
-      <DialogContent className="max-h-[85vh] overflow-y-auto p-0">
-        <DialogTitle className="px-4 pt-4">Filters</DialogTitle>
-        {children}
+      {/* the title and the close button stay at the top, only the filters scroll (their search bar
+        sticks below the title) */}
+      <DialogContent showCloseButton={false} className="flex max-h-[85dvh] flex-col gap-0 overflow-hidden p-0">
+        <div className="flex shrink-0 items-center justify-between border-b px-4 py-2">
+          <DialogTitle>Filters</DialogTitle>
+          <DialogClose asChild>
+            <Button variant="ghost" size="icon-sm" aria-label="Close">
+              <X />
+            </Button>
+          </DialogClose>
+        </div>
+        <div className="min-h-0 flex-1 overflow-y-auto">{children}</div>
       </DialogContent>
     </Dialog>
   )

@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react'
-import { ChevronDown, FolderOpen, Loader2, PlugZap, RefreshCw, Unlink, UserRound } from 'lucide-react'
+import { ChevronDown, FolderOpen, FolderSearch, Loader2, PlugZap, RefreshCw, Unlink, UserRound } from 'lucide-react'
 import { useActivePlaythrough, useActivePlayer, useStore } from '@/store'
-import { useUi } from '@/ui'
+import { useFileSync } from '@/hooks/useFileSync'
 import { cn } from '@/lib/utils'
-import { canSaveInPlace } from '@/lib/files'
+import { attachHints, canSaveInPlace, isClassicFile } from '@/lib/files'
 import { hasRememberedPlayer } from '@/lib/player'
 import { usePlayerLoader } from '@/hooks/usePlayerLoader'
 import { DIFFICULTY_LABELS } from '@/lib/availability'
@@ -31,8 +31,8 @@ export function PlayerMenu() {
   const pt = useActivePlaythrough()
   const player = useActivePlayer()
   const detachPlayer = useStore((s) => s.detachPlayer)
-  const openDialog = useUi((s) => s.open)
   const { load, loading } = usePlayerLoader()
+  const sync = useFileSync()
   const [remembered, setRemembered] = useState(false)
 
   useEffect(() => {
@@ -44,6 +44,7 @@ export function PlayerMenu() {
   }, [pt, player])
 
   if (!pt) return null
+  const hints = attachHints('player')
   const ref = pt.player
 
   // an attached player that is not loaded in this session: reconnect with one click
@@ -52,7 +53,7 @@ export function PlayerMenu() {
       ? {
           title: remembered
             ? `Reconnect the player: reload ${ref.fileName}`
-            : `Reconnect the player: choose ${ref.fileName} again`,
+            : `Reconnect the player: choose ${ref.fileName} again${isClassicFile('player', pt.id) ? ' (e.g. from the Steam Cloud folder)' : ''}`,
           run: () => void load(pt.id, remembered),
         }
       : null
@@ -90,19 +91,33 @@ export function PlayerMenu() {
                 : 'Player files are read locally and never uploaded. Load it again for this session.'
               : 'Read inventory, banks and used upgrades from a .plr file. The file stays on your computer.'}
           </DropdownMenuLabel>
-          {ref && !player && remembered && (
+          {ref && (remembered || isClassicFile('player', pt.id)) && (
             <DropdownMenuItem onSelect={() => void load(pt.id, true)}>
               <RefreshCw /> Reload {ref.fileName}
+              {!remembered && '…'}
             </DropdownMenuItem>
           )}
-          <DropdownMenuItem onSelect={() => void load(pt.id)}>
-            <FolderOpen />{' '}
-            {ref ? (player ? 'Reload / choose player file…' : 'Choose player file…') : 'Attach player file…'}
-          </DropdownMenuItem>
+          {/* Chrome/Edge do not open Steam's folder (Steam Cloud saves) with the normal dialog: a second
+            entry with the classic dialog (W10) */}
+          {canSaveInPlace ? (
+            <>
+              <DropdownMenuItem title={hints.local} onSelect={() => void load(pt.id, false, true, false)}>
+                <FolderOpen /> Attach non-Steam Cloud player
+              </DropdownMenuItem>
+              <DropdownMenuItem title={hints.steam} onSelect={() => void load(pt.id, false, true, true)}>
+                <FolderSearch /> Attach Steam Cloud player
+              </DropdownMenuItem>
+            </>
+          ) : (
+            <DropdownMenuItem onSelect={() => void load(pt.id, false, true, false)}>
+              <FolderOpen />{' '}
+              {ref ? (player ? 'Reload / choose player file…' : 'Choose player file…') : 'Attach player file…'}
+            </DropdownMenuItem>
+          )}
           {ref && (
             <>
               <DropdownMenuSeparator />
-              <DropdownMenuItem disabled={!player} onSelect={() => openDialog({ type: 'sync', section: 'player' })}>
+              <DropdownMenuItem disabled={!player} onSelect={() => void sync('player', 'player')}>
                 <RefreshCw /> Sync with player…
               </DropdownMenuItem>
               <DropdownMenuSeparator />

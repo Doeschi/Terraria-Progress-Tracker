@@ -18,7 +18,6 @@ import {
   type OpenedFile,
 } from './lib/files'
 import {
-  activePlaythrough,
   findPlaythrough,
   newPlaythrough,
   newSaveFile,
@@ -27,7 +26,7 @@ import {
   type SaveFile,
 } from './lib/saveFile'
 import { GAME_MODE_DIFFICULTY } from './lib/availability'
-import { loadView, saveView } from './lib/viewState'
+import { chooseActive, loadView, rememberActive, saveView } from './lib/viewState'
 import { useUi } from './ui'
 import { carryOver } from './lib/dataUpdate'
 import type { Difficulty, GameData, PlatformId } from './lib/types'
@@ -47,6 +46,8 @@ interface State {
   dataError: string | null
 
   doc: SaveFile | null
+  /** the selected playthrough - kept in the browser, not in the file (switching is no change) */
+  activeId: string | null
   fileName: string | null
   handle: FileSystemFileHandle | null
   dirty: boolean
@@ -156,7 +157,7 @@ export const useStore = create<State & Actions>()((set, get) => {
       }
     })
   const mutateActive = (fn: (p: Playthrough) => Playthrough) => {
-    const id = get().doc?.activePlaythroughId
+    const id = get().activeId
     if (id) mutatePlaythrough(id, fn)
   }
   // the list's view of a playthrough, as it was left (remembered in the browser, viewState.ts);
@@ -171,6 +172,7 @@ export const useStore = create<State & Actions>()((set, get) => {
     data: null,
     dataError: null,
     doc: null,
+    activeId: null,
     fileName: null,
     handle: null,
     dirty: false,
@@ -201,6 +203,7 @@ export const useStore = create<State & Actions>()((set, get) => {
     newFile() {
       set({
         doc: { ...newSaveFile(), dataVersion: get().data?.meta.dataVersion || undefined },
+        activeId: null,
         fileName: null,
         handle: null,
         dirty: true,
@@ -218,8 +221,10 @@ export const useStore = create<State & Actions>()((set, get) => {
       const data = get().data
       const { doc, report } = data ? carryOver(opened, data) : { doc: opened, report: null }
       if (report) useUi.getState().open({ type: 'dataUpdate', report })
+      const activeId = chooseActive(doc)
       set({
         doc,
+        activeId,
         fileName,
         handle,
         dirty: dirty || doc !== opened,
@@ -227,13 +232,14 @@ export const useStore = create<State & Actions>()((set, get) => {
         autosaveStatus: 'ok',
         worlds: {},
         players: {},
-        ...viewOf(doc.activePlaythroughId),
+        ...viewOf(activeId),
       })
     },
 
     closeFile() {
       set({
         doc: null,
+        activeId: null,
         fileName: null,
         handle: null,
         dirty: false,
@@ -289,29 +295,29 @@ export const useStore = create<State & Actions>()((set, get) => {
       mutateDoc((doc) => ({
         ...doc,
         playthroughs: [...doc.playthroughs, p],
-        activePlaythroughId: p.id,
       }))
-      set(viewOf(p.id))
+      rememberActive(p.id)
+      set({ activeId: p.id, ...viewOf(p.id) })
       return p.id
     },
 
     updatePlaythrough: mutatePlaythrough,
 
     deletePlaythrough(id) {
-      mutateDoc((doc) => {
-        const playthroughs = doc.playthroughs.filter((p) => p.id !== id)
-        const activePlaythroughId =
-          doc.activePlaythroughId === id ? (playthroughs[0]?.id ?? null) : doc.activePlaythroughId
-        return { ...doc, playthroughs, activePlaythroughId }
-      })
+      mutateDoc((doc) => ({ ...doc, playthroughs: doc.playthroughs.filter((p) => p.id !== id) }))
+      if (get().activeId === id) {
+        const next = get().doc?.playthroughs[0]?.id ?? null
+        rememberActive(next)
+        set({ activeId: next, ...viewOf(next) })
+      }
       const { [id]: _removed, ...worlds } = get().worlds
       const { [id]: _player, ...players } = get().players
       set({ worlds, players })
     },
 
     setActivePlaythrough(id) {
-      mutateDoc((doc) => ({ ...doc, activePlaythroughId: id }))
-      set(viewOf(id))
+      rememberActive(id)
+      set({ activeId: id, ...viewOf(id) })
     },
 
     setChecked(keys, value) {
@@ -493,7 +499,7 @@ function rememberView() {
   clearTimeout(saveTimer)
   saveTimer = setTimeout(() => {
     const s = useStore.getState()
-    const id = s.doc?.activePlaythroughId
+    const id = s.activeId
     if (!id) return
     const { selection, search, view, mode, bestiarySelection, bestiarySearch, bestiaryView, picked } = s
     const { detailKey } = useUi.getState()
@@ -518,15 +524,15 @@ useUi.subscribe((s, prev) => {
 })
 
 export function useActivePlaythrough(): Playthrough | null {
-  return useStore((s) => activePlaythrough(s.doc) ?? null)
+  return useStore((s) => findPlaythrough(s.doc, s.activeId) ?? null)
 }
 
 export function useActiveWorld(): LoadedWorld | null {
-  return useStore((s) => (s.doc?.activePlaythroughId ? (s.worlds[s.doc.activePlaythroughId] ?? null) : null))
+  return useStore((s) => (s.activeId ? (s.worlds[s.activeId] ?? null) : null))
 }
 
 export function useActivePlayer(): LoadedPlayer | null {
-  return useStore((s) => (s.doc?.activePlaythroughId ? (s.players[s.doc.activePlaythroughId] ?? null) : null))
+  return useStore((s) => (s.activeId ? (s.players[s.activeId] ?? null) : null))
 }
 
 // ------------------------------------------------------- local backup

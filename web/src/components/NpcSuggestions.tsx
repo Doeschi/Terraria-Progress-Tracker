@@ -63,7 +63,8 @@ export function NpcSuggestions({ search, open }: { search: string; open: boolean
             onClick={() => openDetail(ref)}
             className={cn(
               'flex w-full items-center gap-2.5 px-2.5 py-1 text-left text-sm hover:bg-muted',
-              active === ref && 'outline-2 -outline-offset-2 outline-primary outline-dashed',
+              active === ref &&
+                'outline-2 -outline-offset-2 outline-primary outline-dashed pointer-coarse:outline-none',
             )}
           >
             <WikiIcon src={e.icon} alt="" size={24} />

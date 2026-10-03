@@ -1,3 +1,4 @@
+import type { SaveFile } from './saveFile'
 import { emptySelection, GROUP_KEYS, type Selection, type ViewMode } from './filtering'
 import { BESTIARY_GROUP_KEYS, emptyBestiarySelection, type BestiarySelection, type BestiaryViewMode } from './bestiary'
 
@@ -83,4 +84,38 @@ export function saveView(playthroughId: string, view: SavedView) {
   } catch {
     // storage unavailable - the view is just not remembered
   }
+}
+
+// ------------------------------------------------------ selected playthrough
+
+const ACTIVE_KEY = 'active-playthroughs'
+
+/** Remember the selected playthrough (newest first; ids are unique across progress files). */
+export function rememberActive(playthroughId: string | null) {
+  if (!playthroughId) return
+  try {
+    const list = readActive().filter((id) => id !== playthroughId)
+    localStorage.setItem(ACTIVE_KEY, JSON.stringify([playthroughId, ...list].slice(0, 50)))
+  } catch {
+    // e.g. storage blocked - the first playthrough is selected next time
+  }
+}
+
+function readActive(): string[] {
+  try {
+    const v = JSON.parse(localStorage.getItem(ACTIVE_KEY) ?? '[]')
+    return Array.isArray(v) ? v.filter((x): x is string => typeof x === 'string') : []
+  } catch {
+    return []
+  }
+}
+
+/** The playthrough to select in a progress file: the last one selected in this browser, the one an
+ * older file names, or the first. */
+export function chooseActive(doc: SaveFile): string | null {
+  const ids = new Set(doc.playthroughs.map((p) => p.id))
+  const remembered = readActive().find((id) => ids.has(id))
+  if (remembered) return remembered
+  if (doc.activePlaythroughId && ids.has(doc.activePlaythroughId)) return doc.activePlaythroughId
+  return doc.playthroughs[0]?.id ?? null
 }

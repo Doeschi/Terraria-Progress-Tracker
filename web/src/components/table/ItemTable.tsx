@@ -22,7 +22,7 @@ import { rodOfDiscord } from '@/lib/eggs'
 import type { Owned } from '@/hooks/useTrackerView'
 import { usePrefs } from '@/lib/prefs'
 import { useUi } from '@/ui'
-import { cn } from '@/lib/utils'
+import { cn, isTouchScreen } from '@/lib/utils'
 import type { Item } from '@/lib/types'
 import { chestSearchHint } from '@/lib/world'
 import { Button } from '@/components/ui/button'
@@ -148,7 +148,7 @@ export function ItemTable({
   /** amount per item owned: chests and player (world or player loaded) */
   owned: Map<string, Owned> | null
 }) {
-  const hasWorld = useStore((s) => !!s.doc?.activePlaythroughId && !!s.worlds[s.doc.activePlaythroughId])
+  const hasWorld = useStore((s) => !!s.activeId && !!s.worlds[s.activeId])
   const catalogue = useItemColumns()
   const pt = useActivePlaythrough()
   const eggs = usePrefs((s) => s.layout.easterEggs)
@@ -229,6 +229,7 @@ export function ItemTable({
   const headers = table.getHeaderGroups()[0].headers
   const width = headers.reduce((n, h) => n + h.getSize(), 0)
   const selectedKey = useUi((s) => s.detailKey)
+  const touch = useMemo(() => isTouchScreen(), [])
   const openDetail = useUi((s) => s.openDetail)
   // keyboard selection from the search field (↑/↓, Enter opens the card): the highlighted row is
   // scrolled into view
@@ -372,7 +373,8 @@ export function ItemTable({
                           // highlighted by the search (Enter opens it): a dashed frame around the whole
                           // row like the filter search's, drawn in every cell (pinned cells would cover
                           // an outline of the row)
-                          ...(isActive && dashedFrame(ci === 0, ci === cells.length - 1)),
+                          // not on touch screens: no keyboard to move it (MO6)
+                          ...(isActive && !touch && dashedFrame(ci === 0, ci === cells.length - 1)),
                           ...(bigIcon && cell.column.id === 'icon' && { zIndex: 20, overflow: 'visible' }),
                         }}
                         className={cn(
