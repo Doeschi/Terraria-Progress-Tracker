@@ -12,7 +12,66 @@ const COOLDOWN = 250
 /** px around its ghost in the list where a click puts the weapon back */
 const NEAR = 12
 
+/** The swing (or stab) of a weapon icon, from its handle. */
+function swingAnimation(el: HTMLElement | null, stab: boolean | undefined) {
+  if (stab)
+    return el?.animate(
+      [{ transform: 'translate(0, 0)' }, { transform: 'translate(13px, -13px)' }, { transform: 'translate(0, 0)' }],
+      { duration: 220, easing: 'ease-out' },
+    )
+  return el?.animate([{ transform: 'rotate(-75deg)' }, { transform: 'rotate(95deg)' }], {
+    duration: 240,
+    easing: 'cubic-bezier(.3,.7,.4,1)',
+  })
+}
+
 export function WeaponLayer() {
+  return (
+    <>
+      <HeldWeapon />
+      <TapSwing />
+    </>
+  )
+}
+
+/** Phones: a tap on a weapon's big icon swings it once there (to the right), then it is gone. */
+function TapSwing() {
+  const swing = useHeldWeapon((s) => s.swing)
+  const endSwing = useHeldWeapon((s) => s.endSwing)
+  const boxRef = useRef<HTMLDivElement>(null)
+  const swordRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    if (!swing) return
+    const weapon = WEAPONS[swing.key]
+    swingAnimation(swordRef.current, weapon.stab)
+    boxRef.current?.animate([{ opacity: 1, offset: 0.7 }, { opacity: 0 }], { duration: 420, fill: 'forwards' })
+    const len = Math.hypot(1, 0.25)
+    const effect = setTimeout(() => weapon.effect({ x: swing.x, y: swing.y }, { x: 1 / len, y: -0.25 / len }), 110)
+    const done = setTimeout(endSwing, 420)
+    return () => {
+      clearTimeout(effect)
+      clearTimeout(done)
+    }
+  }, [swing, endSwing])
+
+  if (!swing) return null
+  return (
+    <div
+      key={swing.n}
+      ref={boxRef}
+      aria-hidden="true"
+      className="pointer-events-none fixed top-0 left-0 z-[9998]"
+      style={{ transform: `translate(${swing.x}px, ${swing.y - SIZE}px)` }}
+    >
+      <div ref={swordRef} style={{ transformOrigin: '15% 85%' }}>
+        <WikiIcon src={swing.icon} alt="" size={SIZE} upscale />
+      </div>
+    </div>
+  )
+}
+
+function HeldWeapon() {
   const held = useHeldWeapon((s) => s.held)
   const drop = useHeldWeapon((s) => s.drop)
   const boxRef = useRef<HTMLDivElement>(null)
@@ -58,16 +117,7 @@ export function WeaponLayer() {
       const len = Math.hypot(dir.x, dir.y) || 1
       const unit = { x: dir.x / len, y: dir.y / len }
       // icons point to the top right: a stab goes that way
-      if (weapon.stab)
-        swordRef.current?.animate(
-          [{ transform: 'translate(0, 0)' }, { transform: 'translate(13px, -13px)' }, { transform: 'translate(0, 0)' }],
-          { duration: 220, easing: 'ease-out' },
-        )
-      else
-        swordRef.current?.animate([{ transform: 'rotate(-75deg)' }, { transform: 'rotate(95deg)' }], {
-          duration: 240,
-          easing: 'cubic-bezier(.3,.7,.4,1)',
-        })
+      swingAnimation(swordRef.current, weapon.stab)
       setTimeout(() => weapon.effect(pos, unit), 110)
     }
     const onUp = () => {

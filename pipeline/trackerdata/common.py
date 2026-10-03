@@ -116,6 +116,29 @@ def strip_markup(value):
     return "\n".join(line for line in lines if line)
 
 
+# platform images in tooltips ("Right click to open / L2 to open (PlayStation logo) / ...") ->
+# markers the app shows as icons (web/public/icons/platforms/<id>.*); other images are removed
+TOOLTIP_ICONS = {
+    "Desktop only.png": "desktop",
+    "Console only.png": "console",
+    "Mobile only.png": "mobile",
+    "PS.svg": "playstation",
+    "Xbox One.svg": "xbox-one",
+    "Xbox.svg": "xbox",
+    "Nintendo Switch.svg": "switch",
+    "3DS.svg": "3ds",
+    "Wii U icon.svg": "wiiu",
+}
+
+
+def tooltip_text(value):
+    """strip_markup for item tooltips: the platform images become "{icon:<id>}" markers."""
+    def icon(m):
+        name = m.group(1).strip().replace("_", " ")
+        return f"{{icon:{TOOLTIP_ICONS[name]}}}" if name in TOOLTIP_ICONS else m.group(0)
+    return strip_markup(re.sub(r"\[\[File:([^|\]]+)[^\]]*\]\]", icon, html.unescape(value or "")))
+
+
 def number(value, as_int=True):
     """First number in a raw value ("19 (set)", "150%", "9999 ... / 99" -> 19, 150, 9999).
     Where the wiki lists several values per platform, the first is the desktop one."""

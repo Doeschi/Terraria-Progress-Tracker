@@ -1,5 +1,20 @@
+import { plural } from '@/lib/format'
 import { Fragment, useMemo, useRef, useState } from 'react'
-import { Check, ChevronDown, Columns3, Eye, EyeOff, ListChecks, Pencil, Plus, Save, Star } from 'lucide-react'
+import {
+  Check,
+  ChevronDown,
+  CircleCheck,
+  CircleDashed,
+  Columns3,
+  Eye,
+  EyeOff,
+  ListChecks,
+  Pencil,
+  Plus,
+  Save,
+  Star,
+  type LucideIcon,
+} from 'lucide-react'
 import { useStore } from '@/store'
 import { usePrefs, type ViewDef } from '@/lib/prefs'
 import { buildFilterGroups, GROUP_KEYS, type ViewMode } from '@/lib/filtering'
@@ -75,11 +90,12 @@ function Toolbar({
   const mode = useStore((s) => s.view)
   const setView = useStore((s) => s.setView)
 
-  const views: { value: ViewMode; label: string; tip: string }[] = [
+  // phones: icons instead of the labels (except "All"), so the numbers next to them fit
+  const views: { value: ViewMode; label: string; tip: string; icon?: LucideIcon }[] = [
     { value: 'all', label: 'All', tip: 'All items that count towards progress' },
-    { value: 'missing', label: 'Missing', tip: 'Items you have not checked yet' },
-    { value: 'obtained', label: 'Obtained', tip: 'Items you have checked' },
-    { value: 'ignored', label: 'Ignored', tip: 'Hidden items that do not count towards progress' },
+    { value: 'missing', label: 'Missing', tip: 'Items you have not checked yet', icon: CircleDashed },
+    { value: 'obtained', label: 'Obtained', tip: 'Items you have checked', icon: CircleCheck },
+    { value: 'ignored', label: 'Ignored', tip: 'Hidden items that do not count towards progress', icon: EyeOff },
   ]
 
   return (
@@ -117,8 +133,8 @@ function Toolbar({
             aria-label="Which items to show"
           >
             {views.map((v) => (
-              <ToggleGroupItem key={v.value} value={v.value} title={v.tip}>
-                {v.label}
+              <ToggleGroupItem key={v.value} value={v.value} title={v.tip} aria-label={v.label}>
+                {phone && v.icon ? <v.icon /> : v.label}
                 {v.value === 'ignored' && view.ignoredCount > 0 && (
                   <span className="text-muted-foreground">{view.ignoredCount}</span>
                 )}
@@ -439,7 +455,7 @@ function BulkActions({ view, compact = false }: { view: TrackerView; compact?: b
 function MobileFilters({ view }: { view: TrackerView }) {
   const active = useStore((s) => GROUP_KEYS.reduce((n, g) => n + s.selection[g].length, 0))
   return (
-    <MobileFiltersButton active={active}>
+    <MobileFiltersButton active={active} shown={plural(view.visible.length, 'item')}>
       <FilterSidebar facets={view.facets} groupTallies={view.groupTallies} available={view.available} />
     </MobileFiltersButton>
   )

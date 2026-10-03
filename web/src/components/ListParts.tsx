@@ -182,7 +182,16 @@ export function SearchHint({ search }: { search: string }) {
 }
 
 /** "Filters" button for narrow screens: the filter sidebar in a dialog. */
-export function MobileFiltersButton({ active, children }: { active: number; children: React.ReactNode }) {
+export function MobileFiltersButton({
+  active,
+  shown,
+  children,
+}: {
+  active: number
+  /** what the list shows with these filters, e.g. "1,234 items" */
+  shown: string
+  children: React.ReactNode
+}) {
   return (
     <Dialog>
       <DialogTrigger asChild>
@@ -206,8 +215,14 @@ export function MobileFiltersButton({ active, children }: { active: number; chil
       {/* the title and the close button stay at the top, only the filters scroll (their search bar
         sticks below the title) */}
       <DialogContent showCloseButton={false} className="flex max-h-[85dvh] flex-col gap-0 overflow-hidden p-0">
-        <div className="flex shrink-0 items-center justify-between border-b px-4 py-2">
-          <DialogTitle>Filters</DialogTitle>
+        <div className="flex shrink-0 items-center justify-between gap-2 border-b px-4 py-2">
+          {/* updates while filters are switched: how many are on, what the list shows */}
+          <div className="flex min-w-0 flex-col gap-0.5">
+            <DialogTitle>Filters</DialogTitle>
+            <p className="truncate text-xs text-muted-foreground">
+              {active === 0 ? 'No filters' : active === 1 ? '1 filter' : `${active} filters`} active · {shown} shown
+            </p>
+          </div>
           <DialogClose asChild>
             <Button variant="ghost" size="icon-sm" aria-label="Close">
               <X />

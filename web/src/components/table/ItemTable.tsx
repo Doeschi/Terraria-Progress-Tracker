@@ -16,7 +16,7 @@ import { useVirtualizer } from '@tanstack/react-virtual'
 import { ArrowDown, ArrowUp, ExternalLink, Eye, EyeOff, PackageSearch } from 'lucide-react'
 import { useActivePlaythrough, useActiveWorld, useStore } from '@/store'
 import { itemLuck, sourceKills, type Luck } from '@/lib/luck'
-import { canWield, useHeldWeapon, WEAPONS, weaponsAwake } from '@/lib/weapons'
+import { canWield, useHeldWeapon, WEAPONS } from '@/lib/weapons'
 import { useWorldProgress } from '@/hooks/useWorldProgress'
 import { rodOfDiscord } from '@/lib/eggs'
 import type { Owned } from '@/hooks/useTrackerView'
@@ -417,7 +417,7 @@ export function ItemTable({
   )
 }
 
-/** The item icon, smaller in the compact density; a big one for awake weapons (easter egg). */
+/** The item icon, smaller in the compact density; a big one for checked special weapons (easter egg). */
 function IconCell({ item }: { item: Item }) {
   const compact = usePrefs((s) => s.layout.density === 'compact')
   const eggs = usePrefs((s) => s.layout.easterEggs)
@@ -430,7 +430,7 @@ function IconCell({ item }: { item: Item }) {
 
 /** A weapon easter egg (lib/weapons.ts): on some visits, special weapons the player has show a
  * big icon; click it to pick the weapon up. */
-const isBigWeapon = (key: string, owned: boolean, eggs: boolean) => eggs && owned && weaponsAwake && key in WEAPONS
+const isBigWeapon = (key: string, owned: boolean, eggs: boolean) => eggs && owned && key in WEAPONS
 
 function BigWeaponIcon({ item, size }: { item: Item; size: number }) {
   const pickUp = useHeldWeapon((s) => s.pickUp)

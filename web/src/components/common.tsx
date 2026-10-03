@@ -4,7 +4,7 @@ import { cn } from '@/lib/utils'
 import { formatPercent, percent, type Tally } from '@/lib/filtering'
 import { useStore } from '@/store'
 import { findSprite, type Sprite } from '@/lib/sprites'
-import { RARITIES } from './common-data'
+import { RARITIES, TOOLTIP_ICONS } from './common-data'
 import type { Difficulty } from '@/lib/types'
 import { plural } from '@/lib/format'
 
@@ -196,5 +196,32 @@ export function ObtainedMark({ small = false }: { small?: boolean }) {
         aria-label="Obtained"
       />
     </span>
+  )
+}
+
+// ------------------------------------------------------------ tooltip icons
+
+/** An item tooltip with its platform icons. */
+export function TooltipText({ text }: { text: string }) {
+  // split with a capture group: every second part is an icon id
+  const parts = text.split(/\{icon:([a-z0-9-]+)\}/)
+  return <>{parts.map((part, i) => (i % 2 ? <PlatformIcon key={i} id={part} /> : part))}</>
+}
+
+function PlatformIcon({ id }: { id: string }) {
+  const icon = TOOLTIP_ICONS[id]
+  if (!icon) return null
+  return (
+    <img
+      src={`${import.meta.env.BASE_URL}icons/platforms/${icon.file}`}
+      alt={icon.name}
+      title={icon.name}
+      draggable={false}
+      className={cn(
+        'inline-block h-3 w-auto align-[-1px]',
+        icon.invert && 'dark:invert',
+        icon.pixel && '[image-rendering:pixelated]',
+      )}
+    />
   )
 }

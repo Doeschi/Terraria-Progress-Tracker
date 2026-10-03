@@ -25,6 +25,20 @@ export function TopBar({ view }: { view: TrackerView | null }) {
   return <DesktopTopBar view={view} />
 }
 
+/** "Dev" next to the logo when the page comes from the dev server (Vite's development build, much
+ * slower than the published production build). */
+function DevBadge() {
+  if (!import.meta.env.DEV) return null
+  return (
+    <span
+      className="shrink-0 rounded bg-amber-500/15 px-1.5 py-0.5 text-[10px] leading-none font-semibold text-amber-700 uppercase dark:text-amber-400"
+      title="Development build (dev server) - slower than the published site"
+    >
+      Dev
+    </span>
+  )
+}
+
 /** Phones (MO1): one slim row - logo, playthrough, Items / Bestiary and a menu (☰) with the rest
  * of the desktop top bar; the item progress as a thin line below it. */
 function PhoneTopBar({ view }: { view: TrackerView | null }) {
@@ -35,6 +49,7 @@ function PhoneTopBar({ view }: { view: TrackerView | null }) {
       <HeaderSnow />
       <div className="flex items-center gap-2 px-2 py-1.5">
         <HeaderLogo />
+        <DevBadge />
         {/* the playthrough button takes the room that is left */}
         <div className="flex min-w-0 flex-1 [&_button]:max-w-full">{hasPlaythrough && <PlaythroughMenu />}</div>
         {view && <ModeSwitch />}
@@ -94,6 +109,7 @@ function DesktopTopBar({ view }: { view: TrackerView | null }) {
       <div className="flex items-center gap-2 font-semibold">
         <HeaderLogo />
         <span className="hidden 2xl:inline">Terraria Progress Tracker</span>
+        <DevBadge />
       </div>
       <div className="flex min-w-0 flex-wrap items-center justify-center gap-x-3 gap-y-2">
         <div className="rounded-xl border bg-card/60 px-2 pt-1 pb-1.5">

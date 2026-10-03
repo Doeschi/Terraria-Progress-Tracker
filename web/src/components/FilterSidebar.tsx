@@ -17,7 +17,7 @@ import { toast } from 'sonner'
 import { useActiveWorld, useStore } from '@/store'
 import { findPlaythrough } from '@/lib/saveFile'
 import { formatRelativeDay } from '@/lib/format'
-import { usePrefs, type ProgressionMode } from '@/lib/prefs'
+import { ALMOST_DONE_COUNTS, usePrefs, type ProgressionMode } from '@/lib/prefs'
 import { ToggleGroup, ToggleGroupItem } from '@/components/ui/toggle-group'
 import { cn } from '@/lib/utils'
 import {
@@ -592,22 +592,44 @@ function AlmostDoneSection({ groups, facets, totals }: { groups: AnyGroup[]; fac
   const q = useContext(QueryContext)
   const place = useContext(PlacementContext)
   const [open, setOpen] = useSectionOpen(scope.prefix + ALMOST_DONE, true)
-  const list = useMemo(() => almostDone(groups, totals, place), [groups, totals, place])
+  const count = usePrefs((s) => s.layout.almostDoneCount)
+  const setLayout = usePrefs((s) => s.setLayout)
+  const list = useMemo(() => almostDone(groups, totals, place, count), [groups, totals, place, count])
   if (q || !list.length) return null
 
   return (
     <section className="rounded-xl border bg-card p-1.5 shadow-xs">
-      <button
-        onClick={() => setOpen(!open)}
-        className={cn(
-          'flex w-full items-center gap-1.5 px-1.5 py-1 text-xs font-semibold tracking-wide text-foreground/80 uppercase hover:text-foreground',
-          open && 'mb-1 border-b pb-2',
+      <div className={cn('flex items-center gap-1', open && 'mb-1 border-b pb-1')}>
+        <button
+          onClick={() => setOpen(!open)}
+          className="flex min-w-0 flex-1 items-center gap-1.5 px-1.5 py-1 text-xs font-semibold tracking-wide text-foreground/80 uppercase hover:text-foreground"
+          title="The options closest to completion (whole playthrough, at least 5 items) – the same filters as in their groups"
+        >
+          <ChevronRight className={cn('size-3.5 shrink-0 transition-transform', open && 'rotate-90')} />
+          <span className="truncate">{ALMOST_DONE_LABEL}</span>
+        </button>
+        {/* how many options to show (FL15), remembered in the browser */}
+        {open && (
+          <div className="flex shrink-0 items-center rounded-md border p-px" role="group" aria-label="Options shown">
+            {ALMOST_DONE_COUNTS.map((n) => (
+              <button
+                key={n}
+                onClick={() => setLayout({ almostDoneCount: n })}
+                aria-pressed={count === n}
+                title={`Show the ${n} options closest to completion`}
+                className={cn(
+                  'min-w-6 rounded-[5px] px-1 text-[11px] leading-5 tabular-nums',
+                  count === n
+                    ? 'bg-primary/15 font-semibold text-foreground'
+                    : 'text-muted-foreground hover:text-foreground',
+                )}
+              >
+                {n}
+              </button>
+            ))}
+          </div>
         )}
-        title="The options closest to completion (whole playthrough, at least 5 items) – the same filters as in their groups"
-      >
-        <ChevronRight className={cn('size-3.5 shrink-0 transition-transform', open && 'rotate-90')} />
-        <span className="truncate">{ALMOST_DONE_LABEL}</span>
-      </button>
+      </div>
       {open && (
         <ul className="flex flex-col gap-px">
           {list.map(({ group, entry, parent }) => (

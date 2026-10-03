@@ -74,6 +74,9 @@ class Milestones:
                 base = self.index[self.boss_milestone[boss]]
             elif source["id"] in self.source_milestone:
                 base = self.index[self.source_milestone[source["id"]]]
+            elif source["id"] in self.vendor_milestone:
+                # a town NPC (the Mechanic's Combat Wrench): from when it can move in
+                base = self.index[self.vendor_milestone[source["id"]]]
             elif source.get("events"):
                 base = self.of_events(source["events"])
             elif "jungle-temple" in source.get("biomes", []):

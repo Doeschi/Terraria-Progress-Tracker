@@ -23,6 +23,7 @@ from .common import (
     seed_only,
     read_csv,
     strip_markup,
+    tooltip_text,
 )
 
 
@@ -255,7 +256,7 @@ def build_item(row, mapping, schema, exclusive, history, equip, extra_keys=()):
         "placedHeight": number(row["placedheight"]),
         "buff": strip_markup(row["buffs"]) or None,
         "debuff": strip_markup(row["debuffs"]) or None,
-        "tooltip": strip_markup(row["tooltip"]) or None,
+        "tooltip": tooltip_text(row["tooltip"]) or None,
     }
     item["minDifficulty"] = min_difficulty(item)
     # keep the file small: stat fields that don't apply to the item are left out

@@ -108,6 +108,9 @@ function SyncView({ initial, onDone }: { initial: SyncSection; onDone: () => voi
   }, [data, pt])
   // everything on the player (all storages) - kept out of the world's "not found" list
   const stock = useMemo(() => (player ? playerStock(data, player, pt.platform) : null), [data, player, pt.platform])
+  // used permanent upgrades (Life Crystal, Demon Heart, …) are gone from the storages, but obtained:
+  // not "not found" either
+  const used = useMemo(() => new Set(player ? usedUpgrades(player) : []), [player])
 
   const playerItems = useMemo(() => {
     if (!player || !stock) return []
@@ -135,10 +138,10 @@ function SyncView({ initial, onDone }: { initial: SyncSection; onDone: () => voi
       .sort((a, b) => a.item.name.localeCompare(b.item.name))
     const notFound = pt.checked
       .map((k) => data.itemsByKey.get(k))
-      .filter((i): i is Item => !!i && counts(i) && !scan.found.has(i.key) && !stock?.has(i.key))
+      .filter((i): i is Item => !!i && counts(i) && !scan.found.has(i.key) && !stock?.has(i.key) && !used.has(i.key))
       .sort((a, b) => a.name.localeCompare(b.name))
     return { scan, toCheck, notFound }
-  }, [data, world, pt, areas, scope, detection, counts, checked, stock])
+  }, [data, world, pt, areas, scope, detection, counts, checked, stock, used])
 
   const bestiary = useMemo(() => (world ? bestiaryDiff(data, pt, world) : null), [data, pt, world])
 
@@ -307,7 +310,7 @@ function SyncView({ initial, onDone }: { initial: SyncSection; onDone: () => voi
             </TabsContent>
             <TabsContent value="notFound" className="flex min-h-0 flex-col gap-2">
               <ListHeader
-                text="Checked items that are in none of the scanned containers. Tick the ones you no longer have to uncheck them."
+                text={`Checked items that are in none of the scanned containers${player ? ', nor on the player (storages, used permanent upgrades)' : ''}. Tick the ones you no longer have to uncheck them.`}
                 ids={items.notFound.map((i) => i.key)}
                 allOn={items.notFound.every((i) => uncheck.has(i.key))}
                 onAll={(ids, on) => setUncheck((s) => withIds(s, ids, on))}

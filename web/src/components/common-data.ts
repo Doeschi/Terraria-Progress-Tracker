@@ -17,3 +17,24 @@ export const RARITIES: Record<number, { name: string; color: string }> = {
   10: { name: 'Red', color: '#ff2864' },
   11: { name: 'Purple', color: '#b428ff' },
 }
+
+// ------------------------------------------------------------ tooltip icons
+
+/** Platform icons in item tooltips: "{icon:playstation}" markers (pipeline: TOOLTIP_ICONS), the
+ * files in public/icons/platforms/. Black logos are inverted in dark mode. */
+export const TOOLTIP_ICONS: Record<string, { file: string; name: string; invert?: boolean; pixel?: boolean }> = {
+  desktop: { file: 'desktop.png', name: 'Desktop', pixel: true },
+  console: { file: 'console.png', name: 'Console', pixel: true },
+  mobile: { file: 'mobile.png', name: 'Mobile', pixel: true },
+  playstation: { file: 'playstation.svg', name: 'PlayStation', invert: true },
+  'xbox-one': { file: 'xbox-one.svg', name: 'Xbox One' },
+  xbox: { file: 'xbox.svg', name: 'Xbox' },
+  switch: { file: 'switch.svg', name: 'Nintendo Switch' },
+  '3ds': { file: '3ds.svg', name: 'Nintendo 3DS', invert: true },
+  wiiu: { file: 'wiiu.png', name: 'Wii U' },
+}
+const ICON_MARKER = /\{icon:([a-z0-9-]+)\}/g
+
+/** The tooltip as plain text (table column, sorting): the icons by name. */
+export const tooltipPlain = (text?: string) =>
+  text?.replace(ICON_MARKER, (_, id: string) => TOOLTIP_ICONS[id]?.name ?? '')

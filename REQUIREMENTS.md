@@ -36,8 +36,7 @@ GitHub Actions.
   everything seasonal then uses that date and time (only what is shown; nothing is saved).
   Seasonal ones follow the clock while the app stays open: the date is checked once a minute, and
   a change (a special day, the night after midnight) shows without reloading.
-  Ones that only appear on some visits can be forced with `?weapons=awake`; the completion ones
-  can be shown with `?egg=bestiary` and `?egg=credits`.
+  The completion ones can be shown with `?egg=bestiary` and `?egg=credits`.
 
 ## D – Data
 
@@ -418,7 +417,8 @@ needs a decision is reported, and parsers that read page text must not silently 
 - **FL14** Every group header also shows how many of its options are completed, e.g. "✓ 2/18"
   (top-level options over the whole playthrough, like FL11; hidden ones left out; green when
   all are complete).
-- **FL15** Group "Almost done" (items and bestiary): the 5 options closest to completion, as
+- **FL15** Group "Almost done" (items and bestiary): the options closest to completion – 3, 5
+  (default), 10 or 20, chosen in its header (remembered in the browser, one setting for both) – as
   duplicates of the options in their groups (same selection; the group name is shown with each).
   Ranked by percentage, ties by fewer missing; only options with at least 5 items, at least one
   obtained and not complete; hidden options and the groups Progression and Crafting are left
@@ -519,7 +519,9 @@ Below 640 px width (phones) the layout changes; tablets and desktops stay as the
   32 px icon, compact 48 px with a 24 px icon and smaller text (about 14 instead of 11 cards on
   a phone screen).
 - **MO4** The detail panel is a full-screen sheet with the back button (already the overlay on
-  narrow screens, ID).
+  narrow screens, ID). Touch: a swipe from left to right goes back to the previous item like the
+  back button; on the first item it closes the sheet (the sheet follows the finger; past a third
+  of its width or with a quick flick, otherwise it springs back).
 - **MO5** Bestiary as cards too: checkbox (unlocked), icon, name, second line type and where /
   when; on the right the drops progress. Tapping opens the NPC card.
 - **MO6** Touch (any device with a coarse pointer, also tablets): comfortable density by default
@@ -793,7 +795,10 @@ Below 640 px width (phones) the layout changes; tablets and desktops stay as the
   events), "Dropped by" (source icon, name, boss, quantity and chance of the playthrough's
   difficulty, the other modes' chances small below when they differ, game modes; drops not in
   the playthrough's difficulty are greyed out and listed last), stats (all combat, tool, use/placement and economy
-  values) and details (item id, internal name, platforms).
+  values) and details (item id, internal name, platforms). The platform images of a tooltip
+  ("Right click to open / L2 to open (PlayStation) / …" on crates and bags) are shown as small
+  icons, as on the wiki (static files in `web/public/icons/platforms/`; the pipeline turns the
+  known images into `{icon:<id>}` markers); the Tooltip column shows their names.
 - **ID3** The name column of the table shows the name (opens the detail panel) and, aligned at
   its right edge in every row, "Find in chests" and "Open on the wiki"; the last column only
   has "Ignore". Expert/Master-only items (about 100) show the wiki's Expert or Master icon right
@@ -1173,7 +1178,7 @@ Status: parser done (PL1, PL2), app integration in progress (PL3–PL5).
   as obtained (Life Crystal, Life Fruit, Mana Crystal, Demon Heart, Torch God's Favor, Artisan
   Loaf, Vital Crystal, Aegis Fruit, Arcane Crystal, Galaxy Pearl, Gummy Worm, Ambrosia). The
   player never unchecks anything; with a player loaded, the world's "checked but not found"
-  list leaves out what the player has.
+  list leaves out what the player has, in any storage, and the used permanent upgrades.
 - **PL5** Column "Owned" (BL6): the amount in the player's chests (whole world)
   plus, with a player loaded, everything on the player; the tooltip splits it up ("12 in chests ·
   3 in the Void Vault · 1 in the inventory"). Offered while a world or a player is loaded; the

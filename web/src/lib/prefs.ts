@@ -31,6 +31,8 @@ export interface Layout {
   easterEggs: boolean
   /** with a loaded world: dim items whose milestone it has not reached (MS8) */
   dimUnavailable: boolean
+  /** how many options "Almost done" shows (FL15) */
+  almostDoneCount: AlmostDoneCount
   /** widths in px of the filter sidebar and the docked detail panel, set by dragging their edge */
   sidebarWidth: number
   detailWidth: number
@@ -38,6 +40,10 @@ export interface Layout {
   detailOrder: string[]
   hiddenDetail: string[]
 }
+
+/** The choices for the number of "Almost done" options. */
+export const ALMOST_DONE_COUNTS = [3, 5, 10, 20] as const
+export type AlmostDoneCount = (typeof ALMOST_DONE_COUNTS)[number]
 
 export const DEFAULT_LAYOUT: Layout = {
   // touch screens: comfortable (bigger rows and options) until chosen in the settings (MO6)
@@ -48,6 +54,7 @@ export const DEFAULT_LAYOUT: Layout = {
   celebrate: true,
   easterEggs: true,
   dimUnavailable: false,
+  almostDoneCount: 5,
   sidebarWidth: SIDEBAR_WIDTH.initial,
   detailWidth: DETAIL_WIDTH.initial,
   openGroups: {},
@@ -64,6 +71,8 @@ function readLayout(v: unknown): Layout {
   if (o.density === 'comfortable' || o.density === 'compact') out.density = o.density
   for (const k of ['optionBars', 'celebrate', 'easterEggs', 'dimUnavailable'] as const)
     if (typeof o[k] === 'boolean') out[k] = o[k] as boolean
+  if (ALMOST_DONE_COUNTS.includes(o.almostDoneCount as AlmostDoneCount))
+    out.almostDoneCount = o.almostDoneCount as AlmostDoneCount
   for (const k of ['sidebarWidth', 'detailWidth'] as const)
     if (typeof o[k] === 'number' && Number.isFinite(o[k])) out[k] = o[k] as number
   for (const k of ['favoriteViews', 'detailOrder', 'hiddenDetail'] as const) {

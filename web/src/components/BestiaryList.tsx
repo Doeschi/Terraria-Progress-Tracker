@@ -1,6 +1,16 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { useVirtualizer } from '@tanstack/react-virtual'
-import { ArrowDown, ArrowUp, ChevronDown, ExternalLink, ListChecks, Star } from 'lucide-react'
+import {
+  ArrowDown,
+  ArrowUp,
+  ChevronDown,
+  CircleCheck,
+  CircleDashed,
+  ExternalLink,
+  ListChecks,
+  Star,
+  type LucideIcon,
+} from 'lucide-react'
 import { useUi } from '@/ui'
 import { useActivePlaythrough, useActiveWorld, useStore } from '@/store'
 import { cn } from '@/lib/utils'
@@ -33,7 +43,7 @@ import {
   usePublishRows,
 } from '@/lib/listCursor'
 import { IconList, type IconEntry } from './table/cells'
-import { formatDate, nameOf } from '@/lib/format'
+import { formatDate, nameOf, plural } from '@/lib/format'
 import { worldState } from '@/lib/bestiary'
 import { inDifficulty, seedOnly } from '@/lib/drops'
 import { NPC_REF, npcIndex } from '@/lib/npcs'
@@ -77,10 +87,11 @@ function Toolbar({ view, phone = false }: { view: BestiaryView; phone?: boolean 
   const setView = useStore((s) => s.setBestiaryView)
   const world = useActiveWorld()
 
-  const views: { value: BestiaryViewMode; label: string; tip: string }[] = [
+  // phones: icons instead of the labels (except "All"), like the item list
+  const views: { value: BestiaryViewMode; label: string; tip: string; icon?: LucideIcon }[] = [
     { value: 'all', label: 'All', tip: 'All bestiary entries' },
-    { value: 'missing', label: 'Missing', tip: 'Entries not unlocked yet' },
-    { value: 'unlocked', label: 'Unlocked', tip: 'Entries you have unlocked' },
+    { value: 'missing', label: 'Missing', tip: 'Entries not unlocked yet', icon: CircleDashed },
+    { value: 'unlocked', label: 'Unlocked', tip: 'Entries you have unlocked', icon: CircleCheck },
   ]
 
   return (
@@ -111,8 +122,8 @@ function Toolbar({ view, phone = false }: { view: BestiaryView; phone?: boolean 
             aria-label="Which entries to show"
           >
             {views.map((v) => (
-              <ToggleGroupItem key={v.value} value={v.value} title={v.tip}>
-                {v.label}
+              <ToggleGroupItem key={v.value} value={v.value} title={v.tip} aria-label={v.label}>
+                {phone && v.icon ? <v.icon /> : v.label}
               </ToggleGroupItem>
             ))}
           </ToggleGroup>
@@ -196,7 +207,7 @@ function BulkActions({ view, compact = false }: { view: BestiaryView; compact?: 
 function MobileFilters({ view }: { view: BestiaryView }) {
   const active = useStore((s) => BESTIARY_GROUP_KEYS.reduce((n, g) => n + s.bestiarySelection[g].length, 0))
   return (
-    <MobileFiltersButton active={active}>
+    <MobileFiltersButton active={active} shown={plural(view.visible.length, 'entry', 'entries')}>
       <BestiaryFilterSidebar facets={view.facets} groupTallies={view.groupTallies} available={view.available} />
     </MobileFiltersButton>
   )

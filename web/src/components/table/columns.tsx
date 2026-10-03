@@ -2,7 +2,8 @@ import type { ReactNode } from 'react'
 import { compareVersions } from '@/lib/availability'
 import { chanceFor, regularDrops, type DropKind } from '@/lib/drops'
 import type { Difficulty, GameData, Item, PlatformId } from '@/lib/types'
-import { Coins, RarityIcon, WikiIcon } from '../common'
+import { Coins, RarityIcon, TooltipText, WikiIcon } from '../common'
+import { tooltipPlain } from '../common-data'
 import { formatDate, nameOf } from '@/lib/format'
 import { conditionLabel, conditionNames } from '@/lib/conditions'
 import { ConditionsCell, IconList, LuckCell, type IconEntry } from './cells'
@@ -179,7 +180,14 @@ export function buildColumns(data: GameData): ItemColumn[] {
       value: (i) => i.hardmode || undefined,
       cell: (i) => yes(i.hardmode),
     },
-    { id: 'tooltip', label: 'Tooltip', group: 'Item', size: 320, value: (i) => i.tooltip },
+    {
+      id: 'tooltip',
+      label: 'Tooltip',
+      group: 'Item',
+      size: 320,
+      value: (i) => tooltipPlain(i.tooltip),
+      cell: (i) => i.tooltip && <TooltipText text={i.tooltip} />,
+    },
 
     // ---------------------------------------------------------- source
     {

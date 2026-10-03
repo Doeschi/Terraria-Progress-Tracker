@@ -9,6 +9,7 @@ import { buildBestiaryGroups } from '@/lib/bestiary'
 import { DETAIL_SECTIONS, move, ordered } from '@/lib/layout'
 import { buildColumns } from './table/columns'
 import { resolveViews } from './table/presets'
+import { useIsPhone } from '@/hooks/useIsPhone'
 import { cn } from '@/lib/utils'
 import { Button } from '@/components/ui/button'
 import { Checkbox } from '@/components/ui/checkbox'
@@ -20,6 +21,7 @@ import { ToggleGroup, ToggleGroupItem } from '@/components/ui/toggle-group'
 
 export function SettingsDialog({ open, onOpenChange }: { open: boolean; onOpenChange: (open: boolean) => void }) {
   const layout = usePrefs((s) => s.layout)
+  const phone = useIsPhone()
   const setLayout = usePrefs((s) => s.setLayout)
   const resetLayout = usePrefs((s) => s.resetLayout)
   const { theme, setTheme } = useTheme()
@@ -60,7 +62,8 @@ export function SettingsDialog({ open, onOpenChange }: { open: boolean; onOpenCh
           </Part>
 
           <Part title="Item list">
-            <ViewOrderEditor />
+            {/* phones show cards, without views */}
+            {!phone && <ViewOrderEditor />}
             <Check
               checked={layout.dimUnavailable}
               onChange={(dimUnavailable) => setLayout({ dimUnavailable })}

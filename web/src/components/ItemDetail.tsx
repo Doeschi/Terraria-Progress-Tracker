@@ -23,7 +23,7 @@ import { conditionNames } from '@/lib/conditions'
 import { Button } from '@/components/ui/button'
 import { Checkbox } from '@/components/ui/checkbox'
 import { Sheet, SheetContent, SheetDescription, SheetTitle } from '@/components/ui/sheet'
-import { DifficultyIcon, RarityIcon, WikiIcon } from './common'
+import { DifficultyIcon, RarityIcon, TooltipText, WikiIcon } from './common'
 import { ResizablePane } from './ResizablePane'
 import { DETAIL_WIDTH } from '@/lib/panes'
 import { CollapsibleSection, RecipeSections } from './RecipeSections'
@@ -39,6 +39,7 @@ import { type ColumnGroup, type ItemColumn, type TrackingState } from './table/c
 import { useItemColumns } from './table/useColumns'
 import { LuckCell } from './table/cells'
 import { usePrefs } from '@/lib/prefs'
+import { useSwipeClose } from '@/hooks/useSwipeClose'
 import { DETAIL_SECTIONS, ordered } from '@/lib/layout'
 
 // Everything known about one item, selected in the item table. On wide screens
@@ -118,10 +119,20 @@ export function ItemDetailPanel() {
 export function ItemDetailSheet() {
   const card = useDetailCard()
   const closeDetail = useUi((s) => s.closeDetail)
+  // touch: a swipe from left to right goes back to the previous item; on the first one it closes
+  const swipe = useSwipeClose(closeDetail, () => {
+    const { detailHistory, detailBack } = useUi.getState()
+    if (!detailHistory.length) return false
+    detailBack()
+    return true
+  })
   return (
     <Sheet open={!!card} onOpenChange={(o) => !o && closeDetail()}>
       {/* phones: the whole screen (MO4); the side variant's 3/4 width needs the same prefix to be overridden */}
-      <SheetContent className="gap-0 overflow-y-auto p-0 data-[side=right]:w-full data-[side=right]:sm:max-w-lg">
+      <SheetContent
+        className="touch-pan-y touch-pinch-zoom gap-0 overflow-y-auto p-0 data-[side=right]:w-full data-[side=right]:sm:max-w-lg"
+        {...swipe}
+      >
         {card && (
           <>
             <BackButton />
@@ -215,7 +226,9 @@ function DetailContent({ item, Title }: { item: Item; Title: TitleComponent }) {
   // the sections in the order and selection of the settings (Layout.detailOrder / hiddenDetail)
   const sections: Record<string, React.ReactNode> = {
     tooltip: item.tooltip && (
-      <p className="rounded-lg border bg-muted/30 px-3 py-2 text-sm whitespace-pre-line italic">{item.tooltip}</p>
+      <p className="rounded-lg border bg-muted/30 px-3 py-2 text-sm whitespace-pre-line italic">
+        <TooltipText text={item.tooltip} />
+      </p>
     ),
     what: (
       <Section title="What it is">

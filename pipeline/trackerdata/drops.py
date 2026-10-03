@@ -202,8 +202,11 @@ class Drops:
             m = re.fullmatch(r"(.+) furniture", n)
             if m:
                 prefix = m.group(1) + " "
+                # set pieces are on the shared page of their type ("Chairs", "Work Benches"): not
+                # the Golden Crate (a page of its own) or the golden grave markers ("Tombstones")
                 found = [i for items in self.by_name.values() for i in items
-                         if norm_name(i["name"]).startswith(prefix) and "furniture" in i["categories"]]
+                         if norm_name(i["name"]).startswith(prefix) and "furniture" in i["categories"]
+                         and norm_name(i["page"]) not in (norm_name(i["name"]), "tombstones")]
         if found and len(found) > 1:
             # same name, several items: prefer obtainable ones (e.g. "Ogre Mask" has an unused,
             # unobtainable variant), then the item on its own page (e.g. "Seaweed")

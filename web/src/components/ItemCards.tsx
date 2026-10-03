@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef } from 'react'
 import { useVirtualizer } from '@tanstack/react-virtual'
-import { ArrowDownUp, Check } from 'lucide-react'
+import { ArrowDownUp } from 'lucide-react'
 import { useActivePlaythrough, useStore } from '@/store'
 import { useUi } from '@/ui'
 import { cn } from '@/lib/utils'
@@ -8,6 +8,8 @@ import { nameOf } from '@/lib/format'
 import { shownObtain } from '@/lib/filtering'
 import { useActiveRow, usePublishRows } from '@/lib/listCursor'
 import { rodOfDiscord } from '@/lib/eggs'
+import { useHeldWeapon, WEAPONS } from '@/lib/weapons'
+import { usePrefs } from '@/lib/prefs'
 import type { GameData, Item } from '@/lib/types'
 import { Button } from '@/components/ui/button'
 import { Checkbox } from '@/components/ui/checkbox'
@@ -159,6 +161,9 @@ function ItemCard({
 }) {
   const openDetail = useUi((s) => s.openDetail)
   const setChecked = useStore((s) => s.setChecked)
+  // weapon easter egg (G8): a checked special weapon gets a big icon - tap it to swing it
+  const eggs = usePrefs((s) => s.layout.easterEggs)
+  const weapon = eggs && own && !ignored && item.key in WEAPONS
   // what the table shows in columns, written out (no hover on phones)
   const category = item.categories[0] ? nameOf(data.categories, item.categories[0]) : undefined
   const obtain = shownObtain(data, item.obtain)
@@ -175,6 +180,8 @@ function ItemCard({
         ignored && 'opacity-60',
         selected && 'bg-primary/15',
         active && 'outline-2 -outline-offset-2 outline-primary outline-dashed pointer-coarse:outline-none',
+        // its big icon sticks out over the neighbours
+        weapon && 'z-10',
       )}
       style={{ top, height: size.height }}
     >
@@ -190,24 +197,43 @@ function ItemCard({
           aria-label={`Obtained: ${item.name}`}
         />
       </label>
+      {weapon && <CardWeapon item={item} size={size.icon} />}
       <button
         type="button"
         onClick={() => openDetail(item.key)}
         className="flex h-full min-w-0 flex-1 items-center gap-2.5 text-left"
       >
-        <WikiIcon src={item.icon} alt="" size={size.icon} />
+        {!weapon && <WikiIcon src={item.icon} alt="" size={size.icon} />}
         <span className="flex min-w-0 flex-1 flex-col">
-          <span className={cn('flex items-center gap-1.5 truncate font-medium', size.name)}>
-            <span className="truncate">{item.name}</span>
-            {own && (
-              <Check className="size-3.5 shrink-0 text-emerald-600 dark:text-emerald-400" aria-label="obtained" />
-            )}
-          </span>
+          <span className={cn('truncate font-medium', size.name)}>{item.name}</span>
           <span className={cn('truncate text-muted-foreground', size.line)}>
             {[category, obtain, milestone && `after ${milestone}`].filter(Boolean).join(' · ')}
           </span>
         </span>
       </button>
     </li>
+  )
+}
+
+/** The big icon of a weapon easter egg (lib/weapons.ts) on a card: a tap swings it once. */
+function CardWeapon({ item, size }: { item: Item; size: number }) {
+  const swingAt = useHeldWeapon((s) => s.swingAt)
+  const swinging = useHeldWeapon((s) => s.swing?.key === item.key)
+  const big = Math.round(size * 1.6)
+  return (
+    <span className="relative mr-1.5 block shrink-0" style={{ width: size, height: size }}>
+      <button
+        type="button"
+        onClick={(e) => {
+          const r = e.currentTarget.getBoundingClientRect()
+          swingAt(item.key, item.icon, r.left + r.width / 2, r.top + r.height / 2)
+        }}
+        className={cn('egg-weapon absolute rounded', swinging && 'opacity-30')}
+        style={{ left: (size - big) / 2, top: (size - big) / 2, width: big, height: big }}
+        aria-label={item.name}
+      >
+        <WikiIcon src={item.icon} alt="" size={big} upscale />
+      </button>
+    </span>
   )
 }

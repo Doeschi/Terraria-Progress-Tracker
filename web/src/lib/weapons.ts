@@ -5,19 +5,9 @@ import { achievement, itemIcon } from './eggs'
 import { PLANTS } from './logoArt'
 import { prefersReducedMotion } from './season'
 
-// Weapon easter eggs (G8): on some visits, special weapons the player has checked show a bigger
-// icon in the list. Click it to pick the weapon up, click to swing it (again and again) - with an effect like
-// in the game (own pixel art). `?weapons=awake` wakes them up for testing.
-
-/** On about 1 in 4 visits the weapons are "awake" (their big icons are shown). */
-export const weaponsAwake = (() => {
-  try {
-    if (new URLSearchParams(window.location.search).get('weapons') === 'awake') return true
-  } catch {
-    // ignore
-  }
-  return Math.random() < 0.25
-})()
+// Weapon easter eggs (G8): special weapons the player has checked show a bigger icon in the list.
+// Click it to pick the weapon up, click to swing it (again and again) - with an effect like in the
+// game (own pixel art). On phones (cards, touch) a tap on it swings it once right there.
 
 /** Picking up needs a mouse (or pen) and motion. */
 export const canWield = () =>
@@ -295,14 +285,24 @@ export const WEAPONS: Record<string, Weapon> = {
   CopperShortsword: { effect: copperShortsword, stab: true },
 }
 
-/** The weapon being carried (picked up from the list), if any. */
+/** The weapon being carried (picked up from the list), if any; and a single swing (phones). */
 export const useHeldWeapon = create<{
   /** the weapon and where it was picked up (the mouse position) */
   held: { key: string; icon?: string; x: number; y: number } | null
+  /** a single swing where its icon was tapped (n: tells two taps apart) */
+  swing: { key: string; icon?: string; x: number; y: number; n: number } | null
   pickUp(key: string, icon: string | undefined, x: number, y: number): void
   drop(): void
-}>()((set) => ({
+  swingAt(key: string, icon: string | undefined, x: number, y: number): void
+  endSwing(): void
+}>()((set, get) => ({
   held: null,
+  swing: null,
   pickUp: (key, icon, x, y) => set({ held: { key, icon, x, y } }),
   drop: () => set({ held: null }),
+  swingAt: (key, icon, x, y) => {
+    if (prefersReducedMotion()) return
+    set({ swing: { key, icon, x, y, n: (get().swing?.n ?? 0) + 1 } })
+  },
+  endSwing: () => set({ swing: null }),
 }))

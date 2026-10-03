@@ -360,8 +360,9 @@ function DropList({
 
 type GroupBlock = { key: string; group: DropGroup; rows: SourceDrop[] }
 
-/** The rows with the rows of each drop group (of the same source) together, at the place of the
- * group's first row; a group with a single row here stays a plain row. */
+/** The rows of each drop group (of the same source) together: first all rows without a group (in
+ * their order), then the groups (in the order of their first row); a group with a single row here
+ * stays a plain row. */
 function withGroups(data: GameData, rows: SourceDrop[], difficulty: Difficulty): (SourceDrop | GroupBlock)[] {
   const blocks = new Map<string, GroupBlock>()
   const out: (SourceDrop | GroupBlock)[] = []
@@ -381,7 +382,8 @@ function withGroups(data: GameData, rows: SourceDrop[], difficulty: Difficulty):
       out.push(b)
     }
   }
-  return out.flatMap((b) => ('group' in b && b.rows.length < 2 ? b.rows : [b]))
+  const flat = out.flatMap((b) => ('group' in b && b.rows.length < 2 ? b.rows : [b]))
+  return [...flat.filter((b) => !('group' in b)), ...flat.filter((b) => 'group' in b)]
 }
 
 function DropRow({

@@ -14125,7 +14125,7 @@
     "tooltip": "It smells funny...",
     "conditions": [],
     "set": "clothier-s-set",
-    "milestone": "start",
+    "milestone": "skeletron",
     "milestoneVia": "Dropped by Clothier"
   },
   {
@@ -70820,7 +70820,7 @@
     "autoswing": false,
     "useTime": 20,
     "debuff": "Chaos State",
-    "tooltip": "Teleports you to the position of the cursor\nCauses the chaos state ()\nTeleports you to the position of the cursor ()",
+    "tooltip": "Teleports you to the position of the cursor\nCauses the chaos state ({icon:desktop})\nTeleports you to the position of the cursor ({icon:mobile})",
     "conditions": [],
     "milestone": "wall-of-flesh",
     "milestoneVia": "Dropped by Chaos Elemental"
@@ -94454,7 +94454,7 @@
     "consumable": false,
     "placeable": false,
     "autoswing": false,
-    "tooltip": "Right click to open\nPress LT to open\nPress R1 to open\nPress ZR to open\nPress ZL to open\nDouble tap to open\nTap to open the present!",
+    "tooltip": "{icon:desktop} Right click to open\n{icon:xbox} Press LT to open\n{icon:playstation} Press R1 to open\n{icon:wiiu} Press ZR to open\n{icon:switch} Press ZL to open\n{icon:mobile} Double tap to open\n{icon:3ds} Tap to open the present!",
     "conditions": [],
     "milestone": "start",
     "milestoneVia": "Dropped by enemies"
@@ -99140,7 +99140,7 @@
     "useTime": 15,
     "placedWidth": 1,
     "placedHeight": 1,
-    "tooltip": "Right click to open\nPress Up/Down to cycle through placement styles\nPress LT to open\nPress R1 to open\nPress ZL to open\nDouble tap to open",
+    "tooltip": "{icon:desktop} Right click to open\nPress Up/Down to cycle through placement styles\n{icon:xbox} Press LT to open\n{icon:playstation} Press R1 to open\n{icon:switch} Press ZL to open\n{icon:mobile} Double tap to open",
     "eventOnly": true,
     "conditions": [],
     "milestone": "plantera",
@@ -122864,7 +122864,7 @@
     "useTime": 15,
     "placedWidth": 2,
     "placedHeight": 2,
-    "tooltip": "Right click to open /\nL2 to open () /\nLT to open () /\nZL to open () /\nDouble tap to open",
+    "tooltip": "{icon:desktop} Right click to open /\n{icon:console} L2 to open ({icon:playstation}) /\nLT to open ({icon:xbox-one}) /\nZL to open ({icon:switch}) /\n{icon:mobile} Double tap to open",
     "conditions": [],
     "milestone": "start",
     "milestoneVia": "Fished"
@@ -122919,7 +122919,7 @@
     "useTime": 15,
     "placedWidth": 2,
     "placedHeight": 2,
-    "tooltip": "Right click to open /\nL2 to open () /\nLT to open () /\nZL to open () /\nDouble tap to open",
+    "tooltip": "{icon:desktop} Right click to open /\n{icon:console} L2 to open ({icon:playstation}) /\nLT to open ({icon:xbox-one}) /\nZL to open ({icon:switch}) /\n{icon:mobile} Double tap to open",
     "conditions": [],
     "milestone": "start",
     "milestoneVia": "Fished"
@@ -122941,14 +122941,11 @@
       "other-furniture"
     ],
     "obtain": [
-      "drop",
       "fishing",
       "shimmer"
     ],
     "vendors": [],
-    "events": [
-      "pirate-invasion"
-    ],
+    "events": [],
     "biomes": [],
     "times": [],
     "platforms": [
@@ -122977,7 +122974,7 @@
     "useTime": 15,
     "placedWidth": 2,
     "placedHeight": 2,
-    "tooltip": "Right click to open /\nL2 to open () /\nLT to open () /\nZL to open () /\nDouble tap to open",
+    "tooltip": "{icon:desktop} Right click to open /\n{icon:console} L2 to open ({icon:playstation}) /\nLT to open ({icon:xbox-one}) /\nZL to open ({icon:switch}) /\n{icon:mobile} Double tap to open",
     "conditions": [],
     "milestone": "start",
     "milestoneVia": "Fished"
@@ -166674,7 +166671,7 @@
     "useTime": 15,
     "placedWidth": 2,
     "placedHeight": 2,
-    "tooltip": "Right click to open /\nL2 to open () /\nLT to open () /\nZL to open () /\nDouble tap to open",
+    "tooltip": "{icon:desktop} Right click to open /\n{icon:console} L2 to open ({icon:playstation}) /\nLT to open ({icon:xbox-one}) /\nZL to open ({icon:switch}) /\n{icon:mobile} Double tap to open",
     "conditions": [],
     "milestone": "start",
     "milestoneVia": "Fished"
@@ -166726,7 +166723,7 @@
     "useTime": 15,
     "placedWidth": 2,
     "placedHeight": 2,
-    "tooltip": "Right click to open /\nL2 to open () /\nLT to open () /\nZL to open () /\nDouble tap to open",
+    "tooltip": "{icon:desktop} Right click to open /\n{icon:console} L2 to open ({icon:playstation}) /\nLT to open ({icon:xbox-one}) /\nZL to open ({icon:switch}) /\n{icon:mobile} Double tap to open",
     "conditions": [],
     "milestone": "start",
     "milestoneVia": "Fished"
@@ -166778,7 +166775,7 @@
     "useTime": 15,
     "placedWidth": 2,
     "placedHeight": 2,
-    "tooltip": "Right click to open /\nL2 to open () /\nLT to open () /\nZL to open () /\nDouble tap to open",
+    "tooltip": "{icon:desktop} Right click to open /\n{icon:console} L2 to open ({icon:playstation}) /\nLT to open ({icon:xbox-one}) /\nZL to open ({icon:switch}) /\n{icon:mobile} Double tap to open",
     "conditions": [],
     "milestone": "wall-of-flesh",
     "milestoneVia": "Hardmode item"
@@ -166830,7 +166827,7 @@
     "useTime": 15,
     "placedWidth": 2,
     "placedHeight": 2,
-    "tooltip": "Right click to open /\nL2 to open () /\nLT to open () /\nZL to open () /\nDouble tap to open",
+    "tooltip": "{icon:desktop} Right click to open /\n{icon:console} L2 to open ({icon:playstation}) /\nLT to open ({icon:xbox-one}) /\nZL to open ({icon:switch}) /\n{icon:mobile} Double tap to open",
     "conditions": [],
     "milestone": "start",
     "milestoneVia": "Fished"
@@ -166882,7 +166879,7 @@
     "useTime": 15,
     "placedWidth": 2,
     "placedHeight": 2,
-    "tooltip": "Right click to open /\nL2 to open () /\nLT to open () /\nZL to open () /\nDouble tap to open",
+    "tooltip": "{icon:desktop} Right click to open /\n{icon:console} L2 to open ({icon:playstation}) /\nLT to open ({icon:xbox-one}) /\nZL to open ({icon:switch}) /\n{icon:mobile} Double tap to open",
     "conditions": [],
     "milestone": "wall-of-flesh",
     "milestoneVia": "Hardmode item"
@@ -166934,7 +166931,7 @@
     "useTime": 15,
     "placedWidth": 2,
     "placedHeight": 2,
-    "tooltip": "Right click to open /\nL2 to open () /\nLT to open () /\nZL to open () /\nDouble tap to open",
+    "tooltip": "{icon:desktop} Right click to open /\n{icon:console} L2 to open ({icon:playstation}) /\nLT to open ({icon:xbox-one}) /\nZL to open ({icon:switch}) /\n{icon:mobile} Double tap to open",
     "conditions": [],
     "milestone": "start",
     "milestoneVia": "Fished"
@@ -167974,13 +167971,10 @@
       "decoration"
     ],
     "obtain": [
-      "drop",
       "player-death"
     ],
     "vendors": [],
-    "events": [
-      "pirate-invasion"
-    ],
+    "events": [],
     "biomes": [],
     "times": [],
     "platforms": [
@@ -168005,7 +167999,6 @@
     "useTime": 15,
     "placedWidth": 2,
     "placedHeight": 2,
-    "eventOnly": true,
     "conditions": [],
     "milestone": "start",
     "milestoneVia": "Player death"
@@ -168025,13 +168018,10 @@
       "decoration"
     ],
     "obtain": [
-      "drop",
       "player-death"
     ],
     "vendors": [],
-    "events": [
-      "pirate-invasion"
-    ],
+    "events": [],
     "biomes": [],
     "times": [],
     "platforms": [
@@ -168056,7 +168046,6 @@
     "useTime": 15,
     "placedWidth": 2,
     "placedHeight": 2,
-    "eventOnly": true,
     "conditions": [],
     "milestone": "start",
     "milestoneVia": "Player death"
@@ -168076,13 +168065,10 @@
       "decoration"
     ],
     "obtain": [
-      "drop",
       "player-death"
     ],
     "vendors": [],
-    "events": [
-      "pirate-invasion"
-    ],
+    "events": [],
     "biomes": [],
     "times": [],
     "platforms": [
@@ -168107,7 +168093,6 @@
     "useTime": 15,
     "placedWidth": 2,
     "placedHeight": 2,
-    "eventOnly": true,
     "conditions": [],
     "milestone": "start",
     "milestoneVia": "Player death"
@@ -168127,13 +168112,10 @@
       "decoration"
     ],
     "obtain": [
-      "drop",
       "player-death"
     ],
     "vendors": [],
-    "events": [
-      "pirate-invasion"
-    ],
+    "events": [],
     "biomes": [],
     "times": [],
     "platforms": [
@@ -168158,7 +168140,6 @@
     "useTime": 15,
     "placedWidth": 2,
     "placedHeight": 2,
-    "eventOnly": true,
     "conditions": [],
     "milestone": "start",
     "milestoneVia": "Player death"
@@ -168178,13 +168159,10 @@
       "decoration"
     ],
     "obtain": [
-      "drop",
       "player-death"
     ],
     "vendors": [],
-    "events": [
-      "pirate-invasion"
-    ],
+    "events": [],
     "biomes": [],
     "times": [],
     "platforms": [
@@ -168209,7 +168187,6 @@
     "useTime": 15,
     "placedWidth": 2,
     "placedHeight": 2,
-    "eventOnly": true,
     "conditions": [],
     "milestone": "start",
     "milestoneVia": "Player death"
@@ -197886,7 +197863,7 @@
     "debuff": "Confused^Tipsy",
     "tooltip": "69% chance to save ammo",
     "conditions": [],
-    "milestone": "start",
+    "milestone": "evil-boss",
     "milestoneVia": "Dropped by Tavernkeep"
   },
   {
@@ -205914,7 +205891,7 @@
     "useTime": 15,
     "placedWidth": 2,
     "placedHeight": 2,
-    "tooltip": "Right click to open /\nL2 to open () /\nLT to open () /\nZL to open () /\nDouble tap to open",
+    "tooltip": "{icon:desktop} Right click to open /\n{icon:console} L2 to open ({icon:playstation}) /\nLT to open ({icon:xbox-one}) /\nZL to open ({icon:switch}) /\n{icon:mobile} Double tap to open",
     "conditions": [],
     "milestone": "wall-of-flesh",
     "milestoneVia": "Hardmode item"
@@ -205965,7 +205942,7 @@
     "useTime": 15,
     "placedWidth": 2,
     "placedHeight": 2,
-    "tooltip": "Right click to open /\nL2 to open () /\nLT to open () /\nZL to open () /\nDouble tap to open",
+    "tooltip": "{icon:desktop} Right click to open /\n{icon:console} L2 to open ({icon:playstation}) /\nLT to open ({icon:xbox-one}) /\nZL to open ({icon:switch}) /\n{icon:mobile} Double tap to open",
     "conditions": [],
     "milestone": "wall-of-flesh",
     "milestoneVia": "Hardmode item"
@@ -206016,7 +205993,7 @@
     "useTime": 15,
     "placedWidth": 2,
     "placedHeight": 2,
-    "tooltip": "Right click to open /\nL2 to open () /\nLT to open () /\nZL to open () /\nDouble tap to open",
+    "tooltip": "{icon:desktop} Right click to open /\n{icon:console} L2 to open ({icon:playstation}) /\nLT to open ({icon:xbox-one}) /\nZL to open ({icon:switch}) /\n{icon:mobile} Double tap to open",
     "conditions": [],
     "milestone": "wall-of-flesh",
     "milestoneVia": "Hardmode item"
@@ -206067,7 +206044,7 @@
     "useTime": 15,
     "placedWidth": 2,
     "placedHeight": 2,
-    "tooltip": "Right click to open /\nL2 to open () /\nLT to open () /\nZL to open () /\nDouble tap to open",
+    "tooltip": "{icon:desktop} Right click to open /\n{icon:console} L2 to open ({icon:playstation}) /\nLT to open ({icon:xbox-one}) /\nZL to open ({icon:switch}) /\n{icon:mobile} Double tap to open",
     "conditions": [],
     "milestone": "wall-of-flesh",
     "milestoneVia": "Hardmode item"
@@ -206118,7 +206095,7 @@
     "useTime": 15,
     "placedWidth": 2,
     "placedHeight": 2,
-    "tooltip": "Right click to open /\nL2 to open () /\nLT to open () /\nZL to open () /\nDouble tap to open",
+    "tooltip": "{icon:desktop} Right click to open /\n{icon:console} L2 to open ({icon:playstation}) /\nLT to open ({icon:xbox-one}) /\nZL to open ({icon:switch}) /\n{icon:mobile} Double tap to open",
     "conditions": [],
     "milestone": "wall-of-flesh",
     "milestoneVia": "Hardmode item"
@@ -206169,7 +206146,7 @@
     "useTime": 15,
     "placedWidth": 2,
     "placedHeight": 2,
-    "tooltip": "Right click to open /\nL2 to open () /\nLT to open () /\nZL to open () /\nDouble tap to open",
+    "tooltip": "{icon:desktop} Right click to open /\n{icon:console} L2 to open ({icon:playstation}) /\nLT to open ({icon:xbox-one}) /\nZL to open ({icon:switch}) /\n{icon:mobile} Double tap to open",
     "conditions": [],
     "milestone": "wall-of-flesh",
     "milestoneVia": "Hardmode item"
@@ -206220,7 +206197,7 @@
     "useTime": 15,
     "placedWidth": 2,
     "placedHeight": 2,
-    "tooltip": "Right click to open /\nL2 to open () /\nLT to open () /\nZL to open () /\nDouble tap to open",
+    "tooltip": "{icon:desktop} Right click to open /\n{icon:console} L2 to open ({icon:playstation}) /\nLT to open ({icon:xbox-one}) /\nZL to open ({icon:switch}) /\n{icon:mobile} Double tap to open",
     "conditions": [],
     "milestone": "wall-of-flesh",
     "milestoneVia": "Hardmode item"
@@ -206271,7 +206248,7 @@
     "useTime": 15,
     "placedWidth": 2,
     "placedHeight": 2,
-    "tooltip": "Right click to open /\nL2 to open () /\nLT to open () /\nZL to open () /\nDouble tap to open",
+    "tooltip": "{icon:desktop} Right click to open /\n{icon:console} L2 to open ({icon:playstation}) /\nLT to open ({icon:xbox-one}) /\nZL to open ({icon:switch}) /\n{icon:mobile} Double tap to open",
     "conditions": [],
     "milestone": "wall-of-flesh",
     "milestoneVia": "Hardmode item"
@@ -206322,7 +206299,7 @@
     "useTime": 15,
     "placedWidth": 2,
     "placedHeight": 2,
-    "tooltip": "Right click to open /\nL2 to open () /\nLT to open () /\nZL to open () /\nDouble tap to open",
+    "tooltip": "{icon:desktop} Right click to open /\n{icon:console} L2 to open ({icon:playstation}) /\nLT to open ({icon:xbox-one}) /\nZL to open ({icon:switch}) /\n{icon:mobile} Double tap to open",
     "conditions": [],
     "milestone": "wall-of-flesh",
     "milestoneVia": "Hardmode item"
@@ -225421,7 +225398,7 @@
     "conditions": [
       "npc-name-whitney"
     ],
-    "milestone": "wall-of-flesh",
+    "milestone": "any-mech",
     "milestoneVia": "Dropped by Steampunker"
   },
   {
@@ -227049,7 +227026,7 @@
     "useTime": 15,
     "placedWidth": 2,
     "placedHeight": 2,
-    "tooltip": "Right click to open /\nL2 to open () /\nLT to open () /\nZL to open () /\nDouble tap to open",
+    "tooltip": "{icon:desktop} Right click to open /\n{icon:console} L2 to open ({icon:playstation}) /\nLT to open ({icon:xbox-one}) /\nZL to open ({icon:switch}) /\n{icon:mobile} Double tap to open",
     "conditions": [],
     "milestone": "start",
     "milestoneVia": "Fished"
@@ -227100,7 +227077,7 @@
     "useTime": 15,
     "placedWidth": 2,
     "placedHeight": 2,
-    "tooltip": "Right click to open /\nL2 to open () /\nLT to open () /\nZL to open () /\nDouble tap to open",
+    "tooltip": "{icon:desktop} Right click to open /\n{icon:console} L2 to open ({icon:playstation}) /\nLT to open ({icon:xbox-one}) /\nZL to open ({icon:switch}) /\n{icon:mobile} Double tap to open",
     "conditions": [],
     "milestone": "wall-of-flesh",
     "milestoneVia": "Hardmode item"
@@ -227152,7 +227129,7 @@
     "useTime": 15,
     "placedWidth": 2,
     "placedHeight": 2,
-    "tooltip": "Right click to open /\nL2 to open () /\nLT to open () /\nZL to open () /\nDouble tap to open",
+    "tooltip": "{icon:desktop} Right click to open /\n{icon:console} L2 to open ({icon:playstation}) /\nLT to open ({icon:xbox-one}) /\nZL to open ({icon:switch}) /\n{icon:mobile} Double tap to open",
     "conditions": [],
     "milestone": "start",
     "milestoneVia": "Fished"
@@ -227203,7 +227180,7 @@
     "useTime": 15,
     "placedWidth": 2,
     "placedHeight": 2,
-    "tooltip": "Right click to open /\nL2 to open () /\nLT to open () /\nZL to open () /\nDouble tap to open",
+    "tooltip": "{icon:desktop} Right click to open /\n{icon:console} L2 to open ({icon:playstation}) /\nLT to open ({icon:xbox-one}) /\nZL to open ({icon:switch}) /\n{icon:mobile} Double tap to open",
     "conditions": [],
     "milestone": "wall-of-flesh",
     "milestoneVia": "Hardmode item"
@@ -247807,7 +247784,7 @@
     "useTime": 15,
     "tooltip": "'For fixing things, and breaking them'",
     "conditions": [],
-    "milestone": "start",
+    "milestone": "skeletron",
     "milestoneVia": "Dropped by Mechanic"
   },
   {
@@ -250628,7 +250605,7 @@
     "useTime": 15,
     "placedWidth": 2,
     "placedHeight": 2,
-    "tooltip": "Right click to open /\nL2 to open () /\nLT to open () /\nZL to open () /\nDouble tap to open",
+    "tooltip": "{icon:desktop} Right click to open /\n{icon:console} L2 to open ({icon:playstation}) /\nLT to open ({icon:xbox-one}) /\nZL to open ({icon:switch}) /\n{icon:mobile} Double tap to open",
     "conditions": [],
     "milestone": "start",
     "milestoneVia": "Fished"
@@ -250679,7 +250656,7 @@
     "useTime": 15,
     "placedWidth": 2,
     "placedHeight": 2,
-    "tooltip": "Right click to open /\nL2 to open () /\nLT to open () /\nZL to open () /\nDouble tap to open",
+    "tooltip": "{icon:desktop} Right click to open /\n{icon:console} L2 to open ({icon:playstation}) /\nLT to open ({icon:xbox-one}) /\nZL to open ({icon:switch}) /\n{icon:mobile} Double tap to open",
     "conditions": [],
     "milestone": "wall-of-flesh",
     "milestoneVia": "Hardmode item"
@@ -256901,7 +256878,7 @@
     "useTime": 15,
     "placedWidth": 2,
     "placedHeight": 2,
-    "tooltip": "Right click to open /\nL2 to open () /\nLT to open () /\nZL to open () /\nDouble tap to open",
+    "tooltip": "{icon:desktop} Right click to open /\n{icon:console} L2 to open ({icon:playstation}) /\nLT to open ({icon:xbox-one}) /\nZL to open ({icon:switch}) /\n{icon:mobile} Double tap to open",
     "conditions": [],
     "milestone": "start",
     "milestoneVia": "Fished"
@@ -256952,7 +256929,7 @@
     "useTime": 15,
     "placedWidth": 2,
     "placedHeight": 2,
-    "tooltip": "Right click to open /\nL2 to open () /\nLT to open () /\nZL to open () /\nDouble tap to open",
+    "tooltip": "{icon:desktop} Right click to open /\n{icon:console} L2 to open ({icon:playstation}) /\nLT to open ({icon:xbox-one}) /\nZL to open ({icon:switch}) /\n{icon:mobile} Double tap to open",
     "conditions": [],
     "milestone": "wall-of-flesh",
     "milestoneVia": "Hardmode item"
