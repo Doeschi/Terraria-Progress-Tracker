@@ -3282,7 +3282,7 @@
       "crafting-material"
     ],
     "subcategories": [
-      "potion-ingredient"
+      "other-crafting-material"
     ],
     "obtain": [
       "plunder"
@@ -3785,8 +3785,7 @@
       "crafting-material"
     ],
     "subcategories": [
-      "enemy-drop",
-      "potion-ingredient"
+      "enemy-drop"
     ],
     "obtain": [
       "drop"
@@ -28273,8 +28272,7 @@
       "crafting-material"
     ],
     "subcategories": [
-      "enemy-drop",
-      "potion-ingredient"
+      "enemy-drop"
     ],
     "obtain": [
       "drop"
@@ -127965,8 +127963,7 @@
       "other-block"
     ],
     "obtain": [
-      "crafted",
-      "quest-reward"
+      "crafted"
     ],
     "vendors": [],
     "events": [],
@@ -128000,7 +127997,7 @@
     "placedHeight": 1,
     "conditions": [],
     "milestone": "start",
-    "milestoneVia": "Angler quest reward"
+    "milestoneVia": "Crafted"
   },
   {
     "key": "BlueJellyfish",
@@ -128513,7 +128510,8 @@
       "trophy-relic"
     ],
     "obtain": [
-      "drop"
+      "drop",
+      "quest-reward"
     ],
     "vendors": [],
     "events": [],
@@ -128564,7 +128562,8 @@
       "trophy-relic"
     ],
     "obtain": [
-      "drop"
+      "drop",
+      "quest-reward"
     ],
     "vendors": [],
     "events": [],
@@ -128615,7 +128614,8 @@
       "trophy-relic"
     ],
     "obtain": [
-      "drop"
+      "drop",
+      "quest-reward"
     ],
     "vendors": [],
     "events": [],
@@ -128666,7 +128666,8 @@
       "trophy-relic"
     ],
     "obtain": [
-      "drop"
+      "drop",
+      "quest-reward"
     ],
     "vendors": [],
     "events": [],
@@ -130845,7 +130846,7 @@
       "wings"
     ],
     "obtain": [
-      "other"
+      "quest-reward"
     ],
     "vendors": [],
     "events": [],
@@ -140010,6 +140011,7 @@
     "subcategories": [],
     "obtain": [
       "bag",
+      "quest-reward",
       "extractinator",
       "extractinator-regular",
       "chlorophyte-extractinator"
@@ -140060,6 +140062,7 @@
     "subcategories": [],
     "obtain": [
       "bag",
+      "quest-reward",
       "extractinator",
       "extractinator-regular",
       "chlorophyte-extractinator"
@@ -140110,7 +140113,8 @@
     "subcategories": [],
     "obtain": [
       "drop",
-      "bag"
+      "bag",
+      "quest-reward"
     ],
     "vendors": [],
     "events": [],
@@ -150699,7 +150703,7 @@
       "crafting-material"
     ],
     "subcategories": [
-      "potion-ingredient"
+      "other-crafting-material"
     ],
     "obtain": [
       "plunder"
@@ -270410,7 +270414,8 @@
       "trophy-relic"
     ],
     "obtain": [
-      "drop"
+      "drop",
+      "quest-reward"
     ],
     "vendors": [],
     "events": [],
@@ -272350,7 +272355,7 @@
       "other-tool"
     ],
     "obtain": [
-      "other"
+      "quest-reward"
     ],
     "vendors": [],
     "events": [],
@@ -272380,7 +272385,8 @@
     "rangeBonus": 2,
     "tooltip": "Capable of soaking up an endless amount of honey",
     "conditions": [],
-    "milestone": "start"
+    "milestone": "start",
+    "milestoneVia": "Angler quest reward"
   },
   {
     "key": "UltraAbsorbantSponge",
@@ -274348,8 +274354,8 @@
       "npc-present",
       "after-plantera"
     ],
-    "milestone": "plantera",
-    "milestoneVia": "Sold by the Painter"
+    "milestone": "skeletron",
+    "milestoneVia": "Sold by the Painter in a Graveyard while the Mechanic is present"
   },
   {
     "key": "EchoMonolith",
@@ -281773,12 +281779,10 @@
     "url": "https://terraria.wiki.gg/wiki/Jungle_Juice",
     "icon": "https://terraria.wiki.gg/images/Jungle_Juice.png",
     "categories": [
-      "potion",
-      "crafting-material"
+      "potion"
     ],
     "subcategories": [
-      "healing",
-      "potion-ingredient"
+      "healing"
     ],
     "obtain": [
       "crafted"

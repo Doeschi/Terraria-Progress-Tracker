@@ -515,7 +515,7 @@
     "id": "potion-ingredient",
     "name": "Other potion ingredients",
     "icon": "https://terraria.wiki.gg/images/Daybloom.png",
-    "count": 48,
+    "count": 43,
     "parent": "crafting-material"
   },
   {
@@ -851,8 +851,8 @@
   {
     "id": "other-crafting-material",
     "name": "Other crafting materials",
-    "icon": "https://terraria.wiki.gg/images/Vile_Powder.png",
-    "count": 91,
+    "icon": "https://terraria.wiki.gg/images/Vile_Mushroom.png",
+    "count": 93,
     "parent": "crafting-material",
     "fallback": true
   },

@@ -39,7 +39,7 @@
     "id": "skeletron",
     "name": "Skeletron",
     "icon": "https://terraria.wiki.gg/images/Map_Icon_Skeletron.png",
-    "count": 193
+    "count": 194
   },
   {
     "id": "wall-of-flesh",
@@ -69,7 +69,7 @@
     "id": "plantera",
     "name": "Plantera",
     "icon": "https://terraria.wiki.gg/images/Map_Icon_Plantera_%28first_form%29.png",
-    "count": 226
+    "count": 225
   },
   {
     "id": "golem",

@@ -157,14 +157,22 @@ export interface AlmostDone {
 /**
  * The options closest to completion over the whole playthrough (`totals`, without filters):
  * highest percentage first, then fewer missing; at least `min` items, started, not complete,
- * not hidden. Subgroups count on their own.
+ * not hidden, not left out of "Almost done" (`skipped`). With "Only filters with matches" the ones
+ * of these without matches are not shown (no others fill up). Subgroups count on their own.
  */
-export function almostDone(groups: AnyGroup[], totals: AnyFacets, place: Placement, count = 5, min = 5): AlmostDone[] {
+export function almostDone(
+  groups: AnyGroup[],
+  totals: AnyFacets,
+  place: Placement,
+  count = 5,
+  skipped: (group: string, id: string) => boolean = () => false,
+  min = 5,
+): AlmostDone[] {
   const out: (AlmostDone & { t: Tally })[] = []
   const consider = (group: AnyGroup, entry: FilterEntry, parent?: FilterEntry) => {
     const t = totals[group.key]?.get(entry.id)
     if (!t || t.total < min || t.obtained === 0 || t.obtained === t.total) return
-    if (place.isHidden(group.key, entry.id)) return
+    if (place.isHidden(group.key, entry.id) || skipped(group.key, entry.id)) return
     out.push({ group, entry, parent, t })
   }
   for (const g of groups) {
@@ -175,12 +183,17 @@ export function almostDone(groups: AnyGroup[], totals: AnyFacets, place: Placeme
     }
   }
   const missing = (t: Tally) => t.total - t.obtained
-  return out
-    .sort(
-      (a, b) =>
-        b.t.obtained / b.t.total - a.t.obtained / a.t.total ||
-        missing(a.t) - missing(b.t) ||
-        a.entry.name.localeCompare(b.entry.name),
-    )
-    .slice(0, count)
+  return (
+    out
+      .sort(
+        (a, b) =>
+          b.t.obtained / b.t.total - a.t.obtained / a.t.total ||
+          missing(a.t) - missing(b.t) ||
+          a.entry.name.localeCompare(b.entry.name),
+      )
+      .slice(0, count)
+      // "Only filters with matches" (FL19): rows without items for the current filters and search are
+      // left out - after picking, so the list itself stays independent of the filters
+      .filter((x) => place.exists(x.group.key, x.entry.id))
+  )
 }

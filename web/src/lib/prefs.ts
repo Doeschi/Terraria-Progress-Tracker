@@ -172,8 +172,13 @@ interface Prefs {
   chestScopes: Record<string, ScanScope>
   /** filter options moved to the "Hidden" section: "<prefix><group>/<id>" */
   hiddenFilters: string[]
+  /** options left out of "Almost done" ("<prefix><group>/<id>", FL15); they stay in their group */
+  almostDoneSkipped: string[]
   /** move options at 100% to the "Completed" section */
   hideCompleted: boolean
+  /** filter sidebars: options without matching items (filters, search) are left out instead of
+   * grayed out (FL19) */
+  onlyMatchingFilters: boolean
   progressionMode: ProgressionMode
   /** item, bestiary and chest search: typos allowed or the exact text */
   searchMode: SearchMode
@@ -197,7 +202,11 @@ interface PrefsActions {
   setSyncScope(playthroughId: string, scope: ScanScope): void
   setChestScope(playthroughId: string, scope: ScanScope): void
   toggleHiddenFilter(key: string): void
+  toggleAlmostDoneSkip(key: string): void
+  /** brings back every left-out option of one sidebar ("" items, "bestiary:") */
+  clearAlmostDoneSkips(prefix: string): void
   setHideCompleted(hide: boolean): void
+  setOnlyMatchingFilters(only: boolean): void
   setProgressionMode(mode: ProgressionMode): void
   setSearchMode(mode: SearchMode): void
   setSearchNpcs(on: boolean): void
@@ -224,7 +233,9 @@ function load(): Prefs {
     syncScopes: {},
     chestScopes: {},
     hiddenFilters: [],
+    almostDoneSkipped: [],
     hideCompleted: true,
+    onlyMatchingFilters: false,
     progressionMode: 'upTo',
     searchMode: 'fuzzy',
     searchNpcs: true,
@@ -255,7 +266,10 @@ function load(): Prefs {
     if (p && typeof p.chestScopes === 'object') prefs.chestScopes = p.chestScopes
     if (Array.isArray(p.hiddenFilters))
       prefs.hiddenFilters = p.hiddenFilters.filter((k: unknown) => typeof k === 'string')
+    if (Array.isArray(p.almostDoneSkipped))
+      prefs.almostDoneSkipped = p.almostDoneSkipped.filter((k: unknown) => typeof k === 'string')
     if (typeof p.hideCompleted === 'boolean') prefs.hideCompleted = p.hideCompleted
+    if (typeof p.onlyMatchingFilters === 'boolean') prefs.onlyMatchingFilters = p.onlyMatchingFilters
     if (p.progressionMode === 'upTo' || p.progressionMode === 'exactly') prefs.progressionMode = p.progressionMode
     if (p.searchMode === 'fuzzy' || p.searchMode === 'exact') prefs.searchMode = p.searchMode
     if (typeof p.searchNpcs === 'boolean') prefs.searchNpcs = p.searchNpcs
@@ -294,11 +308,23 @@ export const usePrefs = create<Prefs & PrefsActions>()((set, get) => {
     setAutosave: (autosave) => update({ autosave }),
     setSyncScope: (id, scope) => update({ syncScopes: { ...get().syncScopes, [id]: scope } }),
     setChestScope: (id, scope) => update({ chestScopes: { ...get().chestScopes, [id]: scope } }),
+    toggleAlmostDoneSkip: (key) => {
+      const list = get().almostDoneSkipped
+      update({ almostDoneSkipped: list.includes(key) ? list.filter((k) => k !== key) : [...list, key] })
+    },
+    clearAlmostDoneSkips: (prefix) =>
+      update({
+        // the item sidebar's keys have no prefix: keep only the bestiary's then, and the other way round
+        almostDoneSkipped: get().almostDoneSkipped.filter((k) =>
+          prefix ? !k.startsWith(prefix) : k.startsWith('bestiary:'),
+        ),
+      }),
     toggleHiddenFilter: (key) => {
       const list = get().hiddenFilters
       update({ hiddenFilters: list.includes(key) ? list.filter((k) => k !== key) : [...list, key] })
     },
     setHideCompleted: (hideCompleted) => update({ hideCompleted }),
+    setOnlyMatchingFilters: (onlyMatchingFilters) => update({ onlyMatchingFilters }),
     setProgressionMode: (progressionMode) => update({ progressionMode }),
     setSearchMode: (searchMode) => update({ searchMode }),
     setSearchNpcs: (searchNpcs) => update({ searchNpcs }),

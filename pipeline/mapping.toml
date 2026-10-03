@@ -762,7 +762,10 @@ name = "Other potion ingredients"
 parent = "crafting-material"
 icon = "Daybloom"
 match = ["tag:potion ingredients", "listcat:potion ingredients"]
-exclude = ["listcat:fished items"]  # in "Fish"
+# fish are in "Fish"; the wiki also tags items that are in no potion recipe (anymore): Jungle Juice
+# (a drink), Unicorn Horn and Worm Tooth (arrows), Vicious / Vile Mushroom (powders)
+exclude = ["listcat:fished items", "page:jungle juice", "page:unicorn horn", "page:worm tooth",
+           "page:vicious mushroom", "page:vile mushroom"]
 
 [subcategories.thread-cloth]
 name = "Threads & cloth"
@@ -1140,6 +1143,8 @@ match = ["tag:fished", "listcat:fished items", "tag:quest fish"]
 name = "Angler quest reward"
 icon_file = "Angler.png"
 match = ["tag:quest rewards", "listcat:quest rewards"]
+# the wiki's tag is left over: no longer from the Angler since 1.4.0.1, crafted instead
+exclude = ["page:coralstone block"]
 
 # The wiki tags the Dye Trader's rewards for Strange Plants as "quest rewards" too.
 # They are listed in the section `section` of `page` ({{item|...}}), grouped under
@@ -2052,7 +2057,9 @@ after-all-mechs = "all-mechs"
 "Dungeon Spirit" = "plantera"
 "Giant Cursed Skull" = "plantera"
 
-# Minimum milestone of items the data cannot tell (name patterns, "*" at the end = prefix).
+# Milestones of items the data cannot tell (name patterns, "*" at the end = prefix): a minimum
+# ("not before"), or with override = true the exact milestone (when the wiki's conditions read too
+# strict, e.g. alternatives as if both were needed).
 [milestone_items]
 "Hellstone" = { milestone = "evil-boss", reason = "mined (needs a Nightmare Pickaxe / Deathbringer Pickaxe)" }
 "Chlorophyte Ore" = { milestone = "all-mechs", reason = "mined (needs a Pickaxe Axe / Drax)" }
@@ -2061,6 +2068,9 @@ after-all-mechs = "all-mechs"
 "Life Fruit" = { milestone = "any-mech", reason = "grows after any mechanical boss" }
 # crafted from Chlorophyte Bars (the wiki tags it "plunder", which would make it a plain Hardmode item)
 "Chlorophyte Extractinator" = { milestone = "all-mechs", reason = "crafted – needs Chlorophyte Bars" }
+# the Painter sells it in a Graveyard while the Mechanic (rescued after Skeletron) is present; the
+# wiki's row also names "after Plantera" (then without the Mechanic), read as both together
+"Echo Coating" = { milestone = "skeletron", reason = "sold by the Painter in a Graveyard while the Mechanic is present", override = true }
 
 
 # --------------------------------------------------------------------- flags
@@ -2572,6 +2582,17 @@ keys = [
 # Items without a `type` on the wiki.
 
 [manual]
+# Angler quest rewards the wiki does not tag (the rewards on the Angler page, on shared pages)
+"Fin Wings" = ["obtain:quest-reward"]
+"Honey Absorbant Sponge" = ["obtain:quest-reward"]
+"Apprentice Bait" = ["obtain:quest-reward"]
+"Journeyman Bait" = ["obtain:quest-reward"]
+"Master Bait" = ["obtain:quest-reward"]
+"Bunnyfish Trophy" = ["obtain:quest-reward"]
+"Goldfish Trophy" = ["obtain:quest-reward"]
+"Sharkteeth Trophy" = ["obtain:quest-reward"]
+"Swordfish Trophy" = ["obtain:quest-reward"]
+"Silent Fish" = ["obtain:quest-reward"]
 # developer items by name: the developer wings sit on the shared "Wings" page without
 # the developer tag (Jim's Cap is excluded in [categories.developer])
 "Red's *" = ["categories:developer"]

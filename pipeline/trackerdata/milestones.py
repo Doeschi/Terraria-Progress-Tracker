@@ -39,6 +39,9 @@ class Milestones:
         self.item_rules = [(norm_name(p), m if isinstance(m, str) else m["milestone"],
                             None if isinstance(m, str) else m.get("reason"))
                            for p, m in mapping.milestone_items.items()]
+        # rules with override = true set the milestone exactly (also earlier than the sources say)
+        self.item_overrides = {norm_name(p) for p, m in mapping.milestone_items.items()
+                               if isinstance(m, dict) and m.get("override")}
         self.item_rules_used = set()
         for mid in [*self.boss_milestone.values(), *self.event_milestone.values(),
                     *self.condition_milestone.values(), *self.vendor_milestone.values(),
@@ -99,14 +102,16 @@ class Milestones:
         """Set item["milestone"] and item["milestoneVia"] (reason)."""
         by_key = {i["key"]: i for i in items}
         inf = len(self.order)
-        floor = {}
+        floor, fixed = {}, {}
         for item in items:
             value, reason = (self.index["wall-of-flesh"], "Hardmode item") if item.get("hardmode") else (0, None)
             for pattern, mid, why in self.item_rules:
                 if pattern == norm_name(item["name"]) or (pattern.endswith("*") and
                                                           norm_name(item["name"]).startswith(pattern[:-1])):
                     self.item_rules_used.add(pattern)
-                    if self.index[mid] > value:
+                    if pattern in self.item_overrides:
+                        fixed[item["key"]] = (self.index[mid], why or "rule in mapping.toml")
+                    elif self.index[mid] > value:
                         value, reason = self.index[mid], why or "rule in mapping.toml"
             floor[item["key"]] = (value, reason)
 
@@ -213,13 +218,16 @@ class Milestones:
                     if r.get("phase") == "hardmode":
                         values.append(self.index["wall-of-flesh"])
                     candidates.append((max(values, default=0), f"from the {r['machine_name']} ({r['input']})"))
-                if not candidates:
-                    continue
-                # earliest; on a tie the one with a reason
-                value, reason = min(candidates, key=lambda c: (c[0], c[1] is None))
-                f = floor[key]
-                if f[0] > value:
-                    value, reason = f
+                if key in fixed:
+                    value, reason = fixed[key]
+                else:
+                    if not candidates:
+                        continue
+                    # earliest; on a tie the one with a reason
+                    value, reason = min(candidates, key=lambda c: (c[0], c[1] is None))
+                    f = floor[key]
+                    if f[0] > value:
+                        value, reason = f
                 if value < inf and (key not in best or best[key][0] != value):
                     best[key] = (value, reason)
                     changed = True

@@ -402,7 +402,7 @@ needs a decision is reported, and parsers that read page text must not silently 
   message with "Undo". Hidden options still work as filters from there and can be shown in their
   group again (eye, always available in "Hidden"; the section opens in edit mode). The filter
   search (FL9) ignores hidden options.
-- **FL11** "Move completed filters" (toggle next to the filter search, on by default): options at 100 % over
+- **FL11** "Move completed filters" (in the menu next to the filter search, FL19; on by default): options at 100 % over
   the whole playthrough (not the current filters and search) move to the "Completed" section,
   above "Hidden". Completed options stay usable and follow the filter search; their counts follow
   the current filters like everywhere (greyed out without matching items). A completed option
@@ -418,7 +418,10 @@ needs a decision is reported, and parsers that read page text must not silently 
   (top-level options over the whole playthrough, like FL11; hidden ones left out; green when
   all are complete).
 - **FL15** Group "Almost done" (items and bestiary): the options closest to completion – 3, 5
-  (default), 10 or 20, chosen in its header (remembered in the browser, one setting for both) – as
+  (default), 10 or 20, chosen in its header (remembered in the browser, one setting for both).
+  Each row has a × that leaves the option out of "Almost done" only (it stays in its group; the
+  next one fills up; a toast with Undo); while options are left out, "↺ N" in the header brings
+  them all back (remembered in the browser, per sidebar). The options are shown as
   duplicates of the options in their groups (same selection; the group name is shown with each).
   Ranked by percentage, ties by fewer missing; only options with at least 5 items, at least one
   obtained and not complete; hidden options and the groups Progression and Crafting are left
@@ -455,6 +458,14 @@ needs a decision is reported, and parsers that read page text must not silently 
   - "Show its items in the table" in the NPC card, the source card and the "Set" section: picks
     the entry, clears the other filters and the search, selects only it and switches to the
     Items collection
+- **FL19** The options of the filter list are in a menu (☰) next to the filter search, also in
+  the phones' filter dialog: "Only filters with matches" (off by default, remembered in the
+  browser: options without items for the current filters and search are left out instead of
+  grayed out; selected ones stay; "Almost done" keeps its list by absolute progress and only
+  leaves out those of its options without matches, no others fill up), "Move completed filters" (FL11), "Hide filters" (the edit
+  mode with the eye per option) and "Open / Close all filter groups". The button is highlighted
+  while "Only filters with matches" or "Hide filters" is on.
+
 ## LS – Layout and settings
 
 - **LS0** The top bar groups its fields in cards: File, the playthrough box (P) and the View

@@ -51,7 +51,7 @@
     "id": "quest-reward",
     "name": "Angler quest reward",
     "icon": "https://terraria.wiki.gg/images/Angler.png",
-    "count": 43
+    "count": 52
   },
   {
     "id": "strange-plant",
@@ -113,7 +113,7 @@
     "id": "other",
     "name": "Other",
     "icon": "https://terraria.wiki.gg/images/Tombstone.png",
-    "count": 33,
+    "count": 31,
     "fallback": true
   },
   {
