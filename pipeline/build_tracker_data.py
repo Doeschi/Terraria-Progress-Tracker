@@ -78,7 +78,6 @@ from trackerdata.mapping import Mapping
 from trackerdata.items import (
     build_item,
     correct_versions_by_id,
-    derive_obtain,
     History,
     make_keys_unique,
     pick_rows,
@@ -88,6 +87,7 @@ from trackerdata.items import (
     versions_file,
 )
 from trackerdata.drops import derive_events, derive_spawns, Drops
+from trackerdata.sources import Sources
 from trackerdata.groups import read_groups
 from trackerdata.extractinator import extractinator_file
 from trackerdata.sets import find_sets
@@ -95,8 +95,6 @@ from trackerdata.recipes import missing_items_file, recipe_only_items, recipes_f
 from trackerdata.bestiary import bestiary_file
 from trackerdata.milestones import Milestones
 from trackerdata.conditions import (
-    apply_conditions,
-    apply_page_rewards,
     Conditions,
     page_rewards,
     shop_rows,
@@ -220,25 +218,32 @@ def build(raw_dir, mapping_path, out_dir, readable_dir=None, no_sanity=False):
     log(f"  drop groups of {len(groups)} pages: {dict(drops.group_report)}")
     if drops.group_pages:
         warn(f"drop groups not matched (several fit a row, or no drop rows) on: {dict(drops.group_pages)}")
-    derive_events(items, drops, mapping.sections["events"], mapping.bosses)
-    derive_spawns(items, drops, mapping)
+    derive_events(drops, mapping.sections["events"], mapping.bosses)
+    derive_spawns(drops, mapping)
 
     log("Shops and conditions…")
     wikitext = json.loads((raw_dir / "page_wikitext.json").read_text(encoding="utf-8"))
     shops = shop_rows(wikitext, mapping.sections["vendors"], drops.resolve, conditions)
     rewards = page_rewards(mapping.sections["obtain"], wikitext, drops.resolve, conditions)
-    apply_page_rewards(items, rewards, mapping.sections["obtain"])
-    apply_conditions(items, drops, shops, conditions, mapping, rewards)
+    for oid, found in rewards.items():
+        log(f"  {oid}: {len(found)} items from the page '{mapping.sections['obtain'][oid]['page']}'")
+    log(f"  shops: {sum(len(v) for v in shops.values())} rows for {len(shops)} items")
+    if conditions.unmapped:
+        warn(f"condition links not mapped (add them to mapping.toml or [conditions] ignore_links): "
+             f"{dict(conditions.unmapped.most_common(30))}")
 
     log("Recipes…")
     recipes = recipes_file(recipe_rows, items, mapping, wikitext.get("Alternative crafting ingredients", ""))
     log("Extractinators…")
     extractinator, extractinator_sources = extractinator_file(wikitext, drops.resolve, items,
                                                                    mapping.extractinator_inputs)
-    # "Obtained by" also from our data (drops, containers, shimmer, extractinators), the rest under
-    # "Other"
-    derive_obtain(items, drops, {s["result"] for s in recipes["shimmer"]}, mapping.sections["obtain"],
-                  extractinator_sources)
+    # every source of an item, and the item fields that follow from them: "Obtained by" (also from
+    # our data: drops, containers, shimmer, extractinators; the rest under "Other"), vendors,
+    # events, biomes, conditions, ...
+    log("Sources…")
+    sources = Sources(items, drops, shops, rewards, {s["result"] for s in recipes["shimmer"]},
+                      extractinator_sources, mapping)
+    sources.apply(items, conditions)
 
     outputs = {"items.json": items}
     for section in LIST_SECTIONS:
@@ -288,7 +293,7 @@ def build(raw_dir, mapping_path, out_dir, readable_dir=None, no_sanity=False):
     for r in extractinator["results"]:
         recipe_index["extractinator_to"][r["item"]].append({**r, "machine_item": machines[r["machine"]]["item"],
                                                             "machine_name": machines[r["machine"]]["name"]})
-    milestones.compute(items, drops, shops, recipe_index, rewards)
+    milestones.compute(items, drops, sources, recipe_index)
     outputs["milestones.json"] = milestones.milestones_file(
         items, {b["id"]: b["icon"] for b in outputs["bosses.json"]["bosses"] if b.get("icon")},
         {norm_name(i["name"]): i.get("icon") for i in items})

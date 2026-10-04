@@ -1394,7 +1394,7 @@
       "vendor": "merchant",
       "text": "When either the Eater of Worlds, Brain of Cthulhu, Skeletron, or Wall of Flesh have been defeated.",
       "conditions": [
-        "after-wall-of-flesh"
+        "after-eater-of-worlds"
       ]
     }
   ],
@@ -1403,7 +1403,7 @@
       "vendor": "merchant",
       "text": "When either the Eater of Worlds, Brain of Cthulhu, Skeletron, or Wall of Flesh have been defeated.",
       "conditions": [
-        "after-wall-of-flesh"
+        "after-eater-of-worlds"
       ]
     }
   ],
@@ -1852,7 +1852,7 @@
       "text": "During night when King Slime or Eye of Cthulhu has been defeated.",
       "conditions": [
         "night",
-        "after-eye-of-cthulhu"
+        "after-king-slime"
       ]
     }
   ],
@@ -5980,8 +5980,8 @@
       "conditions": [
         "pre-hardmode",
         "night",
-        "after-brain-of-cthulhu",
-        "hardmode"
+        "hardmode",
+        "after-eater-of-worlds"
       ]
     }
   ],
@@ -6360,7 +6360,7 @@
       "text": "During pre-Hardmode when either the King Slime, Eye of Cthulhu, Eater of Worlds, Brain of Cthulhu, Queen Bee, Deerclops, or Skeletron have been defeated.",
       "conditions": [
         "pre-hardmode",
-        "after-skeletron"
+        "after-king-slime"
       ]
     }
   ],

@@ -138,6 +138,17 @@ GitHub Actions.
   item has at least one method: the rest (world items like Fallen Star, items the wiki has not
   tagged yet, about 30) are under "Other". Critters whose name differs from their NPC (butterflies, ducks, scorpions,
   jellyfish) come from their shared wiki page.
+- **D8b** Everything that says how and when an item is obtained is read off one list of its
+  sources (`trackerdata/sources.py`), collected when all the data is read: its drop rows
+  (enemies, treasure bags, containers), shop rows, vendors the Items table names without a shop
+  row, reward pages (CO4a), shimmer and Extractinator results, name rules, and the methods only
+  the wiki's tags name. From it: "Obtained by" (D8a), vendors (CO1), events and "Event only"
+  (EV2, EV4, CO4), biomes and time of day (BI), conditions (CO3), `minDifficulty` (D7) and the
+  milestone (MS2) – so they cannot disagree. For all of them: rows only in special seeds count
+  for nothing (CO6); containers, crafting, world items, fishing, quest rewards and vendors
+  without a shop row are sources without a restriction; a tag naming a kind of drop row
+  ("Dropped by enemies", "Found in chests & pots", the bags) says nothing more for an item that
+  has drop rows – without rows it is a source nothing more is known about (no restriction).
 - **D7** Items with rarity Expert (-12) or Master (-13) that can only be obtained from drops or
   treasure bags get `minDifficulty` `expert` / `master`. Items that can also be crafted or
   bought are not restricted.
@@ -697,7 +708,9 @@ Below 640 px width (phones) the layout changes; tablets and desktops stay as the
   `<span class="note">` and `<div class="note-text">`, e.g. Green Cap "(Only if name is
   Andrew)", Chain Knife "(In Remix worlds)"); "In regular worlds" is the default and dropped.
   A note on one of several chances ("3.33% · 3.11% (Hardmode)": the Present's other chance in
-  Hardmode) is no condition of the row.
+  Hardmode) is no condition of the row. Bosses named as alternatives ("when either the Eater of
+  Worlds, Brain of Cthulhu, Skeletron, or Wall of Flesh have been defeated") give the earliest
+  of them (the order of `[milestones]`), not the one next to "defeated".
   The build reports unmapped links. Types:
   - Time of day: Day, Night; moon phases 1–8 (from `{{moons|…}}`, with the wiki's moon icons)
   - Progress: after a boss (the bosses of the Bosses filter, plus "any mechanical boss" / "all
@@ -715,9 +728,9 @@ Below 640 px width (phones) the layout changes; tablets and desktops stay as the
   An item belongs to a condition only if it can *only* be obtained under it: within a condition
   group (time of day, moon phase, boss, weather) every source must be restricted – shop rows,
   drops (an enemy that only spawns at night counts as a night source) – and the item belongs to
-  the conditions of its sources in that group. Containers, crafting, fishing, other obtain
-  methods and vendors without a shop row are unrestricted sources; shop rows only in special
-  seeds do not count. E.g. Leaf Wings → Night, after Plantera; Glowstick (Merchant at night,
+  the conditions of its sources in that group. Containers, crafting, fishing, world items and
+  vendors without a shop row are unrestricted sources (D8b); rows only in special seeds do
+  not count. E.g. Leaf Wings → Night, after Plantera; Glowstick (Merchant at night,
   Skeleton Merchant by day, enemies any time) → none. Events and Biome keep "can be obtained
   during / in" (EV2, BI1).
 - **CO4** Events and Biome also count shop rows and drop conditions, e.g. Leaf Wings → Jungle,

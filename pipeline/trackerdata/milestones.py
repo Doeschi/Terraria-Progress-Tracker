@@ -100,8 +100,9 @@ class Milestones:
         page = unquote(source.get("url", "")[len(WIKI):]).replace("_", " ")
         return norm_name(source["name"]) in self.hardmode_npcs or norm_name(page) in self.hardmode_npcs
 
-    def compute(self, items, drops, shops, recipes, rewards):
-        """Set item["milestone"] and item["milestoneVia"] (reason)."""
+    def compute(self, items, drops, sources, recipes):
+        """Set item["milestone"] and item["milestoneVia"] (reason). `sources`: the sources of
+        the items (sources.py); `recipes`: recipes, shimmer and Extractinator results per item."""
         by_key = {i["key"]: i for i in items}
         inf = len(self.order)
         floor, fixed, ruled = {}, {}, set()
@@ -130,40 +131,30 @@ class Milestones:
             key = item["key"]
             if item.get("unobtainable"):
                 continue
-            modelled = set()
-            for d in drops.drops.get(key, []):
-                v = self.drop_value(drops, d)
-                if v:
-                    offer(key, *v)
-                modelled.add("drop")
-            for r in shops.get(key, []):
-                cond = self.of_conditions(r["conditions"])
-                if cond is not None:
-                    vendor = self.index[self.vendor_milestone.get(r["vendor"], self.order[0])]
-                    offer(key, max(cond, vendor), f"sold by the {self.vendor_name(r['vendor'])}")
-                modelled.add("vendor")
-            for oid, found in rewards.items():
-                if key in found:
-                    cond = self.of_conditions(found[key])
-                    offer(key, cond, "Strange Plant reward")
-            # vendors only known from the Items table (no shop row)
-            for v in item["vendors"]:
-                if v not in {r["vendor"] for r in shops.get(key, [])}:
-                    offer(key, self.index[self.vendor_milestone.get(v, self.order[0])],
-                          f"sold by the {self.vendor_name(v)}")
-            kinds = {drops.sources[d["source"]]["kind"] for d in drops.drops.get(key, [])}
-            for o in item["obtain"]:
-                if o in ("crafted",) or (o in ("vendor",) and "vendor" in modelled):
-                    continue
-                # the drop data (enemies, bags, lock boxes, chests) is more precise than the
-                # general obtain methods
-                if o in ("drop", "bag", "treasure-bag", "loot") and kinds:
-                    continue
-                # an item with a rule in [milestone_items] is obtained as its tags say (mined, found)
-                if o in TAGGED_SOURCES and key not in ruled:
-                    tagged.setdefault(key, self.obtain_names.get(o, o))
-                elif o in PLAIN_SOURCES | TAGGED_SOURCES:
-                    offer(key, 0, self.obtain_names.get(o, o))
+            for s in sources.of[key]:
+                if not s["regular"]:
+                    continue  # only in special seeds
+                if "drop" in s:
+                    v = self.drop_value(drops, s["drop"])
+                    if v:
+                        offer(key, *v)
+                elif s["kind"] in ("shop", "vendor"):
+                    # the later of the vendor's move-in and the row's conditions; "vendor": only
+                    # known from the Items table (no shop row)
+                    vendor = self.index[self.vendor_milestone.get(s["vendor"], self.order[0])]
+                    offer(key, max(vendor, self.of_conditions(s["conditions"])),
+                          f"sold by the {self.vendor_name(s['vendor'])}")
+                elif s["kind"] == "reward":
+                    offer(key, self.of_conditions(s["conditions"]), self.obtain_names[s["obtain"][0]])
+                # what only the wiki's tags say; "crafted": the recipes, below. Not a tag the drop
+                # data (enemies, bags, lock boxes, chests) says more precisely
+                elif s["kind"] == "tag" and not s["covered"] and s["method"] != "crafted":
+                    name = self.obtain_names.get(s["method"], s["method"])
+                    # an item with a rule in [milestone_items] is obtained as its tags say (mined, found)
+                    if s["method"] in TAGGED_SOURCES and key not in ruled:
+                        tagged.setdefault(key, name)
+                    elif s["method"] in PLAIN_SOURCES | TAGGED_SOURCES:
+                        offer(key, 0, name)
             if (key not in base and key not in recipes["by_result"] and key not in recipes["shimmer_to"]
                     and key not in recipes.get("extractinator_to", {})):
                 # no source data at all (e.g. Fallen Star): from the start, the minimum still applies

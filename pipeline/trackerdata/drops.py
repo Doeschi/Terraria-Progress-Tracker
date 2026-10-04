@@ -1,4 +1,5 @@
-"""Drops (drops.json, bosses.json) and what is derived from them: events, biomes and time of day."""
+"""Drops (drops.json, bosses.json) and what is derived from them for the drop sources: events,
+biomes and time of day."""
 import fnmatch
 import html
 import re
@@ -6,14 +7,12 @@ from collections import Counter, defaultdict
 
 from .conditions import condition_text
 from .common import (
-    OTHER_SOURCES,
     file_from_wikitext,
     flag,
     image_url,
     log,
     norm_name,
     page_url,
-    seed_only,
     slug,
     warn,
     strip_markup,
@@ -120,6 +119,9 @@ class Drops:
         self.group_report = Counter()
         self.group_pages = Counter()  # pages with rows or groups that could not be matched
         self.attach_groups(groups or {})
+        # per item the most likely source first: the order in drops.json and of an item's sources
+        for entries in self.drops.values():
+            entries.sort(key=lambda d: -max((d.get("chance") or {}).values(), default=0))
 
     def add_banners(self, npc_rows):
         """Enemy banners (every 50 kills) are not in the Drops table: the NPCs table names each
@@ -452,7 +454,6 @@ class Drops:
 
     def drops_file(self):
         for key in self.drops:
-            self.drops[key].sort(key=lambda d: -max((d.get("chance") or {}).values(), default=0))
             for d in self.drops[key]:
                 d.pop("_pages", None)
         return {"sources": self.sources, "items": dict(self.drops), "groups": self.groups,
@@ -542,53 +543,20 @@ def spawn_events(environment, conditions):
             if all(any(c in conds for c in alt) for alt in per_alt)}
 
 
-def derive_events(items, drops, events, bosses):
-    """Add events to items from their drops (see [events] in mapping.toml) and
-    mark items that can only be obtained during events ("eventOnly")."""
+def derive_events(drops, events, bosses):
+    """Events the drop sources are bound to (see [events] in mapping.toml): enemies that only spawn
+    during an event (source["events"]). Main bosses are left out. The items' events follow from
+    their sources (sources.py), the milestones use them too."""
     env_conditions = {eid: set(e.get("environments", [])) for eid, e in events.items()}
-    drop_conditions = {eid: e.get("drop_conditions", []) for eid, e in events.items()}
     main_boss_sources = {norm_name(name) for b in bosses.values()
                          if b.get("stage") in ("pre-hardmode", "hardmode")
                          for name in b.get("sources", [])}
-    source_events = {}
-    for sid, source in drops.sources.items():
-        found = set()
+    for source in drops.sources.values():
         if source["kind"] == "npc" and norm_name(source["name"]) not in main_boss_sources:
             npc = drops.npcs.get(norm_name(source["name"]))
-            if npc:
-                found = spawn_events(npc["environment"], env_conditions)
-        source_events[sid] = found
-        if found:
-            source["events"] = [e for e in events if e in found]  # also used for milestones
-
-    order = list(events)
-    by_key = {i["key"]: i for i in items}
-    added = Counter()
-    for key, entries in drops.drops.items():
-        item = by_key[key]
-        entries = [d for d in entries if not seed_only(d)]
-        if not entries:
-            continue
-        per_drop = []
-        for d in entries:
-            found = set(source_events.get(d["source"], ()))
-            # container drops (chests, crates, trees) add no events; they also make an item
-            # obtainable outside of events
-            if drops.sources[d["source"]]["kind"] != "container":
-                found |= set(d.get("events", ()))
-                text = d.get("rate", "")
-                found |= {eid for eid, words in drop_conditions.items()
-                          if any(w.lower() in text.lower() for w in words)}
-            per_drop.append(found)
-        new = set().union(*per_drop) - set(item["events"])
-        if new:
-            item["events"] = sorted(set(item["events"]) | new, key=order.index)
-            added.update(new)
-        # only during events: every drop is event-bound and no other way to get it
-        if all(per_drop) and not (OTHER_SOURCES | {"bag", "treasure-bag"}) & set(item["obtain"]):
-            item["eventOnly"] = True
-    log(f"  events from drops: {dict(added)}; "
-        f"{sum(1 for i in items if i.get('eventOnly'))} items only obtainable during events")
+            found = spawn_events(npc["environment"], env_conditions) if npc else set()
+            if found:
+                source["events"] = [e for e in events if e in found]
 
 
 def spawn_biomes(environment, biomes):
@@ -608,19 +576,18 @@ def spawn_biomes(environment, biomes):
     return found
 
 
-def derive_spawns(items, drops, mapping):
-    """Biome and time of day per drop source (for display) and per item (filters):
-    where / when the enemies spawn that drop an item. Main bosses, enemies that
-    only spawn during events and town NPCs are left out (a town NPC's environment
-    is where it is found before moving in, e.g. the Stylist in a Spider Nest)."""
+def derive_spawns(drops, mapping):
+    """Biome and time of day per drop source: where / when the enemy spawns (for display, and
+    for the items it drops - sources.py). Main bosses, enemies that only spawn during events
+    and town NPCs are left out (a town NPC's environment is where it is found before moving
+    in, e.g. the Stylist in a Spider Nest)."""
     biomes, times = mapping.sections["biomes"], mapping.sections["times"]
     event_conditions = {eid: set(e.get("environments", [])) for eid, e in mapping.sections["events"].items()}
     time_conditions = {tid: set(t.get("environments", [])) for tid, t in times.items()}
     main_boss_sources = {norm_name(name) for b in mapping.bosses.values()
                          if b.get("stage") in ("pre-hardmode", "hardmode")
                          for name in b.get("sources", [])}
-    source_biomes, source_times = {}, {}
-    for sid, source in drops.sources.items():
+    for source in drops.sources.values():
         npc = drops.npc_for(source["name"]) if source["kind"] == "npc" else None
         if not npc or norm_name(source["name"]) in main_boss_sources:
             continue
@@ -632,16 +599,6 @@ def derive_spawns(items, drops, mapping):
         b = [bid for bid in biomes if bid in spawn_biomes(env, biomes)]
         t = [tid for tid in times if tid in spawn_events(env, time_conditions)]
         if b:
-            source["biomes"] = source_biomes[sid] = b
+            source["biomes"] = b
         if t:
-            source["times"] = source_times[sid] = t
-    by_key = {i["key"]: i for i in items}
-    for key, entries in drops.drops.items():
-        item = by_key[key]
-        entries = [d for d in entries if not seed_only(d)]
-        b = set().union(*(source_biomes.get(d["source"], ()) for d in entries))
-        t = set().union(*(source_times.get(d["source"], ()) for d in entries))
-        item["biomes"] = [bid for bid in biomes if bid in b]
-        item["times"] = [tid for tid in times if tid in t]
-    log(f"  biomes for {sum(1 for i in items if i.get('biomes'))} items, "
-        f"time of day for {sum(1 for i in items if i.get('times'))}")
+            source["times"] = t

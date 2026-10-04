@@ -4,7 +4,7 @@ import html
 import re
 from collections import Counter, defaultdict
 
-from .common import OTHER_SOURCES, image_url, log, norm_name, seed_only, slug, strip_markup, warn
+from .common import image_url, log, norm_name, seed_only, slug, strip_markup, warn
 
 # words that negate the rest of a clause: "before defeating [[Golem]]", "except [[Remix]] worlds";
 # "defeated on the same day as the [[Wall of Flesh]]" is no "after" condition either
@@ -97,6 +97,10 @@ class Conditions:
             names = [boss.get("name", bid), *boss.get("sources", [])]
             self.entries[f"after-{bid}"] = {"name": boss.get("name", bid), "group": "boss", "boss": bid,
                                             "links": [n.lower() for n in names], "after": True}
+        # how early a boss condition is met: its place in [milestones] (for alternatives, see either)
+        self.rank = {}
+        for n, milestone in enumerate(mapping.milestones.values()):
+            self.rank.update({f"after-{b}": n for b in milestone.get("bosses", [])})
         self.link_map = defaultdict(list)   # link target -> [(kind, id, entry)]
         self.phrases = []                   # (regex, kind, id)
         for kind, section in (("condition", self.entries), ("event", mapping.sections["events"]),
@@ -132,6 +136,20 @@ class Conditions:
                 continue
             out += [restore(c) for c in re.split(r"[,;:.(]|\bor\b", sentence) if c.strip()]
         return out
+
+    def either(self, sentence):
+        """Bosses named as alternatives - "when either the [[Eater of Worlds]], [[Brain of
+        Cthulhu]], [[Skeletron]], or [[Wall of Flesh]] have been defeated" - count as the earliest
+        of them (the first of [milestones]): -> (their condition ids, the earliest), else None.
+        "[[A]], [[B]]/[[C]], and [[D]]" or "both [[A]] and [[B]]" are no alternatives."""
+        if "defeat" not in sentence.lower():
+            return None
+        bosses = [(m, cid) for m in LINK.finditer(sentence)
+                  for _, cid, entry in self.link_map.get(m.group(1).strip().lower(), ()) if entry.get("after")]
+        if len(bosses) < 2 or not re.search(r"\bor\b", LINK.sub("", sentence[bosses[0][0].end():bosses[-1][0].start()])):
+            return None
+        ids = [cid for _, cid in bosses]
+        return ids, min(ids, key=lambda cid: self.rank.get(cid, len(self.rank)))
 
     def parse(self, wikitext):
         """-> {"condition": [ids], "event": [ids], "biome": [ids], "moons": [1..8]}"""
@@ -172,6 +190,12 @@ class Conditions:
                 m = regex.search(plain)
                 if m and not (neg_plain and neg_plain.start() < m.start()):
                     add(kind, cid)
+        # bosses named as alternatives: the earliest instead of the one next to "defeated"
+        for sentence in re.split(r"(?<=\.)\s|\n", re.sub(r"<br\s*/?>", " ", text)):
+            ids, first = self.either(sentence) or ((), None)
+            if first:
+                found["condition"] = [c for c in found["condition"] if c not in ids]
+                add("condition", first)
         # special cases with a number or name of their own
         plain = strip_markup(MOONS.sub("", text))
         for regex, make in DYNAMIC:
@@ -183,6 +207,23 @@ class Conditions:
 
     def filterable(self, cid):
         return self.groups.get(self.entries[cid]["group"], {}).get("filter", False)
+
+    def required(self, sources):
+        """Filterable conditions an item can only be obtained under: per condition group (time of
+        day, moon phase, boss, weather) every source must be restricted within the group - then the
+        item belongs to the group's conditions of its sources. E.g. Leaf Wings (only the Witch
+        Doctor, at night after Plantera) -> night, after Plantera; a Glowstick (Merchant at night,
+        Skeleton Merchant by day, enemies any time) -> nothing.
+        `sources`: the condition ids of each source of the item (sources.py); an empty set is an
+        unrestricted one (a container, crafting, fishing, a vendor without a shop row)."""
+        required = set()
+        for group, conf in self.groups.items():
+            if not (conf.get("filter") or conf.get("column")):
+                continue
+            per_source = [{c for c in s if self.entries.get(c, {}).get("group") == group} for s in sources]
+            if per_source and all(per_source):
+                required |= set().union(*per_source)
+        return [c for c in self.entries if c in required]
 
     def conditions_file(self, items, bosses_icons):
         """conditions.json: groups (in mapping order) and conditions with item counts."""
@@ -296,109 +337,3 @@ def page_rewards(obtain_sections, wikitext_pages, resolve, conditions):
         out[oid] = found
     return out
 
-
-def apply_page_rewards(items, rewards, obtain_sections):
-    """Put the items of page_rewards into their obtain entry (instead of `replaces`)."""
-    order = list(obtain_sections)
-    for item in items:
-        for oid, found in rewards.items():
-            if item["key"] in found:
-                replaced = obtain_sections[oid].get("replaces")
-                item["obtain"] = [o for o in item["obtain"] if o != replaced]
-                if oid not in item["obtain"]:
-                    item["obtain"].append(oid)
-                item["obtain"].sort(key=order.index)
-    for oid, found in rewards.items():
-        log(f"  {oid}: {len(found)} items from the page '{obtain_sections[oid]['page']}'")
-
-
-def required_conditions(item, rows, drops, conditions, rewards=None):
-    """Filterable conditions the item can only be obtained under: per condition group (time of
-    day, moon phase, boss, weather) every source must be restricted within the group - then the
-    item belongs to the group's conditions of its sources. E.g. Leaf Wings (only the Witch
-    Doctor, at night after Plantera) -> night, after Plantera; a Glowstick (Merchant at night,
-    Skeleton Merchant by day, enemies any time) -> nothing.
-    Sources: shop rows (not those only in special seeds), drops (an enemy's spawn times count
-    as the drop's; containers are never restricted) and obtain methods without such data
-    (crafting, fishing, ...; vendors without a shop row) as unrestricted."""
-    sources = [set(r["conditions"]) for r in rows if not seed_only(r)]
-    for d in drops.drops.get(item["key"], []):
-        if seed_only(d):
-            continue
-        source = drops.sources[d["source"]]
-        if source["kind"] == "container":
-            sources.append(set())
-        else:
-            sources.append(set(d.get("conditions", [])) | set(source.get("times", [])))
-    # rewards with the conditions of their heading (e.g. Strange Plant rewards after Plantera)
-    for found in (rewards or {}).values():
-        if item["key"] in found:
-            sources.append(set(found[item["key"]]))
-    unrestricted = {"crafted", "fishing", "quest-reward", "plunder", "loot"}
-    shop_vendors = {r["vendor"] for r in rows}
-    # obtain methods without drop data (e.g. developer items from any treasure bag)
-    if item["key"] not in drops.drops:
-        unrestricted |= {"drop", "bag", "treasure-bag"}
-    if unrestricted & set(item["obtain"]) or any(v not in shop_vendors for v in item["vendors"]):
-        sources.append(set())
-    if not sources:
-        return []
-    required = set()
-    for group, conf in conditions.groups.items():
-        if not (conf.get("filter") or conf.get("column")):
-            continue
-        per_source = [{c for c in s if conditions.entries.get(c, {}).get("group") == group} for s in sources]
-        if all(per_source):
-            required |= set().union(*per_source)
-    return [c for c in conditions.entries if c in required]
-
-
-def apply_conditions(items, drops, shops, conditions, mapping, rewards=None):
-    """Item fields from shop rows and drop conditions: vendors, events, biomes (where / when it
-    can be obtained), conditions (only obtainable then, see required_conditions), eventOnly."""
-    event_order, biome_order = list(mapping.sections["events"]), list(mapping.sections["biomes"])
-    by_key = {i["key"]: i for i in items}
-    added_vendors = removed_vendors = 0
-    for key, item in by_key.items():
-        events, biomes = set(item["events"]), set(item["biomes"])
-        # rows only in special world seeds count for nothing (CO6): a vendor that has only such
-        # rows is no vendor of the item (e.g. the Princess's Terragrim)
-        all_rows = shops.get(key, [])
-        rows = [r for r in all_rows if not seed_only(r)]
-        seed_vendors = {r["vendor"] for r in all_rows} - {r["vendor"] for r in rows}
-        if seed_vendors & set(item["vendors"]):
-            removed_vendors += len(seed_vendors & set(item["vendors"]))
-            item["vendors"] = [v for v in item["vendors"] if v not in seed_vendors]
-        # sold only in special seeds (also when the wiki tags it just "vendor"): not bought
-        if all_rows and not rows and not item["vendors"] and "vendor" in item["obtain"]:
-            item["obtain"].remove("vendor")
-        for r in rows:
-            if r["vendor"] not in item["vendors"]:
-                item["vendors"].append(r["vendor"])
-                added_vendors += 1
-            events.update(r["events"])
-            biomes.update(r["biomes"])
-        if rows and "vendor" not in item["obtain"]:
-            item["obtain"].append("vendor")
-        for d in drops.drops.get(key, []):
-            # container drops (chest contents in special seeds, fruit at night) only show theirs
-            if drops.sources[d["source"]]["kind"] != "container" and not seed_only(d):
-                events.update(d.get("events", []))
-                biomes.update(d.get("biomes", []))
-        item["conditions"] = required_conditions(item, rows, drops, conditions, rewards)
-        item["events"] = [e for e in event_order if e in events]
-        item["biomes"] = [b for b in biome_order if b in biomes]
-        # event only: every drop (see derive_events) and every shop row is bound to an event
-        if rows:
-            shop_events = all(r["events"] for r in rows)
-            only_shops = not (OTHER_SOURCES - {"vendor"}) & set(item["obtain"]) and key not in drops.drops
-            if item.get("eventOnly") and not shop_events:
-                item.pop("eventOnly")
-            elif shop_events and (only_shops or item.get("eventOnly")):
-                item["eventOnly"] = True
-    log(f"  shops: {sum(len(v) for v in shops.values())} rows for {len(shops)} items "
-        f"({added_vendors} vendors added, {removed_vendors} only in special seeds removed); conditions for "
-        f"{sum(1 for i in items if i['conditions'])} items")
-    if conditions.unmapped:
-        warn(f"condition links not mapped (add them to mapping.toml or [conditions] ignore_links): "
-             f"{dict(conditions.unmapped.most_common(30))}")

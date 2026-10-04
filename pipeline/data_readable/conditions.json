@@ -49,14 +49,14 @@
       "name": "Night",
       "group": "time",
       "icon": "https://terraria.wiki.gg/images/Moon_Charm.png",
-      "count": 28
+      "count": 30
     },
     {
       "id": "moon-1",
       "name": "Full moon",
       "group": "moon",
       "icon": "https://terraria.wiki.gg/images/Moon-full.png",
-      "count": 19
+      "count": 20
     },
     {
       "id": "moon-2",
@@ -84,28 +84,28 @@
       "name": "New moon",
       "group": "moon",
       "icon": "https://terraria.wiki.gg/images/Moon-new.png",
-      "count": 13
+      "count": 14
     },
     {
       "id": "moon-6",
       "name": "Waxing crescent",
       "group": "moon",
       "icon": "https://terraria.wiki.gg/images/Moon-6.png",
-      "count": 15
+      "count": 16
     },
     {
       "id": "moon-7",
       "name": "First quarter",
       "group": "moon",
       "icon": "https://terraria.wiki.gg/images/Moon-7.png",
-      "count": 13
+      "count": 14
     },
     {
       "id": "moon-8",
       "name": "Waxing gibbous",
       "group": "moon",
       "icon": "https://terraria.wiki.gg/images/Moon-8.png",
-      "count": 13
+      "count": 14
     },
     {
       "id": "windy",
@@ -273,7 +273,7 @@
       "name": "King Slime",
       "group": "boss",
       "icon": "https://terraria.wiki.gg/images/Map_Icon_King_Slime.png",
-      "count": 1
+      "count": 3
     },
     {
       "id": "after-eye-of-cthulhu",
@@ -283,18 +283,18 @@
       "count": 1
     },
     {
+      "id": "after-eater-of-worlds",
+      "name": "Eater of Worlds",
+      "group": "boss",
+      "icon": "https://terraria.wiki.gg/images/Map_Icon_Eater_of_Worlds.png",
+      "count": 2
+    },
+    {
       "id": "after-skeletron",
       "name": "Skeletron",
       "group": "boss",
       "icon": "https://terraria.wiki.gg/images/Map_Icon_Skeletron.png",
       "count": 5
-    },
-    {
-      "id": "after-wall-of-flesh",
-      "name": "Wall of Flesh",
-      "group": "boss",
-      "icon": "https://terraria.wiki.gg/images/Map_Icon_Wall_of_Flesh.png",
-      "count": 2
     },
     {
       "id": "after-queen-slime",
@@ -444,7 +444,7 @@
       "id": "bestiary-100",
       "name": "Bestiary complete",
       "group": "special",
-      "count": 0
+      "count": 1
     }
   ]
 }

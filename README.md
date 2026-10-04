@@ -270,8 +270,8 @@ Step 2 also writes the indented copies to `pipeline/data_readable/` (skip with `
 How wiki values become the tracker's groups is defined in
 [`pipeline/mapping.toml`](pipeline/mapping.toml) (see [The mapping file](#3-the-mapping-file-pipelinemappingtoml)).
 Step 2 reports values that are not mapped yet. Its code is split by topic in
-[`pipeline/trackerdata/`](pipeline/trackerdata) (items, drops, recipes, conditions, milestones,
-bestiary, icons); `build_tracker_data.py` is the entry point.
+[`pipeline/trackerdata/`](pipeline/trackerdata) (items, drops, recipes, conditions, sources,
+milestones, bestiary, icons); `build_tracker_data.py` is the entry point.
 
 ## Running the app
 

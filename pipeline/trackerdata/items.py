@@ -1,13 +1,10 @@
 """Items: rows of the Items table -> item records (platforms, versions from History, difficulty, sections)."""
-import fnmatch
 import html
 import re
 from collections import Counter, defaultdict
 
 from .common import (
     DEFAULT_PLATFORMS,
-    DIFFICULTY_BY_RARITY,
-    OTHER_SOURCES,
     PLATFORM_FIELDS,
     coins,
     file_from_wikitext,
@@ -20,7 +17,6 @@ from .common import (
     number,
     page_url,
     rarity,
-    seed_only,
     read_csv,
     strip_markup,
     tooltip_text,
@@ -161,13 +157,6 @@ def correct_versions_by_id(items, order):
     log(f"  {moved} shared-page items moved to a later update by item id")
 
 
-def min_difficulty(item):
-    need = DIFFICULTY_BY_RARITY.get(item.get("rarity"))
-    if need and not OTHER_SOURCES & set(item["obtain"]):
-        return need
-    return None
-
-
 def read_equipinfo(path):
     """Item id -> player fields the item changes ("equip:<field>" keys), from the
     wiki's Equipinfo table (game code names, e.g. moveSpeed, accRunSpeed)."""
@@ -258,7 +247,6 @@ def build_item(row, mapping, schema, exclusive, history, equip, extra_keys=()):
         "debuff": strip_markup(row["debuffs"]) or None,
         "tooltip": tooltip_text(row["tooltip"]) or None,
     }
-    item["minDifficulty"] = min_difficulty(item)
     # keep the file small: stat fields that don't apply to the item are left out
     return {k: v for k, v in item.items() if v is not None}, unmatched
 
@@ -271,53 +259,6 @@ def make_keys_unique(items):
     dupes = [k for k, n in Counter(i["key"] for i in items).items() if n > 1]
     if dupes:
         log(f"  warning: duplicate item keys remain: {dupes}")
-
-
-def derive_obtain(items, drops, shimmer_results, obtain_sections, extractinator=None):
-    """Obtain methods from our own data, added to the wiki's tags ([obtain] from_drops,
-    from_containers, from_shimmer, from_extractinator, names); items with none at all get the
-    fallback entry. `extractinator`: item key -> machine ids it comes from."""
-    extractinator = extractinator or {}
-    order = list(obtain_sections)
-    fallback = next((oid for oid, o in obtain_sections.items() if o.get("fallback")), None)
-    added, removed = Counter(), Counter()
-    for item in items:
-        # unobtainable items only belong to "Unobtainable" (see build_item)
-        if item.get("unobtainable"):
-            continue
-        have = set(item["obtain"])
-        # rows only in special world seeds do not make an obtain method (e.g. "I am error" chests)
-        kinds, groups, seed_kinds, seed_groups = set(), set(), set(), set()
-        for d in drops.drops.get(item["key"], ()):
-            source = drops.sources[d["source"]]
-            seed = seed_only(d)
-            (seed_kinds if seed else kinds).add(source["kind"])
-            if source.get("group"):
-                (seed_groups if seed else groups).add(source["group"])
-        # the wiki tags an item from its drop rows too: a method it has only from seed-only rows goes
-        for oid in list(have):
-            o = obtain_sections.get(oid, {})
-            drops_of, containers_of = set(o.get("from_drops", ())), set(o.get("from_containers", ()))
-            if ((seed_kinds & drops_of or seed_groups & containers_of)
-                    and not (kinds & drops_of or groups & containers_of)):
-                have.discard(oid)
-                removed[oid] += 1
-        name = norm_name(item["name"])
-        for oid, o in obtain_sections.items():
-            if oid in have:
-                continue
-            if (kinds & set(o.get("from_drops", ())) or groups & set(o.get("from_containers", ()))
-                    or (o.get("from_shimmer") and item["key"] in shimmer_results)
-                    or set(o.get("from_extractinator", ())) & extractinator.get(item["key"], set())
-                    or any(fnmatch.fnmatchcase(name, norm_name(p)) for p in o.get("names", ()))):
-                have.add(oid)
-                added[oid] += 1
-        if fallback and not have:
-            have.add(fallback)
-            added[fallback] += 1
-        item["obtain"] = sorted(have, key=order.index)
-    log(f"  obtain methods added from drops, shimmer and names: {dict(added)}")
-    log(f"  obtain methods only from special seeds, removed: {dict(removed)}")
 
 
 def section_file(section, entries, items):

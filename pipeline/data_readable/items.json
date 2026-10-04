@@ -17435,8 +17435,8 @@
     "placeable": false,
     "autoswing": false,
     "bodySlot": "social helmet",
-    "conditions": [],
     "eventOnly": true,
+    "conditions": [],
     "milestone": "skeletron",
     "milestoneVia": "Sold by the Clothier"
   },
@@ -26048,7 +26048,9 @@
     "autoswing": false,
     "buff": "Werewolf",
     "tooltip": "Turns the holder into a werewolf at night",
-    "conditions": [],
+    "conditions": [
+      "night"
+    ],
     "milestone": "wall-of-flesh",
     "milestoneVia": "Dropped by Werewolf"
   },
@@ -40176,7 +40178,12 @@
     "placeable": false,
     "autoswing": false,
     "tooltip": "Allows flight and slow fall\nHold Up to boost faster!",
-    "conditions": [],
+    "conditions": [
+      "moon-5",
+      "moon-6",
+      "moon-7",
+      "moon-8"
+    ],
     "milestone": "any-mech",
     "milestoneVia": "Sold by the Steampunker"
   },
@@ -41452,8 +41459,8 @@
     "damageType": "ranged",
     "knockback": 4.0,
     "tooltip": "Small blast radius. Will destroy tiles",
-    "conditions": [],
     "eventOnly": true,
+    "conditions": [],
     "milestone": "plantera",
     "milestoneVia": "Sold by the Cyborg"
   },
@@ -41512,10 +41519,10 @@
     "damageType": "ranged",
     "knockback": 6.0,
     "tooltip": "Large blast radius. Will not destroy tiles",
+    "eventOnly": true,
     "conditions": [
       "night"
     ],
-    "eventOnly": true,
     "milestone": "plantera",
     "milestoneVia": "Sold by the Cyborg"
   },
@@ -41574,8 +41581,8 @@
     "damageType": "ranged",
     "knockback": 6.0,
     "tooltip": "Large blast radius. Will destroy tiles",
-    "conditions": [],
     "eventOnly": true,
+    "conditions": [],
     "milestone": "plantera",
     "milestoneVia": "Sold by the Cyborg"
   },
@@ -42013,8 +42020,8 @@
     "placeable": false,
     "autoswing": false,
     "tooltip": "Used by the Clentaminator\nSpreads the Corruption",
-    "conditions": [],
     "eventOnly": true,
+    "conditions": [],
     "milestone": "any-mech",
     "milestoneVia": "Sold by the Steampunker"
   },
@@ -42124,8 +42131,8 @@
     "placeable": false,
     "autoswing": false,
     "tooltip": "Used by the Clentaminator\nSpreads the Crimson",
-    "conditions": [],
     "eventOnly": true,
+    "conditions": [],
     "milestone": "any-mech",
     "milestoneVia": "Sold by the Steampunker"
   },
@@ -45873,6 +45880,7 @@
     "placeable": false,
     "autoswing": false,
     "tooltip": "Lowers shop prices by 20%",
+    "eventOnly": true,
     "conditions": [],
     "milestone": "wall-of-flesh",
     "milestoneVia": "Dropped by Flying Dutchman"
@@ -60256,8 +60264,8 @@
     "placeable": false,
     "autoswing": false,
     "tooltip": "Allows the holder to reverse gravity\nPress Up to change gravity",
-    "minDifficulty": "expert",
     "conditions": [],
+    "minDifficulty": "expert",
     "milestone": "moon-lord",
     "milestoneVia": "From the Treasure Bag (Moon Lord)"
   },
@@ -79659,8 +79667,8 @@
     "placedWidth": 3,
     "placedHeight": 2,
     "tooltip": "'V. Costa Moura'",
-    "conditions": [],
     "eventOnly": true,
+    "conditions": [],
     "milestone": "start",
     "milestoneVia": "Sold by the Painter"
   },
@@ -92428,8 +92436,8 @@
     "placeable": false,
     "autoswing": false,
     "bodySlot": "social helmet",
-    "conditions": [],
     "eventOnly": true,
+    "conditions": [],
     "set": "nurse-set",
     "milestone": "start",
     "milestoneVia": "Sold by the Arms Dealer"
@@ -92486,8 +92494,8 @@
     "placeable": false,
     "autoswing": false,
     "bodySlot": "social shirt",
-    "conditions": [],
     "eventOnly": true,
+    "conditions": [],
     "set": "nurse-set",
     "milestone": "start",
     "milestoneVia": "Sold by the Arms Dealer"
@@ -92544,8 +92552,8 @@
     "placeable": false,
     "autoswing": false,
     "bodySlot": "social pants",
-    "conditions": [],
     "eventOnly": true,
+    "conditions": [],
     "set": "nurse-set",
     "milestone": "start",
     "milestoneVia": "Sold by the Arms Dealer"
@@ -92600,8 +92608,8 @@
     "placeable": false,
     "autoswing": false,
     "bodySlot": "social helmet",
-    "conditions": [],
     "eventOnly": true,
+    "conditions": [],
     "milestone": "wall-of-flesh",
     "milestoneVia": "Sold by the Wizard"
   },
@@ -92655,8 +92663,8 @@
     "placeable": false,
     "autoswing": false,
     "bodySlot": "social helmet",
-    "conditions": [],
     "eventOnly": true,
+    "conditions": [],
     "milestone": "skeletron",
     "milestoneVia": "Sold by the Clothier"
   },
@@ -92710,8 +92718,8 @@
     "placeable": false,
     "autoswing": false,
     "bodySlot": "social shirt",
-    "conditions": [],
     "eventOnly": true,
+    "conditions": [],
     "set": "dye-trader-s-set",
     "milestone": "start",
     "milestoneVia": "Sold by the Dye Trader"
@@ -92766,8 +92774,8 @@
     "placeable": false,
     "autoswing": false,
     "bodySlot": "social helmet",
-    "conditions": [],
     "eventOnly": true,
+    "conditions": [],
     "milestone": "any-mech",
     "milestoneVia": "Sold by the Steampunker"
   },
@@ -92823,8 +92831,8 @@
     "placeable": false,
     "autoswing": false,
     "bodySlot": "social helmet",
-    "conditions": [],
     "eventOnly": true,
+    "conditions": [],
     "set": "cyborg-set",
     "milestone": "plantera",
     "milestoneVia": "Sold by the Cyborg"
@@ -92881,8 +92889,8 @@
     "placeable": false,
     "autoswing": false,
     "bodySlot": "social shirt",
-    "conditions": [],
     "eventOnly": true,
+    "conditions": [],
     "set": "cyborg-set",
     "milestone": "plantera",
     "milestoneVia": "Sold by the Cyborg"
@@ -92939,8 +92947,8 @@
     "placeable": false,
     "autoswing": false,
     "bodySlot": "social pants",
-    "conditions": [],
     "eventOnly": true,
+    "conditions": [],
     "set": "cyborg-set",
     "milestone": "plantera",
     "milestoneVia": "Sold by the Cyborg"
@@ -95377,8 +95385,8 @@
     "useTime": 15,
     "placedWidth": 2,
     "placedHeight": 2,
-    "conditions": [],
     "eventOnly": true,
+    "conditions": [],
     "milestone": "queen-bee",
     "milestoneVia": "Sold by the Witch Doctor"
   },
@@ -98394,8 +98402,8 @@
     "placeable": false,
     "autoswing": false,
     "bodySlot": "social shirt",
-    "conditions": [],
     "eventOnly": true,
+    "conditions": [],
     "set": "dryad-set",
     "milestone": "king-slime",
     "milestoneVia": "Sold by the Dryad"
@@ -98452,8 +98460,8 @@
     "placeable": false,
     "autoswing": false,
     "bodySlot": "social pants",
-    "conditions": [],
     "eventOnly": true,
+    "conditions": [],
     "set": "dryad-set",
     "milestone": "king-slime",
     "milestoneVia": "Sold by the Dryad"
@@ -103211,8 +103219,8 @@
     "placeable": true,
     "autoswing": true,
     "useTime": 15,
-    "conditions": [],
     "eventOnly": true,
+    "conditions": [],
     "milestone": "start",
     "milestoneVia": "Sold by the Painter"
   },
@@ -103262,8 +103270,8 @@
     "placeable": true,
     "autoswing": true,
     "useTime": 15,
-    "conditions": [],
     "eventOnly": true,
+    "conditions": [],
     "milestone": "start",
     "milestoneVia": "Sold by the Painter"
   },
@@ -103313,8 +103321,8 @@
     "placeable": true,
     "autoswing": true,
     "useTime": 15,
-    "conditions": [],
     "eventOnly": true,
+    "conditions": [],
     "milestone": "start",
     "milestoneVia": "Sold by the Painter"
   },
@@ -103364,8 +103372,8 @@
     "placeable": true,
     "autoswing": true,
     "useTime": 15,
-    "conditions": [],
     "eventOnly": true,
+    "conditions": [],
     "milestone": "start",
     "milestoneVia": "Sold by the Painter"
   },
@@ -103415,8 +103423,8 @@
     "placeable": true,
     "autoswing": true,
     "useTime": 15,
-    "conditions": [],
     "eventOnly": true,
+    "conditions": [],
     "milestone": "start",
     "milestoneVia": "Sold by the Painter"
   },
@@ -103466,8 +103474,8 @@
     "placeable": true,
     "autoswing": true,
     "useTime": 15,
-    "conditions": [],
     "eventOnly": true,
+    "conditions": [],
     "milestone": "start",
     "milestoneVia": "Sold by the Painter"
   },
@@ -103517,8 +103525,8 @@
     "placeable": true,
     "autoswing": true,
     "useTime": 15,
-    "conditions": [],
     "eventOnly": true,
+    "conditions": [],
     "milestone": "start",
     "milestoneVia": "Sold by the Painter"
   },
@@ -103568,8 +103576,8 @@
     "placeable": true,
     "autoswing": true,
     "useTime": 15,
-    "conditions": [],
     "eventOnly": true,
+    "conditions": [],
     "milestone": "start",
     "milestoneVia": "Sold by the Painter"
   },
@@ -103619,8 +103627,8 @@
     "placeable": true,
     "autoswing": true,
     "useTime": 15,
-    "conditions": [],
     "eventOnly": true,
+    "conditions": [],
     "milestone": "start",
     "milestoneVia": "Sold by the Painter"
   },
@@ -103670,8 +103678,8 @@
     "placeable": true,
     "autoswing": true,
     "useTime": 15,
-    "conditions": [],
     "eventOnly": true,
+    "conditions": [],
     "milestone": "start",
     "milestoneVia": "Sold by the Painter"
   },
@@ -135454,6 +135462,7 @@
     "useTime": 36,
     "buff": "Pirate",
     "tooltip": "Summons pirates to fight for you",
+    "eventOnly": true,
     "conditions": [],
     "milestone": "wall-of-flesh",
     "milestoneVia": "Dropped by Flying Dutchman"
@@ -146421,6 +146430,7 @@
     "autoswing": false,
     "velocity": 14.0,
     "tooltip": "Press Grapple to launch hook",
+    "eventOnly": true,
     "conditions": [],
     "milestone": "golem",
     "milestoneVia": "Dropped by Gigazapper"
@@ -158694,7 +158704,10 @@
     "useTime": 20,
     "buff": "Magic Lantern",
     "tooltip": "Summons a magic lantern that exposes nearby treasure",
-    "conditions": [],
+    "conditions": [
+      "night",
+      "moon-1"
+    ],
     "milestone": "start",
     "milestoneVia": "Sold by the Skeleton Merchant"
   },
@@ -161071,8 +161084,8 @@
     "placeable": false,
     "autoswing": false,
     "tooltip": "Slimes become friendly",
-    "minDifficulty": "expert",
     "conditions": [],
+    "minDifficulty": "expert",
     "milestone": "king-slime",
     "milestoneVia": "From the Treasure Bag (King Slime)"
   },
@@ -161410,8 +161423,8 @@
     "knockback": 9.0,
     "defense": 2,
     "tooltip": "Allows the player to dash into the enemy\nDouble tap a direction",
-    "minDifficulty": "expert",
     "conditions": [],
+    "minDifficulty": "expert",
     "milestone": "eye-of-cthulhu",
     "milestoneVia": "From the Treasure Bag (Eye of Cthulhu)"
   },
@@ -167702,8 +167715,8 @@
     "autoswing": false,
     "debuff": "Cerebral Mindtrick^Confused",
     "tooltip": "Has a chance to create illusions and dodge an attack\nTemporarily increase critical chance and minion damage after dodge\nMay confuse nearby enemies after being struck",
-    "minDifficulty": "expert",
     "conditions": [],
+    "minDifficulty": "expert",
     "milestone": "evil-boss",
     "milestoneVia": "From the Treasure Bag (Brain of Cthulhu)"
   },
@@ -167750,8 +167763,8 @@
     "placeable": false,
     "autoswing": false,
     "tooltip": "Reduces damage taken by 17%",
-    "minDifficulty": "expert",
     "conditions": [],
+    "minDifficulty": "expert",
     "milestone": "evil-boss",
     "milestoneVia": "From the Treasure Bag (Eater of Worlds)"
   },
@@ -168789,8 +168802,8 @@
     "placeable": false,
     "autoswing": false,
     "tooltip": "Shoots crossbones at enemies while you are attacking",
-    "minDifficulty": "expert",
     "conditions": [],
+    "minDifficulty": "expert",
     "milestone": "skeletron",
     "milestoneVia": "From the Treasure Bag (Skeletron)"
   },
@@ -168843,8 +168856,8 @@
     "placeable": false,
     "autoswing": false,
     "bodySlot": "social shirt",
-    "conditions": [],
     "eventOnly": true,
+    "conditions": [],
     "set": "clothier-s-set",
     "milestone": "skeletron",
     "milestoneVia": "Sold by the Clothier"
@@ -168898,8 +168911,8 @@
     "placeable": false,
     "autoswing": false,
     "bodySlot": "social pants",
-    "conditions": [],
     "eventOnly": true,
+    "conditions": [],
     "set": "clothier-s-set",
     "milestone": "skeletron",
     "milestoneVia": "Sold by the Clothier"
@@ -168953,8 +168966,8 @@
     "placeable": false,
     "autoswing": false,
     "bodySlot": "social helmet",
-    "conditions": [],
     "eventOnly": true,
+    "conditions": [],
     "set": "dye-trader-s-set",
     "milestone": "start",
     "milestoneVia": "Sold by the Dye Trader"
@@ -169449,8 +169462,8 @@
     "critical": 19,
     "knockback": 20.0,
     "useTime": 20,
-    "conditions": [],
     "eventOnly": true,
+    "conditions": [],
     "milestone": "wall-of-flesh",
     "milestoneVia": "Sold by the Skeleton Merchant"
   },
@@ -169652,7 +169665,9 @@
     "knockback": 3.25,
     "velocity": 16.0,
     "useTime": 25,
-    "conditions": [],
+    "conditions": [
+      "after-eye-of-cthulhu"
+    ],
     "milestone": "eye-of-cthulhu",
     "milestoneVia": "Sold by the Traveling Merchant"
   },
@@ -172480,8 +172495,8 @@
     "placeable": false,
     "autoswing": false,
     "tooltip": "Right click to open",
-    "minDifficulty": "expert",
     "conditions": [],
+    "minDifficulty": "expert",
     "milestone": "king-slime",
     "milestoneVia": "Dropped by King Slime"
   },
@@ -172524,8 +172539,8 @@
     "placeable": false,
     "autoswing": false,
     "tooltip": "Right click to open",
-    "minDifficulty": "expert",
     "conditions": [],
+    "minDifficulty": "expert",
     "milestone": "eye-of-cthulhu",
     "milestoneVia": "Dropped by Eye of Cthulhu"
   },
@@ -172568,8 +172583,8 @@
     "placeable": false,
     "autoswing": false,
     "tooltip": "Right click to open",
-    "minDifficulty": "expert",
     "conditions": [],
+    "minDifficulty": "expert",
     "milestone": "evil-boss",
     "milestoneVia": "Dropped by Eater of Worlds"
   },
@@ -172612,8 +172627,8 @@
     "placeable": false,
     "autoswing": false,
     "tooltip": "Right click to open",
-    "minDifficulty": "expert",
     "conditions": [],
+    "minDifficulty": "expert",
     "milestone": "evil-boss",
     "milestoneVia": "Dropped by Brain of Cthulhu"
   },
@@ -172656,8 +172671,8 @@
     "placeable": false,
     "autoswing": false,
     "tooltip": "Right click to open",
-    "minDifficulty": "expert",
     "conditions": [],
+    "minDifficulty": "expert",
     "milestone": "queen-bee",
     "milestoneVia": "Dropped by Queen Bee"
   },
@@ -172700,8 +172715,8 @@
     "placeable": false,
     "autoswing": false,
     "tooltip": "Right click to open",
-    "minDifficulty": "expert",
     "conditions": [],
+    "minDifficulty": "expert",
     "milestone": "skeletron",
     "milestoneVia": "Dropped by Skeletron"
   },
@@ -172744,8 +172759,8 @@
     "placeable": false,
     "autoswing": false,
     "tooltip": "Right click to open",
-    "minDifficulty": "expert",
     "conditions": [],
+    "minDifficulty": "expert",
     "milestone": "wall-of-flesh",
     "milestoneVia": "Dropped by Wall of Flesh"
   },
@@ -172788,8 +172803,8 @@
     "placeable": false,
     "autoswing": false,
     "tooltip": "Right click to open",
-    "minDifficulty": "expert",
     "conditions": [],
+    "minDifficulty": "expert",
     "milestone": "any-mech",
     "milestoneVia": "Dropped by The Destroyer"
   },
@@ -172832,8 +172847,8 @@
     "placeable": false,
     "autoswing": false,
     "tooltip": "Right click to open",
-    "minDifficulty": "expert",
     "conditions": [],
+    "minDifficulty": "expert",
     "milestone": "any-mech",
     "milestoneVia": "Dropped by The Twins"
   },
@@ -172876,8 +172891,8 @@
     "placeable": false,
     "autoswing": false,
     "tooltip": "Right click to open",
-    "minDifficulty": "expert",
     "conditions": [],
+    "minDifficulty": "expert",
     "milestone": "any-mech",
     "milestoneVia": "Dropped by Skeletron Prime"
   },
@@ -172920,8 +172935,8 @@
     "placeable": false,
     "autoswing": false,
     "tooltip": "Right click to open",
-    "minDifficulty": "expert",
     "conditions": [],
+    "minDifficulty": "expert",
     "milestone": "plantera",
     "milestoneVia": "Dropped by Plantera"
   },
@@ -172964,8 +172979,8 @@
     "placeable": false,
     "autoswing": false,
     "tooltip": "Right click to open",
-    "minDifficulty": "expert",
     "conditions": [],
+    "minDifficulty": "expert",
     "milestone": "golem",
     "milestoneVia": "Dropped by Golem"
   },
@@ -173008,8 +173023,8 @@
     "placeable": false,
     "autoswing": false,
     "tooltip": "Right click to open",
-    "minDifficulty": "expert",
     "conditions": [],
+    "minDifficulty": "expert",
     "milestone": "duke-empress",
     "milestoneVia": "Dropped by Duke Fishron"
   },
@@ -173051,8 +173066,8 @@
     "placeable": false,
     "autoswing": false,
     "tooltip": "Right click to open",
-    "minDifficulty": "expert",
-    "conditions": []
+    "conditions": [],
+    "minDifficulty": "expert"
   },
   {
     "key": "MoonLordBossBag",
@@ -173093,8 +173108,8 @@
     "placeable": false,
     "autoswing": false,
     "tooltip": "Right click to open",
-    "minDifficulty": "expert",
     "conditions": [],
+    "minDifficulty": "expert",
     "milestone": "moon-lord",
     "milestoneVia": "Dropped by Moon Lord"
   },
@@ -173141,8 +173156,8 @@
     "placeable": false,
     "autoswing": false,
     "tooltip": "Increases the strength of friendly bees",
-    "minDifficulty": "expert",
     "conditions": [],
+    "minDifficulty": "expert",
     "milestone": "queen-bee",
     "milestoneVia": "From the Treasure Bag (Queen Bee)"
   },
@@ -173239,10 +173254,10 @@
     "autoswing": false,
     "useTime": 30,
     "tooltip": "Permanently increases the number of accessory slots",
-    "minDifficulty": "expert",
     "conditions": [
       "no-demon-heart"
     ],
+    "minDifficulty": "expert",
     "milestone": "wall-of-flesh",
     "milestoneVia": "From the Treasure Bag (Wall of Flesh)"
   },
@@ -173290,8 +173305,8 @@
     "autoswing": false,
     "debuff": "Poisoned",
     "tooltip": "Summons spores over time that will damage enemies",
-    "minDifficulty": "expert",
     "conditions": [],
+    "minDifficulty": "expert",
     "milestone": "plantera",
     "milestoneVia": "From the Treasure Bag (Plantera)"
   },
@@ -173338,8 +173353,8 @@
     "placeable": false,
     "autoswing": false,
     "tooltip": "Greatly increases life regen when not moving",
-    "minDifficulty": "expert",
     "conditions": [],
+    "minDifficulty": "expert",
     "milestone": "golem",
     "milestoneVia": "From the Treasure Bag (Golem)"
   },
@@ -174113,8 +174128,8 @@
     "placeable": false,
     "autoswing": false,
     "buff": "Minecart",
-    "minDifficulty": "expert",
     "conditions": [],
+    "minDifficulty": "expert",
     "milestone": "wall-of-flesh",
     "milestoneVia": "Hardmode item"
   },
@@ -174160,8 +174175,8 @@
     "consumable": false,
     "placeable": false,
     "autoswing": false,
-    "minDifficulty": "expert",
     "conditions": [],
+    "minDifficulty": "expert",
     "milestone": "any-mech",
     "milestoneVia": "From the Treasure Bag (The Twins)"
   },
@@ -174207,8 +174222,8 @@
     "consumable": false,
     "placeable": false,
     "autoswing": false,
-    "minDifficulty": "expert",
     "conditions": [],
+    "minDifficulty": "expert",
     "milestone": "any-mech",
     "milestoneVia": "From the Treasure Bag (The Destroyer)"
   },
@@ -174254,8 +174269,8 @@
     "consumable": false,
     "placeable": false,
     "autoswing": false,
-    "minDifficulty": "expert",
     "conditions": [],
+    "minDifficulty": "expert",
     "milestone": "any-mech",
     "milestoneVia": "From the Treasure Bag (Skeletron Prime)"
   },
@@ -174554,8 +174569,8 @@
     "placeable": false,
     "autoswing": false,
     "bodySlot": "social shirt",
-    "conditions": [],
     "eventOnly": true,
+    "conditions": [],
     "set": "fallen-tuxedo-set",
     "milestone": "skeletron",
     "milestoneVia": "Sold by the Clothier"
@@ -174609,8 +174624,8 @@
     "placeable": false,
     "autoswing": false,
     "bodySlot": "social pants",
-    "conditions": [],
     "eventOnly": true,
+    "conditions": [],
     "set": "fallen-tuxedo-set",
     "milestone": "skeletron",
     "milestoneVia": "Sold by the Clothier"
@@ -174805,8 +174820,8 @@
     "useTime": 20,
     "buff": "Cute Fishron Mount",
     "tooltip": "Attracts a legendary creature which flourishes in water & combat",
-    "minDifficulty": "expert",
     "conditions": [],
+    "minDifficulty": "expert",
     "milestone": "duke-empress",
     "milestoneVia": "From the Treasure Bag (Duke Fishron)"
   },
@@ -185478,8 +185493,8 @@
     "useTime": 20,
     "buff": "Suspicious Looking Eye",
     "tooltip": "Calls upon a suspicious looking eye to provide light\n'I know what you're thinking....'",
-    "minDifficulty": "expert",
     "conditions": [],
+    "minDifficulty": "expert",
     "milestone": "moon-lord",
     "milestoneVia": "From the Treasure Bag (Moon Lord)"
   },
@@ -193037,8 +193052,8 @@
     "consumable": false,
     "placeable": false,
     "autoswing": false,
-    "conditions": [],
     "eventOnly": true,
+    "conditions": [],
     "milestone": "skeletron",
     "milestoneVia": "Sold by the Clothier"
   },
@@ -193090,8 +193105,8 @@
     "consumable": false,
     "placeable": false,
     "autoswing": false,
-    "conditions": [],
     "eventOnly": true,
+    "conditions": [],
     "milestone": "skeletron",
     "milestoneVia": "Sold by the Clothier"
   },
@@ -193193,8 +193208,8 @@
     "placeable": false,
     "autoswing": false,
     "bodySlot": "social helmet",
-    "conditions": [],
     "eventOnly": true,
+    "conditions": [],
     "set": "silly-sunflower-set",
     "milestone": "skeletron",
     "milestoneVia": "Sold by the Clothier"
@@ -193248,8 +193263,8 @@
     "placeable": false,
     "autoswing": false,
     "bodySlot": "social shirt",
-    "conditions": [],
     "eventOnly": true,
+    "conditions": [],
     "set": "silly-sunflower-set",
     "milestone": "skeletron",
     "milestoneVia": "Sold by the Clothier"
@@ -193303,8 +193318,8 @@
     "placeable": false,
     "autoswing": false,
     "bodySlot": "social pants",
-    "conditions": [],
     "eventOnly": true,
+    "conditions": [],
     "set": "silly-sunflower-set",
     "milestone": "skeletron",
     "milestoneVia": "Sold by the Clothier"
@@ -193534,8 +193549,8 @@
     "placedWidth": 1,
     "placedHeight": 1,
     "tooltip": "Oddly durable enough to climb!",
-    "conditions": [],
     "eventOnly": true,
+    "conditions": [],
     "milestone": "start",
     "milestoneVia": "Sold by the Party Girl"
   },
@@ -193590,8 +193605,8 @@
     "placedWidth": 1,
     "placedHeight": 1,
     "tooltip": "Oddly durable enough to climb!",
-    "conditions": [],
     "eventOnly": true,
+    "conditions": [],
     "milestone": "start",
     "milestoneVia": "Sold by the Party Girl"
   },
@@ -193646,8 +193661,8 @@
     "placedWidth": 1,
     "placedHeight": 1,
     "tooltip": "Oddly durable enough to climb!",
-    "conditions": [],
     "eventOnly": true,
+    "conditions": [],
     "milestone": "start",
     "milestoneVia": "Sold by the Party Girl"
   },
@@ -193757,8 +193772,8 @@
     "useTime": 15,
     "placedWidth": 1,
     "placedHeight": 3,
-    "conditions": [],
     "eventOnly": true,
+    "conditions": [],
     "milestone": "start",
     "milestoneVia": "Sold by the Party Girl"
   },
@@ -193813,8 +193828,8 @@
     "useTime": 15,
     "placedWidth": 1,
     "placedHeight": 3,
-    "conditions": [],
     "eventOnly": true,
+    "conditions": [],
     "milestone": "start",
     "milestoneVia": "Sold by the Party Girl"
   },
@@ -193869,8 +193884,8 @@
     "useTime": 15,
     "placedWidth": 1,
     "placedHeight": 3,
-    "conditions": [],
     "eventOnly": true,
+    "conditions": [],
     "milestone": "start",
     "milestoneVia": "Sold by the Party Girl"
   },
@@ -193924,8 +193939,8 @@
     "placedWidth": 4,
     "placedHeight": 3,
     "tooltip": "Beat the shindig out of it!\nMay contain a suprise!",
-    "conditions": [],
     "eventOnly": true,
+    "conditions": [],
     "milestone": "start",
     "milestoneVia": "Sold by the Party Girl"
   },
@@ -194083,8 +194098,8 @@
     "placedWidth": 2,
     "placedHeight": 2,
     "tooltip": "Press Up/Down to cycle through placement styles\n'Wonder what's inside?'",
-    "conditions": [],
     "eventOnly": true,
+    "conditions": [],
     "milestone": "start",
     "milestoneVia": "Sold by the Party Girl"
   },
@@ -199905,9 +199920,9 @@
     "placeable": false,
     "autoswing": false,
     "tooltip": "Right click to open",
-    "minDifficulty": "expert",
     "eventOnly": true,
     "conditions": [],
+    "minDifficulty": "expert",
     "milestone": "golem",
     "milestoneVia": "Dropped by Betsy"
   },
@@ -199949,8 +199964,8 @@
     "placeable": false,
     "autoswing": false,
     "tooltip": "Right click to open",
-    "minDifficulty": "expert",
-    "conditions": []
+    "conditions": [],
+    "minDifficulty": "expert"
   },
   {
     "key": "BossBagDarkMage",
@@ -199990,8 +200005,8 @@
     "placeable": false,
     "autoswing": false,
     "tooltip": "Right click to open",
-    "minDifficulty": "expert",
-    "conditions": []
+    "conditions": [],
+    "minDifficulty": "expert"
   },
   {
     "key": "BossMaskBetsy",
@@ -210068,9 +210083,9 @@
     "placedHeight": 2,
     "tooltip": "'Badum, psh'",
     "conditions": [
-      "after-wall-of-flesh"
+      "after-eater-of-worlds"
     ],
-    "milestone": "wall-of-flesh",
+    "milestone": "evil-boss",
     "milestoneVia": "Sold by the Merchant"
   },
   {
@@ -210603,8 +210618,8 @@
     "useTime": 15,
     "placedWidth": 1,
     "placedHeight": 2,
-    "conditions": [],
     "eventOnly": true,
+    "conditions": [],
     "milestone": "start",
     "milestoneVia": "Sold by the Merchant"
   },
@@ -220395,6 +220410,7 @@
     "useTime": 36,
     "buff": "Vampire Frog",
     "tooltip": "Summons a vampire frog to fight for you",
+    "eventOnly": true,
     "conditions": [],
     "milestone": "start",
     "milestoneVia": "Dropped by Wandering Eye Fish"
@@ -224095,8 +224111,10 @@
     "useTime": 36,
     "mana": 16,
     "tooltip": "'It might be broken'",
-    "conditions": [],
-    "milestone": "skeletron",
+    "conditions": [
+      "after-king-slime"
+    ],
+    "milestone": "king-slime",
     "milestoneVia": "Sold by the Traveling Merchant"
   },
   {
@@ -229002,9 +229020,9 @@
     "useTime": 20,
     "buff": "Witch's Broom",
     "tooltip": "'Grants a witching spark of inspiration!'",
-    "minDifficulty": "expert",
     "eventOnly": true,
     "conditions": [],
+    "minDifficulty": "expert",
     "milestone": "plantera",
     "milestoneVia": "Dropped by Mourning Wood"
   },
@@ -229111,8 +229129,8 @@
     "damageType": "ranged",
     "knockback": 4.0,
     "tooltip": "Will destroy tiles",
-    "conditions": [],
     "eventOnly": true,
+    "conditions": [],
     "milestone": "plantera",
     "milestoneVia": "Sold by the Cyborg"
   },
@@ -231924,8 +231942,8 @@
     "placeable": true,
     "autoswing": true,
     "useTime": 15,
-    "conditions": [],
     "eventOnly": true,
+    "conditions": [],
     "milestone": "king-slime",
     "milestoneVia": "Sold by the Dryad"
   },
@@ -232124,8 +232142,8 @@
     "placeable": true,
     "autoswing": true,
     "useTime": 15,
-    "conditions": [],
     "eventOnly": true,
+    "conditions": [],
     "milestone": "king-slime",
     "milestoneVia": "Sold by the Dryad"
   },
@@ -239804,8 +239822,8 @@
     "consumable": false,
     "placeable": false,
     "autoswing": false,
-    "conditions": [],
     "eventOnly": true,
+    "conditions": [],
     "milestone": "start",
     "milestoneVia": "Sold by the Dye Trader"
   },
@@ -240331,9 +240349,9 @@
     "useTime": 12,
     "tooltip": "Playable next to Drum Set\n'The coffee is strong...and vulgar'",
     "conditions": [
-      "after-wall-of-flesh"
+      "after-eater-of-worlds"
     ],
-    "milestone": "wall-of-flesh",
+    "milestone": "evil-boss",
     "milestoneVia": "Sold by the Merchant"
   },
   {
@@ -241803,8 +241821,8 @@
     "autoswing": false,
     "velocity": 4.0,
     "useTime": 25,
-    "conditions": [],
     "eventOnly": true,
+    "conditions": [],
     "milestone": "start",
     "milestoneVia": "Sold by the Party Girl"
   },
@@ -243574,8 +243592,8 @@
     "useTime": 20,
     "buff": "Baby Werewolf",
     "tooltip": "Summons a baby werewolf",
-    "conditions": [],
     "eventOnly": true,
+    "conditions": [],
     "milestone": "wall-of-flesh",
     "milestoneVia": "Sold by the Zoologist"
   },
@@ -245953,8 +245971,8 @@
     "placeable": false,
     "autoswing": false,
     "tooltip": "Right click to open",
-    "minDifficulty": "expert",
     "conditions": [],
+    "minDifficulty": "expert",
     "milestone": "duke-empress",
     "milestoneVia": "Dropped by Empress of Light"
   },
@@ -246473,9 +246491,9 @@
     "useTime": 20,
     "buff": "Pirate Ship Mount",
     "tooltip": "Summons the Black Spot mount\n'Arrr! This be mutiny!'",
-    "minDifficulty": "master",
     "eventOnly": true,
     "conditions": [],
+    "minDifficulty": "master",
     "milestone": "wall-of-flesh",
     "milestoneVia": "Dropped by Flying Dutchman"
   },
@@ -246525,9 +246543,9 @@
     "useTime": 20,
     "buff": "Tree Mount",
     "tooltip": "Summons a rideable tree mount\n'A wand crafted from the branch of a cursed tree.'",
-    "minDifficulty": "master",
     "eventOnly": true,
     "conditions": [],
+    "minDifficulty": "master",
     "milestone": "plantera",
     "milestoneVia": "Dropped by Mourning Wood"
   },
@@ -246577,9 +246595,9 @@
     "useTime": 20,
     "buff": "Santank Mount",
     "tooltip": "Summons a rideable Santank mount\n'For the REALLY naughty ones.'",
-    "minDifficulty": "master",
     "eventOnly": true,
     "conditions": [],
+    "minDifficulty": "master",
     "milestone": "plantera",
     "milestoneVia": "Dropped by Santa-NK1"
   },
@@ -246627,8 +246645,8 @@
     "useTime": 20,
     "buff": "Goat Mount",
     "tooltip": "Summons a rideable death goat mount\n'Brutal!'",
-    "minDifficulty": "master",
     "conditions": [],
+    "minDifficulty": "master",
     "milestone": "wall-of-flesh",
     "milestoneVia": "Dropped by Wall of Flesh"
   },
@@ -246678,9 +246696,9 @@
     "useTime": 20,
     "buff": "Book Mount",
     "tooltip": "Summons a magic tome mount\n'A book said to be at its holder's behest.'",
-    "minDifficulty": "master",
     "eventOnly": true,
     "conditions": [],
+    "minDifficulty": "master",
     "milestone": "evil-boss",
     "milestoneVia": "Dropped by Dark Mage"
   },
@@ -246730,8 +246748,8 @@
     "useTime": 20,
     "buff": "Slime Prince",
     "tooltip": "Summons a Slime Prince\n'A dessert fit for a king!'",
-    "minDifficulty": "master",
     "conditions": [],
+    "minDifficulty": "master",
     "milestone": "king-slime",
     "milestoneVia": "Dropped by King Slime"
   },
@@ -246779,8 +246797,8 @@
     "useTime": 20,
     "buff": "Suspicious Eye",
     "tooltip": "Summons a suspicious eye\n'Seems to have lost its look.'",
-    "minDifficulty": "master",
     "conditions": [],
+    "minDifficulty": "master",
     "milestone": "eye-of-cthulhu",
     "milestoneVia": "Dropped by Eye of Cthulhu"
   },
@@ -246828,8 +246846,8 @@
     "useTime": 20,
     "buff": "Eater of Worms",
     "tooltip": "Summons the Eater of Worms\n'It'll give you worms!'",
-    "minDifficulty": "master",
     "conditions": [],
+    "minDifficulty": "master",
     "milestone": "evil-boss",
     "milestoneVia": "Dropped by Eater of Worlds"
   },
@@ -246877,8 +246895,8 @@
     "useTime": 20,
     "buff": "Spider Brain",
     "tooltip": "Summons a spider brain\n'Pickled and shrunken, this brain can no longer hurt you.'",
-    "minDifficulty": "master",
     "conditions": [],
+    "minDifficulty": "master",
     "milestone": "evil-boss",
     "milestoneVia": "Dropped by Brain of Cthulhu"
   },
@@ -246926,8 +246944,8 @@
     "useTime": 20,
     "buff": "Skeletron Jr.",
     "tooltip": "Summons a small Skeletron\n'A skull with unimaginable power dulled.'",
-    "minDifficulty": "master",
     "conditions": [],
+    "minDifficulty": "master",
     "milestone": "skeletron",
     "milestoneVia": "Dropped by Skeletron"
   },
@@ -246975,8 +246993,8 @@
     "useTime": 20,
     "buff": "Honey Bee",
     "tooltip": "Summons a honey bee\n'The secret ingredient for royal bees.'",
-    "minDifficulty": "master",
     "conditions": [],
+    "minDifficulty": "master",
     "milestone": "queen-bee",
     "milestoneVia": "Dropped by Queen Bee"
   },
@@ -247024,8 +247042,8 @@
     "useTime": 20,
     "buff": "Destroyer-Lite",
     "tooltip": "Summons a miniature tool of destruction\n'It's safe to operate this, right?'",
-    "minDifficulty": "master",
     "conditions": [],
+    "minDifficulty": "master",
     "milestone": "any-mech",
     "milestoneVia": "Dropped by The Destroyer"
   },
@@ -247073,8 +247091,8 @@
     "useTime": 20,
     "buff": "Rez and Spaz",
     "tooltip": "Summons miniature mechanical eyes\n'Two are better than one.'",
-    "minDifficulty": "master",
     "conditions": [],
+    "minDifficulty": "master",
     "milestone": "any-mech",
     "milestoneVia": "Dropped by The Twins"
   },
@@ -247122,8 +247140,8 @@
     "useTime": 20,
     "buff": "Mini Prime",
     "tooltip": "Summons a miniature Skeletron Prime\n'We can rebuild it.'",
-    "minDifficulty": "master",
     "conditions": [],
+    "minDifficulty": "master",
     "milestone": "any-mech",
     "milestoneVia": "Dropped by Skeletron Prime"
   },
@@ -247171,8 +247189,8 @@
     "useTime": 20,
     "buff": "Plantera Seedling",
     "tooltip": "Summons a newly sprouted Plantera\n'Get to the root of the problem.'",
-    "minDifficulty": "master",
     "conditions": [],
+    "minDifficulty": "master",
     "milestone": "plantera",
     "milestoneVia": "Dropped by Plantera"
   },
@@ -247220,8 +247238,8 @@
     "useTime": 20,
     "buff": "Toy Golem",
     "tooltip": "Summons a toy golem to light your way\n'Power cells not included.'",
-    "minDifficulty": "master",
     "conditions": [],
+    "minDifficulty": "master",
     "milestone": "golem",
     "milestoneVia": "Dropped by Golem"
   },
@@ -247269,8 +247287,8 @@
     "useTime": 20,
     "buff": "Tiny Fishron",
     "tooltip": "Summons a tiny Fishron\n'Brined to perfection.'",
-    "minDifficulty": "master",
     "conditions": [],
+    "minDifficulty": "master",
     "milestone": "duke-empress",
     "milestoneVia": "Dropped by Duke Fishron"
   },
@@ -247318,8 +247336,8 @@
     "useTime": 20,
     "buff": "Phantasmal Dragon",
     "tooltip": "Summons a baby phantasmal dragon\n'Contains a fragment of Phantasm energy.'",
-    "minDifficulty": "master",
     "conditions": [],
+    "minDifficulty": "master",
     "milestone": "lunatic-cultist",
     "milestoneVia": "Dropped by Lunatic Cultist"
   },
@@ -247367,8 +247385,8 @@
     "useTime": 20,
     "buff": "Moonling",
     "tooltip": "Summons a Moonling\n'The forbidden calamari.'",
-    "minDifficulty": "master",
     "conditions": [],
+    "minDifficulty": "master",
     "milestone": "moon-lord",
     "milestoneVia": "Dropped by Moon Lord"
   },
@@ -247416,8 +247434,8 @@
     "useTime": 20,
     "buff": "Fairy Princess",
     "tooltip": "Summons a fairy princess to provide light\n'A glowing gemstone that houses a powerful fairy.'",
-    "minDifficulty": "master",
     "conditions": [],
+    "minDifficulty": "master",
     "milestone": "duke-empress",
     "milestoneVia": "Dropped by Empress of Light"
   },
@@ -247467,9 +247485,9 @@
     "useTime": 20,
     "buff": "Jack 'O Lantern",
     "tooltip": "Summons a possessed Jack 'O Lantern\n'The flame cannot be put out!'",
-    "minDifficulty": "master",
     "eventOnly": true,
     "conditions": [],
+    "minDifficulty": "master",
     "milestone": "plantera",
     "milestoneVia": "Dropped by Pumpking"
   },
@@ -247519,9 +247537,9 @@
     "useTime": 20,
     "buff": "Everscream Sapling",
     "tooltip": "Summons an Everscream sapling\n'Twinkle, Twinkle!'",
-    "minDifficulty": "master",
     "eventOnly": true,
     "conditions": [],
+    "minDifficulty": "master",
     "milestone": "plantera",
     "milestoneVia": "Dropped by Everscream"
   },
@@ -247571,9 +247589,9 @@
     "useTime": 20,
     "buff": "Ice Queen",
     "tooltip": "Summons a tiny Ice Queen\n'Fit for a queen!'",
-    "minDifficulty": "master",
     "eventOnly": true,
     "conditions": [],
+    "minDifficulty": "master",
     "milestone": "plantera",
     "milestoneVia": "Dropped by Ice Queen"
   },
@@ -247623,9 +247641,9 @@
     "useTime": 20,
     "buff": "Alien Skater",
     "tooltip": "Summons an alien skater\n'Kickflips are a lot easier in Zero-G!'",
-    "minDifficulty": "master",
     "eventOnly": true,
     "conditions": [],
+    "minDifficulty": "master",
     "milestone": "golem",
     "milestoneVia": "Dropped by Martian Saucer"
   },
@@ -247675,9 +247693,9 @@
     "useTime": 20,
     "buff": "Baby Ogre",
     "tooltip": "Summons a baby ogre\n'No other uses besides smashing.'",
-    "minDifficulty": "master",
     "eventOnly": true,
     "conditions": [],
+    "minDifficulty": "master",
     "milestone": "any-mech",
     "milestoneVia": "Dropped by Ogre"
   },
@@ -247727,9 +247745,9 @@
     "useTime": 20,
     "buff": "Itsy Betsy",
     "tooltip": "Summons Itsy Betsy\n'No fire sacrifices required!'",
-    "minDifficulty": "master",
     "eventOnly": true,
     "conditions": [],
+    "minDifficulty": "master",
     "milestone": "golem",
     "milestoneVia": "Dropped by Betsy"
   },
@@ -252920,8 +252938,8 @@
     "useTime": 15,
     "placedWidth": 2,
     "placedHeight": 3,
-    "minDifficulty": "master",
     "conditions": [],
+    "minDifficulty": "master",
     "milestone": "eye-of-cthulhu",
     "milestoneVia": "Dropped by Eye of Cthulhu"
   },
@@ -252969,8 +252987,8 @@
     "useTime": 15,
     "placedWidth": 2,
     "placedHeight": 3,
-    "minDifficulty": "master",
     "conditions": [],
+    "minDifficulty": "master",
     "milestone": "evil-boss",
     "milestoneVia": "Dropped by Eater of Worlds"
   },
@@ -253018,8 +253036,8 @@
     "useTime": 15,
     "placedWidth": 2,
     "placedHeight": 3,
-    "minDifficulty": "master",
     "conditions": [],
+    "minDifficulty": "master",
     "milestone": "evil-boss",
     "milestoneVia": "Dropped by Brain of Cthulhu"
   },
@@ -253067,8 +253085,8 @@
     "useTime": 15,
     "placedWidth": 2,
     "placedHeight": 3,
-    "minDifficulty": "master",
     "conditions": [],
+    "minDifficulty": "master",
     "milestone": "skeletron",
     "milestoneVia": "Dropped by Skeletron"
   },
@@ -253116,8 +253134,8 @@
     "useTime": 15,
     "placedWidth": 2,
     "placedHeight": 3,
-    "minDifficulty": "master",
     "conditions": [],
+    "minDifficulty": "master",
     "milestone": "queen-bee",
     "milestoneVia": "Dropped by Queen Bee"
   },
@@ -253165,8 +253183,8 @@
     "useTime": 15,
     "placedWidth": 2,
     "placedHeight": 3,
-    "minDifficulty": "master",
     "conditions": [],
+    "minDifficulty": "master",
     "milestone": "king-slime",
     "milestoneVia": "Dropped by King Slime"
   },
@@ -253214,8 +253232,8 @@
     "useTime": 15,
     "placedWidth": 2,
     "placedHeight": 3,
-    "minDifficulty": "master",
     "conditions": [],
+    "minDifficulty": "master",
     "milestone": "wall-of-flesh",
     "milestoneVia": "Dropped by Wall of Flesh"
   },
@@ -253263,8 +253281,8 @@
     "useTime": 15,
     "placedWidth": 2,
     "placedHeight": 3,
-    "minDifficulty": "master",
     "conditions": [],
+    "minDifficulty": "master",
     "milestone": "any-mech",
     "milestoneVia": "Dropped by The Twins"
   },
@@ -253312,8 +253330,8 @@
     "useTime": 15,
     "placedWidth": 2,
     "placedHeight": 3,
-    "minDifficulty": "master",
     "conditions": [],
+    "minDifficulty": "master",
     "milestone": "any-mech",
     "milestoneVia": "Dropped by The Destroyer"
   },
@@ -253361,8 +253379,8 @@
     "useTime": 15,
     "placedWidth": 2,
     "placedHeight": 3,
-    "minDifficulty": "master",
     "conditions": [],
+    "minDifficulty": "master",
     "milestone": "any-mech",
     "milestoneVia": "Dropped by Skeletron Prime"
   },
@@ -253410,8 +253428,8 @@
     "useTime": 15,
     "placedWidth": 2,
     "placedHeight": 3,
-    "minDifficulty": "master",
     "conditions": [],
+    "minDifficulty": "master",
     "milestone": "plantera",
     "milestoneVia": "Dropped by Plantera"
   },
@@ -253459,8 +253477,8 @@
     "useTime": 15,
     "placedWidth": 2,
     "placedHeight": 3,
-    "minDifficulty": "master",
     "conditions": [],
+    "minDifficulty": "master",
     "milestone": "golem",
     "milestoneVia": "Dropped by Golem"
   },
@@ -253508,8 +253526,8 @@
     "useTime": 15,
     "placedWidth": 2,
     "placedHeight": 3,
-    "minDifficulty": "master",
     "conditions": [],
+    "minDifficulty": "master",
     "milestone": "duke-empress",
     "milestoneVia": "Dropped by Duke Fishron"
   },
@@ -253557,8 +253575,8 @@
     "useTime": 15,
     "placedWidth": 2,
     "placedHeight": 3,
-    "minDifficulty": "master",
     "conditions": [],
+    "minDifficulty": "master",
     "milestone": "lunatic-cultist",
     "milestoneVia": "Dropped by Lunatic Cultist"
   },
@@ -253606,8 +253624,8 @@
     "useTime": 15,
     "placedWidth": 2,
     "placedHeight": 3,
-    "minDifficulty": "master",
     "conditions": [],
+    "minDifficulty": "master",
     "milestone": "moon-lord",
     "milestoneVia": "Dropped by Moon Lord"
   },
@@ -253657,9 +253675,9 @@
     "useTime": 15,
     "placedWidth": 2,
     "placedHeight": 3,
-    "minDifficulty": "master",
     "eventOnly": true,
     "conditions": [],
+    "minDifficulty": "master",
     "milestone": "golem",
     "milestoneVia": "Dropped by Martian Saucer"
   },
@@ -253709,9 +253727,9 @@
     "useTime": 15,
     "placedWidth": 2,
     "placedHeight": 3,
-    "minDifficulty": "master",
     "eventOnly": true,
     "conditions": [],
+    "minDifficulty": "master",
     "milestone": "wall-of-flesh",
     "milestoneVia": "Dropped by Flying Dutchman"
   },
@@ -253761,9 +253779,9 @@
     "useTime": 15,
     "placedWidth": 2,
     "placedHeight": 3,
-    "minDifficulty": "master",
     "eventOnly": true,
     "conditions": [],
+    "minDifficulty": "master",
     "milestone": "plantera",
     "milestoneVia": "Dropped by Mourning Wood"
   },
@@ -253813,9 +253831,9 @@
     "useTime": 15,
     "placedWidth": 2,
     "placedHeight": 3,
-    "minDifficulty": "master",
     "eventOnly": true,
     "conditions": [],
+    "minDifficulty": "master",
     "milestone": "plantera",
     "milestoneVia": "Dropped by Pumpking"
   },
@@ -253865,9 +253883,9 @@
     "useTime": 15,
     "placedWidth": 2,
     "placedHeight": 3,
-    "minDifficulty": "master",
     "eventOnly": true,
     "conditions": [],
+    "minDifficulty": "master",
     "milestone": "plantera",
     "milestoneVia": "Dropped by Ice Queen"
   },
@@ -253917,9 +253935,9 @@
     "useTime": 15,
     "placedWidth": 2,
     "placedHeight": 3,
-    "minDifficulty": "master",
     "eventOnly": true,
     "conditions": [],
+    "minDifficulty": "master",
     "milestone": "plantera",
     "milestoneVia": "Dropped by Everscream"
   },
@@ -253969,9 +253987,9 @@
     "useTime": 15,
     "placedWidth": 2,
     "placedHeight": 3,
-    "minDifficulty": "master",
     "eventOnly": true,
     "conditions": [],
+    "minDifficulty": "master",
     "milestone": "plantera",
     "milestoneVia": "Dropped by Santa-NK1"
   },
@@ -254021,9 +254039,9 @@
     "useTime": 15,
     "placedWidth": 2,
     "placedHeight": 3,
-    "minDifficulty": "master",
     "eventOnly": true,
     "conditions": [],
+    "minDifficulty": "master",
     "milestone": "evil-boss",
     "milestoneVia": "Dropped by Dark Mage"
   },
@@ -254073,9 +254091,9 @@
     "useTime": 15,
     "placedWidth": 2,
     "placedHeight": 3,
-    "minDifficulty": "master",
     "eventOnly": true,
     "conditions": [],
+    "minDifficulty": "master",
     "milestone": "any-mech",
     "milestoneVia": "Dropped by Ogre"
   },
@@ -254125,9 +254143,9 @@
     "useTime": 15,
     "placedWidth": 2,
     "placedHeight": 3,
-    "minDifficulty": "master",
     "eventOnly": true,
     "conditions": [],
+    "minDifficulty": "master",
     "milestone": "golem",
     "milestoneVia": "Dropped by Betsy"
   },
@@ -254175,8 +254193,8 @@
     "useTime": 15,
     "placedWidth": 2,
     "placedHeight": 3,
-    "minDifficulty": "master",
     "conditions": [],
+    "minDifficulty": "master",
     "milestone": "duke-empress",
     "milestoneVia": "Dropped by Empress of Light"
   },
@@ -254224,8 +254242,8 @@
     "useTime": 15,
     "placedWidth": 2,
     "placedHeight": 3,
-    "minDifficulty": "master",
     "conditions": [],
+    "minDifficulty": "master",
     "milestone": "queen-slime",
     "milestoneVia": "Dropped by Queen Slime"
   },
@@ -254275,7 +254293,9 @@
     "autoswing": true,
     "useTime": 15,
     "tooltip": "Teleport to another pylon\nCan function anywhere\n'You must construct additional pylons'",
-    "conditions": [],
+    "conditions": [
+      "bestiary-100"
+    ],
     "milestone": "wall-of-flesh",
     "milestoneVia": "Hardmode item"
   },
@@ -254430,8 +254450,8 @@
     "placeable": false,
     "autoswing": false,
     "tooltip": "Allows flight and slow fall\nPress Down to toggle hover\nPress Up to deactivate hover\nHold Up to boost faster!\n'The more you know'",
-    "minDifficulty": "expert",
     "conditions": [],
+    "minDifficulty": "expert",
     "milestone": "moon-lord",
     "milestoneVia": "From the Treasure Bag (Moon Lord)"
   },
@@ -254578,8 +254598,8 @@
     "placeable": false,
     "autoswing": false,
     "tooltip": "Right click to open",
-    "minDifficulty": "expert",
     "conditions": [],
+    "minDifficulty": "expert",
     "milestone": "queen-slime",
     "milestoneVia": "Dropped by Queen Slime"
   },
@@ -254725,8 +254745,8 @@
     "useTime": 20,
     "buff": "Slime Princess",
     "tooltip": "Summons a Slime Princess\n'A dessert fit for a queen!'",
-    "minDifficulty": "master",
     "conditions": [],
+    "minDifficulty": "master",
     "milestone": "queen-slime",
     "milestoneVia": "Dropped by Queen Slime"
   },
@@ -256099,8 +256119,8 @@
     "placeable": false,
     "autoswing": false,
     "tooltip": "Releases volatile gelatin periodically that damages enemies",
-    "minDifficulty": "expert",
     "conditions": [],
+    "minDifficulty": "expert",
     "milestone": "queen-slime",
     "milestoneVia": "From the Treasure Bag (Queen Slime)"
   },
@@ -256196,8 +256216,8 @@
     "placeable": false,
     "autoswing": false,
     "tooltip": "Grants infinite wing and rocket boot flight\nIncreases flight and jump mobility",
-    "minDifficulty": "expert",
     "conditions": [],
+    "minDifficulty": "expert",
     "milestone": "duke-empress",
     "milestoneVia": "From the Treasure Bag (Empress of Light)"
   },
@@ -261741,8 +261761,8 @@
     "useTime": 20,
     "buff": "Tiny Deerclops",
     "tooltip": "Summons a tiny Deerclops\n'You lookin' at me? Are YOU lookin' at ME?'",
-    "minDifficulty": "master",
     "conditions": [],
+    "minDifficulty": "master",
     "milestone": "deerclops",
     "milestoneVia": "Dropped by Deerclops"
   },
@@ -262263,8 +262283,8 @@
     "placeable": false,
     "autoswing": false,
     "tooltip": "Summons shadow hands to attack your foes\n'I've got a headache just looking at it.'",
-    "minDifficulty": "expert",
     "conditions": [],
+    "minDifficulty": "expert",
     "milestone": "deerclops",
     "milestoneVia": "From the Treasure Bag (Deerclops)"
   },
@@ -262762,8 +262782,8 @@
     "useTime": 15,
     "placedWidth": 2,
     "placedHeight": 3,
-    "minDifficulty": "master",
     "conditions": [],
+    "minDifficulty": "master",
     "milestone": "deerclops",
     "milestoneVia": "Dropped by Deerclops"
   },
@@ -262806,8 +262826,8 @@
     "placeable": false,
     "autoswing": false,
     "tooltip": "Right click to open",
-    "minDifficulty": "expert",
     "conditions": [],
+    "minDifficulty": "expert",
     "milestone": "deerclops",
     "milestoneVia": "Dropped by Deerclops"
   },
@@ -269775,8 +269795,8 @@
     "placedWidth": 2,
     "placedHeight": 3,
     "tooltip": "'C. Germaine'",
-    "conditions": [],
     "eventOnly": true,
+    "conditions": [],
     "milestone": "start",
     "milestoneVia": "Sold by the Painter"
   },
@@ -273347,8 +273367,8 @@
     "autoswing": false,
     "tooltip": "Prevents you from hurting critters while in the inventory\nPrevents you from accidentally destroying the environment while in the inventory\nRight click to deactivate effects",
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "king-slime",
+    "milestoneVia": "Crafted – needs Any Guide to Environmental Preservation"
   },
   {
     "key": "RubblemakerSmall",
@@ -279665,8 +279685,8 @@
     "autoswing": false,
     "tooltip": "Prevents you from accidentally destroying the environment while in the inventory\nEffects are currently inactive, Right click to reactivate",
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Bought from NPCs"
+    "milestone": "king-slime",
+    "milestoneVia": "Sold by the Dryad"
   },
   {
     "key": "DontHurtComboBookInactive",
@@ -280025,8 +280045,8 @@
     "useTime": 20,
     "mana": 8,
     "tooltip": "'A Dead Man's Hand for your opponents, mon chéri'",
-    "conditions": [],
     "eventOnly": true,
+    "conditions": [],
     "milestone": "wall-of-flesh",
     "milestoneVia": "Sold by the Wizard"
   },
@@ -280283,8 +280303,8 @@
     "useTime": 20,
     "buff": "Swarm Biter",
     "tooltip": "Summons a pet swarm biter\n'Careful, I hear they bite!'",
-    "conditions": [],
     "eventOnly": true,
+    "conditions": [],
     "milestone": "start",
     "milestoneVia": "Sold by the Zoologist"
   },
@@ -284129,9 +284149,9 @@
     "tooltip": "A small explosion that will freeze water",
     "conditions": [
       "night",
-      "after-eye-of-cthulhu"
+      "after-king-slime"
     ],
-    "milestone": "eye-of-cthulhu",
+    "milestone": "king-slime",
     "milestoneVia": "Sold by the Demolitionist"
   },
   {

@@ -53,9 +53,6 @@ DEFAULT_PLATFORMS = PLATFORM_FIELDS
 DIFFICULTY_BY_RARITY = {-12: "expert", -13: "master"}
 
 
-OTHER_SOURCES = {"crafted", "vendor", "loot", "plunder", "fishing", "quest-reward"}
-
-
 # Rarity level -> (name, suffix of the wiki file "Rarity_color_<suffix>_big")
 RARITY_ICONS = {
     -13: ("Master", "fiery_red"), -12: ("Expert", "rainbow"), -11: ("Quest", "quest"),
