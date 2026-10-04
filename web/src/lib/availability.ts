@@ -66,6 +66,12 @@ export function itemsForPlaythrough(
   return data.items.filter(available)
 }
 
+/** Items a new playthrough starts with ignored: they do not count towards progress (and can be
+ * un-ignored) - unobtainable items and other forms of an item. */
+export function startsIgnored(item: Item): boolean {
+  return item.unobtainable || !!item.otherForm
+}
+
 export function versionLabel(data: GameData, id: string | null): string {
   if (!id) return `Latest (${data.versions.at(-1)?.id ?? '?'})`
   return nameOf(data.versions, id)

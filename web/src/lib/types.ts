@@ -43,6 +43,8 @@ export interface Item {
   milestoneVia?: string
   /** not in the wiki's Items table, built from its recipe (no stats, rarity or prices) */
   recipeOnly?: boolean
+  /** another form of an item, not obtained on its own (a Shellphone mode, the Closed Void Bag) */
+  otherForm?: boolean
   hardmode: boolean
   hardmodeOnly: boolean
   unobtainable: boolean

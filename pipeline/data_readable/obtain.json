@@ -104,12 +104,6 @@
     "count": 11
   },
   {
-    "id": "other-form",
-    "name": "Other form of an item",
-    "icon": "https://terraria.wiki.gg/images/Shellphone.png",
-    "count": 13
-  },
-  {
     "id": "toilet",
     "name": "Using a toilet (well fed)",
     "icon": "https://terraria.wiki.gg/images/Toilet.png",
@@ -120,7 +114,7 @@
     "id": "other",
     "name": "Other",
     "icon": "https://terraria.wiki.gg/images/Tombstone.png",
-    "count": 27,
+    "count": 37,
     "fallback": true
   },
   {

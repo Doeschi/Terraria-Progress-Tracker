@@ -4,7 +4,7 @@ import type { DataUpdateReport } from './lib/dataUpdate'
 // Which dialog is open. Kept separate from the data store.
 
 /** part of the sync dialog to show first */
-export type SyncSection = 'items' | 'player' | 'bestiary'
+export type SyncSection = 'items' | 'bestiary'
 
 export type DialogState =
   | { type: 'none' }

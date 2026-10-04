@@ -116,9 +116,10 @@ A list of all items (one entry per item id), sorted by id.
 | `hardmode` | a Hardmode item (the wiki says so; `[hardmode] pre_hardmode` in `mapping.toml` corrects it) |
 | `hardmodeOnly` | only exists in Hardmode (wiki tag "hardmode only") |
 | `unobtainable` | cannot be obtained in the game (ignored by default in new playthroughs) |
+| `otherForm` | `true` for another form of an item, not obtained on its own (a Shellphone mode, the Closed Void Bag; `[other_forms]` in `mapping.toml`): ignored by default in new playthroughs too |
 | `eventOnly` | only obtainable during events |
 | `milestone` | the earliest milestone it can be obtained at (`milestones.json` id) |
-| `milestoneVia` | why, e.g. `"Crafted – needs Chlorophyte Ore"`, `"Dropped by Plantera"` |
+| `milestoneVia` | why: the source (`"Dropped by Plantera"`, `"Sold by the Cyborg"`), for a needed item on to what holds that back (`"Crafted – needs Slime Block → Solidifier: Dropped by King Slime"`), and `"…, in Hardmode"` where only the wiki's Hardmode flag puts it there (`"Fished, in Hardmode"`) |
 | `recipeOnly` | not in the wiki's item table, built from its recipe (no stats, rarity, prices) |
 
 **Kind**
@@ -190,9 +191,15 @@ Like the list files, plus:
 
 ## `obtain.json`
 
-Like the list files, plus `fallback`: `true` for "Other" – items with no other obtain method, and
+Like the list files, plus `fallback`: `true` for "Other" – items with no other obtain method,
 `parent`: a sub-option ("Extractinator" and "Chlorophyte Extractinator" under "Extractinators");
-items list the parent and their sub-options.
+items list the parent and their sub-options – and `filter`: `false` for a method that is only
+shown with the item, without a filter option ("Using a toilet (well fed)").
+
+The methods follow from an item's sources: "Crafted" from the recipes, "Dropped by enemies", the
+chest, crate and treasure bag methods from the drop rows, "Bought from NPCs" from the shop
+rows; the wiki's tags only add what the data has no rows for ("Collected in the world",
+"Fished", …).
 
 ## `versions.json`
 

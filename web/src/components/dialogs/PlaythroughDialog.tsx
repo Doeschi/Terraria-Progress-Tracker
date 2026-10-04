@@ -4,7 +4,13 @@ import { FolderOpen, FolderSearch, Globe, Loader2, UserRound, X } from 'lucide-r
 import { useActivePlaythrough, useStore } from '@/store'
 import { cn, isTouchScreen } from '@/lib/utils'
 import { useUi } from '@/ui'
-import { DIFFICULTY_LABELS, GAME_MODE_DIFFICULTY, itemsForPlaythrough, versionLabel } from '@/lib/availability'
+import {
+  DIFFICULTY_LABELS,
+  GAME_MODE_DIFFICULTY,
+  itemsForPlaythrough,
+  startsIgnored,
+  versionLabel,
+} from '@/lib/availability'
 import {
   ATTACH_DIFFERENCE,
   attachHints,
@@ -179,9 +185,9 @@ function PlaythroughForm({ edit, onDone }: { edit: boolean; onDone: () => void }
   const keptPlayer = pt?.player && !removePlayer && !player ? pt.player : null
   const [readingPlayer, setReadingPlayer] = useState(false)
   // same rule as the tracker itself, so this is the total the progress will count
-  // (unobtainable items start ignored)
+  // (unobtainable items and other forms of an item start ignored)
   const itemCount = useMemo(
-    () => itemsForPlaythrough(data, { platform, difficulty, gameVersion }).filter((i) => !i.unobtainable).length,
+    () => itemsForPlaythrough(data, { platform, difficulty, gameVersion }).filter((i) => !startsIgnored(i)).length,
     [data, platform, difficulty, gameVersion],
   )
 
@@ -216,7 +222,7 @@ function PlaythroughForm({ edit, onDone }: { edit: boolean; onDone: () => void }
       // continue with the areas of the new world, then the first sync (with the player, if any)
       useUi.getState().open({ type: 'areas', thenSync: true })
     } else if (player) {
-      useUi.getState().open({ type: 'sync', section: 'player' })
+      useUi.getState().open({ type: 'sync', section: 'items' })
     }
   }
 
@@ -485,7 +491,7 @@ function PlaythroughForm({ edit, onDone }: { edit: boolean; onDone: () => void }
             : 'All difficulty-specific items are counted.'}{' '}
         {pt
           ? 'Checked items stay checked when they are hidden by these settings.'
-          : 'Unobtainable items are ignored. All settings can be changed later.'}
+          : 'Unobtainable items and other forms of an item (e.g. Shellphone modes) are ignored. All settings can be changed later.'}
       </p>
       <DialogFooter>
         <Button type="submit" disabled={!name.trim()}>

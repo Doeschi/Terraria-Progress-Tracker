@@ -9,7 +9,8 @@ the committed data) and writes update_report.md next to this script (not committ
     (build_warnings.json)
   - items added, removed and renamed (same item id, other key - renamed keys break progress files)
   - per item: changed categories, subcategories, "Obtained by", milestone and its reason, vendors,
-    events, biomes, time of day, conditions, event only, minimum difficulty, unobtainable
+    events, biomes, time of day, conditions, event only, minimum difficulty, unobtainable, other
+    form of an item
   - counts per data file before / after
 and adds the items added, removed and renamed to the change log in meta.json (REQUIREMENTS DU4),
 which the app uses to carry progress files over (renamed keys) and to tell what changed.
@@ -47,6 +48,7 @@ FIELDS = {
     "eventOnly": None,
     "minDifficulty": "difficulties.json",
     "unobtainable": None,
+    "otherForm": None,
 }
 # long lists in the report: the first ones, then "... and N more"
 LIMIT = 150

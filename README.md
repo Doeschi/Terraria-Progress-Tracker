@@ -44,11 +44,11 @@ the unchanged downloads in [`pipeline/raw/`](pipeline/raw).
 
 | File | Contents |
 |------|----------|
-| `items.json` | All 6,185 items (key = internal name; 45 of them only known from recipes, see below; pickups like Heart and Star are left out) with id, icons, wiki page, stats, rarity, prices, platforms, and – derived – categories and subcategories, how they are obtained, vendors, events, biomes, time of day, the game update that added them and whether they are Expert/Master-only |
-| `drops.json` | 488 drop sources (enemies, bosses, treasure bags, chests, crates, grab bags, shaking trees) and 3,688 drops (incl. 305 enemy banners from the NPCs table) with chance and quantity **per game mode** (Classic / Expert / Master), and 313 drop groups ("one of the following 8 items") |
+| `items.json` | All 6,185 items (key = internal name; 45 of them only known from recipes, see below; pickups like Heart and Star are left out) with id, icons, wiki page, stats, rarity, prices, platforms, and – derived – categories and subcategories, how they are obtained, vendors, events, biomes, time of day, the conditions they can only be obtained under, the game update that added them, whether they are Expert/Master-only, and the earliest milestone of a playthrough they are available from |
+| `drops.json` | 488 drop sources (enemies, bosses, treasure bags, chests, crates, grab bags, shaking trees) and 3,679 drops (incl. 304 enemy banners from the NPCs table) with chance and quantity **per game mode** (Classic / Expert / Master), and 313 drop groups ("one of the following 8 items") |
 | `shops.json` | 817 shop rows of 24 vendors (from the vendor pages): per item the vendor, the wiki's condition text and the parsed conditions, events, biomes and moon phases |
 | `conditions.json` | Conditions of shop rows and drops: time of day, moon phases, after a boss, wind, Hardmode, world seeds – with item counts |
-| `milestones.json` | Progression milestones (World creation, King Slime, … Moon Lord); `items.json` gives each item its earliest milestone and the reason (e.g. "Crafted – needs Chlorophyte Ore") |
+| `milestones.json` | Progression milestones (World creation, King Slime, … Moon Lord); `items.json` gives each item its earliest milestone and the reason (e.g. "Crafted – needs Slime Block → Solidifier: Dropped by King Slime") |
 | `sprites.json` + `icons/` | The wiki images the app shows (about 6,800: item and filter icons, enemies, bosses, critters) packed into 4 sprite sheets, with each image's sheet and position (`build_icons.py`) |
 | `containers.json` | The container sources grouped into Chests, Crates, Other containers and Trees, with item counts |
 | `bosses.json` | Bosses by progression stage, each with all drop sources that count for it (parts, treasure bag) |
@@ -135,24 +135,34 @@ the new names. `build_icons.py` downloads them once and packs them into sprite s
 4. **Drops:** the rows of `Drops` are matched to items by name (also without "(item)", by wiki
    page, and "… furniture" sets) and sorted into enemies, treasure bags and containers, with chance
    and quantity per game mode. Conditions in the chance text or notes are read (`[conditions]`).
-5. **Events, biomes, time of day:** from the spawn `environment` of the enemies (`NPCs`) and the
-   drop conditions; an item is "event only" if every source is bound to an event.
-6. **Shops and conditions:** the vendor pages give the shop rows; their condition texts become
+5. **Drop sources:** where and when an enemy spawns – events, biomes, time of day – from its
+   spawn `environment` (`NPCs`), and the platforms of sources the wiki marks as exclusive to
+   some versions (`Exclusive`).
+6. **Shops and rewards:** the vendor pages give the shop rows; their condition texts become
    conditions (night, moon phase, after a boss, wind, Hardmode, world seeds), events and biomes.
-   The Dye Trader's rewards get their own obtain method.
-   "Obtained by" is completed from our own data: drop sources, shimmer transmutations, critters
-   and music boxes; items without any method go under "Other".
-7. **Group files:** `categories.json`, `obtain.json`, … with names, icons and item counts, and
+   The Dye Trader page gives the Strange Plant rewards.
+7. **Recipes and Extractinators:** stations are linked to the items that provide them, "Any …"
+   groups to their items; shimmer transmutations are kept apart. The Extractinator pages give
+   what the two machines produce.
+8. **Sources:** every way to obtain an item is collected in one list (`trackerdata/sources.py`):
+   its drop rows, shop rows, rewards, recipes, shimmer and Extractinator results, and the
+   methods only the wiki's tags name. All fields that say how and when an item is obtained are
+   read off this list, so they cannot disagree: "Obtained by" (items without any method go
+   under "Other"), vendors, events, biomes, time of day, the conditions an item can only be
+   obtained under, "event only" and Expert/Master-only. Rows only in special world seeds and
+   drop sources that are not in the Desktop version count for nothing.
+9. **Group files:** `categories.json`, `obtain.json`, … with names, icons and item counts, and
    platforms, game updates, rarities, coins and difficulties.
-8. **Drops, bosses, containers, shops, conditions** are written; `[bosses]` defines which drop
-   sources count for which boss.
-9. **Recipes:** stations are linked to the items that provide them, "Any …" groups to their
-   items; shimmer transmutations are kept apart.
-10. **Milestones:** the earliest point of a playthrough from which each item can be obtained,
-    from all of the above (`[milestones]`).
-11. **Bestiary:** the entries of "Bestiary/List", matched to NPC ids and internal names ("NPC
+10. **Drops, bosses, containers, shops, conditions** are written; `[bosses]` defines which drop
+    sources count for which boss.
+11. **Milestones:** the earliest point of a playthrough from which each item can be obtained –
+    the earliest of its sources, recipes resolved until nothing changes, plus the rules of
+    `mapping.toml`. The reason names the source and goes on to what holds a needed item back
+    ("Crafted – needs Slime Block → Solidifier: Dropped by King Slime"). A Hardmode item (the
+    wiki's flag) never comes before the Wall of Flesh; those whose data says earlier are reported.
+12. **Bestiary:** the entries of "Bestiary/List", matched to NPC ids and internal names ("NPC
     IDs") and to the `NPCs` table.
-12. Everything is written minified to `web/public/data/` and indented to `pipeline/data_readable/`.
+13. Everything is written minified to `web/public/data/` and indented to `pipeline/data_readable/`.
     Raw values the mapping does not know yet are listed in the output.
 
 ### 3. The mapping file (`pipeline/mapping.toml`)
@@ -175,23 +185,30 @@ it (`*` is a wildcard). Example: the Shuriken has `type: weapon`,
 |---------|--------------|
 | `[settings]` | which Items fields become keys |
 | `[categories.*]`, `[subcategories.*]` | the "Categories" filter: name, icon and `match` keys. Subcategories have a `parent`; they can be a `fallback` ("Other …"), be limited to items of some categories (`with_categories`, `without_categories`, `only_in_parent`), or be removed again by `exclude` keys |
-| `[obtain.*]` | the "Obtained by" filter (crafted, bought, dropped, chests, fishing, quest rewards, caught, recorded, shimmer, other, …); `page` / `section` / `replaces` fill an entry from a page section (the Strange Plant rewards); `from_drops` / `from_containers` / `from_shimmer` / `names` add items from our own data; the `fallback` entry ("Other") takes items without any method |
+| `[obtain.*]` | the "Obtained by" filter (crafted, bought, dropped, chests, fishing, quest rewards, caught, recorded, shimmer, other, …); `page` / `section` fill an entry from a page section (the Strange Plant rewards, with `milestone`: from when there are any); `from_recipes` / `from_drops` / `from_containers` / `from_shimmer` / `from_extractinator` / `names` add items from our own data; `replaces` drops a tag the wiki gives the same items wrongly ("bag loot" on boss treasure bag items); the `fallback` entry ("Other") takes items without any method; `filter = false` shows a method only with the item |
 | `[vendors.*]` | the "Sold by" filter: the vendor's tag, icon, wiki page (for the shop) and `milestone` (when the vendor moves in) |
 | `[events.*]` | the "Events" filter: `environments` (spawn conditions of the event's enemies), `drop_conditions` (words in a drop's chance), `links` / `phrases` (in the condition texts of shops and drops) |
 | `[biomes.*]`, `[times.*]` | where and when enemies spawn (`environments`, `alone`), plus `links` / `phrases` for condition texts |
 | `[conditions]` | the "Conditions" filter: the condition groups (time of day, moon phase, after a boss, weather; world seeds and progress are only shown), each condition with the wiki links and text patterns that mean it; `ignore_links` for links that are no condition |
-| `[milestones.*]`, `[milestone_conditions]`, `[milestone_sources]`, `[milestone_biomes]`, `[milestone_items]` | the "Progression" filter: the milestones in order with their bosses and events, and the exceptions the data cannot tell (late Dungeon enemies, locked chests, mining Hellstone and Chlorophyte, …) |
+| `[milestones.*]`, `[milestone_conditions]`, `[milestone_sources]`, `[milestone_biomes]`, `[milestone_items]` | the "Progression" filter: the milestones in order with their bosses and events, and what the data cannot tell: from when an enemy or a container is reached (`[milestone_sources]`: late Dungeon enemies, locked chests, Hardmode crates), the biomes that need a boss (`[milestone_biomes]`), and item rules (`[milestone_items]`: mining Hellstone and Chlorophyte, lava fishing, drops of a whole biome, world items the data only knows a later source for) |
 | `[flags]` | yes/no fields of an item: `hardmode`, `hardmodeOnly`, `unobtainable`, `banner`, `questFish` |
+| `[hardmode]` | items the wiki flags as Hardmode items although their sources are there before (`pre_hardmode`, e.g. Defender's Forge) |
+| `[other_forms]` | other forms of an item, switched in the inventory and not obtained on their own (Shellphone modes, the Closed Void Bag): marked `otherForm`, ignored by default in a new playthrough |
+| `[pickups]` | items left out entirely: picked up and used on touch (Heart, Star, …) |
 | `[drops]` | which source kinds are used; `boss_ignore_items` (coins and potions do not count for a boss) |
 | `[containers.*]`, `[container_icons]` | the "Found in" groups (chests, crates, other, trees) and icons for sources that are no item (trees → their wood) |
+| `[drop_variants]`, `[drop_areas]` | names for an enemy's variants in the drop rows (Mimic: "Hardmode variant") and the layers of containers (Gold Chest: Underground, Cavern) |
 | `[unobtainable]` | overrides of the wiki: items it marks unobtainable that are obtainable after all (`obtainable`), and items that are unobtainable although it does not say so (`unobtainable`, e.g. the Red Envelope: never really added to the game) |
 | `[recipes]`, `[recipe_groups]`, `[stations]` | stations that need no item (water, lava, "By Hand"), "Any …" groups the wiki page lacks, and which items provide a station (a Mythril Anvil also counts as an Iron Anvil) |
 | `[recipe_items]` | template items for the items only known from recipes ("* Door" → Ash Wood Door) |
+| `[extractinator_inputs]` | Extractinator inputs the wiki names differently from the items |
+| `[sets]` | pages that are, or are not, an armor / vanity set despite their name |
 | `[bestiary]` | entry types (town, critter, enemy, boss) and the bestiary's own filters → our biomes, times and events |
 | `[boss_stages]`, `[bosses.*]` | the "Bosses" filter: stages, map icons and the drop sources that count for each boss (the boss, its parts, its treasure bag) |
 | `[versions.*]` | names and icon items of the game updates ("1.4.4 · Labor of Love") |
 | `[ignore]` | raw keys dropped on purpose (duplicates, not useful), so they are not reported as unmapped |
-| `[manual]` | item name patterns → groups, for what the wiki does not tag (items without `type`, the developer wings, music boxes, …) |
+| `[manual]` | item name patterns → groups, for what the wiki does not tag (items without `type`, the developer wings, music boxes, the biome keys' drops, …) |
+| `[sanity]`, `[renamed_items]` | minimum counts of the parts read from page text, and renames the update report cannot detect (see [Updating the item data](#updating-the-item-data)) |
 
 ### 4. What is derived rather than copied
 
@@ -200,16 +217,24 @@ it (`*` is a wildcard). Example: the Shuriken has `type: weapon`,
 - **Items missing from the wiki's Items table** (45 new 1.4.5 doors, candelabras and a few
   others) from its Recipes table, with categories taken from a similar item.
 - **Events, biomes and time of day of an item** from the spawn conditions of the enemies that
-  drop it (enemy banners included) and from the conditions of drops and shops: 361 items are only
-  obtainable during events, 532 have a biome.
-- **Conditions** (night, moon phase, after a boss, wind) for the 166 items that can only be
+  drop it (enemy banners included) and from the conditions of drops and shops: 371 items are only
+  obtainable during events, 530 have a biome.
+- **Conditions** (night, moon phase, after a boss, wind) for the 249 items that can only be
   obtained under them, from the shop texts of the vendor pages and the drop notes.
+- **How an item is obtained** from all its sources together: "Crafted" from the recipes,
+  "Dropped by enemies", chests, crates and boss treasure bags from the drop rows, "Bought" from
+  the shop rows – the wiki's own tags only where the data has nothing (they are per page, also
+  for items they do not hold for).
 - **Expert/Master-only items** from their rarity, unless they can also be crafted, bought, found
   or fished.
 - **Crafting stations** linked to the items that provide them, and the "Any …" groups to their
   items.
-- **Earliest milestone of every item** from its drops, shops, recipes (repeated until stable) and
-  containers, plus a few rules for mining.
+- **Earliest milestone of every item** from its sources – drops, shops, containers, recipes
+  (repeated until stable), shimmer, the Extractinators – plus rules for what the wiki does not
+  say in a usable form: pickaxe tiers, lava fishing, drops of a whole biome, when a vendor moves
+  in. About 1,000 items have no source row at all, only a tag ("collected in the world",
+  "fished", "caught"): they count from the start unless a rule or the wiki's Hardmode flag
+  says otherwise.
 - **Bestiary entries** matched to NPC ids and internal names (the keys of the bestiary in world
   files), with the game update from the NPC id history.
 - **Platform icons** extracted from the wiki's CSS.
@@ -230,8 +255,9 @@ python pipeline/compare_data.py            # step 4: what changed -> pipeline/up
 - **Renamed items:** same item id, another key. Their checkmarks drop out of progress files.
 - **Added and removed items.**
 - **Changed items:** per item, changes in categories, "Obtained by", milestone and its reason,
-  vendors, events, biomes, time of day, conditions, event only, minimum difficulty and
-  unobtainable, with the same change of many items in one line (`--full` names every item).
+  vendors, events, biomes, time of day, conditions, event only, minimum difficulty,
+  unobtainable and other form of an item, with the same change of many items in one line
+  (`--full` names every item).
 - **Counts per data file,** before and after.
 
 Step 4 also adds the added, removed and renamed items to the change log in
@@ -240,7 +266,13 @@ checkmarks of renamed items along and to show once what changed since the file w
 Renames with the same item id are found automatically; others go into `[renamed_items]` of
 `mapping.toml`.
 - **Step 2's warnings:** unmapped raw values, items without a category, unknown names, unmatched
-  drop groups – each a decision for `mapping.toml` or a wiki error.
+  drop groups, Hardmode items whose sources in the data say earlier – each a decision for
+  `mapping.toml` or a wiki error.
+
+While working on the pipeline itself, `compare_data.py --base-dir <folder>` compares with a
+folder of earlier data (a copy, or `build_tracker_data.py --out <folder>`) instead of the last
+commit and leaves the change log alone – so every change to the logic shows exactly which items
+it moves.
 
 The parts that step 2 reads from page text (shops, Bestiary/List, the drop groups, the
 Extractinator tables, …) have minimum counts in `[sanity]` of `mapping.toml`. Below one, step 2

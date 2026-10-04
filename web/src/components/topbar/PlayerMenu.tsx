@@ -117,7 +117,7 @@ export function PlayerMenu() {
           {ref && (
             <>
               <DropdownMenuSeparator />
-              <DropdownMenuItem disabled={!player} onSelect={() => void sync('player', 'player')}>
+              <DropdownMenuItem disabled={!player} onSelect={() => void sync('player', 'items')}>
                 <RefreshCw /> Sync with player…
               </DropdownMenuItem>
               <DropdownMenuSeparator />

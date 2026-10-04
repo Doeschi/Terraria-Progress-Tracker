@@ -136758,6 +136758,7 @@
     "unobtainable": false,
     "banner": false,
     "questFish": false,
+    "otherForm": true,
     "rarity": 8,
     "sell": 50000,
     "research": 1,
@@ -162698,9 +162699,11 @@
     "icon": "https://terraria.wiki.gg/images/Cell_Phone.png",
     "categories": [
       "tool",
+      "accessory",
       "crafting-material"
     ],
     "subcategories": [
+      "informational",
       "material-equipment",
       "other-tool"
     ],
@@ -259931,6 +259934,7 @@
     "unobtainable": false,
     "banner": false,
     "questFish": false,
+    "otherForm": true,
     "rarity": 2,
     "sell": 100,
     "research": 1,
@@ -262490,6 +262494,7 @@
     "unobtainable": false,
     "banner": false,
     "questFish": false,
+    "otherForm": true,
     "rarity": 1,
     "sell": 10000,
     "research": 1,
@@ -273364,6 +273369,7 @@
     "unobtainable": false,
     "banner": false,
     "questFish": false,
+    "otherForm": true,
     "rarity": 3,
     "sell": 20000,
     "research": 1,
@@ -274927,13 +274933,15 @@
     "url": "https://terraria.wiki.gg/wiki/Shellphone",
     "icon": "https://terraria.wiki.gg/images/Shellphone_%28Home%29.png",
     "categories": [
-      "tool"
+      "tool",
+      "accessory"
     ],
     "subcategories": [
+      "informational",
       "other-tool"
     ],
     "obtain": [
-      "other-form"
+      "other"
     ],
     "vendors": [],
     "events": [],
@@ -274952,6 +274960,7 @@
     "unobtainable": false,
     "banner": false,
     "questFish": false,
+    "otherForm": true,
     "rarity": 8,
     "sell": 100000,
     "research": 1,
@@ -274962,8 +274971,7 @@
     "useTime": 90,
     "tooltip": "Displays everything\nAllows you to return home at will\nRight click to toggle destination\n'If you listen closely, you can hear something about your car's warranty'",
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Other form of an item"
+    "milestone": "start"
   },
   {
     "key": "ShellphoneSpawn",
@@ -274974,13 +274982,15 @@
     "url": "https://terraria.wiki.gg/wiki/Shellphone",
     "icon": "https://terraria.wiki.gg/images/Shellphone_%28Spawn%29.png",
     "categories": [
-      "tool"
+      "tool",
+      "accessory"
     ],
     "subcategories": [
+      "informational",
       "other-tool"
     ],
     "obtain": [
-      "other-form"
+      "other"
     ],
     "vendors": [],
     "events": [],
@@ -274999,6 +275009,7 @@
     "unobtainable": false,
     "banner": false,
     "questFish": false,
+    "otherForm": true,
     "rarity": 8,
     "sell": 100000,
     "research": 1,
@@ -275009,8 +275020,7 @@
     "useTime": 90,
     "tooltip": "Displays everything\nAllows you to return to spawn at will\nRight click to toggle destination\n'If you listen closely, you can hear something about your car's warranty'",
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Other form of an item"
+    "milestone": "start"
   },
   {
     "key": "ShellphoneOcean",
@@ -275021,13 +275031,15 @@
     "url": "https://terraria.wiki.gg/wiki/Shellphone",
     "icon": "https://terraria.wiki.gg/images/Shellphone_%28Ocean%29.png",
     "categories": [
-      "tool"
+      "tool",
+      "accessory"
     ],
     "subcategories": [
+      "informational",
       "other-tool"
     ],
     "obtain": [
-      "other-form"
+      "other"
     ],
     "vendors": [],
     "events": [],
@@ -275046,6 +275058,7 @@
     "unobtainable": false,
     "banner": false,
     "questFish": false,
+    "otherForm": true,
     "rarity": 8,
     "sell": 100000,
     "research": 1,
@@ -275056,8 +275069,7 @@
     "useTime": 90,
     "tooltip": "Displays everything\nAllows you to travel to the ocean at will\nRight click to toggle destination\n'If you listen closely, you can hear something about your car's warranty'",
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Other form of an item"
+    "milestone": "start"
   },
   {
     "key": "ShellphoneHell",
@@ -275068,13 +275080,15 @@
     "url": "https://terraria.wiki.gg/wiki/Shellphone",
     "icon": "https://terraria.wiki.gg/images/Shellphone_%28Underworld%29.png",
     "categories": [
-      "tool"
+      "tool",
+      "accessory"
     ],
     "subcategories": [
+      "informational",
       "other-tool"
     ],
     "obtain": [
-      "other-form"
+      "other"
     ],
     "vendors": [],
     "events": [],
@@ -275093,6 +275107,7 @@
     "unobtainable": false,
     "banner": false,
     "questFish": false,
+    "otherForm": true,
     "rarity": 8,
     "sell": 100000,
     "research": 1,
@@ -275103,8 +275118,7 @@
     "useTime": 90,
     "tooltip": "Displays everything\nAllows you to travel to the underworld at will\nRight click to toggle destination\n'If you listen closely, you can hear something about your car's warranty'",
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Other form of an item"
+    "milestone": "start"
   },
   {
     "key": "MusicBoxShimmer",
@@ -276531,6 +276545,7 @@
     "unobtainable": false,
     "banner": false,
     "questFish": false,
+    "otherForm": true,
     "rarity": 1,
     "sell": 10000,
     "research": 1,
@@ -278740,9 +278755,11 @@
     "url": "https://terraria.wiki.gg/wiki/Shellphone",
     "icon": "https://terraria.wiki.gg/images/Shellphone.png",
     "categories": [
-      "tool"
+      "tool",
+      "accessory"
     ],
     "subcategories": [
+      "informational",
       "other-tool"
     ],
     "obtain": [
@@ -279513,8 +279530,7 @@
       "other-tool"
     ],
     "obtain": [
-      "vendor",
-      "other-form"
+      "vendor"
     ],
     "vendors": [
       "zoologist"
@@ -279535,6 +279551,7 @@
     "unobtainable": false,
     "banner": false,
     "questFish": false,
+    "otherForm": true,
     "rarity": 1,
     "buy": 50000,
     "sell": 10000,
@@ -279565,8 +279582,7 @@
       "other-tool"
     ],
     "obtain": [
-      "vendor",
-      "other-form"
+      "vendor"
     ],
     "vendors": [
       "dryad"
@@ -279587,6 +279603,7 @@
     "unobtainable": false,
     "banner": false,
     "questFish": false,
+    "otherForm": true,
     "rarity": 1,
     "buy": 50000,
     "sell": 10000,
@@ -279615,7 +279632,7 @@
       "other-tool"
     ],
     "obtain": [
-      "other-form"
+      "other"
     ],
     "vendors": [],
     "events": [],
@@ -279634,6 +279651,7 @@
     "unobtainable": false,
     "banner": false,
     "questFish": false,
+    "otherForm": true,
     "rarity": 2,
     "sell": 20000,
     "research": 1,
@@ -279643,8 +279661,7 @@
     "autoswing": false,
     "tooltip": "Prevents you from hurting critters while in the inventory\nPrevents you from accidentally destroying the environment while in the inventory\nEffects are currently inactive, Right click to reactivate",
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Other form of an item"
+    "milestone": "start"
   },
   {
     "key": "DeadCellsMushroomBoiSummonItem",
@@ -289925,7 +289942,7 @@
       "other-crafting-material"
     ],
     "obtain": [
-      "other-form"
+      "other"
     ],
     "vendors": [],
     "events": [],
@@ -289944,6 +289961,7 @@
     "unobtainable": false,
     "banner": false,
     "questFish": false,
+    "otherForm": true,
     "rarity": 9,
     "sell": 25000,
     "research": 1,
@@ -289953,8 +289971,7 @@
     "autoswing": false,
     "tooltip": "Can be activated with the right materials\n'At every setback, begin again... wiser.'",
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Other form of an item"
+    "milestone": "start"
   },
   {
     "key": "EnchantedPixieDust",
@@ -293668,8 +293685,7 @@
       "enemy-drop"
     ],
     "obtain": [
-      "drop",
-      "other-form"
+      "drop"
     ],
     "vendors": [],
     "events": [],
@@ -293688,6 +293704,7 @@
     "unobtainable": false,
     "banner": false,
     "questFish": false,
+    "otherForm": true,
     "rarity": 9,
     "sell": 25000,
     "research": 1,
@@ -314604,7 +314621,7 @@
       "combat"
     ],
     "obtain": [
-      "other-form"
+      "other"
     ],
     "vendors": [],
     "events": [],
@@ -314623,6 +314640,7 @@
     "unobtainable": false,
     "banner": false,
     "questFish": false,
+    "otherForm": true,
     "rarity": 5,
     "sell": 80000,
     "research": 1,
@@ -314632,8 +314650,7 @@
     "autoswing": false,
     "tooltip": "Weapons use ammo in rotating order across your entire inventory\n8% increased ranged damage\nRight click to switch ammo usage modes",
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Other form of an item"
+    "milestone": "start"
   },
   {
     "key": "TimerCrit",
@@ -315747,7 +315764,7 @@
       "combat"
     ],
     "obtain": [
-      "other-form"
+      "other"
     ],
     "vendors": [],
     "events": [],
@@ -315766,6 +315783,7 @@
     "unobtainable": false,
     "banner": false,
     "questFish": false,
+    "otherForm": true,
     "rarity": 5,
     "sell": 80000,
     "research": 1,
@@ -315775,8 +315793,7 @@
     "autoswing": false,
     "tooltip": "Weapons use ammo randomly\n8% increased ranged damage\nRight click to switch ammo usage modes",
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Other form of an item"
+    "milestone": "start"
   },
   {
     "key": "AmmoCyclerNoCycle",
@@ -315793,7 +315810,7 @@
       "combat"
     ],
     "obtain": [
-      "other-form"
+      "other"
     ],
     "vendors": [],
     "events": [],
@@ -315812,6 +315829,7 @@
     "unobtainable": false,
     "banner": false,
     "questFish": false,
+    "otherForm": true,
     "rarity": 5,
     "sell": 80000,
     "research": 1,
@@ -315821,8 +315839,7 @@
     "autoswing": false,
     "tooltip": "Weapons use ammo normally!\n8% increased ranged damage\nRight click to switch ammo usage modes",
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Other form of an item"
+    "milestone": "start"
   },
   {
     "key": "OldStyleParkourBookInactive",
@@ -315839,7 +315856,7 @@
       "other-tool"
     ],
     "obtain": [
-      "other-form"
+      "other"
     ],
     "vendors": [],
     "events": [],
@@ -315858,6 +315875,7 @@
     "unobtainable": false,
     "banner": false,
     "questFish": false,
+    "otherForm": true,
     "rarity": 10,
     "sell": 70000,
     "research": 1,
@@ -315867,7 +315885,6 @@
     "autoswing": false,
     "tooltip": "Allows moving in nostalgic ways.\nEffects are currently inactive, Right click to reactivate\n'Because it's there!'",
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Other form of an item"
+    "milestone": "start"
   }
 ]

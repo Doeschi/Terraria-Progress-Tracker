@@ -25,7 +25,7 @@ import {
   type Playthrough,
   type SaveFile,
 } from './lib/saveFile'
-import { GAME_MODE_DIFFICULTY } from './lib/availability'
+import { GAME_MODE_DIFFICULTY, startsIgnored } from './lib/availability'
 import { chooseActive, loadView, rememberActive, saveView } from './lib/viewState'
 import { useUi } from './ui'
 import { carryOver } from './lib/dataUpdate'
@@ -286,10 +286,11 @@ export const useStore = create<State & Actions>()((set, get) => {
     createPlaythrough(name, platform, difficulty, gameVersion) {
       const p = {
         ...newPlaythrough(name, platform, difficulty, gameVersion),
-        // unobtainable items do not count towards progress by default (they can be un-ignored)
+        // unobtainable items and other forms of an item do not count towards progress by default
+        // (they can be un-ignored)
         ignored:
           get()
-            .data?.items.filter((i) => i.unobtainable)
+            .data?.items.filter(startsIgnored)
             .map((i) => i.key) ?? [],
       }
       mutateDoc((doc) => ({

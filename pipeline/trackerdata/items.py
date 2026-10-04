@@ -218,6 +218,8 @@ def build_item(row, mapping, schema, exclusive, history, equip, extra_keys=()):
         "introduced": format_version(introduced) if introduced else None,
         "version": version_group(introduced) if introduced else None,
         **flags,
+        # another form of an item, not obtained on its own (mapping.toml [other_forms])
+        "otherForm": mapping.hits(mapping.other_forms, norm_name(name)) or None,
         "rarity": rarity(row["rare"]),
         "buy": coins(row["buy"]),
         "sell": coins(row["sell"]),

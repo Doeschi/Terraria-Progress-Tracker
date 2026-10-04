@@ -21,7 +21,7 @@ import { usePlayerLoader } from '@/hooks/usePlayerLoader'
 import { useWorldLoader } from '@/hooks/useWorldLoader'
 import { findPlaythrough } from '@/lib/saveFile'
 import { chooseActive } from '@/lib/viewState'
-import { itemsForPlaythrough } from '@/lib/availability'
+import { itemsForPlaythrough, startsIgnored } from '@/lib/availability'
 import { Button } from '@/components/ui/button'
 import { openFileAction } from '@/actions'
 import { AiNotice, Credits } from './Credits'
@@ -52,11 +52,12 @@ export function WelcomeScreen() {
     if (pt.player) void hasRememberedPlayer(id).then((remembered) => remembered && loadPlayer(id, true, false))
   }
 
-  // as the progress of a new PC playthrough counts them: unobtainable items are ignored by default
+  // as the progress of a new PC playthrough counts them: unobtainable items and other forms of an
+  // item are ignored by default
   const itemCount = useMemo(
     () =>
       itemsForPlaythrough(data, { platform: 'desktop', difficulty: 'master', gameVersion: null }).filter(
-        (i) => !i.unobtainable,
+        (i) => !startsIgnored(i),
       ).length,
     [data],
   )

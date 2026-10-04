@@ -1250,13 +1250,6 @@ name = "Player death"
 icon = "Tombstone"
 match = ["page:tombstones"]
 
-[obtain.other-form]
-name = "Other form of an item"
-icon = "Shellphone"
-match = []
-# switched in the inventory (right-click) or by using the item
-names = ["Shellphone (*)", "Chaos Cylinder (*)", "* (Inactive)"]
-
 # Poo: sitting on a toilet with a food buff (Well Fed or stronger). Only shown with the item
 # (detail panel, table), no option in the "Obtained by" filter (filter = false)
 [obtain.toilet]
@@ -2235,6 +2228,18 @@ boss_ignore_items = [
 ]
 
 
+# --------------------------------------------------------------- other forms
+# Other forms of an item: switched in the inventory (right-click) or by using the item, not
+# obtained on their own - the modes of the Shellphone and the Chaos Cylinder, "(Inactive)"
+# versions, the closed Void Bag, the Uncumbering Stone, the Flairoon, ... Item name patterns.
+# The items are marked (`otherForm`) and a new playthrough starts with them ignored, like the
+# unobtainable items (REQUIREMENTS D19a, P7).
+
+[other_forms]
+names = ["Shellphone (*)", "Chaos Cylinder (*)", "* (Inactive)", "Closed Void Bag", "Uncumbering Stone",
+         "Capricorn Hooves", "Gentleman's Magnificent Beard", "Flairoon"]
+
+
 # ------------------------------------------------------------------- pickups
 # Picked up and used up on touch, never in the inventory (healing hearts, mana stars and
 # their seasonal variants, Nebula boosters): left out of the items entirely.
@@ -2712,6 +2717,7 @@ keys = [
     "listcat:crafting stations", "listcat:minecart track items",
     "listcat:souls", "listcat:scope", "listcat:buffs", "listcat:debuffs",
     "listcat:wall-piercing weapons",
+    "listcat:craftable items",       # "Crafted" comes from the recipes ([obtain.crafted])
 ]
 
 
@@ -2769,6 +2775,11 @@ keys = [
 "* Banner" = ["subcategories:other-banner"]
 
 "*Music Box*" = ["subcategories:music-box"]
+# The wiki types the Cell Phone and the Shellphone (and its modes) as tools, so "Informational"
+# (only for accessories) left them out, though the wiki lists them as informational items:
+# accessories too
+"Cell Phone" = ["categories:accessory"]
+"Shellphone*" = ["categories:accessory"]
 # effects the Equipinfo table does not record
 "Band of Regeneration" = ["subcategories:defense-survival"]
 "Soul of *" = ["subcategories:soul"]

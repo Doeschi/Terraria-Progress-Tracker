@@ -21,10 +21,16 @@ npm run format         # Prettier (single quotes, no semicolons, 120 columns; sr
 | `lib/types.ts`, `lib/data.ts` | Shapes and loading of the generated JSON in `public/data/` |
 | `lib/saveFile.ts`, `lib/files.ts` | Tracking file format (with migrations), opening/saving, local backup, autosave writes |
 | `lib/filtering.ts`, `lib/filterView.ts` | Filter groups, faceted counts; what the filter sidebar shows (hidden, completed, search) |
-| `lib/availability.ts`, `lib/drops.ts`, `lib/recipes.ts`, `lib/bestiary.ts` | Items per playthrough, drops, crafting, bestiary |
+| `lib/availability.ts`, `lib/drops.ts`, `lib/recipes.ts`, `lib/bestiary.ts` | Items per playthrough (and which of them a new one starts with ignored), drops, crafting, bestiary |
+| `lib/sources.ts`, `lib/npcs.ts`, `lib/conditions.ts` | The "Sources & sets" filter group, the links behind the NPC cards, the condition names of shop rows and drops |
 | `lib/world.ts`, `lib/coords.ts`, `workers/` | World files (parsed in a Web Worker), chests, areas, coordinates |
-| `lib/prefs.ts` | View settings remembered in the browser (columns, sorting, hidden filters, autosave, …) |
-| `lib/format.ts` | Small text helpers (plurals, names, dates) |
-| `hooks/` | View models (`useTrackerView`, `useBestiaryView`), world loading, autosave, areas |
+| `lib/worldProgress.ts`, `lib/luck.ts` | What a loaded world has defeated (milestones reached), expected drops ("bad luck") |
+| `lib/player.ts` | The attached player file (read with `packages/terraria-player-file`) |
+| `lib/dataUpdate.ts` | Carrying a progress file over to newer item data (renamed keys, what changed) |
+| `lib/prefs.ts`, `lib/viewState.ts`, `lib/layout.ts` | View settings remembered in the browser (columns, sorting, hidden filters, autosave, …), the view of each playthrough, what the settings can show and reorder |
+| `lib/sprites.ts` | Where a wiki icon sits in the sprite sheets |
+| `lib/format.ts`, `lib/utils.ts` | Small helpers (plurals, names, dates; touch screens, class names) |
+| `lib/eggs.tsx`, `lib/trophies.ts`, `lib/weapons.ts`, `lib/fx.ts`, `lib/confetti.ts`, `lib/parade.ts`, `lib/season.ts` | Easter eggs and celebrations |
+| `hooks/` | View models (`useTrackerView`, `useBestiaryView`), world and player loading, world progress, completions, autosave, areas |
 | `components/` | Screens and parts: header (`TopBar`, `topbar/`), filter sidebar, item and bestiary lists, item details, `dialogs/`, `table/` |
 | `components/ui/` | shadcn/ui components (generated, kept in their own style) |

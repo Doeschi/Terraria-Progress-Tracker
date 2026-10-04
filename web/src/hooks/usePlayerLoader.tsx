@@ -97,7 +97,7 @@ export function usePlayerLoader() {
         // a new character: offer the first sync right away
         const newPlayer = !attached || attached.name !== player.name
         if (newPlayer && playthroughId === useStore.getState().activeId)
-          useUi.getState().open({ type: 'sync', section: 'player' })
+          useUi.getState().open({ type: 'sync', section: 'items' })
         return newPlayer ? 'new' : true
       } catch (err) {
         toast.error(err instanceof Error ? err.message : String(err))

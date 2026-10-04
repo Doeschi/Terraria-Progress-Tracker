@@ -134,8 +134,7 @@ GitHub Actions.
   shaking trees → Collected in the world), shimmer transmutations ("Shimmer transformation"),
   critters ("Caught with a Bug Net"), the Extractinators (B6), and by name: music boxes
   ("Recorded (Music Box)"), grave markers of the page "Tombstones" ("Player death"; the golden
-  ones when dying with at least 10 gold coins – from the start, though pirates drop them too), other forms of an item – Shellphone
-  and Chaos Cylinder modes, "(Inactive)" versions ("Other form of an item"). Methods with
+  ones when dying with at least 10 gold coins – from the start, though pirates drop them too), Methods with
   `filter = false` are only shown with the item (detail panel, table), not as a filter option:
   Poo "Using a toilet (well fed)". Every obtainable
   item has at least one method: the rest (world items like Fallen Star, items the wiki has not
@@ -163,6 +162,12 @@ GitHub Actions.
 - **D18b** Pickups that are used up on touch and never reach the inventory (Heart, Star, their
   seasonal variants Candy Apple, Candy Cane, Soul Cake, Sugar Plum, and the Nebula boosters) are
   left out of the items (`[pickups]` in `mapping.toml`), together with their drop rows.
+- **D19a** Other forms of an item – switched in the inventory (right-click) or by using the
+  item, not obtained on their own: the modes of the Shellphone and the Chaos Cylinder,
+  "(Inactive)" versions, the Closed Void Bag, the Uncumbering Stone, Capricorn Hooves,
+  Gentleman's Magnificent Beard, the Flairoon – are no obtain method. They are marked
+  (`otherForm`; `[other_forms]` in `mapping.toml`, item name patterns) and start ignored in a
+  new playthrough (P7); in "Obtained by" they have what their other data says, else "Other".
 - **D19** Unobtainable items (the wiki's `unobtainable` field, tag or category "Unobtainable
   items") only belong to the obtain method "Unobtainable"; other labels the wiki gives them (e.g.
   "Dropped by enemies" for presents that were dropped until 1.2.2) are dropped. A list in
@@ -200,7 +205,7 @@ needs a decision is reported, and parsers that read page text must not silently 
     break progress files
   - per item: changes of categories, subcategories, "Obtained by", milestone and its reason,
     vendors, events, biomes, time of day, conditions, event only, minimum difficulty,
-    unobtainable (a list per kind, item names)
+    unobtainable, other form of an item (a list per kind, item names)
   - counts per data file before / after (items, drops, sources, recipes, shop rows, bestiary
     entries, drop groups, Extractinator results, sets, …)
   - the warnings of step 2 in one list (unmapped raw values, items without category, unknown
@@ -332,8 +337,9 @@ needs a decision is reported, and parsers that read page text must not silently 
   item count; "Save". A player chosen here is attached on Create / Save; without a new world the
   sync dialog opens on its Player section.
 
-- **P7** A new playthrough starts with all unobtainable items (D19) ignored, so they do not count
-  towards progress; they can be un-ignored like any other item. Existing playthroughs are not
+- **P7** A new playthrough starts with all unobtainable items (D19) and all other forms of an
+  item (D19a) ignored, so they do not count towards progress; they can be un-ignored like any
+  other item. Existing playthroughs are not
   changed.
 ## I – Items
 
@@ -797,7 +803,7 @@ Below 640 px width (phones) the layout changes; tablets and desktops stay as the
     Koi, Obsidifish, Demon Conch, Bottomless Lava Bucket, Lava Absorbant Sponge, the lava
     critters. Not counted: the Golden Bug Net, a rare Angler reward, catches the bait too
   - methods only the wiki's tags or a name rule give, without data of ours ("Collected in the
-    world", "Caught with a Bug Net", "Other form of an item"; "Dropped by enemies", chests and
+    world", "Caught with a Bug Net", "Recorded (Music Box)"; "Dropped by enemies", chests and
     bags without a drop row) → Start, but only for items the data has no
     source for: the tags are per wiki page, also for items they do not hold for (every
     chandelier is "collected in the world"), so a later source in the data (a recipe, a vendor,
@@ -1089,16 +1095,25 @@ Below 640 px width (phones) the layout changes; tablets and desktops stay as the
 - **SY4a** Option to also scan item frames, weapon racks, mannequins, hat racks and plates.
 - **SY5** For each found item the dialog shows in how many chests it was found and the total
   stack.
-- **SY6** The dialog shows a summary (chests scanned, items to check, items to uncheck).
-- **SY7** One sync dialog for everything from the world: sections "Items" (SY1–SY6) and
-  "Bestiary" (BE5), each with its number of differences. One "Apply" applies the selected
+- **SY6** The dialog shows a summary (chests scanned, items to check, items to uncheck), and
+  below its title when the game last saved the loaded world file and player file (their
+  modification time: "World file saved today, 14:05 · player file saved yesterday, 22:10").
+- **SY7** One sync dialog for everything from the world and the player: sections "Items"
+  (SY1–SY6 and the player, PL4 – one list for the chests of the world and what the player has)
+  and "Bestiary" (BE5), each with its number of differences; with only a player loaded there
+  is just "Items" and no section switch. One "Apply" applies the selected
   changes of both; the footer summarises both. In every list a ticked checkbox means "apply
   this change" (for "Checked but not found": uncheck the item; off by default).
 
 - **SY8** The area selection (sync and chest search) has two blocks: "Areas to scan" – "Full
   World" (the entire world) set apart from the areas of the playthrough, with a "Manage areas…"
   button that opens the areas dialog; its "Back to sync" / "Back to chest search" button returns
-  – and "Options" (only player chests, include displays).
+  – and "Containers" (only player chests, include displays). In the sync dialog all options –
+  this area selection and what counts on the player (PL4) – sit in one collapsible "Options"
+  container above the lists: collapsed by default, with the current choice in short ("Full
+  World · only player chests · everything on the player"); the open state is remembered in the
+  browser (PR1). The lists give way when the open options leave less room, and the section
+  scrolls as a whole if that is not enough.
 - **SY9** A third tab "Unknown items" lists the item ids of the scanned containers that the item
   data does not know: amount, the containers with name and position, and – if known – the name
   and icon from `missing_items.json` (recipe items without a template, see D22), or a hint when the id is higher than every known id (newer game version).
@@ -1246,10 +1261,12 @@ Status: parser done (PL1, PL2), app integration in progress (PL3–PL5).
   progress file stores a reference per playthrough (name, file name, last sync – F7),
   not the contents; the parsed player is kept for the session only. Files of unsupported game
   versions give a clear message.
-- **PL4** Sync (SY): the sync dialog also opens with only a player loaded. Section "Inventory" (next to "Chests" and "Bestiary"):
-  checkboxes per storage (inventory incl. coins and ammo, equipment / misc slots / loadouts, Piggy
-  Bank, Safe, Defender's Forge, Void Vault) and "permanent upgrades used", all on by default; the
-  list of items to be checked can be deselected like the world's. Used permanent upgrades count
+- **PL4** Sync (SY): the sync dialog also opens with only a player loaded. The player is part of
+  the section "Items" (SY7): "To be checked" lists what is in the scanned chests or on the
+  player, one row per item that says where ("10 in 1 container · 37 in the inventory · 1 in the
+  Safe"), deselected like before. Options (in the "Options" container, SY8): checkboxes per
+  storage (inventory incl. coins and ammo, equipment / misc slots / loadouts, Piggy
+  Bank, Safe, Defender's Forge, Void Vault) and "permanent upgrades used", all on by default. Used permanent upgrades count
   as obtained (Life Crystal, Life Fruit, Mana Crystal, Demon Heart, Torch God's Favor, Artisan
   Loaf, Vital Crystal, Aegis Fruit, Arcane Crystal, Galaxy Pearl, Gummy Worm, Ambrosia). The
   player never unchecks anything; with a player loaded, the world's "checked but not found"

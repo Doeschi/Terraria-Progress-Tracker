@@ -7,7 +7,7 @@ import { Checkbox } from '@/components/ui/checkbox'
 import { Label } from '@/components/ui/label'
 
 // Which containers the sync and the chest search scan: areas (Full World and the
-// playthrough's own areas) and the options for displays and player chests.
+// playthrough's own areas) and which containers count (displays, only player chests).
 
 export function AreaSelector({
   scope,
@@ -62,7 +62,7 @@ export function AreaSelector({
         </div>
       </fieldset>
       <fieldset className="flex flex-col gap-2 rounded-lg border p-3">
-        <legend className="px-1 text-xs font-medium tracking-wide text-muted-foreground uppercase">Options</legend>
+        <legend className="px-1 text-xs font-medium tracking-wide text-muted-foreground uppercase">Containers</legend>
         <Label className="font-normal">
           <Checkbox
             checked={scope.onlyPlayer}
