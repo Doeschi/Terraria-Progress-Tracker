@@ -81435,7 +81435,7 @@
     "placedHeight": 2,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Shimmer from Jungle Key: Crafted, in Hardmode"
+    "milestoneVia": "Shimmer from Jungle Key: Dropped by enemies, in Hardmode"
   },
   {
     "key": "CorruptionChest",
@@ -81490,7 +81490,7 @@
     "placedHeight": 2,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Shimmer from Corruption Key: Crafted, in Hardmode"
+    "milestoneVia": "Shimmer from Corruption Key: Dropped by enemies, in Hardmode"
   },
   {
     "key": "CrimsonChest",
@@ -81545,7 +81545,7 @@
     "placedHeight": 2,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Shimmer from Crimson Key: Crafted, in Hardmode"
+    "milestoneVia": "Shimmer from Crimson Key: Dropped by enemies, in Hardmode"
   },
   {
     "key": "HallowedChest",
@@ -81600,7 +81600,7 @@
     "placedHeight": 2,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Shimmer from Hallowed Key: Crafted, in Hardmode"
+    "milestoneVia": "Shimmer from Hallowed Key: Dropped by enemies, in Hardmode"
   },
   {
     "key": "FrozenChest",
@@ -81655,7 +81655,7 @@
     "placedHeight": 2,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Shimmer from Frozen Key: Crafted, in Hardmode"
+    "milestoneVia": "Shimmer from Frozen Key: Dropped by enemies, in Hardmode"
   },
   {
     "key": "JungleKey",
@@ -81670,11 +81670,13 @@
     ],
     "subcategories": [],
     "obtain": [
-      "crafted"
+      "drop"
     ],
     "vendors": [],
     "events": [],
-    "biomes": [],
+    "biomes": [
+      "jungle"
+    ],
     "times": [],
     "platforms": [
       "desktop",
@@ -81701,7 +81703,7 @@
     "tooltip": "Unlocks a Jungle Chest in the dungeon",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Crafted, in Hardmode"
+    "milestoneVia": "Dropped by enemies, in Hardmode"
   },
   {
     "key": "CorruptionKey",
@@ -81716,11 +81718,13 @@
     ],
     "subcategories": [],
     "obtain": [
-      "crafted"
+      "drop"
     ],
     "vendors": [],
     "events": [],
-    "biomes": [],
+    "biomes": [
+      "corruption"
+    ],
     "times": [],
     "platforms": [
       "desktop",
@@ -81747,7 +81751,7 @@
     "tooltip": "Unlocks a Corruption Chest in the dungeon",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Crafted, in Hardmode"
+    "milestoneVia": "Dropped by enemies, in Hardmode"
   },
   {
     "key": "CrimsonKey",
@@ -81762,11 +81766,13 @@
     ],
     "subcategories": [],
     "obtain": [
-      "crafted"
+      "drop"
     ],
     "vendors": [],
     "events": [],
-    "biomes": [],
+    "biomes": [
+      "crimson"
+    ],
     "times": [],
     "platforms": [
       "desktop",
@@ -81793,7 +81799,7 @@
     "tooltip": "Unlocks a Crimson Chest in the dungeon",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Crafted, in Hardmode"
+    "milestoneVia": "Dropped by enemies, in Hardmode"
   },
   {
     "key": "HallowedKey",
@@ -81808,11 +81814,13 @@
     ],
     "subcategories": [],
     "obtain": [
-      "crafted"
+      "drop"
     ],
     "vendors": [],
     "events": [],
-    "biomes": [],
+    "biomes": [
+      "hallow"
+    ],
     "times": [],
     "platforms": [
       "desktop",
@@ -81839,7 +81847,7 @@
     "tooltip": "Unlocks a Hallowed Chest in the dungeon",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Crafted, in Hardmode"
+    "milestoneVia": "Dropped by enemies, in Hardmode"
   },
   {
     "key": "FrozenKey",
@@ -81854,11 +81862,13 @@
     ],
     "subcategories": [],
     "obtain": [
-      "crafted"
+      "drop"
     ],
     "vendors": [],
     "events": [],
-    "biomes": [],
+    "biomes": [
+      "snow"
+    ],
     "times": [],
     "platforms": [
       "desktop",
@@ -81885,7 +81895,7 @@
     "tooltip": "Unlocks an Ice Chest in the dungeon",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Crafted, in Hardmode"
+    "milestoneVia": "Dropped by enemies, in Hardmode"
   },
   {
     "key": "ImpFace",
@@ -190464,7 +190474,7 @@
     "placedHeight": 2,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Crafted – needs Jungle Chest → Jungle Key: Crafted, in Hardmode"
+    "milestoneVia": "Crafted – needs Jungle Chest → Jungle Key: Dropped by enemies, in Hardmode"
   },
   {
     "key": "Fake_CorruptionChest",
@@ -190513,7 +190523,7 @@
     "placedHeight": 2,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Crafted – needs Corruption Chest → Corruption Key: Crafted, in Hardmode"
+    "milestoneVia": "Crafted – needs Corruption Chest → Corruption Key: Dropped by enemies, in Hardmode"
   },
   {
     "key": "Fake_CrimsonChest",
@@ -190562,7 +190572,7 @@
     "placedHeight": 2,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Crafted – needs Crimson Chest → Crimson Key: Crafted, in Hardmode"
+    "milestoneVia": "Crafted – needs Crimson Chest → Crimson Key: Dropped by enemies, in Hardmode"
   },
   {
     "key": "Fake_HallowedChest",
@@ -190611,7 +190621,7 @@
     "placedHeight": 2,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Crafted – needs Hallowed Chest → Hallowed Key: Crafted, in Hardmode"
+    "milestoneVia": "Crafted – needs Hallowed Chest → Hallowed Key: Dropped by enemies, in Hardmode"
   },
   {
     "key": "Fake_FrozenChest",
@@ -190660,7 +190670,7 @@
     "placedHeight": 2,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Crafted – needs Ice Chest → Frozen Key: Crafted, in Hardmode"
+    "milestoneVia": "Crafted – needs Ice Chest → Frozen Key: Dropped by enemies, in Hardmode"
   },
   {
     "key": "Fake_DynastyChest",
@@ -242274,7 +242284,7 @@
     "placedHeight": 2,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Shimmer from Desert Key: Hardmode item"
+    "milestoneVia": "Shimmer from Desert Key: Dropped by enemies, in Hardmode"
   },
   {
     "key": "Fake_DungeonDesertChest",
@@ -242323,7 +242333,7 @@
     "placedHeight": 2,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Crafted – needs Desert Chest → Desert Key: Hardmode item"
+    "milestoneVia": "Crafted – needs Desert Chest → Desert Key: Dropped by enemies, in Hardmode"
   },
   {
     "key": "DungeonDesertKey",
@@ -242338,11 +242348,13 @@
     ],
     "subcategories": [],
     "obtain": [
-      "other"
+      "drop"
     ],
     "vendors": [],
     "events": [],
-    "biomes": [],
+    "biomes": [
+      "desert"
+    ],
     "times": [],
     "platforms": [
       "desktop",
@@ -242366,7 +242378,7 @@
     "tooltip": "Unlocks a Desert Chest in the dungeon",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by enemies, in Hardmode"
   },
   {
     "key": "SparkleGuitar",
@@ -268988,7 +269000,6 @@
       "painting"
     ],
     "obtain": [
-      "crafted",
       "loot",
       "plunder",
       "bag"
@@ -281521,7 +281532,6 @@
     "placeable": true,
     "autoswing": true,
     "obtain": [
-      "crafted",
       "shimmer"
     ],
     "vendors": [],

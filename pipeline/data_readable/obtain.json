@@ -3,7 +3,7 @@
     "id": "crafted",
     "name": "Crafted",
     "icon": "https://terraria.wiki.gg/images/Work_Bench.png",
-    "count": 3221
+    "count": 3214
   },
   {
     "id": "vendor",
@@ -15,7 +15,7 @@
     "id": "drop",
     "name": "Dropped by enemies",
     "icon": "https://terraria.wiki.gg/images/Gel.png",
-    "count": 1112
+    "count": 1118
   },
   {
     "id": "loot",
@@ -120,7 +120,7 @@
     "id": "other",
     "name": "Other",
     "icon": "https://terraria.wiki.gg/images/Tombstone.png",
-    "count": 29,
+    "count": 28,
     "fallback": true
   },
   {

@@ -15,19 +15,19 @@
     "id": "desert",
     "name": "Desert",
     "icon": "https://terraria.wiki.gg/images/Sand_Block.png",
-    "count": 42
+    "count": 43
   },
   {
     "id": "snow",
     "name": "Snow",
     "icon": "https://terraria.wiki.gg/images/Snow_Block.png",
-    "count": 62
+    "count": 63
   },
   {
     "id": "jungle",
     "name": "Jungle",
     "icon": "https://terraria.wiki.gg/images/Mud_Block.png",
-    "count": 81
+    "count": 82
   },
   {
     "id": "jungle-temple",
@@ -39,19 +39,19 @@
     "id": "corruption",
     "name": "Corruption",
     "icon": "https://terraria.wiki.gg/images/Ebonstone_Block.png",
-    "count": 56
+    "count": 57
   },
   {
     "id": "crimson",
     "name": "Crimson",
     "icon": "https://terraria.wiki.gg/images/Crimstone_Block.png",
-    "count": 58
+    "count": 59
   },
   {
     "id": "hallow",
     "name": "Hallow",
     "icon": "https://terraria.wiki.gg/images/Pearlstone_Block.png",
-    "count": 49
+    "count": 50
   },
   {
     "id": "ocean",

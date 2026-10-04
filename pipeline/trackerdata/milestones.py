@@ -171,8 +171,8 @@ class Milestones:
                 elif "method" not in s:
                     offer(key, self.gate(s), self.text(s), s["kind"] != "vendor")
                 # What only the wiki's tags or a name rule say: from the start. Not a tag the drop
-                # data (enemies, bags, lock boxes, chests) says more precisely; "crafted": the recipes
-                elif not s["covered"] and s["method"] != "crafted":
+                # data (enemies, bags, lock boxes, chests) says more precisely
+                elif not s["covered"]:
                     # an item with a rule in [milestone_items] is obtained as its tags say (mined, found)
                     if s["sure"] or key in ruled:
                         offer(key, 0, self.text(s), False)
@@ -180,8 +180,7 @@ class Milestones:
                         tagged.setdefault(key, self.text(s))
             if key not in base and not made[key]:
                 # no source data at all (e.g. Fallen Star): from the start, the minimum still applies
-                offer(key, 0, tagged.get(key) or (self.obtain_names["crafted"] if "crafted" in item["obtain"]
-                                                  else None), False)
+                offer(key, 0, tagged.get(key), False)
 
         # recipes, shimmer and the Extractinators depend on other items: until nothing changes
         best = {}

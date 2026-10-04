@@ -71,6 +71,7 @@ class Sources:
         self.stations = {name: s.get("items", []) for name, s in recipes["stations"].items() if not s.get("condition")}
         self.groups = {name: g.get("items", []) for name, g in recipes["groups"].items()}
         self.machines = {m["id"]: m for m in extractinator["machines"]}
+        self.machine_names = {m["name"] for m in extractinator["machines"]}
         self.vendors = {}  # item key -> its vendors
         self.report = Counter()
         self.of = {item["key"]: self.collect(item) for item in items}
@@ -120,12 +121,17 @@ class Sources:
         for oid, found in self.rewards.items():
             if key in found:
                 out.append(source("reward", [oid], conditions=set(found[key])))
-        # recipes: every crafting station and every ingredient
+        # Recipes: every crafting station and every ingredient. A conversion in an Extractinator is
+        # no crafting (it is among the machine's results); a recipe that is not in the Desktop
+        # version counts for nothing for an item that is
+        crafted = [oid for oid, o in self.obtain.items() if o.get("from_recipes")]
         for r in self.recipes.get(key, ()):
+            made = not self.machine_names & set(r["stations"])
+            there = "desktop" in r.get("platforms", ("desktop",)) or "desktop" not in item["platforms"]
             needs = [(st, self.stations[st]) for st in r["stations"] if st in self.stations]
             needs += [(self.names[i["item"]], [i["item"]]) if i.get("item")
                       else (i["group"], self.groups.get(i["group"], [])) for i in r["ingredients"]]
-            out.append(source("recipe", recipe=r, needs=needs))
+            out.append(source("recipe", crafted if made else (), regular=there, free=made, recipe=r, needs=needs))
         # shimmer: the item thrown in (or any of a group, "Any Fruit"); a note can restrict it
         # ("only after Moon Lord")
         for s in self.shimmer.get(key, ()):
@@ -182,7 +188,7 @@ class Sources:
             # the rows that say when and where: drops and shop rows
             rows = [s for s in sources if s["kind"] in ("npc", "bag", "container", "shop")]
             # a source at any time: crafting, a vendor without a shop row, world items, ...
-            free = any(s["free"] for s in sources if s["kind"] in ("vendor", "tag"))
+            free = any(s["free"] for s in sources if s["kind"] in ("recipe", "vendor", "tag"))
             if not item.get("unobtainable"):
                 have = {oid for s in sources for oid in s["obtain"]}
                 if fallback and not have:

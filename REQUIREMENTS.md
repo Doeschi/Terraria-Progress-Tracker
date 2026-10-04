@@ -126,7 +126,10 @@ GitHub Actions.
   items that fit no other subcategory; it is always listed last (also when sorted A–Z).
 - **D8** Obtain methods are named as *how* an item is obtained ("Crafted", "Found in chests &
   pots", "Collected in the world", …) so they are not mistaken for categories.
-- **D8a** "Obtained by" comes from the wiki's tags and from our own data: drops (enemies →
+- **D8a** "Obtained by" comes from the wiki's tags and from our own data: recipes ("Crafted":
+  an item with a crafting recipe – not the wiki's category "craftable items", which also holds
+  the biome keys of old-gen recipes and is per page; conversions in an Extractinator are no
+  crafting), drops (enemies →
   Dropped by enemies, boss treasure bags, chests → Found in chests & pots, crates and grab bags,
   shaking trees → Collected in the world), shimmer transmutations ("Shimmer transformation"),
   critters ("Caught with a Bug Net"), the Extractinators (B6), and by name: music boxes
@@ -173,7 +176,7 @@ GitHub Actions.
   recipe, vendor), so wiki mistakes become visible.
 - **D22** Items the wiki's Items table lacks but its Recipes table names with an id (45 in 1.4.5:
   new doors and candelabras, Magic Shimmer Dropper, Trusty Chillet) are tracked like other items:
-  name, id, icon and recipe from the Recipes table, obtained by crafting, game update from the
+  name, id, icon and recipe from the Recipes table, obtained as that says (crafting, shimmer), game update from the
   item id, and page, categories, platforms and placement flags from a similar item set in
   `mapping.toml` (`[recipe_items]`, name pattern -> template item). They have no stats, rarity
   or prices; the detail panel says so. Recipe items without a template are reported and stay in

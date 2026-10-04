@@ -1091,15 +1091,19 @@ fallback = true
 #   from_containers  container groups ([containers]) that give it
 #   from_shimmer     results of shimmer transmutations
 #   from_extractinator  results of these machines (extractinator.json; REQUIREMENTS B6)
+#   from_recipes     results of crafting recipes (recipes.json)
 #   names            item name patterns
 #   replaces         a method the wiki tags these items with too, wrongly: an item of this
 #                    entry only keeps that method if the data gives it (a drop row)
 #   fallback         items that got no method at all (kept last in the filter)
 
+# Not the wiki's category "craftable items": it also holds items only old-gen recipes make (the
+# biome keys) and is per page (the painting Constellation next to the whip of that name).
 [obtain.crafted]
 name = "Crafted"
 icon = "Work Bench"
-match = ["listcat:craftable items"]
+match = []
+from_recipes = true
 
 [obtain.vendor]
 name = "Bought from NPCs"
@@ -2727,6 +2731,13 @@ keys = [
 "Silent Fish" = ["obtain:quest-reward"]
 # fished in lava, like the Bottomless Lava Bucket (the wiki has not tagged it)
 "Lava Absorbant Sponge" = ["obtain:fishing"]
+# biome keys: dropped by every enemy of their biome in Hardmode (not in the wiki's Drops table)
+"Jungle Key" = ["obtain:drop", "biomes:jungle"]
+"Corruption Key" = ["obtain:drop", "biomes:corruption"]
+"Crimson Key" = ["obtain:drop", "biomes:crimson"]
+"Hallowed Key" = ["obtain:drop", "biomes:hallow"]
+"Frozen Key" = ["obtain:drop", "biomes:snow"]
+"Desert Key" = ["obtain:drop", "biomes:desert"]
 # developer items by name: the developer wings sit on the shared "Wings" page without
 # the developer tag (Jim's Cap is excluded in [categories.developer] and [obtain.treasure-bag])
 "Red's *" = ["categories:developer", "obtain:treasure-bag"]

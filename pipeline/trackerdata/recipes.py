@@ -204,8 +204,8 @@ def recipe_only_items(rows, items, templates, starts):
             "url": template["url"],
             "icon": image_url(file_from_wikitext(row["resultimage"]) or f"{name}.png"),
             **{f: template[f] for f in TEMPLATE_FIELDS if f in template},
-            # known from a recipe (or a shimmer transmutation) - crafted
-            "obtain": ["crafted"],
+            # how it is obtained follows from its recipe or shimmer transmutation (sources.py)
+            "obtain": [],
             "vendors": [], "events": [], "biomes": [], "times": [],
             "platformsKnown": False,
             "introduced": version,
