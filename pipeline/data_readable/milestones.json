@@ -3,7 +3,7 @@
     "id": "start",
     "name": "World creation",
     "icon": "https://terraria.wiki.gg/images/Copper_Shortsword.png",
-    "count": 3329
+    "count": 3328
   },
   {
     "id": "king-slime",
@@ -45,7 +45,7 @@
     "id": "wall-of-flesh",
     "name": "Wall of Flesh (Hardmode)",
     "icon": "https://terraria.wiki.gg/images/Map_Icon_Wall_of_Flesh.png",
-    "count": 1063
+    "count": 1064
   },
   {
     "id": "queen-slime",

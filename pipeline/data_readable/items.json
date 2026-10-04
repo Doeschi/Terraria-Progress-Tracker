@@ -70125,11 +70125,13 @@
       "event-summon"
     ],
     "obtain": [
-      "other"
+      "drop"
     ],
     "vendors": [],
     "events": [],
-    "biomes": [],
+    "biomes": [
+      "ocean"
+    ],
     "times": [],
     "platforms": [
       "desktop",
@@ -70156,7 +70158,8 @@
     "useTime": 45,
     "tooltip": "Summons a pirate invasion",
     "conditions": [],
-    "milestone": "start"
+    "milestone": "wall-of-flesh",
+    "milestoneVia": "Dropped by Ocean enemies in Hardmode"
   },
   {
     "key": "TurtleHelmet",

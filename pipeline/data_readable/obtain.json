@@ -15,7 +15,7 @@
     "id": "drop",
     "name": "Dropped by enemies",
     "icon": "https://terraria.wiki.gg/images/Gel.png",
-    "count": 1118
+    "count": 1119
   },
   {
     "id": "loot",
@@ -120,7 +120,7 @@
     "id": "other",
     "name": "Other",
     "icon": "https://terraria.wiki.gg/images/Tombstone.png",
-    "count": 28,
+    "count": 27,
     "fallback": true
   },
   {
