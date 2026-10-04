@@ -19636,7 +19636,7 @@
     "placedHeight": 1,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Cobalt Slime"
   },
   {
     "key": "MythrilOre",
@@ -19694,7 +19694,7 @@
     "placedHeight": 1,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Mythril Slime"
   },
   {
     "key": "AdamantiteOre",
@@ -19752,7 +19752,7 @@
     "placedHeight": 1,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Adamantite Slime"
   },
   {
     "key": "Pwnhammer",
@@ -22091,7 +22091,7 @@
     "placedHeight": 1,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Collected in the world, in Hardmode"
   },
   {
     "key": "MiningShirt",
@@ -30252,7 +30252,7 @@
     "placedHeight": 2,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Recorded (Music Box), in Hardmode"
   },
   {
     "key": "MusicBoxEerie",
@@ -30308,7 +30308,7 @@
     "placedHeight": 2,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Recorded (Music Box), in Hardmode"
   },
   {
     "key": "MusicBoxNight",
@@ -30364,7 +30364,7 @@
     "placedHeight": 2,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Recorded (Music Box), in Hardmode"
   },
   {
     "key": "MusicBoxTitle",
@@ -30474,7 +30474,7 @@
     "placedHeight": 2,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Recorded (Music Box), in Hardmode"
   },
   {
     "key": "MusicBoxBoss1",
@@ -30530,7 +30530,7 @@
     "placedHeight": 2,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Recorded (Music Box), in Hardmode"
   },
   {
     "key": "MusicBoxJungle",
@@ -30586,7 +30586,7 @@
     "placedHeight": 2,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Recorded (Music Box), in Hardmode"
   },
   {
     "key": "MusicBoxCorruption",
@@ -30642,7 +30642,7 @@
     "placedHeight": 2,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Recorded (Music Box), in Hardmode"
   },
   {
     "key": "MusicBoxUndergroundCorruption",
@@ -30698,7 +30698,7 @@
     "placedHeight": 2,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Recorded (Music Box), in Hardmode"
   },
   {
     "key": "MusicBoxTheHallow",
@@ -30754,7 +30754,7 @@
     "placedHeight": 2,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Recorded (Music Box), in Hardmode"
   },
   {
     "key": "MusicBoxBoss2",
@@ -30810,7 +30810,7 @@
     "placedHeight": 2,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Recorded (Music Box), in Hardmode"
   },
   {
     "key": "MusicBoxUndergroundHallow",
@@ -30866,7 +30866,7 @@
     "placedHeight": 2,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Recorded (Music Box), in Hardmode"
   },
   {
     "key": "MusicBoxBoss3",
@@ -30922,7 +30922,7 @@
     "placedHeight": 2,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Recorded (Music Box), in Hardmode"
   },
   {
     "key": "SoulofFlight",
@@ -33365,7 +33365,7 @@
     "placedHeight": 1,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Collected in the world, in Hardmode"
   },
   {
     "key": "EbonwoodWall",
@@ -35686,7 +35686,7 @@
     "tooltip": "'Great for impersonating devs!'\nAllows flight and slow fall",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "From boss treasure bags, in Hardmode"
   },
   {
     "key": "RedsHelmet",
@@ -35737,7 +35737,7 @@
     "conditions": [],
     "set": "red-s-set",
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "From boss treasure bags, in Hardmode"
   },
   {
     "key": "RedsBreastplate",
@@ -35788,7 +35788,7 @@
     "conditions": [],
     "set": "red-s-set",
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "From boss treasure bags, in Hardmode"
   },
   {
     "key": "RedsLeggings",
@@ -35839,7 +35839,7 @@
     "conditions": [],
     "set": "red-s-set",
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "From boss treasure bags, in Hardmode"
   },
   {
     "key": "Fish",
@@ -40977,7 +40977,7 @@
     "placedHeight": 1,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Collected in the world, in Hardmode"
   },
   {
     "key": "MushroomWall",
@@ -41326,7 +41326,7 @@
     "useTime": 15,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Collected in the world, in Hardmode"
   },
   {
     "key": "RocketI",
@@ -44759,8 +44759,8 @@
     "placedWidth": 1,
     "placedHeight": 1,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "wall-of-flesh",
+    "milestoneVia": "Found in the Hallow"
   },
   {
     "key": "RedIceBlock",
@@ -58795,7 +58795,7 @@
     "placedHeight": 1,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Palladium Slime"
   },
   {
     "key": "OrichalcumOre",
@@ -58853,7 +58853,7 @@
     "placedHeight": 1,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Orichalcum Slime"
   },
   {
     "key": "TitaniumOre",
@@ -58911,7 +58911,7 @@
     "placedHeight": 1,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Titanium Slime"
   },
   {
     "key": "TealMushroom",
@@ -61019,7 +61019,7 @@
     "tooltip": "Activates when signalled",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Collected in the world, in Hardmode"
   },
   {
     "key": "FlameTrap",
@@ -61074,7 +61074,7 @@
     "tooltip": "Activates when signalled",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Collected in the world, in Hardmode"
   },
   {
     "key": "SpikyBallTrap",
@@ -61128,7 +61128,7 @@
     "tooltip": "Activates when signalled",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Collected in the world, in Hardmode"
   },
   {
     "key": "SpearTrap",
@@ -61182,7 +61182,7 @@
     "tooltip": "Activates when signalled",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Collected in the world, in Hardmode"
   },
   {
     "key": "WoodenSpike",
@@ -67259,8 +67259,8 @@
     "velocity": 2.0,
     "tooltip": "Explodes into deadly shrapnel",
     "conditions": [],
-    "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestone": "golem",
+    "milestoneVia": "Dropped by Golem"
   },
   {
     "key": "ChlorophyteJackhammer",
@@ -67988,7 +67988,7 @@
       "day"
     ],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Sold by the Clothier, in Hardmode"
   },
   {
     "key": "GangstaHat",
@@ -68042,7 +68042,7 @@
       "night"
     ],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Sold by the Clothier, in Hardmode"
   },
   {
     "key": "SailorHat",
@@ -79390,7 +79390,7 @@
     "tooltip": "'V. Costa Moura'",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Sold by the Painter, in Hardmode"
   },
   {
     "key": "Daylight",
@@ -81710,7 +81710,7 @@
     "tooltip": "Unlocks a Jungle Chest in the dungeon",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Crafted, in Hardmode"
   },
   {
     "key": "CorruptionKey",
@@ -81756,7 +81756,7 @@
     "tooltip": "Unlocks a Corruption Chest in the dungeon",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Crafted, in Hardmode"
   },
   {
     "key": "CrimsonKey",
@@ -81802,7 +81802,7 @@
     "tooltip": "Unlocks a Crimson Chest in the dungeon",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Crafted, in Hardmode"
   },
   {
     "key": "HallowedKey",
@@ -81848,7 +81848,7 @@
     "tooltip": "Unlocks a Hallowed Chest in the dungeon",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Crafted, in Hardmode"
   },
   {
     "key": "FrozenKey",
@@ -81894,7 +81894,7 @@
     "tooltip": "Unlocks an Ice Chest in the dungeon",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Crafted, in Hardmode"
   },
   {
     "key": "ImpFace",
@@ -82791,7 +82791,7 @@
     "conditions": [],
     "set": "cenx-s-set",
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "From boss treasure bags, in Hardmode"
   },
   {
     "key": "CenxsBreastplate",
@@ -82842,7 +82842,7 @@
     "conditions": [],
     "set": "cenx-s-set",
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "From boss treasure bags, in Hardmode"
   },
   {
     "key": "CenxsLeggings",
@@ -82893,7 +82893,7 @@
     "conditions": [],
     "set": "cenx-s-set",
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "From boss treasure bags, in Hardmode"
   },
   {
     "key": "CrownosMask",
@@ -82944,7 +82944,7 @@
     "conditions": [],
     "set": "crowno-s-set",
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "From boss treasure bags, in Hardmode"
   },
   {
     "key": "CrownosBreastplate",
@@ -82995,7 +82995,7 @@
     "conditions": [],
     "set": "crowno-s-set",
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "From boss treasure bags, in Hardmode"
   },
   {
     "key": "CrownosLeggings",
@@ -83046,7 +83046,7 @@
     "conditions": [],
     "set": "crowno-s-set",
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "From boss treasure bags, in Hardmode"
   },
   {
     "key": "WillsHelmet",
@@ -83097,7 +83097,7 @@
     "conditions": [],
     "set": "will-s-set",
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "From boss treasure bags, in Hardmode"
   },
   {
     "key": "WillsBreastplate",
@@ -83148,7 +83148,7 @@
     "conditions": [],
     "set": "will-s-set",
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "From boss treasure bags, in Hardmode"
   },
   {
     "key": "WillsLeggings",
@@ -83199,7 +83199,7 @@
     "conditions": [],
     "set": "will-s-set",
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "From boss treasure bags, in Hardmode"
   },
   {
     "key": "JimsHelmet",
@@ -83250,7 +83250,7 @@
     "conditions": [],
     "set": "jim-s-set",
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "From boss treasure bags, in Hardmode"
   },
   {
     "key": "JimsBreastplate",
@@ -83301,7 +83301,7 @@
     "conditions": [],
     "set": "jim-s-set",
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "From boss treasure bags, in Hardmode"
   },
   {
     "key": "JimsLeggings",
@@ -83352,7 +83352,7 @@
     "conditions": [],
     "set": "jim-s-set",
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "From boss treasure bags, in Hardmode"
   },
   {
     "key": "AaronsHelmet",
@@ -83403,7 +83403,7 @@
     "conditions": [],
     "set": "aaron-s-set",
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "From boss treasure bags, in Hardmode"
   },
   {
     "key": "AaronsBreastplate",
@@ -83454,7 +83454,7 @@
     "conditions": [],
     "set": "aaron-s-set",
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "From boss treasure bags, in Hardmode"
   },
   {
     "key": "AaronsLeggings",
@@ -83505,7 +83505,7 @@
     "conditions": [],
     "set": "aaron-s-set",
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "From boss treasure bags, in Hardmode"
   },
   {
     "key": "VampireKnives",
@@ -84141,7 +84141,7 @@
     "conditions": [],
     "set": "d-town-s-set",
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "From boss treasure bags, in Hardmode"
   },
   {
     "key": "DTownsBreastplate",
@@ -84192,7 +84192,7 @@
     "conditions": [],
     "set": "d-town-s-set",
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "From boss treasure bags, in Hardmode"
   },
   {
     "key": "DTownsLeggings",
@@ -84243,7 +84243,7 @@
     "conditions": [],
     "set": "d-town-s-set",
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "From boss treasure bags, in Hardmode"
   },
   {
     "key": "DTownsWings",
@@ -84290,7 +84290,7 @@
     "tooltip": "'Great for impersonating devs!'\nAllows flight and slow fall",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "From boss treasure bags, in Hardmode"
   },
   {
     "key": "WillsWings",
@@ -84337,7 +84337,7 @@
     "tooltip": "'Great for impersonating devs!'\nAllows flight and slow fall",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "From boss treasure bags, in Hardmode"
   },
   {
     "key": "CrownosWings",
@@ -84384,7 +84384,7 @@
     "tooltip": "'Great for impersonating devs!'\nAllows flight and slow fall",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "From boss treasure bags, in Hardmode"
   },
   {
     "key": "CenxsWings",
@@ -84431,7 +84431,7 @@
     "tooltip": "'Great for impersonating devs!'\nAllows flight and slow fall",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "From boss treasure bags, in Hardmode"
   },
   {
     "key": "CenxsDress",
@@ -84482,7 +84482,7 @@
     "conditions": [],
     "set": "cenx-s-dress-set",
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "From boss treasure bags, in Hardmode"
   },
   {
     "key": "CenxsDressPants",
@@ -84533,7 +84533,7 @@
     "conditions": [],
     "set": "cenx-s-dress-set",
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "From boss treasure bags, in Hardmode"
   },
   {
     "key": "PalladiumColumn",
@@ -84941,7 +84941,7 @@
     "placedHeight": 2,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Recorded (Music Box), in Hardmode"
   },
   {
     "key": "MusicBoxSpace",
@@ -84994,7 +84994,7 @@
     "placedHeight": 2,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Recorded (Music Box), in Hardmode"
   },
   {
     "key": "MusicBoxCrimson",
@@ -85047,7 +85047,7 @@
     "placedHeight": 2,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Recorded (Music Box), in Hardmode"
   },
   {
     "key": "MusicBoxBoss4",
@@ -85100,7 +85100,7 @@
     "placedHeight": 2,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Recorded (Music Box), in Hardmode"
   },
   {
     "key": "MusicBoxAltOverworldDay",
@@ -85153,7 +85153,7 @@
     "placedHeight": 2,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Recorded (Music Box), in Hardmode"
   },
   {
     "key": "MusicBoxRain",
@@ -85206,7 +85206,7 @@
     "placedHeight": 2,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Recorded (Music Box), in Hardmode"
   },
   {
     "key": "MusicBoxIce",
@@ -85262,7 +85262,7 @@
     "placedHeight": 2,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Recorded (Music Box), in Hardmode"
   },
   {
     "key": "MusicBoxDesert",
@@ -85318,7 +85318,7 @@
     "placedHeight": 2,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Recorded (Music Box), in Hardmode"
   },
   {
     "key": "MusicBoxOcean",
@@ -85371,7 +85371,7 @@
     "placedHeight": 2,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Recorded (Music Box), in Hardmode"
   },
   {
     "key": "MusicBoxDungeon",
@@ -85424,7 +85424,7 @@
     "placedHeight": 2,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Recorded (Music Box), in Hardmode"
   },
   {
     "key": "MusicBoxPlantera",
@@ -85477,7 +85477,7 @@
     "placedHeight": 2,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Recorded (Music Box), in Hardmode"
   },
   {
     "key": "MusicBoxBoss5",
@@ -85533,7 +85533,7 @@
     "placedHeight": 2,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Recorded (Music Box), in Hardmode"
   },
   {
     "key": "MusicBoxTemple",
@@ -85586,7 +85586,7 @@
     "placedHeight": 2,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Recorded (Music Box), in Hardmode"
   },
   {
     "key": "MusicBoxEclipse",
@@ -85639,7 +85639,7 @@
     "placedHeight": 2,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Recorded (Music Box), in Hardmode"
   },
   {
     "key": "MusicBoxMushrooms",
@@ -85692,7 +85692,7 @@
     "placedHeight": 2,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Recorded (Music Box), in Hardmode"
   },
   {
     "key": "ButterflyDust",
@@ -94863,8 +94863,8 @@
     "knockback": 1.5,
     "velocity": 4.0,
     "conditions": [],
-    "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestone": "plantera",
+    "milestoneVia": "Dropped by Pumpking"
   },
   {
     "key": "JackOLanternLauncher",
@@ -94979,8 +94979,8 @@
     "knockback": 3.0,
     "velocity": 4.0,
     "conditions": [],
-    "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestone": "plantera",
+    "milestoneVia": "Dropped by Pumpking"
   },
   {
     "key": "Sickle",
@@ -97440,8 +97440,8 @@
     "knockback": 4.5,
     "velocity": 3.0,
     "conditions": [],
-    "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestone": "plantera",
+    "milestoneVia": "Dropped by Mourning Wood"
   },
   {
     "key": "CursedSapling",
@@ -103931,7 +103931,7 @@
     "placedHeight": 2,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Recorded (Music Box), in Hardmode"
   },
   {
     "key": "MusicBoxAltUnderground",
@@ -103984,7 +103984,7 @@
     "placedHeight": 2,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Recorded (Music Box), in Hardmode"
   },
   {
     "key": "MusicBoxFrostMoon",
@@ -104037,7 +104037,7 @@
     "placedHeight": 2,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Recorded (Music Box), in Hardmode"
   },
   {
     "key": "BrownPaint",
@@ -121436,7 +121436,7 @@
     "autoswing": false,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Fished, in Hardmode"
   },
   {
     "key": "GoldenCarp",
@@ -121581,7 +121581,7 @@
     "autoswing": false,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Fished, in Hardmode"
   },
   {
     "key": "VariegatedLardfish",
@@ -121922,7 +121922,7 @@
     "autoswing": false,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Fished, in Hardmode"
   },
   {
     "key": "Ebonkoi",
@@ -122650,7 +122650,7 @@
     "debuff": "Hellfire",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Fished, in Hardmode"
   },
   {
     "key": "Swordfish",
@@ -127292,7 +127292,7 @@
     "tooltip": "Allows fishing in lava",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Angler quest reward, in Hardmode"
   },
   {
     "key": "FrogLeg",
@@ -127654,7 +127654,7 @@
     "tooltip": "Summons a rideable Pigron mount",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Fished, in Hardmode"
   },
   {
     "key": "SlimySaddle",
@@ -128040,7 +128040,7 @@
     "baitPower": 20,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Caught with a Bug Net, in Hardmode"
   },
   {
     "key": "PinkJellyfish",
@@ -130827,7 +130827,7 @@
     "tooltip": "Allows flight and slow fall",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Angler quest reward, in Hardmode"
   },
   {
     "key": "TreasureMap",
@@ -136770,7 +136770,7 @@
     "tooltip": "Spews homing bubbles\nRight click to toggle modes",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by enemies, in Hardmode"
   },
   {
     "key": "GreenDungeonChest",
@@ -139936,7 +139936,7 @@
     "baitPower": 666,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Caught with a Bug Net, in Hardmode"
   },
   {
     "key": "ApprenticeBait",
@@ -141296,7 +141296,7 @@
     "placedHeight": 1,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by enemies, in Hardmode"
   },
   {
     "key": "AlphabetStatue0",
@@ -143431,7 +143431,7 @@
     "placedHeight": 2,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Recorded (Music Box), in Hardmode"
   },
   {
     "key": "CactusTable",
@@ -149552,7 +149552,7 @@
     "autoswing": false,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Strange Plant reward"
   },
   {
     "key": "PaintingCastleMarsberg",
@@ -156406,7 +156406,7 @@
     "platformsKnown": true,
     "introduced": "1.3.0.1",
     "version": "1.3",
-    "hardmode": true,
+    "hardmode": false,
     "hardmodeOnly": false,
     "unobtainable": false,
     "banner": false,
@@ -156425,8 +156425,8 @@
     "buff": "Bewitched",
     "tooltip": "Usable when placed\nIncreased your max number of minions by 1",
     "conditions": [],
-    "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestone": "skeletron",
+    "milestoneVia": "Found in the Dungeon"
   },
   {
     "key": "AlchemyTable",
@@ -156477,8 +156477,8 @@
     "placedHeight": 3,
     "tooltip": "33% chance to not consume potion crafting ingredients",
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Fished"
+    "milestone": "skeletron",
+    "milestoneVia": "Found in the Dungeon"
   },
   {
     "key": "StrangeBrew",
@@ -158128,7 +158128,7 @@
     "tooltip": "Capable of soaking up an endless amount of water",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Angler quest reward, in Hardmode"
   },
   {
     "key": "GoldRing",
@@ -158702,7 +158702,7 @@
     "placedHeight": 2,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Recorded (Music Box), in Hardmode"
   },
   {
     "key": "RainbowTorch",
@@ -161935,8 +161935,8 @@
     "knockback": 3.0,
     "velocity": 6.0,
     "conditions": [],
-    "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestone": "plantera",
+    "milestoneVia": "Dropped by Nailhead"
   },
   {
     "key": "NightVisionHelmet",
@@ -166728,7 +166728,7 @@
     "tooltip": "{icon:desktop} Right click to open /\n{icon:console} L2 to open ({icon:playstation}) /\nLT to open ({icon:xbox-one}) /\nZL to open ({icon:switch}) /\n{icon:mobile} Double tap to open",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Fished, in Hardmode"
   },
   {
     "key": "FloatingIslandFishingCrate",
@@ -166832,7 +166832,7 @@
     "tooltip": "{icon:desktop} Right click to open /\n{icon:console} L2 to open ({icon:playstation}) /\nLT to open ({icon:xbox-one}) /\nZL to open ({icon:switch}) /\n{icon:mobile} Double tap to open",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Fished, in Hardmode"
   },
   {
     "key": "JungleFishingCrate",
@@ -166938,7 +166938,7 @@
     "tooltip": "Shoots an explosive crystal charge",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Fished, in Hardmode"
   },
   {
     "key": "Toxikarp",
@@ -166991,7 +166991,7 @@
     "tooltip": "Spits toxic bubbles",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Fished, in Hardmode"
   },
   {
     "key": "Bladetongue",
@@ -167045,7 +167045,7 @@
     "tooltip": "Spits an Ichor stream on contact",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Fished, in Hardmode"
   },
   {
     "key": "SharkToothNecklace",
@@ -167802,7 +167802,7 @@
     "conditions": [],
     "set": "lazure-s-set",
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "From boss treasure bags, in Hardmode"
   },
   {
     "key": "BejeweledValkyrieBody",
@@ -167853,7 +167853,7 @@
     "conditions": [],
     "set": "lazure-s-set",
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "From boss treasure bags, in Hardmode"
   },
   {
     "key": "BejeweledValkyrieWing",
@@ -167900,7 +167900,7 @@
     "tooltip": "'Great for impersonating devs!'\nAllows flight and slow fall\nThe Valkyrie Satellite Barrier Platform is totally safe. Most of the time.",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "From boss treasure bags, in Hardmode"
   },
   {
     "key": "RichGravestone1",
@@ -168236,7 +168236,7 @@
     "placedHeight": 2,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Recorded (Music Box), in Hardmode"
   },
   {
     "key": "MusicBoxPirates",
@@ -168288,7 +168288,7 @@
     "placedHeight": 2,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Recorded (Music Box), in Hardmode"
   },
   {
     "key": "MusicBoxHell",
@@ -168340,7 +168340,7 @@
     "placedHeight": 2,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Recorded (Music Box), in Hardmode"
   },
   {
     "key": "CrystalBlockWall",
@@ -168584,7 +168584,7 @@
     ],
     "set": "tax-collector-s-set",
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Sold by the Clothier, in Hardmode"
   },
   {
     "key": "TaxCollectorSuit",
@@ -168638,7 +168638,7 @@
     ],
     "set": "tax-collector-s-set",
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Sold by the Clothier, in Hardmode"
   },
   {
     "key": "TaxCollectorPants",
@@ -168692,7 +168692,7 @@
     ],
     "set": "tax-collector-s-set",
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Sold by the Clothier, in Hardmode"
   },
   {
     "key": "BoneGlove",
@@ -170898,7 +170898,7 @@
     "tooltip": "'Great for impersonating devs!'",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "From boss treasure bags, in Hardmode"
   },
   {
     "key": "ValkyrieYoyo",
@@ -170952,7 +170952,7 @@
     "tooltip": "'Great for impersonating devs!'",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "From boss treasure bags, in Hardmode"
   },
   {
     "key": "Amarok",
@@ -171005,7 +171005,7 @@
     "debuff": "Frostbite",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by enemies, in Hardmode"
   },
   {
     "key": "HelFire",
@@ -171058,7 +171058,7 @@
     "debuff": "Hellfire",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by enemies, in Hardmode"
   },
   {
     "key": "Kraken",
@@ -173335,7 +173335,7 @@
     "placedHeight": 1,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Collected in the world, in Hardmode"
   },
   {
     "key": "HallowSandstone",
@@ -173385,7 +173385,7 @@
     "placedHeight": 1,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Collected in the world, in Hardmode"
   },
   {
     "key": "HardenedSandWall",
@@ -174802,7 +174802,7 @@
     "tooltip": "'I didn't get this off of a Schmoo'",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "From boss treasure bags, in Hardmode"
   },
   {
     "key": "ConfettiCannon",
@@ -174859,7 +174859,7 @@
       "npc-present"
     ],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Sold by the Party Girl, in Hardmode"
   },
   {
     "key": "MusicBoxTowers",
@@ -174911,7 +174911,7 @@
     "placedHeight": 2,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Recorded (Music Box), in Hardmode"
   },
   {
     "key": "MusicBoxGoblins",
@@ -174963,7 +174963,7 @@
     "placedHeight": 2,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Recorded (Music Box), in Hardmode"
   },
   {
     "key": "BossMaskCultist",
@@ -175669,7 +175669,7 @@
     "tooltip": "Can be traded for rare dyes",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Collected in the world, in Hardmode"
   },
   {
     "key": "StrangePlant2",
@@ -175718,7 +175718,7 @@
     "tooltip": "Can be traded for rare dyes",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Collected in the world, in Hardmode"
   },
   {
     "key": "StrangePlant3",
@@ -175767,7 +175767,7 @@
     "tooltip": "Can be traded for rare dyes",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Collected in the world, in Hardmode"
   },
   {
     "key": "StrangePlant4",
@@ -175816,7 +175816,7 @@
     "tooltip": "Can be traded for rare dyes",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Collected in the world, in Hardmode"
   },
   {
     "key": "Terrarian",
@@ -184410,7 +184410,7 @@
     "autoswing": false,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Strange Plant reward"
   },
   {
     "key": "BlackAndWhiteDye",
@@ -185465,7 +185465,7 @@
     "conditions": [],
     "set": "yoraiz0r-s-set",
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "From boss treasure bags, in Hardmode"
   },
   {
     "key": "Yoraiz0rPants",
@@ -185516,7 +185516,7 @@
     "conditions": [],
     "set": "yoraiz0r-s-set",
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "From boss treasure bags, in Hardmode"
   },
   {
     "key": "Yoraiz0rWings",
@@ -185563,7 +185563,7 @@
     "tooltip": "'Great for impersonating devs!'\nAllows flight and slow fall\nWhatever this accessory does to you is not a bug!",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "From boss treasure bags, in Hardmode"
   },
   {
     "key": "Yoraiz0rDarkness",
@@ -185615,7 +185615,7 @@
     "conditions": [],
     "set": "yoraiz0r-s-set",
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "From boss treasure bags, in Hardmode"
   },
   {
     "key": "JimsWings",
@@ -185662,7 +185662,7 @@
     "tooltip": "'Great for impersonating devs!'\nAllows flight and slow fall",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "From boss treasure bags, in Hardmode"
   },
   {
     "key": "Yoraiz0rHead",
@@ -185713,7 +185713,7 @@
     "conditions": [],
     "set": "yoraiz0r-s-set",
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "From boss treasure bags, in Hardmode"
   },
   {
     "key": "LivingLeafWall",
@@ -185811,7 +185811,7 @@
     "conditions": [],
     "set": "skiphs-set",
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "From boss treasure bags, in Hardmode"
   },
   {
     "key": "SkiphsShirt",
@@ -185862,7 +185862,7 @@
     "conditions": [],
     "set": "skiphs-set",
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "From boss treasure bags, in Hardmode"
   },
   {
     "key": "SkiphsPants",
@@ -185913,7 +185913,7 @@
     "conditions": [],
     "set": "skiphs-set",
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "From boss treasure bags, in Hardmode"
   },
   {
     "key": "SkiphsWings",
@@ -185960,7 +185960,7 @@
     "tooltip": "'Great for impersonating devs!'\nAllows flight and slow fall",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "From boss treasure bags, in Hardmode"
   },
   {
     "key": "LokisHelm",
@@ -186011,7 +186011,7 @@
     "conditions": [],
     "set": "loki-s-set",
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "From boss treasure bags, in Hardmode"
   },
   {
     "key": "LokisShirt",
@@ -186062,7 +186062,7 @@
     "conditions": [],
     "set": "loki-s-set",
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "From boss treasure bags, in Hardmode"
   },
   {
     "key": "LokisPants",
@@ -186113,7 +186113,7 @@
     "conditions": [],
     "set": "loki-s-set",
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "From boss treasure bags, in Hardmode"
   },
   {
     "key": "LokisWings",
@@ -186160,7 +186160,7 @@
     "tooltip": "'Great for impersonating devs!'\nAllows flight and slow fall\nLet your plans be dark and impenetrable as night, and when you move, fall like a thunderbolt.",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "From boss treasure bags, in Hardmode"
   },
   {
     "key": "SandSlimeBanner",
@@ -186501,7 +186501,7 @@
     "tooltip": "'Great for impersonating devs!'",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "From boss treasure bags, in Hardmode"
   },
   {
     "key": "ShadowflameHadesDye",
@@ -189737,7 +189737,7 @@
     "conditions": [
       "inventory"
     ],
-    "milestone": "plantera",
+    "milestone": "moon-lord",
     "milestoneVia": "Sold by the Cyborg"
   },
   {
@@ -196410,7 +196410,7 @@
     "placedHeight": 2,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Recorded (Music Box), in Hardmode"
   },
   {
     "key": "ApprenticeHat",
@@ -197328,7 +197328,7 @@
     "platformsKnown": true,
     "introduced": "1.3.4",
     "version": "1.3",
-    "hardmode": true,
+    "hardmode": false,
     "hardmodeOnly": false,
     "unobtainable": false,
     "banner": false,
@@ -197346,8 +197346,8 @@
     "placedHeight": 4,
     "tooltip": "Can be used to store your items\nStored items can only be accessed by you\nStored coins can be used in shops",
     "conditions": [],
-    "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestone": "evil-boss",
+    "milestoneVia": "Sold by the Tavernkeep"
   },
   {
     "key": "WarTable",
@@ -200264,7 +200264,7 @@
     "placedHeight": 2,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Recorded (Music Box), in Hardmode"
   },
   {
     "key": "ApprenticeStaffT3",
@@ -202945,7 +202945,7 @@
     "conditions": [],
     "set": "arkhalis-set",
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "From boss treasure bags, in Hardmode"
   },
   {
     "key": "ArkhalisShirt",
@@ -202996,7 +202996,7 @@
     "conditions": [],
     "set": "arkhalis-set",
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "From boss treasure bags, in Hardmode"
   },
   {
     "key": "ArkhalisPants",
@@ -203047,7 +203047,7 @@
     "conditions": [],
     "set": "arkhalis-set",
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "From boss treasure bags, in Hardmode"
   },
   {
     "key": "ArkhalisWings",
@@ -203094,7 +203094,7 @@
     "tooltip": "'Great for impersonating devs!'\n'I didn't get this from the Grid'\nAllows flight and slow fall",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "From boss treasure bags, in Hardmode"
   },
   {
     "key": "LeinforsHat",
@@ -203145,7 +203145,7 @@
     "conditions": [],
     "set": "leinfors-set",
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "From boss treasure bags, in Hardmode"
   },
   {
     "key": "LeinforsShirt",
@@ -203196,7 +203196,7 @@
     "conditions": [],
     "set": "leinfors-set",
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "From boss treasure bags, in Hardmode"
   },
   {
     "key": "LeinforsPants",
@@ -203247,7 +203247,7 @@
     "conditions": [],
     "set": "leinfors-set",
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "From boss treasure bags, in Hardmode"
   },
   {
     "key": "LeinforsWings",
@@ -203294,7 +203294,7 @@
     "tooltip": "'Great for impersonating devs!'\nAllows flight and slow fall\n'It's full on! What does it mean?!'",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "From boss treasure bags, in Hardmode"
   },
   {
     "key": "LeinforsAccessory",
@@ -203346,7 +203346,7 @@
     "conditions": [],
     "set": "leinfors-set",
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "From boss treasure bags, in Hardmode"
   },
   {
     "key": "Celeb2",
@@ -204626,7 +204626,7 @@
     "placedHeight": 1,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Collected in the world, in Hardmode"
   },
   {
     "key": "LesionBlockWall",
@@ -204673,7 +204673,7 @@
     "useTime": 15,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Collected in the world, in Hardmode"
   },
   {
     "key": "LesionPlatform",
@@ -205800,7 +205800,7 @@
     "tooltip": "{icon:desktop} Right click to open /\n{icon:console} L2 to open ({icon:playstation}) /\nLT to open ({icon:xbox-one}) /\nZL to open ({icon:switch}) /\n{icon:mobile} Double tap to open",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Fished, in Hardmode"
   },
   {
     "key": "IronCrateHard",
@@ -205851,7 +205851,7 @@
     "tooltip": "{icon:desktop} Right click to open /\n{icon:console} L2 to open ({icon:playstation}) /\nLT to open ({icon:xbox-one}) /\nZL to open ({icon:switch}) /\n{icon:mobile} Double tap to open",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Fished, in Hardmode"
   },
   {
     "key": "GoldenCrateHard",
@@ -205902,7 +205902,7 @@
     "tooltip": "{icon:desktop} Right click to open /\n{icon:console} L2 to open ({icon:playstation}) /\nLT to open ({icon:xbox-one}) /\nZL to open ({icon:switch}) /\n{icon:mobile} Double tap to open",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Fished, in Hardmode"
   },
   {
     "key": "CorruptFishingCrateHard",
@@ -205953,7 +205953,7 @@
     "tooltip": "{icon:desktop} Right click to open /\n{icon:console} L2 to open ({icon:playstation}) /\nLT to open ({icon:xbox-one}) /\nZL to open ({icon:switch}) /\n{icon:mobile} Double tap to open",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Fished, in Hardmode"
   },
   {
     "key": "CrimsonFishingCrateHard",
@@ -206004,7 +206004,7 @@
     "tooltip": "{icon:desktop} Right click to open /\n{icon:console} L2 to open ({icon:playstation}) /\nLT to open ({icon:xbox-one}) /\nZL to open ({icon:switch}) /\n{icon:mobile} Double tap to open",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Fished, in Hardmode"
   },
   {
     "key": "DungeonFishingCrateHard",
@@ -206055,7 +206055,7 @@
     "tooltip": "{icon:desktop} Right click to open /\n{icon:console} L2 to open ({icon:playstation}) /\nLT to open ({icon:xbox-one}) /\nZL to open ({icon:switch}) /\n{icon:mobile} Double tap to open",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Fished, in Hardmode"
   },
   {
     "key": "FloatingIslandFishingCrateHard",
@@ -206106,7 +206106,7 @@
     "tooltip": "{icon:desktop} Right click to open /\n{icon:console} L2 to open ({icon:playstation}) /\nLT to open ({icon:xbox-one}) /\nZL to open ({icon:switch}) /\n{icon:mobile} Double tap to open",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Fished, in Hardmode"
   },
   {
     "key": "HallowedFishingCrateHard",
@@ -206157,7 +206157,7 @@
     "tooltip": "{icon:desktop} Right click to open /\n{icon:console} L2 to open ({icon:playstation}) /\nLT to open ({icon:xbox-one}) /\nZL to open ({icon:switch}) /\n{icon:mobile} Double tap to open",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Fished, in Hardmode"
   },
   {
     "key": "JungleFishingCrateHard",
@@ -206208,7 +206208,7 @@
     "tooltip": "{icon:desktop} Right click to open /\n{icon:console} L2 to open ({icon:playstation}) /\nLT to open ({icon:xbox-one}) /\nZL to open ({icon:switch}) /\n{icon:mobile} Double tap to open",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Fished, in Hardmode"
   },
   {
     "key": "DeadMansChest",
@@ -210670,7 +210670,7 @@
     "placedHeight": 2,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Recorded (Music Box), in Hardmode"
   },
   {
     "key": "MusicBoxSlimeRain",
@@ -210725,7 +210725,7 @@
     "placedHeight": 2,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Recorded (Music Box), in Hardmode"
   },
   {
     "key": "MusicBoxSpaceAlt",
@@ -210780,7 +210780,7 @@
     "placedHeight": 2,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Recorded (Music Box), in Hardmode"
   },
   {
     "key": "MusicBoxTownDay",
@@ -210835,7 +210835,7 @@
     "placedHeight": 2,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Recorded (Music Box), in Hardmode"
   },
   {
     "key": "MusicBoxTownNight",
@@ -210890,7 +210890,7 @@
     "placedHeight": 2,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Recorded (Music Box), in Hardmode"
   },
   {
     "key": "MusicBoxWindyDay",
@@ -210945,7 +210945,7 @@
     "placedHeight": 2,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Recorded (Music Box), in Hardmode"
   },
   {
     "key": "GolfCupFlagWhite",
@@ -221068,7 +221068,7 @@
     "tooltip": "Medium improvements to all stats",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Found in Shaking Pearlwood Palm tree"
   },
   {
     "key": "Elderberry",
@@ -221536,7 +221536,7 @@
     "tooltip": "Medium improvements to all stats",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Found in Shaking Pearlwood Palm tree"
   },
   {
     "key": "SandstoneBathtub",
@@ -224577,7 +224577,7 @@
     "placedHeight": 2,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Recorded (Music Box), in Hardmode"
   },
   {
     "key": "MusicBoxGraveyard",
@@ -224632,7 +224632,7 @@
     "placedHeight": 2,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Recorded (Music Box), in Hardmode"
   },
   {
     "key": "Seagull",
@@ -226082,7 +226082,7 @@
     "placedHeight": 1,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Crafted – needs Pink Ice Block"
   },
   {
     "key": "JungleTorch",
@@ -227009,7 +227009,7 @@
     "tooltip": "{icon:desktop} Right click to open /\n{icon:console} L2 to open ({icon:playstation}) /\nLT to open ({icon:xbox-one}) /\nZL to open ({icon:switch}) /\n{icon:mobile} Double tap to open",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Fished, in Hardmode"
   },
   {
     "key": "OasisCrate",
@@ -227112,7 +227112,7 @@
     "tooltip": "{icon:desktop} Right click to open /\n{icon:console} L2 to open ({icon:playstation}) /\nLT to open ({icon:xbox-one}) /\nZL to open ({icon:switch}) /\n{icon:mobile} Double tap to open",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Fished, in Hardmode"
   },
   {
     "key": "SpectreGoggles",
@@ -227148,7 +227148,7 @@
     "platformsKnown": true,
     "introduced": "1.4.0.1",
     "version": "1.4.0",
-    "hardmode": true,
+    "hardmode": false,
     "hardmodeOnly": false,
     "unobtainable": false,
     "banner": false,
@@ -227163,8 +227163,8 @@
     "autoswing": false,
     "tooltip": "Enables Echo Sight, showing hidden blocks",
     "conditions": [],
-    "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestone": "skeletron",
+    "milestoneVia": "Sold by the Mechanic"
   },
   {
     "key": "Oyster",
@@ -227753,7 +227753,7 @@
     "placedHeight": 2,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Recorded (Music Box), in Hardmode"
   },
   {
     "key": "Grate",
@@ -236890,7 +236890,7 @@
     "placedHeight": 2,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Recorded (Music Box), in Hardmode"
   },
   {
     "key": "StormTigerStaff",
@@ -240369,7 +240369,7 @@
     "tooltip": "Kites can be flown on windy days\nReel it in with Right click",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by enemies, in Hardmode"
   },
   {
     "key": "KiteKoi",
@@ -240790,7 +240790,7 @@
     "tooltip": "Kites can be flown on windy days\nReel it in with Right click\n'This one can't wander too far'",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by enemies, in Hardmode"
   },
   {
     "key": "KiteUnicorn",
@@ -240838,7 +240838,7 @@
     "tooltip": "Kites can be flown on windy days\nReel it in with Right click",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by enemies, in Hardmode"
   },
   {
     "key": "UndertakerHat",
@@ -243198,7 +243198,7 @@
     "tooltip": "'Great for impersonating devs!'\nAllows flight and slow fall\n'I am right here'",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "From boss treasure bags, in Hardmode"
   },
   {
     "key": "TerraToilet",
@@ -243300,7 +243300,7 @@
     "conditions": [],
     "set": "ghostar-s-set",
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "From boss treasure bags, in Hardmode"
   },
   {
     "key": "GhostarShirt",
@@ -243351,7 +243351,7 @@
     "conditions": [],
     "set": "ghostar-s-set",
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "From boss treasure bags, in Hardmode"
   },
   {
     "key": "GhostarPants",
@@ -243402,7 +243402,7 @@
     "conditions": [],
     "set": "ghostar-s-set",
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "From boss treasure bags, in Hardmode"
   },
   {
     "key": "BallOfFuseWire",
@@ -243455,7 +243455,7 @@
       "bestiary-70"
     ],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Sold by the Zoologist, in Hardmode"
   },
   {
     "key": "FullMoonSqueakyToy",
@@ -244015,7 +244015,7 @@
     "tooltip": "'Great for impersonating devs!'\nAllows flight and slow fall\n'Can you help me tie this on?'",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "From boss treasure bags, in Hardmode"
   },
   {
     "key": "SafemanSunHair",
@@ -244066,7 +244066,7 @@
     "conditions": [],
     "set": "safeman-s-set",
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "From boss treasure bags, in Hardmode"
   },
   {
     "key": "SafemanSunDress",
@@ -244117,7 +244117,7 @@
     "conditions": [],
     "set": "safeman-s-set",
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "From boss treasure bags, in Hardmode"
   },
   {
     "key": "SafemanDressLeggings",
@@ -244168,7 +244168,7 @@
     "conditions": [],
     "set": "safeman-s-set",
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "From boss treasure bags, in Hardmode"
   },
   {
     "key": "FoodBarbarianWings",
@@ -244215,7 +244215,7 @@
     "tooltip": "'Great for impersonating devs!'\nAllows flight and slow fall\n'The holes cut down on weight.'",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "From boss treasure bags, in Hardmode"
   },
   {
     "key": "FoodBarbarianHelm",
@@ -244266,7 +244266,7 @@
     "conditions": [],
     "set": "foodbarbarian-s-set",
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "From boss treasure bags, in Hardmode"
   },
   {
     "key": "FoodBarbarianArmor",
@@ -244317,7 +244317,7 @@
     "conditions": [],
     "set": "foodbarbarian-s-set",
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "From boss treasure bags, in Hardmode"
   },
   {
     "key": "FoodBarbarianGreaves",
@@ -244368,7 +244368,7 @@
     "conditions": [],
     "set": "foodbarbarian-s-set",
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "From boss treasure bags, in Hardmode"
   },
   {
     "key": "GroxTheGreatWings",
@@ -244415,7 +244415,7 @@
     "tooltip": "'Great for impersonating devs!'\nAllows flight and slow fall",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "From boss treasure bags, in Hardmode"
   },
   {
     "key": "GroxTheGreatHelm",
@@ -244466,7 +244466,7 @@
     "conditions": [],
     "set": "grox-the-great-s-set",
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "From boss treasure bags, in Hardmode"
   },
   {
     "key": "GroxTheGreatArmor",
@@ -244517,7 +244517,7 @@
     "conditions": [],
     "set": "grox-the-great-s-set",
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "From boss treasure bags, in Hardmode"
   },
   {
     "key": "GroxTheGreatGreaves",
@@ -244568,7 +244568,7 @@
     "conditions": [],
     "set": "grox-the-great-s-set",
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "From boss treasure bags, in Hardmode"
   },
   {
     "key": "Smolstar",
@@ -250596,7 +250596,7 @@
     "tooltip": "{icon:desktop} Right click to open /\n{icon:console} L2 to open ({icon:playstation}) /\nLT to open ({icon:xbox-one}) /\nZL to open ({icon:switch}) /\n{icon:mobile} Double tap to open",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Fished, in Hardmode"
   },
   {
     "key": "ObsidianLockbox",
@@ -254213,8 +254213,8 @@
     "conditions": [
       "bestiary-100"
     ],
-    "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestone": "moon-lord",
+    "milestoneVia": "Sold by the Zoologist with a complete Bestiary"
   },
   {
     "key": "FairyQueenMagicItem",
@@ -255625,7 +255625,7 @@
     "placedHeight": 2,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Recorded (Music Box), in Hardmode"
   },
   {
     "key": "QueenSlimeHook",
@@ -255930,7 +255930,7 @@
     "placedHeight": 2,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Recorded (Music Box), in Hardmode"
   },
   {
     "key": "GelBalloon",
@@ -256078,7 +256078,7 @@
     "tooltip": "Summons Queen Slime",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Collected in the world, in Hardmode"
   },
   {
     "key": "EmpressFlightBooster",
@@ -256180,7 +256180,7 @@
     "placedHeight": 2,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Recorded (Music Box), in Hardmode"
   },
   {
     "key": "MusicBoxMorningRain",
@@ -256235,7 +256235,7 @@
     "placedHeight": 2,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Recorded (Music Box), in Hardmode"
   },
   {
     "key": "MusicBoxConsoleTitle",
@@ -256857,7 +256857,7 @@
     "tooltip": "{icon:desktop} Right click to open /\n{icon:console} L2 to open ({icon:playstation}) /\nLT to open ({icon:xbox-one}) /\nZL to open ({icon:switch}) /\n{icon:mobile} Double tap to open",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Fished, in Hardmode"
   },
   {
     "key": "BadgersHat",
@@ -256906,7 +256906,7 @@
       "same-day"
     ],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Eye of Cthulhu, in Hardmode"
   },
   {
     "key": "EmpressBlade",
@@ -257014,7 +257014,7 @@
     "placedHeight": 2,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Recorded (Music Box), in Hardmode"
   },
   {
     "key": "DeadMansSweater",
@@ -257416,7 +257416,7 @@
     "placedHeight": 2,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Recorded (Music Box), in Hardmode"
   },
   {
     "key": "MusicBoxOWDay",
@@ -257468,7 +257468,7 @@
     "placedHeight": 2,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Recorded (Music Box), in Hardmode"
   },
   {
     "key": "MusicBoxOWNight",
@@ -257520,7 +257520,7 @@
     "placedHeight": 2,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Recorded (Music Box), in Hardmode"
   },
   {
     "key": "MusicBoxOWUnderground",
@@ -257572,7 +257572,7 @@
     "placedHeight": 2,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Recorded (Music Box), in Hardmode"
   },
   {
     "key": "MusicBoxOWDesert",
@@ -257624,7 +257624,7 @@
     "placedHeight": 2,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Recorded (Music Box), in Hardmode"
   },
   {
     "key": "MusicBoxOWOcean",
@@ -257676,7 +257676,7 @@
     "placedHeight": 2,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Recorded (Music Box), in Hardmode"
   },
   {
     "key": "MusicBoxOWMushroom",
@@ -257728,7 +257728,7 @@
     "placedHeight": 2,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Recorded (Music Box), in Hardmode"
   },
   {
     "key": "MusicBoxOWDungeon",
@@ -257780,7 +257780,7 @@
     "placedHeight": 2,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Recorded (Music Box), in Hardmode"
   },
   {
     "key": "MusicBoxOWSpace",
@@ -257832,7 +257832,7 @@
     "placedHeight": 2,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Recorded (Music Box), in Hardmode"
   },
   {
     "key": "MusicBoxOWUnderworld",
@@ -257884,7 +257884,7 @@
     "placedHeight": 2,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Recorded (Music Box), in Hardmode"
   },
   {
     "key": "MusicBoxOWSnow",
@@ -257936,7 +257936,7 @@
     "placedHeight": 2,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Recorded (Music Box), in Hardmode"
   },
   {
     "key": "MusicBoxOWCorruption",
@@ -257988,7 +257988,7 @@
     "placedHeight": 2,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Recorded (Music Box), in Hardmode"
   },
   {
     "key": "MusicBoxOWUndergroundCorruption",
@@ -258040,7 +258040,7 @@
     "placedHeight": 2,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Recorded (Music Box), in Hardmode"
   },
   {
     "key": "MusicBoxOWCrimson",
@@ -258092,7 +258092,7 @@
     "placedHeight": 2,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Recorded (Music Box), in Hardmode"
   },
   {
     "key": "MusicBoxOWUndergroundCrimson",
@@ -258144,7 +258144,7 @@
     "placedHeight": 2,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Recorded (Music Box), in Hardmode"
   },
   {
     "key": "MusicBoxOWUndergroundSnow",
@@ -258196,7 +258196,7 @@
     "placedHeight": 2,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Recorded (Music Box), in Hardmode"
   },
   {
     "key": "MusicBoxOWUndergroundHallow",
@@ -258248,7 +258248,7 @@
     "placedHeight": 2,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Recorded (Music Box), in Hardmode"
   },
   {
     "key": "MusicBoxOWBloodMoon",
@@ -258300,7 +258300,7 @@
     "placedHeight": 2,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Recorded (Music Box), in Hardmode"
   },
   {
     "key": "MusicBoxOWBoss2",
@@ -258352,7 +258352,7 @@
     "placedHeight": 2,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Recorded (Music Box), in Hardmode"
   },
   {
     "key": "MusicBoxOWBoss1",
@@ -258404,7 +258404,7 @@
     "placedHeight": 2,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Recorded (Music Box), in Hardmode"
   },
   {
     "key": "MusicBoxOWInvasion",
@@ -258456,7 +258456,7 @@
     "placedHeight": 2,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Recorded (Music Box), in Hardmode"
   },
   {
     "key": "MusicBoxOWTowers",
@@ -258508,7 +258508,7 @@
     "placedHeight": 2,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Recorded (Music Box), in Hardmode"
   },
   {
     "key": "OcramTrophy",
@@ -258552,7 +258552,7 @@
     "placedHeight": 3,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by enemies, in Hardmode"
   },
   {
     "key": "MusicBoxOWMoonLord",
@@ -258604,7 +258604,7 @@
     "placedHeight": 2,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Recorded (Music Box), in Hardmode"
   },
   {
     "key": "MusicBoxOWPlantera",
@@ -258656,7 +258656,7 @@
     "placedHeight": 2,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Recorded (Music Box), in Hardmode"
   },
   {
     "key": "MusicBoxOWJungle",
@@ -258708,7 +258708,7 @@
     "placedHeight": 2,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Recorded (Music Box), in Hardmode"
   },
   {
     "key": "MusicBoxOWWallOfFlesh",
@@ -258760,7 +258760,7 @@
     "placedHeight": 2,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Recorded (Music Box), in Hardmode"
   },
   {
     "key": "MusicBoxOWHallow",
@@ -258812,7 +258812,7 @@
     "placedHeight": 2,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Recorded (Music Box), in Hardmode"
   },
   {
     "key": "MilkCarton",
@@ -262782,7 +262782,7 @@
     "placedHeight": 2,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Recorded (Music Box), in Hardmode"
   },
   {
     "key": "DontStarveShaderItem",
@@ -268620,7 +268620,7 @@
     "tooltip": "'T. Murphy'\n'I'm such a lizard, you don't even know my real name...'",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Collected in the world, in Hardmode"
   },
   {
     "key": "MySon",
@@ -268809,7 +268809,7 @@
     "platformsKnown": true,
     "introduced": "1.4.4",
     "version": "1.4.4",
-    "hardmode": true,
+    "hardmode": false,
     "hardmodeOnly": false,
     "unobtainable": false,
     "banner": false,
@@ -268826,8 +268826,8 @@
     "placedHeight": 4,
     "tooltip": "'C. Rohde'",
     "conditions": [],
-    "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestone": "skeletron",
+    "milestoneVia": "Found in Dungeon Crate"
   },
   {
     "key": "NotSoLostInParadise",
@@ -270857,7 +270857,7 @@
     "tooltip": "'J. T. Kjexrud'",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Collected in the world, in Hardmode"
   },
   {
     "key": "JojaCola",
@@ -275151,7 +275151,7 @@
     "placedHeight": 2,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Recorded (Music Box), in Hardmode"
   },
   {
     "key": "SpiderWallUnsafe",
@@ -280062,7 +280062,7 @@
     "tooltip": "Summons a sentry\nSummons a hanging barnacle to poison enemies",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Fished, in Hardmode"
   },
   {
     "key": "MiteyTitey",
@@ -281029,7 +281029,7 @@
     "buff": "Alchemic Enhancement",
     "tooltip": "Usable when placed\nFresh buffs last longer\n'A mysterious bottle from far away'",
     "conditions": [],
-    "milestone": "start",
+    "milestone": "skeletron",
     "milestoneVia": "Shimmer from Alchemy Table"
   },
   {
@@ -281447,7 +281447,7 @@
     "tooltip": "'K. Lira'",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Collected in the world, in Hardmode"
   },
   {
     "key": "WinterAtVaringskollen",
@@ -283275,7 +283275,7 @@
     "platformsKnown": true,
     "introduced": "1.4.5",
     "version": "1.4.5",
-    "hardmode": true,
+    "hardmode": false,
     "hardmodeOnly": false,
     "unobtainable": false,
     "banner": false,
@@ -283292,8 +283292,8 @@
     "placedHeight": 3,
     "tooltip": "'M. Gejdel'",
     "conditions": [],
-    "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestone": "start",
+    "milestoneVia": "Found in Ocean Crate"
   },
   {
     "key": "TheRunicPixie",
@@ -283854,7 +283854,7 @@
     "placedHeight": 2,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Recorded (Music Box), in Hardmode"
   },
   {
     "key": "MusicBoxTwins",
@@ -283906,7 +283906,7 @@
     "placedHeight": 2,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Recorded (Music Box), in Hardmode"
   },
   {
     "key": "MagicString",
@@ -285808,7 +285808,7 @@
     "placedHeight": 2,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Recorded (Music Box), in Hardmode"
   },
   {
     "key": "MusicBoxQueenBeeAlt",
@@ -285913,7 +285913,7 @@
     "placedHeight": 2,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Recorded (Music Box), in Hardmode"
   },
   {
     "key": "MusicBoxSkeletronPrime",
@@ -285965,7 +285965,7 @@
     "placedHeight": 2,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Recorded (Music Box), in Hardmode"
   },
   {
     "key": "MusicBoxDestroyer",
@@ -286017,7 +286017,7 @@
     "placedHeight": 2,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Recorded (Music Box), in Hardmode"
   },
   {
     "key": "ChickenBonesHead",
@@ -286068,7 +286068,7 @@
     "conditions": [],
     "set": "chicken-bones-set",
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "From boss treasure bags, in Hardmode"
   },
   {
     "key": "ChickenBonesBody",
@@ -286119,7 +286119,7 @@
     "conditions": [],
     "set": "chicken-bones-set",
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "From boss treasure bags, in Hardmode"
   },
   {
     "key": "ChickenBonesLegs",
@@ -286170,7 +286170,7 @@
     "conditions": [],
     "set": "chicken-bones-set",
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "From boss treasure bags, in Hardmode"
   },
   {
     "key": "ChickenBonesWings",
@@ -286217,7 +286217,7 @@
     "tooltip": "'Great for impersonating devs!'\nAllows flight and slow fall",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "From boss treasure bags, in Hardmode"
   },
   {
     "key": "ChickenBonesRobe",
@@ -286269,7 +286269,7 @@
     "conditions": [],
     "set": "chicken-bones-set",
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "From boss treasure bags, in Hardmode"
   },
   {
     "key": "UpgradedMiningHead",
@@ -288487,7 +288487,7 @@
     "platformsKnown": true,
     "introduced": "1.4.5",
     "version": "1.4.5",
-    "hardmode": true,
+    "hardmode": false,
     "hardmodeOnly": false,
     "unobtainable": false,
     "banner": false,
@@ -288504,8 +288504,8 @@
     "placedHeight": 3,
     "tooltip": "'The lunatic is on the grass... The lunatic is in my head...'\n'C. Shadou'",
     "conditions": [],
-    "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestone": "skeletron",
+    "milestoneVia": "Dropped by Dark Caster"
   },
   {
     "key": "PaintingGermanZenith",
@@ -288606,7 +288606,7 @@
     "tooltip": "'C. Rohde'",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Collected in the world, in Hardmode"
   },
   {
     "key": "PaintingKaguya",
@@ -288764,7 +288764,7 @@
     "placedHeight": 2,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Recorded (Music Box), in Hardmode"
   },
   {
     "key": "MusicBoxTorchGod",
@@ -291046,7 +291046,7 @@
     "conditions": [],
     "set": "kazzymodus-set",
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "From boss treasure bags, in Hardmode"
   },
   {
     "key": "KazzymodusChestpiece",
@@ -291097,7 +291097,7 @@
     "conditions": [],
     "set": "kazzymodus-set",
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "From boss treasure bags, in Hardmode"
   },
   {
     "key": "KazzymodusLeggings",
@@ -291148,7 +291148,7 @@
     "conditions": [],
     "set": "kazzymodus-set",
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "From boss treasure bags, in Hardmode"
   },
   {
     "key": "KazzymodusWings",
@@ -291195,7 +291195,7 @@
     "tooltip": "'Great for impersonating devs!'\nAllows flight and slow fall",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "From boss treasure bags, in Hardmode"
   },
   {
     "key": "SlimeSpear",
@@ -302744,7 +302744,7 @@
     "platformsKnown": true,
     "introduced": "1.4.5.0",
     "version": "1.4.5",
-    "hardmode": true,
+    "hardmode": false,
     "hardmodeOnly": false,
     "unobtainable": false,
     "banner": false,
@@ -302757,8 +302757,8 @@
     "autoswing": true,
     "useTime": 15,
     "conditions": [],
-    "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Gothic Brick"
   },
   {
     "key": "FlinxFurBlock",
@@ -313068,7 +313068,7 @@
     "conditions": [],
     "set": "luna-s-set",
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "From boss treasure bags, in Hardmode"
   },
   {
     "key": "LunasBody",
@@ -313119,7 +313119,7 @@
     "conditions": [],
     "set": "luna-s-set",
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "From boss treasure bags, in Hardmode"
   },
   {
     "key": "LunasLegs",
@@ -313170,7 +313170,7 @@
     "conditions": [],
     "set": "luna-s-set",
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "From boss treasure bags, in Hardmode"
   },
   {
     "key": "LunasWings",
@@ -313217,7 +313217,7 @@
     "tooltip": "'Great for impersonating devs!'\nAllows flight and slow fall",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "From boss treasure bags, in Hardmode"
   },
   {
     "key": "LunasCloak",
@@ -313269,7 +313269,7 @@
     "conditions": [],
     "set": "luna-s-set",
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "From boss treasure bags, in Hardmode"
   },
   {
     "key": "PalworldChilletEgg",
@@ -313367,7 +313367,7 @@
     "placedHeight": 2,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Recorded (Music Box), in Hardmode"
   },
   {
     "key": "MusicBoxRainbowBoulder",
@@ -313419,7 +313419,7 @@
     "placedHeight": 2,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Recorded (Music Box), in Hardmode"
   },
   {
     "key": "MusicBoxSilence",

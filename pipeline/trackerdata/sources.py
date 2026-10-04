@@ -16,7 +16,8 @@ A source is a dict:
   events, biomes, times, conditions
               when and where it is available
   needs       recipe, shimmer, extractinator: what it is made from - [(name, [item keys])], each
-              one of these items (a crafting station or an "Any ..." group: any of several)
+              one of these items (a crafting station or an "Any ..." group: any of several);
+              a shop row: the item the player must have
   method      tag, name: the method; `covered`: the item's drop rows say it more precisely (it
               only names the method); `sure`: it holds for every item it is on
   drop + source, row + vendor, recipe, row + machine
@@ -98,8 +99,11 @@ class Sources:
                 conditions=set() if container else set(d.get("conditions", ())) | set(dropper.get("times", ()))))
         shop = self.shops.get(key, [])
         for r in shop:
+            # a row for players who have an item ("... a Nail Gun in their inventory") needs it
+            needs = {"needs": [(self.names[r["needs"][0]], r["needs"])]} if r.get("needs") else {}
             out.append(source("shop", [VENDOR], regular=not seed_only(r), row=r, vendor=r["vendor"],
-                              events=set(r["events"]), biomes=set(r["biomes"]), conditions=set(r["conditions"])))
+                              events=set(r["events"]), biomes=set(r["biomes"]), conditions=set(r["conditions"]),
+                              **needs))
         # the vendors the Items table names; one that only has rows in special seeds is no vendor of
         # the item (the Princess's Terragrim)
         sold = [r["vendor"] for r in shop if not seed_only(r)]

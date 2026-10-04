@@ -3,7 +3,7 @@
     "id": "start",
     "name": "World creation",
     "icon": "https://terraria.wiki.gg/images/Copper_Shortsword.png",
-    "count": 3331
+    "count": 3329
   },
   {
     "id": "king-slime",
@@ -21,7 +21,7 @@
     "id": "evil-boss",
     "name": "Eater of Worlds / Brain of Cthulhu",
     "icon": "https://terraria.wiki.gg/images/Map_Icon_Eater_of_Worlds.png",
-    "count": 140
+    "count": 141
   },
   {
     "id": "queen-bee",
@@ -39,13 +39,13 @@
     "id": "skeletron",
     "name": "Skeletron",
     "icon": "https://terraria.wiki.gg/images/Map_Icon_Skeletron.png",
-    "count": 446
+    "count": 453
   },
   {
     "id": "wall-of-flesh",
     "name": "Wall of Flesh (Hardmode)",
     "icon": "https://terraria.wiki.gg/images/Map_Icon_Wall_of_Flesh.png",
-    "count": 1075
+    "count": 1063
   },
   {
     "id": "queen-slime",
@@ -69,13 +69,13 @@
     "id": "plantera",
     "name": "Plantera",
     "icon": "https://terraria.wiki.gg/images/Map_Icon_Plantera_%28first_form%29.png",
-    "count": 281
+    "count": 284
   },
   {
     "id": "golem",
     "name": "Golem",
     "icon": "https://terraria.wiki.gg/images/Map_Icon_Golem.png",
-    "count": 138
+    "count": 139
   },
   {
     "id": "duke-empress",
@@ -93,6 +93,6 @@
     "id": "moon-lord",
     "name": "Moon Lord",
     "icon": "https://terraria.wiki.gg/images/Map_Icon_Moon_Lord.png",
-    "count": 86
+    "count": 88
   }
 ]

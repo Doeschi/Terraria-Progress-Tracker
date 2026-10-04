@@ -299,6 +299,11 @@ def shop_rows(wikitext_pages, vendors, resolve, conditions):
             row = {"vendor": vid, "text": condition_text(cond) or None,
                    "conditions": parsed["condition"], "moons": parsed["moons"],
                    "events": parsed["event"], "biomes": parsed["biome"]}
+            # "When the player has a [[Nail Gun]] in their inventory": sold to who has one of these
+            # items (for the milestones; not in shops.json)
+            if "inventory" in parsed["condition"]:
+                row["needs"] = [i["key"] for m in LINK.finditer(html.unescape(cond))
+                                for i in resolve(m.group(1).strip())]
             for item in items:
                 if row not in rows[item["key"]]:
                     rows[item["key"]].append(row)

@@ -1164,6 +1164,7 @@ match = []
 page = "Dye Trader"
 section = "Rewards"
 replaces = "quest-reward"
+milestone = "wall-of-flesh"   # Strange Plants only grow in Hardmode
 
 # critters (NPCs of type critter / gold critter, and shared critter pages)
 [obtain.caught]
@@ -2026,6 +2027,9 @@ after-all-mechs = "all-mechs"
 "Dungeon Crate" = "skeletron"
 # fished in lava (see [milestone_items])
 "Obsidian Crate" = "evil-boss"
+# the trees of the Hallow
+"Shaking Pearlwood tree" = "wall-of-flesh"
+"Shaking Pearlwood Palm tree" = "wall-of-flesh"
 "Lihzahrd Chest" = "plantera"
 # Dungeon biome chests (keys from Hardmode biome enemies, locked until Plantera)
 "Corruption Chest" = "plantera"
@@ -2053,8 +2057,14 @@ after-all-mechs = "all-mechs"
 # Mimic: before Hardmode they only spawn in Remix worlds.
 "Blue Jellyfish" = "start"
 "Pink Jellyfish" = "start"
-# Hardmode-only, but missing from the category
+# Hardmode-only, but missing from the category; the slimes that carry a Hardmode ore
 "Orca" = "wall-of-flesh"
+"Cobalt Slime" = "wall-of-flesh"
+"Palladium Slime" = "wall-of-flesh"
+"Mythril Slime" = "wall-of-flesh"
+"Orichalcum Slime" = "wall-of-flesh"
+"Adamantite Slime" = "wall-of-flesh"
+"Titanium Slime" = "wall-of-flesh"
 # Underworld, after any mechanical boss
 "Red Devil" = "any-mech"
 # Solar Eclipse: after all three mechanical bosses / after Plantera
@@ -2154,6 +2164,8 @@ dungeon = "skeletron"
 "Sharpening Station" = "start"
 "Explosives" = "start"
 "Water Candle" = { milestone = "skeletron", reason = "found in the Dungeon" }
+"Alchemy Table" = { milestone = "skeletron", reason = "found in the Dungeon" }
+"Pink Ice Block" = { milestone = "wall-of-flesh", reason = "found in the Hallow" }
 "Lihzahrd Chest" = { milestone = "plantera", reason = "found in the Jungle Temple" }
 "Lihzahrd Altar" = { milestone = "golem", reason = "mined (needs the Picksaw)" }
 # crafted from Chlorophyte Bars (the wiki tags it "plunder", which would make it a plain Hardmode item)
@@ -2161,6 +2173,21 @@ dungeon = "skeletron"
 # the Painter sells it in a Graveyard while the Mechanic (rescued after Skeletron) is present; the
 # wiki's row also names "after Plantera" (then without the Mechanic), read as both together
 "Echo Coating" = { milestone = "skeletron", reason = "sold by the Painter in a Graveyard while the Mechanic is present", override = true }
+# The wiki's Hardmode flag: a Hardmode item is not available before the Wall of Flesh, whatever
+# its sources say (the reason then ends in ", in Hardmode"). The build lists the Hardmode items
+# whose data says earlier: a gate is missing in the data, or the flag is wrong. A rule here
+# decides it - the flag holds (the data lacks the gate):
+"Balla Hat" = "wall-of-flesh"                     # the Clothier, after the Frost Legion
+"Gangsta Hat" = "wall-of-flesh"
+"Tax Collector's *" = "wall-of-flesh"             # the Clothier, while the Tax Collector is present
+"Confetti Cannon" = "wall-of-flesh"               # the Party Girl, while the Pirate is present
+"The Land of Deceiving Looks" = "wall-of-flesh"   # the Painter, in the Hallow
+"Ball O' Fuse Wire" = "wall-of-flesh"             # the Zoologist, Bestiary 70 %
+"Badger's Hat" = "wall-of-flesh"                  # the Eye of Cthulhu on the same day as the Wall of Flesh
+"Universal Pylon" = { milestone = "moon-lord", reason = "sold by the Zoologist with a complete Bestiary" }
+# - or the flag is wrong: [hardmode] pre_hardmode, below. (The Bewitching Table: the Witch Doctor
+# sells it while the Wizard is present, but it stands in the Dungeon.)
+"Bewitching Table" = { milestone = "skeletron", reason = "found in the Dungeon" }
 
 
 # --------------------------------------------------------------------- flags
@@ -2171,6 +2198,20 @@ hardmodeOnly = ["tag:hardmodeonly"]
 unobtainable = ["unobtainable:1", "tag:unobtainable", "listcat:unobtainable items"]
 banner = ["tag:enemy banner"]
 questFish = ["tag:quest fish"]
+
+
+# Items the wiki flags as Hardmode items although they are available before the Wall of Flesh
+# (their sources say so, see [milestone_items]): no Hardmode items here.
+[hardmode]
+pre_hardmode = [
+    "Defender's Forge",        # the Tavernkeep sells it without a condition
+    "Spectre Goggles",         # the Mechanic, in a Graveyard
+    "Bewitching Table",        # found in the Dungeon
+    "Gothic Brick Wall",       # crafted from Gothic Brick
+    "Remnants of Devotion",    # paintings: Dungeon Crate, Ocean Crate, Dark Caster
+    "Of Sea and Dreams",
+    "Dark Forebodings",
+]
 
 
 # --------------------------------------------------------------------- drops

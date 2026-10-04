@@ -799,7 +799,9 @@ Below 640 px width (phones) the layout changes; tablets and desktops stay as the
     a drop) counts instead – Steampunk Chest → any mechanical boss, the Dungeon's paintings →
     Skeletron. Items for which the tag holds anyway have a rule in `[milestone_items]` (Ice
     Block, Demonite Ore, Sunflower → Start; Lihzahrd Chest → Plantera)
-  - minimum: Hardmode items → Wall of Flesh; `[milestone_items]` (name patterns) for what the
+  - minimum: Hardmode items (the wiki's flag) → Wall of Flesh, whatever their sources say – the
+    source stays the reason ("Fished, in Hardmode", "From boss treasure bags, in Hardmode");
+    `[milestone_items]` (name patterns) for what the
     data does not know, e.g. mining: Hellstone → evil boss, Hardmode ores → Wall of Flesh,
     Chlorophyte Ore → all three mechanical bosses, Meteorite → evil boss (a meteor lands only
     after the Eater of Worlds / Brain of Cthulhu; the Meteor Head too, `[milestone_sources]`); enemies in the wiki's category "Hardmode-only
@@ -807,15 +809,24 @@ Below 640 px width (phones) the layout changes; tablets and desktops stay as the
     later than their biome says (post-Plantera Dungeon enemies, Old One's Army tier 2, the Solar
     Eclipse enemies after Plantera, the cultists at the Dungeon after Golem) and for
     exceptions to the category (pre-Hardmode enemies on a shared page, missing ones)
-  The build writes `milestones.json` (with item counts) and lists Hardmode items whose sources
-  say Start, to find missing rules.
+  A shop row for players who have an item ("… a Nail Gun in their inventory") needs that item
+  (Nail → Plantera, Portal Gun Station → Moon Lord); a reward page can count from a milestone
+  (`[obtain.*] milestone`: Strange Plants only grow in Hardmode).
+  The build writes `milestones.json` (with item counts) and reports (DU1) the Hardmode items
+  whose sources *in the data* (drop rows, shop rows, recipes, …) say earlier: there a gate is
+  missing in `mapping.toml` – or the flag is wrong. A rule in `[milestone_items]` decides it:
+  `= "wall-of-flesh"` (the flag holds: Balla Hat, after the Frost Legion) or a later milestone.
+  Where the flag is wrong, `[hardmode] pre_hardmode` in `mapping.toml` takes it from the item
+  (no "Hardmode" badge either): Defender's Forge (the Tavernkeep sells it without a
+  condition), Spectre Goggles, Bewitching Table, Gothic Brick Wall, three paintings.
 - **MS3** Filter group "Progression" (replaces Pre-Hardmode / Hardmode): the milestones with
   icons. A switch in the group: "up to" (default, cumulative – a milestone contains every item
   available by then, e.g. Skeletron includes King Slime's) or "exactly" (only what becomes
   available at that milestone). The switch is remembered in the browser (PR1).
 - **MS4** Detail panel: "Available after: <milestone>" with the reason (e.g. "Crafted – needs
   Chlorophyte Ore", "Sold by the Cyborg", "Dropped by Plantera"; without more precise data the
-  obtain method's name as in "Obtained by", e.g. "Collected in the world"). Table column "Available after"
+  obtain method's name as in "Obtained by", e.g. "Collected in the world"; "…, in Hardmode" when only
+  the wiki's Hardmode flag puts it there). Table column "Available after"
   (first of group Source, with the milestone icon, the reason on hover), sorted in milestone
   order.
 - **MS5** Progress of the loaded world: the world file stores which bosses were defeated

@@ -47,6 +47,8 @@ class Mapping:
         self.recipe_items = data.get("recipe_items", {})
         # items the wiki marks unobtainable that count as obtainable after all (normalised names)
         self.obtainable = {norm_name(n) for n in data.get("unobtainable", {}).get("obtainable", [])}
+        # items the wiki flags as Hardmode items that are available before (normalised names)
+        self.pre_hardmode = {norm_name(n) for n in data.get("hardmode", {}).get("pre_hardmode", [])}
         # items the wiki does not mark unobtainable that are anyway (never really added to the game)
         self.unobtainable = {norm_name(n) for n in data.get("unobtainable", {}).get("unobtainable", [])}
         self.bestiary = data.get("bestiary", {})

@@ -113,7 +113,7 @@ A list of all items (one entry per item id), sorted by id.
 | `introduced` | the Desktop patch that added it (`"1.4.0.1"`) |
 | `version` | the game update it belongs to (`versions.json` id, e.g. `"1.4.0"`) |
 | `minDifficulty` | `"expert"` / `"master"`: only obtainable from this difficulty on |
-| `hardmode` | a Hardmode item (the wiki says so) |
+| `hardmode` | a Hardmode item (the wiki says so; `[hardmode] pre_hardmode` in `mapping.toml` corrects it) |
 | `hardmodeOnly` | only exists in Hardmode (wiki tag "hardmode only") |
 | `unobtainable` | cannot be obtained in the game (ignored by default in new playthroughs) |
 | `eventOnly` | only obtainable during events |
