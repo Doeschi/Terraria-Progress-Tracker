@@ -45,7 +45,7 @@
     "id": "fishing",
     "name": "Fished",
     "icon": "https://terraria.wiki.gg/images/Wood_Fishing_Pole.png",
-    "count": 119
+    "count": 120
   },
   {
     "id": "quest-reward",
@@ -120,7 +120,7 @@
     "id": "other",
     "name": "Other",
     "icon": "https://terraria.wiki.gg/images/Tombstone.png",
-    "count": 30,
+    "count": 29,
     "fallback": true
   },
   {

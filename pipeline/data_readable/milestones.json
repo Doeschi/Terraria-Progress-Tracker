@@ -3,7 +3,7 @@
     "id": "start",
     "name": "World creation",
     "icon": "https://terraria.wiki.gg/images/Copper_Shortsword.png",
-    "count": 3384
+    "count": 3331
   },
   {
     "id": "king-slime",
@@ -21,7 +21,7 @@
     "id": "evil-boss",
     "name": "Eater of Worlds / Brain of Cthulhu",
     "icon": "https://terraria.wiki.gg/images/Map_Icon_Eater_of_Worlds.png",
-    "count": 87
+    "count": 140
   },
   {
     "id": "queen-bee",

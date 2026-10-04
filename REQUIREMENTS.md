@@ -785,7 +785,12 @@ Below 640 px width (phones) the layout changes; tablets and desktops stay as the
     Plantera), else Start; rows only in special seeds do not count. The Extractinators: the
     machine, one of the inputs, and Hardmode for the results only then
   - Strange Plant rewards: the conditions of their heading; fishing, quest rewards, player
-    death → Start
+    death → Start. Fishing in lava → Eater of Worlds / Brain of Cthulhu (`[milestone_items]`,
+    and the Obsidian Crate in `[milestone_sources]`): it needs lava bait, caught with a
+    Lavaproof Bug Net (Hellstone Bars), or a lavaproof hook, which comes from the lava crates
+    (the Hotline Fishing Hook only in Hardmode) – Obsidian Crate and its contents, Flarefin
+    Koi, Obsidifish, Demon Conch, Bottomless Lava Bucket, Lava Absorbant Sponge, the lava
+    critters. Not counted: the Golden Bug Net, a rare Angler reward, catches the bait too
   - methods only the wiki's tags or a name rule give, without data of ours ("Collected in the
     world", "Caught with a Bug Net", "Other form of an item"; "Dropped by enemies", chests and
     bags without a drop row) → Start, but only for items the data has no

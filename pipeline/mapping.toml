@@ -2024,6 +2024,8 @@ after-all-mechs = "all-mechs"
 "Golden Lock Box" = "skeletron"         # Golden Key from Dungeon enemies
 "Obsidian Lock Box" = "skeletron"       # Shadow Key
 "Dungeon Crate" = "skeletron"
+# fished in lava (see [milestone_items])
+"Obsidian Crate" = "evil-boss"
 "Lihzahrd Chest" = "plantera"
 # Dungeon biome chests (keys from Hardmode biome enemies, locked until Plantera)
 "Corruption Chest" = "plantera"
@@ -2110,6 +2112,19 @@ dungeon = "skeletron"
 # dropped by the enemies of a biome, not by one enemy (not in the wiki's Drops table)
 "Cascade" = { milestone = "skeletron", reason = "dropped by Underworld enemies after Skeletron" }
 "Yelets" = { milestone = "any-mech", reason = "dropped by Jungle enemies after any mechanical boss" }
+# Fishing in lava only works with lava bait - Magma Snail, Lavafly, Hell Butterfly, caught with a
+# Lavaproof Bug Net (Hellstone Bars) - or a lavaproof hook (from the lava crates; the Angler's
+# Hotline Fishing Hook in Hardmode). Not counted: the Golden Bug Net, a rare reward of the Angler,
+# catches the bait too. The contents of the Obsidian Crate: [milestone_sources].
+"Magma Snail" = { milestone = "evil-boss", reason = "caught with a Lavaproof Bug Net" }
+"Lavafly" = { milestone = "evil-boss", reason = "caught with a Lavaproof Bug Net" }
+"Hell Butterfly" = { milestone = "evil-boss", reason = "caught with a Lavaproof Bug Net" }
+"Obsidian Crate" = { milestone = "evil-boss", reason = "fished in lava (needs lava bait or a lavaproof hook)" }
+"Flarefin Koi" = { milestone = "evil-boss", reason = "fished in lava (needs lava bait or a lavaproof hook)" }
+"Obsidifish" = { milestone = "evil-boss", reason = "fished in lava (needs lava bait or a lavaproof hook)" }
+"Demon Conch" = { milestone = "evil-boss", reason = "fished in lava (needs lava bait or a lavaproof hook)" }
+"Bottomless Lava Bucket" = { milestone = "evil-boss", reason = "fished in lava (needs lava bait or a lavaproof hook)" }
+"Lava Absorbant Sponge" = { milestone = "evil-boss", reason = "fished in lava (needs lava bait or a lavaproof hook)" }
 # What the wiki only tags ("Collected in the world", "Dropped by enemies", …) counts for an item
 # the data has no source for: the tags are per wiki page, also for items they do not hold for
 # (every chandelier is "collected in the world"). An item with a rule here is obtained as tagged,
@@ -2118,6 +2133,20 @@ dungeon = "skeletron"
 "Sandstone Block" = "start"
 "Hardened Sand Block" = "start"
 "Hellstone Brick" = "start"
+"Hellforge" = "start"
+# the paintings of the Underworld's ruined houses (the data only knows them from the lava crates)
+"Darkness" = "start"
+"Dark Soul Reaper" = "start"
+"Trapped Ghost" = "start"
+"Demon's Eye" = "start"
+"Hand Earth" = "start"
+"Skelehead" = "start"
+"Lake of Fire" = "start"
+"Imp Face" = "start"
+"Ominous Presence" = "start"
+"Shining Moon" = "start"
+"Living Gore" = "start"
+"Flowing Magma" = "start"
 "Demonite Ore" = "start"
 "Crimtane Ore" = "start"
 "Sunflower" = "start"
@@ -2655,6 +2684,8 @@ keys = [
 "Sharkteeth Trophy" = ["obtain:quest-reward"]
 "Swordfish Trophy" = ["obtain:quest-reward"]
 "Silent Fish" = ["obtain:quest-reward"]
+# fished in lava, like the Bottomless Lava Bucket (the wiki has not tagged it)
+"Lava Absorbant Sponge" = ["obtain:fishing"]
 # developer items by name: the developer wings sit on the shared "Wings" page without
 # the developer tag (Jim's Cap is excluded in [categories.developer] and [obtain.treasure-bag])
 "Red's *" = ["categories:developer", "obtain:treasure-bag"]

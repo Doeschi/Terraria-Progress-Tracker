@@ -6587,8 +6587,8 @@
     "useTime": 20,
     "debuff": "On Fire!",
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "evil-boss",
+    "milestoneVia": "Crafted – needs Hellstone Bar"
   },
   {
     "key": "MoltenFury",
@@ -6643,8 +6643,8 @@
     "useTime": 22,
     "tooltip": "Lights wooden arrows ablaze",
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "evil-boss",
+    "milestoneVia": "Crafted – needs Hellstone Bar"
   },
   {
     "key": "FieryGreatsword",
@@ -6701,8 +6701,8 @@
     "debuff": "On Fire!",
     "tooltip": "'It's made out of fire!'",
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "evil-boss",
+    "milestoneVia": "Crafted – needs Hellstone Bar"
   },
   {
     "key": "MoltenPickaxe",
@@ -6757,8 +6757,8 @@
     "toolSpeed": 18,
     "debuff": "On Fire!",
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "evil-boss",
+    "milestoneVia": "Crafted – needs Hellstone Bar"
   },
   {
     "key": "MeteorHelmet",
@@ -9642,7 +9642,7 @@
     "placedHeight": 1,
     "tooltip": "'Hot to the touch'",
     "conditions": [],
-    "milestone": "start",
+    "milestone": "evil-boss",
     "milestoneVia": "Found in Obsidian Crate"
   },
   {
@@ -11903,8 +11903,8 @@
     "toolSpeed": 14,
     "debuff": "On Fire!",
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "evil-boss",
+    "milestoneVia": "Crafted – needs Hellstone Bar"
   },
   {
     "key": "Flamelash",
@@ -12130,7 +12130,7 @@
     "placedHeight": 2,
     "conditions": [],
     "milestone": "start",
-    "milestoneVia": "Found in Obsidian Crate"
+    "milestoneVia": "Collected in the world"
   },
   {
     "key": "ClayPot",
@@ -12599,8 +12599,8 @@
     "tooltip": "7% increased melee critical strike chance",
     "conditions": [],
     "set": "molten-armor",
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "evil-boss",
+    "milestoneVia": "Crafted – needs Hellstone Bar"
   },
   {
     "key": "MoltenBreastplate",
@@ -12652,8 +12652,8 @@
     "tooltip": "7% increased melee damage",
     "conditions": [],
     "set": "molten-armor",
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "evil-boss",
+    "milestoneVia": "Crafted – needs Hellstone Bar"
   },
   {
     "key": "MoltenGreaves",
@@ -12705,8 +12705,8 @@
     "tooltip": "7% increased melee speed",
     "conditions": [],
     "set": "molten-armor",
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "evil-boss",
+    "milestoneVia": "Crafted – needs Hellstone Bar"
   },
   {
     "key": "MeteorShot",
@@ -14378,8 +14378,8 @@
     "knockback": 8.0,
     "velocity": 6.5,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "evil-boss",
+    "milestoneVia": "Crafted – needs Hellstone Bar"
   },
   {
     "key": "Sandgun",
@@ -78610,7 +78610,7 @@
     "placedHeight": 3,
     "conditions": [],
     "milestone": "start",
-    "milestoneVia": "Found in Obsidian Crate"
+    "milestoneVia": "Collected in the world"
   },
   {
     "key": "DarkSoulReaper",
@@ -78663,7 +78663,7 @@
     "tooltip": "'J. T. Kjexrud'",
     "conditions": [],
     "milestone": "start",
-    "milestoneVia": "Found in Obsidian Crate"
+    "milestoneVia": "Collected in the world"
   },
   {
     "key": "Land",
@@ -78768,7 +78768,7 @@
     "tooltip": "'J. T. Kjexrud'",
     "conditions": [],
     "milestone": "start",
-    "milestoneVia": "Found in Obsidian Crate"
+    "milestoneVia": "Collected in the world"
   },
   {
     "key": "DemonsEye",
@@ -78821,7 +78821,7 @@
     "tooltip": "'J. T. Kjexrud'",
     "conditions": [],
     "milestone": "start",
-    "milestoneVia": "Found in Obsidian Crate"
+    "milestoneVia": "Collected in the world"
   },
   {
     "key": "FindingGold",
@@ -79831,7 +79831,7 @@
     "tooltip": "'J. T. Kjexrud'",
     "conditions": [],
     "milestone": "start",
-    "milestoneVia": "Found in Obsidian Crate"
+    "milestoneVia": "Collected in the world"
   },
   {
     "key": "OldMiner",
@@ -79936,7 +79936,7 @@
     "tooltip": "'J. T. Kjexrud'",
     "conditions": [],
     "milestone": "start",
-    "milestoneVia": "Found in Obsidian Crate"
+    "milestoneVia": "Collected in the world"
   },
   {
     "key": "FacingtheCerebralMastermind",
@@ -80042,7 +80042,7 @@
     "tooltip": "'W. Garner'",
     "conditions": [],
     "milestone": "start",
-    "milestoneVia": "Found in Obsidian Crate"
+    "milestoneVia": "Collected in the world"
   },
   {
     "key": "TrioSuperHeroes",
@@ -81947,7 +81947,7 @@
     "tooltip": "'J. T. Kjexrud'",
     "conditions": [],
     "milestone": "start",
-    "milestoneVia": "Found in Obsidian Crate"
+    "milestoneVia": "Collected in the world"
   },
   {
     "key": "OminousPresence",
@@ -82000,7 +82000,7 @@
     "tooltip": "'A. Craig'",
     "conditions": [],
     "milestone": "start",
-    "milestoneVia": "Found in Obsidian Crate"
+    "milestoneVia": "Collected in the world"
   },
   {
     "key": "ShiningMoon",
@@ -82053,7 +82053,7 @@
     "tooltip": "'A. Craig'",
     "conditions": [],
     "milestone": "start",
-    "milestoneVia": "Found in Obsidian Crate"
+    "milestoneVia": "Collected in the world"
   },
   {
     "key": "LivingGore",
@@ -82106,7 +82106,7 @@
     "tooltip": "'A. Craig'",
     "conditions": [],
     "milestone": "start",
-    "milestoneVia": "Found in Obsidian Crate"
+    "milestoneVia": "Collected in the world"
   },
   {
     "key": "FlowingMagma",
@@ -82159,7 +82159,7 @@
     "tooltip": "'A. Craig'",
     "conditions": [],
     "milestone": "start",
-    "milestoneVia": "Found in Obsidian Crate"
+    "milestoneVia": "Collected in the world"
   },
   {
     "key": "SpectrePaintbrush",
@@ -121676,8 +121676,8 @@
     "placeable": false,
     "autoswing": false,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Fished"
+    "milestone": "evil-boss",
+    "milestoneVia": "Fished in lava (needs lava bait or a lavaproof hook)"
   },
   {
     "key": "DoubleCod",
@@ -121825,8 +121825,8 @@
     "placeable": false,
     "autoswing": false,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Fished"
+    "milestone": "evil-boss",
+    "milestoneVia": "Fished in lava (needs lava bait or a lavaproof hook)"
   },
   {
     "key": "Shrimp",
@@ -123548,8 +123548,8 @@
     "buff": "Inferno",
     "tooltip": "Ignites nearby enemies",
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "evil-boss",
+    "milestoneVia": "Crafted – needs Flarefin Koi"
   },
   {
     "key": "WrathPotion",
@@ -124428,8 +124428,8 @@
     "debuff": "On Fire!",
     "tooltip": "Summons an imp to fight for you",
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "evil-boss",
+    "milestoneVia": "Crafted – needs Hellstone Bar"
   },
   {
     "key": "QueenSpiderStaff",
@@ -228885,7 +228885,7 @@
     "buff": "Minecart",
     "tooltip": "Provides 7 seconds of immunity to lava",
     "conditions": [],
-    "milestone": "start",
+    "milestone": "evil-boss",
     "milestoneVia": "Found in Obsidian Crate"
   },
   {
@@ -234093,7 +234093,7 @@
     "buff": "Baby Imp",
     "tooltip": "Summons a baby imp\n'He hasn't learned how to teleport yet!'",
     "conditions": [],
-    "milestone": "start",
+    "milestone": "evil-boss",
     "milestoneVia": "Found in Obsidian Crate"
   },
   {
@@ -243557,7 +243557,7 @@
     "buff": "Shadow Mimic",
     "tooltip": "Summons a pet shadow mimic",
     "conditions": [],
-    "milestone": "start",
+    "milestone": "evil-boss",
     "milestoneVia": "Found in Obsidian Crate"
   },
   {
@@ -247755,8 +247755,8 @@
     "useTime": 90,
     "tooltip": "If you listen closely, you can hear screams\n'Watch your toes'",
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Fished"
+    "milestone": "evil-boss",
+    "milestoneVia": "Fished in lava (needs lava bait or a lavaproof hook)"
   },
   {
     "key": "BottomlessLavaBucket",
@@ -247803,8 +247803,8 @@
     "rangeBonus": 2,
     "tooltip": "Contains an endless amount of lava\nCan be poured out",
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Fished"
+    "milestone": "evil-boss",
+    "milestoneVia": "Fished in lava (needs lava bait or a lavaproof hook)"
   },
   {
     "key": "FireproofBugNet",
@@ -247850,8 +247850,8 @@
     "useTime": 21,
     "tooltip": "Used to catch critters and bait\nCan catch lava critters too!\n'For when things get too hot to handle'",
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "evil-boss",
+    "milestoneVia": "Crafted – needs Hellstone Bar"
   },
   {
     "key": "FlameWakerBoots",
@@ -247900,7 +247900,7 @@
     "autoswing": false,
     "tooltip": "Leaves a trail of flames in your wake\n'Never get cold feet again'",
     "conditions": [],
-    "milestone": "start",
+    "milestone": "evil-boss",
     "milestoneVia": "Found in Obsidian Crate"
   },
   {
@@ -248005,7 +248005,7 @@
     "tooltip": "A small explosion that will spread water",
     "conditions": [],
     "milestone": "start",
-    "milestoneVia": "Found in Obsidian Crate"
+    "milestoneVia": "Sold by the Demolitionist"
   },
   {
     "key": "LavaBomb",
@@ -248220,7 +248220,7 @@
     "buff": "Lava Shark Mount",
     "tooltip": "Summons a rideable lava shark mount\n'Bloody hell!'",
     "conditions": [],
-    "milestone": "start",
+    "milestone": "evil-boss",
     "milestoneVia": "Found in Obsidian Crate"
   },
   {
@@ -249010,8 +249010,8 @@
     "useTime": 15,
     "baitPower": 15,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Caught with a Bug Net"
+    "milestone": "evil-boss",
+    "milestoneVia": "Caught with a Lavaproof Bug Net"
   },
   {
     "key": "HellButterflyJar",
@@ -249057,8 +249057,8 @@
     "placedWidth": 2,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "evil-boss",
+    "milestoneVia": "Crafted – needs Hell Butterfly"
   },
   {
     "key": "Lavafly",
@@ -249105,8 +249105,8 @@
     "useTime": 15,
     "baitPower": 25,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Caught with a Bug Net"
+    "milestone": "evil-boss",
+    "milestoneVia": "Caught with a Lavaproof Bug Net"
   },
   {
     "key": "LavaflyinaBottle",
@@ -249153,8 +249153,8 @@
     "placedWidth": 1,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "evil-boss",
+    "milestoneVia": "Crafted – needs Lavafly"
   },
   {
     "key": "MagmaSnail",
@@ -249201,8 +249201,8 @@
     "useTime": 15,
     "baitPower": 35,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Caught with a Bug Net"
+    "milestone": "evil-boss",
+    "milestoneVia": "Caught with a Lavaproof Bug Net"
   },
   {
     "key": "MagmaSnailCage",
@@ -249248,8 +249248,8 @@
     "placedWidth": 3,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "evil-boss",
+    "milestoneVia": "Crafted – needs Magma Snail"
   },
   {
     "key": "GemTreeTopazSeed",
@@ -249620,7 +249620,7 @@
     "placedWidth": 2,
     "placedHeight": 3,
     "conditions": [],
-    "milestone": "start",
+    "milestone": "evil-boss",
     "milestoneVia": "Found in Obsidian Crate"
   },
   {
@@ -249668,8 +249668,8 @@
     "placedWidth": 2,
     "placedHeight": 3,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "evil-boss",
+    "milestoneVia": "Crafted – needs Hanging Pot"
   },
   {
     "key": "PotSuspendedMoonglow",
@@ -249716,8 +249716,8 @@
     "placedWidth": 2,
     "placedHeight": 3,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "evil-boss",
+    "milestoneVia": "Crafted – needs Hanging Pot"
   },
   {
     "key": "PotSuspendedWaterleaf",
@@ -249764,8 +249764,8 @@
     "placedWidth": 2,
     "placedHeight": 3,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "evil-boss",
+    "milestoneVia": "Crafted – needs Hanging Pot"
   },
   {
     "key": "PotSuspendedShiverthorn",
@@ -249812,8 +249812,8 @@
     "placedWidth": 2,
     "placedHeight": 3,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "evil-boss",
+    "milestoneVia": "Crafted – needs Hanging Pot"
   },
   {
     "key": "PotSuspendedBlinkroot",
@@ -249860,8 +249860,8 @@
     "placedWidth": 2,
     "placedHeight": 3,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "evil-boss",
+    "milestoneVia": "Crafted – needs Hanging Pot"
   },
   {
     "key": "PotSuspendedDeathweedCorrupt",
@@ -249908,8 +249908,8 @@
     "placedWidth": 2,
     "placedHeight": 3,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "evil-boss",
+    "milestoneVia": "Crafted – needs Hanging Pot"
   },
   {
     "key": "PotSuspendedDeathweedCrimson",
@@ -249956,8 +249956,8 @@
     "placedWidth": 2,
     "placedHeight": 3,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "evil-boss",
+    "milestoneVia": "Crafted – needs Hanging Pot"
   },
   {
     "key": "PotSuspendedFireblossom",
@@ -250004,8 +250004,8 @@
     "placedWidth": 2,
     "placedHeight": 3,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "evil-boss",
+    "milestoneVia": "Crafted – needs Hanging Pot"
   },
   {
     "key": "BrazierSuspended",
@@ -250052,8 +250052,8 @@
     "placedWidth": 2,
     "placedHeight": 3,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "evil-boss",
+    "milestoneVia": "Crafted – needs Hanging Pot"
   },
   {
     "key": "VolcanoSmall",
@@ -250103,7 +250103,7 @@
     "placedWidth": 1,
     "placedHeight": 1,
     "conditions": [],
-    "milestone": "start",
+    "milestone": "evil-boss",
     "milestoneVia": "Found in Obsidian Crate"
   },
   {
@@ -250152,8 +250152,8 @@
     "placedWidth": 2,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "evil-boss",
+    "milestoneVia": "Crafted – needs Mini Volcano"
   },
   {
     "key": "PotionOfReturn",
@@ -250200,8 +250200,8 @@
     "useTime": 30,
     "tooltip": "Teleports you home and creates a portal\nUse portal to return when you are done\n'Good for one round trip!'",
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "evil-boss",
+    "milestoneVia": "Crafted – needs Obsidifish"
   },
   {
     "key": "VanityTreeSakuraSeed",
@@ -250270,7 +250270,7 @@
       "other-tool"
     ],
     "obtain": [
-      "other"
+      "fishing"
     ],
     "vendors": [],
     "events": [],
@@ -250300,7 +250300,8 @@
     "rangeBonus": 2,
     "tooltip": "Capable of soaking up an endless amount of lava",
     "conditions": [],
-    "milestone": "start"
+    "milestone": "evil-boss",
+    "milestoneVia": "Fished in lava (needs lava bait or a lavaproof hook)"
   },
   {
     "key": "HallowedHood",
@@ -250395,8 +250396,8 @@
     "autoswing": false,
     "tooltip": "Allows flight\nThe wearer can run super fast\nLeaves a trail of flames in your wake",
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "evil-boss",
+    "milestoneVia": "Crafted – needs Flame Waker Boots"
   },
   {
     "key": "TeleportationPylonJungle",
@@ -250543,8 +250544,8 @@
     "placedHeight": 2,
     "tooltip": "{icon:desktop} Right click to open /\n{icon:console} L2 to open ({icon:playstation}) /\nLT to open ({icon:xbox-one}) /\nZL to open ({icon:switch}) /\n{icon:mobile} Double tap to open",
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Fished"
+    "milestone": "evil-boss",
+    "milestoneVia": "Fished in lava (needs lava bait or a lavaproof hook)"
   },
   {
     "key": "LavaCrateHard",
@@ -250638,7 +250639,7 @@
     "autoswing": false,
     "tooltip": "Right click to open\nRequires a Shadow Key",
     "conditions": [],
-    "milestone": "start",
+    "milestone": "evil-boss",
     "milestoneVia": "Found in Obsidian Crate"
   },
   {
@@ -250687,7 +250688,7 @@
     "placedHeight": 2,
     "tooltip": "'No, you can't wear it on your head'",
     "conditions": [],
-    "milestone": "start",
+    "milestone": "evil-boss",
     "milestoneVia": "Found in Obsidian Crate"
   },
   {
@@ -250736,7 +250737,7 @@
     "autoswing": false,
     "tooltip": "Allows fishing in lava",
     "conditions": [],
-    "milestone": "start",
+    "milestone": "evil-boss",
     "milestoneVia": "Found in Obsidian Crate"
   },
   {
@@ -251743,7 +251744,7 @@
     "placedWidth": 3,
     "placedHeight": 6,
     "conditions": [],
-    "milestone": "start",
+    "milestone": "evil-boss",
     "milestoneVia": "Found in Obsidian Crate"
   },
   {
@@ -251792,7 +251793,7 @@
     "placedWidth": 3,
     "placedHeight": 6,
     "conditions": [],
-    "milestone": "start",
+    "milestone": "evil-boss",
     "milestoneVia": "Found in Obsidian Crate"
   },
   {
@@ -251841,7 +251842,7 @@
     "placedWidth": 3,
     "placedHeight": 5,
     "conditions": [],
-    "milestone": "start",
+    "milestone": "evil-boss",
     "milestoneVia": "Found in Obsidian Crate"
   },
   {
@@ -251890,7 +251891,7 @@
     "placedWidth": 3,
     "placedHeight": 5,
     "conditions": [],
-    "milestone": "start",
+    "milestone": "evil-boss",
     "milestoneVia": "Found in Obsidian Crate"
   },
   {
@@ -251939,7 +251940,7 @@
     "placedWidth": 3,
     "placedHeight": 6,
     "conditions": [],
-    "milestone": "start",
+    "milestone": "evil-boss",
     "milestoneVia": "Found in Obsidian Crate"
   },
   {
@@ -260180,8 +260181,8 @@
     "autoswing": false,
     "tooltip": "Fishing line will never break, decreases chance of bait consumption, increases fishing power by 10\nAllows fishing in lava",
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "evil-boss",
+    "milestoneVia": "Crafted – needs Lavaproof Fishing Hook"
   },
   {
     "key": "PrincessWeapon",
