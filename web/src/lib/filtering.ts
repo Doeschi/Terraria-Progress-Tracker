@@ -174,7 +174,8 @@ export function buildFilterGroups(data: GameData): FilterGroup[] {
       key: 'obtain',
       label: 'Obtained by',
       entries: data.obtain
-        .filter((o) => !o.parent)
+        // "filter: false": only shown with the items (e.g. "Using a toilet" for Poo)
+        .filter((o) => !o.parent && o.filter !== false)
         .map((o) => {
           const children = data.obtain.filter((c) => c.parent === o.id)
           return children.length ? { ...o, children } : o

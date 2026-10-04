@@ -1245,6 +1245,15 @@ match = []
 # switched in the inventory (right-click) or by using the item
 names = ["Shellphone (*)", "Chaos Cylinder (*)", "* (Inactive)"]
 
+# Poo: sitting on a toilet with a food buff (Well Fed or stronger). Only shown with the item
+# (detail panel, table), no option in the "Obtained by" filter (filter = false)
+[obtain.toilet]
+name = "Using a toilet (well fed)"
+icon = "Toilet"
+match = []
+names = ["Poo"]
+filter = false
+
 # everything with no other method: world items (Fallen Star), items the wiki has not tagged yet
 [obtain.other]
 name = "Other"
@@ -2115,7 +2124,8 @@ items = ["Heart", "Candy Apple", "Candy Cane", "Star", "Soul Cake", "Sugar Plum"
 
 [unobtainable]
 obtainable = []
-unobtainable = ["Red Envelope", "Mythical Lion Mask", "Mythical Robe"]
+# the Phasic Warp Ejector is unimplemented (an id and a sprite) but its Cargo row is empty
+unobtainable = ["Red Envelope", "Mythical Lion Mask", "Mythical Robe", "Phasic Warp Ejector"]
 
 
 # ------------------------------------------------------------------- recipes

@@ -353,6 +353,8 @@ def section_file(section, entries, items):
             record["parent"] = entry["parent"]
         if entry.get("fallback"):
             record["fallback"] = True
+        if entry.get("filter") is False:
+            record["filter"] = False  # shown with the items only, no filter option
         out.append(record)
     return out
 

@@ -110,16 +110,23 @@
     "count": 13
   },
   {
+    "id": "toilet",
+    "name": "Using a toilet (well fed)",
+    "icon": "https://terraria.wiki.gg/images/Toilet.png",
+    "count": 1,
+    "filter": false
+  },
+  {
     "id": "other",
     "name": "Other",
     "icon": "https://terraria.wiki.gg/images/Tombstone.png",
-    "count": 31,
+    "count": 30,
     "fallback": true
   },
   {
     "id": "unobtainable",
     "name": "Unobtainable",
     "icon": "https://terraria.wiki.gg/images/Blue_Present.png",
-    "count": 49
+    "count": 50
   }
 ]

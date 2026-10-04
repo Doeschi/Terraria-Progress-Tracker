@@ -150410,7 +150410,7 @@
       "other-miscellaneous"
     ],
     "obtain": [
-      "other"
+      "unobtainable"
     ],
     "vendors": [],
     "events": [],
@@ -150425,7 +150425,7 @@
     "version": "1.3",
     "hardmode": false,
     "hardmodeOnly": false,
-    "unobtainable": false,
+    "unobtainable": true,
     "banner": false,
     "questFish": false,
     "rarity": 0,
@@ -150433,8 +150433,7 @@
     "consumable": false,
     "placeable": false,
     "autoswing": false,
-    "conditions": [],
-    "milestone": "start"
+    "conditions": []
   },
   {
     "key": "ChargedBlasterCannon",
@@ -276784,7 +276783,8 @@
     ],
     "obtain": [
       "crafted",
-      "drop"
+      "drop",
+      "toilet"
     ],
     "vendors": [],
     "events": [],

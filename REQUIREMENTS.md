@@ -132,7 +132,9 @@ GitHub Actions.
   critters ("Caught with a Bug Net"), the Extractinators (B6), and by name: music boxes
   ("Recorded (Music Box)"), grave markers of the page "Tombstones" ("Player death"; the golden
   ones when dying with at least 10 gold coins – from the start, though pirates drop them too), other forms of an item – Shellphone
-  and Chaos Cylinder modes, "(Inactive)" versions ("Other form of an item"). Every obtainable
+  and Chaos Cylinder modes, "(Inactive)" versions ("Other form of an item"). Methods with
+  `filter = false` are only shown with the item (detail panel, table), not as a filter option:
+  Poo "Using a toilet (well fed)". Every obtainable
   item has at least one method: the rest (world items like Fallen Star, items the wiki has not
   tagged yet, about 30) are under "Other". Critters whose name differs from their NPC (butterflies, ducks, scorpions,
   jellyfish) come from their shared wiki page.
@@ -1228,3 +1230,13 @@ Status: parser done (PL1, PL2), app integration in progress (PL3–PL5).
   "fully researched / not yet", optional sync of researched items; chest search also finds items
   on the player (inventory, banks, loadouts – no map marker); several players per playthrough
   (all characters, or friends in multiplayer).
+- **Extended end credits (G8):** more blocks in the credits of a completed playthrough, each only
+  when its data is there (a block without data is left out):
+  - top 5 enemies killed (kill counts of the loaded world's bestiary)
+  - top 3 days with the most items / bestiary entries checked (Playthrough.changedAt /
+    bestiaryChangedAt)
+  - with a loaded world (and player): top 3 blocks owned by count, top 5 other items owned by
+    count (chests plus player, like the "Owned" column)
+  - more ideas: the first item checked, the longest streak of days with progress, the busiest
+    hour of the day, coins owned in total, Angler quests completed and play time (player file),
+    the bosses in the order of their first defeat

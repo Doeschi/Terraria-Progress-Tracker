@@ -91,6 +91,8 @@ export interface GroupEntry {
   parent?: string
   /** "Other …" subcategory: the parent's items that fit no other subcategory */
   fallback?: boolean
+  /** false: shown with the items (detail panel, table) but no filter option (e.g. "Using a toilet") */
+  filter?: false
 }
 
 export interface PlatformEntry {
