@@ -4,9 +4,12 @@ import fnmatch
 import html
 import re
 from collections import Counter, defaultdict
+from urllib.parse import unquote
 
 from .conditions import condition_text
 from .common import (
+    PLATFORM_FIELDS,
+    WIKI,
     file_from_wikitext,
     flag,
     image_url,
@@ -557,6 +560,18 @@ def derive_events(drops, events, bosses):
             found = spawn_events(npc["environment"], env_conditions) if npc else set()
             if found:
                 source["events"] = [e for e in events if e in found]
+
+
+def derive_platforms(drops, exclusive):
+    """Platforms of the drop sources the wiki marks as exclusive to some versions (the Exclusive
+    table, by name or wiki page): source["platforms"], e.g. the old-gen Shadow Hammer. Sources
+    without it exist on every version."""
+    for source in drops.sources.values():
+        page = unquote(source.get("url", "")[len(WIKI):]).replace("_", " ")
+        excl = exclusive.get(norm_name(source["name"])) or exclusive.get(norm_name(page))
+        platforms = [p for p in PLATFORM_FIELDS if excl and flag(excl.get(p))]
+        if platforms:
+            source["platforms"] = platforms
 
 
 def spawn_biomes(environment, biomes):

@@ -247,6 +247,7 @@ is shown in the item details, but counts for no filter.
 | `npcId` | the game's NPC id (enemies) |
 | `group` | containers: their `containers.json` id |
 | `biomes` / `events` / `times` | where / during what / when the enemy spawns |
+| `platforms` | only for sources the wiki marks as exclusive to some versions (e.g. the old-gen Shadow Hammer): the platform ids |
 
 **Drop** (`items`)
 

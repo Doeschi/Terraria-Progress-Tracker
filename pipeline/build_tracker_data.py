@@ -86,7 +86,7 @@ from trackerdata.items import (
     update_starts,
     versions_file,
 )
-from trackerdata.drops import derive_events, derive_spawns, Drops
+from trackerdata.drops import derive_events, derive_platforms, derive_spawns, Drops
 from trackerdata.sources import Sources
 from trackerdata.groups import read_groups
 from trackerdata.extractinator import extractinator_file
@@ -220,6 +220,7 @@ def build(raw_dir, mapping_path, out_dir, readable_dir=None, no_sanity=False):
         warn(f"drop groups not matched (several fit a row, or no drop rows) on: {dict(drops.group_pages)}")
     derive_events(drops, mapping.sections["events"], mapping.bosses)
     derive_spawns(drops, mapping)
+    derive_platforms(drops, exclusive)
 
     log("Shops and conditions…")
     wikitext = json.loads((raw_dir / "page_wikitext.json").read_text(encoding="utf-8"))

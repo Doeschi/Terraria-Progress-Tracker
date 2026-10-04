@@ -110,13 +110,14 @@ class Milestones:
         return cond
 
     def text(self, s, why=None):
-        """A source as the reason of a milestone; `why`: what a recipe needs latest."""
+        """A source as the reason of a milestone; `why`: what it needs latest (a recipe, a shop
+        row for players who have an item)."""
         kind = s["kind"]
         if "drop" in s:
             name = s["source"]["name"]
             return f"found in {name}" if kind == "container" else f"dropped by {name}" if kind == "npc" else f"from the {name}"
         if kind in ("shop", "vendor"):
-            return f"sold by the {self.vendor_name(s['vendor'])}"
+            return f"sold by the {self.vendor_name(s['vendor'])}" + (f" – needs {why}" if why else "")
         if kind == "recipe":
             return f"crafted – needs {why}" if why else "crafted"
         if kind == "shimmer":
@@ -184,6 +185,8 @@ class Milestones:
 
         # recipes, shimmer and the Extractinators depend on other items: until nothing changes
         best = {}
+        # the item that holds an item back: the one its source needs latest (key -> key)
+        held_by = {}
         # Hardmode items (the wiki's flag) with an earlier source in the data: key -> (value, reason)
         early = {}
         rounds = 0
@@ -202,28 +205,32 @@ class Milestones:
             changed = False
             for item in items:
                 key = item["key"]
-                candidates = [(*base[key], key not in undated)] if key in base else []
+                candidates = [(*base[key], key not in undated, None)] if key in base else []
                 for s in made.get(key, ()):
-                    # the latest of what it needs (of a station's items or a group: the earliest)
-                    worst, why = self.gate(s), None
+                    # the latest of what it needs (of a station's items or a group: the earliest);
+                    # `holder`: that item
+                    worst, why, holder = self.gate(s), None, None
                     for name, keys in s["needs"]:
                         v = min((value_of(k) for k in keys), default=0)
                         if v > worst:
-                            worst, why = v, name
-                    candidates.append((worst, self.text(s, why), True))
+                            worst, why, holder = v, name, min(keys, key=value_of)
+                    candidates.append((worst, self.text(s, why), True, holder))
+                holder = None
                 if key in fixed:
                     value, reason = fixed[key]
                 else:
                     if not candidates:
                         continue
                     # earliest; on a tie the one with a reason
-                    value, reason, data = min(candidates, key=lambda c: (c[0], c[1] is None))
+                    value, reason, data, holder = min(candidates, key=lambda c: (c[0], c[1] is None))
                     # from the start by a recipe too: the tags agree, their method is the reason
                     # ("Collected in the world" rather than crafted from its own walls)
                     if value == 0 and key in tagged and base.get(key, (inf,))[0] > 0:
-                        reason = tagged[key]
+                        reason, holder = tagged[key], None
                     f = floor[key]
                     early.pop(key, None)
+                    if f[0] > value:
+                        holder = None  # the minimum holds it back, not what it needs
                     if f[0] > value and f[1]:
                         value, reason = f
                     elif f[0] > value:
@@ -234,7 +241,7 @@ class Milestones:
                             early[key] = (value, reason)
                         value, reason = f[0], f"{reason}, in Hardmode" if reason else "Hardmode item"
                 if value < inf and (key not in best or best[key][0] != value):
-                    best[key] = (value, reason)
+                    best[key], held_by[key] = (value, reason), holder
                     changed = True
             return changed
 
@@ -263,15 +270,35 @@ class Milestones:
             for key in [k for k in circle if k in tagged] or circle or still_open:
                 offer(key, 0, tagged.get(key), False)
             settle()
+        def capital(text):
+            return text[:1].upper() + text[1:]
+
+        def full(key):
+            """The reason of an item with what holds back the item it needs, down to a source of
+            its own: "crafted – needs Slime Block → Solidifier: Dropped by King Slime". (Only
+            as long as each item is as late as the one that needs it.)"""
+            value, reason = best[key]
+            chain, k = [], held_by.get(key)
+            while k and k != key and k not in chain and best.get(k, (None,))[0] == value:
+                chain.append(k)
+                k = held_by.get(k)
+            if not reason or not chain:
+                return reason
+            # the first one is named in the reason; of a long way only its end
+            path = [sources.names[k] for k in chain[1:]]
+            path = path if len(path) < 4 else ["…", path[-1]]
+            root = best[chain[-1]][1]
+            return reason + "".join(f" → {name}" for name in path) + (f": {capital(root)}" if root else "")
+
         for item in items:
             if item["key"] in best:
-                value, reason = best[item["key"]]
-                item["milestone"] = self.order[value]
+                item["milestone"] = self.order[best[item["key"]][0]]
+                reason = full(item["key"])
                 if reason:
                     # "Crafted – needs Chlorophyte Ore", like the names in "Obtained by"
-                    item["milestoneVia"] = reason[:1].upper() + reason[1:]
+                    item["milestoneVia"] = capital(reason)
         log(f"  milestones for {len(best)} items ({rounds} rounds)")
-        raised = sum(1 for i in items if (i.get("milestoneVia") or "").endswith((", in Hardmode", "Hardmode item")))
+        raised = sum(1 for _, reason in best.values() if (reason or "").endswith((", in Hardmode", "Hardmode item")))
         log(f"  {raised} items in Hardmode only by the wiki's Hardmode flag, {len(early)} of them against the data")
         if early:
             names = {i["key"]: i["name"] for i in items}

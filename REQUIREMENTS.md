@@ -148,7 +148,9 @@ GitHub Actions.
   the wiki's tags name. From it: "Obtained by" (D8a), vendors (CO1), events and "Event only"
   (EV2, EV4, CO4), biomes and time of day (BI), conditions (CO3), `minDifficulty` (D7) and the
   milestone (MS2) – so they cannot disagree. For all of them: rows only in special seeds count
-  for nothing (CO6); containers, crafting, world items, fishing, quest rewards and vendors
+  for nothing (CO6), nor does a drop source that is not in the Desktop version for an item
+  that is (the Exclusive table: the old-gen Shadow Hammer's Cobalt, Mythril and Adamantite
+  Bars); containers, crafting, world items, fishing, quest rewards and vendors
   without a shop row are sources without a restriction; a tag naming a kind of drop row
   ("Dropped by enemies", "Found in chests & pots", the bags) says nothing more for an item that
   has drop rows – without rows it is a source nothing more is known about (no restriction).
@@ -823,8 +825,12 @@ Below 640 px width (phones) the layout changes; tablets and desktops stay as the
   icons. A switch in the group: "up to" (default, cumulative – a milestone contains every item
   available by then, e.g. Skeletron includes King Slime's) or "exactly" (only what becomes
   available at that milestone). The switch is remembered in the browser (PR1).
-- **MS4** Detail panel: "Available after: <milestone>" with the reason (e.g. "Crafted – needs
-  Chlorophyte Ore", "Sold by the Cyborg", "Dropped by Plantera"; without more precise data the
+- **MS4** Detail panel: "Available after: <milestone>" with the reason (e.g. "Sold by the
+  Cyborg", "Dropped by Plantera"). A reason that names a needed item – a recipe's latest
+  ingredient or station, the item a shimmer transmutation starts from, the item a shop row
+  asks for – goes on to what holds that item back, down to a source of its own: "Crafted –
+  needs Slime Block → Solidifier: Dropped by King Slime", "Sold by the Cyborg – needs Portal
+  Gun: Dropped by Moon Lord" (of a long way only the first and the last item). Without more precise data the
   obtain method's name as in "Obtained by", e.g. "Collected in the world"; "…, in Hardmode" when only
   the wiki's Hardmode flag puts it there). Table column "Available after"
   (first of group Source, with the milestone icon, the reason on hover), sorted in milestone

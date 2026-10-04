@@ -20,6 +20,11 @@
       "npcId": 490,
       "events": [
         "blood-moon"
+      ],
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
       ]
     },
     "dungeon-slime": {
@@ -42,6 +47,11 @@
       "npcId": 389,
       "events": [
         "martian-madness"
+      ],
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
       ]
     },
     "martian-engineer": {
@@ -53,6 +63,11 @@
       "npcId": 386,
       "events": [
         "martian-madness"
+      ],
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
       ]
     },
     "mythical-wyvern": {
@@ -72,6 +87,11 @@
       "npcId": 390,
       "events": [
         "martian-madness"
+      ],
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
       ]
     },
     "bone-lee": {
@@ -124,6 +144,11 @@
       "npcId": 628,
       "events": [
         "windy-day"
+      ],
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
       ]
     },
     "antlion-larva": {
@@ -135,6 +160,11 @@
       "npcId": 582,
       "biomes": [
         "desert"
+      ],
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
       ]
     },
     "deadly-sphere": {
@@ -146,6 +176,11 @@
       "npcId": 467,
       "events": [
         "solar-eclipse"
+      ],
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
       ]
     },
     "derpling": {
@@ -223,6 +258,11 @@
       "npcId": 587,
       "events": [
         "blood-moon"
+      ],
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
       ]
     },
     "everscream": {
@@ -289,6 +329,11 @@
       "npcId": 531,
       "biomes": [
         "desert"
+      ],
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
       ]
     },
     "windy-balloon": {
@@ -300,6 +345,11 @@
       "npcId": 594,
       "events": [
         "windy-day"
+      ],
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
       ]
     },
     "blue-slime": {
@@ -357,6 +407,11 @@
       "npcId": 382,
       "events": [
         "martian-madness"
+      ],
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
       ]
     },
     "giant-tortoise": {
@@ -468,6 +523,11 @@
       "npcId": 491,
       "events": [
         "pirate-invasion"
+      ],
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
       ]
     },
     "raven": {
@@ -491,6 +551,11 @@
       "npcId": 481,
       "biomes": [
         "granite-marble"
+      ],
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
       ]
     },
     "spiked-ice-slime": {
@@ -579,6 +644,11 @@
       "npcId": 532,
       "biomes": [
         "desert"
+      ],
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
       ]
     },
     "brain-scrambler": {
@@ -590,6 +660,11 @@
       "npcId": 381,
       "events": [
         "martian-madness"
+      ],
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
       ]
     },
     "cyan-beetle": {
@@ -623,6 +698,11 @@
       "npcId": 468,
       "events": [
         "solar-eclipse"
+      ],
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
       ]
     },
     "lac-beetle": {
@@ -667,6 +747,11 @@
       "npcId": 581,
       "biomes": [
         "desert"
+      ],
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
       ]
     },
     "water-chest": {
@@ -720,6 +805,11 @@
       "biomes": [
         "desert",
         "corruption"
+      ],
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
       ]
     },
     "ghoul": {
@@ -731,6 +821,11 @@
       "npcId": 524,
       "biomes": [
         "desert"
+      ],
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
       ]
     },
     "tainted-ghoul": {
@@ -743,6 +838,11 @@
       "biomes": [
         "desert",
         "crimson"
+      ],
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
       ]
     },
     "dreamer-ghoul": {
@@ -755,6 +855,11 @@
       "biomes": [
         "desert",
         "hallow"
+      ],
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
       ]
     },
     "lava-bat": {
@@ -785,7 +890,12 @@
       "kind": "container",
       "url": "https://terraria.wiki.gg/wiki/Oyster",
       "icon": "https://terraria.wiki.gg/images/Oyster.png",
-      "group": "other"
+      "group": "other",
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
+      ]
     },
     "illuminant-bat": {
       "id": "illuminant-bat",
@@ -821,6 +931,11 @@
       "npcId": 546,
       "events": [
         "sandstorm"
+      ],
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
       ]
     },
     "demon": {
@@ -854,6 +969,10 @@
       "npcId": 1005,
       "biomes": [
         "corruption"
+      ],
+      "platforms": [
+        "oldgen",
+        "3ds"
       ]
     },
     "green-slime": {
@@ -970,6 +1089,11 @@
       "npcId": 383,
       "events": [
         "martian-madness"
+      ],
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
       ]
     },
     "rune-wizard": {
@@ -1066,7 +1190,12 @@
       "kind": "container",
       "url": "https://terraria.wiki.gg/wiki/Herb_Bag",
       "icon": "https://terraria.wiki.gg/images/Herb_Bag.png",
-      "group": "other"
+      "group": "other",
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
+      ]
     },
     "corrupt-penguin": {
       "id": "corrupt-penguin",
@@ -1088,6 +1217,11 @@
       "npcId": 470,
       "events": [
         "blood-moon"
+      ],
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
       ]
     },
     "gray-grunt": {
@@ -1099,6 +1233,11 @@
       "npcId": 385,
       "events": [
         "martian-madness"
+      ],
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
       ]
     },
     "raincoat-zombie": {
@@ -1140,7 +1279,12 @@
       "kind": "container",
       "url": "https://terraria.wiki.gg/wiki/Corrupt_Crate",
       "icon": "https://terraria.wiki.gg/images/Corrupt_Crate.png",
-      "group": "crate"
+      "group": "crate",
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
+      ]
     },
     "crimson-crate": {
       "id": "crimson-crate",
@@ -1148,7 +1292,12 @@
       "kind": "container",
       "url": "https://terraria.wiki.gg/wiki/Crimson_Crate",
       "icon": "https://terraria.wiki.gg/images/Crimson_Crate.png",
-      "group": "crate"
+      "group": "crate",
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
+      ]
     },
     "dungeon-crate": {
       "id": "dungeon-crate",
@@ -1156,7 +1305,12 @@
       "kind": "container",
       "url": "https://terraria.wiki.gg/wiki/Dungeon_Crate",
       "icon": "https://terraria.wiki.gg/images/Dungeon_Crate.png",
-      "group": "crate"
+      "group": "crate",
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
+      ]
     },
     "jungle-crate": {
       "id": "jungle-crate",
@@ -1164,7 +1318,12 @@
       "kind": "container",
       "url": "https://terraria.wiki.gg/wiki/Jungle_Crate",
       "icon": "https://terraria.wiki.gg/images/Jungle_Crate.png",
-      "group": "crate"
+      "group": "crate",
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
+      ]
     },
     "oasis-crate": {
       "id": "oasis-crate",
@@ -1172,7 +1331,12 @@
       "kind": "container",
       "url": "https://terraria.wiki.gg/wiki/Oasis_Crate",
       "icon": "https://terraria.wiki.gg/images/Oasis_Crate.png",
-      "group": "crate"
+      "group": "crate",
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
+      ]
     },
     "stockade-crate": {
       "id": "stockade-crate",
@@ -1180,7 +1344,12 @@
       "kind": "container",
       "url": "https://terraria.wiki.gg/wiki/Stockade_Crate",
       "icon": "https://terraria.wiki.gg/images/Stockade_Crate.png",
-      "group": "crate"
+      "group": "crate",
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
+      ]
     },
     "hellstone-crate": {
       "id": "hellstone-crate",
@@ -1188,7 +1357,12 @@
       "kind": "container",
       "url": "https://terraria.wiki.gg/wiki/Hellstone_Crate",
       "icon": "https://terraria.wiki.gg/images/Hellstone_Crate.png",
-      "group": "crate"
+      "group": "crate",
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
+      ]
     },
     "bramble-crate": {
       "id": "bramble-crate",
@@ -1196,7 +1370,12 @@
       "kind": "container",
       "url": "https://terraria.wiki.gg/wiki/Bramble_Crate",
       "icon": "https://terraria.wiki.gg/images/Bramble_Crate.png",
-      "group": "crate"
+      "group": "crate",
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
+      ]
     },
     "mythril-crate": {
       "id": "mythril-crate",
@@ -1204,7 +1383,12 @@
       "kind": "container",
       "url": "https://terraria.wiki.gg/wiki/Mythril_Crate",
       "icon": "https://terraria.wiki.gg/images/Mythril_Crate.png",
-      "group": "crate"
+      "group": "crate",
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
+      ]
     },
     "divine-crate": {
       "id": "divine-crate",
@@ -1212,7 +1396,12 @@
       "kind": "container",
       "url": "https://terraria.wiki.gg/wiki/Divine_Crate",
       "icon": "https://terraria.wiki.gg/images/Divine_Crate.png",
-      "group": "crate"
+      "group": "crate",
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
+      ]
     },
     "seaside-crate": {
       "id": "seaside-crate",
@@ -1220,7 +1409,12 @@
       "kind": "container",
       "url": "https://terraria.wiki.gg/wiki/Seaside_Crate",
       "icon": "https://terraria.wiki.gg/images/Seaside_Crate.png",
-      "group": "crate"
+      "group": "crate",
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
+      ]
     },
     "golden-crate": {
       "id": "golden-crate",
@@ -1244,7 +1438,12 @@
       "kind": "container",
       "url": "https://terraria.wiki.gg/wiki/Titanium_Crate",
       "icon": "https://terraria.wiki.gg/images/Titanium_Crate.png",
-      "group": "crate"
+      "group": "crate",
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
+      ]
     },
     "hematic-crate": {
       "id": "hematic-crate",
@@ -1252,7 +1451,12 @@
       "kind": "container",
       "url": "https://terraria.wiki.gg/wiki/Hematic_Crate",
       "icon": "https://terraria.wiki.gg/images/Hematic_Crate.png",
-      "group": "crate"
+      "group": "crate",
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
+      ]
     },
     "mirage-crate": {
       "id": "mirage-crate",
@@ -1260,7 +1464,12 @@
       "kind": "container",
       "url": "https://terraria.wiki.gg/wiki/Mirage_Crate",
       "icon": "https://terraria.wiki.gg/images/Mirage_Crate.png",
-      "group": "crate"
+      "group": "crate",
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
+      ]
     },
     "hallowed-crate": {
       "id": "hallowed-crate",
@@ -1268,7 +1477,12 @@
       "kind": "container",
       "url": "https://terraria.wiki.gg/wiki/Hallowed_Crate",
       "icon": "https://terraria.wiki.gg/images/Hallowed_Crate.png",
-      "group": "crate"
+      "group": "crate",
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
+      ]
     },
     "defiled-crate": {
       "id": "defiled-crate",
@@ -1276,7 +1490,12 @@
       "kind": "container",
       "url": "https://terraria.wiki.gg/wiki/Defiled_Crate",
       "icon": "https://terraria.wiki.gg/images/Defiled_Crate.png",
-      "group": "crate"
+      "group": "crate",
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
+      ]
     },
     "pirate-corsair": {
       "id": "pirate-corsair",
@@ -1331,6 +1550,11 @@
       "npcId": 580,
       "biomes": [
         "desert"
+      ],
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
       ]
     },
     "sandstone-chest": {
@@ -1339,7 +1563,12 @@
       "kind": "container",
       "url": "https://terraria.wiki.gg/wiki/Sandstone_Chest",
       "icon": "https://terraria.wiki.gg/images/Sandstone_Chest.png",
-      "group": "chest"
+      "group": "chest",
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
+      ]
     },
     "skyware-chest": {
       "id": "skyware-chest",
@@ -1358,6 +1587,11 @@
       "npcId": 694,
       "biomes": [
         "dungeon"
+      ],
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
       ]
     },
     "betsy": {
@@ -1369,6 +1603,11 @@
       "npcId": 551,
       "events": [
         "old-ones-army"
+      ],
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
       ]
     },
     "treasure-bag-betsy": {
@@ -1376,7 +1615,12 @@
       "name": "Treasure Bag (Betsy)",
       "kind": "bag",
       "url": "https://terraria.wiki.gg/wiki/Treasure_Bag_%28Betsy%29",
-      "icon": "https://terraria.wiki.gg/images/Treasure_Bag_%28Betsy%29.png"
+      "icon": "https://terraria.wiki.gg/images/Treasure_Bag_%28Betsy%29.png",
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
+      ]
     },
     "frozen-zombie": {
       "id": "frozen-zombie",
@@ -1434,6 +1678,11 @@
       "npcId": 489,
       "events": [
         "blood-moon"
+      ],
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
       ]
     },
     "martian-walker": {
@@ -1445,6 +1694,11 @@
       "npcId": 520,
       "events": [
         "martian-madness"
+      ],
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
       ]
     },
     "skeleton-commando": {
@@ -1478,6 +1732,11 @@
       "npcId": 460,
       "events": [
         "solar-eclipse"
+      ],
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
       ]
     },
     "tactical-skeleton": {
@@ -1500,6 +1759,11 @@
       "npcId": 462,
       "events": [
         "solar-eclipse"
+      ],
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
       ]
     },
     "swamp-thing": {
@@ -1533,6 +1797,11 @@
       "npcId": 466,
       "events": [
         "solar-eclipse"
+      ],
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
       ]
     },
     "mister-stabby": {
@@ -1566,6 +1835,11 @@
       "npcId": 536,
       "biomes": [
         "graveyard"
+      ],
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
       ]
     },
     "pirate-crossbower": {
@@ -1588,6 +1862,11 @@
       "npcId": 477,
       "events": [
         "solar-eclipse"
+      ],
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
       ]
     },
     "spore-skeleton": {
@@ -1599,6 +1878,11 @@
       "npcId": 635,
       "biomes": [
         "glowing-mushroom"
+      ],
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
       ]
     },
     "sky-crate": {
@@ -1607,7 +1891,12 @@
       "kind": "container",
       "url": "https://terraria.wiki.gg/wiki/Sky_Crate",
       "icon": "https://terraria.wiki.gg/images/Sky_Crate.png",
-      "group": "crate"
+      "group": "crate",
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
+      ]
     },
     "azure-crate": {
       "id": "azure-crate",
@@ -1615,7 +1904,12 @@
       "kind": "container",
       "url": "https://terraria.wiki.gg/wiki/Azure_Crate",
       "icon": "https://terraria.wiki.gg/images/Azure_Crate.png",
-      "group": "crate"
+      "group": "crate",
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
+      ]
     },
     "skeleton-archer": {
       "id": "skeleton-archer",
@@ -1637,6 +1931,11 @@
       "npcId": 515,
       "biomes": [
         "desert"
+      ],
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
       ]
     },
     "flying-fish": {
@@ -1685,6 +1984,11 @@
       "npcId": 497,
       "biomes": [
         "underground"
+      ],
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
       ]
     },
     "antlion": {
@@ -1729,6 +2033,11 @@
       "npcId": 630,
       "biomes": [
         "crimson"
+      ],
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
       ]
     },
     "light-mummy": {
@@ -1784,6 +2093,11 @@
       "npcId": 537,
       "biomes": [
         "desert"
+      ],
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
       ]
     },
     "dye-trader": {
@@ -1792,7 +2106,13 @@
       "kind": "npc",
       "url": "https://terraria.wiki.gg/wiki/Dye_Trader",
       "icon": "https://terraria.wiki.gg/images/Dye_Trader.png",
-      "npcId": 207
+      "npcId": 207,
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile",
+        "oldgen"
+      ]
     },
     "painter": {
       "id": "painter",
@@ -1808,7 +2128,12 @@
       "kind": "npc",
       "url": "https://terraria.wiki.gg/wiki/Tax_Collector",
       "icon": "https://terraria.wiki.gg/images/Tax_Collector.png",
-      "npcId": 441
+      "npcId": 441,
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
+      ]
     },
     "creature-from-the-deep": {
       "id": "creature-from-the-deep",
@@ -1819,6 +2144,11 @@
       "npcId": 461,
       "events": [
         "solar-eclipse"
+      ],
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
       ]
     },
     "zombie-merman": {
@@ -1830,6 +2160,11 @@
       "npcId": 586,
       "events": [
         "blood-moon"
+      ],
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
       ]
     },
     "nymph": {
@@ -1863,6 +2198,11 @@
       "npcId": 469,
       "events": [
         "solar-eclipse"
+      ],
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
       ]
     },
     "splinterling": {
@@ -1918,6 +2258,11 @@
       "npcId": 565,
       "events": [
         "old-ones-army"
+      ],
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
       ]
     },
     "ogre": {
@@ -1929,6 +2274,11 @@
       "npcId": 577,
       "events": [
         "old-ones-army"
+      ],
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
       ]
     },
     "blood-eel": {
@@ -1940,6 +2290,11 @@
       "npcId": 623,
       "events": [
         "blood-moon"
+      ],
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
       ]
     },
     "giant-worm": {
@@ -1973,6 +2328,11 @@
       "npcId": 618,
       "events": [
         "blood-moon"
+      ],
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
       ]
     },
     "heavenly-slime": {
@@ -1984,6 +2344,11 @@
       "npcId": 660,
       "biomes": [
         "hallow"
+      ],
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
       ]
     },
     "crystal-slime": {
@@ -1995,6 +2360,11 @@
       "npcId": 658,
       "biomes": [
         "hallow"
+      ],
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
       ]
     },
     "creeper": {
@@ -2014,6 +2384,11 @@
       "npcId": 659,
       "biomes": [
         "hallow"
+      ],
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
       ]
     },
     "rainbow-slime": {
@@ -2116,6 +2491,11 @@
       "npcId": 620,
       "events": [
         "blood-moon"
+      ],
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
       ]
     },
     "pirate-captain": {
@@ -2175,6 +2555,11 @@
       "biomes": [
         "desert",
         "hallow"
+      ],
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
       ]
     },
     "crimera": {
@@ -2241,6 +2626,11 @@
       "npcId": 480,
       "biomes": [
         "granite-marble"
+      ],
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
       ]
     },
     "frozen-crate": {
@@ -2249,7 +2639,12 @@
       "kind": "container",
       "url": "https://terraria.wiki.gg/wiki/Frozen_Crate",
       "icon": "https://terraria.wiki.gg/images/Frozen_Crate.png",
-      "group": "crate"
+      "group": "crate",
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
+      ]
     },
     "boreal-crate": {
       "id": "boreal-crate",
@@ -2257,7 +2652,12 @@
       "kind": "container",
       "url": "https://terraria.wiki.gg/wiki/Boreal_Crate",
       "icon": "https://terraria.wiki.gg/images/Boreal_Crate.png",
-      "group": "crate"
+      "group": "crate",
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
+      ]
     },
     "jungle-chest": {
       "id": "jungle-chest",
@@ -2305,7 +2705,12 @@
       "kind": "container",
       "url": "https://terraria.wiki.gg/wiki/Desert_Chest",
       "icon": "https://terraria.wiki.gg/images/Desert_Chest.png",
-      "group": "chest"
+      "group": "chest",
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
+      ]
     },
     "headless-horseman": {
       "id": "headless-horseman",
@@ -2371,6 +2776,11 @@
       "npcId": 693,
       "biomes": [
         "dungeon"
+      ],
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
       ]
     },
     "slimeling": {
@@ -2390,7 +2800,12 @@
       "kind": "container",
       "url": "https://terraria.wiki.gg/wiki/Dead_Man%27s_Chest",
       "icon": "https://terraria.wiki.gg/images/Dead_Man%27s_Chest.png",
-      "group": "chest"
+      "group": "chest",
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
+      ]
     },
     "can-of-worms": {
       "id": "can-of-worms",
@@ -2398,7 +2813,12 @@
       "kind": "container",
       "url": "https://terraria.wiki.gg/wiki/Can_Of_Worms",
       "icon": "https://terraria.wiki.gg/images/Can_Of_Worms.png",
-      "group": "other"
+      "group": "other",
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
+      ]
     },
     "obsidian-lock-box": {
       "id": "obsidian-lock-box",
@@ -2406,7 +2826,12 @@
       "kind": "container",
       "url": "https://terraria.wiki.gg/wiki/Obsidian_Lock_Box",
       "icon": "https://terraria.wiki.gg/images/Obsidian_Lock_Box.png",
-      "group": "other"
+      "group": "other",
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
+      ]
     },
     "slimer": {
       "id": "slimer",
@@ -2428,6 +2853,11 @@
       "npcId": 691,
       "biomes": [
         "graveyard"
+      ],
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
       ]
     },
     "rock-golem": {
@@ -2439,6 +2869,11 @@
       "npcId": 631,
       "biomes": [
         "underground"
+      ],
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
       ]
     },
     "tim": {
@@ -2458,7 +2893,12 @@
       "kind": "container",
       "url": "https://terraria.wiki.gg/wiki/Pearlwood_Crate",
       "icon": "https://terraria.wiki.gg/images/Pearlwood_Crate.png",
-      "group": "crate"
+      "group": "crate",
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
+      ]
     },
     "dungeon-guardian": {
       "id": "dungeon-guardian",
@@ -2480,6 +2920,11 @@
       "npcId": 506,
       "biomes": [
         "underground"
+      ],
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
       ]
     },
     "steampunker": {
@@ -2523,6 +2968,11 @@
         "desert",
         "corruption",
         "crimson"
+      ],
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
       ]
     },
     "shaking-forest-tree": {
@@ -2563,7 +3013,12 @@
       "kind": "container",
       "url": "https://terraria.wiki.gg/wiki/Ash_tree",
       "icon": "https://terraria.wiki.gg/images/Ash_Wood.png",
-      "group": "tree"
+      "group": "tree",
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
+      ]
     },
     "shaking-giant-glowing-mushroom": {
       "id": "shaking-giant-glowing-mushroom",
@@ -2595,7 +3050,13 @@
       "kind": "container",
       "url": "https://terraria.wiki.gg/wiki/Palm_tree",
       "icon": "https://terraria.wiki.gg/images/Palm_Wood.png",
-      "group": "tree"
+      "group": "tree",
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile",
+        "oldgen"
+      ]
     },
     "shaking-ebonwood-palm-tree": {
       "id": "shaking-ebonwood-palm-tree",
@@ -2646,7 +3107,12 @@
       "kind": "container",
       "url": "https://terraria.wiki.gg/wiki/Huge_Dragon_Egg",
       "icon": "https://terraria.wiki.gg/images/Huge_Dragon_Egg.png",
-      "group": "other"
+      "group": "other",
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
+      ]
     },
     "devourer": {
       "id": "devourer",
@@ -2665,7 +3131,12 @@
       "kind": "container",
       "url": "https://terraria.wiki.gg/wiki/Geode",
       "icon": "https://terraria.wiki.gg/images/Geode.png",
-      "group": "other"
+      "group": "other",
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
+      ]
     },
     "tavernkeep": {
       "id": "tavernkeep",
@@ -2673,7 +3144,12 @@
       "kind": "npc",
       "url": "https://terraria.wiki.gg/wiki/Tavernkeep",
       "icon": "https://terraria.wiki.gg/images/Tavernkeep.png",
-      "npcId": 550
+      "npcId": 550,
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
+      ]
     },
     "sand-elemental": {
       "id": "sand-elemental",
@@ -2684,6 +3160,11 @@
       "npcId": 541,
       "events": [
         "sandstorm"
+      ],
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
       ]
     },
     "goblin-warlock": {
@@ -2695,6 +3176,11 @@
       "npcId": 471,
       "events": [
         "goblin-army"
+      ],
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
       ]
     },
     "martian-saucer": {
@@ -2706,6 +3192,11 @@
       "npcId": 395,
       "events": [
         "martian-madness"
+      ],
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
       ]
     },
     "golden-lock-box": {
@@ -2714,7 +3205,12 @@
       "kind": "container",
       "url": "https://terraria.wiki.gg/wiki/Golden_Lock_Box",
       "icon": "https://terraria.wiki.gg/images/Golden_Lock_Box.png",
-      "group": "other"
+      "group": "other",
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
+      ]
     },
     "gold-chest": {
       "id": "gold-chest",
@@ -2793,6 +3289,11 @@
       "npcId": 634,
       "biomes": [
         "glowing-mushroom"
+      ],
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
       ]
     },
     "ice-bat": {
@@ -2848,6 +3349,11 @@
       "npcId": 535,
       "biomes": [
         "forest-surface"
+      ],
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
       ]
     },
     "fire-imp": {
@@ -2897,14 +3403,24 @@
       "kind": "npc",
       "url": "https://terraria.wiki.gg/wiki/Deerclops",
       "icon": "https://terraria.wiki.gg/images/Deerclops.png",
-      "npcId": 668
+      "npcId": 668,
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
+      ]
     },
     "treasure-bag-deerclops": {
       "id": "treasure-bag-deerclops",
       "name": "Treasure Bag (Deerclops)",
       "kind": "bag",
       "url": "https://terraria.wiki.gg/wiki/Treasure_Bag_%28Deerclops%29",
-      "icon": "https://terraria.wiki.gg/images/Treasure_Bag_%28Deerclops%29.png"
+      "icon": "https://terraria.wiki.gg/images/Treasure_Bag_%28Deerclops%29.png",
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
+      ]
     },
     "empress-of-light": {
       "id": "empress-of-light",
@@ -2912,14 +3428,24 @@
       "kind": "npc",
       "url": "https://terraria.wiki.gg/wiki/Empress_of_Light",
       "icon": "https://terraria.wiki.gg/images/Empress_of_Light.gif",
-      "npcId": 636
+      "npcId": 636,
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
+      ]
     },
     "treasure-bag-empress-of-light": {
       "id": "treasure-bag-empress-of-light",
       "name": "Treasure Bag (Empress of Light)",
       "kind": "bag",
       "url": "https://terraria.wiki.gg/wiki/Treasure_Bag_%28Empress_of_Light%29",
-      "icon": "https://terraria.wiki.gg/images/Treasure_Bag_%28Empress_of_Light%29.png"
+      "icon": "https://terraria.wiki.gg/images/Treasure_Bag_%28Empress_of_Light%29.png",
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
+      ]
     },
     "chest": {
       "id": "chest",
@@ -2998,6 +3524,11 @@
       "npcId": 482,
       "biomes": [
         "granite-marble"
+      ],
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
       ]
     },
     "granite-elemental": {
@@ -3009,6 +3540,11 @@
       "npcId": 483,
       "biomes": [
         "granite-marble"
+      ],
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
       ]
     },
     "crawdad": {
@@ -3020,6 +3556,11 @@
       "npcId": 495,
       "biomes": [
         "underground"
+      ],
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
       ]
     },
     "angler-fish": {
@@ -3040,7 +3581,12 @@
       "kind": "container",
       "url": "https://terraria.wiki.gg/wiki/Ocean_Crate",
       "icon": "https://terraria.wiki.gg/images/Ocean_Crate.png",
-      "group": "crate"
+      "group": "crate",
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
+      ]
     },
     "shadow-chest": {
       "id": "shadow-chest",
@@ -3070,6 +3616,11 @@
       "npcId": 464,
       "events": [
         "blood-moon"
+      ],
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
       ]
     },
     "pink-jellyfish": {
@@ -3185,6 +3736,11 @@
       "npcId": 543,
       "events": [
         "sandstorm"
+      ],
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
       ]
     },
     "sand-shark": {
@@ -3196,6 +3752,11 @@
       "npcId": 542,
       "events": [
         "sandstorm"
+      ],
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
       ]
     },
     "flesh-reaver": {
@@ -3207,6 +3768,11 @@
       "npcId": 544,
       "events": [
         "sandstorm"
+      ],
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
       ]
     },
     "crystal-thresher": {
@@ -3218,6 +3784,11 @@
       "npcId": 545,
       "events": [
         "sandstorm"
+      ],
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
       ]
     },
     "world-feeder": {
@@ -3237,7 +3808,12 @@
       "kind": "npc",
       "url": "https://terraria.wiki.gg/wiki/Princess",
       "icon": "https://terraria.wiki.gg/images/Princess.png",
-      "npcId": 663
+      "npcId": 663,
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
+      ]
     },
     "stylist": {
       "id": "stylist",
@@ -3245,7 +3821,13 @@
       "kind": "npc",
       "url": "https://terraria.wiki.gg/wiki/Stylist",
       "icon": "https://terraria.wiki.gg/images/Stylist.png",
-      "npcId": 353
+      "npcId": 353,
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile",
+        "oldgen"
+      ]
     },
     "wyvern": {
       "id": "wyvern",
@@ -3316,7 +3898,13 @@
       "kind": "npc",
       "url": "https://terraria.wiki.gg/wiki/Traveling_Merchant",
       "icon": "https://terraria.wiki.gg/images/Traveling_Merchant.png",
-      "npcId": 368
+      "npcId": 368,
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile",
+        "oldgen"
+      ]
     },
     "demon-eye": {
       "id": "demon-eye",
@@ -3362,189 +3950,324 @@
       "name": "Dirt Slime",
       "kind": "npc",
       "url": "https://terraria.wiki.gg/wiki/Slimes",
-      "icon": "https://terraria.wiki.gg/images/Dirt_Slime.png"
+      "icon": "https://terraria.wiki.gg/images/Dirt_Slime.png",
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
+      ]
     },
     "stone-slime": {
       "id": "stone-slime",
       "name": "Stone Slime",
       "kind": "npc",
       "url": "https://terraria.wiki.gg/wiki/Slimes",
-      "icon": "https://terraria.wiki.gg/images/Stone_Slime.png"
+      "icon": "https://terraria.wiki.gg/images/Stone_Slime.png",
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
+      ]
     },
     "cloud-slime": {
       "id": "cloud-slime",
       "name": "Cloud Slime",
       "kind": "npc",
       "url": "https://terraria.wiki.gg/wiki/Slimes",
-      "icon": "https://terraria.wiki.gg/images/Cloud_Slime.png"
+      "icon": "https://terraria.wiki.gg/images/Cloud_Slime.png",
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
+      ]
     },
     "web-slime": {
       "id": "web-slime",
       "name": "Web Slime",
       "kind": "npc",
       "url": "https://terraria.wiki.gg/wiki/Slimes",
-      "icon": "https://terraria.wiki.gg/images/Web_Slime.png"
+      "icon": "https://terraria.wiki.gg/images/Web_Slime.png",
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
+      ]
     },
     "wood-slime": {
       "id": "wood-slime",
       "name": "Wood Slime",
       "kind": "npc",
       "url": "https://terraria.wiki.gg/wiki/Slimes",
-      "icon": "https://terraria.wiki.gg/images/Wood_Slime.png"
+      "icon": "https://terraria.wiki.gg/images/Wood_Slime.png",
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
+      ]
     },
     "granite-slime": {
       "id": "granite-slime",
       "name": "Granite Slime",
       "kind": "npc",
       "url": "https://terraria.wiki.gg/wiki/Slimes",
-      "icon": "https://terraria.wiki.gg/images/Granite_Slime.png"
+      "icon": "https://terraria.wiki.gg/images/Granite_Slime.png",
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
+      ]
     },
     "marble-slime": {
       "id": "marble-slime",
       "name": "Marble Slime",
       "kind": "npc",
       "url": "https://terraria.wiki.gg/wiki/Slimes",
-      "icon": "https://terraria.wiki.gg/images/Marble_Slime.png"
+      "icon": "https://terraria.wiki.gg/images/Marble_Slime.png",
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
+      ]
     },
     "spike-slime": {
       "id": "spike-slime",
       "name": "Spike Slime",
       "kind": "npc",
       "url": "https://terraria.wiki.gg/wiki/Slimes",
-      "icon": "https://terraria.wiki.gg/images/Spike_Slime.png"
+      "icon": "https://terraria.wiki.gg/images/Spike_Slime.png",
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
+      ]
     },
     "torch-slime": {
       "id": "torch-slime",
       "name": "Torch Slime",
       "kind": "npc",
       "url": "https://terraria.wiki.gg/wiki/Slimes",
-      "icon": "https://terraria.wiki.gg/images/Torch_Slime.png"
+      "icon": "https://terraria.wiki.gg/images/Torch_Slime.png",
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
+      ]
     },
     "poo-slime": {
       "id": "poo-slime",
       "name": "Poo Slime",
       "kind": "npc",
       "url": "https://terraria.wiki.gg/wiki/Slimes",
-      "icon": "https://terraria.wiki.gg/images/Poo_Slime.png"
+      "icon": "https://terraria.wiki.gg/images/Poo_Slime.png",
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
+      ]
     },
     "hive-slime": {
       "id": "hive-slime",
       "name": "Hive Slime",
       "kind": "npc",
       "url": "https://terraria.wiki.gg/wiki/Slimes",
-      "icon": "https://terraria.wiki.gg/images/Hive_Slime.png"
+      "icon": "https://terraria.wiki.gg/images/Hive_Slime.png",
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
+      ]
     },
     "honey-slime": {
       "id": "honey-slime",
       "name": "Honey Slime",
       "kind": "npc",
       "url": "https://terraria.wiki.gg/wiki/Slimes",
-      "icon": "https://terraria.wiki.gg/images/Honey_Slime.png"
+      "icon": "https://terraria.wiki.gg/images/Honey_Slime.png",
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
+      ]
     },
     "herb-slime": {
       "id": "herb-slime",
       "name": "Herb Slime",
       "kind": "npc",
       "url": "https://terraria.wiki.gg/wiki/Slimes",
-      "icon": "https://terraria.wiki.gg/images/Herb_Slime.png"
+      "icon": "https://terraria.wiki.gg/images/Herb_Slime.png",
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
+      ]
     },
     "balloon-slime": {
       "id": "balloon-slime",
       "name": "Balloon Slime",
       "kind": "npc",
       "url": "https://terraria.wiki.gg/wiki/Slimes",
-      "icon": "https://terraria.wiki.gg/images/Balloon_Slime.png"
+      "icon": "https://terraria.wiki.gg/images/Balloon_Slime.png",
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
+      ]
     },
     "confetti-slime": {
       "id": "confetti-slime",
       "name": "Confetti Slime",
       "kind": "npc",
       "url": "https://terraria.wiki.gg/wiki/Slimes",
-      "icon": "https://terraria.wiki.gg/images/Confetti_Slime.png"
+      "icon": "https://terraria.wiki.gg/images/Confetti_Slime.png",
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
+      ]
     },
     "slush-slime": {
       "id": "slush-slime",
       "name": "Slush Slime",
       "kind": "npc",
       "url": "https://terraria.wiki.gg/wiki/Slimes",
-      "icon": "https://terraria.wiki.gg/images/Slush_Slime.png"
+      "icon": "https://terraria.wiki.gg/images/Slush_Slime.png",
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
+      ]
     },
     "snow-slime": {
       "id": "snow-slime",
       "name": "Snow Slime",
       "kind": "npc",
       "url": "https://terraria.wiki.gg/wiki/Slimes",
-      "icon": "https://terraria.wiki.gg/images/Snow_Slime.png"
+      "icon": "https://terraria.wiki.gg/images/Snow_Slime.png",
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
+      ]
     },
     "fossil-slime": {
       "id": "fossil-slime",
       "name": "Fossil Slime",
       "kind": "npc",
       "url": "https://terraria.wiki.gg/wiki/Slimes",
-      "icon": "https://terraria.wiki.gg/images/Fossil_Slime.png"
+      "icon": "https://terraria.wiki.gg/images/Fossil_Slime.png",
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
+      ]
     },
     "heart-slime": {
       "id": "heart-slime",
       "name": "Heart Slime",
       "kind": "npc",
       "url": "https://terraria.wiki.gg/wiki/Slimes",
-      "icon": "https://terraria.wiki.gg/images/Heart_Slime.png"
+      "icon": "https://terraria.wiki.gg/images/Heart_Slime.png",
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
+      ]
     },
     "hell-slime": {
       "id": "hell-slime",
       "name": "Hell Slime",
       "kind": "npc",
       "url": "https://terraria.wiki.gg/wiki/Slimes",
-      "icon": "https://terraria.wiki.gg/images/Hell_Slime.png"
+      "icon": "https://terraria.wiki.gg/images/Hell_Slime.png",
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
+      ]
     },
     "conveyor-slime": {
       "id": "conveyor-slime",
       "name": "Conveyor Slime",
       "kind": "npc",
       "url": "https://terraria.wiki.gg/wiki/Slimes",
-      "icon": "https://terraria.wiki.gg/images/Conveyor_Slime.png"
+      "icon": "https://terraria.wiki.gg/images/Conveyor_Slime.png",
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
+      ]
     },
     "cobalt-slime": {
       "id": "cobalt-slime",
       "name": "Cobalt Slime",
       "kind": "npc",
       "url": "https://terraria.wiki.gg/wiki/Slimes",
-      "icon": "https://terraria.wiki.gg/images/Cobalt_Slime.png"
+      "icon": "https://terraria.wiki.gg/images/Cobalt_Slime.png",
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
+      ]
     },
     "palladium-slime": {
       "id": "palladium-slime",
       "name": "Palladium Slime",
       "kind": "npc",
       "url": "https://terraria.wiki.gg/wiki/Slimes",
-      "icon": "https://terraria.wiki.gg/images/Palladium_Slime.png"
+      "icon": "https://terraria.wiki.gg/images/Palladium_Slime.png",
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
+      ]
     },
     "mythril-slime": {
       "id": "mythril-slime",
       "name": "Mythril Slime",
       "kind": "npc",
       "url": "https://terraria.wiki.gg/wiki/Slimes",
-      "icon": "https://terraria.wiki.gg/images/Mythril_Slime.png"
+      "icon": "https://terraria.wiki.gg/images/Mythril_Slime.png",
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
+      ]
     },
     "orichalcum-slime": {
       "id": "orichalcum-slime",
       "name": "Orichalcum Slime",
       "kind": "npc",
       "url": "https://terraria.wiki.gg/wiki/Slimes",
-      "icon": "https://terraria.wiki.gg/images/Orichalcum_Slime.png"
+      "icon": "https://terraria.wiki.gg/images/Orichalcum_Slime.png",
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
+      ]
     },
     "adamantite-slime": {
       "id": "adamantite-slime",
       "name": "Adamantite Slime",
       "kind": "npc",
       "url": "https://terraria.wiki.gg/wiki/Slimes",
-      "icon": "https://terraria.wiki.gg/images/Adamantite_Slime.png"
+      "icon": "https://terraria.wiki.gg/images/Adamantite_Slime.png",
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
+      ]
     },
     "titanium-slime": {
       "id": "titanium-slime",
       "name": "Titanium Slime",
       "kind": "npc",
       "url": "https://terraria.wiki.gg/wiki/Slimes",
-      "icon": "https://terraria.wiki.gg/images/Titanium_Slime.png"
+      "icon": "https://terraria.wiki.gg/images/Titanium_Slime.png",
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
+      ]
     },
     "brain-of-cthulhu": {
       "id": "brain-of-cthulhu",
@@ -3559,7 +4282,12 @@
       "name": "Treasure Bag (Brain of Cthulhu)",
       "kind": "bag",
       "url": "https://terraria.wiki.gg/wiki/Treasure_Bag_%28Brain_of_Cthulhu%29",
-      "icon": "https://terraria.wiki.gg/images/Treasure_Bag_%28Brain_of_Cthulhu%29.png"
+      "icon": "https://terraria.wiki.gg/images/Treasure_Bag_%28Brain_of_Cthulhu%29.png",
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
+      ]
     },
     "queen-slime": {
       "id": "queen-slime",
@@ -3567,14 +4295,24 @@
       "kind": "npc",
       "url": "https://terraria.wiki.gg/wiki/Queen_Slime",
       "icon": "https://terraria.wiki.gg/images/Queen_Slime.png",
-      "npcId": 657
+      "npcId": 657,
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
+      ]
     },
     "treasure-bag-queen-slime": {
       "id": "treasure-bag-queen-slime",
       "name": "Treasure Bag (Queen Slime)",
       "kind": "bag",
       "url": "https://terraria.wiki.gg/wiki/Treasure_Bag_%28Queen_Slime%29",
-      "icon": "https://terraria.wiki.gg/images/Treasure_Bag_%28Queen_Slime%29.png"
+      "icon": "https://terraria.wiki.gg/images/Treasure_Bag_%28Queen_Slime%29.png",
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
+      ]
     },
     "snow-flinx": {
       "id": "snow-flinx",
@@ -3593,7 +4331,12 @@
       "kind": "container",
       "url": "https://terraria.wiki.gg/wiki/Pigronata",
       "icon": "https://terraria.wiki.gg/images/Pigronata.png",
-      "group": "other"
+      "group": "other",
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
+      ]
     },
     "skeletron": {
       "id": "skeletron",
@@ -3608,7 +4351,12 @@
       "name": "Treasure Bag (Skeletron)",
       "kind": "bag",
       "url": "https://terraria.wiki.gg/wiki/Treasure_Bag_%28Skeletron%29",
-      "icon": "https://terraria.wiki.gg/images/Treasure_Bag_%28Skeletron%29.png"
+      "icon": "https://terraria.wiki.gg/images/Treasure_Bag_%28Skeletron%29.png",
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
+      ]
     },
     "lunatic-cultist": {
       "id": "lunatic-cultist",
@@ -3616,14 +4364,24 @@
       "kind": "npc",
       "url": "https://terraria.wiki.gg/wiki/Lunatic_Cultist",
       "icon": "https://terraria.wiki.gg/images/Lunatic_Cultist.gif",
-      "npcId": 439
+      "npcId": 439,
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
+      ]
     },
     "mechdusa": {
       "id": "mechdusa",
       "name": "Mechdusa",
       "kind": "npc",
       "url": "https://terraria.wiki.gg/wiki/Mechdusa",
-      "icon": "https://terraria.wiki.gg/images/Mechdusa.png"
+      "icon": "https://terraria.wiki.gg/images/Mechdusa.png",
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
+      ]
     },
     "moon-lord": {
       "id": "moon-lord",
@@ -3631,14 +4389,24 @@
       "kind": "npc",
       "url": "https://terraria.wiki.gg/wiki/Moon_Lord",
       "icon": "https://terraria.wiki.gg/images/Moon_Lord%27s_Head.gif",
-      "npcId": 396
+      "npcId": 396,
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
+      ]
     },
     "treasure-bag-moon-lord": {
       "id": "treasure-bag-moon-lord",
       "name": "Treasure Bag (Moon Lord)",
       "kind": "bag",
       "url": "https://terraria.wiki.gg/wiki/Treasure_Bag_%28Moon_Lord%29",
-      "icon": "https://terraria.wiki.gg/images/Treasure_Bag_%28Moon_Lord%29.png"
+      "icon": "https://terraria.wiki.gg/images/Treasure_Bag_%28Moon_Lord%29.png",
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
+      ]
     },
     "ice-mimic": {
       "id": "ice-mimic",
@@ -3673,6 +4441,11 @@
       "npcId": 474,
       "biomes": [
         "crimson"
+      ],
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
       ]
     },
     "corrupt-mimic": {
@@ -3684,6 +4457,11 @@
       "npcId": 473,
       "biomes": [
         "corruption"
+      ],
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
       ]
     },
     "hallowed-mimic": {
@@ -3695,6 +4473,11 @@
       "npcId": 475,
       "biomes": [
         "hallow"
+      ],
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
       ]
     },
     "jungle-mimic": {
@@ -3706,6 +4489,11 @@
       "npcId": 476,
       "biomes": [
         "jungle"
+      ],
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
       ]
     },
     "eater-of-worlds": {
@@ -3721,7 +4509,12 @@
       "name": "Treasure Bag (Eater of Worlds)",
       "kind": "bag",
       "url": "https://terraria.wiki.gg/wiki/Treasure_Bag_%28Eater_of_Worlds%29",
-      "icon": "https://terraria.wiki.gg/images/Treasure_Bag_%28Eater_of_Worlds%29.png"
+      "icon": "https://terraria.wiki.gg/images/Treasure_Bag_%28Eater_of_Worlds%29.png",
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
+      ]
     },
     "angry-trapper": {
       "id": "angry-trapper",
@@ -3787,6 +4580,11 @@
       "npcId": 517,
       "events": [
         "lunar-events"
+      ],
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
       ]
     },
     "vortex-pillar": {
@@ -3798,6 +4596,11 @@
       "npcId": 422,
       "events": [
         "lunar-events"
+      ],
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
       ]
     },
     "nebula-pillar": {
@@ -3809,6 +4612,11 @@
       "npcId": 507,
       "events": [
         "lunar-events"
+      ],
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
       ]
     },
     "stardust-pillar": {
@@ -3820,6 +4628,11 @@
       "npcId": 493,
       "events": [
         "lunar-events"
+      ],
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
       ]
     },
     "chaos-elemental": {
@@ -3842,6 +4655,11 @@
       "npcId": 463,
       "events": [
         "solar-eclipse"
+      ],
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
       ]
     },
     "frozen-chest": {
@@ -3865,7 +4683,12 @@
       "name": "Treasure Bag (King Slime)",
       "kind": "bag",
       "url": "https://terraria.wiki.gg/wiki/Treasure_Bag_%28King_Slime%29",
-      "icon": "https://terraria.wiki.gg/images/Treasure_Bag_%28King_Slime%29.png"
+      "icon": "https://terraria.wiki.gg/images/Treasure_Bag_%28King_Slime%29.png",
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
+      ]
     },
     "eye-of-cthulhu": {
       "id": "eye-of-cthulhu",
@@ -3880,7 +4703,12 @@
       "name": "Treasure Bag (Eye of Cthulhu)",
       "kind": "bag",
       "url": "https://terraria.wiki.gg/wiki/Treasure_Bag_%28Eye_of_Cthulhu%29",
-      "icon": "https://terraria.wiki.gg/images/Treasure_Bag_%28Eye_of_Cthulhu%29.png"
+      "icon": "https://terraria.wiki.gg/images/Treasure_Bag_%28Eye_of_Cthulhu%29.png",
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
+      ]
     },
     "goblin-scout": {
       "id": "goblin-scout",
@@ -3925,7 +4753,12 @@
       "name": "Treasure Bag (Queen Bee)",
       "kind": "bag",
       "url": "https://terraria.wiki.gg/wiki/Treasure_Bag_%28Queen_Bee%29",
-      "icon": "https://terraria.wiki.gg/images/Treasure_Bag_%28Queen_Bee%29.png"
+      "icon": "https://terraria.wiki.gg/images/Treasure_Bag_%28Queen_Bee%29.png",
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
+      ]
     },
     "party-girl": {
       "id": "party-girl",
@@ -3948,7 +4781,12 @@
       "name": "Treasure Bag (Skeletron Prime)",
       "kind": "bag",
       "url": "https://terraria.wiki.gg/wiki/Treasure_Bag_%28Skeletron_Prime%29",
-      "icon": "https://terraria.wiki.gg/images/Treasure_Bag_%28Skeletron_Prime%29.png"
+      "icon": "https://terraria.wiki.gg/images/Treasure_Bag_%28Skeletron_Prime%29.png",
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
+      ]
     },
     "the-twins": {
       "id": "the-twins",
@@ -3963,7 +4801,12 @@
       "name": "Treasure Bag (The Twins)",
       "kind": "bag",
       "url": "https://terraria.wiki.gg/wiki/Treasure_Bag_%28The_Twins%29",
-      "icon": "https://terraria.wiki.gg/images/Treasure_Bag_%28The_Twins%29.png"
+      "icon": "https://terraria.wiki.gg/images/Treasure_Bag_%28The_Twins%29.png",
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
+      ]
     },
     "spazmatism": {
       "id": "spazmatism",
@@ -3994,7 +4837,12 @@
       "name": "Treasure Bag (The Destroyer)",
       "kind": "bag",
       "url": "https://terraria.wiki.gg/wiki/Treasure_Bag_%28The_Destroyer%29",
-      "icon": "https://terraria.wiki.gg/images/Treasure_Bag_%28The_Destroyer%29.png"
+      "icon": "https://terraria.wiki.gg/images/Treasure_Bag_%28The_Destroyer%29.png",
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
+      ]
     },
     "mourning-wood": {
       "id": "mourning-wood",
@@ -4020,7 +4868,12 @@
       "name": "Treasure Bag (Golem)",
       "kind": "bag",
       "url": "https://terraria.wiki.gg/wiki/Treasure_Bag_%28Golem%29",
-      "icon": "https://terraria.wiki.gg/images/Treasure_Bag_%28Golem%29.png"
+      "icon": "https://terraria.wiki.gg/images/Treasure_Bag_%28Golem%29.png",
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
+      ]
     },
     "duke-fishron": {
       "id": "duke-fishron",
@@ -4035,7 +4888,12 @@
       "name": "Treasure Bag (Duke Fishron)",
       "kind": "bag",
       "url": "https://terraria.wiki.gg/wiki/Treasure_Bag_%28Duke_Fishron%29",
-      "icon": "https://terraria.wiki.gg/images/Treasure_Bag_%28Duke_Fishron%29.png"
+      "icon": "https://terraria.wiki.gg/images/Treasure_Bag_%28Duke_Fishron%29.png",
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
+      ]
     },
     "obsidian-crate": {
       "id": "obsidian-crate",
@@ -4043,7 +4901,12 @@
       "kind": "container",
       "url": "https://terraria.wiki.gg/wiki/Obsidian_Crate",
       "icon": "https://terraria.wiki.gg/images/Obsidian_Crate.png",
-      "group": "crate"
+      "group": "crate",
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
+      ]
     },
     "wall-of-flesh": {
       "id": "wall-of-flesh",
@@ -4058,7 +4921,12 @@
       "name": "Treasure Bag (Wall of Flesh)",
       "kind": "bag",
       "url": "https://terraria.wiki.gg/wiki/Treasure_Bag_%28Wall_of_Flesh%29",
-      "icon": "https://terraria.wiki.gg/images/Treasure_Bag_%28Wall_of_Flesh%29.png"
+      "icon": "https://terraria.wiki.gg/images/Treasure_Bag_%28Wall_of_Flesh%29.png",
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
+      ]
     },
     "werewolf": {
       "id": "werewolf",
@@ -4087,7 +4955,12 @@
       "name": "Treasure Bag (Plantera)",
       "kind": "bag",
       "url": "https://terraria.wiki.gg/wiki/Treasure_Bag_%28Plantera%29",
-      "icon": "https://terraria.wiki.gg/images/Treasure_Bag_%28Plantera%29.png"
+      "icon": "https://terraria.wiki.gg/images/Treasure_Bag_%28Plantera%29.png",
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
+      ]
     },
     "hellhound": {
       "id": "hellhound",
@@ -4120,6 +4993,11 @@
       "npcId": 575,
       "events": [
         "old-ones-army"
+      ],
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
       ]
     },
     "scutlix": {
@@ -4131,6 +5009,11 @@
       "npcId": 391,
       "events": [
         "martian-madness"
+      ],
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
       ]
     },
     "blood-squid": {
@@ -4142,6 +5025,11 @@
       "npcId": 619,
       "events": [
         "blood-moon"
+      ],
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
       ]
     },
     "etherian-goblin": {
@@ -4153,6 +5041,11 @@
       "npcId": 554,
       "events": [
         "old-ones-army"
+      ],
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
       ]
     },
     "sroller": {
@@ -4164,6 +5057,11 @@
       "npcId": 417,
       "events": [
         "lunar-events"
+      ],
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
       ]
     },
     "arapaima": {
@@ -4197,6 +5095,11 @@
       "npcId": 578,
       "events": [
         "old-ones-army"
+      ],
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
       ]
     },
     "gingerbread-man": {
@@ -4241,6 +5144,11 @@
       "npcId": 427,
       "events": [
         "lunar-events"
+      ],
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
       ]
     },
     "mini-star-cell": {
@@ -4252,6 +5160,11 @@
       "npcId": 406,
       "events": [
         "lunar-events"
+      ],
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
       ]
     },
     "star-cell": {
@@ -4263,6 +5176,11 @@
       "npcId": 405,
       "events": [
         "lunar-events"
+      ],
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
       ]
     },
     "etherian-goblin-bomber": {
@@ -4274,6 +5192,11 @@
       "npcId": 557,
       "events": [
         "old-ones-army"
+      ],
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
       ]
     },
     "drakomire": {
@@ -4285,6 +5208,11 @@
       "npcId": 415,
       "events": [
         "lunar-events"
+      ],
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
       ]
     },
     "brain-suckler": {
@@ -4296,6 +5224,11 @@
       "npcId": 421,
       "events": [
         "lunar-events"
+      ],
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
       ]
     },
     "flocko": {
@@ -4318,6 +5251,11 @@
       "npcId": 418,
       "events": [
         "lunar-events"
+      ],
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
       ]
     },
     "drakin": {
@@ -4329,6 +5267,11 @@
       "npcId": 571,
       "events": [
         "old-ones-army"
+      ],
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
       ]
     },
     "alien-larva": {
@@ -4340,6 +5283,11 @@
       "npcId": 428,
       "events": [
         "lunar-events"
+      ],
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
       ]
     },
     "drakomire-rider": {
@@ -4351,6 +5299,11 @@
       "npcId": 416,
       "events": [
         "lunar-events"
+      ],
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
       ]
     },
     "dune-splicer": {
@@ -4362,6 +5315,11 @@
       "npcId": 512,
       "biomes": [
         "desert"
+      ],
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
       ]
     },
     "spore-zombie": {
@@ -4395,6 +5353,11 @@
       "npcId": 518,
       "events": [
         "lunar-events"
+      ],
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
       ]
     },
     "elf-archer": {
@@ -4417,6 +5380,11 @@
       "npcId": 632,
       "biomes": [
         "graveyard"
+      ],
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
       ]
     },
     "giant-antlion-swarmer": {
@@ -4428,6 +5396,11 @@
       "npcId": 509,
       "biomes": [
         "desert"
+      ],
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
       ]
     },
     "kobold": {
@@ -4439,6 +5412,11 @@
       "npcId": 573,
       "events": [
         "old-ones-army"
+      ],
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
       ]
     },
     "giant-fungi-bulb": {
@@ -4458,7 +5436,12 @@
       "kind": "npc",
       "url": "https://terraria.wiki.gg/wiki/Shimmer_Slime",
       "icon": "https://terraria.wiki.gg/images/Shimmer_Slime.gif",
-      "npcId": 676
+      "npcId": 676,
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
+      ]
     },
     "elf-copter": {
       "id": "elf-copter",
@@ -4513,6 +5496,11 @@
       "npcId": 465,
       "biomes": [
         "crimson"
+      ],
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
       ]
     },
     "goldfish": {
@@ -4535,6 +5523,11 @@
       "npcId": 508,
       "biomes": [
         "desert"
+      ],
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
       ]
     },
     "twinkle-popper": {
@@ -4546,6 +5539,11 @@
       "npcId": 409,
       "events": [
         "lunar-events"
+      ],
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
       ]
     },
     "milkyway-weaver": {
@@ -4557,6 +5555,11 @@
       "npcId": 404,
       "events": [
         "lunar-events"
+      ],
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
       ]
     },
     "predictor": {
@@ -4568,6 +5571,11 @@
       "npcId": 424,
       "events": [
         "lunar-events"
+      ],
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
       ]
     },
     "nebula-floater": {
@@ -4579,6 +5587,11 @@
       "npcId": 420,
       "events": [
         "lunar-events"
+      ],
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
       ]
     },
     "flow-invader": {
@@ -4590,6 +5603,11 @@
       "npcId": 407,
       "events": [
         "lunar-events"
+      ],
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
       ]
     },
     "vortexian": {
@@ -4601,6 +5619,11 @@
       "npcId": 429,
       "events": [
         "lunar-events"
+      ],
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
       ]
     },
     "nutcracker": {
@@ -4623,6 +5646,11 @@
       "npcId": 560,
       "events": [
         "old-ones-army"
+      ],
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
       ]
     },
     "martian-drone": {
@@ -4634,6 +5662,11 @@
       "npcId": 388,
       "events": [
         "martian-madness"
+      ],
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
       ]
     },
     "alien-queen": {
@@ -4645,6 +5678,11 @@
       "npcId": 426,
       "events": [
         "lunar-events"
+      ],
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
       ]
     },
     "hoppin-jack": {
@@ -4680,6 +5718,11 @@
       "npcId": 419,
       "events": [
         "lunar-events"
+      ],
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
       ]
     },
     "old-one-s-skeleton": {
@@ -4691,6 +5734,11 @@
       "npcId": 567,
       "events": [
         "old-ones-army"
+      ],
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
       ]
     },
     "wither-beast": {
@@ -4702,6 +5750,11 @@
       "npcId": 569,
       "events": [
         "old-ones-army"
+      ],
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
       ]
     },
     "jungle-creeper": {
@@ -4724,6 +5777,11 @@
       "npcId": 423,
       "events": [
         "lunar-events"
+      ],
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
       ]
     },
     "stargazer": {
@@ -4735,6 +5793,11 @@
       "npcId": 411,
       "events": [
         "lunar-events"
+      ],
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
       ]
     },
     "bird": {
@@ -4796,6 +5859,11 @@
       "npcId": 387,
       "events": [
         "martian-madness"
+      ],
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
       ]
     },
     "storm-diver": {
@@ -4807,6 +5875,11 @@
       "npcId": 425,
       "events": [
         "lunar-events"
+      ],
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
       ]
     },
     "lava-slime": {
@@ -4826,7 +5899,12 @@
       "kind": "npc",
       "url": "https://terraria.wiki.gg/wiki/Gnome",
       "icon": "https://terraria.wiki.gg/images/Gnome.gif",
-      "npcId": 624
+      "npcId": 624,
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
+      ]
     },
     "etherian-javelin-thrower": {
       "id": "etherian-javelin-thrower",
@@ -4837,6 +5915,11 @@
       "npcId": 563,
       "events": [
         "old-ones-army"
+      ],
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
       ]
     },
     "crawltipede": {
@@ -4848,6 +5931,11 @@
       "npcId": 414,
       "events": [
         "lunar-events"
+      ],
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
       ]
     },
     "cultist-archer": {
@@ -4859,6 +5947,11 @@
       "npcId": 379,
       "biomes": [
         "dungeon"
+      ],
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
       ]
     },
     "lunatic-devotee": {
@@ -4870,6 +5963,11 @@
       "npcId": 438,
       "biomes": [
         "dungeon"
+      ],
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile"
       ]
     },
     "fungo-fish": {
@@ -4892,6 +5990,12 @@
       "npcId": 316,
       "biomes": [
         "graveyard"
+      ],
+      "platforms": [
+        "desktop",
+        "console",
+        "mobile",
+        "oldgen"
       ]
     },
     "fungi-bulb": {

@@ -11,7 +11,8 @@ A source is a dict:
               "recipe", "shimmer", "extractinator", "name" ([obtain] names), "tag" (a method only
               the wiki's tags name)
   obtain      the obtain methods it stands for
-  regular     False: only in special world seeds - shown, but it counts for nothing (CO6)
+  regular     False: only in special world seeds, or a drop source that is not in the Desktop
+              version - shown, but it counts for nothing (CO6, D8b)
   free        True: no restriction of its own - at any time, in any difficulty
   events, biomes, times, conditions
               when and where it is available
@@ -87,8 +88,11 @@ class Sources:
                 rate = d.get("rate", "").lower()
                 events |= set(d.get("events", ()))
                 events |= {eid for eid, words in self.event_words.items() if any(w in rate for w in words)}
+            # a source that is not in the Desktop version counts for nothing for an item that is
+            # (the bars of the old-gen Shadow Hammer)
+            there = "desktop" in dropper.get("platforms", ("desktop",)) or "desktop" not in item["platforms"]
             out.append(source(
-                dropper["kind"], regular=not seed_only(d), free=container, drop=d, source=dropper,
+                dropper["kind"], regular=there and not seed_only(d), free=container, drop=d, source=dropper,
                 obtain=[oid for oid, o in self.obtain.items()
                         if dropper["kind"] in o.get("from_drops", ())
                         or dropper.get("group") in o.get("from_containers", ())],
