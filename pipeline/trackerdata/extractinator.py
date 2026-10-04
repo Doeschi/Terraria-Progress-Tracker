@@ -101,8 +101,7 @@ def page_results(machine, text):
 
 def extractinator_file(wikitext, resolve, items, aliases=None):
     """extractinator.json: the machines (with their item) and the results, item names resolved to
-    keys (`aliases`: wiki name -> item names or keys, [extractinator_inputs]). Also returns
-    {item key: set of machine ids} for "Obtained by"."""
+    keys (`aliases`: wiki name -> item names or keys, [extractinator_inputs])."""
     by_name = {i["name"]: i["key"] for i in items}
     by_key = {i["key"] for i in items}
     machines, results, unknown = [], [], set()
@@ -130,11 +129,8 @@ def extractinator_file(wikitext, resolve, items, aliases=None):
                     if r.get(f):
                         row[f] = r[f]
                 results.append(row)
-    sources = {}
-    for r in results:
-        sources.setdefault(r["item"], set()).add(r["machine"])
-    log(f"  extractinators: {len(results)} results of {len(sources)} items "
+    log(f"  extractinators: {len(results)} results of {len({r['item'] for r in results})} items "
         f"({sum(1 for r in results if r.get('conversion'))} conversions)")
     if unknown:
         warn(f"Extractinator: unknown items {sorted(unknown)} (add them to [extractinator_inputs])")
-    return {"machines": machines, "results": results}, sources
+    return {"machines": machines, "results": results}

@@ -235,14 +235,12 @@ def build(raw_dir, mapping_path, out_dir, readable_dir=None, no_sanity=False):
     log("Recipes…")
     recipes = recipes_file(recipe_rows, items, mapping, wikitext.get("Alternative crafting ingredients", ""))
     log("Extractinators…")
-    extractinator, extractinator_sources = extractinator_file(wikitext, drops.resolve, items,
-                                                                   mapping.extractinator_inputs)
+    extractinator = extractinator_file(wikitext, drops.resolve, items, mapping.extractinator_inputs)
     # every source of an item, and the item fields that follow from them: "Obtained by" (also from
     # our data: drops, containers, shimmer, extractinators; the rest under "Other"), vendors,
     # events, biomes, conditions, ...
     log("Sources…")
-    sources = Sources(items, drops, shops, rewards, {s["result"] for s in recipes["shimmer"]},
-                      extractinator_sources, mapping)
+    sources = Sources(items, drops, shops, rewards, recipes, extractinator, mapping)
     sources.apply(items, conditions)
 
     outputs = {"items.json": items}
@@ -282,18 +280,7 @@ def build(raw_dir, mapping_path, out_dir, readable_dir=None, no_sanity=False):
     categories_path = raw_dir / "page_categories.json"
     page_categories = json.loads(categories_path.read_text(encoding="utf-8")) if categories_path.exists() else {}
     milestones = Milestones(mapping, mapping.bosses, page_categories.get("Hardmode-only NPCs", []))
-    recipe_index = {"stations": outputs["recipes.json"]["stations"], "groups": outputs["recipes.json"]["groups"],
-                    "by_result": defaultdict(list), "shimmer_to": defaultdict(list)}
-    for r in outputs["recipes.json"]["recipes"]:
-        recipe_index["by_result"][r["result"]].append(r)
-    for s in outputs["recipes.json"]["shimmer"]:
-        recipe_index["shimmer_to"][s["result"]].append(s)
-    machines = {m["id"]: m for m in extractinator["machines"]}
-    recipe_index["extractinator_to"] = defaultdict(list)
-    for r in extractinator["results"]:
-        recipe_index["extractinator_to"][r["item"]].append({**r, "machine_item": machines[r["machine"]]["item"],
-                                                            "machine_name": machines[r["machine"]]["name"]})
-    milestones.compute(items, drops, sources, recipe_index)
+    milestones.compute(items, sources)
     outputs["milestones.json"] = milestones.milestones_file(
         items, {b["id"]: b["icon"] for b in outputs["bosses.json"]["bosses"] if b.get("icon")},
         {norm_name(i["name"]): i.get("icon") for i in items})

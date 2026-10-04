@@ -180,7 +180,7 @@ it (`*` is a wildcard). Example: the Shuriken has `type: weapon`,
 | `[events.*]` | the "Events" filter: `environments` (spawn conditions of the event's enemies), `drop_conditions` (words in a drop's chance), `links` / `phrases` (in the condition texts of shops and drops) |
 | `[biomes.*]`, `[times.*]` | where and when enemies spawn (`environments`, `alone`), plus `links` / `phrases` for condition texts |
 | `[conditions]` | the "Conditions" filter: the condition groups (time of day, moon phase, after a boss, weather; world seeds and progress are only shown), each condition with the wiki links and text patterns that mean it; `ignore_links` for links that are no condition |
-| `[milestones.*]`, `[milestone_conditions]`, `[container_milestones]`, `[milestone_sources]`, `[milestone_items]` | the "Progression" filter: the milestones in order with their bosses and events, and the exceptions the data cannot tell (late Dungeon enemies, locked chests, mining Hellstone and Chlorophyte, …) |
+| `[milestones.*]`, `[milestone_conditions]`, `[milestone_sources]`, `[milestone_biomes]`, `[milestone_items]` | the "Progression" filter: the milestones in order with their bosses and events, and the exceptions the data cannot tell (late Dungeon enemies, locked chests, mining Hellstone and Chlorophyte, …) |
 | `[flags]` | yes/no fields of an item: `hardmode`, `hardmodeOnly`, `unobtainable`, `banner`, `questFish` |
 | `[drops]` | which source kinds are used; `boss_ignore_items` (coins and potions do not count for a boss) |
 | `[containers.*]`, `[container_icons]` | the "Found in" groups (chests, crates, other, trees) and icons for sources that are no item (trees → their wood) |

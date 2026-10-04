@@ -1086,12 +1086,14 @@ fallback = true
 # "what" ("Crafted", not "Crafting"), so they are not mistaken for categories.
 # loot = chests, pots, trees ...; plunder = placed in the world and collected
 # (dungeon furniture, statues, ores).
-# Our own data adds to the tags (derive_obtain in items.py):
+# Our own data adds to the tags (sources.py):
 #   from_drops       drop source kinds that give this method ("npc", "bag")
 #   from_containers  container groups ([containers]) that give it
 #   from_shimmer     results of shimmer transmutations
 #   from_extractinator  results of these machines (extractinator.json; REQUIREMENTS B6)
 #   names            item name patterns
+#   replaces         a method the wiki tags these items with too, wrongly: an item of this
+#                    entry only keeps that method if the data gives it (a drop row)
 #   fallback         items that got no method at all (kept last in the filter)
 
 [obtain.crafted]
@@ -1128,11 +1130,16 @@ icon = "Wooden Crate"
 match = ["tag:bag loot", "listcat:bag loot items"]
 from_containers = ["crate", "other"]
 
+# Developer items come from the treasure bags too (as [categories.developer]; the developer wings
+# by name, [manual]). The wiki tags all of this as "bag loot" as well: that only stays for items
+# a crate or grab bag really holds.
 [obtain.treasure-bag]
 name = "From boss treasure bags"
 icon_file = "Treasure Bag (Eye of Cthulhu).png"
-match = ["tag:treasure bag loot", "listcat:treasure bag loot items"]
+match = ["tag:treasure bag loot", "listcat:treasure bag loot items", "tag:developer", "listcat:developer items"]
+exclude = ["page:jim's cap"]  # a drop, not a developer item
 from_drops = ["bag"]
+replaces = "bag"
 
 [obtain.fishing]
 name = "Fished"
@@ -1987,8 +1994,31 @@ hardmode = "wall-of-flesh"
 after-any-mech = "any-mech"
 after-all-mechs = "all-mechs"
 
-# Containers (drop source names) that are only reachable later; others: start.
-[container_milestones]
+# Drop rows of an enemy's variants: the wiki names the variant in a note ("Mimic (Pre-Hardmode
+# variant)"); rows without a note get the name given here (source name = name of the variant).
+[drop_variants]
+"Mimic" = "Hardmode variant"
+"Ice Mimic" = "Hardmode variant"
+
+# Containers with other items per layer (Gold Chest, Frozen Chest): the Drops table has one row per
+# item with the chance per layer in notes ("1/6 (Underground) · 2/15 (Cavern) · 19/150 ("lava
+# layer")"). Rows with these notes are split into one drop per layer (shown as variants; the
+# drop groups under a page heading of that name belong to it). Note -> layer, in display order.
+[drop_areas]
+"Underground" = "Underground"
+"Cavern" = "Cavern"
+"lava layer" = "Cavern (lava layer)"
+"within bottom 250 tiles of world" = "Cavern"
+
+# From when a drop source - an enemy, a container - is reached (drop source names), where the
+# data does not tell. By the data: a boss, its parts and its treasure bag count from the boss
+# ([milestones] bosses), a town NPC from when it moves in ([vendors] milestone), an event enemy
+# from the event ([milestones] events), an enemy of a biome in [milestone_biomes] from that
+# milestone, and enemies in the wiki's category "Hardmode-only NPCs" (raw/page_categories.json,
+# by name or wiki page) from the Wall of Flesh at the earliest; everything else from the start.
+# An entry here replaces that (not the boss), in both directions.
+[milestone_sources]
+# containers that are only reachable later
 "Shadow Chest" = "skeletron"            # Shadow Key from the Dungeon
 "Gold Chest (Dungeon)" = "skeletron"
 "Golden Lock Box" = "skeletron"         # Golden Key from Dungeon enemies
@@ -2016,27 +2046,7 @@ after-all-mechs = "all-mechs"
 "Mythril Crate" = "wall-of-flesh"
 "Titanium Crate" = "wall-of-flesh"
 "Pearlwood Crate" = "wall-of-flesh"
-
-# Drop rows of an enemy's variants: the wiki names the variant in a note ("Mimic (Pre-Hardmode
-# variant)"); rows without a note get the name given here (source name = name of the variant).
-[drop_variants]
-"Mimic" = "Hardmode variant"
-"Ice Mimic" = "Hardmode variant"
-
-# Containers with other items per layer (Gold Chest, Frozen Chest): the Drops table has one row per
-# item with the chance per layer in notes ("1/6 (Underground) · 2/15 (Cavern) · 19/150 ("lava
-# layer")"). Rows with these notes are split into one drop per layer (shown as variants; the
-# drop groups under a page heading of that name belong to it). Note -> layer, in display order.
-[drop_areas]
-"Underground" = "Underground"
-"Cavern" = "Cavern"
-"lava layer" = "Cavern (lava layer)"
-"within bottom 250 tiles of world" = "Cavern"
-
-# Enemies that appear later than their biome says (drop source names). Enemies in the wiki's
-# category "Hardmode-only NPCs" (raw/page_categories.json, by name or wiki page) count from the
-# Wall of Flesh; entries here override that, in both directions.
-[milestone_sources]
+# enemies the data puts too early or too late:
 # pre-Hardmode enemies on a shared page of the category ("Jellyfish"). Not the Mimic and the Ice
 # Mimic: before Hardmode they only spawn in Remix worlds.
 "Blue Jellyfish" = "start"
@@ -2079,6 +2089,12 @@ after-all-mechs = "all-mechs"
 "Bone Lee" = "plantera"
 "Dungeon Spirit" = "plantera"
 "Giant Cursed Skull" = "plantera"
+
+# Enemies that spawn in these biomes ([biomes]) count from the milestone; of several biomes the
+# first one here.
+[milestone_biomes]
+jungle-temple = "plantera"
+dungeon = "skeletron"
 
 # Milestones of items the data cannot tell (name patterns, "*" at the end = prefix): a minimum
 # ("not before"), or with override = true the exact milestone (when the wiki's conditions read too
@@ -2640,27 +2656,27 @@ keys = [
 "Swordfish Trophy" = ["obtain:quest-reward"]
 "Silent Fish" = ["obtain:quest-reward"]
 # developer items by name: the developer wings sit on the shared "Wings" page without
-# the developer tag (Jim's Cap is excluded in [categories.developer])
-"Red's *" = ["categories:developer"]
-"Cenx's *" = ["categories:developer"]
-"Crowno's *" = ["categories:developer"]
-"Will's *" = ["categories:developer"]
-"Jim's *" = ["categories:developer"]
-"Aaron's *" = ["categories:developer"]
-"D-Town's *" = ["categories:developer"]
-"Lazure's *" = ["categories:developer"]
-"Yoraiz0r's *" = ["categories:developer"]
-"Skiphs' *" = ["categories:developer"]
-"Loki's *" = ["categories:developer"]
-"Arkhalis' *" = ["categories:developer"]
-"Leinfors' *" = ["categories:developer"]
-"Ghostar's *" = ["categories:developer"]
-"Safeman's *" = ["categories:developer"]
-"FoodBarbarian's *" = ["categories:developer"]
-"Grox The Great's *" = ["categories:developer"]
-"Chicken Bones' *" = ["categories:developer"]
-"Kazzymodus' *" = ["categories:developer"]
-"Luna's *" = ["categories:developer"]
+# the developer tag (Jim's Cap is excluded in [categories.developer] and [obtain.treasure-bag])
+"Red's *" = ["categories:developer", "obtain:treasure-bag"]
+"Cenx's *" = ["categories:developer", "obtain:treasure-bag"]
+"Crowno's *" = ["categories:developer", "obtain:treasure-bag"]
+"Will's *" = ["categories:developer", "obtain:treasure-bag"]
+"Jim's *" = ["categories:developer", "obtain:treasure-bag"]
+"Aaron's *" = ["categories:developer", "obtain:treasure-bag"]
+"D-Town's *" = ["categories:developer", "obtain:treasure-bag"]
+"Lazure's *" = ["categories:developer", "obtain:treasure-bag"]
+"Yoraiz0r's *" = ["categories:developer", "obtain:treasure-bag"]
+"Skiphs' *" = ["categories:developer", "obtain:treasure-bag"]
+"Loki's *" = ["categories:developer", "obtain:treasure-bag"]
+"Arkhalis' *" = ["categories:developer", "obtain:treasure-bag"]
+"Leinfors' *" = ["categories:developer", "obtain:treasure-bag"]
+"Ghostar's *" = ["categories:developer", "obtain:treasure-bag"]
+"Safeman's *" = ["categories:developer", "obtain:treasure-bag"]
+"FoodBarbarian's *" = ["categories:developer", "obtain:treasure-bag"]
+"Grox The Great's *" = ["categories:developer", "obtain:treasure-bag"]
+"Chicken Bones' *" = ["categories:developer", "obtain:treasure-bag"]
+"Kazzymodus' *" = ["categories:developer", "obtain:treasure-bag"]
+"Luna's *" = ["categories:developer", "obtain:treasure-bag"]
 
 # decorative banners (colored, dungeon, underworld, War Table Banner, ...);
 # enemy banners are excluded in [subcategories.other-banner]

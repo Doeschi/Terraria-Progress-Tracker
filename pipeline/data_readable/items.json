@@ -2606,7 +2606,6 @@
       "crafted",
       "vendor",
       "drop",
-      "bag",
       "treasure-bag"
     ],
     "vendors": [
@@ -3114,7 +3113,6 @@
     "obtain": [
       "drop",
       "plunder",
-      "bag",
       "treasure-bag",
       "extractinator",
       "chlorophyte-extractinator"
@@ -3226,7 +3224,6 @@
     "obtain": [
       "vendor",
       "drop",
-      "bag",
       "treasure-bag"
     ],
     "vendors": [
@@ -4736,7 +4733,6 @@
     ],
     "obtain": [
       "drop",
-      "bag",
       "treasure-bag",
       "extractinator",
       "chlorophyte-extractinator"
@@ -13887,7 +13883,6 @@
     ],
     "obtain": [
       "drop",
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -13939,7 +13934,6 @@
     ],
     "obtain": [
       "drop",
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -13991,7 +13985,6 @@
     ],
     "obtain": [
       "drop",
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -14174,7 +14167,8 @@
     "useTime": 15,
     "tooltip": "'It's smiling, might be a good snack'",
     "conditions": [],
-    "milestone": "start"
+    "milestone": "start",
+    "milestoneVia": "Caught with a Bug Net"
   },
   {
     "key": "Robe",
@@ -19776,7 +19770,6 @@
     ],
     "obtain": [
       "drop",
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -22957,7 +22950,6 @@
     ],
     "obtain": [
       "drop",
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -23382,7 +23374,6 @@
     ],
     "obtain": [
       "drop",
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -26240,7 +26231,6 @@
     ],
     "obtain": [
       "drop",
-      "bag",
       "treasure-bag",
       "shimmer"
     ],
@@ -26294,7 +26284,6 @@
     ],
     "obtain": [
       "drop",
-      "bag",
       "treasure-bag",
       "shimmer"
     ],
@@ -26348,7 +26337,6 @@
     ],
     "obtain": [
       "drop",
-      "bag",
       "treasure-bag",
       "shimmer"
     ],
@@ -27627,7 +27615,6 @@
     ],
     "obtain": [
       "drop",
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -29441,7 +29428,6 @@
     ],
     "obtain": [
       "drop",
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -29493,7 +29479,6 @@
     ],
     "obtain": [
       "drop",
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -29545,7 +29530,6 @@
     ],
     "obtain": [
       "drop",
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -35673,7 +35657,7 @@
       "wings"
     ],
     "obtain": [
-      "bag"
+      "treasure-bag"
     ],
     "vendors": [],
     "events": [],
@@ -35722,7 +35706,6 @@
       "vanity-sets"
     ],
     "obtain": [
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -35774,7 +35757,6 @@
       "vanity-sets"
     ],
     "obtain": [
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -35826,7 +35808,6 @@
       "vanity-sets"
     ],
     "obtain": [
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -40688,7 +40669,6 @@
     ],
     "obtain": [
       "drop",
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -41365,7 +41345,6 @@
     "obtain": [
       "vendor",
       "drop",
-      "bag",
       "treasure-bag"
     ],
     "vendors": [
@@ -42314,7 +42293,6 @@
     ],
     "obtain": [
       "drop",
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -47242,7 +47220,6 @@
     "obtain": [
       "drop",
       "plunder",
-      "bag",
       "treasure-bag",
       "extractinator",
       "chlorophyte-extractinator"
@@ -48275,7 +48252,6 @@
     ],
     "obtain": [
       "drop",
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -53426,7 +53402,6 @@
     ],
     "obtain": [
       "drop",
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -53655,7 +53630,6 @@
     "obtain": [
       "drop",
       "plunder",
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -59684,7 +59658,6 @@
     ],
     "obtain": [
       "drop",
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -59743,7 +59716,6 @@
     ],
     "obtain": [
       "drop",
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -59805,7 +59777,6 @@
     ],
     "obtain": [
       "drop",
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -60180,7 +60151,6 @@
     "obtain": [
       "crafted",
       "drop",
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -60236,7 +60206,6 @@
       "movement"
     ],
     "obtain": [
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -60287,7 +60256,6 @@
     ],
     "obtain": [
       "drop",
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -60754,7 +60722,6 @@
     "subcategories": [],
     "obtain": [
       "drop",
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -61494,7 +61461,6 @@
     ],
     "obtain": [
       "drop",
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -61609,7 +61575,6 @@
     ],
     "obtain": [
       "drop",
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -62325,7 +62290,6 @@
     ],
     "obtain": [
       "drop",
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -62738,7 +62702,6 @@
     ],
     "obtain": [
       "drop",
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -62959,7 +62922,6 @@
     ],
     "obtain": [
       "drop",
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -65298,7 +65260,6 @@
     ],
     "obtain": [
       "drop",
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -66547,7 +66508,6 @@
     ],
     "obtain": [
       "drop",
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -66920,7 +66880,6 @@
     ],
     "obtain": [
       "drop",
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -67089,7 +67048,6 @@
     ],
     "obtain": [
       "drop",
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -67148,7 +67106,6 @@
     ],
     "obtain": [
       "drop",
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -67263,7 +67220,6 @@
     "obtain": [
       "vendor",
       "drop",
-      "bag",
       "treasure-bag"
     ],
     "vendors": [
@@ -67893,7 +67849,6 @@
     ],
     "obtain": [
       "drop",
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -68989,7 +68944,6 @@
     ],
     "obtain": [
       "drop",
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -69050,7 +69004,6 @@
     ],
     "obtain": [
       "drop",
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -69109,7 +69062,6 @@
     ],
     "obtain": [
       "drop",
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -69168,7 +69120,6 @@
     ],
     "obtain": [
       "drop",
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -69283,7 +69234,6 @@
     ],
     "obtain": [
       "drop",
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -69607,7 +69557,6 @@
     ],
     "obtain": [
       "drop",
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -70070,7 +70019,6 @@
     ],
     "obtain": [
       "drop",
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -70956,7 +70904,6 @@
     ],
     "obtain": [
       "drop",
-      "bag",
       "treasure-bag",
       "extractinator",
       "chlorophyte-extractinator"
@@ -71481,7 +71428,7 @@
     "tooltip": "'+800% jump height'",
     "conditions": [],
     "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestoneVia": "Caught with a Bug Net"
   },
   {
     "key": "VialofVenom",
@@ -82758,7 +82705,6 @@
     ],
     "obtain": [
       "drop",
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -82814,7 +82760,6 @@
       "vanity-sets"
     ],
     "obtain": [
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -82866,7 +82811,6 @@
       "vanity-sets"
     ],
     "obtain": [
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -82918,7 +82862,6 @@
       "vanity-sets"
     ],
     "obtain": [
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -82970,7 +82913,6 @@
       "vanity-sets"
     ],
     "obtain": [
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -83022,7 +82964,6 @@
       "vanity-sets"
     ],
     "obtain": [
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -83074,7 +83015,6 @@
       "vanity-sets"
     ],
     "obtain": [
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -83126,7 +83066,6 @@
       "vanity-sets"
     ],
     "obtain": [
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -83178,7 +83117,6 @@
       "vanity-sets"
     ],
     "obtain": [
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -83230,7 +83168,6 @@
       "vanity-sets"
     ],
     "obtain": [
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -83282,7 +83219,6 @@
       "vanity-sets"
     ],
     "obtain": [
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -83334,7 +83270,6 @@
       "vanity-sets"
     ],
     "obtain": [
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -83386,7 +83321,6 @@
       "vanity-sets"
     ],
     "obtain": [
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -83438,7 +83372,6 @@
       "vanity-sets"
     ],
     "obtain": [
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -83490,7 +83423,6 @@
       "vanity-sets"
     ],
     "obtain": [
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -83542,7 +83474,6 @@
       "vanity-sets"
     ],
     "obtain": [
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -84179,7 +84110,6 @@
       "vanity-sets"
     ],
     "obtain": [
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -84231,7 +84161,6 @@
       "vanity-sets"
     ],
     "obtain": [
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -84283,7 +84212,6 @@
       "vanity-sets"
     ],
     "obtain": [
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -84333,7 +84261,7 @@
       "wings"
     ],
     "obtain": [
-      "bag"
+      "treasure-bag"
     ],
     "vendors": [],
     "events": [],
@@ -84380,7 +84308,7 @@
       "wings"
     ],
     "obtain": [
-      "bag"
+      "treasure-bag"
     ],
     "vendors": [],
     "events": [],
@@ -84427,7 +84355,7 @@
       "wings"
     ],
     "obtain": [
-      "bag"
+      "treasure-bag"
     ],
     "vendors": [],
     "events": [],
@@ -84474,7 +84402,7 @@
       "wings"
     ],
     "obtain": [
-      "bag"
+      "treasure-bag"
     ],
     "vendors": [],
     "events": [],
@@ -84523,7 +84451,6 @@
       "vanity-sets"
     ],
     "obtain": [
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -84575,7 +84502,6 @@
       "vanity-sets"
     ],
     "obtain": [
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -105499,7 +105425,8 @@
     "useTime": 15,
     "baitPower": 20,
     "conditions": [],
-    "milestone": "start"
+    "milestone": "start",
+    "milestoneVia": "Caught with a Bug Net"
   },
   {
     "key": "FireflyinaBottle",
@@ -105600,7 +105527,8 @@
     "useTime": 15,
     "baitPower": 5,
     "conditions": [],
-    "milestone": "start"
+    "milestone": "start",
+    "milestoneVia": "Caught with a Bug Net"
   },
   {
     "key": "PurpleEmperorButterfly",
@@ -105650,7 +105578,8 @@
     "useTime": 15,
     "baitPower": 35,
     "conditions": [],
-    "milestone": "start"
+    "milestone": "start",
+    "milestoneVia": "Caught with a Bug Net"
   },
   {
     "key": "RedAdmiralButterfly",
@@ -105700,7 +105629,8 @@
     "useTime": 15,
     "baitPower": 30,
     "conditions": [],
-    "milestone": "start"
+    "milestone": "start",
+    "milestoneVia": "Caught with a Bug Net"
   },
   {
     "key": "UlyssesButterfly",
@@ -105750,7 +105680,8 @@
     "useTime": 15,
     "baitPower": 20,
     "conditions": [],
-    "milestone": "start"
+    "milestone": "start",
+    "milestoneVia": "Caught with a Bug Net"
   },
   {
     "key": "SulphurButterfly",
@@ -105800,7 +105731,8 @@
     "useTime": 15,
     "baitPower": 10,
     "conditions": [],
-    "milestone": "start"
+    "milestone": "start",
+    "milestoneVia": "Caught with a Bug Net"
   },
   {
     "key": "TreeNymphButterfly",
@@ -105850,7 +105782,8 @@
     "useTime": 15,
     "baitPower": 50,
     "conditions": [],
-    "milestone": "start"
+    "milestone": "start",
+    "milestoneVia": "Caught with a Bug Net"
   },
   {
     "key": "ZebraSwallowtailButterfly",
@@ -105900,7 +105833,8 @@
     "useTime": 15,
     "baitPower": 15,
     "conditions": [],
-    "milestone": "start"
+    "milestone": "start",
+    "milestoneVia": "Caught with a Bug Net"
   },
   {
     "key": "JuliaButterfly",
@@ -105950,7 +105884,8 @@
     "useTime": 15,
     "baitPower": 25,
     "conditions": [],
-    "milestone": "start"
+    "milestone": "start",
+    "milestoneVia": "Caught with a Bug Net"
   },
   {
     "key": "Worm",
@@ -106053,7 +105988,8 @@
     "autoswing": true,
     "useTime": 15,
     "conditions": [],
-    "milestone": "start"
+    "milestone": "start",
+    "milestoneVia": "Caught with a Bug Net"
   },
   {
     "key": "LightningBug",
@@ -106103,7 +106039,8 @@
     "useTime": 15,
     "baitPower": 35,
     "conditions": [],
-    "milestone": "start"
+    "milestone": "start",
+    "milestoneVia": "Caught with a Bug Net"
   },
   {
     "key": "LightningBuginaBottle",
@@ -106208,7 +106145,7 @@
     "baitPower": 10,
     "conditions": [],
     "milestone": "start",
-    "milestoneVia": "From the Extractinator (Old Shoe / Seaweed (junk) / Tin Can)"
+    "milestoneVia": "Caught with a Bug Net"
   },
   {
     "key": "GlowingSnail",
@@ -106258,7 +106195,8 @@
     "useTime": 15,
     "baitPower": 15,
     "conditions": [],
-    "milestone": "start"
+    "milestone": "start",
+    "milestoneVia": "Caught with a Bug Net"
   },
   {
     "key": "FancyGreyWallpaper",
@@ -106642,7 +106580,8 @@
     "autoswing": true,
     "useTime": 15,
     "conditions": [],
-    "milestone": "start"
+    "milestone": "start",
+    "milestoneVia": "Caught with a Bug Net"
   },
   {
     "key": "BlueJay",
@@ -106690,7 +106629,8 @@
     "autoswing": true,
     "useTime": 15,
     "conditions": [],
-    "milestone": "start"
+    "milestone": "start",
+    "milestoneVia": "Caught with a Bug Net"
   },
   {
     "key": "Cardinal",
@@ -106738,7 +106678,8 @@
     "autoswing": true,
     "useTime": 15,
     "conditions": [],
-    "milestone": "start"
+    "milestone": "start",
+    "milestoneVia": "Caught with a Bug Net"
   },
   {
     "key": "Squirrel",
@@ -106786,7 +106727,8 @@
     "autoswing": true,
     "useTime": 15,
     "conditions": [],
-    "milestone": "start"
+    "milestone": "start",
+    "milestoneVia": "Caught with a Bug Net"
   },
   {
     "key": "Bunny",
@@ -106834,7 +106776,8 @@
     "autoswing": true,
     "useTime": 15,
     "conditions": [],
-    "milestone": "start"
+    "milestone": "start",
+    "milestoneVia": "Caught with a Bug Net"
   },
   {
     "key": "CactusBookcase",
@@ -112003,7 +111946,8 @@
     "autoswing": true,
     "useTime": 15,
     "conditions": [],
-    "milestone": "start"
+    "milestone": "start",
+    "milestoneVia": "Caught with a Bug Net"
   },
   {
     "key": "MallardDuck",
@@ -112051,7 +111995,8 @@
     "autoswing": true,
     "useTime": 15,
     "conditions": [],
-    "milestone": "start"
+    "milestone": "start",
+    "milestoneVia": "Caught with a Bug Net"
   },
   {
     "key": "Duck",
@@ -112099,7 +112044,8 @@
     "autoswing": true,
     "useTime": 15,
     "conditions": [],
-    "milestone": "start"
+    "milestone": "start",
+    "milestoneVia": "Caught with a Bug Net"
   },
   {
     "key": "HoneyBathtub",
@@ -113790,7 +113736,8 @@
     "useTime": 15,
     "baitPower": 15,
     "conditions": [],
-    "milestone": "start"
+    "milestone": "start",
+    "milestoneVia": "Caught with a Bug Net"
   },
   {
     "key": "Scorpion",
@@ -113840,7 +113787,8 @@
     "useTime": 15,
     "baitPower": 10,
     "conditions": [],
-    "milestone": "start"
+    "milestone": "start",
+    "milestoneVia": "Caught with a Bug Net"
   },
   {
     "key": "BubbleWallpaper",
@@ -114497,7 +114445,6 @@
     "obtain": [
       "vendor",
       "drop",
-      "bag",
       "treasure-bag"
     ],
     "vendors": [
@@ -116317,7 +116264,8 @@
     "autoswing": true,
     "useTime": 15,
     "conditions": [],
-    "milestone": "start"
+    "milestone": "start",
+    "milestoneVia": "Caught with a Bug Net"
   },
   {
     "key": "PenguinCage",
@@ -116955,7 +116903,6 @@
     ],
     "obtain": [
       "drop",
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -127725,7 +127672,6 @@
     ],
     "obtain": [
       "drop",
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -127776,7 +127722,6 @@
     ],
     "obtain": [
       "drop",
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -128046,7 +127991,8 @@
     "useTime": 15,
     "baitPower": 20,
     "conditions": [],
-    "milestone": "start"
+    "milestone": "start",
+    "milestoneVia": "Caught with a Bug Net"
   },
   {
     "key": "GreenJellyfish",
@@ -128141,7 +128087,8 @@
     "useTime": 15,
     "baitPower": 20,
     "conditions": [],
-    "milestone": "start"
+    "milestone": "start",
+    "milestoneVia": "Caught with a Bug Net"
   },
   {
     "key": "BlueJellyfishJar",
@@ -131258,7 +131205,6 @@
     ],
     "obtain": [
       "drop",
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -135483,7 +135429,6 @@
     ],
     "obtain": [
       "drop",
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -136685,7 +136630,6 @@
     ],
     "obtain": [
       "drop",
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -136736,7 +136680,6 @@
     ],
     "obtain": [
       "drop",
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -136789,7 +136732,6 @@
     ],
     "obtain": [
       "drop",
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -137323,7 +137265,6 @@
     ],
     "obtain": [
       "drop",
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -137381,7 +137322,6 @@
     ],
     "obtain": [
       "drop",
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -137440,7 +137380,6 @@
     ],
     "obtain": [
       "drop",
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -137499,7 +137438,6 @@
     ],
     "obtain": [
       "drop",
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -143392,7 +143330,8 @@
     "useTime": 15,
     "baitPower": 10,
     "conditions": [],
-    "milestone": "start"
+    "milestone": "start",
+    "milestoneVia": "Caught with a Bug Net"
   },
   {
     "key": "GrasshopperCage",
@@ -150757,7 +150696,6 @@
     ],
     "obtain": [
       "drop",
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -150838,7 +150776,8 @@
     "autoswing": true,
     "useTime": 15,
     "conditions": [],
-    "milestone": "start"
+    "milestone": "start",
+    "milestoneVia": "Caught with a Bug Net"
   },
   {
     "key": "GoldBunny",
@@ -150883,7 +150822,8 @@
     "autoswing": true,
     "useTime": 15,
     "conditions": [],
-    "milestone": "start"
+    "milestone": "start",
+    "milestoneVia": "Caught with a Bug Net"
   },
   {
     "key": "GoldButterfly",
@@ -150930,7 +150870,8 @@
     "useTime": 15,
     "baitPower": 50,
     "conditions": [],
-    "milestone": "start"
+    "milestone": "start",
+    "milestoneVia": "Caught with a Bug Net"
   },
   {
     "key": "GoldFrog",
@@ -150975,7 +150916,8 @@
     "autoswing": true,
     "useTime": 15,
     "conditions": [],
-    "milestone": "start"
+    "milestone": "start",
+    "milestoneVia": "Caught with a Bug Net"
   },
   {
     "key": "GoldGrasshopper",
@@ -151022,7 +150964,8 @@
     "useTime": 15,
     "baitPower": 50,
     "conditions": [],
-    "milestone": "start"
+    "milestone": "start",
+    "milestoneVia": "Caught with a Bug Net"
   },
   {
     "key": "GoldMouse",
@@ -151067,7 +151010,8 @@
     "autoswing": true,
     "useTime": 15,
     "conditions": [],
-    "milestone": "start"
+    "milestone": "start",
+    "milestoneVia": "Caught with a Bug Net"
   },
   {
     "key": "GoldWorm",
@@ -156397,7 +156341,6 @@
     ],
     "obtain": [
       "drop",
-      "bag",
       "treasure-bag",
       "shimmer"
     ],
@@ -157459,7 +157402,6 @@
     ],
     "obtain": [
       "drop",
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -157616,7 +157558,6 @@
     ],
     "obtain": [
       "drop",
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -157766,7 +157707,7 @@
       "other-dye"
     ],
     "obtain": [
-      "bag",
+      "treasure-bag",
       "strange-plant"
     ],
     "vendors": [],
@@ -159562,7 +159503,6 @@
     ],
     "obtain": [
       "drop",
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -159714,7 +159654,6 @@
     ],
     "obtain": [
       "drop",
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -159821,7 +159760,6 @@
     ],
     "obtain": [
       "drop",
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -161056,7 +160994,6 @@
       "defense-survival"
     ],
     "obtain": [
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -161390,7 +161327,6 @@
       "defense-survival"
     ],
     "obtain": [
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -166140,7 +166076,8 @@
     "useTime": 15,
     "baitPower": 15,
     "conditions": [],
-    "milestone": "start"
+    "milestone": "start",
+    "milestoneVia": "Caught with a Bug Net"
   },
   {
     "key": "Sluggy",
@@ -166187,7 +166124,8 @@
     "useTime": 15,
     "baitPower": 25,
     "conditions": [],
-    "milestone": "start"
+    "milestone": "start",
+    "milestoneVia": "Caught with a Bug Net"
   },
   {
     "key": "Buggy",
@@ -166234,7 +166172,8 @@
     "useTime": 15,
     "baitPower": 40,
     "conditions": [],
-    "milestone": "start"
+    "milestone": "start",
+    "milestoneVia": "Caught with a Bug Net"
   },
   {
     "key": "GrubSoup",
@@ -167686,7 +167625,6 @@
       "defense-survival"
     ],
     "obtain": [
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -167735,7 +167673,6 @@
       "defense-survival"
     ],
     "obtain": [
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -167834,7 +167771,6 @@
       "vanity-sets"
     ],
     "obtain": [
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -167886,7 +167822,6 @@
       "vanity-sets"
     ],
     "obtain": [
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -167936,7 +167871,7 @@
       "wings"
     ],
     "obtain": [
-      "bag"
+      "treasure-bag"
     ],
     "vendors": [],
     "events": [],
@@ -168774,7 +168709,6 @@
       "combat"
     ],
     "obtain": [
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -170929,7 +170863,7 @@
       "yoyo"
     ],
     "obtain": [
-      "bag"
+      "treasure-bag"
     ],
     "vendors": [],
     "events": [],
@@ -170983,7 +170917,6 @@
       "yoyo"
     ],
     "obtain": [
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -173128,7 +173061,6 @@
       "combat"
     ],
     "obtain": [
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -173225,7 +173157,6 @@
     ],
     "subcategories": [],
     "obtain": [
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -173276,7 +173207,6 @@
       "combat"
     ],
     "obtain": [
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -173325,7 +173255,6 @@
       "defense-survival"
     ],
     "obtain": [
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -174148,7 +174077,6 @@
       "other-crafting-material"
     ],
     "obtain": [
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -174195,7 +174123,6 @@
       "other-crafting-material"
     ],
     "obtain": [
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -174242,7 +174169,6 @@
       "other-crafting-material"
     ],
     "obtain": [
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -174790,7 +174716,6 @@
       "other-mount"
     ],
     "obtain": [
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -174842,7 +174767,6 @@
       "projectile-melee"
     ],
     "obtain": [
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -175664,7 +175588,6 @@
     ],
     "obtain": [
       "drop",
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -175913,7 +175836,6 @@
     ],
     "obtain": [
       "drop",
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -179434,7 +179356,6 @@
     ],
     "obtain": [
       "drop",
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -183720,7 +183641,6 @@
     ],
     "obtain": [
       "drop",
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -184807,7 +184727,8 @@
     "autoswing": true,
     "useTime": 15,
     "conditions": [],
-    "milestone": "start"
+    "milestone": "start",
+    "milestoneVia": "Caught with a Bug Net"
   },
   {
     "key": "SquirrelGold",
@@ -184852,7 +184773,8 @@
     "autoswing": true,
     "useTime": 15,
     "conditions": [],
-    "milestone": "start"
+    "milestone": "start",
+    "milestoneVia": "Caught with a Bug Net"
   },
   {
     "key": "SquirrelOrangeCage",
@@ -185066,7 +184988,6 @@
     ],
     "obtain": [
       "drop",
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -185120,7 +185041,6 @@
     ],
     "obtain": [
       "drop",
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -185176,7 +185096,6 @@
     ],
     "obtain": [
       "drop",
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -185463,7 +185382,6 @@
       "light-pet"
     ],
     "obtain": [
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -185516,7 +185434,6 @@
       "vanity-sets"
     ],
     "obtain": [
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -185568,7 +185485,6 @@
       "vanity-sets"
     ],
     "obtain": [
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -185618,7 +185534,7 @@
       "wings"
     ],
     "obtain": [
-      "bag"
+      "treasure-bag"
     ],
     "vendors": [],
     "events": [],
@@ -185669,7 +185585,6 @@
       "other-accessory"
     ],
     "obtain": [
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -185718,7 +185633,7 @@
       "wings"
     ],
     "obtain": [
-      "bag"
+      "treasure-bag"
     ],
     "vendors": [],
     "events": [],
@@ -185767,7 +185682,6 @@
       "vanity-sets"
     ],
     "obtain": [
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -185866,7 +185780,6 @@
       "vanity-sets"
     ],
     "obtain": [
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -185918,7 +185831,6 @@
       "vanity-sets"
     ],
     "obtain": [
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -185970,7 +185882,6 @@
       "vanity-sets"
     ],
     "obtain": [
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -186020,7 +185931,7 @@
       "wings"
     ],
     "obtain": [
-      "bag"
+      "treasure-bag"
     ],
     "vendors": [],
     "events": [],
@@ -186069,7 +185980,6 @@
       "vanity-sets"
     ],
     "obtain": [
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -186121,7 +186031,6 @@
       "vanity-sets"
     ],
     "obtain": [
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -186173,7 +186082,6 @@
       "vanity-sets"
     ],
     "obtain": [
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -186223,7 +186131,7 @@
       "wings"
     ],
     "obtain": [
-      "bag"
+      "treasure-bag"
     ],
     "vendors": [],
     "events": [],
@@ -186564,7 +186472,7 @@
       "other-dye"
     ],
     "obtain": [
-      "bag"
+      "treasure-bag"
     ],
     "vendors": [],
     "events": [],
@@ -194758,7 +194666,6 @@
     ],
     "obtain": [
       "drop",
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -197614,7 +197521,6 @@
     ],
     "obtain": [
       "drop",
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -198176,7 +198082,6 @@
     ],
     "obtain": [
       "drop",
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -199782,7 +199687,6 @@
     ],
     "obtain": [
       "drop",
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -199839,7 +199743,6 @@
     ],
     "obtain": [
       "drop",
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -200380,7 +200283,6 @@
     ],
     "obtain": [
       "drop",
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -201122,7 +201024,6 @@
     ],
     "obtain": [
       "drop",
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -203013,7 +202914,6 @@
       "vanity-sets"
     ],
     "obtain": [
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -203065,7 +202965,6 @@
       "vanity-sets"
     ],
     "obtain": [
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -203117,7 +203016,6 @@
       "vanity-sets"
     ],
     "obtain": [
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -203167,7 +203065,7 @@
       "wings"
     ],
     "obtain": [
-      "bag"
+      "treasure-bag"
     ],
     "vendors": [],
     "events": [],
@@ -203216,7 +203114,6 @@
       "vanity-sets"
     ],
     "obtain": [
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -203268,7 +203165,6 @@
       "vanity-sets"
     ],
     "obtain": [
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -203320,7 +203216,6 @@
       "vanity-sets"
     ],
     "obtain": [
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -203370,7 +203265,7 @@
       "wings"
     ],
     "obtain": [
-      "bag"
+      "treasure-bag"
     ],
     "vendors": [],
     "events": [],
@@ -203421,7 +203316,6 @@
       "other-accessory"
     ],
     "obtain": [
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -203471,7 +203365,6 @@
     ],
     "obtain": [
       "drop",
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -210323,7 +210216,8 @@
     "useTime": 15,
     "tooltip": "'Hey! Listen!'",
     "conditions": [],
-    "milestone": "start"
+    "milestone": "start",
+    "milestoneVia": "Caught with a Bug Net"
   },
   {
     "key": "FairyCritterGreen",
@@ -210369,7 +210263,8 @@
     "useTime": 15,
     "tooltip": "'Hey! Listen!'",
     "conditions": [],
-    "milestone": "start"
+    "milestone": "start",
+    "milestoneVia": "Caught with a Bug Net"
   },
   {
     "key": "FairyCritterBlue",
@@ -210415,7 +210310,8 @@
     "useTime": 15,
     "tooltip": "'Hey! Listen!'",
     "conditions": [],
-    "milestone": "start"
+    "milestone": "start",
+    "milestoneVia": "Caught with a Bug Net"
   },
   {
     "key": "JunoniaShell",
@@ -220459,7 +220355,8 @@
     "useTime": 15,
     "tooltip": "'Not to be confused with the elusive Gold Gold Goldfish'",
     "conditions": [],
-    "milestone": "start"
+    "milestone": "start",
+    "milestoneVia": "Caught with a Bug Net"
   },
   {
     "key": "GoldGoldfishBowl",
@@ -223473,7 +223370,8 @@
     "useTime": 15,
     "baitPower": 20,
     "conditions": [],
-    "milestone": "start"
+    "milestone": "start",
+    "milestoneVia": "Caught with a Bug Net"
   },
   {
     "key": "BlueDragonfly",
@@ -223520,7 +223418,8 @@
     "useTime": 15,
     "baitPower": 20,
     "conditions": [],
-    "milestone": "start"
+    "milestone": "start",
+    "milestoneVia": "Caught with a Bug Net"
   },
   {
     "key": "GreenDragonfly",
@@ -223567,7 +223466,8 @@
     "useTime": 15,
     "baitPower": 20,
     "conditions": [],
-    "milestone": "start"
+    "milestone": "start",
+    "milestoneVia": "Caught with a Bug Net"
   },
   {
     "key": "OrangeDragonfly",
@@ -223614,7 +223514,8 @@
     "useTime": 15,
     "baitPower": 20,
     "conditions": [],
-    "milestone": "start"
+    "milestone": "start",
+    "milestoneVia": "Caught with a Bug Net"
   },
   {
     "key": "RedDragonfly",
@@ -223661,7 +223562,8 @@
     "useTime": 15,
     "baitPower": 20,
     "conditions": [],
-    "milestone": "start"
+    "milestone": "start",
+    "milestoneVia": "Caught with a Bug Net"
   },
   {
     "key": "YellowDragonfly",
@@ -223708,7 +223610,8 @@
     "useTime": 15,
     "baitPower": 20,
     "conditions": [],
-    "milestone": "start"
+    "milestone": "start",
+    "milestoneVia": "Caught with a Bug Net"
   },
   {
     "key": "GoldDragonfly",
@@ -223755,7 +223658,8 @@
     "useTime": 15,
     "baitPower": 50,
     "conditions": [],
-    "milestone": "start"
+    "milestone": "start",
+    "milestoneVia": "Caught with a Bug Net"
   },
   {
     "key": "PortableStool",
@@ -224773,7 +224677,8 @@
     "autoswing": true,
     "useTime": 15,
     "conditions": [],
-    "milestone": "start"
+    "milestone": "start",
+    "milestoneVia": "Caught with a Bug Net"
   },
   {
     "key": "SeagullStatue",
@@ -224869,7 +224774,8 @@
     "useTime": 15,
     "baitPower": 17,
     "conditions": [],
-    "milestone": "start"
+    "milestone": "start",
+    "milestoneVia": "Caught with a Bug Net"
   },
   {
     "key": "GoldLadyBug",
@@ -224916,7 +224822,8 @@
     "useTime": 15,
     "baitPower": 50,
     "conditions": [],
-    "milestone": "start"
+    "milestone": "start",
+    "milestoneVia": "Caught with a Bug Net"
   },
   {
     "key": "Maggot",
@@ -224963,7 +224870,8 @@
     "useTime": 15,
     "baitPower": 22,
     "conditions": [],
-    "milestone": "start"
+    "milestone": "start",
+    "milestoneVia": "Caught with a Bug Net"
   },
   {
     "key": "MaggotCage",
@@ -225461,7 +225369,8 @@
     "autoswing": true,
     "useTime": 15,
     "conditions": [],
-    "milestone": "start"
+    "milestone": "start",
+    "milestoneVia": "Caught with a Bug Net"
   },
   {
     "key": "Grebe",
@@ -225506,7 +225415,8 @@
     "autoswing": true,
     "useTime": 15,
     "conditions": [],
-    "milestone": "start"
+    "milestone": "start",
+    "milestoneVia": "Caught with a Bug Net"
   },
   {
     "key": "Rat",
@@ -225551,7 +225461,8 @@
     "autoswing": true,
     "useTime": 15,
     "conditions": [],
-    "milestone": "start"
+    "milestone": "start",
+    "milestoneVia": "Caught with a Bug Net"
   },
   {
     "key": "RatCage",
@@ -226565,7 +226476,8 @@
     "autoswing": true,
     "useTime": 15,
     "conditions": [],
-    "milestone": "start"
+    "milestone": "start",
+    "milestoneVia": "Caught with a Bug Net"
   },
   {
     "key": "OwlCage",
@@ -227685,7 +227597,8 @@
     "useTime": 15,
     "baitPower": 17,
     "conditions": [],
-    "milestone": "start"
+    "milestone": "start",
+    "milestoneVia": "Caught with a Bug Net"
   },
   {
     "key": "GoldWaterStrider",
@@ -227732,7 +227645,8 @@
     "useTime": 15,
     "baitPower": 50,
     "conditions": [],
-    "milestone": "start"
+    "milestone": "start",
+    "milestoneVia": "Caught with a Bug Net"
   },
   {
     "key": "LawnFlamingo",
@@ -230007,7 +229921,8 @@
     "autoswing": true,
     "useTime": 15,
     "conditions": [],
-    "milestone": "start"
+    "milestone": "start",
+    "milestoneVia": "Caught with a Bug Net"
   },
   {
     "key": "TurtleJungle",
@@ -230052,7 +229967,8 @@
     "autoswing": true,
     "useTime": 15,
     "conditions": [],
-    "milestone": "start"
+    "milestone": "start",
+    "milestoneVia": "Caught with a Bug Net"
   },
   {
     "key": "TurtleStatue",
@@ -230768,7 +230684,8 @@
     "autoswing": true,
     "useTime": 15,
     "conditions": [],
-    "milestone": "start"
+    "milestone": "start",
+    "milestoneVia": "Caught with a Bug Net"
   },
   {
     "key": "SeahorseCage",
@@ -230860,7 +230777,8 @@
     "autoswing": true,
     "useTime": 15,
     "conditions": [],
-    "milestone": "start"
+    "milestone": "start",
+    "milestoneVia": "Caught with a Bug Net"
   },
   {
     "key": "GoldSeahorseCage",
@@ -242477,7 +242395,6 @@
     ],
     "obtain": [
       "drop",
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -243252,7 +243169,7 @@
       "wings"
     ],
     "obtain": [
-      "bag"
+      "treasure-bag"
     ],
     "vendors": [],
     "events": [],
@@ -243352,7 +243269,6 @@
       "vanity-sets"
     ],
     "obtain": [
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -243404,7 +243320,6 @@
       "vanity-sets"
     ],
     "obtain": [
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -243456,7 +243371,6 @@
       "vanity-sets"
     ],
     "obtain": [
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -244072,7 +243986,7 @@
       "wings"
     ],
     "obtain": [
-      "bag"
+      "treasure-bag"
     ],
     "vendors": [],
     "events": [],
@@ -244121,7 +244035,6 @@
       "vanity-sets"
     ],
     "obtain": [
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -244173,7 +244086,6 @@
       "vanity-sets"
     ],
     "obtain": [
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -244225,7 +244137,6 @@
       "vanity-sets"
     ],
     "obtain": [
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -244275,7 +244186,7 @@
       "wings"
     ],
     "obtain": [
-      "bag"
+      "treasure-bag"
     ],
     "vendors": [],
     "events": [],
@@ -244324,7 +244235,6 @@
       "vanity-sets"
     ],
     "obtain": [
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -244376,7 +244286,6 @@
       "vanity-sets"
     ],
     "obtain": [
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -244428,7 +244337,6 @@
       "vanity-sets"
     ],
     "obtain": [
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -244478,7 +244386,7 @@
       "wings"
     ],
     "obtain": [
-      "bag"
+      "treasure-bag"
     ],
     "vendors": [],
     "events": [],
@@ -244527,7 +244435,6 @@
       "vanity-sets"
     ],
     "obtain": [
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -244579,7 +244486,6 @@
       "vanity-sets"
     ],
     "obtain": [
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -244631,7 +244537,6 @@
       "vanity-sets"
     ],
     "obtain": [
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -244682,7 +244587,6 @@
     ],
     "obtain": [
       "drop",
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -245757,7 +245661,6 @@
     ],
     "obtain": [
       "drop",
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -248016,7 +247919,6 @@
     ],
     "obtain": [
       "drop",
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -248462,7 +248364,8 @@
     "autoswing": true,
     "useTime": 15,
     "conditions": [],
-    "milestone": "start"
+    "milestone": "start",
+    "milestoneVia": "Caught with a Bug Net"
   },
   {
     "key": "GemSquirrelTopaz",
@@ -248507,7 +248410,8 @@
     "autoswing": true,
     "useTime": 15,
     "conditions": [],
-    "milestone": "start"
+    "milestone": "start",
+    "milestoneVia": "Caught with a Bug Net"
   },
   {
     "key": "GemSquirrelSapphire",
@@ -248552,7 +248456,8 @@
     "autoswing": true,
     "useTime": 15,
     "conditions": [],
-    "milestone": "start"
+    "milestone": "start",
+    "milestoneVia": "Caught with a Bug Net"
   },
   {
     "key": "GemSquirrelEmerald",
@@ -248597,7 +248502,8 @@
     "autoswing": true,
     "useTime": 15,
     "conditions": [],
-    "milestone": "start"
+    "milestone": "start",
+    "milestoneVia": "Caught with a Bug Net"
   },
   {
     "key": "GemSquirrelRuby",
@@ -248642,7 +248548,8 @@
     "autoswing": true,
     "useTime": 15,
     "conditions": [],
-    "milestone": "start"
+    "milestone": "start",
+    "milestoneVia": "Caught with a Bug Net"
   },
   {
     "key": "GemSquirrelDiamond",
@@ -248687,7 +248594,8 @@
     "autoswing": true,
     "useTime": 15,
     "conditions": [],
-    "milestone": "start"
+    "milestone": "start",
+    "milestoneVia": "Caught with a Bug Net"
   },
   {
     "key": "GemSquirrelAmber",
@@ -248732,7 +248640,8 @@
     "autoswing": true,
     "useTime": 15,
     "conditions": [],
-    "milestone": "start"
+    "milestone": "start",
+    "milestoneVia": "Caught with a Bug Net"
   },
   {
     "key": "GemBunnyAmethyst",
@@ -248777,7 +248686,8 @@
     "autoswing": true,
     "useTime": 15,
     "conditions": [],
-    "milestone": "start"
+    "milestone": "start",
+    "milestoneVia": "Caught with a Bug Net"
   },
   {
     "key": "GemBunnyTopaz",
@@ -248822,7 +248732,8 @@
     "autoswing": true,
     "useTime": 15,
     "conditions": [],
-    "milestone": "start"
+    "milestone": "start",
+    "milestoneVia": "Caught with a Bug Net"
   },
   {
     "key": "GemBunnySapphire",
@@ -248867,7 +248778,8 @@
     "autoswing": true,
     "useTime": 15,
     "conditions": [],
-    "milestone": "start"
+    "milestone": "start",
+    "milestoneVia": "Caught with a Bug Net"
   },
   {
     "key": "GemBunnyEmerald",
@@ -248912,7 +248824,8 @@
     "autoswing": true,
     "useTime": 15,
     "conditions": [],
-    "milestone": "start"
+    "milestone": "start",
+    "milestoneVia": "Caught with a Bug Net"
   },
   {
     "key": "GemBunnyRuby",
@@ -248957,7 +248870,8 @@
     "autoswing": true,
     "useTime": 15,
     "conditions": [],
-    "milestone": "start"
+    "milestone": "start",
+    "milestoneVia": "Caught with a Bug Net"
   },
   {
     "key": "GemBunnyDiamond",
@@ -249002,7 +248916,8 @@
     "autoswing": true,
     "useTime": 15,
     "conditions": [],
-    "milestone": "start"
+    "milestone": "start",
+    "milestoneVia": "Caught with a Bug Net"
   },
   {
     "key": "GemBunnyAmber",
@@ -249047,7 +248962,8 @@
     "autoswing": true,
     "useTime": 15,
     "conditions": [],
-    "milestone": "start"
+    "milestone": "start",
+    "milestoneVia": "Caught with a Bug Net"
   },
   {
     "key": "HellButterfly",
@@ -249094,7 +249010,8 @@
     "useTime": 15,
     "baitPower": 15,
     "conditions": [],
-    "milestone": "start"
+    "milestone": "start",
+    "milestoneVia": "Caught with a Bug Net"
   },
   {
     "key": "HellButterflyJar",
@@ -249188,7 +249105,8 @@
     "useTime": 15,
     "baitPower": 25,
     "conditions": [],
-    "milestone": "start"
+    "milestone": "start",
+    "milestoneVia": "Caught with a Bug Net"
   },
   {
     "key": "LavaflyinaBottle",
@@ -249283,7 +249201,8 @@
     "useTime": 15,
     "baitPower": 35,
     "conditions": [],
-    "milestone": "start"
+    "milestone": "start",
+    "milestoneVia": "Caught with a Bug Net"
   },
   {
     "key": "MagmaSnailCage",
@@ -252296,7 +252215,6 @@
     ],
     "obtain": [
       "drop",
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -252405,7 +252323,6 @@
     ],
     "obtain": [
       "drop",
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -252856,7 +252773,6 @@
     ],
     "obtain": [
       "drop",
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -254315,7 +254231,6 @@
     ],
     "obtain": [
       "drop",
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -254370,7 +254285,6 @@
     ],
     "obtain": [
       "drop",
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -254422,7 +254336,6 @@
       "wings"
     ],
     "obtain": [
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -255729,7 +255642,6 @@
     ],
     "obtain": [
       "drop",
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -255778,7 +255690,6 @@
     ],
     "obtain": [
       "drop",
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -255829,7 +255740,6 @@
     ],
     "obtain": [
       "drop",
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -255881,7 +255791,6 @@
     ],
     "obtain": [
       "drop",
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -255933,7 +255842,6 @@
     ],
     "obtain": [
       "drop",
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -256039,7 +255947,6 @@
     ],
     "obtain": [
       "drop",
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -256091,7 +255998,6 @@
       "combat"
     ],
     "obtain": [
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -256188,7 +256094,6 @@
       "movement"
     ],
     "obtain": [
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -260800,7 +260705,6 @@
     ],
     "obtain": [
       "drop",
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -261987,7 +261891,6 @@
     ],
     "obtain": [
       "drop",
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -262159,7 +262062,6 @@
     ],
     "obtain": [
       "drop",
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -262255,7 +262157,6 @@
       "other-accessory"
     ],
     "obtain": [
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -262304,7 +262205,6 @@
     ],
     "obtain": [
       "drop",
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -262904,7 +262804,6 @@
     ],
     "obtain": [
       "drop",
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -263107,7 +263006,6 @@
     ],
     "obtain": [
       "drop",
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -263162,7 +263060,6 @@
     ],
     "obtain": [
       "drop",
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -263218,7 +263115,6 @@
     ],
     "obtain": [
       "drop",
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -263908,7 +263804,8 @@
     "useTime": 15,
     "baitPower": 10,
     "conditions": [],
-    "milestone": "start"
+    "milestone": "start",
+    "milestoneVia": "Caught with a Bug Net"
   },
   {
     "key": "StinkbugCage",
@@ -267821,7 +267718,8 @@
     "autoswing": true,
     "useTime": 15,
     "conditions": [],
-    "milestone": "start"
+    "milestone": "start",
+    "milestoneVia": "Caught with a Bug Net"
   },
   {
     "key": "ScarletMacawCage",
@@ -272256,7 +272154,8 @@
     "autoswing": true,
     "useTime": 15,
     "conditions": [],
-    "milestone": "start"
+    "milestone": "start",
+    "milestoneVia": "Caught with a Bug Net"
   },
   {
     "key": "BlueMacawCage",
@@ -272794,7 +272693,8 @@
     "autoswing": true,
     "useTime": 15,
     "conditions": [],
-    "milestone": "start"
+    "milestone": "start",
+    "milestoneVia": "Caught with a Bug Net"
   },
   {
     "key": "YellowCockatiel",
@@ -272839,7 +272739,8 @@
     "autoswing": true,
     "useTime": 15,
     "conditions": [],
-    "milestone": "start"
+    "milestone": "start",
+    "milestoneVia": "Caught with a Bug Net"
   },
   {
     "key": "GrayCockatiel",
@@ -272884,7 +272785,8 @@
     "autoswing": true,
     "useTime": 15,
     "conditions": [],
-    "milestone": "start"
+    "milestone": "start",
+    "milestoneVia": "Caught with a Bug Net"
   },
   {
     "key": "ToucanCage",
@@ -274671,7 +274573,8 @@
     "autoswing": true,
     "useTime": 15,
     "conditions": [],
-    "milestone": "start"
+    "milestone": "start",
+    "milestoneVia": "Caught with a Bug Net"
   },
   {
     "key": "ShimmerflyinaBottle",
@@ -275053,7 +274956,8 @@
     "useTime": 90,
     "tooltip": "Displays everything\nAllows you to return home at will\nRight click to toggle destination\n'If you listen closely, you can hear something about your car's warranty'",
     "conditions": [],
-    "milestone": "start"
+    "milestone": "start",
+    "milestoneVia": "Other form of an item"
   },
   {
     "key": "ShellphoneSpawn",
@@ -275099,7 +275003,8 @@
     "useTime": 90,
     "tooltip": "Displays everything\nAllows you to return to spawn at will\nRight click to toggle destination\n'If you listen closely, you can hear something about your car's warranty'",
     "conditions": [],
-    "milestone": "start"
+    "milestone": "start",
+    "milestoneVia": "Other form of an item"
   },
   {
     "key": "ShellphoneOcean",
@@ -275145,7 +275050,8 @@
     "useTime": 90,
     "tooltip": "Displays everything\nAllows you to travel to the ocean at will\nRight click to toggle destination\n'If you listen closely, you can hear something about your car's warranty'",
     "conditions": [],
-    "milestone": "start"
+    "milestone": "start",
+    "milestoneVia": "Other form of an item"
   },
   {
     "key": "ShellphoneHell",
@@ -275191,7 +275097,8 @@
     "useTime": 90,
     "tooltip": "Displays everything\nAllows you to travel to the underworld at will\nRight click to toggle destination\n'If you listen closely, you can hear something about your car's warranty'",
     "conditions": [],
-    "milestone": "start"
+    "milestone": "start",
+    "milestoneVia": "Other form of an item"
   },
   {
     "key": "MusicBoxShimmer",
@@ -276290,7 +276197,6 @@
     ],
     "obtain": [
       "drop",
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -279731,7 +279637,8 @@
     "autoswing": false,
     "tooltip": "Prevents you from hurting critters while in the inventory\nPrevents you from accidentally destroying the environment while in the inventory\nEffects are currently inactive, Right click to reactivate",
     "conditions": [],
-    "milestone": "start"
+    "milestone": "start",
+    "milestoneVia": "Other form of an item"
   },
   {
     "key": "DeadCellsMushroomBoiSummonItem",
@@ -282584,7 +282491,8 @@
     "useTime": 15,
     "tooltip": "'Pufferfish are friends, not food'",
     "conditions": [],
-    "milestone": "start"
+    "milestone": "start",
+    "milestoneVia": "Caught with a Bug Net"
   },
   {
     "key": "PufferfishCage",
@@ -283296,7 +283204,6 @@
     ],
     "obtain": [
       "drop",
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -286129,7 +286036,6 @@
       "vanity-sets"
     ],
     "obtain": [
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -286181,7 +286087,6 @@
       "vanity-sets"
     ],
     "obtain": [
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -286233,7 +286138,6 @@
       "vanity-sets"
     ],
     "obtain": [
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -286283,7 +286187,7 @@
       "wings"
     ],
     "obtain": [
-      "bag"
+      "treasure-bag"
     ],
     "vendors": [],
     "events": [],
@@ -286334,7 +286238,6 @@
       "other-accessory"
     ],
     "obtain": [
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -290045,7 +289948,8 @@
     "autoswing": false,
     "tooltip": "Can be activated with the right materials\n'At every setback, begin again... wiser.'",
     "conditions": [],
-    "milestone": "start"
+    "milestone": "start",
+    "milestoneVia": "Other form of an item"
   },
   {
     "key": "EnchantedPixieDust",
@@ -291110,7 +291014,6 @@
       "vanity-sets"
     ],
     "obtain": [
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -291162,7 +291065,6 @@
       "vanity-sets"
     ],
     "obtain": [
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -291214,7 +291116,6 @@
       "vanity-sets"
     ],
     "obtain": [
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -291264,7 +291165,7 @@
       "wings"
     ],
     "obtain": [
-      "bag"
+      "treasure-bag"
     ],
     "vendors": [],
     "events": [],
@@ -313135,7 +313036,6 @@
       "vanity-sets"
     ],
     "obtain": [
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -313187,7 +313087,6 @@
       "vanity-sets"
     ],
     "obtain": [
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -313239,7 +313138,6 @@
       "vanity-sets"
     ],
     "obtain": [
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -313289,7 +313187,7 @@
       "wings"
     ],
     "obtain": [
-      "bag"
+      "treasure-bag"
     ],
     "vendors": [],
     "events": [],
@@ -313340,7 +313238,6 @@
       "other-accessory"
     ],
     "obtain": [
-      "bag",
       "treasure-bag"
     ],
     "vendors": [],
@@ -314730,7 +314627,8 @@
     "autoswing": false,
     "tooltip": "Weapons use ammo in rotating order across your entire inventory\n8% increased ranged damage\nRight click to switch ammo usage modes",
     "conditions": [],
-    "milestone": "start"
+    "milestone": "start",
+    "milestoneVia": "Other form of an item"
   },
   {
     "key": "TimerCrit",
@@ -315872,7 +315770,8 @@
     "autoswing": false,
     "tooltip": "Weapons use ammo randomly\n8% increased ranged damage\nRight click to switch ammo usage modes",
     "conditions": [],
-    "milestone": "start"
+    "milestone": "start",
+    "milestoneVia": "Other form of an item"
   },
   {
     "key": "AmmoCyclerNoCycle",
@@ -315917,7 +315816,8 @@
     "autoswing": false,
     "tooltip": "Weapons use ammo normally!\n8% increased ranged damage\nRight click to switch ammo usage modes",
     "conditions": [],
-    "milestone": "start"
+    "milestone": "start",
+    "milestoneVia": "Other form of an item"
   },
   {
     "key": "OldStyleParkourBookInactive",
@@ -315962,6 +315862,7 @@
     "autoswing": false,
     "tooltip": "Allows moving in nostalgic ways.\nEffects are currently inactive, Right click to reactivate\n'Because it's there!'",
     "conditions": [],
-    "milestone": "start"
+    "milestone": "start",
+    "milestoneVia": "Other form of an item"
   }
 ]

@@ -137,7 +137,10 @@ GitHub Actions.
   Poo "Using a toilet (well fed)". Every obtainable
   item has at least one method: the rest (world items like Fallen Star, items the wiki has not
   tagged yet, about 30) are under "Other". Critters whose name differs from their NPC (butterflies, ducks, scorpions,
-  jellyfish) come from their shared wiki page.
+  jellyfish) come from their shared wiki page. The wiki tags the loot of boss treasure bags as
+  "bag loot" too: an item "From boss treasure bags" is only "From grab bags & crates" if a
+  crate or grab bag really holds it (a drop row; `[obtain.treasure-bag] replaces`). Developer
+  items (D18a) are "From boss treasure bags".
 - **D8b** Everything that says how and when an item is obtained is read off one list of its
   sources (`trackerdata/sources.py`), collected when all the data is read: its drop rows
   (enemies, treasure bags, containers), shop rows, vendors the Items table names without a shop
@@ -769,7 +772,8 @@ Below 640 px width (phones) the layout changes; tablets and desktops stay as the
   - boss drops and treasure bags: the boss's milestone (mechanical bosses: any mechanical boss;
     Lunar Pillars: Lunatic Cultist); event enemies: the event's milestone (`[milestones.*]
     events`, e.g. Pumpkin Moon → Plantera, Martian Madness → Golem); enemies spawning in the
-    Dungeon → Skeletron, in the Jungle Temple → Plantera; other enemies → Start
+    Dungeon → Skeletron, in the Jungle Temple → Plantera (`[milestone_biomes]`); town NPCs →
+    their move-in; other enemies → Start
   - shop rows: the later of the vendor's move-in (`[vendors.*] milestone`, e.g. Cyborg →
     Plantera) and the row's conditions (after a boss, Hardmode)
   - recipes: the latest of the crafting stations (the earliest item providing each) and the
@@ -777,12 +781,14 @@ Below 640 px width (phones) the layout changes; tablets and desktops stay as the
     like "Any Fruit" the earliest), and the boss of its note (RC4). Items whose only sources go
     in a circle (Obsidian from Obsidian Walls and back) or that have no source data count from
     Start; what needs them keeps its other requirements (the Obsidian Shield its Cobalt Shield)
-  - containers: `[container_milestones]` (e.g. Shadow Chest → Skeletron, biome chests →
-    Plantera), else Start; rows only in special seeds do not count
+  - containers: `[milestone_sources]` (e.g. Shadow Chest → Skeletron, biome chests →
+    Plantera), else Start; rows only in special seeds do not count. The Extractinators: the
+    machine, one of the inputs, and Hardmode for the results only then
   - Strange Plant rewards: the conditions of their heading; fishing, quest rewards, player
     death → Start
-  - methods only the wiki's tags name, without data of ours ("Collected in the world"; "Dropped
-    by enemies", chests and bags without a drop row) → Start, but only for items the data has no
+  - methods only the wiki's tags or a name rule give, without data of ours ("Collected in the
+    world", "Caught with a Bug Net", "Other form of an item"; "Dropped by enemies", chests and
+    bags without a drop row) → Start, but only for items the data has no
     source for: the tags are per wiki page, also for items they do not hold for (every
     chandelier is "collected in the world"), so a later source in the data (a recipe, a vendor,
     a drop) counts instead – Steampunk Chest → any mechanical boss, the Dungeon's paintings →

@@ -26,8 +26,8 @@ class Mapping:
         # milestones ("available after", see milestones.py)
         self.milestones = {k: v for k, v in data.get("milestones", {}).items() if isinstance(v, dict)}
         self.milestone_conditions = data.get("milestone_conditions", {})
-        self.container_milestones = data.get("container_milestones", {})
         self.milestone_sources = data.get("milestone_sources", {})
+        self.milestone_biomes = data.get("milestone_biomes", {})
         self.drop_variants = data.get("drop_variants", {})
         self.drop_areas = data.get("drop_areas", {})
         self.sets = data.get("sets", {})

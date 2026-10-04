@@ -33,13 +33,13 @@
     "id": "bag",
     "name": "From grab bags & crates",
     "icon": "https://terraria.wiki.gg/images/Wooden_Crate.png",
-    "count": 570
+    "count": 351
   },
   {
     "id": "treasure-bag",
     "name": "From boss treasure bags",
     "icon": "https://terraria.wiki.gg/images/Treasure_Bag_%28Eye_of_Cthulhu%29.png",
-    "count": 228
+    "count": 250
   },
   {
     "id": "fishing",
