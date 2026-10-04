@@ -6,8 +6,10 @@ from .common import WIKI, image_url, log, norm_name, slug
 
 # obtain methods that have no data of their own here: available from the start (the item's
 # minimum still applies, e.g. Hardmode fish); the reason is the method's name in [obtain]
-PLAIN_SOURCES = {"fishing", "quest-reward", "plunder", "loot", "crafted", "vendor", "drop", "bag", "treasure-bag",
-                 "player-death"}
+PLAIN_SOURCES = {"fishing", "quest-reward", "crafted", "vendor", "player-death"}
+# the same, but the wiki tags them per page - also for items they do not hold for (every chandelier
+# is "collected in the world"): they only count for items the data gives no source for
+TAGGED_SOURCES = {"plunder", "loot", "drop", "bag", "treasure-bag"}
 
 
 class Milestones:
@@ -102,21 +104,23 @@ class Milestones:
         """Set item["milestone"] and item["milestoneVia"] (reason)."""
         by_key = {i["key"]: i for i in items}
         inf = len(self.order)
-        floor, fixed = {}, {}
+        floor, fixed, ruled = {}, {}, set()
         for item in items:
             value, reason = (self.index["wall-of-flesh"], "Hardmode item") if item.get("hardmode") else (0, None)
             for pattern, mid, why in self.item_rules:
                 if pattern == norm_name(item["name"]) or (pattern.endswith("*") and
                                                           norm_name(item["name"]).startswith(pattern[:-1])):
                     self.item_rules_used.add(pattern)
+                    ruled.add(item["key"])
                     if pattern in self.item_overrides:
                         fixed[item["key"]] = (self.index[mid], why or "rule in mapping.toml")
                     elif self.index[mid] > value:
                         value, reason = self.index[mid], why or "rule in mapping.toml"
             floor[item["key"]] = (value, reason)
 
-        # sources that do not depend on other items
-        base = {}
+        # sources that do not depend on other items; `tagged`: the method the wiki's tags name
+        # (TAGGED_SOURCES), for items the data leaves open
+        base, tagged = {}, {}
 
         def offer(key, value, reason):
             if value is not None and (key not in base or value < base[key][0]):
@@ -155,12 +159,16 @@ class Milestones:
                 # general obtain methods
                 if o in ("drop", "bag", "treasure-bag", "loot") and kinds:
                     continue
-                if o in PLAIN_SOURCES:
+                # an item with a rule in [milestone_items] is obtained as its tags say (mined, found)
+                if o in TAGGED_SOURCES and key not in ruled:
+                    tagged.setdefault(key, self.obtain_names.get(o, o))
+                elif o in PLAIN_SOURCES | TAGGED_SOURCES:
                     offer(key, 0, self.obtain_names.get(o, o))
             if (key not in base and key not in recipes["by_result"] and key not in recipes["shimmer_to"]
                     and key not in recipes.get("extractinator_to", {})):
                 # no source data at all (e.g. Fallen Star): from the start, the minimum still applies
-                offer(key, 0, self.obtain_names["crafted"] if "crafted" in item["obtain"] else None)
+                offer(key, 0, tagged.get(key) or (self.obtain_names["crafted"] if "crafted" in item["obtain"]
+                                                  else None))
 
         # recipes and shimmer, until nothing changes
         best = {}
@@ -204,11 +212,17 @@ class Milestones:
                             worst, why = v, name
                     candidates.append((worst, f"crafted – needs {why}" if why else "crafted"))
                 for s in recipes["shimmer_to"].get(key, []):
+                    # a note can restrict it: "only after Moon Lord" (the Bottomless Shimmer Bucket)
+                    after = self.of_conditions(s.get("conditions", []))
+                    if after is None:
+                        continue
                     if s.get("item"):
-                        # a note can restrict it: "only after Moon Lord" (the Bottomless Shimmer Bucket)
-                        after = self.of_conditions(s.get("conditions", [])) or 0
                         candidates.append((max(value_of(s["item"]), after),
                                            f"shimmer from {by_key[s['item']]['name']}"))
+                    elif s.get("group"):
+                        # any item of a group ("Any Fruit" -> Ambrosia): its earliest
+                        v = min((value_of(k) for k in groups.get(s["group"], [])), default=0)
+                        candidates.append((max(v, after), f"shimmer from {s['group']}"))
                 # Extractinator results (B6): the latest of the machine, the input (any of them) and
                 # "Hardmode only"
                 for r in recipes.get("extractinator_to", {}).get(key, []):
@@ -225,6 +239,10 @@ class Milestones:
                         continue
                     # earliest; on a tie the one with a reason
                     value, reason = min(candidates, key=lambda c: (c[0], c[1] is None))
+                    # from the start by a recipe too: the tags agree, their method is the reason
+                    # ("Collected in the world" rather than crafted from its own walls)
+                    if value == 0 and key in tagged and base.get(key, (inf,))[0] > 0:
+                        reason = tagged[key]
                     f = floor[key]
                     if f[0] > value:
                         value, reason = f
@@ -233,12 +251,43 @@ class Milestones:
                     changed = True
             return changed
 
+        def needs(key):
+            """Items the recipes, shimmer and Extractinator sources of an item wait for; of "any
+            of these" (the items of a station or a group) only while none of them is known."""
+            def any_of(keys):
+                return [] if any(k in best for k in keys) else keys
+
+            out = set()
+            for r in recipes["by_result"].get(key, []):
+                for st in r["stations"]:
+                    out.update(any_of(station_items.get(st, [])))
+                for ing in r["ingredients"]:
+                    out.update([ing["item"]] if ing.get("item") else any_of(groups.get(ing.get("group"), [])))
+            for s in recipes["shimmer_to"].get(key, []):
+                out.update([s["item"]] if s.get("item") else any_of(groups.get(s.get("group"), [])))
+            for r in recipes.get("extractinator_to", {}).get(key, []):
+                out.update(any_of(r["inputs"]) + ([r["machine_item"]] if r.get("machine_item") else []))
+            return out
+
         settle()
-        # items still open depend on items without any source data: those count from the start
-        for item in items:
-            if item["key"] not in best and not item.get("unobtainable"):
-                offer(item["key"], 0, None)
-        settle()
+        # Items still open have no usable source data: recipes in a circle (Obsidian from Obsidian
+        # Walls and back) or nothing at all. Those count from the start, with the method of the
+        # wiki's tags as the reason - not the items that only need them (an Obsidian Shield still
+        # needs its Cobalt Shield). In a circle the tagged items come first (Pearlwood, found in
+        # the world, not the Pearlwood Wall made from it).
+        while True:
+            still_open = {i["key"] for i in items if i["key"] not in best and not i.get("unobtainable")}
+            if not still_open:
+                break
+            circle = still_open
+            while True:
+                needed = circle & set().union(*(needs(k) for k in circle))
+                if needed == circle:
+                    break
+                circle = needed
+            for key in [k for k in circle if k in tagged] or circle or still_open:
+                offer(key, 0, tagged.get(key))
+            settle()
         for item in items:
             if item["key"] in best:
                 value, reason = best[item["key"]]

@@ -2823,6 +2823,15 @@
       "vendor": "merchant"
     }
   ],
+  "JellyfishBlock": [
+    {
+      "vendor": "pirate",
+      "text": "In a Graveyard.",
+      "biomes": [
+        "graveyard"
+      ]
+    }
+  ],
   "Jetpack": [
     {
       "vendor": "steampunker",
@@ -4317,19 +4326,6 @@
     }
   ],
   "PrincessDress": [
-    {
-      "vendor": "clothier",
-      "text": "In Hardmode, during a new moon",
-      "conditions": [
-        "moon-5",
-        "hardmode"
-      ],
-      "moons": [
-        5
-      ]
-    }
-  ],
-  "PrincessDressNew": [
     {
       "vendor": "clothier",
       "text": "In Hardmode, during a new moon",

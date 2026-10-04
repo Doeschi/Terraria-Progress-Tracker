@@ -8,13 +8,19 @@ the committed data) and writes update_report.md next to this script (not committ
   - the parts read from page text with their minimums, and the warnings of step 2
     (build_warnings.json)
   - items added, removed and renamed (same item id, other key - renamed keys break progress files)
-  - per item: changed categories, subcategories, "Obtained by", milestone, vendors, unobtainable
+  - per item: changed categories, subcategories, "Obtained by", milestone and its reason, vendors,
+    events, biomes, time of day, conditions, event only, minimum difficulty, unobtainable
   - counts per data file before / after
 and adds the items added, removed and renamed to the change log in meta.json (REQUIREMENTS DU4),
 which the app uses to carry progress files over (renamed keys) and to tell what changed.
 
+While working on the pipeline: --base-dir compares with a folder of earlier data (a copy, or
+build_tracker_data.py --out <folder>) instead of a git revision - the change log is not written
+then -, and --full lists every item of a change.
+
 Usage:  python compare_data.py                 (after build_tracker_data.py)
         python compare_data.py --base HEAD~3   (compare with an older commit)
+        python compare_data.py --base-dir ../before --full --out ../before/report.md
 """
 import argparse
 import json
@@ -32,7 +38,14 @@ FIELDS = {
     "subcategories": "subcategories.json",
     "obtain": "obtain.json",
     "milestone": "milestones.json",
+    "milestoneVia": None,
     "vendors": "vendors.json",
+    "events": "events.json",
+    "biomes": "biomes.json",
+    "times": "times.json",
+    "conditions": "conditions.json",
+    "eventOnly": None,
+    "minDifficulty": "difficulties.json",
     "unobtainable": None,
 }
 # long lists in the report: the first ones, then "... and N more"
@@ -49,10 +62,21 @@ def git(*args):
     return subprocess.run(["git", *args], cwd=ROOT, capture_output=True, text=True, encoding="utf-8")
 
 
-def old_file(rev, name):
-    """A data file in a git revision, or None if it did not exist there."""
-    r = git("show", f"{rev}:web/public/data/{name}")
+def old_file(base, name):
+    """A data file of the previous data - a git revision, or a folder (--base-dir) -, or None if it
+    did not exist there."""
+    if isinstance(base, Path):
+        return new_file(base, name)
+    r = git("show", f"{base}:web/public/data/{name}")
     return json.loads(r.stdout) if r.returncode == 0 else None
+
+
+def old_names(base):
+    """The names of the data files of the previous data."""
+    if isinstance(base, Path):
+        return {p.name for p in base.glob("*.json")}
+    return {n.split("/")[-1] for n in git("ls-tree", "--name-only", base, "web/public/data/").stdout.split()
+            if n.endswith(".json")}
 
 
 def new_file(data_dir, name):
@@ -87,8 +111,8 @@ def shown_path(path):
     return path.relative_to(ROOT).as_posix() if path.is_relative_to(ROOT) else path.as_posix()
 
 
-def capped(lines):
-    if len(lines) <= LIMIT:
+def capped(lines, full=False):
+    if full or len(lines) <= LIMIT:
         return lines
     return lines[:LIMIT] + [f"- … and {len(lines) - LIMIT} more"]
 
@@ -97,6 +121,8 @@ def names_of(*lists):
     """id -> display name over the old and new versions of a list file."""
     out = {}
     for entries in lists:
+        if isinstance(entries, dict):  # conditions.json: {"groups": [...], "conditions": [...]}
+            entries = entries.get("conditions")
         for e in entries or ():
             out.setdefault(e["id"], e.get("name", e["id"]))
     return out
@@ -110,7 +136,7 @@ def show(value, names):
     return str(names.get(value, value)) if isinstance(value, str) else str(value)
 
 
-def item_changes(old_items, new_items, data_dir, rev):
+def item_changes(old_items, new_items, data_dir, base):
     old_by_key = {i["key"]: i for i in old_items}
     new_by_key = {i["key"]: i for i in new_items}
     added = [new_by_key[k] for k in new_by_key if k not in old_by_key]
@@ -125,7 +151,7 @@ def item_changes(old_items, new_items, data_dir, rev):
             removed.remove(same[0])
     changes = {}
     for field, list_file in FIELDS.items():
-        names = names_of(old_file(rev, list_file), new_file(data_dir, list_file)) if list_file else {}
+        names = names_of(old_file(base, list_file), new_file(data_dir, list_file)) if list_file else {}
         # the same change of many items (a new category) in one line, with its items
         by_change = {}
         for key, new in new_by_key.items():
@@ -141,11 +167,12 @@ def item_changes(old_items, new_items, data_dir, rev):
     return added, removed, renamed, changes
 
 
-def change_lines(groups):
-    """"- Armor → Armor, Sets: 230 items (Copper Greaves, Iron Greaves, … +218)"."""
+def change_lines(groups, full=False):
+    """"- Armor → Armor, Sets: 230 items (Copper Greaves, Iron Greaves, … +218)"; `full`: all names."""
     lines = []
     for change, items in groups:
-        shown = ", ".join(items[:EXAMPLES]) + (f", … +{len(items) - EXAMPLES}" if len(items) > EXAMPLES else "")
+        examples = len(items) if full else EXAMPLES
+        shown = ", ".join(items[:examples]) + (f", … +{len(items) - examples}" if len(items) > examples else "")
         lines.append(f"- {change}: {len(items)} {'item' if len(items) == 1 else 'items'} ({shown})")
     return lines
 
@@ -179,15 +206,24 @@ def add_to_change_log(data_dir, readable_dir, added, removed, renamed):
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--base", default="HEAD", help="git revision with the previous data (default: HEAD)")
+    ap.add_argument("--base-dir", type=Path, help="folder with the previous data, instead of a git revision "
+                                                  "(the change log in meta.json is not written)")
     ap.add_argument("--data", type=Path, default=DATA, help="the new data (default: web/public/data)")
     ap.add_argument("--out", type=Path, default=HERE / "update_report.md")
+    ap.add_argument("--full", action="store_true", help="list every item of a change and every line of a list")
     args = ap.parse_args()
 
-    commit = git("log", "-1", "--format=%h %ad %s", "--date=short", args.base).stdout.strip()
-    if not commit:
-        sys.exit(f"unknown git revision: {args.base}")
+    if args.base_dir:
+        if not (args.base_dir / "items.json").exists():
+            sys.exit(f"no items.json in {args.base_dir}")
+        base, previous = args.base_dir, f"`{shown_path(args.base_dir)}`"
+    else:
+        commit = git("log", "-1", "--format=%h %ad %s", "--date=short", args.base).stdout.strip()
+        if not commit:
+            sys.exit(f"unknown git revision: {args.base}")
+        base, previous = args.base, f"`{args.base}` ({commit})"
     report = ["# Data update report", "",
-              f"Previous data: `{args.base}` ({commit}) → new data: `{shown_path(args.data)}`.", ""]
+              f"Previous data: {previous} → new data: `{shown_path(args.data)}`.", ""]
 
     # step 2: parts read from page text, warnings
     warnings_path = HERE / "build_warnings.json"
@@ -205,8 +241,8 @@ def main():
         report += ["*build_warnings.json missing – run build_tracker_data.py first.*", ""]
 
     # items
-    old_items, new_items = old_file(args.base, "items.json") or [], new_file(args.data, "items.json") or []
-    added, removed, renamed, changes = item_changes(old_items, new_items, args.data, args.base)
+    old_items, new_items = old_file(base, "items.json") or [], new_file(args.data, "items.json") or []
+    added, removed, renamed, changes = item_changes(old_items, new_items, args.data, base)
     # renames the report cannot detect (another item id): [renamed_items] in mapping.toml
     manual = tomllib.loads((HERE / "mapping.toml").read_text(encoding="utf-8")).get("renamed_items", {})
     old_by_key, new_by_key = {i["key"]: i for i in old_items}, {i["key"]: i for i in new_items}
@@ -219,35 +255,36 @@ def main():
                 removed = [i for i in removed if i["key"] != old]
     report += [f"## Renamed items ({len(renamed)})", "",
                "Same item id, another key: checked items with the old key drop out of progress files.", ""]
-    report += capped([f"- {o['name']} (`{o['key']}`) → {n['name']} (`{n['key']}`)" for o, n in renamed]) or ["None."]
+    report += capped([f"- {o['name']} (`{o['key']}`) → {n['name']} (`{n['key']}`)" for o, n in renamed],
+                     args.full) or ["None."]
     report += ["", f"## Added items ({len(added)})", ""]
-    report += capped([f"- {i['name']} (`{i['key']}`, id {i['id']})" for i in added]) or ["None."]
+    report += capped([f"- {i['name']} (`{i['key']}`, id {i['id']})" for i in added], args.full) or ["None."]
     report += ["", f"## Removed items ({len(removed)})", ""]
-    report += capped([f"- {i['name']} (`{i['key']}`, id {i['id']})" for i in removed]) or ["None."]
+    report += capped([f"- {i['name']} (`{i['key']}`, id {i['id']})" for i in removed], args.full) or ["None."]
     report += ["", "## Changed items", ""]
     for field, groups in changes.items():
         total = sum(len(items) for _, items in groups)
-        report += [f"### {field} ({total} items)", ""] + (capped(change_lines(groups)) or ["None."]) + [""]
+        report += ([f"### {field} ({total} items)", ""]
+                   + (capped(change_lines(groups, args.full), args.full) or ["None."]) + [""])
 
     # counts per file
-    files = sorted({p.name for p in args.data.glob("*.json")} | set(
-        n.split("/")[-1] for n in git("ls-tree", "--name-only", args.base, "web/public/data/").stdout.split()
-        if n.endswith(".json")))
+    files = sorted({p.name for p in args.data.glob("*.json")} | old_names(base))
     report += ["## Counts per data file", "", "| File | What | Before | After | Change |", "|---|---|---:|---:|---:|"]
     for name in files:
         if name == "sprites.json":
             continue
-        before, after = counts(name, old_file(args.base, name)), counts(name, new_file(args.data, name))
+        before, after = counts(name, old_file(base, name)), counts(name, new_file(args.data, name))
         for label in dict.fromkeys([*before, *after]):
             a, b = before.get(label), after.get(label)
             diff = "" if a is None or b is None or a == b else f"{b - a:+d}"
             report.append(f"| {name} | {label} | {'–' if a is None else a} | {'–' if b is None else b} | {diff} |")
 
     args.out.write_text("\n".join(report) + "\n", encoding="utf-8")
-    # the readable copy only for the real data (not a test copy given with --data)
-    readable = HERE / "data_readable" if args.data.resolve() == DATA.resolve() else Path("/nonexistent")
-    add_to_change_log(args.data, readable, added, removed,
-                      {o["key"]: n["key"] for o, n in renamed})
+    if not args.base_dir:  # a folder is no earlier data version
+        # the readable copy only for the real data (not a test copy given with --data)
+        readable = HERE / "data_readable" if args.data.resolve() == DATA.resolve() else Path("/nonexistent")
+        add_to_change_log(args.data, readable, added, removed,
+                          {o["key"]: n["key"] for o, n in renamed})
     log(f"Wrote {args.out}: {len(added)} added, {len(removed)} removed, {len(renamed)} renamed items, "
         + ", ".join(f"{sum(len(i) for _, i in groups)} {field}" for field, groups in changes.items()) + " changes")
 

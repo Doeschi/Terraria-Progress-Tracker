@@ -229,8 +229,9 @@ python pipeline/compare_data.py            # step 4: what changed -> pipeline/up
 **Before committing new data, read `pipeline/update_report.md`** (not committed). It lists:
 - **Renamed items:** same item id, another key. Their checkmarks drop out of progress files.
 - **Added and removed items.**
-- **Changed items:** per item, changes in categories, "Obtained by", milestone, vendors and
-  unobtainable, with the same change of many items in one line.
+- **Changed items:** per item, changes in categories, "Obtained by", milestone and its reason,
+  vendors, events, biomes, time of day, conditions, event only, minimum difficulty and
+  unobtainable, with the same change of many items in one line (`--full` names every item).
 - **Counts per data file,** before and after.
 
 Step 4 also adds the added, removed and renamed items to the change log in

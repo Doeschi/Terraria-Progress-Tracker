@@ -7393,8 +7393,8 @@
     "placedWidth": 1,
     "placedHeight": 1,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "skeletron",
+    "milestoneVia": "Found in Dungeon Crate"
   },
   {
     "key": "BlueBrickWall",
@@ -7443,8 +7443,8 @@
     "autoswing": true,
     "useTime": 15,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Blue Brick"
   },
   {
     "key": "ChainLantern",
@@ -7551,8 +7551,8 @@
     "placedWidth": 1,
     "placedHeight": 1,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "skeletron",
+    "milestoneVia": "Found in Dungeon Crate"
   },
   {
     "key": "GreenBrickWall",
@@ -7601,8 +7601,8 @@
     "autoswing": true,
     "useTime": 15,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Green Brick"
   },
   {
     "key": "PinkBrick",
@@ -7656,8 +7656,8 @@
     "placedWidth": 1,
     "placedHeight": 1,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "skeletron",
+    "milestoneVia": "Found in Dungeon Crate"
   },
   {
     "key": "PinkBrickWall",
@@ -7706,8 +7706,8 @@
     "autoswing": true,
     "useTime": 15,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Pink Brick"
   },
   {
     "key": "GoldBrick",
@@ -8122,8 +8122,8 @@
     "debuff": "Water Candle",
     "tooltip": "Holding this may attract unwanted attention",
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "skeletron",
+    "milestoneVia": "Found in the Dungeon"
   },
   {
     "key": "Book",
@@ -8181,8 +8181,8 @@
     "placedHeight": 1,
     "tooltip": "Press Up/Down to cycle through placement styles\n'It contains strange symbols'",
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "skeletron",
+    "milestoneVia": "Found in Dungeon Crate"
   },
   {
     "key": "Cobweb",
@@ -9080,8 +9080,8 @@
     "mana": 10,
     "tooltip": "Casts a slow moving bolt of water",
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "skeletron",
+    "milestoneVia": "Dropped by Water Bolt Mimic"
   },
   {
     "key": "Bomb",
@@ -18012,8 +18012,8 @@
     "placedWidth": 3,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Bone"
   },
   {
     "key": "Dresser",
@@ -19119,8 +19119,8 @@
     "placedWidth": 3,
     "placedHeight": 4,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Book"
   },
   {
     "key": "Throne",
@@ -21459,7 +21459,8 @@
     "defense": 2,
     "tooltip": "Grants immunity to knockback\nGrants immunity to fire blocks",
     "conditions": [],
-    "milestone": "start"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Cobalt Shield"
   },
   {
     "key": "TinkerersWorkshop",
@@ -22043,8 +22044,8 @@
     "placedHeight": 1,
     "tooltip": "Will suffocate you if it falls on you",
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "wall-of-flesh",
+    "milestoneVia": "Shimmer from Hardened Pearlsand Block"
   },
   {
     "key": "PearlstoneBlock",
@@ -23584,7 +23585,7 @@
     "tooltip": "Press Grapple to launch hook",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Mimic"
   },
   {
     "key": "StarStatue",
@@ -26591,8 +26592,8 @@
     "mana": 21,
     "tooltip": "Casts a controllable rainbow",
     "conditions": [],
-    "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestone": "any-mech",
+    "milestoneVia": "Crafted – needs Soul of Sight"
   },
   {
     "key": "IceRod",
@@ -26992,7 +26993,7 @@
     "placedHeight": 1,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Found in Divine Crate"
   },
   {
     "key": "ClownHat",
@@ -27494,8 +27495,8 @@
     "placedHeight": 1,
     "tooltip": "Becomes inactive when signalled",
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Wire"
   },
   {
     "key": "InactiveStoneBlock",
@@ -27548,8 +27549,8 @@
     "placedHeight": 1,
     "tooltip": "Becomes active when signalled",
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Wire"
   },
   {
     "key": "Lever",
@@ -27829,7 +27830,7 @@
     "tooltip": "A magical returning dagger",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Mimic"
   },
   {
     "key": "CrystalStorm",
@@ -28529,8 +28530,8 @@
     "autoswing": false,
     "tooltip": "Carries signals between mechanisms\nUse a wrench to place",
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "skeletron",
+    "milestoneVia": "Sold by the Mechanic"
   },
   {
     "key": "SpellTome",
@@ -28637,7 +28638,7 @@
     "tooltip": "Causes stars to fall after taking damage",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Mimic"
   },
   {
     "key": "Megashark",
@@ -28809,7 +28810,7 @@
     "tooltip": "Reduces the cooldown of healing potions by 25%",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Mimic"
   },
   {
     "key": "TitanGlove",
@@ -28864,7 +28865,7 @@
     "tooltip": "Increases melee knockback\nIncreases the size of melee weapons",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Mimic"
   },
   {
     "key": "CobaltNaginata",
@@ -29844,7 +29845,7 @@
     "tooltip": "Increases length of invincibility after taking damage",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Mimic"
   },
   {
     "key": "ManaFlower",
@@ -30208,8 +30209,8 @@
     "useTime": 14,
     "tooltip": "'Greetings, programs!'",
     "conditions": [],
-    "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestone": "any-mech",
+    "milestoneVia": "Crafted – needs Hallowed Bar"
   },
   {
     "key": "MusicBoxOverworldDay",
@@ -31048,7 +31049,7 @@
     "tooltip": "Has a chance to record songs",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Sold by the Wizard"
   },
   {
     "key": "DemoniteBrick",
@@ -31216,8 +31217,8 @@
     "rangeBonus": -1,
     "tooltip": "'Not to be confused with a picksaw'",
     "conditions": [],
-    "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestone": "any-mech",
+    "milestoneVia": "Crafted – needs Hallowed Bar"
   },
   {
     "key": "Explosives",
@@ -31322,8 +31323,8 @@
     "placedHeight": 2,
     "tooltip": "Moves liquid to connected outlet pump when signalled",
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Wire"
   },
   {
     "key": "OutletPump",
@@ -31374,8 +31375,8 @@
     "placedHeight": 2,
     "tooltip": "Receives liquid from connected input pump when signalled",
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Wire"
   },
   {
     "key": "Timer1Second",
@@ -31431,8 +31432,8 @@
     "placedHeight": 1,
     "tooltip": "Signals every second",
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "skeletron",
+    "milestoneVia": "Sold by the Mechanic"
   },
   {
     "key": "Timer3Second",
@@ -31488,8 +31489,8 @@
     "placedHeight": 1,
     "tooltip": "Signals every 3 seconds",
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "skeletron",
+    "milestoneVia": "Sold by the Mechanic"
   },
   {
     "key": "Timer5Second",
@@ -31545,8 +31546,8 @@
     "placedHeight": 1,
     "tooltip": "Signals every 5 seconds",
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "skeletron",
+    "milestoneVia": "Sold by the Mechanic"
   },
   {
     "key": "CandyCaneBlock",
@@ -31598,7 +31599,7 @@
     "placedWidth": 1,
     "placedHeight": 1,
     "conditions": [],
-    "milestone": "wall-of-flesh",
+    "milestone": "start",
     "milestoneVia": "Found in Present"
   },
   {
@@ -31647,8 +31648,8 @@
     "autoswing": true,
     "useTime": 15,
     "conditions": [],
-    "milestone": "wall-of-flesh",
-    "milestoneVia": "Crafted – needs Candy Cane Block"
+    "milestone": "start",
+    "milestoneVia": "Crafted"
   },
   {
     "key": "SantaHat",
@@ -31865,7 +31866,7 @@
     "placedWidth": 1,
     "placedHeight": 1,
     "conditions": [],
-    "milestone": "wall-of-flesh",
+    "milestone": "start",
     "milestoneVia": "Found in Present"
   },
   {
@@ -31914,8 +31915,8 @@
     "autoswing": true,
     "useTime": 15,
     "conditions": [],
-    "milestone": "wall-of-flesh",
-    "milestoneVia": "Crafted – needs Green Candy Cane Block"
+    "milestone": "start",
+    "milestoneVia": "Crafted"
   },
   {
     "key": "SnowBlock",
@@ -32415,8 +32416,8 @@
     "useTime": 45,
     "tooltip": "Summons the Frost Legion",
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Found in Present"
+    "milestone": "wall-of-flesh",
+    "milestoneVia": "Found in Presents only in Hardmode"
   },
   {
     "key": "Carrot",
@@ -33690,8 +33691,8 @@
     "placedWidth": 2,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "wall-of-flesh",
+    "milestoneVia": "Crafted – needs Pearlwood"
   },
   {
     "key": "EbonwoodChair",
@@ -34379,8 +34380,8 @@
     "placedWidth": 3,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "wall-of-flesh",
+    "milestoneVia": "Crafted – needs Pearlwood"
   },
   {
     "key": "EbonwoodPiano",
@@ -34431,8 +34432,8 @@
     "placedWidth": 3,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Bone"
   },
   {
     "key": "RichMahoganyPiano",
@@ -34483,8 +34484,8 @@
     "placedWidth": 3,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Bone"
   },
   {
     "key": "PearlwoodPiano",
@@ -34535,8 +34536,8 @@
     "placedWidth": 3,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "wall-of-flesh",
+    "milestoneVia": "Crafted – needs Pearlwood"
   },
   {
     "key": "EbonwoodBed",
@@ -36313,7 +36314,7 @@
     "tooltip": "Shoots an icy bolt",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Ice Mimic"
   },
   {
     "key": "BorealWoodTable",
@@ -36694,7 +36695,7 @@
     "debuff": "Shadowflame",
     "tooltip": "Summons the Devil's trident",
     "conditions": [],
-    "milestone": "wall-of-flesh",
+    "milestone": "any-mech",
     "milestoneVia": "Dropped by Red Devil"
   },
   {
@@ -38961,7 +38962,7 @@
     "tooltip": "Shoots frost arrows",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Ice Mimic"
   },
   {
     "key": "FrostStaff",
@@ -40660,8 +40661,8 @@
     "velocity": 12.0,
     "useTime": 18,
     "conditions": [],
-    "milestone": "all-mechs",
-    "milestoneVia": "Crafted – needs True Excalibur"
+    "milestone": "plantera",
+    "milestoneVia": "Crafted – needs Broken Hero Sword"
   },
   {
     "key": "GrenadeLauncher",
@@ -40935,8 +40936,8 @@
     "placedWidth": 1,
     "placedHeight": 1,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "king-slime",
+    "milestoneVia": "Crafted – needs Solidifier"
   },
   {
     "key": "FleshBlock",
@@ -41189,8 +41190,8 @@
     "placedWidth": 1,
     "placedHeight": 1,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "king-slime",
+    "milestoneVia": "Crafted – needs Solidifier"
   },
   {
     "key": "BoneBlockWall",
@@ -41287,8 +41288,8 @@
     "autoswing": true,
     "useTime": 15,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "king-slime",
+    "milestoneVia": "Crafted – needs Slime Block"
   },
   {
     "key": "FleshBlockWall",
@@ -42551,8 +42552,8 @@
     "tooltip": "3% increased damage",
     "conditions": [],
     "set": "crimson-armor",
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "evil-boss",
+    "milestoneVia": "Crafted – needs Tissue Sample"
   },
   {
     "key": "CrimsonScalemail",
@@ -42604,8 +42605,8 @@
     "tooltip": "3% increased damage",
     "conditions": [],
     "set": "crimson-armor",
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "evil-boss",
+    "milestoneVia": "Crafted – needs Tissue Sample"
   },
   {
     "key": "CrimsonGreaves",
@@ -42657,8 +42658,8 @@
     "tooltip": "3% increased damage",
     "conditions": [],
     "set": "crimson-armor",
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "evil-boss",
+    "milestoneVia": "Crafted – needs Tissue Sample"
   },
   {
     "key": "BloodButcherer",
@@ -42824,8 +42825,8 @@
     "hammerPower": 55,
     "toolSpeed": 19,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "evil-boss",
+    "milestoneVia": "Crafted – needs Tissue Sample"
   },
   {
     "key": "DeathbringerPickaxe",
@@ -42880,8 +42881,8 @@
     "toolSpeed": 14,
     "tooltip": "Able to mine Hellstone",
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "evil-boss",
+    "milestoneVia": "Crafted – needs Tissue Sample"
   },
   {
     "key": "BloodLustCluster",
@@ -43047,8 +43048,8 @@
     "velocity": 12.0,
     "useTime": 45,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "evil-boss",
+    "milestoneVia": "Crafted – needs Tissue Sample"
   },
   {
     "key": "TheRottedFork",
@@ -43795,8 +43796,8 @@
     "placedHeight": 1,
     "tooltip": "Used for basic crafting",
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "king-slime",
+    "milestoneVia": "Crafted – needs Solidifier"
   },
   {
     "key": "CactusDoor",
@@ -44104,8 +44105,8 @@
     "autoswing": false,
     "tooltip": "Allows flight and slow fall",
     "conditions": [],
-    "milestone": "wall-of-flesh",
-    "milestoneVia": "Crafted – needs Mythril Anvil"
+    "milestone": "any-mech",
+    "milestoneVia": "Crafted – needs Fire Feather"
   },
   {
     "key": "FrozenWings",
@@ -44407,8 +44408,8 @@
     "placedWidth": 3,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Bone Welder"
   },
   {
     "key": "FleshTable",
@@ -44459,8 +44460,8 @@
     "placedWidth": 3,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestone": "any-mech",
+    "milestoneVia": "Crafted – needs Flesh Cloning Vat"
   },
   {
     "key": "LivingWoodTable",
@@ -47240,9 +47241,7 @@
     ],
     "vendors": [],
     "events": [],
-    "biomes": [
-      "crimson"
-    ],
+    "biomes": [],
     "times": [],
     "platforms": [
       "desktop",
@@ -47272,7 +47271,7 @@
     "placedHeight": 1,
     "conditions": [],
     "milestone": "start",
-    "milestoneVia": "Dropped by Creeper"
+    "milestoneVia": "Collected in the world"
   },
   {
     "key": "CactusSword",
@@ -49357,8 +49356,8 @@
     "placedWidth": 3,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Bone"
   },
   {
     "key": "ShadewoodBed",
@@ -53683,8 +53682,8 @@
     "placedHeight": 3,
     "tooltip": "Used to craft objects",
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "king-slime",
+    "milestoneVia": "Dropped by King Slime"
   },
   {
     "key": "Amber",
@@ -58702,8 +58701,8 @@
     "autoswing": true,
     "useTime": 15,
     "conditions": [],
-    "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestone": "golem",
+    "milestoneVia": "Crafted – needs Lihzahrd Brick"
   },
   {
     "key": "SlushBlock",
@@ -60833,8 +60832,8 @@
     "placedWidth": 2,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "plantera",
+    "milestoneVia": "Found in the Jungle Temple"
   },
   {
     "key": "LihzahrdChair",
@@ -60936,8 +60935,8 @@
     "placedWidth": 3,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestone": "golem",
+    "milestoneVia": "Crafted – needs Lihzahrd Brick"
   },
   {
     "key": "LihzahrdWorkBench",
@@ -67470,7 +67469,7 @@
     "tooltip": "Shoots a ball of frost",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Ice Mimic"
   },
   {
     "key": "Uzi",
@@ -68910,8 +68909,8 @@
     "placedWidth": 3,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "golem",
+    "milestoneVia": "Mined (needs the Picksaw)"
   },
   {
     "key": "LihzahrdPowerCell",
@@ -70044,7 +70043,7 @@
     "tooltip": "Summons a baby snowman",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Ice Mimic"
   },
   {
     "key": "BookofSkulls",
@@ -70880,7 +70879,7 @@
     "tooltip": "Shoots a deathly sickle",
     "eventOnly": true,
     "conditions": [],
-    "milestone": "any-mech",
+    "milestone": "all-mechs",
     "milestoneVia": "Dropped by Reaper"
   },
   {
@@ -70956,9 +70955,7 @@
     ],
     "vendors": [],
     "events": [],
-    "biomes": [
-      "crimson"
-    ],
+    "biomes": [],
     "times": [],
     "platforms": [
       "desktop",
@@ -70985,8 +70982,8 @@
     "autoswing": true,
     "useTime": 15,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Dropped by Creeper"
+    "milestone": "evil-boss",
+    "milestoneVia": "From the Treasure Bag (Brain of Cthulhu)"
   },
   {
     "key": "Vertebrae",
@@ -73243,8 +73240,8 @@
     "placedHeight": 3,
     "tooltip": "'W. Garner'",
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "skeletron",
+    "milestoneVia": "Found in Dungeon Crate"
   },
   {
     "key": "TheHangedMan",
@@ -73296,8 +73293,8 @@
     "placedHeight": 3,
     "tooltip": "'W. Garner'",
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "skeletron",
+    "milestoneVia": "Found in Dungeon Crate"
   },
   {
     "key": "GloryoftheFire",
@@ -73349,8 +73346,8 @@
     "placedHeight": 3,
     "tooltip": "'W. Garner'",
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "skeletron",
+    "milestoneVia": "Found in Dungeon Crate"
   },
   {
     "key": "BoneWarp",
@@ -73402,8 +73399,8 @@
     "placedHeight": 3,
     "tooltip": "'W. Garner'",
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "skeletron",
+    "milestoneVia": "Found in Dungeon Crate"
   },
   {
     "key": "WallSkeleton",
@@ -73552,8 +73549,8 @@
     "autoswing": true,
     "useTime": 15,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Blue Brick"
   },
   {
     "key": "BlueTiledWall",
@@ -73602,8 +73599,8 @@
     "autoswing": true,
     "useTime": 15,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Blue Brick"
   },
   {
     "key": "PinkSlabWall",
@@ -73652,8 +73649,8 @@
     "autoswing": true,
     "useTime": 15,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Pink Brick"
   },
   {
     "key": "PinkTiledWall",
@@ -73702,8 +73699,8 @@
     "autoswing": true,
     "useTime": 15,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Pink Brick"
   },
   {
     "key": "GreenSlabWall",
@@ -73752,8 +73749,8 @@
     "autoswing": true,
     "useTime": 15,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Green Brick"
   },
   {
     "key": "GreenTiledWall",
@@ -73802,8 +73799,8 @@
     "autoswing": true,
     "useTime": 15,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Green Brick"
   },
   {
     "key": "BlueBrickPlatform",
@@ -73858,8 +73855,8 @@
     "placedHeight": 1,
     "tooltip": "Press Down to fall through",
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Blue Brick"
   },
   {
     "key": "PinkBrickPlatform",
@@ -73914,8 +73911,8 @@
     "placedHeight": 1,
     "tooltip": "Press Down to fall through",
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Pink Brick"
   },
   {
     "key": "GreenBrickPlatform",
@@ -73970,8 +73967,8 @@
     "placedHeight": 1,
     "tooltip": "Press Down to fall through",
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Green Brick"
   },
   {
     "key": "MetalShelf",
@@ -75699,8 +75696,8 @@
     "placedHeight": 3,
     "tooltip": "'W. Garner'",
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "skeletron",
+    "milestoneVia": "Found in Dungeon Crate"
   },
   {
     "key": "TheCursedMan",
@@ -75752,8 +75749,8 @@
     "placedHeight": 3,
     "tooltip": "'W. Garner'",
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "skeletron",
+    "milestoneVia": "Found in Dungeon Crate"
   },
   {
     "key": "TheEyeSeestheEnd",
@@ -75805,8 +75802,8 @@
     "placedHeight": 4,
     "tooltip": "'W. Garner'",
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "skeletron",
+    "milestoneVia": "Found in Dungeon Crate"
   },
   {
     "key": "SomethingEvilisWatchingYou",
@@ -75858,8 +75855,8 @@
     "placedHeight": 4,
     "tooltip": "'R. Moosdijk'",
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "skeletron",
+    "milestoneVia": "Found in Dungeon Crate"
   },
   {
     "key": "TheTwinsHaveAwoken",
@@ -75911,8 +75908,8 @@
     "placedHeight": 4,
     "tooltip": "'R. Moosdijk'",
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "skeletron",
+    "milestoneVia": "Found in Dungeon Crate"
   },
   {
     "key": "TheScreamer",
@@ -75964,8 +75961,8 @@
     "placedHeight": 4,
     "tooltip": "'V. Costa Moura'",
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "skeletron",
+    "milestoneVia": "Found in Dungeon Crate"
   },
   {
     "key": "GoblinsPlayingPoker",
@@ -76017,8 +76014,8 @@
     "placedHeight": 4,
     "tooltip": "'W. Garner'",
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "skeletron",
+    "milestoneVia": "Found in Dungeon Crate"
   },
   {
     "key": "Dryadisque",
@@ -76070,8 +76067,8 @@
     "placedHeight": 4,
     "tooltip": "'W. Garner'",
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "skeletron",
+    "milestoneVia": "Found in Dungeon Crate"
   },
   {
     "key": "Sunflowers",
@@ -76443,8 +76440,8 @@
     "placedHeight": 4,
     "tooltip": "'K. Wright'",
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "skeletron",
+    "milestoneVia": "Found in Dungeon Crate"
   },
   {
     "key": "PoweredbyBirds",
@@ -76496,8 +76493,8 @@
     "placedHeight": 4,
     "tooltip": "'C. J. Ness'",
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "skeletron",
+    "milestoneVia": "Found in Dungeon Crate"
   },
   {
     "key": "TheDestroyer",
@@ -76549,8 +76546,8 @@
     "placedHeight": 4,
     "tooltip": "'R. Moosdijk'",
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "skeletron",
+    "milestoneVia": "Found in Dungeon Crate"
   },
   {
     "key": "ThePersistencyofEyes",
@@ -76602,8 +76599,8 @@
     "placedHeight": 4,
     "tooltip": "'V. Costa Moura'",
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "skeletron",
+    "milestoneVia": "Found in Dungeon Crate"
   },
   {
     "key": "UnicornCrossingtheHallows",
@@ -76655,8 +76652,8 @@
     "placedHeight": 4,
     "tooltip": "'V. Costa Moura'",
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "skeletron",
+    "milestoneVia": "Found in Dungeon Crate"
   },
   {
     "key": "GreatWave",
@@ -76708,8 +76705,8 @@
     "placedHeight": 4,
     "tooltip": "'V. Costa Moura'",
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "skeletron",
+    "milestoneVia": "Found in Dungeon Crate"
   },
   {
     "key": "StarryNight",
@@ -76761,8 +76758,8 @@
     "placedHeight": 4,
     "tooltip": "'V. Costa Moura'",
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "skeletron",
+    "milestoneVia": "Found in Dungeon Crate"
   },
   {
     "key": "GuidePicasso",
@@ -76866,8 +76863,8 @@
     "placedHeight": 3,
     "tooltip": "'A. G. Kolf'",
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "skeletron",
+    "milestoneVia": "Found in Dungeon Crate"
   },
   {
     "key": "FatherofSomeone",
@@ -80036,8 +80033,8 @@
     "placedHeight": 4,
     "tooltip": "'A. G. Kolf'",
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "skeletron",
+    "milestoneVia": "Found in Dungeon Crate"
   },
   {
     "key": "LakeofFire",
@@ -80142,8 +80139,8 @@
     "placedHeight": 4,
     "tooltip": "'C. Burczyk'",
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "skeletron",
+    "milestoneVia": "Found in Dungeon Crate"
   },
   {
     "key": "SpectreHood",
@@ -80566,8 +80563,8 @@
     "placedWidth": 3,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Bone Welder"
   },
   {
     "key": "GothicWorkBench",
@@ -80672,8 +80669,8 @@
     "placedWidth": 3,
     "placedHeight": 4,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Bone Welder"
   },
   {
     "key": "PaladinsHammer",
@@ -80982,7 +80979,7 @@
     "placeable": false,
     "autoswing": false,
     "conditions": [],
-    "milestone": "wall-of-flesh",
+    "milestone": "any-mech",
     "milestoneVia": "Dropped by Red Devil"
   },
   {
@@ -81491,8 +81488,8 @@
     "placedWidth": 2,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "wall-of-flesh",
+    "milestoneVia": "Shimmer from Jungle Key"
   },
   {
     "key": "CorruptionChest",
@@ -81546,8 +81543,8 @@
     "placedWidth": 2,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "wall-of-flesh",
+    "milestoneVia": "Shimmer from Corruption Key"
   },
   {
     "key": "CrimsonChest",
@@ -81601,8 +81598,8 @@
     "placedWidth": 2,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "wall-of-flesh",
+    "milestoneVia": "Shimmer from Crimson Key"
   },
   {
     "key": "HallowedChest",
@@ -81656,8 +81653,8 @@
     "placedWidth": 2,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "wall-of-flesh",
+    "milestoneVia": "Shimmer from Hallowed Key"
   },
   {
     "key": "FrozenChest",
@@ -81711,8 +81708,8 @@
     "placedWidth": 2,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "wall-of-flesh",
+    "milestoneVia": "Shimmer from Frozen Key"
   },
   {
     "key": "JungleKey",
@@ -83675,7 +83672,7 @@
     "autoswing": false,
     "eventOnly": true,
     "conditions": [],
-    "milestone": "any-mech",
+    "milestone": "plantera",
     "milestoneVia": "Dropped by Mothron"
   },
   {
@@ -83840,8 +83837,8 @@
     "placedHeight": 4,
     "tooltip": "'W. Garner'",
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "skeletron",
+    "milestoneVia": "Found in Dungeon Crate"
   },
   {
     "key": "TheMerchant",
@@ -85914,7 +85911,7 @@
     "tooltip": "Grants immunity to knockback and fire blocks\nGrants immunity to most debuffs",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Crafted – needs Ankh Charm"
   },
   {
     "key": "BlueFlare",
@@ -86844,7 +86841,7 @@
     "tooltip": "Nearby players get a bonus against: Mimic",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Ice Mimic"
   },
   {
     "key": "ClownBanner",
@@ -89516,7 +89513,7 @@
     "tooltip": "Nearby players get a bonus against: Reaper",
     "eventOnly": true,
     "conditions": [],
-    "milestone": "any-mech",
+    "milestone": "all-mechs",
     "milestoneVia": "Dropped by Reaper"
   },
   {
@@ -91604,8 +91601,8 @@
     "placedWidth": 3,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestone": "any-mech",
+    "milestoneVia": "Crafted – needs Steampunk Boiler"
   },
   {
     "key": "GlassBed",
@@ -94372,12 +94369,9 @@
       "vanity-sets"
     ],
     "obtain": [
-      "vendor",
       "bag"
     ],
-    "vendors": [
-      "clothier"
-    ],
+    "vendors": [],
     "events": [],
     "biomes": [],
     "times": [],
@@ -96441,8 +96435,8 @@
     "placedWidth": 3,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "plantera",
+    "milestoneVia": "Crafted – needs Spooky Wood"
   },
   {
     "key": "SpookyWorkBench",
@@ -99195,7 +99189,7 @@
     "useTime": 38,
     "tooltip": "'Don't shoot your eye out!'",
     "conditions": [],
-    "milestone": "wall-of-flesh",
+    "milestone": "start",
     "milestoneVia": "Found in Present"
   },
   {
@@ -99298,7 +99292,7 @@
     "placedWidth": 1,
     "placedHeight": 1,
     "conditions": [],
-    "milestone": "wall-of-flesh",
+    "milestone": "start",
     "milestoneVia": "Found in Present"
   },
   {
@@ -101083,7 +101077,7 @@
     "autoswing": false,
     "bodySlot": "social helmet",
     "conditions": [],
-    "milestone": "wall-of-flesh",
+    "milestone": "start",
     "milestoneVia": "Found in Present"
   },
   {
@@ -101132,7 +101126,7 @@
     "placedWidth": 3,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "wall-of-flesh",
+    "milestone": "start",
     "milestoneVia": "Found in Present"
   },
   {
@@ -101184,7 +101178,7 @@
     "knockback": 5.3,
     "useTime": 27,
     "conditions": [],
-    "milestone": "wall-of-flesh",
+    "milestone": "start",
     "milestoneVia": "Found in Present"
   },
   {
@@ -101293,7 +101287,7 @@
     "buff": "Exquisitely Stuffed",
     "tooltip": "Major improvements to all stats\n'A cozy treat by the fireplace.'",
     "conditions": [],
-    "milestone": "wall-of-flesh",
+    "milestone": "start",
     "milestoneVia": "Found in Present"
   },
   {
@@ -101342,7 +101336,7 @@
     "healLife": 80,
     "debuff": "Potion Sickness",
     "conditions": [],
-    "milestone": "wall-of-flesh",
+    "milestone": "start",
     "milestoneVia": "Found in Present"
   },
   {
@@ -101394,7 +101388,7 @@
     "velocity": 12.0,
     "useTime": 15,
     "conditions": [],
-    "milestone": "wall-of-flesh",
+    "milestone": "start",
     "milestoneVia": "Found in Present"
   },
   {
@@ -101500,7 +101494,7 @@
     "useTime": 0,
     "tooltip": "Press Grapple to launch hook",
     "conditions": [],
-    "milestone": "wall-of-flesh",
+    "milestone": "start",
     "milestoneVia": "Found in Present"
   },
   {
@@ -101609,7 +101603,7 @@
     "toolSpeed": 16,
     "tooltip": "Can mine Meteorite",
     "conditions": [],
-    "milestone": "wall-of-flesh",
+    "milestone": "start",
     "milestoneVia": "Found in Present"
   },
   {
@@ -101662,7 +101656,7 @@
     "velocity": 11.0,
     "useTime": 15,
     "conditions": [],
-    "milestone": "wall-of-flesh",
+    "milestone": "start",
     "milestoneVia": "Found in Present"
   },
   {
@@ -101712,7 +101706,7 @@
     "buff": "Exquisitely Stuffed",
     "tooltip": "Major improvements to all stats\n'You'll bounce off the walls!'",
     "conditions": [],
-    "milestone": "wall-of-flesh",
+    "milestone": "start",
     "milestoneVia": "Found in Present"
   },
   {
@@ -101762,7 +101756,7 @@
     "buff": "Exquisitely Stuffed",
     "tooltip": "Major improvements to all stats\n'Not the gumdrop buttons!'",
     "conditions": [],
-    "milestone": "wall-of-flesh",
+    "milestone": "start",
     "milestoneVia": "Found in Present"
   },
   {
@@ -101809,7 +101803,7 @@
     "autoswing": false,
     "tooltip": "Grants immunity to Chilled and Frozen",
     "conditions": [],
-    "milestone": "wall-of-flesh",
+    "milestone": "start",
     "milestoneVia": "Found in Present"
   },
   {
@@ -101857,8 +101851,8 @@
     "autoswing": false,
     "tooltip": "'You've been naughty this year'",
     "conditions": [],
-    "milestone": "wall-of-flesh",
-    "milestoneVia": "Dropped by Jungle Mimic"
+    "milestone": "start",
+    "milestoneVia": "Found in Present"
   },
   {
     "key": "Toolbox",
@@ -101904,7 +101898,7 @@
     "autoswing": false,
     "tooltip": "Increases block placement & tool range by 1",
     "conditions": [],
-    "milestone": "wall-of-flesh",
+    "milestone": "start",
     "milestoneVia": "Found in Present"
   },
   {
@@ -101954,8 +101948,8 @@
     "placedWidth": 2,
     "placedHeight": 3,
     "conditions": [],
-    "milestone": "wall-of-flesh",
-    "milestoneVia": "Crafted – needs Pine Tree Block"
+    "milestone": "start",
+    "milestoneVia": "Crafted"
   },
   {
     "key": "PineChair",
@@ -102003,8 +101997,8 @@
     "placedWidth": 1,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "wall-of-flesh",
-    "milestoneVia": "Crafted – needs Pine Tree Block"
+    "milestone": "start",
+    "milestoneVia": "Crafted"
   },
   {
     "key": "PineTable",
@@ -102101,7 +102095,7 @@
     "buff": "Puppy",
     "tooltip": "Summons a Puppy",
     "conditions": [],
-    "milestone": "wall-of-flesh",
+    "milestone": "start",
     "milestoneVia": "Found in Present"
   },
   {
@@ -102390,7 +102384,7 @@
     "bodySlot": "social helmet",
     "conditions": [],
     "set": "mrs-claus-set",
-    "milestone": "wall-of-flesh",
+    "milestone": "start",
     "milestoneVia": "Found in Present"
   },
   {
@@ -102440,7 +102434,7 @@
     "bodySlot": "social shirt",
     "conditions": [],
     "set": "mrs-claus-set",
-    "milestone": "wall-of-flesh",
+    "milestone": "start",
     "milestoneVia": "Found in Present"
   },
   {
@@ -102490,7 +102484,7 @@
     "bodySlot": "social pants",
     "conditions": [],
     "set": "mrs-claus-set",
-    "milestone": "wall-of-flesh",
+    "milestone": "start",
     "milestoneVia": "Found in Present"
   },
   {
@@ -102540,7 +102534,7 @@
     "bodySlot": "social helmet",
     "conditions": [],
     "set": "parka-set",
-    "milestone": "wall-of-flesh",
+    "milestone": "start",
     "milestoneVia": "Found in Present"
   },
   {
@@ -102590,7 +102584,7 @@
     "bodySlot": "social shirt",
     "conditions": [],
     "set": "parka-set",
-    "milestone": "wall-of-flesh",
+    "milestone": "start",
     "milestoneVia": "Found in Present"
   },
   {
@@ -102640,7 +102634,7 @@
     "bodySlot": "social pants",
     "conditions": [],
     "set": "parka-set",
-    "milestone": "wall-of-flesh",
+    "milestone": "start",
     "milestoneVia": "Found in Present"
   },
   {
@@ -102687,7 +102681,7 @@
     "autoswing": false,
     "bodySlot": "social helmet",
     "conditions": [],
-    "milestone": "wall-of-flesh",
+    "milestone": "start",
     "milestoneVia": "Found in Present"
   },
   {
@@ -102734,7 +102728,7 @@
     "autoswing": false,
     "bodySlot": "social shirt",
     "conditions": [],
-    "milestone": "wall-of-flesh",
+    "milestone": "start",
     "milestoneVia": "Found in Present"
   },
   {
@@ -102784,7 +102778,7 @@
     "bodySlot": "social helmet",
     "conditions": [],
     "set": "tree-set",
-    "milestone": "wall-of-flesh",
+    "milestone": "start",
     "milestoneVia": "Found in Present"
   },
   {
@@ -102834,7 +102828,7 @@
     "bodySlot": "social shirt",
     "conditions": [],
     "set": "tree-set",
-    "milestone": "wall-of-flesh",
+    "milestone": "start",
     "milestoneVia": "Found in Present"
   },
   {
@@ -102884,7 +102878,7 @@
     "bodySlot": "social pants",
     "conditions": [],
     "set": "tree-set",
-    "milestone": "wall-of-flesh",
+    "milestone": "start",
     "milestoneVia": "Found in Present"
   },
   {
@@ -106884,8 +106878,8 @@
     "placedWidth": 3,
     "placedHeight": 4,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Book"
   },
   {
     "key": "EbonwoodBookcase",
@@ -106937,8 +106931,8 @@
     "placedWidth": 3,
     "placedHeight": 4,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Book"
   },
   {
     "key": "FleshBookcase",
@@ -106990,8 +106984,8 @@
     "placedWidth": 3,
     "placedHeight": 4,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "any-mech",
+    "milestoneVia": "Crafted – needs Flesh Cloning Vat"
   },
   {
     "key": "HoneyBookcase",
@@ -107043,8 +107037,8 @@
     "placedWidth": 3,
     "placedHeight": 4,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Book"
   },
   {
     "key": "SteampunkBookcase",
@@ -107093,8 +107087,8 @@
     "placedWidth": 3,
     "placedHeight": 4,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "any-mech",
+    "milestoneVia": "Crafted – needs Steampunk Boiler"
   },
   {
     "key": "GlassBookcase",
@@ -107143,8 +107137,8 @@
     "placedWidth": 3,
     "placedHeight": 4,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Book"
   },
   {
     "key": "RichMahoganyBookcase",
@@ -107194,8 +107188,8 @@
     "placedWidth": 3,
     "placedHeight": 4,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Book"
   },
   {
     "key": "PearlwoodBookcase",
@@ -107247,8 +107241,8 @@
     "placedWidth": 3,
     "placedHeight": 4,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "wall-of-flesh",
+    "milestoneVia": "Crafted – needs Pearlwood"
   },
   {
     "key": "SpookyBookcase",
@@ -107298,8 +107292,8 @@
     "placedWidth": 3,
     "placedHeight": 4,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "plantera",
+    "milestoneVia": "Crafted – needs Spooky Wood"
   },
   {
     "key": "SkywareBookcase",
@@ -107348,8 +107342,8 @@
     "placedWidth": 3,
     "placedHeight": 4,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Book"
   },
   {
     "key": "LihzahrdBookcase",
@@ -107399,8 +107393,8 @@
     "placedWidth": 3,
     "placedHeight": 4,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "golem",
+    "milestoneVia": "Crafted – needs Lihzahrd Brick"
   },
   {
     "key": "FrozenBookcase",
@@ -107450,8 +107444,8 @@
     "placedWidth": 3,
     "placedHeight": 4,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Book"
   },
   {
     "key": "CactusLantern",
@@ -108775,8 +108769,8 @@
     "placedWidth": 3,
     "placedHeight": 3,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "any-mech",
+    "milestoneVia": "Crafted – needs Flesh Cloning Vat"
   },
   {
     "key": "HoneyChandelier",
@@ -108985,8 +108979,8 @@
     "placedWidth": 3,
     "placedHeight": 3,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "wall-of-flesh",
+    "milestoneVia": "Crafted – needs Pearlwood"
   },
   {
     "key": "LihzahrdChandelier",
@@ -109036,8 +109030,8 @@
     "placedWidth": 3,
     "placedHeight": 3,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "golem",
+    "milestoneVia": "Crafted – needs Lihzahrd Brick"
   },
   {
     "key": "SkywareChandelier",
@@ -109137,8 +109131,8 @@
     "placedWidth": 3,
     "placedHeight": 3,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "plantera",
+    "milestoneVia": "Crafted – needs Spooky Wood"
   },
   {
     "key": "GlassChandelier",
@@ -112701,8 +112695,8 @@
     "placedWidth": 3,
     "placedHeight": 4,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Book"
   },
   {
     "key": "ShadewoodBookcase",
@@ -112754,8 +112748,8 @@
     "placedWidth": 3,
     "placedHeight": 4,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Book"
   },
   {
     "key": "GoldenBookcase",
@@ -112807,8 +112801,8 @@
     "placedWidth": 3,
     "placedHeight": 4,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "wall-of-flesh",
+    "milestoneVia": "Dropped by Flying Dutchman"
   },
   {
     "key": "BoneBookcase",
@@ -112857,8 +112851,8 @@
     "placedWidth": 3,
     "placedHeight": 4,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Bone Welder"
   },
   {
     "key": "LivingWoodBed",
@@ -113167,8 +113161,8 @@
     "placedWidth": 3,
     "placedHeight": 3,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Bone Welder"
   },
   {
     "key": "LivingWoodLantern",
@@ -115777,8 +115771,8 @@
     "placedHeight": 3,
     "tooltip": "Used for special crafting",
     "conditions": [],
-    "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestone": "plantera",
+    "milestoneVia": "Found in Lihzahrd Chest"
   },
   {
     "key": "LivingLoom",
@@ -117732,8 +117726,8 @@
     "placedWidth": 3,
     "placedHeight": 4,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Book"
   },
   {
     "key": "DynastyCup",
@@ -118331,8 +118325,8 @@
     "placedWidth": 3,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Bone"
   },
   {
     "key": "FleshPiano",
@@ -118383,8 +118377,8 @@
     "placedWidth": 3,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "any-mech",
+    "milestoneVia": "Crafted – needs Flesh Cloning Vat"
   },
   {
     "key": "FrozenPiano",
@@ -118433,8 +118427,8 @@
     "placedWidth": 3,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Bone"
   },
   {
     "key": "FrozenTable",
@@ -118590,8 +118584,8 @@
     "placedWidth": 2,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "any-mech",
+    "milestoneVia": "Crafted – needs Steampunk Boiler"
   },
   {
     "key": "HoneyWorkBench",
@@ -118793,8 +118787,8 @@
     "placedWidth": 3,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Bone"
   },
   {
     "key": "HoneyPiano",
@@ -118845,8 +118839,8 @@
     "placedWidth": 3,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Bone"
   },
   {
     "key": "SteampunkPiano",
@@ -118894,8 +118888,8 @@
     "placedWidth": 3,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "any-mech",
+    "milestoneVia": "Crafted – needs Steampunk Boiler"
   },
   {
     "key": "HoneyCup",
@@ -125305,8 +125299,8 @@
     "placedWidth": 3,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Bone Welder"
   },
   {
     "key": "CactusPiano",
@@ -125357,8 +125351,8 @@
     "placedWidth": 3,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Bone"
   },
   {
     "key": "SpookyPiano",
@@ -125407,8 +125401,8 @@
     "placedWidth": 3,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "plantera",
+    "milestoneVia": "Crafted – needs Spooky Wood"
   },
   {
     "key": "SkywarePiano",
@@ -125457,8 +125451,8 @@
     "placedWidth": 3,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Bone"
   },
   {
     "key": "LihzahrdPiano",
@@ -125507,8 +125501,8 @@
     "placedWidth": 3,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "golem",
+    "milestoneVia": "Crafted – needs Lihzahrd Brick"
   },
   {
     "key": "BlueDungeonDresser",
@@ -128545,7 +128539,7 @@
     "placedHeight": 3,
     "conditions": [],
     "milestone": "start",
-    "milestoneVia": "Dropped by enemies"
+    "milestoneVia": "Angler quest reward"
   },
   {
     "key": "BunnyfishTrophy",
@@ -128597,7 +128591,7 @@
     "placedHeight": 3,
     "conditions": [],
     "milestone": "start",
-    "milestoneVia": "Dropped by enemies"
+    "milestoneVia": "Angler quest reward"
   },
   {
     "key": "SwordfishTrophy",
@@ -128649,7 +128643,7 @@
     "placedHeight": 3,
     "conditions": [],
     "milestone": "start",
-    "milestoneVia": "Dropped by enemies"
+    "milestoneVia": "Angler quest reward"
   },
   {
     "key": "SharkteethTrophy",
@@ -128701,7 +128695,7 @@
     "placedHeight": 3,
     "conditions": [],
     "milestone": "start",
-    "milestoneVia": "Dropped by enemies"
+    "milestoneVia": "Angler quest reward"
   },
   {
     "key": "Batfish",
@@ -132737,8 +132731,8 @@
     "placedWidth": 3,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Bone"
   },
   {
     "key": "PalmWoodTable",
@@ -132992,8 +132986,8 @@
     "placedWidth": 3,
     "placedHeight": 4,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Book"
   },
   {
     "key": "MushroomBathtub",
@@ -133195,8 +133189,8 @@
     "placedWidth": 3,
     "placedHeight": 4,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Book"
   },
   {
     "key": "MushroomCandelabra",
@@ -133608,8 +133602,8 @@
     "placedWidth": 3,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Bone"
   },
   {
     "key": "MushroomPlatform",
@@ -133919,8 +133913,8 @@
     "placedWidth": 3,
     "placedHeight": 4,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Book"
   },
   {
     "key": "BorealWoodCandelabra",
@@ -134470,8 +134464,8 @@
     "placedWidth": 3,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Bone"
   },
   {
     "key": "BorealWoodPlatform",
@@ -134575,8 +134569,8 @@
     "placedWidth": 4,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "king-slime",
+    "milestoneVia": "Crafted – needs Solidifier"
   },
   {
     "key": "SlimeBed",
@@ -134627,8 +134621,8 @@
     "placedHeight": 2,
     "tooltip": "Allows you to set your spawn point if placed in a valid house\nCan be used to sleep, speeding up time",
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "king-slime",
+    "milestoneVia": "Crafted – needs Solidifier"
   },
   {
     "key": "SlimeBookcase",
@@ -134680,8 +134674,8 @@
     "placedWidth": 3,
     "placedHeight": 4,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Book"
   },
   {
     "key": "SlimeCandelabra",
@@ -134732,8 +134726,8 @@
     "placedWidth": 2,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "king-slime",
+    "milestoneVia": "Crafted – needs Solidifier"
   },
   {
     "key": "SlimeCandle",
@@ -134784,8 +134778,8 @@
     "placedWidth": 1,
     "placedHeight": 1,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "king-slime",
+    "milestoneVia": "Crafted – needs Solidifier"
   },
   {
     "key": "SlimeChair",
@@ -134835,8 +134829,8 @@
     "placedWidth": 1,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "king-slime",
+    "milestoneVia": "Crafted – needs Solidifier"
   },
   {
     "key": "SlimeChandelier",
@@ -134888,8 +134882,8 @@
     "placedWidth": 3,
     "placedHeight": 3,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "king-slime",
+    "milestoneVia": "Crafted – needs Solidifier"
   },
   {
     "key": "SlimeChest",
@@ -134943,8 +134937,8 @@
     "placedWidth": 2,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "king-slime",
+    "milestoneVia": "Crafted – needs Solidifier"
   },
   {
     "key": "SlimeClock",
@@ -134994,8 +134988,8 @@
     "placedWidth": 2,
     "placedHeight": 5,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "king-slime",
+    "milestoneVia": "Crafted – needs Solidifier"
   },
   {
     "key": "SlimeDoor",
@@ -135046,8 +135040,8 @@
     "placedWidth": 2,
     "placedHeight": 3,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "king-slime",
+    "milestoneVia": "Crafted – needs Solidifier"
   },
   {
     "key": "SlimeDresser",
@@ -135095,8 +135089,8 @@
     "placedWidth": 3,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "king-slime",
+    "milestoneVia": "Crafted – needs Solidifier"
   },
   {
     "key": "SlimeLamp",
@@ -135145,8 +135139,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "king-slime",
+    "milestoneVia": "Crafted – needs Solidifier"
   },
   {
     "key": "SlimeLantern",
@@ -135197,8 +135191,8 @@
     "placedWidth": 1,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "king-slime",
+    "milestoneVia": "Crafted – needs Solidifier"
   },
   {
     "key": "SlimePiano",
@@ -135249,8 +135243,8 @@
     "placedWidth": 3,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Bone"
   },
   {
     "key": "SlimePlatform",
@@ -135303,8 +135297,8 @@
     "placedHeight": 1,
     "tooltip": "Press Down to fall through",
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "king-slime",
+    "milestoneVia": "Crafted – needs Slime Block"
   },
   {
     "key": "SlimeSofa",
@@ -135352,8 +135346,8 @@
     "placedWidth": 3,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "king-slime",
+    "milestoneVia": "Crafted – needs Solidifier"
   },
   {
     "key": "SlimeTable",
@@ -135404,8 +135398,8 @@
     "placedWidth": 3,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "king-slime",
+    "milestoneVia": "Crafted – needs Solidifier"
   },
   {
     "key": "PirateStaff",
@@ -136877,8 +136871,8 @@
     "placedWidth": 2,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Green Brick"
   },
   {
     "key": "PinkDungeonChest",
@@ -136930,8 +136924,8 @@
     "placedWidth": 2,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Pink Brick"
   },
   {
     "key": "BlueDungeonChest",
@@ -136983,8 +136977,8 @@
     "placedWidth": 2,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Blue Brick"
   },
   {
     "key": "BoneChest",
@@ -137035,8 +137029,8 @@
     "placedWidth": 2,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Bone Welder"
   },
   {
     "key": "CactusChest",
@@ -137142,8 +137136,8 @@
     "placedWidth": 2,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "any-mech",
+    "milestoneVia": "Crafted – needs Flesh Cloning Vat"
   },
   {
     "key": "ObsidianChest",
@@ -137195,8 +137189,8 @@
     "placedWidth": 2,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "evil-boss",
+    "milestoneVia": "Crafted – needs Hellstone"
   },
   {
     "key": "PumpkinChest",
@@ -137300,8 +137294,8 @@
     "placedWidth": 2,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "plantera",
+    "milestoneVia": "Crafted – needs Spooky Wood"
   },
   {
     "key": "TempestStaff",
@@ -139097,8 +139091,8 @@
     "placedWidth": 3,
     "placedHeight": 3,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "any-mech",
+    "milestoneVia": "Crafted – needs Steampunk Boiler"
   },
   {
     "key": "PumpkinChandelier",
@@ -139840,8 +139834,8 @@
     "placedWidth": 3,
     "placedHeight": 4,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Book"
   },
   {
     "key": "PumpkinPiano",
@@ -139890,8 +139884,8 @@
     "placedWidth": 3,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Bone"
   },
   {
     "key": "SharkStatue",
@@ -144900,7 +144894,7 @@
     "tooltip": "Allows flight and slow fall",
     "eventOnly": true,
     "conditions": [],
-    "milestone": "any-mech",
+    "milestone": "plantera",
     "milestoneVia": "Dropped by Mothron"
   },
   {
@@ -147079,8 +147073,8 @@
     "placedWidth": 3,
     "placedHeight": 3,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "golem",
+    "milestoneVia": "Crafted – needs Martian Conduit Plating"
   },
   {
     "key": "MartianChest",
@@ -147131,8 +147125,8 @@
     "placedWidth": 2,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "golem",
+    "milestoneVia": "Crafted – needs Martian Conduit Plating"
   },
   {
     "key": "MartianDoor",
@@ -147278,8 +147272,8 @@
     "placedWidth": 3,
     "placedHeight": 4,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "golem",
+    "milestoneVia": "Crafted – needs Martian Conduit Plating"
   },
   {
     "key": "MartianHoverCandle",
@@ -147474,8 +147468,8 @@
     "placedWidth": 3,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "golem",
+    "milestoneVia": "Crafted – needs Martian Conduit Plating"
   },
   {
     "key": "MartianPlatform",
@@ -147624,8 +147618,8 @@
     "placedWidth": 3,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "golem",
+    "milestoneVia": "Crafted – needs Martian Conduit Plating"
   },
   {
     "key": "MartianTableLamp",
@@ -148262,8 +148256,8 @@
     "placedWidth": 2,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Blue Brick"
   },
   {
     "key": "GreenDungeonSink",
@@ -148311,8 +148305,8 @@
     "placedWidth": 2,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Green Brick"
   },
   {
     "key": "PinkDungeonSink",
@@ -148360,8 +148354,8 @@
     "placedWidth": 2,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Pink Brick"
   },
   {
     "key": "ObsidianSink",
@@ -148409,7 +148403,8 @@
     "placedWidth": 2,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start"
+    "milestone": "evil-boss",
+    "milestoneVia": "Crafted – needs Hellstone"
   },
   {
     "key": "MetalSink",
@@ -149048,8 +149043,8 @@
     "placedWidth": 2,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "king-slime",
+    "milestoneVia": "Crafted – needs Solidifier"
   },
   {
     "key": "CactusSink",
@@ -151416,7 +151411,7 @@
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Cultist Archer",
     "conditions": [],
-    "milestone": "wall-of-flesh",
+    "milestone": "golem",
     "milestoneVia": "Dropped by Cultist Archer"
   },
   {
@@ -151467,7 +151462,7 @@
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Lunatic Devotee",
     "conditions": [],
-    "milestone": "wall-of-flesh",
+    "milestone": "golem",
     "milestoneVia": "Dropped by Lunatic Devotee"
   },
   {
@@ -156264,8 +156259,8 @@
     "placedHeight": 4,
     "tooltip": "'V. Costa Moura'\n'In loving memory'",
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "skeletron",
+    "milestoneVia": "Found in Dungeon Crate"
   },
   {
     "key": "VineRope",
@@ -156530,7 +156525,7 @@
     "tooltip": "33% chance to not consume potion crafting ingredients",
     "conditions": [],
     "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestoneVia": "Fished"
   },
   {
     "key": "StrangeBrew",
@@ -157790,8 +157785,8 @@
     "autoswing": false,
     "tooltip": "'Great for impersonating devs!'",
     "conditions": [],
-    "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestone": "moon-lord",
+    "milestoneVia": "Strange Plant reward"
   },
   {
     "key": "PurpleOozeDye",
@@ -161476,7 +161471,7 @@
     "tooltip": "Sparks emit from struck enemies",
     "eventOnly": true,
     "conditions": [],
-    "milestone": "any-mech",
+    "milestone": "plantera",
     "milestoneVia": "Dropped by Butcher"
   },
   {
@@ -161825,7 +161820,7 @@
     "mana": 30,
     "eventOnly": true,
     "conditions": [],
-    "milestone": "any-mech",
+    "milestone": "plantera",
     "milestoneVia": "Dropped by Dr. Man Fly"
   },
   {
@@ -161880,7 +161875,7 @@
     "tooltip": "Allows you to go into stealth mode",
     "eventOnly": true,
     "conditions": [],
-    "milestone": "any-mech",
+    "milestone": "plantera",
     "milestoneVia": "Dropped by Psycho"
   },
   {
@@ -161935,7 +161930,7 @@
     "useTime": 15,
     "eventOnly": true,
     "conditions": [],
-    "milestone": "any-mech",
+    "milestone": "plantera",
     "milestoneVia": "Dropped by Nailhead"
   },
   {
@@ -162237,8 +162232,8 @@
     "placedHeight": 1,
     "tooltip": "Very bouncy",
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "king-slime",
+    "milestoneVia": "Crafted – needs Solidifier"
   },
   {
     "key": "PinkTorch",
@@ -163616,8 +163611,8 @@
     "placedWidth": 3,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Bone"
   },
   {
     "key": "MarblePiano",
@@ -163665,8 +163660,8 @@
     "placedWidth": 3,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Bone"
   },
   {
     "key": "GranitePiano",
@@ -163714,8 +163709,8 @@
     "placedWidth": 3,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Bone"
   },
   {
     "key": "MeteoritePlatform",
@@ -164213,8 +164208,8 @@
     "placedWidth": 3,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "evil-boss",
+    "milestoneVia": "Crafted – needs Meteorite Brick"
   },
   {
     "key": "MarbleTable",
@@ -164802,8 +164797,8 @@
     "placedWidth": 3,
     "placedHeight": 4,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Book"
   },
   {
     "key": "MarbleBookcase",
@@ -164852,8 +164847,8 @@
     "placedWidth": 3,
     "placedHeight": 4,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Book"
   },
   {
     "key": "GraniteBookcase",
@@ -164902,8 +164897,8 @@
     "placedWidth": 3,
     "placedHeight": 4,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Book"
   },
   {
     "key": "MeteoriteCandelabra",
@@ -165390,8 +165385,8 @@
     "placedWidth": 3,
     "placedHeight": 3,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "evil-boss",
+    "milestoneVia": "Crafted – needs Meteorite Brick"
   },
   {
     "key": "MarbleChandelier",
@@ -165542,8 +165537,8 @@
     "placedWidth": 2,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "evil-boss",
+    "milestoneVia": "Crafted – needs Meteorite Brick"
   },
   {
     "key": "MarbleChest",
@@ -169017,7 +169012,7 @@
     "tooltip": "Summons a deadly sphere to fight for you",
     "eventOnly": true,
     "conditions": [],
-    "milestone": "any-mech",
+    "milestone": "plantera",
     "milestoneVia": "Dropped by Deadly Sphere"
   },
   {
@@ -169864,8 +169859,8 @@
     "tooltip": "Increases summon damage by 8%",
     "conditions": [],
     "set": "obsidian-armor",
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "evil-boss",
+    "milestoneVia": "Crafted – needs Shadow Scale"
   },
   {
     "key": "ObsidianShirt",
@@ -169914,8 +169909,8 @@
     "tooltip": "Increases your max number of minions by 1",
     "conditions": [],
     "set": "obsidian-armor",
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "evil-boss",
+    "milestoneVia": "Crafted – needs Shadow Scale"
   },
   {
     "key": "ObsidianPants",
@@ -169964,8 +169959,8 @@
     "tooltip": "Increases summon damage by 8%",
     "conditions": [],
     "set": "obsidian-armor",
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "evil-boss",
+    "milestoneVia": "Crafted – needs Shadow Scale"
   },
   {
     "key": "MedusaHead",
@@ -170680,8 +170675,8 @@
     "debuff": "On Fire!",
     "tooltip": "Hits charge a fiery explosion",
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Dropped by enemies"
+    "milestone": "skeletron",
+    "milestoneVia": "Dropped by Underworld enemies after Skeletron"
   },
   {
     "key": "Chik",
@@ -170899,8 +170894,8 @@
     "debuff": "Acid Venom",
     "tooltip": "Hits inflict Acid Venom",
     "conditions": [],
-    "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestone": "any-mech",
+    "milestoneVia": "Dropped by Jungle enemies after any mechanical boss"
   },
   {
     "key": "RedsYoyo",
@@ -171226,7 +171221,7 @@
     "tooltip": "Hits with the power of the Eye of Cthulhu",
     "eventOnly": true,
     "conditions": [],
-    "milestone": "any-mech",
+    "milestone": "plantera",
     "milestoneVia": "Dropped by Mothron"
   },
   {
@@ -176307,7 +176302,7 @@
     "tooltip": "Nearby players get a bonus against: Dr. Man Fly",
     "eventOnly": true,
     "conditions": [],
-    "milestone": "any-mech",
+    "milestone": "plantera",
     "milestoneVia": "Dropped by Dr. Man Fly"
   },
   {
@@ -176359,7 +176354,7 @@
     "tooltip": "Nearby players get a bonus against: Mothron",
     "eventOnly": true,
     "conditions": [],
-    "milestone": "any-mech",
+    "milestone": "plantera",
     "milestoneVia": "Dropped by Mothron"
   },
   {
@@ -176512,7 +176507,7 @@
     "tooltip": "Nearby players get a bonus against: Butcher",
     "eventOnly": true,
     "conditions": [],
-    "milestone": "any-mech",
+    "milestone": "plantera",
     "milestoneVia": "Dropped by Butcher"
   },
   {
@@ -176564,7 +176559,7 @@
     "tooltip": "Nearby players get a bonus against: Psycho",
     "eventOnly": true,
     "conditions": [],
-    "milestone": "any-mech",
+    "milestone": "plantera",
     "milestoneVia": "Dropped by Psycho"
   },
   {
@@ -176616,7 +176611,7 @@
     "tooltip": "Nearby players get a bonus against: Deadly Sphere",
     "eventOnly": true,
     "conditions": [],
-    "milestone": "any-mech",
+    "milestone": "plantera",
     "milestoneVia": "Dropped by Deadly Sphere"
   },
   {
@@ -176668,7 +176663,7 @@
     "tooltip": "Nearby players get a bonus against: Nailhead",
     "eventOnly": true,
     "conditions": [],
-    "milestone": "any-mech",
+    "milestone": "plantera",
     "milestoneVia": "Dropped by Nailhead"
   },
   {
@@ -178894,7 +178889,7 @@
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Red Devil",
     "conditions": [],
-    "milestone": "wall-of-flesh",
+    "milestone": "any-mech",
     "milestoneVia": "Dropped by Red Devil"
   },
   {
@@ -187494,8 +187489,8 @@
     "placedHeight": 2,
     "tooltip": "Sends a message to everyone when signalled",
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Wire"
   },
   {
     "key": "LogicGateLamp_On",
@@ -187948,8 +187943,8 @@
     "placedHeight": 1,
     "tooltip": "Signals when stepped on or off by a player",
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Wire"
   },
   {
     "key": "EngineeringHelmet",
@@ -188153,8 +188148,8 @@
     "placedHeight": 1,
     "tooltip": "Signals when stepped on or off by a player",
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Wire"
   },
   {
     "key": "WeightedPressurePlatePurple",
@@ -188205,8 +188200,8 @@
     "placedHeight": 1,
     "tooltip": "Signals when stepped on or off by a player",
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Wire"
   },
   {
     "key": "WeightedPressurePlateCyan",
@@ -188257,8 +188252,8 @@
     "placedHeight": 1,
     "tooltip": "Signals when stepped on or off by a player",
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Wire"
   },
   {
     "key": "TeamBlockGreen",
@@ -189868,8 +189863,8 @@
     "placedWidth": 2,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Wire"
   },
   {
     "key": "Fake_GoldChest",
@@ -189917,8 +189912,8 @@
     "placedWidth": 2,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Wire"
   },
   {
     "key": "Fake_ShadowChest",
@@ -189966,8 +189961,8 @@
     "placedWidth": 2,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Wire"
   },
   {
     "key": "Fake_EbonwoodChest",
@@ -190015,8 +190010,8 @@
     "placedWidth": 2,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Wire"
   },
   {
     "key": "Fake_RichMahoganyChest",
@@ -190064,8 +190059,8 @@
     "placedWidth": 2,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Wire"
   },
   {
     "key": "Fake_PearlwoodChest",
@@ -190113,8 +190108,8 @@
     "placedWidth": 2,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "wall-of-flesh",
+    "milestoneVia": "Crafted – needs Pearlwood Chest"
   },
   {
     "key": "Fake_IvyChest",
@@ -190162,8 +190157,8 @@
     "placedWidth": 2,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Wire"
   },
   {
     "key": "Fake_IceChest",
@@ -190211,8 +190206,8 @@
     "placedWidth": 2,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Wire"
   },
   {
     "key": "Fake_LivingWoodChest",
@@ -190260,8 +190255,8 @@
     "placedWidth": 2,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Wire"
   },
   {
     "key": "Fake_SkywareChest",
@@ -190309,8 +190304,8 @@
     "placedWidth": 2,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Wire"
   },
   {
     "key": "Fake_ShadewoodChest",
@@ -190358,8 +190353,8 @@
     "placedWidth": 2,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Wire"
   },
   {
     "key": "Fake_WebCoveredChest",
@@ -190407,8 +190402,8 @@
     "placedWidth": 2,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Wire"
   },
   {
     "key": "Fake_LihzahrdChest",
@@ -190456,8 +190451,8 @@
     "placedWidth": 2,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "plantera",
+    "milestoneVia": "Crafted – needs Lihzahrd Chest"
   },
   {
     "key": "Fake_WaterChest",
@@ -190505,8 +190500,8 @@
     "placedWidth": 2,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Wire"
   },
   {
     "key": "Fake_JungleChest",
@@ -190554,8 +190549,8 @@
     "placedWidth": 2,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "wall-of-flesh",
+    "milestoneVia": "Crafted – needs Jungle Chest"
   },
   {
     "key": "Fake_CorruptionChest",
@@ -190603,8 +190598,8 @@
     "placedWidth": 2,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "wall-of-flesh",
+    "milestoneVia": "Crafted – needs Corruption Chest"
   },
   {
     "key": "Fake_CrimsonChest",
@@ -190652,8 +190647,8 @@
     "placedWidth": 2,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "wall-of-flesh",
+    "milestoneVia": "Crafted – needs Crimson Chest"
   },
   {
     "key": "Fake_HallowedChest",
@@ -190701,8 +190696,8 @@
     "placedWidth": 2,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "wall-of-flesh",
+    "milestoneVia": "Crafted – needs Hallowed Chest"
   },
   {
     "key": "Fake_FrozenChest",
@@ -190750,8 +190745,8 @@
     "placedWidth": 2,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "wall-of-flesh",
+    "milestoneVia": "Crafted – needs Ice Chest"
   },
   {
     "key": "Fake_DynastyChest",
@@ -190799,8 +190794,8 @@
     "placedWidth": 2,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Wire"
   },
   {
     "key": "Fake_HoneyChest",
@@ -190848,8 +190843,8 @@
     "placedWidth": 2,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Wire"
   },
   {
     "key": "Fake_SteampunkChest",
@@ -190897,8 +190892,8 @@
     "placedWidth": 2,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "any-mech",
+    "milestoneVia": "Crafted – needs Steampunk Chest"
   },
   {
     "key": "Fake_PalmWoodChest",
@@ -190946,8 +190941,8 @@
     "placedWidth": 2,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Wire"
   },
   {
     "key": "Fake_MushroomChest",
@@ -190995,8 +190990,8 @@
     "placedWidth": 2,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Wire"
   },
   {
     "key": "Fake_BorealWoodChest",
@@ -191044,8 +191039,8 @@
     "placedWidth": 2,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Wire"
   },
   {
     "key": "Fake_SlimeChest",
@@ -191093,8 +191088,8 @@
     "placedWidth": 2,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Wire"
   },
   {
     "key": "Fake_GreenDungeonChest",
@@ -191142,8 +191137,8 @@
     "placedWidth": 2,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Green Dungeon Chest"
   },
   {
     "key": "Fake_PinkDungeonChest",
@@ -191191,8 +191186,8 @@
     "placedWidth": 2,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Pink Dungeon Chest"
   },
   {
     "key": "Fake_BlueDungeonChest",
@@ -191240,8 +191235,8 @@
     "placedWidth": 2,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Blue Dungeon Chest"
   },
   {
     "key": "Fake_BoneChest",
@@ -191289,8 +191284,8 @@
     "placedWidth": 2,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Bone Chest"
   },
   {
     "key": "Fake_CactusChest",
@@ -191338,8 +191333,8 @@
     "placedWidth": 2,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Wire"
   },
   {
     "key": "Fake_FleshChest",
@@ -191387,8 +191382,8 @@
     "placedWidth": 2,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "any-mech",
+    "milestoneVia": "Crafted – needs Flesh Chest"
   },
   {
     "key": "Fake_ObsidianChest",
@@ -191436,8 +191431,8 @@
     "placedWidth": 2,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Wire"
   },
   {
     "key": "Fake_PumpkinChest",
@@ -191485,8 +191480,8 @@
     "placedWidth": 2,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Wire"
   },
   {
     "key": "Fake_SpookyChest",
@@ -191534,8 +191529,8 @@
     "placedWidth": 2,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "plantera",
+    "milestoneVia": "Crafted – needs Spooky Chest"
   },
   {
     "key": "Fake_GlassChest",
@@ -191583,8 +191578,8 @@
     "placedWidth": 2,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Wire"
   },
   {
     "key": "Fake_MartianChest",
@@ -191632,8 +191627,8 @@
     "placedWidth": 2,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "golem",
+    "milestoneVia": "Crafted – needs Martian Chest"
   },
   {
     "key": "Fake_MeteoriteChest",
@@ -191681,8 +191676,8 @@
     "placedWidth": 2,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Wire"
   },
   {
     "key": "Fake_GraniteChest",
@@ -191730,8 +191725,8 @@
     "placedWidth": 2,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Wire"
   },
   {
     "key": "Fake_MarbleChest",
@@ -191779,8 +191774,8 @@
     "placedWidth": 2,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Wire"
   },
   {
     "key": "Fake_newchest1",
@@ -201195,8 +201190,8 @@
     "placedWidth": 2,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "wall-of-flesh",
+    "milestoneVia": "Crafted – needs Crystal Block"
   },
   {
     "key": "GoldenChest",
@@ -201249,8 +201244,8 @@
     "placedWidth": 2,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "wall-of-flesh",
+    "milestoneVia": "Dropped by Flying Dutchman"
   },
   {
     "key": "Fake_CrystalChest",
@@ -201298,8 +201293,8 @@
     "placedWidth": 2,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "wall-of-flesh",
+    "milestoneVia": "Crafted – needs Crystal Chest"
   },
   {
     "key": "Fake_GoldenChest",
@@ -201347,8 +201342,8 @@
     "placedWidth": 2,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "wall-of-flesh",
+    "milestoneVia": "Crafted – needs Golden Chest"
   },
   {
     "key": "CrystalDoor",
@@ -201690,8 +201685,8 @@
     "placedWidth": 3,
     "placedHeight": 3,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "wall-of-flesh",
+    "milestoneVia": "Crafted – needs Crystal Block"
   },
   {
     "key": "CrystalBathtub",
@@ -202738,8 +202733,8 @@
     "placedWidth": 3,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "wall-of-flesh",
+    "milestoneVia": "Crafted – needs Crystal Block"
   },
   {
     "key": "DynastyPiano",
@@ -202787,8 +202782,8 @@
     "placedWidth": 3,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Bone"
   },
   {
     "key": "CrystalBookCase",
@@ -202837,8 +202832,8 @@
     "placedWidth": 3,
     "placedHeight": 4,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "wall-of-flesh",
+    "milestoneVia": "Crafted – needs Crystal Block"
   },
   {
     "key": "CrystalSofaHowDoesThatEvenWork",
@@ -202983,7 +202978,7 @@
     "placedHeight": 2,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Crafted – needs Crystal Block"
   },
   {
     "key": "ArkhalisHat",
@@ -203643,8 +203638,8 @@
     "placedWidth": 3,
     "placedHeight": 4,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "wall-of-flesh",
+    "milestoneVia": "Crafted – needs Spider Nest Block"
   },
   {
     "key": "SpiderDresser",
@@ -203887,8 +203882,8 @@
     "placedWidth": 3,
     "placedHeight": 3,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "wall-of-flesh",
+    "milestoneVia": "Crafted – needs Spider Nest Block"
   },
   {
     "key": "SpiderChest",
@@ -203939,8 +203934,8 @@
     "placedWidth": 2,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "wall-of-flesh",
+    "milestoneVia": "Crafted – needs Spider Nest Block"
   },
   {
     "key": "SpiderClock",
@@ -204183,8 +204178,8 @@
     "placedWidth": 3,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "wall-of-flesh",
+    "milestoneVia": "Crafted – needs Spider Nest Block"
   },
   {
     "key": "SpiderPlatform",
@@ -204384,7 +204379,7 @@
     "placedHeight": 2,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Crafted – needs Spider Nest Block"
   },
   {
     "key": "SpiderWorkbench",
@@ -204482,8 +204477,8 @@
     "placedWidth": 2,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "wall-of-flesh",
+    "milestoneVia": "Crafted – needs Spider Chest"
   },
   {
     "key": "IronBrick",
@@ -204969,8 +204964,8 @@
     "placedWidth": 3,
     "placedHeight": 4,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "any-mech",
+    "milestoneVia": "Crafted – needs Decay Chamber"
   },
   {
     "key": "LesionCandelabra",
@@ -205165,8 +205160,8 @@
     "placedWidth": 3,
     "placedHeight": 3,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "any-mech",
+    "milestoneVia": "Crafted – needs Decay Chamber"
   },
   {
     "key": "LesionChest",
@@ -205217,8 +205212,8 @@
     "placedWidth": 2,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "any-mech",
+    "milestoneVia": "Crafted – needs Decay Chamber"
   },
   {
     "key": "LesionClock",
@@ -205509,8 +205504,8 @@
     "placedWidth": 3,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "any-mech",
+    "milestoneVia": "Crafted – needs Decay Chamber"
   },
   {
     "key": "LesionSink",
@@ -205655,8 +205650,8 @@
     "placedWidth": 3,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestone": "any-mech",
+    "milestoneVia": "Crafted – needs Decay Chamber"
   },
   {
     "key": "LesionWorkbench",
@@ -205754,8 +205749,8 @@
     "placedWidth": 2,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "any-mech",
+    "milestoneVia": "Crafted – needs Lesion Chest"
   },
   {
     "key": "HatRack",
@@ -212285,8 +212280,8 @@
     "placedWidth": 1,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Blue Brick"
   },
   {
     "key": "ToiletDungeonGreen",
@@ -212333,8 +212328,8 @@
     "placedWidth": 1,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Green Brick"
   },
   {
     "key": "ToiletDungeonPink",
@@ -212381,8 +212376,8 @@
     "placedWidth": 1,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Pink Brick"
   },
   {
     "key": "ToiletObsidian",
@@ -212429,7 +212424,8 @@
     "placedWidth": 1,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start"
+    "milestone": "evil-boss",
+    "milestoneVia": "Crafted – needs Hellstone"
   },
   {
     "key": "ToiletFrozen",
@@ -212908,8 +212904,8 @@
     "placedWidth": 1,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "king-slime",
+    "milestoneVia": "Crafted – needs Solidifier"
   },
   {
     "key": "ToiletMartian",
@@ -214241,8 +214237,8 @@
     "placedWidth": 3,
     "placedHeight": 4,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "lunatic-cultist",
+    "milestoneVia": "Crafted – needs Ancient Manipulator"
   },
   {
     "key": "SolarDresser",
@@ -214485,8 +214481,8 @@
     "placedWidth": 3,
     "placedHeight": 3,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "lunatic-cultist",
+    "milestoneVia": "Crafted – needs Ancient Manipulator"
   },
   {
     "key": "SolarChest",
@@ -214537,8 +214533,8 @@
     "placedWidth": 2,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "lunatic-cultist",
+    "milestoneVia": "Crafted – needs Ancient Manipulator"
   },
   {
     "key": "SolarClock",
@@ -214781,8 +214777,8 @@
     "placedWidth": 3,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "lunatic-cultist",
+    "milestoneVia": "Crafted – needs Ancient Manipulator"
   },
   {
     "key": "SolarPlatform",
@@ -214980,8 +214976,8 @@
     "placedWidth": 3,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestone": "lunatic-cultist",
+    "milestoneVia": "Crafted – needs Ancient Manipulator"
   },
   {
     "key": "SolarWorkbench",
@@ -215079,8 +215075,8 @@
     "placedWidth": 2,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "lunatic-cultist",
+    "milestoneVia": "Crafted – needs Solar Chest"
   },
   {
     "key": "SolarToilet",
@@ -215274,8 +215270,8 @@
     "placedWidth": 3,
     "placedHeight": 4,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "lunatic-cultist",
+    "milestoneVia": "Crafted – needs Ancient Manipulator"
   },
   {
     "key": "VortexDresser",
@@ -215518,8 +215514,8 @@
     "placedWidth": 3,
     "placedHeight": 3,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "lunatic-cultist",
+    "milestoneVia": "Crafted – needs Ancient Manipulator"
   },
   {
     "key": "VortexChest",
@@ -215570,8 +215566,8 @@
     "placedWidth": 2,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "lunatic-cultist",
+    "milestoneVia": "Crafted – needs Ancient Manipulator"
   },
   {
     "key": "VortexClock",
@@ -215814,8 +215810,8 @@
     "placedWidth": 3,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "lunatic-cultist",
+    "milestoneVia": "Crafted – needs Ancient Manipulator"
   },
   {
     "key": "VortexPlatform",
@@ -216013,8 +216009,8 @@
     "placedWidth": 3,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestone": "lunatic-cultist",
+    "milestoneVia": "Crafted – needs Ancient Manipulator"
   },
   {
     "key": "VortexWorkbench",
@@ -216112,8 +216108,8 @@
     "placedWidth": 2,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "lunatic-cultist",
+    "milestoneVia": "Crafted – needs Vortex Chest"
   },
   {
     "key": "VortexToilet",
@@ -216307,8 +216303,8 @@
     "placedWidth": 3,
     "placedHeight": 4,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "lunatic-cultist",
+    "milestoneVia": "Crafted – needs Ancient Manipulator"
   },
   {
     "key": "NebulaDresser",
@@ -216551,8 +216547,8 @@
     "placedWidth": 3,
     "placedHeight": 3,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "lunatic-cultist",
+    "milestoneVia": "Crafted – needs Ancient Manipulator"
   },
   {
     "key": "NebulaChest",
@@ -216603,8 +216599,8 @@
     "placedWidth": 2,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "lunatic-cultist",
+    "milestoneVia": "Crafted – needs Ancient Manipulator"
   },
   {
     "key": "NebulaClock",
@@ -216847,8 +216843,8 @@
     "placedWidth": 3,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "lunatic-cultist",
+    "milestoneVia": "Crafted – needs Ancient Manipulator"
   },
   {
     "key": "NebulaPlatform",
@@ -217046,8 +217042,8 @@
     "placedWidth": 3,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestone": "lunatic-cultist",
+    "milestoneVia": "Crafted – needs Ancient Manipulator"
   },
   {
     "key": "NebulaWorkbench",
@@ -217145,8 +217141,8 @@
     "placedWidth": 2,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "lunatic-cultist",
+    "milestoneVia": "Crafted – needs Nebula Chest"
   },
   {
     "key": "NebulaToilet",
@@ -217340,8 +217336,8 @@
     "placedWidth": 3,
     "placedHeight": 4,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "lunatic-cultist",
+    "milestoneVia": "Crafted – needs Ancient Manipulator"
   },
   {
     "key": "StardustDresser",
@@ -217584,8 +217580,8 @@
     "placedWidth": 3,
     "placedHeight": 3,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "lunatic-cultist",
+    "milestoneVia": "Crafted – needs Ancient Manipulator"
   },
   {
     "key": "StardustChest",
@@ -217636,8 +217632,8 @@
     "placedWidth": 2,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "lunatic-cultist",
+    "milestoneVia": "Crafted – needs Ancient Manipulator"
   },
   {
     "key": "StardustClock",
@@ -217880,8 +217876,8 @@
     "placedWidth": 3,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "lunatic-cultist",
+    "milestoneVia": "Crafted – needs Ancient Manipulator"
   },
   {
     "key": "StardustPlatform",
@@ -218079,8 +218075,8 @@
     "placedWidth": 3,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestone": "lunatic-cultist",
+    "milestoneVia": "Crafted – needs Ancient Manipulator"
   },
   {
     "key": "StardustWorkbench",
@@ -218178,8 +218174,8 @@
     "placedWidth": 2,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "lunatic-cultist",
+    "milestoneVia": "Crafted – needs Stardust Chest"
   },
   {
     "key": "StardustToilet",
@@ -218708,8 +218704,8 @@
     "placedHeight": 1,
     "tooltip": "May break when stepped on",
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Blue Brick"
   },
   {
     "key": "CrackedGreenBrick",
@@ -218756,8 +218752,8 @@
     "placedHeight": 1,
     "tooltip": "May break when stepped on",
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Green Brick"
   },
   {
     "key": "CrackedPinkBrick",
@@ -218804,8 +218800,8 @@
     "placedHeight": 1,
     "tooltip": "May break when stepped on",
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Pink Brick"
   },
   {
     "key": "FlowerPacketWild",
@@ -220082,8 +220078,8 @@
     "placedWidth": 2,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Wire"
   },
   {
     "key": "DesertChest",
@@ -220183,8 +220179,8 @@
     "placedWidth": 2,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Wire"
   },
   {
     "key": "SanguineStaff",
@@ -221773,8 +221769,8 @@
     "placedWidth": 3,
     "placedHeight": 4,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Book"
   },
   {
     "key": "SandstoneDresser",
@@ -222261,8 +222257,8 @@
     "placedWidth": 3,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Bone"
   },
   {
     "key": "SandstonePlatform",
@@ -235024,8 +235020,8 @@
     "placedWidth": 3,
     "placedHeight": 4,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Book"
   },
   {
     "key": "BambooDresser",
@@ -235564,8 +235560,8 @@
     "placedWidth": 3,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Bone"
   },
   {
     "key": "BambooPlatform",
@@ -235862,8 +235858,8 @@
     "placedWidth": 2,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Wire"
   },
   {
     "key": "BambooToilet",
@@ -242350,8 +242346,8 @@
     "placedWidth": 2,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "wall-of-flesh",
+    "milestoneVia": "Shimmer from Desert Key"
   },
   {
     "key": "Fake_DungeonDesertChest",
@@ -242399,8 +242395,8 @@
     "placedWidth": 2,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "wall-of-flesh",
+    "milestoneVia": "Crafted – needs Desert Chest"
   },
   {
     "key": "DungeonDesertKey",
@@ -243317,7 +243313,7 @@
     "placedHeight": 2,
     "tooltip": "'Seriously? THIS is what you used the Broken Hero Sword for?'",
     "conditions": [],
-    "milestone": "any-mech",
+    "milestone": "plantera",
     "milestoneVia": "Crafted – needs Broken Hero Sword"
   },
   {
@@ -243681,7 +243677,7 @@
     "eventOnly": true,
     "conditions": [],
     "set": "dr-man-fly-set",
-    "milestone": "any-mech",
+    "milestone": "plantera",
     "milestoneVia": "Dropped by Dr. Man Fly"
   },
   {
@@ -243733,7 +243729,7 @@
     "eventOnly": true,
     "conditions": [],
     "set": "dr-man-fly-set",
-    "milestone": "any-mech",
+    "milestone": "plantera",
     "milestoneVia": "Dropped by Dr. Man Fly"
   },
   {
@@ -243785,7 +243781,7 @@
     "eventOnly": true,
     "conditions": [],
     "set": "butcher-s-set",
-    "milestone": "any-mech",
+    "milestone": "plantera",
     "milestoneVia": "Dropped by Butcher"
   },
   {
@@ -243837,7 +243833,7 @@
     "eventOnly": true,
     "conditions": [],
     "set": "butcher-s-set",
-    "milestone": "any-mech",
+    "milestone": "plantera",
     "milestoneVia": "Dropped by Butcher"
   },
   {
@@ -243889,7 +243885,7 @@
     "eventOnly": true,
     "conditions": [],
     "set": "butcher-s-set",
-    "milestone": "any-mech",
+    "milestone": "plantera",
     "milestoneVia": "Dropped by Butcher"
   },
   {
@@ -254780,8 +254776,8 @@
     "useTime": 15,
     "tooltip": "'Its wings are so delicate, you must be careful not to damage it...'",
     "conditions": [],
-    "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestone": "plantera",
+    "milestoneVia": "Appears in the Hallow after Plantera"
   },
   {
     "key": "AccentSlab",
@@ -254923,7 +254919,7 @@
     "placedWidth": 2,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "wall-of-flesh",
+    "milestone": "plantera",
     "milestoneVia": "Crafted – needs Prismatic Lacewing"
   },
   {
@@ -260113,8 +260109,8 @@
     "tooltip": "'You can't see me behind the screen, I'm half human and half machine...'\nConcept by Dr.Zootsuit",
     "conditions": [],
     "set": "tv-head-set",
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Wire"
   },
   {
     "key": "TVHeadSuit",
@@ -260312,7 +260308,7 @@
     "useTime": 25,
     "mana": 18,
     "conditions": [],
-    "milestone": "wall-of-flesh",
+    "milestone": "plantera",
     "milestoneVia": "Dropped by Princess"
   },
   {
@@ -260607,8 +260603,8 @@
     "bodySlot": "social helmet",
     "conditions": [],
     "set": "royal-set",
-    "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestone": "plantera",
+    "milestoneVia": "Sold by the Princess"
   },
   {
     "key": "RoyalDressTop",
@@ -260659,8 +260655,8 @@
     "bodySlot": "social shirt",
     "conditions": [],
     "set": "royal-set",
-    "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestone": "plantera",
+    "milestoneVia": "Sold by the Princess"
   },
   {
     "key": "RoyalDressBottom",
@@ -260711,8 +260707,8 @@
     "bodySlot": "social pants",
     "conditions": [],
     "set": "royal-set",
-    "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestone": "plantera",
+    "milestoneVia": "Sold by the Princess"
   },
   {
     "key": "BoneWhip",
@@ -260902,8 +260898,8 @@
     "placeable": false,
     "autoswing": false,
     "conditions": [],
-    "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestone": "plantera",
+    "milestoneVia": "Sold by the Princess"
   },
   {
     "key": "GlassSlipper",
@@ -260952,7 +260948,7 @@
     "placeable": false,
     "autoswing": false,
     "conditions": [],
-    "milestone": "start",
+    "milestone": "plantera",
     "milestoneVia": "Sold by the Princess"
   },
   {
@@ -261089,8 +261085,8 @@
     "bodySlot": "social shirt",
     "conditions": [],
     "set": "prince-set",
-    "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestone": "plantera",
+    "milestoneVia": "Sold by the Princess"
   },
   {
     "key": "FirecrackerMobile",
@@ -261184,8 +261180,8 @@
     "bodySlot": "social pants",
     "conditions": [],
     "set": "prince-set",
-    "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestone": "plantera",
+    "milestoneVia": "Sold by the Princess"
   },
   {
     "key": "PrinceCape",
@@ -261237,8 +261233,8 @@
     "autoswing": false,
     "conditions": [],
     "set": "prince-set",
-    "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestone": "plantera",
+    "milestoneVia": "Sold by the Princess"
   },
   {
     "key": "PottedCrystalPlantFern",
@@ -261288,8 +261284,8 @@
     "placedWidth": 2,
     "placedHeight": 5,
     "conditions": [],
-    "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestone": "plantera",
+    "milestoneVia": "Sold by the Princess"
   },
   {
     "key": "PottedCrystalPlantSpiral",
@@ -261339,8 +261335,8 @@
     "placedWidth": 2,
     "placedHeight": 5,
     "conditions": [],
-    "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestone": "plantera",
+    "milestoneVia": "Sold by the Princess"
   },
   {
     "key": "PottedCrystalPlantTeardrop",
@@ -261390,8 +261386,8 @@
     "placedWidth": 2,
     "placedHeight": 5,
     "conditions": [],
-    "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestone": "plantera",
+    "milestoneVia": "Sold by the Princess"
   },
   {
     "key": "PottedCrystalPlantTree",
@@ -261441,8 +261437,8 @@
     "placedWidth": 2,
     "placedHeight": 5,
     "conditions": [],
-    "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestone": "plantera",
+    "milestoneVia": "Sold by the Princess"
   },
   {
     "key": "Princess64",
@@ -261493,8 +261489,8 @@
     "placedHeight": 4,
     "tooltip": "'J. Hayes'",
     "conditions": [],
-    "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestone": "plantera",
+    "milestoneVia": "Sold by the Princess"
   },
   {
     "key": "PaintingOfALass",
@@ -261545,8 +261541,8 @@
     "placedHeight": 3,
     "tooltip": "'J. Hayes'",
     "conditions": [],
-    "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestone": "plantera",
+    "milestoneVia": "Sold by the Princess"
   },
   {
     "key": "DarkSideHallow",
@@ -261597,8 +261593,8 @@
     "placedHeight": 3,
     "tooltip": "'J. Hayes'",
     "conditions": [],
-    "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestone": "plantera",
+    "milestoneVia": "Sold by the Princess"
   },
   {
     "key": "BerniePetItem",
@@ -261648,8 +261644,8 @@
     "buff": "Bernie",
     "tooltip": "Summons a cherished teddy bear\n'My childhood buddy - Bernie!'",
     "conditions": [],
-    "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestone": "plantera",
+    "milestoneVia": "Sold by the Princess"
   },
   {
     "key": "GlommerPetItem",
@@ -264759,8 +264755,8 @@
     "placedWidth": 3,
     "placedHeight": 4,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Book"
   },
   {
     "key": "CoralDresser",
@@ -265299,8 +265295,8 @@
     "placedWidth": 3,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Bone"
   },
   {
     "key": "CoralPlatform",
@@ -265597,8 +265593,8 @@
     "placedWidth": 2,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Wire"
   },
   {
     "key": "CoralToilet",
@@ -265792,8 +265788,8 @@
     "placedWidth": 3,
     "placedHeight": 4,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Book"
   },
   {
     "key": "BalloonDresser",
@@ -266332,8 +266328,8 @@
     "placedWidth": 3,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Bone"
   },
   {
     "key": "BalloonPlatform",
@@ -266630,8 +266626,8 @@
     "placedWidth": 2,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Wire"
   },
   {
     "key": "BalloonToilet",
@@ -266825,8 +266821,8 @@
     "placedWidth": 3,
     "placedHeight": 4,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Book"
   },
   {
     "key": "AshWoodDresser",
@@ -267365,8 +267361,8 @@
     "placedWidth": 3,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Bone"
   },
   {
     "key": "AshWoodPlatform",
@@ -267663,8 +267659,8 @@
     "placedWidth": 2,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Wire"
   },
   {
     "key": "AshWoodToilet",
@@ -268295,8 +268291,8 @@
     "placedHeight": 3,
     "tooltip": "'B. Hook'",
     "conditions": [],
-    "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestone": "plantera",
+    "milestoneVia": "Sold by the Princess"
   },
   {
     "key": "Requiem",
@@ -268347,7 +268343,7 @@
     "tooltip": "'C. Rohde'",
     "eventOnly": true,
     "conditions": [],
-    "milestone": "any-mech",
+    "milestone": "all-mechs",
     "milestoneVia": "Dropped by Reaper"
   },
   {
@@ -268551,7 +268547,7 @@
     "tooltip": "'J. Witzig'",
     "eventOnly": true,
     "conditions": [],
-    "milestone": "any-mech",
+    "milestone": "plantera",
     "milestoneVia": "Dropped by Butcher"
   },
   {
@@ -268603,8 +268599,8 @@
     "placedHeight": 3,
     "tooltip": "'C. Germaine'",
     "conditions": [],
-    "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestone": "plantera",
+    "milestoneVia": "Sold by the Princess"
   },
   {
     "key": "BennyWarhol",
@@ -269064,7 +269060,7 @@
     "tooltip": "'G. Groviar'",
     "eventOnly": true,
     "conditions": [],
-    "milestone": "any-mech",
+    "milestone": "plantera",
     "milestoneVia": "Dropped by Mothron"
   },
   {
@@ -270446,7 +270442,7 @@
     "tooltip": "'J. Parker III'\n'Legends say the batteries died ages ago.'",
     "conditions": [],
     "milestone": "start",
-    "milestoneVia": "Dropped by enemies"
+    "milestoneVia": "Angler quest reward"
   },
   {
     "key": "TheDuke",
@@ -270549,7 +270545,7 @@
       "after-king-slime",
       "after-queen-slime"
     ],
-    "milestone": "queen-slime",
+    "milestone": "plantera",
     "milestoneVia": "Sold by the Princess"
   },
   {
@@ -271637,7 +271633,7 @@
     "autoswing": false,
     "buff": "Terra Fart Kart",
     "conditions": [],
-    "milestone": "any-mech",
+    "milestone": "plantera",
     "milestoneVia": "Crafted – needs Terra Toilet"
   },
   {
@@ -272732,8 +272728,8 @@
     "placedHeight": 4,
     "tooltip": "'Yorai Omer'",
     "conditions": [],
-    "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestone": "plantera",
+    "milestoneVia": "Sold by the Princess"
   },
   {
     "key": "Toucan",
@@ -274254,7 +274250,8 @@
     "useTime": 45,
     "tooltip": "Permanently increases mining and building speed",
     "conditions": [],
-    "milestone": "start"
+    "milestone": "start",
+    "milestoneVia": "Shimmer from Any Fruit"
   },
   {
     "key": "PeddlersSatchel",
@@ -274801,7 +274798,8 @@
     "placedWidth": 1,
     "placedHeight": 1,
     "conditions": [],
-    "milestone": "start"
+    "milestone": "start",
+    "milestoneVia": "Shimmer from Any Torch"
   },
   {
     "key": "ReflectiveShades",
@@ -274989,7 +274987,7 @@
     "tooltip": "Life regen is increased when near a campfire",
     "conditions": [],
     "milestone": "start",
-    "milestoneVia": "Shimmer from Campfire"
+    "milestoneVia": "Crafted"
   },
   {
     "key": "Shellphone",
@@ -275361,7 +275359,7 @@
     "useTime": 15,
     "tooltip": "A cursed segment of Dungeon wall that will spawn monsters",
     "conditions": [],
-    "milestone": "start",
+    "milestone": "skeletron",
     "milestoneVia": "Shimmer from Blue Brick Wall"
   },
   {
@@ -275405,7 +275403,7 @@
     "useTime": 15,
     "tooltip": "A cursed segment of Dungeon wall that will spawn monsters",
     "conditions": [],
-    "milestone": "start",
+    "milestone": "skeletron",
     "milestoneVia": "Shimmer from Blue Slab Wall"
   },
   {
@@ -275449,7 +275447,7 @@
     "useTime": 15,
     "tooltip": "A cursed segment of Dungeon wall that will spawn monsters",
     "conditions": [],
-    "milestone": "start",
+    "milestone": "skeletron",
     "milestoneVia": "Shimmer from Blue Tiled Wall"
   },
   {
@@ -275493,7 +275491,7 @@
     "useTime": 15,
     "tooltip": "A cursed segment of Dungeon wall that will spawn monsters",
     "conditions": [],
-    "milestone": "start",
+    "milestone": "skeletron",
     "milestoneVia": "Shimmer from Pink Brick Wall"
   },
   {
@@ -275537,7 +275535,7 @@
     "useTime": 15,
     "tooltip": "A cursed segment of Dungeon wall that will spawn monsters",
     "conditions": [],
-    "milestone": "start",
+    "milestone": "skeletron",
     "milestoneVia": "Shimmer from Pink Slab Wall"
   },
   {
@@ -275581,7 +275579,7 @@
     "useTime": 15,
     "tooltip": "A cursed segment of Dungeon wall that will spawn monsters",
     "conditions": [],
-    "milestone": "start",
+    "milestone": "skeletron",
     "milestoneVia": "Shimmer from Pink Tiled Wall"
   },
   {
@@ -275625,7 +275623,7 @@
     "useTime": 15,
     "tooltip": "A cursed segment of Dungeon wall that will spawn monsters",
     "conditions": [],
-    "milestone": "start",
+    "milestone": "skeletron",
     "milestoneVia": "Shimmer from Green Brick Wall"
   },
   {
@@ -275669,7 +275667,7 @@
     "useTime": 15,
     "tooltip": "A cursed segment of Dungeon wall that will spawn monsters",
     "conditions": [],
-    "milestone": "start",
+    "milestone": "skeletron",
     "milestoneVia": "Shimmer from Green Slab Wall"
   },
   {
@@ -275713,7 +275711,7 @@
     "useTime": 15,
     "tooltip": "A cursed segment of Dungeon wall that will spawn monsters",
     "conditions": [],
-    "milestone": "start",
+    "milestone": "skeletron",
     "milestoneVia": "Shimmer from Green Tiled Wall"
   },
   {
@@ -277886,7 +277884,7 @@
     "placedWidth": 1,
     "placedHeight": 1,
     "conditions": [],
-    "milestone": "start",
+    "milestone": "skeletron",
     "milestoneVia": "Shimmer from Blue Brick"
   },
   {
@@ -277932,8 +277930,8 @@
     "autoswing": true,
     "useTime": 15,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Ancient Blue Brick"
   },
   {
     "key": "AncientGreenDungeonBrick",
@@ -277982,7 +277980,7 @@
     "placedWidth": 1,
     "placedHeight": 1,
     "conditions": [],
-    "milestone": "start",
+    "milestone": "skeletron",
     "milestoneVia": "Shimmer from Green Brick"
   },
   {
@@ -278028,8 +278026,8 @@
     "autoswing": true,
     "useTime": 15,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Ancient Green Brick"
   },
   {
     "key": "AncientPinkDungeonBrick",
@@ -278078,7 +278076,7 @@
     "placedWidth": 1,
     "placedHeight": 1,
     "conditions": [],
-    "milestone": "start",
+    "milestone": "skeletron",
     "milestoneVia": "Shimmer from Pink Brick"
   },
   {
@@ -278124,8 +278122,8 @@
     "autoswing": true,
     "useTime": 15,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Ancient Pink Brick"
   },
   {
     "key": "AncientGoldBrick",
@@ -279765,8 +279763,8 @@
     "buff": "Mushroom Boi!",
     "tooltip": "Summons a mushroom boi to fight for you\n'Get Mushed Boi!'",
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "evil-boss",
+    "milestoneVia": "Crafted – needs Shadow Scale"
   },
   {
     "key": "DeadCellsBeheadedHead",
@@ -280385,8 +280383,8 @@
     "placedHeight": 2,
     "tooltip": "'For display purposes only!'",
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "evil-boss",
+    "milestoneVia": "Crafted – needs Tissue Sample"
   },
   {
     "key": "ShadowOrbReplica",
@@ -280483,8 +280481,8 @@
     "placedHeight": 2,
     "tooltip": "'For display purposes only!'",
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "evil-boss",
+    "milestoneVia": "Crafted – needs Tissue Sample"
   },
   {
     "key": "CobwebReplica",
@@ -280915,9 +280913,7 @@
       "whip"
     ],
     "obtain": [
-      "crafted",
-      "loot",
-      "bag"
+      "crafted"
     ],
     "vendors": [],
     "events": [],
@@ -280950,8 +280946,8 @@
     "useTime": 30,
     "tooltip": "15 summon tag damage\n15% summon tag critical strike chance\nYour summons will focus struck enemies\nStrike enemies with cosmic energy\nCosmic energy grows from enemies hit by summons\nStrike again to scatter a constellation of stars",
     "conditions": [],
-    "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestone": "lunatic-cultist",
+    "milestoneVia": "Crafted – needs Ancient Manipulator"
   },
   {
     "key": "MoonLordWhip",
@@ -281156,8 +281152,8 @@
     "placedHeight": 4,
     "tooltip": "'C. Shadou'",
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "queen-bee",
+    "milestoneVia": "From the Treasure Bag (Queen Bee)"
   },
   {
     "key": "PlayerVoiceCowbellItem",
@@ -281310,8 +281306,8 @@
     "placedHeight": 4,
     "tooltip": "'R. Teare'",
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "evil-boss",
+    "milestoneVia": "Dropped by Meteor Head"
   },
   {
     "key": "HeroesFromAnotherWorld",
@@ -281417,8 +281413,8 @@
     "placedHeight": 3,
     "tooltip": "'G. Kalinkin'",
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "wall-of-flesh",
+    "milestoneVia": "Dropped by Illuminant Slime"
   },
   {
     "key": "EaterOfLife",
@@ -281473,8 +281469,8 @@
     "placedHeight": 4,
     "tooltip": "'G. Kalinkin'",
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "wall-of-flesh",
+    "milestoneVia": "Dropped by Floaty Gross"
   },
   {
     "key": "ThisIsCanonNow",
@@ -282713,8 +282709,8 @@
     "placedHeight": 2,
     "tooltip": "'Shiny. Sparkly. Deadly.'",
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "wall-of-flesh",
+    "milestoneVia": "Crafted – needs Crystal Ball"
   },
   {
     "key": "MoonLordBody",
@@ -284519,8 +284515,8 @@
     "placedWidth": 3,
     "placedHeight": 4,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Book"
   },
   {
     "key": "AetheriumDresser",
@@ -285049,8 +285045,8 @@
     "placedWidth": 3,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Bone"
   },
   {
     "key": "AetheriumPlatform",
@@ -285347,8 +285343,8 @@
     "placedWidth": 2,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Wire"
   },
   {
     "key": "AetheriumToilet",
@@ -287160,8 +287156,8 @@
     "placedWidth": 3,
     "placedHeight": 4,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Book"
   },
   {
     "key": "FallenStarDresser",
@@ -287690,8 +287686,8 @@
     "placedWidth": 3,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Bone"
   },
   {
     "key": "FallenStarPlatform",
@@ -287988,8 +287984,8 @@
     "placedWidth": 2,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Wire"
   },
   {
     "key": "FallenStarToilet",
@@ -291329,8 +291325,8 @@
     "useTime": 24,
     "debuff": "Slime",
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "king-slime",
+    "milestoneVia": "Crafted – needs Solidifier"
   },
   {
     "key": "SlimeWhip",
@@ -291382,8 +291378,8 @@
     "debuff": "Slime^On Fire!",
     "tooltip": "3 summon tag damage\nWhip crack can ignite enemies",
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "king-slime",
+    "milestoneVia": "Crafted – needs Solidifier"
   },
   {
     "key": "FeywoodBathtub",
@@ -291529,8 +291525,8 @@
     "placedWidth": 3,
     "placedHeight": 4,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Book"
   },
   {
     "key": "FeywoodDresser",
@@ -292059,8 +292055,8 @@
     "placedWidth": 3,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Bone"
   },
   {
     "key": "FeywoodPlatform",
@@ -292357,8 +292353,8 @@
     "placedWidth": 2,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Wire"
   },
   {
     "key": "FeywoodToilet",
@@ -292647,8 +292643,8 @@
     "placedWidth": 3,
     "placedHeight": 4,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "any-mech",
+    "milestoneVia": "Crafted – needs Hallowed Brick"
   },
   {
     "key": "HallowedDresser",
@@ -292886,8 +292882,8 @@
     "placedWidth": 3,
     "placedHeight": 3,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "any-mech",
+    "milestoneVia": "Crafted – needs Hallowed Brick"
   },
   {
     "key": "HallowedFurnitureChest",
@@ -292938,8 +292934,8 @@
     "placedWidth": 2,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "any-mech",
+    "milestoneVia": "Crafted – needs Hallowed Brick"
   },
   {
     "key": "HallowedClock",
@@ -293177,8 +293173,8 @@
     "placedWidth": 3,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "any-mech",
+    "milestoneVia": "Crafted – needs Hallowed Brick"
   },
   {
     "key": "HallowedPlatform",
@@ -293376,8 +293372,8 @@
     "placedWidth": 3,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "any-mech",
+    "milestoneVia": "Crafted – needs Hallowed Brick"
   },
   {
     "key": "HallowedWorkbench",
@@ -293475,8 +293471,8 @@
     "placedWidth": 2,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "any-mech",
+    "milestoneVia": "Crafted – needs Fancy Hallowed Chest"
   },
   {
     "key": "HallowedToilet",
@@ -294114,8 +294110,8 @@
     "placedWidth": 3,
     "placedHeight": 3,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Bone Welder"
   },
   {
     "key": "GothicChest",
@@ -294166,8 +294162,8 @@
     "placedWidth": 2,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Bone Welder"
   },
   {
     "key": "GothicClock",
@@ -294405,8 +294401,8 @@
     "placedWidth": 3,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Bone Welder"
   },
   {
     "key": "GothicPlatform",
@@ -294604,8 +294600,8 @@
     "placedWidth": 2,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Gothic Chest"
   },
   {
     "key": "GothicToilet",
@@ -294799,8 +294795,8 @@
     "placedWidth": 3,
     "placedHeight": 4,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Book"
   },
   {
     "key": "DemoniteCandelabra",
@@ -295329,8 +295325,8 @@
     "placedWidth": 3,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Bone"
   },
   {
     "key": "DemonitePlatform",
@@ -295675,8 +295671,8 @@
     "placedWidth": 2,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Wire"
   },
   {
     "key": "CrimtaneBathtub",
@@ -295822,8 +295818,8 @@
     "placedWidth": 3,
     "placedHeight": 4,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Book"
   },
   {
     "key": "CrimtaneCandelabra",
@@ -296352,8 +296348,8 @@
     "placedWidth": 3,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Bone"
   },
   {
     "key": "CrimtanePlatform",
@@ -296698,8 +296694,8 @@
     "placedWidth": 2,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Wire"
   },
   {
     "key": "SnowBathtub",
@@ -296845,8 +296841,8 @@
     "placedWidth": 3,
     "placedHeight": 4,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Book"
   },
   {
     "key": "SnowCandelabra",
@@ -297375,8 +297371,8 @@
     "placedWidth": 3,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Bone"
   },
   {
     "key": "SnowPlatform",
@@ -297721,8 +297717,8 @@
     "placedWidth": 2,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Wire"
   },
   {
     "key": "FlinxFurBathtub",
@@ -297868,8 +297864,8 @@
     "placedWidth": 3,
     "placedHeight": 4,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Book"
   },
   {
     "key": "FlinxFurCandelabra",
@@ -298398,8 +298394,8 @@
     "placedWidth": 3,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Bone"
   },
   {
     "key": "FlinxFurPlatform",
@@ -298744,8 +298740,8 @@
     "placedWidth": 2,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Wire"
   },
   {
     "key": "PineBathtub",
@@ -298792,8 +298788,8 @@
     "placedWidth": 4,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "wall-of-flesh",
-    "milestoneVia": "Crafted – needs Pine Tree Block"
+    "milestone": "start",
+    "milestoneVia": "Crafted"
   },
   {
     "key": "PineBed",
@@ -298841,8 +298837,8 @@
     "placedHeight": 2,
     "tooltip": "Allows you to set your spawn point if placed in a valid house\nCan be used to sleep, speeding up time",
     "conditions": [],
-    "milestone": "wall-of-flesh",
-    "milestoneVia": "Crafted – needs Pine Tree Block"
+    "milestone": "start",
+    "milestoneVia": "Crafted"
   },
   {
     "key": "PineBookcase",
@@ -298891,8 +298887,8 @@
     "placedWidth": 3,
     "placedHeight": 4,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Book"
   },
   {
     "key": "PineCandelabra",
@@ -298935,8 +298931,8 @@
     "questFish": false,
     "recipeOnly": true,
     "conditions": [],
-    "milestone": "wall-of-flesh",
-    "milestoneVia": "Crafted – needs Pine Tree Block"
+    "milestone": "start",
+    "milestoneVia": "Crafted"
   },
   {
     "key": "PineCandle",
@@ -298984,8 +298980,8 @@
     "placedWidth": 1,
     "placedHeight": 1,
     "conditions": [],
-    "milestone": "wall-of-flesh",
-    "milestoneVia": "Crafted – needs Pine Tree Block"
+    "milestone": "start",
+    "milestoneVia": "Crafted"
   },
   {
     "key": "PineChandelier",
@@ -299134,8 +299130,8 @@
     "placedWidth": 2,
     "placedHeight": 5,
     "conditions": [],
-    "milestone": "wall-of-flesh",
-    "milestoneVia": "Crafted – needs Pine Tree Block"
+    "milestone": "start",
+    "milestoneVia": "Crafted"
   },
   {
     "key": "PineDresser",
@@ -299182,8 +299178,8 @@
     "placedWidth": 3,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "wall-of-flesh",
-    "milestoneVia": "Crafted – needs Pine Tree Block"
+    "milestone": "start",
+    "milestoneVia": "Crafted"
   },
   {
     "key": "PineLamp",
@@ -299231,8 +299227,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "conditions": [],
-    "milestone": "wall-of-flesh",
-    "milestoneVia": "Crafted – needs Pine Tree Block"
+    "milestone": "start",
+    "milestoneVia": "Crafted"
   },
   {
     "key": "PineLantern",
@@ -299280,8 +299276,8 @@
     "placedWidth": 1,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "wall-of-flesh",
-    "milestoneVia": "Crafted – needs Pine Tree Block"
+    "milestone": "start",
+    "milestoneVia": "Crafted"
   },
   {
     "key": "PinePiano",
@@ -299329,8 +299325,8 @@
     "placedWidth": 3,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Bone"
   },
   {
     "key": "PinePlatform",
@@ -299382,8 +299378,8 @@
     "placedHeight": 1,
     "tooltip": "Press Down to fall through",
     "conditions": [],
-    "milestone": "wall-of-flesh",
-    "milestoneVia": "Crafted – needs Pine Tree Block"
+    "milestone": "start",
+    "milestoneVia": "Crafted"
   },
   {
     "key": "PineSink",
@@ -299431,8 +299427,8 @@
     "placedWidth": 2,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "wall-of-flesh",
-    "milestoneVia": "Crafted – needs Pine Tree Block"
+    "milestone": "start",
+    "milestoneVia": "Crafted"
   },
   {
     "key": "PineSofa",
@@ -299479,8 +299475,8 @@
     "placedWidth": 3,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "wall-of-flesh",
-    "milestoneVia": "Crafted – needs Pine Tree Block"
+    "milestone": "start",
+    "milestoneVia": "Crafted"
   },
   {
     "key": "PineToilet",
@@ -299527,8 +299523,8 @@
     "placedWidth": 1,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "wall-of-flesh",
-    "milestoneVia": "Crafted – needs Pine Tree Block"
+    "milestone": "start",
+    "milestoneVia": "Crafted"
   },
   {
     "key": "PineWorkbench",
@@ -299577,8 +299573,8 @@
     "placedHeight": 1,
     "tooltip": "Used for basic crafting",
     "conditions": [],
-    "milestone": "wall-of-flesh",
-    "milestoneVia": "Crafted – needs Pine Tree Block"
+    "milestone": "start",
+    "milestoneVia": "Crafted"
   },
   {
     "key": "Fake_PineChest",
@@ -299626,8 +299622,8 @@
     "placedWidth": 2,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Wire"
   },
   {
     "key": "EasterBathtub",
@@ -299773,8 +299769,8 @@
     "placedWidth": 3,
     "placedHeight": 4,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Book"
   },
   {
     "key": "EasterCandelabra",
@@ -300303,8 +300299,8 @@
     "placedWidth": 3,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Bone"
   },
   {
     "key": "EasterPlatform",
@@ -300649,8 +300645,8 @@
     "placedWidth": 2,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Wire"
   },
   {
     "key": "StoneBathtub",
@@ -300796,8 +300792,8 @@
     "placedWidth": 3,
     "placedHeight": 4,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Book"
   },
   {
     "key": "StoneCandelabra",
@@ -301282,8 +301278,8 @@
     "placedWidth": 3,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Bone"
   },
   {
     "key": "StoneSink",
@@ -301575,8 +301571,8 @@
     "placedWidth": 2,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Wire"
   },
   {
     "key": "JellyfishBathtub",
@@ -301722,8 +301718,8 @@
     "placedWidth": 3,
     "placedHeight": 4,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "wall-of-flesh",
+    "milestoneVia": "Crafted – needs Jellyfish Block"
   },
   {
     "key": "JellyfishCandelabra",
@@ -301913,8 +301909,8 @@
     "placedWidth": 3,
     "placedHeight": 3,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "wall-of-flesh",
+    "milestoneVia": "Crafted – needs Jellyfish Block"
   },
   {
     "key": "JellyfishChest",
@@ -301965,8 +301961,8 @@
     "placedWidth": 2,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "wall-of-flesh",
+    "milestoneVia": "Crafted – needs Jellyfish Block"
   },
   {
     "key": "JellyfishClock",
@@ -302252,8 +302248,8 @@
     "placedWidth": 3,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "wall-of-flesh",
+    "milestoneVia": "Crafted – needs Jellyfish Block"
   },
   {
     "key": "JellyfishPlatform",
@@ -302451,8 +302447,8 @@
     "placedWidth": 3,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "wall-of-flesh",
+    "milestoneVia": "Crafted – needs Jellyfish Block"
   },
   {
     "key": "JellyfishToilet",
@@ -302598,8 +302594,8 @@
     "placedWidth": 2,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "wall-of-flesh",
+    "milestoneVia": "Crafted – needs Jellyfish Chest"
   },
   {
     "key": "PineTreeBlockWall",
@@ -302644,8 +302640,8 @@
     "autoswing": true,
     "useTime": 15,
     "conditions": [],
-    "milestone": "wall-of-flesh",
-    "milestoneVia": "Crafted – needs Pine Tree Block"
+    "milestone": "start",
+    "milestoneVia": "Crafted"
   },
   {
     "key": "EasterBlock",
@@ -302961,7 +302957,9 @@
       "pirate"
     ],
     "events": [],
-    "biomes": [],
+    "biomes": [
+      "graveyard"
+    ],
     "times": [],
     "platforms": [
       "desktop",
@@ -302989,7 +302987,7 @@
     "placedHeight": 1,
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Sold by the Pirate"
   },
   {
     "key": "JellyfishBlockWall",
@@ -303184,8 +303182,8 @@
     "placedWidth": 1,
     "placedHeight": 1,
     "conditions": [],
-    "milestone": "wall-of-flesh",
-    "milestoneVia": "Crafted – needs Pine Platform"
+    "milestone": "start",
+    "milestoneVia": "Crafted"
   },
   {
     "key": "PineWoodBlockWall",
@@ -303230,8 +303228,8 @@
     "autoswing": true,
     "useTime": 15,
     "conditions": [],
-    "milestone": "wall-of-flesh",
-    "milestoneVia": "Crafted – needs Pine Wood"
+    "milestone": "start",
+    "milestoneVia": "Crafted"
   },
   {
     "key": "HarpyBathtub",
@@ -303377,8 +303375,8 @@
     "placedWidth": 3,
     "placedHeight": 4,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Book"
   },
   {
     "key": "HarpyCandelabra",
@@ -303907,8 +303905,8 @@
     "placedWidth": 3,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Bone"
   },
   {
     "key": "HarpyPlatform",
@@ -304253,8 +304251,8 @@
     "placedWidth": 2,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Wire"
   },
   {
     "key": "HarpyBlock",
@@ -304495,8 +304493,8 @@
     "placedWidth": 3,
     "placedHeight": 4,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Book"
   },
   {
     "key": "CloudCandelabra",
@@ -305025,8 +305023,8 @@
     "placedWidth": 3,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Bone"
   },
   {
     "key": "CloudSink",
@@ -305318,8 +305316,8 @@
     "placedWidth": 2,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Wire"
   },
   {
     "key": "MoonplateBathtub",
@@ -305465,8 +305463,8 @@
     "placedWidth": 3,
     "placedHeight": 4,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Book"
   },
   {
     "key": "DuskwareCandelabra",
@@ -305995,8 +305993,8 @@
     "placedWidth": 3,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Bone"
   },
   {
     "key": "MoonplatePlatform",
@@ -306341,8 +306339,8 @@
     "placedWidth": 2,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Wire"
   },
   {
     "key": "MoonplateBlock",
@@ -306486,8 +306484,8 @@
     "placedWidth": 4,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Librarian Block"
   },
   {
     "key": "LibrarianBed",
@@ -306535,8 +306533,8 @@
     "placedHeight": 2,
     "tooltip": "Allows you to set your spawn point if placed in a valid house\nCan be used to sleep, speeding up time",
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Librarian Block"
   },
   {
     "key": "LibrarianBookcase",
@@ -306585,8 +306583,8 @@
     "placedWidth": 3,
     "placedHeight": 4,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Book"
   },
   {
     "key": "LibrarianCandelabra",
@@ -306629,8 +306627,8 @@
     "questFish": false,
     "recipeOnly": true,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Librarian Block"
   },
   {
     "key": "LibrarianCandle",
@@ -306678,8 +306676,8 @@
     "placedWidth": 1,
     "placedHeight": 1,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Librarian Block"
   },
   {
     "key": "LibrarianChair",
@@ -306726,8 +306724,8 @@
     "placedWidth": 1,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Librarian Block"
   },
   {
     "key": "LibrarianChandelier",
@@ -306776,8 +306774,8 @@
     "placedWidth": 3,
     "placedHeight": 3,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Librarian Block"
   },
   {
     "key": "LibrarianChest",
@@ -306828,8 +306826,8 @@
     "placedWidth": 2,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Librarian Block"
   },
   {
     "key": "LibrarianClock",
@@ -306876,8 +306874,8 @@
     "placedWidth": 2,
     "placedHeight": 5,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Librarian Block"
   },
   {
     "key": "LibrarianDoor",
@@ -306920,8 +306918,8 @@
     "questFish": false,
     "recipeOnly": true,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Librarian Block"
   },
   {
     "key": "LibrarianDresser",
@@ -306968,8 +306966,8 @@
     "placedWidth": 3,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Librarian Block"
   },
   {
     "key": "LibrarianLamp",
@@ -307017,8 +307015,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Librarian Block"
   },
   {
     "key": "LibrarianLantern",
@@ -307066,8 +307064,8 @@
     "placedWidth": 1,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Librarian Block"
   },
   {
     "key": "LibrarianPiano",
@@ -307115,8 +307113,8 @@
     "placedWidth": 3,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Bone"
   },
   {
     "key": "LibrarianPlatform",
@@ -307168,8 +307166,8 @@
     "placedHeight": 1,
     "tooltip": "Press Down to fall through",
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Librarian Block"
   },
   {
     "key": "LibrarianSink",
@@ -307217,8 +307215,8 @@
     "placedWidth": 2,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Librarian Block"
   },
   {
     "key": "LibrarianSofa",
@@ -307265,8 +307263,8 @@
     "placedWidth": 3,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Librarian Block"
   },
   {
     "key": "LibrarianTable",
@@ -307314,8 +307312,8 @@
     "placedWidth": 3,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Librarian Block"
   },
   {
     "key": "LibrarianToilet",
@@ -307362,8 +307360,8 @@
     "placedWidth": 1,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Librarian Block"
   },
   {
     "key": "LibrarianWorkbench",
@@ -307412,8 +307410,8 @@
     "placedHeight": 1,
     "tooltip": "Used for basic crafting",
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Librarian Block"
   },
   {
     "key": "Fake_LibrarianChest",
@@ -307461,8 +307459,8 @@
     "placedWidth": 2,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Librarian Chest"
   },
   {
     "key": "LibrarianBlock",
@@ -307510,8 +307508,8 @@
     "placedWidth": 1,
     "placedHeight": 1,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Book"
   },
   {
     "key": "LibrarianBlockWall",
@@ -307556,8 +307554,8 @@
     "autoswing": true,
     "useTime": 15,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Librarian Block"
   },
   {
     "key": "SpikeBathtub",
@@ -307703,8 +307701,8 @@
     "placedWidth": 3,
     "placedHeight": 4,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Book"
   },
   {
     "key": "SpikeCandelabra",
@@ -308233,8 +308231,8 @@
     "placedWidth": 3,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Bone"
   },
   {
     "key": "SpikePlatform",
@@ -308579,8 +308577,8 @@
     "placedWidth": 2,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Wire"
   },
   {
     "key": "SpikeBlock",
@@ -308821,8 +308819,8 @@
     "placedWidth": 3,
     "placedHeight": 4,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Book"
   },
   {
     "key": "OfficeCandelabra",
@@ -309351,8 +309349,8 @@
     "placedWidth": 3,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Bone"
   },
   {
     "key": "OfficePlatform",
@@ -309697,8 +309695,8 @@
     "placedWidth": 2,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Wire"
   },
   {
     "key": "OfficeBlock",
@@ -309939,8 +309937,8 @@
     "placedWidth": 3,
     "placedHeight": 4,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "wall-of-flesh",
+    "milestoneVia": "Crafted – needs Forbidden Block"
   },
   {
     "key": "ForbiddenCandelabra",
@@ -310130,8 +310128,8 @@
     "placedWidth": 3,
     "placedHeight": 3,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "wall-of-flesh",
+    "milestoneVia": "Crafted – needs Forbidden Block"
   },
   {
     "key": "ForbiddenChest",
@@ -310182,8 +310180,8 @@
     "placedWidth": 2,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "wall-of-flesh",
+    "milestoneVia": "Crafted – needs Forbidden Block"
   },
   {
     "key": "ForbiddenClock",
@@ -310469,8 +310467,8 @@
     "placedWidth": 3,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "wall-of-flesh",
+    "milestoneVia": "Crafted – needs Forbidden Block"
   },
   {
     "key": "ForbiddenPlatform",
@@ -310668,8 +310666,8 @@
     "placedWidth": 3,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "wall-of-flesh",
+    "milestoneVia": "Crafted – needs Forbidden Block"
   },
   {
     "key": "ForbiddenToilet",
@@ -310815,8 +310813,8 @@
     "placedWidth": 2,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "wall-of-flesh",
+    "milestoneVia": "Crafted – needs Forbidden Chest"
   },
   {
     "key": "ForbiddenBlock",
@@ -311057,8 +311055,8 @@
     "placedWidth": 3,
     "placedHeight": 4,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Book"
   },
   {
     "key": "AquariumCandelabra",
@@ -311535,8 +311533,8 @@
     "placedWidth": 3,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Bone"
   },
   {
     "key": "WaterPlatform",
@@ -312074,8 +312072,8 @@
     "placedWidth": 3,
     "placedHeight": 4,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Book"
   },
   {
     "key": "BoulderCandelabra",
@@ -312604,8 +312602,8 @@
     "placedWidth": 3,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Collected in the world"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Bone"
   },
   {
     "key": "BoulderPlatform",
@@ -312950,8 +312948,8 @@
     "placedWidth": 2,
     "placedHeight": 2,
     "conditions": [],
-    "milestone": "start",
-    "milestoneVia": "Crafted"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Wire"
   },
   {
     "key": "BoulderBlock",
@@ -314858,7 +314856,7 @@
     "tooltip": "Walk past a sentry to carry it",
     "conditions": [],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Hardmode item"
+    "milestoneVia": "Dropped by Ice Mimic"
   },
   {
     "key": "ArcSurge",
@@ -315386,7 +315384,8 @@
     "defense": 2,
     "tooltip": "Grants immunity to knockback and fire blocks\nIncreases your max number of summon tag effects by 1\nSignificantly increases the duration of your summon tag effects",
     "conditions": [],
-    "milestone": "start"
+    "milestone": "skeletron",
+    "milestoneVia": "Crafted – needs Obsidian Shield"
   },
   {
     "key": "SweetBarb",

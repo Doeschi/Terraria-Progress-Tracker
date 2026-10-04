@@ -26,7 +26,7 @@
       "water-chest",
       "web-covered-chest"
     ],
-    "count": 257
+    "count": 256
   },
   {
     "id": "crate",
@@ -60,7 +60,7 @@
       "titanium-crate",
       "wooden-crate"
     ],
-    "count": 208
+    "count": 207
   },
   {
     "id": "other",

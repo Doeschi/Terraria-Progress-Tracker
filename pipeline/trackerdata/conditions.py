@@ -24,8 +24,9 @@ DYNAMIC = [
 
 
 def templates(text, name):
-    """Inner text of every {{name|...}} in `text` (nested templates and links kept)."""
-    start = re.compile(r"\{\{\s*" + re.escape(name) + r"\s*\|", re.I)
+    """Inner text of every {{name|...}} in `text` (nested templates and links kept); the wiki
+    reads "_" in a template name as a space ({{shop_row|...}})."""
+    start = re.compile(r"\{\{\s*" + r"[ _]+".join(re.escape(w) for w in name.split()) + r"\s*\|", re.I)
     pos = 0
     while True:
         m = start.search(text, pos)
@@ -233,8 +234,13 @@ def shop_rows(wikitext_pages, vendors, resolve, conditions):
             if not args or not args[0]:
                 continue
             name = strip_markup(args[0])
-            # "Princess Dress (Clothier)" -> Princess Dress; "Any Pylon" = pylons of happy NPCs
-            items = resolve(name) or resolve(re.sub(r"\s*\([^)]*\)$", "", name))
+            # "Princess Dress (Clothier)" -> Princess Dress, of several the one on a page named like
+            # that ("Princess set (Clothier)"); "Any Pylon" = pylons of happy NPCs
+            items = resolve(name)
+            bracket = re.search(r"\s*(\([^)]*\))$", name)
+            if not items and bracket:
+                items = resolve(name[:bracket.start()])
+                items = [i for i in items if norm_name(i["page"]).endswith(norm_name(bracket.group(1)))] or items
             if not items and name.lower().startswith("any "):
                 continue
             if not items:

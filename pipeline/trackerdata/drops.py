@@ -194,8 +194,11 @@ class Drops:
     def resolve(self, name):
         n = norm_name(name)
         found = self.by_name.get(n)
+        kind = None
         if not found:
-            base = re.sub(r"\s*\((item|painting)\)$", "", n)
+            # "Constellation (painting)": the painting, not the whip of that name
+            m = re.search(r"\s*\((item|painting)\)$", n)
+            base, kind = (n[:m.start()], m.group(1)) if m else (n, None)
             found = self.by_name.get(base) or self.by_page.get(n)
         if not found:
             # a whole furniture set, e.g. "Golden furniture" -> Golden Chair, Golden Bed, ...
@@ -209,9 +212,10 @@ class Drops:
                          and norm_name(i["page"]) not in (norm_name(i["name"]), "tombstones")]
         if found and len(found) > 1:
             # same name, several items: prefer obtainable ones (e.g. "Ogre Mask" has an unused,
-            # unobtainable variant), then the item on its own page (e.g. "Seaweed")
+            # unobtainable variant), then the item on its own page (e.g. "Seaweed") or of the kind
+            # named in brackets
             found = [i for i in found if not i.get("unobtainable")] or found
-            own = [i for i in found if norm_name(i["page"]) == n]
+            own = [i for i in found if norm_name(i["page"]) == n or kind in i["subcategories"]]
             found = own or found
         return found or []
 
@@ -286,7 +290,10 @@ class Drops:
             custom = html.unescape(row["custom"])
             notes = [*re.findall(r'<span class="note">(.*?)</span>', custom),
                      *re.findall(r'<div class="note-text[^"]*">(.*?)</div>', custom, re.S)]
-            parsed = self.conditions.parse(" ".join([row["rate"], *notes]))
+            # a note on one of several chances ("3.33% · 3.11% (Hardmode)": another chance in
+            # Hardmode) is no condition of the row
+            chances = [s for s in rate.split(" · ") if re.search(r"\d", s) and not re.match(r"(Expert|Master):", s)]
+            parsed = self.conditions.parse(" ".join([row["rate"] if len(chances) < 2 else "", *notes]))
             note = condition_text(" ".join([*notes, rate_note])).strip("() ")
             if note.lower() == "in regular worlds":
                 note = ""  # the default; its Remix counterpart has the condition

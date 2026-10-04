@@ -57,6 +57,7 @@
       "icon": "https://terraria.wiki.gg/images/Map_Icon_Brain_of_Cthulhu.png",
       "sources": [
         "brain-of-cthulhu",
+        "creeper",
         "treasure-bag-brain-of-cthulhu"
       ],
       "count": 9

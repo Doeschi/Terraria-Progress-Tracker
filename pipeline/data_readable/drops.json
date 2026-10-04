@@ -2003,10 +2003,7 @@
       "kind": "npc",
       "url": "https://terraria.wiki.gg/wiki/Creeper",
       "icon": "https://terraria.wiki.gg/images/Creeper.png",
-      "npcId": 267,
-      "biomes": [
-        "crimson"
-      ]
+      "npcId": 267
     },
     "bouncy-slime": {
       "id": "bouncy-slime",
@@ -12488,9 +12485,6 @@
           "expert",
           "master"
         ],
-        "biomes": [
-          "underground"
-        ],
         "variants": [
           "Underground"
         ]
@@ -12533,9 +12527,6 @@
           "normal",
           "expert",
           "master"
-        ],
-        "biomes": [
-          "underground"
         ],
         "variants": [
           "Cavern"
@@ -33670,9 +33661,6 @@
           "expert",
           "master"
         ],
-        "biomes": [
-          "underground"
-        ],
         "variants": [
           "Underground"
         ],
@@ -33717,9 +33705,6 @@
           "normal",
           "expert",
           "master"
-        ],
-        "biomes": [
-          "underground"
         ],
         "variants": [
           "Cavern"
@@ -46740,71 +46725,6 @@
         "group": "azure-crate-9"
       }
     ],
-    "ConstellationWhip": [
-      {
-        "source": "skyware-chest",
-        "quantity": "1",
-        "rate": "1/6 (16.67%)",
-        "chance": {
-          "normal": 16.67,
-          "expert": 16.67,
-          "master": 16.67
-        },
-        "quantities": {
-          "normal": "1",
-          "expert": "1",
-          "master": "1"
-        },
-        "modes": [
-          "normal",
-          "expert",
-          "master"
-        ],
-        "group": "skyware-chest-1"
-      },
-      {
-        "source": "sky-crate",
-        "quantity": "1",
-        "rate": "1/12 (8.33%)",
-        "chance": {
-          "normal": 8.33,
-          "expert": 8.33,
-          "master": 8.33
-        },
-        "quantities": {
-          "normal": "1",
-          "expert": "1",
-          "master": "1"
-        },
-        "modes": [
-          "normal",
-          "expert",
-          "master"
-        ],
-        "group": "sky-crate-7"
-      },
-      {
-        "source": "azure-crate",
-        "quantity": "1",
-        "rate": "1/12 (8.33%)",
-        "chance": {
-          "normal": 8.33,
-          "expert": 8.33,
-          "master": 8.33
-        },
-        "quantities": {
-          "normal": "1",
-          "expert": "1",
-          "master": "1"
-        },
-        "modes": [
-          "normal",
-          "expert",
-          "master"
-        ],
-        "group": "azure-crate-9"
-      }
-    ],
     "SeeTheWorldForWhatItIs": [
       {
         "source": "skyware-chest",
@@ -51658,9 +51578,6 @@
           "expert",
           "master"
         ],
-        "conditions": [
-          "hardmode"
-        ],
         "group": "present-1"
       }
     ],
@@ -54863,9 +54780,6 @@
           "expert",
           "master"
         ],
-        "biomes": [
-          "underground"
-        ],
         "variants": [
           "Cavern"
         ],
@@ -54910,9 +54824,6 @@
           "normal",
           "expert",
           "master"
-        ],
-        "biomes": [
-          "underground"
         ],
         "variants": [
           "Underground"
@@ -55145,9 +55056,6 @@
           "expert",
           "master"
         ],
-        "biomes": [
-          "underground"
-        ],
         "variants": [
           "Underground"
         ],
@@ -55171,9 +55079,6 @@
           "normal",
           "expert",
           "master"
-        ],
-        "biomes": [
-          "underground"
         ],
         "variants": [
           "Cavern"
@@ -57977,9 +57882,6 @@
           "normal",
           "expert",
           "master"
-        ],
-        "conditions": [
-          "hardmode"
         ]
       }
     ],
@@ -58002,9 +57904,6 @@
           "normal",
           "expert",
           "master"
-        ],
-        "conditions": [
-          "hardmode"
         ]
       }
     ],
@@ -58028,9 +57927,6 @@
           "expert",
           "master"
         ],
-        "conditions": [
-          "hardmode"
-        ],
         "group": "present-1"
       }
     ],
@@ -58053,9 +57949,6 @@
           "normal",
           "expert",
           "master"
-        ],
-        "conditions": [
-          "hardmode"
         ]
       }
     ],
@@ -58078,9 +57971,6 @@
           "normal",
           "expert",
           "master"
-        ],
-        "conditions": [
-          "hardmode"
         ]
       }
     ],
@@ -58103,9 +57993,6 @@
           "normal",
           "expert",
           "master"
-        ],
-        "conditions": [
-          "hardmode"
         ]
       }
     ],
@@ -58128,9 +58015,6 @@
           "normal",
           "expert",
           "master"
-        ],
-        "conditions": [
-          "hardmode"
         ]
       }
     ],
@@ -58153,9 +58037,6 @@
           "normal",
           "expert",
           "master"
-        ],
-        "conditions": [
-          "hardmode"
         ]
       }
     ],
@@ -58178,9 +58059,6 @@
           "normal",
           "expert",
           "master"
-        ],
-        "conditions": [
-          "hardmode"
         ]
       }
     ],
@@ -58203,9 +58081,6 @@
           "normal",
           "expert",
           "master"
-        ],
-        "conditions": [
-          "hardmode"
         ]
       }
     ],
@@ -58228,9 +58103,6 @@
           "normal",
           "expert",
           "master"
-        ],
-        "conditions": [
-          "hardmode"
         ]
       }
     ],
@@ -58253,9 +58125,6 @@
           "normal",
           "expert",
           "master"
-        ],
-        "conditions": [
-          "hardmode"
         ]
       }
     ],
@@ -58278,9 +58147,6 @@
           "normal",
           "expert",
           "master"
-        ],
-        "conditions": [
-          "hardmode"
         ]
       }
     ],
@@ -58303,9 +58169,6 @@
           "normal",
           "expert",
           "master"
-        ],
-        "conditions": [
-          "hardmode"
         ]
       }
     ],
@@ -58328,9 +58191,6 @@
           "normal",
           "expert",
           "master"
-        ],
-        "conditions": [
-          "hardmode"
         ]
       }
     ],
@@ -58353,9 +58213,6 @@
           "normal",
           "expert",
           "master"
-        ],
-        "conditions": [
-          "hardmode"
         ]
       }
     ],
@@ -58378,9 +58235,6 @@
           "normal",
           "expert",
           "master"
-        ],
-        "conditions": [
-          "hardmode"
         ]
       }
     ],
@@ -58403,9 +58257,6 @@
           "normal",
           "expert",
           "master"
-        ],
-        "conditions": [
-          "hardmode"
         ]
       }
     ],
@@ -58428,9 +58279,6 @@
           "normal",
           "expert",
           "master"
-        ],
-        "conditions": [
-          "hardmode"
         ]
       }
     ],
@@ -58453,9 +58301,6 @@
           "normal",
           "expert",
           "master"
-        ],
-        "conditions": [
-          "hardmode"
         ]
       }
     ],
@@ -58478,9 +58323,6 @@
           "normal",
           "expert",
           "master"
-        ],
-        "conditions": [
-          "hardmode"
         ]
       }
     ],
@@ -58503,9 +58345,6 @@
           "normal",
           "expert",
           "master"
-        ],
-        "conditions": [
-          "hardmode"
         ]
       }
     ],
@@ -58528,9 +58367,6 @@
           "normal",
           "expert",
           "master"
-        ],
-        "conditions": [
-          "hardmode"
         ]
       }
     ],
@@ -58553,9 +58389,6 @@
           "normal",
           "expert",
           "master"
-        ],
-        "conditions": [
-          "hardmode"
         ]
       }
     ],
@@ -58578,9 +58411,6 @@
           "normal",
           "expert",
           "master"
-        ],
-        "conditions": [
-          "hardmode"
         ]
       }
     ],
@@ -58603,9 +58433,6 @@
           "normal",
           "expert",
           "master"
-        ],
-        "conditions": [
-          "hardmode"
         ]
       }
     ],
@@ -58628,9 +58455,6 @@
           "normal",
           "expert",
           "master"
-        ],
-        "conditions": [
-          "hardmode"
         ]
       }
     ],
@@ -58653,9 +58477,6 @@
           "normal",
           "expert",
           "master"
-        ],
-        "conditions": [
-          "hardmode"
         ]
       }
     ],
@@ -58678,9 +58499,6 @@
           "normal",
           "expert",
           "master"
-        ],
-        "conditions": [
-          "hardmode"
         ]
       }
     ],
@@ -58703,9 +58521,6 @@
           "normal",
           "expert",
           "master"
-        ],
-        "conditions": [
-          "hardmode"
         ]
       }
     ],
@@ -60098,9 +59913,6 @@
           "expert",
           "master"
         ],
-        "biomes": [
-          "underground"
-        ],
         "variants": [
           "Underground"
         ]
@@ -60151,9 +59963,6 @@
           "expert",
           "master"
         ],
-        "biomes": [
-          "underground"
-        ],
         "variants": [
           "Cavern"
         ]
@@ -60176,9 +59985,6 @@
           "normal",
           "expert",
           "master"
-        ],
-        "biomes": [
-          "underground"
         ],
         "variants": [
           "Cavern (lava layer)"
@@ -60205,9 +60011,6 @@
           "expert",
           "master"
         ],
-        "biomes": [
-          "underground"
-        ],
         "variants": [
           "Underground"
         ]
@@ -60258,9 +60061,6 @@
           "expert",
           "master"
         ],
-        "biomes": [
-          "underground"
-        ],
         "variants": [
           "Cavern"
         ]
@@ -60283,9 +60083,6 @@
           "normal",
           "expert",
           "master"
-        ],
-        "biomes": [
-          "underground"
         ],
         "variants": [
           "Cavern (lava layer)"
@@ -60312,9 +60109,6 @@
           "expert",
           "master"
         ],
-        "biomes": [
-          "underground"
-        ],
         "variants": [
           "Underground"
         ]
@@ -60365,9 +60159,6 @@
           "expert",
           "master"
         ],
-        "biomes": [
-          "underground"
-        ],
         "variants": [
           "Cavern"
         ]
@@ -60390,9 +60181,6 @@
           "normal",
           "expert",
           "master"
-        ],
-        "biomes": [
-          "underground"
         ],
         "variants": [
           "Cavern (lava layer)"
@@ -60419,9 +60207,6 @@
           "expert",
           "master"
         ],
-        "biomes": [
-          "underground"
-        ],
         "variants": [
           "Underground"
         ]
@@ -60472,9 +60257,6 @@
           "expert",
           "master"
         ],
-        "biomes": [
-          "underground"
-        ],
         "variants": [
           "Cavern"
         ]
@@ -60497,9 +60279,6 @@
           "normal",
           "expert",
           "master"
-        ],
-        "biomes": [
-          "underground"
         ],
         "variants": [
           "Cavern (lava layer)"
@@ -60526,9 +60305,6 @@
           "expert",
           "master"
         ],
-        "biomes": [
-          "underground"
-        ],
         "variants": [
           "Underground"
         ]
@@ -60579,9 +60355,6 @@
           "expert",
           "master"
         ],
-        "biomes": [
-          "underground"
-        ],
         "variants": [
           "Cavern"
         ]
@@ -60604,9 +60377,6 @@
           "normal",
           "expert",
           "master"
-        ],
-        "biomes": [
-          "underground"
         ],
         "variants": [
           "Cavern (lava layer)"
@@ -60633,9 +60403,6 @@
           "expert",
           "master"
         ],
-        "biomes": [
-          "underground"
-        ],
         "variants": [
           "Underground"
         ]
@@ -60686,9 +60453,6 @@
           "expert",
           "master"
         ],
-        "biomes": [
-          "underground"
-        ],
         "variants": [
           "Cavern"
         ]
@@ -60711,9 +60475,6 @@
           "normal",
           "expert",
           "master"
-        ],
-        "biomes": [
-          "underground"
         ],
         "variants": [
           "Cavern (lava layer)"
@@ -60740,9 +60501,6 @@
           "expert",
           "master"
         ],
-        "biomes": [
-          "underground"
-        ],
         "variants": [
           "Cavern"
         ]
@@ -60766,9 +60524,6 @@
           "expert",
           "master"
         ],
-        "biomes": [
-          "underground"
-        ],
         "variants": [
           "Cavern (lava layer)"
         ]
@@ -60791,9 +60546,6 @@
           "normal",
           "expert",
           "master"
-        ],
-        "biomes": [
-          "underground"
         ],
         "variants": [
           "Underground"
@@ -60914,9 +60666,6 @@
           "expert",
           "master"
         ],
-        "biomes": [
-          "underground"
-        ],
         "variants": [
           "Cavern"
         ]
@@ -60939,9 +60688,6 @@
           "normal",
           "expert",
           "master"
-        ],
-        "biomes": [
-          "underground"
         ],
         "variants": [
           "Cavern (lava layer)"
@@ -60992,9 +60738,6 @@
           "expert",
           "master"
         ],
-        "biomes": [
-          "underground"
-        ],
         "variants": [
           "Underground"
         ],
@@ -61021,9 +60764,6 @@
           "expert",
           "master"
         ],
-        "biomes": [
-          "underground"
-        ],
         "variants": [
           "Cavern"
         ]
@@ -61047,9 +60787,6 @@
           "expert",
           "master"
         ],
-        "biomes": [
-          "underground"
-        ],
         "variants": [
           "Cavern (lava layer)"
         ]
@@ -61072,9 +60809,6 @@
           "normal",
           "expert",
           "master"
-        ],
-        "biomes": [
-          "underground"
         ],
         "variants": [
           "Underground"
@@ -61229,9 +60963,6 @@
           "expert",
           "master"
         ],
-        "biomes": [
-          "underground"
-        ],
         "variants": [
           "Cavern"
         ],
@@ -61255,9 +60986,6 @@
           "normal",
           "expert",
           "master"
-        ],
-        "biomes": [
-          "underground"
         ],
         "variants": [
           "Underground"

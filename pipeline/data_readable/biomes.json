@@ -45,7 +45,7 @@
     "id": "crimson",
     "name": "Crimson",
     "icon": "https://terraria.wiki.gg/images/Crimstone_Block.png",
-    "count": 60
+    "count": 58
   },
   {
     "id": "hallow",
@@ -99,7 +99,7 @@
     "id": "graveyard",
     "name": "Graveyard",
     "icon": "https://terraria.wiki.gg/images/Tombstone.png",
-    "count": 48
+    "count": 49
   },
   {
     "id": "meteorite",

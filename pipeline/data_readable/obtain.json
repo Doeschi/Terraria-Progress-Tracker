@@ -9,7 +9,7 @@
     "id": "vendor",
     "name": "Bought from NPCs",
     "icon": "https://terraria.wiki.gg/images/Gold_Coin.png",
-    "count": 797
+    "count": 796
   },
   {
     "id": "drop",
@@ -21,7 +21,7 @@
     "id": "loot",
     "name": "Found in chests & pots",
     "icon": "https://terraria.wiki.gg/images/Chest.png",
-    "count": 293
+    "count": 292
   },
   {
     "id": "plunder",
@@ -33,7 +33,7 @@
     "id": "bag",
     "name": "From grab bags & crates",
     "icon": "https://terraria.wiki.gg/images/Wooden_Crate.png",
-    "count": 571
+    "count": 570
   },
   {
     "id": "treasure-bag",

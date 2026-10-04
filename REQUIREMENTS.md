@@ -150,7 +150,9 @@ GitHub Actions.
   `mapping.toml` (`[unobtainable] obtainable`) can override the wiki for single items.
 - **D20** When a drop, recipe or ingredient names an item that exists several times (same name,
   different id), obtainable items are preferred (e.g. "Ogre Mask": the vanity mask, not the unused
-  variant).
+  variant). A kind in brackets picks its item: the drop rows of "Constellation (painting)" belong
+  to the painting, not to the whip; the shop row "Princess Dress (Clothier)" to the dress of the
+  page "Princess set (Clothier)", not to the Goodie Bag costume.
 - **D21** The build warns about items marked unobtainable that still have a current source (drop,
   recipe, vendor), so wiki mistakes become visible.
 - **D22** Items the wiki's Items table lacks but its Recipes table names with an id (45 in 1.4.5:
@@ -177,14 +179,17 @@ needs a decision is reported, and parsers that read page text must not silently 
   (`pipeline/update_report.md`, not committed):
   - items added and removed; renamed ones (same item id, different key) listed apart – they
     break progress files
-  - per item: changes of categories, subcategories, "Obtained by", milestone, vendors,
+  - per item: changes of categories, subcategories, "Obtained by", milestone and its reason,
+    vendors, events, biomes, time of day, conditions, event only, minimum difficulty,
     unobtainable (a list per kind, item names)
   - counts per data file before / after (items, drops, sources, recipes, shop rows, bestiary
     entries, drop groups, Extractinator results, sets, …)
   - the warnings of step 2 in one list (unmapped raw values, items without category, unknown
     names, rules that match nothing, unmatched drop groups, …): step 2 also writes them to a file
     (`pipeline/build_warnings.json`) instead of only to the log
-  The report is read before committing new data.
+  The report is read before committing new data. While working on the pipeline: `--base-dir`
+  compares with a folder of earlier data instead of a git revision (the change log of DU4 is
+  not written then), `--full` names every item of a change instead of the first 12.
 - **DU2** Parser sanity checks: each part read from page text (shops of the vendor pages,
   Bestiary/List, "Any …" ingredient groups, platform icons from MediaWiki:Common.css, NPC IDs,
   drop groups, Extractinator tables, Strange Plant rewards) has a minimum in `mapping.toml`
@@ -681,7 +686,8 @@ Below 640 px width (phones) the layout changes; tablets and desktops stay as the
 ## CO – Conditions (vendors and drops)
 
 - **CO1** Vendor shops come from the vendor pages (`{{shop row|item|condition}}` in their source,
-  downloaded with the other page sources; the vendor list is `[vendors]` in `mapping.toml`).
+  also written `{{shop_row|…}}`; downloaded with the other page sources; the vendor list is
+  `[vendors]` in `mapping.toml`).
   Each shop row gives the item, the vendor and the condition as text, e.g. "In Hardmode, during
   night, in a Jungle, when Plantera has been defeated." Items of the shops that the Items table
   does not tag with the vendor get the vendor too.
@@ -690,6 +696,8 @@ Below 640 px width (phones) the layout changes; tablets and desktops stay as the
   "but not …") give no id. Drop rows: the chance text and the notes of the custom column (both
   `<span class="note">` and `<div class="note-text">`, e.g. Green Cap "(Only if name is
   Andrew)", Chain Knife "(In Remix worlds)"); "In regular worlds" is the default and dropped.
+  A note on one of several chances ("3.33% · 3.11% (Hardmode)": the Present's other chance in
+  Hardmode) is no condition of the row.
   The build reports unmapped links. Types:
   - Time of day: Day, Night; moon phases 1–8 (from `{{moons|…}}`, with the wiki's moon icons)
   - Progress: after a boss (the bosses of the Bosses filter, plus "any mechanical boss" / "all
@@ -752,18 +760,28 @@ Below 640 px width (phones) the layout changes; tablets and desktops stay as the
   - shop rows: the later of the vendor's move-in (`[vendors.*] milestone`, e.g. Cyborg →
     Plantera) and the row's conditions (after a boss, Hardmode)
   - recipes: the latest of the crafting stations (the earliest item providing each) and the
-    ingredients ("Any …" groups: their earliest item); shimmer: the source item, and the boss of
-    its note (RC4)
+    ingredients ("Any …" groups: their earliest item); shimmer: the source item (of a group
+    like "Any Fruit" the earliest), and the boss of its note (RC4). Items whose only sources go
+    in a circle (Obsidian from Obsidian Walls and back) or that have no source data count from
+    Start; what needs them keeps its other requirements (the Obsidian Shield its Cobalt Shield)
   - containers: `[container_milestones]` (e.g. Shadow Chest → Skeletron, biome chests →
     Plantera), else Start; rows only in special seeds do not count
-  - Strange Plant rewards: the conditions of their heading; other obtain methods (fishing,
-    quest rewards, …) → Start
+  - Strange Plant rewards: the conditions of their heading; fishing, quest rewards, player
+    death → Start
+  - methods only the wiki's tags name, without data of ours ("Collected in the world"; "Dropped
+    by enemies", chests and bags without a drop row) → Start, but only for items the data has no
+    source for: the tags are per wiki page, also for items they do not hold for (every
+    chandelier is "collected in the world"), so a later source in the data (a recipe, a vendor,
+    a drop) counts instead – Steampunk Chest → any mechanical boss, the Dungeon's paintings →
+    Skeletron. Items for which the tag holds anyway have a rule in `[milestone_items]` (Ice
+    Block, Demonite Ore, Sunflower → Start; Lihzahrd Chest → Plantera)
   - minimum: Hardmode items → Wall of Flesh; `[milestone_items]` (name patterns) for what the
     data does not know, e.g. mining: Hellstone → evil boss, Hardmode ores → Wall of Flesh,
     Chlorophyte Ore → all three mechanical bosses, Meteorite → evil boss (a meteor lands only
     after the Eater of Worlds / Brain of Cthulhu; the Meteor Head too, `[milestone_sources]`); enemies in the wiki's category "Hardmode-only
     NPCs" → Wall of Flesh (by name or wiki page); `[milestone_sources]` for enemies that appear
-    later than their biome says (post-Plantera Dungeon enemies, Old One's Army tier 2) and for
+    later than their biome says (post-Plantera Dungeon enemies, Old One's Army tier 2, the Solar
+    Eclipse enemies after Plantera, the cultists at the Dungeon after Golem) and for
     exceptions to the category (pre-Hardmode enemies on a shared page, missing ones)
   The build writes `milestones.json` (with item counts) and lists Hardmode items whose sources
   say Start, to find missing rules.

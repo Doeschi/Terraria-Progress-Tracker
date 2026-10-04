@@ -1385,8 +1385,10 @@ milestone = "wall-of-flesh"
 icon_file = "Santa Claus.png"
 match = ["tag:vendor:santa claus"]
 
+# moves in when all other town NPCs are present: after Plantera (the Cyborg)
 [vendors.princess]
 name = "Princess"
+milestone = "plantera"
 icon_file = "Princess.png"
 match = ["tag:vendor:princess"]
 
@@ -2035,13 +2037,25 @@ after-all-mechs = "all-mechs"
 # category "Hardmode-only NPCs" (raw/page_categories.json, by name or wiki page) count from the
 # Wall of Flesh; entries here override that, in both directions.
 [milestone_sources]
-# pre-Hardmode enemies on a shared page of the category ("Jellyfish", "Mimics")
+# pre-Hardmode enemies on a shared page of the category ("Jellyfish"). Not the Mimic and the Ice
+# Mimic: before Hardmode they only spawn in Remix worlds.
 "Blue Jellyfish" = "start"
 "Pink Jellyfish" = "start"
-"Mimic" = "start"
-"Ice Mimic" = "start"
 # Hardmode-only, but missing from the category
 "Orca" = "wall-of-flesh"
+# Underworld, after any mechanical boss
+"Red Devil" = "any-mech"
+# Solar Eclipse: after all three mechanical bosses / after Plantera
+"Reaper" = "all-mechs"
+"Mothron" = "plantera"
+"Butcher" = "plantera"
+"Deadly Sphere" = "plantera"
+"Dr. Man Fly" = "plantera"
+"Nailhead" = "plantera"
+"Psycho" = "plantera"
+# the cultists at the Dungeon entrance appear after Golem
+"Cultist Archer" = "golem"
+"Lunatic Devotee" = "golem"
 # spawns only near a fallen meteor: one lands only after the Eater of Worlds / Brain of Cthulhu
 "Meteor Head" = "evil-boss"
 # Old One's Army tier 2 (after any mechanical boss)
@@ -2075,6 +2089,28 @@ after-all-mechs = "all-mechs"
 "Meteorite" = { milestone = "evil-boss", reason = "a meteor lands only after the Eater of Worlds / Brain of Cthulhu" }
 "Lihzahrd Brick" = { milestone = "golem", reason = "mined (needs the Picksaw)" }
 "Life Fruit" = { milestone = "any-mech", reason = "grows after any mechanical boss" }
+"Prismatic Lacewing" = { milestone = "plantera", reason = "appears in the Hallow after Plantera" }
+"Snow Globe" = { milestone = "wall-of-flesh", reason = "found in Presents only in Hardmode" }
+# dropped by the enemies of a biome, not by one enemy (not in the wiki's Drops table)
+"Cascade" = { milestone = "skeletron", reason = "dropped by Underworld enemies after Skeletron" }
+"Yelets" = { milestone = "any-mech", reason = "dropped by Jungle enemies after any mechanical boss" }
+# What the wiki only tags ("Collected in the world", "Dropped by enemies", …) counts for an item
+# the data has no source for: the tags are per wiki page, also for items they do not hold for
+# (every chandelier is "collected in the world"). An item with a rule here is obtained as tagged,
+# also when the data knows a later source (a recipe, a vendor, a drop):
+"Ice Block" = "start"
+"Sandstone Block" = "start"
+"Hardened Sand Block" = "start"
+"Hellstone Brick" = "start"
+"Demonite Ore" = "start"
+"Crimtane Ore" = "start"
+"Sunflower" = "start"
+"Flower Wall" = "start"
+"Sharpening Station" = "start"
+"Explosives" = "start"
+"Water Candle" = { milestone = "skeletron", reason = "found in the Dungeon" }
+"Lihzahrd Chest" = { milestone = "plantera", reason = "found in the Jungle Temple" }
+"Lihzahrd Altar" = { milestone = "golem", reason = "mined (needs the Picksaw)" }
 # crafted from Chlorophyte Bars (the wiki tags it "plunder", which would make it a plain Hardmode item)
 "Chlorophyte Extractinator" = { milestone = "all-mechs", reason = "crafted – needs Chlorophyte Bars" }
 # the Painter sells it in a Graveyard while the Mechanic (rescued after Skeletron) is present; the
@@ -2351,7 +2387,7 @@ sources = ["Eater of Worlds", "Treasure Bag (Eater of Worlds)"]
 name = "Brain of Cthulhu"
 stage = "pre-hardmode"
 icon_file = "Map Icon Brain of Cthulhu.png"
-sources = ["Brain of Cthulhu", "Treasure Bag (Brain of Cthulhu)"]
+sources = ["Brain of Cthulhu", "Creeper", "Treasure Bag (Brain of Cthulhu)"]
 
 [bosses.queen-bee]
 name = "Queen Bee"
