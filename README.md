@@ -56,6 +56,7 @@ the unchanged downloads in [`pipeline/raw/`](pipeline/raw).
 | `extractinator.json` | 198 results of the Extractinator and the Chlorophyte Extractinator for 74 items: per input (Silt / Slush, Desert Fossil, moss, junk, Poo) with chance and amount, and 57 conversions (Copper Ore → Tin Ore, Demonite → Crimtane, …) |
 | `sets.json` | 185 armor and vanity sets (69 armor, 116 vanity, 562 items): the items of a wiki page "… armor" / "… set"; category "Sets" with "Armor sets" and "Vanity sets" |
 | `bestiary.json` | All 546 bestiary entries in the in-game order, with the internal name the world file uses, type, stars, biome / time / event filters, game update and platforms |
+| `intros.json` | The introduction of the wiki page of every item and bestiary entry (the text before the first heading; 2,946 pages), as paragraphs and lists of plain text |
 | `categories.json`, `subcategories.json`, `obtain.json`, `vendors.json`, `events.json`, `biomes.json`, `times.json` | The groups used above, with names, icons and item counts |
 | `missing_items.json` | Items the wiki's Items table lacks, its Recipes table names with id, and that have no template in `[recipe_items]` (currently none) |
 | `versions.json`, `rarities.json`, `coins.json`, `difficulties.json`, `platforms.json` | Game updates (with names and a representative item), rarity images, coin values, game-mode and platform icons |
@@ -72,7 +73,7 @@ Everything comes from the [Terraria Wiki](https://terraria.wiki.gg/) (wiki.gg). 
 four steps; only steps 1 and 3 talk to the wiki, steps 2 and 4 work offline.
 
 ```
-step 1  download_cargo_tables.py   wiki -> pipeline/raw/   (tables, page sources, image lists)
+step 1  download_cargo_tables.py   wiki -> pipeline/raw/   (tables, page sources, introductions, image lists)
 step 2  build_tracker_data.py      raw + mapping.toml -> web/public/data/*.json (+ data_readable/)
         check_icons.py (optional)  checks the linked images, notes renamed files for step 2
 step 3  build_icons.py             wiki images -> web/public/icons/ sprite sheets + sprites.json
@@ -114,6 +115,14 @@ change.
 Also scraped: the rendered HTML of "NPC IDs" (internal NPC names and ids – the keys of the
 bestiary in world files), the image lists of "Rarity", "Coins" and "Difficulty" (their icons) and
 the pages in the category "Hardmode-only NPCs" (their drops count from the Wall of Flesh).
+
+**Introductions – taken as they are.** The text of a page before its first heading, for the
+about 2,960 pages of the items and bestiary entries. The wiki's API returns it without infobox,
+notes, images and footnotes (the extension TextExtracts); step 1 saves that HTML with the page's
+revision (`raw/page_intros.json`) and later reads only pages that are new or were edited
+(`--all-intros` reads all again). The wiki needs about two seconds per page and often answers
+with an error first (the script tries again), so the first download takes almost two hours.
+Step 2 only turns the HTML into paragraphs and lists of plain text.
 
 **Images.** Icons are links to the wiki's image files (`https://terraria.wiki.gg/images/…`),
 built from the file names in the tables. `check_icons.py` asks the API about all of them (in
@@ -162,7 +171,9 @@ the new names. `build_icons.py` downloads them once and packs them into sprite s
     wiki's flag) never comes before the Wall of Flesh; those whose data says earlier are reported.
 12. **Bestiary:** the entries of "Bestiary/List", matched to NPC ids and internal names ("NPC
     IDs") and to the `NPCs` table.
-13. Everything is written minified to `web/public/data/` and indented to `pipeline/data_readable/`.
+13. **Introductions:** the saved HTML of each page becomes paragraphs and lists of plain text
+    (`intros.json`, per wiki page); pages of banners (their enemy's page) are left out.
+14. Everything is written minified to `web/public/data/` and indented to `pipeline/data_readable/`.
     Raw values the mapping does not know yet are listed in the output.
 
 ### 3. The mapping file (`pipeline/mapping.toml`)
@@ -244,7 +255,7 @@ it (`*` is a wildcard). Example: the Shuriken has `type: weapon`,
 Requires Python 3.11+ and `pip install requests pillow`.
 
 ```bash
-python pipeline/download_cargo_tables.py   # step 1: wiki -> pipeline/raw/ (Cargo tables, page images/sources)
+python pipeline/download_cargo_tables.py   # step 1: wiki -> pipeline/raw/ (Cargo tables, page images/sources/introductions)
 python pipeline/build_tracker_data.py      # step 2: raw + mapping.toml -> web/public/data/*.json
 python pipeline/check_icons.py             # optional: check that all linked wiki images exist
 python pipeline/build_icons.py             # step 3: wiki images -> sprite sheets in web/public/icons/
@@ -275,7 +286,7 @@ commit and leaves the change log alone – so every change to the logic shows ex
 it moves.
 
 The parts that step 2 reads from page text (shops, Bestiary/List, the drop groups, the
-Extractinator tables, …) have minimum counts in `[sanity]` of `mapping.toml`. Below one, step 2
+Extractinator tables, the introductions, …) have minimum counts in `[sanity]` of `mapping.toml`. Below one, step 2
 stops before writing anything, because a changed wiki template would otherwise ship half the data
 without a warning. `--no-sanity` builds anyway, to look at the result. When the game grows, raise
 the minimums; `pipeline/build_warnings.json` has the current counts.

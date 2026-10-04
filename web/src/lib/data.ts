@@ -30,7 +30,7 @@ import type {
 } from './types'
 
 /** Like fetchJson, but a missing file gives `fallback` (e.g. no sprite sheets built yet). */
-async function fetchOptional<T>(name: string, fallback: T): Promise<T> {
+export async function fetchOptional<T>(name: string, fallback: T): Promise<T> {
   try {
     return await fetchJson<T>(name)
   } catch {

@@ -414,6 +414,13 @@
     "parent": "dye"
   },
   {
+    "id": "strange-dye",
+    "name": "Strange dyes",
+    "icon": "https://terraria.wiki.gg/images/Living_Rainbow_Dye.png",
+    "count": 33,
+    "parent": "dye"
+  },
+  {
     "id": "healing",
     "name": "Healing items",
     "icon": "https://terraria.wiki.gg/images/Healing_Potion.png",
@@ -820,7 +827,7 @@
     "id": "other-dye",
     "name": "Other dyes",
     "icon": "https://terraria.wiki.gg/images/Red_Dye.png",
-    "count": 120,
+    "count": 87,
     "parent": "dye",
     "fallback": true
   },

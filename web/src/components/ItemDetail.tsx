@@ -31,6 +31,7 @@ import { cardRow } from '@/lib/cardRow'
 import { Badge, CardLink, Chips, Section, type TitleComponent } from './DetailParts'
 import { ContainsSection, NpcCard, SourceCard } from './NpcDetail'
 import { ExtractinatorSection } from './ExtractinatorSection'
+import { IntroSection } from './IntroSection'
 import { SetSection } from './SetSection'
 import { shownObtain } from '@/lib/filtering'
 import { NPC_REF, refName, SOURCE_REF, sourceRef, vendorRef } from '@/lib/npcs'
@@ -230,6 +231,8 @@ function DetailContent({ item, Title }: { item: Item; Title: TitleComponent }) {
         <TooltipText text={item.tooltip} />
       </p>
     ),
+    // not for banners: their wiki page is the page of their enemy
+    about: !item.banner && <IntroSection page={item.page} name={item.name} url={item.url} />,
     what: (
       <Section title="What it is">
         <Chips

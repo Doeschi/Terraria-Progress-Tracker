@@ -3,6 +3,7 @@
 /** Sections of the item detail panel, in their default order. */
 export const DETAIL_SECTIONS: { id: string; label: string }[] = [
   { id: 'tooltip', label: 'Tooltip' },
+  { id: 'about', label: 'About (introduction from the wiki)' },
   { id: 'what', label: 'What it is' },
   { id: 'set', label: 'Set (armor and vanity sets)' },
   { id: 'how', label: 'How to get it' },

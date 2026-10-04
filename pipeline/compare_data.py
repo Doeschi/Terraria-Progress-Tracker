@@ -104,6 +104,8 @@ def counts(name, data):
                 out[f"{key} (rows)"] = sum(len(v) for v in value.values())
     if name == "shops.json":
         out = {"items": len(data), "rows": sum(len(v) for v in data.values())}
+    if name == "intros.json":
+        out = {"pages": len(data)}
     return out
 
 

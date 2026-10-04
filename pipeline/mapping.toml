@@ -653,6 +653,14 @@ parent = "dye"
 icon = "Life Hair Dye"
 match = ["type:hair dye"]
 
+# the Dye Trader's rewards for Strange Plants (the wiki tags them as quest rewards)
+[subcategories.strange-dye]
+name = "Strange dyes"
+parent = "dye"
+icon = "Living Rainbow Dye"
+match = ["tag:quest rewards", "listcat:quest rewards"]
+only_in_parent = true
+
 # Potions
 [subcategories.healing]
 name = "Healing items"
@@ -1225,6 +1233,7 @@ platform_icons = 6            # icons in MediaWiki:Common.css (6)
 drop_group_pages = 80         # pages with drop groups (93)
 strange_plant_rewards = 30    # the Dye Trader's rewards (33)
 extractinator_results = 50    # per machine (56 / 142)
+page_intros = 2500            # wiki pages with an introduction (2946)
 
 # Renamed items the update report cannot detect (their item id changed too): old key = new key.
 # compare_data.py adds them to the change log in meta.json; the app moves the checkmarks of

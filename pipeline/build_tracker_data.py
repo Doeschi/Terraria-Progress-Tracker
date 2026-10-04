@@ -7,7 +7,7 @@ access - everything comes from the raw/ folder and mapping.toml.
 Inputs:
   raw/items.csv, exclusive.csv, history.csv, drops.csv, npcs.csv, recipes.csv,
   page_images.json, page_wikitext.json (incl. MediaWiki:Common.css), page_html.json, drop_groups.json,
-  page_categories.json (Hardmode-only NPCs), schema.json   (from step 1)
+  page_categories.json (Hardmode-only NPCs), page_intros.json, schema.json   (from step 1)
   raw/image_redirects.json   image files that are redirects (optional, from check_icons.py)
   mapping.toml   how raw type/listcat/tag values become categories,
                  subcategories, obtain methods, vendors, events and flags
@@ -48,6 +48,8 @@ same files go to --readable (default data_readable/ next to this script):
                       (the others are added to items.json) - to name such ids in world files
   bestiary.json       bestiary entries in the in-game order (type, biomes, times,
                       events, version, platforms) and the entry types
+  intros.json         per wiki page of an item or bestiary entry its introduction (the text
+                      before the first heading): paragraphs and lists
 
 Usage:  python build_tracker_data.py
         python build_tracker_data.py --raw raw --mapping mapping.toml --out ../web/public/data
@@ -93,6 +95,7 @@ from trackerdata.extractinator import extractinator_file
 from trackerdata.sets import find_sets
 from trackerdata.recipes import missing_items_file, recipe_only_items, recipes_file
 from trackerdata.bestiary import bestiary_file
+from trackerdata.intros import intros_file
 from trackerdata.milestones import Milestones
 from trackerdata.conditions import (
     Conditions,
@@ -303,6 +306,15 @@ def build(raw_dir, mapping_path, out_dir, readable_dir=None, no_sanity=False):
                                              page_html.get("NPC IDs", ""), npc_rows, exclusive,
                                              mapping, mapping.versions)
 
+    log("Introductions…")
+    intros_path = raw_dir / "page_intros.json"
+    page_intros = json.loads(intros_path.read_text(encoding="utf-8")) if intros_path.exists() else {}
+    outputs["intros.json"] = intros_file(page_intros, items, outputs["bestiary.json"]["entries"])
+    log(f"  {len(outputs['intros.json'])} pages with an introduction; without one: "
+        f"{sum(1 for i in items if not i.get('banner') and i.get('page') not in outputs['intros.json'])} items, "
+        f"{sum(1 for e in outputs['bestiary.json']['entries'] if e['page'] not in outputs['intros.json'])} "
+        f"bestiary entries")
+
     # DU3: the data version (download date) and the newest game version; the change log written
     # by compare_data.py (DU4) is kept
     info_path = raw_dir / "download_info.json"
@@ -324,6 +336,7 @@ def build(raw_dir, mapping_path, out_dir, readable_dir=None, no_sanity=False):
         "platform_icons": len(p_icons),
         "drop_group_pages": len(groups),
         "strange_plant_rewards": sum(len(v) for v in rewards.values()),
+        "page_intros": len(outputs["intros.json"]),
         **{f"extractinator_results.{m['id']}": sum(1 for r in extractinator["results"] if r["machine"] == m["id"])
            for m in extractinator["machines"]},
     }

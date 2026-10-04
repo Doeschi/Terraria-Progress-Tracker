@@ -55,6 +55,24 @@ def l10n_names(wikitext):
     return names
 
 
+def table_rows(wikitext):
+    """The rows of the table of "Bestiary/List", each as its cells."""
+    table = wikitext[wikitext.find("{|"):]
+    return [[c.strip() for c in row.strip().split("\n| ")] for row in table.split("\n|-")[1:]]
+
+
+def entity_page(entity):
+    """The wiki page of a row's entity ("{{tr|Blue Slime}}", "[[Guide]]"), None without one."""
+    page = re.search(r"\{\{tr\|([^|}]+)", entity) or re.search(r"\[\[([^|\]]+)", entity)
+    return html.unescape(page.group(1)).strip() if page else None
+
+
+def entry_pages(wikitext):
+    """The wiki pages of all bestiary entries (step 1 downloads their introductions)."""
+    return sorted({page for cells in table_rows(wikitext) if len(cells) >= 5
+                   for page in [entity_page(cells[1])] if page})
+
+
 def bestiary_file(wikitext, page_html, npc_rows, exclusive, mapping, version_names):
     conf = mapping.bestiary
     icons = conf.get("icons", {})
@@ -71,19 +89,17 @@ def bestiary_file(wikitext, page_html, npc_rows, exclusive, mapping, version_nam
     allowed = conf.get("platforms", ["desktop", "console", "mobile"])
 
     entries, problems = [], Counter()
-    table = wikitext[wikitext.find("{|"):]
-    for n, row in enumerate(table.split("\n|-")[1:], start=1):
-        cells = [c.strip() for c in row.strip().split("\n| ")]
+    for n, cells in enumerate(table_rows(wikitext), start=1):
         if len(cells) < 5:
             problems["row without 5 cells"] += 1
             continue
         _, entity, stars, filter_cell, desc = cells[:5]
         key = re.search(r"Bestiary_FlavorText\.npc_(\w+)", desc)
-        page = re.search(r"\{\{tr\|([^|}]+)", entity) or re.search(r"\[\[([^|\]]+)", entity)
+        page = entity_page(entity)
         if not key or not page:
             problems["row without name or key"] += 1
             continue
-        key, page = key.group(1), html.unescape(page.group(1)).strip()
+        key = key.group(1)
         notes = [variants.get(k, k) for k in re.findall(r"\{\{l10n\|bl\|(\w+)\}\}", entity)]
         name = f"{page} ({', '.join(notes)})" if notes else page
         npc = npc_ids.get(key)

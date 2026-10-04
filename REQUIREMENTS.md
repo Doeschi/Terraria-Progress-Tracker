@@ -192,6 +192,20 @@ GitHub Actions.
   "(placed)" one as placed image. `check_icons.py` checks all linked images through the wiki API
   in batches (no downloads) and saves image files that are only redirects (direct link = 404) to
   `raw/image_redirects.json`; the build then links their targets.
+- **D24** Introductions: the text of a wiki page before its first heading, for the pages of all
+  items and bestiary entries (about 2,960 pages). Step 1 saves it as the wiki's API gives it
+  (TextExtracts: HTML without infobox, notes, images and footnotes; `raw/page_intros.json`, with
+  the page's revision). Only pages that are new or were edited since the last download are read
+  again (`--all-intros`: all; the wiki needs about two seconds per page and often answers with
+  an error first, the first download took 1 h 47 min). Step 2 turns the HTML into paragraphs and
+  lists of plain text (`intros.json`, per wiki page: a page of several items is stored once; the
+  wiki's platform notes stay as text in brackets, links are not kept; brackets left empty by a
+  removed icon go). A single sentence that only announces a table or a row of icons ("The full
+  set grants the following effects while equipped:") is dropped, because the wiki's introduction
+  leaves those out – unless it is the whole text (Ankh Charm). Pages without an introduction are
+  left out (Angler/Quests: the 41 quest fish; Gemstone Blocks: 7 items). 2,946 pages have one;
+  the file is 1.4 MB (376 KB compressed). The app loads it when a detail panel first shows an
+  introduction, not at the start.
 
 ## DU – Data updates
 
@@ -216,7 +230,7 @@ needs a decision is reported, and parsers that read page text must not silently 
   not written then), `--full` names every item of a change instead of the first 12.
 - **DU2** Parser sanity checks: each part read from page text (shops of the vendor pages,
   Bestiary/List, "Any …" ingredient groups, platform icons from MediaWiki:Common.css, NPC IDs,
-  drop groups, Extractinator tables, Strange Plant rewards) has a minimum in `mapping.toml`
+  drop groups, Extractinator tables, Strange Plant rewards, introductions) has a minimum in `mapping.toml`
   (`[sanity]`, about 90 % of the last download: shop rows ≥ 700, drop group pages ≥ 80, results
   per Extractinator ≥ 50, bestiary entries ≥ 500, …; `build_warnings.json` has the counts). Below it, step 2 stops with an error naming the part, the count and
   the minimum (a changed wiki template, not a silently smaller data set). `--no-sanity` builds
@@ -885,6 +899,13 @@ Below 640 px width (phones) the layout changes; tablets and desktops stay as the
   has "Ignore". Expert/Master-only items (about 100) show the wiki's Expert or Master icon right
   after their name (tooltip "Expert & Master only" / "Master only") instead of a column of their
   own; the "Difficulty" column is in no view any more, only in the Columns menu (for sorting).
+- **ID4** Section "About" (below the tooltip; shown, hidden and moved like the other sections,
+  LS3): the introduction of the item's wiki page (D24) – all paragraphs and lists before the
+  page's first heading – and a link "From the Terraria Wiki" to the page. An item on a page of
+  several items (the 192 paintings on "Paintings", the pieces of an armor set) gets the text of
+  the page, under the heading "About <page>". Not shown for banners (their page is the page of
+  their enemy) and for pages without an introduction. The section can be folded; folded or
+  not is remembered.
 
 ## ND – NPC details
 
@@ -921,6 +942,8 @@ Below 640 px width (phones) the layout changes; tablets and desktops stay as the
 - **ND5** The bestiary list opens the NPC card when a row is clicked (not the checkbox or link),
   docked like the item details (overlay on narrow screens). Column "Drops": how many different
   items the entry drops and how many of them are obtained (e.g. "5 / 12"), sortable.
+- **ND6** NPC card: the section "About" as in the item card (ID4), first in the card: the
+  introduction of the entry's wiki page.
 
 ## V – Game version
 

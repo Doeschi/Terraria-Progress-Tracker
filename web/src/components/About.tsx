@@ -76,7 +76,7 @@ export function AboutDialog({
         </DialogHeader>
         <div className="flex flex-col gap-4">
           <Part title="Data and icons">
-            Item, recipe, drop, shop and bestiary data and all icons come from the{' '}
+            Item, recipe, drop, shop and bestiary data, the "About" texts and all icons come from the{' '}
             <A href="https://terraria.wiki.gg/">Terraria Wiki</A> and are licensed under{' '}
             <A href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</A>. This also applies to the
             generated data files and the icon sprite sheets of this app.

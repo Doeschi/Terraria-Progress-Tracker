@@ -14,6 +14,7 @@ import { Button } from '@/components/ui/button'
 import { Checkbox } from '@/components/ui/checkbox'
 import { ObtainedMark, WikiIcon } from './common'
 import { CollapsibleSection } from './RecipeSections'
+import { IntroSection } from './IntroSection'
 import { ShowItemsButton } from './ShowItemsButton'
 import { cardRow } from '@/lib/cardRow'
 import { Badge, CardLink, Section, type TitleComponent } from './DetailParts'
@@ -89,6 +90,7 @@ export function NpcCard({ entry, Title }: { entry: BestiaryEntry; Title: TitleCo
       </div>
 
       <div className="flex flex-col gap-5 p-4">
+        <IntroSection page={entry.page} name={entry.name} url={entry.url} />
         {(where.length > 0 || worldKills !== undefined) && (
           <Section title="Where and when">
             {where.length > 0 && <p className="text-sm">{where.join(' · ')}</p>}

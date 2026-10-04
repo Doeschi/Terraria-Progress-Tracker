@@ -25,6 +25,7 @@ Data and images come from the [Terraria Wiki](https://terraria.wiki.gg/) (CC BY-
 - [`sets.json`](#setsjson)
 - [`meta.json`](#metajson)
 - [`bestiary.json`](#bestiaryjson)
+- [`intros.json`](#introsjson)
 - [`missing_items.json`](#missing_itemsjson)
 - [`sprites.json`](#spritesjson)
 
@@ -68,6 +69,7 @@ Data and images come from the [Terraria Wiki](https://terraria.wiki.gg/) (CC BY-
 | [`sets.json`](#setsjson) | armor and vanity sets |
 | [`meta.json`](#metajson) | data version and the change log of data updates |
 | [`bestiary.json`](#bestiaryjson) | the bestiary entries and their types |
+| [`intros.json`](#introsjson) | the introductions of the wiki pages ("About" in the detail panel) |
 | [`missing_items.json`](#missing_itemsjson) | item ids known only from recipes |
 | [`sprites.json`](#spritesjson) | where each icon is in the sprite sheets (`icons/`) |
 
@@ -377,6 +379,25 @@ Armor and vanity sets: the items of a wiki page whose name ends in "armor" or "s
 | `biomes` / `times` / `events` | where / when / during what it appears |
 | `version` | the update that added it (`versions.json` id) |
 | `platforms` | platform ids it exists on |
+
+## `intros.json`
+
+The introduction of a wiki page – its text before the first heading – for the pages of the items
+and the bestiary entries: an object, wiki page (`page` of an item or bestiary entry) → blocks.
+A block is a paragraph (a string) or a list (an array of its entries):
+
+```json
+"Kaleidoscope": [
+  "The Kaleidoscope is a Hardmode, post-Plantera whip that has a 1/4 (25%) chance of being dropped by the Empress of Light. It has a 20% multihit penalty and performs the following effects on hit:",
+  ["20 tag damage", "10% tag critical strike chance"],
+  "Its best modifier is Legendary."
+]
+```
+
+The text is the wiki's own (plain text, without links). Items of the same page share its entry;
+pages without an introduction and pages only banners are on (the pages of their enemies, unless
+a bestiary entry has the page) are left out. The app loads this file only when a detail panel
+shows an introduction.
 
 ## `missing_items.json`
 

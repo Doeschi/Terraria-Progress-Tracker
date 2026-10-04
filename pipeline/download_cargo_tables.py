@@ -28,6 +28,11 @@ Outputs (in --out, default raw/ next to this script):
   download_info.json  date of the download (the data version, REQUIREMENTS DU3)
   drop_groups.json source text of the pages whose drop lists have groups ("one of the
                    following items"; found by the wiki search insource:"group:start")
+  page_intros.json the introduction of the pages of all items and bestiary entries: the text
+                   before the first heading as HTML, without infobox, notes and images (the
+                   wiki's TextExtracts), with the page's revision. Only pages that are new or
+                   were edited since the last download are read again (--all-intros: all; the
+                   first download takes almost two hours)
 
 Requires:  pip install requests
 Contact:   wiki.gg asks for a contact in the User-Agent. Give it with --contact, the
@@ -35,6 +40,8 @@ Contact:   wiki.gg asks for a contact in the User-Agent. Give it with --contact,
            script (not committed); otherwise the project URL is used.
 Usage:     python download_cargo_tables.py
            python download_cargo_tables.py --tables Recipes --pages   (only some tables)
+           python download_cargo_tables.py --tables --pages --wikitext --html --categories \\
+               --no-drop-groups   (only the introductions)
 
 Wiki content is CC BY-NC-SA 4.0.
 """
@@ -50,6 +57,9 @@ import tomllib
 from pathlib import Path
 
 import requests
+
+from trackerdata.bestiary import entry_pages
+from trackerdata.common import read_csv
 
 API = "https://terraria.wiki.gg/api.php"
 # wiki.gg asks scripts for a descriptive User-Agent with a contact. The contact is not
@@ -70,6 +80,8 @@ DEFAULT_HTML = ["NPC IDs"]
 DEFAULT_CATEGORIES = ["Hardmode-only NPCs"]
 # Wiki search for the pages with drop groups (their source text is saved).
 DROP_GROUP_SEARCH = 'insource:"group:start"'
+# Introductions are saved after this many pages (the first download takes long).
+INTRO_SAVE_EVERY = 200
 PAGE_SIZE = 500
 # Semicolon-separated CSV; values containing ";" are quoted by the csv module.
 CSV_DELIMITER = ";"
@@ -97,6 +109,31 @@ def vendor_pages():
         return []
     vendors = tomllib.loads(MAPPING_FILE.read_text(encoding="utf-8")).get("vendors", {})
     return [v.get("page", v["name"]) for v in vendors.values()]
+
+
+def intro_pages(raw_dir):
+    """The pages whose introduction is saved: the pages of the items (items.csv) and of the
+    bestiary entries (Bestiary/List in page_wikitext.json)."""
+    pages = set()
+    if (raw_dir / "items.csv").exists():
+        pages |= {row["_pageName"] for row in read_csv(raw_dir / "items.csv")}
+    texts_path = raw_dir / "page_wikitext.json"
+    if texts_path.exists():
+        pages |= set(entry_pages(json.loads(texts_path.read_text(encoding="utf-8")).get("Bestiary/List", "")))
+    return sorted(p for p in pages if p)
+
+
+def leads_to(query):
+    """title -> the page a requested title leads to (the "normalized" and "redirects" of a query)."""
+    moved = {m["from"]: m["to"] for m in query.get("normalized", []) + query.get("redirects", [])}
+
+    def target(title):
+        for _ in range(5):
+            if title not in moved:
+                break
+            title = moved[title]
+        return title
+    return target
 
 
 def contact(cli_value=None):
@@ -232,6 +269,35 @@ class Wiki:
             log(f"  {len(texts)} of {len(titles)} pages")
         return texts
 
+    def revisions(self, titles):
+        """{title: id of the current revision of the page (redirects followed)}, 50 pages per
+        request; pages that don't exist are left out."""
+        revisions = {}
+        for i in range(0, len(titles), 50):
+            chunk = titles[i:i + 50]
+            data = self.get(action="query", prop="info", redirects="1", titles="|".join(chunk))
+            target = leads_to(data["query"])
+            found = {p["title"]: p["lastrevid"] for p in data["query"]["pages"] if "lastrevid" in p}
+            revisions.update({t: found[target(t)] for t in chunk if target(t) in found})
+        return revisions
+
+    def intros(self, titles):
+        """{title: introduction of the page as HTML (redirects followed)}, 20 pages per request
+        (the limit of TextExtracts)."""
+        texts = {}
+        for i in range(0, len(titles), 20):
+            chunk, cont = titles[i:i + 20], {}
+            while True:
+                data = self.get(action="query", prop="extracts", exintro="1", exlimit="max",
+                                redirects="1", titles="|".join(chunk), **cont)
+                target = leads_to(data["query"])
+                found = {p["title"]: p["extract"] for p in data["query"]["pages"] if "extract" in p}
+                texts.update({t: found[target(t)] for t in chunk if target(t) in found})
+                if "continue" not in data:
+                    break
+                cont = data["continue"]
+        return texts
+
     def download(self, table, fields):
         rows, offset = [], 0
         while True:
@@ -279,6 +345,10 @@ def main():
                     help="wiki categories whose pages are listed (default: 'Hardmode-only NPCs')")
     ap.add_argument("--no-drop-groups", dest="drop_groups", action="store_false",
                     help="don't download the pages with drop groups")
+    ap.add_argument("--no-intros", dest="intros", action="store_false",
+                    help="don't download the introductions of the item and bestiary pages")
+    ap.add_argument("--all-intros", action="store_true",
+                    help="download all introductions again, not only those of new and edited pages")
     ap.add_argument("--delay", type=float, default=0.5, help="seconds between requests")
     ap.add_argument("--contact", help="contact for the wiki's User-Agent (default: WIKI_CONTACT, "
                                       "contact.txt or the project URL)")
@@ -345,6 +415,27 @@ def main():
         texts = dict(sorted(wiki.wikitexts(titles).items()))
         groups_path.write_text(json.dumps(texts, indent=1, ensure_ascii=False), encoding="utf-8")
         log(f"wrote {groups_path}")
+
+    if args.intros:
+        log("Reading page introductions…")
+        intros_path = args.out / "page_intros.json"
+        saved = json.loads(intros_path.read_text(encoding="utf-8")) if intros_path.exists() else {}
+        titles = intro_pages(args.out)
+        revisions = wiki.revisions(titles)
+        # pages that are gone (or no longer the page of an item or bestiary entry) are dropped
+        intros = {t: saved[t] for t in titles if t in saved and t in revisions}
+        changed = [t for t in titles if t in revisions
+                   and (args.all_intros or intros.get(t, {}).get("revid") != revisions[t])]
+        log(f"  {len(titles)} pages, {len(titles) - len(revisions)} of them not on the wiki; "
+            f"{len(changed)} to read (new or edited since the last download)")
+        for i in range(0, max(len(changed), 1), INTRO_SAVE_EVERY):
+            for title, text in wiki.intros(changed[i:i + INTRO_SAVE_EVERY]).items():
+                intros[title] = {"revid": revisions[title], "html": text}
+            intros_path.write_text(json.dumps(dict(sorted(intros.items())), indent=1, ensure_ascii=False),
+                                   encoding="utf-8")
+            if changed:
+                log(f"  {min(i + INTRO_SAVE_EVERY, len(changed))} of {len(changed)} pages")
+        log(f"wrote {intros_path} ({len(intros)} introductions)")
 
     if schemas:
         # merge, so downloading only some tables keeps the schemas of the others
