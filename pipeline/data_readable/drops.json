@@ -76982,7 +76982,7 @@
       {
         "source": "hellhound",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 100 kills",
         "modes": [
           "normal",
           "expert",
@@ -76999,7 +76999,7 @@
       {
         "source": "mushi-ladybug",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -77016,7 +77016,7 @@
       {
         "source": "kobold-glider",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 100 kills",
         "modes": [
           "normal",
           "expert",
@@ -77033,7 +77033,7 @@
       {
         "source": "scutlix",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -77050,7 +77050,7 @@
       {
         "source": "blood-squid",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -77067,7 +77067,7 @@
       {
         "source": "scutlix-gunner",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -77084,7 +77084,7 @@
       {
         "source": "wolf",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -77101,7 +77101,7 @@
       {
         "source": "deadly-sphere",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -77118,7 +77118,7 @@
       {
         "source": "etherian-goblin",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 1000 kills",
         "modes": [
           "normal",
           "expert",
@@ -77135,7 +77135,7 @@
       {
         "source": "rusty-armored-bones",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -77152,7 +77152,7 @@
       {
         "source": "ray-gunner",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -77169,7 +77169,7 @@
       {
         "source": "hell-armored-bones",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -77186,7 +77186,7 @@
       {
         "source": "martian-engineer",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -77203,7 +77203,7 @@
       {
         "source": "crimslime",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -77220,7 +77220,7 @@
       {
         "source": "gigazapper",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -77237,7 +77237,7 @@
       {
         "source": "giant-tortoise",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -77254,7 +77254,7 @@
       {
         "source": "umbrella-slime",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -77271,7 +77271,7 @@
       {
         "source": "sroller",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -77288,7 +77288,7 @@
       {
         "source": "arapaima",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -77305,7 +77305,7 @@
       {
         "source": "spiked-jungle-slime",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -77322,7 +77322,7 @@
       {
         "source": "vulture",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -77339,7 +77339,7 @@
       {
         "source": "moth",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 25 kills",
         "modes": [
           "normal",
           "expert",
@@ -77356,7 +77356,7 @@
       {
         "source": "bone-lee",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -77373,7 +77373,7 @@
       {
         "source": "present-mimic",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -77390,7 +77390,7 @@
       {
         "source": "etherian-lightning-bug",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -77407,7 +77407,7 @@
       {
         "source": "undead-miner",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -77424,7 +77424,7 @@
       {
         "source": "ice-slime",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -77441,7 +77441,7 @@
       {
         "source": "gingerbread-man",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -77458,7 +77458,7 @@
       {
         "source": "krampus",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -77475,7 +77475,7 @@
       {
         "source": "piranha",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -77492,7 +77492,7 @@
       {
         "source": "yeti",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -77509,7 +77509,7 @@
       {
         "source": "alien-hornet",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -77526,7 +77526,7 @@
       {
         "source": "snatcher",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -77543,7 +77543,7 @@
       {
         "source": "zombie-elf",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 100 kills",
         "modes": [
           "normal",
           "expert",
@@ -77560,7 +77560,7 @@
       {
         "source": "mini-star-cell",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -77577,7 +77577,7 @@
       {
         "source": "star-cell",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -77594,7 +77594,7 @@
       {
         "source": "etherian-goblin-bomber",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 500 kills",
         "modes": [
           "normal",
           "expert",
@@ -77611,7 +77611,7 @@
       {
         "source": "angry-dandelion",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -77628,7 +77628,7 @@
       {
         "source": "derpling",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -77645,7 +77645,7 @@
       {
         "source": "squid",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -77662,7 +77662,7 @@
       {
         "source": "corrupt-slime",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -77677,7 +77677,7 @@
       {
         "source": "slimeling",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -77694,7 +77694,7 @@
       {
         "source": "drakomire",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -77711,7 +77711,7 @@
       {
         "source": "drippler",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -77728,7 +77728,7 @@
       {
         "source": "wandering-eye-fish",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 25 kills",
         "modes": [
           "normal",
           "expert",
@@ -77745,7 +77745,7 @@
       {
         "source": "armored-skeleton",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -77762,7 +77762,7 @@
       {
         "source": "antlion-larva",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -77779,7 +77779,7 @@
       {
         "source": "brain-suckler",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -77796,7 +77796,7 @@
       {
         "source": "ice-elemental",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -77813,7 +77813,7 @@
       {
         "source": "flocko",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -77830,7 +77830,7 @@
       {
         "source": "corite",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -77847,7 +77847,7 @@
       {
         "source": "blue-slime",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -77862,7 +77862,7 @@
       {
         "source": "slime",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -77879,7 +77879,7 @@
       {
         "source": "drakin",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 100 kills",
         "modes": [
           "normal",
           "expert",
@@ -77896,7 +77896,7 @@
       {
         "source": "alien-larva",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -77913,7 +77913,7 @@
       {
         "source": "dungeon-slime",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -77930,7 +77930,7 @@
       {
         "source": "crab",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -77947,7 +77947,7 @@
       {
         "source": "herpling",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -77964,7 +77964,7 @@
       {
         "source": "drakomire-rider",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -77979,7 +77979,7 @@
       {
         "source": "drakanian",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -77996,7 +77996,7 @@
       {
         "source": "angry-nimbus",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -78013,7 +78013,7 @@
       {
         "source": "sand-poacher",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -78030,7 +78030,7 @@
       {
         "source": "raven",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -78047,7 +78047,7 @@
       {
         "source": "hoplite",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -78064,7 +78064,7 @@
       {
         "source": "spiked-ice-slime",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -78081,7 +78081,7 @@
       {
         "source": "dune-splicer",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -78098,7 +78098,7 @@
       {
         "source": "floaty-gross",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -78115,7 +78115,7 @@
       {
         "source": "corruptor",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -78132,7 +78132,7 @@
       {
         "source": "ichor-sticker",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -78149,7 +78149,7 @@
       {
         "source": "spore-zombie",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -78166,7 +78166,7 @@
       {
         "source": "goblin-warrior",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -78183,7 +78183,7 @@
       {
         "source": "goblin-peon",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -78200,7 +78200,7 @@
       {
         "source": "cochineal-beetle",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -78217,7 +78217,7 @@
       {
         "source": "basilisk",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -78234,7 +78234,7 @@
       {
         "source": "anomura-fungus",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -78251,7 +78251,7 @@
       {
         "source": "brain-scrambler",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -78268,7 +78268,7 @@
       {
         "source": "cyan-beetle",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -78285,7 +78285,7 @@
       {
         "source": "doctor-bones",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 10 kills",
         "modes": [
           "normal",
           "expert",
@@ -78302,7 +78302,7 @@
       {
         "source": "dr-man-fly",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -78319,7 +78319,7 @@
       {
         "source": "elf-archer",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -78336,7 +78336,7 @@
       {
         "source": "lac-beetle",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -78353,7 +78353,7 @@
       {
         "source": "maggot-zombie",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -78368,7 +78368,7 @@
       {
         "source": "zombie",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -78383,7 +78383,7 @@
       {
         "source": "moss-zombie",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -78400,7 +78400,7 @@
       {
         "source": "paladin",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 25 kills",
         "modes": [
           "normal",
           "expert",
@@ -78417,7 +78417,7 @@
       {
         "source": "sea-snail",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -78434,7 +78434,7 @@
       {
         "source": "antlion-swarmer",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -78449,7 +78449,7 @@
       {
         "source": "giant-antlion-swarmer",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -78466,7 +78466,7 @@
       {
         "source": "kobold",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 200 kills",
         "modes": [
           "normal",
           "expert",
@@ -78483,7 +78483,7 @@
       {
         "source": "giant-cursed-skull",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -78500,7 +78500,7 @@
       {
         "source": "giant-fungi-bulb",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -78515,7 +78515,7 @@
       {
         "source": "fungi-bulb",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -78532,7 +78532,7 @@
       {
         "source": "cursed-skull",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -78549,7 +78549,7 @@
       {
         "source": "illuminant-slime",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -78566,7 +78566,7 @@
       {
         "source": "vile-ghoul",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -78581,7 +78581,7 @@
       {
         "source": "ghoul",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -78596,7 +78596,7 @@
       {
         "source": "tainted-ghoul",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -78611,7 +78611,7 @@
       {
         "source": "dreamer-ghoul",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -78628,7 +78628,7 @@
       {
         "source": "lava-bat",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -78645,7 +78645,7 @@
       {
         "source": "shimmer-slime",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -78662,7 +78662,7 @@
       {
         "source": "angry-bones",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -78679,7 +78679,7 @@
       {
         "source": "illuminant-bat",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -78696,7 +78696,7 @@
       {
         "source": "giant-flying-fox",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -78713,7 +78713,7 @@
       {
         "source": "elf-copter",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -78730,7 +78730,7 @@
       {
         "source": "angry-tumbler",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -78747,7 +78747,7 @@
       {
         "source": "demon",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -78762,7 +78762,7 @@
       {
         "source": "voodoo-demon",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -78779,7 +78779,7 @@
       {
         "source": "dark-caster",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -78796,7 +78796,7 @@
       {
         "source": "poltergeist",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 100 kills",
         "modes": [
           "normal",
           "expert",
@@ -78813,7 +78813,7 @@
       {
         "source": "green-slime",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -78830,7 +78830,7 @@
       {
         "source": "purple-slime",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -78847,7 +78847,7 @@
       {
         "source": "yellow-slime",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -78864,7 +78864,7 @@
       {
         "source": "jungle-slime",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -78881,7 +78881,7 @@
       {
         "source": "scarecrow",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 150 kills",
         "modes": [
           "normal",
           "expert",
@@ -78898,7 +78898,7 @@
       {
         "source": "martian-officer",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -78915,7 +78915,7 @@
       {
         "source": "rune-wizard",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 10 kills",
         "modes": [
           "normal",
           "expert",
@@ -78932,7 +78932,7 @@
       {
         "source": "necromancer",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -78949,7 +78949,7 @@
       {
         "source": "ragged-caster",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -78966,7 +78966,7 @@
       {
         "source": "wall-creeper",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -78983,7 +78983,7 @@
       {
         "source": "black-slime",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -79000,7 +79000,7 @@
       {
         "source": "baby-slime",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -79015,7 +79015,7 @@
       {
         "source": "mother-slime",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -79032,7 +79032,7 @@
       {
         "source": "bunny",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -79049,7 +79049,7 @@
       {
         "source": "corrupt-penguin",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -79066,7 +79066,7 @@
       {
         "source": "vicious-penguin",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -79083,7 +79083,7 @@
       {
         "source": "corrupt-goldfish",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -79100,7 +79100,7 @@
       {
         "source": "vicious-goldfish",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -79117,7 +79117,7 @@
       {
         "source": "gray-grunt",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -79134,7 +79134,7 @@
       {
         "source": "raincoat-zombie",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -79151,7 +79151,7 @@
       {
         "source": "icy-merman",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -79168,7 +79168,7 @@
       {
         "source": "blue-armored-bones",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -79185,7 +79185,7 @@
       {
         "source": "goldfish",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -79202,7 +79202,7 @@
       {
         "source": "pirate-corsair",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -79219,7 +79219,7 @@
       {
         "source": "pirate-deckhand",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -79236,7 +79236,7 @@
       {
         "source": "pirate-deadeye",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -79253,7 +79253,7 @@
       {
         "source": "ice-golem",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 25 kills",
         "modes": [
           "normal",
           "expert",
@@ -79270,7 +79270,7 @@
       {
         "source": "antlion-charger",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -79285,7 +79285,7 @@
       {
         "source": "giant-antlion-charger",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -79302,7 +79302,7 @@
       {
         "source": "water-bolt-mimic",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -79319,7 +79319,7 @@
       {
         "source": "frozen-zombie",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -79336,7 +79336,7 @@
       {
         "source": "goblin-sorcerer",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -79353,7 +79353,7 @@
       {
         "source": "twinkle-popper",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -79370,7 +79370,7 @@
       {
         "source": "milkyway-weaver",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -79387,7 +79387,7 @@
       {
         "source": "predictor",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -79404,7 +79404,7 @@
       {
         "source": "nebula-floater",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -79421,7 +79421,7 @@
       {
         "source": "flow-invader",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -79438,7 +79438,7 @@
       {
         "source": "vortexian",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -79455,7 +79455,7 @@
       {
         "source": "blood-zombie",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -79472,7 +79472,7 @@
       {
         "source": "nutcracker",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -79489,7 +79489,7 @@
       {
         "source": "martian-walker",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -79506,7 +79506,7 @@
       {
         "source": "skeleton-commando",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -79523,7 +79523,7 @@
       {
         "source": "skeleton-sniper",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -79540,7 +79540,7 @@
       {
         "source": "butcher",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -79557,7 +79557,7 @@
       {
         "source": "tactical-skeleton",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -79574,7 +79574,7 @@
       {
         "source": "fritz",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -79591,7 +79591,7 @@
       {
         "source": "swamp-thing",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -79608,7 +79608,7 @@
       {
         "source": "frankenstein",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -79625,7 +79625,7 @@
       {
         "source": "psycho",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -79642,7 +79642,7 @@
       {
         "source": "mister-stabby",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -79659,7 +79659,7 @@
       {
         "source": "orca",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -79676,7 +79676,7 @@
       {
         "source": "the-bride",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 10 kills",
         "modes": [
           "normal",
           "expert",
@@ -79693,7 +79693,7 @@
       {
         "source": "pirate-crossbower",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -79710,7 +79710,7 @@
       {
         "source": "mothron",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 25 kills",
         "modes": [
           "normal",
           "expert",
@@ -79727,7 +79727,7 @@
       {
         "source": "spore-skeleton",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -79744,7 +79744,7 @@
       {
         "source": "etherian-wyvern",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 200 kills",
         "modes": [
           "normal",
           "expert",
@@ -79761,7 +79761,7 @@
       {
         "source": "martian-drone",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -79778,7 +79778,7 @@
       {
         "source": "skeleton-archer",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -79795,7 +79795,7 @@
       {
         "source": "tomb-crawler",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -79812,7 +79812,7 @@
       {
         "source": "flying-fish",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -79829,7 +79829,7 @@
       {
         "source": "pinky",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 25 kills",
         "modes": [
           "normal",
           "expert",
@@ -79846,7 +79846,7 @@
       {
         "source": "alien-queen",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -79863,7 +79863,7 @@
       {
         "source": "giant-shelly",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -79880,7 +79880,7 @@
       {
         "source": "antlion",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -79897,7 +79897,7 @@
       {
         "source": "dark-mummy",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -79914,7 +79914,7 @@
       {
         "source": "mummy",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -79931,7 +79931,7 @@
       {
         "source": "blood-mummy",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -79948,7 +79948,7 @@
       {
         "source": "light-mummy",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -79965,7 +79965,7 @@
       {
         "source": "hoppin-jack",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -79982,7 +79982,7 @@
       {
         "source": "ice-tortoise",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -79999,7 +79999,7 @@
       {
         "source": "red-slime",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -80016,7 +80016,7 @@
       {
         "source": "sand-slime",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -80033,7 +80033,7 @@
       {
         "source": "creature-from-the-deep",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -80050,7 +80050,7 @@
       {
         "source": "zombie-merman",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 25 kills",
         "modes": [
           "normal",
           "expert",
@@ -80067,7 +80067,7 @@
       {
         "source": "nymph",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 25 kills",
         "modes": [
           "normal",
           "expert",
@@ -80082,7 +80082,7 @@
       {
         "source": "lost-girl",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 25 kills",
         "modes": [
           "normal",
           "expert",
@@ -80099,7 +80099,7 @@
       {
         "source": "the-possessed",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -80116,7 +80116,7 @@
       {
         "source": "possessed-armor",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -80133,7 +80133,7 @@
       {
         "source": "splinterling",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 150 kills",
         "modes": [
           "normal",
           "expert",
@@ -80150,7 +80150,7 @@
       {
         "source": "the-groom",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 10 kills",
         "modes": [
           "normal",
           "expert",
@@ -80167,7 +80167,7 @@
       {
         "source": "reaper",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -80184,7 +80184,7 @@
       {
         "source": "selenian",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -80201,7 +80201,7 @@
       {
         "source": "goblin-thief",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -80218,7 +80218,7 @@
       {
         "source": "blood-eel",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 25 kills",
         "modes": [
           "normal",
           "expert",
@@ -80235,7 +80235,7 @@
       {
         "source": "giant-worm",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -80250,7 +80250,7 @@
       {
         "source": "digger",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -80267,7 +80267,7 @@
       {
         "source": "dreadnautilus",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 10 kills",
         "modes": [
           "normal",
           "expert",
@@ -80284,7 +80284,7 @@
       {
         "source": "old-one-s-skeleton",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 150 kills",
         "modes": [
           "normal",
           "expert",
@@ -80301,7 +80301,7 @@
       {
         "source": "rainbow-slime",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -80318,7 +80318,7 @@
       {
         "source": "blood-feeder",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -80335,7 +80335,7 @@
       {
         "source": "face-monster",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -80352,7 +80352,7 @@
       {
         "source": "blood-crawler",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -80369,7 +80369,7 @@
       {
         "source": "eater-of-souls",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -80386,7 +80386,7 @@
       {
         "source": "wither-beast",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -80403,7 +80403,7 @@
       {
         "source": "moss-hornet",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -80420,7 +80420,7 @@
       {
         "source": "eyezor",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -80437,7 +80437,7 @@
       {
         "source": "hemogoblin-shark",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 25 kills",
         "modes": [
           "normal",
           "expert",
@@ -80454,7 +80454,7 @@
       {
         "source": "pirate-captain",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 25 kills",
         "modes": [
           "normal",
           "expert",
@@ -80471,7 +80471,7 @@
       {
         "source": "meteor-head",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -80488,7 +80488,7 @@
       {
         "source": "dungeon-spirit",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -80505,7 +80505,7 @@
       {
         "source": "lamia",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -80522,7 +80522,7 @@
       {
         "source": "crimera",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -80539,7 +80539,7 @@
       {
         "source": "jungle-creeper",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -80556,7 +80556,7 @@
       {
         "source": "black-recluse",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -80573,7 +80573,7 @@
       {
         "source": "snow-balla",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -80590,7 +80590,7 @@
       {
         "source": "snowman-gangsta",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -80607,7 +80607,7 @@
       {
         "source": "evolution-beast",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -80624,7 +80624,7 @@
       {
         "source": "medusa",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -80641,7 +80641,7 @@
       {
         "source": "headless-horseman",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -80658,7 +80658,7 @@
       {
         "source": "diabolist",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -80675,7 +80675,7 @@
       {
         "source": "clown",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 25 kills",
         "modes": [
           "normal",
           "expert",
@@ -80692,7 +80692,7 @@
       {
         "source": "red-devil",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -80709,7 +80709,7 @@
       {
         "source": "hornet",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -80726,7 +80726,7 @@
       {
         "source": "librarian-skeleton",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -80743,7 +80743,7 @@
       {
         "source": "stargazer",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -80760,7 +80760,7 @@
       {
         "source": "bird",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -80775,7 +80775,7 @@
       {
         "source": "blue-jay",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -80790,7 +80790,7 @@
       {
         "source": "cardinal",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -80807,7 +80807,7 @@
       {
         "source": "penguin",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -80824,7 +80824,7 @@
       {
         "source": "tesla-turret",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -80841,7 +80841,7 @@
       {
         "source": "slimer",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -80858,7 +80858,7 @@
       {
         "source": "rock-golem",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -80875,7 +80875,7 @@
       {
         "source": "tim",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 10 kills",
         "modes": [
           "normal",
           "expert",
@@ -80892,7 +80892,7 @@
       {
         "source": "salamander",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -80909,7 +80909,7 @@
       {
         "source": "storm-diver",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -80926,7 +80926,7 @@
       {
         "source": "skeleton",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -80943,7 +80943,7 @@
       {
         "source": "toxic-sludge",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -80960,7 +80960,7 @@
       {
         "source": "desert-spirit",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -80977,7 +80977,7 @@
       {
         "source": "pixie",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -80994,7 +80994,7 @@
       {
         "source": "devourer",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 25 kills",
         "modes": [
           "normal",
           "expert",
@@ -81011,7 +81011,7 @@
       {
         "source": "sand-elemental",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 25 kills",
         "modes": [
           "normal",
           "expert",
@@ -81028,7 +81028,7 @@
       {
         "source": "goblin-warlock",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 25 kills",
         "modes": [
           "normal",
           "expert",
@@ -81045,7 +81045,7 @@
       {
         "source": "lava-slime",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -81062,7 +81062,7 @@
       {
         "source": "goblin-archer",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -81079,7 +81079,7 @@
       {
         "source": "undead-viking",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -81096,7 +81096,7 @@
       {
         "source": "armored-viking",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -81113,7 +81113,7 @@
       {
         "source": "spore-bat",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -81130,7 +81130,7 @@
       {
         "source": "ice-bat",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -81147,7 +81147,7 @@
       {
         "source": "giant-bat",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -81164,7 +81164,7 @@
       {
         "source": "jungle-bat",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -81181,7 +81181,7 @@
       {
         "source": "cave-bat",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -81198,7 +81198,7 @@
       {
         "source": "fire-imp",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -81215,7 +81215,7 @@
       {
         "source": "vampire",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -81232,7 +81232,7 @@
       {
         "source": "gnome",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 25 kills",
         "modes": [
           "normal",
           "expert",
@@ -81249,7 +81249,7 @@
       {
         "source": "etherian-javelin-thrower",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 200 kills",
         "modes": [
           "normal",
           "expert",
@@ -81266,7 +81266,7 @@
       {
         "source": "cursed-hammer",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -81283,7 +81283,7 @@
       {
         "source": "enchanted-sword",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -81300,7 +81300,7 @@
       {
         "source": "harpy",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -81317,7 +81317,7 @@
       {
         "source": "crimson-axe",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -81334,7 +81334,7 @@
       {
         "source": "granite-golem",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -81351,7 +81351,7 @@
       {
         "source": "granite-elemental",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -81368,7 +81368,7 @@
       {
         "source": "crawdad",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -81385,7 +81385,7 @@
       {
         "source": "angler-fish",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -81402,7 +81402,7 @@
       {
         "source": "crawltipede",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -81419,7 +81419,7 @@
       {
         "source": "cultist-archer",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 25 kills",
         "modes": [
           "normal",
           "expert",
@@ -81436,7 +81436,7 @@
       {
         "source": "lunatic-devotee",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 25 kills",
         "modes": [
           "normal",
           "expert",
@@ -81453,7 +81453,7 @@
       {
         "source": "corrupt-bunny",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -81470,7 +81470,7 @@
       {
         "source": "vicious-bunny",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -81487,7 +81487,7 @@
       {
         "source": "pink-jellyfish",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -81504,7 +81504,7 @@
       {
         "source": "blue-jellyfish",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -81521,7 +81521,7 @@
       {
         "source": "blood-jelly",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -81538,7 +81538,7 @@
       {
         "source": "green-jellyfish",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -81555,7 +81555,7 @@
       {
         "source": "fungo-fish",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -81572,7 +81572,7 @@
       {
         "source": "shark",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -81589,7 +81589,7 @@
       {
         "source": "bone-serpent",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -81606,7 +81606,7 @@
       {
         "source": "wandering-eye",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -81623,7 +81623,7 @@
       {
         "source": "unicorn",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -81640,7 +81640,7 @@
       {
         "source": "pigron",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -81657,7 +81657,7 @@
       {
         "source": "bone-biter",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -81674,7 +81674,7 @@
       {
         "source": "sand-shark",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -81691,7 +81691,7 @@
       {
         "source": "flesh-reaver",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -81708,7 +81708,7 @@
       {
         "source": "crystal-thresher",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -81725,7 +81725,7 @@
       {
         "source": "world-feeder",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -81742,7 +81742,7 @@
       {
         "source": "wyvern",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -81759,7 +81759,7 @@
       {
         "source": "ghost",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -81776,7 +81776,7 @@
       {
         "source": "wraith",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -81793,7 +81793,7 @@
       {
         "source": "lihzahrd",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -81810,7 +81810,7 @@
       {
         "source": "flying-snake",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -81827,7 +81827,7 @@
       {
         "source": "demon-eye",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -81844,7 +81844,7 @@
       {
         "source": "snow-flinx",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -81861,7 +81861,7 @@
       {
         "source": "ice-mimic",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -81876,7 +81876,7 @@
       {
         "source": "mimic",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -81893,7 +81893,7 @@
       {
         "source": "crimson-mimic",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 25 kills",
         "modes": [
           "normal",
           "expert",
@@ -81910,7 +81910,7 @@
       {
         "source": "corrupt-mimic",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 25 kills",
         "modes": [
           "normal",
           "expert",
@@ -81927,7 +81927,7 @@
       {
         "source": "hallowed-mimic",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 25 kills",
         "modes": [
           "normal",
           "expert",
@@ -81944,7 +81944,7 @@
       {
         "source": "angry-trapper",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -81961,7 +81961,7 @@
       {
         "source": "man-eater",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -81978,7 +81978,7 @@
       {
         "source": "clinger",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -81995,7 +81995,7 @@
       {
         "source": "gastropod",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -82012,7 +82012,7 @@
       {
         "source": "parrot",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -82029,7 +82029,7 @@
       {
         "source": "chaos-elemental",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -82046,7 +82046,7 @@
       {
         "source": "nailhead",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 25 kills",
         "modes": [
           "normal",
           "expert",
@@ -82063,7 +82063,7 @@
       {
         "source": "goblin-scout",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -82080,7 +82080,7 @@
       {
         "source": "hellbat",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",
@@ -82097,7 +82097,7 @@
       {
         "source": "werewolf",
         "quantity": "1",
-        "rate": "Banner",
+        "rate": "every 50 kills",
         "modes": [
           "normal",
           "expert",

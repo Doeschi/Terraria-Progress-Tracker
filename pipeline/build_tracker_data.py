@@ -6,7 +6,8 @@ access - everything comes from the raw/ folder and mapping.toml.
 
 Inputs:
   raw/items.csv, exclusive.csv, history.csv, drops.csv, npcs.csv, recipes.csv,
-  page_images.json, page_wikitext.json (incl. MediaWiki:Common.css), page_html.json, drop_groups.json,
+  page_images.json, page_wikitext.json (incl. MediaWiki:Common.css), page_html.json (NPC IDs, the
+  banner kill counts, the pages of [page_lists]), list_redirects.json, drop_groups.json,
   page_categories.json (Hardmode-only NPCs), page_intros.json, schema.json   (from step 1)
   raw/image_redirects.json   image files that are redirects (optional, from check_icons.py)
   mapping.toml   how raw type/listcat/tag values become categories,
@@ -96,6 +97,8 @@ from trackerdata.sets import find_sets
 from trackerdata.recipes import missing_items_file, recipe_only_items, recipes_file
 from trackerdata.bestiary import bestiary_file
 from trackerdata.intros import intros_file
+from trackerdata.banners import KILLS_SECTION, apply_banners, kill_counts
+from trackerdata.lists import list_keys
 from trackerdata.milestones import Milestones
 from trackerdata.conditions import (
     Conditions,
@@ -184,6 +187,13 @@ def build(raw_dir, mapping_path, out_dir, readable_dir=None, no_sanity=False):
     for s in find_sets(items, mapping.sets):
         for key in s["items"]:
             extra[(by_key[key]["id"], norm_name(by_key[key]["name"]))].add(f"set:{s['kind']}")
+    # the item lists of wiki pages (D26): "list:vanity items#halloween sets"
+    page_html = json.loads((raw_dir / "page_html.json").read_text(encoding="utf-8"))
+    redirects_path = raw_dir / "list_redirects.json"
+    list_redirects = json.loads(redirects_path.read_text(encoding="utf-8")) if redirects_path.exists() else {}
+    listed, list_entries = list_keys(mapping.page_lists, page_html, drops.resolve, list_redirects)
+    for item_ref, keys in listed.items():
+        extra[item_ref] |= keys
     items, unmapped = build_items(extra)
     # items the Items table lacks (e.g. 1.4.5 doors), from the Recipes table
     recipe_rows = read_csv(raw_dir / "recipes.csv")
@@ -191,6 +201,9 @@ def build(raw_dir, mapping_path, out_dir, readable_dir=None, no_sanity=False):
                                update_starts(items, list(mapping.versions)))
     items.sort(key=lambda i: (i["id"], i["name"]))
     make_keys_unique(items)
+    # enemy banners: their number in the game and the kills one takes
+    banner_kills = kill_counts(page_html.get(KILLS_SECTION, ""))
+    apply_banners(items, mapping.banners, banner_kills)
     conditions = Conditions(mapping, items)
     # drop groups ("one of the following items") from the page sources (REQUIREMENTS B5)
     groups_path = raw_dir / "drop_groups.json"
@@ -301,7 +314,6 @@ def build(raw_dir, mapping_path, out_dir, readable_dir=None, no_sanity=False):
             f"[unobtainable] obtainable in mapping.toml): {conflicts}")
 
     log("Bestiary…")
-    page_html = json.loads((raw_dir / "page_html.json").read_text(encoding="utf-8"))
     outputs["bestiary.json"] = bestiary_file(wikitext.get("Bestiary/List", ""),
                                              page_html.get("NPC IDs", ""), npc_rows, exclusive,
                                              mapping, mapping.versions)
@@ -337,6 +349,8 @@ def build(raw_dir, mapping_path, out_dir, readable_dir=None, no_sanity=False):
         "drop_group_pages": len(groups),
         "strange_plant_rewards": sum(len(v) for v in rewards.values()),
         "page_intros": len(outputs["intros.json"]),
+        "banner_kill_counts": len(banner_kills),
+        "page_list_entries": list_entries,
         **{f"extractinator_results.{m['id']}": sum(1 for r in extractinator["results"] if r["machine"] == m["id"])
            for m in extractinator["machines"]},
     }

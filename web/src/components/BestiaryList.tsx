@@ -47,6 +47,7 @@ import { formatDate, nameOf, plural } from '@/lib/format'
 import { worldState } from '@/lib/bestiary'
 import { inDifficulty, seedOnly } from '@/lib/drops'
 import { NPC_REF, npcIndex } from '@/lib/npcs'
+import { bannerOfEntry, bannerProgress, bannerState, bannerText, type BannerState } from '@/lib/banners'
 import { useIsPhone } from '@/hooks/useIsPhone'
 import { useCardSize } from '@/hooks/useCardSize'
 
@@ -237,7 +238,7 @@ function ActiveFilters({ onlyActive = false }: { onlyActive?: boolean }) {
 
 // -------------------------------------------------------------------- table
 
-type SortId = 'n' | 'name' | 'type' | 'stars' | 'drops' | 'added' | 'world' | 'changed'
+type SortId = 'n' | 'name' | 'type' | 'stars' | 'drops' | 'added' | 'world' | 'banners' | 'changed'
 
 /** Default column widths in px (the name column stays narrow: long names are rare) */
 const COLUMNS = {
@@ -250,6 +251,7 @@ const COLUMNS = {
   drops: 200,
   added: 90,
   world: 140,
+  banners: 130,
   changed: 160,
 } as const
 type ColumnId = keyof typeof COLUMNS
@@ -313,6 +315,17 @@ function BestiaryTable({ view, phone = false }: { view: BestiaryView; phone?: bo
 
   const versionRank = useMemo(() => new Map(data.versions.map((v, n) => [v.id, n])), [data])
 
+  // "Banners" (BE9): what the world has earned of each entry's banner
+  const banners = useMemo(() => {
+    const out = new Map<string, BannerState>()
+    if (!world?.bannerKills.length) return null
+    for (const e of data.bestiary.entries) {
+      const state = bannerState(world, bannerOfEntry(data, e.id))
+      if (state) out.set(e.id, state)
+    }
+    return out
+  }, [data, world])
+
   const rows = useMemo(() => {
     if (!sort) return view.visible
     const key = (e: BestiaryEntry): string | number => {
@@ -331,6 +344,11 @@ function BestiaryTable({ view, phone = false }: { view: BestiaryView; phone?: bo
           return versionRank.get(e.version) ?? -1
         case 'world':
           return worldCell(world?.bestiary, e.id).value
+        case 'banners': {
+          // banners earned, then how far the next one is
+          const b = banners?.get(e.id)
+          return b ? b.kills / b.needed : -1
+        }
         case 'changed':
           return pt.bestiaryChangedAt[e.id] ?? ''
       }
@@ -341,7 +359,7 @@ function BestiaryTable({ view, phone = false }: { view: BestiaryView; phone?: bo
       const kb = key(b)
       return (ka < kb ? -1 : ka > kb ? 1 : 0) * dir || a.n - b.n
     })
-  }, [view.visible, sort, typeName, world, pt.bestiaryChangedAt, drops, versionRank])
+  }, [view.visible, sort, typeName, world, pt.bestiaryChangedAt, drops, versionRank, banners])
   const scrollRef = useRef<HTMLDivElement>(null)
   // keyboard selection from the search field (↑/↓, Enter opens the card)
   usePublishRows(useMemo(() => rows.map((e) => ({ ref: NPC_REF + e.id, name: e.name })), [rows]))
@@ -377,6 +395,7 @@ function BestiaryTable({ view, phone = false }: { view: BestiaryView; phone?: bo
     'drops',
     'added',
     ...(world ? ['world' as const] : []),
+    ...(banners ? ['banners' as const] : []),
     'changed',
   ]
   const startResize = (id: ColumnId, e: React.PointerEvent) => {
@@ -478,6 +497,7 @@ function BestiaryTable({ view, phone = false }: { view: BestiaryView; phone?: bo
             {header('drops', 'Drops', 'drops')}
             {header('added', 'Added in', 'added')}
             {world && header('world', 'In the world', 'world')}
+            {banners && header('banners', 'Banners', 'banners')}
             {header('changed', 'Last changed', 'changed')}
           </tr>
         </thead>
@@ -497,6 +517,7 @@ function BestiaryTable({ view, phone = false }: { view: BestiaryView; phone?: bo
                 typeName={typeName.get(e.type) ?? e.type}
                 unlocked={view.unlocked.has(e.id)}
                 world={world ? worldCell(world.bestiary, e.id).text : null}
+                banner={banners ? (banners.get(e.id) ?? null) : undefined}
                 changed={formatDate(pt.bestiaryChangedAt[e.id])}
                 drops={drops.get(e.id)}
                 selected={selected === NPC_REF + e.id}
@@ -528,6 +549,7 @@ function Row({
   typeName,
   unlocked,
   world,
+  banner,
   changed,
   drops,
   selected,
@@ -540,6 +562,8 @@ function Row({
   typeName: string
   unlocked: boolean
   world: string | null
+  /** its banner in the world; null: it has none; undefined: no column (no world) */
+  banner?: BannerState | null
   changed: string | undefined
   /** the different items it drops, and how many of them are obtained */
   drops?: DropSummary
@@ -636,6 +660,19 @@ function Row({
         </span>
       </td>
       {world !== null && <td className="px-2 py-1 whitespace-nowrap tabular-nums">{world}</td>}
+      {banner !== undefined && (
+        <td
+          className="px-2 py-1 whitespace-nowrap tabular-nums"
+          title={banner ? `${banner.item.name}: ${bannerText(banner)} (one every ${banner.needed} kills)` : undefined}
+        >
+          {banner && (
+            <span className={cn('flex items-center gap-1.5', !banner.earned && 'text-muted-foreground')}>
+              <WikiIcon src={banner.item.icon} alt="" size={18} />
+              {bannerProgress(banner)}
+            </span>
+          )}
+        </td>
+      )}
       <td className="px-2 py-1 whitespace-nowrap tabular-nums">{changed ?? ''}</td>
     </tr>
   )

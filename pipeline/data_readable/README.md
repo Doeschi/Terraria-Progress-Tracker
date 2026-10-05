@@ -129,6 +129,8 @@ A list of all items (one entry per item id), sorted by id.
 | Field | Meaning |
 |---|---|
 | `banner` | an enemy banner |
+| `bannerId` | enemy banners: the banner's number in the game – the index of the kill counters (and of the banners waiting in the Banners Window) in a world file |
+| `bannerKills` | enemy banners: the kills one banner takes (50; 10 to 1,000 for some) |
 | `questFish` | an Angler quest fish |
 | `consumable` | used up when used |
 | `placeable` | can be placed in the world |
@@ -263,7 +265,7 @@ is shown in the item details, but counts for no filter.
 | Field | Meaning |
 |---|---|
 | `source` | the drop source id |
-| `rate` | the chance as the wiki shows it, e.g. `"1% · Expert: 1.99%"` |
+| `rate` | the chance as the wiki shows it, e.g. `"1% · Expert: 1.99%"`; for an enemy banner `"every 50 kills"` (its `bannerKills`) |
 | `chance` | the chance in % per game mode, e.g. `{"normal": 1, "expert": 1.99}` |
 | `quantity` | the amount as the wiki shows it, e.g. `"1–3 · Expert: 2–6"` |
 | `quantities` | the amount per game mode, e.g. `{"normal": "1–3"}` |

@@ -150,6 +150,9 @@ match = ["type:pet summon"]
 name = "Mounts"
 icon = "Slimy Saddle"
 match = ["type:mount summon"]
+# the wiki types the Minecart Track as a mount summon too: it is a track like the Booster Track
+# and the Pressure Plate Track (furniture)
+exclude = ["page:minecart track"]
 
 [categories.crafting-material]
 name = "Crafting materials"
@@ -598,6 +601,44 @@ only_in_parent = true
 match = ["type:accessory"]
 exclude = ["page:music boxes", "page:monoliths"]
 
+# the lists of the wiki's page "Vanity items" ([page_lists]): single pieces and the kinds of sets;
+# their items are in Head / Body / Legs / Accessories as well
+[subcategories.vanity-piece]
+name = "Vanity pieces"
+parent = "vanity"
+icon = "Sunglasses"
+only_in_parent = true
+match = ["list:vanity items#vanity pieces"]
+
+[subcategories.halloween-set]
+name = "Halloween sets"
+parent = "vanity"
+icon = "Witch Hat"
+only_in_parent = true
+match = ["list:vanity items#halloween sets"]
+
+[subcategories.christmas-set]
+name = "Christmas sets"
+parent = "vanity"
+icon = "Santa Hat"
+only_in_parent = true
+match = ["list:vanity items#christmas sets"]
+
+# the wiki's "Vanity Sets": the sets that are none of the others
+[subcategories.other-vanity-set]
+name = "Other vanity sets"
+parent = "vanity"
+icon = "Plumber's Hat"
+only_in_parent = true
+match = ["list:vanity items#vanity sets"]
+
+[subcategories.developer-set]
+name = "Developer sets"
+parent = "vanity"
+icon = "Red's Helmet"
+only_in_parent = true
+match = ["list:vanity items#developer sets"]
+
 [subcategories.vanity-music-box]
 name = "Music boxes"
 parent = "vanity"
@@ -698,7 +739,8 @@ match = ["type:light pet"]
 name = "Minecarts"
 parent = "mount"
 icon = "Minecart"
-match = ["tag:minecart"]
+# the plain Minecart has no tag of its own: everything on the wiki's page "Minecarts"
+match = ["tag:minecart", "page:minecarts"]
 
 # Crafting materials
 # The wiki marks every item used in a recipe as crafting material. Real
@@ -1234,6 +1276,31 @@ drop_group_pages = 80         # pages with drop groups (93)
 strange_plant_rewards = 30    # the Dye Trader's rewards (33)
 extractinator_results = 50    # per machine (56 / 142)
 page_intros = 2500            # wiki pages with an introduction (2946)
+banner_kill_counts = 35       # banners with another kill count than the default (41)
+page_list_entries = 200       # entries of the lists of the [page_lists] pages
+
+# Item lists of wiki pages (REQUIREMENTS D26). Step 1 saves these pages as rendered HTML
+# (page_html.json). The entries of the lists below each heading - items, or pages of several
+# items (sets) - give their items the key "list:<page>#<heading>" for the rules of this file,
+# e.g. "list:vanity items#halloween sets". The wiki's platform notes in a heading are left out
+# ("(3DS version) Oktoberfest Vanity Sets" -> "oktoberfest vanity sets").
+[page_lists]
+pages = ["Vanity items"]
+
+# Enemy banners (REQUIREMENTS D25). The game numbers them; a world file counts the kills per
+# banner number. From number `from` on the item id is `item` + (number - from) - the game's
+# Terraria.GameContent.BannerSystem.BannerToItem, as in the wiki's Module:Npcinfo/datagen. The
+# build warns when an enemy banner has no number (new banners of a game update: add their range)
+# or a number leads to no enemy banner.
+# `kills`: the kills one banner takes; the banners that differ are read from the wiki's page
+# "Banners (enemy)", section "Banners with non-default kill count".
+[banners]
+kills = 50
+ranges = [
+  [1, 1615], [88, 2897], [186, 3390], [249, 3593], [251, 3780], [252, 3789], [257, 3837],
+  [267, 4541], [273, 4602], [274, 4687], [276, 4965], [289, 5352], [290, 5651], [291, 5672],
+  [292, 5673],
+]
 
 # Renamed items the update report cannot detect (their item id changed too): old key = new key.
 # compare_data.py adds them to the change log in meta.json; the app moves the checkmarks of

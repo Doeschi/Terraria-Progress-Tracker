@@ -32,6 +32,7 @@ import { Badge, CardLink, Chips, Section, type TitleComponent } from './DetailPa
 import { ContainsSection, NpcCard, SourceCard } from './NpcDetail'
 import { ExtractinatorSection } from './ExtractinatorSection'
 import { IntroSection } from './IntroSection'
+import { bannerState, bannerText } from '@/lib/banners'
 import { SetSection } from './SetSection'
 import { shownObtain } from '@/lib/filtering'
 import { NPC_REF, refName, SOURCE_REF, sourceRef, vendorRef } from '@/lib/npcs'
@@ -218,7 +219,10 @@ function DetailContent({ item, Title }: { item: Item; Title: TitleComponent }) {
     owned: null,
   }
   // kills per drop source in the loaded world (expected drops)
-  const bestiary = useActiveWorld()?.bestiary
+  const world = useActiveWorld()
+  const bestiary = world?.bestiary
+  // an enemy banner in the loaded world: kills, banners earned (BE9)
+  const banner = bannerState(world, item)
   const kills = useMemo(() => (bestiary ? sourceKills(data, bestiary) : null), [data, bestiary])
   const changed = formatDate(pt.changedAt[item.key])
   const detailOrder = usePrefs((s) => s.layout.detailOrder)
@@ -251,6 +255,18 @@ function DetailContent({ item, Title }: { item: Item; Title: TitleComponent }) {
           <p className="text-sm">
             <span className="text-muted-foreground">{item.eventOnly ? 'Only during ' : 'During '}</span>
             {item.events.map((e) => nameOf(data.events, e)).join(', ')}
+          </p>
+        )}
+        {banner && world && (
+          <p className="text-sm">
+            <span className="text-muted-foreground">
+              In <em>{world.name}</em>:{' '}
+            </span>
+            {bannerText(banner)}
+            <span className="text-muted-foreground">
+              {' '}
+              · next at {((banner.earned + 1) * banner.needed).toLocaleString('en')} kills
+            </span>
           </p>
         )}
       </Section>

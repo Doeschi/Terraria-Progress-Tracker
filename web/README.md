@@ -24,7 +24,7 @@ npm run format         # Prettier (single quotes, no semicolons, 120 columns; sr
 | `lib/availability.ts`, `lib/drops.ts`, `lib/recipes.ts`, `lib/bestiary.ts` | Items per playthrough (and which of them a new one starts with ignored), drops, crafting, bestiary |
 | `lib/sources.ts`, `lib/npcs.ts`, `lib/conditions.ts` | The "Sources & sets" filter group, the links behind the NPC cards, the condition names of shop rows and drops |
 | `lib/world.ts`, `lib/coords.ts`, `workers/` | World files (parsed in a Web Worker), chests, areas, coordinates |
-| `lib/worldProgress.ts`, `lib/luck.ts` | What a loaded world has defeated (milestones reached), expected drops ("bad luck") |
+| `lib/worldProgress.ts`, `lib/luck.ts`, `lib/banners.ts` | What a loaded world has defeated (milestones reached), expected drops ("bad luck"), enemy banners earned by kills |
 | `lib/player.ts` | The attached player file (read with `packages/terraria-player-file`) |
 | `lib/dataUpdate.ts` | Carrying a progress file over to newer item data (renamed keys, what changed) |
 | `lib/prefs.ts`, `lib/viewState.ts`, `lib/layout.ts` | View settings remembered in the browser (columns, sorting, hidden filters, autosave, …), the view of each playthrough, what the settings can show and reorder |

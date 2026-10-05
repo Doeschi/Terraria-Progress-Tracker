@@ -16,6 +16,7 @@ import {
 import { formatTilePosition } from '@/lib/coords'
 import { availabilityCheck } from '@/lib/availability'
 import { bestiaryDiff, worldState } from '@/lib/bestiary'
+import { bannerText, earnedBanners } from '@/lib/banners'
 import { formatRelativeDay, plural } from '@/lib/format'
 import { getLoadedModified } from '@/lib/files'
 import type { BestiaryEntry, Item } from '@/lib/types'
@@ -37,8 +38,9 @@ import { PLAYER_STORAGES, playerStock, STORAGE_TEXT, usedUpgrades, type PlayerSt
 import { AreaSelector } from './AreaSelector'
 
 // Sync the playthrough with the attached world and player, in one dialog:
-//   Items     - items in the world's chests (selected areas), in the player's storages and the
-//               permanent upgrades it has used vs. checked items; the player only checks
+//   Items     - items in the world's chests (selected areas), in the player's storages, the
+//               permanent upgrades it has used and the banners the world has earned by kills
+//               vs. checked items; the player and the banners only check
 //   Bestiary  - the world's bestiary vs. the playthrough's
 // Every change can be deselected; nothing changes until Apply.
 
@@ -97,6 +99,8 @@ function SyncView({ initial, onDone }: { initial: SyncSection; onDone: () => voi
   // player: storages that count, used upgrades
   const [storages, setStorages] = useState<Set<PlayerStorage>>(new Set(PLAYER_STORAGES.map((x) => x.id)))
   const [withUpgrades, setWithUpgrades] = useState(true)
+  // world: banners earned by kills count as obtained (since 1.4.5 they wait in the Banners Window)
+  const [withBanners, setWithBanners] = useState(true)
 
   const checked = useMemo(() => new Set(pt.checked), [pt.checked])
   const counts = useMemo(() => {
@@ -127,6 +131,11 @@ function SyncView({ initial, onDone }: { initial: SyncSection; onDone: () => voi
     return rows.sort((a, b) => a.item.name.localeCompare(b.item.name))
   }, [player, stock, storages, withUpgrades, counts, checked, data])
 
+  const banners = useMemo(
+    () => (world && withBanners ? earnedBanners(data, world) : new Map<string, never>()),
+    [data, world, withBanners],
+  )
+
   const items = useMemo(() => {
     if (!world) return null
     const selected = areas.filter((a) => scope.areaIds.includes(a.id))
@@ -136,24 +145,30 @@ function SyncView({ initial, onDone }: { initial: SyncSection; onDone: () => voi
       .sort((a, b) => a.item.name.localeCompare(b.item.name))
     const notFound = pt.checked
       .map((k) => data.itemsByKey.get(k))
-      .filter((i): i is Item => !!i && counts(i) && !scan.found.has(i.key) && !stock?.has(i.key) && !used.has(i.key))
+      .filter(
+        (i): i is Item =>
+          !!i && counts(i) && !scan.found.has(i.key) && !stock?.has(i.key) && !used.has(i.key) && !banners.has(i.key),
+      )
       .sort((a, b) => a.name.localeCompare(b.name))
     return { scan, toCheck, notFound }
-  }, [data, world, pt, areas, scope, detection, counts, checked, stock, used])
+  }, [data, world, pt, areas, scope, detection, counts, checked, stock, used, banners])
 
-  // to be checked: what is in the scanned containers or on the player, each row with where
+  // to be checked: what is in the scanned containers or on the player, and the banners earned by
+  // kills, each row with where
   const toCheck = useMemo(() => {
     const rows = new Map<string, { item: Item; where: string[] }>()
-    for (const f of items?.toCheck ?? []) rows.set(f.item.key, { item: f.item, where: [foundText(f)] })
-    for (const r of playerItems) {
-      const row = rows.get(r.item.key)
-      if (row) row.where.push(r.detail)
-      else rows.set(r.item.key, { item: r.item, where: [r.detail] })
+    const add = (item: Item, where: string) => {
+      const row = rows.get(item.key)
+      if (row) row.where.push(where)
+      else rows.set(item.key, { item, where: [where] })
     }
+    for (const f of items?.toCheck ?? []) add(f.item, foundText(f))
+    for (const r of playerItems) add(r.item, r.detail)
+    for (const b of banners.values()) if (counts(b.item) && !checked.has(b.item.key)) add(b.item, bannerText(b))
     return [...rows.values()]
       .map((r) => ({ item: r.item, detail: r.where.join(' · ') }))
       .sort((a, b) => a.item.name.localeCompare(b.item.name))
-  }, [items, playerItems])
+  }, [items, playerItems, banners, counts, checked])
 
   const bestiary = useMemo(() => (world ? bestiaryDiff(data, pt, world) : null), [data, pt, world])
 
@@ -217,6 +232,7 @@ function SyncView({ initial, onDone }: { initial: SyncSection; onDone: () => voi
     world && (selected.length === 1 ? selected[0].name : plural(selected.length, 'area')),
     world && scope.onlyPlayer && 'only player chests',
     world && scope.includeDisplays && world.displaysAvailable && 'with displays',
+    world && world.bannerKills.length > 0 && withBanners && 'banners by kills',
     player &&
       (storages.size === PLAYER_STORAGES.length && withUpgrades
         ? 'everything on the player'
@@ -234,7 +250,8 @@ function SyncView({ initial, onDone }: { initial: SyncSection; onDone: () => voi
           {player && <em>{player.name}</em>}
         </DialogTitle>
         <DialogDescription>
-          Compare your progress with {world && "the items in the world's chests and the world's bestiary"}
+          Compare your progress with{' '}
+          {world && "the items in the world's chests, the banners it has earned and its bestiary"}
           {world && player && ', and with '}
           {player && "the player's inventory, banks and used upgrades"}. Nothing changes until you press Apply.
         </DialogDescription>
@@ -276,6 +293,21 @@ function SyncView({ initial, onDone }: { initial: SyncSection; onDone: () => voi
                 onChange={setScope}
                 onManage={() => openDialog({ type: 'areas', returnTo: { type: 'sync', section: 'items' } })}
               />
+            )}
+            {world && world.bannerKills.length > 0 && (
+              <fieldset className="flex flex-col gap-1 rounded-lg border p-3">
+                <legend className="px-1 text-xs font-medium tracking-wide text-muted-foreground uppercase">
+                  Banners
+                </legend>
+                <label className="flex items-center gap-1.5 text-sm">
+                  <Checkbox checked={withBanners} onCheckedChange={(v) => setWithBanners(v === true)} />
+                  Count banners earned by kills
+                </label>
+                <p className="text-xs text-muted-foreground">
+                  The world counts the kills for every enemy banner. Since 1.4.5 an earned banner is not dropped: it
+                  waits in the Banners Window next to the crafting menu until you take it out.
+                </p>
+              </fieldset>
             )}
             {player && (
               <fieldset className="flex flex-col gap-2 rounded-lg border p-3">
@@ -331,6 +363,7 @@ function SyncView({ initial, onDone }: { initial: SyncSection; onDone: () => voi
                       ? 'Items the player has (or has used) that are not checked yet.'
                       : 'Items found in chests or on the player (or used by it) that are not checked yet.'
                 }
+                note={banners.size > 0 ? 'Banners earned by kills are included.' : undefined}
                 ids={toCheck.map((r) => r.item.key)}
                 allOn={!toCheck.some((r) => skipCheck.has(r.item.key))}
                 onAll={(ids, on) => setSkipCheck((s) => withIds(s, ids, !on))}
@@ -351,7 +384,7 @@ function SyncView({ initial, onDone }: { initial: SyncSection; onDone: () => voi
               <>
                 <TabsContent value="notFound" className="flex min-h-0 flex-col gap-2">
                   <ListHeader
-                    text={`Checked items that are in none of the scanned containers${player ? ', nor on the player (storages, used permanent upgrades)' : ''}. Tick the ones you no longer have to uncheck them.`}
+                    text={`Checked items that are in none of the scanned containers${player ? ', nor on the player (storages, used permanent upgrades)' : ''}${banners.size > 0 ? ', and no banners earned by kills' : ''}. Tick the ones you no longer have to uncheck them.`}
                     ids={items.notFound.map((i) => i.key)}
                     allOn={items.notFound.every((i) => uncheck.has(i.key))}
                     onAll={(ids, on) => setUncheck((s) => withIds(s, ids, on))}
@@ -547,12 +580,15 @@ function entryRows(entries: BestiaryEntry[], skip: Set<string>, b: WorldBestiary
 
 function ListHeader({
   text,
+  note,
   ids,
   allOn,
   onAll,
   labels = ['Deselect all', 'Select all'],
 }: {
   text: string
+  /** a second sentence */
+  note?: string
   ids: string[]
   allOn: boolean
   onAll: (ids: string[], on: boolean) => void
@@ -561,7 +597,10 @@ function ListHeader({
 }) {
   return (
     <div className="flex items-center gap-2 text-xs text-muted-foreground">
-      <span className="flex-1">{text}</span>
+      <span className="flex-1">
+        {text}
+        {note && ` ${note}`}
+      </span>
       {ids.length > 0 && (
         <Button variant="ghost" size="xs" onClick={() => onAll(ids, !allOn)}>
           {allOn ? labels[0] : labels[1]}

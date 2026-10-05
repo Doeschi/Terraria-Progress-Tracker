@@ -127,9 +127,10 @@ class Drops:
             entries.sort(key=lambda d: -max((d.get("chance") or {}).values(), default=0))
 
     def add_banners(self, npc_rows):
-        """Enemy banners (every 50 kills) are not in the Drops table: the NPCs table names each
-        enemy's banner (`bannername`). They become drops of the enemy with the rate "Banner", so
-        biome, event and milestone follow from where the enemy spawns."""
+        """Enemy banners (every 50 kills, some more or less: `bannerKills`) are not in the Drops
+        table: the NPCs table names each enemy's banner (`bannername`). They become drops of the
+        enemy with the rate "every 50 kills", so biome, event and milestone follow from where the
+        enemy spawns."""
         added, unmatched = 0, []
         # a row named after the main NPC of another page (Raincoat Zombie's variants are named
         # "Zombie") is its own page's NPC, not that other one
@@ -148,9 +149,10 @@ class Drops:
             name_n, page_n = norm_name(npc["nameraw"]), norm_name(npc["_pageName"])
             owner = npc["_pageName"] if name_n != page_n and name_n in main_pages and page_n in main_pages else npc["nameraw"]
             sid = self.source({"nameraw": owner, "_pageName": npc["_pageName"]}, "npc")
-            entry = {"source": sid, "quantity": "1", "rate": "Banner", "modes": list(DROP_MODES),
-                     "quantities": {m: "1" for m in DROP_MODES}}
             for item in items:
+                rate = f"every {item['bannerKills']} kills" if item.get("bannerKills") else "Banner"
+                entry = {"source": sid, "quantity": "1", "rate": rate, "modes": list(DROP_MODES),
+                         "quantities": {m: "1" for m in DROP_MODES}}
                 if entry not in self.drops[item["key"]]:
                     self.drops[item["key"]].append(entry)
                     added += 1

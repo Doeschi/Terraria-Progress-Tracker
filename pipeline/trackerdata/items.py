@@ -192,7 +192,8 @@ def build_item(row, mapping, schema, exclusive, history, equip, extra_keys=()):
     # the wiki's Hardmode flag is wrong for some items (mapping.toml [hardmode])
     if norm_name(row["name"]) in mapping.pre_hardmode:
         flags["hardmode"] = flags["hardmodeOnly"] = False
-    unmatched = {k for k in unmatched if not k.startswith(("equip:", "page:", "npc:", "drop:", "bodyslot:"))}
+    unmatched = {k for k in unmatched
+                 if not k.startswith(("equip:", "page:", "npc:", "drop:", "bodyslot:", "list:"))}
     platforms, known = platforms_of(row, exclusive)
     page = html.unescape(row["_pageName"])
     name = html.unescape(row["name"])

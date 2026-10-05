@@ -66,6 +66,8 @@ self.onmessage = async (e: MessageEvent<{ buffer: ArrayBuffer; fileName: string 
         containers,
         displaysAvailable,
         bestiary,
+        bannerKills: h.killCount ?? [],
+        bannersWaiting: h.claimableBanners ?? null,
         defeated: defeatedBosses(h as unknown as Record<string, unknown>),
       },
     })

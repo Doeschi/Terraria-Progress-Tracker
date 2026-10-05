@@ -112,7 +112,10 @@ change.
 | "Extractinator", "Chlorophyte Extractinator", section "Possible conversions" | what they give per input (chance, amount, Pre-Hardmode / Hardmode only) and always convert (`extractinator.json`) |
 | the ~112 pages with drop groups (found by the wiki search `insource:"group:start"`) | which drops belong together: "One of the following 8 items will always be dropped", "1/12: one of these 14" (`group` in `drops.json`) |
 
-Also scraped: the rendered HTML of "NPC IDs" (internal NPC names and ids – the keys of the
+Also scraped: the item lists of the rendered page "Vanity items" (which vanity items are single
+pieces, Halloween, Christmas, developer or other sets – the keys `list:vanity items#…` of
+`mapping.toml`), the rendered table "Banners with non-default kill count" of "Banners (enemy)" (the
+kills an enemy banner takes when it is not 50), the rendered HTML of "NPC IDs" (internal NPC names and ids – the keys of the
 bestiary in world files), the image lists of "Rarity", "Coins" and "Difficulty" (their icons) and
 the pages in the category "Hardmode-only NPCs" (their drops count from the Wall of Flesh).
 
@@ -204,6 +207,8 @@ it (`*` is a wildcard). Example: the Shuriken has `type: weapon`,
 | `[milestones.*]`, `[milestone_conditions]`, `[milestone_sources]`, `[milestone_biomes]`, `[milestone_items]` | the "Progression" filter: the milestones in order with their bosses and events, and what the data cannot tell: from when an enemy or a container is reached (`[milestone_sources]`: late Dungeon enemies, locked chests, Hardmode crates), the biomes that need a boss (`[milestone_biomes]`), and item rules (`[milestone_items]`: mining Hellstone and Chlorophyte, lava fishing, drops of a whole biome, world items the data only knows a later source for) |
 | `[flags]` | yes/no fields of an item: `hardmode`, `hardmodeOnly`, `unobtainable`, `banner`, `questFish` |
 | `[hardmode]` | items the wiki flags as Hardmode items although their sources are there before (`pre_hardmode`, e.g. Defender's Forge) |
+| `[page_lists]` | wiki pages whose item lists give their items a key per heading (`list:vanity items#halloween sets`), for subcategories that follow a list of the wiki |
+| `[banners]` | enemy banners: their numbers in the game (ranges number → item id, the index of a world file's kill counters) and the default kills per banner |
 | `[other_forms]` | other forms of an item, switched in the inventory and not obtained on their own (Shellphone modes, the Closed Void Bag): marked `otherForm`, ignored by default in a new playthrough |
 | `[pickups]` | items left out entirely: picked up and used on touch (Heart, Star, …) |
 | `[drops]` | which source kinds are used; `boss_ignore_items` (coins and potions do not count for a boss) |

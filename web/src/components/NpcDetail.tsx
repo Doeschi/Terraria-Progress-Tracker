@@ -15,6 +15,7 @@ import { Checkbox } from '@/components/ui/checkbox'
 import { ObtainedMark, WikiIcon } from './common'
 import { CollapsibleSection } from './RecipeSections'
 import { IntroSection } from './IntroSection'
+import { bannerOfEntry, bannerState } from '@/lib/banners'
 import { ShowItemsButton } from './ShowItemsButton'
 import { cardRow } from '@/lib/cardRow'
 import { Badge, CardLink, Section, type TitleComponent } from './DetailParts'
@@ -40,6 +41,8 @@ export function NpcCard({ entry, Title }: { entry: BestiaryEntry; Title: TitleCo
     entry.events.map((e) => nameOf(data.events, e)).join(', '),
   ].filter(Boolean)
   const worldKills = world?.bestiary?.kills[entry.id]
+  // its banner in the loaded world (BE9)
+  const banner = bannerState(world, bannerOfEntry(data, entry.id))
   const sources = index.sourcesOfEntry.get(entry.id) ?? []
   const drops = index.dropsOfEntry.get(entry.id) ?? []
   const bag = index.bagOfEntry.get(entry.id)
@@ -91,12 +94,22 @@ export function NpcCard({ entry, Title }: { entry: BestiaryEntry; Title: TitleCo
 
       <div className="flex flex-col gap-5 p-4">
         <IntroSection page={entry.page} name={entry.name} url={entry.url} />
-        {(where.length > 0 || worldKills !== undefined) && (
+        {(where.length > 0 || worldKills !== undefined || banner) && (
           <Section title="Where and when">
             {where.length > 0 && <p className="text-sm">{where.join(' · ')}</p>}
             {worldKills !== undefined && world && (
               <p className="text-sm text-muted-foreground">
                 {worldKills.toLocaleString('en')} {worldKills === 1 ? 'kill' : 'kills'} in <em>{world.name}</em>
+              </p>
+            )}
+            {banner && (
+              <p className="text-sm text-muted-foreground">
+                <CardLink onOpen={() => openDetail(banner.item.key)} title="Open the banner">
+                  {banner.item.name}
+                </CardLink>
+                : {banner.earned} earned
+                {banner.waiting ? ` (${banner.waiting} in the Banners Window)` : ''} · {banner.towardsNext}/
+                {banner.needed} kills towards the next
               </p>
             )}
           </Section>

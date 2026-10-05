@@ -32,6 +32,8 @@ class Mapping:
         self.drop_areas = data.get("drop_areas", {})
         self.sets = data.get("sets", {})
         self.sanity = data.get("sanity", {})
+        self.banners = data.get("banners", {})
+        self.page_lists = data.get("page_lists", {}).get("pages", [])
         self.extractinator_inputs = data.get("extractinator_inputs", {})
         self.milestone_items = data.get("milestone_items", {})
         # container groups ("Found in") and icons of containers that are no item

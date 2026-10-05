@@ -49,6 +49,10 @@ export interface Item {
   hardmodeOnly: boolean
   unobtainable: boolean
   banner: boolean
+  /** enemy banners: the banner's number in the game (the index of a world's kill counters) */
+  bannerId?: number
+  /** enemy banners: the kills one banner takes (50, some more or less) */
+  bannerKills?: number
   questFish: boolean
   rarity?: number
   buy?: number

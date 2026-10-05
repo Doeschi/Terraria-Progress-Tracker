@@ -357,6 +357,41 @@
     "parent": "vanity"
   },
   {
+    "id": "vanity-piece",
+    "name": "Vanity pieces",
+    "icon": "https://terraria.wiki.gg/images/Sunglasses.png",
+    "count": 57,
+    "parent": "vanity"
+  },
+  {
+    "id": "halloween-set",
+    "name": "Halloween sets",
+    "icon": "https://terraria.wiki.gg/images/Witch_Hat.png",
+    "count": 61,
+    "parent": "vanity"
+  },
+  {
+    "id": "christmas-set",
+    "name": "Christmas sets",
+    "icon": "https://terraria.wiki.gg/images/Santa_Hat.png",
+    "count": 12,
+    "parent": "vanity"
+  },
+  {
+    "id": "other-vanity-set",
+    "name": "Other vanity sets",
+    "icon": "https://terraria.wiki.gg/images/Plumber%27s_Hat.png",
+    "count": 194,
+    "parent": "vanity"
+  },
+  {
+    "id": "developer-set",
+    "name": "Developer sets",
+    "icon": "https://terraria.wiki.gg/images/Red%27s_Helmet.png",
+    "count": 65,
+    "parent": "vanity"
+  },
+  {
     "id": "vanity-music-box",
     "name": "Music boxes",
     "icon": "https://terraria.wiki.gg/images/Music_Box.png",
@@ -459,7 +494,7 @@
     "id": "minecart",
     "name": "Minecarts",
     "icon": "https://terraria.wiki.gg/images/Minecart.png",
-    "count": 25,
+    "count": 26,
     "parent": "mount"
   },
   {
@@ -851,7 +886,7 @@
     "id": "other-mount",
     "name": "Other mounts",
     "icon": "https://terraria.wiki.gg/images/Reindeer_Bells.png",
-    "count": 41,
+    "count": 39,
     "parent": "mount",
     "fallback": true
   },

@@ -21,8 +21,12 @@ Outputs (in --out, default raw/ next to this script):
                    MediaWiki:Common.css: the platform icons of {{eicons}};
                    the vendor pages: their shops with the conditions per item;
                    Extractinator, Chlorophyte Extractinator: what they turn blocks into)
-  page_html.json   rendered HTML of a few wiki pages (NPC IDs: internal names,
-                   ids and images of all NPCs)
+  page_html.json   rendered HTML of a few wiki pages or sections of them (NPC IDs: internal
+                   names, ids and images of all NPCs; "Banners (enemy)", section "Banners with
+                   non-default kill count": the kills a banner takes; the pages of [page_lists]
+                   in mapping.toml, e.g. "Vanity items": their item lists per heading)
+  list_redirects.json  the entries of those item lists that are redirects, with the page they
+                   lead to (a set listed under another name)
   page_categories.json  the pages in a few wiki categories (Hardmode-only NPCs: enemies
                    that only appear in Hardmode, for the milestones)
   download_info.json  date of the download (the data version, REQUIREMENTS DU3)
@@ -59,6 +63,7 @@ from pathlib import Path
 import requests
 
 from trackerdata.bestiary import entry_pages
+from trackerdata.lists import page_lists
 from trackerdata.common import read_csv
 
 API = "https://terraria.wiki.gg/api.php"
@@ -74,8 +79,9 @@ DEFAULT_PAGES = ["Rarity", "Coins", "Difficulty"]
 DEFAULT_WIKITEXT = ["Alternative crafting ingredients", "Bestiary/List", "MediaWiki:Common.css",
                     "Extractinator", "Chlorophyte Extractinator"]
 MAPPING_FILE = Path(__file__).resolve().parent / "mapping.toml"
-# Pages whose rendered HTML is saved (tables filled by templates/queries).
-DEFAULT_HTML = ["NPC IDs"]
+# Pages whose rendered HTML is saved (tables filled by templates/queries); "Page#Heading" saves
+# only that section.
+DEFAULT_HTML = ["NPC IDs", "Banners (enemy)#Banners with non-default kill count"]
 # Categories whose pages are listed.
 DEFAULT_CATEGORIES = ["Hardmode-only NPCs"]
 # Wiki search for the pages with drop groups (their source text is saved).
@@ -109,6 +115,13 @@ def vendor_pages():
         return []
     vendors = tomllib.loads(MAPPING_FILE.read_text(encoding="utf-8")).get("vendors", {})
     return [v.get("page", v["name"]) for v in vendors.values()]
+
+
+def list_pages():
+    """Wiki pages whose item lists are read ([page_lists] pages in mapping.toml)."""
+    if not MAPPING_FILE.exists():
+        return []
+    return tomllib.loads(MAPPING_FILE.read_text(encoding="utf-8")).get("page_lists", {}).get("pages", [])
 
 
 def intro_pages(raw_dir):
@@ -232,7 +245,17 @@ class Wiki:
         return data.get("parse", {}).get("wikitext", "")
 
     def html(self, page):
-        data = self.get(action="parse", page=page, prop="text")
+        """Rendered HTML of a page, or of one of its sections ("Page#Heading")."""
+        title, _, heading = page.partition("#")
+        section = {}
+        if heading:
+            sections = self.get(action="parse", page=title, prop="sections")["parse"]["sections"]
+            index = next((s["index"] for s in sections if s["line"] == heading), None)
+            if index is None:
+                log(f"  warning: the page '{title}' has no section '{heading}'")
+                return ""
+            section = {"section": index}
+        data = self.get(action="parse", page=title, prop="text", **section)
         return data.get("parse", {}).get("text", "")
 
     def category_members(self, category):
@@ -280,6 +303,21 @@ class Wiki:
             found = {p["title"]: p["lastrevid"] for p in data["query"]["pages"] if "lastrevid" in p}
             revisions.update({t: found[target(t)] for t in chunk if target(t) in found})
         return revisions
+
+    def redirects(self, titles):
+        """{title: the page it redirects to} for the titles that are redirects to a whole page
+        (not to a section of one), 50 per request."""
+        moved = {}
+        for i in range(0, len(titles), 50):
+            chunk = titles[i:i + 50]
+            data = self.get(action="query", redirects="1", titles="|".join(chunk))
+            named = {n["from"]: n["to"] for n in data["query"].get("normalized", [])}
+            targets = {r["from"]: r for r in data["query"].get("redirects", [])}
+            for title in chunk:
+                target = targets.get(named.get(title, title))
+                if target and not target.get("tofragment"):
+                    moved[title] = target["to"]
+        return moved
 
     def intros(self, titles):
         """{title: introduction of the page as HTML (redirects followed)}, 20 pages per request
@@ -339,8 +377,11 @@ def main():
                          "ingredients' 'Bestiary/List' 'MediaWiki:Common.css' 'Extractinator' "
                          "'Chlorophyte Extractinator' and the vendor pages of mapping.toml); added "
                          "to the pages saved before")
-    ap.add_argument("--html", nargs="*", default=DEFAULT_HTML,
-                    help="wiki pages whose rendered HTML is saved (default: 'NPC IDs')")
+    ap.add_argument("--html", nargs="*", default=DEFAULT_HTML + list_pages(),
+                    help="wiki pages ('Page') or sections ('Page#Heading') whose rendered HTML is "
+                         "saved (default: 'NPC IDs', the banner kill counts of 'Banners (enemy)' "
+                         "and the pages of [page_lists] in mapping.toml); added to the ones saved "
+                         "before")
     ap.add_argument("--categories", nargs="*", default=DEFAULT_CATEGORIES,
                     help="wiki categories whose pages are listed (default: 'Hardmode-only NPCs')")
     ap.add_argument("--no-drop-groups", dest="drop_groups", action="store_false",
@@ -394,10 +435,19 @@ def main():
 
     if args.html:
         log("Reading page HTML…")
-        texts = {page: wiki.html(page) for page in args.html}
         html_path = args.out / "page_html.json"
+        texts = json.loads(html_path.read_text(encoding="utf-8")) if html_path.exists() else {}
+        texts.update({page: wiki.html(page) for page in args.html})
         html_path.write_text(json.dumps(texts, indent=1, ensure_ascii=False), encoding="utf-8")
         log(f"wrote {html_path}")
+        # the item lists of the [page_lists] pages: which of their entries are redirects
+        entries = sorted({title for page in list_pages()
+                          for titles in page_lists(texts.get(page, "")).values() for title in titles})
+        if entries:
+            redirects_path = args.out / "list_redirects.json"
+            redirects_path.write_text(json.dumps(wiki.redirects(entries), indent=1, ensure_ascii=False),
+                                      encoding="utf-8")
+            log(f"wrote {redirects_path}")
 
     if args.categories:
         log("Reading categories…")

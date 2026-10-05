@@ -12881,7 +12881,8 @@
       "vanity"
     ],
     "subcategories": [
-      "vanity-head"
+      "vanity-head",
+      "vanity-piece"
     ],
     "obtain": [
       "crafted"
@@ -12984,6 +12985,7 @@
     ],
     "subcategories": [
       "vanity-head",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -13038,6 +13040,7 @@
     ],
     "subcategories": [
       "vanity-body",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -13090,6 +13093,7 @@
     ],
     "subcategories": [
       "vanity-legs",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -13140,7 +13144,8 @@
       "vanity"
     ],
     "subcategories": [
-      "vanity-head"
+      "vanity-head",
+      "vanity-piece"
     ],
     "obtain": [
       "vendor"
@@ -13194,7 +13199,8 @@
       "vanity"
     ],
     "subcategories": [
-      "vanity-head"
+      "vanity-head",
+      "vanity-piece"
     ],
     "obtain": [
       "drop"
@@ -13248,6 +13254,7 @@
     ],
     "subcategories": [
       "vanity-head",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -13302,6 +13309,7 @@
     ],
     "subcategories": [
       "vanity-body",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -13359,6 +13367,7 @@
     ],
     "subcategories": [
       "vanity-legs",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -13416,6 +13425,7 @@
     ],
     "subcategories": [
       "vanity-head",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -13468,6 +13478,7 @@
     ],
     "subcategories": [
       "vanity-body",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -13520,6 +13531,7 @@
     ],
     "subcategories": [
       "vanity-legs",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -13572,6 +13584,7 @@
     ],
     "subcategories": [
       "vanity-head",
+      "vanity-piece",
       "cage-jar"
     ],
     "obtain": [
@@ -13626,6 +13639,7 @@
     ],
     "subcategories": [
       "vanity-head",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -13680,6 +13694,7 @@
     ],
     "subcategories": [
       "vanity-body",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -13732,6 +13747,7 @@
     ],
     "subcategories": [
       "vanity-legs",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -14081,6 +14097,7 @@
     ],
     "subcategories": [
       "vanity-head",
+      "halloween-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -14184,6 +14201,7 @@
     ],
     "subcategories": [
       "vanity-body",
+      "vanity-piece",
       "material-equipment"
     ],
     "obtain": [
@@ -14233,7 +14251,8 @@
       "vanity"
     ],
     "subcategories": [
-      "vanity-head"
+      "vanity-head",
+      "vanity-piece"
     ],
     "obtain": [
       "drop"
@@ -14287,6 +14306,7 @@
     ],
     "subcategories": [
       "vanity-head",
+      "vanity-piece",
       "material-equipment"
     ],
     "obtain": [
@@ -14557,6 +14577,7 @@
     ],
     "subcategories": [
       "vanity-body",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -14612,6 +14633,7 @@
     ],
     "subcategories": [
       "vanity-legs",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -14667,6 +14689,7 @@
     ],
     "subcategories": [
       "vanity-head",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -17391,7 +17414,8 @@
       "vanity"
     ],
     "subcategories": [
-      "vanity-head"
+      "vanity-head",
+      "vanity-piece"
     ],
     "obtain": [
       "vendor"
@@ -17553,6 +17577,7 @@
     ],
     "subcategories": [
       "vanity-body",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -17610,6 +17635,7 @@
     ],
     "subcategories": [
       "vanity-legs",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -26990,6 +27016,7 @@
     ],
     "subcategories": [
       "vanity-head",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -27045,6 +27072,7 @@
     ],
     "subcategories": [
       "vanity-body",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -27100,6 +27128,7 @@
     ],
     "subcategories": [
       "vanity-legs",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -31642,6 +31671,7 @@
     ],
     "subcategories": [
       "vanity-head",
+      "christmas-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -31697,6 +31727,7 @@
     ],
     "subcategories": [
       "vanity-body",
+      "christmas-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -31752,6 +31783,7 @@
     ],
     "subcategories": [
       "vanity-legs",
+      "christmas-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -35694,6 +35726,7 @@
     ],
     "subcategories": [
       "vanity-head",
+      "developer-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -35745,6 +35778,7 @@
     ],
     "subcategories": [
       "vanity-body",
+      "developer-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -35796,6 +35830,7 @@
     ],
     "subcategories": [
       "vanity-legs",
+      "developer-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -38363,6 +38398,7 @@
     ],
     "subcategories": [
       "vanity-head",
+      "vanity-piece",
       "material-equipment"
     ],
     "obtain": [
@@ -40430,6 +40466,7 @@
     ],
     "subcategories": [
       "vanity-head",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -40484,6 +40521,7 @@
     ],
     "subcategories": [
       "vanity-body",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -44979,6 +45017,7 @@
     ],
     "subcategories": [
       "vanity-head",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -45039,6 +45078,7 @@
     ],
     "subcategories": [
       "vanity-body",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -45099,6 +45139,7 @@
     ],
     "subcategories": [
       "vanity-legs",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -45159,6 +45200,7 @@
     ],
     "subcategories": [
       "vanity-head",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -45212,6 +45254,7 @@
     ],
     "subcategories": [
       "vanity-body",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -45265,6 +45308,7 @@
     ],
     "subcategories": [
       "vanity-legs",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -45471,6 +45515,7 @@
     ],
     "subcategories": [
       "vanity-head",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -46331,7 +46376,8 @@
       "vanity"
     ],
     "subcategories": [
-      "vanity-head"
+      "vanity-head",
+      "other-vanity-set"
     ],
     "obtain": [
       "vendor"
@@ -46385,7 +46431,8 @@
       "vanity"
     ],
     "subcategories": [
-      "vanity-body"
+      "vanity-body",
+      "other-vanity-set"
     ],
     "obtain": [
       "vendor"
@@ -46441,6 +46488,7 @@
     ],
     "subcategories": [
       "vanity-body",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -46542,7 +46590,8 @@
       "vanity"
     ],
     "subcategories": [
-      "vanity-head"
+      "vanity-head",
+      "vanity-piece"
     ],
     "obtain": [
       "vendor"
@@ -46594,7 +46643,8 @@
       "vanity"
     ],
     "subcategories": [
-      "vanity-head"
+      "vanity-head",
+      "vanity-piece"
     ],
     "obtain": [
       "vendor"
@@ -46650,6 +46700,7 @@
     ],
     "subcategories": [
       "vanity-head",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -46707,6 +46758,7 @@
     ],
     "subcategories": [
       "vanity-body",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -46764,6 +46816,7 @@
     ],
     "subcategories": [
       "vanity-legs",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -46821,6 +46874,7 @@
     ],
     "subcategories": [
       "vanity-head",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -46878,6 +46932,7 @@
     ],
     "subcategories": [
       "vanity-body",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -46935,6 +46990,7 @@
     ],
     "subcategories": [
       "vanity-legs",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -46992,6 +47048,7 @@
     ],
     "subcategories": [
       "vanity-head",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -47047,6 +47104,7 @@
     ],
     "subcategories": [
       "vanity-body",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -47102,6 +47160,7 @@
     ],
     "subcategories": [
       "vanity-legs",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -66224,7 +66283,8 @@
       "vanity"
     ],
     "subcategories": [
-      "vanity-head"
+      "vanity-head",
+      "vanity-piece"
     ],
     "obtain": [
       "drop"
@@ -67888,7 +67948,8 @@
       "vanity"
     ],
     "subcategories": [
-      "vanity-head"
+      "vanity-head",
+      "vanity-piece"
     ],
     "obtain": [
       "drop"
@@ -67939,7 +68000,8 @@
       "vanity"
     ],
     "subcategories": [
-      "vanity-head"
+      "vanity-head",
+      "vanity-piece"
     ],
     "obtain": [
       "vendor"
@@ -67993,7 +68055,8 @@
       "vanity"
     ],
     "subcategories": [
-      "vanity-head"
+      "vanity-head",
+      "vanity-piece"
     ],
     "obtain": [
       "vendor"
@@ -68049,6 +68112,7 @@
     ],
     "subcategories": [
       "vanity-head",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -68102,7 +68166,8 @@
       "vanity"
     ],
     "subcategories": [
-      "vanity-head"
+      "vanity-head",
+      "vanity-piece"
     ],
     "obtain": [
       "drop"
@@ -68156,6 +68221,7 @@
     ],
     "subcategories": [
       "vanity-body",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -68211,6 +68277,7 @@
     ],
     "subcategories": [
       "vanity-legs",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -68610,6 +68677,7 @@
     ],
     "subcategories": [
       "vanity-body",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -68665,6 +68733,7 @@
     ],
     "subcategories": [
       "vanity-legs",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -76135,7 +76204,8 @@
       "vanity"
     ],
     "subcategories": [
-      "vanity-head"
+      "vanity-head",
+      "vanity-piece"
     ],
     "obtain": [
       "vendor"
@@ -80693,7 +80763,8 @@
       "vanity"
     ],
     "subcategories": [
-      "vanity-head"
+      "vanity-head",
+      "vanity-piece"
     ],
     "obtain": [
       "drop"
@@ -82761,6 +82832,7 @@
     ],
     "subcategories": [
       "vanity-head",
+      "developer-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -82812,6 +82884,7 @@
     ],
     "subcategories": [
       "vanity-body",
+      "developer-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -82863,6 +82936,7 @@
     ],
     "subcategories": [
       "vanity-legs",
+      "developer-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -82914,6 +82988,7 @@
     ],
     "subcategories": [
       "vanity-head",
+      "developer-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -82965,6 +83040,7 @@
     ],
     "subcategories": [
       "vanity-body",
+      "developer-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -83016,6 +83092,7 @@
     ],
     "subcategories": [
       "vanity-legs",
+      "developer-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -83067,6 +83144,7 @@
     ],
     "subcategories": [
       "vanity-head",
+      "developer-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -83118,6 +83196,7 @@
     ],
     "subcategories": [
       "vanity-body",
+      "developer-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -83169,6 +83248,7 @@
     ],
     "subcategories": [
       "vanity-legs",
+      "developer-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -83220,6 +83300,7 @@
     ],
     "subcategories": [
       "vanity-head",
+      "developer-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -83271,6 +83352,7 @@
     ],
     "subcategories": [
       "vanity-body",
+      "developer-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -83322,6 +83404,7 @@
     ],
     "subcategories": [
       "vanity-legs",
+      "developer-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -83373,6 +83456,7 @@
     ],
     "subcategories": [
       "vanity-head",
+      "developer-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -83424,6 +83508,7 @@
     ],
     "subcategories": [
       "vanity-body",
+      "developer-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -83475,6 +83560,7 @@
     ],
     "subcategories": [
       "vanity-legs",
+      "developer-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -84111,6 +84197,7 @@
     ],
     "subcategories": [
       "vanity-head",
+      "developer-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -84162,6 +84249,7 @@
     ],
     "subcategories": [
       "vanity-body",
+      "developer-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -84213,6 +84301,7 @@
     ],
     "subcategories": [
       "vanity-legs",
+      "developer-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -84452,6 +84541,7 @@
     ],
     "subcategories": [
       "vanity-body",
+      "developer-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -84503,6 +84593,7 @@
     ],
     "subcategories": [
       "vanity-legs",
+      "developer-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -85960,6 +86051,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Angler Fish",
+    "bannerId": 1,
+    "bannerKills": 50,
     "conditions": [],
     "milestone": "wall-of-flesh",
     "milestoneVia": "Dropped by Angler Fish"
@@ -86014,6 +86107,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Angry Nimbus",
+    "bannerId": 2,
+    "bannerKills": 50,
     "eventOnly": true,
     "conditions": [],
     "milestone": "wall-of-flesh",
@@ -86069,6 +86164,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Anomura Fungus",
+    "bannerId": 3,
+    "bannerKills": 50,
     "conditions": [],
     "milestone": "start",
     "milestoneVia": "Dropped by Anomura Fungus"
@@ -86123,6 +86220,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Antlion",
+    "bannerId": 4,
+    "bannerKills": 50,
     "conditions": [],
     "milestone": "start",
     "milestoneVia": "Dropped by Antlion"
@@ -86177,6 +86276,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Arapaima",
+    "bannerId": 5,
+    "bannerKills": 50,
     "conditions": [],
     "milestone": "wall-of-flesh",
     "milestoneVia": "Dropped by Arapaima"
@@ -86231,6 +86332,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Armored Skeleton",
+    "bannerId": 6,
+    "bannerKills": 50,
     "conditions": [],
     "milestone": "wall-of-flesh",
     "milestoneVia": "Dropped by Armored Skeleton"
@@ -86285,6 +86388,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Cave Bat",
+    "bannerId": 7,
+    "bannerKills": 50,
     "conditions": [],
     "milestone": "start",
     "milestoneVia": "Dropped by Cave Bat"
@@ -86341,6 +86446,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Bird",
+    "bannerId": 8,
+    "bannerKills": 50,
     "conditions": [],
     "milestone": "start",
     "milestoneVia": "Dropped by Bird"
@@ -86395,6 +86502,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Black Recluse",
+    "bannerId": 9,
+    "bannerKills": 50,
     "conditions": [],
     "milestone": "wall-of-flesh",
     "milestoneVia": "Dropped by Black Recluse"
@@ -86449,6 +86558,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Blood Feeder",
+    "bannerId": 10,
+    "bannerKills": 50,
     "conditions": [],
     "milestone": "wall-of-flesh",
     "milestoneVia": "Dropped by Blood Feeder"
@@ -86504,6 +86615,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Blood Jelly",
+    "bannerId": 11,
+    "bannerKills": 50,
     "conditions": [],
     "milestone": "wall-of-flesh",
     "milestoneVia": "Dropped by Blood Jelly"
@@ -86558,6 +86671,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Blood Crawler",
+    "bannerId": 12,
+    "bannerKills": 50,
     "conditions": [],
     "milestone": "start",
     "milestoneVia": "Dropped by Blood Crawler"
@@ -86612,6 +86727,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Bone Serpent",
+    "bannerId": 13,
+    "bannerKills": 50,
     "conditions": [],
     "milestone": "start",
     "milestoneVia": "Dropped by Bone Serpent"
@@ -86666,6 +86783,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Bunny",
+    "bannerId": 14,
+    "bannerKills": 50,
     "conditions": [],
     "milestone": "start",
     "milestoneVia": "Dropped by Bunny"
@@ -86720,6 +86839,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Chaos Elemental",
+    "bannerId": 15,
+    "bannerKills": 50,
     "conditions": [],
     "milestone": "wall-of-flesh",
     "milestoneVia": "Dropped by Chaos Elemental"
@@ -86777,6 +86898,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Mimic",
+    "bannerId": 16,
+    "bannerKills": 50,
     "conditions": [],
     "milestone": "wall-of-flesh",
     "milestoneVia": "Dropped by Ice Mimic"
@@ -86831,6 +86954,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Clown",
+    "bannerId": 17,
+    "bannerKills": 25,
     "eventOnly": true,
     "conditions": [],
     "milestone": "wall-of-flesh",
@@ -86886,6 +87011,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Corrupt Bunny",
+    "bannerId": 18,
+    "bannerKills": 50,
     "eventOnly": true,
     "conditions": [],
     "milestone": "start",
@@ -86941,6 +87068,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Corrupt Goldfish",
+    "bannerId": 19,
+    "bannerKills": 50,
     "conditions": [],
     "milestone": "start",
     "milestoneVia": "Dropped by Corrupt Goldfish"
@@ -86995,6 +87124,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Crab",
+    "bannerId": 20,
+    "bannerKills": 50,
     "conditions": [],
     "milestone": "start",
     "milestoneVia": "Dropped by Crab"
@@ -87049,6 +87180,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Crimera",
+    "bannerId": 21,
+    "bannerKills": 50,
     "conditions": [],
     "milestone": "start",
     "milestoneVia": "Dropped by Crimera"
@@ -87103,6 +87236,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Crimson Axe",
+    "bannerId": 22,
+    "bannerKills": 50,
     "conditions": [],
     "milestone": "wall-of-flesh",
     "milestoneVia": "Dropped by Crimson Axe"
@@ -87157,6 +87292,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Cursed Hammer",
+    "bannerId": 23,
+    "bannerKills": 50,
     "conditions": [],
     "milestone": "wall-of-flesh",
     "milestoneVia": "Dropped by Cursed Hammer"
@@ -87211,6 +87348,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Demon",
+    "bannerId": 24,
+    "bannerKills": 50,
     "conditions": [],
     "milestone": "start",
     "milestoneVia": "Dropped by Demon"
@@ -87267,6 +87406,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Demon Eye",
+    "bannerId": 25,
+    "bannerKills": 50,
     "conditions": [
       "night"
     ],
@@ -87323,6 +87464,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Derpling",
+    "bannerId": 26,
+    "bannerKills": 50,
     "conditions": [],
     "milestone": "wall-of-flesh",
     "milestoneVia": "Dropped by Derpling"
@@ -87377,6 +87520,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Eater of Souls",
+    "bannerId": 27,
+    "bannerKills": 50,
     "conditions": [],
     "milestone": "start",
     "milestoneVia": "Dropped by Eater of Souls"
@@ -87431,6 +87576,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Enchanted Sword",
+    "bannerId": 28,
+    "bannerKills": 50,
     "conditions": [],
     "milestone": "wall-of-flesh",
     "milestoneVia": "Dropped by Enchanted Sword"
@@ -87487,6 +87634,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Frozen Zombie",
+    "bannerId": 29,
+    "bannerKills": 50,
     "conditions": [
       "night"
     ],
@@ -87543,6 +87692,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Face Monster",
+    "bannerId": 30,
+    "bannerKills": 50,
     "conditions": [],
     "milestone": "start",
     "milestoneVia": "Dropped by Face Monster"
@@ -87597,6 +87748,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Floaty Gross",
+    "bannerId": 31,
+    "bannerKills": 50,
     "conditions": [],
     "milestone": "wall-of-flesh",
     "milestoneVia": "Dropped by Floaty Gross"
@@ -87651,6 +87804,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Flying Fish",
+    "bannerId": 32,
+    "bannerKills": 50,
     "eventOnly": true,
     "conditions": [],
     "milestone": "start",
@@ -87706,6 +87861,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Flying Snake",
+    "bannerId": 33,
+    "bannerKills": 50,
     "conditions": [],
     "milestone": "plantera",
     "milestoneVia": "Dropped by Flying Snake"
@@ -87760,6 +87917,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Frankenstein",
+    "bannerId": 34,
+    "bannerKills": 50,
     "eventOnly": true,
     "conditions": [],
     "milestone": "any-mech",
@@ -87815,6 +87974,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Fungi Bulb",
+    "bannerId": 35,
+    "bannerKills": 50,
     "conditions": [],
     "milestone": "start",
     "milestoneVia": "Dropped by Fungi Bulb"
@@ -87869,6 +88030,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Fungo Fish",
+    "bannerId": 36,
+    "bannerKills": 50,
     "conditions": [],
     "milestone": "wall-of-flesh",
     "milestoneVia": "Dropped by Fungo Fish"
@@ -87925,6 +88088,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Gastropod",
+    "bannerId": 37,
+    "bannerKills": 50,
     "conditions": [
       "night"
     ],
@@ -87981,6 +88146,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Goblin Thief",
+    "bannerId": 38,
+    "bannerKills": 50,
     "eventOnly": true,
     "conditions": [],
     "milestone": "start",
@@ -88036,6 +88203,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Goblin Sorcerer",
+    "bannerId": 39,
+    "bannerKills": 50,
     "eventOnly": true,
     "conditions": [],
     "milestone": "start",
@@ -88091,6 +88260,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Goblin Peon",
+    "bannerId": 40,
+    "bannerKills": 50,
     "eventOnly": true,
     "conditions": [],
     "milestone": "start",
@@ -88146,6 +88317,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Goblin Scout",
+    "bannerId": 41,
+    "bannerKills": 50,
     "conditions": [],
     "milestone": "start",
     "milestoneVia": "Dropped by Goblin Scout"
@@ -88200,6 +88373,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Goblin Warrior",
+    "bannerId": 42,
+    "bannerKills": 50,
     "eventOnly": true,
     "conditions": [],
     "milestone": "start",
@@ -88255,6 +88430,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Goldfish",
+    "bannerId": 43,
+    "bannerKills": 50,
     "eventOnly": true,
     "conditions": [],
     "milestone": "start",
@@ -88310,6 +88487,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Harpy",
+    "bannerId": 44,
+    "bannerKills": 50,
     "conditions": [],
     "milestone": "start",
     "milestoneVia": "Dropped by Harpy"
@@ -88364,6 +88543,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Hellbat",
+    "bannerId": 45,
+    "bannerKills": 50,
     "conditions": [],
     "milestone": "start",
     "milestoneVia": "Dropped by Hellbat"
@@ -88418,6 +88599,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Herpling",
+    "bannerId": 46,
+    "bannerKills": 50,
     "conditions": [],
     "milestone": "wall-of-flesh",
     "milestoneVia": "Dropped by Herpling"
@@ -88472,6 +88655,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Hornet",
+    "bannerId": 47,
+    "bannerKills": 50,
     "conditions": [],
     "milestone": "start",
     "milestoneVia": "Dropped by Hornet"
@@ -88526,6 +88711,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Ice Elemental",
+    "bannerId": 48,
+    "bannerKills": 50,
     "conditions": [],
     "milestone": "wall-of-flesh",
     "milestoneVia": "Dropped by Ice Elemental"
@@ -88580,6 +88767,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Icy Merman",
+    "bannerId": 49,
+    "bannerKills": 50,
     "conditions": [],
     "milestone": "wall-of-flesh",
     "milestoneVia": "Dropped by Icy Merman"
@@ -88634,6 +88823,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Fire Imp",
+    "bannerId": 50,
+    "bannerKills": 50,
     "conditions": [],
     "milestone": "start",
     "milestoneVia": "Dropped by Fire Imp"
@@ -88688,6 +88879,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Blue Jellyfish",
+    "bannerId": 51,
+    "bannerKills": 50,
     "conditions": [],
     "milestone": "start",
     "milestoneVia": "Dropped by Blue Jellyfish"
@@ -88742,6 +88935,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Jungle Creeper",
+    "bannerId": 52,
+    "bannerKills": 50,
     "conditions": [],
     "milestone": "wall-of-flesh",
     "milestoneVia": "Dropped by Jungle Creeper"
@@ -88796,6 +88991,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Lihzahrd",
+    "bannerId": 53,
+    "bannerKills": 50,
     "conditions": [],
     "milestone": "plantera",
     "milestoneVia": "Dropped by Lihzahrd"
@@ -88850,6 +89047,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Man Eater",
+    "bannerId": 54,
+    "bannerKills": 50,
     "conditions": [],
     "milestone": "start",
     "milestoneVia": "Dropped by Man Eater"
@@ -88904,6 +89103,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Meteor Head",
+    "bannerId": 55,
+    "bannerKills": 50,
     "conditions": [],
     "milestone": "evil-boss",
     "milestoneVia": "Dropped by Meteor Head"
@@ -88958,6 +89159,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Moth",
+    "bannerId": 56,
+    "bannerKills": 25,
     "conditions": [],
     "milestone": "wall-of-flesh",
     "milestoneVia": "Dropped by Moth"
@@ -89012,6 +89215,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Mummy",
+    "bannerId": 57,
+    "bannerKills": 50,
     "conditions": [],
     "milestone": "wall-of-flesh",
     "milestoneVia": "Dropped by Mummy"
@@ -89066,6 +89271,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Mushi Ladybug",
+    "bannerId": 58,
+    "bannerKills": 50,
     "conditions": [],
     "milestone": "start",
     "milestoneVia": "Dropped by Mushi Ladybug"
@@ -89120,6 +89327,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Parrot",
+    "bannerId": 59,
+    "bannerKills": 50,
     "eventOnly": true,
     "conditions": [],
     "milestone": "wall-of-flesh",
@@ -89176,6 +89385,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Pigron",
+    "bannerId": 60,
+    "bannerKills": 50,
     "conditions": [],
     "milestone": "wall-of-flesh",
     "milestoneVia": "Dropped by Pigron"
@@ -89231,6 +89442,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Piranha",
+    "bannerId": 61,
+    "bannerKills": 50,
     "conditions": [],
     "milestone": "start",
     "milestoneVia": "Dropped by Piranha"
@@ -89285,6 +89498,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Pirate Deckhand",
+    "bannerId": 62,
+    "bannerKills": 50,
     "eventOnly": true,
     "conditions": [],
     "milestone": "wall-of-flesh",
@@ -89340,6 +89555,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Pixie",
+    "bannerId": 63,
+    "bannerKills": 50,
     "conditions": [],
     "milestone": "wall-of-flesh",
     "milestoneVia": "Dropped by Pixie"
@@ -89394,6 +89611,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Raincoat Zombie",
+    "bannerId": 64,
+    "bannerKills": 50,
     "eventOnly": true,
     "conditions": [],
     "milestone": "start",
@@ -89449,6 +89668,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Reaper",
+    "bannerId": 65,
+    "bannerKills": 50,
     "eventOnly": true,
     "conditions": [],
     "milestone": "all-mechs",
@@ -89504,6 +89725,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Shark",
+    "bannerId": 66,
+    "bannerKills": 50,
     "conditions": [],
     "milestone": "start",
     "milestoneVia": "Dropped by Shark"
@@ -89558,6 +89781,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Skeleton",
+    "bannerId": 67,
+    "bannerKills": 50,
     "conditions": [],
     "milestone": "start",
     "milestoneVia": "Dropped by Skeleton"
@@ -89612,6 +89837,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Dark Caster",
+    "bannerId": 68,
+    "bannerKills": 50,
     "conditions": [],
     "milestone": "skeletron",
     "milestoneVia": "Dropped by Dark Caster"
@@ -89666,6 +89893,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Blue Slime",
+    "bannerId": 69,
+    "bannerKills": 50,
     "conditions": [],
     "milestone": "start",
     "milestoneVia": "Dropped by Blue Slime"
@@ -89720,6 +89949,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Snow Flinx",
+    "bannerId": 70,
+    "bannerKills": 50,
     "conditions": [],
     "milestone": "start",
     "milestoneVia": "Dropped by Snow Flinx"
@@ -89774,6 +90005,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Wall Creeper",
+    "bannerId": 71,
+    "bannerKills": 50,
     "conditions": [],
     "milestone": "start",
     "milestoneVia": "Dropped by Wall Creeper"
@@ -89828,6 +90061,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Spore Zombie",
+    "bannerId": 72,
+    "bannerKills": 50,
     "conditions": [],
     "milestone": "start",
     "milestoneVia": "Dropped by Spore Zombie"
@@ -89882,6 +90117,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Swamp Thing",
+    "bannerId": 73,
+    "bannerKills": 50,
     "eventOnly": true,
     "conditions": [],
     "milestone": "any-mech",
@@ -89937,6 +90174,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Giant Tortoise",
+    "bannerId": 74,
+    "bannerKills": 50,
     "conditions": [],
     "milestone": "wall-of-flesh",
     "milestoneVia": "Dropped by Giant Tortoise"
@@ -89991,6 +90230,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Toxic Sludge",
+    "bannerId": 75,
+    "bannerKills": 50,
     "conditions": [],
     "milestone": "wall-of-flesh",
     "milestoneVia": "Dropped by Toxic Sludge"
@@ -90045,6 +90286,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Umbrella Slime",
+    "bannerId": 76,
+    "bannerKills": 50,
     "eventOnly": true,
     "conditions": [],
     "milestone": "start",
@@ -90100,6 +90343,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Unicorn",
+    "bannerId": 77,
+    "bannerKills": 50,
     "conditions": [],
     "milestone": "wall-of-flesh",
     "milestoneVia": "Dropped by Unicorn"
@@ -90154,6 +90399,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Vampire",
+    "bannerId": 78,
+    "bannerKills": 50,
     "eventOnly": true,
     "conditions": [],
     "milestone": "any-mech",
@@ -90209,6 +90456,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Vulture",
+    "bannerId": 79,
+    "bannerKills": 50,
     "conditions": [],
     "milestone": "start",
     "milestoneVia": "Dropped by Vulture"
@@ -90263,6 +90512,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Nymph",
+    "bannerId": 80,
+    "bannerKills": 25,
     "conditions": [],
     "milestone": "start",
     "milestoneVia": "Dropped by Nymph"
@@ -90319,6 +90570,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Werewolf",
+    "bannerId": 81,
+    "bannerKills": 50,
     "conditions": [
       "night"
     ],
@@ -90377,6 +90630,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Wolf",
+    "bannerId": 82,
+    "bannerKills": 50,
     "conditions": [
       "night"
     ],
@@ -90433,6 +90688,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: World Feeder",
+    "bannerId": 83,
+    "bannerKills": 50,
     "conditions": [],
     "milestone": "wall-of-flesh",
     "milestoneVia": "Dropped by World Feeder"
@@ -90487,6 +90744,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Giant Worm",
+    "bannerId": 84,
+    "bannerKills": 50,
     "conditions": [],
     "milestone": "start",
     "milestoneVia": "Dropped by Giant Worm"
@@ -90543,6 +90802,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Wraith",
+    "bannerId": 85,
+    "bannerKills": 50,
     "conditions": [
       "night"
     ],
@@ -90599,6 +90860,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Wyvern",
+    "bannerId": 86,
+    "bannerKills": 50,
     "conditions": [],
     "milestone": "wall-of-flesh",
     "milestoneVia": "Dropped by Wyvern"
@@ -90656,6 +90919,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Zombie",
+    "bannerId": 87,
+    "bannerKills": 50,
     "conditions": [],
     "milestone": "start",
     "milestoneVia": "Dropped by Maggot Zombie"
@@ -92328,6 +92593,7 @@
     ],
     "subcategories": [
       "vanity-head",
+      "halloween-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -92386,6 +92652,7 @@
     ],
     "subcategories": [
       "vanity-body",
+      "halloween-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -92444,6 +92711,7 @@
     ],
     "subcategories": [
       "vanity-legs",
+      "halloween-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -92500,7 +92768,8 @@
       "vanity"
     ],
     "subcategories": [
-      "vanity-head"
+      "vanity-head",
+      "vanity-piece"
     ],
     "obtain": [
       "vendor"
@@ -92555,7 +92824,8 @@
       "vanity"
     ],
     "subcategories": [
-      "vanity-head"
+      "vanity-head",
+      "vanity-piece"
     ],
     "obtain": [
       "vendor"
@@ -92612,6 +92882,7 @@
     ],
     "subcategories": [
       "vanity-body",
+      "halloween-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -92666,7 +92937,8 @@
       "vanity"
     ],
     "subcategories": [
-      "vanity-head"
+      "vanity-head",
+      "vanity-piece"
     ],
     "obtain": [
       "vendor"
@@ -92723,6 +92995,7 @@
     ],
     "subcategories": [
       "vanity-head",
+      "halloween-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -92781,6 +93054,7 @@
     ],
     "subcategories": [
       "vanity-body",
+      "halloween-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -92839,6 +93113,7 @@
     ],
     "subcategories": [
       "vanity-legs",
+      "halloween-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -92897,6 +93172,7 @@
     ],
     "subcategories": [
       "vanity-head",
+      "halloween-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -92949,6 +93225,7 @@
     ],
     "subcategories": [
       "vanity-body",
+      "halloween-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -93001,6 +93278,7 @@
     ],
     "subcategories": [
       "vanity-legs",
+      "halloween-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -93053,6 +93331,7 @@
     ],
     "subcategories": [
       "vanity-head",
+      "halloween-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -93105,6 +93384,7 @@
     ],
     "subcategories": [
       "vanity-body",
+      "halloween-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -93157,6 +93437,7 @@
     ],
     "subcategories": [
       "vanity-legs",
+      "halloween-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -93209,6 +93490,7 @@
     ],
     "subcategories": [
       "vanity-head",
+      "halloween-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -93261,6 +93543,7 @@
     ],
     "subcategories": [
       "vanity-body",
+      "halloween-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -93313,6 +93596,7 @@
     ],
     "subcategories": [
       "vanity-head",
+      "halloween-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -93365,6 +93649,7 @@
     ],
     "subcategories": [
       "vanity-body",
+      "halloween-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -93417,6 +93702,7 @@
     ],
     "subcategories": [
       "vanity-legs",
+      "halloween-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -93469,6 +93755,7 @@
     ],
     "subcategories": [
       "vanity-head",
+      "halloween-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -93521,6 +93808,7 @@
     ],
     "subcategories": [
       "vanity-body",
+      "halloween-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -93573,6 +93861,7 @@
     ],
     "subcategories": [
       "vanity-legs",
+      "halloween-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -93625,6 +93914,7 @@
     ],
     "subcategories": [
       "vanity-head",
+      "halloween-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -93677,6 +93967,7 @@
     ],
     "subcategories": [
       "vanity-body",
+      "halloween-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -93729,6 +94020,7 @@
     ],
     "subcategories": [
       "vanity-legs",
+      "halloween-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -93781,6 +94073,7 @@
     ],
     "subcategories": [
       "vanity-head",
+      "halloween-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -93833,6 +94126,7 @@
     ],
     "subcategories": [
       "vanity-body",
+      "halloween-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -93885,6 +94179,7 @@
     ],
     "subcategories": [
       "vanity-legs",
+      "halloween-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -93937,6 +94232,7 @@
     ],
     "subcategories": [
       "vanity-head",
+      "halloween-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -93989,6 +94285,7 @@
     ],
     "subcategories": [
       "vanity-head",
+      "halloween-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -94042,6 +94339,7 @@
     ],
     "subcategories": [
       "vanity-body",
+      "halloween-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -94095,6 +94393,7 @@
     ],
     "subcategories": [
       "vanity-legs",
+      "halloween-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -94148,6 +94447,7 @@
     ],
     "subcategories": [
       "vanity-body",
+      "halloween-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -94200,6 +94500,7 @@
     ],
     "subcategories": [
       "vanity-legs",
+      "halloween-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -94252,6 +94553,7 @@
     ],
     "subcategories": [
       "vanity-head",
+      "halloween-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -94304,6 +94606,7 @@
     ],
     "subcategories": [
       "vanity-body",
+      "halloween-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -94403,6 +94706,7 @@
     ],
     "subcategories": [
       "vanity-body",
+      "halloween-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -94455,6 +94759,7 @@
     ],
     "subcategories": [
       "vanity-legs",
+      "halloween-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -94507,6 +94812,7 @@
     ],
     "subcategories": [
       "vanity-head",
+      "halloween-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -94559,6 +94865,7 @@
     ],
     "subcategories": [
       "vanity-body",
+      "halloween-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -94611,6 +94918,7 @@
     ],
     "subcategories": [
       "vanity-head",
+      "halloween-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -94663,6 +94971,7 @@
     ],
     "subcategories": [
       "vanity-body",
+      "halloween-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -94715,6 +95024,7 @@
     ],
     "subcategories": [
       "vanity-legs",
+      "halloween-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -95111,6 +95421,7 @@
     ],
     "subcategories": [
       "vanity-head",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -95166,6 +95477,7 @@
     ],
     "subcategories": [
       "vanity-body",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -95221,6 +95533,7 @@
     ],
     "subcategories": [
       "vanity-legs",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -96499,6 +96812,7 @@
     ],
     "subcategories": [
       "vanity-head",
+      "halloween-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -96551,6 +96865,7 @@
     ],
     "subcategories": [
       "vanity-body",
+      "halloween-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -96603,6 +96918,7 @@
     ],
     "subcategories": [
       "vanity-head",
+      "halloween-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -96655,6 +96971,7 @@
     ],
     "subcategories": [
       "vanity-body",
+      "halloween-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -96707,6 +97024,7 @@
     ],
     "subcategories": [
       "vanity-legs",
+      "halloween-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -96757,7 +97075,8 @@
       "vanity"
     ],
     "subcategories": [
-      "vanity-head"
+      "vanity-head",
+      "vanity-piece"
     ],
     "obtain": [
       "bag"
@@ -97515,6 +97834,7 @@
     ],
     "subcategories": [
       "vanity-head",
+      "halloween-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -97567,6 +97887,7 @@
     ],
     "subcategories": [
       "vanity-body",
+      "halloween-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -97619,6 +97940,7 @@
     ],
     "subcategories": [
       "vanity-legs",
+      "halloween-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -97671,6 +97993,7 @@
     ],
     "subcategories": [
       "vanity-head",
+      "halloween-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -97723,6 +98046,7 @@
     ],
     "subcategories": [
       "vanity-body",
+      "halloween-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -97775,6 +98099,7 @@
     ],
     "subcategories": [
       "vanity-legs",
+      "halloween-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -98190,6 +98515,7 @@
     ],
     "subcategories": [
       "vanity-body",
+      "halloween-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -98242,6 +98568,7 @@
     ],
     "subcategories": [
       "vanity-legs",
+      "halloween-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -98294,6 +98621,7 @@
     ],
     "subcategories": [
       "vanity-body",
+      "halloween-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -98352,6 +98680,7 @@
     ],
     "subcategories": [
       "vanity-legs",
+      "halloween-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -98520,7 +98849,8 @@
       "vanity"
     ],
     "subcategories": [
-      "vanity-head"
+      "vanity-head",
+      "vanity-piece"
     ],
     "obtain": [
       "drop"
@@ -100931,7 +101261,8 @@
       "vanity"
     ],
     "subcategories": [
-      "vanity-head"
+      "vanity-head",
+      "vanity-piece"
     ],
     "obtain": [
       "drop"
@@ -100983,7 +101314,8 @@
       "vanity"
     ],
     "subcategories": [
-      "vanity-head"
+      "vanity-head",
+      "vanity-piece"
     ],
     "obtain": [
       "bag"
@@ -102289,6 +102621,7 @@
     ],
     "subcategories": [
       "vanity-head",
+      "christmas-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -102339,6 +102672,7 @@
     ],
     "subcategories": [
       "vanity-body",
+      "christmas-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -102389,6 +102723,7 @@
     ],
     "subcategories": [
       "vanity-legs",
+      "christmas-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -102439,6 +102774,7 @@
     ],
     "subcategories": [
       "vanity-head",
+      "christmas-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -102489,6 +102825,7 @@
     ],
     "subcategories": [
       "vanity-body",
+      "christmas-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -102539,6 +102876,7 @@
     ],
     "subcategories": [
       "vanity-legs",
+      "christmas-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -102587,7 +102925,8 @@
       "vanity"
     ],
     "subcategories": [
-      "vanity-head"
+      "vanity-head",
+      "vanity-piece"
     ],
     "obtain": [
       "bag"
@@ -102634,7 +102973,8 @@
       "vanity"
     ],
     "subcategories": [
-      "vanity-body"
+      "vanity-body",
+      "vanity-piece"
     ],
     "obtain": [
       "bag"
@@ -102683,6 +103023,7 @@
     ],
     "subcategories": [
       "vanity-head",
+      "christmas-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -102733,6 +103074,7 @@
     ],
     "subcategories": [
       "vanity-body",
+      "christmas-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -102783,6 +103125,7 @@
     ],
     "subcategories": [
       "vanity-legs",
+      "christmas-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -102833,6 +103176,7 @@
     ],
     "subcategories": [
       "vanity-head",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -102888,6 +103232,7 @@
     ],
     "subcategories": [
       "vanity-body",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -102943,6 +103288,7 @@
     ],
     "subcategories": [
       "vanity-legs",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -105186,7 +105532,8 @@
       "vanity"
     ],
     "subcategories": [
-      "vanity-head"
+      "vanity-head",
+      "vanity-piece"
     ],
     "obtain": [
       "vendor"
@@ -117097,7 +117444,8 @@
       "vanity"
     ],
     "subcategories": [
-      "vanity-head"
+      "vanity-head",
+      "vanity-piece"
     ],
     "obtain": [
       "drop"
@@ -119952,7 +120300,8 @@
       "vanity"
     ],
     "subcategories": [
-      "vanity-body"
+      "vanity-body",
+      "vanity-piece"
     ],
     "obtain": [
       "vendor"
@@ -123086,13 +123435,11 @@
     "url": "https://terraria.wiki.gg/wiki/Minecart_Track",
     "icon": "https://terraria.wiki.gg/images/Minecart_Track.png",
     "categories": [
-      "mount",
       "crafting-material",
       "furniture"
     ],
     "subcategories": [
       "material-furniture",
-      "other-mount",
       "other-furniture"
     ],
     "obtain": [
@@ -123258,7 +123605,7 @@
       "crafting-material"
     ],
     "subcategories": [
-      "other-mount",
+      "minecart",
       "other-crafting-material"
     ],
     "obtain": [
@@ -127002,6 +127349,7 @@
     ],
     "subcategories": [
       "vanity-head",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -127054,6 +127402,7 @@
     ],
     "subcategories": [
       "vanity-body",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -127106,6 +127455,7 @@
     ],
     "subcategories": [
       "vanity-legs",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -131001,6 +131351,7 @@
     ],
     "subcategories": [
       "vanity-head",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -131053,6 +131404,7 @@
     ],
     "subcategories": [
       "vanity-body",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -131105,6 +131457,7 @@
     ],
     "subcategories": [
       "vanity-legs",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -146391,7 +146744,8 @@
       "vanity"
     ],
     "subcategories": [
-      "vanity-head"
+      "vanity-head",
+      "vanity-piece"
     ],
     "obtain": [
       "drop"
@@ -146439,7 +146793,8 @@
       "vanity"
     ],
     "subcategories": [
-      "vanity-head"
+      "vanity-head",
+      "vanity-piece"
     ],
     "obtain": [
       "drop"
@@ -146489,6 +146844,7 @@
     ],
     "subcategories": [
       "vanity-head",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -146541,6 +146897,7 @@
     ],
     "subcategories": [
       "vanity-body",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -146593,6 +146950,7 @@
     ],
     "subcategories": [
       "vanity-legs",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -146645,6 +147003,7 @@
     ],
     "subcategories": [
       "vanity-head",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -146697,6 +147056,7 @@
     ],
     "subcategories": [
       "vanity-body",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -146749,6 +147109,7 @@
     ],
     "subcategories": [
       "vanity-legs",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -149112,6 +149473,7 @@
     ],
     "subcategories": [
       "vanity-head",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -149167,6 +149529,7 @@
     ],
     "subcategories": [
       "vanity-head",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -149222,6 +149585,7 @@
     ],
     "subcategories": [
       "vanity-body",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -149277,6 +149641,7 @@
     ],
     "subcategories": [
       "vanity-body",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -149428,7 +149793,8 @@
       "vanity"
     ],
     "subcategories": [
-      "vanity-head"
+      "vanity-head",
+      "vanity-piece"
     ],
     "obtain": [
       "vendor"
@@ -151164,6 +151530,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Angry Trapper",
+    "bannerId": 88,
+    "bannerKills": 50,
     "conditions": [],
     "milestone": "wall-of-flesh",
     "milestoneVia": "Dropped by Angry Trapper"
@@ -151215,6 +151583,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Armored Viking",
+    "bannerId": 89,
+    "bannerKills": 50,
     "conditions": [],
     "milestone": "wall-of-flesh",
     "milestoneVia": "Dropped by Armored Viking"
@@ -151266,6 +151636,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Black Slime",
+    "bannerId": 90,
+    "bannerKills": 50,
     "conditions": [],
     "milestone": "start",
     "milestoneVia": "Dropped by Black Slime"
@@ -151318,6 +151690,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Blue Armored Bones",
+    "bannerId": 91,
+    "bannerKills": 50,
     "conditions": [],
     "milestone": "plantera",
     "milestoneVia": "Dropped by Blue Armored Bones"
@@ -151369,6 +151743,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Cultist Archer",
+    "bannerId": 92,
+    "bannerKills": 25,
     "conditions": [],
     "milestone": "golem",
     "milestoneVia": "Dropped by Cultist Archer"
@@ -151420,6 +151796,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Lunatic Devotee",
+    "bannerId": 93,
+    "bannerKills": 25,
     "conditions": [],
     "milestone": "golem",
     "milestoneVia": "Dropped by Lunatic Devotee"
@@ -151468,6 +151846,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: {$NPCName.None}",
+    "bannerId": 94,
+    "bannerKills": 50,
     "conditions": []
   },
   {
@@ -151517,6 +151897,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Bone Lee",
+    "bannerId": 95,
+    "bannerKills": 50,
     "conditions": [],
     "milestone": "plantera",
     "milestoneVia": "Dropped by Bone Lee"
@@ -151568,6 +151950,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Clinger",
+    "bannerId": 96,
+    "bannerKills": 50,
     "conditions": [],
     "milestone": "wall-of-flesh",
     "milestoneVia": "Dropped by Clinger"
@@ -151619,6 +152003,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Cochineal Beetle",
+    "bannerId": 97,
+    "bannerKills": 50,
     "conditions": [],
     "milestone": "start",
     "milestoneVia": "Dropped by Cochineal Beetle"
@@ -151670,6 +152056,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Corrupt Penguin",
+    "bannerId": 98,
+    "bannerKills": 50,
     "eventOnly": true,
     "conditions": [],
     "milestone": "start",
@@ -151722,6 +152110,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Corrupt Slime",
+    "bannerId": 99,
+    "bannerKills": 50,
     "conditions": [],
     "milestone": "wall-of-flesh",
     "milestoneVia": "Dropped by Corrupt Slime"
@@ -151774,6 +152164,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Corruptor",
+    "bannerId": 100,
+    "bannerKills": 50,
     "conditions": [],
     "milestone": "wall-of-flesh",
     "milestoneVia": "Dropped by Corruptor"
@@ -151825,6 +152217,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Crimslime",
+    "bannerId": 101,
+    "bannerKills": 50,
     "conditions": [],
     "milestone": "wall-of-flesh",
     "milestoneVia": "Dropped by Crimslime"
@@ -151876,6 +152270,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Cursed Skull",
+    "bannerId": 102,
+    "bannerKills": 50,
     "conditions": [],
     "milestone": "skeletron",
     "milestoneVia": "Dropped by Cursed Skull"
@@ -151927,6 +152323,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Cyan Beetle",
+    "bannerId": 103,
+    "bannerKills": 50,
     "conditions": [],
     "milestone": "start",
     "milestoneVia": "Dropped by Cyan Beetle"
@@ -151978,6 +152376,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Devourer",
+    "bannerId": 104,
+    "bannerKills": 25,
     "conditions": [],
     "milestone": "start",
     "milestoneVia": "Dropped by Devourer"
@@ -152029,6 +152429,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Diabolist",
+    "bannerId": 105,
+    "bannerKills": 50,
     "conditions": [],
     "milestone": "plantera",
     "milestoneVia": "Dropped by Diabolist"
@@ -152080,6 +152482,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Doctor Bones",
+    "bannerId": 106,
+    "bannerKills": 10,
     "conditions": [],
     "milestone": "start",
     "milestoneVia": "Dropped by Doctor Bones"
@@ -152131,6 +152535,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Dungeon Slime",
+    "bannerId": 107,
+    "bannerKills": 50,
     "conditions": [],
     "milestone": "skeletron",
     "milestoneVia": "Dropped by Dungeon Slime"
@@ -152183,6 +152589,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Dungeon Spirit",
+    "bannerId": 108,
+    "bannerKills": 50,
     "conditions": [],
     "milestone": "plantera",
     "milestoneVia": "Dropped by Dungeon Spirit"
@@ -152235,6 +152643,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Elf Archer",
+    "bannerId": 109,
+    "bannerKills": 50,
     "eventOnly": true,
     "conditions": [],
     "milestone": "plantera",
@@ -152288,6 +152698,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Elf Copter",
+    "bannerId": 110,
+    "bannerKills": 50,
     "eventOnly": true,
     "conditions": [],
     "milestone": "plantera",
@@ -152340,6 +152752,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Eyezor",
+    "bannerId": 111,
+    "bannerKills": 50,
     "eventOnly": true,
     "conditions": [],
     "milestone": "any-mech",
@@ -152393,6 +152807,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Flocko",
+    "bannerId": 112,
+    "bannerKills": 50,
     "eventOnly": true,
     "conditions": [],
     "milestone": "plantera",
@@ -152445,6 +152861,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Ghost",
+    "bannerId": 113,
+    "bannerKills": 50,
     "conditions": [],
     "milestone": "start",
     "milestoneVia": "Dropped by Ghost"
@@ -152497,6 +152915,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Giant Bat",
+    "bannerId": 114,
+    "bannerKills": 50,
     "conditions": [],
     "milestone": "wall-of-flesh",
     "milestoneVia": "Dropped by Giant Bat"
@@ -152549,6 +152969,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Giant Cursed Skull",
+    "bannerId": 115,
+    "bannerKills": 50,
     "conditions": [],
     "milestone": "plantera",
     "milestoneVia": "Dropped by Giant Cursed Skull"
@@ -152602,6 +153024,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Giant Flying Fox",
+    "bannerId": 116,
+    "bannerKills": 50,
     "conditions": [
       "night"
     ],
@@ -152656,6 +153080,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Gingerbread Man",
+    "bannerId": 117,
+    "bannerKills": 50,
     "eventOnly": true,
     "conditions": [],
     "milestone": "plantera",
@@ -152708,6 +153134,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Goblin Archer",
+    "bannerId": 118,
+    "bannerKills": 50,
     "eventOnly": true,
     "conditions": [],
     "milestone": "start",
@@ -152760,6 +153188,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Green Slime",
+    "bannerId": 119,
+    "bannerKills": 50,
     "conditions": [],
     "milestone": "start",
     "milestoneVia": "Dropped by Green Slime"
@@ -152812,6 +153242,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Headless Horseman",
+    "bannerId": 120,
+    "bannerKills": 50,
     "eventOnly": true,
     "conditions": [],
     "milestone": "plantera",
@@ -152865,6 +153297,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Hell Armored Bones",
+    "bannerId": 121,
+    "bannerKills": 50,
     "conditions": [],
     "milestone": "plantera",
     "milestoneVia": "Dropped by Hell Armored Bones"
@@ -152917,6 +153351,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Hellhound",
+    "bannerId": 122,
+    "bannerKills": 100,
     "eventOnly": true,
     "conditions": [],
     "milestone": "plantera",
@@ -152970,6 +153406,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Hoppin' Jack",
+    "bannerId": 123,
+    "bannerKills": 50,
     "conditions": [],
     "milestone": "wall-of-flesh",
     "milestoneVia": "Dropped by Hoppin' Jack"
@@ -153021,6 +153459,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Ice Bat",
+    "bannerId": 124,
+    "bannerKills": 50,
     "conditions": [],
     "milestone": "start",
     "milestoneVia": "Dropped by Ice Bat"
@@ -153072,6 +153512,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Ice Golem",
+    "bannerId": 125,
+    "bannerKills": 25,
     "eventOnly": true,
     "conditions": [],
     "milestone": "wall-of-flesh",
@@ -153126,6 +153568,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Ice Slime",
+    "bannerId": 126,
+    "bannerKills": 50,
     "conditions": [
       "day"
     ],
@@ -153180,6 +153624,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Ichor Sticker",
+    "bannerId": 127,
+    "bannerKills": 50,
     "conditions": [],
     "milestone": "wall-of-flesh",
     "milestoneVia": "Dropped by Ichor Sticker"
@@ -153232,6 +153678,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Illuminant Bat",
+    "bannerId": 128,
+    "bannerKills": 50,
     "conditions": [],
     "milestone": "wall-of-flesh",
     "milestoneVia": "Dropped by Illuminant Bat"
@@ -153283,6 +153731,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Illuminant Slime",
+    "bannerId": 129,
+    "bannerKills": 50,
     "conditions": [],
     "milestone": "wall-of-flesh",
     "milestoneVia": "Dropped by Illuminant Slime"
@@ -153334,6 +153784,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Jungle Bat",
+    "bannerId": 130,
+    "bannerKills": 50,
     "conditions": [],
     "milestone": "start",
     "milestoneVia": "Dropped by Jungle Bat"
@@ -153387,6 +153839,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Jungle Slime",
+    "bannerId": 131,
+    "bannerKills": 50,
     "conditions": [
       "day"
     ],
@@ -153441,6 +153895,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Krampus",
+    "bannerId": 132,
+    "bannerKills": 50,
     "eventOnly": true,
     "conditions": [],
     "milestone": "plantera",
@@ -153493,6 +153949,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Lac Beetle",
+    "bannerId": 133,
+    "bannerKills": 50,
     "conditions": [],
     "milestone": "start",
     "milestoneVia": "Dropped by Lac Beetle"
@@ -153544,6 +154002,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Lava Bat",
+    "bannerId": 134,
+    "bannerKills": 50,
     "conditions": [],
     "milestone": "wall-of-flesh",
     "milestoneVia": "Dropped by Lava Bat"
@@ -153595,6 +154055,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Lava Slime",
+    "bannerId": 135,
+    "bannerKills": 50,
     "conditions": [],
     "milestone": "start",
     "milestoneVia": "Dropped by Lava Slime"
@@ -153646,6 +154108,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Brain Scrambler",
+    "bannerId": 136,
+    "bannerKills": 50,
     "eventOnly": true,
     "conditions": [],
     "milestone": "golem",
@@ -153698,6 +154162,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Martian Drone",
+    "bannerId": 137,
+    "bannerKills": 50,
     "eventOnly": true,
     "conditions": [],
     "milestone": "golem",
@@ -153750,6 +154216,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Martian Engineer",
+    "bannerId": 138,
+    "bannerKills": 50,
     "eventOnly": true,
     "conditions": [],
     "milestone": "golem",
@@ -153802,6 +154270,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Gigazapper",
+    "bannerId": 139,
+    "bannerKills": 50,
     "eventOnly": true,
     "conditions": [],
     "milestone": "golem",
@@ -153854,6 +154324,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Gray Grunt",
+    "bannerId": 140,
+    "bannerKills": 50,
     "eventOnly": true,
     "conditions": [],
     "milestone": "golem",
@@ -153906,6 +154378,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Martian Officer",
+    "bannerId": 141,
+    "bannerKills": 50,
     "eventOnly": true,
     "conditions": [],
     "milestone": "golem",
@@ -153958,6 +154432,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Ray Gunner",
+    "bannerId": 142,
+    "bannerKills": 50,
     "eventOnly": true,
     "conditions": [],
     "milestone": "golem",
@@ -154010,6 +154486,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Scutlix Gunner",
+    "bannerId": 143,
+    "bannerKills": 50,
     "eventOnly": true,
     "conditions": [],
     "milestone": "golem",
@@ -154062,6 +154540,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Tesla Turret",
+    "bannerId": 144,
+    "bannerKills": 50,
     "eventOnly": true,
     "conditions": [],
     "milestone": "golem",
@@ -154114,6 +154594,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Mister Stabby",
+    "bannerId": 145,
+    "bannerKills": 50,
     "eventOnly": true,
     "conditions": [],
     "milestone": "wall-of-flesh",
@@ -154166,6 +154648,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Mother Slime",
+    "bannerId": 146,
+    "bannerKills": 50,
     "conditions": [],
     "milestone": "start",
     "milestoneVia": "Dropped by Baby Slime"
@@ -154217,6 +154701,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Necromancer",
+    "bannerId": 147,
+    "bannerKills": 50,
     "conditions": [],
     "milestone": "plantera",
     "milestoneVia": "Dropped by Necromancer"
@@ -154269,6 +154755,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Nutcracker",
+    "bannerId": 148,
+    "bannerKills": 50,
     "eventOnly": true,
     "conditions": [],
     "milestone": "plantera",
@@ -154321,6 +154809,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Paladin",
+    "bannerId": 149,
+    "bannerKills": 25,
     "conditions": [],
     "milestone": "plantera",
     "milestoneVia": "Dropped by Paladin"
@@ -154373,6 +154863,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Penguin",
+    "bannerId": 150,
+    "bannerKills": 50,
     "conditions": [],
     "milestone": "start",
     "milestoneVia": "Dropped by Penguin"
@@ -154426,6 +154918,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Pinky",
+    "bannerId": 151,
+    "bannerKills": 25,
     "conditions": [],
     "milestone": "start",
     "milestoneVia": "Dropped by Pinky"
@@ -154478,6 +154972,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Poltergeist",
+    "bannerId": 152,
+    "bannerKills": 100,
     "eventOnly": true,
     "conditions": [],
     "milestone": "plantera",
@@ -154532,6 +155028,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Possessed Armor",
+    "bannerId": 153,
+    "bannerKills": 50,
     "conditions": [],
     "milestone": "wall-of-flesh",
     "milestoneVia": "Dropped by Possessed Armor"
@@ -154584,6 +155082,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Present Mimic",
+    "bannerId": 154,
+    "bannerKills": 50,
     "eventOnly": true,
     "conditions": [],
     "milestone": "plantera",
@@ -154636,6 +155136,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Purple Slime",
+    "bannerId": 155,
+    "bannerKills": 50,
     "conditions": [],
     "milestone": "start",
     "milestoneVia": "Dropped by Purple Slime"
@@ -154687,6 +155189,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Ragged Caster",
+    "bannerId": 156,
+    "bannerKills": 50,
     "conditions": [],
     "milestone": "plantera",
     "milestoneVia": "Dropped by Ragged Caster"
@@ -154738,6 +155242,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Rainbow Slime",
+    "bannerId": 157,
+    "bannerKills": 50,
     "eventOnly": true,
     "conditions": [],
     "milestone": "wall-of-flesh",
@@ -154791,6 +155297,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Raven",
+    "bannerId": 158,
+    "bannerKills": 50,
     "conditions": [],
     "milestone": "start",
     "milestoneVia": "Dropped by Raven"
@@ -154842,6 +155350,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Red Slime",
+    "bannerId": 159,
+    "bannerKills": 50,
     "conditions": [],
     "milestone": "start",
     "milestoneVia": "Dropped by Red Slime"
@@ -154893,6 +155403,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Rune Wizard",
+    "bannerId": 160,
+    "bannerKills": 10,
     "conditions": [],
     "milestone": "wall-of-flesh",
     "milestoneVia": "Dropped by Rune Wizard"
@@ -154945,6 +155457,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Rusty Armored Bones",
+    "bannerId": 161,
+    "bannerKills": 50,
     "conditions": [],
     "milestone": "plantera",
     "milestoneVia": "Dropped by Rusty Armored Bones"
@@ -154997,6 +155511,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Scarecrow",
+    "bannerId": 162,
+    "bannerKills": 150,
     "eventOnly": true,
     "conditions": [],
     "milestone": "plantera",
@@ -155049,6 +155565,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Scutlix",
+    "bannerId": 163,
+    "bannerKills": 50,
     "eventOnly": true,
     "conditions": [],
     "milestone": "golem",
@@ -155102,6 +155620,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Skeleton Archer",
+    "bannerId": 164,
+    "bannerKills": 50,
     "conditions": [],
     "milestone": "wall-of-flesh",
     "milestoneVia": "Dropped by Skeleton Archer"
@@ -155154,6 +155674,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Skeleton Commando",
+    "bannerId": 165,
+    "bannerKills": 50,
     "conditions": [],
     "milestone": "plantera",
     "milestoneVia": "Dropped by Skeleton Commando"
@@ -155205,6 +155727,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Skeleton Sniper",
+    "bannerId": 166,
+    "bannerKills": 50,
     "conditions": [],
     "milestone": "plantera",
     "milestoneVia": "Dropped by Skeleton Sniper"
@@ -155256,6 +155780,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Slimer",
+    "bannerId": 167,
+    "bannerKills": 50,
     "conditions": [],
     "milestone": "wall-of-flesh",
     "milestoneVia": "Dropped by Slimer"
@@ -155307,6 +155833,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Snatcher",
+    "bannerId": 168,
+    "bannerKills": 50,
     "conditions": [],
     "milestone": "start",
     "milestoneVia": "Dropped by Snatcher"
@@ -155358,6 +155886,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Snow Balla",
+    "bannerId": 169,
+    "bannerKills": 50,
     "eventOnly": true,
     "conditions": [],
     "milestone": "wall-of-flesh",
@@ -155410,6 +155940,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Snowman Gangsta",
+    "bannerId": 170,
+    "bannerKills": 50,
     "eventOnly": true,
     "conditions": [],
     "milestone": "wall-of-flesh",
@@ -155462,6 +155994,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Spiked Ice Slime",
+    "bannerId": 171,
+    "bannerKills": 50,
     "conditions": [],
     "milestone": "start",
     "milestoneVia": "Dropped by Spiked Ice Slime"
@@ -155513,6 +156047,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Spiked Jungle Slime",
+    "bannerId": 172,
+    "bannerKills": 50,
     "conditions": [],
     "milestone": "start",
     "milestoneVia": "Dropped by Spiked Jungle Slime"
@@ -155565,6 +156101,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Splinterling",
+    "bannerId": 173,
+    "bannerKills": 150,
     "eventOnly": true,
     "conditions": [],
     "milestone": "plantera",
@@ -155617,6 +156155,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Squid",
+    "bannerId": 174,
+    "bannerKills": 50,
     "conditions": [],
     "milestone": "start",
     "milestoneVia": "Dropped by Squid"
@@ -155668,6 +156208,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Tactical Skeleton",
+    "bannerId": 175,
+    "bannerKills": 50,
     "conditions": [],
     "milestone": "plantera",
     "milestoneVia": "Dropped by Tactical Skeleton"
@@ -155719,6 +156261,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: The Groom",
+    "bannerId": 176,
+    "bannerKills": 10,
     "conditions": [],
     "milestone": "start",
     "milestoneVia": "Dropped by The Groom"
@@ -155770,6 +156314,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Tim",
+    "bannerId": 177,
+    "bannerKills": 10,
     "conditions": [],
     "milestone": "start",
     "milestoneVia": "Dropped by Tim"
@@ -155821,6 +156367,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Undead Miner",
+    "bannerId": 178,
+    "bannerKills": 50,
     "conditions": [],
     "milestone": "start",
     "milestoneVia": "Dropped by Undead Miner"
@@ -155872,6 +156420,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Undead Viking",
+    "bannerId": 179,
+    "bannerKills": 50,
     "conditions": [],
     "milestone": "start",
     "milestoneVia": "Dropped by Undead Viking"
@@ -155920,6 +156470,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Cultist Archer",
+    "bannerId": 180,
+    "bannerKills": 50,
     "conditions": []
   },
   {
@@ -155966,6 +156518,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: {$NPCName.None}",
+    "bannerId": 181,
+    "bannerKills": 50,
     "conditions": []
   },
   {
@@ -156012,6 +156566,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: {$NPCName.None}",
+    "bannerId": 182,
+    "bannerKills": 50,
     "conditions": []
   },
   {
@@ -156061,6 +156617,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Yellow Slime",
+    "bannerId": 183,
+    "bannerKills": 50,
     "conditions": [],
     "milestone": "start",
     "milestoneVia": "Dropped by Yellow Slime"
@@ -156113,6 +156671,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Yeti",
+    "bannerId": 184,
+    "bannerKills": 50,
     "eventOnly": true,
     "conditions": [],
     "milestone": "plantera",
@@ -156166,6 +156726,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Zombie Elf",
+    "bannerId": 185,
+    "bannerKills": 100,
     "eventOnly": true,
     "conditions": [],
     "milestone": "plantera",
@@ -167775,6 +168337,7 @@
     ],
     "subcategories": [
       "vanity-head",
+      "developer-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -167826,6 +168389,7 @@
     ],
     "subcategories": [
       "vanity-body",
+      "developer-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -168553,6 +169117,7 @@
     ],
     "subcategories": [
       "vanity-head",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -168607,6 +169172,7 @@
     ],
     "subcategories": [
       "vanity-body",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -168661,6 +169227,7 @@
     ],
     "subcategories": [
       "vanity-legs",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -168762,6 +169329,7 @@
     ],
     "subcategories": [
       "vanity-body",
+      "halloween-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -168817,6 +169385,7 @@
     ],
     "subcategories": [
       "vanity-legs",
+      "halloween-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -168872,6 +169441,7 @@
     ],
     "subcategories": [
       "vanity-head",
+      "halloween-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -169626,6 +170196,7 @@
     ],
     "subcategories": [
       "vanity-head",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -169678,6 +170249,7 @@
     ],
     "subcategories": [
       "vanity-body",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -169730,6 +170302,7 @@
     ],
     "subcategories": [
       "vanity-legs",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -174467,6 +175040,7 @@
     ],
     "subcategories": [
       "vanity-body",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -174522,6 +175096,7 @@
     ],
     "subcategories": [
       "vanity-legs",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -175926,6 +176501,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Goblin Warlock",
+    "bannerId": 186,
+    "bannerKills": 25,
     "eventOnly": true,
     "conditions": [],
     "milestone": "wall-of-flesh",
@@ -175981,6 +176558,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Salamander",
+    "bannerId": 187,
+    "bannerKills": 50,
     "conditions": [],
     "milestone": "start",
     "milestoneVia": "Dropped by Salamander"
@@ -176035,6 +176614,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Giant Shelly",
+    "bannerId": 188,
+    "bannerKills": 50,
     "conditions": [],
     "milestone": "start",
     "milestoneVia": "Dropped by Giant Shelly"
@@ -176089,6 +176670,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Crawdad",
+    "bannerId": 189,
+    "bannerKills": 50,
     "conditions": [],
     "milestone": "start",
     "milestoneVia": "Dropped by Crawdad"
@@ -176140,6 +176723,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Fritz",
+    "bannerId": 190,
+    "bannerKills": 50,
     "eventOnly": true,
     "conditions": [],
     "milestone": "any-mech",
@@ -176192,6 +176777,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Creature from the Deep",
+    "bannerId": 191,
+    "bannerKills": 50,
     "eventOnly": true,
     "conditions": [],
     "milestone": "any-mech",
@@ -176244,6 +176831,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Dr. Man Fly",
+    "bannerId": 192,
+    "bannerKills": 50,
     "eventOnly": true,
     "conditions": [],
     "milestone": "plantera",
@@ -176296,6 +176885,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Mothron",
+    "bannerId": 193,
+    "bannerKills": 25,
     "eventOnly": true,
     "conditions": [],
     "milestone": "plantera",
@@ -176348,6 +176939,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: {$NPCName.None}",
+    "bannerId": 194,
+    "bannerKills": 50,
     "conditions": []
   },
   {
@@ -176397,6 +176990,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: The Possessed",
+    "bannerId": 195,
+    "bannerKills": 50,
     "eventOnly": true,
     "conditions": [],
     "milestone": "any-mech",
@@ -176449,6 +177044,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Butcher",
+    "bannerId": 196,
+    "bannerKills": 50,
     "eventOnly": true,
     "conditions": [],
     "milestone": "plantera",
@@ -176501,6 +177098,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Psycho",
+    "bannerId": 197,
+    "bannerKills": 50,
     "eventOnly": true,
     "conditions": [],
     "milestone": "plantera",
@@ -176553,6 +177152,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Deadly Sphere",
+    "bannerId": 198,
+    "bannerKills": 50,
     "eventOnly": true,
     "conditions": [],
     "milestone": "plantera",
@@ -176605,6 +177206,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Nailhead",
+    "bannerId": 199,
+    "bannerKills": 25,
     "eventOnly": true,
     "conditions": [],
     "milestone": "plantera",
@@ -176654,6 +177257,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: {$NPCName.None}",
+    "bannerId": 200,
+    "bannerKills": 50,
     "conditions": []
   },
   {
@@ -176703,6 +177308,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Medusa",
+    "bannerId": 201,
+    "bannerKills": 50,
     "conditions": [],
     "milestone": "wall-of-flesh",
     "milestoneVia": "Dropped by Medusa"
@@ -176754,6 +177361,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Hoplite",
+    "bannerId": 202,
+    "bannerKills": 50,
     "conditions": [],
     "milestone": "start",
     "milestoneVia": "Dropped by Hoplite"
@@ -176805,6 +177414,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Granite Elemental",
+    "bannerId": 203,
+    "bannerKills": 50,
     "conditions": [],
     "milestone": "start",
     "milestoneVia": "Dropped by Granite Elemental"
@@ -176856,6 +177467,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Granite Golem",
+    "bannerId": 204,
+    "bannerKills": 50,
     "conditions": [],
     "milestone": "start",
     "milestoneVia": "Dropped by Granite Golem"
@@ -176907,6 +177520,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Blood Zombie",
+    "bannerId": 205,
+    "bannerKills": 50,
     "eventOnly": true,
     "conditions": [],
     "milestone": "start",
@@ -176959,6 +177574,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Drippler",
+    "bannerId": 206,
+    "bannerKills": 50,
     "eventOnly": true,
     "conditions": [],
     "milestone": "start",
@@ -177011,6 +177628,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Tomb Crawler",
+    "bannerId": 207,
+    "bannerKills": 50,
     "conditions": [],
     "milestone": "start",
     "milestoneVia": "Dropped by Tomb Crawler"
@@ -177062,6 +177681,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Dune Splicer",
+    "bannerId": 208,
+    "bannerKills": 50,
     "conditions": [],
     "milestone": "wall-of-flesh",
     "milestoneVia": "Dropped by Dune Splicer"
@@ -177113,6 +177734,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Antlion Swarmer",
+    "bannerId": 209,
+    "bannerKills": 50,
     "conditions": [],
     "milestone": "start",
     "milestoneVia": "Dropped by Antlion Swarmer"
@@ -177164,6 +177787,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Antlion Charger",
+    "bannerId": 210,
+    "bannerKills": 50,
     "conditions": [],
     "milestone": "start",
     "milestoneVia": "Dropped by Antlion Charger"
@@ -177218,6 +177843,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Ghoul",
+    "bannerId": 211,
+    "bannerKills": 50,
     "conditions": [],
     "milestone": "wall-of-flesh",
     "milestoneVia": "Dropped by Vile Ghoul"
@@ -177270,6 +177897,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Lamia",
+    "bannerId": 212,
+    "bannerKills": 50,
     "conditions": [],
     "milestone": "wall-of-flesh",
     "milestoneVia": "Dropped by Lamia"
@@ -177323,6 +177952,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Desert Spirit",
+    "bannerId": 213,
+    "bannerKills": 50,
     "conditions": [],
     "milestone": "wall-of-flesh",
     "milestoneVia": "Dropped by Desert Spirit"
@@ -177374,6 +178005,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Basilisk",
+    "bannerId": 214,
+    "bannerKills": 50,
     "conditions": [],
     "milestone": "wall-of-flesh",
     "milestoneVia": "Dropped by Basilisk"
@@ -177425,6 +178058,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Sand Poacher",
+    "bannerId": 215,
+    "bannerKills": 50,
     "conditions": [],
     "milestone": "wall-of-flesh",
     "milestoneVia": "Dropped by Sand Poacher"
@@ -177476,6 +178111,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Stargazer",
+    "bannerId": 216,
+    "bannerKills": 50,
     "eventOnly": true,
     "conditions": [],
     "milestone": "lunatic-cultist",
@@ -177528,6 +178165,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Milkyway Weaver",
+    "bannerId": 217,
+    "bannerKills": 50,
     "eventOnly": true,
     "conditions": [],
     "milestone": "lunatic-cultist",
@@ -177580,6 +178219,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Flow Invader",
+    "bannerId": 218,
+    "bannerKills": 50,
     "eventOnly": true,
     "conditions": [],
     "milestone": "lunatic-cultist",
@@ -177632,6 +178273,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Twinkle Popper",
+    "bannerId": 219,
+    "bannerKills": 50,
     "eventOnly": true,
     "conditions": [],
     "milestone": "lunatic-cultist",
@@ -177684,6 +178327,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Mini Star Cell",
+    "bannerId": 220,
+    "bannerKills": 50,
     "eventOnly": true,
     "conditions": [],
     "milestone": "lunatic-cultist",
@@ -177736,6 +178381,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Star Cell",
+    "bannerId": 221,
+    "bannerKills": 50,
     "eventOnly": true,
     "conditions": [],
     "milestone": "lunatic-cultist",
@@ -177788,6 +178435,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Corite",
+    "bannerId": 222,
+    "bannerKills": 50,
     "eventOnly": true,
     "conditions": [],
     "milestone": "lunatic-cultist",
@@ -177840,6 +178489,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Sroller",
+    "bannerId": 223,
+    "bannerKills": 50,
     "eventOnly": true,
     "conditions": [],
     "milestone": "lunatic-cultist",
@@ -177892,6 +178543,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Crawltipede",
+    "bannerId": 224,
+    "bannerKills": 50,
     "eventOnly": true,
     "conditions": [],
     "milestone": "lunatic-cultist",
@@ -177944,6 +178597,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Drakomire Rider",
+    "bannerId": 225,
+    "bannerKills": 50,
     "eventOnly": true,
     "conditions": [],
     "milestone": "lunatic-cultist",
@@ -177996,6 +178651,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Drakomire",
+    "bannerId": 226,
+    "bannerKills": 50,
     "eventOnly": true,
     "conditions": [],
     "milestone": "lunatic-cultist",
@@ -178048,6 +178705,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Selenian",
+    "bannerId": 227,
+    "bannerKills": 50,
     "eventOnly": true,
     "conditions": [],
     "milestone": "lunatic-cultist",
@@ -178100,6 +178759,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Predictor",
+    "bannerId": 228,
+    "bannerKills": 50,
     "eventOnly": true,
     "conditions": [],
     "milestone": "lunatic-cultist",
@@ -178152,6 +178813,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Brain Suckler",
+    "bannerId": 229,
+    "bannerKills": 50,
     "eventOnly": true,
     "conditions": [],
     "milestone": "lunatic-cultist",
@@ -178204,6 +178867,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Nebula Floater",
+    "bannerId": 230,
+    "bannerKills": 50,
     "eventOnly": true,
     "conditions": [],
     "milestone": "lunatic-cultist",
@@ -178256,6 +178921,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Evolution Beast",
+    "bannerId": 231,
+    "bannerKills": 50,
     "eventOnly": true,
     "conditions": [],
     "milestone": "lunatic-cultist",
@@ -178308,6 +178975,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Alien Larva",
+    "bannerId": 232,
+    "bannerKills": 50,
     "eventOnly": true,
     "conditions": [],
     "milestone": "lunatic-cultist",
@@ -178360,6 +179029,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Alien Queen",
+    "bannerId": 233,
+    "bannerKills": 50,
     "eventOnly": true,
     "conditions": [],
     "milestone": "lunatic-cultist",
@@ -178412,6 +179083,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Alien Hornet",
+    "bannerId": 234,
+    "bannerKills": 50,
     "eventOnly": true,
     "conditions": [],
     "milestone": "lunatic-cultist",
@@ -178464,6 +179137,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Vortexian",
+    "bannerId": 235,
+    "bannerKills": 50,
     "eventOnly": true,
     "conditions": [],
     "milestone": "lunatic-cultist",
@@ -178516,6 +179191,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Storm Diver",
+    "bannerId": 236,
+    "bannerKills": 50,
     "eventOnly": true,
     "conditions": [],
     "milestone": "lunatic-cultist",
@@ -178569,6 +179246,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Pirate Captain",
+    "bannerId": 237,
+    "bannerKills": 25,
     "eventOnly": true,
     "conditions": [],
     "milestone": "wall-of-flesh",
@@ -178622,6 +179301,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Pirate Deadeye",
+    "bannerId": 238,
+    "bannerKills": 50,
     "eventOnly": true,
     "conditions": [],
     "milestone": "wall-of-flesh",
@@ -178675,6 +179356,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Pirate Corsair",
+    "bannerId": 239,
+    "bannerKills": 50,
     "eventOnly": true,
     "conditions": [],
     "milestone": "wall-of-flesh",
@@ -178728,6 +179411,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Pirate Crossbower",
+    "bannerId": 240,
+    "bannerKills": 50,
     "eventOnly": true,
     "conditions": [],
     "milestone": "wall-of-flesh",
@@ -178780,6 +179465,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Martian Walker",
+    "bannerId": 241,
+    "bannerKills": 50,
     "eventOnly": true,
     "conditions": [],
     "milestone": "golem",
@@ -178832,6 +179519,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Red Devil",
+    "bannerId": 242,
+    "bannerKills": 50,
     "conditions": [],
     "milestone": "any-mech",
     "milestoneVia": "Dropped by Red Devil"
@@ -178883,6 +179572,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Pink Jellyfish",
+    "bannerId": 243,
+    "bannerKills": 50,
     "conditions": [],
     "milestone": "start",
     "milestoneVia": "Dropped by Pink Jellyfish"
@@ -178934,6 +179625,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Green Jellyfish",
+    "bannerId": 244,
+    "bannerKills": 50,
     "conditions": [],
     "milestone": "wall-of-flesh",
     "milestoneVia": "Dropped by Green Jellyfish"
@@ -178985,6 +179678,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Dark Mummy",
+    "bannerId": 245,
+    "bannerKills": 50,
     "conditions": [],
     "milestone": "wall-of-flesh",
     "milestoneVia": "Dropped by Dark Mummy"
@@ -179036,6 +179731,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Light Mummy",
+    "bannerId": 246,
+    "bannerKills": 50,
     "conditions": [],
     "milestone": "wall-of-flesh",
     "milestoneVia": "Dropped by Light Mummy"
@@ -179087,6 +179784,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Angry Bones",
+    "bannerId": 247,
+    "bannerKills": 50,
     "conditions": [],
     "milestone": "skeletron",
     "milestoneVia": "Dropped by Angry Bones"
@@ -179138,6 +179837,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Ice Tortoise",
+    "bannerId": 248,
+    "bannerKills": 50,
     "conditions": [],
     "milestone": "wall-of-flesh",
     "milestoneVia": "Dropped by Ice Tortoise"
@@ -180263,6 +180964,7 @@
     ],
     "subcategories": [
       "vanity-head",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -180315,6 +181017,7 @@
     ],
     "subcategories": [
       "vanity-body",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -185438,6 +186141,7 @@
     ],
     "subcategories": [
       "vanity-body",
+      "developer-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -185489,6 +186193,7 @@
     ],
     "subcategories": [
       "vanity-legs",
+      "developer-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -185588,6 +186293,7 @@
     ],
     "subcategories": [
       "vanity-accessory",
+      "developer-set",
       "vanity-sets",
       "other-accessory"
     ],
@@ -185686,6 +186392,7 @@
     ],
     "subcategories": [
       "vanity-head",
+      "developer-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -185784,6 +186491,7 @@
     ],
     "subcategories": [
       "vanity-head",
+      "developer-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -185835,6 +186543,7 @@
     ],
     "subcategories": [
       "vanity-body",
+      "developer-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -185886,6 +186595,7 @@
     ],
     "subcategories": [
       "vanity-legs",
+      "developer-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -185984,6 +186694,7 @@
     ],
     "subcategories": [
       "vanity-head",
+      "developer-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -186035,6 +186746,7 @@
     ],
     "subcategories": [
       "vanity-body",
+      "developer-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -186086,6 +186798,7 @@
     ],
     "subcategories": [
       "vanity-legs",
+      "developer-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -186216,6 +186929,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Sand Slime",
+    "bannerId": 249,
+    "bannerKills": 50,
     "conditions": [],
     "milestone": "start",
     "milestoneVia": "Dropped by Sand Slime"
@@ -186267,6 +186982,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Sea Snail",
+    "bannerId": 250,
+    "bannerKills": 50,
     "conditions": [],
     "milestone": "start",
     "milestoneVia": "Dropped by Sea Snail"
@@ -187888,7 +188605,8 @@
       "vanity"
     ],
     "subcategories": [
-      "vanity-head"
+      "vanity-head",
+      "vanity-piece"
     ],
     "obtain": [
       "vendor"
@@ -193037,7 +193755,8 @@
       "vanity"
     ],
     "subcategories": [
-      "vanity-head"
+      "vanity-head",
+      "vanity-piece"
     ],
     "obtain": [
       "vendor"
@@ -193088,6 +193807,7 @@
     ],
     "subcategories": [
       "vanity-head",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -193143,6 +193863,7 @@
     ],
     "subcategories": [
       "vanity-body",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -193198,6 +193919,7 @@
     ],
     "subcategories": [
       "vanity-legs",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -194371,6 +195093,7 @@
     ],
     "subcategories": [
       "vanity-head",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -194424,6 +195147,7 @@
     ],
     "subcategories": [
       "vanity-body",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -194477,6 +195201,7 @@
     ],
     "subcategories": [
       "vanity-legs",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -194669,7 +195394,8 @@
       "vanity"
     ],
     "subcategories": [
-      "vanity-head"
+      "vanity-head",
+      "vanity-piece"
     ],
     "obtain": [
       "drop",
@@ -195209,6 +195935,7 @@
     ],
     "subcategories": [
       "vanity-head",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -195258,6 +195985,7 @@
     ],
     "subcategories": [
       "vanity-body",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -195307,6 +196035,7 @@
     ],
     "subcategories": [
       "vanity-legs",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -195591,6 +196320,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Sand Elemental",
+    "bannerId": 251,
+    "bannerKills": 25,
     "eventOnly": true,
     "conditions": [],
     "milestone": "wall-of-flesh",
@@ -195756,6 +196487,7 @@
     ],
     "subcategories": [
       "vanity-legs",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -195808,6 +196540,7 @@
     ],
     "subcategories": [
       "vanity-body",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -195860,6 +196593,7 @@
     ],
     "subcategories": [
       "vanity-head",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -196050,6 +196784,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Sand Shark",
+    "bannerId": 252,
+    "bannerKills": 50,
     "eventOnly": true,
     "conditions": [],
     "milestone": "wall-of-flesh",
@@ -196102,6 +196838,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Bone Biter",
+    "bannerId": 253,
+    "bannerKills": 50,
     "eventOnly": true,
     "conditions": [],
     "milestone": "wall-of-flesh",
@@ -196154,6 +196892,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Flesh Reaver",
+    "bannerId": 254,
+    "bannerKills": 50,
     "eventOnly": true,
     "conditions": [],
     "milestone": "wall-of-flesh",
@@ -196206,6 +196946,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Crystal Thresher",
+    "bannerId": 255,
+    "bannerKills": 50,
     "eventOnly": true,
     "conditions": [],
     "milestone": "wall-of-flesh",
@@ -196258,6 +197000,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Angry Tumbler",
+    "bannerId": 256,
+    "bannerKills": 50,
     "eventOnly": true,
     "conditions": [],
     "milestone": "start",
@@ -198692,6 +199436,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a small bonus against: Etherian Goblin Bomber",
+    "bannerId": 257,
+    "bannerKills": 500,
     "eventOnly": true,
     "conditions": [],
     "milestone": "evil-boss",
@@ -198744,6 +199490,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a small bonus against: Etherian Goblin",
+    "bannerId": 258,
+    "bannerKills": 1000,
     "eventOnly": true,
     "conditions": [],
     "milestone": "evil-boss",
@@ -198796,6 +199544,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a small bonus against: Old One's Skeleton",
+    "bannerId": 259,
+    "bannerKills": 150,
     "eventOnly": true,
     "conditions": [],
     "milestone": "evil-boss",
@@ -198848,6 +199598,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a small bonus against: Drakin",
+    "bannerId": 260,
+    "bannerKills": 100,
     "eventOnly": true,
     "conditions": [],
     "milestone": "any-mech",
@@ -198900,6 +199652,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a small bonus against: Kobold Glider",
+    "bannerId": 261,
+    "bannerKills": 100,
     "eventOnly": true,
     "conditions": [],
     "milestone": "any-mech",
@@ -198952,6 +199706,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a small bonus against: Kobold",
+    "bannerId": 262,
+    "bannerKills": 200,
     "eventOnly": true,
     "conditions": [],
     "milestone": "any-mech",
@@ -199004,6 +199760,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a small bonus against: Wither Beast",
+    "bannerId": 263,
+    "bannerKills": 50,
     "eventOnly": true,
     "conditions": [],
     "milestone": "any-mech",
@@ -199056,6 +199814,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a small bonus against: Etherian Wyvern",
+    "bannerId": 264,
+    "bannerKills": 200,
     "eventOnly": true,
     "conditions": [],
     "milestone": "evil-boss",
@@ -199108,6 +199868,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a small bonus against: Etherian Javelin Thrower",
+    "bannerId": 265,
+    "bannerKills": 200,
     "eventOnly": true,
     "conditions": [],
     "milestone": "evil-boss",
@@ -199160,6 +199922,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a small bonus against: Etherian Lightning Bug",
+    "bannerId": 266,
+    "bannerKills": 50,
     "eventOnly": true,
     "conditions": [],
     "milestone": "any-mech",
@@ -202918,6 +203682,7 @@
     ],
     "subcategories": [
       "vanity-head",
+      "developer-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -202969,6 +203734,7 @@
     ],
     "subcategories": [
       "vanity-body",
+      "developer-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -203020,6 +203786,7 @@
     ],
     "subcategories": [
       "vanity-legs",
+      "developer-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -203118,6 +203885,7 @@
     ],
     "subcategories": [
       "vanity-head",
+      "developer-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -203169,6 +203937,7 @@
     ],
     "subcategories": [
       "vanity-body",
+      "developer-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -203220,6 +203989,7 @@
     ],
     "subcategories": [
       "vanity-legs",
+      "developer-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -203319,6 +204089,7 @@
     ],
     "subcategories": [
       "vanity-accessory",
+      "developer-set",
       "vanity-sets",
       "other-accessory"
     ],
@@ -213175,6 +213946,7 @@
     ],
     "subcategories": [
       "vanity-head",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -213224,6 +213996,7 @@
     ],
     "subcategories": [
       "vanity-body",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -213273,6 +214046,7 @@
     ],
     "subcategories": [
       "vanity-legs",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -213371,6 +214145,7 @@
     ],
     "subcategories": [
       "vanity-head",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -213420,6 +214195,7 @@
     ],
     "subcategories": [
       "vanity-body",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -213469,6 +214245,7 @@
     ],
     "subcategories": [
       "vanity-legs",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -213518,6 +214295,7 @@
     ],
     "subcategories": [
       "vanity-head",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -213570,6 +214348,7 @@
     ],
     "subcategories": [
       "vanity-body",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -213622,6 +214401,7 @@
     ],
     "subcategories": [
       "vanity-legs",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -213674,6 +214454,7 @@
     ],
     "subcategories": [
       "vanity-head",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -220379,6 +221160,7 @@
     ],
     "subcategories": [
       "vanity-head",
+      "vanity-piece",
       "cage-jar"
     ],
     "obtain": [
@@ -222705,6 +223487,7 @@
     ],
     "subcategories": [
       "vanity-body",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -222758,6 +223541,7 @@
     ],
     "subcategories": [
       "vanity-legs",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -222811,6 +223595,7 @@
     ],
     "subcategories": [
       "vanity-head",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -222863,6 +223648,7 @@
     ],
     "subcategories": [
       "vanity-body",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -233594,6 +234380,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: The Bride",
+    "bannerId": 267,
+    "bannerKills": 10,
     "conditions": [],
     "milestone": "start",
     "milestoneVia": "Dropped by The Bride"
@@ -233645,6 +234433,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Zombie Merman",
+    "bannerId": 268,
+    "bannerKills": 25,
     "eventOnly": true,
     "conditions": [],
     "milestone": "start",
@@ -233697,6 +234487,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Wandering Eye Fish",
+    "bannerId": 269,
+    "bannerKills": 25,
     "eventOnly": true,
     "conditions": [],
     "milestone": "start",
@@ -233749,6 +234541,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Blood Squid",
+    "bannerId": 270,
+    "bannerKills": 50,
     "eventOnly": true,
     "conditions": [],
     "milestone": "wall-of-flesh",
@@ -233801,6 +234595,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Blood Eel",
+    "bannerId": 271,
+    "bannerKills": 25,
     "eventOnly": true,
     "conditions": [],
     "milestone": "wall-of-flesh",
@@ -233853,6 +234649,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Hemogoblin Shark",
+    "bannerId": 272,
+    "bannerKills": 25,
     "eventOnly": true,
     "conditions": [],
     "milestone": "wall-of-flesh",
@@ -233966,7 +234764,8 @@
       "vanity"
     ],
     "subcategories": [
-      "vanity-head"
+      "vanity-head",
+      "vanity-piece"
     ],
     "obtain": [
       "vendor"
@@ -234274,6 +235073,7 @@
     ],
     "subcategories": [
       "vanity-head",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -234327,6 +235127,7 @@
     ],
     "subcategories": [
       "vanity-body",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -234379,6 +235180,7 @@
     ],
     "subcategories": [
       "vanity-legs",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -234429,7 +235231,8 @@
       "vanity"
     ],
     "subcategories": [
-      "vanity-head"
+      "vanity-head",
+      "vanity-piece"
     ],
     "obtain": [
       "vendor"
@@ -234478,7 +235281,8 @@
       "vanity"
     ],
     "subcategories": [
-      "vanity-head"
+      "vanity-head",
+      "vanity-piece"
     ],
     "obtain": [
       "vendor"
@@ -234529,6 +235333,7 @@
     ],
     "subcategories": [
       "vanity-head",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -234582,7 +235387,8 @@
       "vanity"
     ],
     "subcategories": [
-      "vanity-head"
+      "vanity-head",
+      "vanity-piece"
     ],
     "obtain": [
       "vendor"
@@ -234631,7 +235437,8 @@
       "vanity"
     ],
     "subcategories": [
-      "vanity-head"
+      "vanity-head",
+      "vanity-piece"
     ],
     "obtain": [
       "vendor"
@@ -236686,6 +237493,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Dreadnautilus",
+    "bannerId": 273,
+    "bannerKills": 10,
     "eventOnly": true,
     "conditions": [],
     "milestone": "wall-of-flesh",
@@ -239153,6 +239962,7 @@
     ],
     "subcategories": [
       "vanity-head",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -239202,6 +240012,7 @@
     ],
     "subcategories": [
       "vanity-body",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -239251,6 +240062,7 @@
     ],
     "subcategories": [
       "vanity-legs",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -239766,6 +240578,7 @@
     ],
     "subcategories": [
       "vanity-body",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -239818,6 +240631,7 @@
     ],
     "subcategories": [
       "vanity-legs",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -239870,6 +240684,7 @@
     ],
     "subcategories": [
       "vanity-head",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -240861,6 +241676,7 @@
     ],
     "subcategories": [
       "vanity-head",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -240915,6 +241731,7 @@
     ],
     "subcategories": [
       "vanity-body",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -241002,6 +241819,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Angry Dandelion",
+    "bannerId": 274,
+    "bannerKills": 50,
     "eventOnly": true,
     "conditions": [],
     "milestone": "start",
@@ -241052,6 +241871,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Gnome",
+    "bannerId": 275,
+    "bannerKills": 25,
     "conditions": [],
     "milestone": "start",
     "milestoneVia": "Dropped by Gnome"
@@ -241825,6 +242646,7 @@
     ],
     "subcategories": [
       "vanity-head",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -241879,6 +242701,7 @@
     ],
     "subcategories": [
       "vanity-body",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -241933,6 +242756,7 @@
     ],
     "subcategories": [
       "vanity-legs",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -242045,6 +242869,7 @@
     ],
     "subcategories": [
       "vanity-head",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -242099,6 +242924,7 @@
     ],
     "subcategories": [
       "vanity-body",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -243275,6 +244101,7 @@
     ],
     "subcategories": [
       "vanity-head",
+      "developer-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -243326,6 +244153,7 @@
     ],
     "subcategories": [
       "vanity-body",
+      "developer-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -243377,6 +244205,7 @@
     ],
     "subcategories": [
       "vanity-legs",
+      "developer-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -243583,6 +244412,7 @@
     ],
     "subcategories": [
       "vanity-head",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -243635,6 +244465,7 @@
     ],
     "subcategories": [
       "vanity-body",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -243687,6 +244518,7 @@
     ],
     "subcategories": [
       "vanity-head",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -243739,6 +244571,7 @@
     ],
     "subcategories": [
       "vanity-body",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -243791,6 +244624,7 @@
     ],
     "subcategories": [
       "vanity-legs",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -244041,6 +244875,7 @@
     ],
     "subcategories": [
       "vanity-head",
+      "developer-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -244092,6 +244927,7 @@
     ],
     "subcategories": [
       "vanity-body",
+      "developer-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -244143,6 +244979,7 @@
     ],
     "subcategories": [
       "vanity-legs",
+      "developer-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -244241,6 +245078,7 @@
     ],
     "subcategories": [
       "vanity-head",
+      "developer-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -244292,6 +245130,7 @@
     ],
     "subcategories": [
       "vanity-body",
+      "developer-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -244343,6 +245182,7 @@
     ],
     "subcategories": [
       "vanity-legs",
+      "developer-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -244441,6 +245281,7 @@
     ],
     "subcategories": [
       "vanity-head",
+      "developer-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -244492,6 +245333,7 @@
     ],
     "subcategories": [
       "vanity-body",
+      "developer-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -244543,6 +245385,7 @@
     ],
     "subcategories": [
       "vanity-legs",
+      "developer-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -244756,6 +245599,7 @@
     ],
     "subcategories": [
       "vanity-head",
+      "vanity-piece",
       "other-furniture"
     ],
     "obtain": [
@@ -245131,6 +245975,7 @@
     ],
     "subcategories": [
       "vanity-head",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -245187,6 +246032,7 @@
     ],
     "subcategories": [
       "vanity-accessory",
+      "other-vanity-set",
       "vanity-sets",
       "other-accessory"
     ],
@@ -245240,7 +246086,8 @@
       "vanity"
     ],
     "subcategories": [
-      "vanity-head"
+      "vanity-head",
+      "other-vanity-set"
     ],
     "obtain": [
       "vendor"
@@ -245294,6 +246141,7 @@
     ],
     "subcategories": [
       "vanity-accessory",
+      "other-vanity-set",
       "other-accessory"
     ],
     "obtain": [
@@ -245347,6 +246195,7 @@
     ],
     "subcategories": [
       "vanity-head",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -245403,6 +246252,7 @@
     ],
     "subcategories": [
       "vanity-accessory",
+      "other-vanity-set",
       "vanity-sets",
       "other-accessory"
     ],
@@ -245456,7 +246306,8 @@
       "vanity"
     ],
     "subcategories": [
-      "vanity-head"
+      "vanity-head",
+      "vanity-piece"
     ],
     "obtain": [
       "vendor"
@@ -245508,6 +246359,7 @@
     ],
     "subcategories": [
       "vanity-accessory",
+      "other-vanity-set",
       "vanity-sets",
       "other-accessory"
     ],
@@ -245714,6 +246566,7 @@
     ],
     "subcategories": [
       "vanity-head",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -245762,6 +246615,7 @@
     ],
     "subcategories": [
       "vanity-body",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -245810,6 +246664,7 @@
     ],
     "subcategories": [
       "vanity-legs",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -254390,7 +255245,8 @@
       "vanity"
     ],
     "subcategories": [
-      "vanity-head"
+      "vanity-head",
+      "vanity-piece"
     ],
     "obtain": [
       "vendor"
@@ -254912,6 +255768,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Rock Golem",
+    "bannerId": 276,
+    "bannerKills": 50,
     "conditions": [],
     "milestone": "wall-of-flesh",
     "milestoneVia": "Dropped by Rock Golem"
@@ -254963,6 +255821,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Blood Mummy",
+    "bannerId": 277,
+    "bannerKills": 50,
     "conditions": [],
     "milestone": "wall-of-flesh",
     "milestoneVia": "Dropped by Blood Mummy"
@@ -255014,6 +255874,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Spore Skeleton",
+    "bannerId": 278,
+    "bannerKills": 50,
     "conditions": [],
     "milestone": "start",
     "milestoneVia": "Dropped by Spore Skeleton"
@@ -255065,6 +255927,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Spore Bat",
+    "bannerId": 279,
+    "bannerKills": 50,
     "conditions": [],
     "milestone": "start",
     "milestoneVia": "Dropped by Spore Bat"
@@ -255116,6 +255980,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Antlion Larva",
+    "bannerId": 280,
+    "bannerKills": 50,
     "conditions": [],
     "milestone": "start",
     "milestoneVia": "Dropped by Antlion Larva"
@@ -255167,6 +256033,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Vicious Bunny",
+    "bannerId": 281,
+    "bannerKills": 50,
     "eventOnly": true,
     "conditions": [],
     "milestone": "start",
@@ -255219,6 +256087,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Vicious Goldfish",
+    "bannerId": 282,
+    "bannerKills": 50,
     "conditions": [],
     "milestone": "start",
     "milestoneVia": "Dropped by Vicious Goldfish"
@@ -255270,6 +256140,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Vicious Penguin",
+    "bannerId": 283,
+    "bannerKills": 50,
     "eventOnly": true,
     "conditions": [],
     "milestone": "start",
@@ -255322,6 +256194,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Corrupt Mimic",
+    "bannerId": 284,
+    "bannerKills": 25,
     "conditions": [],
     "milestone": "wall-of-flesh",
     "milestoneVia": "Dropped by Corrupt Mimic"
@@ -255373,6 +256247,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Crimson Mimic",
+    "bannerId": 285,
+    "bannerKills": 25,
     "conditions": [],
     "milestone": "wall-of-flesh",
     "milestoneVia": "Dropped by Crimson Mimic"
@@ -255424,6 +256300,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Hallowed Mimic",
+    "bannerId": 286,
+    "bannerKills": 25,
     "conditions": [],
     "milestone": "wall-of-flesh",
     "milestoneVia": "Dropped by Hallowed Mimic"
@@ -255475,6 +256353,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Moss Hornet",
+    "bannerId": 287,
+    "bannerKills": 50,
     "conditions": [],
     "milestone": "wall-of-flesh",
     "milestoneVia": "Dropped by Moss Hornet"
@@ -255528,6 +256408,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Wandering Eye",
+    "bannerId": 288,
+    "bannerKills": 50,
     "conditions": [
       "night"
     ],
@@ -256362,6 +257244,7 @@
     ],
     "subcategories": [
       "vanity-head",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -256416,6 +257299,7 @@
     ],
     "subcategories": [
       "vanity-head",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -256470,6 +257354,7 @@
     ],
     "subcategories": [
       "vanity-head",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -256524,6 +257409,7 @@
     ],
     "subcategories": [
       "vanity-body",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -256578,6 +257464,7 @@
     ],
     "subcategories": [
       "vanity-body",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -256632,6 +257519,7 @@
     ],
     "subcategories": [
       "vanity-body",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -256880,7 +257768,8 @@
       "vanity"
     ],
     "subcategories": [
-      "vanity-head"
+      "vanity-head",
+      "vanity-piece"
     ],
     "obtain": [
       "drop"
@@ -259044,6 +259933,7 @@
     ],
     "subcategories": [
       "vanity-head",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -259094,6 +259984,7 @@
     ],
     "subcategories": [
       "vanity-body",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -259144,6 +260035,7 @@
     ],
     "subcategories": [
       "vanity-legs",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -259238,6 +260130,7 @@
     ],
     "subcategories": [
       "vanity-head",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -259288,6 +260181,7 @@
     ],
     "subcategories": [
       "vanity-body",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -259338,6 +260232,7 @@
     ],
     "subcategories": [
       "vanity-legs",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -259388,6 +260283,7 @@
     ],
     "subcategories": [
       "vanity-head",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -259476,6 +260372,7 @@
     ],
     "subcategories": [
       "vanity-body",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -259526,6 +260423,7 @@
     ],
     "subcategories": [
       "vanity-legs",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -259576,6 +260474,7 @@
     ],
     "subcategories": [
       "vanity-head",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -259669,6 +260568,7 @@
     ],
     "subcategories": [
       "vanity-body",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -259762,6 +260662,7 @@
     ],
     "subcategories": [
       "vanity-legs",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -259812,6 +260713,7 @@
     ],
     "subcategories": [
       "vanity-head",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -259862,6 +260764,7 @@
     ],
     "subcategories": [
       "vanity-body",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -259912,6 +260815,7 @@
     ],
     "subcategories": [
       "vanity-legs",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -259962,6 +260866,7 @@
     ],
     "subcategories": [
       "vanity-legs",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -260012,6 +260917,7 @@
     ],
     "subcategories": [
       "vanity-head",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -260062,6 +260968,7 @@
     ],
     "subcategories": [
       "vanity-body",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -260112,6 +261019,7 @@
     ],
     "subcategories": [
       "vanity-legs",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -260504,6 +261412,7 @@
     ],
     "subcategories": [
       "vanity-head",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -260556,6 +261465,7 @@
     ],
     "subcategories": [
       "vanity-body",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -260608,6 +261518,7 @@
     ],
     "subcategories": [
       "vanity-legs",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -260985,6 +261896,7 @@
     ],
     "subcategories": [
       "vanity-body",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -261080,6 +261992,7 @@
     ],
     "subcategories": [
       "vanity-legs",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -261133,6 +262046,7 @@
     ],
     "subcategories": [
       "vanity-accessory",
+      "other-vanity-set",
       "vanity-sets",
       "other-accessory"
     ],
@@ -262118,7 +263032,8 @@
       "vanity"
     ],
     "subcategories": [
-      "vanity-head"
+      "vanity-head",
+      "vanity-piece"
     ],
     "obtain": [
       "crafted"
@@ -262212,7 +263127,8 @@
       "vanity"
     ],
     "subcategories": [
-      "vanity-head"
+      "vanity-head",
+      "vanity-piece"
     ],
     "obtain": [
       "drop",
@@ -262262,6 +263178,7 @@
     ],
     "subcategories": [
       "vanity-body",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -262311,6 +263228,7 @@
     ],
     "subcategories": [
       "vanity-legs",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -262361,6 +263279,7 @@
     ],
     "subcategories": [
       "vanity-accessory",
+      "other-vanity-set",
       "vanity-sets",
       "other-accessory"
     ],
@@ -262417,6 +263336,7 @@
     ],
     "subcategories": [
       "vanity-accessory",
+      "other-vanity-set",
       "vanity-sets",
       "material-equipment",
       "other-accessory"
@@ -262470,6 +263390,7 @@
     ],
     "subcategories": [
       "vanity-accessory",
+      "other-vanity-set",
       "vanity-sets",
       "material-equipment",
       "other-accessory"
@@ -262917,6 +263838,7 @@
     ],
     "subcategories": [
       "vanity-body",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -262966,6 +263888,7 @@
     ],
     "subcategories": [
       "vanity-legs",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -263978,7 +264901,8 @@
       "vanity"
     ],
     "subcategories": [
-      "vanity-head"
+      "vanity-head",
+      "vanity-piece"
     ],
     "obtain": [
       "vendor"
@@ -271622,7 +272546,8 @@
       "vanity"
     ],
     "subcategories": [
-      "vanity-head"
+      "vanity-head",
+      "vanity-piece"
     ],
     "obtain": [
       "drop"
@@ -272373,7 +273298,8 @@
       "vanity"
     ],
     "subcategories": [
-      "vanity-head"
+      "vanity-head",
+      "vanity-piece"
     ],
     "obtain": [
       "vendor"
@@ -274681,6 +275607,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Shimmer Slime",
+    "bannerId": 289,
+    "bannerKills": 50,
     "conditions": [],
     "milestone": "start",
     "milestoneVia": "Dropped by Shimmer Slime"
@@ -276213,7 +277141,8 @@
       "vanity"
     ],
     "subcategories": [
-      "vanity-head"
+      "vanity-head",
+      "vanity-piece"
     ],
     "obtain": [
       "drop",
@@ -276263,6 +277192,7 @@
     ],
     "subcategories": [
       "vanity-body",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -276316,6 +277246,7 @@
     ],
     "subcategories": [
       "vanity-legs",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -276472,6 +277403,7 @@
     ],
     "subcategories": [
       "vanity-head",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -279730,6 +280662,7 @@
     ],
     "subcategories": [
       "vanity-head",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -279780,6 +280713,7 @@
     ],
     "subcategories": [
       "vanity-body",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -279830,6 +280764,7 @@
     ],
     "subcategories": [
       "vanity-legs",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -282674,7 +283609,8 @@
       "vanity"
     ],
     "subcategories": [
-      "vanity-body"
+      "vanity-body",
+      "vanity-piece"
     ],
     "obtain": [
       "loot",
@@ -286055,6 +286991,7 @@
     ],
     "subcategories": [
       "vanity-head",
+      "developer-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -286106,6 +287043,7 @@
     ],
     "subcategories": [
       "vanity-body",
+      "developer-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -286157,6 +287095,7 @@
     ],
     "subcategories": [
       "vanity-legs",
+      "developer-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -286256,6 +287195,7 @@
     ],
     "subcategories": [
       "vanity-accessory",
+      "developer-set",
       "vanity-sets",
       "other-accessory"
     ],
@@ -288089,6 +289029,7 @@
     ],
     "subcategories": [
       "vanity-head",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -288139,6 +289080,7 @@
     ],
     "subcategories": [
       "vanity-body",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -288189,6 +289131,7 @@
     ],
     "subcategories": [
       "vanity-legs",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -288286,6 +289229,7 @@
     ],
     "subcategories": [
       "vanity-accessory",
+      "other-vanity-set",
       "vanity-sets",
       "other-accessory"
     ],
@@ -289218,6 +290162,7 @@
     ],
     "subcategories": [
       "vanity-body",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -289267,6 +290212,7 @@
     ],
     "subcategories": [
       "vanity-legs",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -289314,7 +290260,8 @@
       "vanity"
     ],
     "subcategories": [
-      "vanity-body"
+      "vanity-body",
+      "vanity-piece"
     ],
     "obtain": [
       "crafted"
@@ -289360,7 +290307,8 @@
       "vanity"
     ],
     "subcategories": [
-      "vanity-legs"
+      "vanity-legs",
+      "vanity-piece"
     ],
     "obtain": [
       "crafted"
@@ -289406,7 +290354,8 @@
       "vanity"
     ],
     "subcategories": [
-      "vanity-legs"
+      "vanity-legs",
+      "vanity-piece"
     ],
     "obtain": [
       "crafted"
@@ -289488,6 +290437,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Orca",
+    "bannerId": 290,
+    "bannerKills": 50,
     "conditions": [],
     "milestone": "wall-of-flesh",
     "milestoneVia": "Dropped by Orca"
@@ -289702,6 +290653,7 @@
     ],
     "subcategories": [
       "vanity-head",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -289751,6 +290703,7 @@
     ],
     "subcategories": [
       "vanity-body",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -289800,6 +290753,7 @@
     ],
     "subcategories": [
       "vanity-legs",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -289893,7 +290847,8 @@
       "vanity"
     ],
     "subcategories": [
-      "vanity-head"
+      "vanity-head",
+      "vanity-piece"
     ],
     "obtain": [
       "crafted"
@@ -290531,6 +291486,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Librarian Skeleton",
+    "bannerId": 291,
+    "bannerKills": 50,
     "conditions": [],
     "milestone": "skeletron",
     "milestoneVia": "Dropped by Librarian Skeleton"
@@ -290582,6 +291539,8 @@
     "placedWidth": 1,
     "placedHeight": 3,
     "tooltip": "Nearby players get a bonus against: Water Bolt Mimic",
+    "bannerId": 292,
+    "bannerKills": 50,
     "conditions": [],
     "milestone": "skeletron",
     "milestoneVia": "Dropped by Water Bolt Mimic"
@@ -290876,6 +291835,7 @@
     ],
     "subcategories": [
       "vanity-head",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -290928,6 +291888,7 @@
     ],
     "subcategories": [
       "vanity-body",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -290980,6 +291941,7 @@
     ],
     "subcategories": [
       "vanity-legs",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -291033,6 +291995,7 @@
     ],
     "subcategories": [
       "vanity-head",
+      "developer-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -291084,6 +292047,7 @@
     ],
     "subcategories": [
       "vanity-body",
+      "developer-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -291135,6 +292099,7 @@
     ],
     "subcategories": [
       "vanity-legs",
+      "developer-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -293574,6 +294539,7 @@
     ],
     "subcategories": [
       "vanity-body",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -293629,6 +294595,7 @@
     ],
     "subcategories": [
       "vanity-legs",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -313055,6 +314022,7 @@
     ],
     "subcategories": [
       "vanity-head",
+      "developer-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -313106,6 +314074,7 @@
     ],
     "subcategories": [
       "vanity-body",
+      "developer-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -313157,6 +314126,7 @@
     ],
     "subcategories": [
       "vanity-legs",
+      "developer-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -313256,6 +314226,7 @@
     ],
     "subcategories": [
       "vanity-accessory",
+      "developer-set",
       "vanity-sets",
       "other-accessory"
     ],
