@@ -179,14 +179,17 @@ class Drops:
         return next((gid for gid, g in self.containers.items() if g.get("fallback")), None)
 
     def containers_file(self):
-        """containers.json: the container groups in mapping order, each with its sources (by
-        name), icon and the number of items found in them."""
+        """containers.json: the container groups of the "Found in" filter in mapping order, each
+        with its sources (by name), icon and the number of items found in them. Not the groups
+        with `filter = false` (shaking trees: an "Obtained by" method instead)."""
         items_by_source = defaultdict(set)
         for key, entries in self.drops.items():
             for d in entries:
                 items_by_source[d["source"]].add(key)
         out = []
         for gid, group in self.containers.items():
+            if group.get("filter") is False:
+                continue
             sids = sorted((sid for sid, s in self.sources.items() if s.get("group") == gid),
                           key=lambda sid: self.sources[sid]["name"].lower())
             found = self.by_name.get(norm_name(group.get("icon", "")))

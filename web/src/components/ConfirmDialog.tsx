@@ -12,22 +12,34 @@ import {
 
 export function ConfirmDialogHost() {
   const { options, resolve } = useConfirmStore()
-  const finish = (ok: boolean) => {
-    resolve?.(ok)
+  const finish = (answer: string | null) => {
+    resolve?.(answer)
     useConfirmStore.setState({ options: null, resolve: null })
   }
   return (
-    <AlertDialog open={!!options} onOpenChange={(open) => !open && finish(false)}>
+    <AlertDialog open={!!options} onOpenChange={(open) => !open && finish(null)}>
       <AlertDialogContent>
         <AlertDialogHeader>
           <AlertDialogTitle>{options?.title}</AlertDialogTitle>
           {options?.description && <AlertDialogDescription>{options.description}</AlertDialogDescription>}
         </AlertDialogHeader>
         <AlertDialogFooter>
-          <AlertDialogCancel onClick={() => finish(false)}>Cancel</AlertDialogCancel>
-          <AlertDialogAction variant={options?.destructive ? 'destructive' : 'default'} onClick={() => finish(true)}>
-            {options?.confirmLabel ?? 'Continue'}
-          </AlertDialogAction>
+          <AlertDialogCancel onClick={() => finish(null)}>Cancel</AlertDialogCancel>
+          {options?.choices ? (
+            options.choices.map((c) => (
+              <AlertDialogAction
+                key={c.id}
+                variant={c.destructive ? 'destructive' : 'default'}
+                onClick={() => finish(c.id)}
+              >
+                {c.label}
+              </AlertDialogAction>
+            ))
+          ) : (
+            <AlertDialogAction variant={options?.destructive ? 'destructive' : 'default'} onClick={() => finish('ok')}>
+              {options?.confirmLabel ?? 'Continue'}
+            </AlertDialogAction>
+          )}
         </AlertDialogFooter>
       </AlertDialogContent>
     </AlertDialog>

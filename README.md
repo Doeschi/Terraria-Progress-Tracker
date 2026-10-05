@@ -6,8 +6,9 @@ Track which Terraria items and bestiary entries you have collected, per playthro
 difficulty and game version – with filters and progress for categories, sources, bosses, events,
 biomes and crafting, recipes and drops per item, and sync with your world file (chests and
 bestiary) and your player file (inventory, banks, Void Vault, used upgrades). Runs entirely in the
-browser: progress is stored in a JSON file on your computer, world and player files are read
-locally, and nothing is uploaded. See [REQUIREMENTS.md](REQUIREMENTS.md) for the
+browser: progress is stored in a JSON file on your computer – or, if you choose so, in your own
+Google Drive, to use it on several devices – world and player files are read locally, and nothing
+else is uploaded. See [REQUIREMENTS.md](REQUIREMENTS.md) for the
 full feature list.
 
 ## Contents
@@ -50,7 +51,7 @@ the unchanged downloads in [`pipeline/raw/`](pipeline/raw).
 | `conditions.json` | Conditions of shop rows and drops: time of day, moon phases, after a boss, wind, Hardmode, world seeds – with item counts |
 | `milestones.json` | Progression milestones (World creation, King Slime, … Moon Lord); `items.json` gives each item its earliest milestone and the reason (e.g. "Crafted – needs Slime Block → Solidifier: Dropped by King Slime") |
 | `sprites.json` + `icons/` | The wiki images the app shows (about 6,800: item and filter icons, enemies, bosses, critters) packed into 4 sprite sheets, with each image's sheet and position (`build_icons.py`) |
-| `containers.json` | The container sources grouped into Chests, Crates, Other containers and Trees, with item counts |
+| `containers.json` | The container sources of the "Found in" filter grouped into Chests, Crates and Other containers, with item counts (shaking trees are an "Obtained by" method) |
 | `bosses.json` | Bosses by progression stage, each with all drop sources that count for it (parts, treasure bag) |
 | `recipes.json` | 3,655 crafting recipes (current versions, platform-limited ones marked), 42 crafting stations with the items that provide them (stronger stations included), 34 "Any …" ingredient groups resolved to items, 287 shimmer transmutations |
 | `extractinator.json` | 198 results of the Extractinator and the Chlorophyte Extractinator for 74 items: per input (Silt / Slush, Desert Fossil, moss, junk, Poo) with chance and amount, and 57 conversions (Copper Ore → Tin Ore, Demonite → Crimtane, …) |

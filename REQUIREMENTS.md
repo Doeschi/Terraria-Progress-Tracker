@@ -13,7 +13,8 @@ GitHub Actions.
 
 - **G1** Everything runs in the browser. No backend, no analytics, no tracking data is sent
   anywhere. The only outgoing requests are for the app files and for item icons from
-  terraria.wiki.gg (sent with `referrerpolicy="no-referrer"`).
+  terraria.wiki.gg (sent with `referrerpolicy="no-referrer"`) – and, only when the user chooses
+  Google Drive for the progress file (GD), to Google: its sign-in and the user's own Drive.
 - **G2** Modern UI with dark and light mode (follows system setting, can be switched).
 - **G3** Desktop first, but usable on tablets and phones.
 - **G4** Credits the Terraria Wiki as data and icon source (CC BY-NC-SA 4.0) with a link.
@@ -74,7 +75,8 @@ GitHub Actions.
   boss treasure bags and containers (chests, crates, lock boxes, grab bags, shaking trees).
 - **D11a** Container sources get a group from `mapping.toml` (`[containers]`, matched by name):
   Chests, Crates, Trees (shaking a tree) and Other containers (lock boxes, Goodie Bag, Present,
-  Geode, …). Sources that are no item themselves (e.g. "Gold Chest (Dungeon)", "Shaking Forest
+  Geode, …). The Trees are not a group of the "Found in" filter (`filter = false`): shaking a
+  tree is the "Obtained by" method "Shaking trees" (D8a). Sources that are no item themselves (e.g. "Gold Chest (Dungeon)", "Shaking Forest
   tree") get the icon of the item without the suffix or of a configured item (the tree's wood).
   Container drops do not add events, biomes or times of day, and an item found in a container is
   not "only obtainable during events".
@@ -140,7 +142,8 @@ GitHub Actions.
   the biome keys of old-gen recipes and is per page; conversions in an Extractinator are no
   crafting), drops (enemies →
   Dropped by enemies, boss treasure bags, chests → Found in chests & pots, crates and grab bags,
-  shaking trees → Collected in the world), shimmer transmutations ("Shimmer transformation"),
+  shaking trees → Shaking trees – 29 items: the fruit, Acorns, Eucalyptus Sap …; the wiki tags
+  them as "loot", which only stays for the ones a chest holds as well), shimmer transmutations ("Shimmer transformation"),
   critters ("Caught with a Bug Net"), the Extractinators (B6), and by name: music boxes
   ("Recorded (Music Box)"), grave markers of the page "Tombstones" ("Player death"; the golden
   ones when dying with at least 10 gold coins – from the start, though pirates drop them too), Methods with
@@ -315,7 +318,9 @@ needs a decision is reported, and parsers that read page text must not silently 
   newest file is easy to find. The file button and "Continue where you left off" show
   "Browser copy" (the state kept in the browser); the tooltip names the last download or the
   opened file.
-- **F3** "Save as" is always available.
+- **F3** "Save as" is always available. A new file that was never saved has no "Save" entry in
+  the File menu – only "Save as…" and "Save to Google Drive" (GD3); Ctrl+S asks where to save it.
+  Opening a file from disk is "Open local file…", next to "Open from Google Drive…".
 - **F4** Unsaved changes are shown in the UI, and the browser warns before the tab is
   closed with unsaved changes.
 - **F5** A backup of the current state is kept locally in the browser (IndexedDB) after
@@ -345,14 +350,61 @@ needs a decision is reported, and parsers that read page text must not silently 
   playthroughs is no change to the file); older files with `activePlaythroughId` are read once as a
   fallback, otherwise the first playthrough is selected.
 
-- **F8** Autosave (off by default; switch in the File menu, remembered in the browser, PR1): only
-  where the file is written in place (Chrome/Edge) and only once the file exists on disk (after
-  the first manual save / when opened). While there are unsaved changes it saves every 2
+- **F8** Autosave (off by default; remembered in the browser, PR1): only where the file is
+  written in place (Chrome/Edge) and only once the file exists on disk (after the first manual
+  save / when opened) – the switch appears in the File menu only then, not for a file never saved
+  and not for a Drive file (GD4). While there are unsaved changes it saves every 2
   minutes, and also when the tab is hidden or the page is closed. It never shows a dialog: if
   the browser has no write permission in this session (e.g. after a reload) autosave pauses;
   next to the label "File" the header shows "Saved 14:05" (a file icon with a check – a file on
   this computer, nothing is uploaded), "Autosave paused" or "Autosave failed" (both clickable:
   ask for permission / retry), or "save once first".
+## GD – Google Drive
+
+- **GD1** The progress file can be opened from and saved to the user's Google Drive, for
+  devices without a sync client (phones, tablets) and for switching between devices. Only the
+  progress file: world and player files are never uploaded. On another device a playthrough
+  arrives with its checkmarks and areas; its world and player are attached there again (the
+  file only stores their name and id, F7).
+- **GD2** A visible file in the user's Drive (permission `drive.file`: the app sees only the
+  files it created itself), no hidden app folder – the user can see, download and delete it.
+  New files go into a folder "Terraria Progress Tracker" in "My Drive", which the app creates on
+  the first save. The user may rename or move the folder and the files: the app finds the folder
+  again as the (oldest) folder it created, and lists its files wherever they are.
+- **GD3** File menu (also in the phone's menu) and start page: "Open from Google Drive…" – after
+  the sign-in a list of the app's files in the Drive, newest first, with name and last change.
+  File menu: "Save to Google Drive" for a local or new file – a dialog asks for the file name
+  (preset: the name of the open file; ".json" is added) and it becomes a new file in the Drive
+  that lives there from then on: the file button shows a cloud, "Save"
+  writes to the Drive, and "Save as…" becomes "Save a local copy…" (the Drive file stays open).
+  "Sign out of Google Drive" (with the account's address) forgets the access and the account on
+  this device; the files stay in the Drive. In the list every file has a delete button: after a
+  confirmation the file goes to the trash of the Drive (restorable there for 30 days – the app
+  deletes nothing for good). The open file is marked in the list; deleting it leaves the progress
+  open as an unsaved file.
+- **GD4** Saving a Drive file is always manual (Save / Ctrl+S). No autosave for Drive files
+  for now; the autosave switch (F8) is only offered for local files. Unsaved changes are shown
+  as today (F4), the backup in the browser (F5) stays the safety net and remembers the Drive
+  file. Next to "File" the header shows "Saved 14:05" with a cloud after a save.
+- **GD5** Changes from another device: the app remembers the revision of the Drive file it
+  loaded or saved last and checks it before saving. If the file was changed elsewhere, it asks:
+  "Load that version" (the changes here are dropped), "Save mine as a copy" (a new Drive file
+  "name (copy 2026-10-05 14-32).json", which is then the open file) or "Overwrite". No automatic
+  merging for now. "Continue where you left off" with a Drive file checks right away: without
+  unsaved changes a newer version is loaded, with them the app asks first; if the Drive cannot be
+  reached the session continues and saving checks again. A file deleted or put in the trash:
+  saving offers to save it as a new file.
+- **GD6** Sign-in: Google Identity Services in the browser (no backend). An access lasts about
+  an hour, is kept only in memory and can only be renewed from a click or key press – saving is
+  one, so after an hour (or a reload) the next save or open shows Google's window for a moment.
+  The account's address is remembered on the device, so Google's window does not ask for the
+  account again. Google's script is loaded only when the user chooses the Drive; nothing is
+  sent to Google otherwise. The start page and the About dialog say that the progress file goes
+  to the user's own Drive only when chosen (G1).
+- **GD7** Setup: a Google Cloud project with the Drive API and an OAuth client of type "Web
+  application" (allowed origins: the Pages address and the local dev server); the client id is
+  public and part of the code.
+
 ## P – Playthroughs
 
 - **P1** A file holds any number of playthroughs.
@@ -369,6 +421,16 @@ needs a decision is reported, and parsers that read page text must not silently 
   new, edit, delete; the button shows the name and the icons of platform, difficulty and game
   version, their names on hover; in the settings they can be shown as three separate dropdowns),
   Player, World, one sync button for both, and the overall Progress.
+- **P5a** The desktop header is always one line. When the window is too narrow for it, its texts
+  give way to their icons step by step (the names stay on hover), as far as needed for what it
+  holds at the moment – measured, so long names step earlier than short ones: (1) the app name
+  next to the logo and "(not loaded)" after the player and the world, (2) Player and World as
+  icons, (3) File as an icon, with the save status as an icon, (4) Progress with icons instead of
+  "Items" / "Bestiary" and only the percentage, the Items / Bestiary switch as icons, (5) the
+  playthrough button without the name (the platform, difficulty and version icons stay), (6) no
+  Progress, (7) no GitHub and About buttons (About is also at the bottom of the filter sidebar).
+  Should even that not fit, the controls can be scrolled sideways. Widening the window brings the
+  texts back in the reverse order. The phone layout (MO1) is not affected.
 - **P3** Each playthrough has one platform. Only items available on that platform are shown
   and counted.
 - **P4** Platform, difficulty and game version can be changed later; checked state of items is
@@ -653,7 +715,8 @@ Below 640 px width (phones) the layout changes; tablets and desktops stay as the
 - **B3a** Table column "Found in" (group Source, "Where to get it" preset): the containers with
   their chance, like B3; "Dropped by" only lists enemies, bosses and treasure bags.
 - **B3b** Filter group "Found in" (after Sold by): the container groups (Chests, Crates, Other
-  containers, Trees) with their containers nested below (collapsed), with icons and progress,
+  containers; not the shaking trees – "Obtained by" has "Shaking trees", and a single tree can be
+  picked under "Sources & sets") with their containers nested below (collapsed), with icons and progress,
   e.g. everything from Skyware Chests. Only container drops of the playthrough's difficulty count.
 - **B3c** The detail panel shows container drops in their own section "Found in" (below "Dropped
   by"), with quantity and chance like the drops.
@@ -1358,17 +1421,11 @@ Status: parser done (PL1, PL2), app integration in progress (PL3–PL5).
   Extras: chest search hits and sync results on the map.
 - **Clickable events, biomes and conditions** in the details (ND): open a card of the event /
   biome (its enemies, items, vendors) or apply the filter.
-- **Cloud storage for the progress file:** open and save the progress file in Dropbox (first)
-  and Google Drive (later), for devices without a sync client (phones, tablets). No maintained
-  library covers both for a browser-only app, so a small adapter per service (sign in, find,
-  load, save): Dropbox with the official `dropbox` SDK (PKCE sign-in, long-lived token, app
-  folder), Google Drive with Google Identity Services + the Drive REST API (`drive.file` or the
-  hidden app folder; 1-hour tokens renewed silently). Both need an app registration with the
-  Pages URL as redirect (client ids in the code are fine; Dropbox starts in development mode,
-  up to 500 users). Detect changes from other devices with the file's revision (Dropbox `rev`,
-  Drive version) and ask before overwriting. Same autosave rules as the local file. Open
-  questions: visible file or hidden app folder; File-menu entries and "Continue" for cloud
-  files. (Already works today on PCs: save the file in the Dropbox / Drive sync folder.)
+- **Cloud storage, more:** Google Drive comes first (GD). Later: Dropbox with the official
+  `dropbox` SDK (PKCE sign-in, long-lived token; an app registration, development mode up to
+  500 users), autosave for cloud files, and merging changes of two devices automatically (the
+  file has a time per checked item). (Already works today on PCs: save the file in the
+  Dropbox / Drive sync folder.)
 - **Drop groups – open cases (B5):** rows that fit several groups stay without one: the
   Shadow Chest's potions (the same potion in two groups of the chest) and the Toy Sled of both
   Ice Mimics (one Drops row for both variants, a group per variant) – could be solved with a

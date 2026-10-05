@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button'
 import { AboutDialog } from '../About'
 import { SettingsDialog } from '../Settings'
 import { GitHubMark, REPO } from './GitHubLink'
+import { useHeaderLevel } from './compact'
 
 const THEMES: { id: Theme; label: string; Icon: typeof Sun }[] = [
   { id: 'light', label: 'Light', Icon: Sun },
@@ -15,23 +16,30 @@ const THEMES: { id: Theme; label: string; Icon: typeof Sun }[] = [
 /** The small buttons at the top right: GitHub, theme, about, settings. */
 export function SettingsMenu() {
   const [dialog, setDialog] = useState<'settings' | 'about' | null>(null)
+  // the narrowest desktop header (P5a): only theme and settings; About is also at the bottom of
+  // the filter sidebar
+  const few = useHeaderLevel() >= 7
   return (
     <div className="flex items-center gap-1">
-      <Button variant="ghost" size="icon-sm" asChild>
-        <a href={REPO} target="_blank" rel="noreferrer noopener" title="Source code on GitHub" aria-label="GitHub">
-          <GitHubMark className="size-4" />
-        </a>
-      </Button>
+      {!few && (
+        <Button variant="ghost" size="icon-sm" asChild>
+          <a href={REPO} target="_blank" rel="noreferrer noopener" title="Source code on GitHub" aria-label="GitHub">
+            <GitHubMark className="size-4" />
+          </a>
+        </Button>
+      )}
       <ThemeButton />
-      <Button
-        variant="ghost"
-        size="icon-sm"
-        onClick={() => setDialog('about')}
-        aria-label="About, licenses"
-        title="About, licenses"
-      >
-        <Info />
-      </Button>
+      {!few && (
+        <Button
+          variant="ghost"
+          size="icon-sm"
+          onClick={() => setDialog('about')}
+          aria-label="About, licenses"
+          title="About, licenses"
+        >
+          <Info />
+        </Button>
+      )}
       <Button
         variant="ghost"
         size="icon-sm"

@@ -26,6 +26,7 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu'
 import { confirm } from '@/lib/confirm'
+import { useHeaderLevel } from './compact'
 
 // World menu (attach, reload, sync, chest search, areas, detach) and its quick button.
 
@@ -37,6 +38,10 @@ export function WorldMenu() {
   const { load, loading } = useWorldLoader()
   const sync = useFileSync()
   const [remembered, setRemembered] = useState(false)
+  // a narrow desktop header (P5a): first without "(not loaded)", then only the icon (the name on
+  // hover)
+  const level = useHeaderLevel()
+  const compact = level >= 2
 
   useEffect(() => {
     let cancelled = false
@@ -80,10 +85,16 @@ export function WorldMenu() {
       )}
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
-          <Button variant="outline" size="sm" disabled={loading} className="max-w-52">
+          <Button
+            variant="outline"
+            size="sm"
+            disabled={loading}
+            className="max-w-52"
+            title={ref ? `${ref.name}${world ? '' : ' (not loaded)'}` : 'Attach world'}
+          >
             <Globe className={world ? 'text-emerald-600 dark:text-emerald-400' : 'text-muted-foreground'} />
-            <span className="truncate">{ref ? ref.name : 'Attach world'}</span>
-            {ref && !world && <span className="text-xs text-muted-foreground">(not loaded)</span>}
+            {!compact && <span className="truncate">{ref ? ref.name : 'Attach world'}</span>}
+            {level < 1 && ref && !world && <span className="text-xs text-muted-foreground">(not loaded)</span>}
             <ChevronDown className="text-muted-foreground" />
           </Button>
         </DropdownMenuTrigger>

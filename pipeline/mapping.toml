@@ -1134,7 +1134,7 @@ fallback = true
 # How an item can be obtained. Built from `tag` and `listcat`; both are
 # filled in by wiki editors and are not complete. Names read as "how", not
 # "what" ("Crafted", not "Crafting"), so they are not mistaken for categories.
-# loot = chests, pots, trees ...; plunder = placed in the world and collected
+# loot = chests, pots ...; plunder = placed in the world and collected
 # (dungeon furniture, statues, ores).
 # Our own data adds to the tags (sources.py):
 #   from_drops       drop source kinds that give this method ("npc", "bag")
@@ -1176,7 +1176,16 @@ from_containers = ["chest"]
 name = "Collected in the world"
 icon = "Gold Chest"
 match = ["tag:plunder", "tag:plunder:*", "listcat:plunder items"]
+
+# What a tree drops when it is shaken (fruit, Acorns, ...): the drop rows of the "Shaking ..."
+# sources ([containers.tree]). The wiki tags these items as "loot": that only stays for the ones
+# a chest holds as well.
+[obtain.shaking-tree]
+name = "Shaking trees"
+icon = "Acorn"
+match = []
 from_containers = ["tree"]
+replaces = "loot"
 
 [obtain.bag]
 name = "From grab bags & crates"
@@ -2357,6 +2366,8 @@ shimmer = "Shimmer"
 # Groups of container sources (filter "Found in"), in this order. Sources are
 # matched by name ("*" = wildcard); the first group that matches wins, a
 # `fallback` group takes the rest. `icon` = item whose icon the group shows.
+# `filter = false`: a group that is not in the "Found in" filter - its sources are an
+# "Obtained by" method instead ([obtain] from_containers).
 [containers.chest]
 name = "Chests"
 icon = "Gold Chest"
@@ -2376,6 +2387,7 @@ fallback = true
 name = "Trees"
 icon = "Acorn"
 match = ["shaking *"]
+filter = false   # "Obtained by": Shaking trees
 
 # Icons of container sources that are no item themselves (source name -> item).
 # Sources like "Gold Chest (Dungeon)" use the item without the suffix.

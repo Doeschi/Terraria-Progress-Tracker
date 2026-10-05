@@ -14,6 +14,7 @@ import {
 import { confirm } from '@/lib/confirm'
 import { DifficultyIcon, WikiIcon } from '../common'
 import { nameOf } from '@/lib/format'
+import { useHeaderLevel } from './compact'
 
 // Playthrough menu (switch, new, edit, delete); platform, difficulty and game version are shown
 // as icons in its button and changed in the edit dialog.
@@ -25,6 +26,8 @@ export function PlaythroughMenu() {
   const setActive = useStore((s) => s.setActivePlaythrough)
   const deletePlaythrough = useStore((s) => s.deletePlaythrough)
   const openDialog = useUi((s) => s.open)
+  // a very narrow desktop header: only the icons, the name on hover (P5a)
+  const compact = useHeaderLevel() >= 5
 
   const remove = async () => {
     if (!active) return
@@ -49,8 +52,13 @@ export function PlaythroughMenu() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="outline" size="sm" className="max-w-64 justify-between" title={settings}>
-          <span className="truncate">{active ? active.name : 'No playthrough'}</span>
+        <Button
+          variant="outline"
+          size="sm"
+          className="max-w-64 justify-between"
+          title={active ? `${active.name} · ${settings}` : undefined}
+        >
+          {!(compact && active) && <span className="truncate">{active ? active.name : 'No playthrough'}</span>}
           {active && (
             <span className="flex shrink-0 items-center gap-1" aria-label={settings}>
               <WikiIcon src={platform?.icon} alt="" size={16} />

@@ -1499,8 +1499,7 @@
     ],
     "obtain": [
       "vendor",
-      "loot",
-      "plunder"
+      "shaking-tree"
     ],
     "vendors": [
       "dryad"
@@ -10596,8 +10595,8 @@
     ],
     "obtain": [
       "vendor",
-      "loot",
       "plunder",
+      "shaking-tree",
       "extractinator",
       "extractinator-regular",
       "chlorophyte-extractinator",
@@ -44652,7 +44651,7 @@
     ],
     "obtain": [
       "loot",
-      "plunder"
+      "shaking-tree"
     ],
     "vendors": [],
     "events": [],
@@ -50110,7 +50109,7 @@
     ],
     "obtain": [
       "loot",
-      "plunder"
+      "shaking-tree"
     ],
     "vendors": [],
     "events": [],
@@ -96286,8 +96285,7 @@
       "ranged"
     ],
     "obtain": [
-      "loot",
-      "plunder",
+      "shaking-tree",
       "bag"
     ],
     "vendors": [],
@@ -174946,7 +174944,7 @@
     ],
     "obtain": [
       "loot",
-      "plunder"
+      "shaking-tree"
     ],
     "vendors": [],
     "events": [],
@@ -174994,7 +174992,7 @@
     ],
     "obtain": [
       "loot",
-      "plunder"
+      "shaking-tree"
     ],
     "vendors": [],
     "events": [],
@@ -208007,8 +208005,7 @@
       "other-crafting-material"
     ],
     "obtain": [
-      "loot",
-      "plunder"
+      "shaking-tree"
     ],
     "vendors": [],
     "events": [],
@@ -221513,8 +221510,7 @@
       "other-crafting-material"
     ],
     "obtain": [
-      "loot",
-      "plunder"
+      "shaking-tree"
     ],
     "vendors": [],
     "events": [],
@@ -221565,8 +221561,7 @@
       "other-crafting-material"
     ],
     "obtain": [
-      "loot",
-      "plunder"
+      "shaking-tree"
     ],
     "vendors": [],
     "events": [],
@@ -221617,8 +221612,7 @@
       "other-crafting-material"
     ],
     "obtain": [
-      "loot",
-      "plunder"
+      "shaking-tree"
     ],
     "vendors": [],
     "events": [],
@@ -221669,8 +221663,7 @@
       "other-crafting-material"
     ],
     "obtain": [
-      "loot",
-      "plunder"
+      "shaking-tree"
     ],
     "vendors": [],
     "events": [],
@@ -221721,8 +221714,7 @@
       "other-crafting-material"
     ],
     "obtain": [
-      "loot",
-      "plunder"
+      "shaking-tree"
     ],
     "vendors": [],
     "events": [],
@@ -221773,8 +221765,7 @@
       "other-crafting-material"
     ],
     "obtain": [
-      "loot",
-      "plunder"
+      "shaking-tree"
     ],
     "vendors": [],
     "events": [],
@@ -221825,8 +221816,7 @@
       "other-crafting-material"
     ],
     "obtain": [
-      "loot",
-      "plunder"
+      "shaking-tree"
     ],
     "vendors": [],
     "events": [],
@@ -221877,8 +221867,7 @@
       "other-crafting-material"
     ],
     "obtain": [
-      "loot",
-      "plunder"
+      "shaking-tree"
     ],
     "vendors": [],
     "events": [],
@@ -221929,8 +221918,7 @@
       "other-crafting-material"
     ],
     "obtain": [
-      "loot",
-      "plunder"
+      "shaking-tree"
     ],
     "vendors": [],
     "events": [],
@@ -221981,8 +221969,7 @@
       "other-crafting-material"
     ],
     "obtain": [
-      "loot",
-      "plunder"
+      "shaking-tree"
     ],
     "vendors": [],
     "events": [],
@@ -222033,8 +222020,7 @@
       "other-crafting-material"
     ],
     "obtain": [
-      "loot",
-      "plunder"
+      "shaking-tree"
     ],
     "vendors": [],
     "events": [],
@@ -222085,8 +222071,7 @@
       "other-crafting-material"
     ],
     "obtain": [
-      "loot",
-      "plunder"
+      "shaking-tree"
     ],
     "vendors": [],
     "events": [],
@@ -222137,8 +222122,7 @@
       "other-crafting-material"
     ],
     "obtain": [
-      "loot",
-      "plunder"
+      "shaking-tree"
     ],
     "vendors": [],
     "events": [],
@@ -222189,8 +222173,7 @@
       "other-crafting-material"
     ],
     "obtain": [
-      "loot",
-      "plunder"
+      "shaking-tree"
     ],
     "vendors": [],
     "events": [],
@@ -222241,8 +222224,7 @@
       "other-crafting-material"
     ],
     "obtain": [
-      "loot",
-      "plunder"
+      "shaking-tree"
     ],
     "vendors": [],
     "events": [],
@@ -222293,8 +222275,7 @@
       "other-crafting-material"
     ],
     "obtain": [
-      "loot",
-      "plunder"
+      "shaking-tree"
     ],
     "vendors": [],
     "events": [],
@@ -225779,8 +225760,7 @@
       "other-pet"
     ],
     "obtain": [
-      "loot",
-      "plunder"
+      "shaking-tree"
     ],
     "vendors": [],
     "events": [],
@@ -271907,8 +271887,7 @@
       "other-crafting-material"
     ],
     "obtain": [
-      "loot",
-      "plunder"
+      "shaking-tree"
     ],
     "vendors": [],
     "events": [],
@@ -271959,8 +271938,7 @@
       "other-crafting-material"
     ],
     "obtain": [
-      "loot",
-      "plunder"
+      "shaking-tree"
     ],
     "vendors": [],
     "events": [],
@@ -283712,8 +283690,7 @@
       "other-pet"
     ],
     "obtain": [
-      "loot",
-      "plunder"
+      "shaking-tree"
     ],
     "vendors": [],
     "events": [],
@@ -289284,7 +289261,7 @@
     ],
     "obtain": [
       "loot",
-      "plunder"
+      "shaking-tree"
     ],
     "vendors": [],
     "events": [],

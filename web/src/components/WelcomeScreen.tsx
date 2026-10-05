@@ -3,6 +3,7 @@ import {
   BookOpen,
   ChevronRight,
   Clock,
+  Cloud,
   FilePlus,
   FileText,
   FolderOpen,
@@ -23,7 +24,7 @@ import { findPlaythrough } from '@/lib/saveFile'
 import { chooseActive } from '@/lib/viewState'
 import { itemsForPlaythrough, startsIgnored } from '@/lib/availability'
 import { Button } from '@/components/ui/button'
-import { openFileAction } from '@/actions'
+import { checkDriveVersion, openFileAction, openFromDriveAction } from '@/actions'
 import { AiNotice, Credits } from './Credits'
 import { formatRelativeDay } from '@/lib/format'
 import { Logo } from './Logo'
@@ -44,7 +45,9 @@ export function WelcomeScreen() {
   // if the browser remembers them. Runs inside the click, so the browser may ask for read access
   // right away; without a remembered file the header offers "reconnect".
   const continueSession = (b: Backup) => {
-    loadFile({ doc: b.doc, fileName: b.fileName, handle: b.handle }, b.dirty)
+    loadFile({ doc: b.doc, fileName: b.fileName, handle: b.handle, drive: b.drive }, b.dirty)
+    // a Drive file: is there a newer version from another device? (GD5)
+    if (b.drive) void checkDriveVersion()
     const pt = findPlaythrough(b.doc, chooseActive(b.doc))
     if (!pt || !canSaveInPlace) return
     const id = pt.id
@@ -123,13 +126,11 @@ export function WelcomeScreen() {
 
         <div className="mx-auto flex w-full max-w-md flex-col gap-2 rounded-xl border bg-card p-4 shadow-sm">
           {backup && <ContinueButton backup={backup} onClick={() => continueSession(backup)} />}
-          <Button
-            size="lg"
-            variant={backup ? 'outline' : 'default'}
-            className="justify-start"
-            onClick={() => void openFileAction()}
-          >
+          <Button size="lg" variant="outline" className="justify-start" onClick={() => void openFileAction()}>
             <FolderOpen /> Open progress file…
+          </Button>
+          <Button size="lg" variant="outline" className="justify-start" onClick={() => void openFromDriveAction()}>
+            <Cloud /> Open from Google Drive…
           </Button>
           <Button
             size="lg"
@@ -148,8 +149,8 @@ export function WelcomeScreen() {
           <p className="flex items-center gap-2 text-xs text-muted-foreground">
             <ShieldCheck className="size-4 shrink-0" />
             <span>
-              Everything runs in your browser. Progress files and game files are never uploaded; only item icons are
-              loaded from the Terraria Wiki.
+              Everything runs in your browser. Game files are never uploaded, and your progress file only to your own
+              Google Drive if you choose that; only item icons are loaded from the Terraria Wiki.
             </span>
           </p>
           <Credits withIcon />
@@ -163,7 +164,7 @@ export function WelcomeScreen() {
 /** The last session: file name, when it was saved, unsaved changes and the active playthrough. */
 function ContinueButton({ backup, onClick }: { backup: Backup; onClick: () => void }) {
   const pt = findPlaythrough(backup.doc, chooseActive(backup.doc))
-  const file = fileLabel(backup.fileName)
+  const file = fileLabel(backup.fileName, !!backup.drive)
   return (
     <button
       onClick={onClick}
@@ -175,7 +176,7 @@ function ContinueButton({ backup, onClick }: { backup: Backup; onClick: () => vo
         <span className="text-sm font-semibold">Continue where you left off</span>
         <span className="flex flex-wrap items-center gap-x-3 gap-y-0.5 text-xs opacity-85">
           <span className="flex min-w-0 items-center gap-1">
-            <FileText className="size-3.5 shrink-0" />
+            {backup.drive ? <Cloud className="size-3.5 shrink-0" /> : <FileText className="size-3.5 shrink-0" />}
             <span className="truncate">
               {file.label}
               {pt && ` · ${pt.name}`}

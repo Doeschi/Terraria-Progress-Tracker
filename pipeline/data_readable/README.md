@@ -300,7 +300,7 @@ The groups of the "Found in" filter:
 
 | Field | Meaning |
 |---|---|
-| `id` / `name` / `icon` | the group (Chests, Crates, Trees, Other) |
+| `id` / `name` / `icon` | the group (Chests, Crates, Other) |
 | `sources` | the container source ids in it (`drops.json` sources of kind `container`) |
 | `count` | items found in them |
 

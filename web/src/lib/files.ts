@@ -1,6 +1,7 @@
 import { fileOpen, fileSave, supported as fsAccessSupported } from 'browser-fs-access'
 import { del, get, set } from 'idb-keyval'
 import { parseSaveFile, serializeSaveFile, type SaveFile } from './saveFile'
+import type { DriveRef } from './drive'
 
 // Opening/saving the progress file, the local backup and remembered world files.
 // With the File System Access API (Chrome/Edge) files are written in place;
@@ -12,6 +13,8 @@ export interface OpenedFile {
   doc: SaveFile
   fileName: string | null
   handle: FileSystemFileHandle | null
+  /** the file lives in Google Drive (GD) */
+  drive?: DriveRef | null
 }
 
 export async function openTrackingFile(): Promise<OpenedFile | null> {
@@ -80,6 +83,8 @@ export interface Backup {
   doc: SaveFile
   fileName: string | null
   handle: FileSystemFileHandle | null
+  /** the file lives in Google Drive (GD) */
+  drive?: DriveRef | null
   dirty: boolean
   savedAt: string
 }
@@ -167,7 +172,8 @@ export async function openRememberedWorld(playthroughId: string): Promise<File |
  * What the file button shows. Without in-place saving the browser may rename downloads,
  * so the page does not know the file on disk: it shows the copy kept in the browser.
  */
-export function fileLabel(fileName: string | null): { label: string; title?: string } {
+export function fileLabel(fileName: string | null, inDrive = false): { label: string; title?: string } {
+  if (inDrive && fileName) return { label: fileName, title: `${fileName} – in your Google Drive` }
   if (canSaveInPlace || !fileName) return { label: fileName ?? 'Unsaved file' }
   return {
     label: 'Browser copy',

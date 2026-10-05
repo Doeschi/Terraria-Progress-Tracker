@@ -71,7 +71,8 @@ export function AboutDialog({
           <DialogTitle>About Terraria Progress Tracker</DialogTitle>
           <DialogDescription>
             Your progress on items and bestiary entries, per playthrough. Everything runs in your browser; progress and
-            game files are never uploaded.
+            game files are never uploaded – except the progress file to your own Google Drive, if you choose to save it
+            there.
           </DialogDescription>
         </DialogHeader>
         <div className="flex flex-col gap-4">

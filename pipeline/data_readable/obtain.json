@@ -21,13 +21,19 @@
     "id": "loot",
     "name": "Found in chests & pots",
     "icon": "https://terraria.wiki.gg/images/Chest.png",
-    "count": 292
+    "count": 268
   },
   {
     "id": "plunder",
     "name": "Collected in the world",
     "icon": "https://terraria.wiki.gg/images/Gold_Chest.png",
-    "count": 890
+    "count": 862
+  },
+  {
+    "id": "shaking-tree",
+    "name": "Shaking trees",
+    "icon": "https://terraria.wiki.gg/images/Acorn.png",
+    "count": 29
   },
   {
     "id": "bag",

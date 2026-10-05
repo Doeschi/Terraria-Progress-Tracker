@@ -30,6 +30,7 @@ import { ChestSearchDialog } from '@/components/dialogs/ChestSearchDialog'
 import { PlaythroughDialog } from '@/components/dialogs/PlaythroughDialog'
 import { SyncDialog } from '@/components/dialogs/SyncDialog'
 import { DataUpdateDialog } from '@/components/dialogs/DataUpdateDialog'
+import { DriveDialog, DriveSaveDialog } from '@/components/dialogs/DriveDialog'
 
 export default function App() {
   const data = useStore((s) => s.data)
@@ -70,6 +71,8 @@ export default function App() {
       <AreasDialog />
       <SyncDialog />
       <DataUpdateDialog />
+      <DriveDialog />
+      <DriveSaveDialog />
       <ChestSearchDialog />
       <ConfirmDialogHost />
       {/* expanded: several toasts at once (e.g. "filters complete" and "everything collected") all stay readable */}

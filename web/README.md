@@ -20,6 +20,7 @@ npm run format         # Prettier (single quotes, no semicolons, 120 columns; sr
 | `actions.ts` | File actions shared by the header and the start page |
 | `lib/types.ts`, `lib/data.ts` | Shapes and loading of the generated JSON in `public/data/` |
 | `lib/saveFile.ts`, `lib/files.ts` | Tracking file format (with migrations), opening/saving, local backup, autosave writes |
+| `lib/drive.ts` | Google Drive for the progress file: sign-in (Google Identity Services, loaded on first use) and the Drive REST API |
 | `lib/filtering.ts`, `lib/filterView.ts` | Filter groups, faceted counts; what the filter sidebar shows (hidden, completed, search) |
 | `lib/availability.ts`, `lib/drops.ts`, `lib/recipes.ts`, `lib/bestiary.ts` | Items per playthrough (and which of them a new one starts with ignored), drops, crafting, bestiary |
 | `lib/sources.ts`, `lib/npcs.ts`, `lib/conditions.ts` | The "Sources & sets" filter group, the links behind the NPC cards, the condition names of shop rows and drops |

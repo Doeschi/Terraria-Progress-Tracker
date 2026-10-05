@@ -79,25 +79,5 @@
       "present"
     ],
     "count": 140
-  },
-  {
-    "id": "tree",
-    "name": "Trees",
-    "icon": "https://terraria.wiki.gg/images/Acorn.png",
-    "sources": [
-      "shaking-ash-tree",
-      "shaking-boreal-tree",
-      "shaking-ebonwood-palm-tree",
-      "shaking-ebonwood-tree",
-      "shaking-forest-tree",
-      "shaking-giant-glowing-mushroom",
-      "shaking-mahogany-tree",
-      "shaking-palm-tree",
-      "shaking-pearlwood-palm-tree",
-      "shaking-pearlwood-tree",
-      "shaking-shadewood-palm-tree",
-      "shaking-shadewood-tree"
-    ],
-    "count": 29
   }
 ]

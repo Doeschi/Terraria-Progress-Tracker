@@ -6,7 +6,9 @@ import type { TrackerView } from '@/hooks/useTrackerView'
 import { TallyBar, TallyText } from './common'
 import { usePrefs } from '@/lib/prefs'
 import { useEndCredits, useTrophies } from '@/lib/trophies'
-import { Clapperboard, Menu, Star } from 'lucide-react'
+import { BookOpen, Clapperboard, Menu, Package, Star } from 'lucide-react'
+import { formatPercent } from '@/lib/filtering'
+import { HeaderLevel, MAX_HEADER_LEVEL, useFitLevel, useHeaderLevel } from './topbar/compact'
 import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet'
 import { useIsPhone } from '@/hooks/useIsPhone'
 import { Button } from '@/components/ui/button'
@@ -28,7 +30,9 @@ export function TopBar({ view }: { view: TrackerView | null }) {
 /** "Dev" next to the logo when the page comes from the dev server (Vite's development build, much
  * slower than the published production build). */
 function DevBadge() {
-  if (!import.meta.env.DEV) return null
+  const level = useHeaderLevel()
+  // not in the narrowest desktop header
+  if (!import.meta.env.DEV || level >= 7) return null
   return (
     <span
       className="shrink-0 rounded bg-amber-500/15 px-1.5 py-0.5 text-[10px] leading-none font-semibold text-amber-700 uppercase dark:text-amber-400"
@@ -102,23 +106,56 @@ function PhoneTopBar({ view }: { view: TrackerView | null }) {
 
 function DesktopTopBar({ view }: { view: TrackerView | null }) {
   const hasPlaythrough = useActivePlaythrough() !== null
+  // one line at every width (P5a): the controls show icons instead of text as far as needed
+  const { bar, left, controls, right, level } = useFitLevel(MAX_HEADER_LEVEL)
   // three columns: logo (left) | file + playthrough (centered) | theme (right)
   return (
-    <header className="relative z-40 grid grid-cols-[auto_1fr_auto] items-center gap-3 border-b bg-background/80 px-3 py-2 backdrop-blur">
+    <header
+      ref={bar}
+      className="relative z-40 grid grid-cols-[auto_minmax(0,1fr)_auto] items-center gap-3 border-b bg-background/80 px-3 py-2 backdrop-blur"
+    >
       <HeaderSnow />
-      <div className="flex items-center gap-2 font-semibold">
-        <HeaderLogo />
-        <span className="hidden 2xl:inline">Terraria Progress Tracker</span>
-        <DevBadge />
-      </div>
-      <div className="flex min-w-0 flex-wrap items-center justify-center gap-x-3 gap-y-2">
+      <HeaderLevel.Provider value={level}>
+        <div ref={left} className="flex items-center gap-2 font-semibold whitespace-nowrap">
+          <HeaderLogo />
+          {level < 1 && <span className="hidden 2xl:inline">Terraria Progress Tracker</span>}
+          <DevBadge />
+        </div>
+        {/* should even the most compact header not fit, it can be scrolled sideways */}
+        <div className="flex min-w-0 [justify-content:safe_center] overflow-x-auto [scrollbar-width:none]">
+          <DesktopControls view={view} hasPlaythrough={hasPlaythrough} level={level} innerRef={controls} />
+        </div>
+        <div ref={right}>
+          <SettingsMenu />
+        </div>
+      </HeaderLevel.Provider>
+    </header>
+  )
+}
+
+/** The controls of the desktop header at their natural width, never wrapping (measured by
+ * useFitLevel). */
+function DesktopControls({
+  view,
+  hasPlaythrough,
+  level,
+  innerRef,
+}: {
+  view: TrackerView | null
+  hasPlaythrough: boolean
+  level: number
+  innerRef: React.Ref<HTMLDivElement>
+}) {
+  return (
+    <>
+      <div ref={innerRef} className="flex w-max shrink-0 items-center gap-x-3">
         <div className="rounded-xl border bg-card/60 px-2 pt-1 pb-1.5">
           <Field label="File" extra={<AutosaveStatus />}>
             <FileMenu />
           </Field>
         </div>
-        {/* everything that belongs to the active playthrough, kept together when wrapping */}
-        <div className="flex flex-wrap items-end gap-x-2 gap-y-1 rounded-xl border bg-card/60 px-2 pt-1 pb-1.5">
+        {/* everything that belongs to the active playthrough */}
+        <div className="flex items-end gap-x-2 rounded-xl border bg-card/60 px-2 pt-1 pb-1.5">
           <Field label="Playthrough">
             <PlaythroughMenu />
           </Field>
@@ -135,7 +172,7 @@ function DesktopTopBar({ view }: { view: TrackerView | null }) {
           )}
           {/* one sync for both: right of Player and World */}
           {hasPlaythrough && <SyncButton />}
-          {view && (
+          {view && level < 6 && (
             <Field label="Progress" title="Overall progress of this playthrough">
               <ProgressBars view={view} />
             </Field>
@@ -150,25 +187,38 @@ function DesktopTopBar({ view }: { view: TrackerView | null }) {
           </div>
         )}
       </div>
-      <SettingsMenu />
-    </header>
+    </>
   )
 }
 
-/** Item progress, and below it the bestiary progress (if the game version has one). */
+/** Item progress, and below it the bestiary progress (if the game version has one). Compact
+ * (header level 4): icons instead of the labels, only the percentage. */
 function ProgressBars({ view }: { view: TrackerView }) {
   const data = useStore((s) => s.data)!
   const gameVersion = useActivePlaythrough()?.gameVersion ?? null
   const bestiary = useBestiaryProgress()
-  const rows = [{ label: 'Items', tally: view.overall }]
-  if (bestiaryExists(data, gameVersion)) rows.push({ label: 'Bestiary', tally: bestiary })
+  const compact = useHeaderLevel() >= 4
+  const rows = [{ label: 'Items', Icon: Package, tally: view.overall }]
+  if (bestiaryExists(data, gameVersion)) rows.push({ label: 'Bestiary', Icon: BookOpen, tally: bestiary })
   return (
     <div className="flex h-8 flex-col justify-center gap-0.5 px-1 text-xs">
       {rows.map((r) => (
-        <div key={r.label} className="flex items-center gap-2">
-          <span className="w-12 text-muted-foreground">{r.label}</span>
-          <TallyBar tally={r.tally} className="h-1.5 w-20" />
-          <TallyText tally={r.tally} />
+        <div
+          key={r.label}
+          className="flex items-center gap-2"
+          title={compact ? `${r.label}: ${r.tally.obtained} of ${r.tally.total}` : undefined}
+        >
+          {compact ? (
+            <r.Icon className="size-3 shrink-0 text-muted-foreground" aria-label={r.label} />
+          ) : (
+            <span className="w-12 text-muted-foreground">{r.label}</span>
+          )}
+          <TallyBar tally={r.tally} className={compact ? 'h-1.5 w-12' : 'h-1.5 w-20'} />
+          {compact ? (
+            <span className="font-medium text-foreground/80 tabular-nums">{formatPercent(r.tally)}</span>
+          ) : (
+            <TallyText tally={r.tally} />
+          )}
         </div>
       ))}
     </div>
@@ -186,6 +236,8 @@ function ModeSwitch() {
   // ... and the end credits again, once the playthrough is complete
   const allDone = useTrophies((s) => s.all)
   const showCredits = useEndCredits((s) => s.show)
+  // a narrow desktop header (level 4): icons instead of the words
+  const icons = useHeaderLevel() >= 4
   return (
     <div className="flex items-center gap-1">
       <ToggleGroup
@@ -196,9 +248,15 @@ function ModeSwitch() {
         onValueChange={(v) => v && setMode(v as TrackerMode)}
         aria-label="Items or bestiary"
       >
-        <ToggleGroupItem value="items">Items</ToggleGroupItem>
-        <ToggleGroupItem value="bestiary" title={star ? 'Bestiary complete!' : undefined}>
-          Bestiary
+        <ToggleGroupItem value="items" title={icons ? 'Items' : undefined} aria-label="Items">
+          {icons ? <Package /> : 'Items'}
+        </ToggleGroupItem>
+        <ToggleGroupItem
+          value="bestiary"
+          title={star ? 'Bestiary complete!' : icons ? 'Bestiary' : undefined}
+          aria-label="Bestiary"
+        >
+          {icons ? <BookOpen /> : 'Bestiary'}
           {star && <Star className="size-3 fill-amber-400 text-amber-500" aria-label="complete" />}
         </ToggleGroupItem>
       </ToggleGroup>

@@ -1,5 +1,6 @@
 import { create } from 'zustand'
 import { loadGameData } from './lib/data'
+import type { DriveFile, DriveRef } from './lib/drive'
 import {
   buildFilterGroups,
   emptySelection,
@@ -50,6 +51,8 @@ interface State {
   activeId: string | null
   fileName: string | null
   handle: FileSystemFileHandle | null
+  /** the file lives in Google Drive: its id and the revision loaded or saved last (GD) */
+  drive: DriveRef | null
   dirty: boolean
   /** time of the last successful save of the file (manual or automatic) */
   lastSavedAt: string | null
@@ -81,6 +84,12 @@ interface Actions {
   loadFile(file: OpenedFile, dirty?: boolean): void
   closeFile(): void
   save(saveAs?: boolean): Promise<boolean>
+  /** Write a local copy of the file; what is open (a Drive file) stays as it is. */
+  saveCopy(): Promise<boolean>
+  /** `doc` was written to this Drive file: it is the open file now (GD) */
+  savedToDrive(doc: SaveFile, file: DriveFile): void
+  /** the open file's Drive file was deleted: it has no place any more and is unsaved (GD) */
+  driveFileDeleted(): void
   /** Save silently if possible (file on disk, write permission, unsaved changes). */
   autoSave(): Promise<void>
 
@@ -175,6 +184,7 @@ export const useStore = create<State & Actions>()((set, get) => {
     activeId: null,
     fileName: null,
     handle: null,
+    drive: null,
     dirty: false,
     lastSavedAt: null,
     autosaveStatus: 'ok',
@@ -206,6 +216,7 @@ export const useStore = create<State & Actions>()((set, get) => {
         activeId: null,
         fileName: null,
         handle: null,
+        drive: null,
         dirty: true,
         lastSavedAt: null,
         autosaveStatus: 'ok',
@@ -215,7 +226,7 @@ export const useStore = create<State & Actions>()((set, get) => {
       })
     },
 
-    loadFile({ doc: opened, fileName, handle }, dirty = false) {
+    loadFile({ doc: opened, fileName, handle, drive = null }, dirty = false) {
       // newer item data than the file was last used with: renamed keys move along, the changes are
       // shown once (DU5)
       const data = get().data
@@ -227,6 +238,7 @@ export const useStore = create<State & Actions>()((set, get) => {
         activeId,
         fileName,
         handle,
+        drive,
         dirty: dirty || doc !== opened,
         lastSavedAt: null,
         autosaveStatus: 'ok',
@@ -242,6 +254,7 @@ export const useStore = create<State & Actions>()((set, get) => {
         activeId: null,
         fileName: null,
         handle: null,
+        drive: null,
         dirty: false,
         worlds: {},
         players: {},
@@ -266,6 +279,29 @@ export const useStore = create<State & Actions>()((set, get) => {
         autosaveStatus: 'ok',
       })
       return true
+    },
+
+    async saveCopy() {
+      const { doc, fileName } = get()
+      if (!doc) return false
+      const name = canSaveInPlace ? (fileName ?? DEFAULT_FILE_NAME) : downloadName(fileName ?? DEFAULT_FILE_NAME)
+      return !!(await saveTrackingFile(doc, name, null))
+    },
+
+    savedToDrive(doc, file) {
+      set({
+        fileName: file.name,
+        handle: null,
+        drive: { id: file.id, revision: file.revision },
+        // only clear "dirty" if nothing changed while it was written
+        dirty: get().doc !== doc,
+        lastSavedAt: new Date().toISOString(),
+        autosaveStatus: 'ok',
+      })
+    },
+
+    driveFileDeleted() {
+      if (get().drive) set({ drive: null, dirty: true, lastSavedAt: null })
     },
 
     async autoSave() {
@@ -541,15 +577,22 @@ export function useActivePlayer(): LoadedPlayer | null {
 let backupTimer: ReturnType<typeof setTimeout> | undefined
 useStore.subscribe((state, prev) => {
   if (!state.doc) return
-  if (state.doc === prev.doc && state.dirty === prev.dirty && state.handle === prev.handle) return
+  if (
+    state.doc === prev.doc &&
+    state.dirty === prev.dirty &&
+    state.handle === prev.handle &&
+    state.drive === prev.drive
+  )
+    return
   clearTimeout(backupTimer)
   backupTimer = setTimeout(() => {
-    const { doc, fileName, handle, dirty } = useStore.getState()
+    const { doc, fileName, handle, drive, dirty } = useStore.getState()
     if (doc)
       void writeBackup({
         doc,
         fileName,
         handle,
+        drive,
         dirty,
         savedAt: new Date().toISOString(),
       })

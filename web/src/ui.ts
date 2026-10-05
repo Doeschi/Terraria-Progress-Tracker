@@ -16,6 +16,10 @@ export type DialogState =
   | { type: 'areas'; thenSync?: boolean; returnTo?: DialogState }
   | { type: 'sync'; section?: SyncSection }
   | { type: 'chestSearch'; itemKey?: string }
+  /** the app's progress files in Google Drive, to open one (GD3) */
+  | { type: 'drive' }
+  /** the name of the new file before "Save to Google Drive" (GD3) */
+  | { type: 'driveSave' }
   /** what changed in the item data since the opened file was last used (DU5) */
   | { type: 'dataUpdate'; report: DataUpdateReport }
 
