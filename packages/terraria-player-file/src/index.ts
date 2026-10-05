@@ -78,6 +78,14 @@ export interface PlayerFile {
   misc: { pet: MiscSlot; lightPet: MiscSlot; minecart: MiscSlot; mount: MiscSlot; hook: MiscSlot }
   /** the 3 loadouts; the active one is stored empty (its items are `equipment`) */
   loadouts: EquipmentSet[]
+  /** the loadout in use, 0-2 */
+  selectedLoadout: number
+  /**
+   * Items in the game's temporary slots when it saved - on the cursor, in the slot of the Goblin
+   * Tinkerer or the Guide, in the research slot. The game puts them back into the inventory when
+   * the character is loaded. `slot` is the bit of the slot (FORMAT.md).
+   */
+  held: PlayerItem[]
   piggyBank: PlayerItem[]
   safe: PlayerItem[]
   defendersForge: PlayerItem[]
@@ -107,6 +115,8 @@ export class UnsupportedVersionError extends Error {
 }
 
 const DIFFICULTIES: Difficulty[] = ['classic', 'mediumcore', 'hardcore', 'journey']
+/** bytes of the value of each Journey power a character stores (FORMAT.md) */
+const POWER_VALUE_SIZE: Record<number, number> = { 5: 1, 11: 1, 14: 4 }
 // the game has about 6,000 items; far larger ids mean the reading went off track
 const MAX_ITEM_ID = 20000
 const MAX_STACK = 1_000_000
@@ -219,7 +229,22 @@ export function parsePlayerData(bytes: Uint8Array, options: ReadOptions = {}): P
     research[item] = r.i32()
   }
 
-  r.skip(22) // not decoded yet (FORMAT.md: Journey powers, minecart flags, selected loadout)
+  // items in the temporary slots: a flag per slot, then the items of the set flags
+  const heldFlags = r.u8()
+  const held: PlayerItem[] = []
+  for (let bit = 0; bit < 8; bit++) if (heldFlags & (1 << bit)) held.push({ ...bankItem(r), slot: bit })
+  // the Journey powers of the character: (true, id, value) per power, then false
+  while (r.bool()) {
+    const at = r.pos
+    const power = r.u16()
+    const size = POWER_VALUE_SIZE[power]
+    if (size === undefined) throw new FormatError(`unknown Journey power ${power}; the layout differs`, at)
+    r.skip(size)
+  }
+  r.u8() // minecart upgrade flags
+  const selectedLoadout = r.i32()
+  if (selectedLoadout < 0 || selectedLoadout > 2)
+    throw new FormatError(`invalid loadout ${selectedLoadout}; the layout differs`, r.pos - 4)
   const loadouts: EquipmentSet[] = []
   for (let i = 0; i < 3; i++) {
     const slots = list(20, () => fullItem(r))
@@ -257,6 +282,8 @@ export function parsePlayerData(bytes: Uint8Array, options: ReadOptions = {}): P
     equipment,
     misc: { pet, lightPet, minecart, mount, hook },
     loadouts,
+    selectedLoadout,
+    held,
     piggyBank,
     safe,
     defendersForge,
@@ -272,6 +299,7 @@ export function allItems(player: PlayerFile): (PlayerItem & { where: string })[]
   const out: (PlayerItem & { where: string })[] = []
   const add = (where: string, items: PlayerItem[]) => items.forEach((i) => out.push({ ...i, where }))
   add('inventory', player.inventory)
+  add('held', player.held)
   add('coins', player.coins)
   add('ammo', player.ammo)
   const set = (where: string, s: EquipmentSet) =>

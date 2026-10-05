@@ -1379,7 +1379,10 @@ Status: parser done (PL1, PL2), app integration in progress (PL3–PL5).
   1.4.5; older or unknown newer versions give a clear error (or, where possible, what could be
   read and what is missing, like the world file W7). Result: name, difficulty (incl. Journey),
   game version / file version (1.4.5 = 326), and per item id + stack + prefix:
-  - inventory (50 slots, coins, ammo); the trash slot is not saved by the game
+  - inventory (50 slots, coins, ammo); the trash slot is not saved by the game. Items in the
+    game's temporary slots when it saved (on the cursor, in the slot of the Goblin Tinkerer or
+    the Guide, in the research slot) are stored apart in the file; the game puts them back into
+    the inventory, so they count as inventory here
   - equipment: armor, accessories, vanity, dyes; misc equipment (pet, light pet, minecart, mount,
     hook) and their dyes; the 3 equipment loadouts
   - storages: Piggy Bank, Safe, Defender's Forge, Void Vault (40 slots each)

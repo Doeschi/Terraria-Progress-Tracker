@@ -140,12 +140,28 @@ without spaces (`CopperPickaxe`), not ids.
 
 | Size | Field | |
 | --- | --- | --- |
-| 22 bytes | not decoded yet; identical in both test characters. Probably the Journey powers (`u8` 1, `u16` power id, value – e.g. the bytes `01 0E 00 00 00 00 3F` would be power 14 with 0.5 as `f32`), the minecart upgrade flags and the selected loadout | ? |
+| `u8` | temporary slots: one bit per slot that holds an item (0 in both test characters) | ✔ (bit 0) |
+| per set bit: `BankItem` | the item of that slot | ✔ (one item, bit 0) |
+| repeated: `bool` true, `u16` power id, value; then `bool` false | the Journey powers of the character: power 5 (`bool`), 11 (`bool`), 14 (`f32`) – the same three in every file seen, also for characters that are not Journey ones | ~ |
+| `u8` | minecart upgrade flags (2 in every file seen) | ~ |
+| `i32` | loadout in use, 0–2 | ✔ (0) |
 | 3 × loadout | each: 20 × `FullItem` armor / accessories / vanity, 10 × `FullItem` dyes, 10 × `bool` hidden visuals (310 bytes) | ✔ |
 | 13 bytes | not decoded yet; identical in both test characters (`01` then zeros) | ? |
 
 The loadout that is in use is stored empty in its loadout record; its items are the equipment
 above. ✔ (loadout 1 empty, loadouts 2 and 3 with the Shadewood / Ebonwood Helmet)
+
+**Temporary slots.** When the game saves while an item is outside the inventory – on the cursor,
+in the slot of the Goblin Tinkerer or the Guide, in the research slot – it stores the item here
+and puts it back into the inventory when the character is loaded. A real character had the flag
+byte `01` followed by one item (a Blue Golf Ball with the prefix Violent: `93 10 00 00`,
+`01 00 00 00`, `50`), which moves everything after it by 9 bytes. Which slot each bit stands for
+is not verified (bit 0 is probably the cursor); a reader only needs to know that every set bit is
+followed by one item. Until this was seen the part was skipped as 22 fixed bytes, and such a file
+failed with an implausible item in the first loadout.
+
+**Journey powers.** The value size depends on the power, so an unknown power id cannot be
+skipped: this reader stops with an error then.
 
 ### Not found
 

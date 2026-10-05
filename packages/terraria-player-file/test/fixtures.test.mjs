@@ -2,7 +2,7 @@
 import { test } from 'node:test'
 import assert from 'node:assert/strict'
 import { readFile } from 'node:fs/promises'
-import { allItems, parsePlayerData, readPlayerFile, UnsupportedVersionError } from '../dist/index.js'
+import { allItems, decryptPlayerFile, parsePlayerData, readPlayerFile, UnsupportedVersionError } from '../dist/index.js'
 
 const load = async (name) => readPlayerFile(await readFile(new URL(`./fixtures/${name}`, import.meta.url)))
 // the slot / id / stack / prefix of a list, for compact comparisons
@@ -134,6 +134,30 @@ test('allItems lists every place', async () => {
   const where = new Set(items.map((i) => i.where))
   for (const w of ['inventory', 'coins', 'ammo', 'equipment', 'misc:pet', 'loadout:2', 'loadout:3', 'piggyBank', 'safe', 'defendersForge', 'voidVault'])
     assert.ok(where.has(w), w)
+})
+
+test('journey.plr: loadout in use, nothing in the temporary slots', async () => {
+  const p = await load('journey.plr')
+  assert.equal(p.selectedLoadout, 0)
+  assert.deepEqual(p.held, [])
+})
+
+test('an item in a temporary slot (on the cursor when the game saved)', async () => {
+  // no such test character: the bytes of classic.plr with the flag set and an item put in, as a
+  // real character had it (Blue Golf Ball, Violent)
+  const bytes = await decryptPlayerFile(await readFile(new URL('./fixtures/classic.plr', import.meta.url)))
+  // the part after the research: no temporary items, the three Journey powers, minecart flags
+  const part = [0x00, 0x01, 0x05, 0x00, 0x00, 0x01, 0x0b, 0x00, 0x01, 0x01, 0x0e, 0x00, 0x00, 0x00, 0x00, 0x3f, 0x00, 0x02]
+  const at = bytes.findIndex((_, i) => part.every((b, n) => bytes[i + n] === b))
+  assert.ok(at > 0)
+  const item = [0x93, 0x10, 0x00, 0x00, 0x01, 0x00, 0x00, 0x00, 0x50] // id 4243, stack 1, prefix 80
+  const changed = new Uint8Array([...bytes.subarray(0, at), 0x01, ...item, ...bytes.subarray(at + 1)])
+  const before = parsePlayerData(bytes)
+  const p = parsePlayerData(changed)
+  assert.deepEqual(p.held, [{ id: 4243, stack: 1, prefix: 80, slot: 0 }])
+  assert.deepEqual(p.loadouts, before.loadouts)
+  assert.deepEqual(p.inventory, before.inventory)
+  assert.deepEqual(allItems(p).filter((i) => i.where === 'held').map((i) => i.id), [4243])
 })
 
 test('errors: not a player file, unsupported version', async () => {

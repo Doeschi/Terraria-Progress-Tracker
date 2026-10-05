@@ -35,7 +35,8 @@ export const STORAGE_TEXT: Record<PlayerStorage, string> = {
 
 /** allItems' `where` -> storage */
 function storageOf(where: string): PlayerStorage {
-  if (where === 'coins' || where === 'ammo' || where === 'inventory') return 'inventory'
+  // 'held': on the cursor or in an NPC's slot when the game saved - it goes back to the inventory
+  if (where === 'coins' || where === 'ammo' || where === 'inventory' || where === 'held') return 'inventory'
   if (where === 'equipment' || where.startsWith('misc:') || where.startsWith('loadout:')) return 'equipment'
   return where as PlayerStorage
 }

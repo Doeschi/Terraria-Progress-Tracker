@@ -26,11 +26,12 @@ player.inventory       // [{ slot: 0, id: 3509, stack: 1, prefix: 0, favorited: 
 player.coins, player.ammo // the coin and ammo slots (0-3)
 player.voidVault       // same item shape, also piggyBank, safe, defendersForge
 player.equipment       // armor, accessories, vanity, dyes; also player.misc and player.loadouts
+player.held            // items in the game's temporary slots when it saved (e.g. on the cursor)
 player.upgrades        // life crystals and fruit, mana crystals, Demon Heart, Aegis Fruit, ...
 player.research        // { Wood: 30, CopperPickaxe: 1, ... } (internal item names)
 ```
 
-`allItems(player)` lists every item with where it is (`inventory`, `voidVault`, `loadout:2`, …).
+`allItems(player)` lists every item with where it is (`inventory`, `held`, `voidVault`, `loadout:2`, …).
 Empty slots are left out of all lists. Other file versions throw an `UnsupportedVersionError`
 (`{ allowUnknownVersion: true }` tries the newest known layout anyway); a layout that does not
 fit throws a `FormatError` with the byte offset instead of returning wrong data.

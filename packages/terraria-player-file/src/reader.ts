@@ -39,6 +39,13 @@ export class Reader {
     return this.u8() !== 0
   }
 
+  u16(): number {
+    this.need(2)
+    const v = this.view.getUint16(this.pos, true)
+    this.pos += 2
+    return v
+  }
+
   i32(): number {
     this.need(4)
     const v = this.view.getInt32(this.pos, true)
