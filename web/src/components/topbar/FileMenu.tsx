@@ -8,6 +8,7 @@ import {
   FilePlus,
   FileText,
   FolderOpen,
+  Loader2,
   LogOut,
   Save,
   SaveAll,
@@ -45,6 +46,7 @@ export function FileMenu() {
   // a new file that was never saved: there is nothing to "Save" to yet, only "Save as…" and the Drive
   const unsaved = useStore((s) => s.fileName === null && !s.drive)
   const dirty = useStore((s) => s.dirty)
+  const saving = useStore((s) => s.saving)
   const newFile = useStore((s) => s.newFile)
   const closeFile = useStore((s) => s.closeFile)
   const hasHandle = useStore((s) => !!s.handle)
@@ -75,7 +77,11 @@ export function FileMenu() {
               compact && <FileText className="text-muted-foreground" />
             )}
             {!compact && <span className="truncate">{file.label}</span>}
-            {dirty && <span className="size-2 shrink-0 rounded-full bg-amber-500" title="Unsaved changes" />}
+            {saving ? (
+              <Loader2 className="shrink-0 animate-spin text-muted-foreground" aria-label="Saving" />
+            ) : (
+              dirty && <span className="size-2 shrink-0 rounded-full bg-amber-500" title="Unsaved changes" />
+            )}
             <ChevronDown className="text-muted-foreground" />
           </Button>
         </DropdownMenuTrigger>
@@ -169,8 +175,16 @@ export function AutosaveStatus() {
   const status = useStore((s) => s.autosaveStatus)
   const lastSavedAt = useStore((s) => s.lastSavedAt)
   const dirty = useStore((s) => s.dirty)
+  const saving = useStore((s) => s.saving)
   // a narrow desktop header: only the icon, the text on hover (P5a)
   const compact = useHeaderLevel() >= 3
+  if (saving)
+    return (
+      <span className="flex items-center gap-1 text-[10px] text-muted-foreground" title="Saving…">
+        <Loader2 className="size-3 animate-spin" />
+        {!compact && 'Saving…'}
+      </span>
+    )
   if (inDrive)
     return lastSavedAt ? (
       <span

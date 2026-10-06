@@ -242,16 +242,22 @@ export function MobileFiltersButton({
 export function ActiveFilterBar<K extends string>({
   groups,
   selection,
+  requireAll,
   search,
   onRemove,
+  onToggleAll,
   onClearSearch,
   onClearAll,
   onlyActive = false,
 }: {
   groups: FilterGroup<K>[]
   selection: Record<K, string[]>
+  /** groups whose selected options must all apply (FL3a) */
+  requireAll: K[]
   search: string
   onRemove: (group: K, id: string) => void
+  /** the group's options must all apply - or any of them again */
+  onToggleAll: (group: K) => void
   onClearSearch: () => void
   onClearAll: () => void
   /** phones (MO2): no "No filters active" line, the room is for the list */
@@ -304,7 +310,27 @@ export function ActiveFilterBar<K extends string>({
             <span className="font-medium text-muted-foreground">{g.label}:</span>
             {selection[g.key].map((id, i) => (
               <Fragment key={id}>
-                {i > 0 && <span className="text-muted-foreground">or</span>}
+                {i > 0 &&
+                  // between the options: "or", or "and" when all of them must apply; a click
+                  // switches, where an item can carry several options of the group (FL3a)
+                  (g.multi ? (
+                    <button
+                      onClick={() => onToggleAll(g.key)}
+                      className={cn(
+                        'rounded px-1 hover:bg-muted',
+                        requireAll.includes(g.key) ? 'font-semibold text-primary' : 'text-muted-foreground',
+                      )}
+                      title={
+                        requireAll.includes(g.key)
+                          ? 'All of these must apply – click: any of them'
+                          : 'Any of these applies – click: all of them must'
+                      }
+                    >
+                      {requireAll.includes(g.key) ? 'and' : 'or'}
+                    </button>
+                  ) : (
+                    <span className="text-muted-foreground">or</span>
+                  ))}
                 <button
                   onClick={() => onRemove(g.key, id)}
                   className="flex items-center gap-1 rounded-md bg-primary/15 py-0.5 pr-1 pl-2 font-medium hover:bg-primary/25"
@@ -319,8 +345,9 @@ export function ActiveFilterBar<K extends string>({
         </Fragment>
       ))}
       {/* right after the last filter, not at the far edge */}
-      <Button variant="ghost" size="xs" onClick={onClearAll}>
+      <Button variant="outline" size="xs" onClick={onClearAll} title="Clear all filters and the search (Esc)">
         Clear all
+        <kbd className="rounded border bg-muted px-1 font-sans text-[10px] pointer-coarse:hidden">Esc</kbd>
       </Button>
     </div>
   )

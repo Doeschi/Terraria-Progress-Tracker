@@ -117,5 +117,9 @@ export function handleTableKey(e: React.KeyboardEvent, open: (ref: string) => vo
   } else if (e.key === 'Enter') {
     e.preventDefault()
     if (rows[tableIndex]) open(rows[tableIndex].ref)
-  } else if (e.key === 'Escape') setTableIndex(null)
+  } else if (e.key === 'Escape') {
+    // taken: it ends the keyboard mode, it does not clear the filters (S3a)
+    e.preventDefault()
+    setTableIndex(null)
+  }
 }

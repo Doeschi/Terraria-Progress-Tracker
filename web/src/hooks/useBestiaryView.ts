@@ -46,6 +46,8 @@ export function useBestiaryView(): BestiaryView {
   const entries = usePlaythroughEntries()
   const pt = useActivePlaythrough()
   const selection = useStore((s) => s.bestiarySelection)
+  const requireAllKeys = useStore((s) => s.bestiaryRequireAll)
+  const requireAll = useMemo(() => new Set(requireAllKeys), [requireAllKeys])
   const search = useDeferredValue(useStore((s) => s.bestiarySearch))
   const view = useStore((s) => s.bestiaryView)
 
@@ -63,9 +65,10 @@ export function useBestiaryView(): BestiaryView {
         checked: unlocked,
         ignored: NOTHING,
         selection,
+        requireAll,
         searchRank: ranks,
       }),
-    [entries, unlocked, selection, ranks],
+    [entries, unlocked, selection, requireAll, ranks],
   )
 
   const visible = useMemo(() => {

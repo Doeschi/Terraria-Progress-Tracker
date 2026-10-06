@@ -1,6 +1,12 @@
 import type { SaveFile } from './saveFile'
-import { emptySelection, GROUP_KEYS, type Selection, type ViewMode } from './filtering'
-import { BESTIARY_GROUP_KEYS, emptyBestiarySelection, type BestiarySelection, type BestiaryViewMode } from './bestiary'
+import { emptySelection, GROUP_KEYS, type GroupKey, type Selection, type ViewMode } from './filtering'
+import {
+  BESTIARY_GROUP_KEYS,
+  emptyBestiarySelection,
+  type BestiaryGroupKey,
+  type BestiarySelection,
+  type BestiaryViewMode,
+} from './bestiary'
 
 // What the list shows, per playthrough, remembered in the browser: selected filters, search,
 // "Show" switch, items or bestiary, and the item in the detail panel. Restored when the
@@ -8,10 +14,13 @@ import { BESTIARY_GROUP_KEYS, emptyBestiarySelection, type BestiarySelection, ty
 
 export interface SavedView {
   selection: Selection
+  /** groups whose selected options must all apply (FL3a) */
+  requireAll: GroupKey[]
   search: string
   view: ViewMode
   mode: 'items' | 'bestiary'
   bestiarySelection: BestiarySelection
+  bestiaryRequireAll: BestiaryGroupKey[]
   bestiarySearch: string
   bestiaryView: BestiaryViewMode
   /** item shown in the detail panel */
@@ -26,10 +35,12 @@ const BESTIARY_VIEWS: BestiaryViewMode[] = ['all', 'missing', 'unlocked']
 
 export const defaultView = (): SavedView => ({
   selection: emptySelection(),
+  requireAll: [],
   search: '',
   view: 'all',
   mode: 'items',
   bestiarySelection: emptyBestiarySelection(),
+  bestiaryRequireAll: [],
   bestiarySearch: '',
   bestiaryView: 'all',
   detailKey: null,
@@ -60,6 +71,11 @@ function readSelection<K extends string>(
   return out
 }
 
+/** Group keys of a saved list; unknown ones are dropped. */
+function readKeys<K extends string>(v: unknown, keys: readonly K[]): K[] {
+  return Array.isArray(v) ? v.filter((x): x is K => keys.includes(x as K)) : []
+}
+
 /** The remembered view of a playthrough (defaults for a new one). */
 export function loadView(playthroughId: string | null | undefined): SavedView {
   const out = defaultView()
@@ -68,6 +84,8 @@ export function loadView(playthroughId: string | null | undefined): SavedView {
   if (!v || typeof v !== 'object') return out
   out.selection = readSelection(v.selection, GROUP_KEYS, out.selection)
   out.bestiarySelection = readSelection(v.bestiarySelection, BESTIARY_GROUP_KEYS, out.bestiarySelection)
+  out.requireAll = readKeys(v.requireAll, GROUP_KEYS)
+  out.bestiaryRequireAll = readKeys(v.bestiaryRequireAll, BESTIARY_GROUP_KEYS)
   if (typeof v.search === 'string') out.search = v.search
   if (typeof v.bestiarySearch === 'string') out.bestiarySearch = v.bestiarySearch
   if (VIEWS.includes(v.view as ViewMode)) out.view = v.view as ViewMode

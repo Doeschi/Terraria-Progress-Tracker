@@ -58,6 +58,8 @@ interface State {
   lastSavedAt: string | null
   /** autosave: 'paused' = no write permission in this session, 'error' = the last write failed */
   autosaveStatus: 'ok' | 'paused' | 'error'
+  /** the file is being written (to disk or to the Drive): a spinner next to it (F9) */
+  saving: boolean
 
   /** Parsed worlds of this session, by playthrough id. Never saved. */
   worlds: Record<string, LoadedWorld>
@@ -65,6 +67,8 @@ interface State {
   players: Record<string, LoadedPlayer>
 
   selection: Selection
+  /** groups whose selected options must all apply, not any of them (FL3a) */
+  requireAll: GroupKey[]
   /** options of "Sources & sets" shown in the sidebar (FL18) */
   picked: string[]
   search: string
@@ -73,6 +77,7 @@ interface State {
   /** main view: item list or bestiary */
   mode: TrackerMode
   bestiarySelection: BestiarySelection
+  bestiaryRequireAll: BestiaryGroupKey[]
   bestiarySearch: string
   bestiaryView: BestiaryViewMode
 }
@@ -90,6 +95,8 @@ interface Actions {
   savedToDrive(doc: SaveFile, file: DriveFile): void
   /** the open file's Drive file was deleted: it has no place any more and is unsaved (GD) */
   driveFileDeleted(): void
+  /** a save (to the Drive) is running or done: the spinner next to the file */
+  setSaving(saving: boolean): void
   /** Save silently if possible (file on disk, write permission, unsaved changes). */
   autoSave(): Promise<void>
 
@@ -120,12 +127,18 @@ interface Actions {
   /** "Show its items in the table": only this option selected, no search, the item list */
   showSourceItems(id: string): void
   setSearch(search: string): void
+  /** all filters at once (undo of "Clear all") */
+  setSelection(selection: Selection, requireAll: GroupKey[]): void
+  /** a group's selected options must all apply - or any of them again (FL3a) */
+  toggleRequireAll(group: GroupKey): void
   setView(view: ViewMode): void
 
   setMode(mode: TrackerMode): void
   toggleBestiaryFilter(group: BestiaryGroupKey, id: string): void
   clearBestiaryFilter(group?: BestiaryGroupKey): void
   setBestiarySearch(search: string): void
+  setBestiarySelection(selection: BestiarySelection, requireAll: BestiaryGroupKey[]): void
+  toggleBestiaryRequireAll(group: BestiaryGroupKey): void
   setBestiaryView(view: BestiaryViewMode): void
 }
 
@@ -188,14 +201,17 @@ export const useStore = create<State & Actions>()((set, get) => {
     dirty: false,
     lastSavedAt: null,
     autosaveStatus: 'ok',
+    saving: false,
     worlds: {},
     players: {},
     selection: emptySelection(),
+    requireAll: [],
     picked: [],
     search: '',
     view: 'all',
     mode: 'items',
     bestiarySelection: emptyBestiarySelection(),
+    bestiaryRequireAll: [],
     bestiarySearch: '',
     bestiaryView: 'all',
 
@@ -268,7 +284,13 @@ export const useStore = create<State & Actions>()((set, get) => {
       if (!doc) return false
       // downloads get a timestamp: the browser may rename them, so each one is told apart by its time
       const name = canSaveInPlace ? (fileName ?? DEFAULT_FILE_NAME) : downloadName(fileName ?? DEFAULT_FILE_NAME)
-      const result = await saveTrackingFile(doc, name, saveAs ? null : handle)
+      set({ saving: true })
+      let result: Awaited<ReturnType<typeof saveTrackingFile>>
+      try {
+        result = await saveTrackingFile(doc, name, saveAs ? null : handle)
+      } finally {
+        set({ saving: false })
+      }
       if (!result) return false
       // only clear "dirty" if nothing changed while the save dialog was open
       set({
@@ -285,7 +307,12 @@ export const useStore = create<State & Actions>()((set, get) => {
       const { doc, fileName } = get()
       if (!doc) return false
       const name = canSaveInPlace ? (fileName ?? DEFAULT_FILE_NAME) : downloadName(fileName ?? DEFAULT_FILE_NAME)
-      return !!(await saveTrackingFile(doc, name, null))
+      set({ saving: true })
+      try {
+        return !!(await saveTrackingFile(doc, name, null))
+      } finally {
+        set({ saving: false })
+      }
     },
 
     savedToDrive(doc, file) {
@@ -304,6 +331,10 @@ export const useStore = create<State & Actions>()((set, get) => {
       if (get().drive) set({ drive: null, dirty: true, lastSavedAt: null })
     },
 
+    setSaving(saving) {
+      set({ saving })
+    },
+
     async autoSave() {
       const { doc, handle, dirty } = get()
       if (!doc || !handle || !dirty) return
@@ -312,10 +343,13 @@ export const useStore = create<State & Actions>()((set, get) => {
           set({ autosaveStatus: 'paused' })
           return
         }
+        set({ saving: true })
         await writeTrackingFile(doc, handle)
         set({ dirty: get().doc !== doc, lastSavedAt: new Date().toISOString(), autosaveStatus: 'ok' })
       } catch {
         set({ autosaveStatus: 'error' })
+      } finally {
+        set({ saving: false })
       }
     },
 
@@ -455,13 +489,27 @@ export const useStore = create<State & Actions>()((set, get) => {
         const parent = parents.get(`${group}/${id}`)
         next = next.filter((x) => `${group}/${x}` !== parent && parents.get(`${group}/${x}`) !== `${group}/${id}`)
       }
-      set({ selection: { ...get().selection, [group]: next } })
+      set({
+        selection: { ...get().selection, [group]: next },
+        // the mode goes with the last option of the group
+        requireAll: next.length ? get().requireAll : get().requireAll.filter((g) => g !== group),
+      })
     },
 
     clearFilter(group) {
       set({
         selection: group ? { ...get().selection, [group]: [] } : emptySelection(),
+        requireAll: group ? get().requireAll.filter((g) => g !== group) : [],
       })
+    },
+
+    setSelection(selection, requireAll) {
+      set({ selection, requireAll })
+    },
+
+    toggleRequireAll(group) {
+      const { requireAll } = get()
+      set({ requireAll: requireAll.includes(group) ? requireAll.filter((g) => g !== group) : [...requireAll, group] })
     },
 
     pickSource(id) {
@@ -495,14 +543,29 @@ export const useStore = create<State & Actions>()((set, get) => {
     toggleBestiaryFilter(group, id) {
       const current = get().bestiarySelection[group]
       const next = current.includes(id) ? current.filter((x) => x !== id) : [...current, id]
-      set({ bestiarySelection: { ...get().bestiarySelection, [group]: next } })
+      set({
+        bestiarySelection: { ...get().bestiarySelection, [group]: next },
+        bestiaryRequireAll: next.length
+          ? get().bestiaryRequireAll
+          : get().bestiaryRequireAll.filter((g) => g !== group),
+      })
     },
     clearBestiaryFilter(group) {
       set({
         bestiarySelection: group ? { ...get().bestiarySelection, [group]: [] } : emptyBestiarySelection(),
+        bestiaryRequireAll: group ? get().bestiaryRequireAll.filter((g) => g !== group) : [],
       })
     },
     setBestiarySearch: (bestiarySearch) => set({ bestiarySearch }),
+    setBestiarySelection: (bestiarySelection, bestiaryRequireAll) => set({ bestiarySelection, bestiaryRequireAll }),
+    toggleBestiaryRequireAll(group) {
+      const { bestiaryRequireAll } = get()
+      set({
+        bestiaryRequireAll: bestiaryRequireAll.includes(group)
+          ? bestiaryRequireAll.filter((g) => g !== group)
+          : [...bestiaryRequireAll, group],
+      })
+    },
     setBestiaryView: (bestiaryView) => set({ bestiaryView }),
   }
 })
@@ -538,14 +601,29 @@ function rememberView() {
     const s = useStore.getState()
     const id = s.activeId
     if (!id) return
-    const { selection, search, view, mode, bestiarySelection, bestiarySearch, bestiaryView, picked } = s
+    const { selection, requireAll, search, view, mode, bestiarySelection, bestiaryRequireAll } = s
+    const { bestiarySearch, bestiaryView, picked } = s
     const { detailKey } = useUi.getState()
-    saveView(id, { selection, search, view, mode, bestiarySelection, bestiarySearch, bestiaryView, detailKey, picked })
+    saveView(id, {
+      selection,
+      requireAll,
+      search,
+      view,
+      mode,
+      bestiarySelection,
+      bestiaryRequireAll,
+      bestiarySearch,
+      bestiaryView,
+      detailKey,
+      picked,
+    })
   }, 300)
 }
 useStore.subscribe((s, prev) => {
   if (
     s.selection !== prev.selection ||
+    s.requireAll !== prev.requireAll ||
+    s.bestiaryRequireAll !== prev.bestiaryRequireAll ||
     s.search !== prev.search ||
     s.view !== prev.view ||
     s.mode !== prev.mode ||

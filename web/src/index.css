@@ -263,6 +263,18 @@ html.egg-worthy.dark {
   }
 }
 
+/* toasts (G9): lifted off the panels, which they share their colors with otherwise */
+[data-sonner-toast].cn-toast {
+  box-shadow:
+    0 0 0 1px color-mix(in oklab, var(--primary) 35%, transparent),
+    0 10px 30px rgb(0 0 0 / 0.3);
+}
+.dark [data-sonner-toast].cn-toast {
+  box-shadow:
+    0 0 0 1px color-mix(in oklab, var(--primary) 45%, transparent),
+    0 10px 30px rgb(0 0 0 / 0.6);
+}
+
 /* end credits (easter egg G8): twinkling stars */
 .egg-credits-star {
   opacity: 0.7;

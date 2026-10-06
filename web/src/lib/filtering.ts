@@ -57,6 +57,9 @@ export interface FilterGroup<K extends string = GroupKey> {
   entries: FilterEntry[]
   /** show nested entries without expanding them first */
   expanded?: boolean
+  /** an item can carry several of its options, so its selected options can be required all at
+   * once instead of any of them (FL3a) */
+  multi?: boolean
 }
 
 /** An item's obtain methods to show (chips, table): a parent without its sub-options, which say
@@ -151,7 +154,7 @@ export function buildFilterGroups(data: GameData): FilterGroup[] {
         ...data.milestones,
       ],
     },
-    { key: 'boss', label: 'Bosses', entries: bossStages, expanded: true },
+    { key: 'boss', label: 'Bosses', entries: bossStages, expanded: true, multi: true },
     {
       key: 'version',
       label: 'Added in',
@@ -168,11 +171,12 @@ export function buildFilterGroups(data: GameData): FilterGroup[] {
         { id: UNKNOWN_RARITY, name: 'Unknown', count: 0 },
       ],
     },
-    { key: 'category', label: 'Categories', entries: categories },
+    { key: 'category', label: 'Categories', entries: categories, multi: true },
     // sub-options (the two Extractinators) under their parent
     {
       key: 'obtain',
       label: 'Obtained by',
+      multi: true,
       entries: data.obtain
         // "filter: false": only shown with the items (e.g. "Using a toilet" for Poo)
         .filter((o) => !o.parent && o.filter !== false)
@@ -184,6 +188,7 @@ export function buildFilterGroups(data: GameData): FilterGroup[] {
     {
       key: 'crafting',
       label: 'Crafting',
+      multi: true,
       entries: CRAFTING.map((c) => ({
         id: c.id,
         name: c.name,
@@ -192,13 +197,18 @@ export function buildFilterGroups(data: GameData): FilterGroup[] {
       })),
     },
     // the vendors' heads (their map icons) instead of the full body
-    { key: 'vendor', label: 'Sold by', entries: data.vendors.map((v) => ({ ...v, icon: v.head ?? v.icon })) },
-    { key: 'container', label: 'Found in', entries: containers },
+    {
+      key: 'vendor',
+      label: 'Sold by',
+      entries: data.vendors.map((v) => ({ ...v, icon: v.head ?? v.icon })),
+      multi: true,
+    },
+    { key: 'container', label: 'Found in', entries: containers, multi: true },
     // any NPC, container or set (FL18): the sidebar shows only the picked ones
-    { key: 'source', label: 'Sources & sets', entries: sourceCandidates(data) },
-    { key: 'event', label: 'Events', entries: data.events },
-    { key: 'biome', label: 'Biome', entries: data.biomes },
-    { key: 'condition', label: 'Conditions', entries: conditions },
+    { key: 'source', label: 'Sources & sets', entries: sourceCandidates(data), multi: true },
+    { key: 'event', label: 'Events', entries: data.events, multi: true },
+    { key: 'biome', label: 'Biome', entries: data.biomes, multi: true },
+    { key: 'condition', label: 'Conditions', entries: conditions, multi: true },
   ]
   return groups.sort((a, b) => GROUP_KEYS.indexOf(a.key) - GROUP_KEYS.indexOf(b.key))
 }
@@ -256,6 +266,8 @@ export interface CountInput {
   checked: Set<string>
   ignored: Set<string>
   selection: Selection
+  /** groups whose selected options must all apply (FL3a) */
+  requireAll?: ReadonlySet<GroupKey>
   searchRank: Map<string, number> | null // null = no search
 }
 
@@ -269,6 +281,7 @@ export interface Counts<K extends string = GroupKey> {
   filtered: Tally
   /** progress of the whole playthrough */
   overall: Tally
+  /** ignored items matching search and filters (what the view "Ignored" shows) */
   ignoredCount: number
   /** keys of items (ignored ones included) matching search and filters */
   matching: Set<string>
@@ -289,11 +302,14 @@ export interface FacetInput<K extends string, T extends { key: string }> {
   checked: Set<string>
   ignored: Set<string>
   selection: Record<K, string[]>
+  /** groups whose selected options must all apply, not any of them (FL3a) */
+  requireAll?: ReadonlySet<K>
   searchRank: Map<string, number> | null
 }
 
 export function computeFacets<K extends string, T extends { key: string }>(input: FacetInput<K, T>): Counts<K> {
   const { keys: GROUP_KEYS, items, checked, ignored, selection, searchRank } = input
+  const requireAll = input.requireAll ?? new Set<K>()
   const facets = Object.fromEntries(GROUP_KEYS.map((g) => [g, new Map<string, Tally>()])) as Facets<K>
   const groupTallies = Object.fromEntries(GROUP_KEYS.map((g) => [g, { total: 0, obtained: 0 }])) as Record<K, Tally>
   const selectedSets = GROUP_KEYS.map((g) => new Set(selection[g]))
@@ -313,8 +329,7 @@ export function computeFacets<K extends string, T extends { key: string }>(input
   for (const item of items) {
     const isIgnored = ignored.has(item.key)
     const have = checked.has(item.key)
-    if (isIgnored) ignoredCount++
-    else {
+    if (!isIgnored) {
       overall.total++
       if (have) overall.obtained++
     }
@@ -326,7 +341,12 @@ export function computeFacets<K extends string, T extends { key: string }>(input
     let failCount = 0
     for (let i = 0; i < GROUP_KEYS.length; i++) {
       const sel = selectedSets[i]
-      if (sel.size && !entries[GROUP_KEYS[i]].some((id) => sel.has(id))) {
+      if (!sel.size) continue
+      const own = entries[GROUP_KEYS[i]]
+      const passes = requireAll.has(GROUP_KEYS[i])
+        ? [...sel].every((id) => own.includes(id))
+        : own.some((id) => sel.has(id))
+      if (!passes) {
         failCount++
         failing = i
       }
@@ -336,6 +356,9 @@ export function computeFacets<K extends string, T extends { key: string }>(input
       for (let i = 0; i < GROUP_KEYS.length; i++) {
         const g = GROUP_KEYS[i]
         if (failCount !== 0 && failing !== i) continue
+        // a group whose options must all apply: its counts come from the items that pass it too -
+        // an option not selected yet shows what would remain with it added (FL3a)
+        if (failCount !== 0 && requireAll.has(g)) continue
         for (const id of entries[g]) add(facets[g], id, have)
         if (entries[g].length) {
           groupTallies[g].total++
@@ -346,7 +369,8 @@ export function computeFacets<K extends string, T extends { key: string }>(input
     if (failCount) continue
 
     matching.add(item.key)
-    if (!isIgnored) {
+    if (isIgnored) ignoredCount++
+    else {
       filtered.total++
       if (have) filtered.obtained++
     }

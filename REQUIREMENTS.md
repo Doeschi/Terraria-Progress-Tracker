@@ -30,6 +30,9 @@ GitHub Actions.
   playthrough, time of the last change ("today, 14:05") and an "unsaved changes" marker. Below,
   three notes with icons centered on their text: privacy, data source / license / unofficial
   fan project (G4), and that the app was built with the help of AI (Claude by Anthropic).
+- **G9** Toasts (bottom right) stand out over the panels, which share their colors otherwise:
+  success, error, warning and info toasts in their own colors, the plain ones tinted with the
+  accent color, all with an accent-colored edge and a shadow.
 - **G8** A few easter eggs (Terraria references; deliberately not listed here). They never block
   the app or change data, are short, show no motion with "reduced motion", use only own texts and
   the wiki's images, and can be turned off in the settings ("Easter eggs", on by default).
@@ -350,6 +353,11 @@ needs a decision is reported, and parsers that read page text must not silently 
   playthroughs is no change to the file); older files with `activePlaythroughId` are read once as a
   fallback, otherwise the first playthrough is selected.
 
+- **F9** While the file is written – to disk, by autosave, or to Google Drive – the file button
+  shows a spinner instead of the "unsaved" dot and the status next to "File" says "Saving…";
+  a second save is not started meanwhile. A save to the Drive also shows a "Saving to Google
+  Drive…" toast that turns into the result; while the app asks something (another device's
+  version, a deleted file) the indicator pauses.
 - **F8** Autosave (off by default; remembered in the browser, PR1): only where the file is
   written in place (Chrome/Edge) and only once the file exists on disk (after the first manual
   save / when opened) – the switch appears in the File menu only then, not for a file never saved
@@ -452,7 +460,8 @@ needs a decision is reported, and parsers that read page text must not silently 
 - **I3** Each item can be ignored (per playthrough). Ignored items are hidden from the list
   and do not count towards any progress. (Hidden and ignored are the same thing.)
 - **I4** A view switch shows: all, obtained, missing, or ignored items. From "ignored" items
-  can be un-ignored.
+  can be un-ignored. Each button shows the number of items it would show under the current
+  search and filters (ignored items are matched by search and filters like the others).
 - **I5** Each item has a link that opens its wiki page in a new tab.
 - **I6** Without a sorted column, items are ordered by name (or by relevance while searching).
 - **I6a** Search mode inside the search field (items and bestiary; also used by the chest
@@ -503,6 +512,16 @@ needs a decision is reported, and parsers that read page text must not silently 
   progress bar.
 - **FL3** Multiple entries can be selected. Within a group they are combined with OR, across
   groups with AND.
+- **FL3a** Within a group the selected options can be required all at once: in the active-filters
+  line the "or" between two options of a group is a button – a click switches the whole group to
+  "and" (shown in the accent color), a click on an "and" back to "or". Only for groups whose
+  items can carry several options (Categories, Obtained by, Crafting, Sold by, Found in, Bosses,
+  Sources & sets, Events, Biome, Conditions; bestiary: Biome, Time of day, Events); for the
+  others (Progression, Rarity, Added in, Type) "A and B" is always empty, so the "or" stays text.
+  The counts of such a group follow: an option not yet selected shows how many items would
+  remain with it added, a selected one the current result. The mode is remembered with the view
+  (PR), goes with the group's last option, and "Clear all" (with its Undo) covers it. Across
+  groups it stays AND.
 - **FL4** Totals only count items available in the playthrough (platform, difficulty, game
   version) that are not ignored. Entry counts
   are faceted: they respect the search and the selections of all *other* filter groups.
@@ -1073,9 +1092,16 @@ Below 640 px width (phones) the layout changes; tablets and desktops stay as the
   another field or with a dialog or menu open. The key is shown in the empty, unfocused field
   (its label from the keyboard layout where the browser knows it). Escape clears the search, a
   second Escape leaves the field.
+- **S3a** Escape clears all active filters and the search of the shown view (items or bestiary) –
+  the same as the "Clear all" button in the active-filters line, which shows "Esc" as its hint.
+  Only a press nothing else takes: not in a field (there Escape clears or leaves the field, S3),
+  not with a dialog or menu open, not while the table has the keyboard (S6) or a weapon is
+  carried (G8). A toast "Filters cleared" offers "Undo", which puts the filters and the search
+  back. The picked sources (FL18) stay in the sidebar, only their selection is cleared.
 - **S4** While something is searched, the first row of the list (in its sort order) is outlined
   and Enter opens its card in the detail panel; ↑/↓ move through the matches (wrapping around,
-  the row is scrolled into view). A line under the field names it ("↵ open Night's Edge · ↑↓ 2
+  the row is scrolled into view – only when the highlighted row or its place changes: checking
+  an item does not move the list). A line under the field names it ("↵ open Night's Edge · ↑↓ 2
   of 117"), like the filter search. Item list and bestiary.
 - **S5** NPCs in the item search: an "NPCs" switch in the field (next to Fuzzy / Exact; on by
   default, remembered in the browser; the placeholder then says "Search items or NPCs by

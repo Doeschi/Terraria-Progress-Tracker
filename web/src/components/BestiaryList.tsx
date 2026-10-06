@@ -47,6 +47,7 @@ import { formatDate, nameOf, plural } from '@/lib/format'
 import { worldState } from '@/lib/bestiary'
 import { inDifficulty, seedOnly } from '@/lib/drops'
 import { NPC_REF, npcIndex } from '@/lib/npcs'
+import { clearAllFilters } from '@/lib/clearFilters'
 import { bannerOfEntry, bannerProgress, bannerState, bannerText, type BannerState } from '@/lib/banners'
 import { useIsPhone } from '@/hooks/useIsPhone'
 import { useCardSize } from '@/hooks/useCardSize'
@@ -218,19 +219,19 @@ function ActiveFilters({ onlyActive = false }: { onlyActive?: boolean }) {
   const data = useStore((s) => s.data)!
   const groups = useMemo(() => buildBestiaryGroups(data), [data])
   const selection = useStore((s) => s.bestiarySelection)
+  const requireAll = useStore((s) => s.bestiaryRequireAll)
   const search = useStore((s) => s.bestiarySearch.trim())
-  const { toggleBestiaryFilter, clearBestiaryFilter, setBestiarySearch } = useStore.getState()
+  const { toggleBestiaryFilter, toggleBestiaryRequireAll, setBestiarySearch } = useStore.getState()
   return (
     <ActiveFilterBar
       groups={groups}
       selection={selection}
+      requireAll={requireAll}
       search={search}
       onRemove={toggleBestiaryFilter}
+      onToggleAll={toggleBestiaryRequireAll}
       onClearSearch={() => setBestiarySearch('')}
-      onClearAll={() => {
-        clearBestiaryFilter()
-        setBestiarySearch('')
-      }}
+      onClearAll={clearAllFilters}
       onlyActive={onlyActive}
     />
   )
@@ -375,10 +376,15 @@ function BestiaryTable({ view, phone = false }: { view: BestiaryView; phone?: bo
   const virtualRows = virtualizer.getVirtualItems()
   const padTop = virtualRows[0]?.start ?? 0
   const padBottom = virtualizer.getTotalSize() - (virtualRows.at(-1)?.end ?? 0)
+  // only when the highlighted row's place changes is it scrolled into view - not when the rows
+  // are rebuilt by a check (the list would jump)
+  const activeIndex = useMemo(
+    () => (activeRef ? rows.findIndex((e) => NPC_REF + e.id === activeRef) : -1),
+    [activeRef, rows],
+  )
   useEffect(() => {
-    const index = activeRef ? rows.findIndex((e) => NPC_REF + e.id === activeRef) : -1
-    if (index >= 0) virtualizer.scrollToIndex(index, { align: 'auto' })
-  }, [activeRef, rows, virtualizer])
+    if (activeIndex >= 0) virtualizer.scrollToIndex(activeIndex, { align: 'auto' })
+  }, [activeIndex, virtualizer])
 
   // column widths, set by dragging a header's right edge (remembered in the browser)
   const savedSizes = usePrefs((s) => s.bestiaryColumnSizes)

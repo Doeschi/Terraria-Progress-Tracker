@@ -185,6 +185,7 @@ function HeldWeapon() {
     <div
       ref={boxRef}
       aria-hidden="true"
+      data-weapon-held=""
       className="pointer-events-none fixed top-0 left-0 z-[9998]"
       style={{ transform: 'translate(-200px, -200px)' }}
     >

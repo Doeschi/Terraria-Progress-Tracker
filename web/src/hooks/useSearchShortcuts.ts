@@ -1,9 +1,11 @@
 import { useEffect, useState } from 'react'
+import { clearAllFilters } from '@/lib/clearFilters'
 
 // Keyboard shortcuts to the search fields: the key left of 1 (§ on Swiss/German keyboards,
 // ` on US ones - by its position) jumps to the item or bestiary search, Shift + that key to the
 // filter search; "/" to the item search as on many websites. Not while typing in a field or
-// with a dialog open.
+// with a dialog open. Escape, when nothing else takes it, clears all filters and the search
+// (S3a).
 
 export type SearchTarget = 'list' | 'filters'
 
@@ -22,6 +24,12 @@ export function useSearchShortcuts() {
       )
         return
       if (document.querySelector('[role="dialog"], [role="alertdialog"], [role="menu"]')) return
+      if (e.key === 'Escape') {
+        // a carried weapon (easter egg) takes Escape to fly back
+        if (document.querySelector('[data-weapon-held]')) return
+        if (clearAllFilters()) e.preventDefault()
+        return
+      }
       const target: SearchTarget | null = isTopLeftKey(e)
         ? e.shiftKey
           ? 'filters'

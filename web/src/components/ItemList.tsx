@@ -18,6 +18,7 @@ import {
 import { useStore } from '@/store'
 import { usePrefs, type ViewDef } from '@/lib/prefs'
 import { buildFilterGroups, GROUP_KEYS, type ViewMode } from '@/lib/filtering'
+import { clearAllFilters } from '@/lib/clearFilters'
 import type { TrackerView } from '@/hooks/useTrackerView'
 import { Button } from '@/components/ui/button'
 import { ToggleGroup, ToggleGroupItem } from '@/components/ui/toggle-group'
@@ -90,12 +91,32 @@ function Toolbar({
   const mode = useStore((s) => s.view)
   const setView = useStore((s) => s.setView)
 
-  // phones: icons instead of the labels (except "All"), so the numbers next to them fit
-  const views: { value: ViewMode; label: string; tip: string; icon?: LucideIcon }[] = [
-    { value: 'all', label: 'All', tip: 'All items that count towards progress' },
-    { value: 'missing', label: 'Missing', tip: 'Items you have not checked yet', icon: CircleDashed },
-    { value: 'obtained', label: 'Obtained', tip: 'Items you have checked', icon: CircleCheck },
-    { value: 'ignored', label: 'Ignored', tip: 'Hidden items that do not count towards progress', icon: EyeOff },
+  // each with the number of items it shows under the current search and filters (I4); phones:
+  // icons instead of the labels (except "All"), so the numbers next to them fit
+  const { filtered, ignoredCount } = view
+  const views: { value: ViewMode; label: string; tip: string; count: number; icon?: LucideIcon }[] = [
+    { value: 'all', label: 'All', tip: 'All items that count towards progress', count: filtered.total },
+    {
+      value: 'missing',
+      label: 'Missing',
+      tip: 'Items you have not checked yet',
+      count: filtered.total - filtered.obtained,
+      icon: CircleDashed,
+    },
+    {
+      value: 'obtained',
+      label: 'Obtained',
+      tip: 'Items you have checked',
+      count: filtered.obtained,
+      icon: CircleCheck,
+    },
+    {
+      value: 'ignored',
+      label: 'Ignored',
+      tip: 'Hidden items that do not count towards progress',
+      count: ignoredCount,
+      icon: EyeOff,
+    },
   ]
 
   return (
@@ -135,9 +156,7 @@ function Toolbar({
             {views.map((v) => (
               <ToggleGroupItem key={v.value} value={v.value} title={v.tip} aria-label={v.label}>
                 {phone && v.icon ? <v.icon /> : v.label}
-                {v.value === 'ignored' && view.ignoredCount > 0 && (
-                  <span className="text-muted-foreground">{view.ignoredCount}</span>
-                )}
+                <span className="text-muted-foreground tabular-nums">{v.count.toLocaleString('en')}</span>
               </ToggleGroupItem>
             ))}
           </ToggleGroup>
@@ -465,19 +484,19 @@ function ActiveFilters({ onlyActive = false }: { onlyActive?: boolean }) {
   const data = useStore((s) => s.data)!
   const groups = useMemo(() => buildFilterGroups(data), [data])
   const selection = useStore((s) => s.selection)
+  const requireAll = useStore((s) => s.requireAll)
   const search = useStore((s) => s.search.trim())
-  const { toggleFilter, clearFilter, setSearch } = useStore.getState()
+  const { toggleFilter, toggleRequireAll, setSearch } = useStore.getState()
   return (
     <ActiveFilterBar
       groups={groups}
       selection={selection}
+      requireAll={requireAll}
       search={search}
       onRemove={toggleFilter}
+      onToggleAll={toggleRequireAll}
       onClearSearch={() => setSearch('')}
-      onClearAll={() => {
-        clearFilter()
-        setSearch('')
-      }}
+      onClearAll={clearAllFilters}
       onlyActive={onlyActive}
     />
   )

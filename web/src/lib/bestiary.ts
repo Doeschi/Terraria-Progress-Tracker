@@ -57,6 +57,7 @@ export function buildBestiaryGroups(data: GameData): FilterGroup<BestiaryGroupKe
     {
       key: 'biome',
       label: 'Biome',
+      multi: true,
       entries: used(
         data.biomes,
         count((e) => e.biomes),
@@ -65,6 +66,7 @@ export function buildBestiaryGroups(data: GameData): FilterGroup<BestiaryGroupKe
     {
       key: 'time',
       label: 'Time of day',
+      multi: true,
       entries: used(
         data.times,
         count((e) => e.times),
@@ -73,6 +75,7 @@ export function buildBestiaryGroups(data: GameData): FilterGroup<BestiaryGroupKe
     {
       key: 'event',
       label: 'Events',
+      multi: true,
       entries: used(
         data.events,
         count((e) => e.events),

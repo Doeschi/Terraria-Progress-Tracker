@@ -26,11 +26,14 @@ const Toaster = ({ ...props }: ToasterProps) => {
           <Loader2Icon className="size-4 animate-spin" />
         ),
       }}
+      // success / error / warning / info in their own colors; the plain ones tinted with the
+      // accent and lifted by a shadow (.cn-toast), so they stand out over the panels (G9)
+      richColors
       style={
         {
-          "--normal-bg": "var(--popover)",
+          "--normal-bg": "color-mix(in oklab, var(--popover) 86%, var(--primary))",
           "--normal-text": "var(--popover-foreground)",
-          "--normal-border": "var(--border)",
+          "--normal-border": "color-mix(in oklab, var(--border) 40%, var(--primary))",
           "--border-radius": "var(--radius)",
           // clickable also while a dialog is open (it switches off pointer events outside itself):
           // e.g. "Undo" after hiding a filter in the Filters dialog on phones

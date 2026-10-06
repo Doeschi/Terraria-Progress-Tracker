@@ -236,11 +236,12 @@ export function ItemTable({
   usePublishRows(useMemo(() => rows.map((r) => ({ ref: r.id, name: r.original.name })), [rows]))
   const active = useActiveRow(useStore((s) => s.search))
   const activeKey = active.row?.ref
+  // the row's own index (NPC suggestions come before the rows); only when it changes is the row
+  // scrolled into view - not when the rows are rebuilt by a check (S6: the table would jump)
+  const activeIndex = useMemo(() => (activeKey ? rows.findIndex((r) => r.id === activeKey) : -1), [activeKey, rows])
   useEffect(() => {
-    // the row's own index (NPC suggestions come before the rows)
-    const index = activeKey ? rows.findIndex((r) => r.id === activeKey) : -1
-    if (index >= 0) virtualizer.scrollToIndex(index, { align: 'auto' })
-  }, [activeKey, rows, virtualizer])
+    if (activeIndex >= 0) virtualizer.scrollToIndex(activeIndex, { align: 'auto' })
+  }, [activeIndex, virtualizer])
   const worldAttached = !!pt?.world
   const rowState = useMemo(
     () => ({
