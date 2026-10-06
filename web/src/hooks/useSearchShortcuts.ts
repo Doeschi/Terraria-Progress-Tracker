@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react'
-import { clearAllFilters } from '@/lib/clearFilters'
+import { clearAllFilters, undoClearFilters } from '@/lib/clearFilters'
 
 // Keyboard shortcuts to the search fields: the key left of 1 (§ on Swiss/German keyboards,
 // ` on US ones - by its position) jumps to the item or bestiary search, Shift + that key to the
 // filter search; "/" to the item search as on many websites. Not while typing in a field or
-// with a dialog open. Escape, when nothing else takes it, clears all filters and the search
-// (S3a).
+// with a dialog open. Escape, when nothing else takes it, clears all filters and the search;
+// Ctrl+Z (⌘Z) while the "Filters cleared" toast shows puts them back (S3a).
 
 export type SearchTarget = 'list' | 'filters'
 
@@ -15,7 +15,7 @@ const isTopLeftKey = (e: KeyboardEvent) => e.code === 'Backquote' || e.key === '
 export function useSearchShortcuts() {
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
-      if (e.ctrlKey || e.metaKey || e.altKey || e.defaultPrevented) return
+      if (e.defaultPrevented) return
       // the target can also be the document or window (keys sent to them)
       const t = e.target
       if (
@@ -24,6 +24,12 @@ export function useSearchShortcuts() {
       )
         return
       if (document.querySelector('[role="dialog"], [role="alertdialog"], [role="menu"]')) return
+      // undo of "Clear all" (in a field Ctrl+Z stays the field's own undo)
+      if ((e.ctrlKey || e.metaKey) && !e.altKey && !e.shiftKey && e.key.toLowerCase() === 'z') {
+        if (undoClearFilters()) e.preventDefault()
+        return
+      }
+      if (e.ctrlKey || e.metaKey || e.altKey) return
       if (e.key === 'Escape') {
         // a carried weapon (easter egg) takes Escape to fly back
         if (document.querySelector('[data-weapon-held]')) return

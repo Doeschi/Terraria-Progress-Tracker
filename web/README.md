@@ -31,8 +31,9 @@ npm run format         # Prettier (single quotes, no semicolons, 120 columns; sr
 | `lib/prefs.ts`, `lib/viewState.ts`, `lib/layout.ts` | View settings remembered in the browser (columns, sorting, hidden filters, autosave, …), the view of each playthrough, what the settings can show and reorder |
 | `lib/sprites.ts` | Where a wiki icon sits in the sprite sheets |
 | `lib/intros.ts` | The introductions of the wiki pages ("About" in the detail panel), loaded when first shown |
+| `lib/stats.ts` | The numbers behind the statistics view: changes per day / week / month, streaks, pace, completed filters, progress per group |
 | `lib/format.ts`, `lib/utils.ts` | Small helpers (plurals, names, dates; touch screens, class names) |
 | `lib/eggs.tsx`, `lib/trophies.ts`, `lib/weapons.ts`, `lib/fx.ts`, `lib/confetti.ts`, `lib/parade.ts`, `lib/season.ts` | Easter eggs and celebrations |
 | `hooks/` | View models (`useTrackerView`, `useBestiaryView`), world and player loading, world progress, completions, autosave, areas |
-| `components/` | Screens and parts: header (`TopBar`, `topbar/`), filter sidebar, item and bestiary lists, item details, `dialogs/`, `table/` |
+| `components/` | Screens and parts: header (`TopBar`, `topbar/`), filter sidebar, item and bestiary lists, item details, statistics (`stats/`, with the SVG charts), `dialogs/`, `table/` |
 | `components/ui/` | shadcn/ui components (generated, kept in their own style) |

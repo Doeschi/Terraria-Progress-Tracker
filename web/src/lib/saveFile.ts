@@ -49,8 +49,8 @@ const PlaythroughSchema = z.object({
   bestiary: z.array(z.string()),
   /** bestiary entry id -> ISO time of the last change */
   bestiaryChangedAt: z.record(z.string(), z.string()),
-  /** filter option ("<group>/<id>", bestiary ones "bestiary:<group>/<id>") -> ISO time it reached
-   * 100% over the whole playthrough; removed when it is no longer complete */
+  /** filter option ("<group>/<id>", bestiary ones "bestiary:<group>/<id>") -> ISO time it first
+   * reached 100% over the whole playthrough; kept when it is no longer complete (FL17) */
   completedAt: z.record(z.string(), z.string()),
   world: z.nullable(WorldRefSchema),
   /** the attached player file (only a reference, the file is read each session) */

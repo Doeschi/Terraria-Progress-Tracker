@@ -1,7 +1,8 @@
 # terraria-player-file
 
 Read Terraria player files (`.plr`) in the browser or in Node: inventory, equipment and loadouts,
-Piggy Bank, Safe, Defender's Forge and Void Vault, permanent upgrades and Journey research.
+Piggy Bank, Safe, Defender's Forge and Void Vault, permanent upgrades, Journey research and the
+character's statistics (play time, deaths, Angler quests, golf score, tax money).
 
 > **Status: in development, not published yet.** Reads Terraria 1.4.5 player files (file
 > version 326, [FORMAT.md](FORMAT.md)), tested against the test characters. The package lives
@@ -29,6 +30,7 @@ player.equipment       // armor, accessories, vanity, dyes; also player.misc and
 player.held            // items in the game's temporary slots when it saved (e.g. on the cursor)
 player.upgrades        // life crystals and fruit, mana crystals, Demon Heart, Aegis Fruit, ...
 player.research        // { Wood: 30, CopperPickaxe: 1, ... } (internal item names)
+player.playTime        // seconds played; also deaths { pve, pvp }, anglerQuests, golfScore, taxMoney
 ```
 
 `allItems(player)` lists every item with where it is (`inventory`, `held`, `voidVault`, `loadout:2`, …).

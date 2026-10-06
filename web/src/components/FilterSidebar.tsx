@@ -573,12 +573,7 @@ function GroupSection({
         </div>
       </div>
       {open && scope === ITEMS_SCOPE && group.key === 'crafting' && <CraftingOptions />}
-      {open && scope === ITEMS_SCOPE && group.key === 'progression' && (
-        <>
-          <ProgressionOptions />
-          <DimOption />
-        </>
-      )}
+      {open && scope === ITEMS_SCOPE && group.key === 'progression' && <ProgressionOptions />}
       {open && (
         <ul className="flex flex-col gap-px">
           {entries.length === 0 && (
@@ -808,34 +803,6 @@ function ProgressionOptions() {
       </ToggleGroup>
       <span>the milestone</span>
     </div>
-  )
-}
-
-/** With a loaded world: dim the items it has not reached yet (MS8), right under the mode switch. */
-function DimOption() {
-  const dim = usePrefs((s) => s.layout.dimUnavailable)
-  const setLayout = usePrefs((s) => s.setLayout)
-  const progress = useWorldProgress()
-  return (
-    <label
-      className={cn(
-        'mb-1 flex items-center gap-2 px-2 pb-1 text-xs text-muted-foreground',
-        progress ? 'cursor-pointer' : 'opacity-50',
-      )}
-      title={
-        progress
-          ? `Dim the items ${progress.worldName} has not reached yet (after a boss it has not defeated)`
-          : 'Needs a loaded world: dims the items it has not reached yet'
-      }
-    >
-      <Checkbox
-        checked={dim}
-        disabled={!progress}
-        onCheckedChange={(v) => setLayout({ dimUnavailable: v === true })}
-        className="size-3.5"
-      />
-      Dim items not available yet in the world
-    </label>
   )
 }
 

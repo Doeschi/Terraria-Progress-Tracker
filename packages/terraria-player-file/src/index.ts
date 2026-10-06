@@ -52,6 +52,14 @@ export interface PlayerFile {
   maxLife: number
   mana: number
   maxMana: number
+  /** time played with this character, in seconds */
+  playTime: number
+  deaths: { pve: number; pvp: number }
+  /** Angler quests finished */
+  anglerQuests: number
+  golfScore: number
+  /** money the Tax Collector has gathered, in copper coins */
+  taxMoney: number
   /** permanent upgrades used (FORMAT.md marks which of them are verified) */
   upgrades: {
     lifeCrystals: number
@@ -142,7 +150,8 @@ export function parsePlayerData(bytes: Uint8Array, options: ReadOptions = {}): P
   const difficultyId = r.u8()
   const difficulty = DIFFICULTIES[difficultyId]
   if (!difficulty) throw new FormatError(`unknown difficulty ${difficultyId}`, r.pos - 1)
-  r.i64() // play time
+  // .NET TimeSpan ticks of 100 ns
+  const playTime = Number(r.i64()) / 10_000_000
   r.i32() // hair
   r.u8() // hair dye
   r.u8() // team
@@ -166,8 +175,8 @@ export function parsePlayerData(bytes: Uint8Array, options: ReadOptions = {}): P
   const ambrosia = r.bool()
   r.bool() // Old One's Army defeated
   r.u8() // unknown (FORMAT.md)
-  r.i32() // tax money
-  r.skip(8) // deaths PvE, PvP
+  const taxMoney = r.i32()
+  const deaths = { pve: r.i32(), pvp: r.i32() }
   r.skip(7 * 3) // colors
 
   // equipment: 20 slots (armor, accessories, vanity), then 10 dyes - 6 bytes each
@@ -212,13 +221,13 @@ export function parsePlayerData(bytes: Uint8Array, options: ReadOptions = {}): P
 
   r.bool() // hotbar locked
   r.skip(13) // hidden info displays
-  r.i32() // Angler quests
+  const anglerQuests = r.i32()
   r.skip(4 * 4) // d-pad bindings
   r.skip(12 * 4) // builder accessory states
   r.i32() // Tavernkeep quest log
   if (r.bool()) r.i32() // dead: respawn timer
   r.i64() // last save time
-  r.i32() // golf score
+  const golfScore = r.i32()
   r.u8() // unknown (FORMAT.md)
 
   const researchCount = r.i32()
@@ -261,6 +270,11 @@ export function parsePlayerData(bytes: Uint8Array, options: ReadOptions = {}): P
     maxLife,
     mana,
     maxMana,
+    playTime,
+    deaths,
+    anglerQuests,
+    golfScore,
+    taxMoney,
     upgrades: {
       // 100 base life, +20 per Life Crystal up to 400, then +5 per Life Fruit
       lifeCrystals: Math.max(0, Math.min(15, Math.floor((maxLife - 100) / 20))),

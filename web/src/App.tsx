@@ -25,6 +25,7 @@ import { WeaponLayer } from '@/components/WeaponLayer'
 import { EndCredits } from '@/components/EndCredits'
 import { useBestiaryCompletions, useItemCompletions } from '@/hooks/useCompletions'
 import { WelcomeScreen } from '@/components/WelcomeScreen'
+import { StatsScreen } from '@/components/stats/StatsScreen'
 import { AreasDialog } from '@/components/dialogs/AreasDialog'
 import { ChestSearchDialog } from '@/components/dialogs/ChestSearchDialog'
 import { PlaythroughDialog } from '@/components/dialogs/PlaythroughDialog'
@@ -142,6 +143,8 @@ function Tracker() {
       <TopBar view={view} />
       {pt && view && mode === 'bestiary' ? (
         <BestiaryScreen />
+      ) : pt && view && mode === 'stats' ? (
+        <StatsScreen view={view} />
       ) : pt && view ? (
         <div className="flex min-h-0 flex-1">
           <ResizablePane

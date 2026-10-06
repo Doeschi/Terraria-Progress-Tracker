@@ -30,6 +30,11 @@ test('journey.plr: header and stats', async () => {
   assert.equal(p.upgrades.lifeFruit, 0)
   assert.equal(p.upgrades.manaCrystals, 1)
   assert.equal(p.upgrades.demonHeart, false)
+  // 8 min 20 s played; the other statistics are still at their start
+  assert.equal(Math.round(p.playTime), 500)
+  assert.deepEqual(p.deaths, { pve: 0, pvp: 0 })
+  assert.equal(p.anglerQuests, 0)
+  assert.equal(p.golfScore, 0)
 })
 
 test('journey.plr: inventory, coins, ammo', async () => {
@@ -113,6 +118,9 @@ test('classic.plr', async () => {
   assert.equal(p.maxLife, 120)
   assert.equal(p.upgrades.lifeCrystals, 1)
   assert.equal(p.upgrades.manaCrystals, 0)
+  assert.equal(Math.round(p.playTime), 55)
+  assert.deepEqual(p.deaths, { pve: 0, pvp: 0 })
+  assert.equal(p.taxMoney, 0)
   // starting tools (random prefixes), Gel in hotbar slot 4, Stone in the last slot
   assert.deepEqual(
     p.inventory.map((i) => [i.slot, i.id, i.stack]),

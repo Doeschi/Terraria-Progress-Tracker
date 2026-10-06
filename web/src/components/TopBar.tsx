@@ -6,7 +6,7 @@ import type { TrackerView } from '@/hooks/useTrackerView'
 import { TallyBar, TallyText } from './common'
 import { usePrefs } from '@/lib/prefs'
 import { useEndCredits, useTrophies } from '@/lib/trophies'
-import { BookOpen, Clapperboard, Menu, Package, Star } from 'lucide-react'
+import { BookOpen, ChartColumn, Clapperboard, Menu, Package, Star } from 'lucide-react'
 import { formatPercent } from '@/lib/filtering'
 import { HeaderLevel, MAX_HEADER_LEVEL, useFitLevel, useHeaderLevel } from './topbar/compact'
 import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet'
@@ -43,8 +43,8 @@ function DevBadge() {
   )
 }
 
-/** Phones (MO1): one slim row - logo, playthrough, Items / Bestiary and a menu (☰) with the rest
- * of the desktop top bar; the item progress as a thin line below it. */
+/** Phones (MO1): one slim row - logo, playthrough, Items / Bestiary / Stats (as icons) and a menu
+ * (☰) with the rest of the desktop top bar; the item progress as a thin line below it. */
 function PhoneTopBar({ view }: { view: TrackerView | null }) {
   const hasPlaythrough = useActivePlaythrough() !== null
   const overall = view?.overall
@@ -56,7 +56,7 @@ function PhoneTopBar({ view }: { view: TrackerView | null }) {
         <DevBadge />
         {/* the playthrough button takes the room that is left */}
         <div className="flex min-w-0 flex-1 [&_button]:max-w-full">{hasPlaythrough && <PlaythroughMenu />}</div>
-        {view && <ModeSwitch />}
+        {view && <ModeSwitch icons />}
         <Sheet>
           <SheetTrigger asChild>
             <Button variant="outline" size="icon-sm" title="Menu" aria-label="Menu">
@@ -225,8 +225,8 @@ function ProgressBars({ view }: { view: TrackerView }) {
   )
 }
 
-/** Switch between the item list and the bestiary. */
-function ModeSwitch() {
+/** Switch between the item list, the bestiary and the statistics (ST1). */
+function ModeSwitch({ icons: iconsOnly = false }: { icons?: boolean }) {
   const mode = useStore((s) => s.mode)
   const setMode = useStore((s) => s.setMode)
   // easter egg (G8): a gold star once the whole bestiary is unlocked
@@ -236,8 +236,10 @@ function ModeSwitch() {
   // ... and the end credits again, once the playthrough is complete
   const allDone = useTrophies((s) => s.all)
   const showCredits = useEndCredits((s) => s.show)
-  // a narrow desktop header (level 4): icons instead of the words
-  const icons = useHeaderLevel() >= 4
+  // icon and word, as long as there is room: a narrow desktop header (level 4) and the phone bar
+  // show only the icons
+  const level = useHeaderLevel()
+  const icons = iconsOnly || level >= 4
   return (
     <div className="flex items-center gap-1">
       <ToggleGroup
@@ -246,18 +248,24 @@ function ModeSwitch() {
         size="sm"
         value={mode}
         onValueChange={(v) => v && setMode(v as TrackerMode)}
-        aria-label="Items or bestiary"
+        aria-label="Items, bestiary or statistics"
       >
         <ToggleGroupItem value="items" title={icons ? 'Items' : undefined} aria-label="Items">
-          {icons ? <Package /> : 'Items'}
+          <Package />
+          {!icons && 'Items'}
         </ToggleGroupItem>
         <ToggleGroupItem
           value="bestiary"
           title={star ? 'Bestiary complete!' : icons ? 'Bestiary' : undefined}
           aria-label="Bestiary"
         >
-          {icons ? <BookOpen /> : 'Bestiary'}
+          <BookOpen />
+          {!icons && 'Bestiary'}
           {star && <Star className="size-3 fill-amber-400 text-amber-500" aria-label="complete" />}
+        </ToggleGroupItem>
+        <ToggleGroupItem value="stats" title={icons ? 'Statistics' : undefined} aria-label="Statistics">
+          <ChartColumn />
+          {!icons && 'Stats'}
         </ToggleGroupItem>
       </ToggleGroup>
       {allDone && eggs && (

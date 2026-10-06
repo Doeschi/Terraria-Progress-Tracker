@@ -13,6 +13,7 @@ import {
   Plus,
   Save,
   Star,
+  SunDim,
   type LucideIcon,
 } from 'lucide-react'
 import { useStore } from '@/store'
@@ -45,6 +46,7 @@ import { handleListKey } from '@/lib/listCursor'
 import { NpcSuggestions } from './NpcSuggestions'
 import { useUi } from '@/ui'
 import { useIsPhone } from '@/hooks/useIsPhone'
+import { useWorldProgress } from '@/hooks/useWorldProgress'
 import { CardSortMenu, ItemCards, type CardSort } from './ItemCards'
 
 export function ItemList({ view }: { view: TrackerView }) {
@@ -326,6 +328,7 @@ function PresetBar() {
         </DropdownMenuContent>
       </DropdownMenu>
       <ColumnsMenu custom={!active} />
+      <DimToggle />
       {editing && (
         <ViewEditor
           target={editing}
@@ -336,6 +339,38 @@ function PresetBar() {
         />
       )}
     </div>
+  )
+}
+
+/** Dim the items the loaded world has not reached yet (MS8): a toggle next to the columns, greyed
+ * out without a world (aria-disabled, so the hint still shows on hover). */
+function DimToggle() {
+  const dim = usePrefs((s) => s.layout.dimUnavailable)
+  const setLayout = usePrefs((s) => s.setLayout)
+  const progress = useWorldProgress()
+  const on = dim && !!progress
+  return (
+    <Button
+      variant="outline"
+      size="sm"
+      aria-pressed={on}
+      aria-disabled={!progress}
+      onClick={() => progress && setLayout({ dimUnavailable: !dim })}
+      className={cn(
+        'h-7 rounded-full',
+        // on: filled like the active view button
+        on &&
+          'border-primary bg-primary text-primary-foreground hover:bg-primary/80 hover:text-primary-foreground dark:bg-primary dark:hover:bg-primary/80',
+        !progress && 'cursor-not-allowed opacity-50 hover:bg-transparent',
+      )}
+      title={
+        progress
+          ? `${on ? 'Shows' : 'Dims'} the items ${progress.worldName} has not reached yet (after a boss it has not defeated) – click to switch`
+          : 'Needs a loaded world: dims the items it has not reached yet'
+      }
+    >
+      <SunDim /> Dim unavailable
+    </Button>
   )
 }
 

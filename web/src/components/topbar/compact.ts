@@ -5,7 +5,7 @@ import { createContext, useContext, useEffect, useLayoutEffect, useRef, useState
 //   1  no app name next to the logo, no "(not loaded)" after the player and the world
 //   2  Player and World: only their icons (the names on hover)
 //   3  File: only its icon, and the save status as an icon
-//   4  Progress without counts and with icons for "Items" / "Bestiary"; Items | Bestiary as icons
+//   4  Progress without counts and with icons for "Items" / "Bestiary"; Items | Bestiary | Stats as icons
 //   5  the playthrough button without the name (platform, difficulty and version icons stay)
 //   6  no Progress
 //   7  no GitHub and About buttons (About is also at the bottom of the filter sidebar)

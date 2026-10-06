@@ -99,9 +99,11 @@ function useCompletions(
 }
 
 /**
- * When each filter option was completed (Playthrough.completedAt): options at 100% get the current
- * time if they have none, options no longer complete lose it. Hidden options count too. Runs
- * only with counts (not while the data or the view is still loading).
+ * When each filter option was first completed (Playthrough.completedAt, FL17): options at 100%
+ * get the current time if they have none. The time stays when the option falls below 100% again
+ * (items get unchecked after a sync, e.g. all Copper Bars used up) and is not replaced when it
+ * completes again - it is the first completion. Hidden options count too. Runs only with counts
+ * (not while the data or the view is still loading).
  */
 function useCompletedAt(groups: AnyGroup[], totals: AnyFacets, playthroughId: string | undefined, prefix: string) {
   const completedAt = useStore((s) => findPlaythrough(s.doc, playthroughId ?? '')?.completedAt)
@@ -109,15 +111,12 @@ function useCompletedAt(groups: AnyGroup[], totals: AnyFacets, playthroughId: st
 
   useEffect(() => {
     if (!playthroughId || !completedAt || !Object.values(totals).some((m) => m.size)) return
-    const done = new Set([...completedOptions(groups, totals, EMPTY, prefix).keys()].map((k) => prefix + k))
-    const mine = (k: string) => (prefix ? k.startsWith(prefix) : !k.startsWith('bestiary:'))
-    const stale = Object.keys(completedAt).filter((k) => mine(k) && !done.has(k))
-    const fresh = [...done].filter((k) => !completedAt[k])
-    if (!stale.length && !fresh.length) return
+    const done = [...completedOptions(groups, totals, EMPTY, prefix).keys()].map((k) => prefix + k)
+    const fresh = done.filter((k) => !completedAt[k])
+    if (!fresh.length) return
     const now = new Date().toISOString()
     updatePlaythrough(playthroughId, (p) => {
       const next = { ...p.completedAt }
-      for (const k of stale) delete next[k]
       for (const k of fresh) next[k] = now
       return { ...p, completedAt: next }
     })

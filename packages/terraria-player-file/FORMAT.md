@@ -62,7 +62,7 @@ Offsets are those of the test character `journey.plr` (name of 17 characters, no
 | 16 | `u64` | flags (bit 0: favorite) | ~ |
 | 24 | `string` | character name | ✔ |
 |  | `u8` | difficulty: 0 Classic, 1 Mediumcore, 2 Hardcore, 3 Journey | ✔ (0, 3) |
-|  | `i64` | play time (ticks) | ~ |
+|  | `i64` | play time (.NET `TimeSpan` ticks of 100 ns; the Journey character 8 min 20 s, the Classic one 55 s) | ✔ |
 |  | `i32` | hair style | ~ |
 |  | `u8` | hair dye | ~ |
 |  | `u8` | team | ~ |
@@ -82,7 +82,7 @@ Offsets are those of the test character `journey.plr` (name of 17 characters, no
 | 6 × `bool` | Vital Crystal, Aegis Fruit, Arcane Crystal, Galaxy Pearl, Gummy Worm, Ambrosia used | ~ |
 | `bool` | Old One's Army defeated once | ~ |
 | `u8` | unknown – 1 for the Journey character, 0 for the Classic one | ? |
-| `i32` | tax money collected | ~ |
+| `i32` | tax money collected (copper coins) | ~ |
 | `i32`, `i32` | deaths (PvE, PvP) | ~ |
 | 7 × `color` | hair, skin, eyes, shirt, undershirt, pants, shoes | ~ |
 

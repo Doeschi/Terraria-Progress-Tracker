@@ -1,4 +1,5 @@
 import type { SaveFile } from './saveFile'
+import type { TrackerMode } from '@/store'
 import { emptySelection, GROUP_KEYS, type GroupKey, type Selection, type ViewMode } from './filtering'
 import {
   BESTIARY_GROUP_KEYS,
@@ -9,8 +10,8 @@ import {
 } from './bestiary'
 
 // What the list shows, per playthrough, remembered in the browser: selected filters, search,
-// "Show" switch, items or bestiary, and the item in the detail panel. Restored when the
-// playthrough becomes active again (on the next visit, or after switching playthroughs).
+// "Show" switch, items / bestiary / statistics, and the item in the detail panel. Restored when
+// the playthrough becomes active again (on the next visit, or after switching playthroughs).
 
 export interface SavedView {
   selection: Selection
@@ -18,7 +19,7 @@ export interface SavedView {
   requireAll: GroupKey[]
   search: string
   view: ViewMode
-  mode: 'items' | 'bestiary'
+  mode: TrackerMode
   bestiarySelection: BestiarySelection
   bestiaryRequireAll: BestiaryGroupKey[]
   bestiarySearch: string
@@ -32,6 +33,7 @@ export interface SavedView {
 const KEY = 'view-state'
 const VIEWS: ViewMode[] = ['all', 'missing', 'obtained', 'ignored']
 const BESTIARY_VIEWS: BestiaryViewMode[] = ['all', 'missing', 'unlocked']
+const MODES: TrackerMode[] = ['items', 'bestiary', 'stats']
 
 export const defaultView = (): SavedView => ({
   selection: emptySelection(),
@@ -90,7 +92,7 @@ export function loadView(playthroughId: string | null | undefined): SavedView {
   if (typeof v.bestiarySearch === 'string') out.bestiarySearch = v.bestiarySearch
   if (VIEWS.includes(v.view as ViewMode)) out.view = v.view as ViewMode
   if (BESTIARY_VIEWS.includes(v.bestiaryView as BestiaryViewMode)) out.bestiaryView = v.bestiaryView as BestiaryViewMode
-  if (v.mode === 'items' || v.mode === 'bestiary') out.mode = v.mode
+  if (MODES.includes(v.mode as TrackerMode)) out.mode = v.mode as TrackerMode
   if (typeof v.detailKey === 'string') out.detailKey = v.detailKey
   if (Array.isArray(v.picked)) out.picked = v.picked.filter((x): x is string => typeof x === 'string')
   return out

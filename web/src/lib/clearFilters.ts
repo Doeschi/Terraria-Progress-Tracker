@@ -3,11 +3,18 @@ import { useStore } from '@/store'
 
 // "Clear all" (S3a): the active filters and the search of the view that is shown - items or
 // bestiary - are cleared, by the button in the active-filters line or by Escape. A toast offers
-// to put them back: Escape is pressed by reflex.
+// to put them back (its "Undo" button, or Ctrl+Z while it shows): Escape is pressed by reflex.
 
-/** Clears the filters and the search of the current view; false when there was nothing to clear. */
+const TOAST = 'filters-cleared'
+const isMac = /Mac|iPhone|iPad/.test(navigator.platform)
+/** what Ctrl+Z puts back while the toast shows */
+let pendingUndo: (() => void) | null = null
+
+/** Clears the filters and the search of the current view; false when there was nothing to clear
+ * (the statistics have no filters). */
 export function clearAllFilters(): boolean {
   const s = useStore.getState()
+  if (s.mode === 'stats') return false
   if (s.mode === 'bestiary') {
     const { bestiarySelection, bestiaryRequireAll, bestiarySearch } = s
     if (!bestiarySearch && Object.values(bestiarySelection).every((ids) => !ids.length)) return false
@@ -31,5 +38,25 @@ export function clearAllFilters(): boolean {
 }
 
 function undoable(restore: () => void) {
-  toast('Filters cleared', { id: 'filters-cleared', action: { label: 'Undo', onClick: restore } })
+  pendingUndo = restore
+  const forget = () => {
+    pendingUndo = null
+  }
+  toast('Filters cleared', {
+    id: TOAST,
+    description: `${isMac ? '⌘Z' : 'Ctrl+Z'} puts them back`,
+    action: { label: 'Undo', onClick: restore },
+    onDismiss: forget,
+    onAutoClose: forget,
+  })
+}
+
+/** Ctrl+Z while "Filters cleared" shows: the filters and the search come back. False otherwise. */
+export function undoClearFilters(): boolean {
+  if (!pendingUndo) return false
+  const restore = pendingUndo
+  pendingUndo = null
+  restore()
+  toast.dismiss(TOAST)
+  return true
 }

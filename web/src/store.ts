@@ -40,7 +40,8 @@ import {
   type BestiaryViewMode,
 } from './lib/bestiary'
 
-export type TrackerMode = 'items' | 'bestiary'
+/** the main view: the item list, the bestiary or the statistics (ST) */
+export type TrackerMode = 'items' | 'bestiary' | 'stats'
 
 interface State {
   data: GameData | null
@@ -74,7 +75,7 @@ interface State {
   search: string
   view: ViewMode
 
-  /** main view: item list or bestiary */
+  /** main view: item list, bestiary or statistics */
   mode: TrackerMode
   bestiarySelection: BestiarySelection
   bestiaryRequireAll: BestiaryGroupKey[]

@@ -64,11 +64,6 @@ export function SettingsDialog({ open, onOpenChange }: { open: boolean; onOpenCh
           <Part title="Item list">
             {/* phones show cards, without views */}
             {!phone && <ViewOrderEditor />}
-            <Check
-              checked={layout.dimUnavailable}
-              onChange={(dimUnavailable) => setLayout({ dimUnavailable })}
-              label="Dim items not available yet (with a loaded world: items after a boss it has not defeated; also in the Progression filter)"
-            />
           </Part>
 
           <Part title="Filter sidebar">

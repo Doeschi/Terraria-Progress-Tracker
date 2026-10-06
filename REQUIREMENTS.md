@@ -434,7 +434,7 @@ needs a decision is reported, and parsers that read page text must not silently 
   holds at the moment – measured, so long names step earlier than short ones: (1) the app name
   next to the logo and "(not loaded)" after the player and the world, (2) Player and World as
   icons, (3) File as an icon, with the save status as an icon, (4) Progress with icons instead of
-  "Items" / "Bestiary" and only the percentage, the Items / Bestiary switch as icons, (5) the
+  "Items" / "Bestiary" and only the percentage, the Items / Bestiary / Stats switch as icons, (5) the
   playthrough button without the name (the platform, difficulty and version icons stay), (6) no
   Progress, (7) no GitHub and About buttons (About is also at the bottom of the filter sidebar).
   Should even that not fit, the controls can be scrolled sideways. Widening the window brings the
@@ -594,11 +594,14 @@ needs a decision is reported, and parsers that read page text must not silently 
   parent is part of it (not counted or named separately, like the "Completed" section of FL11).
   Setting "Celebrate completed filters"
   (on by default); no confetti with reduced motion.
-- **FL17** The time a filter option was completed is kept per playthrough in the progress file
-  (`completedAt`): set when the option reaches 100 % over the whole playthrough (item and
-  bestiary filters, hidden ones too), removed when it is no longer complete. Shown in the
-  "Completed" section next to the option ("today, 14:05") and in the tooltip of every completed
-  option ("Completed today, 14:05").
+- **FL17** The time a filter option was first completed is kept per playthrough in the progress
+  file (`completedAt`): set when the option reaches 100 % over the whole playthrough (item and
+  bestiary filters, hidden ones too). It stays when the option falls below 100 % again (items
+  get unchecked after a sync – all Copper Bars used up – and many crate filters miss one item
+  again) and is not replaced when the option completes once more. Shown in the "Completed"
+  section next to the option ("today, 14:05") and in the tooltip of every option with a time
+  ("Completed today, 14:05"); the statistics list all of them (ST5). The completion toast (FL16)
+  celebrates every completion as before.
 
 - **FL18** Group "Sources & sets": filter by any NPC, container or set – too many for a sidebar
   list (about 800), so the group shows only the picked ones, and "+ Add an NPC, container or
@@ -636,7 +639,7 @@ needs a decision is reported, and parsers that read page text must not silently 
   - Appearance: theme; density (compact – default – or comfortable: compact has lower table
     rows, smaller icons and tighter filter options; the explanation below the row, over the full
     width)
-  - Item list: order of the views; "Dim items not available yet" (MS8)
+  - Item list: order of the views
   - Filter sidebar: reorder the filter groups (items and bestiary; single options are hidden in
     the sidebar itself, FL10); progress bars of the single options on / off
   - Detail panel: show / hide and reorder its sections
@@ -668,7 +671,7 @@ needs a decision is reported, and parsers that read page text must not silently 
 Below 640 px width (phones) the layout changes; tablets and desktops stay as they are (G3).
 
 - **MO1** Slim top bar (one row): logo, the playthrough button,
-  the Items / Bestiary switch and a menu (☰); the overall item progress as a thin line under
+  the Items / Bestiary / Stats switch (as icons) and a menu (☰); the overall item progress as a thin line under
   the bar. The menu holds what the desktop top bar shows besides: File (with the autosave
   status), Player, World, the sync button, the item and bestiary progress bars, settings, About,
   theme and GitHub.
@@ -983,9 +986,10 @@ Below 640 px width (phones) the layout changes; tablets and desktops stay as the
   world it is ignored. Not celebrated as completed and no completion date (it changes with the
   world). Limitation: an item has one milestone (the latest of what it needs, in the usual
   order), so "available now" can be slightly early when bosses were skipped.
-- **MS8** Setting "Dim items not available yet" (Layout, off by default): with a loaded world,
-  item rows whose milestone is not reached are dimmed in the list. Also switched in the filter
-  group Progression, under "Available up to / exactly at" (greyed out without a loaded world).
+- **MS8** "Dim unavailable" (off by default, remembered in the browser): with a loaded world,
+  item rows whose milestone is not reached are dimmed in the list. Switched with a toggle button
+  in the list toolbar, right of "Columns" (greyed out without a loaded world, the hint says why);
+  nowhere else.
 
 ## ID – Item detail panel
 
@@ -1097,7 +1101,9 @@ Below 640 px width (phones) the layout changes; tablets and desktops stay as the
   Only a press nothing else takes: not in a field (there Escape clears or leaves the field, S3),
   not with a dialog or menu open, not while the table has the keyboard (S6) or a weapon is
   carried (G8). A toast "Filters cleared" offers "Undo", which puts the filters and the search
-  back. The picked sources (FL18) stay in the sidebar, only their selection is cleared.
+  back – also with Ctrl+Z (⌘Z on a Mac) while the toast shows, outside of fields (there Ctrl+Z
+  stays the field's own undo). The picked sources (FL18) stay in the sidebar, only their
+  selection is cleared.
 - **S4** While something is searched, the first row of the list (in its sort order) is outlined
   and Enter opens its card in the detail panel; ↑/↓ move through the matches (wrapping around,
   the row is scrolled into view – only when the highlighted row or its place changes: checking
@@ -1343,7 +1349,7 @@ Below 640 px width (phones) the layout changes; tablets and desktops stay as the
   newly attached world (areas dialog first) a message offers it. It can also be opened from the
   World menu ("Sync with world…") and the sync button in the top bar (the bestiary toolbar has
   none).
-- **BE6** Separate view: "Items | Bestiary" switch in the header. The bestiary view has its own
+- **BE6** Separate view: "Items | Bestiary | Stats" switch in the header (Stats: ST). The bestiary view has its own
   filters (Type, Biome, Time of day, Events, Added in – faceted like FL3/FL4), its own search,
   Show all / missing / unlocked, and a table: in-game number (default order), icon, name, type,
   biomes, stars, kills in the attached world, unlocked checkbox, wiki link, last changed.
@@ -1416,6 +1422,8 @@ Status: parser done (PL1, PL2), app integration in progress (PL3–PL5).
     Demon Heart, Vital Crystal, Aegis Fruit, Arcane Crystal, Galaxy Pearl, Gummy Worm, Ambrosia,
     Artisan Loaf, Torch God's Favor, Minecart Upgrade Kit
   - Journey research (item → amount researched), read now, used later (v2)
+  - the character's statistics: play time (seconds), deaths (PvE, PvP), Angler quests finished,
+    golf score, tax money collected (copper coins) – shown in the statistics (ST7)
   Test files: the owner's characters for development; for the package's own tests fresh, clean
   characters (one Journey, one Classic) with items in every storage and a few used upgrades.
 - **PL3** Attach a player to a playthrough (one per playthrough for now), like the world (W): in
@@ -1441,8 +1449,50 @@ Status: parser done (PL1, PL2), app integration in progress (PL3–PL5).
   3 in the Void Vault · 1 in the inventory"). Offered while a world or a player is loaded; the
   "Bad luck" view (needs a world) shows it.
 
+## ST – Statistics
+
+Charts of a playthrough's progress, from what the progress file already records: the time of the
+last change of every item and bestiary entry (`changedAt`, `bestiaryChangedAt`, F7) and the first
+completion of every filter option (`completedAt`, FL17). The file keeps no history, so the series
+count what is checked now, by the time it was checked – an item unchecked later leaves no trace.
+Charts are drawn in the app (SVG, no chart library) in the accent color, light and dark; every
+value is readable by hovering (a crosshair on the time charts, the cell on the calendar) and
+most of them as numbers next to the chart.
+
+- **ST1** Third view next to Items and Bestiary: the switch in the header becomes "Items |
+  Bestiary | Stats", each with its icon (box, book, column chart) beside the word as long as
+  there is room; on phones and in narrow headers (P5a) only the icons.
+  Remembered with the view of the playthrough (PR). Escape and "/" do nothing there (no filters,
+  no search).
+- **ST2** Time range above everything: "All time" (from the playthrough's creation, or the first
+  change if earlier, up to today; a column per day up to 70 days, per week up to 450, else per
+  month), "90 days", "30 days" (a column per day). All charts and the pace follow it.
+- **ST3** Items over time: the running total of the items obtained (a line with a light wash
+  below it, starting at what was obtained before the range) and the items checked per period as
+  columns, over the same days. Items checked before the file recorded times count for the day
+  the playthrough was created. Ignored items are left out. Above it: obtained (of total, %),
+  remaining, per day (over the range), projected completion (remaining ÷ pace; "Done!" when
+  everything is obtained, "—" without progress in the range). The bestiary gets the same chart
+  and numbers (if the game version has one).
+- **ST4** Activity calendar: the last weeks (as many as fit, at most a year) as columns of seven
+  cells, each day colored by its changes – items checked, unchecked or ignored, bestiary entries
+  marked – in four steps of the accent color; today outlined. Next to it: active days, current
+  streak (days in a row up to today or yesterday), longest streak, busiest weekday.
+- **ST5** Completed filters: every filter option with a completion time (FL17), newest first,
+  under the day it was first completed (Today, Yesterday, date) with icon, name, group and time;
+  the first 25, "Show all" for the rest.
+- **ST6** Progress by group: obtained / total per category or per "Obtained by" method (switch),
+  as a meter per row with the counts and the percentage, the most complete first; ignored items
+  left out; methods not offered as a filter left out.
+- **ST7** Character: with an attached player file (PL) its play time, deaths (PvE, PvP in the
+  hint), Angler quests, golf score and tax money (as coins); without one a hint to attach it.
+
 ## v2 / later
 
+- **Statistics, more (ST):** a kill history – the loaded world only knows the kills of now, so the
+  app would have to keep snapshots per sync (date, kills per enemy, maybe the item and bestiary
+  counts) in the progress file to show kills over time and kills per session; also the total
+  kills of the world and the top enemies as numbers.
 - **Area map stage 2:** draw the actual world (block, wall and liquid colors) behind the
   schematic map (AM): own tile reader writing colors straight into a pixel buffer (the library's
   per-tile objects need too much memory), a map color table (license to check if taken from a
