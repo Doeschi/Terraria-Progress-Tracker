@@ -201,9 +201,9 @@ items list the parent and their sub-options – and `filter`: `false` for a meth
 shown with the item, without a filter option ("Using a toilet (well fed)").
 
 The methods follow from an item's sources: "Crafted" from the recipes, "Dropped by enemies", the
-chest, crate and treasure bag methods from the drop rows, "Bought from NPCs" from the shop
-rows; the wiki's tags only add what the data has no rows for ("Collected in the world",
-"Fished", …).
+chest, crate, treasure bag and "Shaking trees" methods from the drop rows, "Bought from NPCs"
+from the shop rows; the wiki's tags only add what the data has no rows for ("Collected in the
+world", "Fished", …).
 
 ## `versions.json`
 
@@ -378,6 +378,7 @@ Armor and vanity sets: the items of a wiki page whose name ends in "armor" or "s
 | `type` | entry type id |
 | `stars` | rarity stars in the bestiary |
 | `npcId` | the game's NPC id |
+| `unlockedBy` | what else unlocks the entry in the game (`[bestiary.unlocked_by]`, `[bestiary.unlock_groups]` in `mapping.toml`): groups of entry ids – any group whose entries are all unlocked (killed, seen or talked to) unlocks it, e.g. the Tortured Soul `[["TaxCollector"]]`, the Dungeon Guardian `[["Clothier"], ["SkeletronHead"]]`, a Crawdad `[["GiantShelly", "Salamander2"]]`, every gold critter the other gold critters |
 | `biomes` / `times` / `events` | where / when / during what it appears |
 | `version` | the update that added it (`versions.json` id) |
 | `platforms` | platform ids it exists on |

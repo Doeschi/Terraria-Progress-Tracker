@@ -88,6 +88,11 @@ export function AboutDialog({
             <A href={`${REPO}/blob/main/LICENSE`}>MIT License</A>. How the data is built is explained in the{' '}
             <A href={`${REPO}#how-the-data-is-built`}>README</A>.
           </Part>
+          <Part title="Privacy">
+            Everything runs in your browser; the progress file goes to your own Google Drive only when you choose so.
+            What the app stores where and what it sends is written down in the{' '}
+            <A href={`${import.meta.env.BASE_URL}privacy.html`}>privacy policy</A>.
+          </Part>
           <Part title="Trademark">
             Terraria is a trademark of Re-Logic. This is an unofficial fan project, not affiliated with or endorsed by
             Re-Logic.

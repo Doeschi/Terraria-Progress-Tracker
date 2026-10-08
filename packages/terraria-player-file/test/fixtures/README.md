@@ -25,6 +25,7 @@ check in the game.
   - Void Vault: Gold Coin / Silver Coin
 - Permanent upgrades: 2 Life Crystals, 1 Mana Crystal; no Demon Heart, no other permanent boosters
 - Journey research: Copper Pickaxe and Dirt Block fully researched, Wood 30/100
+- Statistics: 8 min 20 s of play time; no deaths, no Angler quests, golf score 0
 
 ## classic.plr
 
@@ -33,3 +34,4 @@ check in the game.
   slot
 - Permanent upgrades: 1 Life Crystal
 - No Journey research
+- Statistics: 55 s of play time; no deaths, no tax money

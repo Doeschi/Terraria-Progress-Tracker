@@ -18,6 +18,15 @@ class Milestones:
                 self.event_milestone[e] = mid
         # drop source name -> boss id (the boss, its parts, its treasure bag)
         self.source_boss = {norm_name(n): bid for bid, b in bosses.items() for n in b.get("sources", [])}
+        self.boss_names = {bid: b.get("name", bid) for bid, b in bosses.items()}
+        # `all_of`: a milestone reached once all of a set of bosses are defeated (the three
+        # mechanical bosses, each with the milestone "any of them"); an item that needs drops of
+        # several of them needs this milestone
+        self.all_of = {mid: list(m["all_of"]) for mid, m in self.entries.items() if m.get("all_of")}
+        self.alt_boss = {b: mid for mid, bosses_of in self.all_of.items() for b in bosses_of}
+        for mid, bosses_of in self.all_of.items():
+            if any(b not in self.boss_milestone for b in bosses_of):
+                raise SystemExit(f"mapping: [milestones.{mid}] all_of names a boss without a milestone")
         self.condition_milestone = {f"after-{b}": m for b, m in self.boss_milestone.items()}
         self.condition_milestone.update(mapping.milestone_conditions)
         self.vendor_milestone = {vid: v.get("milestone", self.order[0])
@@ -87,6 +96,18 @@ class Milestones:
             value = next((self.index[m] for b, m in self.biome_milestone.items() if b in dropper.get("biomes", ())), 0)
         return max(value, self.index["wall-of-flesh"]) if self.hardmode_only(dropper) else value
 
+    def alt_boss_of(self, s):
+        """The boss of a milestone's `all_of` a source depends on - a drop of the boss, a row
+        conditioned on it - or None."""
+        if "drop" in s:
+            boss = self.source_boss.get(norm_name(s["source"]["name"]))
+            if boss in self.alt_boss:
+                return boss
+            conditions = s["drop"].get("conditions", ())
+        else:
+            conditions = s.get("conditions", ())
+        return next((c[6:] for c in conditions if c.startswith("after-") and c[6:] in self.alt_boss), None)
+
     def gate(self, s):
         """Milestone (index) a source (sources.py) needs by itself - without the items it is made
         from; None: only in special seeds."""
@@ -152,11 +173,23 @@ class Milestones:
         base, made, tagged = {}, {}, {}
         # items whose base source has no data of ours: a tagged method, a vendor without a shop row
         undated = set()
+        # per item: (value, boss) of every base source - which of the bosses of an `all_of`
+        # milestone it comes from (None: no such boss)
+        base_bosses = {}
 
-        def offer(key, value, reason, data=True):
-            if value is not None and (key not in base or value < base[key][0]):
+        def offer(key, value, reason, data=True, boss=None):
+            if value is None:
+                return
+            base_bosses.setdefault(key, []).append((value, boss))
+            if key not in base or value < base[key][0]:
                 base[key] = (value, reason)
                 (undated.discard if data else undated.add)(key)
+
+        def bosses_at(key, value):
+            """The `all_of` bosses an item at `value` can come from: a set (one of them is
+            needed), or None when a source there needs none of them."""
+            found = {boss for v, boss in base_bosses.get(key, ()) if v == value}
+            return None if None in found or not found else frozenset(found)
 
         for item in items:
             key = item["key"]
@@ -169,7 +202,7 @@ class Milestones:
                 if "needs" in s:
                     made[key].append(s)
                 elif "method" not in s:
-                    offer(key, self.gate(s), self.text(s), s["kind"] != "vendor")
+                    offer(key, self.gate(s), self.text(s), s["kind"] != "vendor", self.alt_boss_of(s))
                 # What only the wiki's tags or a name rule say: from the start. Not a tag the drop
                 # data (enemies, bags, lock boxes, chests) says more precisely
                 elif not s["covered"]:
@@ -184,6 +217,8 @@ class Milestones:
 
         # recipes, shimmer and the Extractinators depend on other items: until nothing changes
         best = {}
+        # the `all_of` bosses an item can come from at its milestone (see bosses_at), per item
+        best_bosses = {}
         # the item that holds an item back: the one its source needs latest (key -> key)
         held_by = {}
         # Hardmode items (the wiki's flag) with an earlier source in the data: key -> (value, reason)
@@ -200,28 +235,69 @@ class Milestones:
             while changed:
                 changed, rounds = step(), rounds + 1
 
+        def all_of_needs(s, worst):
+            """Drops of bosses that stand in for each other (`all_of`): what a source needs at
+            the milestone of any of them, and from which of them. Returns (value, reason,
+            bosses): the milestone of all of them with the reason when no single boss gives
+            everything; else `worst`, None and the bosses left (None: no constraint)."""
+            for mid, bosses_of in self.all_of.items():
+                any_index = self.index[self.boss_milestone[bosses_of[0]]]
+                if worst != any_index:
+                    continue
+                allowed, named, involved = set(bosses_of), [], set()
+                for name, keys in s["needs"]:
+                    # what is needed at that milestone exactly (an alternative that comes earlier
+                    # needs no boss at all), and from which of the bosses it can come
+                    if any(value_of(k) < any_index for k in keys):
+                        continue
+                    choices = [k for k in keys if value_of(k) == any_index]
+                    if not choices or any(best_bosses.get(k) is None for k in choices):
+                        continue
+                    can = set().union(*(best_bosses[k] for k in choices))
+                    if can.issuperset(bosses_of):
+                        continue  # any of them drops it (Hallowed Bars): it constrains nothing
+                    allowed &= can
+                    named.append(name)
+                    involved |= can
+                if named and not allowed:
+                    names = [self.boss_names[b] for b in bosses_of if b in involved]
+                    what = f"{', '.join(named[:-1])} and {named[-1]}" if len(named) > 1 else named[0]
+                    where = f"{', '.join(names[:-1])} and {names[-1]}" if len(names) > 1 else names[0]
+                    return self.index[mid], f"crafted – needs {what}: drops of {where}", None
+                return worst, None, frozenset(allowed) if named else None
+            return worst, None, None
+
         def step():
             changed = False
             for item in items:
                 key = item["key"]
-                candidates = [(*base[key], key not in undated, None)] if key in base else []
+                # (value, reason, has data, holder, the `all_of` bosses it can come from)
+                candidates = [(*base[key], key not in undated, None, bosses_at(key, base[key][0]))] if key in base else []
                 for s in made.get(key, ()):
                     # the latest of what it needs (of a station's items or a group: the earliest);
                     # `holder`: that item
                     worst, why, holder = self.gate(s), None, None
+                    if worst is None:
+                        continue
                     for name, keys in s["needs"]:
                         v = min((value_of(k) for k in keys), default=0)
                         if v > worst:
                             worst, why, holder = v, name, min(keys, key=value_of)
-                    candidates.append((worst, self.text(s, why), True, holder))
-                holder = None
+                    worst, special, bosses_left = all_of_needs(s, worst)
+                    if special:
+                        holder = None
+                    candidates.append((worst, special or self.text(s, why), True, holder, bosses_left))
+                holder, bosses_left = None, None
                 if key in fixed:
                     value, reason = fixed[key]
                 else:
                     if not candidates:
                         continue
                     # earliest; on a tie the one with a reason
-                    value, reason, data, holder = min(candidates, key=lambda c: (c[0], c[1] is None))
+                    value, reason, data, holder, _ = min(candidates, key=lambda c: (c[0], c[1] is None))
+                    # the bosses it can come from: every way at that milestone counts
+                    ways = [c[4] for c in candidates if c[0] == value]
+                    bosses_left = None if any(w is None for w in ways) else frozenset().union(*ways)
                     # from the start by a recipe too: the tags agree, their method is the reason
                     # ("Collected in the world" rather than crafted from its own walls)
                     if value == 0 and key in tagged and base.get(key, (inf,))[0] > 0:
@@ -229,7 +305,7 @@ class Milestones:
                     f = floor[key]
                     early.pop(key, None)
                     if f[0] > value:
-                        holder = None  # the minimum holds it back, not what it needs
+                        holder, bosses_left = None, None  # the minimum holds it back, not what it needs
                     if f[0] > value and f[1]:
                         value, reason = f
                     elif f[0] > value:
@@ -239,8 +315,8 @@ class Milestones:
                         if data and key not in ruled:
                             early[key] = (value, reason)
                         value, reason = f[0], f"{reason}, in Hardmode" if reason else "Hardmode item"
-                if value < inf and (key not in best or best[key][0] != value):
-                    best[key], held_by[key] = (value, reason), holder
+                if value < inf and (key not in best or best[key][0] != value or best_bosses[key] != bosses_left):
+                    best[key], held_by[key], best_bosses[key] = (value, reason), holder, bosses_left
                     changed = True
             return changed
 

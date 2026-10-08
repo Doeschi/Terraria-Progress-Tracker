@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Privacy policy of the Terraria Progress Tracker: everything runs in your browser; your progress file goes to your own Google Drive only if you choose so."
+    />
+    <title>Privacy policy – Terraria Progress Tracker</title>
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <script>
+      // the theme chosen in the app (light / dark / system), so this page matches it
+      try {
+        var t = localStorage.getItem('theme')
+        if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t
+      } catch (e) {}
+    </script>
+    <style>
+      :root {
+        color-scheme: light;
+        --bg: oklch(1 0 0);
+        --fg: oklch(0.145 0 0);
+        --muted: oklch(0.556 0 0);
+        --card: oklch(0.97 0 0);
+        --border: oklch(0.922 0 0);
+        --accent: oklch(0.56 0.15 150);
+      }
+      @media (prefers-color-scheme: dark) {
+        :root:not([data-theme='light']) {
+          color-scheme: dark;
+          --bg: oklch(0.225 0.008 260);
+          --fg: oklch(0.975 0 0);
+          --muted: oklch(0.74 0.01 260);
+          --card: oklch(0.26 0.009 260);
+          --border: oklch(1 0 0 / 12%);
+          --accent: oklch(0.7 0.16 150);
+        }
+      }
+      :root[data-theme='dark'] {
+        color-scheme: dark;
+        --bg: oklch(0.225 0.008 260);
+        --fg: oklch(0.975 0 0);
+        --muted: oklch(0.74 0.01 260);
+        --card: oklch(0.26 0.009 260);
+        --border: oklch(1 0 0 / 12%);
+        --accent: oklch(0.7 0.16 150);
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--fg);
+        font:
+          16px/1.55 system-ui,
+          -apple-system,
+          'Segoe UI',
+          sans-serif;
+      }
+      main {
+        max-width: 40rem;
+        margin: 0 auto;
+        padding: 2rem 1rem 3rem;
+      }
+      header {
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+        margin-bottom: 1.5rem;
+        font-size: 0.875rem;
+        color: var(--muted);
+      }
+      header img {
+        width: 24px;
+        height: 24px;
+      }
+      h1 {
+        font-size: 1.75rem;
+        line-height: 1.2;
+        margin: 0 0 0.25rem;
+      }
+      h2 {
+        font-size: 1.1rem;
+        margin: 1.5rem 0 0.4rem;
+      }
+      p,
+      li {
+        margin: 0.4rem 0;
+      }
+      ul {
+        padding-left: 1.3rem;
+      }
+      a {
+        color: var(--accent);
+        text-underline-offset: 2px;
+      }
+      .date {
+        color: var(--muted);
+        font-size: 0.875rem;
+        margin-bottom: 1.25rem;
+      }
+      .summary {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-left: 4px solid var(--accent);
+        border-radius: 0.6rem;
+        padding: 0.8rem 1.1rem;
+        font-weight: 500;
+      }
+      .summary p {
+        margin: 0;
+      }
+      code {
+        font-size: 0.9em;
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 0.3rem;
+        padding: 0 0.3em;
+      }
+      footer {
+        margin-top: 2rem;
+        padding-top: 1rem;
+        border-top: 1px solid var(--border);
+        font-size: 0.875rem;
+        color: var(--muted);
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <header>
+        <img src="./favicon.svg" alt="" />
+        <a href="./">Terraria Progress Tracker</a>
+        <span aria-hidden="true">›</span>
+        <span>Privacy policy</span>
+      </header>
+
+      <h1>Privacy policy</h1>
+      <p class="date">Last updated: 7 October 2026</p>
+
+      <div class="summary">
+        <p>Everything runs in your browser. No account, no analytics, no cookies, no ads.</p>
+      </div>
+
+      <ul>
+        <li>
+          <strong>Your progress</strong> is a file you save yourself – on your computer or, only if you choose so, in
+          your own Google Drive. It holds your playthroughs, checked items and bestiary entries, and only the
+          <em>names</em> of your world and character.
+        </li>
+        <li><strong>World and player files</strong> are read in your browser and never uploaded.</li>
+        <li>
+          <strong>Your browser</strong> keeps a backup of the open file and your view settings. Clear the site's data to
+          remove them.
+        </li>
+        <li>
+          <strong>Requests:</strong> the app is served by GitHub Pages (which may log your IP address), and a few images
+          come from terraria.wiki.gg. Nothing else is sent to anyone.
+        </li>
+      </ul>
+
+      <h2>Google Drive (optional)</h2>
+      <p>
+        If you choose it, you sign in with Google and grant the permission <code>drive.file</code>: the app can only see
+        the files it created itself. It saves your progress file in a folder "Terraria Progress Tracker" in your Drive,
+        keeps the access in memory only and your account's address on your device. Delete the files in the app or in
+        Drive; revoke the access in your <a href="https://myaccount.google.com/permissions">Google account</a>. The
+        app's use of information received from Google APIs adheres to the
+        <a href="https://developers.google.com/terms/api-services-user-data-policy"
+          >Google API Services User Data Policy</a
+        >, including the Limited Use requirements.
+      </p>
+
+      <footer>
+        Questions: <a href="https://github.com/Doeschi/Terraria-Progress-Tracker/issues">open an issue on GitHub</a> ·
+        Unofficial fan project, not affiliated with Re-Logic · <a href="./">← Back to the tracker</a>
+      </footer>
+    </main>
+  </body>
+</html>

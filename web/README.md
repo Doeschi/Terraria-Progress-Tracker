@@ -9,6 +9,8 @@ npm run dev            # development server on http://localhost:5173
 npm run build          # type check + static site in dist/
 npm run lint           # ESLint
 npm run format         # Prettier (single quotes, no semicolons, 120 columns; src/components/ui excluded)
+npm run format:check   # Prettier, only checking (the deploy workflow runs lint and build)
+npm run preview        # serves the built site in dist/
 ```
 
 ## Code layout (`src/`)
@@ -33,7 +35,9 @@ npm run format         # Prettier (single quotes, no semicolons, 120 columns; sr
 | `lib/intros.ts` | The introductions of the wiki pages ("About" in the detail panel), loaded when first shown |
 | `lib/stats.ts` | The numbers behind the statistics view: changes per day / week / month, streaks, pace, completed filters, progress per group |
 | `lib/format.ts`, `lib/utils.ts` | Small helpers (plurals, names, dates; touch screens, class names) |
+| `lib/confirm.ts`, `lib/clearFilters.ts`, `lib/listCursor.ts`, `lib/cardRow.ts` | Confirm / choose dialogs called from code, "Clear all" with undo (Escape, Ctrl+Z), keyboard selection in the lists from the search field, the clickable rows of the detail panel |
+| `lib/theme.ts`, `lib/panes.ts`, `lib/logoArt.ts` | Light / dark / system theme, the widths of the resizable panes, the pixel art of the logo |
 | `lib/eggs.tsx`, `lib/trophies.ts`, `lib/weapons.ts`, `lib/fx.ts`, `lib/confetti.ts`, `lib/parade.ts`, `lib/season.ts` | Easter eggs and celebrations |
-| `hooks/` | View models (`useTrackerView`, `useBestiaryView`), world and player loading, world progress, completions, autosave, areas |
+| `hooks/` | View models (`useTrackerView`, `useBestiaryView`), world and player loading, world progress, completions, autosave, areas, keyboard shortcuts, screen sizes (`useIsPhone`, `useMediaQuery`, `useElementWidth`) |
 | `components/` | Screens and parts: header (`TopBar`, `topbar/`), filter sidebar, item and bestiary lists, item details, statistics (`stats/`, with the SVG charts), `dialogs/`, `table/` |
 | `components/ui/` | shadcn/ui components (generated, kept in their own style) |

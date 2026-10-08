@@ -41,6 +41,14 @@ GitHub Actions.
   Seasonal ones follow the clock while the app stays open: the date is checked once a minute, and
   a change (a special day, the night after midnight) shows without reloading.
   The completion ones can be shown with `?egg=bestiary` and `?egg=credits`.
+- **G10** Privacy policy: a short static page next to the app (`web/public/privacy.html`,
+  served as `privacy.html`; readable without JavaScript, follows the app's theme) – one screen:
+  everything runs in the browser, the progress file and what it holds, game files never
+  uploaded, what the browser keeps, the requests made (GitHub Pages, a few wiki images), and
+  the Google Drive part (permission `drive.file`, where the file goes, how to revoke, the
+  Limited Use statement of the Google API Services User Data Policy); contact via GitHub
+  issues. Linked from the start page's privacy note and the About dialog; it is also the privacy
+  policy link of the Google OAuth consent screen (GD7).
 
 ## D – Data
 
@@ -411,7 +419,10 @@ needs a decision is reported, and parsers that read page text must not silently 
   to the user's own Drive only when chosen (G1).
 - **GD7** Setup: a Google Cloud project with the Drive API and an OAuth client of type "Web
   application" (allowed origins: the Pages address and the local dev server); the client id is
-  public and part of the code.
+  public and part of the code. The OAuth consent screen ("Google Auth Platform") is published
+  ("In production", user type External) so anyone can sign in – no verification is needed as
+  long as the only scope is `drive.file` (non-sensitive) and no logo is uploaded; its home page
+  is the app, its privacy policy link the app's privacy page (G10).
 
 ## P – Playthroughs
 
@@ -916,7 +927,13 @@ Below 640 px width (phones) the layout changes; tablets and desktops stay as the
     Plantera) and the row's conditions (after a boss, Hardmode)
   - recipes: the latest of the crafting stations (the earliest item providing each) and the
     ingredients ("Any …" groups: their earliest item); shimmer: the source item (of a group
-    like "Any Fruit" the earliest), and the boss of its note (RC4). Items whose only sources go
+    like "Any Fruit" the earliest), and the boss of its note (RC4). Bosses that stand in for
+    each other (`[milestones.*] all_of`: the three mechanical bosses, each "Any mechanical
+    boss"): a recipe whose ingredients cannot all come from one of them – the True Night's Edge
+    with the three souls, the Drax, the Avenger Emblem, the Mechanical Cart – needs "All three
+    mechanical bosses" ("Crafted – needs Soul of Fright, Soul of Might and Soul of Sight: drops
+    of The Twins, The Destroyer and Skeletron Prime"); Hallowed Bars, dropped by all three,
+    constrain nothing. Items whose only sources go
     in a circle (Obsidian from Obsidian Walls and back) or that have no source data count from
     Start; what needs them keeps its other requirements (the Obsidian Shield its Cobalt Shield)
   - containers: `[milestone_sources]` (e.g. Shadow Chest → Skeletron, biome chests →
@@ -1349,6 +1366,17 @@ Below 640 px width (phones) the layout changes; tablets and desktops stay as the
   newly attached world (areas dialog first) a message offers it. It can also be opened from the
   World menu ("Sync with world…") and the sync button in the top bar (the bestiary toolbar has
   none).
+  Entries the game unlocks through other entries count as unlocked too (`unlockedBy` in
+  `bestiary.json`, from `[bestiary.unlocked_by]` and `[bestiary.unlock_groups]` of
+  `mapping.toml`, after the wiki's "Bestiary" notes): the Tortured Soul by talking to the Tax
+  Collector, the Lost Girl by killing the Nymph she turns into, the Dungeon Guardian by talking
+  to the Clothier or defeating Skeletron, the Phantasm Dragon and the Ancient Vision by
+  defeating the Lunatic Cultist, the third of
+  Crawdad / Giant Shelly / Salamander once the other two are unlocked (only two spawn in a
+  world), all scarecrows by one of them (one kill count since 1.4.4.9) and all gold critters by
+  one of them. The Torch God counts as unlocked when the attached player (PL) has used the Torch
+  God's Favor (a character's unlock, not the world's). The world column and the sync rows say
+  what did it ("via Tax Collector", "Torch God's Favor used").
 - **BE6** Separate view: "Items | Bestiary | Stats" switch in the header (Stats: ST). The bestiary view has its own
   filters (Type, Biome, Time of day, Events, Added in – faceted like FL3/FL4), its own search,
   Show all / missing / unlocked, and a table: in-game number (default order), icon, name, type,

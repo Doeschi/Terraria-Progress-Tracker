@@ -112,9 +112,9 @@ export function useWorldLoader() {
         )
         // a new world: areas, then the first sync (items and bestiary);
         // a reloaded world: the sync dialog only when the bestiary differs
-        const { data, doc } = useStore.getState()
+        const { data, doc, players } = useStore.getState()
         const pt = findPlaythrough(doc, playthroughId)
-        const diff = data && pt ? bestiaryDiff(data, pt, world) : null
+        const diff = data && pt ? bestiaryDiff(data, pt, world, players[playthroughId] ?? null) : null
         const changes = diff ? diff.toCheck.length + diff.toUncheck.length : 0
         const newWorld = !attached || attached.guid !== world.guid
         if (!world.bestiary) toast.warning('The bestiary could not be read from this world.')

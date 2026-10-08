@@ -12,13 +12,14 @@ import {
   type LucideIcon,
 } from 'lucide-react'
 import { useUi } from '@/ui'
-import { useActivePlaythrough, useActiveWorld, useStore } from '@/store'
+import { useActivePlayer, useActivePlaythrough, useActiveWorld, useStore } from '@/store'
 import { cn } from '@/lib/utils'
 import { usePrefs } from '@/lib/prefs'
 import { confirm } from '@/lib/confirm'
 import { BESTIARY_GROUP_KEYS, bestiaryExists, buildBestiaryGroups, type BestiaryViewMode } from '@/lib/bestiary'
 import type { BestiaryEntry, GameData, GroupEntry, Item } from '@/lib/types'
 import type { WorldBestiary } from '@/lib/world'
+import type { LoadedPlayer } from '@/lib/player'
 import type { BestiaryView } from '@/hooks/useBestiaryView'
 import { Button } from '@/components/ui/button'
 import { Checkbox } from '@/components/ui/checkbox'
@@ -270,10 +271,16 @@ interface Sort {
   desc: boolean
 }
 
-/** World column: what the world says, "–" for nothing, "" without a readable bestiary. */
-function worldCell(b: WorldBestiary | null | undefined, id: string): { text: string; value: number } {
+/** World column: what the world (and the attached player) says, "–" for nothing, "" without a
+ * readable bestiary. */
+function worldCell(
+  b: WorldBestiary | null | undefined,
+  e: BestiaryEntry,
+  byId: Map<string, BestiaryEntry>,
+  player: LoadedPlayer | null,
+): { text: string; value: number } {
   if (!b) return { text: '', value: -1 }
-  const state = worldState(b, id)
+  const state = worldState(b, e, byId, player)
   return { text: state.text ?? '–', value: state.value }
 }
 
@@ -281,6 +288,8 @@ function BestiaryTable({ view, phone = false }: { view: BestiaryView; phone?: bo
   const data = useStore((s) => s.data)!
   const pt = useActivePlaythrough()!
   const world = useActiveWorld()
+  const player = useActivePlayer()
+  const byId = useMemo(() => new Map(data.bestiary.entries.map((e) => [e.id, e])), [data])
   const setBestiary = useStore((s) => s.setBestiary)
   const [sort, setSort] = useState<Sort | null>(null)
   const typeName = useMemo(() => new Map(data.bestiary.types.map((t) => [t.id, t.name])), [data])
@@ -344,7 +353,7 @@ function BestiaryTable({ view, phone = false }: { view: BestiaryView; phone?: bo
         case 'added':
           return versionRank.get(e.version) ?? -1
         case 'world':
-          return worldCell(world?.bestiary, e.id).value
+          return worldCell(world?.bestiary, e, byId, player).value
         case 'banners': {
           // banners earned, then how far the next one is
           const b = banners?.get(e.id)
@@ -360,7 +369,7 @@ function BestiaryTable({ view, phone = false }: { view: BestiaryView; phone?: bo
       const kb = key(b)
       return (ka < kb ? -1 : ka > kb ? 1 : 0) * dir || a.n - b.n
     })
-  }, [view.visible, sort, typeName, world, pt.bestiaryChangedAt, drops, versionRank, banners])
+  }, [view.visible, sort, typeName, world, byId, player, pt.bestiaryChangedAt, drops, versionRank, banners])
   const scrollRef = useRef<HTMLDivElement>(null)
   // keyboard selection from the search field (↑/↓, Enter opens the card)
   usePublishRows(useMemo(() => rows.map((e) => ({ ref: NPC_REF + e.id, name: e.name })), [rows]))
@@ -522,7 +531,7 @@ function BestiaryTable({ view, phone = false }: { view: BestiaryView; phone?: bo
                 entry={e}
                 typeName={typeName.get(e.type) ?? e.type}
                 unlocked={view.unlocked.has(e.id)}
-                world={world ? worldCell(world.bestiary, e.id).text : null}
+                world={world ? worldCell(world.bestiary, e, byId, player).text : null}
                 banner={banners ? (banners.get(e.id) ?? null) : undefined}
                 changed={formatDate(pt.bestiaryChangedAt[e.id])}
                 drops={drops.get(e.id)}

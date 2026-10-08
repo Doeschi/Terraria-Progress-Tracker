@@ -4,9 +4,10 @@
 
 Track which Terraria items and bestiary entries you have collected, per playthrough, platform,
 difficulty and game version – with filters and progress for categories, sources, bosses, events,
-biomes and crafting, recipes and drops per item, and sync with your world file (chests and
-bestiary) and your player file (inventory, banks, Void Vault, used upgrades). Runs entirely in the
-browser: progress is stored in a JSON file on your computer – or, if you choose so, in your own
+biomes and crafting, recipes and drops per item, sync with your world file (chests and
+bestiary) and your player file (inventory, banks, Void Vault, used upgrades), and statistics of
+your progress (items and bestiary over time, activity, pace, play time and deaths). Runs entirely
+in the browser: progress is stored in a JSON file on your computer – or, if you choose so, in your own
 Google Drive, to use it on several devices – world and player files are read locally, and nothing
 else is uploaded. See [REQUIREMENTS.md](REQUIREMENTS.md) for the
 full feature list.
@@ -29,7 +30,9 @@ full feature list.
 | Folder                   | Contents                                                                     |
 |--------------------------|------------------------------------------------------------------------------|
 | `pipeline/`              | Python scripts that turn the Terraria Wiki's Cargo tables into JSON          |
-| `pipeline/raw/`          | The downloaded wiki data, unchanged (Cargo tables as CSV, page sources)      |
+| `pipeline/raw/`          | The downloaded wiki data, unchanged (Cargo tables as CSV, page sources, rendered pages, introductions) |
+| `pipeline/trackerdata/`  | The code of step 2, split by topic (items, drops, recipes, sets, Extractinators, conditions, sources, milestones, bestiary, banners, page lists, introductions, icons) |
+| `pipeline/icons_cache/`  | The downloaded wiki images of step 3 (not committed)                        |
 | `pipeline/data_readable/`| The generated data, indented for reading (same content as `web/public/data`); every field is explained in its [README](pipeline/data_readable/README.md) |
 | `web/`                   | The web app (Vite, React, TypeScript, Tailwind, shadcn/ui)                   |
 | `web/public/data/`       | The generated data the app loads (minified JSON)                             |
@@ -74,7 +77,7 @@ Everything comes from the [Terraria Wiki](https://terraria.wiki.gg/) (wiki.gg). 
 four steps; only steps 1 and 3 talk to the wiki, steps 2 and 4 work offline.
 
 ```
-step 1  download_cargo_tables.py   wiki -> pipeline/raw/   (tables, page sources, introductions, image lists)
+step 1  download_cargo_tables.py   wiki -> pipeline/raw/   (tables, page sources, rendered pages, introductions, image lists)
 step 2  build_tracker_data.py      raw + mapping.toml -> web/public/data/*.json (+ data_readable/)
         check_icons.py (optional)  checks the linked images, notes renamed files for step 2
 step 3  build_icons.py             wiki images -> web/public/icons/ sprite sheets + sprites.json
@@ -124,7 +127,7 @@ the pages in the category "Hardmode-only NPCs" (their drops count from the Wall 
 about 2,960 pages of the items and bestiary entries. The wiki's API returns it without infobox,
 notes, images and footnotes (the extension TextExtracts); step 1 saves that HTML with the page's
 revision (`raw/page_intros.json`) and later reads only pages that are new or were edited
-(`--all-intros` reads all again). The wiki needs about two seconds per page and often answers
+(`--all-intros` reads all again, `--no-intros` skips them). The wiki needs about two seconds per page and often answers
 with an error first (the script tries again), so the first download takes almost two hours.
 Step 2 only turns the HTML into paragraphs and lists of plain text.
 
@@ -199,13 +202,13 @@ it (`*` is a wildcard). Example: the Shuriken has `type: weapon`,
 | Section | What it does |
 |---------|--------------|
 | `[settings]` | which Items fields become keys |
-| `[categories.*]`, `[subcategories.*]` | the "Categories" filter: name, icon and `match` keys. Subcategories have a `parent`; they can be a `fallback` ("Other …"), be limited to items of some categories (`with_categories`, `without_categories`, `only_in_parent`), or be removed again by `exclude` keys |
+| `[categories.*]`, `[subcategories.*]` | the "Categories" filter: name, icon and `match` keys; `exclude` keys take items out again (the Minecart Track is no mount). Subcategories have a `parent`; they can be a `fallback` ("Other …") or be limited to items of some categories (`with_categories`, `without_categories`, `only_in_parent`) |
 | `[obtain.*]` | the "Obtained by" filter (crafted, bought, dropped, chests, fishing, quest rewards, caught, recorded, shimmer, other, …); `page` / `section` fill an entry from a page section (the Strange Plant rewards, with `milestone`: from when there are any); `from_recipes` / `from_drops` / `from_containers` / `from_shimmer` / `from_extractinator` / `names` add items from our own data; `replaces` drops a tag the wiki gives the same items wrongly ("bag loot" on boss treasure bag items); the `fallback` entry ("Other") takes items without any method; `filter = false` shows a method only with the item |
 | `[vendors.*]` | the "Sold by" filter: the vendor's tag, icon, wiki page (for the shop) and `milestone` (when the vendor moves in) |
 | `[events.*]` | the "Events" filter: `environments` (spawn conditions of the event's enemies), `drop_conditions` (words in a drop's chance), `links` / `phrases` (in the condition texts of shops and drops) |
 | `[biomes.*]`, `[times.*]` | where and when enemies spawn (`environments`, `alone`), plus `links` / `phrases` for condition texts |
 | `[conditions]` | the "Conditions" filter: the condition groups (time of day, moon phase, after a boss, weather; world seeds and progress are only shown), each condition with the wiki links and text patterns that mean it; `ignore_links` for links that are no condition |
-| `[milestones.*]`, `[milestone_conditions]`, `[milestone_sources]`, `[milestone_biomes]`, `[milestone_items]` | the "Progression" filter: the milestones in order with their bosses and events, and what the data cannot tell: from when an enemy or a container is reached (`[milestone_sources]`: late Dungeon enemies, locked chests, Hardmode crates), the biomes that need a boss (`[milestone_biomes]`), and item rules (`[milestone_items]`: mining Hellstone and Chlorophyte, lava fishing, drops of a whole biome, world items the data only knows a later source for) |
+| `[milestones.*]`, `[milestone_conditions]`, `[milestone_sources]`, `[milestone_biomes]`, `[milestone_items]` | the "Progression" filter: the milestones in order with their bosses and events (`all_of`: a milestone reached once all of a set of bosses are defeated – an item needing drops of several of them, like the True Night's Edge, counts from there), and what the data cannot tell: from when an enemy or a container is reached (`[milestone_sources]`: late Dungeon enemies, locked chests, Hardmode crates), the biomes that need a boss (`[milestone_biomes]`), and item rules (`[milestone_items]`: mining Hellstone and Chlorophyte, lava fishing, drops of a whole biome, world items the data only knows a later source for) |
 | `[flags]` | yes/no fields of an item: `hardmode`, `hardmodeOnly`, `unobtainable`, `banner`, `questFish` |
 | `[hardmode]` | items the wiki flags as Hardmode items although their sources are there before (`pre_hardmode`, e.g. Defender's Forge) |
 | `[page_lists]` | wiki pages whose item lists give their items a key per heading (`list:vanity items#halloween sets`), for subcategories that follow a list of the wiki |
@@ -213,14 +216,14 @@ it (`*` is a wildcard). Example: the Shuriken has `type: weapon`,
 | `[other_forms]` | other forms of an item, switched in the inventory and not obtained on their own (Shellphone modes, the Closed Void Bag): marked `otherForm`, ignored by default in a new playthrough |
 | `[pickups]` | items left out entirely: picked up and used on touch (Heart, Star, …) |
 | `[drops]` | which source kinds are used; `boss_ignore_items` (coins and potions do not count for a boss) |
-| `[containers.*]`, `[container_icons]` | the "Found in" groups (chests, crates, other, trees) and icons for sources that are no item (trees → their wood) |
+| `[containers.*]`, `[container_icons]` | the "Found in" groups (chests, crates, other; the trees have `filter = false` – shaking them is the "Obtained by" method "Shaking trees") and icons for sources that are no item (trees → their wood) |
 | `[drop_variants]`, `[drop_areas]` | names for an enemy's variants in the drop rows (Mimic: "Hardmode variant") and the layers of containers (Gold Chest: Underground, Cavern) |
 | `[unobtainable]` | overrides of the wiki: items it marks unobtainable that are obtainable after all (`obtainable`), and items that are unobtainable although it does not say so (`unobtainable`, e.g. the Red Envelope: never really added to the game) |
 | `[recipes]`, `[recipe_groups]`, `[stations]` | stations that need no item (water, lava, "By Hand"), "Any …" groups the wiki page lacks, and which items provide a station (a Mythril Anvil also counts as an Iron Anvil) |
 | `[recipe_items]` | template items for the items only known from recipes ("* Door" → Ash Wood Door) |
 | `[extractinator_inputs]` | Extractinator inputs the wiki names differently from the items |
 | `[sets]` | pages that are, or are not, an armor / vanity set despite their name |
-| `[bestiary]` | entry types (town, critter, enemy, boss) and the bestiary's own filters → our biomes, times and events |
+| `[bestiary]` | entry types (town, critter, enemy, boss), the bestiary's own filters → our biomes, times and events, and the entries the game unlocks through other entries (`unlocked_by`: the Tortured Soul by the Tax Collector; `unlock_groups`: one gold critter unlocks all) |
 | `[boss_stages]`, `[bosses.*]` | the "Bosses" filter: stages, map icons and the drop sources that count for each boss (the boss, its parts, its treasure bag) |
 | `[versions.*]` | names and icon items of the game updates ("1.4.4 · Labor of Love") |
 | `[ignore]` | raw keys dropped on purpose (duplicates, not useful), so they are not reported as unmapped |
@@ -247,7 +250,8 @@ it (`*` is a wildcard). Example: the Shuriken has `type: weapon`,
 - **Crafting stations** linked to the items that provide them, and the "Any …" groups to their
   items.
 - **Earliest milestone of every item** from its sources – drops, shops, containers, recipes
-  (repeated until stable), shimmer, the Extractinators – plus rules for what the wiki does not
+  (repeated until stable; a recipe needing drops of several mechanical bosses counts from all
+  three), shimmer, the Extractinators – plus rules for what the wiki does not
   say in a usable form: pickaxe tiers, lava fishing, drops of a whole biome, when a vendor moves
   in. About 1,000 items have no source row at all, only a tag ("collected in the world",
   "fished", "caught"): they count from the start unless a rule or the wiki's Hardmode flag
@@ -319,8 +323,9 @@ Step 2 also writes the indented copies to `pipeline/data_readable/` (skip with `
 How wiki values become the tracker's groups is defined in
 [`pipeline/mapping.toml`](pipeline/mapping.toml) (see [The mapping file](#3-the-mapping-file-pipelinemappingtoml)).
 Step 2 reports values that are not mapped yet. Its code is split by topic in
-[`pipeline/trackerdata/`](pipeline/trackerdata) (items, drops, recipes, conditions, sources,
-milestones, bestiary, icons); `build_tracker_data.py` is the entry point.
+[`pipeline/trackerdata/`](pipeline/trackerdata) (items, drops, recipes, sets, Extractinators,
+conditions, sources, milestones, bestiary, banners, page lists, introductions, icons);
+`build_tracker_data.py` is the entry point.
 
 ## Running the app
 
@@ -334,6 +339,18 @@ npm run dev
 code clean (see [`web/README.md`](web/README.md) for the code layout). Pushing to `main` deploys
 it to GitHub Pages via [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml) (enable
 Pages with source "GitHub Actions" in the repository settings).
+
+**Google Drive.** Saving the progress file to Google Drive uses Google Identity Services in the
+browser and the Drive REST API with the permission `drive.file` (the app only sees files it
+created) – no backend. The OAuth client ID in [`web/src/lib/drive.ts`](web/src/lib/drive.ts) is
+public by design but bound to this project's origins; a fork that wants the Drive needs its own
+client ID (Google Cloud console → APIs & Services → Credentials → OAuth client ID, type "Web
+application", with the site's origin and `http://localhost:5173` as authorized JavaScript
+origins, and the Google Drive API enabled). The consent screen must be published ("In
+production") for other people to sign in; with `drive.file` as the only scope and no logo that
+needs no verification. Its privacy policy link is the app's privacy page,
+[`web/public/privacy.html`](web/public/privacy.html) (served next to the app, linked from the start
+page and the About dialog). Everything else works without it.
 
 ## License and credits
 

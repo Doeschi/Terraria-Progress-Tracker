@@ -89,6 +89,7 @@ def bestiary_file(wikitext, page_html, npc_rows, exclusive, mapping, version_nam
     allowed = conf.get("platforms", ["desktop", "console", "mobile"])
 
     entries, problems = [], Counter()
+    raw_types = {}  # entry id -> the NPCs table's types (for "type:..." in [bestiary.unlock_groups])
     for n, cells in enumerate(table_rows(wikitext), start=1):
         if len(cells) < 5:
             problems["row without 5 cells"] += 1
@@ -107,6 +108,7 @@ def bestiary_file(wikitext, page_html, npc_rows, exclusive, mapping, version_nam
             problems[f"no NPC id for {key}"] += 1
         npc_id = npc["id"] if npc else None
         row_types = {t.strip().lower() for t in (npcs_by_id.get(npc_id) or {}).get("type", "").split("^")}
+        raw_types[key] = row_types
         etype = next((t for t, types in type_rules.items() if row_types & types), "enemy")
         # version: the NPC id's update, but not before the bestiary itself
         v = max((ver for a, b, ver in id_versions if npc_id is not None and a <= npc_id <= b),
@@ -135,6 +137,27 @@ def bestiary_file(wikitext, page_html, npc_rows, exclusive, mapping, version_nam
         entries.append({k: v for k, v in entry.items() if v is not None})
 
     by_id = {e["id"]: e for e in entries}
+    # what else unlocks an entry in the game ([bestiary.unlocked_by], [bestiary.unlock_groups]):
+    # groups of entry ids - any group whose entries are all unlocked unlocks the entry
+    unlocked_by = defaultdict(list)
+    for key, rules in conf.get("unlocked_by", {}).items():
+        for rule in rules:
+            unlocked_by[key].append([rule] if isinstance(rule, str) else list(rule))
+    for members in conf.get("unlock_groups", {}).values():
+        ids = []
+        for m in members:
+            if m.startswith("type:"):
+                ids += [e["id"] for e in entries if m[5:].lower() in raw_types[e["id"]]]
+            else:
+                ids.append(m)
+        for i in ids:
+            unlocked_by[i] += [[j] for j in ids if j != i]
+    for key, groups in unlocked_by.items():
+        unknown = [i for g in [[key], *groups] for i in g if i not in by_id]
+        if unknown:
+            problems[f"unlock rule with unknown entry {unknown}"] += 1
+        else:
+            by_id[key]["unlockedBy"] = groups
     types = []
     for tid, name in conf.get("type_names", {}).items():
         icon_entry = by_id.get(conf.get("type_icons", {}).get(tid, ""))

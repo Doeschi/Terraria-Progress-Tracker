@@ -57,13 +57,13 @@
     "id": "any-mech",
     "name": "Any mechanical boss",
     "icon": "https://terraria.wiki.gg/images/Map_Icon_Retinazer_%28first_form%29.png",
-    "count": 261
+    "count": 253
   },
   {
     "id": "all-mechs",
     "name": "All three mechanical bosses",
     "icon": "https://terraria.wiki.gg/images/Mechanical_Skull.png",
-    "count": 33
+    "count": 41
   },
   {
     "id": "plantera",

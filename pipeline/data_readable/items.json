@@ -31222,8 +31222,8 @@
     "rangeBonus": -1,
     "tooltip": "'Not to be confused with a picksaw'",
     "conditions": [],
-    "milestone": "any-mech",
-    "milestoneVia": "Crafted – needs Hallowed Bar: Dropped by Skeletron Prime"
+    "milestone": "all-mechs",
+    "milestoneVia": "Crafted – needs Soul of Fright, Soul of Might and Soul of Sight: drops of The Twins, The Destroyer and Skeletron Prime"
   },
   {
     "key": "Explosives",
@@ -36261,8 +36261,8 @@
     "velocity": 14.0,
     "useTime": 32,
     "conditions": [],
-    "milestone": "any-mech",
-    "milestoneVia": "Crafted – needs Soul of Fright: Dropped by Skeletron Prime"
+    "milestone": "all-mechs",
+    "milestoneVia": "Crafted – needs Soul of Fright, Soul of Might and Soul of Sight: drops of The Twins, The Destroyer and Skeletron Prime"
   },
   {
     "key": "Frostbrand",
@@ -50243,8 +50243,8 @@
     "autoswing": false,
     "tooltip": "12% increased damage",
     "conditions": [],
-    "milestone": "any-mech",
-    "milestoneVia": "Crafted – needs Soul of Fright: Dropped by Skeletron Prime"
+    "milestone": "all-mechs",
+    "milestoneVia": "Crafted – needs Soul of Fright, Soul of Might and Soul of Sight: drops of The Twins, The Destroyer and Skeletron Prime"
   },
   {
     "key": "MechanicalGlove",
@@ -50294,8 +50294,8 @@
     "autoswing": false,
     "tooltip": "Increases melee knockback\n12% increased melee damage and speed\nEnables auto swing for melee weapons\nIncreases the size of melee weapons",
     "conditions": [],
-    "milestone": "any-mech",
-    "milestoneVia": "Crafted – needs Avenger Emblem → Soul of Fright: Dropped by Skeletron Prime"
+    "milestone": "all-mechs",
+    "milestoneVia": "Crafted – needs Avenger Emblem: Crafted – needs Soul of Fright, Soul of Might and Soul of Sight: drops of The Twins, The Destroyer and Skeletron Prime"
   },
   {
     "key": "LandMine",
@@ -53267,8 +53267,8 @@
     "toolSpeed": 7,
     "tooltip": "'Not to be confused with a hamdrill'",
     "conditions": [],
-    "milestone": "any-mech",
-    "milestoneVia": "Crafted – needs Hallowed Bar: Dropped by Skeletron Prime"
+    "milestone": "all-mechs",
+    "milestoneVia": "Crafted – needs Soul of Fright, Soul of Might and Soul of Sight: drops of The Twins, The Destroyer and Skeletron Prime"
   },
   {
     "key": "CobaltWaraxe",
@@ -71752,8 +71752,8 @@
     "debuff": "Hellfire",
     "tooltip": "Increases melee knockback and melee attacks inflict fire damage\n12% increased melee damage and speed\nEnables auto swing for melee weapons and whips\nIncreases the size of melee weapons",
     "conditions": [],
-    "milestone": "any-mech",
-    "milestoneVia": "Crafted – needs Mechanical Glove → Avenger Emblem → Soul of Fright: Dropped by Skeletron Prime"
+    "milestone": "all-mechs",
+    "milestoneVia": "Crafted – needs Mechanical Glove → Avenger Emblem: Crafted – needs Soul of Fright, Soul of Might and Soul of Sight: drops of The Twins, The Destroyer and Skeletron Prime"
   },
   {
     "key": "Cog",
@@ -117379,8 +117379,8 @@
     "autoswing": false,
     "tooltip": "Increases pickup range for mana stars\n15% increased magic damage",
     "conditions": [],
-    "milestone": "any-mech",
-    "milestoneVia": "Crafted – needs Avenger Emblem → Soul of Fright: Dropped by Skeletron Prime"
+    "milestone": "all-mechs",
+    "milestoneVia": "Crafted – needs Avenger Emblem: Crafted – needs Soul of Fright, Soul of Might and Soul of Sight: drops of The Twins, The Destroyer and Skeletron Prime"
   },
   {
     "key": "CelestialCuffs",
@@ -272509,8 +272509,8 @@
     "useTime": 30,
     "tooltip": "Permanently grants boosted speed and a defensive probe for minecarts\n'Free Mechanical Cart included!'",
     "conditions": [],
-    "milestone": "any-mech",
-    "milestoneVia": "Crafted – needs Mechanical Battery Piece: From the Treasure Bag (Skeletron Prime)"
+    "milestone": "all-mechs",
+    "milestoneVia": "Crafted – needs Mechanical Battery Piece, Mechanical Wagon Piece and Mechanical Wheel Piece: drops of The Twins, The Destroyer and Skeletron Prime"
   },
   {
     "key": "JimsCap",

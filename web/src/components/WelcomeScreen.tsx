@@ -150,7 +150,15 @@ export function WelcomeScreen() {
             <ShieldCheck className="size-4 shrink-0" />
             <span>
               Everything runs in your browser. Game files are never uploaded, and your progress file only to your own
-              Google Drive if you choose that; only item icons are loaded from the Terraria Wiki.
+              Google Drive if you choose that; only item icons are loaded from the Terraria Wiki.{' '}
+              <a
+                className="underline underline-offset-2 hover:text-foreground"
+                href={`${import.meta.env.BASE_URL}privacy.html`}
+                target="_blank"
+                rel="noreferrer"
+              >
+                Privacy policy
+              </a>
             </span>
           </p>
           <Credits withIcon />

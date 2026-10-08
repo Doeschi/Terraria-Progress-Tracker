@@ -371,6 +371,9 @@ export interface BestiaryEntry {
   type: BestiaryTypeId
   stars?: number
   npcId?: number
+  /** what else unlocks the entry in the game (BE5): groups of entry ids - any group whose
+   * entries are all unlocked in the world unlocks it (the Tortured Soul by the Tax Collector) */
+  unlockedBy?: string[][]
   /** biomes.json / times.json / events.json ids */
   biomes: string[]
   times: string[]

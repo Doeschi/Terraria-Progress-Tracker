@@ -16,6 +16,7 @@ import {
 import { formatTilePosition } from '@/lib/coords'
 import { availabilityCheck } from '@/lib/availability'
 import { bestiaryDiff, worldState } from '@/lib/bestiary'
+import type { LoadedPlayer } from '@/lib/player'
 import { bannerText, earnedBanners } from '@/lib/banners'
 import { formatRelativeDay, plural } from '@/lib/format'
 import { getLoadedModified } from '@/lib/files'
@@ -76,6 +77,7 @@ function SyncView({ initial, onDone }: { initial: SyncSection; onDone: () => voi
   const pt = useActivePlaythrough()!
   const world = useActiveWorld()
   const player = useActivePlayer()
+  const entryById = useMemo(() => new Map(data.bestiary.entries.map((e) => [e.id, e])), [data])
   const setChecked = useStore((s) => s.setChecked)
   const setBestiary = useStore((s) => s.setBestiary)
   const updatePlaythrough = useStore((s) => s.updatePlaythrough)
@@ -170,7 +172,7 @@ function SyncView({ initial, onDone }: { initial: SyncSection; onDone: () => voi
       .sort((a, b) => a.item.name.localeCompare(b.item.name))
   }, [items, playerItems, banners, counts, checked])
 
-  const bestiary = useMemo(() => (world ? bestiaryDiff(data, pt, world) : null), [data, pt, world])
+  const bestiary = useMemo(() => (world ? bestiaryDiff(data, pt, world, player) : null), [data, pt, world, player])
 
   const willCheck = toCheck.filter((r) => !skipCheck.has(r.item.key)).map((r) => r.item.key)
   const willUncheck = items?.notFound.filter((i) => uncheck.has(i.key)) ?? []
@@ -431,7 +433,7 @@ function SyncView({ initial, onDone }: { initial: SyncSection; onDone: () => voi
             />
             <Rows
               empty="Everything unlocked in the world is already checked."
-              rows={entryRows(bestiary.toCheck, skipBestiary, world!.bestiary!)}
+              rows={entryRows(bestiary.toCheck, skipBestiary, world!.bestiary!, entryById, player)}
               onToggle={(id, on) => setSkipBestiary((s) => withIds(s, [id], !on))}
             />
           </TabsContent>
@@ -444,7 +446,7 @@ function SyncView({ initial, onDone }: { initial: SyncSection; onDone: () => voi
             />
             <Rows
               empty="Every checked entry is unlocked in the world."
-              rows={entryRows(bestiary.toUncheck, skipBestiary, world!.bestiary!)}
+              rows={entryRows(bestiary.toUncheck, skipBestiary, world!.bestiary!, entryById, player)}
               onToggle={(id, on) => setSkipBestiary((s) => withIds(s, [id], !on))}
             />
           </TabsContent>
@@ -567,14 +569,20 @@ function UnknownItems({ unknown }: { unknown: UnknownItem[] }) {
 
 const foundText = (f: FoundItem) => `${f.stack} in ${plural(f.containers, 'container')}`
 
-function entryRows(entries: BestiaryEntry[], skip: Set<string>, b: WorldBestiary): Row[] {
+function entryRows(
+  entries: BestiaryEntry[],
+  skip: Set<string>,
+  b: WorldBestiary,
+  byId: Map<string, BestiaryEntry>,
+  player: LoadedPlayer | null,
+): Row[] {
   return entries.map((e) => ({
     id: e.id,
     number: e.n,
     icon: e.icon,
     name: e.name,
     on: !skip.has(e.id),
-    detail: worldState(b, e.id).text ?? 'not in the world',
+    detail: worldState(b, e, byId, player).text ?? 'not in the world',
   }))
 }
 

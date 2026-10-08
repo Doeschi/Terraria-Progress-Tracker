@@ -2047,6 +2047,9 @@ events = ["solar-eclipse"]
 [milestones.all-mechs]
 name = "All three mechanical bosses"
 icon = "Mechanical Skull"
+# reached once all of these are defeated; an item that needs drops of several of them (the
+# True Night's Edge: the three souls) needs this milestone, not "any mechanical boss"
+all_of = ["the-twins", "the-destroyer", "skeletron-prime"]
 
 [milestones.plantera]
 name = "Plantera"
@@ -2470,6 +2473,25 @@ town = "Guide"
 critter = "Bunny"
 enemy = "BlueSlime"
 boss = "EyeofCthulhu"
+
+# Entries the game unlocks through other entries, without a kill or sighting of their own (wiki
+# "Bestiary", Notes): the entry -> what else unlocks it in the world, as entry ids - any of the
+# listed; a nested list: all of them together
+[bestiary.unlocked_by]
+DemonTaxCollector = ["TaxCollector"]             # Tortured Soul: talking to the Tax Collector
+DungeonGuardian = ["Clothier", "SkeletronHead"]  # talking to the Clothier, or Skeletron defeated
+CultistDragonHead = ["CultistBoss"]              # Phantasm Dragon: the Lunatic Cultist defeated
+AncientCultistSquidhead = ["CultistBoss"]        # Ancient Vision: the same
+LostGirl = ["Nymph"]                             # she turns into the Nymph when approached
+Crawdad = [["GiantShelly", "Salamander2"]]       # only two of the three spawn in a world: the
+GiantShelly = [["Crawdad", "Salamander2"]]       # third counts once the other two are unlocked
+Salamander2 = [["Crawdad", "GiantShelly"]]
+
+# any entry of a group unlocks all of them; "type:<type>" takes the entries of that NPCs type
+[bestiary.unlock_groups]
+scarecrows = ["Scarecrow1", "Scarecrow2", "Scarecrow3", "Scarecrow4", "Scarecrow5",
+              "Scarecrow6", "Scarecrow7", "Scarecrow8", "Scarecrow9", "Scarecrow10"]  # one kill count since 1.4.4.9
+gold_critters = ["type:gold critter"]
 
 [bestiary.filters]
 Surface = ["biomes:forest-surface"]
