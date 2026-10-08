@@ -102,7 +102,7 @@
   ],
   "Adamantite armor": [
     "Adamantite armor is a Hardmode armor set consisting of the Adamantite Breastplate and Adamantite Leggings, as well as three different headpieces: the Adamantite Helmet, Adamantite Mask, and Adamantite Headgear, providing bonuses for the melee, ranged, and magic damage type respectively. Crafting a full set with one headpiece requires a total of 54 Adamantite Bars (216 Adamantite Ore). Crafting all five pieces requires a total of 78 Adamantite Bars (312 Adamantite Ore).",
-    "Its alternate ore counterpart is the Titanium armor.",
+    "Its alternate ore counterpart is Titanium armor.",
     "The player also emits a faint pulsating aura."
   ],
   "Adhesive Bandage": [
@@ -1125,6 +1125,10 @@
     "The Blood Squid is a flying Hardmode enemy summoned by the Dreadnautilus during a Blood Moon. It resembles a regular Squid, but is larger, redder-colored, and has multiple eyes on its body, similar to the Drippler. The Dreadnautilus always summons Blood Squids in groups of three.",
     "The Blood Squid attempts to close in on the player before firing a single red Blood Shot projectile at the player, similar to the Dreadnautilus's own Blood Shots, but with higher damage. Like the Dreadnautilus, it recoils after each shot."
   ],
+  "Blood Thorn": [
+    "The Blood Thorn is a Hardmode magic weapon that summons three penetrating Blood Thorn projectiles upon use, which erupt from solid blocks and platforms to damage enemies near the player's cursor. It has a 1/8 (12.5%) chance of being dropped by Hemogoblin Sharks.",
+    "Its best modifier is Mythical."
+  ],
   "Blood Zombie": [
     "The Blood Zombie is a pre-Hardmode enemy and a Zombie variant that only spawns during a Blood Moon. It acts mostly the same as normal Zombies, walking towards the player to deal contact damage while attempting to navigate around obstacles, and opening doors if they are in the way. However, it speeds up considerably the closer it gets to the player, and it generally has greater health, damage, and speed than most other Zombies. In Expert Mode, it moves even faster.",
     "It does not have any variants, nor does it have an Armed variation in Expert Mode."
@@ -1174,7 +1178,7 @@
     "The Blue Chicken Egg is a pet-summoning item that spawns a Blue Chicken that follows the player. The Blue Chicken Egg can be purchased from the Traveling Merchant for 25 Gold."
   ],
   "Blue Cultist Archer": [
-    "The Cultists are Hardmode, post-Golem enemies that spawn along with a Mysterious Tablet at the entrance to the Dungeon after Golem has been defeated. Four Cultists will appear there: two Cultist Archers and two Lunatic Devotees. Defeating all four of the Cultists causes the Lunatic Cultist to spawn instantly at their location, destroying the Mysterious Tablet in the process. Defeating the Lunatic Cultist then initiates the Lunar Events.",
+    "The Cultists are Hardmode, post-Golem enemies that spawn along with a Mysterious Tablet at the entrance to the Dungeon after Skeletron and Golem have been defeated. Four Cultists will appear there: two Cultist Archers and two Lunatic Devotees. Defeating all four of the Cultists causes the Lunatic Cultist to spawn instantly at their location, destroying the Mysterious Tablet in the process. Defeating the Lunatic Cultist then initiates the Lunar Events.",
     "Until one of the Cultists is attacked, they are passive and deal no contact damage, and players can walk through them freely without activating them. Attacking any of the four will awaken the Archers, who will begin to fire Wooden Arrows using bows and will deal contact damage. Lunatic Devotees are always passive and never deal contact damage.",
     "All four Cultists respawn and reset their location and initial passive state after 12 minutes (12 in-game hours), if the Lunatic Cultist was not summoned, if the player runs away or dies during the fight, when all four Celestial Pillars are destroyed, or when the world is closed and restarted. Restarting the world can be the fastest option to reset them to their original state.",
     "The Lunatic Devotee and Cultist Archer require 25 kills to be awarded completion of their Bestiary entries and corresponding banners, as opposed to the usual 50 kills."
@@ -2004,7 +2008,7 @@
   ],
   "Chlorophyte armor": [
     "Chlorophyte armor is a Hardmode, post-mechanical bosses armor set consisting of the Chlorophyte Plate Mail and Chlorophyte Greaves, as well as four different headpieces: the Chlorophyte Mask, Chlorophyte Helmet, Chlorophyte Headgear, and Chlorophyte Visor, providing bonuses for the melee, ranged, magic and summon damage type respectively. Crafting a full set with one headpiece requires a total of 54 Chlorophyte Bars (270 Chlorophyte Ore). Crafting all six pieces requires a total of 90 Chlorophyte Bars (450 Chlorophyte Ore).",
-    "The full set grants the following effects while equipped:",
+    "The full set grants the following effects while equipped, depending on the headpiece chosen:",
     [
       "Summons a Leaf Crystal minion above the player. It periodically fires green, laser-like bolts of energy that instantly hit the target and deals 100 base damage and 10 (Extremely strong) knockback."
     ]
@@ -2188,7 +2192,7 @@
   ],
   "Cobalt armor": [
     "Cobalt armor is a Hardmode armor set consisting of the Cobalt Breastplate and Cobalt Leggings, as well as three different headpieces: the Cobalt Helmet, Cobalt Mask, and Cobalt Hat, providing bonuses for the melee, ranged, and magic damage type respectively. Crafting a full set with one headpiece requires a total of 45 Cobalt Bars (135 Cobalt Ore). Crafting all five pieces requires a total of 65 Cobalt Bars (195 Cobalt Ore).",
-    "Its alternate ore counterpart is the Palladium armor.",
+    "Its alternate ore counterpart is Palladium armor.",
     "The player also emits visual afterimages while moving."
   ],
   "Cobweb": [
@@ -2397,7 +2401,7 @@
   ],
   "Copper armor": [
     "Copper armor is a pre-Hardmode armor set consisting of the Copper Helmet, Copper Chainmail, and Copper Greaves. Crafting a full set requires a total of 48 Copper Bars (144 Copper Ore). The full set grants 6 defense while equipped.",
-    "Its alternate ore counterpart is the Tin armor."
+    "Its alternate ore counterpart is Tin armor."
   ],
   "Coral": [
     "Corals are crafting materials which can be found in the Ocean biomes at the ends of the world. They grow naturally on Sand Blocks underwater, within 380 tiles of the left or right edges of the world, and above the depth of (Desktop, Console and Mobile versions) −20 feet / (Old-gen console and 3DS versions) 0 feet, as long as no more than 5 Corals ((Desktop, Console and Mobile versions) or Seashells) are within 7 tiles horizontally and vertically.",
@@ -3613,7 +3617,8 @@
     "The Enchanted Pixie Dust is a Hardmode transformation mount item that turns the player into a Pixie. While in this form, the player will emit a dim light in a 15-block radius and gain infinite flight. Additionally, the player will be able to fit through 1-tile gaps and their hurt sound is replaced with a twinkling sound. If the player has any dashes equipped, they can also perform a dash by pressing Dash, or by double-tapping ◀ Left or ▶ Right while the \"Double Tap Dashing\" setting is enabled. The player loses their ability to use other items, and doing so will result in the player dismounting and returning to normal. It is dropped by Pixies with a 1/200 (0.5%) chance after defeating any mechanical boss."
   ],
   "Enchanted Sundial": [
-    "The Enchanted Sundial is a Hardmode furniture item. It can be triggered by the ⚷ Open / Activate key or wires, doing so will advance time to sunrise (4:30 AM) the following day. It has a 7-day cooldown period, so once used, it will not be usable again until 7 in-game days have passed (see Notes for details). When the Enchanted Sundial is ready to be used, the dial at the top of its sprite and the sun in the middle will both glow bright yellow. The Enchanted Sundial is obtained from fished Pearlwood (1/200 (0.5%) chance), Mythril (1/60 (1.67%) chance), and Titanium Crates (1/20 (5%) chance).",
+    "The Enchanted Sundial is a Hardmode furniture item. It can be triggered by the ⚷ Open / Activate key or wires, doing so will advance time to sunrise (4:30 AM) the following day. It has a 7-day cooldown period, so once used, it will not be usable again until 7 in-game days have passed (see Notes for details). When the Enchanted Sundial is ready to be used, the dial at the top of its sprite and the sun in the middle will both glow bright yellow.",
+    "The Enchanted Sundial is obtained from fished Pearlwood Crates (1/200 (0.5%) chance), Mythril Crates (1/60 (1.67%) chance), and Titanium Crates (1/20 (5%) chance).",
     "The Enchanted Sundial does not turn the time to the next day immediately. It instead \"fast-forwards\" time, causing it to pass 60 times faster than usual (1 hour of in-game time, which would usually take 1 minute of real-life time, takes only 1 second while the Enchanted Sundial is active). When the Enchanted Sundial is taking effect, the effect of other time-accelerating methods (bed and Journey Mode Time Menu) will be ignored. However, unlike these methods, the Enchanted Sundial does not increase tile update rate in world, meaning that things like plant growth and biome spread is unaffected when it is active.",
     "The Enchanted Moondial is its night counterpart, allowing the player to advance time to dusk (7:30 PM) of the current or following day."
   ],
@@ -4064,11 +4069,11 @@
     "The Flask of Gold cannot be used in conjunction with other flasks, and using it will remove any existing flask effects. Like all other flasks, the effect will not be canceled when the player dies."
   ],
   "Flask of Ichor": [
-    "The Flask of Ichor is a Hardmode flask that causes melee weapons and whips (Desktop, Console and Mobile versions) to inflict the Ichor debuff for 10–19 seconds on enemies hit. Melee weapons that fire projectiles will also inflict the debuff on enemies hit by the projectiles.",
+    "The Flask of Ichor is a Hardmode flask that causes melee weapons and whips to inflict the Ichor debuff for 10–19 seconds on enemies hit. Melee weapons that fire projectiles will also inflict the debuff on enemies hit by the projectiles.",
     "The Flask of Ichor cannot be used in conjunction with other flasks, and using it will remove any existing flask effects. Like all other flasks, the effect will not be canceled when the player dies."
   ],
   "Flask of Nanites": [
-    "The Flask of Nanites is a Hardmode, post-Plantera flask that causes melee weapons and whips (Desktop, Console and Mobile versions) to inflict the Confused debuff for 1–3 seconds on enemies hit. Melee weapons that fire projectiles will also inflict the debuff on enemies hit by the projectiles. It also grants a 1.05× damage multiplier to melee and whip attacks, which is applied after other damage bonuses.",
+    "The Flask of Nanites is a Hardmode, post-Plantera flask that causes melee weapons and whips (Desktop, Console and Mobile versions) to inflict the Confused debuff for 1–3 seconds on enemies hit. Melee weapons that fire projectiles will also inflict the debuff on enemies hit by the projectiles. It also grants a 1.05× damage multiplier to melee and whip attacks, which is applied after other damage bonuses, but before damage of the hit is reduced by enemies' defense.",
     "The Flask of Nanites cannot be used in conjunction with other flasks, and using it will remove any existing flask effects. Like all other flasks, the effect will not be canceled when the player dies."
   ],
   "Flask of Party": [
@@ -4281,7 +4286,7 @@
     "The Fox set is a vanity set composed of the Fox Tail and Fox Ears. It can be purchased from the Zoologist during a Third Quarter or a Waning Crescent for 6 Gold (set)."
   ],
   "Foxparks": [
-    "Foxparks is a pre-Hardmode summon weapon that summons a Foxparks minion. It does not deal contact damage, but runs and shoots fireballs towards enemies that inflict the On Fire! debuff for 5–10 seconds. When the weapon is held down using ⚒ Use / Attack, Foxparks will teleport to the player and be held while using a special flamethrower attack that does not consume any ammunition. The flamethrower attack inflicts the On Fire! debuff for 5 seconds, can pierce through 3 targets before dissipating on the 4th hit, and loses 15% damage per hit. Both attacks deal 100% of the weapon's damage and knockback. Only one copy of Foxparks can be summoned at a time; additional uses of the summon weapon do not summon additional minions, nor do they improve the existing minion. Like other Pals, Foxparks can be petted using ⚷ Open / Activate.",
+    "Foxparks is a pre-Hardmode summon weapon that summons a Foxparks minion. It does not deal contact damage, but runs and shoots fireballs towards enemies that inflict the On Fire! debuff for 5–10 seconds. When the weapon is held down using ⚒ Use / Attack, Foxparks will teleport to the player and be held while using a special flamethrower attack that does not consume any ammunition. The flamethrower attack rapidly shoots flames that inflict the On Fire! debuff for 5 seconds, can pierce through enemies, and lose 15% damage per hit. Both attacks deal 100% of the weapon's damage and knockback. Only one copy of Foxparks can be summoned at a time; additional uses of the summon weapon do not summon additional minions, nor do they improve the existing minion. Like other Pals, Foxparks can be petted using ⚷ Open / Activate.",
     "Foxparks has a rare chance to spawn on Grass, Jungle grass, Snow, or Ice blocks above surface during daytime if the player is not in a Graveyard biome, but it cannot spawn in the central lateral 1/4 of the world. It is initially spawned as the distressed Foxparks, with two Goblin Archers spawned around it. After killing both Goblin Archers (or making them despawn), Foxparks will turn into its item form when the player is within 6.25 tiles from it.",
     "It is one of the few entities that can be detected by the Lifeform Analyzer or its upgrades.",
     "Its best modifier is Fabled."
@@ -4311,7 +4316,7 @@
     "Fritz is a Hardmode enemy that spawns during the Solar Eclipse event. It moves very quickly on the ground and leaps into players to attack."
   ],
   "Frog": [
-    "The Frog is a harmless critter that spawns in the Jungle at any time. When in water, Frogs will swim along the water's surface. Frogs will occasionally croak when nearby.",
+    "The Frog is a harmless critter that spawns in the Jungle at any time. When in water, Frogs will swim along the water's surface. Frogs will occasionally croak during nighttime, or if they are below the surface.",
     "The Frog has only 5 health and no defense, and can be damaged by other enemies and players.",
     "The Frog can be caught with any Bug Net to be carried around in the inventory and released later, or crafted into animated decorative furniture (Frog Cage). Once crafted, the Frog cannot be released again, unless the furniture item is de-crafted via Shimmer (Desktop, Console and Mobile versions).",
     "The Frog can be spawned by the Frog Statue, however statue-spawned critters cannot be caught with any Bug Net, and will disappear in a puff of smoke when the player attempts to do so.",
@@ -4909,7 +4914,7 @@
   ],
   "Gold armor": [
     "Gold armor is a pre-Hardmode armor set consisting of the Gold Helmet, Gold Chainmail, and Gold Greaves. Crafting a full set requires a total of 75 Gold Bars (300 Gold Ore). The full set grants 16 defense while equipped.",
-    "Its alternate ore counterpart is the Platinum armor.",
+    "Its alternate ore counterpart is Platinum armor.",
     "The Ancient Gold Helmet is functionally identical to and interchangeable with the Gold Helmet. The Ancient Gold Helmet has a 1/100 (1%) chance of being dropped by Skeletons and Spore Skeletons, and can also be obtained by dropping a Gold Helmet into Shimmer. Its appearance is based on the sprite of the Gold Helmet prior to 1.0.3."
   ],
   "Golden Bug Net": [
@@ -5287,7 +5292,7 @@
   "Hallowed armor": [
     "Hallowed armor is a Hardmode, post-one mechanical boss armor set consisting of the Hallowed Plate Mail and Hallowed Greaves, as well as four different headpieces: the Hallowed Mask, Hallowed Helmet, Hallowed Headgear, and Hallowed Hood, providing bonuses for melee, ranged, magic, and summon damage type respectively. Crafting a full set with one headpiece requires a total of 54 Hallowed Bars. Crafting all six pieces requires a total of 90 Hallowed Bars.",
     "Hallowed armor pieces are interchangeable with Ancient Hallowed armor pieces, still providing the set bonus.",
-    "The full set grants the following effects while equipped:",
+    "The full set grants the following effects while equipped, depending on the headpiece chosen:",
     [
       "Upon enemy hits, the player receives the Holy Protection buff, which grants the ability to dodge the next attack dealt by an enemy or other damage source. It has a 30-second cooldown after the dodge has been activated."
     ],
@@ -5864,7 +5869,7 @@
   ],
   "Iron armor": [
     "Iron armor is a pre-Hardmode armor set consisting of the Iron Helmet, Iron Chainmail, and Iron Greaves. Crafting a full set requires a total of 60 Iron Bars (180 Iron Ore). The full set grants 9 defense while equipped.",
-    "Its alternate ore counterpart is the Lead armor.",
+    "Its alternate ore counterpart is Lead armor.",
     "The Ancient Iron Helmet is functionally identical to and interchangeable with the Iron Helmet. The Ancient Iron Helmet has a 1/100 (1%) chance of being dropped by Skeletons and Spore Skeletons, and can also be obtained by dropping an Iron Helmet into Shimmer. Its appearance is based on the sprite of the Iron Helmet prior to 1.0.3."
   ],
   "Ironskin Potion": [
@@ -6019,12 +6024,13 @@
   ],
   "Junk": [
     "Junk items are fished instead of regular fishing catches when the player's fishing conditions are particularly unfavorable. Their only use is being converted by the Extractinator or Chlorophyte Extractinator to obtain low-level bait. There are three different junk items, all of which are functionally identical: Old Shoe, Seaweed, and Tin Can.",
-    "Junk items can only be caught if either of the following two conditions are met:",
+    "Junk items can only be caught if both of the following conditions are met:",
     [
       "The lake is smaller than 300 tiles (water) or 200 tiles (honey).",
+      "This requirement decreases at higher altitudes, reaching a minimum of 75 tiles (50 for honey)",
       "The player's Fishing Power is lower than 50."
     ],
-    "If both conditions are not met (i.e., the lake size and the player's Fishing Power are both high enough), then regular fishing catches are caught instead of junk items. If both conditions are met, the chances to fish a junk item are very high (except during a Blood Moon, during which enemies will commonly be caught instead of other drops).",
+    "If either condition is not met (i.e., the lake size or the player's Fishing Power is high enough), then regular fishing catches are caught instead of junk items. If both conditions are met, the chances to fish a junk item are very high (except during a Blood Moon, during which enemies will commonly be caught instead of other drops).",
     "There is a 1/8 (12.5%) chance for a Joja Cola to be fished up in place of a junk item."
   ],
   "KO Cannon": [
@@ -6342,7 +6348,7 @@
   ],
   "Lead armor": [
     "Lead armor is a pre-Hardmode armor set consisting of the Lead Helmet, Lead Chainmail, and Lead Greaves. Crafting a full set requires a total of 60 Lead Bars (180 Lead Ore). The full set grants 11 defense while equipped.",
-    "Its alternate ore counterpart is the Iron armor."
+    "Its alternate ore counterpart is Iron armor."
   ],
   "Leaf Blower": [
     "The Leaf Blower is a Hardmode magic gun that has a 1/8 (12.5%) chance of being dropped by Plantera. When used, it rapidly fires a spread of leaf projectiles that begin swirling after traveling for about 15 tiles, and move in a spiral circle pattern while gradually fading away. The leaves cannot pass through blocks or pierce enemies.",
@@ -6576,7 +6582,7 @@
   ],
   "Living Wood Wall": [
     "The Living Wood Wall is a type of background wall which can be found naturally generated in Living Trees, considered unsafe, where it does not drop as an item when destroyed. It can also be found naturally generated in Living Mahogany Trees, considered safe, where it does drop as an item when destroyed. It can also be obtained via crafting. It is considered a safe wall when placed by the player.",
-    "Unsafe Living Wood Walls only allow Goldfish, Snails, Mice, Worms, Bunnies, and Gnomes to spawn in front of them. This effect is not applied in Remix and Zenith worlds.",
+    "Under normal circumstances, unsafe Living Wood Walls only allow Goldfish, Snails, Mice, Worms, Squirrels, Bunnies, and Gnomes to spawn in front of them. Notably, Gnomes only spawn on the surface, meaning unsafe Living Wood Walls underground will spawn exclusively critters. This effect is not applied in Remix and Zenith worlds.",
     "The Overgrown Living Wood Wall is an item that places an unsafe Living Wood Wall. It is visually identical and is obtained by throwing a Living Wood Wall into Shimmer."
   ],
   "Lizard Egg": [
@@ -6731,7 +6737,7 @@
     "While the Lunatic Cultist is alive, its exclusive music Lunatic Cultist will play. When Otherworldly music is enabled, the track Boss 2 (Otherworldly) will play instead."
   ],
   "Lunatic Devotee": [
-    "The Cultists are Hardmode, post-Golem enemies that spawn along with a Mysterious Tablet at the entrance to the Dungeon after Golem has been defeated. Four Cultists will appear there: two Cultist Archers and two Lunatic Devotees. Defeating all four of the Cultists causes the Lunatic Cultist to spawn instantly at their location, destroying the Mysterious Tablet in the process. Defeating the Lunatic Cultist then initiates the Lunar Events.",
+    "The Cultists are Hardmode, post-Golem enemies that spawn along with a Mysterious Tablet at the entrance to the Dungeon after Skeletron and Golem have been defeated. Four Cultists will appear there: two Cultist Archers and two Lunatic Devotees. Defeating all four of the Cultists causes the Lunatic Cultist to spawn instantly at their location, destroying the Mysterious Tablet in the process. Defeating the Lunatic Cultist then initiates the Lunar Events.",
     "Until one of the Cultists is attacked, they are passive and deal no contact damage, and players can walk through them freely without activating them. Attacking any of the four will awaken the Archers, who will begin to fire Wooden Arrows using bows and will deal contact damage. Lunatic Devotees are always passive and never deal contact damage.",
     "All four Cultists respawn and reset their location and initial passive state after 12 minutes (12 in-game hours), if the Lunatic Cultist was not summoned, if the player runs away or dies during the fight, when all four Celestial Pillars are destroyed, or when the world is closed and restarted. Restarting the world can be the fastest option to reset them to their original state.",
     "The Lunatic Devotee and Cultist Archer require 25 kills to be awarded completion of their Bestiary entries and corresponding banners, as opposed to the usual 50 kills."
@@ -7211,7 +7217,7 @@
       "+30% mining speed",
       "The player emits a small amount of light."
     ],
-    "All Mining armor pieces are interchangeable with pieces from the Prospector armor and the Ultrabright Helmet, still providing the set bonus. The only difference is the defense."
+    "All Mining armor pieces are interchangeable with pieces from Prospector armor and the Ultrabright Helmet, still providing the set bonus. The only difference is the defense."
   ],
   "Minishark": [
     "The Minishark is a pre-Hardmode gun that can be purchased from the Arms Dealer for 35 Gold. When used, it rapidly fires bullets at a slight spread, with each shot having a 1/3 (33.33%) chance of not consuming any ammunition.",
@@ -7644,7 +7650,7 @@
   ],
   "Mythril armor": [
     "Mythril armor is a Hardmode armor set consisting of the Mythril Chainmail and Mythril Greaves, as well as three different headpieces: the Mythril Helmet, Mythril Hat, and Mythril Hood, providing bonuses for the melee, ranged, and magic damage type respectively. Crafting a full set with one headpiece requires a total of 45 Mythril Bars (180 Mythril Ore). Crafting all five pieces requires a total of 65 Mythril Bars (260 Mythril Ore).",
-    "Its alternate ore counterpart is the Orichalcum armor."
+    "Its alternate ore counterpart is Orichalcum armor."
   ],
   "Nachos": [
     "Nachos are a food item that grant the Plenty Satisfied buff when consumed. This lasts for 16 minutes, but can be canceled at any time by right-clicking the icon, by selecting the icon using Cycle Next/Previous Buff and then pressing Remove Buff, or by double-tapping the buff icon. Nachos have a 1/30 (3.33%) chance of being dropped by Angry Tumblers and all Sand Shark variants."
@@ -8018,8 +8024,8 @@
   ],
   "Orichalcum armor": [
     "Orichalcum armor is a Hardmode armor set consisting of the Orichalcum Breastplate and Orichalcum Leggings, as well as three different headpieces: the Orichalcum Mask, Orichalcum Helmet, and Orichalcum Headgear, providing bonuses for the melee, ranged, and magic damage type respectively. Crafting a full set with one headpiece requires a total of 54 Orichalcum Bars (216 Orichalcum Ore). Crafting all five pieces requires a total of 78 Orichalcum Bars (312 Orichalcum Ore).",
-    "Its alternate ore counterpart is the Mythril armor.",
-    "The full set grants the following effects while equipped:",
+    "Its alternate ore counterpart is Mythril armor.",
+    "The full set grants the following effects while equipped, depending on the headpiece chosen:",
     [
       "Upon enemy hits, a flower petal is summoned at the edge of the screen and is shot towards the target, moving to the other end of the screen and damaging every enemy along the way. The petal deals 36 classless damage. Petals travel very fast (123 mph) and can pass through blocks and liquids. There is a cooldown of 0.33 seconds before another flower petal can be summoned, meaning that this set bonus adds roughly 100 DPS."
     ]
@@ -8167,8 +8173,8 @@
   ],
   "Palladium armor": [
     "Palladium armor is a Hardmode armor set consisting of the Palladium Breastplate and Palladium Leggings, as well as three different headpieces: the Palladium Mask, Palladium Helmet, and Palladium Headgear, providing bonuses for the melee, ranged, and magic damage type respectively. Crafting a full set with one headpiece requires a total of 54 Palladium Bars (162 Palladium Ore). Crafting all five pieces requires a total of 78 Palladium Bars (234 Palladium Ore).",
-    "Its alternate ore counterpart is the Cobalt armor.",
-    "The full set grants the following effects while equipped:",
+    "Its alternate ore counterpart is Cobalt armor.",
+    "The full set grants the following effects while equipped, depending on the headpiece chosen:",
     [
       "Hitting an enemy grants the Rapid Healing buff for 5 seconds, providing a flat health regeneration of 2 HP per second.",
       "Further hits will refresh the duration. The buff is not canceled when the armor is removed.",
@@ -8632,7 +8638,7 @@
   ],
   "Platinum armor": [
     "Platinum armor is a pre-Hardmode armor set consisting of the Platinum Helmet, Platinum Chainmail, and Platinum Greaves. Crafting a full set requires a total of 75 Platinum Bars (300 Platinum Ore). The full set grants 20 defense while equipped.",
-    "Its alternate ore counterpart is the Gold armor."
+    "Its alternate ore counterpart is Gold armor."
   ],
   "Plum": [
     "The Plum is a food and fruit item that grants the Well Fed buff when consumed. This lasts for 5 minutes, but can be canceled at any time by right-clicking the icon, by selecting the icon using Cycle Next/Previous Buff and then pressing Remove Buff, or by double-tapping the buff icon.",
@@ -8845,7 +8851,7 @@
       "+30% mining speed",
       "The player emits a small amount of light."
     ],
-    "All Prospector armor pieces are interchangeable with pieces from the Mining armor and the Ultrabright Helmet, still providing the set bonus. The only difference is the defense."
+    "All Prospector armor pieces are interchangeable with pieces from Mining armor and the Ultrabright Helmet, still providing the set bonus. The only difference is the defense."
   ],
   "Proximity Mine Launcher": [
     "The Proximity Mine Launcher is a Hardmode, post-Plantera launcher that can be purchased from the Cyborg for 35 Gold. When used, it consumes a rocket and fires a mine that travels in a short arc before becoming stationary and semi-transparent until an enemy approaches or until a minute passes, at which point it explodes. The player will not activate the mine, but will be damaged by an exploding mine. Stationary mines deal 300% of the weapon's damage (240 base damage) to enemies, but not to players, who only take a flat 60 damage instead.",
@@ -10099,7 +10105,7 @@
   ],
   "Shroomite armor": [
     "Shroomite armor is a Hardmode, post-Plantera ranged armor set consisting of the Shroomite Breastplate and Shroomite Leggings, as well as three different headpieces: the Shroomite Headgear, Shroomite Mask, and Shroomite Helmet, providing bonuses for ranged weapons using a specific type of ammunition. Crafting the full set with one headpiece requires a total of 54 Shroomite Bars (810 Glowing Mushrooms and 270 Chlorophyte Ore). Crafting all five pieces requires a total of 78 Shroomite Bars (1170 Glowing Mushrooms and 390 Chlorophyte Ore).",
-    "The full set grants the following effects while equipped:",
+    "The full set grants the following effects while equipped, depending on the headpiece chosen:",
     [
       "+25% ranged critical strike chance",
       "+20% ammo conservation",
@@ -10230,7 +10236,7 @@
   ],
   "Silver armor": [
     "Silver armor is a pre-Hardmode armor set consisting of the Silver Helmet, Silver Chainmail, and Silver Greaves. Crafting a full set requires a total of 60 Silver Bars (240 Silver Ore). The full set grants 13 defense while equipped.",
-    "Its alternate ore counterpart is the Tungsten armor."
+    "Its alternate ore counterpart is Tungsten armor."
   ],
   "Sinks": [
     "The Sink is a type of furniture item and crafting station. Like Fountains, it can be used to craft items that require water as a crafting station.",
@@ -10349,7 +10355,7 @@
   ],
   "Slime Crown": [
     "The Slime Crown is a boss-summoning item that summons King Slime when used. It can be used in any biome at any time.",
-    "When thrown into Shimmer, the Slime Crown is consumed and the Slime Rain event begins immediately. If the event is already in progress, then the item merely sinks to the bottom of the Shimmer like all other non-decraftable items."
+    "When thrown into Shimmer, the Slime Crown is consumed and the Slime Rain event begins immediately. If the event is already in progress, then the item merely sinks to the bottom of the Shimmer like all other non-decraftable items. If the Remix seed is active in the current world, the item will still be consumed, but the Slime Rain will not start."
   ],
   "Slime Gun": [
     "The Slime Gun is a tool that has a 2/3 (66.67%) chance of being dropped by King Slime. When used, it sprays an arc of slime which inflicts the Slime debuff on players, enemies, and NPCs for 3 seconds. Additionally, the slime turns on most light sources, as opposed to the stream of the Water Gun, which turns them off. The Slime Gun can be used limitlessly and does not consume any ammunition or mana.",
@@ -10635,7 +10641,7 @@
     "The Soul of Might is one of the six souls. It is a crafting material dropped by The Destroyer."
   ],
   "Soul of Night": [
-    "Soul of Night is a Hardmode crafting material dropped by most enemies killed in the Underground Corruption or Underground Crimson (in the Cavern layer), with a 1/5 (20%) chance. This also includes enemies not native to the biome, such as normal cavern enemies, Underworld enemies, but not enemies spawned from statues. See Notes for details."
+    "Soul of Night is a Hardmode crafting material dropped by most enemies killed in the Cavern layer of an Underground Corruption or Underground Crimson biome with a 1/5 (20%) chance. This also includes enemies not native to the biome, such as normal cavern enemies, Underworld enemies, but not enemies spawned from statues. See Notes for details."
   ],
   "Soul of Sight": [
     "The Soul of Sight is one of the six souls that can be obtained in Hardmode. It is a crafting material dropped by The Twins."
@@ -11650,6 +11656,7 @@
   ],
   "The Rotted Fork": [
     "The Rotted Fork is a pre-Hardmode spear that has a 1/5 (20%) chance of being obtained from destroying Crimson Hearts found in The Crimson or a 1/5 (20%) chance from Crimson Crates and Hematic Crates. When thrust, it creates a small shockwave at its tip.",
+    "Its Shadow Orb melee weapon counterpart is the Ball O' Hurt.",
     "Its best modifier is Godly or Demonic. Both modifiers increase the average damage output by the same amount."
   ],
   "The Torch God": [
@@ -11792,7 +11799,7 @@
   ],
   "Tin armor": [
     "Tin armor is a pre-Hardmode armor set consisting of the Tin Helmet, Tin Chainmail, and Tin Greaves. Crafting a full set requires a total of 48 Tin Bars (144 Tin Ore). The full set grants 7 defense while equipped.",
-    "Its alternate ore counterpart is the Copper armor."
+    "Its alternate ore counterpart is Copper armor."
   ],
   "Tinkerer's Workshop": [
     "The Tinkerer's Workshop is a flat-surface item and crafting station that is used primarily to combine multiple accessories into single items that usually provide the abilities of their components. For instance, it can combine the Rocket Boots and Hermes Boots into a single item (the Spectre Boots) that provides the same rocket-jumping and accelerated movement as the individual items do, without occupying two accessory slots. The Tinkerer's Workshop can be purchased from the Goblin Tinkerer for 10 Gold.",
@@ -11864,8 +11871,8 @@
   ],
   "Titanium armor": [
     "Titanium armor is a Hardmode armor set consisting of the Titanium Breastplate and Titanium Leggings, as well as three different headpieces: the Titanium Mask, Titanium Helmet, and Titanium Headgear, providing bonuses for melee, ranged, and magic damage type respectively. Crafting a full set with one headpiece requires a total of 59 Titanium Bars (236 Titanium Ore). Crafting all five pieces requires a total of 85 Titanium Bars (340 Titanium Ore).",
-    "Its alternate ore counterpart is the Adamantite armor.",
-    "The full set grants the following effects while equipped:",
+    "Its alternate ore counterpart is Adamantite armor.",
+    "The full set grants the following effects while equipped, depending on the headpiece chosen:",
     [
       "Attacking grants the player the Titanium Barrier buff, which spawns Titanium Shards that spin around the player. The shards spin faster the more there are, and up to 7 shards can exist at once. Each Titanium Shard deals 50 damage with a knockback value of 15 (Insane), and cannot deal critical hits. Each shard dissipates on enemy hits or after 10 seconds has passed."
     ]
@@ -12067,7 +12074,7 @@
     "Its best modifier is Godly or Demonic. Both modifiers increase the average damage output by the same amount."
   ],
   "Trophies": [
-    "Trophies are decorative furniture items which usually have a 1/10 (10%) chance to be dropped from most bosses. While they can be considered the \"boss version of banners\", they are purely cosmetic and do not provide any bonuses. Some trophies can only be rewarded by the Angler for completing fishing quests. In total, there are (Desktop, Console and Mobile versions) 33 / (Old-gen console and 3DS versions) 24 trophies."
+    "Trophies are decorative furniture items which usually have a 1/10 (10%) chance to be dropped from most bosses. While they can be considered the \"boss version of banners\", they are purely cosmetic and do not provide any bonuses. Some trophies can only be rewarded by the Angler for completing fishing quests. In total, there are (Desktop, Console and Mobile versions) 35 / (Old-gen console and 3DS versions) 24 trophies."
   ],
   "Tropical Smoothie": [
     "The Tropical Smoothie is a food item that grants the Well Fed buff when consumed. This lasts for 20 minutes, but can be canceled at any time by right-clicking the icon, by selecting the icon using Cycle Next/Previous Buff and then pressing Remove Buff, or by double-tapping the buff icon."
@@ -12162,7 +12169,7 @@
   ],
   "Tungsten armor": [
     "Tungsten armor is a pre-Hardmode armor set consisting of the Tungsten Helmet, Tungsten Chainmail, and Tungsten Greaves. Crafting a full set requires a total of 60 Tungsten Bars (240 Tungsten Ore). The full set grants 15 defense while equipped.",
-    "Its alternate ore counterpart is the Silver armor."
+    "Its alternate ore counterpart is Silver armor."
   ],
   "Turtle": [
     "The Turtle is a critter which can spawn in bodies of water in the Forest during the day. They move slowly on land and swim at the surface of water. The Turtle has only 5 health and no defense, and can be damaged by other enemies and players.",
@@ -12181,9 +12188,9 @@
       "+14% melee damage",
       "+12% melee critical strike chance",
       "+750 aggro",
-      "Stronger Thorns effect upon taking contact damage, which inflicts 200% of the enemy's contact damage back at them and applies a knockback of 10 (Extremely strong).",
-      "A visual turtle shell appears on the player's back."
-    ]
+      "Stronger Thorns effect upon taking contact damage, which inflicts 200% of the enemy's contact damage back at them and applies a knockback of 10 (Extremely strong)."
+    ],
+    "A visual turtle shell also appears on the player's back."
   ],
   "Tuxedo set": [
     "The Tuxedo set is a vanity set consisting of the Top Hat, Tuxedo Shirt and Tuxedo Pants. These items are to be equipped in the Social Slots as they only provide a visual appearance.",

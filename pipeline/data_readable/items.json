@@ -3935,7 +3935,7 @@
     "useTime": 15,
     "conditions": [],
     "milestone": "start",
-    "milestoneVia": "Dropped by Blue Slime (bonus drop)"
+    "milestoneVia": "Dropped by Black Slime (bonus drop)"
   },
   {
     "key": "SilverCoin",
@@ -6531,7 +6531,7 @@
     "tooltip": "Sometimes dropped by Skeletons and Piranha",
     "conditions": [],
     "milestone": "start",
-    "milestoneVia": "Dropped by Undead Miner"
+    "milestoneVia": "Dropped by Hoplite"
   },
   {
     "key": "Flamarang",
@@ -20277,12 +20277,10 @@
     "icon": "https://terraria.wiki.gg/images/Mythril_Hood.png",
     "categories": [
       "armor",
-      "sets",
-      "crafting-material"
+      "sets"
     ],
     "subcategories": [
-      "armor-sets",
-      "material-equipment"
+      "armor-sets"
     ],
     "obtain": [
       "crafted"
@@ -20332,12 +20330,10 @@
     "icon": "https://terraria.wiki.gg/images/Mythril_Helmet.png",
     "categories": [
       "armor",
-      "sets",
-      "crafting-material"
+      "sets"
     ],
     "subcategories": [
-      "armor-sets",
-      "material-equipment"
+      "armor-sets"
     ],
     "obtain": [
       "crafted"
@@ -20387,12 +20383,10 @@
     "icon": "https://terraria.wiki.gg/images/Mythril_Hat.png",
     "categories": [
       "armor",
-      "sets",
-      "crafting-material"
+      "sets"
     ],
     "subcategories": [
-      "armor-sets",
-      "material-equipment"
+      "armor-sets"
     ],
     "obtain": [
       "crafted"
@@ -20442,12 +20436,10 @@
     "icon": "https://terraria.wiki.gg/images/Mythril_Chainmail.png",
     "categories": [
       "armor",
-      "sets",
-      "crafting-material"
+      "sets"
     ],
     "subcategories": [
-      "armor-sets",
-      "material-equipment"
+      "armor-sets"
     ],
     "obtain": [
       "crafted"
@@ -20497,12 +20489,10 @@
     "icon": "https://terraria.wiki.gg/images/Mythril_Greaves.png",
     "categories": [
       "armor",
-      "sets",
-      "crafting-material"
+      "sets"
     ],
     "subcategories": [
-      "armor-sets",
-      "material-equipment"
+      "armor-sets"
     ],
     "obtain": [
       "crafted"
@@ -21265,7 +21255,7 @@
     "tooltip": "Displays horizontal position",
     "conditions": [],
     "milestone": "start",
-    "milestoneVia": "Dropped by Mother Slime"
+    "milestoneVia": "Dropped by Snow Flinx"
   },
   {
     "key": "DivingGear",
@@ -31154,12 +31144,12 @@
     "consumable": false,
     "placeable": false,
     "autoswing": true,
-    "damage": 50,
+    "damage": 53,
     "damageType": "ranged",
     "critical": 4,
     "knockback": 2.5,
     "velocity": 11.0,
-    "useTime": 17,
+    "useTime": 16,
     "conditions": [],
     "milestone": "any-mech",
     "milestoneVia": "Crafted – needs Hallowed Bar: Dropped by Skeletron Prime"
@@ -133222,8 +133212,6 @@
       "oldgen"
     ],
     "platformsKnown": true,
-    "introduced": "1.2.4",
-    "version": "1.2",
     "hardmode": true,
     "hardmodeOnly": false,
     "unobtainable": false,
@@ -156886,7 +156874,7 @@
     "tooltip": "Teleports you to a party member\nClick their head on the fullscreen map",
     "conditions": [],
     "milestone": "start",
-    "milestoneVia": "Dropped by Blue Slime (bonus drop)"
+    "milestoneVia": "Dropped by Black Slime (bonus drop)"
   },
   {
     "key": "SummonerEmblem",
@@ -157619,7 +157607,7 @@
     "consumable": true,
     "placeable": false,
     "autoswing": false,
-    "damage": 7,
+    "damage": 10,
     "damageType": "ranged",
     "knockback": 2.5,
     "velocity": 3.0,
@@ -220935,6 +220923,62 @@
     "milestoneVia": "Dropped by Dreadnautilus"
   },
   {
+    "key": "SharpTears",
+    "id": 4270,
+    "name": "Blood Thorn",
+    "internalName": "SharpTears",
+    "page": "Blood Thorn",
+    "url": "https://terraria.wiki.gg/wiki/Blood_Thorn",
+    "icon": "https://terraria.wiki.gg/images/Blood_Thorn.png",
+    "categories": [
+      "weapon"
+    ],
+    "subcategories": [
+      "magic"
+    ],
+    "obtain": [
+      "drop"
+    ],
+    "vendors": [],
+    "events": [
+      "blood-moon"
+    ],
+    "biomes": [],
+    "times": [],
+    "platforms": [
+      "desktop",
+      "console",
+      "mobile"
+    ],
+    "platformsKnown": true,
+    "introduced": "1.4.0.1",
+    "version": "1.4.0",
+    "hardmode": true,
+    "hardmodeOnly": false,
+    "unobtainable": false,
+    "banner": false,
+    "questFish": false,
+    "rarity": 4,
+    "sell": 40000,
+    "research": 1,
+    "stack": 9999,
+    "consumable": false,
+    "placeable": false,
+    "autoswing": true,
+    "damage": 40,
+    "damageType": "magic",
+    "critical": 4,
+    "knockback": 1.0,
+    "velocity": 32.0,
+    "useTime": 33,
+    "mana": 20,
+    "tooltip": "Summons blood thorns from the ground",
+    "eventOnly": true,
+    "conditions": [],
+    "milestone": "wall-of-flesh",
+    "milestoneVia": "Dropped by Hemogoblin Shark"
+  },
+  {
     "key": "BloodMoonStarter",
     "id": 4271,
     "name": "Bloody Tear",
@@ -220982,7 +221026,7 @@
     "tooltip": "Summons the Blood Moon\n'What a horrible night to have a curse.'",
     "conditions": [],
     "milestone": "start",
-    "milestoneVia": "Dropped by The Bride"
+    "milestoneVia": "Dropped by The Groom"
   },
   {
     "key": "DripplerFlail",
@@ -271232,17 +271276,16 @@
     "id": 5264,
     "name": "Silent Fish",
     "internalName": "SilentFish",
-    "page": "Trophies",
-    "url": "https://terraria.wiki.gg/wiki/Trophies",
+    "page": "Paintings",
+    "url": "https://terraria.wiki.gg/wiki/Paintings",
     "icon": "https://terraria.wiki.gg/images/Silent_Fish.png",
     "categories": [
       "furniture"
     ],
     "subcategories": [
-      "trophy-relic"
+      "painting"
     ],
     "obtain": [
-      "drop",
       "quest-reward"
     ],
     "vendors": [],
@@ -271255,8 +271298,8 @@
       "mobile"
     ],
     "platformsKnown": true,
-    "introduced": "1.4.5.0",
-    "version": "1.4.5",
+    "introduced": "1.4.4",
+    "version": "1.4.4",
     "hardmode": false,
     "hardmodeOnly": false,
     "unobtainable": false,
@@ -271271,7 +271314,7 @@
     "autoswing": true,
     "useTime": 15,
     "placedWidth": 3,
-    "placedHeight": 3,
+    "placedHeight": 2,
     "tooltip": "'J. Parker III'\n'Legends say the batteries died ages ago.'",
     "conditions": [],
     "milestone": "start",
@@ -287540,7 +287583,7 @@
     "platformsKnown": true,
     "introduced": "1.4.5.0",
     "version": "1.4.5",
-    "hardmode": false,
+    "hardmode": true,
     "hardmodeOnly": false,
     "unobtainable": false,
     "banner": false,
@@ -287590,7 +287633,7 @@
     "platformsKnown": true,
     "introduced": "1.4.5.0",
     "version": "1.4.5",
-    "hardmode": false,
+    "hardmode": true,
     "hardmodeOnly": false,
     "unobtainable": false,
     "banner": false,
@@ -314528,7 +314571,7 @@
     "platformsKnown": true,
     "introduced": "1.4.5.0",
     "version": "1.4.5",
-    "hardmode": false,
+    "hardmode": true,
     "hardmodeOnly": false,
     "unobtainable": false,
     "banner": false,
@@ -314581,7 +314624,7 @@
     "platformsKnown": true,
     "introduced": "1.4.5.0",
     "version": "1.4.5",
-    "hardmode": false,
+    "hardmode": true,
     "hardmodeOnly": false,
     "unobtainable": false,
     "banner": false,
@@ -315834,7 +315877,7 @@
     "platformsKnown": true,
     "introduced": "1.4.5.0",
     "version": "1.4.5",
-    "hardmode": false,
+    "hardmode": true,
     "hardmodeOnly": false,
     "unobtainable": false,
     "banner": false,

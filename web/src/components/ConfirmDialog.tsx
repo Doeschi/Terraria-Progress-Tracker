@@ -23,7 +23,8 @@ export function ConfirmDialogHost() {
           <AlertDialogTitle>{options?.title}</AlertDialogTitle>
           {options?.description && <AlertDialogDescription>{options.description}</AlertDialogDescription>}
         </AlertDialogHeader>
-        <AlertDialogFooter>
+        {/* several answers (choose) can be wider than the dialog: they wrap instead of overflowing it */}
+        <AlertDialogFooter className="sm:flex-wrap">
           <AlertDialogCancel onClick={() => finish(null)}>Cancel</AlertDialogCancel>
           {options?.choices ? (
             options.choices.map((c) => (

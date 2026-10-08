@@ -17,7 +17,7 @@
     "id": "magic",
     "name": "Magic weapons",
     "icon": "https://terraria.wiki.gg/images/Wand_of_Sparking.png",
-    "count": 81,
+    "count": 82,
     "parent": "weapon"
   },
   {
@@ -585,7 +585,7 @@
     "id": "material-equipment",
     "name": "Equipment",
     "icon": "https://terraria.wiki.gg/images/Hermes_Boots.png",
-    "count": 354,
+    "count": 349,
     "parent": "crafting-material"
   },
   {
@@ -606,7 +606,7 @@
     "id": "painting",
     "name": "Paintings",
     "icon": "https://terraria.wiki.gg/images/The_Merchant.png",
-    "count": 198,
+    "count": 199,
     "parent": "furniture"
   },
   {
@@ -620,7 +620,7 @@
     "id": "trophy-relic",
     "name": "Trophies & relics",
     "icon": "https://terraria.wiki.gg/images/Eye_of_Cthulhu_Trophy.png",
-    "count": 63,
+    "count": 62,
     "parent": "furniture"
   },
   {

@@ -3,7 +3,7 @@
     "id": "weapon",
     "name": "Weapons",
     "icon": "https://terraria.wiki.gg/images/Copper_Shortsword.png",
-    "count": 493
+    "count": 494
   },
   {
     "id": "ammunition",
@@ -99,7 +99,7 @@
     "id": "crafting-material",
     "name": "Crafting materials",
     "icon": "https://terraria.wiki.gg/images/Iron_Bar.png",
-    "count": 1358
+    "count": 1353
   },
   {
     "id": "crafting-station",

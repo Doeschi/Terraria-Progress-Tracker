@@ -46,7 +46,6 @@
 47;Watches;4049;Watches;3a481bee83219f662b6f07856b6b1f79;1;1;1;1;;;30;1789692694
 48;Charged Blaster Cannon;4056;Charged Blaster Cannon;c9099385670a2748dc17088c8be941cd;1;1;;1;;;22;1789692695
 49;Cursed Dart;4057;Cursed Dart;39cfd37ac243929678cc2282bd7fd6a0;1;1;;1;;;22;1789692695
-50;Gravedigger's Shovel;4059;Gravedigger's Shovel;f6d879037ebfea0fbbff937d066ac595;1;1;;1;;;22;1789692696
 51;Brand of the Inferno;4065;Brand of the Inferno;6d9fb02e90e18f56abb7cf2c4467160f;1;1;;1;;;22;1789692696
 52;Intro Messages;4067;Intro Messages;970ad5389d8023aa238d4fec52d4f63f;1;;;;;;2;1789692696
 54;Bottomless Lava Bucket;4074;Bottomless Lava Bucket;a258c866acfeb5d37bb27e809915b7d0;1;1;;1;;;22;1789692696
@@ -127,7 +126,6 @@
 134;Illuminant Hook;4296;Illuminant Hook;3c5aca22bc1211620e419a8ac226f2fe;1;1;;1;;;22;1789692704
 135;Sky Fracture;4302;Sky Fracture;395bae5b8dfdb35db371f17b858a4474;1;1;;1;;;22;1789692704
 136;Sky Blue String;4288;Sky Blue String;60d5b3bf2671529030672e4094c19565;1;1;;1;;;22;1789692704
-137;Traveling Merchant;4295;Traveling Merchant;f3e1241fe2145cdaec8add577ecf2c39;1;1;1;1;;;30;1789692703
 138;Finch Staff;4303;Finch Staff;1c59989878e3a30c959d5af18a477b43;1;1;;1;;;22;1789692704
 139;1.3.5;4304;1.3.5;f82208cb1a0eac11d8d5726958ce9104;1;1;;1;;;22;1789692704
 140;Firestarter's set;4305;Firestarter's set;17a196d81211af4c9fea640dd6e8fda4;1;1;;1;;;22;1789692704
@@ -162,7 +160,6 @@
 172;Cactus Dresser;4395;Cactus Dresser;3d8b8b29e4b3377f5968629a34d6bf72;1;1;1;1;;;30;1789692708
 173;Stoned;4393;Stoned;8359299f3cc6d8b74029e800b3b11e5d;1;1;;1;;;22;1789692709
 174;Otherworldly Music Box (Snow);4397;Otherworldly Music Box (Snow);15fd9d78ae12fbfc2c3b1c542c17c630;1;1;;1;;;22;1789692709
-175;Spelunker Glowstick;4398;Spelunker Glowstick;d25c298d90db5967f4fd493463d61e9e;1;1;;1;;;22;1789692709
 176;Turkor Body;4405;Turkor Body;c735f0c8f766f16f740e0b23cf8954dd;;;;;1;;32;1789692709
 177;Bone Throwing Knife;4403;Bone Throwing Knife;54d608ee345781389009491a876e6276;1;1;;1;;;22;1789692709
 178;Ancient Storm;4407;Ancient Storm;673339a66abe631ddfe7bf741c611a16;1;1;;1;;;22;1789692709
@@ -255,7 +252,6 @@
 272;Spectral Gastropod;4676;Spectral Gastropod;fad673955e5bb3edc6ad3d256d303c1a;;;1;;1;;40;1789692719
 274;Maroon Graduation set;4683;Maroon Graduation set;06c2d4874c20e3c5546f7908be636363;1;1;;1;;;22;1789692719
 275;Potted Hallow Bamboo;4692;Potted Hallow Bamboo;91796871ad62114ace60ecc042b2202d;1;1;;1;;;22;1789692719
-276;Sake;4689;Sake;e2c94fa18a0176b88c14816b23dd9e3e;1;1;1;1;;;30;1789692719
 277;Lavaproof Tackle Bag;4694;Lavaproof Tackle Bag;57d535d88b382cf2725a37a0336b4ec7;1;1;;1;;;22;1789692720
 278;Mister Stabby Banner;4693;Mister Stabby Banner;2d7cc73b90d70506678881d06992db73;1;1;;1;;;22;1789692720
 279;Sharpening stone;4697;Sharpening stone;341eaa562d7b8e673fc1ca61c8c5df80;1;1;;1;;;22;1789692720
@@ -269,14 +265,12 @@
 287;Golfer Rescue;4722;Golfer Rescue;424e9091fcd03013a1569bb7a7788ab7;1;1;;1;;;22;1789692721
 288;Meteorite Bed;4727;Meteorite Bed;de876b0af15c8c067edf0fc68d381250;1;1;;1;;;22;1789692721
 289;Blackcurrant;4729;Blackcurrant;216d0b6e1fa823f0f3a01ebe6895d107;1;1;;1;;;22;1789692722
-290;Flying Knife;4731;Flying Knife;178326b1b1156101a73fbf55c5295f92;1;1;;1;;;22;1789692722
 291;Music Box (Windy Day);4734;Music Box (Windy Day);86cb3843dfde17ebd3b8cacbc6e50f4b;1;1;;1;;;22;1789692722
 292;Martian Costume Shirt;4739;Martian Costume Shirt;fc75fd019c9f6704f38d7b8906136a18;1;1;;1;;;22;1789692722
 293;Anti-Gravity Hook;4745;Anti-Gravity Hook;c4254799993f84db6d1a247c67e34029;1;1;;1;;;22;1789692722
 294;Solar Platform;4737;Solar Platform;2bc84d3a09168c0c1234d27148529140;1;1;;1;;;22;1789692722
 295;Spider furniture;4758;Spider furniture;3cffb4e23eea96b21dff86b094a69602;1;1;;1;;;22;1789692722
 296;Spider Piano;4754;Spider Piano;484826645789d930bd99b3fec8e55b94;1;1;;1;;;22;1789692723
-297;Gem Locks;4767;Gem Locks;a89768d7dee1ca7048b392e8d7463814;1;1;;1;;;22;1789692723
 298;Parka set;4768;Parka set;596f8ccf7f797ef9207933e4ceede63d;1;1;1;1;;;30;1789692723
 299;First Fractal;4769;First Fractal;c6d53829adbafb63e80b4626969dddd5;1;1;;1;;;22;1789692723
 301;Xeno Staff;4772;Xeno Staff;71e0845d4335c39c64715418154b59bc;1;1;;1;;;22;1789692723
@@ -422,7 +416,6 @@
 446;Diamond Stone Block;5203;Diamond Stone Block;db02e96f72d75fb76e2506ca89c62510;1;1;;1;;;22;1789692740
 447;Ruby Bunny;5207;Ruby Bunny;a2763be7eee90811eefbc23c0ecb9ea5;1;1;;1;;;22;1789692740
 448;Old Stone Wall;5212;Old Stone Wall;07c6003a2ee8960044f81727149e6c99;1;1;;1;;;22;1789692740
-449;Stardust armor;5213;Stardust armor;4c36f4fd93a19937ce0804abec1a5905;1;1;;1;;;22;1789692740
 450;Blue Paint;5215;Blue Paint;d36c70dfb9f272e92d986091a4bc7436;1;1;1;1;;;30;1789692740
 451;Flow Invader Banner;5219;Flow Invader Banner;ea761daf687a11e5f25a2bec7626de5c;1;1;;1;;;22;1789692740
 452;Mourning Wood Relic;5226;Mourning Wood Relic;d5032fde3ac057912c74c2689a324bfc;1;1;;1;;;22;1789692741
@@ -458,7 +451,6 @@
 483;Ghoul;5311;Ghoul;a8515fffc5e27c8c977bec3adc1d06e6;1;1;;1;;;22;1789692743
 484;Pretty Pink set;5297;Pretty Pink set;ba6ad18f25e00795885bc34da38257ce;1;1;;1;;;22;1789692743
 485;Release Doves;5314;Release Doves;1f507c323cb1c6bcff32b424c2607589;1;1;;1;;;22;1789692743
-486;Seafood Dinner;5315;Seafood Dinner;8164a5532f2549932ede8023e5132bd3;1;1;;1;;;22;1789692743
 487;Stardust Dragon;5317;Stardust Dragon;59be7ae436a55b54653be510bb7f773a;1;1;;1;;;22;1789692743
 488;Depth Hair Dye;5320;Depth Hair Dye;059623fb1aad29382e36e732952a7fa6;1;1;1;1;;;30;1789692743
 489;Lemon;5321;Lemon;ff71ff25b2b0033b0d9f68830728b4cc;1;1;;1;;;22;1789692743
@@ -550,8 +542,6 @@
 582;Sensors;5573;Sensors;af29aa178ae43211319e28f627e96590;1;1;;1;;;22;1789692752
 583;Deadly Sphere;5579;Deadly Sphere;314a2e843a02a1664634449b96377b6e;1;1;;1;;;22;1789692752
 584;Otherworldly Music Box (Mushrooms);5586;Otherworldly Music Box (Mushrooms);8fc851dab5071179b4f17ab11efff26c;1;1;;1;;;22;1789692752
-585;Spinal Tap;5584;Spinal Tap;f9d3c9b22fc7bc82259879a627e21a83;1;1;;1;;;22;1789692752
-586;Queen Slime;5589;Queen Slime;0573f3265d0197b7cc5bfd24e9604315;1;1;;1;;;22;1789692752
 587;Martian Ray Gunner Banner;5587;Martian Ray Gunner Banner;3a4a6805170c7bc0815fe6b3ba8f2dde;1;1;;1;;;22;1789692752
 588;Shinobi Infiltrator armor;5590;Shinobi Infiltrator armor;1923ea18ed3e852f7c8f41edcddce259;1;1;;1;;;22;1789692753
 589;Golden Chest;5593;Golden Chest;3724700ebc03bdd17d599f88c47c8d20;1;1;;1;;;22;1789692754
@@ -561,7 +551,6 @@
 593;Deep Lime Paint;5603;Deep Lime Paint;74ff5ccae9c53ad673cd9c9fb9e0897c;1;1;1;1;;;30;1789692754
 594;Blood Squid Banner;5604;Blood Squid Banner;6221a625e089dff708b8b5998516b6f3;1;1;;1;;;22;1789692754
 595;Hemogoblin Shark;5606;Hemogoblin Shark;d9e2a655f915f7e434feae5d9970acdb;1;1;;1;;;22;1789692754
-596;Whips;5607;Whips;452b2c43da970c4e09f4ab8571b22907;1;1;;1;;;22;1789692754
 597;Flickerwick;5609;Flickerwick;cac66d8d03ea9a9619fce9684d25720d;1;1;;1;;;22;1789692755
 599;Green Dragonfly Jar;5614;Green Dragonfly Jar;28276908f3953fc0982b33a49962b1f1;1;1;;1;;;22;1789692755
 600;Banner (buff);5613;Banner (buff);8a06f10c334903fa89e387a1fdd4b6fc;1;1;;1;;;22;1789692755
@@ -619,7 +608,6 @@
 656;Wandering Ronin set;5765;Wandering Ronin set;a7d2fe62219a5b66470536c434e21ae6;1;1;;1;;;22;1789692758
 657;Celestial Fragments;5771;Celestial Fragments;62a63492b4925f060a587083883aa79c;1;1;;1;;;22;1789692758
 658;Unicorn Wisp Dye;5772;Unicorn Wisp Dye;aa1efd9c8ae0a8154bb5d6643254f75f;1;1;;1;;;22;1789692758
-659;Bone Glove;5774;Bone Glove;3a665f5d633c217f0e7f3cd5caa891ba;1;1;;1;;;22;1789692758
 661;Tiny Fishron;5778;Tiny Fishron;e328b6cac7931fca9ec9b536457c5913;1;1;;1;;;22;1789692759
 662;Present Mimic Banner;5779;Present Mimic Banner;b3e25149f2c9c2dc0d2864adb10bb26d;1;1;;1;1;;54;1789692759
 663;Sensor;5782;Sensor;06b185256c71c1aec263c6e22bf8ef6b;1;1;;1;;;22;1789692759
@@ -662,7 +650,6 @@
 700;Plaguebringer's set;5907;Plaguebringer's set;634d31fd25fde73ac48e27d0139a35fc;1;1;;1;;;22;1789692763
 701;Large Bamboo;5909;Large Bamboo;b307e2814085de09f56a52ba5aeba8d5;1;1;;1;;;22;1789692763
 702;Honey Bomb;5910;Honey Bomb;d69333de9b3bf4c22e47051d86151799;1;1;;1;;;22;1789692764
-704;Nebula Blaze;5919;Nebula Blaze;9f56a9d2b4ca830b2fa0de5723c07ca8;1;1;;1;;;22;1789692764
 705;Victorian Goth Dress;5920;Victorian Goth Dress;7a50d4479672f054906eb552d945a0a1;1;1;;1;;;22;1789692765
 706;Granite Lamp;5924;Granite Lamp;b83dd20bb83de42b52f3a4d601bb194c;1;1;;1;;;22;1789692765
 707;Oasis;5922;Oasis;0454236a66b299894fc9ee3f5e8fc6b6;1;1;;1;;;22;1789692765
@@ -716,7 +703,6 @@
 759;Portal Gun;6078;Portal Gun;9ebe2546c61de520d82b28afcf47f6a5;1;1;;1;;;22;1789692769
 760;Volume;6079;Volume;bd7a9717d29c5ddcab1bc175eda1e298;1;1;;1;1;;54;1789692769
 761;Living Mahogany Tree;6082;Living Mahogany Tree;69d952012c8d270c57d42c235040ea56;1;1;;1;;;22;1789692769
-762;Compass;6059;Compass;83ca2d1346e6423497cb1b449c392cb7;1;1;1;1;;;30;1789692769
 763;Hardened Ebonsand Wall;6094;Hardened Ebonsand Wall;f5d8cf0d9fc1d165dc639702f80f10eb;1;1;;1;;;22;1789692769
 764;Vortexian Banner;6086;Vortexian Banner;125c5827b274c42c3767fe5da423f799;1;1;;1;;;22;1789692770
 765;Music Box (Boss 2);6100;Music Box (Boss 2);d71e4e35853cb7a5847dc3d469ac3504;1;1;1;1;;;30;1789692770
@@ -779,16 +765,13 @@
 825;Black Graduation set;6281;Black Graduation set;cab6a0ccc3f2c37c1df79f27de2e37d0;1;1;;1;;;22;1789692776
 826;Blood Zombie Banner;6287;Blood Zombie Banner;536a5db75ede6cd15a3b9bab0b59ffcf;1;1;;1;;;22;1789692776
 827;Granite Dresser;6290;Granite Dresser;c732f298b97dc4d1660541ce1cf6fe78;1;1;;1;;;22;1789692776
-828;Bouncy Glowstick;6292;Bouncy Glowstick;4444557450f74b9cf82a77c1c9038d7a;1;1;;1;;;22;1789692776
 829;Yellow Pin Flag;6293;Yellow Pin Flag;d027f36623084572d5478efd449d8659;1;1;;1;;;22;1789692776
 830;Deadly Sphere (buff);6299;Deadly Sphere (buff);b9e3a4f2c39e976721224cd382577cee;1;1;;1;;;22;1789692777
 831;Green Dungeon Clock;6305;Green Dungeon Clock;c5d1e2b0e9092601278a0465cb1df79f;1;1;;1;;;22;1789692777
 832;Solar Flare Leggings;6298;Solar Flare Leggings;0ad5a4a52e2e13d51b0d5077e1274ada;1;1;;1;;;22;1789692777
-833;Ball O' Fuse Wire;6308;Ball O' Fuse Wire;fb4e8ad4c2bfae0dd60925e8be847dd8;1;1;;1;;;22;1789692777
 835;The Duplicity of Reflections;6309;The Duplicity of Reflections;d3446d58ffda32acc1d27c5a74f28d5e;1;1;;1;;;22;1789692777
 836;Burger;6312;Burger;496451f3d45d2f22ba6695e53b3a2e12;1;1;;1;;;22;1789692777
 837;Sticky Dynamite;6314;Sticky Dynamite;9ba00a23c0577baf59c51bb11e5bf920;1;1;;1;;;22;1789692777
-838;Love Potion;6310;Love Potion;9fb9d3346603335566802db44c217220;1;1;1;1;;;30;1789692777
 839;Pearlwood Crate;6316;Pearlwood Crate;05d3eb3205df2d46d0c50f3b2e358c0c;1;1;;1;;;22;1789692778
 840;Stardust Brick Wall;6319;Stardust Brick Wall;a1f2f511c0bfb601d9d35ff6795f9dc5;1;1;;1;;;22;1789692778
 841;Ancient Cloth;6321;Ancient Cloth;9c95f4ca8d2c2677f8fdd2a602fb7e34;1;1;;1;;;22;1789692778
@@ -980,7 +963,6 @@
 1035;Crimson Scab Wall;6819;Crimson Scab Wall;4edcf9d394d95514ff1519dba5255241;1;1;;1;;;22;1789692797
 1036;Peckish;6807;Peckish;8da9bd19316b77e2958c6df00cfee13e;1;1;;1;;;22;1789692797
 1037;Crystal Lamp;6818;Crystal Lamp;4064c335018421c0a3ca28c96aff67c3;1;1;;1;;;22;1789692797
-1038;Golf Balls;6823;Golf Balls;c51f56cdc6d6ac9da04bb7464007d413;1;1;;1;;;22;1789692797
 1039;Stardust Brick;6827;Stardust Brick;fe040a4fb6b61dd1d0baa49f7307e2fe;1;1;;1;;;22;1789692797
 1040;Devourer Banner;6826;Devourer Banner;2f07888944780ef0e5cb19e208825090;1;1;;1;;;22;1789692798
 1041;Pink Maid Dress;6828;Pink Maid Dress;bce4b215ae0a448c0871055244f0a69a;1;1;;1;;;22;1789692798
@@ -1064,7 +1046,6 @@
 1127;Wet Bomb;7083;Wet Bomb;7f729844918afa0afd983a6de6446720;1;1;;1;;;22;1789692806
 1128;Ultrabright Campfire;7087;Ultrabright Campfire;bf93aa011dc74bd4ecb512dbce281f25;1;1;;1;;;22;1789692806
 1129;Pet Guinea Pig;7086;Pet Guinea Pig;df54b27cd1ce3c096060ff4b431405ad;;;1;;1;;40;1789692806
-1130;Mothron;7089;Mothron;1ba71c9411094e1297ba8b69742bda1f;1;1;;1;;;22;1789692806
 1131;Bone Rattle;7090;Bone Rattle;8ded8c598b091be3dbd39ab2c4d742d2;1;1;;1;;;22;1789692806
 1132;Flameburst Rod;7092;Flameburst Rod;e6efe4e6c5f3d9e70750bd558326b401;1;1;;1;;;22;1789692806
 1133;Corruption Walls;7093;Corruption Walls;daec4dd497c62b282318707e7a7b0c8d;1;1;;1;;;22;1789692806
@@ -1107,7 +1088,6 @@
 1170;Resource Pack;7172;Resource Pack;be2b2fe7f3ae4c8e29c204840992aa8d;1;;;;;;2;1789692810
 1171;Dune Splicer (Tail);7169;Dune Splicer (Tail);db537b1c795efcecc63ff3cc9fc8a57c;1;1;;1;;;22;1789692810
 1173;Hardened Pearlsand;7180;Hardened Pearlsand;4b85bdb55f7afe2425225894c28a1ed6;1;1;;1;;;22;1789692810
-1174;Houndius Shootius;7187;Houndius Shootius;8292b7accc9ec7935106b6c59739aec3;1;1;;1;;;22;1789692810
 1175;Peace Candle (buff);7185;Peace Candle (buff);e870160ec490fafb63c8336aa61d1e5b;1;1;;1;;;22;1789692810
 1176;Etherian Mana;7188;Etherian Mana;c91cd24e1a0b36ed9a639b165c5be0df;1;1;;1;;;22;1789692810
 1177;Dragon Skull;7191;Dragon Skull;d1e3a5c4eababa80f482d2c016d60c2a;;;1;;1;;40;1789692811
@@ -1127,7 +1107,6 @@
 1191;Boreal Wood Door;7211;Boreal Wood Door;2b4c8ac5dc31cb3fa629c4bf444d49ff;1;1;1;1;;;30;1789692812
 1192;Underground Desert;7219;Underground Desert;20a71b789cfc8ead9142e1d9c0b51cab;1;1;;1;;;22;1789692812
 1193;Red Kite;7234;Red Kite;8a1700920554a36b55ad745dbf66447d;1;1;;1;;;22;1789692812
-1194;Starlight;7235;Starlight;d51792b4d5f7e5523e2fa6df873e8051;1;1;;1;;;22;1789692812
 1195;Green Dungeon Chandelier;7240;Green Dungeon Chandelier;cf50a5a566ea053c00835380628e27f2;1;1;;1;;;22;1789692812
 1196;Sky Mill;7207;Sky Mill;da9ac9f0cdceb0f5d42eb8afd32c5e3b;1;1;1;1;;;30;1789692811
 1197;Blue Graduation Gown;7236;Blue Graduation Gown;97918d675b2c3a9f11f8c6900314fec2;1;1;;1;;;22;1789692812
@@ -1190,7 +1169,6 @@
 1255;Star Topper 3;7409;Star Topper 3;c82dd746934d33059fea011c3cb0acc2;1;1;1;1;;;30;1789692818
 1256;Slime Platform;7405;Slime Platform;f96780e3b6676cfae5a15f32f90ee209;1;1;1;1;;;30;1789692818
 1257;Armed Slimed Zombie;7418;Armed Slimed Zombie;1dff95808f510e42fec7ae2e6a3429ff;1;1;;1;;;22;1789692818
-1258;Moon Lord;7426;Moon Lord;7498f6048f7a276d4f3c53f109859ebc;1;1;;1;;;22;1789692818
 1259;Sandstone Column;7428;Sandstone Column;e7542f9b8060f73a139837a69f37ed4b;1;1;;1;;;22;1789692818
 1260;Ghost Banner;7432;Ghost Banner;28febc312e644804310d3430a3d39267;1;1;;1;;;22;1789692818
 1261;Hoplite Statue;7434;Hoplite Statue;dc185ff6d3b6637ce8bf9b68b7d1f79d;1;1;;1;;;22;1789692818
@@ -1221,7 +1199,6 @@
 1288;Mothron Egg;7500;Mothron Egg;da9d0728672f9be403a52a18bd77301a;1;1;;1;;;22;1789692820
 1289;Martian Gray Grunt Banner;7502;Martian Gray Grunt Banner;df5421c677d8149850c4c4304bf157f0;1;1;;1;;;22;1789692820
 1290;Blue and Yellow Kite;7504;Blue and Yellow Kite;ca678b5fe1f0a50ed9fb55f5c9f41592;1;1;;1;;;22;1789692820
-1291;Enchanted Sundial;7506;Enchanted Sundial;8380d15f8c74853839042585c4c0b480;1;1;;1;;;22;1789692820
 1292;Hardened Sand Blocks;7507;Hardened Sand Blocks;b13ef1673ac09f93e2b860ff1b5555fd;1;1;;1;;;22;1789692821
 1293;Buccaneer Pantaloons;7513;Buccaneer Pantaloons;7c6f4690909a0bcb2c9198c6421aaf01;1;1;;1;;;22;1789692821
 1294;Moon Lord Trophy;7516;Moon Lord Trophy;a1d9accec3400d82aef3782d5037d66e;1;1;;1;;;22;1789692821
@@ -1292,7 +1269,6 @@
 1361;Wooden Minecart;7698;Wooden Minecart;434c64e5668f324490e0c8491969a01b;1;1;;1;;;22;1789692826
 1362;Solar Clock;7696;Solar Clock;47edbb58cba13df86c8ed6f3fa8aaf62;1;1;;1;;;22;1789692827
 1363;Nebula Candle;7699;Nebula Candle;ff52af708d89ca4def21e3ddc32ef4c5;1;1;;1;;;22;1789692827
-1364;Smoke Block;7705;Smoke Block;dada846903a1f86470b239cdb4b5bdd5;1;1;;1;;;22;1789692827
 1365;Spider Chandelier;7713;Spider Chandelier;1476f67c03b910a1950ac3cf916af0ad;1;1;;1;;;22;1789692827
 1367;1.3.5.2;7717;1.3.5.2;d9170883a296298175c6047696d00810;1;1;;1;;;22;1789692827
 1369;Palm Wood Bathtub;7727;Palm Wood Bathtub;45fd4a9858ff745e1a40ee075f45af5a;1;1;;1;;;22;1789692828
@@ -1308,7 +1284,6 @@
 1379;Spectral Armor;7747;Spectral Armor;4b8a2bdf64367648a8a29413f95bb5c7;;;1;;1;;40;1789692828
 1380;Liquid Sensor;7750;Liquid Sensor;0ef62f10ab4cb6cbdfb2b594ca70d69b;1;1;;1;;;22;1789692828
 1381;Spectral Subligar;7755;Spectral Subligar;2e7ba6d446fc5ba2a7c70aa27c03af32;;;1;;1;;40;1789692828
-1382;Gem Squirrels;7751;Gem Squirrels;b789e863006ac497415edfde430715d4;1;1;;1;;;22;1789692828
 1383;Music Box (Slime Rain);7757;Music Box (Slime Rain);7002e863ddbbc89447474a7282092840;1;1;;1;;;22;1789692828
 1384;Pair of Eyeballs;7758;Pair of Eyeballs;0193b8a1444c93cd868c1abdd7051de3;1;1;;1;;;22;1789692828
 1385;Corrupt Tendril Wall;7764;Corrupt Tendril Wall;1f1ab5828da947c651f8344ad825a28f;1;1;;1;;;22;1789692828
@@ -1343,7 +1318,6 @@
 1416;Flame Waker Boots;7833;Flame Waker Boots;43c58fac024097f23607525feb6274ab;1;1;;1;;;22;1789692831
 1417;Worn Golf Club (Wedge);7836;Worn Golf Club (Wedge);99cb4e4e058e5bccfce99452f1df4a07;1;1;;1;;;22;1789692831
 1418;HiTek Sunglasses;7839;HiTek Sunglasses;8221b9acbef1ee9dd2736babb178f2e6;1;1;;1;;;22;1789692831
-1419;Life Drain;7843;Life Drain;583db6036c165b8c496b46044b542414;1;1;;1;;;22;1789692831
 1420;Martian Chandelier;7850;Martian Chandelier;f7837ee43cf4d1259e78be84a6f88550;1;1;;1;;;22;1789692831
 1421;Sandstone Chair;7848;Sandstone Chair;42300eededcc428ff36bb49543eaea79;1;1;;1;;;22;1789692831
 1422;Nebula Sofa;7855;Nebula Sofa;a537077fba05b8bb036f2fd095d6616c;1;1;;1;;;22;1789692832
@@ -1376,7 +1350,6 @@
 1450;Tutorial;7932;Tutorial;368fe771261fcb18f7988833c9294a20;;1;1;1;1;;60;1789692834
 1451;Superhero Mask;7933;Superhero Mask;c307536582d00f99d4ecedbaa5c3fe34;1;1;;1;;;22;1789692834
 1452;Maggot Cage;7936;Maggot Cage;baf02f55dd48896db65dea088793c1f4;1;1;;1;;;22;1789692834
-1453;Weapon Rack;7925;Weapon Rack;faabc8a92aef5d7b57c03e3d49284ea3;1;1;1;1;;;30;1789692834
 1454;Spectre Wings;7940;Spectre Wings;e6ffcc3f282e3a25ea667bfee2b4be95;1;1;;1;;;22;1789692834
 1455;Dirt Bomb;7939;Dirt Bomb;96e7936704f8b5c72b59e8cac2c879a4;1;1;;1;;;22;1789692834
 1456;Fancy Golf Club (Driver);7941;Fancy Golf Club (Driver);8a552aa94a8d72320061ca4babf17e3f;1;1;;1;;;22;1789692834
@@ -1493,7 +1466,6 @@
 1572;Music Box (Ocean Day);8257;Music Box (Ocean Day);1808fe72173ef59c18c9669a0177bc18;1;1;1;1;;;30;1789692849
 1573;Shroom Minecart;8259;Shroom Minecart;0017988f2a80740b2b73be0522ad7650;1;1;;1;;;22;1789692849
 1574;Bone Campfire;8264;Bone Campfire;39bbfe0565432bf3ecd159c014e81038;1;1;;1;;;22;1789692850
-1575;Optic Staff;8263;Optic Staff;c4febf11f0dc55070474364fb4c14132;1;1;1;1;;;30;1789692849
 1576;Plum;8269;Plum;93df2c41a9abe4a797371f5c761adbfe;1;1;;1;;;22;1789692850
 1577;Lime Dye;8267;Lime Dye;9bc5e9245f054567218636b5327c4c89;1;1;1;1;;;30;1789692850
 1578;Blue Dragonfly Jar;8272;Blue Dragonfly Jar;46c7e7b356f6fd486b9e18dc6fba1119;1;1;;1;;;22;1789692850
@@ -1607,7 +1579,6 @@
 1692;Bone Lantern;8595;Bone Lantern;d00923087e45deccff9c38e638c5f843;1;1;;1;;;22;1789692858
 1693;Arch Demon Banner;8592;Arch Demon Banner;514664bce459310c6e53d479f6570788;;;1;;;;8;1789692858
 1694;Logic Gate (XOR);8596;Logic Gate (XOR);ec036be79eceacbc6b71132be4478c57;1;1;;1;;;22;1789692858
-1696;The Bride;8610;The Bride;c4efc08074deeb56f1b049abc0778e8b;1;1;;1;;;22;1789692859
 1697;Jungle Turtle;8612;Jungle Turtle;ae48bb7bde24dfd169bac3466b2859f9;1;1;;1;;;22;1789692859
 1698;Skiphs's Blood Dye;8614;Skiphs's Blood Dye;bbb0a9f7aa95e2b2ce123aa349380b0f;1;1;;1;;;22;1789692859
 1699;Deerclops;8619;Deerclops;72653e0fbedd8f995a1c6e95da1f9254;1;1;;1;;;22;1789692859
@@ -1679,7 +1650,6 @@
 1766;Prismatic Punch;8798;Prismatic Punch;5ce3e2f28d79eca95e049d35d52e76bf;1;1;;1;;;22;1789692865
 1767;Living Fire Block;8803;Living Fire Block;63ae5d81e9777bfd48304129821e3308;1;1;1;1;;;30;1789692865
 1768;Hallowed Campfire;8804;Hallowed Campfire;d8775af1decc7d206c003142cb211282;1;1;;1;;;22;1789692865
-1769;Golf;8809;Golf;690c3b1042564741e15a5ce503979172;1;1;;1;;;22;1789692865
 1771;Vicious Goldfish Banner;8811;Vicious Goldfish Banner;83296f1b3477097fa6c8e6df473ae8ed;1;1;;1;;;22;1789692865
 1772;Blue and Green Lights;8815;Blue and Green Lights;9c2af50c9047ee1cc476a0595d5a2a3e;1;1;1;1;;;30;1789692866
 1773;Sand Elemental;8822;Sand Elemental;974aa7150971bad0eb4bce3de0eba3a7;1;1;;1;;;22;1789692866
@@ -2108,7 +2078,6 @@
 2223;Soul of blight;10093;Soul of blight;e5ee7d35bf83e85e8428bec27e946dad;;;1;;1;;40;1789692912
 2224;Storm Diver Banner;10086;Storm Diver Banner;fdb299eedc5caab0b8a3a28e0df4c17f;1;1;;1;;;22;1789692912
 2225;Gold Mouse;10109;Gold Mouse;83a1980fbf8f62816f0cf6cf7d88ddde;1;1;;1;;;22;1789692912
-2226;Hornet Staff;10099;Hornet Staff;f74bdeb4e33fd71c4645337716aec2df;1;1;1;1;;;30;1789692912
 2227;Obsidian Wall;10114;Obsidian Wall;e151a9610a2023e32b9a43f26979a5c8;1;1;;1;;;22;1789692913
 2228;Stylist;10112;Stylist;3ff3eb908a43febe466188fcd8846853;1;1;1;1;;;30;1789692912
 2229;Palm Wood Wall;10117;Palm Wood Wall;bb7901d2bf785afeb8a46625138912c0;1;1;1;1;;;30;1789692913
@@ -2148,7 +2117,6 @@
 2267;Marble Platform;10224;Marble Platform;7151348e5043a5f2b62347d5d7fd785d;1;1;;1;;;22;1789692918
 2268;Painted Horse Mount;10226;Painted Horse Mount;1d2f5154f5a91435134d9e8d808abeda;1;1;;1;;;22;1789692918
 2269;Empress of Light Relic;10221;Empress of Light Relic;68d24fef9e7a0d6b2e752eed3d5581d1;1;1;;1;;;22;1789692918
-2270;Javelin;10227;Javelin;640266a6d25dc6a8f8e723691dab6df9;1;1;;1;;;22;1789692918
 2272;Ruler;10225;Ruler;eada4723af6f51cf2391d85b5fde49b0;1;1;1;1;;;30;1789692918
 2273;Gentleman's Beard;10231;Gentleman's Beard;3818039cbbcbba7034be2386b00a484b;1;1;;1;;;22;1789692919
 2274;Martian Conduit Plating;10235;Martian Conduit Plating;a3f222c998ff1727ee2cccd3f588cba3;1;1;;1;;;22;1789692919
@@ -2248,7 +2216,6 @@
 2376;Plantera Seedling (pet);10492;Plantera Seedling (pet);f9e495ee2befe9aa899e28c4d8ed4046;1;1;;1;;;22;1789692929
 2377;Corruptor Banner;10497;Corruptor Banner;32d6ef78dd4230655b1b56c29d84e299;1;1;;1;1;;54;1789692929
 2378;Silly Green Balloon Wall;10498;Silly Green Balloon Wall;b243e2944912a5635c1e713d2c6ba660;1;1;;1;;;22;1789692929
-2379;Dye Trader;10488;Dye Trader;c4b4ae9f3ee0e9be46fa6f653fd4587a;1;1;1;1;;;30;1789692929
 2380;Pink Eskimo Coat;10502;Pink Eskimo Coat;8f87d505b224185961e90df8c62a6679;;;1;;1;;40;1789692929
 2381;Skyware Dresser;10500;Skyware Dresser;32e0f8902b22eb3e13b37891dc56d9fc;1;1;1;1;;;30;1789692929
 2382;Ichor Campfire;10504;Ichor Campfire;fc3e2d709a62fe74e51f0c503f8f2107;1;1;;1;;;22;1789692930
@@ -2293,7 +2260,6 @@
 2422;Boreal Wood Sofa;10602;Boreal Wood Sofa;914b486624f6255715432987e75b7c56;1;1;1;1;;;30;1789692935
 2423;Nebula Bed;10613;Nebula Bed;4211dea5e1dcd98a918f799300167044;1;1;;1;;;22;1789692935
 2425;Giant Bat Banner;10611;Giant Bat Banner;ddf228d0c73cc42735629fe4d2f06802;1;1;;1;1;;54;1789692935
-2426;Frost Daggerfish;10627;Frost Daggerfish;0ea33890d2df108e637841df4373c474;1;1;;1;;;22;1789692935
 2427;Green Dungeon Dresser;10618;Green Dungeon Dresser;f9ce99d8a8ab0120c2e2d4786ae7ffb9;1;1;1;1;;;30;1789692935
 2428;Release Lantern;10623;Release Lantern;0195697a3503cc6521c118dba16dc168;1;1;;1;;;22;1789692935
 2429;Locked Green Dungeon Chest;10624;Locked Green Dungeon Chest;9d45d7a733a38d0875a1965c0aa3eace;1;1;1;1;;;30;1789692935
@@ -2317,10 +2283,8 @@
 2448;Solar Brick;10698;Solar Brick;a92c148dd2c6a7670da29dc74d59f134;1;1;;1;;;22;1789692937
 2449;Lamia clothes;10696;Lamia clothes;bde99f333000ca5ddf4215ceddd91d0e;1;1;;1;;;22;1789692937
 2450;Blue Dynasty Wall;10703;Blue Dynasty Wall;23d973c1a30c4d90ab590304b465beee;1;1;1;1;;;30;1789692937
-2451;Dead Man's Chest;10700;Dead Man's Chest;30c6cd0f28badbbb8b0b93f5cd899b39;1;1;;1;;;22;1789692937
 2452;Milkyway Weaver (Tail);10699;Milkyway Weaver (Tail);3493626a3353e7bbf68b2c0f10b08eeb;1;1;;1;;;22;1789692937
 2453;Solar Flare Hammer;10705;Solar Flare Hammer;3c2a8de3dd80df84aa0760d22802a768;1;1;;1;;;22;1789692938
-2454;Gnome;10708;Gnome;1fd967a816834982761258785b9d0b52;1;1;;1;;;22;1789692938
 2455;Compound Dyes;10710;Compound Dyes;166f4e60b60366020d9eb1c8a876c209;1;1;1;1;;;30;1789692938
 2456;Martian furniture;10713;Martian furniture;aadcc046f2bf15518ae65380c5cb6c3c;1;1;;1;;;22;1789692938
 2457;Beetle Minecart;10725;Beetle Minecart;f20a636d6c8cb6268e0f08f9319bf0fb;1;1;;1;;;22;1789692938
@@ -2361,7 +2325,6 @@
 2495;Junonia Shell;10810;Junonia Shell;d26467978c10c97ca3d972cc91c0f48f;1;1;;1;;;22;1789692943
 2496;Fire Moss;10814;Fire Moss;b86943802e38020ee9430b0c607de7eb;1;1;;1;;;22;1789692943
 2497;Candy Cane Sword;10800;Candy Cane Sword;768facf4a4814ff8c12fd8494b739002;1;1;1;1;;;30;1789692942
-2498;Gem Bunnies;10815;Gem Bunnies;6e9b508331d5da2e88e6872304ea172d;1;1;;1;;;22;1789692943
 2499;Meteorite Platform;10826;Meteorite Platform;e4b18d15dcb8d0b5d6c87268ee94bb25;1;1;;1;;;22;1789692943
 2501;Winter Cape;10838;Winter Cape;79ebcae32878622bc5504f802a4aea54;1;1;1;1;;;30;1789692943
 2502;Chester;10832;Chester;2074fbf44ff6179f59b43c491cc06b62;1;1;;1;;;22;1789692943
@@ -2451,7 +2414,6 @@
 2593;Basilisk Banner;11102;Basilisk Banner;62ff09f915d69972e6fc4f49ca5e68d3;1;1;;1;;;22;1789692953
 2594;Lead Brick;11109;Lead Brick;ed6e50b3ac7b0ab1e3d613cd38af8a4a;1;1;;1;;;22;1789692953
 2595;Slime Sink;11104;Slime Sink;437d75072de7f528a0431d577e0cc13a;1;1;;1;;;22;1789692954
-2596;Pylons;11105;Pylons;4296022c2dea6f2075194958a9f42c03;1;1;;1;;;22;1789692954
 2598;Campsite;11117;Campsite;e421433458c813de096a4876461db285;1;1;;1;;;22;1789692954
 2599;Old One's Skeleton Banner;11120;Old One's Skeleton Banner;496dfcbb4d845455a9e4254fb8242af6;1;1;;1;;;22;1789692954
 2600;Itsy Betsy;11122;Itsy Betsy;7c2ba811b03989487ea69a69fb1f17f2;1;1;;1;;;22;1789692954
@@ -2498,7 +2460,6 @@
 2642;Saucer Turret;11224;Saucer Turret;057b264f1d8b7bd64b95be6542f0d2d6;1;1;;1;;;22;1789692959
 2643;Gold Fish Bowl;11229;Gold Fish Bowl;d3bb62e662aaf5fbb0386ba056d2e562;1;1;;1;;;22;1789692959
 2644;Liquid Sensor (Water);11230;Liquid Sensor (Water);9b288cac5081d7bba391d62b5793ab5a;1;1;;1;;;22;1789692959
-2645;Terraspark Boots;11231;Terraspark Boots;e1f524256dacc80de33ef283aa4cabf6;1;1;;1;;;22;1789692959
 2646;Yellow and Green Bulb;11235;Yellow and Green Bulb;4d3a8690a661005fc74c7877d5f807a8;1;1;1;1;;;30;1789692959
 2647;Sponges;11241;Sponges;5d1aabcb4a6a91c7bb867d24c30dd74a;1;1;;1;;;22;1789692959
 2648;Snowfall;11236;Snowfall;2e7e160d777547dc8fb7fbc591e7b975;1;1;;1;;;22;1789692959
@@ -2562,7 +2523,6 @@
 2709;Blood Water;11397;Blood Water;520b3f0b477563499eaae04c604b22b4;1;1;;1;;;22;1789692964
 2710;Silly Sunflower set;11391;Silly Sunflower set;599ee243510329ff8273ff4e11da0900;1;1;;1;;;22;1789692964
 2711;Steampunk Minecart;11401;Steampunk Minecart;52f04e2f9969b828496b92387d3e58cf;1;1;;1;;;22;1789692964
-2712;Pine Tree Block;11404;Pine Tree Block;d7fec6bb9c5a6f4cdc5dd45227fffb7f;1;1;1;1;;;30;1789692964
 2713;Fireworks Box;11409;Fireworks Box;ec80053ea689685e7ee318ac9e7ab99c;1;1;1;1;;;30;1789692965
 2714;Green Paint;11411;Green Paint;af1278e4fc9128f8d751b5c866874e2e;1;1;1;1;;;30;1789692965
 2715;Pedguin's Jacket;11419;Pedguin's Jacket;4194c730ca5045b058eb09bfe019bb01;1;1;;1;;;22;1789692965
@@ -2593,7 +2553,6 @@
 2741;Storm Diver;11465;Storm Diver;6aa501054964fe4ef65b8b9e30424d73;1;1;;1;;;22;1789692967
 2742;Magic Honey Dropper;11474;Magic Honey Dropper;1c0520201da62a7174171f34e0ca8c32;1;1;;1;;;22;1789692967
 2743;Dragon Hornet;11476;Dragon Hornet;3886693473dcb65f171e9007159d75cb;;;1;;1;;40;1789692967
-2744;Frostbite;11475;Frostbite;5d1801a70481550d3de71ee64068b62d;1;1;;1;;;22;1789692967
 2745;Meteorite Chest;11477;Meteorite Chest;a58d4155769a6374321477c9adcf3327;1;1;;1;;;22;1789692967
 2746;Lightning Aura Staff;11482;Lightning Aura Staff;2b0c17bebe20e55e8e9aec565f04c8bc;1;1;;1;;;22;1789692967
 2747;Destroyer Relic;11483;Destroyer Relic;61066e7140031e11ff66577b3fd5a46b;1;1;;1;;;22;1789692967
@@ -2798,7 +2757,6 @@
 2958;Nebula Chandelier;12068;Nebula Chandelier;6ab53bb2de69c6eaf6350dc51abae8bc;1;1;;1;;;22;1789692991
 2959;Funeral Pants;12072;Funeral Pants;305d5aaa7737e797e3320df95abb8380;1;1;;1;;;22;1789692991
 2960;Scutlix Mount;12059;Scutlix Mount;e7e03177566fca3dff45bb24de915e43;1;1;;1;;;22;1789692991
-2961;Golden Slime;12076;Golden Slime;5d8fb0bc858ad0a3e90d418e8b1f83f7;1;1;;1;;;22;1789692991
 2962;Deerclops (pet);12070;Deerclops (pet);4b448dad978dd5d75afc3ac63b5d0236;1;1;;1;;;22;1789692991
 2963;Otherworldly Music Box (Hallow);12079;Otherworldly Music Box (Hallow);a0b338324c1320d0850ff24974c18791;1;1;;1;;;22;1789692991
 2964;Vortex Hamaxe;12081;Vortex Hamaxe;f56de3f1537e3fe858f0520bc755a0ca;1;1;;1;;;22;1789692991
@@ -2875,7 +2833,6 @@
 3039;Suspicious Looking Tentacle;12243;Suspicious Looking Tentacle;53baf5b8086b555594bcbb52057b11d0;1;1;;1;;;22;1789692996
 3040;Snow Hat;12247;Snow Hat;cfa3ab9d091bb39f3c78106f1194b6f2;1;1;1;1;;;30;1789692996
 3041;Flameburst sentry;12248;Flameburst sentry;f57a0d28586b4eba46dba77a76e5aed2;1;1;;1;;;22;1789692996
-3043;Imp Staff;12221;Imp Staff;c976f9dbbd3cee97ecbdf0756a40e944;1;1;1;1;;;30;1789692996
 3044;Shark Tooth Necklace;12253;Shark Tooth Necklace;82f1308aca1faa7a29cddf9d9c986877;1;1;;1;;;22;1789692997
 3045;Magma Snail;12249;Magma Snail;2a561846616ad133e1f7563a17043ec7;1;1;;1;;;22;1789692997
 3046;Fruit Salad;12255;Fruit Salad;3023e8481bc85233082d58929daf3941;1;1;;1;;;22;1789692997
@@ -2943,7 +2900,6 @@
 3113;Stardust Candle;12417;Stardust Candle;a87b3e57fcb995b543465bce7a0483c6;1;1;;1;;;22;1789693005
 3114;The Black Spot;12429;The Black Spot;27ceeb295aba22babf1d8a7c8771ed82;1;1;;1;;;22;1789693006
 3115;Lightning Vortex;12430;Lightning Vortex;bc002c4afb202d631ec17dbbbe7a2171;1;1;;1;;;22;1789693006
-3116;Digging Molecart;12431;Digging Molecart;5e68dac626fc0ff48f15d1d6d11f6135;1;1;;1;;;22;1789693006
 3117;Zombie Pet;12439;Zombie Pet;0741905fde1d81f4472d5547a9e4efc0;;;1;;1;;40;1789693006
 3118;Sandstone Door;12432;Sandstone Door;289ea4763410c20fcefa978d5058bb00;1;1;;1;;;22;1789693006
 3119;Lesion Bed;12442;Lesion Bed;f98af4b50a178d047ada7e1adcb04a41;1;1;;1;;;22;1789693006
@@ -2954,7 +2910,6 @@
 3124;Prismatic Lacewing Jar;12454;Prismatic Lacewing Jar;17bf4503814f9a5eef43c959acd56ccd;1;1;;1;;;22;1789693007
 3125;Monk armor;12456;Monk armor;e74bd7dddaed4418faffb78a62b12ced;1;1;;1;;;22;1789693007
 3126;Ghostar's Infinity Eight;12457;Ghostar's Infinity Eight;1637ae6203055c4d8fe01cb62e31937a;1;1;;1;;;22;1789693007
-3127;Living Fire Blocks;12462;Living Fire Blocks;3c04e4f4eafa6b47c00a0bea29cb8d5c;1;1;1;1;;;30;1789693007
 3128;Rich Mahogany Bookcase;12480;Rich Mahogany Bookcase;c3daf1b6f976e3636f87143826db7b1e;1;1;1;1;;;30;1789693007
 3129;REK 3000;12464;REK 3000;cd6c531f708b3a7787918aacb2c468fd;1;1;;1;;;22;1789693007
 3130;1.3.4.4;12465;1.3.4.4;0759e1b87361320f6fd6dc735a59b6d4;1;1;;1;;;22;1789693007
@@ -3074,7 +3029,6 @@
 3248;Ornament Wallpaper;12841;Ornament Wallpaper;3bee3069d5c05365e0ff18cb6cfafe92;1;1;1;1;;;30;1789693019
 3249;Ninja set;12847;Ninja set;00d90458b19e2a284e3d2ecd30319809;1;1;;1;;;22;1789693019
 3250;Martian Astro Clock;12849;Martian Astro Clock;b7de72c5733ae3b5e43d3c7efab67b15;1;1;;1;;;22;1789693019
-3251;Bone Arrow;12844;Bone Arrow;c762738492ad184c105fafb12e391788;1;1;;1;;;22;1789693019
 3252;Sanguine bat;12853;Sanguine bat;4e209b0f9df5dc694e38bba22556ac9e;1;1;;1;;;22;1789693019
 3253;Granite Platform;12859;Granite Platform;334c334e406a313071b74eee35dc568c;1;1;;1;;;22;1789693019
 3254;Key mold;12860;Key mold;f9a65a19a1b78bbb12599d499a06f052;;;1;;1;;40;1789693019
@@ -3089,7 +3043,6 @@
 3263;Oasis Water Fountain;12876;Oasis Water Fountain;f5d629b4e59db693ee2d3a1d062c814e;1;1;;1;;;22;1789693020
 3264;Frozen Door;12879;Frozen Door;e6b90637a765e7bd6e2804f9a3cc8a3d;1;1;1;1;;;30;1789693020
 3265;Turkey Feather;12881;Turkey Feather;2ef74f924b37329048165cf633ee2108;;;;;1;;32;1789693020
-3266;Cultists;12874;Cultists;2caf3d1ce0a6b0ae8efd9a621e6a532e;1;1;;1;;;22;1789693020
 3267;Predictor;12884;Predictor;df83e48167939874409f455fc246a96d;1;1;;1;;;22;1789693020
 3268;Diamond Toilet;12891;Diamond Toilet;2d828dd893c1327e7f4a439393770202;1;1;;1;;;22;1789693020
 3269;Sea Oats;12889;Sea Oats;78a0b5c6cc5e1ba375b5b51c24f43619;1;1;;1;;;22;1789693020
@@ -3332,7 +3285,6 @@
 3522;Relic;13660;Relic;95bacd099548cd6ef0c33642a7a43ccf;1;1;;1;;;22;1789693045
 3523;Ivy;13662;Ivy;f372e525ec64552ba2344da7e3ba0465;1;1;;1;;;22;1789693045
 3524;Treasure Bag (Ogre);13663;Treasure Bag (Ogre);90a6a8298b4dbca4e7f2dfe17066853b;1;1;;1;;;22;1789693045
-3525;Ichor Dart;13668;Ichor Dart;f168f90e39727d3ece5235c0a0a98e9b;1;1;;1;;;22;1789693046
 3526;Herb Bag;13670;Herb Bag;75448ce3d9a6fad62e1b87e17188153a;1;1;;1;;;22;1789693046
 3527;Shinobi Infiltrator's Pants;13672;Shinobi Infiltrator's Pants;898882dc64e6e390576ba0c5a6e09f21;1;1;;1;;;22;1789693046
 3528;Shiren costume;13675;Shiren costume;ab099e69a0668ba5fa4acf7084757fc0;;;;;;1;1;1789693046
@@ -3363,7 +3315,6 @@
 3555;Dragonfly Jar;13754;Dragonfly Jar;e26d0f4be1f3f49c0c53c260e025e458;1;1;;1;;;22;1789693051
 3556;Glass Candelabra;13756;Glass Candelabra;5ed503870ed575caca6f621706c98f37;1;1;1;1;;;30;1789693051
 3557;Demonic Hellcart;13759;Demonic Hellcart;5ec3471157f6b2245877b86fd2de4fff;1;1;;1;;;22;1789693051
-3558;Crimson Heart (item);13752;Crimson Heart (item);af2b9bfeb07b0a4d849d2aaa7014c695;1;1;;1;;;22;1789693051
 3560;Holly;13761;Holly;c75c2126061533bfc8ab3ae291e7e849;1;1;1;1;;;30;1789693051
 3561;Crimson Mimic Banner;13775;Crimson Mimic Banner;5485d93f61d11e6c36c7130f8dcea16a;1;1;;1;;;22;1789693051
 3562;Steampunk Boiler;13768;Steampunk Boiler;88446f299f1596623129a798ad12f104;1;1;1;1;;;30;1789693051
@@ -3613,7 +3564,6 @@
 3814;Potted Jungle Cedar;14448;Potted Jungle Cedar;162a4cc6e8a99a2a6fd0751300f67085;1;1;;1;;;22;1789693077
 3815;Obsidian Clock;14449;Obsidian Clock;2af7e7fbcf3f37725da87213e8397bf5;1;1;1;1;;;30;1789693077
 3816;Otherworldly Music Box (Jungle);14456;Otherworldly Music Box (Jungle);31c0e73f6ad46963aecde28a9c11a173;1;1;;1;;;22;1789693078
-3817;Daedalus Stormbow;14451;Daedalus Stormbow;4413fa5c96eec31113308ac76acd3937;1;1;;1;;;22;1789693078
 3818;Vampire Miner;14450;Vampire Miner;7efd43b5975fe687b4a46d25a643911b;;;1;;1;;40;1789693078
 3819;Gravity Globe;14457;Gravity Globe;c8bffa1927f7a16ab183501b77a87724;1;1;;1;;;22;1789693078
 3820;Dreadnautilus;14460;Dreadnautilus;1c282d7f0dc517da51dccf7365c4f8dd;1;1;;1;;;22;1789693078
@@ -4153,7 +4103,6 @@
 4432;Shellphone (Home);59271;Shellphone (Home);63a2bc0b0fae85498190de16f8e210d7;1;1;;1;;;22;1789693153
 4433;1.4.4.1;59345;1.4.4.1;fa8c9a7fe801ab780eef59b1b9e52e12;1;1;;1;;;22;1789693153
 4434;Love is in the Trash Slot;59273;Love is in the Trash Slot;acf757752dc31e20773e809d4b2c3e62;1;1;;1;;;22;1789693153
-4435;Town Slimes;59372;Town Slimes;8829c146a50ecc7295566a078c84cd1f;1;1;;1;;;22;1789693153
 4436;Reef Block;59371;Reef Block;c941e8ba289a6c0e9f39dc3bd07d40a3;1;1;;1;;;22;1789693153
 4437;Moon Globe;59373;Moon Globe;6680a15c42c0d7800c12b0070d7c0b51;1;1;;1;;;22;1789693153
 4438;Ash Wood armor;59375;Ash Wood armor;324190b27179d7973c26ec23e959fb8c;1;1;;1;;;22;1789693153
@@ -4577,18 +4526,14 @@
 4890;Huge Dragon Egg;70501;Huge Dragon Egg;b33504ab500d215274a82fad977c4a31;1;1;;1;;;22;1789693205
 4891;Soulscourge;70520;Soulscourge;1f5669ce7146632e5ecf80b8358a5ad5;1;1;;1;;;22;1789693205
 4893;Starcrash;70561;Starcrash;454779870047fa3bb6e1b6843161660d;1;1;;1;;;22;1789693205
-4894;Slime Whip;70563;Slime Whip;5b04b88375d9a981b77f003ae9eb3b06;1;1;;1;;;22;1789693205
 4896;Office Block;70464;Office Block;81cd68b466ef786f04759ea522030095;1;1;;1;;;22;1789693205
 4897;Possession;70619;Possession;0291e38d9a3d398052be0ca52a7b1592;1;1;;1;;;22;1789693206
 4898;Vasculash;70620;Vasculash;73a1904be65c569de1c2af4ae648566f;1;1;;1;;;22;1789693206
-4899;Vulgar Display of Flower;70621;Vulgar Display of Flower;55296c0df4e1170ecf237b46c8d9a360;1;1;;1;;;22;1789693206
 4901;Lucky Clover;70683;Lucky Clover;4568030001a718e64661948fb32fa66f;1;1;;1;;;22;1789693206
 4902;Amulet of the Night;70851;Amulet of the Night;aee53032029959c82a3e07974ae66e84;1;1;;1;;;22;1789693206
-4903;True Copper Shortsword;70900;True Copper Shortsword;637a258eac7d9bb37815ff08d2e715d2;1;1;;1;;;22;1789693206
 4904;Constellation (painting);70901;Constellation (painting);d044c5952b93b31866afd160c097090d;1;1;;1;;;22;1789693207
 4905;Coin rain;70902;Coin rain;ba1d532e55f63249f0d6706f740c6a40;1;1;;1;;;22;1789693207
 4906;Enchanted Pixie Dust;70903;Enchanted Pixie Dust;d15d3f9d683f66293e0d70d7b3f3876f;1;1;;1;;;22;1789693207
-4907;Secret world seeds;70904;Secret world seeds;3f00cb6e69b10fc82642ed19916f523e;1;1;;1;;;22;1789693207
 4908;Dog Collar;70906;Dog Collar;eb899f25bdc6dea92e26400c03860fad;1;1;;1;;;22;1789693207
 4909;Goat's Tuft;71041;Goat's Tuft;cffe4d220bccb0cf5066a924d3aa18c0;1;1;;1;;;22;1789693207
 4910;Crow's Beak;71043;Crow's Beak;2558d7b4a1d205c0a92f2deef4c31224;1;1;;1;;;22;1789693207
@@ -4607,7 +4552,6 @@
 4925;Ram Rune;71089;Ram Rune;dd7c2ffc1bc00c6c350da29871f2e84b;1;1;;1;;;22;1789693211
 4926;Fairy Choker;71076;Fairy Choker;c0af01c6c656a52459c6a4577cb83ddb;1;1;;1;;;22;1789693211
 4927;Flint;71092;Flint;ed490600b075becbd8b81c85c5c1db55;1;1;;1;;;22;1789693211
-4928;Alchemy Flask;71098;Alchemy Flask;f2efbd90f1384f418446e51947c1f10d;1;1;;1;;;22;1789693211
 4929;Barrel Launcher;71097;Barrel Launcher;617dad02f3efba82378a86f49fa316d3;1;1;;1;;;22;1789693211
 4930;Slime Spear;71099;Slime Spear;006c53343369d753b18462665752ea26;1;1;;1;;;22;1789693211
 4931;Killing Deck;71100;Killing Deck;0ecc9f7fe77757846c60c8cb86d8ce26;1;1;;1;;;22;1789693211
@@ -4615,7 +4559,6 @@
 4933;Barnacle Staff;71102;Barnacle Staff;abb594c67e01715b2dbbccbacdf76cad;1;1;;1;;;22;1789693212
 4934;Librarian Skeleton;71104;Librarian Skeleton;f2121d1d05f5935fa1c79b1731261a5a;1;1;;1;;;22;1789693212
 4935;Heart Slime;71106;Heart Slime;0c6a0c2f5cb24b8324a05a58816101bc;1;1;;1;;;22;1789693212
-4936;Pufferfish;71108;Pufferfish;072a214949b09e3c98e608bafa35ae1b;1;1;;1;;;22;1789693213
 4938;Portable Kiln;71112;Portable Kiln;1fe9bdcfd5fdf2f41fd2475cbeb5a946;1;1;;1;;;22;1789693213
 4939;Water Bolt Mimic;71113;Water Bolt Mimic;410791ce65d6e52d37523bd2b2dd401c;1;1;;1;;;22;1789693213
 4940;Mitey-Titey;71115;Mitey-Titey;e7397ba5234cf23f4df4433a2438ad07;1;1;;1;;;22;1789693214
@@ -4648,7 +4591,6 @@
 4970;Balloony Beads;71178;Balloony Beads;2d3d5d45b9b18ab1a4debaef4fdbe2fb;1;1;;1;;;22;1789693221
 4971;Boulder Wall;71181;Boulder Wall;d810212fb8c6673272df16547ab6a3a7;1;1;;1;;;22;1789693221
 4972;Boulder Block;71180;Boulder Block;30db8c78c99dee002788c25d4524d49f;1;1;;1;;;22;1789693221
-4973;Skyblock;71183;Skyblock;c2059e168027ec0e78c15ffc0503a241;1;1;;1;;;22;1789693222
 4974;Boulder furniture;71184;Boulder furniture;0a6a905afbbd34d1485da4b3f8d2f7a4;1;1;;1;;;22;1789693222
 4975;Fallen Star furniture;71186;Fallen Star furniture;701d934db7df6450d0aadf1203743d6e;1;1;;1;;;22;1789693222
 4976;Fallen Star Block;71187;Fallen Star Block;223ba6bc28cb27d6d7f2bb170a7d920e;1;1;;1;;;22;1789693223
@@ -4656,9 +4598,7 @@
 4978;Aquarium furniture;71191;Aquarium furniture;cb9214fbc261924af9e262d6b6a6f3a2;1;1;;1;;;22;1789693223
 4979;Fallen Star Wall;71188;Fallen Star Wall;c1ecded0201716f4a30f2b2a6cc40e1d;1;1;;1;;;22;1789693223
 4980;Aquarium Wall;71193;Aquarium Wall;5f6dd7615ed0832a9c2484cba6157188;1;1;;1;;;22;1789693223
-4981;Captain armor;71195;Captain armor;4ef0538445a9e11828c1e2dcc0c25534;1;1;;1;;;22;1789693223
 4982;Aquarium Block;71192;Aquarium Block;5bdb7d3e851d77f73deb4eb90ccb7df9;1;1;;1;;;22;1789693223
-4983;Prospector armor;71281;Prospector armor;ea9a48449c6272f90864c397bb6523f5;1;1;;1;;;22;1789693224
 4984;Rainbow Cloud;71348;Rainbow Cloud;67eecbcb354b52a1dbd0c9df3c98725f;1;1;;1;;;22;1789693224
 4986;Heavy Work Bench;71436;Heavy Work Bench;0a94531f928b1ad70d70b9f9edda0bd3;1;1;1;1;;;30;1789693224
 4987;Office furniture;71459;Office furniture;eaca28292450f2e9c919f90452fc2081;1;1;;1;;;22;1789693224
@@ -4671,13 +4611,10 @@
 4994;Decorative Cobweb;71476;Decorative Cobweb;2b58b44bf41028971c27b7e609fd57db;1;1;;1;;;22;1789693226
 4995;Winter is coming;71483;Winter is coming;164c003aa8c1989ff180b580e6141570;1;1;;1;;;22;1789693226
 4996;Toadstool;71484;Toadstool;534906dc1dee64a38e37ba39221fbf96;1;1;;1;;;22;1789693226
-4997;Rainbow Road;71486;Rainbow Road;233e220d256d56297f3cba5156a8f824;1;1;;1;;;22;1789693226
 4998;Save the rainforest;71487;Save the rainforest;fe804f980dedf77075624c2359c651b3;1;1;;1;;;22;1789693226
 5000;Abandoned manors;71489;Abandoned manors;53f2ca5cf2fdbc038cd6ed5e2e14085d;1;1;;1;;;22;1789693227
-5001;Such great heights;71490;Such great heights;9cd1e8752d63d8c8b02715e95395f914;1;1;;1;;;22;1789693227
 5002;Royale with cheese;71493;Royale with cheese;d43f5cf3d2139cdf42989962cbbde4d1;1;1;;1;;;22;1789693227
 5003;Beam me up;71494;Beam me up;dd01ccac835a6494aea6ce064a1a21eb;1;1;;1;;;22;1789693227
-5004;Mole people;71491;Mole people;284e9867ed47d7f443dd9c8f053d4215;1;1;;1;;;22;1789693227
 5005;Ghoulder;71497;Ghoulder;5f4720d31919042623a15beb2521c8cf;1;1;;1;;;22;1789693227
 5006;Pink Phaseblade;71498;Pink Phaseblade;3fc845d3f35eb46085ccc57feab98745;1;1;;1;;;22;1789693227
 5007;What a horrible night to have a curse;71495;What a horrible night to have a curse;63dba437dc7b10ba960cdb01c1c97d35;1;1;;1;;;22;1789693227
@@ -4713,7 +4650,6 @@
 5039;Office Wall;71536;Office Wall;79835c2d9bb4c1f77b52ac0cdc7eb401;1;1;;1;;;22;1789693230
 5040;Rainbow Phaseblade;71539;Rainbow Phaseblade;00d9f3b39be5d773c2b218fcd2d273c7;1;1;;1;;;22;1789693230
 5041;Pink Phasesaber;71534;Pink Phasesaber;868b101a7fec73847e6dda0714aabc32;1;1;;1;;;22;1789693230
-5042;Power Bomb;71543;Power Bomb;892f8c3e36fca6d2e7a63d1fb98ee9d6;1;1;;1;;;22;1789693230
 5043;Librarian Block;71540;Librarian Block;f21f613d5014bb956d77bec2e6d543d5;1;1;;1;;;22;1789693230
 5044;Froggy Neckband;71542;Froggy Neckband;553921be2226c48de07038fcb0b6ccc9;1;1;;1;;;22;1789693230
 5045;Welding Mask;71548;Welding Mask;c3bae96585ae1eaa444d0bd9b9dc2eb9;1;1;;1;;;22;1789693230
@@ -4783,7 +4719,6 @@
 5143;Film Projector;71700;Film Projector;fad98200814b92ee586dfb0d81af84e9;1;1;;1;;;22;1789693235
 5144;Sandy britches;71697;Sandy britches;baa2d572fc68b697b2c7a3c8a3317f95;1;1;;1;;;22;1789693235
 5145;Purify this;71699;Purify this;aae8b4078fdbbb5112a57aa9070f1c7c;1;1;;1;;;22;1789693235
-5146;Freeze Bomb;71691;Freeze Bomb;d72751e20235ba85992a835d2b193551;1;1;;1;;;22;1789693235
 5147;CRT Monolith;71702;CRT Monolith;58eed9b7a6c2cf6d95aa97ed92da8cb7;1;1;;1;;;22;1789693235
 5148;Hallowed Brick;71703;Hallowed Brick;0aa2752b61ec8ceb6e924f9e22183561;1;1;;1;;;22;1789693235
 5149;Retro Monolith;71701;Retro Monolith;4831d3d2602bfef1eec715cb74cf9795;1;1;;1;;;22;1789693235
@@ -4813,7 +4748,6 @@
 5174;Hallowed Crown;71744;Hallowed Crown;12a00906c364dd36ea3148c506de3fec;1;1;;1;;;22;1789693237
 5175;Spike Bathtub;71741;Spike Bathtub;d64963f903fc0c438e6965c4d5bd4473;1;1;;1;;;22;1789693237
 5176;Meteorite Toilet;71751;Meteorite Toilet;6da0f1e15e7d71facea18fde2a0943a7;1;1;;1;;;22;1789693237
-5177;Lightning Strike;71760;Lightning Strike;63cb4268dc011ada588d871a0b88bd70;1;1;;1;;;22;1789693237
 5178;Vicious Bunny Kite;71752;Vicious Bunny Kite;c6d48570fb95392994a07a1b5e30b26b;1;1;;1;;;22;1789693237
 5179;Owl (mimic);71761;Owl (mimic);ebcd97dafed840844974ba6c3808611d;1;1;;1;;;22;1789693237
 5180;The Sea of Silence;71766;The Sea of Silence;96efb1001d96e7f4ff0518089871c80c;1;1;;1;;;22;1789693237
@@ -4953,7 +4887,6 @@
 5332;Party Roller Skates;71989;Party Roller Skates;04abc92784da2584df79cf6746ffc9d2;1;1;;1;;;22;1789693244
 5333;Chippy's Chestplate;71984;Chippy's Chestplate;42e17c4a076cf14ec5e8a7db0dade6dd;1;1;;1;;;22;1789693244
 5334;Chippy's Greaves;71983;Chippy's Greaves;42edee11cfa3ad6e32f091f927f1c742;1;1;;1;;;22;1789693244
-5335;Sticky Power Bomb;71993;Sticky Power Bomb;61e7d58e67d04edc58a7a754432a332a;1;1;;1;;;22;1789693244
 5336;Green Roller Skates;71991;Green Roller Skates;1afde207bd0c83295e4d1c8edcc1367d;1;1;;1;;;22;1789693244
 5337;Blue Roller Skates;71994;Blue Roller Skates;76bcd0a8798ade04083bc5647fa6aa8b;1;1;;1;;;22;1789693244
 5338;Classic Roller Skates;71990;Classic Roller Skates;c9d4b156a4613d598e4f51294237892c;1;1;;1;;;22;1789693244
@@ -5218,9 +5151,7 @@
 5630;Heroicis' Wings;72348;Heroicis' Wings;e74cd2e8a4538d4851c9a2b17f9de288;1;1;;1;;;22;1789693256
 5631;Kazzymodus' Wings;72349;Kazzymodus' Wings;d8ed26e02773688ac1b1343cc08df003;1;1;;1;;;22;1789693256
 5632;Luna's Runic Pixie Wings;72351;Luna's Runic Pixie Wings;7848e0ad6666237ea8667c4f8b48ead7;1;1;;1;;;22;1789693256
-5633;Shimmerfall Block;72353;Shimmerfall Block;7610dc127ed48a12aadd6316ab3bc3f8;1;1;;1;;;22;1789693256
 5634;Chippy's Cloak (Inactive);72345;Chippy's Cloak (Inactive);78ee9324d102124e4cda721f4f9b9b6e;1;1;;1;;;22;1789693256
-5635;Shimmerfall Wall;72354;Shimmerfall Wall;feb5fa5a2f0af484506750c77124a6f2;1;1;;1;;;22;1789693256
 5636;Natural Dirt Wall;72355;Natural Dirt Wall;0912a98825091ffb5b5609f5e57260a4;1;1;;1;;;22;1789693256
 5637;Chicken Bones' Wings;72352;Chicken Bones' Wings;522519952140b1615f4e13126bcca8ad;1;1;;1;;;22;1789693256
 5638;Adamantite Slime;72441;Adamantite Slime;0216fc4ccde9ab0cfc3532ac06a00717;1;1;;1;;;22;1789693256
@@ -5265,27 +5196,20 @@
 5678;The Care Bears Movie;73208;The Care Bears Movie;b49f248d2a0f299fd494201af62e4041;1;1;;1;;;22;1789693257
 5679;Debug commands;73261;Debug commands;be7a0549e8dd3a6931d7a5e4290523e9;1;;;;;;2;1789693257
 5681;Fish Mox;73269;Fish Mox;436a1df0183f572026be21ff07b4c84c;1;1;;1;;;22;1789693257
-5682;Does that sparkle;73209;Does that sparkle;18795df9ed2fdc3039737d95a2fc1e6c;1;1;;1;;;22;1789693257
 5683;1.4.5.4;73125;1.4.5.4;a9f227c96d4c643d622c91189f83869d;1;1;;1;;;22;1789693257
 5684;Velociraptor;72918;Velociraptor;f1d8deb2f01716e709aba61388c2e7b7;1;1;;1;;;22;1789693257
 5685;More traps please;73347;More traps please;ee838332ce248caf51ef5c0d0e472d48;1;1;;1;;;22;1789693257
-5686;Monochrome;73414;Monochrome;7d51f2b8ce7130e9f9d023ad7f887589;1;1;;1;;;22;1789693257
-5687;Negative infinity;73415;Negative infinity;f3986615e82dc4174b18cb42cf4d81a6;1;1;;1;;;22;1789693257
 5688;Planetoids;73417;Planetoids;5056c88b98fe6d97e301a3f16f7ddd09;1;1;;1;;;22;1789693257
-5689;Invisible plane;73413;Invisible plane;5b1cffe520ed4a4e225b169630a22eca;1;1;;1;;;22;1789693257
 5691;Jagged rocks;73345;Jagged rocks;373af72bf16b1e049fd13a6069bd0e68;1;1;;1;;;22;1789693257
 5692;Arachnophobia;73419;Arachnophobia;044c17ca174b6aabe20e726117143a70;1;1;;1;;;22;1789693257
 5693;Pumpkin season;73420;Pumpkin season;3efb6a28e49354717716dd54b06618cb;1;1;;1;;;22;1789693258
 5694;Truck stop;73421;Truck stop;2e543b0da7d6679ebb15d52979d5134c;1;1;;1;;;22;1789693258
-5695;We don't even test for that;73422;We don't even test for that;170f691f38463fedf84237812ddb8f24;1;1;;1;;;22;1789693259
 5696;Bring a towel;73423;Bring a towel;9f817389bff478ded44236ada2942ac6;1;1;;1;;;22;1789693259
 5697;Hocus pocus;73424;Hocus pocus;e5935aef01684fcc02807600d4462e86;1;1;;1;;;22;1789693259
 5698;Jingle all the way;73425;Jingle all the way;9eebb81ec1f96aef45681a3ff0c07d00;1;1;;1;;;22;1789693259
 5699;How did I get here;73426;How did I get here;c11b09c006c6814cdfc75593933f2537;1;1;;1;;;22;1789693259
 5701;Get fixed boi;73434;Get fixed boi;6c32ecd8a96e834f2c1b0239bd656788;1;1;;1;;;22;1789693259
-5702;X-ray vision;73958;X-ray vision;74d708a71d0429ea1586fe95cb9e1d70;1;1;;1;;;22;1789693259
 5703;1.4.5.5;73438;1.4.5.5;df849bc8a9b25772ef6a07503bebdbb6;1;1;;1;;;22;1789693259
-5704;Night of the Living Dead;74066;Night of the Living Dead;7ea2d6e06ef5d966594d6bf9b6808a5b;1;1;;1;;;22;1789693260
 5705;Swarm Worm;74022;Swarm Worm;a9b1c760b0ced65b09d5d9c10aeea876;1;1;;1;;;22;1789693260
 5707;1.4.5.6;75293;1.4.5.6;7589aeb79fcba7799a431fee795653cf;1;1;;1;;;22;1789693260
 5708;Music Box (Silence);75303;Music Box (Silence);5be616c68825a8d70fb3f9093e11ab4b;1;1;;1;;;22;1789693260
@@ -5294,24 +5218,11 @@
 5711;Huntress;76602;Huntress;a1a22e9547be9c33b27e8b8cb93089f2;1;1;;1;;;22;1789693260
 5712;Ice Bomb;77503;Ice Bomb;6964788005ad59ad1f15d9cf9ea2561e;1;1;;1;;;22;1789693260
 5714;Calm before the storm;79887;Calm before the storm;2587bce9bd3032869f37b7553c2593ba;1;1;;1;;;22;1789693260
-5716;Glacier Fang;79901;Glacier Fang;460fbaacf8c6adee377c27a8b3d3ff20;1;1;;1;;;22;1789693261
 5717;Electric Boogaloo;79889;Electric Boogaloo;3d13f86d4f33ed67fe4a9f5be7530742;1;1;;1;;;22;1789693261
-5718;Clay Bud Staff;79913;Clay Bud Staff;4df50f4b00a90a58e55fd3d5277a99fe;1;1;;1;;;22;1789693261
 5719;Ruinous Staff;79916;Ruinous Staff;4ce0e3bef1cec341129789861ff8654c;1;1;;1;;;22;1789693261
-5721;Silver Bracer;79920;Silver Bracer;22a7958afed06d231fa9ee6ef01f030b;1;1;;1;;;22;1789693261
-5722;Snake Band;79921;Snake Band;5d9ed25493edf5e283d948f2bf2dee82;1;1;;1;;;22;1789693261
-5723;Mystic Bloom;79902;Mystic Bloom;0ff1ae39536bfc20ca814b00cc592802;1;1;;1;;;22;1789693261
-5724;Mobius Strip;79923;Mobius Strip;7f5f616bdf161c537aad3d04fa08cfdc;1;1;;1;;;22;1789693261
-5725;Wicked Armlet;79924;Wicked Armlet;10431f18b574cba52b4bc3adde8faa74;1;1;;1;;;22;1789693261
 5726;Poison Barb;79929;Poison Barb;302ccccb1d5c95c452de8c43ac4e2902;1;1;;1;;;22;1789693261
-5727;Harpy Charm;79931;Harpy Charm;e37cd796e0770acf43f66c43cff8dee8;1;1;;1;;;22;1789693261
-5728;Snapping Stone;79932;Snapping Stone;049339172740b969a09ae68d5f9f3d64;1;1;;1;;;22;1789693261
-5729;Chaos Cylinder;79933;Chaos Cylinder;9c4eac86513a9d13770e96634c4a3fae;1;1;;1;;;22;1789693262
 5733;Scout's Sling;79943;Scout's Sling;78145c91f49c5179d7b6c3728108c2cd;1;1;;1;;;22;1789693262
 5734;Templar's Sling;79944;Templar's Sling;9ee9a80890bf368869a86cfb8ac10e5c;1;1;;1;;;22;1789693262
-5735;Royal Guard's Harness;79945;Royal Guard's Harness;975f79145246d999c17c7f68f8c08282;1;1;;1;;;22;1789693263
-5736;Pyroclastic Stone;79946;Pyroclastic Stone;85b1ee7abd3cf2f3f054e5f431710770;1;1;;1;;;22;1789693263
-5738;Seraph Necklace;79959;Seraph Necklace;6a2fdac44b22ee97c236538c41cfab89;1;1;;1;;;22;1789693264
 5739;Phoenix Quiver;79960;Phoenix Quiver;819ff099d21c9633a5b72656d1c3727e;1;1;;1;;;22;1789693265
 5741;Silver Shield;79962;Silver Shield;a919b866589992b33cad15bc629e8bae;1;1;;1;;;22;1789693266
 5742;Sweet Barb;79963;Sweet Barb;d7bfe054a5e965d93218043d8d15a2f3;1;1;;1;;;22;1789693266
@@ -5340,14 +5251,10 @@
 5766;Zapped;80129;Zapped;549727c803a6e851569a7396733f54f8;1;1;;1;;;22;1789693272
 5767;Accelerated Afflictions;80130;Accelerated Afflictions;b5c061e22c3c906903f764979154888d;1;1;;1;;;22;1789693272
 5768;Slings;80137;Slings;cfcfaa2763313e7ee8aa219b4bfd12e9;1;1;;1;;;22;1789693272
-5769;1.4.5.8;80144;1.4.5.8;640605b6efa5cb84d6c67d25bf9249dd;1;1;;1;;;22;1789693272
-5770;Parry;80522;Parry;ae6aad00b2c68dbc984fbe8411d4caba;1;1;;1;;;22;1789693272
 5771;Mana Surge;80140;Mana Surge;021be387182d451955ec8c720d889458;1;1;;1;;;22;1789693272
 5773;Notraps;59986;Notraps;4ed1c2f9d428dd0c15af1ac4a667bb05;1;1;;1;;;22;1789694434
 5775;No Traps Seed;60206;No Traps Seed;dbfa97e87f79dcbf57c85efe6c86c349;1;1;;1;;;22;1789694490
 5777;Forbidden armor;10295;Forbidden armor;d2ee2f93b44b7defda9181ed41da8ab1;1;1;;1;;;22;1789709581
-5785;Crystal Vile Shard;6331;Crystal Vile Shard;a1eb17aa17060aa1a2ee8d67a428bf31;1;1;;1;;;22;1789716703
-5786;Unbreakable Wall;73121;Unbreakable Wall;95a4315e292e151b84325a7f6a14d3c2;1;1;;1;;;22;1789721779
 5789;Metal Detector;8837;Metal Detector;2b44ac995a957377af823c1c8aa93bc9;1;1;;1;;;22;1789743589
 5790;Waffle's Iron;59587;Waffle's Iron;fd6a77577d2e1cf475f04d1260639d59;1;1;;1;;;22;1789753952
 5791;World Seed;13782;World Seed;220fbdffe59516397b2494100e5f2931;1;1;;1;;;22;1789757530
@@ -5355,22 +5262,17 @@
 5793;Cracked Dungeon Bricks;10119;Cracked Dungeon Bricks;97270cfa4be0b4f939a4807186a89f7b;1;1;;1;;;22;1789757777
 5799;Striking Moment;13526;Striking Moment;4b19b6ea9107fd0a7e0583dcefd446d4;1;1;;1;;;22;1789772079
 5800;Enchanted Timer;80031;Enchanted Timer;60645cac4295b581256b3ea3bbf4c5c1;1;1;;1;;;22;1789773850
-5804;Acorn Slingshot;71124;Acorn Slingshot;9f9a9f877e4f36d2fe321c1e6f3f9775;1;1;;1;;;22;1789777327
 5811;Drunk;6136;Drunk;dafd5029a1e43f59452f3f1a4a533481;1;1;;1;;;22;1789847359
 5812;For the Worthy;4513;For the Worthy;2a7c1a8893682026e0472e2591834c5e;1;1;;1;;;22;1789849804
 5813;1.4.4;57522;1.4.4;6aff179b45fbd121e117c34d59b92780;1;1;;1;;;22;1789863104
 5815;Secret seed combinations;71128;Secret seed combinations;a897ade64ce379e5b9666057c936d174;1;1;;1;;;22;1789878355
 5816;Blade Staff;5483;Blade Staff;ea9283b175525e319f2f98d890acd3c6;1;1;;1;;;22;1789881850
-5818;Roller Skates;71111;Roller Skates;2f2b4fb5e1e09bd3a96e2c0a581828a4;1;1;;1;;;22;1789883458
 5820;The Eye of Cthulhu;13547;The Eye of Cthulhu;cd3e8f744a0adee9d3cab508ef60be05;1;1;;1;;;22;1789916175
 5821;Piece of Moon Squid;13599;Piece of Moon Squid;1e0c39d27ce6673a7d24f0ab671702ef;1;1;;1;;;22;1789918145
 5825;Hive-Five;59685;Hive-Five;d8a1e4b21f17042bf619ed7718f5ff6f;1;1;;1;;;22;1789921638
 5826;Ghost;10159;Ghost;401357e57c765967393ba391a338e89b;1;1;1;1;;;30;1789931063
-5827;Remix;60246;Remix;d3932716505231ac00a4471c5766efe4;1;1;;1;;;22;1789933796
 5831;Peace Candle;7853;Peace Candle;71771e40b4b2b2816a0b83a163f5917d;1;1;;1;;;22;1789950236
-5836;Conveyor Belt;9252;Conveyor Belt;1877721b12e1dde8ff8bd14477cecb09;1;1;;1;;;22;1789968023
 5837;Shadow Candle;59918;Shadow Candle;355269f541f1ca3cf0f65d007d3f2a77;1;1;;1;;;22;1789976153
-5840;Digtoise;71055;Digtoise;59383ffdb69d119095a39ec41feaeb1a;1;1;;1;;;22;1789990181
 5849;Boulder Bookcase;71592;Boulder Bookcase;790bd603aca4f2c5928777f59df2c4e4;1;1;;1;;;22;1790004221
 5850;Boulder Bathtub;71590;Boulder Bathtub;f1924b1ea2a976f0a735b0132f403a9a;1;1;;1;;;22;1790004221
 5851;Boulder Bed;71591;Boulder Bed;b604645a5943a1e58ec8684d7925c149;1;1;;1;;;22;1790004221
@@ -5686,46 +5588,31 @@
 6187;Nailhead;4489;Nailhead;6fed1e707ed1aee3a5903dd7b673ed41;1;1;;1;;;22;1790137796
 6188;Wicked Claws;79961;Wicked Claws;2066579722f7313103abe2dc3c3bf8dc;1;1;;1;;;22;1790140544
 6189;No Traps;59624;No Traps;a979092a16fbd7e58e2645d8c8769e42;1;1;;1;;;22;1790140918
-6191;Chlorophyte Extractinator;59610;Chlorophyte Extractinator;3abc7a7eaff4092678e0b9fc0543c497;1;1;;1;;;22;1790159925
 6194;1.4.5.7;79885;1.4.5.7;58d85fd57386633b0d627a3503b9602a;1;1;;1;;;22;1790166633
 6198;Blue Chicken Egg;59608;Blue Chicken Egg;ed45faddc4ea0bdc0f0d18137008f08c;1;1;;1;;;22;1790169927
 6200;Solar Eruption;11645;Solar Eruption;851542537a667a8965dabd12c7491d4e;1;1;;1;;;22;1790176994
 6207;Zenith;4649;Zenith;da481495311e13bed8405e0fcc115357;1;1;;1;;;22;1790190836
 6208;Shimmer;59383;Shimmer;c1a87453174ef39939f55ea3a4f2a8ef;1;1;;1;;;22;1790191231
-6209;Daybloom Staff;79900;Daybloom Staff;df939133296e886de4874a8ebaa143ed;1;1;;1;;;22;1790205730
 6210;Twilight Grasp;79942;Twilight Grasp;c58b39fcfc0eb9e16283686cdefcf608;1;1;;1;;;22;1790212393
 6212;Super Star Shooter;9852;Super Star Shooter;78ed5a8812c122004e0612d348b02134;1;1;;1;;;22;1790249188
 6213;Sandstorm;9115;Sandstorm;cb1d02cef2818bf17e1724c0b217b936;1;1;;1;;;22;1790263643
 6215;Yoyos;15872;Yoyos;d6fc5be59bb060f0fb4cf920d6416780;1;1;;1;;;22;1790268848
 6216;Format:C;15195;Format:C;a459ece62c08ae658218d07a035608f9;1;1;;1;;;22;1790270427
-6217;Zenith (seed);59654;Zenith (seed);b8c5d8f9e2877442e2c52cd1be7dbf04;1;1;;1;;;22;1790272196
 6218;Vampire Frog Staff;15232;Vampire Frog Staff;d2ce9cff166cb4eabd6d1a53d484f4b8;1;1;;1;;;22;1790276868
-6220;Infused Fertilizer;71960;Infused Fertilizer;8875084616766c8a068821690463aef4;1;1;;1;;;22;1790279011
 6221;Achievements;7008;Achievements;f5c7922da355fd289ec1d6469e0583a7;1;1;1;1;;;30;1790282196
-6222;Voice accessories;75232;Voice accessories;5ef2e087853a81414ca1b5bb284570c8;1;1;;1;;;22;1790282932
 6223;Cobwhip;70560;Cobwhip;b4dcc20d6f8fc721b91157036d0d5680;1;1;;1;;;22;1790283392
-6224;Electric Eel;70618;Electric Eel;8a9f95b355e4109cabfe6fbf9845282a;1;1;;1;;;22;1790284243
 6225;Gi;15501;Gi;bc4280d2ade3a681153467e45636bdc6;1;1;1;1;;;30;1790285601
 6227;Butcher's Chainsaw;13484;Butcher's Chainsaw;9c1177d0d830027c5feef2294deb49a6;1;1;;1;;;22;1790287458
 6229;Super Mana Potion;4750;Super Mana Potion;27ae057e74ab512600a108c45f9bad4d;1;1;1;1;;;30;1790288989
 6230;Music Boxes;6296;Music Boxes;3ac6a906d90a1bc57877f8602315443a;1;1;1;1;;;30;1790289113
-6231;Martian Madness;7177;Martian Madness;b729d25e3756e330e2b39bb37e3b81a5;1;1;;1;;;22;1790289137
 6232;Red Potion;10844;Red Potion;652d7cb92c8ab1f7ddc10e32cb7c86c9;1;1;;1;;;22;1790289147
 6233;Cell Phone;4183;Cell Phone;faab5da77b26184402e64e2ee7a70060;1;1;;1;;;22;1790289573
-6234;Too easy;73428;Too easy;4072b97b4fcd9a07a89ac63fee384b12;1;1;;1;;;22;1790296510
-6235;Waterpark;73418;Waterpark;aaf98a8d2512d3a43df97c2cd7e2a29a;1;1;;1;;;22;1790298208
-6237;Terraprisma;5497;Terraprisma;621735958447dc27e0d4a4ebd2f4b865;1;1;;1;;;22;1790309349
 6240;Ambient entities;10029;Ambient entities;5c307ec3113f4aef5a0da56f515a1237;1;1;;1;;;22;1790316640
-6243;Stress Ball;71693;Stress Ball;c34483b94013f989e766ef037480325b;1;1;;1;;;22;1790342995
 6245;Desert Tiger Staff;15525;Desert Tiger Staff;ab7ac0ca04b01b71a064b40bf0016c8e;1;1;;1;;;22;1790347577
 6247;1.2.3;15250;1.2.3;b0e8daa258acbb6fc4c86f89e0c9183e;1;1;1;1;;;30;1790352198
 6249;Clinger Staff;15737;Clinger Staff;34f9380a385caba8a42bf06de5203825;1;1;;1;;;22;1790352201
-6250;Last Prism;5775;Last Prism;b441e80feaae0cb4ee367fbea6ee11b5;1;1;;1;;;22;1790353045
-6251;Double daring dangers;72876;Double daring dangers;b92e3dfdd18058eddd20bf020354542e;1;1;;1;;;22;1790357036
 6253;Super Healing Potion;4240;Super Healing Potion;f5ba9addeea9ad3ddbfd373be1ebc5af;1;1;;1;;;22;1790366244
-6255;Cattiva;71349;Cattiva;a2c063773cea6d3b94bc20cc76fcf4a7;1;1;;1;;;22;1790368161
 6260;Football;14971;Football;449a5f6d01d5f416810d04b4df596b6a;1;1;;1;;;22;1790385600
-6261;Ale Tosser;4120;Ale Tosser;8eee5962043d10e1d48f6c23b201e49d;1;1;;1;;;22;1790386438
 6262;Aerial Bane;8599;Aerial Bane;f7735c5a79b48b2f303ec3cfa976025f;1;1;;1;;;22;1790386595
 6263;Actuation Rod;11335;Actuation Rod;2b3aa0ad030f553ae6b1bea06978a7d6;1;1;;1;;;22;1790387039
 6264;Abigail's Flower;4871;Abigail's Flower;655b3236b65aaf0b8f965c339d88cb1b;1;1;;1;;;22;1790387541
@@ -5734,22 +5621,14 @@
 6281;Gatligator;13271;Gatligator;9762527edf96daf3f510a3df5f394570;1;1;1;1;;;30;1790428187
 6283;Magnet Flower;11796;Magnet Flower;73e7bb786754d55e61d52b559a35501a;1;1;;1;;;22;1790428308
 6287;Celestial Magnet;12224;Celestial Magnet;02b50fe13467fc713d9d523e9ee38c7b;1;1;1;1;;;30;1790428568
-6291;Arcane Flower;9068;Arcane Flower;dacfacf16b5b1f1baa45b0dc6a79f1f6;1;1;;1;;;22;1790428750
 6292;Shiny Stone;13436;Shiny Stone;3895e42550d83239430b0c5b2598b350;1;1;;1;;;22;1790428919
 6295;Prismatic Lacewing;12618;Prismatic Lacewing;9fce68b3b179ca8420b31251052b5ca5;1;1;;1;;;22;1790430780
 6299;Solar Fragment;5340;Solar Fragment;8865a0b29364770f4100a41b2f8e0b27;1;1;;1;;;22;1790431363
 6300;Vortex Fragment;13019;Vortex Fragment;c26a6aa99cdc60cabc4409653e4d02dc;1;1;;1;;;22;1790431373
 6301;Nebula Fragment;15458;Nebula Fragment;0858a2fa84b070d3c5b3235a3d954573;1;1;;1;;;22;1790431383
 6302;Stardust Fragment;5361;Stardust Fragment;5a22ca926063478a0d8605025ecb8f7e;1;1;;1;;;22;1790431391
-6305;Special seed combinations;70685;Special seed combinations;63d4509e2374d923ae1a39c23d931a2f;1;1;;1;;;22;1790435438
-6306;Foxparks;71122;Foxparks;806e4b184c1c395f637ae18c30032e0e;1;1;;1;;;22;1790449157
 6308;Fledgling Wings;5648;Fledgling Wings;bde5ed4276e89fee1f6b42ef051e52aa;1;1;;1;;;22;1790463749
-6310;Celebration Mk 10;10821;Celebration Mk 10;24a61d082ef4f160a89d51f8dadfe8be;1;1;;1;;;22;1790474306
-6315;I am error;71488;I am error;e060f71aecc0bb69fc660ac583634bb7;1;1;;1;;;22;1790477175
-6317;Luck;13751;Luck;a2181e5c9365a838badcc644d7125e8e;1;1;;1;;;22;1790484766
 6318;Luminite Pickaxes;9326;Luminite Pickaxes;1c9ac98ed47fb5138aeb088f32e513eb;1;1;;1;;;22;1790488044
-6322;Detonator;6234;Detonator;2cf2eefb65079d5d340327d37072242f;1;1;;1;;;22;1790494757
-6324;Relics;4072;Relics;b51dbce071522232bdd58537db45c0d7;1;1;;1;;;22;1790494920
 6326;Hellfire;9401;Hellfire;2ad0245c6d5a228e1be1b32e8a755de9;1;1;;1;;;22;1790495627
 6329;Journey Mode;4388;Journey Mode;c912c533d1f2ffd22d1481c500d027a3;1;1;;1;;;22;1790498013
 6330;Red's Throw;6577;Red's Throw;8a62bde3c40ebddb8c05394d0e31a836;1;1;;1;;;22;1790514045
@@ -5758,13 +5637,135 @@
 6337;Moon Lord Legs;10608;Moon Lord Legs;dcec834ca1ca56ba35237786f656c9a5;1;1;;1;;;22;1790551677
 6338;Antlion Eggs;12399;Antlion Eggs;4b9e79896ed9ffa4dd3558d6bc29f580;1;1;;1;;;22;1790554028
 6339;Treasure Bag;9240;Treasure Bag;37eeebc841988883db49d3382fe359ed;1;1;;1;;;22;1790559483
-6340;Heavy Sling;79935;Heavy Sling;1032f566cfa4d42ed922d7728a70ab17;1;1;;1;;;22;1790560914
 6341;Obsidian Crate;11428;Obsidian Crate;54e36dffa6b90c2557064d0be0a28eda;1;1;;1;;;22;1790566248
 6344;Vicious Mushroom;9001;Vicious Mushroom;8f83cfbe520fa6d95123f9dd2473da2a;1;1;;1;;;22;1790584197
 6346;Ocram's Razor;59614;Ocram's Razor;35f3123f14b7db29f27e5ebf265c93fd;1;1;;1;;;22;1790600474
 6348;Dark Harvest;12522;Dark Harvest;9f7a6b2a45f9e291f0277a6ecfb8619a;1;1;;1;;;22;1790603835
-6349;Pirate Staff;10204;Pirate Staff;40d708d6ca7df58874711aac460bfed2;1;1;1;1;;;30;1790606725
-6352;Armlet Of Ruin;79951;Armlet Of Ruin;20cba3b0488ee3350e2b29b643280089;1;1;;1;;;22;1790611132
-6353;Arc Surge;79919;Arc Surge;fa78bc5bde748d16b7374b9904bec887;1;1;;1;;;22;1790611149
 6354;Axearang;71957;Axearang;61436e20f05ae5465d2ae3e627439f7c;1;1;;1;;;22;1790611250
 6355;Putrid Scent;14990;Putrid Scent;5a016e90ac94e3b435ab11fcd231ef44;1;1;;1;;;22;1790613884
+6357;Acorn Slingshot;71124;Acorn Slingshot;9f9a9f877e4f36d2fe321c1e6f3f9775;1;1;;1;;;22;1790618743
+6360;Last Prism;5775;Last Prism;b441e80feaae0cb4ee367fbea6ee11b5;1;1;;1;;;22;1790637131
+6361;Ale Tosser;4120;Ale Tosser;8eee5962043d10e1d48f6c23b201e49d;1;1;;1;;;22;1790639735
+6365;Terraprisma;5497;Terraprisma;621735958447dc27e0d4a4ebd2f4b865;1;1;;1;;;22;1790643591
+6366;Celebration Mk 10;10821;Celebration Mk 10;24a61d082ef4f160a89d51f8dadfe8be;1;1;;1;;;22;1790645163
+6367;I am error;71488;I am error;e060f71aecc0bb69fc660ac583634bb7;1;1;;1;;;22;1790645457
+6368;Detonator;6234;Detonator;2cf2eefb65079d5d340327d37072242f;1;1;;1;;;22;1790645980
+6369;Relics;4072;Relics;b51dbce071522232bdd58537db45c0d7;1;1;;1;;;22;1790646116
+6374;Pirate Staff;10204;Pirate Staff;40d708d6ca7df58874711aac460bfed2;1;1;1;1;;;30;1790657666
+6380;Electric Eel;70618;Electric Eel;8a9f95b355e4109cabfe6fbf9845282a;1;1;;1;;;22;1790662837
+6382;Chlorophyte Extractinator;59610;Chlorophyte Extractinator;3abc7a7eaff4092678e0b9fc0543c497;1;1;;1;;;22;1790667774
+6383;Roller Skates;71111;Roller Skates;2f2b4fb5e1e09bd3a96e2c0a581828a4;1;1;;1;;;22;1790690073
+6384;Starlight;7235;Starlight;d51792b4d5f7e5523e2fa6df873e8051;1;1;;1;;;22;1790705942
+6385;Sake;4689;Sake;e2c94fa18a0176b88c14816b23dd9e3e;1;1;1;1;;;30;1790720193
+6390;Alchemy Flask;71098;Alchemy Flask;f2efbd90f1384f418446e51947c1f10d;1;1;;1;;;22;1790767155
+6393;Pylons;11105;Pylons;4296022c2dea6f2075194958a9f42c03;1;1;;1;;;22;1790772621
+6401;Infused Fertilizer;71960;Infused Fertilizer;8875084616766c8a068821690463aef4;1;1;;1;;;22;1790784558
+6403;Digging Molecart;12431;Digging Molecart;5e68dac626fc0ff48f15d1d6d11f6135;1;1;;1;;;22;1790786549
+6405;Golden Slime;12076;Golden Slime;5d8fb0bc858ad0a3e90d418e8b1f83f7;1;1;;1;;;22;1790808587
+6408;Special seed combinations;70685;Special seed combinations;63d4509e2374d923ae1a39c23d931a2f;1;1;;1;;;22;1790871038
+6410;Ichor Dart;13668;Ichor Dart;f168f90e39727d3ece5235c0a0a98e9b;1;1;;1;;;22;1790878892
+6411;Gem Locks;4767;Gem Locks;a89768d7dee1ca7048b392e8d7463814;1;1;;1;;;22;1790879025
+6412;Traveling Merchant;4295;Traveling Merchant;f3e1241fe2145cdaec8add577ecf2c39;1;1;1;1;;;30;1790880752
+6413;Pine Tree Block;11404;Pine Tree Block;d7fec6bb9c5a6f4cdc5dd45227fffb7f;1;1;1;1;;;30;1790881388
+6416;Weapon Rack;7925;Weapon Rack;faabc8a92aef5d7b57c03e3d49284ea3;1;1;1;1;;;30;1790905407
+6417;We don't even test for that;73422;We don't even test for that;170f691f38463fedf84237812ddb8f24;1;1;;1;;;22;1790909675
+6418;Bouncy Glowstick;6292;Bouncy Glowstick;4444557450f74b9cf82a77c1c9038d7a;1;1;;1;;;22;1790910024
+6419;Spelunker Glowstick;4398;Spelunker Glowstick;d25c298d90db5967f4fd493463d61e9e;1;1;;1;;;22;1790910952
+6420;Bone Arrow;12844;Bone Arrow;c762738492ad184c105fafb12e391788;1;1;;1;;;22;1790911600
+6421;Javelin;10227;Javelin;640266a6d25dc6a8f8e723691dab6df9;1;1;;1;;;22;1790913994
+6422;Frost Daggerfish;10627;Frost Daggerfish;0ea33890d2df108e637841df4373c474;1;1;;1;;;22;1790914176
+6425;Frostbite;11475;Frostbite;5d1801a70481550d3de71ee64068b62d;1;1;;1;;;22;1790931712
+6430;Remix;60246;Remix;d3932716505231ac00a4471c5766efe4;1;1;;1;;;22;1790952093
+6434;Hornet Staff;10099;Hornet Staff;f74bdeb4e33fd71c4645337716aec2df;1;1;1;1;;;30;1790987402
+6436;Parry;80522;Parry;ae6aad00b2c68dbc984fbe8411d4caba;1;1;;1;;;22;1790999205
+6437;Queen Slime;5589;Queen Slime;0573f3265d0197b7cc5bfd24e9604315;1;1;;1;;;22;1791004974
+6438;Voice accessories;75232;Voice accessories;5ef2e087853a81414ca1b5bb284570c8;1;1;;1;;;22;1791009291
+6439;Freeze Bomb;71691;Freeze Bomb;d72751e20235ba85992a835d2b193551;1;1;;1;;;22;1791027357
+6441;Stress Ball;71693;Stress Ball;c34483b94013f989e766ef037480325b;1;1;;1;;;22;1791030390
+6443;Stardust armor;5213;Stardust armor;4c36f4fd93a19937ce0804abec1a5905;1;1;;1;;;22;1791059549
+6445;1.4.5.8;80144;1.4.5.8;640605b6efa5cb84d6c67d25bf9249dd;1;1;;1;;;22;1791066105
+6447;Zenith (seed);59654;Zenith (seed);b8c5d8f9e2877442e2c52cd1be7dbf04;1;1;;1;;;22;1791069085
+6448;Ball O' Fuse Wire;6308;Ball O' Fuse Wire;fb4e8ad4c2bfae0dd60925e8be847dd8;1;1;;1;;;22;1791072138
+6449;Seafood Dinner;5315;Seafood Dinner;8164a5532f2549932ede8023e5132bd3;1;1;;1;;;22;1791072708
+6450;The Bride;8610;The Bride;c4efc08074deeb56f1b049abc0778e8b;1;1;;1;;;22;1791073605
+6451;Gem Bunnies;10815;Gem Bunnies;6e9b508331d5da2e88e6872304ea172d;1;1;;1;;;22;1791074963
+6452;Gem Squirrels;7751;Gem Squirrels;b789e863006ac497415edfde430715d4;1;1;;1;;;22;1791075483
+6453;Moon Lord;7426;Moon Lord;7498f6048f7a276d4f3c53f109859ebc;1;1;;1;;;22;1791078090
+6455;Conveyor Belt;9252;Conveyor Belt;1877721b12e1dde8ff8bd14477cecb09;1;1;;1;;;22;1791078939
+6456;Crystal Vile Shard;6331;Crystal Vile Shard;a1eb17aa17060aa1a2ee8d67a428bf31;1;1;;1;;;22;1791079817
+6457;Daedalus Stormbow;14451;Daedalus Stormbow;4413fa5c96eec31113308ac76acd3937;1;1;;1;;;22;1791079838
+6458;Flying Knife;4731;Flying Knife;178326b1b1156101a73fbf55c5295f92;1;1;;1;;;22;1791079859
+6461;Dead Man's Chest;10700;Dead Man's Chest;30c6cd0f28badbbb8b0b93f5cd899b39;1;1;;1;;;22;1791091868
+6463;Martian Madness;7177;Martian Madness;b729d25e3756e330e2b39bb37e3b81a5;1;1;;1;;;22;1791110389
+6464;Optic Staff;8263;Optic Staff;c4febf11f0dc55070474364fb4c14132;1;1;1;1;;;30;1791112857
+6465;Spinal Tap;5584;Spinal Tap;f9d3c9b22fc7bc82259879a627e21a83;1;1;;1;;;22;1791119167
+6466;Compass;6059;Compass;83ca2d1346e6423497cb1b449c392cb7;1;1;1;1;;;30;1791128773
+6467;Houndius Shootius;7187;Houndius Shootius;8292b7accc9ec7935106b6c59739aec3;1;1;;1;;;22;1791133480
+6468;Golf;8809;Golf;690c3b1042564741e15a5ce503979172;1;1;;1;;;22;1791135289
+6469;Golf Balls;6823;Golf Balls;c51f56cdc6d6ac9da04bb7464007d413;1;1;;1;;;22;1791135416
+6470;Pufferfish;71108;Pufferfish;072a214949b09e3c98e608bafa35ae1b;1;1;;1;;;22;1791135566
+6471;Shimmerfall Block;72353;Shimmerfall Block;7610dc127ed48a12aadd6316ab3bc3f8;1;1;;1;;;22;1791137644
+6472;Shimmerfall Wall;72354;Shimmerfall Wall;feb5fa5a2f0af484506750c77124a6f2;1;1;;1;;;22;1791137922
+6473;Crimson Heart (item);13752;Crimson Heart (item);af2b9bfeb07b0a4d849d2aaa7014c695;1;1;;1;;;22;1791152359
+6476;Smoke Block;7705;Smoke Block;dada846903a1f86470b239cdb4b5bdd5;1;1;;1;;;22;1791158511
+6477;Living Fire Blocks;12462;Living Fire Blocks;3c04e4f4eafa6b47c00a0bea29cb8d5c;1;1;1;1;;;30;1791158523
+6482;Gnome;10708;Gnome;1fd967a816834982761258785b9d0b52;1;1;;1;;;22;1791189775
+6485;Arcane Flower;9068;Arcane Flower;dacfacf16b5b1f1baa45b0dc6a79f1f6;1;1;;1;;;22;1791196948
+6487;Captain armor;71195;Captain armor;4ef0538445a9e11828c1e2dcc0c25534;1;1;;1;;;22;1791197647
+6497;Double daring dangers;72876;Double daring dangers;b92e3dfdd18058eddd20bf020354542e;1;1;;1;;;22;1791214193
+6498;Blood Thorn;8230;Blood Thorn;2a5a5350036039d842df8327d78346fd;1;1;;1;;;22;1791218140
+6500;Slime Whip;70563;Slime Whip;5b04b88375d9a981b77f003ae9eb3b06;1;1;;1;;;22;1791221127
+6502;Terraspark Boots;11231;Terraspark Boots;e1f524256dacc80de33ef283aa4cabf6;1;1;;1;;;22;1791238848
+6504;Night of the Living Dead;74066;Night of the Living Dead;7ea2d6e06ef5d966594d6bf9b6808a5b;1;1;;1;;;22;1791255709
+6505;Mothron;7089;Mothron;1ba71c9411094e1297ba8b69742bda1f;1;1;;1;;;22;1791258978
+6507;Power Bomb;71543;Power Bomb;892f8c3e36fca6d2e7a63d1fb98ee9d6;1;1;;1;;;22;1791264765
+6508;Sticky Power Bomb;71993;Sticky Power Bomb;61e7d58e67d04edc58a7a754432a332a;1;1;;1;;;22;1791264826
+6509;Cattiva;71349;Cattiva;a2c063773cea6d3b94bc20cc76fcf4a7;1;1;;1;;;22;1791264921
+6510;Digtoise;71055;Digtoise;59383ffdb69d119095a39ec41feaeb1a;1;1;;1;;;22;1791264992
+6514;Enchanted Sundial;7506;Enchanted Sundial;8380d15f8c74853839042585c4c0b480;1;1;;1;;;22;1791288627
+6516;Unbreakable Wall;73121;Unbreakable Wall;95a4315e292e151b84325a7f6a14d3c2;1;1;;1;;;22;1791288872
+6520;Town Slimes;59372;Town Slimes;8829c146a50ecc7295566a078c84cd1f;1;1;;1;;;22;1791309008
+6521;Luck;13751;Luck;a2181e5c9365a838badcc644d7125e8e;1;1;;1;;;22;1791309654
+6522;Dye Trader;10488;Dye Trader;c4b4ae9f3ee0e9be46fa6f653fd4587a;1;1;1;1;;;30;1791316676
+6526;Cultists;12874;Cultists;2caf3d1ce0a6b0ae8efd9a621e6a532e;1;1;;1;;;22;1791337143
+6528;True Copper Shortsword;70900;True Copper Shortsword;637a258eac7d9bb37815ff08d2e715d2;1;1;;1;;;22;1791338710
+6529;Vulgar Display of Flower;70621;Vulgar Display of Flower;55296c0df4e1170ecf237b46c8d9a360;1;1;;1;;;22;1791339999
+6530;Bone Glove;5774;Bone Glove;3a665f5d633c217f0e7f3cd5caa891ba;1;1;;1;;;22;1791347948
+6532;Foxparks;71122;Foxparks;806e4b184c1c395f637ae18c30032e0e;1;1;;1;;;22;1791348169
+6536;Invisible plane;73413;Invisible plane;5b1cffe520ed4a4e225b169630a22eca;1;1;;1;;;22;1791349678
+6538;Monochrome;73414;Monochrome;7d51f2b8ce7130e9f9d023ad7f887589;1;1;;1;;;22;1791350617
+6541;Negative infinity;73415;Negative infinity;f3986615e82dc4174b18cb42cf4d81a6;1;1;;1;;;22;1791351064
+6542;X-ray vision;73958;X-ray vision;74d708a71d0429ea1586fe95cb9e1d70;1;1;;1;;;22;1791352024
+6544;Gravedigger's Shovel;4059;Gravedigger's Shovel;f6d879037ebfea0fbbff937d066ac595;1;1;;1;;;22;1791365763
+6545;Royal Guard's Harness;79945;Royal Guard's Harness;975f79145246d999c17c7f68f8c08282;1;1;;1;;;22;1791371636
+6547;Too easy;73428;Too easy;4072b97b4fcd9a07a89ac63fee384b12;1;1;;1;;;22;1791375913
+6548;Mole people;71491;Mole people;284e9867ed47d7f443dd9c8f053d4215;1;1;;1;;;22;1791381597
+6549;Such great heights;71490;Such great heights;9cd1e8752d63d8c8b02715e95395f914;1;1;;1;;;22;1791381883
+6550;Love Potion;6310;Love Potion;9fb9d3346603335566802db44c217220;1;1;1;1;;;30;1791381891
+6551;Waterpark;73418;Waterpark;aaf98a8d2512d3a43df97c2cd7e2a29a;1;1;;1;;;22;1791383025
+6552;Rainbow Road;71486;Rainbow Road;233e220d256d56297f3cba5156a8f824;1;1;;1;;;22;1791385219
+6553;Imp Staff;12221;Imp Staff;c976f9dbbd3cee97ecbdf0756a40e944;1;1;1;1;;;30;1791395987
+6556;Secret world seeds;70904;Secret world seeds;3f00cb6e69b10fc82642ed19916f523e;1;1;;1;;;22;1791403502
+6558;Whips;5607;Whips;452b2c43da970c4e09f4ab8571b22907;1;1;;1;;;22;1791418400
+6560;Life Drain;7843;Life Drain;583db6036c165b8c496b46044b542414;1;1;;1;;;22;1791439888
+6561;Skyblock;71183;Skyblock;c2059e168027ec0e78c15ffc0503a241;1;1;;1;;;22;1791450574
+6562;Does that sparkle;73209;Does that sparkle;18795df9ed2fdc3039737d95a2fc1e6c;1;1;;1;;;22;1791454538
+6563;Nebula Blaze;5919;Nebula Blaze;9f56a9d2b4ca830b2fa0de5723c07ca8;1;1;;1;;;22;1791459389
+6565;Daybloom Staff;79900;Daybloom Staff;df939133296e886de4874a8ebaa143ed;1;1;;1;;;22;1791488603
+6566;Glacier Fang;79901;Glacier Fang;460fbaacf8c6adee377c27a8b3d3ff20;1;1;;1;;;22;1791488953
+6567;Mystic Bloom;79902;Mystic Bloom;0ff1ae39536bfc20ca814b00cc592802;1;1;;1;;;22;1791489285
+6568;Lightning Strike;71760;Lightning Strike;63cb4268dc011ada588d871a0b88bd70;1;1;;1;;;22;1791489564
+6569;Clay Bud Staff;79913;Clay Bud Staff;4df50f4b00a90a58e55fd3d5277a99fe;1;1;;1;;;22;1791489813
+6570;Arc Surge;79919;Arc Surge;fa78bc5bde748d16b7374b9904bec887;1;1;;1;;;22;1791490042
+6571;Silver Bracer;79920;Silver Bracer;22a7958afed06d231fa9ee6ef01f030b;1;1;;1;;;22;1791490387
+6572;Snake Band;79921;Snake Band;5d9ed25493edf5e283d948f2bf2dee82;1;1;;1;;;22;1791490647
+6573;Mobius Strip;79923;Mobius Strip;7f5f616bdf161c537aad3d04fa08cfdc;1;1;;1;;;22;1791490943
+6574;Wicked Armlet;79924;Wicked Armlet;10431f18b574cba52b4bc3adde8faa74;1;1;;1;;;22;1791491171
+6575;Harpy Charm;79931;Harpy Charm;e37cd796e0770acf43f66c43cff8dee8;1;1;;1;;;22;1791491422
+6576;Snapping Stone;79932;Snapping Stone;049339172740b969a09ae68d5f9f3d64;1;1;;1;;;22;1791491840
+6577;Chaos Cylinder;79933;Chaos Cylinder;9c4eac86513a9d13770e96634c4a3fae;1;1;;1;;;22;1791492211
+6578;Heavy Sling;79935;Heavy Sling;1032f566cfa4d42ed922d7728a70ab17;1;1;;1;;;22;1791492441
+6579;Pyroclastic Stone;79946;Pyroclastic Stone;85b1ee7abd3cf2f3f054e5f431710770;1;1;;1;;;22;1791492717
+6580;Prospector armor;71281;Prospector armor;ea9a48449c6272f90864c397bb6523f5;1;1;;1;;;22;1791492795
+6581;Armlet Of Ruin;79951;Armlet Of Ruin;20cba3b0488ee3350e2b29b643280089;1;1;;1;;;22;1791492955
+6582;Seraph Necklace;79959;Seraph Necklace;6a2fdac44b22ee97c236538c41cfab89;1;1;;1;;;22;1791493276

@@ -537,7 +537,7 @@ function UnknownItems({ unknown }: { unknown: UnknownItem[] }) {
                     {known && <span className="font-normal text-muted-foreground"> · id {u.id}</span>}
                   </span>
                   <span className="text-xs text-muted-foreground">
-                    {u.stack} in {plural(u.containers.length, 'container')}
+                    ×{u.stack} in {plural(u.containers.length, 'container')}
                   </span>
                 </div>
                 {known ? (
