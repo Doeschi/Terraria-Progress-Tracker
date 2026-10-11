@@ -10,12 +10,7 @@ export function ShowItemsButton({ id, label = 'Show items' }: { id: string; labe
   const showSourceItems = useStore((s) => s.showSourceItems)
   if (!isSourceOption(data, id)) return null
   return (
-    <Button
-      variant="outline"
-      size="sm"
-      onClick={() => showSourceItems(id)}
-      title="Show its items in the table (filter “Sources & sets”)"
-    >
+    <Button variant="outline" size="sm" onClick={() => showSourceItems(id)} title="Show its items in the table">
       <ListFilter /> {label}
     </Button>
   )

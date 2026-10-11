@@ -19,7 +19,7 @@ export function useAutosave() {
       const before = useStore.getState().autosaveStatus
       await useStore.getState().autoSave()
       if (useStore.getState().autosaveStatus === 'error' && before !== 'error')
-        toast.error('Autosave failed – the file could not be written. Save it manually (Ctrl+S).')
+        toast.error("Autosave failed. The file couldn't be written. Save with Ctrl+S.")
     }
     const timer = setInterval(() => void run(), INTERVAL)
     const onVisibility = () => {

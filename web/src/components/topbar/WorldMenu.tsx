@@ -148,7 +148,7 @@ export function WorldMenu() {
                   if (
                     await confirm({
                       title: 'Detach world?',
-                      description: 'The world reference is removed from this playthrough. Areas are kept.',
+                      description: 'Removes the world from this playthrough. Your areas stay.',
                       confirmLabel: 'Detach',
                       destructive: true,
                     })

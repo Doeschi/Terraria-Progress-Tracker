@@ -115,7 +115,7 @@ function Toolbar({
     {
       value: 'ignored',
       label: 'Ignored',
-      tip: 'Hidden items that do not count towards progress',
+      tip: "Hidden items that don't count towards progress",
       count: ignoredCount,
       icon: EyeOff,
     },
@@ -205,7 +205,7 @@ function PresetBar() {
   // views with world-only columns ("Bad luck") need a loaded world
   const hasWorld = useHasWorld()
   const usable = (v: View) => !v.needsWorld || hasWorld
-  const NEEDS_WORLD = 'Needs a loaded world – load the world file first'
+  const NEEDS_WORLD = 'Needs a loaded world. Load the world file first.'
   const active = activeView(views.filter(usable), shownIds)
 
   const apply = (v: ViewDef) => {
@@ -264,7 +264,7 @@ function PresetBar() {
             variant={activeElsewhere ? 'default' : 'outline'}
             size="sm"
             className="h-7 rounded-full"
-            title="All views – ✎ edit, ☆ show as a button"
+            title="All views. ✎ edit, ☆ show as a button"
           >
             {activeElsewhere ? active.label : shown.length ? 'More views' : 'Views'}
             <ChevronDown className={activeElsewhere ? undefined : 'text-muted-foreground'} />
@@ -365,8 +365,10 @@ function DimToggle() {
       )}
       title={
         progress
-          ? `${on ? 'Shows' : 'Dims'} the items ${progress.worldName} has not reached yet (after a boss it has not defeated) – click to switch`
-          : 'Needs a loaded world: dims the items it has not reached yet'
+          ? on
+            ? 'Show all items again'
+            : `Dim items you can't get yet in ${progress.worldName}`
+          : "Load a world to dim items you can't get yet"
       }
     >
       <SunDim /> Dim unavailable
@@ -393,7 +395,7 @@ function ColumnsMenu({ custom }: { custom: boolean }) {
           variant="outline"
           size="sm"
           className={cn('h-7 rounded-full', custom && 'border-primary text-primary')}
-          title={custom ? 'Your own column selection – click to change it' : 'Show or hide single columns'}
+          title={custom ? 'Your own columns. Click to change them' : 'Show or hide columns'}
         >
           <Columns3 /> {custom ? 'Custom' : 'Columns'}
           <span className="text-muted-foreground">{shown}</span>
@@ -415,7 +417,7 @@ function ColumnsMenu({ custom }: { custom: boolean }) {
             variant="ghost"
             size="xs"
             onClick={() => setColumnSizes({})}
-            title="Widths changed by dragging a column edge back to the defaults"
+            title="Reset all column widths to their defaults"
           >
             Reset widths
           </Button>
@@ -466,13 +468,13 @@ function BulkActions({ view, compact = false }: { view: TrackerView; compact?: b
             variant="outline"
             size="icon-sm"
             disabled={!n}
-            title="Bulk actions: check, uncheck or ignore all items in the list"
+            title="Check, uncheck or ignore everything in the list"
             aria-label="Bulk actions"
           >
             <ListChecks />
           </Button>
         ) : (
-          <Button variant="outline" size="sm" disabled={!n} title="Check, uncheck or ignore all items in the list">
+          <Button variant="outline" size="sm" disabled={!n} title="Check, uncheck or ignore everything in the list">
             <ListChecks /> Bulk actions
             <ChevronDown className="text-muted-foreground" />
           </Button>
@@ -484,8 +486,8 @@ function BulkActions({ view, compact = false }: { view: TrackerView; compact?: b
         </DropdownMenuLabel>
         <DropdownMenuSeparator />
         {ignoredView ? (
-          <DropdownMenuItem onSelect={() => run('Un-ignore all visible items?', () => setIgnored(keys, false))}>
-            <Eye /> Un-ignore all
+          <DropdownMenuItem onSelect={() => run('Stop ignoring all visible items?', () => setIgnored(keys, false))}>
+            <Eye /> Stop ignoring all
           </DropdownMenuItem>
         ) : (
           <>

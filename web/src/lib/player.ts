@@ -48,7 +48,7 @@ export async function parsePlayerFile(file: File): Promise<LoadedPlayer> {
   } catch (err) {
     if (err instanceof UnsupportedVersionError)
       throw new Error(
-        `${file.name} was saved by a game version this app cannot read yet (player file version ${err.version}). ` +
+        `${file.name} was saved by a game version this app can't read yet (player file version ${err.version}). ` +
           'Load the character in the current Terraria version and save it again.',
       )
     throw err

@@ -68,8 +68,8 @@ export interface WorldBestiary {
 export function chestSearchHint(loaded: boolean, attached: boolean): string {
   if (loaded) return 'Find in chests'
   return attached
-    ? 'Find in chests – reload the world file first (World menu → Reload, or Choose world file…)'
-    : 'Find in chests – attach a world file first (World menu → Attach world file…)'
+    ? 'Find in chests. Reload the world file first (World menu → Reload)'
+    : 'Find in chests. Attach a world file first (World menu)'
 }
 
 export type WorkerResponse =
@@ -90,7 +90,7 @@ export function parseWorldFile(file: File, onProgress?: (percent: number) => voi
     }
     worker.onerror = (e) => {
       worker.terminate()
-      reject(new Error(e.message || 'The world file could not be read.'))
+      reject(new Error(e.message || "Couldn't read the world file."))
     }
     file.arrayBuffer().then(
       (buffer) => worker.postMessage({ buffer, fileName: file.name }, [buffer]),

@@ -403,8 +403,8 @@ function DetailContent({ item, Title }: { item: Item; Title: TitleComponent }) {
       <div className="flex flex-col gap-5 p-4">
         {item.recipeOnly && (
           <p className="rounded-lg border border-dashed px-3 py-2 text-xs text-muted-foreground">
-            The wiki has no item data for this item yet, only its recipe. Name, icon and recipe come from there,
-            categories from a similar item; stats, rarity and prices are missing.
+            The wiki has no item data for this item yet, only its recipe. Name, icon and recipe come from there, the
+            categories from a similar item. Stats, rarity and prices are missing.
           </p>
         )}
         {sectionIds.map((id) => (

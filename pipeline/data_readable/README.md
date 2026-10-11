@@ -380,6 +380,7 @@ Armor and vanity sets: the items of a wiki page whose name ends in "armor" or "s
 | `type` | entry type id |
 | `stars` | rarity stars in the bestiary |
 | `npcId` | the game's NPC id |
+| `keys` | the other internal names the entry's NPC goes by (its variants, e.g. `["Grebe2"]`, the Salamander's `Salamander`, `Salamander3` …): a world file records kills and sightings under any of them. From the "NPC IDs" page: names on the entry's wiki page without an entry of their own; not for bosses |
 | `unlockedBy` | what else unlocks the entry in the game (`[bestiary.unlocked_by]`, `[bestiary.unlock_groups]` in `mapping.toml`): groups of entry ids – any group whose entries are all unlocked (killed, seen or talked to) unlocks it, e.g. the Tortured Soul `[["TaxCollector"]]`, the Dungeon Guardian `[["Clothier"], ["SkeletronHead"]]`, a Crawdad `[["GiantShelly", "Salamander2"]]`, every gold critter the other gold critters |
 | `biomes` / `times` / `events` | where / when / during what it appears |
 | `version` | the update that added it (`versions.json` id) |

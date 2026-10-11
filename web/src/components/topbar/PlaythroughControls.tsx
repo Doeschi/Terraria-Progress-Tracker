@@ -33,8 +33,7 @@ export function PlaythroughMenu() {
     if (!active) return
     const ok = await confirm({
       title: `Delete "${active.name}"?`,
-      description:
-        'All progress of this playthrough is removed from the file. This cannot be undone once the file is saved.',
+      description: "All its progress is deleted. Once you save the file, this can't be undone.",
       confirmLabel: 'Delete',
       destructive: true,
     })

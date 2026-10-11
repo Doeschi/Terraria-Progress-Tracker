@@ -86,7 +86,7 @@ export function ResizablePane({
         aria-valuemin={limits.min}
         aria-valuemax={limits.max}
         tabIndex={0}
-        title="Drag to resize · double-click: default width"
+        title="Drag to resize. Double-click to reset."
         onPointerDown={onPointerDown}
         onPointerMove={onPointerMove}
         onPointerUp={onPointerUp}

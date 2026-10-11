@@ -36,7 +36,7 @@ function DevBadge() {
   return (
     <span
       className="shrink-0 rounded bg-amber-500/15 px-1.5 py-0.5 text-[10px] leading-none font-semibold text-amber-700 uppercase dark:text-amber-400"
-      title="Development build (dev server) - slower than the published site"
+      title="Development build (dev server), slower than the published site"
     >
       Dev
     </span>

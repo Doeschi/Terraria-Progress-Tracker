@@ -114,7 +114,8 @@ export function ItemCards({
   usePublishRows(useMemo(() => rows.map((i) => ({ ref: i.key, name: i.name })), [rows]))
   const active = useActiveRow(useStore((s) => s.search)).row?.ref
 
-  if (!rows.length) return <p className="p-6 text-center text-sm text-muted-foreground">No items match.</p>
+  if (!rows.length)
+    return <p className="p-6 text-center text-sm text-muted-foreground">No items match your search and filters.</p>
   const virtualRows = virtualizer.getVirtualItems()
   return (
     <div ref={scrollRef} className="min-h-0 flex-1 overflow-auto">

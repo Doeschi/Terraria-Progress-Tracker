@@ -88,9 +88,9 @@ export function FileMenu() {
         <DropdownMenuContent align="start" className="w-60">
           <DropdownMenuLabel className="text-xs font-normal text-muted-foreground">
             {inDrive
-              ? 'Saves to your Google Drive – only when you save (no autosave)'
+              ? 'In your Google Drive. Saved only when you save (no autosave)'
               : unsaved
-                ? 'Not saved yet – choose where to save it'
+                ? 'Not saved yet. Choose where to save it'
                 : canSaveInPlace
                   ? 'Saves directly to the file on disk'
                   : 'Saving downloads the file (browser limitation)'}
@@ -189,7 +189,7 @@ export function AutosaveStatus() {
     return lastSavedAt ? (
       <span
         className="flex items-center gap-1 text-[10px] text-muted-foreground"
-        title={`Saved to Google Drive ${formatTime(lastSavedAt)}${dirty ? ' – changes since then are not in your Drive yet, save with Ctrl+S' : ''}`}
+        title={`Saved to Google Drive at ${formatTime(lastSavedAt)}${dirty ? '. Save again (Ctrl+S) for the changes since then' : ''}`}
       >
         <Cloud className="size-3" />
         {!compact && `Saved ${formatTime(lastSavedAt)}`}
@@ -199,8 +199,8 @@ export function AutosaveStatus() {
 
   if (!handle)
     return compact ? null : (
-      <span className="text-[10px] text-muted-foreground" title="Autosave needs a file on disk: save once with Ctrl+S">
-        Autosave: save once first
+      <span className="text-[10px] text-muted-foreground" title="Save the file once (Ctrl+S) to turn on autosave">
+        Autosave (save once first)
       </span>
     )
   if (status !== 'ok') {
@@ -217,8 +217,8 @@ export function AutosaveStatus() {
         )}
         title={
           status === 'error'
-            ? 'The last automatic save failed – click to try again'
-            : 'The browser needs your permission to write the file again – click to allow it'
+            ? 'The last autosave failed. Click to try again'
+            : 'The browser needs your permission to write the file again. Click to allow it'
         }
       >
         <CircleAlert className="size-3" />
@@ -229,7 +229,7 @@ export function AutosaveStatus() {
   return (
     <span
       className="flex items-center gap-1 text-[10px] text-muted-foreground"
-      title={`${lastSavedAt ? `Saved ${formatTime(lastSavedAt)}` : 'Autosave on'} – ${dirty ? 'unsaved changes are saved within 2 minutes' : 'all changes are saved'}`}
+      title={`${lastSavedAt ? `Saved at ${formatTime(lastSavedAt)}` : 'Autosave on'}. ${dirty ? 'Unsaved changes are saved within 2 minutes' : 'All changes are saved'}`}
     >
       {/* a file on this computer, nothing is uploaded */}
       <FileCheck className="size-3" />

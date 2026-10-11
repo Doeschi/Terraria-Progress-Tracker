@@ -58,8 +58,7 @@ export function useWorldLoader() {
         }
       } catch (err) {
         // automatic loads (no picking) fail quietly with a hint to the reconnect button
-        if (!pick)
-          toast.info('The world file could not be reloaded – use the button next to the world to reconnect it.')
+        if (!pick) toast.info("Couldn't reload the world file. Reconnect it with the button next to the world.")
         else toast.error(err instanceof Error ? err.message : String(err))
         return false
       }
@@ -84,7 +83,7 @@ export function useWorldLoader() {
             description: (
               <>
                 This playthrough is attached to <em>{attached.name}</em>, but you selected <em>{world.name}</em>. Attach
-                the new world instead? Your areas are kept but may not fit the new world.
+                the new world instead? Your areas stay, but they may not fit it.
               </>
             ),
             confirmLabel: 'Attach new world',
@@ -96,7 +95,7 @@ export function useWorldLoader() {
         setLoadedModified('world', playthroughId, file.lastModified)
         const after = findPlaythrough(useStore.getState().doc, playthroughId)?.difficulty
         if (after && after !== before)
-          toast.info(`Difficulty set to ${DIFFICULTY_LABELS[after]} from the world's game mode`)
+          toast.info(`Difficulty changed to ${DIFFICULTY_LABELS[after]} to match the world`)
         if (handle) void rememberWorldHandle(playthroughId, handle)
         // chosen with the classic dialog: chosen that way again; the normal way: back to normal (W10)
         if (!remembered || handle) {
@@ -106,7 +105,7 @@ export function useWorldLoader() {
         const chests = world.containers.filter((c) => c.kind === 'chest').length
         toast.success(
           <span>
-            Loaded world <em>{world.name}</em> – {chests} chests
+            Loaded world <em>{world.name}</em> with {chests} chests
           </span>,
           { id: toastId },
         )
@@ -117,7 +116,7 @@ export function useWorldLoader() {
         const diff = data && pt ? bestiaryDiff(data, pt, world, players[playthroughId] ?? null) : null
         const changes = diff ? diff.toCheck.length + diff.toUncheck.length : 0
         const newWorld = !attached || attached.guid !== world.guid
-        if (!world.bestiary) toast.warning('The bestiary could not be read from this world.')
+        if (!world.bestiary) toast.warning("Couldn't read the bestiary from this world.")
         if (newWorld) {
           useUi.getState().open({ type: 'areas', thenSync: true })
         } else if (!refresh && changes && playthroughId === useStore.getState().activeId) {
@@ -125,7 +124,7 @@ export function useWorldLoader() {
         }
         if (!world.displaysAvailable)
           toast.warning(
-            'Item frames, mannequins and other displays could not be read (newer world format). Chests work normally.',
+            "Couldn't read item frames, mannequins and other displays (newer world format). Chests work as usual.",
           )
         return newWorld ? 'new' : true
       } catch (err) {

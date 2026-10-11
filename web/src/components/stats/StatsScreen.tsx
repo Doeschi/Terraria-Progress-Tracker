@@ -123,21 +123,18 @@ export function StatsScreen({ view }: { view: TrackerView }) {
         </div>
 
         <PaceTiles pace={itemPace} unit="items" rangeText={rangeText} />
-        <Card
-          title="Items over time"
-          hint="The items you have, by the time they were checked - in total, and per period"
-        >
+        <Card title="Items over time" hint="The items you have, by when they were checked: in total, and per period">
           {itemDays.length ? (
             <TimeChart series={itemSeries} unit="items" />
           ) : (
-            <Empty>Nothing checked yet - the chart fills as you collect.</Empty>
+            <Empty>Nothing checked yet. The chart fills as you collect.</Empty>
           )}
         </Card>
 
         {hasBestiary && (
           <>
             <PaceTiles pace={bestiaryPace} unit="entries" rangeText={rangeText} />
-            <Card title="Bestiary over time" hint="Unlocked entries, by the time they were marked">
+            <Card title="Bestiary over time" hint="Unlocked entries, by when they were marked">
               {bestiaryDays.length ? (
                 <TimeChart series={bestiarySeries} unit="entries" />
               ) : (
@@ -149,7 +146,7 @@ export function StatsScreen({ view }: { view: TrackerView }) {
 
         <Card
           title="Activity"
-          hint="Days with changes - items checked, unchecked or ignored, bestiary entries marked"
+          hint="Days with changes: items checked, unchecked or ignored, bestiary entries marked"
           extra={<CalendarLegend />}
         >
           <Calendar byDay={act.byDay} today={now} />
@@ -172,17 +169,14 @@ export function StatsScreen({ view }: { view: TrackerView }) {
         <div className="grid gap-4 lg:grid-cols-2">
           <Card
             title="Completed filters"
-            hint="When each filter option first reached 100 %"
+            hint="When each filter first reached 100 %"
             extra={
               <span className="text-xs text-muted-foreground tabular-nums">{plural(completed.length, 'option')}</span>
             }
           >
             <CompletedList completed={completed} now={now} />
           </Card>
-          <Card
-            title="Progress by group"
-            hint="Obtained items per category and per way to get them, ignored items left out"
-          >
+          <Card title="Progress by group" hint="Obtained items per category or way to get them, without ignored items">
             <Breakdown view={view} />
           </Card>
         </div>
@@ -312,7 +306,7 @@ const FIRST = 25
 /** The completed options, newest first, under the day they were completed. */
 function CompletedList({ completed, now }: { completed: ReturnType<typeof completedOptions>; now: number }) {
   const [all, setAll] = useState(false)
-  if (!completed.length) return <Empty>No filter option completed yet.</Empty>
+  if (!completed.length) return <Empty>No filter completed yet.</Empty>
   const shown = all ? completed : completed.slice(0, FIRST)
   let lastDay: number | null = null
   return (

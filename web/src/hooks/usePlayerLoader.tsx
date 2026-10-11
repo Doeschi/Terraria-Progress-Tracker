@@ -50,8 +50,7 @@ export function usePlayerLoader() {
           handle = picked.handle
         }
       } catch (err) {
-        if (!pick)
-          toast.info('The player file could not be reloaded – use the button next to the player to reconnect it.')
+        if (!pick) toast.info("Couldn't reload the player file. Reconnect it with the button next to the player.")
         else toast.error(err instanceof Error ? err.message : String(err))
         return false
       }

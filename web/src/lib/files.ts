@@ -173,11 +173,11 @@ export async function openRememberedWorld(playthroughId: string): Promise<File |
  * so the page does not know the file on disk: it shows the copy kept in the browser.
  */
 export function fileLabel(fileName: string | null, inDrive = false): { label: string; title?: string } {
-  if (inDrive && fileName) return { label: fileName, title: `${fileName} – in your Google Drive` }
+  if (inDrive && fileName) return { label: fileName, title: `${fileName}, in your Google Drive` }
   if (canSaveInPlace || !fileName) return { label: fileName ?? 'Unsaved file' }
   return {
     label: 'Browser copy',
-    title: `Your progress is kept in this browser; saving downloads a copy.\nLast file: ${fileName}`,
+    title: `Your progress is saved in this browser. Saving downloads a copy.\nLast file: ${fileName}`,
   }
 }
 
@@ -251,15 +251,14 @@ export async function peekRememberedFile(kind: FileKind, playthroughId: string):
 export function attachHints(kind: FileKind) {
   const folder = kind === 'world' ? 'Worlds' : 'Players'
   return {
-    local: `Saved locally (Documents\\My Games\\Terraria\\${folder}): can be automatically read when changes are synced`,
+    local: `Saved locally (Documents\\My Games\\Terraria\\${folder}). Read again by itself when you sync`,
     steam:
       `Saved in the Steam Cloud (C:\\Program Files (x86)\\Steam\\userdata\\…\\105600\\remote\\${folder.toLowerCase()}): ` +
-      'the browser does not allow permanent access for files in a system directory. These files must be reselected ' +
-      'when synchronising the progress.',
+      "the browser can't keep access to a system folder, so you choose the file again for each sync.",
   }
 }
 
 /** How the two ways differ, as a sentence under the buttons (W10). */
 export const ATTACH_DIFFERENCE =
   'Non-Steam Cloud files are read again by themselves when you sync; Steam Cloud files are in a system folder ' +
-  'the browser cannot keep access to, so they must be chosen again for each sync.'
+  "the browser can't keep access to, so you choose them again for each sync."

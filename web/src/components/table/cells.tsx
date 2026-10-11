@@ -101,11 +101,10 @@ export function LuckCell({ data, luck, missing }: { data: GameData; luck: Luck; 
           </Disclosure>
           {luck.approx && (
             <p className="opacity-70">
-              ≈ Some drops only happen under a condition, event or biome – every kill is counted, so this may be too
-              high.
+              ≈ Some drops need a condition, event or biome. Every kill is counted, so this may be too high.
             </p>
           )}
-          {bad && <p className="font-medium text-amber-300 dark:text-amber-700">Still missing – bad luck!</p>}
+          {bad && <p className="font-medium text-amber-300 dark:text-amber-700">Still missing. Bad luck!</p>}
         </div>
       </TooltipContent>
     </Tooltip>
@@ -160,8 +159,8 @@ function AtLeastOnceHow({ parts, atLeastOnce }: { parts: Luck['parts']; atLeastO
         </p>
       )}
       <p className="opacity-70">
-        It is not the expected number of drops: at 1× expected, the chance is only about 63%. The amount per drop does
-        not matter here.
+        It isn't the expected number of drops: at 1× expected, the chance is only about 63%. The amount per drop doesn't
+        matter here.
       </p>
     </>
   )

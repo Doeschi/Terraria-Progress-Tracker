@@ -261,7 +261,7 @@ export function ItemTable({
   if (!items.length) {
     return (
       <div className="grid flex-1 place-items-center p-8 text-center text-sm text-muted-foreground">
-        No items match the current search and filters.
+        No items match your search and filters.
       </div>
     )
   }
@@ -302,7 +302,7 @@ export function ItemTable({
                         onMouseDown={h.getResizeHandler()}
                         onTouchStart={h.getResizeHandler()}
                         onDoubleClick={() => h.column.resetSize()}
-                        title="Drag to resize · double-click: default width"
+                        title="Drag to resize. Double-click to reset."
                         className={cn(
                           'absolute top-0 right-0 z-10 h-full w-1.5 cursor-col-resize touch-none select-none hover:bg-primary/40',
                           h.column.getIsResizing() && 'bg-primary/60',
@@ -313,7 +313,7 @@ export function ItemTable({
                       <button
                         onClick={h.column.getToggleSortingHandler()}
                         className="flex w-full items-center gap-1 hover:text-foreground"
-                        title="Sort (click again to reverse, a third time to reset)"
+                        title="Sort by this column. Click again to reverse, a third time to reset."
                       >
                         <span className="truncate">{h.column.columnDef.header}</span>
                         {sorted === 'asc' && <ArrowUp className="size-3 shrink-0" />}
@@ -491,7 +491,7 @@ function NameCell({ item }: { item: Item }) {
         <button
           onClick={() => openDetail(item.key)}
           className="min-w-0 truncate text-left font-medium hover:text-primary hover:underline"
-          title={`${item.name} – show details`}
+          title={`${item.name}: show details`}
         >
           {item.name}
         </button>

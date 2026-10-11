@@ -134,6 +134,9 @@
         "desktop",
         "console",
         "mobile"
+      ],
+      "keys": [
+        "SleepingAngler"
       ]
     },
     {
@@ -244,6 +247,9 @@
         "desktop",
         "console",
         "mobile"
+      ],
+      "keys": [
+        "WebbedStylist"
       ]
     },
     {
@@ -288,6 +294,9 @@
         "desktop",
         "console",
         "mobile"
+      ],
+      "keys": [
+        "BartenderUnconscious"
       ]
     },
     {
@@ -310,6 +319,9 @@
         "desktop",
         "console",
         "mobile"
+      ],
+      "keys": [
+        "GolferRescue"
       ]
     },
     {
@@ -332,6 +344,9 @@
         "desktop",
         "console",
         "mobile"
+      ],
+      "keys": [
+        "BoundGoblin"
       ]
     },
     {
@@ -376,6 +391,9 @@
         "desktop",
         "console",
         "mobile"
+      ],
+      "keys": [
+        "BoundMechanic"
       ]
     },
     {
@@ -420,6 +438,9 @@
         "desktop",
         "console",
         "mobile"
+      ],
+      "keys": [
+        "BoundWizard"
       ]
     },
     {
@@ -1388,6 +1409,9 @@
         "desktop",
         "console",
         "mobile"
+      ],
+      "keys": [
+        "GoldfishWalker"
       ]
     },
     {
@@ -1410,6 +1434,9 @@
         "desktop",
         "console",
         "mobile"
+      ],
+      "keys": [
+        "GoldGoldfishWalker"
       ],
       "unlockedBy": [
         [
@@ -2452,6 +2479,9 @@
         "desktop",
         "console",
         "mobile"
+      ],
+      "keys": [
+        "OwlMimic"
       ]
     },
     {
@@ -2960,6 +2990,9 @@
         "desktop",
         "console",
         "mobile"
+      ],
+      "keys": [
+        "TruffleWormDigger"
       ]
     },
     {
@@ -3074,6 +3107,9 @@
         "desktop",
         "console",
         "mobile"
+      ],
+      "keys": [
+        "Grebe2"
       ]
     },
     {
@@ -3118,6 +3154,9 @@
         "desktop",
         "console",
         "mobile"
+      ],
+      "keys": [
+        "Seagull2"
       ]
     },
     {
@@ -3689,6 +3728,9 @@
         "desktop",
         "console",
         "mobile"
+      ],
+      "keys": [
+        "DialatedEye2"
       ]
     },
     {
@@ -3711,6 +3753,9 @@
         "desktop",
         "console",
         "mobile"
+      ],
+      "keys": [
+        "SleepyEye2"
       ]
     },
     {
@@ -3733,6 +3778,9 @@
         "desktop",
         "console",
         "mobile"
+      ],
+      "keys": [
+        "PurpleEye2"
       ]
     },
     {
@@ -3755,6 +3803,9 @@
         "desktop",
         "console",
         "mobile"
+      ],
+      "keys": [
+        "DemonEye2"
       ]
     },
     {
@@ -3777,6 +3828,9 @@
         "desktop",
         "console",
         "mobile"
+      ],
+      "keys": [
+        "GreenEye2"
       ]
     },
     {
@@ -3799,6 +3853,9 @@
         "desktop",
         "console",
         "mobile"
+      ],
+      "keys": [
+        "CataractEye2"
       ]
     },
     {
@@ -4021,6 +4078,10 @@
         "desktop",
         "console",
         "mobile"
+      ],
+      "keys": [
+        "BigRainZombie",
+        "SmallRainZombie"
       ]
     },
     {
@@ -4329,6 +4390,10 @@
         "desktop",
         "console",
         "mobile"
+      ],
+      "keys": [
+        "BloodEelBody",
+        "BloodEelTail"
       ]
     },
     {
@@ -4703,6 +4768,10 @@
         "desktop",
         "console",
         "mobile"
+      ],
+      "keys": [
+        "GiantWormBody",
+        "GiantWormTail"
       ]
     },
     {
@@ -4725,6 +4794,10 @@
         "desktop",
         "console",
         "mobile"
+      ],
+      "keys": [
+        "DiggerBody",
+        "DiggerTail"
       ]
     },
     {
@@ -4902,6 +4975,16 @@
         "console",
         "mobile"
       ],
+      "keys": [
+        "Salamander",
+        "Salamander3",
+        "Salamander4",
+        "Salamander5",
+        "Salamander6",
+        "Salamander7",
+        "Salamander8",
+        "Salamander9"
+      ],
       "unlockedBy": [
         [
           "Crawdad",
@@ -4973,6 +5056,9 @@
         "desktop",
         "console",
         "mobile"
+      ],
+      "keys": [
+        "Crawdad2"
       ],
       "unlockedBy": [
         [
@@ -5067,6 +5153,9 @@
         "desktop",
         "console",
         "mobile"
+      ],
+      "keys": [
+        "HeavySkeleton"
       ]
     },
     {
@@ -5266,6 +5355,9 @@
         "console",
         "mobile"
       ],
+      "keys": [
+        "GiantShelly2"
+      ],
       "unlockedBy": [
         [
           "Crawdad",
@@ -5452,6 +5544,9 @@
         "desktop",
         "console",
         "mobile"
+      ],
+      "keys": [
+        "WallCreeper"
       ]
     },
     {
@@ -5474,6 +5569,9 @@
         "desktop",
         "console",
         "mobile"
+      ],
+      "keys": [
+        "BlackRecluse"
       ]
     },
     {
@@ -5522,6 +5620,9 @@
         "desktop",
         "console",
         "mobile"
+      ],
+      "keys": [
+        "ArmedZombieEskimo"
       ]
     },
     {
@@ -5966,6 +6067,10 @@
         "desktop",
         "console",
         "mobile"
+      ],
+      "keys": [
+        "TombCrawlerBody",
+        "TombCrawlerTail"
       ]
     },
     {
@@ -6010,6 +6115,9 @@
         "desktop",
         "console",
         "mobile"
+      ],
+      "keys": [
+        "DesertScorpionWalk"
       ]
     },
     {
@@ -6080,6 +6188,10 @@
         "desktop",
         "console",
         "mobile"
+      ],
+      "keys": [
+        "DuneSplicerBody",
+        "DuneSplicerTail"
       ]
     },
     {
@@ -6666,6 +6778,12 @@
         "desktop",
         "console",
         "mobile"
+      ],
+      "keys": [
+        "GiantMossHornet",
+        "BigMossHornet",
+        "LittleMossHornet",
+        "TinyMossHornet"
       ]
     },
     {
@@ -6866,6 +6984,9 @@
         "desktop",
         "console",
         "mobile"
+      ],
+      "keys": [
+        "JungleCreeper"
       ]
     },
     {
@@ -7737,6 +7858,10 @@
         "desktop",
         "console",
         "mobile"
+      ],
+      "keys": [
+        "BoneSerpentBody",
+        "BoneSerpentTail"
       ]
     },
     {
@@ -7891,6 +8016,13 @@
         "desktop",
         "console",
         "mobile"
+      ],
+      "keys": [
+        "WyvernLegs",
+        "WyvernBody",
+        "WyvernBody2",
+        "WyvernBody3",
+        "WyvernTail"
       ]
     },
     {
@@ -8001,6 +8133,10 @@
         "desktop",
         "console",
         "mobile"
+      ],
+      "keys": [
+        "BigEater",
+        "LittleEater"
       ]
     },
     {
@@ -8045,6 +8181,10 @@
         "desktop",
         "console",
         "mobile"
+      ],
+      "keys": [
+        "DevourerBody",
+        "DevourerTail"
       ]
     },
     {
@@ -8067,6 +8207,10 @@
         "desktop",
         "console",
         "mobile"
+      ],
+      "keys": [
+        "SeekerBody",
+        "SeekerTail"
       ]
     },
     {
@@ -8111,6 +8255,9 @@
         "desktop",
         "console",
         "mobile"
+      ],
+      "keys": [
+        "Slimer2"
       ]
     },
     {
@@ -8271,6 +8418,10 @@
         "desktop",
         "console",
         "mobile"
+      ],
+      "keys": [
+        "BigCrimslime",
+        "LittleCrimslime"
       ]
     },
     {
@@ -8315,6 +8466,10 @@
         "desktop",
         "console",
         "mobile"
+      ],
+      "keys": [
+        "BigCrimera",
+        "LittleCrimera"
       ]
     },
     {
@@ -8447,6 +8602,9 @@
         "desktop",
         "console",
         "mobile"
+      ],
+      "keys": [
+        "BloodCrawler"
       ]
     },
     {
@@ -9084,6 +9242,9 @@
         "desktop",
         "console",
         "mobile"
+      ],
+      "keys": [
+        "FungiSpore"
       ]
     },
     {
@@ -9128,6 +9289,9 @@
         "desktop",
         "console",
         "mobile"
+      ],
+      "keys": [
+        "LihzahrdCrawler"
       ]
     },
     {
@@ -9326,6 +9490,9 @@
         "desktop",
         "console",
         "mobile"
+      ],
+      "keys": [
+        "DD2SkeletonT1"
       ]
     },
     {
@@ -9348,6 +9515,10 @@
         "desktop",
         "console",
         "mobile"
+      ],
+      "keys": [
+        "DD2GoblinT1",
+        "DD2GoblinT2"
       ]
     },
     {
@@ -9370,6 +9541,10 @@
         "desktop",
         "console",
         "mobile"
+      ],
+      "keys": [
+        "DD2GoblinBomberT1",
+        "DD2GoblinBomberT2"
       ]
     },
     {
@@ -9392,6 +9567,9 @@
         "desktop",
         "console",
         "mobile"
+      ],
+      "keys": [
+        "DD2KoboldWalkerT2"
       ]
     },
     {
@@ -9414,6 +9592,10 @@
         "desktop",
         "console",
         "mobile"
+      ],
+      "keys": [
+        "DD2JavelinstT1",
+        "DD2JavelinstT2"
       ]
     },
     {
@@ -9436,6 +9618,9 @@
         "desktop",
         "console",
         "mobile"
+      ],
+      "keys": [
+        "DD2WitherBeastT2"
       ]
     },
     {
@@ -9458,6 +9643,9 @@
         "desktop",
         "console",
         "mobile"
+      ],
+      "keys": [
+        "DD2DrakinT2"
       ]
     },
     {
@@ -9502,6 +9690,9 @@
         "desktop",
         "console",
         "mobile"
+      ],
+      "keys": [
+        "DD2KoboldFlyerT2"
       ]
     },
     {
@@ -9524,6 +9715,10 @@
         "desktop",
         "console",
         "mobile"
+      ],
+      "keys": [
+        "DD2WyvernT1",
+        "DD2WyvernT2"
       ]
     },
     {
@@ -9832,6 +10027,9 @@
         "desktop",
         "console",
         "mobile"
+      ],
+      "keys": [
+        "ForceBubble"
       ]
     },
     {
@@ -10206,6 +10404,9 @@
         "desktop",
         "console",
         "mobile"
+      ],
+      "keys": [
+        "VampireBat"
       ]
     },
     {
@@ -10316,6 +10517,9 @@
         "desktop",
         "console",
         "mobile"
+      ],
+      "keys": [
+        "MothronEgg"
       ]
     },
     {
@@ -11112,6 +11316,9 @@
         "desktop",
         "console",
         "mobile"
+      ],
+      "keys": [
+        "Nutcracker"
       ]
     },
     {
@@ -11900,6 +12107,10 @@
         "desktop",
         "console",
         "mobile"
+      ],
+      "keys": [
+        "SolarCrawltipedeBody",
+        "SolarCrawltipedeTail"
       ]
     },
     {
@@ -12120,6 +12331,9 @@
         "desktop",
         "console",
         "mobile"
+      ],
+      "keys": [
+        "StardustSpiderSmall"
       ]
     },
     {
@@ -12142,6 +12356,10 @@
         "desktop",
         "console",
         "mobile"
+      ],
+      "keys": [
+        "StardustWormBody",
+        "StardustWormTail"
       ]
     },
     {
@@ -12472,6 +12690,10 @@
         "desktop",
         "console",
         "mobile"
+      ],
+      "keys": [
+        "LeechBody",
+        "LeechTail"
       ]
     },
     {
@@ -12826,6 +13048,9 @@
         "desktop",
         "console",
         "mobile"
+      ],
+      "keys": [
+        "Sharkron2"
       ]
     },
     {
@@ -12941,6 +13166,13 @@
         "desktop",
         "console",
         "mobile"
+      ],
+      "keys": [
+        "CultistDragonBody1",
+        "CultistDragonBody2",
+        "CultistDragonBody3",
+        "CultistDragonBody4",
+        "CultistDragonTail"
       ],
       "unlockedBy": [
         [

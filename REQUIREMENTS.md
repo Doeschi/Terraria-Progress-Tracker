@@ -24,6 +24,12 @@ GitHub Actions.
   used and the AI notice.
 - **G5** Deployed to GitHub Pages by a GitHub Actions workflow on push to `main`.
 - **G6** UI language: English.
+- **G6a** Voice of the UI texts (after a UX-writing pass): short and plain, in sentence case
+  everywhere (titles too); buttons verb first ("Save area", "Check all"); tooltips say what the
+  control does, in one line, not how it works; messages say what happened and what to do next
+  ("Couldn't read the world file. Reconnect it with the button next to the world."); contractions
+  ("can't", "isn't"); no dash-chained sentences; one term per thing (filter, playthrough, world,
+  player, sync).
 - **G7** Start page: a short tagline and the main features as a list with icons (items, filters
   with progress, crafting recipes, drops & bosses, bestiary, sync with your world; counts from the data),
   then the actions. "Continue where you left off" is a larger card with the file name, active
@@ -1088,7 +1094,8 @@ Below 640 px width (phones) the layout changes; tablets and desktops stay as the
   in the bestiary.
 - **ND5** The bestiary list opens the NPC card when a row is clicked (not the checkbox or link),
   docked like the item details (overlay on narrow screens). Column "Drops": how many different
-  items the entry drops and how many of them are obtained (e.g. "5 / 12"), sortable.
+  items the entry drops and how many of them are obtained (e.g. "5 / 12"); sorted by the drops
+  still missing (then by how many it drops), entries that drop nothing last.
 - **ND6** NPC card: the section "About" as in the item card (ID4), first in the card: the
   introduction of the entry's wiki page.
 
@@ -1392,7 +1399,10 @@ Below 640 px width (phones) the layout changes; tablets and desktops stay as the
   world), all scarecrows by one of them (one kill count since 1.4.4.9) and all gold critters by
   one of them. The Torch God counts as unlocked when the attached player (PL) has used the Torch
   God's Favor (a character's unlock, not the world's). The world column and the sync rows say
-  what did it ("via Tax Collector", "Torch God's Favor used").
+  what did it ("via Tax Collector", "Torch God's Favor used"). An NPC with several internal
+  names (the Grebe: `Grebe` sitting, `Grebe2` flying; the Salamander's nine variants) is one
+  entry: the world records kills and sightings under any of its names (`keys` in
+  `bestiary.json`, from the "NPC IDs" page), and the app counts them all for the entry.
 - **BE6** Separate view: "Items | Bestiary | Stats" switch in the header (Stats: ST). The bestiary view has its own
   filters (Type, Biome, Time of day, Events, Added in – faceted like FL3/FL4), its own search,
   Show all / missing / unlocked, and a table: in-game number (default order), icon, name, type,

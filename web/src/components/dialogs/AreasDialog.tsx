@@ -50,11 +50,9 @@ export function AreasDialog() {
               ) : (
                 thenSync && (
                   <div className="flex items-center justify-end gap-3 border-t pt-3">
-                    <span className="text-xs text-muted-foreground">
-                      Next step: compare the playthrough with the world
-                    </span>
+                    <span className="text-xs text-muted-foreground">Next, compare your progress with the world</span>
                     <Button onClick={finish}>
-                      Continue: sync with world <ArrowRight />
+                      Continue to the sync <ArrowRight />
                     </Button>
                   </div>
                 )
@@ -110,23 +108,22 @@ function AreasManager({ footer }: { footer?: React.ReactNode }) {
           Areas of <em>{dims.name}</em>
         </DialogTitle>
         <DialogDescription>
-          Areas define which parts of the world are scanned. When syncing with the world or searching chests, only the
-          player chests inside the selected areas are taken into account – for example those of a base or a storage
-          room.
+          Areas limit the sync and the chest search to parts of your world, like your base or a storage room. Only
+          player chests inside the selected areas count.
         </DialogDescription>
       </DialogHeader>
       <ol className="flex list-decimal flex-col gap-0.5 rounded-lg bg-muted px-3 py-2 pl-7 text-xs text-muted-foreground">
         <li>
-          <span className="font-medium text-foreground">Create an area:</span> select the tool “Draw area” and drag a
-          rectangle on the map, or use “New area” to enter the corner coordinates from the game.
+          <span className="font-medium text-foreground">Create an area:</span> choose “Draw area” and drag a rectangle
+          on the map, or use “New area” to type in the corners from the game.
         </li>
         <li>
           <span className="font-medium text-foreground">Adjust an area:</span> select it on the map or in the list, then
-          drag it to move it or drag its handles to resize it. The pencil in the list edits its name and coordinates.
+          drag it to move it or drag its handles to resize it. The pencil edits its name and corners.
         </li>
         <li>
-          <span className="font-medium text-foreground">Without areas:</span> “Full World” is always available and
-          includes all player chests.
+          <span className="font-medium text-foreground">Without areas:</span> “Full World” is always there and includes
+          every player chest.
         </li>
       </ol>
       <WorldMap
@@ -194,7 +191,7 @@ function AreasManager({ footer }: { footer?: React.ReactNode }) {
         })}
         {pt.areas.length === 0 && (
           <li className="rounded-lg border border-dashed px-3 py-2 text-xs text-muted-foreground">
-            No areas defined yet. Draw one on the map, for example around a base or a storage room.
+            No areas yet. Draw one on the map, for example around your base or a storage room.
           </li>
         )}
       </ul>
@@ -251,9 +248,9 @@ function AreaForm({ area, dims, onDone }: { area: Area; dims: WorldDims; onDone:
       <DialogHeader>
         <DialogTitle>{area.id ? 'Edit area' : 'New area'}</DialogTitle>
         <DialogDescription>
-          Enter a name and two opposite corners of the area (e.g. top left and bottom right). In the game, the position
-          is shown by a Compass (east/west) and a Depth Meter (above/below), or by a GPS, Cell Phone or Shellphone
-          (both). The area can also be adjusted on the map afterwards.
+          Enter a name and two opposite corners, for example top left and bottom right. In the game, a Compass shows
+          east/west and a Depth Meter above/below; a GPS, Cell Phone or Shellphone shows both. You can still adjust the
+          area on the map afterwards.
         </DialogDescription>
       </DialogHeader>
       <div className="flex flex-col gap-2">

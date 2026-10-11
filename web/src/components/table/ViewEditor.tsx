@@ -118,7 +118,7 @@ export function ViewEditor({
         <DialogHeader>
           <DialogTitle>{target.view ? `Edit view “${target.view.label}”` : 'New view'}</DialogTitle>
           <DialogDescription>
-            The columns in this order, and how the table is sorted. Stored in this browser.
+            The columns in this order, and how the table is sorted. Saved in this browser.
           </DialogDescription>
         </DialogHeader>
 
@@ -138,7 +138,7 @@ export function ViewEditor({
                   setColumns(current.columns)
                   setSorting(current.sorting.slice(0, 1))
                 }}
-                title="Columns and sorting of the table as it is shown now"
+                title="The columns and sorting of the table as shown now"
               >
                 Take current table
               </Button>
@@ -250,14 +250,14 @@ export function ViewEditor({
 
           <label className="flex cursor-pointer items-center gap-2 text-sm">
             <Checkbox checked={favorite} onCheckedChange={(v) => setFavorite(v === true)} />
-            Favorite – show as a button next to the views dropdown
+            Favorite: show as a button next to the views dropdown
           </label>
         </div>
 
         <DialogFooter className="gap-2 sm:justify-between">
           <div className="flex gap-2">
             {preset && target.view?.changed && (
-              <Button variant="outline" onClick={restore} title="Name, columns and sorting as delivered">
+              <Button variant="outline" onClick={restore} title="Name, columns and sorting as they came with the app">
                 Restore default
               </Button>
             )}

@@ -118,7 +118,7 @@ function worldMarks(p: WorldProgress | null): WorldMarks {
       if (id === AVAILABLE_NOW)
         return p
           ? { kind: 'note', title: `Items whose milestone is reached in ${p.worldName}` }
-          : { kind: 'note', title: 'Needs a loaded world – ignored until the world is loaded' }
+          : { kind: 'note', title: 'Needs a loaded world. Ignored until then.' }
       if (!p) return null
       if (p.reached.has(id)) return { kind: 'done', title: `Reached in ${p.worldName}` }
       if (id === p.next) return { kind: 'next', title: `The next milestone in ${p.worldName}` }
@@ -360,8 +360,7 @@ function FilterPanel({
                         <span className="flex flex-col">
                           Only filters with matches
                           <span className="text-xs text-muted-foreground">
-                            Leave out options without items for the current filters and search, instead of graying them
-                            out
+                            Hide filters with no items for the current filters and search instead of graying them out
                           </span>
                         </span>
                       </DropdownMenuCheckboxItem>
@@ -373,7 +372,7 @@ function FilterPanel({
                         <span className="flex flex-col">
                           Move completed filters
                           <span className="text-xs text-muted-foreground">
-                            Options at 100% go to “Completed” at the bottom
+                            Filters at 100% move to “Completed” at the bottom
                           </span>
                         </span>
                       </DropdownMenuCheckboxItem>
@@ -381,7 +380,7 @@ function FilterPanel({
                         <span className="flex flex-col">
                           Hide filters
                           <span className="text-xs text-muted-foreground">
-                            Shows <EyeOff className="inline size-3 align-[-2px]" /> next to each option to hide it
+                            Shows <EyeOff className="inline size-3 align-[-2px]" /> next to each filter to hide it
                           </span>
                         </span>
                       </DropdownMenuCheckboxItem>
@@ -396,7 +395,7 @@ function FilterPanel({
                 {editMode && (
                   <p className="-mt-2 flex items-center gap-1 px-1 text-[11px] text-muted-foreground">
                     <span className="flex-1">
-                      Click <EyeOff className="inline size-3 align-[-2px]" /> to hide an option – hidden ones are at the
+                      Click <EyeOff className="inline size-3 align-[-2px]" /> to hide a filter. Hidden ones are at the
                       bottom.
                     </span>
                     <button onClick={() => setEditMode(false)} className="font-medium text-primary hover:underline">
@@ -528,7 +527,7 @@ function GroupSection({
                   'ml-auto flex shrink-0 items-center gap-0.5 text-[11px] font-normal tracking-normal normal-case tabular-nums',
                   done === counted.length ? 'text-emerald-600 dark:text-emerald-400' : 'text-muted-foreground',
                 )}
-                title={`${done} of ${counted.length} options completed (100%)`}
+                title={`${done} of ${counted.length} filters complete`}
               >
                 <CircleCheck className="size-3" />
                 {done}/{counted.length}
@@ -544,7 +543,7 @@ function GroupSection({
                   order === 'name' ? 'text-foreground' : 'text-muted-foreground',
                 )}
                 title={
-                  order === 'name' ? 'Sorted A–Z – click for the default order' : 'Default order – click to sort A–Z'
+                  order === 'name' ? 'Sorted A–Z. Click for the default order' : 'Default order. Click to sort A–Z'
                 }
                 aria-label={order === 'name' ? 'Use default order' : 'Sort A–Z'}
               >
@@ -566,7 +565,7 @@ function GroupSection({
           on its own line, so every group's bar has the same length */}
         <div
           className="mt-1 flex items-center gap-2 pl-5"
-          title={`${tally.obtained} of ${tally.total} items in ${group.label.toLowerCase()} obtained (with the other filters and the search)`}
+          title={`${tally.obtained} of ${tally.total} items in ${group.label.toLowerCase()} obtained, with the other filters and the search`}
         >
           <TallyBar tally={tally} className="h-1 flex-1" />
           <TallyText tally={tally} className="w-28 shrink-0 text-right text-[11px]" />
@@ -644,7 +643,7 @@ function AlmostDoneSection({ groups, facets, totals }: { groups: AnyGroup[]; fac
         <button
           onClick={() => setOpen(!open)}
           className="flex min-w-0 flex-1 items-center gap-1.5 px-1.5 py-1 text-xs font-semibold tracking-wide text-foreground/80 uppercase hover:text-foreground"
-          title="The options closest to completion (whole playthrough, at least 5 items) – the same filters as in their groups"
+          title="The filters you're closest to completing (at least 5 items), the same as in their groups"
         >
           <ChevronRight className={cn('size-3.5 shrink-0 transition-transform', open && 'rotate-90')} />
           <span className="truncate">{ALMOST_DONE_LABEL}</span>
@@ -653,7 +652,7 @@ function AlmostDoneSection({ groups, facets, totals }: { groups: AnyGroup[]; fac
           <button
             onClick={() => clearSkips(scope.prefix)}
             className="flex shrink-0 items-center gap-0.5 rounded-md px-1 text-[11px] leading-5 text-muted-foreground hover:bg-foreground/[0.06] hover:text-foreground"
-            title={`Bring back the ${skippedCount === 1 ? 'option' : `${skippedCount} options`} left out of “Almost done”`}
+            title={`Bring back the ${skippedCount === 1 ? 'filter' : `${skippedCount} filters`} hidden from Almost done`}
           >
             <RotateCcw className="size-3" />
             {skippedCount}
@@ -667,7 +666,7 @@ function AlmostDoneSection({ groups, facets, totals }: { groups: AnyGroup[]; fac
                 key={n}
                 onClick={() => setLayout({ almostDoneCount: n })}
                 aria-pressed={count === n}
-                title={`Show the ${n} options closest to completion`}
+                title={`Show the ${n} filters closest to completion`}
                 className={cn(
                   'min-w-6 rounded-[5px] px-1 text-[11px] leading-5 tabular-nums',
                   count === n
@@ -736,7 +735,7 @@ function MovedSection({
         )}
         title={
           kind === 'hidden'
-            ? 'Options you hid – they still work as filters; the eye shows them in their group again'
+            ? 'Filters you hid. They still work; the eye puts them back in their group'
             : 'Options at 100% (in the current context)'
         }
       >
@@ -814,7 +813,7 @@ function CraftingOptions() {
     <div className="mb-1 flex flex-col gap-1 px-2 pb-1 text-xs text-muted-foreground">
       <label
         className="flex cursor-pointer items-center gap-2"
-        title="On: a recipe only counts as craftable if you have its crafting stations (obtained, or in a chest). Off: stations are ignored."
+        title="Count a recipe as craftable only if you have its crafting station, obtained or in a chest"
       >
         <Checkbox checked={stationsRequired} onCheckedChange={(v) => setStationsRequired(v === true)} />
         Crafting stations required
@@ -894,7 +893,7 @@ function EntryRow({
             empty && 'No matching items with the current filters',
           ]
             .filter(Boolean)
-            .join(' – ') || undefined
+            .join('. ') || undefined
         }
       >
         {eye && (
@@ -915,14 +914,14 @@ function EntryRow({
               const key = `${scope.prefix}${group.key}/${entry.id}`
               const { toggleAlmostDoneSkip } = usePrefs.getState()
               toggleAlmostDoneSkip(key)
-              toast(`“${entry.name}” left out of “Almost done”`, {
+              toast(`“${entry.name}” hidden from Almost done`, {
                 description: 'It stays in its group. ↺ next to the heading brings it back.',
                 action: { label: 'Undo', onClick: () => toggleAlmostDoneSkip(key) },
               })
             }}
             className="ml-1 grid size-6 shrink-0 place-items-center rounded text-muted-foreground hover:bg-foreground/10 hover:text-foreground pointer-coarse:size-9"
-            title={`Leave “${entry.name}” out of “Almost done” (it stays in its group)`}
-            aria-label={`Leave ${entry.name} out of Almost done`}
+            title={`Hide “${entry.name}” from Almost done. It stays in its group.`}
+            aria-label={`Hide ${entry.name} from Almost done`}
           >
             <X className="size-3.5" />
           </button>

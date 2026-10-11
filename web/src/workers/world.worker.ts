@@ -75,6 +75,6 @@ self.onmessage = async (e: MessageEvent<{ buffer: ArrayBuffer; fileName: string 
     const message =
       (err as { onlyFriendlyMessage?: string }).onlyFriendlyMessage ||
       (err instanceof Error ? err.message : String(err))
-    post({ type: 'error', message: `The world file could not be read: ${message}` })
+    post({ type: 'error', message: `Couldn't read the world file: ${message}` })
   }
 }

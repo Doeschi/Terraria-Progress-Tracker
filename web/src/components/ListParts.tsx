@@ -27,8 +27,8 @@ function SearchModeSwitch() {
       )}
       title={
         mode === 'fuzzy'
-          ? 'Fuzzy search: finds names even with typos – click for exact search'
-          : 'Exact search: only names that contain the text – click for fuzzy search'
+          ? 'Fuzzy search finds names even with typos. Click for exact search'
+          : 'Exact search matches the text as typed. Click for fuzzy search'
       }
       aria-label={`Search mode: ${mode}`}
     >
@@ -51,8 +51,8 @@ function NpcSearchSwitch() {
       )}
       title={
         on
-          ? 'NPCs: the best-matching NPC is suggested under the field – click to search items only'
-          : 'Items only – click to also suggest the best-matching NPC'
+          ? 'Also suggests the best-matching NPC under the field. Click to search items only'
+          : 'Items only. Click to also suggest the best-matching NPC'
       }
     >
       NPCs
@@ -282,7 +282,7 @@ export function ActiveFilterBar<K extends string>({
       <div className="flex items-center border-b px-3 py-2 text-xs">
         {/* same box as a filter chip, so the bar keeps its height */}
         <span className="rounded-lg border border-dashed py-1 pr-2 pl-2 text-muted-foreground">
-          <span className="inline-block py-0.5">No filters active – choose options on the left or search</span>
+          <span className="inline-block py-0.5">No filters active. Choose some on the left or search.</span>
         </span>
       </div>
     )
@@ -322,8 +322,8 @@ export function ActiveFilterBar<K extends string>({
                       )}
                       title={
                         requireAll.includes(g.key)
-                          ? 'All of these must apply – click: any of them'
-                          : 'Any of these applies – click: all of them must'
+                          ? 'All of these must apply. Click for any of them'
+                          : 'Any of these applies. Click for all of them'
                       }
                     >
                       {requireAll.includes(g.key) ? 'and' : 'or'}

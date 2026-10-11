@@ -1,3 +1,4 @@
+import { worldKills } from '@/lib/bestiary'
 import { useMemo } from 'react'
 import { ExternalLink, Star } from 'lucide-react'
 import { useActivePlaythrough, useActiveWorld, useStore } from '@/store'
@@ -40,7 +41,8 @@ export function NpcCard({ entry, Title }: { entry: BestiaryEntry; Title: TitleCo
     entry.times.map((t) => nameOf(data.times, t).toLowerCase()).join(', '),
     entry.events.map((e) => nameOf(data.events, e)).join(', '),
   ].filter(Boolean)
-  const worldKills = world?.bestiary?.kills[entry.id]
+  const killed = world?.bestiary ? worldKills(world.bestiary, entry) : 0
+  const worldKillCount = killed > 0 ? killed : undefined
   // its banner in the loaded world (BE9)
   const banner = bannerState(world, bannerOfEntry(data, entry.id))
   const sources = index.sourcesOfEntry.get(entry.id) ?? []
@@ -94,12 +96,12 @@ export function NpcCard({ entry, Title }: { entry: BestiaryEntry; Title: TitleCo
 
       <div className="flex flex-col gap-5 p-4">
         <IntroSection page={entry.page} name={entry.name} url={entry.url} />
-        {(where.length > 0 || worldKills !== undefined || banner) && (
+        {(where.length > 0 || worldKillCount !== undefined || banner) && (
           <Section title="Where and when">
             {where.length > 0 && <p className="text-sm">{where.join(' · ')}</p>}
-            {worldKills !== undefined && world && (
+            {worldKillCount !== undefined && world && (
               <p className="text-sm text-muted-foreground">
-                {worldKills.toLocaleString('en')} {worldKills === 1 ? 'kill' : 'kills'} in <em>{world.name}</em>
+                {worldKillCount.toLocaleString('en')} {worldKillCount === 1 ? 'kill' : 'kills'} in <em>{world.name}</em>
               </p>
             )}
             {banner && (

@@ -23,7 +23,7 @@ export async function confirmDiscard(): Promise<boolean> {
   if (!useStore.getState().dirty) return true
   return confirm({
     title: 'Discard unsaved changes?',
-    description: 'The current file has changes that are not saved yet.',
+    description: "Your latest changes aren't saved and will be lost.",
     confirmLabel: 'Discard',
     destructive: true,
   })
@@ -85,7 +85,7 @@ export async function openDriveFile(file: DriveFile): Promise<boolean> {
     })
     return true
   } catch (err) {
-    driveFailed('The file could not be opened', err)
+    driveFailed("Couldn't open the file", err)
     return false
   }
 }
@@ -96,7 +96,7 @@ export async function deleteDriveFile(file: DriveFile): Promise<boolean> {
   const open = useStore.getState().drive?.id === file.id
   const ok = await confirm({
     title: `Delete ${file.name}?`,
-    description: `It is moved to the trash of your Google Drive and can be restored there for 30 days.${open ? ' It is the file you have open: your progress stays open here as an unsaved file.' : ''}`,
+    description: `It goes to the trash in your Google Drive, where you can restore it for 30 days.${open ? " It's the file you have open: your progress stays open here as an unsaved file." : ''}`,
     confirmLabel: 'Move to trash',
     destructive: true,
   })
@@ -104,10 +104,10 @@ export async function deleteDriveFile(file: DriveFile): Promise<boolean> {
   try {
     await trashDriveFile(file.id)
     if (useStore.getState().drive?.id === file.id) useStore.getState().driveFileDeleted()
-    toast.success(`${file.name} is in the trash of your Google Drive`)
+    toast.success(`${file.name} moved to the trash in your Google Drive`)
     return true
   } catch (err) {
-    driveFailed('The file could not be deleted', err)
+    driveFailed("Couldn't delete the file", err)
     return false
   }
 }
@@ -134,7 +134,7 @@ export async function saveToDrive(name: string): Promise<boolean> {
   try {
     const file = await createDriveFile(driveFileName(name), serializeSaveFile(doc))
     useStore.getState().savedToDrive(doc, file)
-    progress.done(`Saved to Google Drive as ${file.name} – Save (Ctrl+S) writes there from now on`)
+    progress.done(`Saved to Google Drive as ${file.name}. Ctrl+S saves there from now on`)
     return true
   } catch (err) {
     progress.failed()
@@ -196,7 +196,7 @@ async function saveDriveChecked(
     progress.pause()
     const again = await confirm({
       title: 'The file is no longer in your Google Drive',
-      description: 'It was deleted or moved to the trash. Save your progress to the Drive as a new file?',
+      description: 'It was deleted or moved to the trash. Save your progress as a new file?',
       confirmLabel: 'Save as a new file',
     })
     if (!again) return
@@ -211,7 +211,7 @@ async function saveDriveChecked(
     const answer = await choose(
       {
         title: 'Changed on another device',
-        description: `${remote.name} was saved to your Google Drive ${formatRelativeDay(remote.modifiedTime)} – after you opened it here. Saving now would replace that version.`,
+        description: `${remote.name} was saved to your Google Drive ${formatRelativeDay(remote.modifiedTime)}, after you opened it here. Saving now replaces that version.`,
       },
       [
         { id: 'load', label: 'Load that version', destructive: true },
@@ -282,7 +282,7 @@ export async function checkDriveVersion() {
     toast.success('Loaded the newer version from Google Drive')
   } catch (err) {
     if (err instanceof DriveError && err.kind === 'gone')
-      toast.warning('The file is no longer in your Google Drive – saving will ask to create it again.')
-    else toast.info('Google Drive could not be checked for a newer version – it is checked again when you save.')
+      toast.warning('This file is no longer in your Google Drive. Saving creates it again.')
+    else toast.info("Couldn't check Google Drive for a newer version. It's checked again when you save.")
   }
 }

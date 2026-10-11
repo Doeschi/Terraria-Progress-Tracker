@@ -71,7 +71,7 @@ export function AreaSelector({
           <span>
             Only player chests{' '}
             <span className="text-muted-foreground">
-              – named, or placed near other chests; excludes the loot chests of world generation
+              – named or placed near other chests, not the loot chests from world generation
             </span>
           </span>
         </Label>
@@ -91,7 +91,7 @@ export function AreaSelector({
               </>
             ) : (
               <span className="text-muted-foreground">
-                Displays (item frames, mannequins, …) could not be read from this world
+                Couldn't read the displays (item frames, mannequins, …) of this world
               </span>
             )}
           </span>

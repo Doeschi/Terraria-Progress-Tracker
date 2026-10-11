@@ -79,7 +79,7 @@ export function NpcSuggestions({ search, open }: { search: string; open: boolean
           onClick={showAll}
           className="w-full border-t px-2.5 py-1.5 text-left text-xs text-muted-foreground hover:bg-muted hover:text-foreground"
         >
-          {matches.length - MAX} more {matches.length - MAX === 1 ? 'NPC' : 'NPCs'} – show in the bestiary
+          {matches.length - MAX} more {matches.length - MAX === 1 ? 'NPC' : 'NPCs'} in the bestiary
         </button>
       )}
     </div>

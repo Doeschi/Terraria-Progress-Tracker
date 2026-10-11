@@ -62,7 +62,7 @@ export function BestiaryList({ view }: { view: BestiaryView }) {
   if (!bestiaryExists(data, gameVersion))
     return (
       <div className="grid h-full place-items-center p-6 text-center text-sm text-muted-foreground">
-        The bestiary was added in 1.4.0 – it does not exist in the game version of this playthrough.
+        The bestiary came with 1.4.0. This playthrough's game version doesn't have one.
       </div>
     )
   return <BestiaryScreenBody view={view} />
@@ -149,7 +149,7 @@ function Toolbar({ view, phone = false }: { view: BestiaryView; phone?: boolean 
       </div>
       {!phone && (!world || !world.bestiary) && (
         <p className="text-xs text-muted-foreground">
-          {!world ? 'Attach the world to sync the bestiary with it.' : 'The bestiary could not be read from the world.'}
+          {!world ? 'Attach the world to sync the bestiary with it.' : "Couldn't read the bestiary from the world."}
         </p>
       )}
     </div>
@@ -179,7 +179,7 @@ function BulkActions({ view, compact = false }: { view: BestiaryView; compact?: 
             variant="outline"
             size="icon-sm"
             disabled={!n}
-            title="Bulk actions: mark all entries in the list"
+            title="Mark all entries in the list as unlocked or not"
             aria-label="Bulk actions"
           >
             <ListChecks />
@@ -197,10 +197,10 @@ function BulkActions({ view, compact = false }: { view: BestiaryView; compact?: 
         </DropdownMenuLabel>
         <DropdownMenuSeparator />
         <DropdownMenuItem onSelect={() => run('Mark all visible entries as unlocked?', true)}>
-          Mark all unlocked
+          Mark all as unlocked
         </DropdownMenuItem>
         <DropdownMenuItem onSelect={() => run('Mark all visible entries as not unlocked?', false)}>
-          Mark all not unlocked
+          Mark all as not unlocked
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
@@ -348,8 +348,11 @@ function BestiaryTable({ view, phone = false }: { view: BestiaryView; phone?: bo
           return typeName.get(e.type) ?? e.type
         case 'stars':
           return e.stars ?? 0
-        case 'drops':
-          return drops.get(e.id)?.total ?? 0
+        case 'drops': {
+          // by the drops still missing, then by how many it drops; entries that drop nothing last
+          const d = drops.get(e.id)
+          return d ? (d.total - d.obtained) * 10_000 + d.total : -1
+        }
         case 'added':
           return versionRank.get(e.version) ?? -1
         case 'world':
@@ -457,7 +460,7 @@ function BestiaryTable({ view, phone = false }: { view: BestiaryView; phone?: bo
       <div
         onPointerDown={(e) => startResize(id, e)}
         onDoubleClick={() => resetWidth(id)}
-        title="Drag to resize · double-click: default width"
+        title="Drag to resize. Double-click to reset."
         className={cn(
           'absolute top-0 right-0 h-full w-1.5 cursor-col-resize touch-none select-none hover:bg-primary/40',
           live?.id === id && 'bg-primary/60',
@@ -466,7 +469,8 @@ function BestiaryTable({ view, phone = false }: { view: BestiaryView; phone?: bo
     </th>
   )
 
-  if (!rows.length) return <p className="p-6 text-center text-sm text-muted-foreground">No bestiary entries match.</p>
+  if (!rows.length)
+    return <p className="p-6 text-center text-sm text-muted-foreground">No entries match your search and filters.</p>
   if (phone)
     return (
       <BestiaryCards
@@ -629,7 +633,7 @@ function Row({
             target="_blank"
             rel="noreferrer noopener"
             className="rounded p-0.5 text-muted-foreground hover:text-foreground"
-            title="Open in the wiki"
+            title="Open on the wiki"
           >
             <ExternalLink className="size-3.5" />
           </a>

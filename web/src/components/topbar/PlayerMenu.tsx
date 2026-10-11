@@ -138,7 +138,7 @@ export function PlayerMenu() {
                   if (
                     await confirm({
                       title: 'Detach player?',
-                      description: 'The player reference is removed from this playthrough. Checked items stay checked.',
+                      description: 'Removes the player from this playthrough. Checked items stay checked.',
                       confirmLabel: 'Detach',
                       destructive: true,
                     })

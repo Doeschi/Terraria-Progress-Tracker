@@ -90,10 +90,10 @@ export function parseSaveFile(text: string): SaveFile {
   try {
     data = JSON.parse(text)
   } catch {
-    throw new SaveFileError('The file is not valid JSON.')
+    throw new SaveFileError("This file isn't valid JSON.")
   }
   if (data?.format !== SAVE_FORMAT) {
-    throw new SaveFileError('This is not a Terraria Progress Tracker file.')
+    throw new SaveFileError("This isn't a Terraria Progress Tracker file.")
   }
   const version = Number(data.version)
   if (version > SAVE_VERSION) {
@@ -103,7 +103,7 @@ export function parseSaveFile(text: string): SaveFile {
   const result = SaveFileSchema.safeParse(data)
   if (!result.success) {
     const issue = result.error.issues[0]
-    throw new SaveFileError(`The file is damaged: ${issue.path.join('.')} – ${issue.message}`)
+    throw new SaveFileError(`The file is damaged: ${issue.path.join('.')} (${issue.message})`)
   }
   return result.data
 }

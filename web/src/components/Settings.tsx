@@ -31,9 +31,7 @@ export function SettingsDialog({ open, onOpenChange }: { open: boolean; onOpenCh
       <DialogContent className="max-h-[90vh] overflow-y-auto sm:max-w-2xl">
         <DialogHeader>
           <DialogTitle>Settings</DialogTitle>
-          <DialogDescription>
-            What is shown where. Remembered in this browser, not in the progress file.
-          </DialogDescription>
+          <DialogDescription>What's shown where. Saved in this browser, not in the progress file.</DialogDescription>
         </DialogHeader>
 
         <div className="flex flex-col gap-4">
@@ -49,7 +47,7 @@ export function SettingsDialog({ open, onOpenChange }: { open: boolean; onOpenCh
                 ]}
               />
             </Row>
-            <Row label="Density" hint="Compact: lower table rows, smaller icons, tighter filter options">
+            <Row label="Density" hint="Compact: shorter rows, smaller icons, tighter filters">
               <Choice<Layout['density']>
                 value={layout.density}
                 onChange={(density) => setLayout({ density })}
@@ -88,7 +86,7 @@ export function SettingsDialog({ open, onOpenChange }: { open: boolean; onOpenCh
             <Check
               checked={layout.celebrate}
               onChange={(celebrate) => setLayout({ celebrate })}
-              label="Celebrate completed filters (a message with confetti when a filter reaches 100%)"
+              label="Celebrate completed filters with a message and confetti"
             />
             <Check
               checked={layout.easterEggs}

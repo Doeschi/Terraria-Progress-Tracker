@@ -309,7 +309,7 @@ export function WorldMap({
               <ToggleGroupItem value="draw" title="Drag on the map to draw a new area">
                 <SquareDashedMousePointer /> Draw area
               </ToggleGroupItem>
-              <ToggleGroupItem value="pan" title="Drag to move the map (the middle mouse button always pans)">
+              <ToggleGroupItem value="pan" title="Drag to move the map. The middle mouse button always pans.">
                 <Hand /> Pan
               </ToggleGroupItem>
             </ToggleGroup>
@@ -343,13 +343,10 @@ export function WorldMap({
               onValueChange={(v) => v && setShowAll(v === 'all')}
               aria-label="Chests shown on the map"
             >
-              <ToggleGroupItem
-                value="player"
-                title="Show only player chests: chests with a name, or placed near other chests"
-              >
+              <ToggleGroupItem value="player" title="Only player chests: named, or placed near other chests">
                 Player chests <span className="text-muted-foreground">{playerChestCount}</span>
               </ToggleGroupItem>
-              <ToggleGroupItem value="all" title="Also show the loot chests placed by world generation">
+              <ToggleGroupItem value="all" title="Also the loot chests from world generation">
                 All chests <span className="text-muted-foreground">{chestCount}</span>
               </ToggleGroupItem>
             </ToggleGroup>
@@ -538,9 +535,9 @@ function DetectionSettings({ total, player }: { total: number; player: number })
       </PopoverTrigger>
       <PopoverContent className="w-80 text-sm" align="start">
         <p className="mb-3 text-xs text-muted-foreground">
-          The world file does not record who placed a chest. A chest counts as a player chest if it has a name, or if at
-          least <b>{detection.minGroup}</b> chests are within <b>{detection.distance}</b> tiles of each other. Used by
-          the map, sync and chest search.
+          The world file doesn't record who placed a chest. A chest counts as a player chest if it has a name, or if at
+          least <b>{detection.minGroup}</b> chests are within <b>{detection.distance}</b> tiles of each other. The map,
+          the sync and the chest search use this.
         </p>
         <div className="grid grid-cols-2 gap-3">
           <div className="flex flex-col gap-1">

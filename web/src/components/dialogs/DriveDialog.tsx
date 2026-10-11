@@ -166,7 +166,7 @@ function DriveFiles({ onDone }: { onDone: () => void }) {
                 className="mr-1 shrink-0 text-muted-foreground hover:text-destructive"
                 disabled={opening !== null}
                 onClick={() => void deleteFile(f)}
-                title={`Delete ${f.name} (to the trash of your Google Drive)`}
+                title={`Move ${f.name} to the trash in your Google Drive`}
                 aria-label={`Delete ${f.name}`}
               >
                 <Trash2 />

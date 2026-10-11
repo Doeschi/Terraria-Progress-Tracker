@@ -205,7 +205,7 @@ function SyncView({ initial, onDone }: { initial: SyncSection; onDone: () => voi
       parts.push(`items: ${willCheck.length} checked, ${willUncheck.length} unchecked`)
     if (willUnlock.length || willLock.length)
       parts.push(`bestiary: ${willUnlock.length} checked, ${willLock.length} unchecked`)
-    toast.success(`Synced – ${parts.join('; ')}`)
+    toast.success(`Synced: ${parts.join('; ')}`)
     onDone()
   }
 
@@ -306,8 +306,8 @@ function SyncView({ initial, onDone }: { initial: SyncSection; onDone: () => voi
                   Count banners earned by kills
                 </label>
                 <p className="text-xs text-muted-foreground">
-                  The world counts the kills for every enemy banner. Since 1.4.5 an earned banner is not dropped: it
-                  waits in the Banners Window next to the crafting menu until you take it out.
+                  The world counts kills for every enemy banner. Since 1.4.5 an earned banner isn't dropped. It waits in
+                  the Banners Window next to the crafting menu until you take it out.
                 </p>
               </fieldset>
             )}
@@ -360,10 +360,10 @@ function SyncView({ initial, onDone }: { initial: SyncSection; onDone: () => voi
               <ListHeader
                 text={
                   !player
-                    ? 'Items found in chests that are not checked yet.'
+                    ? 'Found in chests, not checked yet.'
                     : !world
-                      ? 'Items the player has (or has used) that are not checked yet.'
-                      : 'Items found in chests or on the player (or used by it) that are not checked yet.'
+                      ? 'On the player (or used by it), not checked yet.'
+                      : 'Found in chests or on the player (or used by it), not checked yet.'
                 }
                 note={banners.size > 0 ? 'Banners earned by kills are included.' : undefined}
                 ids={toCheck.map((r) => r.item.key)}
@@ -386,7 +386,7 @@ function SyncView({ initial, onDone }: { initial: SyncSection; onDone: () => voi
               <>
                 <TabsContent value="notFound" className="flex min-h-0 flex-col gap-2">
                   <ListHeader
-                    text={`Checked items that are in none of the scanned containers${player ? ', nor on the player (storages, used permanent upgrades)' : ''}${banners.size > 0 ? ', and no banners earned by kills' : ''}. Tick the ones you no longer have to uncheck them.`}
+                    text={`Checked, but not found in the scanned containers${player ? ' or on the player' : ''}${banners.size > 0 ? ', and no banner earned by kills' : ''}. Tick what you no longer have to uncheck it.`}
                     ids={items.notFound.map((i) => i.key)}
                     allOn={items.notFound.every((i) => uncheck.has(i.key))}
                     onAll={(ids, on) => setUncheck((s) => withIds(s, ids, on))}
@@ -413,7 +413,7 @@ function SyncView({ initial, onDone }: { initial: SyncSection; onDone: () => voi
         </div>
       ) : !world ? null : !bestiary ? (
         <p className="grid h-[45vh] place-items-center rounded-lg border text-sm text-muted-foreground">
-          The bestiary could not be read from this world.
+          Couldn't read the bestiary from this world.
         </p>
       ) : (
         <Tabs
@@ -513,9 +513,8 @@ function UnknownItems({ unknown }: { unknown: UnknownItem[] }) {
   return (
     <>
       <p className="text-xs text-muted-foreground">
-        Items that are not in the item list, so they cannot be checked or unchecked – items missing from the wiki's item
-        list (named from its recipes where possible), or items from a newer game version than the data. The world file
-        only stores the item id.
+        These items aren't in the item data, so they can't be tracked: the wiki's item list lacks them, or they're from
+        a newer game version. The world file stores only the item id.
       </p>
       <ul className="min-h-40 shrink grow basis-[40vh] overflow-y-auto rounded-lg border">
         {[...unknown]
@@ -542,12 +541,12 @@ function UnknownItems({ unknown }: { unknown: UnknownItem[] }) {
                 </div>
                 {known ? (
                   <p className="pl-10 text-xs text-muted-foreground">
-                    Missing from the wiki's item list (the name comes from its recipes), so it has no progress here.
+                    Missing from the wiki's item list (the name comes from its recipes), so it can't be tracked here.
                   </p>
                 ) : (
                   u.id > maxId && (
                     <p className="pl-10 text-xs text-muted-foreground">
-                      Higher than every known item id ({maxId}) – probably added in a newer game version.
+                      Higher than every known item id ({maxId}). Probably from a newer game version.
                     </p>
                   )
                 )}

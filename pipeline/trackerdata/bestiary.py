@@ -137,6 +137,27 @@ def bestiary_file(wikitext, page_html, npc_rows, exclusive, mapping, version_nam
         entries.append({k: v for k, v in entry.items() if v is not None})
 
     by_id = {e["id"]: e for e in entries}
+    # the other internal names an entry's NPC goes by - its variants (Grebe2, Salamander3): what a
+    # world file may record kills and sightings under. From the "NPC IDs" page: names on the entry's
+    # wiki page that are no entry of their own; the page's only entry gets them, else the entry whose
+    # id is the longest prefix of the name. Not for bosses (their parts are drop sources of their own)
+    by_page = defaultdict(list)
+    for e in entries:
+        if e["type"] != "boss":
+            by_page[e["page"]].append(e)
+    unplaced = Counter()
+    for name, npc in npc_ids.items():
+        if name in by_id or not npc.get("page") or npc["page"] not in by_page:
+            continue
+        owners = by_page[npc["page"]]
+        if len(owners) > 1:
+            owners = sorted((o for o in owners if name.startswith(o["id"])), key=lambda o: -len(o["id"]))[:1]
+        if not owners:
+            unplaced[npc["page"]] += 1
+            continue
+        owners[0].setdefault("keys", []).append(name)
+    log(f"  variant names for {sum(1 for e in entries if e.get('keys'))} bestiary entries (NPC IDs page)"
+        + (f"; not placed on pages with several entries: {dict(unplaced.most_common(8))}" if unplaced else ""))
     # what else unlocks an entry in the game ([bestiary.unlocked_by], [bestiary.unlock_groups]):
     # groups of entry ids - any group whose entries are all unlocked unlocks the entry
     unlocked_by = defaultdict(list)

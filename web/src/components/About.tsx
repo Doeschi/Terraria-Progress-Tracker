@@ -70,9 +70,8 @@ export function AboutDialog({
         <DialogHeader>
           <DialogTitle>About Terraria Progress Tracker</DialogTitle>
           <DialogDescription>
-            Your progress on items and bestiary entries, per playthrough. Everything runs in your browser; progress and
-            game files are never uploaded – except the progress file to your own Google Drive, if you choose to save it
-            there.
+            Your progress on items and bestiary entries, per playthrough. Everything runs in your browser. Your game
+            files never leave it, and your progress goes to your own Google Drive only if you choose so.
           </DialogDescription>
         </DialogHeader>
         <div className="flex flex-col gap-4">
@@ -89,8 +88,7 @@ export function AboutDialog({
             <A href={`${REPO}#how-the-data-is-built`}>README</A>.
           </Part>
           <Part title="Privacy">
-            Everything runs in your browser; the progress file goes to your own Google Drive only when you choose so.
-            What the app stores where and what it sends is written down in the{' '}
+            What the app stores and what it sends is in the{' '}
             <A href={`${import.meta.env.BASE_URL}privacy.html`}>privacy policy</A>.
           </Part>
           <Part title="Trademark">
@@ -107,8 +105,7 @@ export function AboutDialog({
             </ul>
           </Part>
           <Part title="AI notice">
-            This web app was built with the help of AI (Claude by Anthropic). Mistakes are possible – if something looks
-            wrong, check the Terraria Wiki.
+            Built with the help of AI (Claude by Anthropic). If something looks wrong, check the Terraria Wiki.
           </Part>
         </div>
       </DialogContent>

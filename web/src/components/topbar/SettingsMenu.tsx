@@ -64,7 +64,7 @@ function ThemeButton() {
   )
   const current = THEMES[i]
   const next = THEMES[(i + 1) % THEMES.length]
-  const label = `Theme: ${current.label} – click for ${next.label}`
+  const label = `Theme: ${current.label}. Click for ${next.label}`
   return (
     <Button variant="ghost" size="icon-sm" onClick={() => setTheme(next.id)} title={label} aria-label={label}>
       <current.Icon />

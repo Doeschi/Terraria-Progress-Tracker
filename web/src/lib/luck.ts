@@ -47,7 +47,10 @@ export function sourceKills(data: GameData, bestiary: WorldBestiary): KillCounts
   const byName = new Map<string, Set<string>>()
   const add = (key: string, id: string) => byName.set(key, (byName.get(key) ?? new Set()).add(id))
   const npcIdOf = new Map<string, number | undefined>()
+  // the names the world records an entry's kills under: its id and its variants (Grebe2)
+  const namesOf = new Map<string, string[]>()
   for (const e of data.bestiary.entries) {
+    namesOf.set(e.id, [e.id, ...(e.keys ?? [])])
     if (e.npcId !== undefined) byNpcId.set(e.npcId, [...(byNpcId.get(e.npcId) ?? []), e.id])
     add(e.name.toLowerCase(), e.id)
     if (e.page) add(e.page.toLowerCase(), e.id)
@@ -63,7 +66,10 @@ export function sourceKills(data: GameData, bestiary: WorldBestiary): KillCounts
       ...(byName.get(s.name.toLowerCase()) ?? []),
     ])
     if (!ids.size) continue
-    const list = [...ids].map((id) => ({ npcId: npcIdOf.get(id), kills: bestiary.kills[id] ?? 0 }))
+    const list = [...ids].map((id) => ({
+      npcId: npcIdOf.get(id),
+      kills: (namesOf.get(id) ?? [id]).reduce((n, k) => n + (bestiary.kills[k] ?? 0), 0),
+    }))
     entries.set(s.id, list)
     total.set(
       s.id,

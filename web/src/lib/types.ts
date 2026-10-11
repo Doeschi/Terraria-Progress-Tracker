@@ -375,6 +375,9 @@ export interface BestiaryEntry {
   type: BestiaryTypeId
   stars?: number
   npcId?: number
+  /** the other internal names its NPC goes by (variants: Grebe2, Salamander3): a world file records
+   * kills and sightings under any of them (BE5) */
+  keys?: string[]
   /** what else unlocks the entry in the game (BE5): groups of entry ids - any group whose
    * entries are all unlocked in the world unlocks it (the Tortured Soul by the Tax Collector) */
   unlockedBy?: string[][]

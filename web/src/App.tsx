@@ -173,7 +173,7 @@ function Tracker() {
           <div className="flex max-w-sm flex-col items-center gap-3 text-center">
             <h2 className="text-lg font-semibold">No playthrough yet</h2>
             <p className="text-sm text-muted-foreground">
-              A progress file can hold several playthroughs, each with its own platform and progress.
+              Create one to start tracking. A file can hold several, each with its own platform and progress.
             </p>
             <Button onClick={() => openDialog({ type: 'newPlaythrough' })}>
               <Plus /> Create playthrough

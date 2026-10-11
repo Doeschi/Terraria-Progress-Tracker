@@ -250,7 +250,7 @@ function PlaythroughForm({ edit, onDone }: { edit: boolean; onDone: () => void }
       setDifficulty(GAME_MODE_DIFFICULTY[data.gameMode] ?? difficulty)
       if (!name.trim()) setName(data.name)
       if (!data.displaysAvailable)
-        toast.warning('Item frames, mannequins and other displays could not be read (newer world format).')
+        toast.warning("Couldn't read item frames, mannequins and other displays (newer world format).")
     } catch (err) {
       toast.error(err instanceof Error ? err.message : String(err))
     } finally {
@@ -328,7 +328,7 @@ function PlaythroughForm({ edit, onDone }: { edit: boolean; onDone: () => void }
               size="icon-sm"
               onClick={() => setRemovePlayer(true)}
               aria-label="Detach player"
-              title="Detach the player (checked items stay checked)"
+              title="Detach the player. Checked items stay checked."
             >
               <X />
             </Button>
@@ -361,7 +361,7 @@ function PlaythroughForm({ edit, onDone }: { edit: boolean; onDone: () => void }
           />
         )}
         <p className="text-xs text-muted-foreground">
-          Inventory, banks and used upgrades for the sync; read locally in your browser.
+          Inventory, banks and used upgrades for the sync. Read in your browser only.
         </p>
       </div>
       <div className="flex flex-col gap-2">
@@ -398,7 +398,7 @@ function PlaythroughForm({ edit, onDone }: { edit: boolean; onDone: () => void }
               size="icon-sm"
               onClick={() => setRemoveWorld(true)}
               aria-label="Detach world"
-              title="Detach the world (areas are kept)"
+              title="Detach the world. Your areas stay."
             >
               <X />
             </Button>
@@ -435,7 +435,7 @@ function PlaythroughForm({ edit, onDone }: { edit: boolean; onDone: () => void }
             onChoose={(classic) => void chooseWorld(classic)}
           />
         )}
-        <p className="text-xs text-muted-foreground">The world is processed locally in your browser.</p>
+        <p className="text-xs text-muted-foreground">The world file is read in your browser only.</p>
       </div>
       {/* the two ways to choose a file (W10), once for player and world */}
       {canSaveInPlace && <p className="-mt-2 text-xs text-muted-foreground">{ATTACH_DIFFERENCE}</p>}
@@ -485,9 +485,9 @@ function PlaythroughForm({ edit, onDone }: { edit: boolean; onDone: () => void }
       </div>
       <p className="-mt-2 text-xs text-muted-foreground">
         {difficulty === 'classic'
-          ? 'Expert- and Master-only items (e.g. treasure bag accessories, relics) are not counted.'
+          ? "Expert- and Master-only items (treasure bag accessories, relics) aren't counted."
           : difficulty === 'expert'
-            ? 'Master-only items (e.g. relics, Master pets) are not counted.'
+            ? "Master-only items (relics, Master pets) aren't counted."
             : 'All difficulty-specific items are counted.'}{' '}
         {pt
           ? 'Checked items stay checked when they are hidden by these settings.'

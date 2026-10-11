@@ -81,7 +81,7 @@ function loadSignIn(): Promise<void> {
     el.onload = () => resolve()
     el.onerror = () => {
       script = null
-      reject(new DriveError('other', "Google's sign-in could not be loaded – are you online?"))
+      reject(new DriveError('other', "Couldn't load Google's sign-in. Are you online?"))
     }
     document.head.append(el)
   })
@@ -137,7 +137,7 @@ async function accessToken(): Promise<string> {
             : new DriveError(
                 'other',
                 e.type === 'popup_failed_to_open'
-                  ? "The browser blocked Google's sign-in window – allow pop-ups for this page and try again."
+                  ? "The browser blocked Google's sign-in window. Allow pop-ups for this page and try again."
                   : e.message || 'Google sign-in failed',
               ),
         ),
@@ -191,7 +191,7 @@ async function call(url: string, init: RequestInit = {}, retry = true): Promise<
     res = await fetch(url, { ...init, headers: { ...init.headers, Authorization: `Bearer ${await accessToken()}` } })
   } catch (err) {
     if (err instanceof DriveError) throw err
-    throw new DriveError('other', 'Google Drive could not be reached – are you online?')
+    throw new DriveError('other', "Couldn't reach Google Drive. Are you online?")
   }
   if (res.status === 401 && retry) {
     // the access ran out early: once more with a new one

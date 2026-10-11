@@ -39,10 +39,7 @@ export function AiNotice() {
   return (
     <p className="flex items-center gap-2 text-xs text-muted-foreground">
       <Sparkles className="size-4 shrink-0" />
-      <span>
-        This web app was built with the help of AI (Claude by Anthropic). Mistakes are possible – if something looks
-        wrong, check the Terraria Wiki.
-      </span>
+      <span>Built with the help of AI (Claude by Anthropic). If something looks wrong, check the Terraria Wiki.</span>
     </p>
   )
 }

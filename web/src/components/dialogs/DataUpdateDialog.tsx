@@ -74,8 +74,8 @@ export function DataUpdateDialog() {
               <section className="flex flex-col gap-1.5">
                 <h3 className="text-sm font-medium">No longer in the data ({report.missing.length})</h3>
                 <p className="text-xs text-muted-foreground">
-                  Checked or ignored in this file, but removed from the wiki data. They stay in the file in case they
-                  come back, but count nowhere.
+                  Checked or ignored in this file, but no longer in the wiki data. They stay in the file in case they
+                  come back, but don't count anywhere.
                 </p>
                 <ul className="flex flex-col gap-0.5 text-sm">
                   {report.missing.slice(0, SHOWN).map((m) => (

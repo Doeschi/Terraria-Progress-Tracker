@@ -101,13 +101,27 @@ export function bestiaryEntryGroups(e: BestiaryEntry): Record<BestiaryGroupKey, 
 /** The Torch God: unlocked by the character's Torch God's Favor (BE5), not recorded in the world */
 const TORCH_GOD = 'TorchGod'
 
-/** Unlocked by the entry's own kills, sightings or chats. */
-const ownUnlock = (b: WorldBestiary, id: string) =>
-  (b.kills[id] ?? 0) > 0 || b.talked.includes(id) || b.seen.includes(id)
+/** The names a world file records an entry under: its id and its variants (`keys`: Grebe2). */
+const namesOf = (e: BestiaryEntry) => [e.id, ...(e.keys ?? [])]
+
+/** Kills of an entry in the world, over all its names. */
+export function worldKills(b: WorldBestiary, e: BestiaryEntry): number {
+  return namesOf(e).reduce((n, id) => n + (b.kills[id] ?? 0), 0)
+}
+
+/** Unlocked by the entry's own kills, sightings or chats, under any of its names. */
+const ownUnlock = (b: WorldBestiary, e: BestiaryEntry) =>
+  worldKills(b, e) > 0 || namesOf(e).some((id) => b.talked.includes(id) || b.seen.includes(id))
 
 /** The group of other entries that unlocks this one, all of them unlocked (`unlockedBy`, BE5). */
-const unlockedVia = (b: WorldBestiary, e: BestiaryEntry) =>
-  e.unlockedBy?.find((group) => group.every((id) => ownUnlock(b, id)))
+function unlockedVia(b: WorldBestiary, e: BestiaryEntry, byId: Map<string, BestiaryEntry>) {
+  return e.unlockedBy?.find((group) =>
+    group.every((id) => {
+      const other = byId.get(id)
+      return other ? ownUnlock(b, other) : false
+    }),
+  )
+}
 
 /**
  * Everything unlocked in the world: by an entry's own kills, sightings and chats, through other
@@ -115,8 +129,9 @@ const unlockedVia = (b: WorldBestiary, e: BestiaryEntry) =>
  * with the attached player, the Torch God by the Torch God's Favor.
  */
 function worldUnlocked(b: WorldBestiary, entries: BestiaryEntry[], player: LoadedPlayer | null): Set<string> {
+  const byId = new Map(entries.map((e) => [e.id, e]))
   const ids = new Set<string>()
-  for (const e of entries) if (ownUnlock(b, e.id) || unlockedVia(b, e)) ids.add(e.id)
+  for (const e of entries) if (ownUnlock(b, e) || unlockedVia(b, e, byId)) ids.add(e.id)
   if (player?.upgrades.torchGodsFavor) ids.add(TORCH_GOD)
   return ids
 }
@@ -132,12 +147,13 @@ export function worldState(
   byId: Map<string, BestiaryEntry>,
   player: LoadedPlayer | null,
 ): { text: string | null; value: number } {
-  const kills = b.kills[e.id] ?? 0
+  const kills = worldKills(b, e)
   if (kills > 0) return { text: plural(kills, 'kill'), value: kills }
-  if (b.talked.includes(e.id)) return { text: 'talked to', value: 0.5 }
-  if (b.seen.includes(e.id)) return { text: 'seen', value: 0.5 }
+  const names = namesOf(e)
+  if (names.some((id) => b.talked.includes(id))) return { text: 'talked to', value: 0.5 }
+  if (names.some((id) => b.seen.includes(id))) return { text: 'seen', value: 0.5 }
   if (e.id === TORCH_GOD && player?.upgrades.torchGodsFavor) return { text: "Torch God's Favor used", value: 0.5 }
-  const via = unlockedVia(b, e)
+  const via = unlockedVia(b, e, byId)
   if (via) return { text: `via ${via.map((id) => byId.get(id)?.name ?? id).join(' + ')}`, value: 0.5 }
   return { text: null, value: 0 }
 }

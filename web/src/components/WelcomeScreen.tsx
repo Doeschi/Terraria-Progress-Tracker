@@ -69,32 +69,32 @@ export function WelcomeScreen() {
     {
       icon: ListChecks,
       title: 'Every item, counted',
-      text: `All ${itemCount.toLocaleString('en')} items from the Terraria Wiki – per playthrough, with its own platform, difficulty and game version.`,
+      text: `All ${itemCount.toLocaleString('en')} items from the Terraria Wiki. Each playthrough counts only the items of its platform, difficulty and game version.`,
     },
     {
       icon: SlidersHorizontal,
       title: 'Filters with live progress',
-      text: 'Categories, sources, vendors, bosses, events, biomes, rarity and updates – each with its own progress bar.',
+      text: 'Filter by category, source, vendor, boss, event, biome, rarity or update. Every filter shows its own progress.',
     },
     {
       icon: Hammer,
       title: 'Crafting recipes',
-      text: 'How an item is made, what it is used in, and what you can craft right now – from your items or your chests.',
+      text: "How an item is made, what it's used in, and what you can craft right now with what you own.",
     },
     {
       icon: Swords,
       title: 'Drops & bosses',
-      text: 'Who drops what and which chests, crates and trees contain it – with the chances for Classic, Expert and Master, and how often it should have dropped by now.',
+      text: 'Who drops what, and which chests, crates and trees hold it, with the chances in Classic, Expert and Master. See how often it should have dropped by now.',
     },
     {
       icon: BookOpen,
       title: 'Bestiary',
-      text: `All ${data.bestiary.entries.length} entries, checked by hand or straight from your world.`,
+      text: `All ${data.bestiary.entries.length} entries, ticked by hand or straight from your world file.`,
     },
     {
       icon: Globe,
       title: 'Sync with your game',
-      text: 'Check off items from your inventory, chests and bestiary, and find any item in your chests on a map.',
+      text: "Check off what's in your inventory, chests and bestiary, and find any item in your chests on a map.",
     },
   ]
 
@@ -105,8 +105,7 @@ export function WelcomeScreen() {
           <Logo size={64} />
           <h1 className="text-2xl font-semibold">Terraria Progress Tracker</h1>
           <p className="max-w-md text-sm text-balance text-muted-foreground">
-            Your companion for a 100% run: see what's still missing, how to get it – and let your game files do the
-            tracking.
+            See what's still missing for 100% and how to get it. Your game files can tick it off for you.
           </p>
         </div>
 
@@ -149,8 +148,8 @@ export function WelcomeScreen() {
           <p className="flex items-center gap-2 text-xs text-muted-foreground">
             <ShieldCheck className="size-4 shrink-0" />
             <span>
-              Everything runs in your browser. Game files are never uploaded, and your progress file only to your own
-              Google Drive if you choose that; only item icons are loaded from the Terraria Wiki.{' '}
+              Everything runs in your browser. Your game files never leave it, and your progress goes to your own Google
+              Drive only if you choose so. A few icons are loaded from the Terraria Wiki.{' '}
               <a
                 className="underline underline-offset-2 hover:text-foreground"
                 href={`${import.meta.env.BASE_URL}privacy.html`}
