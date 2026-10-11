@@ -1165,6 +1165,8 @@ name = "Dropped by enemies"
 icon = "Gel"
 match = ["tag:drop", "listcat:drop items"]
 from_drops = ["npc"]
+# crafted only - the wiki's `drop` tag is stale (no drop row on any platform)
+exclude = ["page:light disc", "page:rainbow rod"]
 
 [obtain.loot]
 name = "Found in chests & pots"
@@ -1215,6 +1217,8 @@ icon_file = "Angler.png"
 match = ["tag:quest rewards", "listcat:quest rewards"]
 # the wiki's tag is left over: no longer from the Angler since 1.4.0.1, crafted instead
 exclude = ["page:coralstone block"]
+# the wiki tags the fish trophies and the Master Bait `drop` too: the Angler gives them
+replaces = "drop"
 
 # The wiki tags the Dye Trader's rewards for Strange Plants as "quest rewards" too.
 # They are listed in the section `section` of `page` ({{item|...}}), grouped under
@@ -1609,6 +1613,9 @@ icon = "Goodie Bag"
 match = ["tag:during:halloween"]
 environments = ["Halloween"]
 drop_conditions = ["Halloween"]
+# containers that only drop during the event (from any enemy, not in the wiki's Drops table):
+# they and what is found in them are bound to the event
+containers = ["Goodie Bag"]
 
 [events.christmas]
 name = "Christmas"
@@ -1617,6 +1624,7 @@ icon = "Present"
 match = ["tag:during:christmas"]
 environments = ["Christmas"]
 drop_conditions = ["Christmas"]
+containers = ["Present"]
 
 
 # -------------------------------------------------------------------- biomes
@@ -1780,7 +1788,9 @@ moon = { name = "Moon phase", filter = true }
 boss = { name = "After a boss", filter = true }
 weather = { name = "Weather", filter = true }
 progress = { name = "Progress", filter = false }
-seed = { name = "World seed", filter = false }
+# "World seed" is a filter of its own kind: items with a source only in that seed, and "Only in
+# special seeds" for items without a regular way (CO6) - not a condition rows are bound to
+seed = { name = "World seed", filter = true }
 special = { name = "Special", filter = false, column = true }
 
 [conditions.day]
@@ -1941,6 +1951,13 @@ phrases = ['\bwave 15 and up\b']
 name = "Defeated on the same day as another boss"
 group = "special"
 phrases = ['\bsame day as\b']
+
+# the first option of the "World seed" filter: items with no regular way at all ([seed_items],
+# and items whose every drop and shop row is only in a seed) - no condition of a row
+[conditions.seed-only]
+name = "Only in special seeds"
+group = "seed"
+icon = "World Globe"
 
 [conditions.seed-remix]
 name = "Remix seed"
@@ -2326,6 +2343,18 @@ boss_ignore_items = [
 [other_forms]
 names = ["Shellphone (*)", "Chaos Cylinder (*)", "* (Inactive)", "Closed Void Bag", "Uncumbering Stone",
          "Capricorn Hooves", "Gentleman's Magnificent Beard", "Flairoon"]
+
+
+# ---------------------------------------------------------------- seed items
+# Items only obtainable in special world seeds where the wiki says so only in the page text -
+# their drop and shop rows carry no seed, or there are none (CO6). Item name -> the seeds
+# (condition ids); every source of the item then counts as only in these seeds.
+
+[seed_items]
+"Moon Lord Torso" = ["seed-ftw", "seed-zenith"]              # Dungeon Gold Chests / Golden Lock Boxes
+"Moon Lord Legs" = ["seed-drunk", "seed-zenith"]             # any chest
+"Ocram's Razor" = ["seed-ftw", "seed-remix", "seed-zenith"]  # crafted; For the Worthy and Remix together
+"Waffle's Iron" = ["seed-ftw", "seed-remix", "seed-zenith"]  # dropped by Mechdusa (both seeds together)
 
 
 # ------------------------------------------------------------------- pickups

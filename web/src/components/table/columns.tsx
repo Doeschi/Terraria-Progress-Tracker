@@ -284,7 +284,7 @@ export function buildColumns(data: GameData): ItemColumn[] {
       size: 180,
       value: (i) => condition(i.conditions),
       // moon phases as the wiki's moon icons, the rest as text
-      cell: (i) => <ConditionsCell data={data} ids={i.conditions} />,
+      cell: (i) => <ConditionsCell data={data} ids={[...i.conditions, ...(i.seeds ?? [])]} />,
     },
     {
       id: 'platforms',

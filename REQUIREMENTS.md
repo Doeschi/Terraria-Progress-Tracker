@@ -817,7 +817,12 @@ Below 640 px width (phones) the layout changes; tablets and desktops stay as the
     wiki's `NPCs` table (e.g. "Pirate Invasion", "Snow biome+Blizzard"); an enemy counts only
     if every spawn alternative requires the event,
   - or the drop itself is limited to the event (e.g. a chance "during Halloween"),
-  - or the item is tagged for the event on the wiki (e.g. seasonal shop items, Old One's Army).
+  - or the item is tagged for the event on the wiki (e.g. seasonal shop items, Old One's Army),
+  - or it is found in a container that only drops during the event (`[events.*] containers`:
+    Goodie Bags during Halloween, Presents during Christmas – dropped by any enemy, which the
+    wiki's Drops table does not list). The container counts as an event drop ("Dropped by any
+    enemy", from the start) and its contents are bound to the event: "Event only" (EV4) unless
+    there is another way (Musket Balls from Presents are not).
 - **EV3** Main bosses (pre-Hardmode and Hardmode stages) do not make their drops event items
   (e.g. Deerclops → Blizzard, Moon Lord → Lunar Events); event bosses (Pumpking, Flying
   Dutchman, …) do.
@@ -874,9 +879,11 @@ Below 640 px width (phones) the layout changes; tablets and desktops stay as the
     ≥ N %, golf score over N, another NPC present, multiplayer, world without a Dungeon /
     Jungle Temple, wave 15 and up, … (text patterns in `mapping.toml`; bestiary %, golf score
     and NPC names get their number / name)
-  - World seeds, Hardmode / Pre-Hardmode, platforms: shown only in the detail panel
+  - Hardmode / Pre-Hardmode, platforms: shown only in the detail panel; world seeds: the "World
+    seed" options of the filter (CO6)
 - **CO3** Filter group "Conditions" (replaces "Time of day"), nested: Time of day (Day, Night),
-  Moon phase (8 phases), After a boss (the bosses, any / all mechanical bosses), Weather (Windy).
+  Moon phase (8 phases), After a boss (the bosses, any / all mechanical bosses), Weather (Windy),
+  World seed (CO6).
   An item belongs to a condition only if it can *only* be obtained under it: within a condition
   group (time of day, moon phase, boss, weather) every source must be restricted – shop rows,
   drops (an enemy that only spawns at night counts as a night source) – and the item belongs to
@@ -908,6 +915,15 @@ Below 640 px width (phones) the layout changes; tablets and desktops stay as the
   that also describes the regular case in a sentence without a seed ("Always available. Only
   … in worlds with For the Worthy.", "In a Jungle. Anywhere in worlds with …") is a regular row
   with the conditions of those sentences.
+  Exclusivity the wiki states only in the page text – the Moon Lord Torso (For the Worthy,
+  Zenith), the Moon Lord Legs (Drunk world), Ocram's Razor and Waffle's Iron (For the Worthy
+  with Remix) – is `[seed_items]` in `mapping.toml`: every source of such an item counts as only
+  in those seeds. Items record their seeds (`seeds`: the seeds any source is only in) and
+  `seedOnly` (no regular way at all). The Conditions group has the sub-group "World seed" with an
+  option per seed (items with a source only there) and "Only in special seeds" first (items
+  without a regular way); the item card says "Only in special world seeds: …" / "Also in special
+  world seeds: …" and shows a "Special seeds only" badge; the table's Conditions column names the
+  seeds. Such items are not ignored by default (D19a) – a decision of the player.
 
 ## MS – Milestones ("available after")
 

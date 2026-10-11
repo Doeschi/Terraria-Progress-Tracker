@@ -28,7 +28,7 @@
     {
       "id": "seed",
       "name": "World seed",
-      "filter": false
+      "filter": true
     },
     {
       "id": "special",
@@ -209,40 +209,47 @@
       "count": 1
     },
     {
+      "id": "seed-only",
+      "name": "Only in special seeds",
+      "group": "seed",
+      "icon": "https://terraria.wiki.gg/images/World_Globe.png",
+      "count": 4
+    },
+    {
       "id": "seed-remix",
       "name": "Remix seed",
       "group": "seed",
-      "count": 0
+      "count": 11
     },
     {
       "id": "seed-ftw",
       "name": "For the Worthy seed",
       "group": "seed",
-      "count": 0
+      "count": 3
     },
     {
       "id": "seed-zenith",
       "name": "Zenith seed",
       "group": "seed",
-      "count": 0
+      "count": 14
     },
     {
       "id": "seed-drunk",
       "name": "Drunk world seed",
       "group": "seed",
-      "count": 0
+      "count": 11
     },
     {
       "id": "seed-ntb",
       "name": "Not the Bees seed",
       "group": "seed",
-      "count": 0
+      "count": 1
     },
     {
       "id": "seed-constant",
       "name": "The Constant seed",
       "group": "seed",
-      "count": 0
+      "count": 24
     },
     {
       "id": "seed-no-traps",
@@ -254,19 +261,19 @@
       "id": "seed-rainbow-road",
       "name": "Rainbow Road seed",
       "group": "seed",
-      "count": 0
+      "count": 2
     },
     {
       "id": "seed-i-am-error",
       "name": "I am error seed",
       "group": "seed",
-      "count": 0
+      "count": 32
     },
     {
       "id": "seed-other",
       "name": "Special seed",
       "group": "seed",
-      "count": 0
+      "count": 3
     },
     {
       "id": "after-king-slime",

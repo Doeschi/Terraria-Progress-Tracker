@@ -36,6 +36,8 @@ class Mapping:
         self.page_lists = data.get("page_lists", {}).get("pages", [])
         self.extractinator_inputs = data.get("extractinator_inputs", {})
         self.milestone_items = data.get("milestone_items", {})
+        # items only obtainable in special world seeds (name -> seed condition ids)
+        self.seed_items = data.get("seed_items", {})
         # container groups ("Found in") and icons of containers that are no item
         self.containers = data.get("containers", {})
         for group in self.containers.values():

@@ -242,11 +242,18 @@ export function itemEntries(
     source: sources,
     event: item.events,
     biome: item.biomes ?? [],
-    condition: [
-      ...new Set(item.conditions.map((c) => `cond-group:${conditionGroup.get(c)}`)),
-      ...item.conditions.map((c) => `cond:${c}`),
-    ],
+    condition: conditionEntries(item, conditionGroup),
   }
+}
+
+/** the "World seed" option for items with no regular way at all (conditions.json, CO6) */
+export const SEED_ONLY = 'seed-only'
+
+/** The "Conditions" options of an item: its conditions, and the "World seed" options - the seeds
+ * it has a source only in, "Only in special seeds" without a regular way (CO6). */
+function conditionEntries(item: Item, conditionGroup: Map<string, string>): string[] {
+  const ids = [...item.conditions, ...(item.seeds ?? []), ...(item.seedOnly ? [SEED_ONLY] : [])]
+  return [...new Set(ids.map((c) => `cond-group:${conditionGroup.get(c)}`)), ...ids.map((c) => `cond:${c}`)]
 }
 
 export interface Tally {

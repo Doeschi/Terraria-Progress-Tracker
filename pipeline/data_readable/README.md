@@ -101,7 +101,7 @@ A list of all items (one entry per item id), sorted by id.
 | `obtain` | `obtain.json` ids: how it is obtained (Crafted, Dropped by enemies, …) |
 | `set` | `sets.json` id of the armor or vanity set it belongs to |
 | `vendors` | `vendors.json` ids: NPCs that sell it (not counting rows only in special world seeds) |
-| `events` | `events.json` ids: events in which it can be obtained (enemies, drops, shop rows) |
+| `events` | `events.json` ids: events in which it can be obtained (enemies, drops, shop rows, containers that only drop then – Goodie Bags, Presents) |
 | `biomes` | `biomes.json` ids: biomes of the enemies that drop it, and of its shop rows |
 | `times` | `times.json` ids (`day` / `night`): only dropped by enemies that spawn then |
 | `conditions` | `conditions.json` ids it can **only** be obtained under (e.g. Leaf Wings: night, after Plantera) |
@@ -120,6 +120,8 @@ A list of all items (one entry per item id), sorted by id.
 | `unobtainable` | cannot be obtained in the game (ignored by default in new playthroughs) |
 | `otherForm` | `true` for another form of an item, not obtained on its own (a Shellphone mode, the Closed Void Bag; `[other_forms]` in `mapping.toml`): ignored by default in new playthroughs too |
 | `eventOnly` | only obtainable during events |
+| `seeds` | special world seeds (`conditions.json` ids of the group `seed`) the item has a source only in – drop and shop rows with a seed condition, or `[seed_items]` in `mapping.toml` |
+| `seedOnly` | no way outside special world seeds (every source is only in a seed) |
 | `milestone` | the earliest milestone it can be obtained at (`milestones.json` id) |
 | `milestoneVia` | why: the source (`"Dropped by Plantera"`, `"Sold by the Cyborg"`), for a needed item on to what holds that back (`"Crafted – needs Slime Block → Solidifier: Dropped by King Slime"`), and `"…, in Hardmode"` where only the wiki's Hardmode flag puts it there (`"Fished, in Hardmode"`) |
 | `recipeOnly` | not in the wiki's item table, built from its recipe (no stats, rarity, prices) |
@@ -308,7 +310,7 @@ The groups of the "Found in" filter:
 
 | Field | Meaning |
 |---|---|
-| `groups` | condition groups: `id`, `name`, `filter` (`true` = shown in the "Conditions" filter) – time of day, moon phase, after a boss, weather; progress, world seed and special are only shown |
+| `groups` | condition groups: `id`, `name`, `filter` (`true` = shown in the "Conditions" filter) – time of day, moon phase, after a boss, weather, and world seed (its options count the items with a source only in that seed, `seeds` of `items.json`; `seed-only`: items with no regular way); progress and special are only shown |
 | `conditions` | the conditions: `id` (e.g. `night`, `moon-1`, `after-plantera`, `seed-remix`), `name`, `group`, `icon` (moon phases), `count` (items) |
 
 ## `recipes.json`

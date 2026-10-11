@@ -38,6 +38,10 @@ export interface Item {
   minDifficulty?: 'expert' | 'master'
   /** only obtainable during events (see `events`) */
   eventOnly?: boolean
+  /** special world seeds (conditions.json ids of the group "seed") with a source only there (CO6) */
+  seeds?: string[]
+  /** no way outside special world seeds */
+  seedOnly?: boolean
   /** earliest milestone (milestones.json id) and why, e.g. "crafted – needs Chlorophyte Ore" */
   milestone?: string
   milestoneVia?: string

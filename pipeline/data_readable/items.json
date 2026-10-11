@@ -5342,7 +5342,9 @@
     "vendors": [
       "arms-dealer"
     ],
-    "events": [],
+    "events": [
+      "christmas"
+    ],
     "biomes": [],
     "times": [],
     "platforms": [
@@ -6198,6 +6200,9 @@
     "mana": 12,
     "debuff": "On Fire!",
     "tooltip": "Throws balls of fire",
+    "seeds": [
+      "seed-remix"
+    ],
     "conditions": [],
     "milestone": "skeletron",
     "milestoneVia": "Found in Obsidian Lock Box"
@@ -8619,6 +8624,9 @@
     "useTime": 16,
     "mana": 7,
     "tooltip": "Sprays out a shower of water",
+    "seeds": [
+      "seed-remix"
+    ],
     "conditions": [],
     "milestone": "skeletron",
     "milestoneVia": "Found in Golden Lock Box"
@@ -12966,6 +12974,9 @@
     "defense": 4,
     "bodySlot": "helmet",
     "tooltip": "5% increased magic damage",
+    "seeds": [
+      "seed-i-am-error"
+    ],
     "conditions": [],
     "milestone": "start",
     "milestoneVia": "Dropped by Tim"
@@ -26045,6 +26056,9 @@
     "autoswing": false,
     "buff": "Werewolf",
     "tooltip": "Turns the holder into a werewolf at night",
+    "seeds": [
+      "seed-i-am-error"
+    ],
     "conditions": [
       "night"
     ],
@@ -26549,8 +26563,7 @@
       "wand"
     ],
     "obtain": [
-      "crafted",
-      "drop"
+      "crafted"
     ],
     "vendors": [],
     "events": [],
@@ -27826,6 +27839,10 @@
     "useTime": 8,
     "mana": 6,
     "tooltip": "A magical returning dagger",
+    "seeds": [
+      "seed-remix",
+      "seed-zenith"
+    ],
     "conditions": [],
     "milestone": "wall-of-flesh",
     "milestoneVia": "Dropped by Mimic"
@@ -30166,8 +30183,7 @@
       "boomerang"
     ],
     "obtain": [
-      "crafted",
-      "drop"
+      "crafted"
     ],
     "vendors": [],
     "events": [],
@@ -31565,7 +31581,9 @@
       "bag"
     ],
     "vendors": [],
-    "events": [],
+    "events": [
+      "christmas"
+    ],
     "biomes": [],
     "times": [],
     "platforms": [
@@ -31835,7 +31853,9 @@
       "bag"
     ],
     "vendors": [],
-    "events": [],
+    "events": [
+      "christmas"
+    ],
     "biomes": [],
     "times": [],
     "platforms": [
@@ -32386,7 +32406,9 @@
       "bag"
     ],
     "vendors": [],
-    "events": [],
+    "events": [
+      "christmas"
+    ],
     "biomes": [],
     "times": [],
     "platforms": [
@@ -32413,6 +32435,7 @@
     "autoswing": false,
     "useTime": 45,
     "tooltip": "Summons the Frost Legion",
+    "eventOnly": true,
     "conditions": [],
     "milestone": "wall-of-flesh",
     "milestoneVia": "Found in Presents only in Hardmode"
@@ -36692,6 +36715,9 @@
     "mana": 19,
     "debuff": "Shadowflame",
     "tooltip": "Summons the Devil's trident",
+    "seeds": [
+      "seed-remix"
+    ],
     "conditions": [],
     "milestone": "any-mech",
     "milestoneVia": "Dropped by Red Devil"
@@ -38959,6 +38985,9 @@
     "velocity": 20.0,
     "useTime": 14,
     "tooltip": "Shoots frost arrows",
+    "seeds": [
+      "seed-remix"
+    ],
     "conditions": [],
     "milestone": "wall-of-flesh",
     "milestoneVia": "Dropped by Ice Mimic"
@@ -40175,6 +40204,9 @@
     "placeable": false,
     "autoswing": false,
     "tooltip": "Allows flight and slow fall\nHold Up to boost faster!",
+    "seeds": [
+      "seed-i-am-error"
+    ],
     "conditions": [
       "moon-5",
       "moon-6",
@@ -45883,6 +45915,10 @@
     "placeable": false,
     "autoswing": false,
     "tooltip": "Lowers shop prices by 20%",
+    "seeds": [
+      "seed-zenith",
+      "seed-drunk"
+    ],
     "eventOnly": true,
     "conditions": [],
     "milestone": "wall-of-flesh",
@@ -45938,6 +45974,10 @@
     "placeable": false,
     "autoswing": false,
     "tooltip": "Hitting enemies will sometimes drop extra coins\n'I found a coin! It's my lucky day!'",
+    "seeds": [
+      "seed-zenith",
+      "seed-drunk"
+    ],
     "eventOnly": true,
     "conditions": [],
     "milestone": "wall-of-flesh",
@@ -46046,6 +46086,10 @@
     "placeable": false,
     "autoswing": false,
     "tooltip": "Allows the holder to do an improved double jump",
+    "seeds": [
+      "seed-zenith",
+      "seed-drunk"
+    ],
     "conditions": [],
     "milestone": "start",
     "milestoneVia": "Found in Gold Chest (Pyramid)"
@@ -48374,6 +48418,9 @@
     "placeable": false,
     "autoswing": false,
     "tooltip": "During nighttime, grants minor increase to damage,\nmelee speed, critical strike chance, life regeneration,\ndefense, mining speed, and minion knockback",
+    "seeds": [
+      "seed-constant"
+    ],
     "eventOnly": true,
     "conditions": [],
     "milestone": "any-mech",
@@ -48633,6 +48680,10 @@
     "velocity": 20.0,
     "useTime": 8,
     "tooltip": "Uses coins for ammo\nHigher valued coins do more damage",
+    "seeds": [
+      "seed-zenith",
+      "seed-drunk"
+    ],
     "eventOnly": true,
     "conditions": [],
     "milestone": "wall-of-flesh",
@@ -67239,6 +67290,9 @@
     "useTime": 40,
     "mana": 20,
     "tooltip": "Shoots a rainbow that does continuous damage",
+    "seeds": [
+      "seed-rainbow-road"
+    ],
     "conditions": [],
     "milestone": "plantera",
     "milestoneVia": "Found in Hallowed Chest"
@@ -69887,6 +69941,11 @@
     "useTime": 28,
     "buff": "Baby Slime",
     "tooltip": "Summons a baby slime to fight for you",
+    "seeds": [
+      "seed-zenith",
+      "seed-drunk",
+      "seed-i-am-error"
+    ],
     "conditions": [],
     "milestone": "start",
     "milestoneVia": "Dropped by Pinky"
@@ -70163,6 +70222,9 @@
     "velocity": 15.0,
     "useTime": 28,
     "tooltip": "Shoots a boxing glove",
+    "seeds": [
+      "seed-remix"
+    ],
     "eventOnly": true,
     "conditions": [],
     "milestone": "wall-of-flesh",
@@ -70439,6 +70501,9 @@
     "knockback": 1.0,
     "velocity": 11.0,
     "useTime": 19,
+    "seeds": [
+      "seed-remix"
+    ],
     "conditions": [],
     "milestone": "start",
     "milestoneVia": "Found in Frozen Crate"
@@ -70550,6 +70615,9 @@
     "placeable": false,
     "autoswing": false,
     "tooltip": "Increases arrow damage by 10% and greatly increases arrow speed\n20% chance to not consume arrows",
+    "seeds": [
+      "seed-i-am-error"
+    ],
     "conditions": [],
     "milestone": "wall-of-flesh",
     "milestoneVia": "Dropped by Skeleton Archer"
@@ -70773,6 +70841,10 @@
     "knockback": 3.5,
     "velocity": 12.0,
     "useTime": 20,
+    "seeds": [
+      "seed-remix",
+      "seed-i-am-error"
+    ],
     "conditions": [],
     "milestone": "start",
     "milestoneVia": "Dropped by Cave Bat"
@@ -72530,6 +72602,10 @@
     "useTime": 17,
     "buff": "Weapon Imbue: Confetti",
     "tooltip": "Melee and Whip attacks cause confetti to appear",
+    "seeds": [
+      "seed-zenith",
+      "seed-drunk"
+    ],
     "conditions": [],
     "milestone": "start",
     "milestoneVia": "Found in Pigronata"
@@ -93168,7 +93244,9 @@
       "bag"
     ],
     "vendors": [],
-    "events": [],
+    "events": [
+      "halloween"
+    ],
     "biomes": [],
     "times": [],
     "platforms": [
@@ -93195,6 +93273,7 @@
     "placeable": false,
     "autoswing": false,
     "bodySlot": "social helmet",
+    "eventOnly": true,
     "conditions": [],
     "set": "creeper-set",
     "milestone": "start",
@@ -93221,7 +93300,9 @@
       "bag"
     ],
     "vendors": [],
-    "events": [],
+    "events": [
+      "halloween"
+    ],
     "biomes": [],
     "times": [],
     "platforms": [
@@ -93248,6 +93329,7 @@
     "placeable": false,
     "autoswing": false,
     "bodySlot": "social shirt",
+    "eventOnly": true,
     "conditions": [],
     "set": "creeper-set",
     "milestone": "start",
@@ -93274,7 +93356,9 @@
       "bag"
     ],
     "vendors": [],
-    "events": [],
+    "events": [
+      "halloween"
+    ],
     "biomes": [],
     "times": [],
     "platforms": [
@@ -93301,6 +93385,7 @@
     "placeable": false,
     "autoswing": false,
     "bodySlot": "social pants",
+    "eventOnly": true,
     "conditions": [],
     "set": "creeper-set",
     "milestone": "start",
@@ -93327,7 +93412,9 @@
       "bag"
     ],
     "vendors": [],
-    "events": [],
+    "events": [
+      "halloween"
+    ],
     "biomes": [],
     "times": [],
     "platforms": [
@@ -93354,6 +93441,7 @@
     "placeable": false,
     "autoswing": false,
     "bodySlot": "social helmet",
+    "eventOnly": true,
     "conditions": [],
     "set": "cat-set",
     "milestone": "start",
@@ -93380,7 +93468,9 @@
       "bag"
     ],
     "vendors": [],
-    "events": [],
+    "events": [
+      "halloween"
+    ],
     "biomes": [],
     "times": [],
     "platforms": [
@@ -93407,6 +93497,7 @@
     "placeable": false,
     "autoswing": false,
     "bodySlot": "social shirt",
+    "eventOnly": true,
     "conditions": [],
     "set": "cat-set",
     "milestone": "start",
@@ -93433,7 +93524,9 @@
       "bag"
     ],
     "vendors": [],
-    "events": [],
+    "events": [
+      "halloween"
+    ],
     "biomes": [],
     "times": [],
     "platforms": [
@@ -93460,6 +93553,7 @@
     "placeable": false,
     "autoswing": false,
     "bodySlot": "social pants",
+    "eventOnly": true,
     "conditions": [],
     "set": "cat-set",
     "milestone": "start",
@@ -93486,7 +93580,9 @@
       "bag"
     ],
     "vendors": [],
-    "events": [],
+    "events": [
+      "halloween"
+    ],
     "biomes": [],
     "times": [],
     "platforms": [
@@ -93513,6 +93609,10 @@
     "placeable": false,
     "autoswing": false,
     "bodySlot": "social helmet",
+    "seeds": [
+      "seed-constant"
+    ],
+    "eventOnly": true,
     "conditions": [],
     "set": "ghost-set",
     "milestone": "start",
@@ -93539,7 +93639,9 @@
       "bag"
     ],
     "vendors": [],
-    "events": [],
+    "events": [
+      "halloween"
+    ],
     "biomes": [],
     "times": [],
     "platforms": [
@@ -93566,6 +93668,10 @@
     "placeable": false,
     "autoswing": false,
     "bodySlot": "social shirt",
+    "seeds": [
+      "seed-constant"
+    ],
+    "eventOnly": true,
     "conditions": [],
     "set": "ghost-set",
     "milestone": "start",
@@ -93592,7 +93698,9 @@
       "bag"
     ],
     "vendors": [],
-    "events": [],
+    "events": [
+      "halloween"
+    ],
     "biomes": [],
     "times": [],
     "platforms": [
@@ -93619,6 +93727,7 @@
     "placeable": false,
     "autoswing": false,
     "bodySlot": "social helmet",
+    "eventOnly": true,
     "conditions": [],
     "set": "pumpkin-set",
     "milestone": "start",
@@ -93645,7 +93754,9 @@
       "bag"
     ],
     "vendors": [],
-    "events": [],
+    "events": [
+      "halloween"
+    ],
     "biomes": [],
     "times": [],
     "platforms": [
@@ -93672,6 +93783,7 @@
     "placeable": false,
     "autoswing": false,
     "bodySlot": "social shirt",
+    "eventOnly": true,
     "conditions": [],
     "set": "pumpkin-set",
     "milestone": "start",
@@ -93698,7 +93810,9 @@
       "bag"
     ],
     "vendors": [],
-    "events": [],
+    "events": [
+      "halloween"
+    ],
     "biomes": [],
     "times": [],
     "platforms": [
@@ -93725,6 +93839,7 @@
     "placeable": false,
     "autoswing": false,
     "bodySlot": "social pants",
+    "eventOnly": true,
     "conditions": [],
     "set": "pumpkin-set",
     "milestone": "start",
@@ -93751,7 +93866,9 @@
       "bag"
     ],
     "vendors": [],
-    "events": [],
+    "events": [
+      "halloween"
+    ],
     "biomes": [],
     "times": [],
     "platforms": [
@@ -93778,6 +93895,7 @@
     "placeable": false,
     "autoswing": false,
     "bodySlot": "social helmet",
+    "eventOnly": true,
     "conditions": [],
     "set": "robot-set",
     "milestone": "start",
@@ -93804,7 +93922,9 @@
       "bag"
     ],
     "vendors": [],
-    "events": [],
+    "events": [
+      "halloween"
+    ],
     "biomes": [],
     "times": [],
     "platforms": [
@@ -93831,6 +93951,7 @@
     "placeable": false,
     "autoswing": false,
     "bodySlot": "social shirt",
+    "eventOnly": true,
     "conditions": [],
     "set": "robot-set",
     "milestone": "start",
@@ -93857,7 +93978,9 @@
       "bag"
     ],
     "vendors": [],
-    "events": [],
+    "events": [
+      "halloween"
+    ],
     "biomes": [],
     "times": [],
     "platforms": [
@@ -93884,6 +94007,7 @@
     "placeable": false,
     "autoswing": false,
     "bodySlot": "social pants",
+    "eventOnly": true,
     "conditions": [],
     "set": "robot-set",
     "milestone": "start",
@@ -93910,7 +94034,9 @@
       "bag"
     ],
     "vendors": [],
-    "events": [],
+    "events": [
+      "halloween"
+    ],
     "biomes": [],
     "times": [],
     "platforms": [
@@ -93937,6 +94063,7 @@
     "placeable": false,
     "autoswing": false,
     "bodySlot": "social helmet",
+    "eventOnly": true,
     "conditions": [],
     "set": "unicorn-set",
     "milestone": "start",
@@ -93963,7 +94090,9 @@
       "bag"
     ],
     "vendors": [],
-    "events": [],
+    "events": [
+      "halloween"
+    ],
     "biomes": [],
     "times": [],
     "platforms": [
@@ -93990,6 +94119,7 @@
     "placeable": false,
     "autoswing": false,
     "bodySlot": "social shirt",
+    "eventOnly": true,
     "conditions": [],
     "set": "unicorn-set",
     "milestone": "start",
@@ -94016,7 +94146,9 @@
       "bag"
     ],
     "vendors": [],
-    "events": [],
+    "events": [
+      "halloween"
+    ],
     "biomes": [],
     "times": [],
     "platforms": [
@@ -94043,6 +94175,7 @@
     "placeable": false,
     "autoswing": false,
     "bodySlot": "social pants",
+    "eventOnly": true,
     "conditions": [],
     "set": "unicorn-set",
     "milestone": "start",
@@ -94069,7 +94202,9 @@
       "bag"
     ],
     "vendors": [],
-    "events": [],
+    "events": [
+      "halloween"
+    ],
     "biomes": [],
     "times": [],
     "platforms": [
@@ -94096,6 +94231,10 @@
     "placeable": false,
     "autoswing": false,
     "bodySlot": "social helmet",
+    "seeds": [
+      "seed-constant"
+    ],
+    "eventOnly": true,
     "conditions": [],
     "set": "vampire-set",
     "milestone": "start",
@@ -94122,7 +94261,9 @@
       "bag"
     ],
     "vendors": [],
-    "events": [],
+    "events": [
+      "halloween"
+    ],
     "biomes": [],
     "times": [],
     "platforms": [
@@ -94149,6 +94290,10 @@
     "placeable": false,
     "autoswing": false,
     "bodySlot": "social shirt",
+    "seeds": [
+      "seed-constant"
+    ],
+    "eventOnly": true,
     "conditions": [],
     "set": "vampire-set",
     "milestone": "start",
@@ -94175,7 +94320,9 @@
       "bag"
     ],
     "vendors": [],
-    "events": [],
+    "events": [
+      "halloween"
+    ],
     "biomes": [],
     "times": [],
     "platforms": [
@@ -94202,6 +94349,10 @@
     "placeable": false,
     "autoswing": false,
     "bodySlot": "social pants",
+    "seeds": [
+      "seed-constant"
+    ],
+    "eventOnly": true,
     "conditions": [],
     "set": "vampire-set",
     "milestone": "start",
@@ -94228,7 +94379,9 @@
       "bag"
     ],
     "vendors": [],
-    "events": [],
+    "events": [
+      "halloween"
+    ],
     "biomes": [],
     "times": [],
     "platforms": [
@@ -94255,6 +94408,7 @@
     "placeable": false,
     "autoswing": false,
     "bodySlot": "social helmet",
+    "eventOnly": true,
     "conditions": [],
     "set": "witch-set",
     "milestone": "start",
@@ -94281,7 +94435,9 @@
       "bag"
     ],
     "vendors": [],
-    "events": [],
+    "events": [
+      "halloween"
+    ],
     "biomes": [],
     "times": [],
     "platforms": [
@@ -94309,6 +94465,7 @@
     "autoswing": false,
     "bodySlot": "social helmet",
     "tooltip": "To me it look like a leprechaun to me",
+    "eventOnly": true,
     "conditions": [],
     "set": "leprechaun-set",
     "milestone": "start",
@@ -94335,7 +94492,9 @@
       "bag"
     ],
     "vendors": [],
-    "events": [],
+    "events": [
+      "halloween"
+    ],
     "biomes": [],
     "times": [],
     "platforms": [
@@ -94363,6 +94522,7 @@
     "autoswing": false,
     "bodySlot": "social shirt",
     "tooltip": "I just wanna know where the gold at!",
+    "eventOnly": true,
     "conditions": [],
     "set": "leprechaun-set",
     "milestone": "start",
@@ -94389,7 +94549,9 @@
       "bag"
     ],
     "vendors": [],
-    "events": [],
+    "events": [
+      "halloween"
+    ],
     "biomes": [],
     "times": [],
     "platforms": [
@@ -94417,6 +94579,7 @@
     "autoswing": false,
     "bodySlot": "social pants",
     "tooltip": "I want the gold. I want the gold. I want the gold. Gimme the gold!",
+    "eventOnly": true,
     "conditions": [],
     "set": "leprechaun-set",
     "milestone": "start",
@@ -94443,7 +94606,9 @@
       "bag"
     ],
     "vendors": [],
-    "events": [],
+    "events": [
+      "halloween"
+    ],
     "biomes": [],
     "times": [],
     "platforms": [
@@ -94470,6 +94635,7 @@
     "placeable": false,
     "autoswing": false,
     "bodySlot": "social shirt",
+    "eventOnly": true,
     "conditions": [],
     "set": "pixie-set",
     "milestone": "start",
@@ -94496,7 +94662,9 @@
       "bag"
     ],
     "vendors": [],
-    "events": [],
+    "events": [
+      "halloween"
+    ],
     "biomes": [],
     "times": [],
     "platforms": [
@@ -94523,6 +94691,7 @@
     "placeable": false,
     "autoswing": false,
     "bodySlot": "social pants",
+    "eventOnly": true,
     "conditions": [],
     "set": "pixie-set",
     "milestone": "start",
@@ -94549,7 +94718,9 @@
       "bag"
     ],
     "vendors": [],
-    "events": [],
+    "events": [
+      "halloween"
+    ],
     "biomes": [],
     "times": [],
     "platforms": [
@@ -94576,6 +94747,7 @@
     "placeable": false,
     "autoswing": false,
     "bodySlot": "social helmet",
+    "eventOnly": true,
     "conditions": [],
     "set": "princess-set",
     "milestone": "start",
@@ -94602,7 +94774,9 @@
       "bag"
     ],
     "vendors": [],
-    "events": [],
+    "events": [
+      "halloween"
+    ],
     "biomes": [],
     "times": [],
     "platforms": [
@@ -94629,6 +94803,7 @@
     "placeable": false,
     "autoswing": false,
     "bodySlot": "social shirt",
+    "eventOnly": true,
     "conditions": [],
     "set": "princess-set",
     "milestone": "start",
@@ -94650,7 +94825,9 @@
       "drop"
     ],
     "vendors": [],
-    "events": [],
+    "events": [
+      "halloween"
+    ],
     "biomes": [],
     "times": [],
     "platforms": [
@@ -94677,9 +94854,10 @@
     "placeable": false,
     "autoswing": false,
     "tooltip": "{icon:desktop} Right click to open\n{icon:xbox} Press LT to open\n{icon:playstation} Press R1 to open\n{icon:wiiu} Press ZR to open\n{icon:switch} Press ZL to open\n{icon:mobile} Double tap to open\n{icon:3ds} Tap to open the present!",
+    "eventOnly": true,
     "conditions": [],
     "milestone": "start",
-    "milestoneVia": "Dropped by enemies"
+    "milestoneVia": "Dropped by any enemy"
   },
   {
     "key": "WitchDress",
@@ -94702,7 +94880,9 @@
       "bag"
     ],
     "vendors": [],
-    "events": [],
+    "events": [
+      "halloween"
+    ],
     "biomes": [],
     "times": [],
     "platforms": [
@@ -94729,6 +94909,7 @@
     "placeable": false,
     "autoswing": false,
     "bodySlot": "social shirt",
+    "eventOnly": true,
     "conditions": [],
     "set": "witch-set",
     "milestone": "start",
@@ -94755,7 +94936,9 @@
       "bag"
     ],
     "vendors": [],
-    "events": [],
+    "events": [
+      "halloween"
+    ],
     "biomes": [],
     "times": [],
     "platforms": [
@@ -94782,6 +94965,7 @@
     "placeable": false,
     "autoswing": false,
     "bodySlot": "social pants",
+    "eventOnly": true,
     "conditions": [],
     "set": "witch-set",
     "milestone": "start",
@@ -94808,7 +94992,9 @@
       "bag"
     ],
     "vendors": [],
-    "events": [],
+    "events": [
+      "halloween"
+    ],
     "biomes": [],
     "times": [],
     "platforms": [
@@ -94835,6 +95021,10 @@
     "placeable": false,
     "autoswing": false,
     "bodySlot": "social helmet",
+    "seeds": [
+      "seed-constant"
+    ],
+    "eventOnly": true,
     "conditions": [],
     "set": "bride-of-frankenstein-set",
     "milestone": "start",
@@ -94861,7 +95051,9 @@
       "bag"
     ],
     "vendors": [],
-    "events": [],
+    "events": [
+      "halloween"
+    ],
     "biomes": [],
     "times": [],
     "platforms": [
@@ -94888,6 +95080,10 @@
     "placeable": false,
     "autoswing": false,
     "bodySlot": "social shirt",
+    "seeds": [
+      "seed-constant"
+    ],
+    "eventOnly": true,
     "conditions": [],
     "set": "bride-of-frankenstein-set",
     "milestone": "start",
@@ -94914,7 +95110,9 @@
       "bag"
     ],
     "vendors": [],
-    "events": [],
+    "events": [
+      "halloween"
+    ],
     "biomes": [],
     "times": [],
     "platforms": [
@@ -94941,6 +95139,7 @@
     "placeable": false,
     "autoswing": false,
     "bodySlot": "social helmet",
+    "eventOnly": true,
     "conditions": [],
     "set": "karate-tortoise-set",
     "milestone": "start",
@@ -94967,7 +95166,9 @@
       "bag"
     ],
     "vendors": [],
-    "events": [],
+    "events": [
+      "halloween"
+    ],
     "biomes": [],
     "times": [],
     "platforms": [
@@ -94994,6 +95195,7 @@
     "placeable": false,
     "autoswing": false,
     "bodySlot": "social shirt",
+    "eventOnly": true,
     "conditions": [],
     "set": "karate-tortoise-set",
     "milestone": "start",
@@ -95020,7 +95222,9 @@
       "bag"
     ],
     "vendors": [],
-    "events": [],
+    "events": [
+      "halloween"
+    ],
     "biomes": [],
     "times": [],
     "platforms": [
@@ -95047,6 +95251,7 @@
     "placeable": false,
     "autoswing": false,
     "bodySlot": "social pants",
+    "eventOnly": true,
     "conditions": [],
     "set": "karate-tortoise-set",
     "milestone": "start",
@@ -96058,7 +96263,9 @@
       "bag"
     ],
     "vendors": [],
-    "events": [],
+    "events": [
+      "halloween"
+    ],
     "biomes": [],
     "times": [],
     "platforms": [
@@ -96086,6 +96293,10 @@
     "autoswing": false,
     "velocity": 13.5,
     "tooltip": "Press Grapple to launch hook",
+    "seeds": [
+      "seed-constant"
+    ],
+    "eventOnly": true,
     "conditions": [],
     "milestone": "start",
     "milestoneVia": "Found in Goodie Bag"
@@ -96279,7 +96490,9 @@
       "bag"
     ],
     "vendors": [],
-    "events": [],
+    "events": [
+      "halloween"
+    ],
     "biomes": [],
     "times": [],
     "platforms": [
@@ -96333,7 +96546,9 @@
       "bag"
     ],
     "vendors": [],
-    "events": [],
+    "events": [
+      "halloween"
+    ],
     "biomes": [],
     "times": [],
     "platforms": [
@@ -96362,6 +96577,7 @@
     "useTime": 20,
     "buff": "Black Cat",
     "tooltip": "Summons a black kitty",
+    "eventOnly": true,
     "conditions": [],
     "milestone": "start",
     "milestoneVia": "Found in Goodie Bag"
@@ -96807,7 +97023,9 @@
       "bag"
     ],
     "vendors": [],
-    "events": [],
+    "events": [
+      "halloween"
+    ],
     "biomes": [],
     "times": [],
     "platforms": [
@@ -96834,6 +97052,10 @@
     "placeable": false,
     "autoswing": false,
     "bodySlot": "social helmet",
+    "seeds": [
+      "seed-constant"
+    ],
+    "eventOnly": true,
     "conditions": [],
     "set": "reaper-set",
     "milestone": "start",
@@ -96860,7 +97082,9 @@
       "bag"
     ],
     "vendors": [],
-    "events": [],
+    "events": [
+      "halloween"
+    ],
     "biomes": [],
     "times": [],
     "platforms": [
@@ -96887,6 +97111,10 @@
     "placeable": false,
     "autoswing": false,
     "bodySlot": "social shirt",
+    "seeds": [
+      "seed-constant"
+    ],
+    "eventOnly": true,
     "conditions": [],
     "set": "reaper-set",
     "milestone": "start",
@@ -96913,7 +97141,9 @@
       "bag"
     ],
     "vendors": [],
-    "events": [],
+    "events": [
+      "halloween"
+    ],
     "biomes": [],
     "times": [],
     "platforms": [
@@ -96940,6 +97170,7 @@
     "placeable": false,
     "autoswing": false,
     "bodySlot": "social helmet",
+    "eventOnly": true,
     "conditions": [],
     "set": "fox-set",
     "milestone": "start",
@@ -96966,7 +97197,9 @@
       "bag"
     ],
     "vendors": [],
-    "events": [],
+    "events": [
+      "halloween"
+    ],
     "biomes": [],
     "times": [],
     "platforms": [
@@ -96993,6 +97226,7 @@
     "placeable": false,
     "autoswing": false,
     "bodySlot": "social shirt",
+    "eventOnly": true,
     "conditions": [],
     "set": "fox-set",
     "milestone": "start",
@@ -97019,7 +97253,9 @@
       "bag"
     ],
     "vendors": [],
-    "events": [],
+    "events": [
+      "halloween"
+    ],
     "biomes": [],
     "times": [],
     "platforms": [
@@ -97046,6 +97282,7 @@
     "placeable": false,
     "autoswing": false,
     "bodySlot": "social pants",
+    "eventOnly": true,
     "conditions": [],
     "set": "fox-set",
     "milestone": "start",
@@ -97070,7 +97307,9 @@
       "bag"
     ],
     "vendors": [],
-    "events": [],
+    "events": [
+      "halloween"
+    ],
     "biomes": [],
     "times": [],
     "platforms": [
@@ -97097,6 +97336,7 @@
     "placeable": false,
     "autoswing": false,
     "bodySlot": "social helmet",
+    "eventOnly": true,
     "conditions": [],
     "milestone": "start",
     "milestoneVia": "Found in Goodie Bag"
@@ -97153,6 +97393,9 @@
     "velocity": 15.0,
     "useTime": 15,
     "debuff": "Bleeding",
+    "seeds": [
+      "seed-i-am-error"
+    ],
     "conditions": [],
     "milestone": "start"
   },
@@ -97829,7 +98072,9 @@
       "bag"
     ],
     "vendors": [],
-    "events": [],
+    "events": [
+      "halloween"
+    ],
     "biomes": [],
     "times": [],
     "platforms": [
@@ -97856,6 +98101,7 @@
     "placeable": false,
     "autoswing": false,
     "bodySlot": "social helmet",
+    "eventOnly": true,
     "conditions": [],
     "set": "space-creature-set",
     "milestone": "start",
@@ -97882,7 +98128,9 @@
       "bag"
     ],
     "vendors": [],
-    "events": [],
+    "events": [
+      "halloween"
+    ],
     "biomes": [],
     "times": [],
     "platforms": [
@@ -97909,6 +98157,7 @@
     "placeable": false,
     "autoswing": false,
     "bodySlot": "social shirt",
+    "eventOnly": true,
     "conditions": [],
     "set": "space-creature-set",
     "milestone": "start",
@@ -97935,7 +98184,9 @@
       "bag"
     ],
     "vendors": [],
-    "events": [],
+    "events": [
+      "halloween"
+    ],
     "biomes": [],
     "times": [],
     "platforms": [
@@ -97962,6 +98213,7 @@
     "placeable": false,
     "autoswing": false,
     "bodySlot": "social pants",
+    "eventOnly": true,
     "conditions": [],
     "set": "space-creature-set",
     "milestone": "start",
@@ -97988,7 +98240,9 @@
       "bag"
     ],
     "vendors": [],
-    "events": [],
+    "events": [
+      "halloween"
+    ],
     "biomes": [],
     "times": [],
     "platforms": [
@@ -98015,6 +98269,7 @@
     "placeable": false,
     "autoswing": false,
     "bodySlot": "social helmet",
+    "eventOnly": true,
     "conditions": [],
     "set": "wolf-set",
     "milestone": "start",
@@ -98041,7 +98296,9 @@
       "bag"
     ],
     "vendors": [],
-    "events": [],
+    "events": [
+      "halloween"
+    ],
     "biomes": [],
     "times": [],
     "platforms": [
@@ -98068,6 +98325,7 @@
     "placeable": false,
     "autoswing": false,
     "bodySlot": "social shirt",
+    "eventOnly": true,
     "conditions": [],
     "set": "wolf-set",
     "milestone": "start",
@@ -98094,7 +98352,9 @@
       "bag"
     ],
     "vendors": [],
-    "events": [],
+    "events": [
+      "halloween"
+    ],
     "biomes": [],
     "times": [],
     "platforms": [
@@ -98121,6 +98381,7 @@
     "placeable": false,
     "autoswing": false,
     "bodySlot": "social pants",
+    "eventOnly": true,
     "conditions": [],
     "set": "wolf-set",
     "milestone": "start",
@@ -98247,7 +98508,9 @@
       "bag"
     ],
     "vendors": [],
-    "events": [],
+    "events": [
+      "halloween"
+    ],
     "biomes": [],
     "times": [],
     "platforms": [
@@ -98277,6 +98540,7 @@
     "placedWidth": 6,
     "placedHeight": 4,
     "tooltip": "'V. Costa Moura'",
+    "eventOnly": true,
     "conditions": [],
     "milestone": "start",
     "milestoneVia": "Found in Goodie Bag"
@@ -98299,7 +98563,9 @@
       "bag"
     ],
     "vendors": [],
-    "events": [],
+    "events": [
+      "halloween"
+    ],
     "biomes": [],
     "times": [],
     "platforms": [
@@ -98329,6 +98595,7 @@
     "placedWidth": 6,
     "placedHeight": 4,
     "tooltip": "'J. Hayes'",
+    "eventOnly": true,
     "conditions": [],
     "milestone": "start",
     "milestoneVia": "Found in Goodie Bag"
@@ -98351,7 +98618,9 @@
       "bag"
     ],
     "vendors": [],
-    "events": [],
+    "events": [
+      "halloween"
+    ],
     "biomes": [],
     "times": [],
     "platforms": [
@@ -98381,6 +98650,7 @@
     "placedWidth": 6,
     "placedHeight": 4,
     "tooltip": "'J. Hayes'",
+    "eventOnly": true,
     "conditions": [],
     "milestone": "start",
     "milestoneVia": "Found in Goodie Bag"
@@ -98403,7 +98673,9 @@
       "bag"
     ],
     "vendors": [],
-    "events": [],
+    "events": [
+      "halloween"
+    ],
     "biomes": [],
     "times": [],
     "platforms": [
@@ -98433,6 +98705,7 @@
     "placedWidth": 6,
     "placedHeight": 4,
     "tooltip": "'J. Hayes'",
+    "eventOnly": true,
     "conditions": [],
     "milestone": "start",
     "milestoneVia": "Found in Goodie Bag"
@@ -98455,7 +98728,9 @@
       "bag"
     ],
     "vendors": [],
-    "events": [],
+    "events": [
+      "halloween"
+    ],
     "biomes": [],
     "times": [],
     "platforms": [
@@ -98485,6 +98760,7 @@
     "placedWidth": 6,
     "placedHeight": 4,
     "tooltip": "'J. Hayes'",
+    "eventOnly": true,
     "conditions": [],
     "milestone": "start",
     "milestoneVia": "Found in Goodie Bag"
@@ -98510,7 +98786,9 @@
       "bag"
     ],
     "vendors": [],
-    "events": [],
+    "events": [
+      "halloween"
+    ],
     "biomes": [],
     "times": [],
     "platforms": [
@@ -98537,6 +98815,7 @@
     "placeable": false,
     "autoswing": false,
     "bodySlot": "social shirt",
+    "eventOnly": true,
     "conditions": [],
     "set": "treasure-hunter-set",
     "milestone": "start",
@@ -98563,7 +98842,9 @@
       "bag"
     ],
     "vendors": [],
-    "events": [],
+    "events": [
+      "halloween"
+    ],
     "biomes": [],
     "times": [],
     "platforms": [
@@ -98590,6 +98871,7 @@
     "placeable": false,
     "autoswing": false,
     "bodySlot": "social pants",
+    "eventOnly": true,
     "conditions": [],
     "set": "treasure-hunter-set",
     "milestone": "start",
@@ -98873,6 +99155,9 @@
     "placeable": false,
     "autoswing": false,
     "bodySlot": "social helmet",
+    "seeds": [
+      "seed-constant"
+    ],
     "eventOnly": true,
     "conditions": [],
     "milestone": "plantera",
@@ -98981,6 +99266,10 @@
     "placedHeight": 2,
     "buff": "Heart Lamp",
     "tooltip": "Increases life regeneration when placed nearby",
+    "seeds": [
+      "seed-zenith",
+      "seed-drunk"
+    ],
     "conditions": [],
     "milestone": "start",
     "milestoneVia": "Found in chests & pots"
@@ -99185,6 +99474,9 @@
     "placeable": false,
     "autoswing": false,
     "tooltip": "Allows the holder to double jump\nIncreases jump height",
+    "seeds": [
+      "seed-i-am-error"
+    ],
     "conditions": [],
     "milestone": "start",
     "milestoneVia": "Crafted"
@@ -99389,10 +99681,13 @@
     "placedWidth": 1,
     "placedHeight": 1,
     "tooltip": "{icon:desktop} Right click to open\nPress Up/Down to cycle through placement styles\n{icon:xbox} Press LT to open\n{icon:playstation} Press R1 to open\n{icon:switch} Press ZL to open\n{icon:mobile} Double tap to open",
+    "seeds": [
+      "seed-other"
+    ],
     "eventOnly": true,
     "conditions": [],
-    "milestone": "plantera",
-    "milestoneVia": "Dropped by Present Mimic"
+    "milestone": "start",
+    "milestoneVia": "Dropped by any enemy"
   },
   {
     "key": "RedRyder",
@@ -99413,7 +99708,9 @@
       "bag"
     ],
     "vendors": [],
-    "events": [],
+    "events": [
+      "christmas"
+    ],
     "biomes": [],
     "times": [],
     "platforms": [
@@ -99444,6 +99741,7 @@
     "velocity": 8.0,
     "useTime": 38,
     "tooltip": "'Don't shoot your eye out!'",
+    "eventOnly": true,
     "conditions": [],
     "milestone": "start",
     "milestoneVia": "Found in Present"
@@ -99521,7 +99819,9 @@
       "bag"
     ],
     "vendors": [],
-    "events": [],
+    "events": [
+      "christmas"
+    ],
     "biomes": [],
     "times": [],
     "platforms": [
@@ -101309,7 +101609,9 @@
       "bag"
     ],
     "vendors": [],
-    "events": [],
+    "events": [
+      "christmas"
+    ],
     "biomes": [],
     "times": [],
     "platforms": [
@@ -101334,6 +101636,7 @@
     "placeable": false,
     "autoswing": false,
     "bodySlot": "social helmet",
+    "eventOnly": true,
     "conditions": [],
     "milestone": "start",
     "milestoneVia": "Found in Present"
@@ -101356,7 +101659,9 @@
       "bag"
     ],
     "vendors": [],
-    "events": [],
+    "events": [
+      "christmas"
+    ],
     "biomes": [],
     "times": [],
     "platforms": [
@@ -101383,6 +101688,7 @@
     "useTime": 15,
     "placedWidth": 3,
     "placedHeight": 2,
+    "eventOnly": true,
     "conditions": [],
     "milestone": "start",
     "milestoneVia": "Found in Present"
@@ -101406,7 +101712,9 @@
       "bag"
     ],
     "vendors": [],
-    "events": [],
+    "events": [
+      "christmas"
+    ],
     "biomes": [],
     "times": [],
     "platforms": [
@@ -101435,6 +101743,7 @@
     "critical": 4,
     "knockback": 5.3,
     "useTime": 27,
+    "eventOnly": true,
     "conditions": [],
     "milestone": "start",
     "milestoneVia": "Found in Present"
@@ -101517,7 +101826,9 @@
       "bag"
     ],
     "vendors": [],
-    "events": [],
+    "events": [
+      "christmas"
+    ],
     "biomes": [],
     "times": [],
     "platforms": [
@@ -101544,6 +101855,7 @@
     "useTime": 17,
     "buff": "Exquisitely Stuffed",
     "tooltip": "Major improvements to all stats\n'A cozy treat by the fireplace.'",
+    "eventOnly": true,
     "conditions": [],
     "milestone": "start",
     "milestoneVia": "Found in Present"
@@ -101566,7 +101878,9 @@
       "bag"
     ],
     "vendors": [],
-    "events": [],
+    "events": [
+      "christmas"
+    ],
     "biomes": [],
     "times": [],
     "platforms": [
@@ -101593,6 +101907,7 @@
     "useTime": 17,
     "healLife": 80,
     "debuff": "Potion Sickness",
+    "eventOnly": true,
     "conditions": [],
     "milestone": "start",
     "milestoneVia": "Found in Present"
@@ -101615,7 +101930,9 @@
       "bag"
     ],
     "vendors": [],
-    "events": [],
+    "events": [
+      "christmas"
+    ],
     "biomes": [],
     "times": [],
     "platforms": [
@@ -101645,6 +101962,7 @@
     "knockback": 0.0,
     "velocity": 12.0,
     "useTime": 15,
+    "eventOnly": true,
     "conditions": [],
     "milestone": "start",
     "milestoneVia": "Found in Present"
@@ -101723,7 +102041,9 @@
       "bag"
     ],
     "vendors": [],
-    "events": [],
+    "events": [
+      "christmas"
+    ],
     "biomes": [],
     "times": [],
     "platforms": [
@@ -101751,6 +102071,7 @@
     "velocity": 11.5,
     "useTime": 0,
     "tooltip": "Press Grapple to launch hook",
+    "eventOnly": true,
     "conditions": [],
     "milestone": "start",
     "milestoneVia": "Found in Present"
@@ -101828,7 +102149,9 @@
       "bag"
     ],
     "vendors": [],
-    "events": [],
+    "events": [
+      "christmas"
+    ],
     "biomes": [],
     "times": [],
     "platforms": [
@@ -101860,6 +102183,7 @@
     "pickaxePower": 55,
     "toolSpeed": 16,
     "tooltip": "Can mine Meteorite",
+    "eventOnly": true,
     "conditions": [],
     "milestone": "start",
     "milestoneVia": "Found in Present"
@@ -101883,7 +102207,9 @@
       "bag"
     ],
     "vendors": [],
-    "events": [],
+    "events": [
+      "christmas"
+    ],
     "biomes": [],
     "times": [],
     "platforms": [
@@ -101913,6 +102239,7 @@
     "knockback": 8.0,
     "velocity": 11.0,
     "useTime": 15,
+    "eventOnly": true,
     "conditions": [],
     "milestone": "start",
     "milestoneVia": "Found in Present"
@@ -101936,7 +102263,9 @@
       "bag"
     ],
     "vendors": [],
-    "events": [],
+    "events": [
+      "christmas"
+    ],
     "biomes": [],
     "times": [],
     "platforms": [
@@ -101963,6 +102292,7 @@
     "useTime": 17,
     "buff": "Exquisitely Stuffed",
     "tooltip": "Major improvements to all stats\n'You'll bounce off the walls!'",
+    "eventOnly": true,
     "conditions": [],
     "milestone": "start",
     "milestoneVia": "Found in Present"
@@ -101986,7 +102316,9 @@
       "bag"
     ],
     "vendors": [],
-    "events": [],
+    "events": [
+      "christmas"
+    ],
     "biomes": [],
     "times": [],
     "platforms": [
@@ -102013,6 +102345,7 @@
     "useTime": 17,
     "buff": "Exquisitely Stuffed",
     "tooltip": "Major improvements to all stats\n'Not the gumdrop buttons!'",
+    "eventOnly": true,
     "conditions": [],
     "milestone": "start",
     "milestoneVia": "Found in Present"
@@ -102035,7 +102368,9 @@
       "bag"
     ],
     "vendors": [],
-    "events": [],
+    "events": [
+      "christmas"
+    ],
     "biomes": [],
     "times": [],
     "platforms": [
@@ -102060,6 +102395,7 @@
     "placeable": false,
     "autoswing": false,
     "tooltip": "Grants immunity to Chilled and Frozen",
+    "eventOnly": true,
     "conditions": [],
     "milestone": "start",
     "milestoneVia": "Found in Present"
@@ -102083,7 +102419,9 @@
       "bag"
     ],
     "vendors": [],
-    "events": [],
+    "events": [
+      "christmas"
+    ],
     "biomes": [
       "jungle"
     ],
@@ -102130,7 +102468,9 @@
       "bag"
     ],
     "vendors": [],
-    "events": [],
+    "events": [
+      "christmas"
+    ],
     "biomes": [],
     "times": [],
     "platforms": [
@@ -102155,6 +102495,7 @@
     "placeable": false,
     "autoswing": false,
     "tooltip": "Increases block placement & tool range by 1",
+    "eventOnly": true,
     "conditions": [],
     "milestone": "start",
     "milestoneVia": "Found in Present"
@@ -102326,7 +102667,9 @@
       "bag"
     ],
     "vendors": [],
-    "events": [],
+    "events": [
+      "christmas"
+    ],
     "biomes": [],
     "times": [],
     "platforms": [
@@ -102352,6 +102695,7 @@
     "useTime": 20,
     "buff": "Puppy",
     "tooltip": "Summons a Puppy",
+    "eventOnly": true,
     "conditions": [],
     "milestone": "start",
     "milestoneVia": "Found in Present"
@@ -102616,7 +102960,9 @@
       "bag"
     ],
     "vendors": [],
-    "events": [],
+    "events": [
+      "christmas"
+    ],
     "biomes": [],
     "times": [],
     "platforms": [
@@ -102641,6 +102987,7 @@
     "placeable": false,
     "autoswing": false,
     "bodySlot": "social helmet",
+    "eventOnly": true,
     "conditions": [],
     "set": "mrs-claus-set",
     "milestone": "start",
@@ -102667,7 +103014,9 @@
       "bag"
     ],
     "vendors": [],
-    "events": [],
+    "events": [
+      "christmas"
+    ],
     "biomes": [],
     "times": [],
     "platforms": [
@@ -102692,6 +103041,7 @@
     "placeable": false,
     "autoswing": false,
     "bodySlot": "social shirt",
+    "eventOnly": true,
     "conditions": [],
     "set": "mrs-claus-set",
     "milestone": "start",
@@ -102718,7 +103068,9 @@
       "bag"
     ],
     "vendors": [],
-    "events": [],
+    "events": [
+      "christmas"
+    ],
     "biomes": [],
     "times": [],
     "platforms": [
@@ -102743,6 +103095,7 @@
     "placeable": false,
     "autoswing": false,
     "bodySlot": "social pants",
+    "eventOnly": true,
     "conditions": [],
     "set": "mrs-claus-set",
     "milestone": "start",
@@ -102769,7 +103122,9 @@
       "bag"
     ],
     "vendors": [],
-    "events": [],
+    "events": [
+      "christmas"
+    ],
     "biomes": [],
     "times": [],
     "platforms": [
@@ -102794,6 +103149,7 @@
     "placeable": false,
     "autoswing": false,
     "bodySlot": "social helmet",
+    "eventOnly": true,
     "conditions": [],
     "set": "parka-set",
     "milestone": "start",
@@ -102820,7 +103176,9 @@
       "bag"
     ],
     "vendors": [],
-    "events": [],
+    "events": [
+      "christmas"
+    ],
     "biomes": [],
     "times": [],
     "platforms": [
@@ -102845,6 +103203,7 @@
     "placeable": false,
     "autoswing": false,
     "bodySlot": "social shirt",
+    "eventOnly": true,
     "conditions": [],
     "set": "parka-set",
     "milestone": "start",
@@ -102871,7 +103230,9 @@
       "bag"
     ],
     "vendors": [],
-    "events": [],
+    "events": [
+      "christmas"
+    ],
     "biomes": [],
     "times": [],
     "platforms": [
@@ -102896,6 +103257,7 @@
     "placeable": false,
     "autoswing": false,
     "bodySlot": "social pants",
+    "eventOnly": true,
     "conditions": [],
     "set": "parka-set",
     "milestone": "start",
@@ -102920,7 +103282,9 @@
       "bag"
     ],
     "vendors": [],
-    "events": [],
+    "events": [
+      "christmas"
+    ],
     "biomes": [],
     "times": [],
     "platforms": [
@@ -102945,6 +103309,7 @@
     "placeable": false,
     "autoswing": false,
     "bodySlot": "social helmet",
+    "eventOnly": true,
     "conditions": [],
     "milestone": "start",
     "milestoneVia": "Found in Present"
@@ -102968,7 +103333,9 @@
       "bag"
     ],
     "vendors": [],
-    "events": [],
+    "events": [
+      "christmas"
+    ],
     "biomes": [],
     "times": [],
     "platforms": [
@@ -102993,6 +103360,7 @@
     "placeable": false,
     "autoswing": false,
     "bodySlot": "social shirt",
+    "eventOnly": true,
     "conditions": [],
     "milestone": "start",
     "milestoneVia": "Found in Present"
@@ -103018,7 +103386,9 @@
       "bag"
     ],
     "vendors": [],
-    "events": [],
+    "events": [
+      "christmas"
+    ],
     "biomes": [],
     "times": [],
     "platforms": [
@@ -103043,6 +103413,7 @@
     "placeable": false,
     "autoswing": false,
     "bodySlot": "social helmet",
+    "eventOnly": true,
     "conditions": [],
     "set": "tree-set",
     "milestone": "start",
@@ -103069,7 +103440,9 @@
       "bag"
     ],
     "vendors": [],
-    "events": [],
+    "events": [
+      "christmas"
+    ],
     "biomes": [],
     "times": [],
     "platforms": [
@@ -103094,6 +103467,7 @@
     "placeable": false,
     "autoswing": false,
     "bodySlot": "social shirt",
+    "eventOnly": true,
     "conditions": [],
     "set": "tree-set",
     "milestone": "start",
@@ -103120,7 +103494,9 @@
       "bag"
     ],
     "vendors": [],
-    "events": [],
+    "events": [
+      "christmas"
+    ],
     "biomes": [],
     "times": [],
     "platforms": [
@@ -103145,6 +103521,7 @@
     "placeable": false,
     "autoswing": false,
     "bodySlot": "social pants",
+    "eventOnly": true,
     "conditions": [],
     "set": "tree-set",
     "milestone": "start",
@@ -120171,6 +120548,9 @@
     "defense": 2,
     "bodySlot": "helmet",
     "tooltip": "6% increased magic damage and critical strike chance",
+    "seeds": [
+      "seed-i-am-error"
+    ],
     "conditions": [],
     "milestone": "start",
     "milestoneVia": "Sold by the Traveling Merchant"
@@ -123519,6 +123899,9 @@
     "useTime": 22,
     "pickaxePower": 59,
     "toolSpeed": 13,
+    "seeds": [
+      "seed-i-am-error"
+    ],
     "conditions": [],
     "milestone": "start",
     "milestoneVia": "Fished"
@@ -123576,6 +123959,9 @@
     "axePower": 70,
     "toolSpeed": 4,
     "rangeBonus": -1,
+    "seeds": [
+      "seed-i-am-error"
+    ],
     "conditions": [],
     "milestone": "start",
     "milestoneVia": "Fished"
@@ -128801,7 +129187,6 @@
       "trophy-relic"
     ],
     "obtain": [
-      "drop",
       "quest-reward"
     ],
     "vendors": [],
@@ -128853,7 +129238,6 @@
       "trophy-relic"
     ],
     "obtain": [
-      "drop",
       "quest-reward"
     ],
     "vendors": [],
@@ -128905,7 +129289,6 @@
       "trophy-relic"
     ],
     "obtain": [
-      "drop",
       "quest-reward"
     ],
     "vendors": [],
@@ -128957,7 +129340,6 @@
       "trophy-relic"
     ],
     "obtain": [
-      "drop",
       "quest-reward"
     ],
     "vendors": [],
@@ -135751,6 +136133,10 @@
     "useTime": 36,
     "buff": "Pirate",
     "tooltip": "Summons pirates to fight for you",
+    "seeds": [
+      "seed-zenith",
+      "seed-drunk"
+    ],
     "eventOnly": true,
     "conditions": [],
     "milestone": "wall-of-flesh",
@@ -146713,6 +147099,9 @@
     "autoswing": false,
     "velocity": 14.0,
     "tooltip": "Press Grapple to launch hook",
+    "seeds": [
+      "seed-i-am-error"
+    ],
     "eventOnly": true,
     "conditions": [],
     "milestone": "golem",
@@ -159198,6 +159587,9 @@
     "useTime": 20,
     "buff": "Magic Lantern",
     "tooltip": "Summons a magic lantern that exposes nearby treasure",
+    "seeds": [
+      "seed-i-am-error"
+    ],
     "conditions": [
       "night",
       "moon-1"
@@ -160555,6 +160947,9 @@
     "mana": 2,
     "debuff": "On Fire!",
     "tooltip": "Shoots a small spark",
+    "seeds": [
+      "seed-remix"
+    ],
     "conditions": [],
     "milestone": "start",
     "milestoneVia": "Found in Chest"
@@ -170162,6 +170557,9 @@
     "knockback": 3.25,
     "velocity": 16.0,
     "useTime": 25,
+    "seeds": [
+      "seed-i-am-error"
+    ],
     "conditions": [
       "after-eye-of-cthulhu"
     ],
@@ -173706,6 +174104,9 @@
     "placeable": false,
     "autoswing": false,
     "tooltip": "Allows the use of two yoyos at once",
+    "seeds": [
+      "seed-i-am-error"
+    ],
     "conditions": [],
     "milestone": "wall-of-flesh",
     "milestoneVia": "Sold by the Skeleton Merchant"
@@ -174471,6 +174872,9 @@
     "knockback": 1.25,
     "velocity": 10.0,
     "useTime": 24,
+    "seeds": [
+      "seed-i-am-error"
+    ],
     "conditions": [],
     "milestone": "start",
     "milestoneVia": "Dropped by Painter"
@@ -174577,6 +174981,9 @@
     "velocity": 7.5,
     "useTime": 13,
     "debuff": "Bleeding",
+    "seeds": [
+      "seed-i-am-error"
+    ],
     "conditions": [],
     "milestone": "start",
     "milestoneVia": "Dropped by Stylist"
@@ -176186,6 +176593,9 @@
     "velocity": 24.0,
     "useTime": 20,
     "tooltip": "Creates a pair of portals that can be traveled through.\nUse Left click & Right click to place portals.\nIncreases momentum and falling speed.\n'Speedy thing goes in, speedy thing comes out.'",
+    "seeds": [
+      "seed-other"
+    ],
     "conditions": [],
     "milestone": "moon-lord",
     "milestoneVia": "Dropped by Moon Lord"
@@ -176235,6 +176645,9 @@
     "placedWidth": 1,
     "placedHeight": 1,
     "tooltip": "Can be traded for rare dyes",
+    "seeds": [
+      "seed-i-am-error"
+    ],
     "conditions": [],
     "milestone": "wall-of-flesh",
     "milestoneVia": "Collected in the world, in Hardmode"
@@ -176284,6 +176697,9 @@
     "placedWidth": 1,
     "placedHeight": 1,
     "tooltip": "Can be traded for rare dyes",
+    "seeds": [
+      "seed-i-am-error"
+    ],
     "conditions": [],
     "milestone": "wall-of-flesh",
     "milestoneVia": "Collected in the world, in Hardmode"
@@ -176333,6 +176749,9 @@
     "placedWidth": 1,
     "placedHeight": 1,
     "tooltip": "Can be traded for rare dyes",
+    "seeds": [
+      "seed-i-am-error"
+    ],
     "conditions": [],
     "milestone": "wall-of-flesh",
     "milestoneVia": "Collected in the world, in Hardmode"
@@ -176382,6 +176801,9 @@
     "placedWidth": 1,
     "placedHeight": 1,
     "tooltip": "Can be traded for rare dyes",
+    "seeds": [
+      "seed-i-am-error"
+    ],
     "conditions": [],
     "milestone": "wall-of-flesh",
     "milestoneVia": "Collected in the world, in Hardmode"
@@ -188422,6 +188844,9 @@
     "autoswing": false,
     "velocity": 16.0,
     "tooltip": "Press Grapple to launch hook",
+    "seeds": [
+      "seed-i-am-error"
+    ],
     "conditions": [],
     "milestone": "any-mech",
     "milestoneVia": "Sold by the Steampunker"
@@ -207971,6 +208396,9 @@
     "defense": 4,
     "bodySlot": "helmet",
     "tooltip": "Improves vision and provides light when worn\n'The darkness holds no secrets for you'",
+    "seeds": [
+      "seed-i-am-error"
+    ],
     "conditions": [],
     "milestone": "start",
     "milestoneVia": "Crafted"
@@ -214773,6 +215201,11 @@
     "velocity": 15.0,
     "useTime": 25,
     "tooltip": "Unleashes a dicing flurry",
+    "seeds": [
+      "seed-zenith",
+      "seed-drunk",
+      "seed-i-am-error"
+    ],
     "conditions": [],
     "milestone": "start",
     "milestoneVia": "Collected in the world"
@@ -221135,6 +221568,9 @@
     "useTime": 36,
     "buff": "Vampire Frog",
     "tooltip": "Summons a vampire frog to fight for you",
+    "seeds": [
+      "seed-i-am-error"
+    ],
     "eventOnly": true,
     "conditions": [],
     "milestone": "start",
@@ -224833,6 +225269,9 @@
     "useTime": 36,
     "mana": 16,
     "tooltip": "'It might be broken'",
+    "seeds": [
+      "seed-i-am-error"
+    ],
     "conditions": [
       "after-king-slime"
     ],
@@ -226948,6 +227387,9 @@
     "useTime": 15,
     "placedWidth": 1,
     "placedHeight": 1,
+    "seeds": [
+      "seed-ntb"
+    ],
     "conditions": [],
     "milestone": "start",
     "milestoneVia": "Crafted"
@@ -227979,6 +228421,9 @@
     "placeable": false,
     "autoswing": false,
     "tooltip": "Enables Echo Sight, showing hidden blocks",
+    "seeds": [
+      "seed-other"
+    ],
     "conditions": [],
     "milestone": "skeletron",
     "milestoneVia": "Sold by the Mechanic"
@@ -228513,6 +228958,9 @@
     "placedWidth": 2,
     "placedHeight": 3,
     "tooltip": "Press Up/Down to cycle through placement styles",
+    "seeds": [
+      "seed-i-am-error"
+    ],
     "conditions": [],
     "milestone": "start",
     "milestoneVia": "Sold by the Traveling Merchant"
@@ -241736,6 +242184,9 @@
     "placeable": false,
     "autoswing": false,
     "bodySlot": "social helmet",
+    "seeds": [
+      "seed-constant"
+    ],
     "conditions": [],
     "set": "gravedigger-set",
     "milestone": "skeletron",
@@ -241791,6 +242242,9 @@
     "placeable": false,
     "autoswing": false,
     "bodySlot": "social shirt",
+    "seeds": [
+      "seed-constant"
+    ],
     "conditions": [],
     "set": "gravedigger-set",
     "milestone": "skeletron",
@@ -243086,6 +243540,9 @@
     "useTime": 22,
     "toolSpeed": 14,
     "tooltip": "Digs in a bigger area than a pickaxe\nOnly digs up soft tiles\n'Can you dig it?'",
+    "seeds": [
+      "seed-i-am-error"
+    ],
     "conditions": [],
     "milestone": "start",
     "milestoneVia": "Crafted"
@@ -244469,6 +244926,9 @@
     "placeable": false,
     "autoswing": false,
     "bodySlot": "social helmet",
+    "seeds": [
+      "seed-constant"
+    ],
     "eventOnly": true,
     "conditions": [],
     "set": "dr-man-fly-set",
@@ -244522,6 +244982,9 @@
     "placeable": false,
     "autoswing": false,
     "bodySlot": "social shirt",
+    "seeds": [
+      "seed-constant"
+    ],
     "eventOnly": true,
     "conditions": [],
     "set": "dr-man-fly-set",
@@ -244575,6 +245038,9 @@
     "placeable": false,
     "autoswing": false,
     "bodySlot": "social helmet",
+    "seeds": [
+      "seed-constant"
+    ],
     "eventOnly": true,
     "conditions": [],
     "set": "butcher-s-set",
@@ -244628,6 +245094,9 @@
     "placeable": false,
     "autoswing": false,
     "bodySlot": "social shirt",
+    "seeds": [
+      "seed-constant"
+    ],
     "eventOnly": true,
     "conditions": [],
     "set": "butcher-s-set",
@@ -244681,6 +245150,9 @@
     "placeable": false,
     "autoswing": false,
     "bodySlot": "social pants",
+    "seeds": [
+      "seed-constant"
+    ],
     "eventOnly": true,
     "conditions": [],
     "set": "butcher-s-set",
@@ -248591,6 +249063,9 @@
     "velocity": 17.0,
     "useTime": 15,
     "tooltip": "'For fixing things, and breaking them'",
+    "seeds": [
+      "seed-i-am-error"
+    ],
     "conditions": [],
     "milestone": "skeletron",
     "milestoneVia": "Dropped by Mechanic"
@@ -255098,6 +255573,9 @@
     "autoswing": true,
     "useTime": 15,
     "tooltip": "Teleport to another pylon\nCan function anywhere\n'You must construct additional pylons'",
+    "seeds": [
+      "seed-i-am-error"
+    ],
     "conditions": [
       "bestiary-100"
     ],
@@ -256586,6 +257064,9 @@
     "autoswing": false,
     "velocity": 16.0,
     "tooltip": "Teleports you to the location of the hook\nPress Grapple to launch hook",
+    "seeds": [
+      "seed-i-am-error"
+    ],
     "conditions": [],
     "milestone": "queen-slime",
     "milestoneVia": "From the Treasure Bag (Queen Slime)"
@@ -257673,6 +258154,11 @@
     "defense": 3,
     "bodySlot": "pants",
     "tooltip": "Slightly increases mobility\n'These might be Steve's'",
+    "seeds": [
+      "seed-zenith",
+      "seed-drunk"
+    ],
+    "seedOnly": true,
     "conditions": [],
     "milestone": "start",
     "milestoneVia": "Found in chests & pots"
@@ -264205,6 +264691,9 @@
     "placedWidth": 6,
     "placedHeight": 4,
     "tooltip": "'C.J. Lee'\nAdapted by J. T. Kjexrud",
+    "seeds": [
+      "seed-constant"
+    ],
     "conditions": [],
     "milestone": "start",
     "milestoneVia": "Sold by the Traveling Merchant"
@@ -264257,6 +264746,9 @@
     "placedWidth": 6,
     "placedHeight": 4,
     "tooltip": "'C.J. Lee'\nAdapted by J. T. Kjexrud",
+    "seeds": [
+      "seed-constant"
+    ],
     "conditions": [],
     "milestone": "start",
     "milestoneVia": "Sold by the Traveling Merchant"
@@ -264309,6 +264801,9 @@
     "placedWidth": 6,
     "placedHeight": 4,
     "tooltip": "'C.J. Lee'\nAdapted by J. T. Kjexrud",
+    "seeds": [
+      "seed-constant"
+    ],
     "conditions": [],
     "milestone": "start",
     "milestoneVia": "Sold by the Traveling Merchant"
@@ -264361,6 +264856,9 @@
     "placedWidth": 6,
     "placedHeight": 4,
     "tooltip": "'C.J. Lee'\nAdapted by J. T. Kjexrud",
+    "seeds": [
+      "seed-constant"
+    ],
     "conditions": [],
     "milestone": "start",
     "milestoneVia": "Sold by the Traveling Merchant"
@@ -274769,6 +275267,12 @@
     "placeable": false,
     "autoswing": false,
     "tooltip": "Summons ???\n'You really shouldn't'",
+    "seeds": [
+      "seed-remix",
+      "seed-ftw",
+      "seed-zenith"
+    ],
+    "seedOnly": true,
     "conditions": [],
     "milestone": "wall-of-flesh",
     "milestoneVia": "Crafted – needs Mythril Anvil → Mythril Bar: Found in Titanium Crate"
@@ -277048,6 +277552,12 @@
     "useTime": 23,
     "debuff": "Hellfire",
     "tooltip": "'It's Waffle Time!'",
+    "seeds": [
+      "seed-remix",
+      "seed-ftw",
+      "seed-zenith"
+    ],
+    "seedOnly": true,
     "conditions": [],
     "milestone": "wall-of-flesh",
     "milestoneVia": "Dropped by Mechdusa"
@@ -280413,6 +280923,9 @@
     "velocity": 9.0,
     "useTime": 32,
     "tooltip": "Rotate Left/Right to steer & Press Up to accelerate\n'First rule of Flight Club, we don't talk about Flight Club'",
+    "seeds": [
+      "seed-i-am-error"
+    ],
     "conditions": [],
     "milestone": "plantera",
     "milestoneVia": "Sold by the Cyborg"
@@ -283663,6 +284176,11 @@
     "autoswing": false,
     "bodySlot": "social shirt",
     "tooltip": "'The legs, the torso, the whole darn thing...'",
+    "seeds": [
+      "seed-ftw",
+      "seed-zenith"
+    ],
+    "seedOnly": true,
     "conditions": [],
     "milestone": "skeletron",
     "milestoneVia": "Found in Golden Lock Box"
@@ -287747,6 +288265,9 @@
     "useTime": 20,
     "buff": "Curse of the Bat",
     "tooltip": "Inflicts the bearer with the curse of the bat",
+    "seeds": [
+      "seed-constant"
+    ],
     "eventOnly": true,
     "conditions": [],
     "milestone": "any-mech",
@@ -290067,6 +290588,10 @@
     "velocity": 6.0,
     "useTime": 15,
     "tooltip": "Works when wet",
+    "seeds": [
+      "seed-drunk",
+      "seed-rainbow-road"
+    ],
     "conditions": [],
     "milestone": "start",
     "milestoneVia": "Found in Chest"

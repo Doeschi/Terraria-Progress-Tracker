@@ -45,7 +45,7 @@ VENDOR = "vendor"
 
 def source(kind, obtain=(), **more):
     return {"kind": kind, "regular": True, "free": False, "obtain": list(obtain), "events": set(),
-            "biomes": set(), "times": set(), "conditions": set(), **more}
+            "biomes": set(), "times": set(), "conditions": set(), "seeds": set(), **more}
 
 
 class Sources:
@@ -59,6 +59,13 @@ class Sources:
         # words of a chance that bind a drop to an event ("during Halloween")
         self.event_words = {eid: [w.lower() for w in e["drop_conditions"]]
                             for eid, e in mapping.sections["events"].items() if e.get("drop_conditions")}
+        # containers that only drop during an event, from any enemy (Goodie Bag, Present): the
+        # container is an event drop, and what is found in it is bound to the event too
+        self.event_containers = {norm_name(c): eid for eid, e in mapping.sections["events"].items()
+                                 for c in e.get("containers", ())}
+        # items only obtainable in special world seeds, where the wiki says so only in the page
+        # text ([seed_items]): every source of the item counts as only in these seeds
+        self.seed_items = {norm_name(n): set(seeds) for n, seeds in mapping.seed_items.items()}
         self.recipes, self.shimmer, self.extracted = defaultdict(list), defaultdict(list), defaultdict(list)
         for r in recipes["recipes"]:
             self.recipes[r["result"]].append(r)
@@ -77,13 +84,29 @@ class Sources:
         self.of = {item["key"]: self.collect(item) for item in items}
 
     def collect(self, item):
+        out = self._collect(item)
+        own = self.seed_items.get(norm_name(item["name"]))
+        if own:
+            for s in out:
+                s["seeds"] = set(s["seeds"]) | own
+        return out
+
+    def _collect(self, item):
         key, out = item["key"], []
         rows = self.drops.drops.get(key, [])
+        # an event-only container itself: dropped by any enemy during the event
+        event_drop = self.event_containers.get(norm_name(item["name"]))
+        if event_drop:
+            out.append(source("npc", [oid for oid, o in self.obtain.items() if "npc" in o.get("from_drops", ())],
+                              drop={}, source={"id": "any-enemy", "name": "any enemy", "kind": "npc"},
+                              events={event_drop}))
         for d in rows:
             dropper = self.drops.sources[d["source"]]
-            # containers are never restricted, and they add no events (fruit of a tree at night)
-            container = dropper["kind"] == "container"
-            events = set(dropper.get("events", ()))
+            # containers are never restricted, and they add no events (fruit of a tree at night) -
+            # except the event-only containers: their contents are bound to the event
+            event = self.event_containers.get(norm_name(dropper["name"]))
+            container = dropper["kind"] == "container" and not event
+            events = set(dropper.get("events", ())) | ({event} if event else set())
             if not container:
                 # the drop itself can be bound to an event: by a condition or the words of its chance
                 rate = d.get("rate", "").lower()
@@ -94,6 +117,7 @@ class Sources:
             there = "desktop" in dropper.get("platforms", ("desktop",)) or "desktop" not in item["platforms"]
             out.append(source(
                 dropper["kind"], regular=there and not seed_only(d), free=container, drop=d, source=dropper,
+                seeds={c for c in d.get("conditions", ()) if c.startswith("seed-")},
                 obtain=[oid for oid, o in self.obtain.items()
                         if dropper["kind"] in o.get("from_drops", ())
                         or dropper.get("group") in o.get("from_containers", ())],
@@ -107,6 +131,7 @@ class Sources:
             # a row for players who have an item ("... a Nail Gun in their inventory") needs it
             needs = {"needs": [(self.names[r["needs"][0]], r["needs"])]} if r.get("needs") else {}
             out.append(source("shop", [VENDOR], regular=not seed_only(r), row=r, vendor=r["vendor"],
+                              seeds={c for c in r["conditions"] if c.startswith("seed-")},
                               events=set(r["events"]), biomes=set(r["biomes"]), conditions=set(r["conditions"]),
                               **needs))
         # the vendors the Items table names; one that only has rows in special seeds is no vendor of
@@ -137,7 +162,8 @@ class Sources:
         for s in self.shimmer.get(key, ()):
             needs = (self.names[s["item"]], [s["item"]]) if s.get("item") else (s["group"], self.groups.get(s["group"], []))
             out.append(source("shimmer", [oid for oid, o in self.obtain.items() if o.get("from_shimmer")],
-                              regular=not seed_only(s), row=s, needs=[needs], conditions=set(s.get("conditions", ()))))
+                              regular=not seed_only(s), row=s, needs=[needs], conditions=set(s.get("conditions", ())),
+                              seeds={c for c in s.get("conditions", ()) if c.startswith("seed-")}))
         # the Extractinators: the machine and one of the inputs; some results only in Hardmode
         for r in self.extracted.get(key, ()):
             machine = self.machines[r["machine"]]
@@ -172,7 +198,7 @@ class Sources:
             if mine and not any(s["regular"] for s in mine):
                 self.report[f"only in special seeds: {oid}"] += 1
                 continue
-            covered = oid in ROW_METHODS and bool(rows)
+            covered = oid in ROW_METHODS and (bool(rows) or bool(event_drop))
             out.append(source("tag", [oid], method=oid, covered=covered, sure=oid in SURE,
                               free=not covered and oid in FREE | ROW_METHODS))
         return out
@@ -198,6 +224,19 @@ class Sources:
             item["vendors"] = self.vendors[key]
             events = set(item["events"]).union(*(s["events"] for s in rows))
             item["events"] = [e for e in order["events"] if e in events]
+            # special world seeds (CO6): the seeds of the rows only there and of [seed_items];
+            # "seedOnly" when no source at all is a regular one
+            every = self.of[key]
+            seeds = set().union(*(s["seeds"] for s in every)) if every else set()
+            seeds = {c for c in seeds if conditions.entries.get(c, {}).get("group") == "seed"}
+            if seeds:
+                item["seeds"] = [c for c in conditions.entries if c in seeds]
+            else:
+                item.pop("seeds", None)
+            if every and all(s["seeds"] for s in every):
+                item["seedOnly"] = True
+            else:
+                item.pop("seedOnly", None)
             # where and when the enemies spawn that drop it - not what the wiki's tags say then
             dropped = key in self.drops.drops
             biomes = (set() if dropped else set(item["biomes"])).union(*(s["biomes"] for s in rows))

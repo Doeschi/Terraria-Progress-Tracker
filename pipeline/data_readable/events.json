@@ -99,12 +99,12 @@
     "id": "halloween",
     "name": "Halloween",
     "icon": "https://terraria.wiki.gg/images/Goodie_Bag.png",
-    "count": 16
+    "count": 74
   },
   {
     "id": "christmas",
     "name": "Christmas",
     "icon": "https://terraria.wiki.gg/images/Present.png",
-    "count": 14
+    "count": 46
   }
 ]

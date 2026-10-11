@@ -257,6 +257,14 @@ function DetailContent({ item, Title }: { item: Item; Title: TitleComponent }) {
             {item.events.map((e) => nameOf(data.events, e)).join(', ')}
           </p>
         )}
+        {item.seeds && item.seeds.length > 0 && (
+          <p className="text-sm">
+            <span className="text-muted-foreground">
+              {item.seedOnly ? 'Only in special world seeds: ' : 'Also in special world seeds: '}
+            </span>
+            {item.seeds.map((s) => data.conditions.get(s)?.name ?? s).join(', ')}
+          </p>
+        )}
         {banner && world && (
           <p className="text-sm">
             <span className="text-muted-foreground">
@@ -337,6 +345,9 @@ function DetailContent({ item, Title }: { item: Item; Title: TitleComponent }) {
                 </Badge>
               )}
               {item.eventOnly && <Badge className="bg-sky-500/15 text-sky-700 dark:text-sky-300">Event only</Badge>}
+              {item.seedOnly && (
+                <Badge className="bg-violet-500/15 text-violet-700 dark:text-violet-300">Special seeds only</Badge>
+              )}
               {item.introduced && <Badge className="bg-muted text-muted-foreground">Added in {item.introduced}</Badge>}
             </div>
           </div>

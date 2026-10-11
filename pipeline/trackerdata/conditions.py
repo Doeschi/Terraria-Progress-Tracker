@@ -228,6 +228,9 @@ class Conditions:
     def conditions_file(self, items, bosses_icons):
         """conditions.json: groups (in mapping order) and conditions with item counts."""
         counts = Counter(c for i in items for c in i.get("conditions", []))
+        # the "World seed" options count the items with a source only there (CO6)
+        counts.update(c for i in items for c in i.get("seeds", []))
+        counts["seed-only"] += sum(1 for i in items if i.get("seedOnly"))
         out = []
         for cid, e in self.entries.items():
             if not counts[cid] and e["group"] == "boss":

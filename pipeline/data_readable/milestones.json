@@ -3,7 +3,7 @@
     "id": "start",
     "name": "World creation",
     "icon": "https://terraria.wiki.gg/images/Copper_Shortsword.png",
-    "count": 3328
+    "count": 3329
   },
   {
     "id": "king-slime",
@@ -69,7 +69,7 @@
     "id": "plantera",
     "name": "Plantera",
     "icon": "https://terraria.wiki.gg/images/Map_Icon_Plantera_%28first_form%29.png",
-    "count": 284
+    "count": 283
   },
   {
     "id": "golem",
