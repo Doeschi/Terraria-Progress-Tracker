@@ -221,15 +221,19 @@ function ActiveFilters({ onlyActive = false }: { onlyActive?: boolean }) {
   const groups = useMemo(() => buildBestiaryGroups(data), [data])
   const selection = useStore((s) => s.bestiarySelection)
   const requireAll = useStore((s) => s.bestiaryRequireAll)
+  const excluded = useStore((s) => s.bestiaryExcluded)
   const search = useStore((s) => s.bestiarySearch.trim())
-  const { toggleBestiaryFilter, toggleBestiaryRequireAll, setBestiarySearch } = useStore.getState()
+  const { toggleBestiaryFilter, toggleBestiaryExclude, toggleBestiaryRequireAll, setBestiarySearch } =
+    useStore.getState()
   return (
     <ActiveFilterBar
       groups={groups}
       selection={selection}
       requireAll={requireAll}
+      excluded={excluded}
       search={search}
       onRemove={toggleBestiaryFilter}
+      onRemoveExcluded={toggleBestiaryExclude}
       onToggleAll={toggleBestiaryRequireAll}
       onClearSearch={() => setBestiarySearch('')}
       onClearAll={clearAllFilters}

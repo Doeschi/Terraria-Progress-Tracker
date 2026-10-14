@@ -1,5 +1,5 @@
 import { Fragment, useMemo } from 'react'
-import { Search, SlidersHorizontal, X } from 'lucide-react'
+import { Ban, Search, SlidersHorizontal, X } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import type { FilterGroup } from '@/lib/filtering'
 import { usePrefs } from '@/lib/prefs'
@@ -237,14 +237,17 @@ export function MobileFiltersButton({
 
 /**
  * The active search and filters as removable chips. Options within a group are combined
- * with OR, groups (and the search) with AND - shown literally.
+ * with OR (or AND), excluded options with AND NOT, groups (and the search) with AND - shown
+ * literally.
  */
 export function ActiveFilterBar<K extends string>({
   groups,
   selection,
   requireAll,
+  excluded,
   search,
   onRemove,
+  onRemoveExcluded,
   onToggleAll,
   onClearSearch,
   onClearAll,
@@ -254,8 +257,11 @@ export function ActiveFilterBar<K extends string>({
   selection: Record<K, string[]>
   /** groups whose selected options must all apply (FL3a) */
   requireAll: K[]
+  /** excluded options per group (FL3b) */
+  excluded: Record<K, string[]>
   search: string
   onRemove: (group: K, id: string) => void
+  onRemoveExcluded: (group: K, id: string) => void
   /** the group's options must all apply - or any of them again */
   onToggleAll: (group: K) => void
   onClearSearch: () => void
@@ -273,7 +279,7 @@ export function ActiveFilterBar<K extends string>({
       }
     return m
   }, [groups])
-  const active = groups.filter((g) => selection[g.key].length > 0)
+  const active = groups.filter((g) => selection[g.key].length > 0 || excluded[g.key].length > 0)
 
   // shown also without filters, so the list below does not jump when the first filter is added
   if (!active.length && !search) {
@@ -336,6 +342,23 @@ export function ActiveFilterBar<K extends string>({
                   className="flex items-center gap-1 rounded-md bg-primary/15 py-0.5 pr-1 pl-2 font-medium hover:bg-primary/25"
                   title="Remove filter"
                 >
+                  {names.get(`${g.key}/${id}`) ?? id}
+                  <X className="size-3" />
+                </button>
+              </Fragment>
+            ))}
+            {/* excluded options: "and not" (FL3b) */}
+            {excluded[g.key].map((id, i) => (
+              <Fragment key={`not-${id}`}>
+                <span className="text-muted-foreground">
+                  {selection[g.key].length > 0 || i > 0 ? 'and not' : 'not'}
+                </span>
+                <button
+                  onClick={() => onRemoveExcluded(g.key, id)}
+                  className="flex items-center gap-1 rounded-md bg-destructive/10 py-0.5 pr-1 pl-2 font-medium text-destructive hover:bg-destructive/20"
+                  title="Remove filter"
+                >
+                  <Ban className="size-3" />
                   {names.get(`${g.key}/${id}`) ?? id}
                   <X className="size-3" />
                 </button>

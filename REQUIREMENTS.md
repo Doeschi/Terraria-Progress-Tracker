@@ -546,6 +546,17 @@ needs a decision is reported, and parsers that read page text must not silently 
   remain with it added, a selected one the current result. The mode is remembered with the view
   (PR), goes with the group's last option, and "Clear all" (with its Undo) covers it. Across
   groups it stays AND.
+- **FL3b** Excluding options: an option is off, included or excluded. Items with an excluded
+  option are left out, whatever else is selected in its group ("Obtained by: Bought from NPCs
+  and not Crafted"; "not Crafted" alone: everything that is not craftable). In the sidebar a ⊘
+  button at the right of the option excludes it (shown on hover, always on touch screens; Alt+click
+  on the option and Shift+Enter in the filter search do the same); an excluded option is struck
+  through with a red outline, its counts stay (what it takes away) and the group's other options
+  count without the items it cuts. In the active-filters line it is a red chip "not Crafted"
+  after the included ones ("… or Fished and not Crafted"); the × of a chip removes it. Including
+  an excluded option stops the exclusion and the other way round. Cleared with "Clear all" / Esc
+  (and put back by Undo), remembered with the view (PR); the bestiary filters the same.
+
 - **FL4** Totals only count items available in the playthrough (platform, difficulty, game
   version) that are not ignored. Entry counts
   are faceted: they respect the search and the selections of all *other* filter groups.

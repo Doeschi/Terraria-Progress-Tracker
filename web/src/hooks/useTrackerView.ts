@@ -54,6 +54,7 @@ export function useTrackerView(): TrackerView | null {
   const selection = useStore((s) => s.selection)
   const requireAllKeys = useStore((s) => s.requireAll)
   const requireAll = useMemo(() => new Set(requireAllKeys), [requireAllKeys])
+  const excluded = useStore((s) => s.excluded)
   const search = useDeferredValue(useStore((s) => s.search))
   const view = useStore((s) => s.view)
   const progressionMode = usePrefs((s) => s.progressionMode)
@@ -162,9 +163,10 @@ export function useTrackerView(): TrackerView | null {
         ignored,
         selection: effectiveSelection,
         requireAll,
+        excluded,
         searchRank: ranks,
       }),
-    [platformItems, entries, crafting, checked, ignored, effectiveSelection, requireAll, ranks],
+    [platformItems, entries, crafting, checked, ignored, effectiveSelection, requireAll, excluded, ranks],
   )
 
   const ordered = useMemo(

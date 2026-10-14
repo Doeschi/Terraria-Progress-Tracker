@@ -70,6 +70,8 @@ interface State {
   selection: Selection
   /** groups whose selected options must all apply, not any of them (FL3a) */
   requireAll: GroupKey[]
+  /** excluded options per group: items with any of them are left out (FL3b) */
+  excluded: Selection
   /** options of "Sources & sets" shown in the sidebar (FL18) */
   picked: string[]
   search: string
@@ -79,6 +81,7 @@ interface State {
   mode: TrackerMode
   bestiarySelection: BestiarySelection
   bestiaryRequireAll: BestiaryGroupKey[]
+  bestiaryExcluded: BestiarySelection
   bestiarySearch: string
   bestiaryView: BestiaryViewMode
 }
@@ -120,6 +123,8 @@ interface Actions {
   deleteArea(playthroughId: string, areaId: string): void
 
   toggleFilter(group: GroupKey, id: string): void
+  /** exclude an option - items with it are left out - or stop excluding it (FL3b) */
+  toggleExclude(group: GroupKey, id: string): void
   clearFilter(group?: GroupKey): void
   /** add an option to "Sources & sets" (and select it) */
   pickSource(id: string): void
@@ -129,16 +134,17 @@ interface Actions {
   showSourceItems(id: string): void
   setSearch(search: string): void
   /** all filters at once (undo of "Clear all") */
-  setSelection(selection: Selection, requireAll: GroupKey[]): void
+  setSelection(selection: Selection, requireAll: GroupKey[], excluded: Selection): void
   /** a group's selected options must all apply - or any of them again (FL3a) */
   toggleRequireAll(group: GroupKey): void
   setView(view: ViewMode): void
 
   setMode(mode: TrackerMode): void
   toggleBestiaryFilter(group: BestiaryGroupKey, id: string): void
+  toggleBestiaryExclude(group: BestiaryGroupKey, id: string): void
   clearBestiaryFilter(group?: BestiaryGroupKey): void
   setBestiarySearch(search: string): void
-  setBestiarySelection(selection: BestiarySelection, requireAll: BestiaryGroupKey[]): void
+  setBestiarySelection(selection: BestiarySelection, requireAll: BestiaryGroupKey[], excluded: BestiarySelection): void
   toggleBestiaryRequireAll(group: BestiaryGroupKey): void
   setBestiaryView(view: BestiaryViewMode): void
 }
@@ -158,6 +164,16 @@ function downloadName(fileName: string, now = new Date()): string {
 
 /** the game data load in progress (loadData is called twice in dev, see there) */
 let loading: Promise<void> | null = null
+
+/** The option added to a group's included (or excluded) options: a parent (category, boss stage)
+ * and its own children are never in the same list together. */
+function withOption(group: GroupKey, id: string, current: string[], data: GameData | null): string[] {
+  const next = [...current, id]
+  if (!data) return next
+  const parents = parentMap(buildFilterGroups(data))
+  const parent = parents.get(`${group}/${id}`)
+  return next.filter((x) => `${group}/${x}` !== parent && parents.get(`${group}/${x}`) !== `${group}/${id}`)
+}
 
 export const useStore = create<State & Actions>()((set, get) => {
   const mutateDoc = (fn: (doc: SaveFile) => SaveFile) => {
@@ -207,12 +223,14 @@ export const useStore = create<State & Actions>()((set, get) => {
     players: {},
     selection: emptySelection(),
     requireAll: [],
+    excluded: emptySelection(),
     picked: [],
     search: '',
     view: 'all',
     mode: 'items',
     bestiarySelection: emptyBestiarySelection(),
     bestiaryRequireAll: [],
+    bestiaryExcluded: emptyBestiarySelection(),
     bestiarySearch: '',
     bestiaryView: 'all',
 
@@ -482,18 +500,29 @@ export const useStore = create<State & Actions>()((set, get) => {
 
     toggleFilter(group, id) {
       const current = get().selection[group]
-      let next = current.includes(id) ? current.filter((x) => x !== id) : [...current, id]
-      const data = get().data
-      if (data && !current.includes(id)) {
-        // a parent (category, boss stage) and its own children are never selected together
-        const parents = parentMap(buildFilterGroups(data))
-        const parent = parents.get(`${group}/${id}`)
-        next = next.filter((x) => `${group}/${x}` !== parent && parents.get(`${group}/${x}`) !== `${group}/${id}`)
-      }
+      const next = current.includes(id) ? current.filter((x) => x !== id) : withOption(group, id, current, get().data)
       set({
         selection: { ...get().selection, [group]: next },
         // the mode goes with the last option of the group
         requireAll: next.length ? get().requireAll : get().requireAll.filter((g) => g !== group),
+        // an option is included or excluded, not both
+        excluded: { ...get().excluded, [group]: get().excluded[group].filter((x) => x !== id) },
+      })
+    },
+
+    toggleExclude(group, id) {
+      const current = get().excluded[group]
+      const excluding = !current.includes(id)
+      const selection = excluding
+        ? { ...get().selection, [group]: get().selection[group].filter((x) => x !== id) }
+        : get().selection
+      set({
+        excluded: {
+          ...get().excluded,
+          [group]: excluding ? withOption(group, id, current, get().data) : current.filter((x) => x !== id),
+        },
+        selection,
+        requireAll: selection[group].length ? get().requireAll : get().requireAll.filter((g) => g !== group),
       })
     },
 
@@ -501,11 +530,12 @@ export const useStore = create<State & Actions>()((set, get) => {
       set({
         selection: group ? { ...get().selection, [group]: [] } : emptySelection(),
         requireAll: group ? get().requireAll.filter((g) => g !== group) : [],
+        excluded: group ? { ...get().excluded, [group]: [] } : emptySelection(),
       })
     },
 
-    setSelection(selection, requireAll) {
-      set({ selection, requireAll })
+    setSelection(selection, requireAll, excluded) {
+      set({ selection, requireAll, excluded })
     },
 
     toggleRequireAll(group) {
@@ -532,6 +562,7 @@ export const useStore = create<State & Actions>()((set, get) => {
       set({
         picked: picked.includes(id) ? picked : [...picked, id],
         selection: { ...emptySelection(), source: [id] },
+        excluded: emptySelection(),
         search: '',
         mode: 'items',
       })
@@ -549,16 +580,36 @@ export const useStore = create<State & Actions>()((set, get) => {
         bestiaryRequireAll: next.length
           ? get().bestiaryRequireAll
           : get().bestiaryRequireAll.filter((g) => g !== group),
+        bestiaryExcluded: { ...get().bestiaryExcluded, [group]: get().bestiaryExcluded[group].filter((x) => x !== id) },
+      })
+    },
+    toggleBestiaryExclude(group, id) {
+      const current = get().bestiaryExcluded[group]
+      const excluding = !current.includes(id)
+      const bestiarySelection = excluding
+        ? { ...get().bestiarySelection, [group]: get().bestiarySelection[group].filter((x) => x !== id) }
+        : get().bestiarySelection
+      set({
+        bestiaryExcluded: {
+          ...get().bestiaryExcluded,
+          [group]: excluding ? [...current, id] : current.filter((x) => x !== id),
+        },
+        bestiarySelection,
+        bestiaryRequireAll: bestiarySelection[group].length
+          ? get().bestiaryRequireAll
+          : get().bestiaryRequireAll.filter((g) => g !== group),
       })
     },
     clearBestiaryFilter(group) {
       set({
         bestiarySelection: group ? { ...get().bestiarySelection, [group]: [] } : emptyBestiarySelection(),
         bestiaryRequireAll: group ? get().bestiaryRequireAll.filter((g) => g !== group) : [],
+        bestiaryExcluded: group ? { ...get().bestiaryExcluded, [group]: [] } : emptyBestiarySelection(),
       })
     },
     setBestiarySearch: (bestiarySearch) => set({ bestiarySearch }),
-    setBestiarySelection: (bestiarySelection, bestiaryRequireAll) => set({ bestiarySelection, bestiaryRequireAll }),
+    setBestiarySelection: (bestiarySelection, bestiaryRequireAll, bestiaryExcluded) =>
+      set({ bestiarySelection, bestiaryRequireAll, bestiaryExcluded }),
     toggleBestiaryRequireAll(group) {
       const { bestiaryRequireAll } = get()
       set({
@@ -602,17 +653,19 @@ function rememberView() {
     const s = useStore.getState()
     const id = s.activeId
     if (!id) return
-    const { selection, requireAll, search, view, mode, bestiarySelection, bestiaryRequireAll } = s
-    const { bestiarySearch, bestiaryView, picked } = s
+    const { selection, requireAll, excluded, search, view, mode, bestiarySelection, bestiaryRequireAll } = s
+    const { bestiaryExcluded, bestiarySearch, bestiaryView, picked } = s
     const { detailKey } = useUi.getState()
     saveView(id, {
       selection,
       requireAll,
+      excluded,
       search,
       view,
       mode,
       bestiarySelection,
       bestiaryRequireAll,
+      bestiaryExcluded,
       bestiarySearch,
       bestiaryView,
       detailKey,
@@ -624,6 +677,8 @@ useStore.subscribe((s, prev) => {
   if (
     s.selection !== prev.selection ||
     s.requireAll !== prev.requireAll ||
+    s.excluded !== prev.excluded ||
+    s.bestiaryExcluded !== prev.bestiaryExcluded ||
     s.bestiaryRequireAll !== prev.bestiaryRequireAll ||
     s.search !== prev.search ||
     s.view !== prev.view ||

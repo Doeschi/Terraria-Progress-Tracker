@@ -16,22 +16,26 @@ export function clearAllFilters(): boolean {
   const s = useStore.getState()
   if (s.mode === 'stats') return false
   if (s.mode === 'bestiary') {
-    const { bestiarySelection, bestiaryRequireAll, bestiarySearch } = s
-    if (!bestiarySearch && Object.values(bestiarySelection).every((ids) => !ids.length)) return false
+    const { bestiarySelection, bestiaryRequireAll, bestiaryExcluded, bestiarySearch } = s
+    if (
+      !bestiarySearch &&
+      [...Object.values(bestiarySelection), ...Object.values(bestiaryExcluded)].every((ids) => !ids.length)
+    )
+      return false
     s.clearBestiaryFilter()
     s.setBestiarySearch('')
     undoable(() => {
-      useStore.getState().setBestiarySelection(bestiarySelection, bestiaryRequireAll)
+      useStore.getState().setBestiarySelection(bestiarySelection, bestiaryRequireAll, bestiaryExcluded)
       useStore.getState().setBestiarySearch(bestiarySearch)
     })
     return true
   }
-  const { selection, requireAll, search } = s
-  if (!search && Object.values(selection).every((ids) => !ids.length)) return false
+  const { selection, requireAll, excluded, search } = s
+  if (!search && [...Object.values(selection), ...Object.values(excluded)].every((ids) => !ids.length)) return false
   s.clearFilter()
   s.setSearch('')
   undoable(() => {
-    useStore.getState().setSelection(selection, requireAll)
+    useStore.getState().setSelection(selection, requireAll, excluded)
     useStore.getState().setSearch(search)
   })
   return true

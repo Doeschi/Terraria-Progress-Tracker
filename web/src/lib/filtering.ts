@@ -275,6 +275,8 @@ export interface CountInput {
   selection: Selection
   /** groups whose selected options must all apply (FL3a) */
   requireAll?: ReadonlySet<GroupKey>
+  /** excluded options per group: items with any of them are left out (FL3b) */
+  excluded?: Selection
   searchRank: Map<string, number> | null // null = no search
 }
 
@@ -311,6 +313,8 @@ export interface FacetInput<K extends string, T extends { key: string }> {
   selection: Record<K, string[]>
   /** groups whose selected options must all apply, not any of them (FL3a) */
   requireAll?: ReadonlySet<K>
+  /** excluded options per group: items with any of them are left out (FL3b) */
+  excluded?: Record<K, string[]>
   searchRank: Map<string, number> | null
 }
 
@@ -320,6 +324,7 @@ export function computeFacets<K extends string, T extends { key: string }>(input
   const facets = Object.fromEntries(GROUP_KEYS.map((g) => [g, new Map<string, Tally>()])) as Facets<K>
   const groupTallies = Object.fromEntries(GROUP_KEYS.map((g) => [g, { total: 0, obtained: 0 }])) as Record<K, Tally>
   const selectedSets = GROUP_KEYS.map((g) => new Set(selection[g]))
+  const excludedSets = GROUP_KEYS.map((g) => new Set(input.excluded?.[g] ?? []))
   const overall: Tally = { total: 0, obtained: 0 }
   const filtered: Tally = { total: 0, obtained: 0 }
   const matching = new Set<string>()
@@ -346,16 +351,25 @@ export function computeFacets<K extends string, T extends { key: string }>(input
 
     let failing = -1
     let failCount = 0
+    // the group an excluded option cuts it in: its other options could not bring it back (FL3b)
+    let excludedBy = -1
     for (let i = 0; i < GROUP_KEYS.length; i++) {
       const sel = selectedSets[i]
-      if (!sel.size) continue
+      const exc = excludedSets[i]
+      if (!sel.size && !exc.size) continue
       const own = entries[GROUP_KEYS[i]]
-      const passes = requireAll.has(GROUP_KEYS[i])
-        ? [...sel].every((id) => own.includes(id))
-        : own.some((id) => sel.has(id))
-      if (!passes) {
-        failCount++
-        failing = i
+      const cut = exc.size > 0 && own.some((id) => exc.has(id))
+      const included =
+        !sel.size ||
+        (requireAll.has(GROUP_KEYS[i]) ? [...sel].every((id) => own.includes(id)) : own.some((id) => sel.has(id)))
+      if (included && !cut) continue
+      failCount++
+      failing = i
+      if (cut) {
+        // only the exclusion leaves it out: it counts for its excluded options, what they take
+        // away. Not selected either: no single change brings it back, it counts for nothing
+        if (included) excludedBy = i
+        else failCount++
       }
     }
 
@@ -363,11 +377,15 @@ export function computeFacets<K extends string, T extends { key: string }>(input
       for (let i = 0; i < GROUP_KEYS.length; i++) {
         const g = GROUP_KEYS[i]
         if (failCount !== 0 && failing !== i) continue
+        // an item only an excluded option leaves out counts for the excluded options it has -
+        // what they take away - not for the group's other options, which could not bring it back
+        const onlyExcluded = failCount !== 0 && excludedBy === i
         // a group whose options must all apply: its counts come from the items that pass it too -
         // an option not selected yet shows what would remain with it added (FL3a)
-        if (failCount !== 0 && requireAll.has(g)) continue
-        for (const id of entries[g]) add(facets[g], id, have)
-        if (entries[g].length) {
+        if (failCount !== 0 && !onlyExcluded && requireAll.has(g)) continue
+        const exc = excludedSets[i]
+        for (const id of entries[g]) if (!onlyExcluded || exc.has(id)) add(facets[g], id, have)
+        if (entries[g].length && !onlyExcluded) {
           groupTallies[g].total++
           if (have) groupTallies[g].obtained++
         }

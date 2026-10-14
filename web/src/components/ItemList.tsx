@@ -509,7 +509,7 @@ function BulkActions({ view, compact = false }: { view: TrackerView; compact?: b
 }
 
 function MobileFilters({ view }: { view: TrackerView }) {
-  const active = useStore((s) => GROUP_KEYS.reduce((n, g) => n + s.selection[g].length, 0))
+  const active = useStore((s) => GROUP_KEYS.reduce((n, g) => n + s.selection[g].length + s.excluded[g].length, 0))
   return (
     <MobileFiltersButton active={active} shown={plural(view.visible.length, 'item')}>
       <FilterSidebar facets={view.facets} groupTallies={view.groupTallies} available={view.available} />
@@ -522,15 +522,18 @@ function ActiveFilters({ onlyActive = false }: { onlyActive?: boolean }) {
   const groups = useMemo(() => buildFilterGroups(data), [data])
   const selection = useStore((s) => s.selection)
   const requireAll = useStore((s) => s.requireAll)
+  const excluded = useStore((s) => s.excluded)
   const search = useStore((s) => s.search.trim())
-  const { toggleFilter, toggleRequireAll, setSearch } = useStore.getState()
+  const { toggleFilter, toggleExclude, toggleRequireAll, setSearch } = useStore.getState()
   return (
     <ActiveFilterBar
       groups={groups}
       selection={selection}
       requireAll={requireAll}
+      excluded={excluded}
       search={search}
       onRemove={toggleFilter}
+      onRemoveExcluded={toggleExclude}
       onToggleAll={toggleRequireAll}
       onClearSearch={() => setSearch('')}
       onClearAll={clearAllFilters}

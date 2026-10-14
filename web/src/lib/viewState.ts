@@ -17,11 +17,14 @@ export interface SavedView {
   selection: Selection
   /** groups whose selected options must all apply (FL3a) */
   requireAll: GroupKey[]
+  /** excluded options per group (FL3b) */
+  excluded: Selection
   search: string
   view: ViewMode
   mode: TrackerMode
   bestiarySelection: BestiarySelection
   bestiaryRequireAll: BestiaryGroupKey[]
+  bestiaryExcluded: BestiarySelection
   bestiarySearch: string
   bestiaryView: BestiaryViewMode
   /** item shown in the detail panel */
@@ -38,11 +41,13 @@ const MODES: TrackerMode[] = ['items', 'bestiary', 'stats']
 export const defaultView = (): SavedView => ({
   selection: emptySelection(),
   requireAll: [],
+  excluded: emptySelection(),
   search: '',
   view: 'all',
   mode: 'items',
   bestiarySelection: emptyBestiarySelection(),
   bestiaryRequireAll: [],
+  bestiaryExcluded: emptyBestiarySelection(),
   bestiarySearch: '',
   bestiaryView: 'all',
   detailKey: null,
@@ -87,6 +92,8 @@ export function loadView(playthroughId: string | null | undefined): SavedView {
   out.selection = readSelection(v.selection, GROUP_KEYS, out.selection)
   out.bestiarySelection = readSelection(v.bestiarySelection, BESTIARY_GROUP_KEYS, out.bestiarySelection)
   out.requireAll = readKeys(v.requireAll, GROUP_KEYS)
+  out.excluded = readSelection(v.excluded, GROUP_KEYS, out.excluded)
+  out.bestiaryExcluded = readSelection(v.bestiaryExcluded, BESTIARY_GROUP_KEYS, out.bestiaryExcluded)
   out.bestiaryRequireAll = readKeys(v.bestiaryRequireAll, BESTIARY_GROUP_KEYS)
   if (typeof v.search === 'string') out.search = v.search
   if (typeof v.bestiarySearch === 'string') out.bestiarySearch = v.bestiarySearch

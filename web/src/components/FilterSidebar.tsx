@@ -1,6 +1,7 @@
 import { createContext, memo, useContext, useEffect, useMemo, useRef, useState } from 'react'
 import {
   ArrowDownAZ,
+  Ban,
   Check,
   ChevronRight,
   ChevronsDownUp,
@@ -11,9 +12,9 @@ import {
   EyeOff,
   ListOrdered,
   Menu,
+  Plus,
   RotateCcw,
   X,
-  Plus,
 } from 'lucide-react'
 import { toast } from 'sonner'
 import {
@@ -75,7 +76,12 @@ interface FilterScope {
   prefix: string
   useSelection(group: string): string[]
   useAllSelections(): Record<string, string[]>
+  /** excluded options of a group (FL3b) */
+  useExcluded(group: string): string[]
+  useAllExcluded(): Record<string, string[]>
   toggle(group: string, id: string): void
+  /** exclude an option, or stop excluding it */
+  exclude(group: string, id: string): void
   clear(group: string): void
 }
 
@@ -83,7 +89,10 @@ const ITEMS_SCOPE: FilterScope = {
   prefix: '',
   useSelection: (group) => useStore((s) => s.selection[group as GroupKey]),
   useAllSelections: () => useStore((s) => s.selection),
+  useExcluded: (group) => useStore((s) => s.excluded[group as GroupKey]),
+  useAllExcluded: () => useStore((s) => s.excluded),
   toggle: (group, id) => useStore.getState().toggleFilter(group as GroupKey, id),
+  exclude: (group, id) => useStore.getState().toggleExclude(group as GroupKey, id),
   clear: (group) => useStore.getState().clearFilter(group as GroupKey),
 }
 
@@ -91,7 +100,10 @@ const BESTIARY_SCOPE: FilterScope = {
   prefix: 'bestiary:',
   useSelection: (group) => useStore((s) => s.bestiarySelection[group as BestiaryGroupKey]),
   useAllSelections: () => useStore((s) => s.bestiarySelection),
+  useExcluded: (group) => useStore((s) => s.bestiaryExcluded[group as BestiaryGroupKey]),
+  useAllExcluded: () => useStore((s) => s.bestiaryExcluded),
   toggle: (group, id) => useStore.getState().toggleBestiaryFilter(group as BestiaryGroupKey, id),
+  exclude: (group, id) => useStore.getState().toggleBestiaryExclude(group as BestiaryGroupKey, id),
   clear: (group) => useStore.getState().clearBestiaryFilter(group as BestiaryGroupKey),
 }
 
@@ -252,6 +264,7 @@ function FilterPanel({
   const onlyMatching = usePrefs((s) => s.onlyMatchingFilters)
   const setOnlyMatching = usePrefs((s) => s.setOnlyMatchingFilters)
   const selections = scope.useAllSelections()
+  const excludedAll = scope.useAllExcluded()
   const entryOrder = usePrefs((s) => s.entryOrder)
   // keyboard selection in the filter search: index into the targets, reset on every change
   const [cursor, setCursor] = useState({ query: '', index: 0 })
@@ -267,18 +280,21 @@ function FilterPanel({
   const placement = useMemo<Placement>(() => {
     const hidden = new Set(hiddenList)
     const key = (group: string, id: string) => `${scope.prefix}${group}/${id}`
+    // an included or excluded option is always shown
+    const active = (group: string, id: string) =>
+      !!selections[group]?.includes(id) || !!excludedAll[group]?.includes(id)
     return {
       isHidden: (group, id) => hidden.has(key(group, id)),
       // over the whole playthrough, not the current filters and search (FL11)
       // Progression and Crafting are no collections (milestones count cumulatively, crafting
       // follows the chests): their options stay in their group, like they get no toast
       isDone: (group, id) => hideCompleted && !NOT_RANKED.has(group) && complete(available[group]?.get(id)),
-      hasItems: (group, id) => (facets[group]?.get(id)?.total ?? 0) > 0 || !!selections[group]?.includes(id),
+      hasItems: (group, id) => (facets[group]?.get(id)?.total ?? 0) > 0 || active(group, id),
       // "Only filters with matches" (FL19): options without items here are left out, not grayed out
       exists: (group, id) =>
         onlyMatching
-          ? (facets[group]?.get(id)?.total ?? 0) > 0 || !!selections[group]?.includes(id)
-          : !!available[group]?.has(id) || !!selections[group]?.includes(id),
+          ? (facets[group]?.get(id)?.total ?? 0) > 0 || active(group, id)
+          : !!available[group]?.has(id) || active(group, id),
       toggleHidden: (group, id, name) => {
         const k = key(group, id)
         const hiding = !hidden.has(k)
@@ -291,7 +307,17 @@ function FilterPanel({
           })
       },
     }
-  }, [hiddenList, hideCompleted, onlyMatching, facets, available, selections, scope.prefix, toggleHiddenFilter])
+  }, [
+    hiddenList,
+    hideCompleted,
+    onlyMatching,
+    facets,
+    available,
+    selections,
+    excludedAll,
+    scope.prefix,
+    toggleHiddenFilter,
+  ])
 
   const targets = useMemo(
     () => searchTargets(groups, placement, q, scope.prefix, entryOrder, hideCompleted),
@@ -301,8 +327,10 @@ function FilterPanel({
   const active = targets[index]
   const activeKey = active ? `${active.group}/${active.id}` : null
   const activeSelected = !!active && !!selections[active.group]?.includes(active.id)
+  const activeExcluded = !!active && !!excludedAll[active.group]?.includes(active.id)
 
-  // ↑/↓ move between matches, Enter selects (or unselects) and clears the search, Escape clears
+  // ↑/↓ move between matches, Enter selects (or unselects) and clears the search, Shift+Enter
+  // excludes (FL3b), Escape clears
   const onSearchKey = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === 'Escape') setQuery('')
     else if ((e.key === 'ArrowDown' || e.key === 'ArrowUp') && targets.length) {
@@ -311,7 +339,8 @@ function FilterPanel({
       setCursor({ query: q, index: (index + step + targets.length) % targets.length })
     } else if (e.key === 'Enter' && active) {
       e.preventDefault()
-      scope.toggle(active.group, active.id)
+      if (e.shiftKey) scope.exclude(active.group, active.id)
+      else scope.toggle(active.group, active.id)
       setQuery('')
     }
   }
@@ -407,7 +436,9 @@ function FilterPanel({
                   <p className="-mt-2 px-1 text-[11px] text-muted-foreground pointer-coarse:hidden">
                     <kbd className="rounded border bg-muted px-1 font-sans">↵</kbd>{' '}
                     {activeSelected ? 'unselect' : 'select'}{' '}
-                    <span className="font-medium text-foreground">{active.name}</span>
+                    <span className="font-medium text-foreground">{active.name}</span> ·{' '}
+                    <kbd className="rounded border bg-muted px-1 font-sans">⇧↵</kbd>{' '}
+                    {activeExcluded ? 'stop excluding' : 'exclude'}
                     {targets.length > 1 && (
                       <>
                         {' '}
@@ -865,8 +896,11 @@ function EntryRow({
     if (isTarget) rowRef.current?.scrollIntoView({ block: 'nearest' })
   }, [isTarget])
   const groupSelection = scope.useSelection(group.key)
+  const groupExcluded = scope.useExcluded(group.key)
   const selected = groupSelection.includes(entry.id)
-  const childSelected = entry.children?.some((c) => groupSelection.includes(c.id)) ?? false
+  const excluded = groupExcluded.includes(entry.id)
+  const childSelected =
+    entry.children?.some((c) => groupSelection.includes(c.id) || groupExcluded.includes(c.id)) ?? false
   const [expanded, setExpanded] = useState(!!group.expanded)
   const tally = facets[group.key].get(entry.id) ?? EMPTY
   // no matching items with the other filters / the search: grayed out, not removed (no jumps)
@@ -880,7 +914,11 @@ function EntryRow({
         ref={rowRef}
         className={cn(
           'group flex items-center rounded-md',
-          selected ? 'bg-primary/15 ring-1 ring-primary/40' : 'hover:bg-foreground/[0.06]',
+          selected
+            ? 'bg-primary/15 ring-1 ring-primary/40'
+            : excluded
+              ? 'bg-destructive/10 ring-1 ring-destructive/40'
+              : 'hover:bg-foreground/[0.06]',
           // the option Enter would select in the filter search
           isTarget && 'outline-2 outline-offset-1 outline-primary outline-dashed pointer-coarse:outline-none',
           nested && 'ml-5',
@@ -890,6 +928,7 @@ function EntryRow({
           [
             mark?.title,
             completedAt && `Completed ${formatRelativeDay(completedAt)}`,
+            excluded && 'Excluded: items with it are left out',
             empty && 'No matching items with the current filters',
           ]
             .filter(Boolean)
@@ -937,7 +976,7 @@ function EntryRow({
           </button>
         )}
         <button
-          onClick={() => scope.toggle(group.key, entry.id)}
+          onClick={(e) => (e.altKey ? scope.exclude(group.key, entry.id) : scope.toggle(group.key, entry.id))}
           className={cn('flex min-w-0 flex-1 flex-col gap-1 px-2 text-left', compact ? 'py-1' : 'py-1.5')}
           aria-pressed={selected}
         >
@@ -951,7 +990,14 @@ function EntryRow({
             ) : (
               <>
                 {entry.icon ? <WikiIcon src={entry.icon} alt="" size={20} /> : <span className="w-5" />}
-                <span className={cn('min-w-0 flex-1 truncate text-sm', selected && 'font-medium')} title={entry.name}>
+                <span
+                  className={cn(
+                    'min-w-0 flex-1 truncate text-sm',
+                    selected && 'font-medium',
+                    excluded && 'line-through decoration-destructive/70',
+                  )}
+                  title={entry.name}
+                >
                   {entry.name}
                   {context && <span className="ml-1.5 text-[11px] font-normal text-muted-foreground">{context}</span>}
                   {showCompleted && completedAt && (
@@ -978,6 +1024,23 @@ function EntryRow({
             <TallyText tally={tally} className="text-xs" />
           </span>
           {optionBars && <TallyBar tally={tally} className="ml-7 w-auto" />}
+        </button>
+        {/* exclude (FL3b): on hover, always on touch screens; the row's Alt+click does the same */}
+        <button
+          onClick={() => scope.exclude(group.key, entry.id)}
+          className={cn(
+            'mr-0.5 grid size-6 shrink-0 place-items-center rounded hover:bg-foreground/10 pointer-coarse:size-9',
+            excluded
+              ? 'text-destructive'
+              : 'text-muted-foreground opacity-0 group-hover:opacity-100 focus-visible:opacity-100 pointer-coarse:opacity-100',
+          )}
+          title={
+            excluded ? `Stop excluding “${entry.name}”` : `Exclude “${entry.name}”: leave out items with it (Alt+click)`
+          }
+          aria-label={excluded ? `Stop excluding ${entry.name}` : `Exclude ${entry.name}`}
+          aria-pressed={excluded}
+        >
+          <Ban className="size-3.5" />
         </button>
         {/* the slot is always reserved so rows with and without subcategories line up */}
         {!context && group.entries.some((e) => e.children?.length) && (
