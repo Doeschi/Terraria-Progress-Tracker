@@ -123,7 +123,13 @@
     "id": "furniture",
     "name": "Furniture",
     "icon": "https://terraria.wiki.gg/images/Wooden_Chair.png",
-    "count": 2778
+    "count": 2461
+  },
+  {
+    "id": "banner",
+    "name": "Banners",
+    "icon": "https://terraria.wiki.gg/images/Zombie_Banner.png",
+    "count": 317
   },
   {
     "id": "light-source",

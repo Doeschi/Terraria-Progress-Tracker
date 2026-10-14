@@ -590,7 +590,6 @@
     ],
     "obtain": [
       "drop",
-      "loot",
       "plunder",
       "bag",
       "extractinator",
@@ -655,7 +654,6 @@
     ],
     "obtain": [
       "drop",
-      "loot",
       "plunder",
       "bag",
       "extractinator",
@@ -721,7 +719,6 @@
     ],
     "obtain": [
       "drop",
-      "loot",
       "plunder",
       "bag",
       "extractinator",
@@ -786,7 +783,6 @@
     ],
     "obtain": [
       "drop",
-      "loot",
       "plunder",
       "bag",
       "extractinator",
@@ -3499,7 +3495,6 @@
     ],
     "obtain": [
       "drop",
-      "loot",
       "bag"
     ],
     "vendors": [],
@@ -3890,7 +3885,6 @@
     "obtain": [
       "crafted",
       "drop",
-      "loot",
       "plunder",
       "bag",
       "extractinator",
@@ -4097,7 +4091,6 @@
     "obtain": [
       "crafted",
       "drop",
-      "loot",
       "plunder",
       "bag",
       "extractinator",
@@ -5275,7 +5268,6 @@
     ],
     "obtain": [
       "drop",
-      "loot",
       "bag"
     ],
     "vendors": [],
@@ -5336,7 +5328,6 @@
     "obtain": [
       "vendor",
       "drop",
-      "loot",
       "bag"
     ],
     "vendors": [
@@ -6050,7 +6041,6 @@
     ],
     "obtain": [
       "vendor",
-      "loot",
       "plunder",
       "bag"
     ],
@@ -6110,7 +6100,6 @@
     "obtain": [
       "crafted",
       "drop",
-      "loot",
       "bag"
     ],
     "vendors": [],
@@ -6337,7 +6326,6 @@
     ],
     "obtain": [
       "drop",
-      "loot",
       "bag"
     ],
     "vendors": [],
@@ -8872,7 +8860,6 @@
     ],
     "obtain": [
       "drop",
-      "loot",
       "bag"
     ],
     "vendors": [],
@@ -9559,7 +9546,6 @@
     "obtain": [
       "crafted",
       "drop",
-      "loot",
       "plunder",
       "bag"
     ],
@@ -18207,10 +18193,10 @@
     "url": "https://terraria.wiki.gg/wiki/Banners_%28decorative%29",
     "icon": "https://terraria.wiki.gg/images/Red_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "other-banner"
+      "banner-craftable"
     ],
     "obtain": [
       "crafted"
@@ -18258,10 +18244,10 @@
     "url": "https://terraria.wiki.gg/wiki/Banners_%28decorative%29",
     "icon": "https://terraria.wiki.gg/images/Green_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "other-banner"
+      "banner-craftable"
     ],
     "obtain": [
       "crafted"
@@ -18309,10 +18295,10 @@
     "url": "https://terraria.wiki.gg/wiki/Banners_%28decorative%29",
     "icon": "https://terraria.wiki.gg/images/Blue_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "other-banner"
+      "banner-craftable"
     ],
     "obtain": [
       "crafted"
@@ -18360,10 +18346,10 @@
     "url": "https://terraria.wiki.gg/wiki/Banners_%28decorative%29",
     "icon": "https://terraria.wiki.gg/images/Yellow_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "other-banner"
+      "banner-craftable"
     ],
     "obtain": [
       "crafted"
@@ -19691,7 +19677,6 @@
     ],
     "obtain": [
       "drop",
-      "loot",
       "plunder",
       "bag",
       "extractinator",
@@ -19749,7 +19734,6 @@
     ],
     "obtain": [
       "drop",
-      "loot",
       "plunder",
       "bag",
       "extractinator",
@@ -20560,7 +20544,6 @@
     ],
     "obtain": [
       "crafted",
-      "loot",
       "bag",
       "extractinator",
       "chlorophyte-extractinator"
@@ -27055,9 +27038,11 @@
     "placeable": false,
     "autoswing": false,
     "bodySlot": "social helmet",
-    "conditions": [],
+    "conditions": [
+      "after-clown"
+    ],
     "set": "clown-set",
-    "milestone": "skeletron",
+    "milestone": "wall-of-flesh",
     "milestoneVia": "Sold by the Clothier"
   },
   {
@@ -27111,9 +27096,11 @@
     "placeable": false,
     "autoswing": false,
     "bodySlot": "social shirt",
-    "conditions": [],
+    "conditions": [
+      "after-clown"
+    ],
     "set": "clown-set",
-    "milestone": "skeletron",
+    "milestone": "wall-of-flesh",
     "milestoneVia": "Sold by the Clothier"
   },
   {
@@ -27167,9 +27154,11 @@
     "placeable": false,
     "autoswing": false,
     "bodySlot": "social pants",
-    "conditions": [],
+    "conditions": [
+      "after-clown"
+    ],
     "set": "clown-set",
-    "milestone": "skeletron",
+    "milestone": "wall-of-flesh",
     "milestoneVia": "Sold by the Clothier"
   },
   {
@@ -37522,7 +37511,6 @@
     ],
     "obtain": [
       "drop",
-      "loot",
       "plunder",
       "bag",
       "extractinator",
@@ -37588,7 +37576,6 @@
     ],
     "obtain": [
       "drop",
-      "loot",
       "plunder",
       "bag",
       "extractinator",
@@ -37653,7 +37640,6 @@
     ],
     "obtain": [
       "drop",
-      "loot",
       "plunder",
       "bag",
       "extractinator",
@@ -37719,7 +37705,6 @@
     ],
     "obtain": [
       "drop",
-      "loot",
       "plunder",
       "bag",
       "extractinator",
@@ -42393,10 +42378,10 @@
     "url": "https://terraria.wiki.gg/wiki/Banners_%28decorative%29",
     "icon": "https://terraria.wiki.gg/images/Ankh_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "other-banner"
+      "banner-other"
     ],
     "obtain": [
       "plunder"
@@ -42444,10 +42429,10 @@
     "url": "https://terraria.wiki.gg/wiki/Banners_%28decorative%29",
     "icon": "https://terraria.wiki.gg/images/Snake_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "other-banner"
+      "banner-other"
     ],
     "obtain": [
       "plunder"
@@ -42495,10 +42480,10 @@
     "url": "https://terraria.wiki.gg/wiki/Banners_%28decorative%29",
     "icon": "https://terraria.wiki.gg/images/Omega_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "other-banner"
+      "banner-other"
     ],
     "obtain": [
       "plunder"
@@ -42991,7 +42976,6 @@
     ],
     "obtain": [
       "drop",
-      "loot",
       "bag"
     ],
     "vendors": [],
@@ -43103,7 +43087,6 @@
     ],
     "obtain": [
       "drop",
-      "loot",
       "bag"
     ],
     "vendors": [],
@@ -45378,10 +45361,10 @@
     "url": "https://terraria.wiki.gg/wiki/Banners_%28decorative%29",
     "icon": "https://terraria.wiki.gg/images/World_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "other-banner"
+      "banner-other"
     ],
     "obtain": [
       "plunder"
@@ -45429,10 +45412,10 @@
     "url": "https://terraria.wiki.gg/wiki/Banners_%28decorative%29",
     "icon": "https://terraria.wiki.gg/images/Sun_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "other-banner"
+      "banner-other"
     ],
     "obtain": [
       "plunder"
@@ -45480,10 +45463,10 @@
     "url": "https://terraria.wiki.gg/wiki/Banners_%28decorative%29",
     "icon": "https://terraria.wiki.gg/images/Gravity_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "other-banner"
+      "banner-other"
     ],
     "obtain": [
       "plunder"
@@ -46409,8 +46392,7 @@
       "vanity"
     ],
     "subcategories": [
-      "vanity-head",
-      "other-vanity-set"
+      "vanity-head"
     ],
     "obtain": [
       "vendor"
@@ -46464,8 +46446,7 @@
       "vanity"
     ],
     "subcategories": [
-      "vanity-body",
-      "other-vanity-set"
+      "vanity-body"
     ],
     "obtain": [
       "vendor"
@@ -53212,7 +53193,6 @@
       "material-equipment"
     ],
     "obtain": [
-      "loot",
       "bag"
     ],
     "vendors": [],
@@ -53773,7 +53753,6 @@
       "potion-ingredient"
     ],
     "obtain": [
-      "loot",
       "bag",
       "extractinator",
       "extractinator-regular",
@@ -58846,7 +58825,6 @@
     ],
     "obtain": [
       "drop",
-      "loot",
       "plunder",
       "bag",
       "extractinator",
@@ -58904,7 +58882,6 @@
     ],
     "obtain": [
       "drop",
-      "loot",
       "plunder",
       "bag",
       "extractinator",
@@ -58962,7 +58939,6 @@
     ],
     "obtain": [
       "drop",
-      "loot",
       "plunder",
       "bag",
       "extractinator",
@@ -63117,7 +63093,6 @@
     ],
     "obtain": [
       "crafted",
-      "loot",
       "bag",
       "extractinator",
       "chlorophyte-extractinator"
@@ -67027,7 +67002,6 @@
     ],
     "obtain": [
       "drop",
-      "loot",
       "bag"
     ],
     "vendors": [],
@@ -68081,10 +68055,11 @@
     "autoswing": false,
     "bodySlot": "social helmet",
     "conditions": [
-      "day"
+      "day",
+      "after-frost-legion"
     ],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Sold by the Clothier, in Hardmode"
+    "milestoneVia": "Sold by the Clothier"
   },
   {
     "key": "GangstaHat",
@@ -68136,10 +68111,11 @@
     "autoswing": false,
     "bodySlot": "social helmet",
     "conditions": [
-      "night"
+      "night",
+      "after-frost-legion"
     ],
     "milestone": "wall-of-flesh",
-    "milestoneVia": "Sold by the Clothier, in Hardmode"
+    "milestoneVia": "Sold by the Clothier"
   },
   {
     "key": "SailorHat",
@@ -68837,7 +68813,6 @@
     "obtain": [
       "crafted",
       "drop",
-      "loot",
       "bag"
     ],
     "vendors": [],
@@ -71180,7 +71155,6 @@
     ],
     "obtain": [
       "drop",
-      "loot",
       "bag"
     ],
     "vendors": [],
@@ -77462,10 +77436,10 @@
     "url": "https://terraria.wiki.gg/wiki/Banners_%28decorative%29",
     "icon": "https://terraria.wiki.gg/images/Marching_Bones_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "other-banner"
+      "banner-other"
     ],
     "obtain": [
       "plunder"
@@ -77513,10 +77487,10 @@
     "url": "https://terraria.wiki.gg/wiki/Banners_%28decorative%29",
     "icon": "https://terraria.wiki.gg/images/Necromantic_Sign.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "other-furniture"
+      "banner-other"
     ],
     "obtain": [
       "plunder"
@@ -77564,10 +77538,10 @@
     "url": "https://terraria.wiki.gg/wiki/Banners_%28decorative%29",
     "icon": "https://terraria.wiki.gg/images/Rusted_Company_Standard.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "other-furniture"
+      "banner-other"
     ],
     "obtain": [
       "plunder"
@@ -77615,10 +77589,10 @@
     "url": "https://terraria.wiki.gg/wiki/Banners_%28decorative%29",
     "icon": "https://terraria.wiki.gg/images/Ragged_Brotherhood_Sigil.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "other-furniture"
+      "banner-other"
     ],
     "obtain": [
       "plunder"
@@ -77666,10 +77640,10 @@
     "url": "https://terraria.wiki.gg/wiki/Banners_%28decorative%29",
     "icon": "https://terraria.wiki.gg/images/Molten_Legion_Flag.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "other-furniture"
+      "banner-other"
     ],
     "obtain": [
       "plunder"
@@ -77717,10 +77691,10 @@
     "url": "https://terraria.wiki.gg/wiki/Banners_%28decorative%29",
     "icon": "https://terraria.wiki.gg/images/Diabolic_Sigil.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "other-furniture"
+      "banner-other"
     ],
     "obtain": [
       "plunder"
@@ -78133,10 +78107,10 @@
     "url": "https://terraria.wiki.gg/wiki/Banners_%28decorative%29",
     "icon": "https://terraria.wiki.gg/images/Hellbound_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "other-banner"
+      "banner-other"
     ],
     "obtain": [
       "plunder"
@@ -78184,10 +78158,10 @@
     "url": "https://terraria.wiki.gg/wiki/Banners_%28decorative%29",
     "icon": "https://terraria.wiki.gg/images/Hell_Hammer_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "other-banner"
+      "banner-other"
     ],
     "obtain": [
       "plunder"
@@ -78235,10 +78209,10 @@
     "url": "https://terraria.wiki.gg/wiki/Banners_%28decorative%29",
     "icon": "https://terraria.wiki.gg/images/Helltower_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "other-banner"
+      "banner-other"
     ],
     "obtain": [
       "plunder"
@@ -78286,10 +78260,10 @@
     "url": "https://terraria.wiki.gg/wiki/Banners_%28decorative%29",
     "icon": "https://terraria.wiki.gg/images/Lost_Hopes_of_Man_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "other-banner"
+      "banner-other"
     ],
     "obtain": [
       "plunder"
@@ -78337,10 +78311,10 @@
     "url": "https://terraria.wiki.gg/wiki/Banners_%28decorative%29",
     "icon": "https://terraria.wiki.gg/images/Obsidian_Watcher_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "other-banner"
+      "banner-other"
     ],
     "obtain": [
       "plunder"
@@ -78388,10 +78362,10 @@
     "url": "https://terraria.wiki.gg/wiki/Banners_%28decorative%29",
     "icon": "https://terraria.wiki.gg/images/Lava_Erupts_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "other-banner"
+      "banner-other"
     ],
     "obtain": [
       "plunder"
@@ -86074,10 +86048,10 @@
     "url": "https://terraria.wiki.gg/wiki/Angler_Fish",
     "icon": "https://terraria.wiki.gg/images/Angler_Fish_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-cavern"
     ],
     "obtain": [
       "drop"
@@ -86131,10 +86105,10 @@
     "url": "https://terraria.wiki.gg/wiki/Angry_Nimbus",
     "icon": "https://terraria.wiki.gg/images/Angry_Nimbus_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-rain-blizzard"
     ],
     "obtain": [
       "drop"
@@ -86188,10 +86162,10 @@
     "url": "https://terraria.wiki.gg/wiki/Anomura_Fungus",
     "icon": "https://terraria.wiki.gg/images/Anomura_Fungus_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-glowing-mushroom"
     ],
     "obtain": [
       "drop"
@@ -86244,10 +86218,10 @@
     "url": "https://terraria.wiki.gg/wiki/Antlion",
     "icon": "https://terraria.wiki.gg/images/Antlion_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-desert"
     ],
     "obtain": [
       "drop"
@@ -86300,10 +86274,10 @@
     "url": "https://terraria.wiki.gg/wiki/Arapaima",
     "icon": "https://terraria.wiki.gg/images/Arapaima_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-jungle"
     ],
     "obtain": [
       "drop"
@@ -86356,10 +86330,10 @@
     "url": "https://terraria.wiki.gg/wiki/Armored_Skeleton",
     "icon": "https://terraria.wiki.gg/images/Armored_Skeleton_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-cavern"
     ],
     "obtain": [
       "drop"
@@ -86412,10 +86386,10 @@
     "url": "https://terraria.wiki.gg/wiki/Cave_Bat",
     "icon": "https://terraria.wiki.gg/images/Cave_Bat_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-cavern"
     ],
     "obtain": [
       "drop"
@@ -86468,10 +86442,10 @@
     "url": "https://terraria.wiki.gg/wiki/Birds",
     "icon": "https://terraria.wiki.gg/images/Bird_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-surface"
     ],
     "obtain": [
       "drop"
@@ -86526,10 +86500,10 @@
     "url": "https://terraria.wiki.gg/wiki/Black_Recluse",
     "icon": "https://terraria.wiki.gg/images/Black_Recluse_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-spider-nest"
     ],
     "obtain": [
       "drop"
@@ -86582,10 +86556,10 @@
     "url": "https://terraria.wiki.gg/wiki/Blood_Feeder",
     "icon": "https://terraria.wiki.gg/images/Blood_Feeder_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-crimson"
     ],
     "obtain": [
       "drop"
@@ -86638,10 +86612,10 @@
     "url": "https://terraria.wiki.gg/wiki/Jellyfish",
     "icon": "https://terraria.wiki.gg/images/Blood_Jelly_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-crimson"
     ],
     "obtain": [
       "drop"
@@ -86695,10 +86669,10 @@
     "url": "https://terraria.wiki.gg/wiki/Blood_Crawler",
     "icon": "https://terraria.wiki.gg/images/Blood_Crawler_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-crimson"
     ],
     "obtain": [
       "drop"
@@ -86751,10 +86725,10 @@
     "url": "https://terraria.wiki.gg/wiki/Bone_Serpent",
     "icon": "https://terraria.wiki.gg/images/Bone_Serpent_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-underworld"
     ],
     "obtain": [
       "drop"
@@ -86807,10 +86781,10 @@
     "url": "https://terraria.wiki.gg/wiki/Bunny",
     "icon": "https://terraria.wiki.gg/images/Bunny_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-surface"
     ],
     "obtain": [
       "drop"
@@ -86863,10 +86837,10 @@
     "url": "https://terraria.wiki.gg/wiki/Chaos_Elemental",
     "icon": "https://terraria.wiki.gg/images/Chaos_Elemental_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-hallow"
     ],
     "obtain": [
       "drop"
@@ -86919,10 +86893,10 @@
     "url": "https://terraria.wiki.gg/wiki/Mimics",
     "icon": "https://terraria.wiki.gg/images/Mimic_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-cavern"
     ],
     "obtain": [
       "drop"
@@ -86978,10 +86952,10 @@
     "url": "https://terraria.wiki.gg/wiki/Clown",
     "icon": "https://terraria.wiki.gg/images/Clown_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-blood-moon"
     ],
     "obtain": [
       "drop"
@@ -87035,10 +87009,10 @@
     "url": "https://terraria.wiki.gg/wiki/Corrupt_Bunny",
     "icon": "https://terraria.wiki.gg/images/Corrupt_Bunny_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-blood-moon"
     ],
     "obtain": [
       "drop"
@@ -87092,10 +87066,10 @@
     "url": "https://terraria.wiki.gg/wiki/Corrupt_Goldfish",
     "icon": "https://terraria.wiki.gg/images/Corrupt_Goldfish_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-blood-moon"
     ],
     "obtain": [
       "drop"
@@ -87148,10 +87122,10 @@
     "url": "https://terraria.wiki.gg/wiki/Crab",
     "icon": "https://terraria.wiki.gg/images/Crab_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-surface"
     ],
     "obtain": [
       "drop"
@@ -87204,10 +87178,10 @@
     "url": "https://terraria.wiki.gg/wiki/Crimera",
     "icon": "https://terraria.wiki.gg/images/Crimera_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-crimson"
     ],
     "obtain": [
       "drop"
@@ -87260,10 +87234,10 @@
     "url": "https://terraria.wiki.gg/wiki/Crimson_Axe",
     "icon": "https://terraria.wiki.gg/images/Crimson_Axe_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-crimson"
     ],
     "obtain": [
       "drop"
@@ -87316,10 +87290,10 @@
     "url": "https://terraria.wiki.gg/wiki/Cursed_Hammer",
     "icon": "https://terraria.wiki.gg/images/Cursed_Hammer_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-corruption"
     ],
     "obtain": [
       "drop"
@@ -87372,10 +87346,10 @@
     "url": "https://terraria.wiki.gg/wiki/Demon",
     "icon": "https://terraria.wiki.gg/images/Demon_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-underworld"
     ],
     "obtain": [
       "drop"
@@ -87428,10 +87402,10 @@
     "url": "https://terraria.wiki.gg/wiki/Demon_Eye",
     "icon": "https://terraria.wiki.gg/images/Demon_Eye_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-surface"
     ],
     "obtain": [
       "drop"
@@ -87488,10 +87462,10 @@
     "url": "https://terraria.wiki.gg/wiki/Derpling",
     "icon": "https://terraria.wiki.gg/images/Derpling_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-jungle"
     ],
     "obtain": [
       "drop"
@@ -87544,10 +87518,10 @@
     "url": "https://terraria.wiki.gg/wiki/Eater_of_Souls",
     "icon": "https://terraria.wiki.gg/images/Eater_of_Souls_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-corruption"
     ],
     "obtain": [
       "drop"
@@ -87600,10 +87574,10 @@
     "url": "https://terraria.wiki.gg/wiki/Enchanted_Sword_%28NPC%29",
     "icon": "https://terraria.wiki.gg/images/Enchanted_Sword_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-hallow"
     ],
     "obtain": [
       "drop"
@@ -87656,10 +87630,10 @@
     "url": "https://terraria.wiki.gg/wiki/Frozen_Zombie",
     "icon": "https://terraria.wiki.gg/images/Frozen_Zombie_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-snow"
     ],
     "obtain": [
       "drop"
@@ -87716,10 +87690,10 @@
     "url": "https://terraria.wiki.gg/wiki/Face_Monster",
     "icon": "https://terraria.wiki.gg/images/Face_Monster_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-crimson"
     ],
     "obtain": [
       "drop"
@@ -87772,10 +87746,10 @@
     "url": "https://terraria.wiki.gg/wiki/Floaty_Gross",
     "icon": "https://terraria.wiki.gg/images/Floaty_Gross_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-crimson"
     ],
     "obtain": [
       "drop"
@@ -87828,10 +87802,10 @@
     "url": "https://terraria.wiki.gg/wiki/Flying_Fish",
     "icon": "https://terraria.wiki.gg/images/Flying_Fish_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-rain-blizzard"
     ],
     "obtain": [
       "drop"
@@ -87885,10 +87859,10 @@
     "url": "https://terraria.wiki.gg/wiki/Flying_Snake",
     "icon": "https://terraria.wiki.gg/images/Flying_Snake_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-jungle"
     ],
     "obtain": [
       "drop"
@@ -87941,10 +87915,10 @@
     "url": "https://terraria.wiki.gg/wiki/Frankenstein",
     "icon": "https://terraria.wiki.gg/images/Frankenstein_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-solar-eclipse"
     ],
     "obtain": [
       "drop"
@@ -87998,10 +87972,10 @@
     "url": "https://terraria.wiki.gg/wiki/Fungi_Bulb",
     "icon": "https://terraria.wiki.gg/images/Fungi_Bulb_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-glowing-mushroom"
     ],
     "obtain": [
       "drop"
@@ -88054,10 +88028,10 @@
     "url": "https://terraria.wiki.gg/wiki/Jellyfish",
     "icon": "https://terraria.wiki.gg/images/Fungo_Fish_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-glowing-mushroom"
     ],
     "obtain": [
       "drop"
@@ -88110,10 +88084,10 @@
     "url": "https://terraria.wiki.gg/wiki/Gastropod",
     "icon": "https://terraria.wiki.gg/images/Gastropod_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-slimes"
     ],
     "obtain": [
       "drop"
@@ -88170,10 +88144,10 @@
     "url": "https://terraria.wiki.gg/wiki/Goblin_Thief",
     "icon": "https://terraria.wiki.gg/images/Goblin_Thief_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-goblin-army"
     ],
     "obtain": [
       "drop"
@@ -88227,10 +88201,10 @@
     "url": "https://terraria.wiki.gg/wiki/Goblin_Sorcerer",
     "icon": "https://terraria.wiki.gg/images/Goblin_Sorcerer_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-goblin-army"
     ],
     "obtain": [
       "drop"
@@ -88284,10 +88258,10 @@
     "url": "https://terraria.wiki.gg/wiki/Goblin_Peon",
     "icon": "https://terraria.wiki.gg/images/Goblin_Peon_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-goblin-army"
     ],
     "obtain": [
       "drop"
@@ -88341,10 +88315,10 @@
     "url": "https://terraria.wiki.gg/wiki/Goblin_Scout",
     "icon": "https://terraria.wiki.gg/images/Goblin_Scout_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-surface"
     ],
     "obtain": [
       "drop"
@@ -88397,10 +88371,10 @@
     "url": "https://terraria.wiki.gg/wiki/Goblin_Warrior",
     "icon": "https://terraria.wiki.gg/images/Goblin_Warrior_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-goblin-army"
     ],
     "obtain": [
       "drop"
@@ -88454,10 +88428,10 @@
     "url": "https://terraria.wiki.gg/wiki/Goldfish",
     "icon": "https://terraria.wiki.gg/images/Goldfish_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-surface"
     ],
     "obtain": [
       "drop"
@@ -88511,10 +88485,10 @@
     "url": "https://terraria.wiki.gg/wiki/Harpy",
     "icon": "https://terraria.wiki.gg/images/Harpy_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-surface"
     ],
     "obtain": [
       "drop"
@@ -88567,10 +88541,10 @@
     "url": "https://terraria.wiki.gg/wiki/Hellbat",
     "icon": "https://terraria.wiki.gg/images/Hellbat_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-underworld"
     ],
     "obtain": [
       "drop"
@@ -88623,10 +88597,10 @@
     "url": "https://terraria.wiki.gg/wiki/Herpling",
     "icon": "https://terraria.wiki.gg/images/Herpling_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-crimson"
     ],
     "obtain": [
       "drop"
@@ -88679,10 +88653,10 @@
     "url": "https://terraria.wiki.gg/wiki/Hornet",
     "icon": "https://terraria.wiki.gg/images/Hornet_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-jungle"
     ],
     "obtain": [
       "drop"
@@ -88735,10 +88709,10 @@
     "url": "https://terraria.wiki.gg/wiki/Ice_Elemental",
     "icon": "https://terraria.wiki.gg/images/Ice_Elemental_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-snow"
     ],
     "obtain": [
       "drop"
@@ -88791,10 +88765,10 @@
     "url": "https://terraria.wiki.gg/wiki/Icy_Merman",
     "icon": "https://terraria.wiki.gg/images/Icy_Merman_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-snow"
     ],
     "obtain": [
       "drop"
@@ -88847,10 +88821,10 @@
     "url": "https://terraria.wiki.gg/wiki/Fire_Imp",
     "icon": "https://terraria.wiki.gg/images/Fire_Imp_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-underworld"
     ],
     "obtain": [
       "drop"
@@ -88903,10 +88877,10 @@
     "url": "https://terraria.wiki.gg/wiki/Jellyfish",
     "icon": "https://terraria.wiki.gg/images/Blue_Jellyfish_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-cavern"
     ],
     "obtain": [
       "drop"
@@ -88959,10 +88933,10 @@
     "url": "https://terraria.wiki.gg/wiki/Jungle_Creeper",
     "icon": "https://terraria.wiki.gg/images/Jungle_Creeper_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-jungle"
     ],
     "obtain": [
       "drop"
@@ -89015,10 +88989,10 @@
     "url": "https://terraria.wiki.gg/wiki/Lihzahrd",
     "icon": "https://terraria.wiki.gg/images/Lihzahrd_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-jungle"
     ],
     "obtain": [
       "drop"
@@ -89071,10 +89045,10 @@
     "url": "https://terraria.wiki.gg/wiki/Man_Eater",
     "icon": "https://terraria.wiki.gg/images/Man_Eater_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-jungle"
     ],
     "obtain": [
       "drop"
@@ -89127,10 +89101,10 @@
     "url": "https://terraria.wiki.gg/wiki/Meteor_Head",
     "icon": "https://terraria.wiki.gg/images/Meteor_Head_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-meteorite"
     ],
     "obtain": [
       "drop"
@@ -89183,10 +89157,10 @@
     "url": "https://terraria.wiki.gg/wiki/Moth",
     "icon": "https://terraria.wiki.gg/images/Moth_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-jungle"
     ],
     "obtain": [
       "drop"
@@ -89239,10 +89213,10 @@
     "url": "https://terraria.wiki.gg/wiki/Mummies",
     "icon": "https://terraria.wiki.gg/images/Mummy_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-desert"
     ],
     "obtain": [
       "drop"
@@ -89295,10 +89269,10 @@
     "url": "https://terraria.wiki.gg/wiki/Mushi_Ladybug",
     "icon": "https://terraria.wiki.gg/images/Mushi_Ladybug_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-glowing-mushroom"
     ],
     "obtain": [
       "drop"
@@ -89351,10 +89325,10 @@
     "url": "https://terraria.wiki.gg/wiki/Parrot",
     "icon": "https://terraria.wiki.gg/images/Parrot_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-pirate-invasion"
     ],
     "obtain": [
       "drop"
@@ -89408,10 +89382,10 @@
     "url": "https://terraria.wiki.gg/wiki/Pigron",
     "icon": "https://terraria.wiki.gg/images/Pigron_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-snow"
     ],
     "obtain": [
       "drop"
@@ -89465,10 +89439,10 @@
     "url": "https://terraria.wiki.gg/wiki/Piranha",
     "icon": "https://terraria.wiki.gg/images/Piranha_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-jungle"
     ],
     "obtain": [
       "drop"
@@ -89522,10 +89496,10 @@
     "url": "https://terraria.wiki.gg/wiki/Pirate_Deckhand",
     "icon": "https://terraria.wiki.gg/images/Pirate_Deckhand_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-pirate-invasion"
     ],
     "obtain": [
       "drop"
@@ -89579,10 +89553,10 @@
     "url": "https://terraria.wiki.gg/wiki/Pixie",
     "icon": "https://terraria.wiki.gg/images/Pixie_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-hallow"
     ],
     "obtain": [
       "drop"
@@ -89635,10 +89609,10 @@
     "url": "https://terraria.wiki.gg/wiki/Raincoat_Zombie",
     "icon": "https://terraria.wiki.gg/images/Raincoat_Zombie_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-rain-blizzard"
     ],
     "obtain": [
       "drop"
@@ -89692,10 +89666,10 @@
     "url": "https://terraria.wiki.gg/wiki/Reaper",
     "icon": "https://terraria.wiki.gg/images/Reaper_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-solar-eclipse"
     ],
     "obtain": [
       "drop"
@@ -89749,10 +89723,10 @@
     "url": "https://terraria.wiki.gg/wiki/Shark",
     "icon": "https://terraria.wiki.gg/images/Shark_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-surface"
     ],
     "obtain": [
       "drop"
@@ -89805,10 +89779,10 @@
     "url": "https://terraria.wiki.gg/wiki/Skeleton",
     "icon": "https://terraria.wiki.gg/images/Skeleton_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-cavern"
     ],
     "obtain": [
       "drop"
@@ -89861,10 +89835,10 @@
     "url": "https://terraria.wiki.gg/wiki/Dark_Caster",
     "icon": "https://terraria.wiki.gg/images/Dark_Caster_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-dungeon"
     ],
     "obtain": [
       "drop"
@@ -89917,10 +89891,10 @@
     "url": "https://terraria.wiki.gg/wiki/Blue_Slime",
     "icon": "https://terraria.wiki.gg/images/Blue_Slime_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-slimes"
     ],
     "obtain": [
       "drop"
@@ -89973,10 +89947,10 @@
     "url": "https://terraria.wiki.gg/wiki/Snow_Flinx",
     "icon": "https://terraria.wiki.gg/images/Snow_Flinx_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-snow"
     ],
     "obtain": [
       "drop"
@@ -90029,10 +90003,10 @@
     "url": "https://terraria.wiki.gg/wiki/Wall_Creeper",
     "icon": "https://terraria.wiki.gg/images/Wall_Creeper_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-spider-nest"
     ],
     "obtain": [
       "drop"
@@ -90085,10 +90059,10 @@
     "url": "https://terraria.wiki.gg/wiki/Spore_Zombie",
     "icon": "https://terraria.wiki.gg/images/Spore_Zombie_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-glowing-mushroom"
     ],
     "obtain": [
       "drop"
@@ -90141,10 +90115,10 @@
     "url": "https://terraria.wiki.gg/wiki/Swamp_Thing",
     "icon": "https://terraria.wiki.gg/images/Swamp_Thing_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-solar-eclipse"
     ],
     "obtain": [
       "drop"
@@ -90198,10 +90172,10 @@
     "url": "https://terraria.wiki.gg/wiki/Giant_Tortoise",
     "icon": "https://terraria.wiki.gg/images/Giant_Tortoise_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-jungle"
     ],
     "obtain": [
       "drop"
@@ -90254,10 +90228,10 @@
     "url": "https://terraria.wiki.gg/wiki/Toxic_Sludge",
     "icon": "https://terraria.wiki.gg/images/Toxic_Sludge_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-slimes"
     ],
     "obtain": [
       "drop"
@@ -90310,10 +90284,10 @@
     "url": "https://terraria.wiki.gg/wiki/Umbrella_Slime",
     "icon": "https://terraria.wiki.gg/images/Umbrella_Slime_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-slimes"
     ],
     "obtain": [
       "drop"
@@ -90367,10 +90341,10 @@
     "url": "https://terraria.wiki.gg/wiki/Unicorn",
     "icon": "https://terraria.wiki.gg/images/Unicorn_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-hallow"
     ],
     "obtain": [
       "drop"
@@ -90423,10 +90397,10 @@
     "url": "https://terraria.wiki.gg/wiki/Vampire",
     "icon": "https://terraria.wiki.gg/images/Vampire_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-solar-eclipse"
     ],
     "obtain": [
       "drop"
@@ -90480,10 +90454,10 @@
     "url": "https://terraria.wiki.gg/wiki/Vulture",
     "icon": "https://terraria.wiki.gg/images/Vulture_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-desert"
     ],
     "obtain": [
       "drop"
@@ -90536,10 +90510,10 @@
     "url": "https://terraria.wiki.gg/wiki/Nymph",
     "icon": "https://terraria.wiki.gg/images/Nymph_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-cavern"
     ],
     "obtain": [
       "drop"
@@ -90592,10 +90566,10 @@
     "url": "https://terraria.wiki.gg/wiki/Werewolf",
     "icon": "https://terraria.wiki.gg/images/Werewolf_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-surface"
     ],
     "obtain": [
       "drop"
@@ -90652,10 +90626,10 @@
     "url": "https://terraria.wiki.gg/wiki/Wolf",
     "icon": "https://terraria.wiki.gg/images/Wolf_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-snow"
     ],
     "obtain": [
       "drop"
@@ -90712,10 +90686,10 @@
     "url": "https://terraria.wiki.gg/wiki/World_Feeder",
     "icon": "https://terraria.wiki.gg/images/World_Feeder_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-corruption"
     ],
     "obtain": [
       "drop"
@@ -90768,10 +90742,10 @@
     "url": "https://terraria.wiki.gg/wiki/Giant_Worm",
     "icon": "https://terraria.wiki.gg/images/Worm_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-cavern"
     ],
     "obtain": [
       "drop"
@@ -90824,10 +90798,10 @@
     "url": "https://terraria.wiki.gg/wiki/Wraith",
     "icon": "https://terraria.wiki.gg/images/Wraith_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-surface"
     ],
     "obtain": [
       "drop"
@@ -90884,10 +90858,10 @@
     "url": "https://terraria.wiki.gg/wiki/Wyvern",
     "icon": "https://terraria.wiki.gg/images/Wyvern_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-surface"
     ],
     "obtain": [
       "drop"
@@ -90940,10 +90914,10 @@
     "url": "https://terraria.wiki.gg/wiki/Zombie",
     "icon": "https://terraria.wiki.gg/images/Zombie_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-surface"
     ],
     "obtain": [
       "drop"
@@ -94712,6 +94686,7 @@
     "subcategories": [
       "vanity-head",
       "halloween-set",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -94768,6 +94743,7 @@
     "subcategories": [
       "vanity-body",
       "halloween-set",
+      "other-vanity-set",
       "vanity-sets"
     ],
     "obtain": [
@@ -122971,7 +122947,6 @@
     ],
     "obtain": [
       "crafted",
-      "loot",
       "bag"
     ],
     "vendors": [],
@@ -123124,7 +123099,6 @@
     ],
     "obtain": [
       "crafted",
-      "loot",
       "bag"
     ],
     "vendors": [],
@@ -128089,7 +128063,6 @@
       "flail"
     ],
     "obtain": [
-      "loot",
       "bag"
     ],
     "vendors": [],
@@ -150202,8 +150175,10 @@
     "placeable": false,
     "autoswing": false,
     "bodySlot": "social helmet",
-    "conditions": [],
-    "milestone": "plantera",
+    "conditions": [
+      "after-martian-madness"
+    ],
+    "milestone": "golem",
     "milestoneVia": "Sold by the Cyborg"
   },
   {
@@ -150251,8 +150226,10 @@
     "placeable": false,
     "autoswing": false,
     "useTime": 17,
-    "conditions": [],
-    "milestone": "start",
+    "conditions": [
+      "after-martian-madness"
+    ],
+    "milestone": "golem",
     "milestoneVia": "Sold by the Stylist"
   },
   {
@@ -150296,8 +150273,10 @@
     "consumable": false,
     "placeable": false,
     "autoswing": false,
-    "conditions": [],
-    "milestone": "wall-of-flesh",
+    "conditions": [
+      "after-martian-madness"
+    ],
+    "milestone": "golem",
     "milestoneVia": "Strange Plant reward"
   },
   {
@@ -150348,8 +150327,10 @@
     "placedWidth": 6,
     "placedHeight": 4,
     "tooltip": "'J. Hayes'",
-    "conditions": [],
-    "milestone": "start",
+    "conditions": [
+      "after-martian-madness"
+    ],
+    "milestone": "golem",
     "milestoneVia": "Sold by the Traveling Merchant"
   },
   {
@@ -150400,8 +150381,10 @@
     "placedWidth": 6,
     "placedHeight": 4,
     "tooltip": "'J. Hayes'",
-    "conditions": [],
-    "milestone": "start",
+    "conditions": [
+      "after-martian-madness"
+    ],
+    "milestone": "golem",
     "milestoneVia": "Sold by the Traveling Merchant"
   },
   {
@@ -150452,8 +150435,10 @@
     "placedWidth": 6,
     "placedHeight": 4,
     "tooltip": "'J. Hayes'",
-    "conditions": [],
-    "milestone": "start",
+    "conditions": [
+      "after-martian-madness"
+    ],
+    "milestone": "golem",
     "milestoneVia": "Sold by the Traveling Merchant"
   },
   {
@@ -151867,10 +151852,10 @@
     "url": "https://terraria.wiki.gg/wiki/Angry_Trapper",
     "icon": "https://terraria.wiki.gg/images/Angry_Trapper_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-jungle"
     ],
     "obtain": [
       "drop"
@@ -151920,10 +151905,10 @@
     "url": "https://terraria.wiki.gg/wiki/Armored_Viking",
     "icon": "https://terraria.wiki.gg/images/Armored_Viking_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-snow"
     ],
     "obtain": [
       "drop"
@@ -151973,10 +151958,10 @@
     "url": "https://terraria.wiki.gg/wiki/Black_Slime",
     "icon": "https://terraria.wiki.gg/images/Black_Slime_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-slimes"
     ],
     "obtain": [
       "drop"
@@ -152026,10 +152011,10 @@
     "url": "https://terraria.wiki.gg/wiki/Blue_Armored_Bones",
     "icon": "https://terraria.wiki.gg/images/Blue_Armored_Bones_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-dungeon"
     ],
     "obtain": [
       "drop"
@@ -152080,10 +152065,10 @@
     "url": "https://terraria.wiki.gg/wiki/Cultists",
     "icon": "https://terraria.wiki.gg/images/Blue_Cultist_Archer_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-lunar-events"
     ],
     "obtain": [
       "drop"
@@ -152133,10 +152118,10 @@
     "url": "https://terraria.wiki.gg/wiki/Cultists",
     "icon": "https://terraria.wiki.gg/images/Lunatic_Devotee_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-lunar-events"
     ],
     "obtain": [
       "drop"
@@ -152186,10 +152171,10 @@
     "url": "https://terraria.wiki.gg/wiki/Banners_%28enemy%29",
     "icon": "https://terraria.wiki.gg/images/Blue_Cultist_Fighter_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-unobtainable"
     ],
     "obtain": [
       "unobtainable"
@@ -152234,10 +152219,10 @@
     "url": "https://terraria.wiki.gg/wiki/Bone_Lee",
     "icon": "https://terraria.wiki.gg/images/Bone_Lee_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-dungeon"
     ],
     "obtain": [
       "drop"
@@ -152287,10 +152272,10 @@
     "url": "https://terraria.wiki.gg/wiki/Clinger",
     "icon": "https://terraria.wiki.gg/images/Clinger_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-corruption"
     ],
     "obtain": [
       "drop"
@@ -152340,10 +152325,10 @@
     "url": "https://terraria.wiki.gg/wiki/Cochineal_Beetle",
     "icon": "https://terraria.wiki.gg/images/Cochineal_Beetle_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-cavern"
     ],
     "obtain": [
       "drop"
@@ -152393,10 +152378,10 @@
     "url": "https://terraria.wiki.gg/wiki/Corrupt_Penguin",
     "icon": "https://terraria.wiki.gg/images/Corrupt_Penguin_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-blood-moon"
     ],
     "obtain": [
       "drop"
@@ -152447,10 +152432,10 @@
     "url": "https://terraria.wiki.gg/wiki/Corrupt_Slime",
     "icon": "https://terraria.wiki.gg/images/Corrupt_Slime_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-slimes"
     ],
     "obtain": [
       "drop"
@@ -152500,10 +152485,10 @@
     "url": "https://terraria.wiki.gg/wiki/Corruptor",
     "icon": "https://terraria.wiki.gg/images/Corruptor_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-corruption"
     ],
     "obtain": [
       "drop"
@@ -152554,10 +152539,10 @@
     "url": "https://terraria.wiki.gg/wiki/Crimslime",
     "icon": "https://terraria.wiki.gg/images/Crimslime_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-slimes"
     ],
     "obtain": [
       "drop"
@@ -152607,10 +152592,10 @@
     "url": "https://terraria.wiki.gg/wiki/Cursed_Skull",
     "icon": "https://terraria.wiki.gg/images/Cursed_Skull_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-dungeon"
     ],
     "obtain": [
       "drop"
@@ -152660,10 +152645,10 @@
     "url": "https://terraria.wiki.gg/wiki/Cyan_Beetle",
     "icon": "https://terraria.wiki.gg/images/Cyan_Beetle_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-snow"
     ],
     "obtain": [
       "drop"
@@ -152713,10 +152698,10 @@
     "url": "https://terraria.wiki.gg/wiki/Devourer",
     "icon": "https://terraria.wiki.gg/images/Devourer_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-corruption"
     ],
     "obtain": [
       "drop"
@@ -152766,10 +152751,10 @@
     "url": "https://terraria.wiki.gg/wiki/Diabolist",
     "icon": "https://terraria.wiki.gg/images/Diabolist_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-dungeon"
     ],
     "obtain": [
       "drop"
@@ -152819,10 +152804,10 @@
     "url": "https://terraria.wiki.gg/wiki/Doctor_Bones",
     "icon": "https://terraria.wiki.gg/images/Doctor_Bones_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-jungle"
     ],
     "obtain": [
       "drop"
@@ -152872,10 +152857,10 @@
     "url": "https://terraria.wiki.gg/wiki/Dungeon_Slime",
     "icon": "https://terraria.wiki.gg/images/Dungeon_Slime_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-slimes"
     ],
     "obtain": [
       "drop"
@@ -152925,10 +152910,10 @@
     "url": "https://terraria.wiki.gg/wiki/Dungeon_Spirit",
     "icon": "https://terraria.wiki.gg/images/Dungeon_Spirit_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-dungeon"
     ],
     "obtain": [
       "drop"
@@ -152979,10 +152964,10 @@
     "url": "https://terraria.wiki.gg/wiki/Elf_Archer",
     "icon": "https://terraria.wiki.gg/images/Elf_Archer_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-frost-moon"
     ],
     "obtain": [
       "drop"
@@ -153034,10 +153019,10 @@
     "url": "https://terraria.wiki.gg/wiki/Elf_Copter",
     "icon": "https://terraria.wiki.gg/images/Elf_Copter_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-frost-moon"
     ],
     "obtain": [
       "drop"
@@ -153089,10 +153074,10 @@
     "url": "https://terraria.wiki.gg/wiki/Eyezor",
     "icon": "https://terraria.wiki.gg/images/Eyezor_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-solar-eclipse"
     ],
     "obtain": [
       "drop"
@@ -153143,10 +153128,10 @@
     "url": "https://terraria.wiki.gg/wiki/Flocko",
     "icon": "https://terraria.wiki.gg/images/Flocko_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-frost-moon"
     ],
     "obtain": [
       "drop"
@@ -153198,10 +153183,10 @@
     "url": "https://terraria.wiki.gg/wiki/Ghost_%28enemy%29",
     "icon": "https://terraria.wiki.gg/images/Ghost_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-halloween"
     ],
     "obtain": [
       "drop"
@@ -153251,10 +153236,10 @@
     "url": "https://terraria.wiki.gg/wiki/Giant_Bat",
     "icon": "https://terraria.wiki.gg/images/Giant_Bat_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-cavern"
     ],
     "obtain": [
       "drop"
@@ -153305,10 +153290,10 @@
     "url": "https://terraria.wiki.gg/wiki/Giant_Cursed_Skull",
     "icon": "https://terraria.wiki.gg/images/Giant_Cursed_Skull_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-dungeon"
     ],
     "obtain": [
       "drop"
@@ -153359,10 +153344,10 @@
     "url": "https://terraria.wiki.gg/wiki/Giant_Flying_Fox",
     "icon": "https://terraria.wiki.gg/images/Giant_Flying_Fox_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-jungle"
     ],
     "obtain": [
       "drop"
@@ -153416,10 +153401,10 @@
     "url": "https://terraria.wiki.gg/wiki/Gingerbread_Man",
     "icon": "https://terraria.wiki.gg/images/Gingerbread_Man_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-frost-moon"
     ],
     "obtain": [
       "drop"
@@ -153471,10 +153456,10 @@
     "url": "https://terraria.wiki.gg/wiki/Goblin_Archer",
     "icon": "https://terraria.wiki.gg/images/Goblin_Archer_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-goblin-army"
     ],
     "obtain": [
       "drop"
@@ -153525,10 +153510,10 @@
     "url": "https://terraria.wiki.gg/wiki/Green_Slime",
     "icon": "https://terraria.wiki.gg/images/Green_Slime_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-slimes"
     ],
     "obtain": [
       "drop"
@@ -153578,10 +153563,10 @@
     "url": "https://terraria.wiki.gg/wiki/Headless_Horseman",
     "icon": "https://terraria.wiki.gg/images/Headless_Horseman_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-pumpkin-moon"
     ],
     "obtain": [
       "drop"
@@ -153633,10 +153618,10 @@
     "url": "https://terraria.wiki.gg/wiki/Hell_Armored_Bones",
     "icon": "https://terraria.wiki.gg/images/Hell_Armored_Bones_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-dungeon"
     ],
     "obtain": [
       "drop"
@@ -153687,10 +153672,10 @@
     "url": "https://terraria.wiki.gg/wiki/Hellhound",
     "icon": "https://terraria.wiki.gg/images/Hellhound_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-pumpkin-moon"
     ],
     "obtain": [
       "drop"
@@ -153742,10 +153727,10 @@
     "url": "https://terraria.wiki.gg/wiki/Hoppin%27_Jack",
     "icon": "https://terraria.wiki.gg/images/Hoppin%27_Jack_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-halloween"
     ],
     "obtain": [
       "drop"
@@ -153796,10 +153781,10 @@
     "url": "https://terraria.wiki.gg/wiki/Ice_Bat",
     "icon": "https://terraria.wiki.gg/images/Ice_Bat_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-snow"
     ],
     "obtain": [
       "drop"
@@ -153849,10 +153834,10 @@
     "url": "https://terraria.wiki.gg/wiki/Ice_Golem",
     "icon": "https://terraria.wiki.gg/images/Ice_Golem_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-rain-blizzard"
     ],
     "obtain": [
       "drop"
@@ -153903,10 +153888,10 @@
     "url": "https://terraria.wiki.gg/wiki/Ice_Slime",
     "icon": "https://terraria.wiki.gg/images/Ice_Slime_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-slimes"
     ],
     "obtain": [
       "drop"
@@ -153960,10 +153945,10 @@
     "url": "https://terraria.wiki.gg/wiki/Ichor_Sticker",
     "icon": "https://terraria.wiki.gg/images/Ichor_Sticker_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-crimson"
     ],
     "obtain": [
       "drop"
@@ -154014,10 +153999,10 @@
     "url": "https://terraria.wiki.gg/wiki/Illuminant_Bat",
     "icon": "https://terraria.wiki.gg/images/Illuminant_Bat_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-hallow"
     ],
     "obtain": [
       "drop"
@@ -154068,10 +154053,10 @@
     "url": "https://terraria.wiki.gg/wiki/Illuminant_Slime",
     "icon": "https://terraria.wiki.gg/images/Illuminant_Slime_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-slimes"
     ],
     "obtain": [
       "drop"
@@ -154121,10 +154106,10 @@
     "url": "https://terraria.wiki.gg/wiki/Jungle_Bat",
     "icon": "https://terraria.wiki.gg/images/Jungle_Bat_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-jungle"
     ],
     "obtain": [
       "drop"
@@ -154174,10 +154159,10 @@
     "url": "https://terraria.wiki.gg/wiki/Jungle_Slime",
     "icon": "https://terraria.wiki.gg/images/Jungle_Slime_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-slimes"
     ],
     "obtain": [
       "drop"
@@ -154231,10 +154216,10 @@
     "url": "https://terraria.wiki.gg/wiki/Krampus",
     "icon": "https://terraria.wiki.gg/images/Krampus_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-frost-moon"
     ],
     "obtain": [
       "drop"
@@ -154286,10 +154271,10 @@
     "url": "https://terraria.wiki.gg/wiki/Lac_Beetle",
     "icon": "https://terraria.wiki.gg/images/Lac_Beetle_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-jungle"
     ],
     "obtain": [
       "drop"
@@ -154339,10 +154324,10 @@
     "url": "https://terraria.wiki.gg/wiki/Lava_Bat",
     "icon": "https://terraria.wiki.gg/images/Lava_Bat_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-underworld"
     ],
     "obtain": [
       "drop"
@@ -154392,10 +154377,10 @@
     "url": "https://terraria.wiki.gg/wiki/Lava_Slime",
     "icon": "https://terraria.wiki.gg/images/Lava_Slime_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-slimes"
     ],
     "obtain": [
       "drop"
@@ -154445,10 +154430,10 @@
     "url": "https://terraria.wiki.gg/wiki/Brain_Scrambler",
     "icon": "https://terraria.wiki.gg/images/Martian_Brain_Scrambler_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-martian-madness"
     ],
     "obtain": [
       "drop"
@@ -154499,10 +154484,10 @@
     "url": "https://terraria.wiki.gg/wiki/Martian_Drone",
     "icon": "https://terraria.wiki.gg/images/Martian_Drone_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-martian-madness"
     ],
     "obtain": [
       "drop"
@@ -154553,10 +154538,10 @@
     "url": "https://terraria.wiki.gg/wiki/Martian_Engineer",
     "icon": "https://terraria.wiki.gg/images/Martian_Engineer_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-martian-madness"
     ],
     "obtain": [
       "drop"
@@ -154607,10 +154592,10 @@
     "url": "https://terraria.wiki.gg/wiki/Gigazapper",
     "icon": "https://terraria.wiki.gg/images/Martian_Gigazapper_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-martian-madness"
     ],
     "obtain": [
       "drop"
@@ -154661,10 +154646,10 @@
     "url": "https://terraria.wiki.gg/wiki/Gray_Grunt",
     "icon": "https://terraria.wiki.gg/images/Martian_Gray_Grunt_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-martian-madness"
     ],
     "obtain": [
       "drop"
@@ -154715,10 +154700,10 @@
     "url": "https://terraria.wiki.gg/wiki/Martian_Officer",
     "icon": "https://terraria.wiki.gg/images/Martian_Officer_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-martian-madness"
     ],
     "obtain": [
       "drop"
@@ -154769,10 +154754,10 @@
     "url": "https://terraria.wiki.gg/wiki/Ray_Gunner",
     "icon": "https://terraria.wiki.gg/images/Martian_Ray_Gunner_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-martian-madness"
     ],
     "obtain": [
       "drop"
@@ -154823,10 +154808,10 @@
     "url": "https://terraria.wiki.gg/wiki/Scutlix",
     "icon": "https://terraria.wiki.gg/images/Martian_Scutlix_Gunner_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-martian-madness"
     ],
     "obtain": [
       "drop"
@@ -154877,10 +154862,10 @@
     "url": "https://terraria.wiki.gg/wiki/Tesla_Turret",
     "icon": "https://terraria.wiki.gg/images/Martian_Tesla_Turret_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-martian-madness"
     ],
     "obtain": [
       "drop"
@@ -154931,10 +154916,10 @@
     "url": "https://terraria.wiki.gg/wiki/Mister_Stabby",
     "icon": "https://terraria.wiki.gg/images/Mister_Stabby_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-frost-legion"
     ],
     "obtain": [
       "drop"
@@ -154985,10 +154970,10 @@
     "url": "https://terraria.wiki.gg/wiki/Mother_Slime",
     "icon": "https://terraria.wiki.gg/images/Mother_Slime_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-slimes"
     ],
     "obtain": [
       "drop"
@@ -155038,10 +155023,10 @@
     "url": "https://terraria.wiki.gg/wiki/Necromancer",
     "icon": "https://terraria.wiki.gg/images/Necromancer_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-dungeon"
     ],
     "obtain": [
       "drop"
@@ -155091,10 +155076,10 @@
     "url": "https://terraria.wiki.gg/wiki/Nutcracker",
     "icon": "https://terraria.wiki.gg/images/Nutcracker_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-frost-moon"
     ],
     "obtain": [
       "drop"
@@ -155146,10 +155131,10 @@
     "url": "https://terraria.wiki.gg/wiki/Paladin",
     "icon": "https://terraria.wiki.gg/images/Paladin_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-dungeon"
     ],
     "obtain": [
       "drop"
@@ -155199,10 +155184,10 @@
     "url": "https://terraria.wiki.gg/wiki/Penguin",
     "icon": "https://terraria.wiki.gg/images/Penguin_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-snow"
     ],
     "obtain": [
       "drop"
@@ -155253,10 +155238,10 @@
     "url": "https://terraria.wiki.gg/wiki/Pinky",
     "icon": "https://terraria.wiki.gg/images/Pinky_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-slimes"
     ],
     "obtain": [
       "drop"
@@ -155308,10 +155293,10 @@
     "url": "https://terraria.wiki.gg/wiki/Poltergeist",
     "icon": "https://terraria.wiki.gg/images/Poltergeist_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-pumpkin-moon"
     ],
     "obtain": [
       "drop"
@@ -155363,10 +155348,10 @@
     "url": "https://terraria.wiki.gg/wiki/Possessed_Armor",
     "icon": "https://terraria.wiki.gg/images/Possessed_Armor_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-surface"
     ],
     "obtain": [
       "drop"
@@ -155418,10 +155403,10 @@
     "url": "https://terraria.wiki.gg/wiki/Present_Mimic",
     "icon": "https://terraria.wiki.gg/images/Present_Mimic_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-frost-moon"
     ],
     "obtain": [
       "drop"
@@ -155473,10 +155458,10 @@
     "url": "https://terraria.wiki.gg/wiki/Purple_Slime",
     "icon": "https://terraria.wiki.gg/images/Purple_Slime_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-slimes"
     ],
     "obtain": [
       "drop"
@@ -155526,10 +155511,10 @@
     "url": "https://terraria.wiki.gg/wiki/Ragged_Caster",
     "icon": "https://terraria.wiki.gg/images/Ragged_Caster_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-dungeon"
     ],
     "obtain": [
       "drop"
@@ -155579,10 +155564,10 @@
     "url": "https://terraria.wiki.gg/wiki/Rainbow_Slime",
     "icon": "https://terraria.wiki.gg/images/Rainbow_Slime_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-slimes"
     ],
     "obtain": [
       "drop"
@@ -155633,10 +155618,10 @@
     "url": "https://terraria.wiki.gg/wiki/Raven",
     "icon": "https://terraria.wiki.gg/images/Raven_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-halloween"
     ],
     "obtain": [
       "drop"
@@ -155687,10 +155672,10 @@
     "url": "https://terraria.wiki.gg/wiki/Red_Slime",
     "icon": "https://terraria.wiki.gg/images/Red_Slime_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-slimes"
     ],
     "obtain": [
       "drop"
@@ -155740,10 +155725,10 @@
     "url": "https://terraria.wiki.gg/wiki/Rune_Wizard",
     "icon": "https://terraria.wiki.gg/images/Rune_Wizard_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-cavern"
     ],
     "obtain": [
       "drop"
@@ -155793,10 +155778,10 @@
     "url": "https://terraria.wiki.gg/wiki/Rusty_Armored_Bones",
     "icon": "https://terraria.wiki.gg/images/Rusty_Armored_Bones_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-dungeon"
     ],
     "obtain": [
       "drop"
@@ -155847,10 +155832,10 @@
     "url": "https://terraria.wiki.gg/wiki/Scarecrow",
     "icon": "https://terraria.wiki.gg/images/Scarecrow_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-pumpkin-moon"
     ],
     "obtain": [
       "drop"
@@ -155902,10 +155887,10 @@
     "url": "https://terraria.wiki.gg/wiki/Scutlix",
     "icon": "https://terraria.wiki.gg/images/Scutlix_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-martian-madness"
     ],
     "obtain": [
       "drop"
@@ -155956,10 +155941,10 @@
     "url": "https://terraria.wiki.gg/wiki/Skeleton_Archer",
     "icon": "https://terraria.wiki.gg/images/Skeleton_Archer_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-cavern"
     ],
     "obtain": [
       "drop"
@@ -156010,10 +155995,10 @@
     "url": "https://terraria.wiki.gg/wiki/Skeleton_Commando",
     "icon": "https://terraria.wiki.gg/images/Skeleton_Commando_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-dungeon"
     ],
     "obtain": [
       "drop"
@@ -156064,10 +156049,10 @@
     "url": "https://terraria.wiki.gg/wiki/Skeleton_Sniper",
     "icon": "https://terraria.wiki.gg/images/Skeleton_Sniper_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-dungeon"
     ],
     "obtain": [
       "drop"
@@ -156117,10 +156102,10 @@
     "url": "https://terraria.wiki.gg/wiki/Slimer",
     "icon": "https://terraria.wiki.gg/images/Slimer_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-slimes"
     ],
     "obtain": [
       "drop"
@@ -156170,10 +156155,10 @@
     "url": "https://terraria.wiki.gg/wiki/Snatcher",
     "icon": "https://terraria.wiki.gg/images/Snatcher_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-jungle"
     ],
     "obtain": [
       "drop"
@@ -156223,10 +156208,10 @@
     "url": "https://terraria.wiki.gg/wiki/Snow_Balla",
     "icon": "https://terraria.wiki.gg/images/Snow_Balla_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-frost-legion"
     ],
     "obtain": [
       "drop"
@@ -156277,10 +156262,10 @@
     "url": "https://terraria.wiki.gg/wiki/Snowman_Gangsta",
     "icon": "https://terraria.wiki.gg/images/Snowman_Gangsta_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-frost-legion"
     ],
     "obtain": [
       "drop"
@@ -156331,10 +156316,10 @@
     "url": "https://terraria.wiki.gg/wiki/Spiked_Ice_Slime",
     "icon": "https://terraria.wiki.gg/images/Spiked_Ice_Slime_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-slimes"
     ],
     "obtain": [
       "drop"
@@ -156384,10 +156369,10 @@
     "url": "https://terraria.wiki.gg/wiki/Spiked_Jungle_Slime",
     "icon": "https://terraria.wiki.gg/images/Spiked_Jungle_Slime_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-slimes"
     ],
     "obtain": [
       "drop"
@@ -156437,10 +156422,10 @@
     "url": "https://terraria.wiki.gg/wiki/Splinterling",
     "icon": "https://terraria.wiki.gg/images/Splinterling_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-pumpkin-moon"
     ],
     "obtain": [
       "drop"
@@ -156492,10 +156477,10 @@
     "url": "https://terraria.wiki.gg/wiki/Squid",
     "icon": "https://terraria.wiki.gg/images/Squid_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-surface"
     ],
     "obtain": [
       "drop"
@@ -156545,10 +156530,10 @@
     "url": "https://terraria.wiki.gg/wiki/Tactical_Skeleton",
     "icon": "https://terraria.wiki.gg/images/Tactical_Skeleton_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-dungeon"
     ],
     "obtain": [
       "drop"
@@ -156598,10 +156583,10 @@
     "url": "https://terraria.wiki.gg/wiki/The_Groom",
     "icon": "https://terraria.wiki.gg/images/The_Groom_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-blood-moon"
     ],
     "obtain": [
       "drop"
@@ -156651,10 +156636,10 @@
     "url": "https://terraria.wiki.gg/wiki/Tim",
     "icon": "https://terraria.wiki.gg/images/Tim_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-cavern"
     ],
     "obtain": [
       "drop"
@@ -156704,10 +156689,10 @@
     "url": "https://terraria.wiki.gg/wiki/Undead_Miner",
     "icon": "https://terraria.wiki.gg/images/Undead_Miner_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-cavern"
     ],
     "obtain": [
       "drop"
@@ -156757,10 +156742,10 @@
     "url": "https://terraria.wiki.gg/wiki/Undead_Viking",
     "icon": "https://terraria.wiki.gg/images/Undead_Viking_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-snow"
     ],
     "obtain": [
       "drop"
@@ -156810,10 +156795,10 @@
     "url": "https://terraria.wiki.gg/wiki/Banners_%28enemy%29",
     "icon": "https://terraria.wiki.gg/images/White_Cultist_Archer_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-unobtainable"
     ],
     "obtain": [
       "unobtainable"
@@ -156858,10 +156843,10 @@
     "url": "https://terraria.wiki.gg/wiki/Banners_%28enemy%29",
     "icon": "https://terraria.wiki.gg/images/White_Cultist_Caster_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-unobtainable"
     ],
     "obtain": [
       "unobtainable"
@@ -156906,10 +156891,10 @@
     "url": "https://terraria.wiki.gg/wiki/Banners_%28enemy%29",
     "icon": "https://terraria.wiki.gg/images/White_Cultist_Fighter_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-unobtainable"
     ],
     "obtain": [
       "unobtainable"
@@ -156954,10 +156939,10 @@
     "url": "https://terraria.wiki.gg/wiki/Yellow_Slime",
     "icon": "https://terraria.wiki.gg/images/Yellow_Slime_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-slimes"
     ],
     "obtain": [
       "drop"
@@ -157007,10 +156992,10 @@
     "url": "https://terraria.wiki.gg/wiki/Yeti",
     "icon": "https://terraria.wiki.gg/images/Yeti_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-frost-moon"
     ],
     "obtain": [
       "drop"
@@ -157062,10 +157047,10 @@
     "url": "https://terraria.wiki.gg/wiki/Zombie_Elf",
     "icon": "https://terraria.wiki.gg/images/Zombie_Elf_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-frost-moon"
     ],
     "obtain": [
       "drop"
@@ -160220,8 +160205,10 @@
     "placedWidth": 6,
     "placedHeight": 4,
     "tooltip": "'J. Hayes'",
-    "conditions": [],
-    "milestone": "start",
+    "conditions": [
+      "after-frost-legion"
+    ],
+    "milestone": "wall-of-flesh",
     "milestoneVia": "Sold by the Traveling Merchant"
   },
   {
@@ -160272,8 +160259,10 @@
     "placedWidth": 6,
     "placedHeight": 4,
     "tooltip": "'J. Hayes'",
-    "conditions": [],
-    "milestone": "start",
+    "conditions": [
+      "after-frost-legion"
+    ],
+    "milestone": "wall-of-flesh",
     "milestoneVia": "Sold by the Traveling Merchant"
   },
   {
@@ -160324,8 +160313,10 @@
     "placedWidth": 6,
     "placedHeight": 4,
     "tooltip": "'J. Hayes'",
-    "conditions": [],
-    "milestone": "start",
+    "conditions": [
+      "after-frost-legion"
+    ],
+    "milestone": "wall-of-flesh",
     "milestoneVia": "Sold by the Traveling Merchant"
   },
   {
@@ -160376,8 +160367,10 @@
     "placedWidth": 6,
     "placedHeight": 4,
     "tooltip": "'J. Hayes'",
-    "conditions": [],
-    "milestone": "start",
+    "conditions": [
+      "after-frost-legion"
+    ],
+    "milestone": "wall-of-flesh",
     "milestoneVia": "Sold by the Traveling Merchant"
   },
   {
@@ -160428,8 +160421,10 @@
     "placedWidth": 6,
     "placedHeight": 4,
     "tooltip": "'J. Hayes'",
-    "conditions": [],
-    "milestone": "start",
+    "conditions": [
+      "after-frost-legion"
+    ],
+    "milestone": "wall-of-flesh",
     "milestoneVia": "Sold by the Traveling Merchant"
   },
   {
@@ -160545,7 +160540,6 @@
     ],
     "obtain": [
       "drop",
-      "loot",
       "bag"
     ],
     "vendors": [],
@@ -170404,8 +170398,10 @@
     "placeable": false,
     "autoswing": false,
     "useTime": 17,
-    "conditions": [],
-    "milestone": "start",
+    "conditions": [
+      "after-martian-madness"
+    ],
+    "milestone": "golem",
     "milestoneVia": "Sold by the Stylist"
   },
   {
@@ -176871,10 +176867,10 @@
     "url": "https://terraria.wiki.gg/wiki/Goblin_Warlock",
     "icon": "https://terraria.wiki.gg/images/Goblin_Warlock_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-goblin-army"
     ],
     "obtain": [
       "drop"
@@ -176926,11 +176922,11 @@
     "icon": "https://terraria.wiki.gg/images/Salamander_Banner.png",
     "categories": [
       "crafting-material",
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "material-furniture",
-      "enemy-banner"
+      "enemy-drop",
+      "banner-cavern"
     ],
     "obtain": [
       "crafted",
@@ -176982,11 +176978,11 @@
     "icon": "https://terraria.wiki.gg/images/Giant_Shelly_Banner.png",
     "categories": [
       "crafting-material",
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "material-furniture",
-      "enemy-banner"
+      "enemy-drop",
+      "banner-cavern"
     ],
     "obtain": [
       "crafted",
@@ -177038,11 +177034,11 @@
     "icon": "https://terraria.wiki.gg/images/Crawdad_Banner.png",
     "categories": [
       "crafting-material",
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "material-furniture",
-      "enemy-banner"
+      "enemy-drop",
+      "banner-cavern"
     ],
     "obtain": [
       "crafted",
@@ -177093,10 +177089,10 @@
     "url": "https://terraria.wiki.gg/wiki/Fritz",
     "icon": "https://terraria.wiki.gg/images/Fritz_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-solar-eclipse"
     ],
     "obtain": [
       "drop"
@@ -177147,10 +177143,10 @@
     "url": "https://terraria.wiki.gg/wiki/Creature_from_the_Deep",
     "icon": "https://terraria.wiki.gg/images/Creature_From_The_Deep_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-solar-eclipse"
     ],
     "obtain": [
       "drop"
@@ -177201,10 +177197,10 @@
     "url": "https://terraria.wiki.gg/wiki/Dr._Man_Fly",
     "icon": "https://terraria.wiki.gg/images/Dr._Man_Fly_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-solar-eclipse"
     ],
     "obtain": [
       "drop"
@@ -177255,10 +177251,10 @@
     "url": "https://terraria.wiki.gg/wiki/Mothron",
     "icon": "https://terraria.wiki.gg/images/Mothron_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-solar-eclipse"
     ],
     "obtain": [
       "drop"
@@ -177309,10 +177305,10 @@
     "url": "https://terraria.wiki.gg/wiki/Banners_%28enemy%29",
     "icon": "https://terraria.wiki.gg/images/Severed_Hand_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-unobtainable"
     ],
     "obtain": [
       "unobtainable"
@@ -177360,10 +177356,10 @@
     "url": "https://terraria.wiki.gg/wiki/The_Possessed",
     "icon": "https://terraria.wiki.gg/images/The_Possessed_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-solar-eclipse"
     ],
     "obtain": [
       "drop"
@@ -177414,10 +177410,10 @@
     "url": "https://terraria.wiki.gg/wiki/Butcher",
     "icon": "https://terraria.wiki.gg/images/Butcher_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-solar-eclipse"
     ],
     "obtain": [
       "drop"
@@ -177468,10 +177464,10 @@
     "url": "https://terraria.wiki.gg/wiki/Psycho",
     "icon": "https://terraria.wiki.gg/images/Psycho_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-solar-eclipse"
     ],
     "obtain": [
       "drop"
@@ -177522,10 +177518,10 @@
     "url": "https://terraria.wiki.gg/wiki/Deadly_Sphere",
     "icon": "https://terraria.wiki.gg/images/Deadly_Sphere_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-solar-eclipse"
     ],
     "obtain": [
       "drop"
@@ -177576,10 +177572,10 @@
     "url": "https://terraria.wiki.gg/wiki/Nailhead",
     "icon": "https://terraria.wiki.gg/images/Nailhead_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-solar-eclipse"
     ],
     "obtain": [
       "drop"
@@ -177630,10 +177626,10 @@
     "url": "https://terraria.wiki.gg/wiki/Banners_%28enemy%29",
     "icon": "https://terraria.wiki.gg/images/Poisonous_Spore_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-unobtainable"
     ],
     "obtain": [
       "unobtainable"
@@ -177678,10 +177674,10 @@
     "url": "https://terraria.wiki.gg/wiki/Medusa",
     "icon": "https://terraria.wiki.gg/images/Medusa_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-marble-cave"
     ],
     "obtain": [
       "drop"
@@ -177731,10 +177727,10 @@
     "url": "https://terraria.wiki.gg/wiki/Hoplite",
     "icon": "https://terraria.wiki.gg/images/Hoplite_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-marble-cave"
     ],
     "obtain": [
       "drop"
@@ -177784,10 +177780,10 @@
     "url": "https://terraria.wiki.gg/wiki/Granite_Elemental",
     "icon": "https://terraria.wiki.gg/images/Granite_Elemental_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-granite-cave"
     ],
     "obtain": [
       "drop"
@@ -177837,10 +177833,10 @@
     "url": "https://terraria.wiki.gg/wiki/Granite_Golem",
     "icon": "https://terraria.wiki.gg/images/Granite_Golem_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-granite-cave"
     ],
     "obtain": [
       "drop"
@@ -177890,10 +177886,10 @@
     "url": "https://terraria.wiki.gg/wiki/Blood_Zombie",
     "icon": "https://terraria.wiki.gg/images/Blood_Zombie_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-blood-moon"
     ],
     "obtain": [
       "drop"
@@ -177944,10 +177940,10 @@
     "url": "https://terraria.wiki.gg/wiki/Drippler",
     "icon": "https://terraria.wiki.gg/images/Drippler_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-blood-moon"
     ],
     "obtain": [
       "drop"
@@ -177998,10 +177994,10 @@
     "url": "https://terraria.wiki.gg/wiki/Tomb_Crawler",
     "icon": "https://terraria.wiki.gg/images/Tomb_Crawler_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-desert"
     ],
     "obtain": [
       "drop"
@@ -178051,10 +178047,10 @@
     "url": "https://terraria.wiki.gg/wiki/Dune_Splicer",
     "icon": "https://terraria.wiki.gg/images/Dune_Splicer_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-desert"
     ],
     "obtain": [
       "drop"
@@ -178104,10 +178100,10 @@
     "url": "https://terraria.wiki.gg/wiki/Antlion_Swarmer",
     "icon": "https://terraria.wiki.gg/images/Antlion_Swarmer_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-desert"
     ],
     "obtain": [
       "drop"
@@ -178157,10 +178153,10 @@
     "url": "https://terraria.wiki.gg/wiki/Antlion_Charger",
     "icon": "https://terraria.wiki.gg/images/Antlion_Charger_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-desert"
     ],
     "obtain": [
       "drop"
@@ -178210,10 +178206,10 @@
     "url": "https://terraria.wiki.gg/wiki/Ghouls",
     "icon": "https://terraria.wiki.gg/images/Ghoul_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-desert"
     ],
     "obtain": [
       "drop"
@@ -178266,10 +178262,10 @@
     "url": "https://terraria.wiki.gg/wiki/Lamia",
     "icon": "https://terraria.wiki.gg/images/Lamia_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-desert"
     ],
     "obtain": [
       "drop"
@@ -178320,10 +178316,10 @@
     "url": "https://terraria.wiki.gg/wiki/Desert_Spirit",
     "icon": "https://terraria.wiki.gg/images/Desert_Spirit_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-desert"
     ],
     "obtain": [
       "drop"
@@ -178375,10 +178371,10 @@
     "url": "https://terraria.wiki.gg/wiki/Basilisk",
     "icon": "https://terraria.wiki.gg/images/Basilisk_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-desert"
     ],
     "obtain": [
       "drop"
@@ -178428,10 +178424,10 @@
     "url": "https://terraria.wiki.gg/wiki/Sand_Poacher",
     "icon": "https://terraria.wiki.gg/images/Sand_Poacher_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-desert"
     ],
     "obtain": [
       "drop"
@@ -178481,10 +178477,10 @@
     "url": "https://terraria.wiki.gg/wiki/Stargazer",
     "icon": "https://terraria.wiki.gg/images/Stargazer_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-lunar-events"
     ],
     "obtain": [
       "drop"
@@ -178535,10 +178531,10 @@
     "url": "https://terraria.wiki.gg/wiki/Milkyway_Weaver",
     "icon": "https://terraria.wiki.gg/images/Milkyway_Weaver_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-lunar-events"
     ],
     "obtain": [
       "drop"
@@ -178589,10 +178585,10 @@
     "url": "https://terraria.wiki.gg/wiki/Flow_Invader",
     "icon": "https://terraria.wiki.gg/images/Flow_Invader_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-lunar-events"
     ],
     "obtain": [
       "drop"
@@ -178643,10 +178639,10 @@
     "url": "https://terraria.wiki.gg/wiki/Twinkle_Popper",
     "icon": "https://terraria.wiki.gg/images/Twinkle_Popper_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-lunar-events"
     ],
     "obtain": [
       "drop"
@@ -178697,10 +178693,10 @@
     "url": "https://terraria.wiki.gg/wiki/Star_Cell",
     "icon": "https://terraria.wiki.gg/images/Mini_Star_Cell_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-lunar-events"
     ],
     "obtain": [
       "drop"
@@ -178751,10 +178747,10 @@
     "url": "https://terraria.wiki.gg/wiki/Star_Cell",
     "icon": "https://terraria.wiki.gg/images/Star_Cell_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-lunar-events"
     ],
     "obtain": [
       "drop"
@@ -178805,10 +178801,10 @@
     "url": "https://terraria.wiki.gg/wiki/Corite",
     "icon": "https://terraria.wiki.gg/images/Corite_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-lunar-events"
     ],
     "obtain": [
       "drop"
@@ -178859,10 +178855,10 @@
     "url": "https://terraria.wiki.gg/wiki/Sroller",
     "icon": "https://terraria.wiki.gg/images/Sroller_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-lunar-events"
     ],
     "obtain": [
       "drop"
@@ -178913,10 +178909,10 @@
     "url": "https://terraria.wiki.gg/wiki/Crawltipede",
     "icon": "https://terraria.wiki.gg/images/Crawltipede_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-lunar-events"
     ],
     "obtain": [
       "drop"
@@ -178967,10 +178963,10 @@
     "url": "https://terraria.wiki.gg/wiki/Drakomire_Rider",
     "icon": "https://terraria.wiki.gg/images/Drakomire_Rider_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-lunar-events"
     ],
     "obtain": [
       "drop"
@@ -179021,10 +179017,10 @@
     "url": "https://terraria.wiki.gg/wiki/Drakomire",
     "icon": "https://terraria.wiki.gg/images/Drakomire_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-lunar-events"
     ],
     "obtain": [
       "drop"
@@ -179075,10 +179071,10 @@
     "url": "https://terraria.wiki.gg/wiki/Selenian",
     "icon": "https://terraria.wiki.gg/images/Selenian_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-lunar-events"
     ],
     "obtain": [
       "drop"
@@ -179129,10 +179125,10 @@
     "url": "https://terraria.wiki.gg/wiki/Predictor",
     "icon": "https://terraria.wiki.gg/images/Predictor_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-lunar-events"
     ],
     "obtain": [
       "drop"
@@ -179183,10 +179179,10 @@
     "url": "https://terraria.wiki.gg/wiki/Brain_Suckler",
     "icon": "https://terraria.wiki.gg/images/Brain_Suckler_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-lunar-events"
     ],
     "obtain": [
       "drop"
@@ -179237,10 +179233,10 @@
     "url": "https://terraria.wiki.gg/wiki/Nebula_Floater",
     "icon": "https://terraria.wiki.gg/images/Nebula_Floater_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-lunar-events"
     ],
     "obtain": [
       "drop"
@@ -179291,10 +179287,10 @@
     "url": "https://terraria.wiki.gg/wiki/Evolution_Beast",
     "icon": "https://terraria.wiki.gg/images/Evolution_Beast_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-lunar-events"
     ],
     "obtain": [
       "drop"
@@ -179345,10 +179341,10 @@
     "url": "https://terraria.wiki.gg/wiki/Alien_Larva",
     "icon": "https://terraria.wiki.gg/images/Alien_Larva_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-lunar-events"
     ],
     "obtain": [
       "drop"
@@ -179399,10 +179395,10 @@
     "url": "https://terraria.wiki.gg/wiki/Alien_Queen",
     "icon": "https://terraria.wiki.gg/images/Alien_Queen_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-lunar-events"
     ],
     "obtain": [
       "drop"
@@ -179453,10 +179449,10 @@
     "url": "https://terraria.wiki.gg/wiki/Alien_Hornet",
     "icon": "https://terraria.wiki.gg/images/Alien_Hornet_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-lunar-events"
     ],
     "obtain": [
       "drop"
@@ -179507,10 +179503,10 @@
     "url": "https://terraria.wiki.gg/wiki/Vortexian",
     "icon": "https://terraria.wiki.gg/images/Vortexian_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-lunar-events"
     ],
     "obtain": [
       "drop"
@@ -179561,10 +179557,10 @@
     "url": "https://terraria.wiki.gg/wiki/Storm_Diver",
     "icon": "https://terraria.wiki.gg/images/Storm_Diver_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-lunar-events"
     ],
     "obtain": [
       "drop"
@@ -179615,10 +179611,10 @@
     "url": "https://terraria.wiki.gg/wiki/Pirate_Captain",
     "icon": "https://terraria.wiki.gg/images/Pirate_Captain_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-pirate-invasion"
     ],
     "obtain": [
       "drop"
@@ -179670,10 +179666,10 @@
     "url": "https://terraria.wiki.gg/wiki/Pirate_Deadeye",
     "icon": "https://terraria.wiki.gg/images/Pirate_Deadeye_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-pirate-invasion"
     ],
     "obtain": [
       "drop"
@@ -179725,10 +179721,10 @@
     "url": "https://terraria.wiki.gg/wiki/Pirate_Corsair",
     "icon": "https://terraria.wiki.gg/images/Pirate_Corsair_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-pirate-invasion"
     ],
     "obtain": [
       "drop"
@@ -179780,10 +179776,10 @@
     "url": "https://terraria.wiki.gg/wiki/Pirate_Crossbower",
     "icon": "https://terraria.wiki.gg/images/Pirate_Crossbower_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-pirate-invasion"
     ],
     "obtain": [
       "drop"
@@ -179835,10 +179831,10 @@
     "url": "https://terraria.wiki.gg/wiki/Martian_Walker",
     "icon": "https://terraria.wiki.gg/images/Martian_Walker_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-martian-madness"
     ],
     "obtain": [
       "drop"
@@ -179889,10 +179885,10 @@
     "url": "https://terraria.wiki.gg/wiki/Red_Devil",
     "icon": "https://terraria.wiki.gg/images/Red_Devil_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-underworld"
     ],
     "obtain": [
       "drop"
@@ -179942,10 +179938,10 @@
     "url": "https://terraria.wiki.gg/wiki/Jellyfish",
     "icon": "https://terraria.wiki.gg/images/Pink_Jellyfish_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-surface"
     ],
     "obtain": [
       "drop"
@@ -179995,10 +179991,10 @@
     "url": "https://terraria.wiki.gg/wiki/Jellyfish",
     "icon": "https://terraria.wiki.gg/images/Green_Jellyfish_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-cavern"
     ],
     "obtain": [
       "drop"
@@ -180048,10 +180044,10 @@
     "url": "https://terraria.wiki.gg/wiki/Mummies",
     "icon": "https://terraria.wiki.gg/images/Dark_Mummy_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-corruption"
     ],
     "obtain": [
       "drop"
@@ -180101,10 +180097,10 @@
     "url": "https://terraria.wiki.gg/wiki/Mummies",
     "icon": "https://terraria.wiki.gg/images/Light_Mummy_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-hallow"
     ],
     "obtain": [
       "drop"
@@ -180154,10 +180150,10 @@
     "url": "https://terraria.wiki.gg/wiki/Angry_Bones",
     "icon": "https://terraria.wiki.gg/images/Angry_Bones_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-dungeon"
     ],
     "obtain": [
       "drop"
@@ -180207,10 +180203,10 @@
     "url": "https://terraria.wiki.gg/wiki/Ice_Tortoise",
     "icon": "https://terraria.wiki.gg/images/Ice_Tortoise_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-snow"
     ],
     "obtain": [
       "drop"
@@ -185526,8 +185522,10 @@
     "consumable": false,
     "placeable": false,
     "autoswing": false,
-    "conditions": [],
-    "milestone": "wall-of-flesh",
+    "conditions": [
+      "after-martian-madness"
+    ],
+    "milestone": "golem",
     "milestoneVia": "Strange Plant reward"
   },
   {
@@ -187299,10 +187297,10 @@
     "url": "https://terraria.wiki.gg/wiki/Sand_Slime",
     "icon": "https://terraria.wiki.gg/images/Sand_Slime_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-slimes"
     ],
     "obtain": [
       "drop"
@@ -187352,10 +187350,10 @@
     "url": "https://terraria.wiki.gg/wiki/Sea_Snail",
     "icon": "https://terraria.wiki.gg/images/Sea_Snail_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-surface"
     ],
     "obtain": [
       "drop"
@@ -196693,10 +196691,10 @@
     "url": "https://terraria.wiki.gg/wiki/Sand_Elemental",
     "icon": "https://terraria.wiki.gg/images/Sand_Elemental_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-sandstorm"
     ],
     "obtain": [
       "drop"
@@ -197157,10 +197155,10 @@
     "url": "https://terraria.wiki.gg/wiki/Sand_Sharks",
     "icon": "https://terraria.wiki.gg/images/Sand_Shark_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-sandstorm"
     ],
     "obtain": [
       "drop"
@@ -197211,10 +197209,10 @@
     "url": "https://terraria.wiki.gg/wiki/Sand_Sharks",
     "icon": "https://terraria.wiki.gg/images/Bone_Biter_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-sandstorm"
     ],
     "obtain": [
       "drop"
@@ -197265,10 +197263,10 @@
     "url": "https://terraria.wiki.gg/wiki/Sand_Sharks",
     "icon": "https://terraria.wiki.gg/images/Flesh_Reaver_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-sandstorm"
     ],
     "obtain": [
       "drop"
@@ -197319,10 +197317,10 @@
     "url": "https://terraria.wiki.gg/wiki/Sand_Sharks",
     "icon": "https://terraria.wiki.gg/images/Crystal_Thresher_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-sandstorm"
     ],
     "obtain": [
       "drop"
@@ -197373,10 +197371,10 @@
     "url": "https://terraria.wiki.gg/wiki/Angry_Tumbler",
     "icon": "https://terraria.wiki.gg/images/Angry_Tumbler_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-sandstorm"
     ],
     "obtain": [
       "drop"
@@ -198573,10 +198571,10 @@
     "url": "https://terraria.wiki.gg/wiki/War_Table_Banner",
     "icon": "https://terraria.wiki.gg/images/War_Table_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "other-banner"
+      "banner-other"
     ],
     "obtain": [
       "drop"
@@ -199809,10 +199807,10 @@
     "url": "https://terraria.wiki.gg/wiki/Etherian_Goblin_Bomber",
     "icon": "https://terraria.wiki.gg/images/Etherian_Goblin_Bomber_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-old-ones-army"
     ],
     "obtain": [
       "drop"
@@ -199863,10 +199861,10 @@
     "url": "https://terraria.wiki.gg/wiki/Etherian_Goblin",
     "icon": "https://terraria.wiki.gg/images/Etherian_Goblin_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-old-ones-army"
     ],
     "obtain": [
       "drop"
@@ -199917,10 +199915,10 @@
     "url": "https://terraria.wiki.gg/wiki/Old_One%27s_Skeleton",
     "icon": "https://terraria.wiki.gg/images/Old_One%27s_Skeleton_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-old-ones-army"
     ],
     "obtain": [
       "drop"
@@ -199971,10 +199969,10 @@
     "url": "https://terraria.wiki.gg/wiki/Drakin",
     "icon": "https://terraria.wiki.gg/images/Drakin_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-old-ones-army"
     ],
     "obtain": [
       "drop"
@@ -200025,10 +200023,10 @@
     "url": "https://terraria.wiki.gg/wiki/Kobold_Glider",
     "icon": "https://terraria.wiki.gg/images/Kobold_Glider_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-old-ones-army"
     ],
     "obtain": [
       "drop"
@@ -200079,10 +200077,10 @@
     "url": "https://terraria.wiki.gg/wiki/Kobold",
     "icon": "https://terraria.wiki.gg/images/Kobold_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-old-ones-army"
     ],
     "obtain": [
       "drop"
@@ -200133,10 +200131,10 @@
     "url": "https://terraria.wiki.gg/wiki/Wither_Beast",
     "icon": "https://terraria.wiki.gg/images/Wither_Beast_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-old-ones-army"
     ],
     "obtain": [
       "drop"
@@ -200187,10 +200185,10 @@
     "url": "https://terraria.wiki.gg/wiki/Etherian_Wyvern",
     "icon": "https://terraria.wiki.gg/images/Etherian_Wyvern_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-old-ones-army"
     ],
     "obtain": [
       "drop"
@@ -200241,10 +200239,10 @@
     "url": "https://terraria.wiki.gg/wiki/Etherian_Javelin_Thrower",
     "icon": "https://terraria.wiki.gg/images/Etherian_Javelin_Thrower_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-old-ones-army"
     ],
     "obtain": [
       "drop"
@@ -200295,10 +200293,10 @@
     "url": "https://terraria.wiki.gg/wiki/Etherian_Lightning_Bug",
     "icon": "https://terraria.wiki.gg/images/Etherian_Lightning_Bug_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-old-ones-army"
     ],
     "obtain": [
       "drop"
@@ -228536,7 +228534,6 @@
       "other-crafting-material"
     ],
     "obtain": [
-      "loot",
       "bag"
     ],
     "vendors": [],
@@ -228582,7 +228579,6 @@
       "other-crafting-material"
     ],
     "obtain": [
-      "loot",
       "bag"
     ],
     "vendors": [],
@@ -228628,7 +228624,6 @@
       "other-crafting-material"
     ],
     "obtain": [
-      "loot",
       "bag"
     ],
     "vendors": [],
@@ -229085,7 +229080,6 @@
     ],
     "obtain": [
       "crafted",
-      "loot",
       "bag"
     ],
     "vendors": [],
@@ -230253,8 +230247,10 @@
     "damageType": "ranged",
     "knockback": 4.0,
     "tooltip": "Will not destroy tiles",
-    "conditions": [],
-    "milestone": "plantera",
+    "conditions": [
+      "after-martian-madness"
+    ],
+    "milestone": "golem",
     "milestoneVia": "Sold by the Cyborg"
   },
   {
@@ -230309,8 +230305,10 @@
     "knockback": 4.0,
     "tooltip": "Will destroy tiles",
     "eventOnly": true,
-    "conditions": [],
-    "milestone": "plantera",
+    "conditions": [
+      "after-martian-madness"
+    ],
+    "milestone": "golem",
     "milestoneVia": "Sold by the Cyborg"
   },
   {
@@ -234814,10 +234812,10 @@
     "url": "https://terraria.wiki.gg/wiki/The_Bride",
     "icon": "https://terraria.wiki.gg/images/The_Bride_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-blood-moon"
     ],
     "obtain": [
       "drop"
@@ -234867,10 +234865,10 @@
     "url": "https://terraria.wiki.gg/wiki/Zombie_Merman",
     "icon": "https://terraria.wiki.gg/images/Zombie_Merman_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-blood-moon"
     ],
     "obtain": [
       "drop"
@@ -234921,10 +234919,10 @@
     "url": "https://terraria.wiki.gg/wiki/Wandering_Eye_Fish",
     "icon": "https://terraria.wiki.gg/images/Wandering_Eye_Fish_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-blood-moon"
     ],
     "obtain": [
       "drop"
@@ -234975,10 +234973,10 @@
     "url": "https://terraria.wiki.gg/wiki/Blood_Squid",
     "icon": "https://terraria.wiki.gg/images/Blood_Squid_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-blood-moon"
     ],
     "obtain": [
       "drop"
@@ -235029,10 +235027,10 @@
     "url": "https://terraria.wiki.gg/wiki/Blood_Eel",
     "icon": "https://terraria.wiki.gg/images/Blood_Eel_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-blood-moon"
     ],
     "obtain": [
       "drop"
@@ -235083,10 +235081,10 @@
     "url": "https://terraria.wiki.gg/wiki/Hemogoblin_Shark",
     "icon": "https://terraria.wiki.gg/images/Hemogoblin_Shark_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-blood-moon"
     ],
     "obtain": [
       "drop"
@@ -236017,7 +236015,6 @@
     ],
     "obtain": [
       "crafted",
-      "loot",
       "plunder",
       "bag"
     ],
@@ -237927,10 +237924,10 @@
     "url": "https://terraria.wiki.gg/wiki/Dreadnautilus",
     "icon": "https://terraria.wiki.gg/images/Dreadnautilus_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-blood-moon"
     ],
     "obtain": [
       "drop"
@@ -242259,10 +242256,10 @@
     "url": "https://terraria.wiki.gg/wiki/Angry_Dandelion",
     "icon": "https://terraria.wiki.gg/images/Angry_Dandelion_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-windy-day"
     ],
     "obtain": [
       "drop"
@@ -242313,10 +242310,10 @@
     "url": "https://terraria.wiki.gg/wiki/Gnome",
     "icon": "https://terraria.wiki.gg/images/Gnome_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-surface"
     ],
     "obtain": [
       "drop"
@@ -252071,7 +252068,6 @@
       "material-equipment"
     ],
     "obtain": [
-      "loot",
       "bag"
     ],
     "vendors": [],
@@ -253076,7 +253072,6 @@
       "decoration"
     ],
     "obtain": [
-      "loot",
       "bag"
     ],
     "vendors": [],
@@ -253125,7 +253120,6 @@
       "decoration"
     ],
     "obtain": [
-      "loot",
       "bag"
     ],
     "vendors": [],
@@ -253174,7 +253168,6 @@
       "decoration"
     ],
     "obtain": [
-      "loot",
       "bag"
     ],
     "vendors": [],
@@ -253223,7 +253216,6 @@
       "decoration"
     ],
     "obtain": [
-      "loot",
       "bag"
     ],
     "vendors": [],
@@ -253272,7 +253264,6 @@
       "decoration"
     ],
     "obtain": [
-      "loot",
       "bag"
     ],
     "vendors": [],
@@ -256232,10 +256223,10 @@
     "url": "https://terraria.wiki.gg/wiki/Rock_Golem",
     "icon": "https://terraria.wiki.gg/images/Rock_Golem_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-cavern"
     ],
     "obtain": [
       "drop"
@@ -256285,10 +256276,10 @@
     "url": "https://terraria.wiki.gg/wiki/Mummies",
     "icon": "https://terraria.wiki.gg/images/Blood_Mummy_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-crimson"
     ],
     "obtain": [
       "drop"
@@ -256338,10 +256329,10 @@
     "url": "https://terraria.wiki.gg/wiki/Spore_Skeleton",
     "icon": "https://terraria.wiki.gg/images/Spore_Skeleton_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-glowing-mushroom"
     ],
     "obtain": [
       "drop"
@@ -256391,10 +256382,10 @@
     "url": "https://terraria.wiki.gg/wiki/Spore_Bat",
     "icon": "https://terraria.wiki.gg/images/Spore_Bat_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-glowing-mushroom"
     ],
     "obtain": [
       "drop"
@@ -256444,10 +256435,10 @@
     "url": "https://terraria.wiki.gg/wiki/Antlion_Larva",
     "icon": "https://terraria.wiki.gg/images/Antlion_Larva_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-desert"
     ],
     "obtain": [
       "drop"
@@ -256497,10 +256488,10 @@
     "url": "https://terraria.wiki.gg/wiki/Vicious_Bunny",
     "icon": "https://terraria.wiki.gg/images/Vicious_Bunny_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-blood-moon"
     ],
     "obtain": [
       "drop"
@@ -256551,10 +256542,10 @@
     "url": "https://terraria.wiki.gg/wiki/Vicious_Goldfish",
     "icon": "https://terraria.wiki.gg/images/Vicious_Goldfish_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-blood-moon"
     ],
     "obtain": [
       "drop"
@@ -256604,10 +256595,10 @@
     "url": "https://terraria.wiki.gg/wiki/Vicious_Penguin",
     "icon": "https://terraria.wiki.gg/images/Vicious_Penguin_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-blood-moon"
     ],
     "obtain": [
       "drop"
@@ -256658,10 +256649,10 @@
     "url": "https://terraria.wiki.gg/wiki/Mimics",
     "icon": "https://terraria.wiki.gg/images/Corrupt_Mimic_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-corruption"
     ],
     "obtain": [
       "drop"
@@ -256711,10 +256702,10 @@
     "url": "https://terraria.wiki.gg/wiki/Mimics",
     "icon": "https://terraria.wiki.gg/images/Crimson_Mimic_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-crimson"
     ],
     "obtain": [
       "drop"
@@ -256764,10 +256755,10 @@
     "url": "https://terraria.wiki.gg/wiki/Mimics",
     "icon": "https://terraria.wiki.gg/images/Hallowed_Mimic_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-hallow"
     ],
     "obtain": [
       "drop"
@@ -256817,10 +256808,10 @@
     "url": "https://terraria.wiki.gg/wiki/Moss_Hornet",
     "icon": "https://terraria.wiki.gg/images/Moss_Hornet_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-jungle"
     ],
     "obtain": [
       "drop"
@@ -256870,10 +256861,10 @@
     "url": "https://terraria.wiki.gg/wiki/Wandering_Eye",
     "icon": "https://terraria.wiki.gg/images/Wandering_Eye_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-surface"
     ],
     "obtain": [
       "drop"
@@ -276096,10 +276087,10 @@
     "url": "https://terraria.wiki.gg/wiki/Shimmer_Slime",
     "icon": "https://terraria.wiki.gg/images/Shimmer_Slime_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-slimes"
     ],
     "obtain": [
       "drop"
@@ -283242,10 +283233,10 @@
     "url": "https://terraria.wiki.gg/wiki/Banners_%28decorative%29",
     "icon": "https://terraria.wiki.gg/images/Pink_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "other-banner"
+      "banner-craftable"
     ],
     "obtain": [
       "crafted"
@@ -283290,10 +283281,10 @@
     "url": "https://terraria.wiki.gg/wiki/Banners_%28decorative%29",
     "icon": "https://terraria.wiki.gg/images/White_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "other-banner"
+      "banner-craftable"
     ],
     "obtain": [
       "crafted"
@@ -290943,10 +290934,10 @@
     "url": "https://terraria.wiki.gg/wiki/Orca",
     "icon": "https://terraria.wiki.gg/images/Orca_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-surface"
     ],
     "obtain": [
       "drop"
@@ -291993,10 +291984,10 @@
     "url": "https://terraria.wiki.gg/wiki/Librarian_Skeleton",
     "icon": "https://terraria.wiki.gg/images/Librarian_Skeleton_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-dungeon"
     ],
     "obtain": [
       "drop"
@@ -292046,10 +292037,10 @@
     "url": "https://terraria.wiki.gg/wiki/Water_Bolt_Mimic",
     "icon": "https://terraria.wiki.gg/images/Water_Bolt_Mimic_Banner.png",
     "categories": [
-      "furniture"
+      "banner"
     ],
     "subcategories": [
-      "enemy-banner"
+      "banner-dungeon"
     ],
     "obtain": [
       "drop"

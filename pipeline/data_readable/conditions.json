@@ -12,7 +12,7 @@
     },
     {
       "id": "boss",
-      "name": "After a boss",
+      "name": "After a boss or invasion",
       "filter": true
     },
     {
@@ -127,6 +127,27 @@
       "group": "boss",
       "icon": "https://terraria.wiki.gg/images/Mechanical_Skull.png",
       "count": 2
+    },
+    {
+      "id": "after-martian-madness",
+      "name": "Martian Madness defeated",
+      "group": "boss",
+      "icon": "https://terraria.wiki.gg/images/Martian_Conduit_Plating.png",
+      "count": 10
+    },
+    {
+      "id": "after-frost-legion",
+      "name": "Frost Legion defeated",
+      "group": "boss",
+      "icon": "https://terraria.wiki.gg/images/Snow_Globe.png",
+      "count": 7
+    },
+    {
+      "id": "after-clown",
+      "name": "A Clown defeated",
+      "group": "boss",
+      "icon": "https://terraria.wiki.gg/images/Clown_Hat.png",
+      "count": 3
     },
     {
       "id": "hardmode",

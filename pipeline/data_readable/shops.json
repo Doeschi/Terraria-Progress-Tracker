@@ -169,7 +169,8 @@
       "vendor": "clothier",
       "text": "During the day, when the Frost Legion has been defeated.",
       "conditions": [
-        "day"
+        "day",
+        "after-frost-legion"
       ]
     }
   ],
@@ -703,31 +704,46 @@
   "ClownHat": [
     {
       "vendor": "clothier",
-      "text": "If a Clown has been defeated."
+      "text": "If a Clown has been defeated.",
+      "conditions": [
+        "after-clown"
+      ]
     }
   ],
   "ClownPants": [
     {
       "vendor": "clothier",
-      "text": "If a Clown has been defeated."
+      "text": "If a Clown has been defeated.",
+      "conditions": [
+        "after-clown"
+      ]
     }
   ],
   "ClownShirt": [
     {
       "vendor": "clothier",
-      "text": "If a Clown has been defeated."
+      "text": "If a Clown has been defeated.",
+      "conditions": [
+        "after-clown"
+      ]
     }
   ],
   "ClusterRocketI": [
     {
       "vendor": "cyborg",
-      "text": "When the Martian Madness has been defeated."
+      "text": "When the Martian Madness has been defeated.",
+      "conditions": [
+        "after-martian-madness"
+      ]
     }
   ],
   "ClusterRocketII": [
     {
       "vendor": "cyborg",
       "text": "When the Martian Madness has been defeated, during a Blood Moon or Solar Eclipse.",
+      "conditions": [
+        "after-martian-madness"
+      ],
       "events": [
         "blood-moon",
         "solar-eclipse"
@@ -1921,7 +1937,8 @@
       "vendor": "clothier",
       "text": "During the night, when the Frost Legion has been defeated.",
       "conditions": [
-        "night"
+        "night",
+        "after-frost-legion"
       ]
     }
   ],
@@ -2686,7 +2703,10 @@
   "HiTekSunglasses": [
     {
       "vendor": "cyborg",
-      "text": "When the Martian Madness has been defeated."
+      "text": "When the Martian Madness has been defeated.",
+      "conditions": [
+        "after-martian-madness"
+      ]
     }
   ],
   "HoneyBomb": [
@@ -3318,7 +3338,10 @@
   "MartianHairDye": [
     {
       "vendor": "stylist",
-      "text": "When a Martian Madness has been defeated."
+      "text": "When a Martian Madness has been defeated.",
+      "conditions": [
+        "after-martian-madness"
+      ]
     }
   ],
   "MechanicalLens": [
@@ -3605,7 +3628,10 @@
   "NightVisionHelmet": [
     {
       "vendor": "cyborg",
-      "text": "When the Martian Madness has been defeated."
+      "text": "When the Martian Madness has been defeated.",
+      "conditions": [
+        "after-martian-madness"
+      ]
     }
   ],
   "NurseHat": [
@@ -3703,25 +3729,37 @@
   "PaintingAcorns": [
     {
       "vendor": "traveling-merchant",
-      "text": "When the Frost Legion has been defeated."
+      "text": "When the Frost Legion has been defeated.",
+      "conditions": [
+        "after-frost-legion"
+      ]
     }
   ],
   "PaintingCastleMarsberg": [
     {
       "vendor": "traveling-merchant",
-      "text": "When the Martian Madness has been defeated."
+      "text": "When the Martian Madness has been defeated.",
+      "conditions": [
+        "after-martian-madness"
+      ]
     }
   ],
   "PaintingColdSnap": [
     {
       "vendor": "traveling-merchant",
-      "text": "When the Frost Legion has been defeated."
+      "text": "When the Frost Legion has been defeated.",
+      "conditions": [
+        "after-frost-legion"
+      ]
     }
   ],
   "PaintingCursedSaint": [
     {
       "vendor": "traveling-merchant",
-      "text": "When the Frost Legion has been defeated."
+      "text": "When the Frost Legion has been defeated.",
+      "conditions": [
+        "after-frost-legion"
+      ]
     }
   ],
   "PaintingGermanBeer": [
@@ -3748,7 +3786,10 @@
   "PaintingMartiaLisa": [
     {
       "vendor": "traveling-merchant",
-      "text": "When the Martian Madness has been defeated."
+      "text": "When the Martian Madness has been defeated.",
+      "conditions": [
+        "after-martian-madness"
+      ]
     }
   ],
   "PaintingOfALass": [
@@ -3764,19 +3805,28 @@
   "PaintingSnowfellas": [
     {
       "vendor": "traveling-merchant",
-      "text": "When the Frost Legion has been defeated."
+      "text": "When the Frost Legion has been defeated.",
+      "conditions": [
+        "after-frost-legion"
+      ]
     }
   ],
   "PaintingTheSeason": [
     {
       "vendor": "traveling-merchant",
-      "text": "When the Frost Legion has been defeated."
+      "text": "When the Frost Legion has been defeated.",
+      "conditions": [
+        "after-frost-legion"
+      ]
     }
   ],
   "PaintingTheTruthIsUpThere": [
     {
       "vendor": "traveling-merchant",
-      "text": "When the Martian Madness has been defeated."
+      "text": "When the Martian Madness has been defeated.",
+      "conditions": [
+        "after-martian-madness"
+      ]
     }
   ],
   "PaintingWendy": [
@@ -5920,7 +5970,10 @@
   "TwilightHairDye": [
     {
       "vendor": "stylist",
-      "text": "When a Martian Madness has been defeated."
+      "text": "When a Martian Madness has been defeated.",
+      "conditions": [
+        "after-martian-madness"
+      ]
     }
   ],
   "UltrabrightTorch": [

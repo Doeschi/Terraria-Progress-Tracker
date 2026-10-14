@@ -111,9 +111,16 @@ GitHub Actions.
 - **D16** Furniture subcategories, one per furniture type: Paintings, Statues, Trophies & relics,
   Music boxes, Chairs, Tables, Work benches, Sofas & benches, Toilets, Beds, Doors, Chests,
   Dressers, Bookcases, Pianos, Clocks, Sinks, Bathtubs, Lamps, Lanterns, Chandeliers, Candles &
-  candelabras, Torches & campfires, Platforms, Cages & jars, Decorations, Enemy banners, Other
-  banners and Other furniture. They come from the wiki page an item is on (`page:<name>` keys,
-  e.g. all chairs are on "Chairs"). Banners are furniture subcategories, not a category.
+  candelabras, Torches & campfires, Platforms, Cages & jars, Decorations and Other furniture.
+  They come from the wiki page an item is on (`page:<name>` keys, e.g. all chairs are on
+  "Chairs").
+- **D16a** Category "Banners" (not furniture): the enemy banners (tag) and the decorative ones
+  (items named "… Banner"). Subcategories: the sections of the wiki's page "Banners (enemy)" –
+  Slimes, the environments (Surface, Cavern, Granite Cave, …, Hallow, Meteorite), the events
+  (Rain & Blizzard, Windy Day, Blood Moon, Goblin Army, …, Old One's Army) and Unobtainable –
+  from the page's item lists (`[page_lists]`, D26), then "Craftable banners" (the colored
+  banners with a recipe) and "Other banners" (the rest: the Dungeon and Underworld banners
+  found in the world, the War Table Banner).
 - **D18** Crafting material subcategories: Bars, Ores, Gems, Souls, Fragments, Enemy drops,
   Critters, Potion ingredients, Threads & cloth – and, for items that are mainly something else
   but used in recipes, Blocks & walls, Furniture & stations and Equipment – plus Other.
@@ -146,8 +153,8 @@ GitHub Actions.
   items the wiki tags as developer items, plus the developer wings, which sit on the shared
   "Wings" page without that tag and are matched by developer name ("Red's *", …; Jim's Cap is
   no developer item). No subcategory per developer: treasure bags always give the full set.
-- **D17** Mapping rules can remove an entry again with `exclude` (e.g. "Other banners" excludes
-  items tagged as enemy banner).
+- **D17** Mapping rules can remove an entry again with `exclude` (e.g. "Craftable banners"
+  excludes items tagged as enemy banner, Furniture excludes the banners).
   Subcategories can also use `with_categories` / `without_categories` (the item's other
   categories) and `only_in_parent`.
 - **D15** Every category with subcategories has an "Other …" subcategory (`fallback`) for its
@@ -888,8 +895,8 @@ Below 640 px width (phones) the layout changes; tablets and desktops stay as the
   - Hardmode / Pre-Hardmode, platforms: shown only in the detail panel; world seeds: the "World
     seed" options of the filter (CO6)
 - **CO3** Filter group "Conditions" (replaces "Time of day"), nested: Time of day (Day, Night),
-  Moon phase (8 phases), After a boss (the bosses, any / all mechanical bosses), Weather (Windy),
-  World seed (CO6).
+  Moon phase (8 phases), After a boss or invasion (the bosses, any / all mechanical bosses,
+  Martian Madness, Frost Legion, a Clown), Weather (Windy), World seed (CO6).
   An item belongs to a condition only if it can *only* be obtained under it: within a condition
   group (time of day, moon phase, boss, weather) every source must be restricted – shop rows,
   drops (an enemy that only spawns at night counts as a night source) – and the item belongs to
@@ -1417,6 +1424,9 @@ Below 640 px width (phones) the layout changes; tablets and desktops stay as the
     earned and the kills towards the next one; entries of the same banner show the same; empty
     for entries without a banner (town NPCs, most critters, bosses). The tooltip names the banner,
     its kills and how many wait in the Banners Window.
+  - Item table: column "Banners" (group Progress, offered with a loaded world, in the view "Bad
+    luck"): "2 · 32/50" like the bestiary's column, sortable by the kills in banners; the
+    tooltip has the kills and the banners in the Banners Window; empty for other items.
   - NPC card, "Where and when": the banner (opens its item card), banners earned, how many wait
     in the Banners Window and the kills towards the next.
   - Item card of a banner, "How to get it": kills in the world, banners earned, how many wait

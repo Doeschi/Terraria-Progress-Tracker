@@ -217,6 +217,7 @@ function DetailContent({ item, Title }: { item: Item; Title: TitleComponent }) {
     luck: null,
     done: () => false,
     owned: null,
+    banner: null,
   }
   // kills per drop source in the loaded world (expected drops)
   const world = useActiveWorld()

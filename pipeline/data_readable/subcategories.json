@@ -536,7 +536,7 @@
     "id": "enemy-drop",
     "name": "Enemy drops",
     "icon": "https://terraria.wiki.gg/images/Shark_Fin.png",
-    "count": 100,
+    "count": 103,
     "parent": "crafting-material"
   },
   {
@@ -578,7 +578,7 @@
     "id": "material-furniture",
     "name": "Furniture & stations",
     "icon": "https://terraria.wiki.gg/images/Work_Bench.png",
-    "count": 273,
+    "count": 270,
     "parent": "crafting-material"
   },
   {
@@ -785,18 +785,236 @@
     "parent": "furniture"
   },
   {
-    "id": "enemy-banner",
-    "name": "Enemy banners",
-    "icon": "https://terraria.wiki.gg/images/Zombie_Banner.png",
-    "count": 292,
-    "parent": "furniture"
+    "id": "banner-slimes",
+    "name": "Slimes",
+    "icon": "https://terraria.wiki.gg/images/Gastropod_Banner.png",
+    "count": 24,
+    "parent": "banner"
   },
   {
-    "id": "other-banner",
-    "name": "Other banners",
+    "id": "banner-surface",
+    "name": "Surface",
+    "icon": "https://terraria.wiki.gg/images/Bird_Banner.png",
+    "count": 19,
+    "parent": "banner"
+  },
+  {
+    "id": "banner-cavern",
+    "name": "Cavern",
+    "icon": "https://terraria.wiki.gg/images/Angler_Fish_Banner.png",
+    "count": 19,
+    "parent": "banner"
+  },
+  {
+    "id": "banner-granite-cave",
+    "name": "Granite Cave",
+    "icon": "https://terraria.wiki.gg/images/Granite_Elemental_Banner.png",
+    "count": 2,
+    "parent": "banner"
+  },
+  {
+    "id": "banner-marble-cave",
+    "name": "Marble Cave",
+    "icon": "https://terraria.wiki.gg/images/Medusa_Banner.png",
+    "count": 2,
+    "parent": "banner"
+  },
+  {
+    "id": "banner-spider-nest",
+    "name": "Spider Nest",
+    "icon": "https://terraria.wiki.gg/images/Black_Recluse_Banner.png",
+    "count": 2,
+    "parent": "banner"
+  },
+  {
+    "id": "banner-glowing-mushroom",
+    "name": "Glowing Mushroom biome",
+    "icon": "https://terraria.wiki.gg/images/Anomura_Fungus_Banner.png",
+    "count": 7,
+    "parent": "banner"
+  },
+  {
+    "id": "banner-snow",
+    "name": "Snow biome",
+    "icon": "https://terraria.wiki.gg/images/Frozen_Zombie_Banner.png",
+    "count": 12,
+    "parent": "banner"
+  },
+  {
+    "id": "banner-jungle",
+    "name": "Jungle",
+    "icon": "https://terraria.wiki.gg/images/Arapaima_Banner.png",
+    "count": 17,
+    "parent": "banner"
+  },
+  {
+    "id": "banner-desert",
+    "name": "Desert",
+    "icon": "https://terraria.wiki.gg/images/Antlion_Banner.png",
+    "count": 13,
+    "parent": "banner"
+  },
+  {
+    "id": "banner-underworld",
+    "name": "Underworld",
+    "icon": "https://terraria.wiki.gg/images/Bone_Serpent_Banner.png",
+    "count": 6,
+    "parent": "banner"
+  },
+  {
+    "id": "banner-dungeon",
+    "name": "Dungeon",
+    "icon": "https://terraria.wiki.gg/images/Dark_Caster_Banner.png",
+    "count": 18,
+    "parent": "banner"
+  },
+  {
+    "id": "banner-corruption",
+    "name": "Corruption",
+    "icon": "https://terraria.wiki.gg/images/Cursed_Hammer_Banner.png",
+    "count": 8,
+    "parent": "banner"
+  },
+  {
+    "id": "banner-crimson",
+    "name": "Crimson",
+    "icon": "https://terraria.wiki.gg/images/Blood_Feeder_Banner.png",
+    "count": 11,
+    "parent": "banner"
+  },
+  {
+    "id": "banner-hallow",
+    "name": "Hallow",
+    "icon": "https://terraria.wiki.gg/images/Chaos_Elemental_Banner.png",
+    "count": 7,
+    "parent": "banner"
+  },
+  {
+    "id": "banner-meteorite",
+    "name": "Meteorite",
+    "icon": "https://terraria.wiki.gg/images/Meteor_Head_Banner.png",
+    "count": 1,
+    "parent": "banner"
+  },
+  {
+    "id": "banner-rain-blizzard",
+    "name": "Rain & Blizzard",
+    "icon": "https://terraria.wiki.gg/images/Angry_Nimbus_Banner.png",
+    "count": 4,
+    "parent": "banner"
+  },
+  {
+    "id": "banner-windy-day",
+    "name": "Windy Day",
+    "icon": "https://terraria.wiki.gg/images/Angry_Dandelion_Banner.png",
+    "count": 1,
+    "parent": "banner"
+  },
+  {
+    "id": "banner-blood-moon",
+    "name": "Blood Moon",
+    "icon": "https://terraria.wiki.gg/images/Clown_Banner.png",
+    "count": 17,
+    "parent": "banner"
+  },
+  {
+    "id": "banner-goblin-army",
+    "name": "Goblin Army",
+    "icon": "https://terraria.wiki.gg/images/Goblin_Thief_Banner.png",
+    "count": 6,
+    "parent": "banner"
+  },
+  {
+    "id": "banner-sandstorm",
+    "name": "Sandstorm",
+    "icon": "https://terraria.wiki.gg/images/Sand_Elemental_Banner.png",
+    "count": 6,
+    "parent": "banner"
+  },
+  {
+    "id": "banner-halloween",
+    "name": "Halloween",
+    "icon": "https://terraria.wiki.gg/images/Ghost_Banner.png",
+    "count": 3,
+    "parent": "banner"
+  },
+  {
+    "id": "banner-pirate-invasion",
+    "name": "Pirate Invasion",
+    "icon": "https://terraria.wiki.gg/images/Parrot_Banner.png",
+    "count": 6,
+    "parent": "banner"
+  },
+  {
+    "id": "banner-solar-eclipse",
+    "name": "Solar Eclipse",
+    "icon": "https://terraria.wiki.gg/images/Frankenstein_Banner.png",
+    "count": 14,
+    "parent": "banner"
+  },
+  {
+    "id": "banner-frost-legion",
+    "name": "Frost Legion",
+    "icon": "https://terraria.wiki.gg/images/Mister_Stabby_Banner.png",
+    "count": 3,
+    "parent": "banner"
+  },
+  {
+    "id": "banner-pumpkin-moon",
+    "name": "Pumpkin Moon",
+    "icon": "https://terraria.wiki.gg/images/Headless_Horseman_Banner.png",
+    "count": 5,
+    "parent": "banner"
+  },
+  {
+    "id": "banner-frost-moon",
+    "name": "Frost Moon",
+    "icon": "https://terraria.wiki.gg/images/Elf_Archer_Banner.png",
+    "count": 9,
+    "parent": "banner"
+  },
+  {
+    "id": "banner-martian-madness",
+    "name": "Martian Madness",
+    "icon": "https://terraria.wiki.gg/images/Martian_Brain_Scrambler_Banner.png",
+    "count": 11,
+    "parent": "banner"
+  },
+  {
+    "id": "banner-lunar-events",
+    "name": "Lunar Events",
+    "icon": "https://terraria.wiki.gg/images/Blue_Cultist_Archer_Banner.png",
+    "count": 23,
+    "parent": "banner"
+  },
+  {
+    "id": "banner-old-ones-army",
+    "name": "Old One's Army",
+    "icon": "https://terraria.wiki.gg/images/Etherian_Goblin_Bomber_Banner.png",
+    "count": 10,
+    "parent": "banner"
+  },
+  {
+    "id": "banner-unobtainable",
+    "name": "Unobtainable",
+    "icon": "https://terraria.wiki.gg/images/Blue_Cultist_Fighter_Banner.png",
+    "count": 6,
+    "parent": "banner"
+  },
+  {
+    "id": "banner-craftable",
+    "name": "Craftable banners",
     "icon": "https://terraria.wiki.gg/images/Red_Banner.png",
-    "count": 20,
-    "parent": "furniture"
+    "count": 6,
+    "parent": "banner"
+  },
+  {
+    "id": "banner-other",
+    "name": "Other banners",
+    "icon": "https://terraria.wiki.gg/images/Ankh_Banner.png",
+    "count": 19,
+    "parent": "banner",
+    "fallback": true
   },
   {
     "id": "novelty",
@@ -910,7 +1128,7 @@
     "id": "other-furniture",
     "name": "Other furniture",
     "icon": "https://terraria.wiki.gg/images/Bottle.png",
-    "count": 305,
+    "count": 300,
     "parent": "furniture",
     "fallback": true
   },

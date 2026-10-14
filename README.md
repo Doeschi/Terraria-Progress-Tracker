@@ -116,9 +116,9 @@ change.
 | "Extractinator", "Chlorophyte Extractinator", section "Possible conversions" | what they give per input (chance, amount, Pre-Hardmode / Hardmode only) and always convert (`extractinator.json`) |
 | the ~112 pages with drop groups (found by the wiki search `insource:"group:start"`) | which drops belong together: "One of the following 8 items will always be dropped", "1/12: one of these 14" (`group` in `drops.json`) |
 
-Also scraped: the item lists of the rendered page "Vanity items" (which vanity items are single
-pieces, Halloween, Christmas, developer or other sets – the keys `list:vanity items#…` of
-`mapping.toml`), the rendered table "Banners with non-default kill count" of "Banners (enemy)" (the
+Also scraped: the item lists of the rendered pages "Vanity items" (which vanity items are single
+pieces, Halloween, Christmas, developer or other sets) and "Banners (enemy)" (the banners of each
+environment and event – the keys `list:<page>#<heading>` of `mapping.toml`), the rendered table "Banners with non-default kill count" of "Banners (enemy)" (the
 kills an enemy banner takes when it is not 50), the rendered HTML of "NPC IDs" (internal NPC names and ids – the keys of the
 bestiary in world files), the image lists of "Rarity", "Coins" and "Difficulty" (their icons) and
 the pages in the category "Hardmode-only NPCs" (their drops count from the Wall of Flesh).

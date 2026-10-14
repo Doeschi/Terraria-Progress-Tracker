@@ -3,7 +3,7 @@
     "id": "start",
     "name": "World creation",
     "icon": "https://terraria.wiki.gg/images/Copper_Shortsword.png",
-    "count": 3329
+    "count": 3319
   },
   {
     "id": "king-slime",
@@ -39,13 +39,13 @@
     "id": "skeletron",
     "name": "Skeletron",
     "icon": "https://terraria.wiki.gg/images/Map_Icon_Skeletron.png",
-    "count": 453
+    "count": 450
   },
   {
     "id": "wall-of-flesh",
     "name": "Wall of Flesh (Hardmode)",
     "icon": "https://terraria.wiki.gg/images/Map_Icon_Wall_of_Flesh.png",
-    "count": 1065
+    "count": 1071
   },
   {
     "id": "queen-slime",
@@ -69,13 +69,13 @@
     "id": "plantera",
     "name": "Plantera",
     "icon": "https://terraria.wiki.gg/images/Map_Icon_Plantera_%28first_form%29.png",
-    "count": 283
+    "count": 280
   },
   {
     "id": "golem",
     "name": "Golem",
     "icon": "https://terraria.wiki.gg/images/Map_Icon_Golem.png",
-    "count": 139
+    "count": 149
   },
   {
     "id": "duke-empress",

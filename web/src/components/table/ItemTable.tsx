@@ -16,6 +16,7 @@ import { useVirtualizer } from '@tanstack/react-virtual'
 import { ArrowDown, ArrowUp, ExternalLink, Eye, EyeOff, PackageSearch } from 'lucide-react'
 import { useActivePlaythrough, useActiveWorld, useStore } from '@/store'
 import { itemLuck, sourceKills, type Luck } from '@/lib/luck'
+import { bannerState } from '@/lib/banners'
 import { canWield, useHeldWeapon, WEAPONS } from '@/lib/weapons'
 import { useWorldProgress } from '@/hooks/useWorldProgress'
 import { rodOfDiscord } from '@/lib/eggs'
@@ -68,6 +69,7 @@ const RowStateContext = createContext<RowState>({
   luck: null,
   done: () => false,
   owned: null,
+  banner: null,
 })
 
 const blank = (v: unknown) => v === undefined || v === '' || v === false
@@ -159,7 +161,8 @@ export function ItemTable({
   const difficulty = pt?.difficulty ?? 'master'
   // expected drops from the loaded world's bestiary kills, computed once per item
   const data = useStore((s) => s.data)!
-  const bestiary = useActiveWorld()?.bestiary
+  const world = useActiveWorld()
+  const bestiary = world?.bestiary
   const luck = useMemo(() => {
     if (!bestiary) return null
     const kills = sourceKills(data, bestiary)
@@ -170,8 +173,10 @@ export function ItemTable({
     }
   }, [data, bestiary, difficulty])
   const done = (key: string) => checked.has(key) || ignored.has(key)
-  const tracking = useRef<TrackingState>({ changedAt: {}, difficulty, luck, done, owned })
-  tracking.current = { changedAt: changedAt ?? {}, difficulty, luck, done, owned }
+  // enemy banners: kills and banners earned in the loaded world (BE9)
+  const banner = useMemo(() => (world ? (item: Item) => bannerState(world, item) : null), [world])
+  const tracking = useRef<TrackingState>({ changedAt: {}, difficulty, luck, done, owned, banner })
+  tracking.current = { changedAt: changedAt ?? {}, difficulty, luck, done, owned, banner }
   // columns in the order of the applied view (the rest in catalogue order after them)
   const columnOrder = usePrefs((s) => s.columnOrder)
   const orderedCatalogue = useMemo(() => {
@@ -254,8 +259,9 @@ export function ItemTable({
       luck,
       done: (key: string) => checked.has(key) || ignored.has(key),
       owned,
+      banner,
     }),
-    [checked, ignored, hasWorld, worldAttached, changedAt, difficulty, luck, owned],
+    [checked, ignored, hasWorld, worldAttached, changedAt, difficulty, luck, owned, banner],
   )
 
   if (!items.length) {

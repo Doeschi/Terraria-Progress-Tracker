@@ -178,6 +178,15 @@ match = ["type:wall"]
 name = "Furniture"
 icon = "Wooden Chair"
 match = ["type:furniture"]
+# banners are a category of their own ([categories.banner])
+exclude = ["tag:enemy banner", "page:banners (decorative)", "page:war table banner"]
+
+# Banners (REQUIREMENTS D16a): the enemy banners (tag) and the decorative ones (their wiki page:
+# the colored banners, the Dungeon and Underworld flags and signs, the War Table Banner)
+[categories.banner]
+name = "Banners"
+icon = "Zombie Banner"
+match = ["tag:enemy banner", "page:banners (decorative)", "page:war table banner"]
 
 [categories.light-source]
 name = "Light sources"
@@ -1016,18 +1025,209 @@ parent = "furniture"
 icon = "Potted Forest Tree"
 match = ["page:christmas tree decorations", "page:potted trees", "page:planter boxes", "page:hanging herbs", "page:vases", "page:seashells", "page:streamers", "page:silly tied balloons", "page:christmas lights", "page:potted lava plants", "page:potted crystal plants", "page:animal skins", "page:pin flags", "page:water fountains", "page:monoliths", "page:tombstones"]
 
-[subcategories.enemy-banner]
-name = "Enemy banners"
-parent = "furniture"
-icon = "Zombie Banner"
-match = ["tag:enemy banner"]
+# Banners: the sections of the wiki's page "Banners (enemy)" (its item lists, [page_lists]),
+# then the craftable decorative banners and the rest
 
-[subcategories.other-banner]
-name = "Other banners"
-parent = "furniture"
+[subcategories.banner-slimes]
+name = "Slimes"
+parent = "banner"
+only_in_parent = true
+match = ["list:banners (enemy)#slimes"]
+
+[subcategories.banner-surface]
+name = "Surface"
+parent = "banner"
+only_in_parent = true
+match = ["list:banners (enemy)#surface"]
+
+[subcategories.banner-cavern]
+name = "Cavern"
+parent = "banner"
+only_in_parent = true
+match = ["list:banners (enemy)#cavern"]
+
+[subcategories.banner-granite-cave]
+name = "Granite Cave"
+parent = "banner"
+only_in_parent = true
+match = ["list:banners (enemy)#granite cave"]
+
+[subcategories.banner-marble-cave]
+name = "Marble Cave"
+parent = "banner"
+only_in_parent = true
+match = ["list:banners (enemy)#marble cave"]
+
+[subcategories.banner-spider-nest]
+name = "Spider Nest"
+parent = "banner"
+only_in_parent = true
+match = ["list:banners (enemy)#spider nest"]
+
+[subcategories.banner-glowing-mushroom]
+name = "Glowing Mushroom biome"
+parent = "banner"
+only_in_parent = true
+match = ["list:banners (enemy)#glowing mushroom biome"]
+
+[subcategories.banner-snow]
+name = "Snow biome"
+parent = "banner"
+only_in_parent = true
+match = ["list:banners (enemy)#snow biome"]
+
+[subcategories.banner-jungle]
+name = "Jungle"
+parent = "banner"
+only_in_parent = true
+match = ["list:banners (enemy)#jungle"]
+
+[subcategories.banner-desert]
+name = "Desert"
+parent = "banner"
+only_in_parent = true
+match = ["list:banners (enemy)#desert"]
+
+[subcategories.banner-underworld]
+name = "Underworld"
+parent = "banner"
+only_in_parent = true
+match = ["list:banners (enemy)#underworld"]
+
+[subcategories.banner-dungeon]
+name = "Dungeon"
+parent = "banner"
+only_in_parent = true
+match = ["list:banners (enemy)#dungeon"]
+
+[subcategories.banner-corruption]
+name = "Corruption"
+parent = "banner"
+only_in_parent = true
+match = ["list:banners (enemy)#corruption"]
+
+[subcategories.banner-crimson]
+name = "Crimson"
+parent = "banner"
+only_in_parent = true
+match = ["list:banners (enemy)#crimson"]
+
+[subcategories.banner-hallow]
+name = "Hallow"
+parent = "banner"
+only_in_parent = true
+match = ["list:banners (enemy)#hallow"]
+
+[subcategories.banner-meteorite]
+name = "Meteorite"
+parent = "banner"
+only_in_parent = true
+match = ["list:banners (enemy)#meteorite"]
+
+[subcategories.banner-rain-blizzard]
+name = "Rain & Blizzard"
+parent = "banner"
+only_in_parent = true
+match = ["list:banners (enemy)#rain/blizzard"]
+
+[subcategories.banner-windy-day]
+name = "Windy Day"
+parent = "banner"
+only_in_parent = true
+match = ["list:banners (enemy)#windy day"]
+
+[subcategories.banner-blood-moon]
+name = "Blood Moon"
+parent = "banner"
+only_in_parent = true
+match = ["list:banners (enemy)#blood moon"]
+
+[subcategories.banner-goblin-army]
+name = "Goblin Army"
+parent = "banner"
+only_in_parent = true
+match = ["list:banners (enemy)#goblin army"]
+
+[subcategories.banner-sandstorm]
+name = "Sandstorm"
+parent = "banner"
+only_in_parent = true
+match = ["list:banners (enemy)#sandstorm"]
+
+[subcategories.banner-halloween]
+name = "Halloween"
+parent = "banner"
+only_in_parent = true
+match = ["list:banners (enemy)#halloween"]
+
+[subcategories.banner-pirate-invasion]
+name = "Pirate Invasion"
+parent = "banner"
+only_in_parent = true
+match = ["list:banners (enemy)#pirate invasion"]
+
+[subcategories.banner-solar-eclipse]
+name = "Solar Eclipse"
+parent = "banner"
+only_in_parent = true
+match = ["list:banners (enemy)#solar eclipse"]
+
+[subcategories.banner-frost-legion]
+name = "Frost Legion"
+parent = "banner"
+only_in_parent = true
+match = ["list:banners (enemy)#frost legion"]
+
+[subcategories.banner-pumpkin-moon]
+name = "Pumpkin Moon"
+parent = "banner"
+only_in_parent = true
+match = ["list:banners (enemy)#pumpkin moon"]
+
+[subcategories.banner-frost-moon]
+name = "Frost Moon"
+parent = "banner"
+only_in_parent = true
+match = ["list:banners (enemy)#frost moon"]
+
+[subcategories.banner-martian-madness]
+name = "Martian Madness"
+parent = "banner"
+only_in_parent = true
+match = ["list:banners (enemy)#martian madness"]
+
+[subcategories.banner-lunar-events]
+name = "Lunar Events"
+parent = "banner"
+only_in_parent = true
+match = ["list:banners (enemy)#lunar events"]
+
+[subcategories.banner-old-ones-army]
+name = "Old One's Army"
+parent = "banner"
+only_in_parent = true
+match = ["list:banners (enemy)#old one's army"]
+
+[subcategories.banner-unobtainable]
+name = "Unobtainable"
+parent = "banner"
+only_in_parent = true
+match = ["list:banners (enemy)#unobtainable"]
+
+# the colored banners with a recipe (by name, [manual]: nothing in the wiki data says "craftable")
+[subcategories.banner-craftable]
+name = "Craftable banners"
+parent = "banner"
 icon = "Red Banner"
-match = []  # items named "... Banner", see the manual section
-exclude = ["tag:enemy banner"]
+only_in_parent = true
+match = []
+
+[subcategories.banner-other]
+name = "Other banners"
+parent = "banner"
+icon = "Ankh Banner"
+fallback = true
+
 
 # Miscellaneous
 [subcategories.novelty]
@@ -1194,6 +1394,9 @@ name = "From grab bags & crates"
 icon = "Wooden Crate"
 match = ["tag:bag loot", "listcat:bag loot items"]
 from_containers = ["crate", "other"]
+# the wiki tags what comes out of a bag, crate or oyster "loot" as well (the pearls): a chest or
+# pot row keeps "Found in chests & pots", the tag alone does not
+replaces = "loot"
 
 # Developer items come from the treasure bags too (as [categories.developer]; the developer wings
 # by name, [manual]). The wiki tags all of this as "bag loot" as well: that only stays for items
@@ -1298,7 +1501,7 @@ page_list_entries = 200       # entries of the lists of the [page_lists] pages
 # e.g. "list:vanity items#halloween sets". The wiki's platform notes in a heading are left out
 # ("(3DS version) Oktoberfest Vanity Sets" -> "oktoberfest vanity sets").
 [page_lists]
-pages = ["Vanity items"]
+pages = ["Vanity items", "Banners (enemy)"]
 
 # Enemy banners (REQUIREMENTS D25). The game numbers them; a world file counts the kills per
 # banner number. From number `from` on the item id is `item` + (number - from) - the game's
@@ -1776,7 +1979,7 @@ environments = ["Day"]
 [conditions]
 ignore_links = [
     "moon phase", "pylons", "golf score", "health", "mana", "multiplayer", "vampirism",
-    "world is infected", "npc drops", "coins", "altar", "clown", "tax collector",
+    "world is infected", "npc drops", "coins", "altar", "tax collector",
     "expert mode", "master mode", "portable storage", "fairies",
     # "if the Party Girl is present"
     "party girl", "mechanic", "wizard", "angler", "pirate",
@@ -1785,7 +1988,7 @@ ignore_links = [
 [conditions.groups]
 time = { name = "Time of day", filter = true }
 moon = { name = "Moon phase", filter = true }
-boss = { name = "After a boss", filter = true }
+boss = { name = "After a boss or invasion", filter = true }
 weather = { name = "Weather", filter = true }
 progress = { name = "Progress", filter = false }
 # "World seed" is a filter of its own kind: items with a source only in that seed, and "Only in
@@ -1875,6 +2078,29 @@ name = "All three mechanical bosses"
 group = "boss"
 icon = "Mechanical Skull"
 links = ["mechanical bosses"]
+after = true
+
+# invasions and enemies defeated ("When the Martian Madness has been defeated."): progress like a
+# boss, with a milestone in [milestone_conditions]
+[conditions.after-martian-madness]
+name = "Martian Madness defeated"
+group = "boss"
+icon = "Martian Conduit Plating"
+links = ["martian madness"]
+after = true
+
+[conditions.after-frost-legion]
+name = "Frost Legion defeated"
+group = "boss"
+icon = "Snow Globe"
+links = ["frost legion"]
+after = true
+
+[conditions.after-clown]
+name = "A Clown defeated"
+group = "boss"
+icon = "Clown Hat"
+links = ["clown"]
 after = true
 
 [conditions.hardmode]
@@ -2096,6 +2322,9 @@ bosses = ["moon-lord"]
 hardmode = "wall-of-flesh"
 after-any-mech = "any-mech"
 after-all-mechs = "all-mechs"
+after-martian-madness = "golem"      # the invasion comes after Golem
+after-frost-legion = "wall-of-flesh"  # a Snow Globe from a Present, in Hardmode
+after-clown = "wall-of-flesh"         # Blood Moons in Hardmode
 
 # Drop rows of an enemy's variants: the wiki names the variant in a note ("Mimic (Pre-Hardmode
 # variant)"); rows without a note get the name given here (source name = name of the variant).
@@ -2909,9 +3138,13 @@ keys = [
 "Kazzymodus' *" = ["categories:developer", "obtain:treasure-bag"]
 "Luna's *" = ["categories:developer", "obtain:treasure-bag"]
 
-# decorative banners (colored, dungeon, underworld, War Table Banner, ...);
-# enemy banners are excluded in [subcategories.other-banner]
-"* Banner" = ["subcategories:other-banner"]
+# the craftable decorative banners ([subcategories.banner-craftable], D16a)
+"Red Banner" = ["subcategories:banner-craftable"]
+"Green Banner" = ["subcategories:banner-craftable"]
+"Blue Banner" = ["subcategories:banner-craftable"]
+"Yellow Banner" = ["subcategories:banner-craftable"]
+"Pink Banner" = ["subcategories:banner-craftable"]
+"White Banner" = ["subcategories:banner-craftable"]
 
 "*Music Box*" = ["subcategories:music-box"]
 # The wiki types the Cell Phone and the Shellphone (and its modes) as tools, so "Informational"

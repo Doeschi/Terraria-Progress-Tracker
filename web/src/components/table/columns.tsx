@@ -7,6 +7,7 @@ import { tooltipPlain } from '../common-data'
 import { formatDate, nameOf } from '@/lib/format'
 import { conditionLabel, conditionNames } from '@/lib/conditions'
 import { ConditionsCell, IconList, LuckCell, type IconEntry } from './cells'
+import { bannerProgress, bannerText, type BannerState } from '@/lib/banners'
 import { shownObtain } from '@/lib/filtering'
 import type { Luck } from '@/lib/luck'
 import type { Owned } from '@/hooks/useTrackerView'
@@ -28,6 +29,8 @@ export interface TrackingState {
   done: (key: string) => boolean
   /** item key -> amount owned, chests and player (null: no world or player loaded) */
   owned: Map<string, Owned> | null
+  /** an enemy banner's kills and banners earned in the loaded world (null: no world loaded) */
+  banner: ((item: Item) => BannerState | undefined) | null
 }
 
 export interface ItemColumn {
@@ -523,6 +526,29 @@ export function buildColumns(data: GameData): ItemColumn[] {
       cell: (i, t) => {
         const luck = t.luck?.(i)
         return luck ? <LuckCell data={data} luck={luck} missing={!t.done(i.key)} /> : null
+      },
+    },
+    {
+      // enemy banners (BE9): banners earned in the loaded world and the kills towards the next,
+      // like the bestiary's column; sorted by the kills in banners
+      id: 'banners',
+      label: 'Banners',
+      group: 'Progress',
+      size: 110,
+      align: 'right',
+      descFirst: true,
+      needs: 'world',
+      value: (i, t) => {
+        const b = t.banner?.(i)
+        return b ? b.kills / b.needed : undefined
+      },
+      cell: (i, t) => {
+        const b = t.banner?.(i)
+        return b ? (
+          <span className="tabular-nums" title={bannerText(b)}>
+            {bannerProgress(b)}
+          </span>
+        ) : null
       },
     },
   ]
