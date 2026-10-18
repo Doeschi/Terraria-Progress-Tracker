@@ -16,8 +16,8 @@ import {
 import { itemsForPlaythrough } from '@/lib/availability'
 import { bossesBySource, itemBosses, itemContainers } from '@/lib/drops'
 import type { Item } from '@/lib/types'
-import { AVAILABLE_NOW } from '@/lib/worldProgress'
-import { useWorldProgress } from './useWorldProgress'
+import { AVAILABLE_NOW } from '@/lib/progress'
+import { useProgress } from './useProgress'
 
 export interface TrackerView extends Counts {
   visible: Item[]
@@ -59,8 +59,8 @@ export function useTrackerView(): TrackerView | null {
   const view = useStore((s) => s.view)
   const progressionMode = usePrefs((s) => s.progressionMode)
   const picked = useStore((s) => s.picked)
-  // milestones reached in the loaded world: the option "Available now" (MS7)
-  const reached = useWorldProgress()?.reached ?? null
+  // milestones the playthrough has reached: the option "Available now" (MS7)
+  const reached = useProgress()?.reached ?? null
 
   // items that exist in this playthrough (platform, difficulty, game version)
   const platform = pt?.platform
@@ -144,15 +144,6 @@ export function useTrackerView(): TrackerView | null {
     return out
   }, [data, platform, chests, player])
 
-  // without a loaded world "Available now" is ignored (it stays selected for the next load)
-  const effectiveSelection = useMemo(
-    () =>
-      reached || !selection.progression.includes(AVAILABLE_NOW)
-        ? selection
-        : { ...selection, progression: selection.progression.filter((id) => id !== AVAILABLE_NOW) },
-    [selection, reached],
-  )
-
   // independent of view mode and sort order
   const counts = useMemo(
     () =>
@@ -161,12 +152,12 @@ export function useTrackerView(): TrackerView | null {
         entriesOf: (item) => ({ ...entries.get(item.key)!, crafting: crafting.get(item.key) ?? NONE }),
         checked,
         ignored,
-        selection: effectiveSelection,
+        selection,
         requireAll,
         excluded,
         searchRank: ranks,
       }),
-    [platformItems, entries, crafting, checked, ignored, effectiveSelection, requireAll, excluded, ranks],
+    [platformItems, entries, crafting, checked, ignored, selection, requireAll, excluded, ranks],
   )
 
   const ordered = useMemo(

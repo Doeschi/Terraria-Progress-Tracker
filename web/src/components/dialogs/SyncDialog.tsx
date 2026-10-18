@@ -98,11 +98,11 @@ function SyncView({ initial, onDone }: { initial: SyncSection; onDone: () => voi
   const [uncheck, setUncheck] = useState<Set<string>>(new Set())
   // bestiary: changes the user deselected
   const [skipBestiary, setSkipBestiary] = useState<Set<string>>(new Set())
-  // player: storages that count, used upgrades
-  const [storages, setStorages] = useState<Set<PlayerStorage>>(new Set(PLAYER_STORAGES.map((x) => x.id)))
-  const [withUpgrades, setWithUpgrades] = useState(true)
-  // world: banners earned by kills count as obtained (since 1.4.5 they wait in the Banners Window)
-  const [withBanners, setWithBanners] = useState(true)
+  // player: storages that count, used upgrades; world: banners earned by kills count as obtained
+  // (since 1.4.5 they wait in the Banners Window) - all remembered in the browser
+  const { storages: storageList, withUpgrades, withBanners } = usePrefs((s) => s.syncOptions)
+  const setSyncOptions = usePrefs((s) => s.setSyncOptions)
+  const storages = useMemo(() => new Set<PlayerStorage>(storageList), [storageList])
 
   const checked = useMemo(() => new Set(pt.checked), [pt.checked])
   const counts = useMemo(() => {
@@ -110,11 +110,17 @@ function SyncView({ initial, onDone }: { initial: SyncSection; onDone: () => voi
     const available = availabilityCheck(data, pt)
     return (item: Item) => available(item) && !ignored.has(item.key)
   }, [data, pt])
-  // everything on the player (all storages) - kept out of the world's "not found" list
   const stock = useMemo(() => (player ? playerStock(data, player, pt.platform) : null), [data, player, pt.platform])
-  // used permanent upgrades (Life Crystal, Demon Heart, …) are gone from the storages, but obtained:
-  // not "not found" either
-  const used = useMemo(() => new Set(player ? usedUpgrades(player) : []), [player])
+  // what the player has, going by the options: in the ticked storages, and the used permanent
+  // upgrades (Life Crystal, Demon Heart, …: gone from the storages, but obtained) if they count.
+  // Kept out of the world's "not found" list; everything else on the player is as good as absent
+  const onPlayer = useMemo(() => {
+    const keys = new Set<string>()
+    if (!player || !stock) return keys
+    for (const [key, { places }] of stock) if ([...places.keys()].some((st) => storages.has(st))) keys.add(key)
+    if (withUpgrades) for (const key of usedUpgrades(player)) keys.add(key)
+    return keys
+  }, [player, stock, storages, withUpgrades])
 
   const playerItems = useMemo(() => {
     if (!player || !stock) return []
@@ -148,12 +154,11 @@ function SyncView({ initial, onDone }: { initial: SyncSection; onDone: () => voi
     const notFound = pt.checked
       .map((k) => data.itemsByKey.get(k))
       .filter(
-        (i): i is Item =>
-          !!i && counts(i) && !scan.found.has(i.key) && !stock?.has(i.key) && !used.has(i.key) && !banners.has(i.key),
+        (i): i is Item => !!i && counts(i) && !scan.found.has(i.key) && !onPlayer.has(i.key) && !banners.has(i.key),
       )
       .sort((a, b) => a.name.localeCompare(b.name))
     return { scan, toCheck, notFound }
-  }, [data, world, pt, areas, scope, detection, counts, checked, stock, used, banners])
+  }, [data, world, pt, areas, scope, detection, counts, checked, onPlayer, banners])
 
   // to be checked: what is in the scanned containers or on the player, and the banners earned by
   // kills, each row with where
@@ -302,7 +307,10 @@ function SyncView({ initial, onDone }: { initial: SyncSection; onDone: () => voi
                   Banners
                 </legend>
                 <label className="flex items-center gap-1.5 text-sm">
-                  <Checkbox checked={withBanners} onCheckedChange={(v) => setWithBanners(v === true)} />
+                  <Checkbox
+                    checked={withBanners}
+                    onCheckedChange={(v) => setSyncOptions({ withBanners: v === true })}
+                  />
                   Count banners earned by kills
                 </label>
                 <p className="text-xs text-muted-foreground">
@@ -326,11 +334,8 @@ function SyncView({ initial, onDone }: { initial: SyncSection; onDone: () => voi
                       <Checkbox
                         checked={storages.has(st.id)}
                         onCheckedChange={(v) =>
-                          setStorages((cur) => {
-                            const next = new Set(cur)
-                            if (v === true) next.add(st.id)
-                            else next.delete(st.id)
-                            return next
+                          setSyncOptions({
+                            storages: v === true ? [...storageList, st.id] : storageList.filter((id) => id !== st.id),
                           })
                         }
                       />
@@ -338,7 +343,10 @@ function SyncView({ initial, onDone }: { initial: SyncSection; onDone: () => voi
                     </label>
                   ))}
                   <label className="flex items-center gap-1.5 text-sm">
-                    <Checkbox checked={withUpgrades} onCheckedChange={(v) => setWithUpgrades(v === true)} />
+                    <Checkbox
+                      checked={withUpgrades}
+                      onCheckedChange={(v) => setSyncOptions({ withUpgrades: v === true })}
+                    />
                     Used permanent upgrades
                   </label>
                 </div>

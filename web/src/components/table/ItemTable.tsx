@@ -18,7 +18,7 @@ import { useActivePlaythrough, useActiveWorld, useStore } from '@/store'
 import { itemLuck, sourceKills, type Luck } from '@/lib/luck'
 import { bannerState } from '@/lib/banners'
 import { canWield, useHeldWeapon, WEAPONS } from '@/lib/weapons'
-import { useWorldProgress } from '@/hooks/useWorldProgress'
+import { useProgress } from '@/hooks/useProgress'
 import { rodOfDiscord } from '@/lib/eggs'
 import type { Owned } from '@/hooks/useTrackerView'
 import { usePrefs } from '@/lib/prefs'
@@ -154,9 +154,9 @@ export function ItemTable({
   const catalogue = useItemColumns()
   const pt = useActivePlaythrough()
   const eggs = usePrefs((s) => s.layout.easterEggs)
-  // MS8: rows whose milestone the loaded world has not reached yet are dimmed (if enabled)
+  // MS8: rows whose milestone the playthrough has not reached yet are dimmed (if enabled)
   const dimUnavailable = usePrefs((s) => s.layout.dimUnavailable)
-  const progress = useWorldProgress()
+  const progress = useProgress()
   const changedAt = pt?.changedAt
   const difficulty = pt?.difficulty ?? 'master'
   // expected drops from the loaded world's bestiary kills, computed once per item
@@ -358,7 +358,7 @@ export function ItemTable({
                   key={row.id}
                   style={{ height: rowHeight }}
                   className={cn('group cursor-pointer', isIgnored && 'opacity-60', notYet && 'opacity-40')}
-                  title={notYet ? `Not available yet in ${progress.worldName}` : undefined}
+                  title={notYet ? 'Not available yet: its milestone is not reached' : undefined}
                   aria-selected={isSelected}
                   onClick={(e) => {
                     // clicks on the checkbox, buttons and links do their own thing

@@ -2,6 +2,7 @@ import { isTouchScreen } from './utils'
 import { create } from 'zustand'
 import { DEFAULT_DETECTION, type ChestDetection } from './world'
 import type { ScanScope } from '@/hooks/useAreas'
+import type { PlayerStorage } from '@/lib/player'
 import type { SearchMode } from './filtering'
 import { DETAIL_WIDTH, SIDEBAR_WIDTH } from './panes'
 
@@ -43,6 +44,21 @@ export interface Layout {
 
 /** The choices for the number of "Almost done" options. */
 export const ALMOST_DONE_COUNTS = [3, 5, 10, 20] as const
+
+export interface SyncOptions {
+  /** the player's storages whose items are checked by a sync */
+  storages: PlayerStorage[]
+  /** the permanent upgrades the player has used count as obtained */
+  withUpgrades: boolean
+  /** banners the world has earned by kills count as obtained */
+  withBanners: boolean
+}
+
+export const DEFAULT_SYNC_OPTIONS: SyncOptions = {
+  storages: ['inventory', 'equipment', 'piggyBank', 'safe', 'defendersForge', 'voidVault'],
+  withUpgrades: true,
+  withBanners: true,
+}
 export type AlmostDoneCount = (typeof ALMOST_DONE_COUNTS)[number]
 
 export const DEFAULT_LAYOUT: Layout = {
@@ -168,6 +184,8 @@ interface Prefs {
   autosave: boolean
   /** sync dialog settings (areas, displays, only player chests) per playthrough id */
   syncScopes: Record<string, ScanScope>
+  /** sync dialog: what on the player counts, and the banners earned by kills (PL4, SY10) */
+  syncOptions: SyncOptions
   /** "Search chests" dialog settings per playthrough id */
   chestScopes: Record<string, ScanScope>
   /** filter options moved to the "Hidden" section: "<prefix><group>/<id>" */
@@ -201,6 +219,7 @@ interface PrefsActions {
   setAutosave(autosave: boolean): void
   setSyncScope(playthroughId: string, scope: ScanScope): void
   setChestScope(playthroughId: string, scope: ScanScope): void
+  setSyncOptions(patch: Partial<SyncOptions>): void
   toggleHiddenFilter(key: string): void
   toggleAlmostDoneSkip(key: string): void
   /** brings back every left-out option of one sidebar ("" items, "bestiary:") */
@@ -231,6 +250,7 @@ function load(): Prefs {
     openSections: {},
     autosave: false,
     syncScopes: {},
+    syncOptions: DEFAULT_SYNC_OPTIONS,
     chestScopes: {},
     hiddenFilters: [],
     almostDoneSkipped: [],
@@ -264,6 +284,17 @@ function load(): Prefs {
     if (typeof p.autosave === 'boolean') prefs.autosave = p.autosave
     if (p && typeof p.syncScopes === 'object') prefs.syncScopes = p.syncScopes
     if (p && typeof p.chestScopes === 'object') prefs.chestScopes = p.chestScopes
+    const o = p?.syncOptions
+    if (o && typeof o === 'object') {
+      const known = new Set<string>(DEFAULT_SYNC_OPTIONS.storages)
+      prefs.syncOptions = {
+        storages: (stringList(o.storages) ?? DEFAULT_SYNC_OPTIONS.storages).filter((s): s is PlayerStorage =>
+          known.has(s),
+        ),
+        withUpgrades: typeof o.withUpgrades === 'boolean' ? o.withUpgrades : true,
+        withBanners: typeof o.withBanners === 'boolean' ? o.withBanners : true,
+      }
+    }
     if (Array.isArray(p.hiddenFilters))
       prefs.hiddenFilters = p.hiddenFilters.filter((k: unknown) => typeof k === 'string')
     if (Array.isArray(p.almostDoneSkipped))
@@ -308,6 +339,7 @@ export const usePrefs = create<Prefs & PrefsActions>()((set, get) => {
     setAutosave: (autosave) => update({ autosave }),
     setSyncScope: (id, scope) => update({ syncScopes: { ...get().syncScopes, [id]: scope } }),
     setChestScope: (id, scope) => update({ chestScopes: { ...get().chestScopes, [id]: scope } }),
+    setSyncOptions: (patch) => update({ syncOptions: { ...get().syncOptions, ...patch } }),
     toggleAlmostDoneSkip: (key) => {
       const list = get().almostDoneSkipped
       update({ almostDoneSkipped: list.includes(key) ? list.filter((k) => k !== key) : [...list, key] })

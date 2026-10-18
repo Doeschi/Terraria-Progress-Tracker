@@ -1,7 +1,7 @@
 /// <reference lib="webworker" />
 import { FileReader, type ItemSlot } from 'terraria-world-file'
 import type { Container, ContainerItem, LoadedWorld, WorkerResponse } from '@/lib/world'
-import { defeatedBosses } from '@/lib/worldProgress'
+import { defeatedBosses } from '@/lib/progress'
 import { readTileEntities } from './tileEntities'
 
 // Parses a .wld file off the main thread. Only the header, chests and tile

@@ -44,8 +44,8 @@ import { RarityIcon, TallyBar, TallyText, WikiIcon } from './common'
 import { Checkbox } from '@/components/ui/checkbox'
 import { SearchField } from './ListParts'
 import { SourcePicker } from './SourcePicker'
-import { useWorldProgress } from '@/hooks/useWorldProgress'
-import { AVAILABLE_NOW, type WorldProgress } from '@/lib/worldProgress'
+import { useProgress } from '@/hooks/useProgress'
+import { AVAILABLE_NOW, reachedWith, type Progress } from '@/lib/progress'
 import {
   ALMOST_DONE,
   ALMOST_DONE_LABEL,
@@ -115,8 +115,8 @@ const QueryContext = createContext('')
 /** Option highlighted by the filter search ("<group>/<id>"); Enter selects it. */
 const ActiveTargetContext = createContext<string | null>(null)
 
-/** A mark of the loaded world next to an option (MS6): reached milestone or defeated boss, the
- * next milestone - or only a tooltip ("Available now" without a world). */
+/** A mark of the playthrough's progress next to an option (MS6): reached milestone or defeated
+ * boss, the next milestone - or only a tooltip ("Available now"). */
 interface WorldMark {
   kind: 'done' | 'next' | 'note'
   title: string
@@ -124,19 +124,31 @@ interface WorldMark {
 type WorldMarks = (group: string, id: string) => WorldMark | null
 const WorldMarkContext = createContext<WorldMarks>(() => null)
 
-function worldMarks(p: WorldProgress | null): WorldMarks {
+/** "A", "A and B", "A, B and C" */
+const listNames = (xs: string[]) => (xs.length < 2 ? xs.join('') : `${xs.slice(0, -1).join(', ')} and ${xs.at(-1)}`)
+
+function worldMarks(p: Progress | null, bossName: (id: string) => string): WorldMarks {
   return (group, id) => {
+    if (!p) return null
     if (group === 'progression') {
       if (id === AVAILABLE_NOW)
-        return p
-          ? { kind: 'note', title: `Items whose milestone is reached in ${p.worldName}` }
-          : { kind: 'note', title: 'Needs a loaded world. Ignored until then.' }
-      if (!p) return null
-      if (p.reached.has(id)) return { kind: 'done', title: `Reached in ${p.worldName}` }
-      if (id === p.next) return { kind: 'next', title: `The next milestone in ${p.worldName}` }
+        return {
+          kind: 'note',
+          title: `Items whose milestone is reached. A boss counts as defeated when its bestiary entry is unlocked${
+            p.worldName ? ` or ${p.worldName} says so` : ''
+          }`,
+        }
+      if (p.reached.has(id)) {
+        const by = reachedWith(id, p.defeated).map(bossName)
+        return { kind: 'done', title: by.length ? `Reached: ${listNames(by)} defeated` : 'Reached from the start' }
+      }
+      if (id === p.next) return { kind: 'next', title: 'The next milestone' }
     }
-    if (p && group === 'boss' && id.startsWith('boss:') && p.defeated.has(id.slice(5)))
-      return { kind: 'done', title: `Defeated in ${p.worldName}` }
+    if (group === 'boss' && id.startsWith('boss:')) {
+      const via = p.defeated.get(id.slice(5))
+      if (via === 'bestiary') return { kind: 'done', title: 'Defeated. Its bestiary entry is unlocked' }
+      if (via === 'world') return { kind: 'done', title: `Defeated in ${p.worldName}` }
+    }
     return null
   }
 }
@@ -189,8 +201,11 @@ export const FilterSidebar = memo(function FilterSidebar({
       }),
     [data, picked],
   )
-  const progress = useWorldProgress()
-  const marks = useMemo(() => worldMarks(progress), [progress])
+  const progress = useProgress()
+  const marks = useMemo(() => {
+    const bosses = new Map(data.bosses.map((b) => [b.id, b.name]))
+    return worldMarks(progress, (id) => bosses.get(id) ?? id)
+  }, [progress, data])
   return (
     <WorldMarkContext.Provider value={marks}>
       <FilterPanel

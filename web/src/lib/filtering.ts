@@ -1,7 +1,7 @@
 import Fuse from 'fuse.js'
 import type { GameData, GroupEntry, Item } from './types'
 import { CRAFT_CHESTS, CRAFT_HAS_RECIPE, CRAFT_OBTAINED } from './recipes'
-import { AVAILABLE_NOW } from './worldProgress'
+import { AVAILABLE_NOW } from './progress'
 import { sourceCandidates } from './sources'
 
 // Filters are organised in groups. Entries within a group are combined with
@@ -143,7 +143,7 @@ export function buildFilterGroups(data: GameData): FilterGroup[] {
     {
       key: 'progression',
       label: 'Progression',
-      // "Available now" (MS7): only has items while a world is loaded
+      // "Available now" (MS7): the items whose milestone the playthrough has reached
       entries: [
         {
           id: AVAILABLE_NOW,

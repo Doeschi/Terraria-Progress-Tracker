@@ -1028,25 +1028,27 @@ Below 640 px width (phones) the layout changes; tablets and desktops stay as the
   the wiki's Hardmode flag puts it there). Table column "Available after"
   (first of group Source, with the milestone icon, the reason on hover), sorted in milestone
   order.
-- **MS5** Progress of the loaded world: the world file stores which bosses were defeated
-  (`downed…` flags, Hardmode, the Old One's Army tiers). A milestone counts as reached when its
-  boss is defeated (Eater of Worlds / Brain of Cthulhu: either; Wall of Flesh: Hardmode; any /
-  all three mechanical bosses; Duke Fishron / Empress of Light: either). Eater of Worlds and
-  Brain of Cthulhu share one flag: the world's evil decides (both in a "drunk world").
-  Read again with every load / reload of the world; nothing is saved.
-- **MS6** With a loaded world, the Progression group marks reached milestones (icon, tooltip
-  "Reached in <world>") and highlights the next one; the Bosses group marks defeated bosses,
-  event bosses included (Pumpking, Ice Queen, Martian Saucer, the pillars, Old One's Army, …).
-- **MS7** Option "Available now" at the top of the Progression group (only with a loaded
-  world): the items whose milestone is reached in the world – also when bosses were defeated
-  out of order. Works like the other options (counts, progress, combinable); without a loaded
-  world it is ignored. Not celebrated as completed and no completion date (it changes with the
-  world). Limitation: an item has one milestone (the latest of what it needs, in the usual
-  order), so "available now" can be slightly early when bosses were skipped.
-- **MS8** "Dim unavailable" (off by default, remembered in the browser): with a loaded world,
-  item rows whose milestone is not reached are dimmed in the list. Switched with a toggle button
-  in the list toolbar, right of "Columns" (greyed out without a loaded world, the hint says why);
-  nowhere else.
+- **MS5** Progress of the playthrough: a boss counts as defeated when its bestiary entry is
+  unlocked (ticked by hand or synced from the world; the Twins need both entries, the Eater of
+  Worlds its head's, the Wall of Flesh's entry stands for Hardmode), or when the loaded world's
+  flags say so (`downed…`, Hardmode, the Old One's Army tiers; Eater of Worlds and Brain of
+  Cthulhu share one flag: the world's evil decides, both in a "drunk world"). A milestone counts
+  as reached when its boss is defeated (Eater of Worlds / Brain of Cthulhu: either; any / all
+  three mechanical bosses; Duke Fishron / Empress of Light: either). The bestiary is in the
+  progress file, the world's flags are read again with every load / reload; nothing else is saved.
+- **MS6** The Progression group marks reached milestones (icon, tooltip "Reached: <bosses>
+  defeated") and highlights the next one; the Bosses group marks defeated bosses, event bosses
+  included (Pumpking, Ice Queen, Martian Saucer, the pillars, Old One's Army, …), the tooltip
+  says whether the bestiary or the loaded world counts it.
+- **MS7** Option "Available now" at the top of the Progression group: the items whose milestone
+  is reached – also when bosses were defeated out of order. Works like the other options (counts,
+  progress, combinable) and needs no loaded world. Not celebrated as completed and no completion
+  date (it changes with the progress). Limitation: an item has one milestone (the latest of what
+  it needs, in the usual order), so "available now" can be slightly early when bosses were
+  skipped.
+- **MS8** "Dim unavailable" (off by default, remembered in the browser): item rows whose
+  milestone is not reached are dimmed in the list. Switched with a toggle button in the list
+  toolbar, right of "Columns"; nowhere else.
 
 ## ID – Item detail panel
 
@@ -1311,7 +1313,7 @@ Below 640 px width (phones) the layout changes; tablets and desktops stay as the
   this change" (for "Checked but not found": uncheck the item; off by default).
 
 - **SY10** Banners earned by kills: option "Count banners earned by kills" in the options of the
-  item sync (block "Banners", with a loaded world; on by default, not remembered). With it,
+  item sync (block "Banners", with a loaded world; on by default, remembered in the browser). With it,
   every enemy banner the world has earned at least once (BE9) is in "To be checked" – with its
   kills, the banners earned and how many still wait in the Banners Window – and a checked
   banner that is in no container is not listed under "Checked but not found". Since 1.4.5 an
@@ -1514,11 +1516,13 @@ Status: parser done (PL1, PL2), app integration in progress (PL3–PL5).
   player, one row per item that says where ("10 in 1 container · 37 in the inventory · 1 in the
   Safe"), deselected like before. Options (in the "Options" container, SY8): checkboxes per
   storage (inventory incl. coins and ammo, equipment / misc slots / loadouts, Piggy
-  Bank, Safe, Defender's Forge, Void Vault) and "permanent upgrades used", all on by default. Used permanent upgrades count
+  Bank, Safe, Defender's Forge, Void Vault) and "permanent upgrades used", all on by default and
+  remembered in the browser (for all playthroughs). Used permanent upgrades count
   as obtained (Life Crystal, Life Fruit, Mana Crystal, Demon Heart, Torch God's Favor, Artisan
   Loaf, Vital Crystal, Aegis Fruit, Arcane Crystal, Galaxy Pearl, Gummy Worm, Ambrosia). The
   player never unchecks anything; with a player loaded, the world's "checked but not found"
-  list leaves out what the player has, in any storage, and the used permanent upgrades.
+  list leaves out what the player has in the ticked storages and, with the option on, the used
+  permanent upgrades. What is only in an unticked storage counts as not found.
 - **PL5** Column "Owned" (BL6): the amount in the player's chests (whole world)
   plus, with a player loaded, everything on the player; the tooltip splits it up ("12 in chests ·
   3 in the Void Vault · 1 in the inventory"). Offered while a world or a player is loaded; the

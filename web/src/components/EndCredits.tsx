@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { useActivePlaythrough, useActiveWorld, useStore } from '@/store'
 import { useBestiaryProgress } from '@/hooks/useBestiaryView'
-import { useWorldProgress } from '@/hooks/useWorldProgress'
+import { useProgress } from '@/hooks/useProgress'
 import { DIFFICULTY_LABELS, versionLabel } from '@/lib/availability'
 import { confettiBurst } from '@/lib/confetti'
 import { nameOf } from '@/lib/format'
@@ -35,7 +35,7 @@ function CreditsScreen({ items, onClose }: { items: Tally; onClose: () => void }
   const data = useStore((s) => s.data)!
   const pt = useActivePlaythrough()!
   const world = useActiveWorld()
-  const progress = useWorldProgress()
+  const progress = useProgress()
   const bestiary = useBestiaryProgress()
   const motion = !prefersReducedMotion()
   const screenRef = useRef<HTMLDivElement>(null)
@@ -170,9 +170,9 @@ function CreditsScreen({ items, onClose }: { items: Tally; onClose: () => void }
           <Block title="Collected">
             <Line big>{count(items.total, 'item')}</Line>
             {bestiary.total > 0 && <Line big>{count(bestiary.total, 'bestiary entry', 'bestiary entries')}</Line>}
-            {progress && world && (
+            {progress && progress.defeated.size > 0 && (
               <Line>
-                {progress.defeated.size} of {data.bosses.length} bosses defeated in <em>{world.name}</em>
+                {progress.defeated.size} of {data.bosses.length} bosses defeated
               </Line>
             )}
           </Block>

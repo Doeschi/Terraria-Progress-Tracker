@@ -51,7 +51,7 @@ export interface LoadedWorld extends WorldDims {
   bannerKills: number[]
   /** banners waiting in the Banners Window, per banner number; null in worlds from before 1.4.5 */
   bannersWaiting: number[] | null
-  /** boss ids the world has defeated (its "downed" flags, see worldProgress.ts) */
+  /** boss ids the world has defeated (its "downed" flags, see progress.ts) */
   defeated: string[]
 }
 

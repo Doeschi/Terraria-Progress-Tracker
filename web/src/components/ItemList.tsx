@@ -46,7 +46,7 @@ import { handleListKey } from '@/lib/listCursor'
 import { NpcSuggestions } from './NpcSuggestions'
 import { useUi } from '@/ui'
 import { useIsPhone } from '@/hooks/useIsPhone'
-import { useWorldProgress } from '@/hooks/useWorldProgress'
+import { useProgress } from '@/hooks/useProgress'
 import { CardSortMenu, ItemCards, type CardSort } from './ItemCards'
 
 export function ItemList({ view }: { view: TrackerView }) {
@@ -342,12 +342,12 @@ function PresetBar() {
   )
 }
 
-/** Dim the items the loaded world has not reached yet (MS8): a toggle next to the columns, greyed
- * out without a world (aria-disabled, so the hint still shows on hover). */
+/** Dim the items the playthrough has not reached yet (MS8): a toggle next to the columns. Greyed
+ * out without a playthrough (aria-disabled, so the hint still shows on hover). */
 function DimToggle() {
   const dim = usePrefs((s) => s.layout.dimUnavailable)
   const setLayout = usePrefs((s) => s.setLayout)
-  const progress = useWorldProgress()
+  const progress = useProgress()
   const on = dim && !!progress
   return (
     <Button
@@ -367,8 +367,8 @@ function DimToggle() {
         progress
           ? on
             ? 'Show all items again'
-            : `Dim items you can't get yet in ${progress.worldName}`
-          : "Load a world to dim items you can't get yet"
+            : "Dim items you can't get yet, going by the bosses in your bestiary"
+          : "Open a playthrough to dim items you can't get yet"
       }
     >
       <SunDim /> Dim unavailable
