@@ -140,14 +140,16 @@ def bestiary_file(wikitext, page_html, npc_rows, exclusive, mapping, version_nam
     # the other internal names an entry's NPC goes by - its variants (Grebe2, Salamander3): what a
     # world file may record kills and sightings under. From the "NPC IDs" page: names on the entry's
     # wiki page that are no entry of their own; the page's only entry gets them, else the entry whose
-    # id is the longest prefix of the name. Not for bosses (their parts are drop sources of their own)
+    # id is the longest prefix of the name. Not for bosses (their parts are drop sources of their own),
+    # and not what the page's enemy spawns ([bestiary.variants] exclude: eggs, spores, a shield)
     by_page = defaultdict(list)
     for e in entries:
         if e["type"] != "boss":
             by_page[e["page"]].append(e)
+    not_variants = set(conf.get("variants", {}).get("exclude", []))
     unplaced = Counter()
     for name, npc in npc_ids.items():
-        if name in by_id or not npc.get("page") or npc["page"] not in by_page:
+        if name in by_id or name in not_variants or not npc.get("page") or npc["page"] not in by_page:
             continue
         owners = by_page[npc["page"]]
         if len(owners) > 1:

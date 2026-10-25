@@ -172,10 +172,16 @@ export function containersIn(world: LoadedWorld, areas: Area[], filter: Containe
 // --------------------------------------------------------------- matching
 
 /** Resolve a world item id to the tracker item on the given platform. */
+/** The item an id in a world or player file means. Some ids are shared: removed mobile and old-gen
+ * items keep their number on the wiki while the current game reuses it (the Shiny Black Slab and
+ * the Wandering Jingasa are both 5048). The item of the playthrough's platform wins; among those
+ * the one with known platforms, then an obtainable one; then the first (SY9a). */
 export function resolveItem(data: GameData, id: number, platform: PlatformId): Item | undefined {
   const candidates = data.itemsById.get(id)
   if (!candidates) return undefined
-  return candidates.find((i) => i.platforms.includes(platform)) ?? candidates[0]
+  const rank = (i: Item) =>
+    (i.platforms.includes(platform) ? 4 : 0) + (i.platformsKnown ? 2 : 0) + (i.unobtainable ? 0 : 1)
+  return candidates.reduce((best, i) => (rank(i) > rank(best) ? i : best))
 }
 
 export interface FoundItem {

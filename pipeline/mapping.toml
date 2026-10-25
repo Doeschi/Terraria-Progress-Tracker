@@ -2732,6 +2732,17 @@ critter = "Bunny"
 enemy = "BlueSlime"
 boss = "EyeofCthulhu"
 
+# Internal NPC names on an entry's wiki page that are no variant of the entry (forms, sizes, tiers,
+# segments) but something it spawns, with kills of their own in a world file: not counted for the
+# entry (kill counts, unlocks)
+[bestiary.variants]
+exclude = [
+  "MothronEgg",           # Mothron's eggs (Baby Mothron has an entry of its own)
+  "ForceBubble",          # the Martian Officer's shield
+  "FungiSpore",           # the Giant Fungi Bulb's spores
+  "StardustSpiderSmall",  # the Flow Invader's small spiders
+]
+
 # Entries the game unlocks through other entries, without a kill or sighting of their own (wiki
 # "Bestiary", Notes): the entry -> what else unlocks it in the world, as entry ids - any of the
 # listed; a nested list: all of them together

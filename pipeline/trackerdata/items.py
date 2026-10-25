@@ -3,24 +3,7 @@ import html
 import re
 from collections import Counter, defaultdict
 
-from .common import (
-    DEFAULT_PLATFORMS,
-    PLATFORM_FIELDS,
-    coins,
-    file_from_wikitext,
-    flag,
-    image_url,
-    log,
-    lower_text,
-    norm_name,
-    norm_value,
-    number,
-    page_url,
-    rarity,
-    read_csv,
-    strip_markup,
-    tooltip_text,
-)
+from .common import (DEFAULT_PLATFORMS, PLATFORM_FIELDS, coins, file_from_wikitext, flag, image_url, log, lower_text, norm_name, norm_value, number, page_url, rarity, read_csv, strip_markup, tooltip_text, warn)
 
 
 def pick_rows(rows):
@@ -265,6 +248,27 @@ def make_keys_unique(items):
     dupes = [k for k, n in Counter(i["key"] for i in items).items() if n > 1]
     if dupes:
         log(f"  warning: duplicate item keys remain: {dupes}")
+    check_shared_ids(items)
+
+
+def check_shared_ids(items):
+    """Item ids used twice: removed mobile / old-gen items keep their number on the wiki while the
+    current game reuses it (Shiny Black Slab and Wandering Jingasa: 5048). The app tells them apart
+    by platform, known platforms and obtainability (SY9a); a warning when that cannot decide."""
+    by_id = defaultdict(list)
+    for item in items:
+        by_id[item["id"]].append(item)
+    unclear = []
+    for iid, group in sorted(by_id.items()):
+        if len(group) < 2:
+            continue
+        for platform in {p for i in group for p in i["platforms"]}:
+            best = [i for i in group if platform in i["platforms"] and i["platformsKnown"] and not i["unobtainable"]]
+            if len(best) > 1:
+                unclear.append(f"{iid} on {platform}: {[i['name'] for i in best]}")
+    if unclear:
+        warn(f"item ids shared by items the app cannot tell apart: {unclear[:10]}")
+    log(f"  {sum(1 for g in by_id.values() if len(g) > 1)} item ids shared by two items (removed items, old-gen)")
 
 
 def section_file(section, entries, items):

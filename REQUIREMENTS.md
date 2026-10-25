@@ -1331,6 +1331,11 @@ Below 640 px width (phones) the layout changes; tablets and desktops stay as the
 - **SY9** A third tab "Unknown items" lists the item ids of the scanned containers that the item
   data does not know: amount, the containers with name and position, and – if known – the name
   and icon from `missing_items.json` (recipe items without a template, see D22), or a hint when the id is higher than every known id (newer game version).
+- **SY9a** Shared item ids: removed mobile and old-gen items keep their number on the wiki while
+  the current game reuses it (the Shiny Black Slab and the Wandering Jingasa are both 5048, the
+  Mythical set and the Prince set, the Red Envelope and the Royal Scepter, …). An id in a world or
+  player file means the item of the playthrough's platform; among those the one with known
+  platforms, then an obtainable one. The data build warns when that cannot decide.
 ## CS – Chest search
 
 - **CS1** A chest search view lets the user select one or more areas and search for an item
@@ -1422,7 +1427,10 @@ Below 640 px width (phones) the layout changes; tablets and desktops stay as the
   what did it ("via Tax Collector", "Torch God's Favor used"). An NPC with several internal
   names (the Grebe: `Grebe` sitting, `Grebe2` flying; the Salamander's nine variants) is one
   entry: the world records kills and sightings under any of its names (`keys` in
-  `bestiary.json`, from the "NPC IDs" page), and the app counts them all for the entry.
+  `bestiary.json`, from the "NPC IDs" page), and the app counts them all for the entry. What an
+  enemy spawns is no variant of it, even without an entry of its own: the Mothron Egg, the
+  Martian Officer's Force Bubble, the Giant Fungi Bulb's spores and the Flow Invader's small
+  spiders (`[bestiary.variants] exclude`) keep their kills to themselves, like in the game.
 - **BE6** Separate view: "Items | Bestiary | Stats" switch in the header (Stats: ST). The bestiary view has its own
   filters (Type, Biome, Time of day, Events, Added in – faceted like FL3/FL4), its own search,
   Show all / missing / unlocked, and a table: in-game number (default order), icon, name, type,
